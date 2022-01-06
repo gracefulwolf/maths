@@ -1,0 +1,342 @@
+@import 'character.css';
+
+/* 공통 수정 */
+img{
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+* {
+  font-style: normal;
+}
+
+/* 기본 폰트 */
+#wrap main {
+  font-size: 40px;
+}
+
+/* 말풍선 폰트 */
+.balloon {
+  font-size: 35px;
+}
+
+/* 대발문 pageManager.css  */
+#wrap header .title {
+  font-size: 37px;
+}
+
+#wrap header .title .toggleBlank{
+  vertical-align: -5px;
+  margin-right:5px;
+  width: 37px;
+  height: 37px;
+}
+/* 소발문  pageManager.css */
+h2 .dot+span,
+h2 .dot+span+span{
+  font-size: 40px;
+}
+
+/* 확인문제 구해야 할것 , 주어진것 밑줄*/
+h2[data-addLine-container] {
+  line-height: 2em;
+}
+
+h2[data-addLine-container]>.dot {
+  margin-top: 0.5em;
+}
+
+/* 쓰기 세기 기존유지box.css */
+.colorBox.check {
+  font-size: 24px;
+}
+/* ox  퀴즈 성공시 비활성화 처리  */
+[data-ox-obj].complete, .complete [data-ox-obj]{
+  pointer-events: none;
+  cursor:default;
+}
+/* 정답 텍스트 quiz.css */
+.answer {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+/* 콘텐츠 박스 및 테이블  */
+.contentsList {
+  font-size: 40px;
+}
+
+/* 인트로 슬라이드 think.css
+하단 발문 크기는 40px
+활동영역 40px
+대발문이 함께 나오는 페이지는 대발문 37, 하단 발문 40
+특이 케이스로 테스트 길이가 길어서 두 줄로 나올거같으면 보드 내에 30px로
+줄여달라고 따로 기재할 수 있으니 보드에 따라주세요.
+*/
+.introSlider_slides>li {
+  font-size: 40px;
+}
+
+/* 말풍선, 말줄임/펼침, 확인문제 말풍선 35px */
+
+/* 칭찬하기, 진진가 35px */
+
+/* 핵심정리 타이틀, 내용(정답제외) 40px */
+
+/* 연필 아이콘 */
+#wrap header .title:before {
+  top: 7px;
+}
+
+/* 활동+ 아이콘 */
+#wrap header .title.active .icon {
+  position: relative;
+  top: -4px;
+}
+
+/* 3,4 학년 대발문 높이 수정
+#wrap header .title {
+  margin: 23px 0 40px 0 !important;
+}
+#wrap header .title.noTab {
+  margin: 23px 0 !important;
+}
+*/
+.colorBox{/* line-height:36px !important; */}
+
+.introSlider_slides {
+  padding: 32px 108px 15px 32px;
+}
+
+.introSlider_slides {
+  padding: 30px 108px 12px 32px;
+}
+
+.intro_circle_tabs {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+}
+
+.introSlider {
+  min-height: auto;
+}
+.introSlider_slides {
+  min-height: 95px;
+}
+
+/* 학습창 내 안내 글자 크기 */
+.popup_pages>li.explain .explainContainer .desc {
+  font-size: 35px !important;
+}
+
+/* 학습창 내 분수 텍스트 크기 */
+.verticalFormulaCon {
+  font-size: 40px !important;
+}
+
+/* 학습창 내 텍스트 크기 */
+.playDataList dd {
+  font-size: 40px;
+}
+
+/*팝업창 활동방법 bullet 수정*/
+.bullet.number {
+  width: 40px;
+  height: 40px;
+  line-height: 1.8em;
+}
+
+/* toggle answer > contentsList 안의 텍스트 크기 */
+.answer .contentsList .exam + div {
+  font-size: 38px;
+}
+
+/* 다음 시간에는 무엇을 배울까요? */
+.fixOpacity {
+  opacity: 1 !important;
+}
+
+.introSlider {
+  box-shadow: inset 3px 3px 0 0 #ececec, inset -3px 0 0 0 #ececec;
+}
+
+/* 풀이 팝업 풀이 부분 텍스트 */
+.popup_pages .solve .popup_contents {
+  font-size: 35px;
+}
+
+/* 핵심정리 */
+.pointContainer .contentsBox h2 {
+  font-size: 40px;
+}
+
+/* 예 약물 */
+.toggle .bullet.exam {
+  margin-right: 10px;
+}
+
+.blankBox {
+  min-width: 40px;
+}
+
+.icon_o_red{
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* 아이콘 색깔 레드 추가 */
+h2 .icon_o_red {
+  margin: 3px 0 0 0;
+}
+
+h2 .icon_o_red {
+  vertical-align: top;
+}
+
+
+.icon_o_red {
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/icon/icon_O_red.png);
+}
+/*-----------------------------------------------------------------------------------------*/
+/*! 수학익힘 css 입니다.! */
+
+/* 대발문 pageManager.css  */
+
+/* 소발문  pageManager.css */
+.suhi h2{
+  font-size: 40px;
+}
+.suhi h2 .dot+span {
+  font-size: 40px;
+}
+.suhi h2 .blankBox {
+  margin-top: 8px;
+  width: 40px;
+  height: 40px;
+  min-width:40px;
+  padding:0;
+}
+.suhi h2>ins.number {
+  margin: 8px 10px 0 0;
+  width: 40px;
+  height: 40px;
+  line-height: 1.8em;
+}
+.suhi h2 .toggleBlank {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+}
+.suhi h2 .icon_o_title {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+}
+.suhi h2 .icon_bogi {
+  margin-top:10px;
+}
+
+/* 대발문 팝업 높이 지정 */
+.popup_pages .textBookPopup .popupInner {
+  height: 240px;
+}
+
+.contentsList>li>.colorBox.check+* {
+  width: auto;
+}
+
+h2 .blankBox {
+min-width: 40px !important;
+  height: 40px !important;
+  display:inline-block;margin-top:7px;
+}
+.blankBox.white {
+  border:3px solid #efefef;
+  background:#ffffff;
+}
+h2.supplyType {
+  padding-bottom:45px;
+}
+.suhi h2 ins.number.big {
+  width:40px;
+  height:40px;
+  line-height:1.8em;
+}
+h2 .supply_guide.titleRight {
+  position:absolute;
+  bottom:0;
+  right:0;
+  letter-spacing:0;
+}
+.answer .exInlineBlock{display:inline-block;width:90%;}
+.noClick{position:relative;}
+.noClick:after{content:"";display:block;width:100%;height:100%;position:absolute;left:0;top:0;z-index:10;background:transparent !important;}
+
+.icon_o_red2 {
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/icon/icon_O_red2.png');
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: -5px;
+}
+.formula .toggle.text .answer{font-size:38px;}
+.handContainer li .colorBox{line-height:1.3em !important;}
+.introContents main{opacity:1 !important;}
+
+.checkContainer .contentsBox h2{
+  font-size:40px !important;
+  line-height:1.3em !important;
+  margin-bottom:30px;
+}
+/* .checkContainer .contentsBox h2[data-addLine-container]{
+  line-height:1.4em !important;
+  margin-top: -4px;
+} */
+#wrap header .title .titleInline{display:inline-block;width:95%;}
+#wrap header .title .bullet.number{margin-top:3px;}
+
+.checkContainer .basicSlider_slides>li.on .basicSlider{flex-grow: 1;}
+
+.checkContainer h2 .icon_o_title,
+h2 .icon_o_red{
+  margin-top:7px;
+}
+.tableContainer table td,
+.tableContainer table th{font-size:40px;}
+
+
+
+/* etb.lim  2021.04.05*/
+
+h2 {top:0!important ; font-size: 40px!important;}
+
+h2 .dot {
+    margin: .45em 10px 0 0!important;
+    top:0!important
+}
+
+h2 .dot + span{top:0!important}
+
+.basicSlider_slides li h2 > span {line-height:52px!important}
+.basicSlider_slides li span.controlBtn {line-height:32px!important}
+h2 .icon_bogi {margin:8px 4px 0 4px!important}
+
+/* etb.lim */
+
+/* 2021.04.06 */
+/* 애니메이션 h2 */
+.aniContainer .mediaSubContainer h2 {
+  font-size: 70px!important;
+}
