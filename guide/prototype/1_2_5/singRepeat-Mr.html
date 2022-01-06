@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/libs/musicNote/css/musicNote.css">
+	<script src="../common/libs/musicNote/js/setting_singStudy.js"></script>
+	<script src="../common/libs/musicNote/js/musicNote.js"></script>
+	<style type="text/css">
+		.sectionIcon,
+		.sectionIcon.section_3  { top: 234px; left: 24px; }
+		.sectionIcon.section_2,
+		.sectionIcon.section_4 { top: 152px;left: 30px; }
+
+		.svgContainer > div:nth-of-type(odd) {
+			height: 310px;
+		}
+	</style>
+</head>
+<body class="singSheetContainer">
+	<!-- counter & player START -->
+	<div class="counterLoading">
+			<img src="../common/libs/musicNote/images/count_1.png" alt="">
+		<img src="../common/libs/musicNote/images/count_2.png" alt="">
+		<img src="../common/libs/musicNote/images/count_3.png" alt="">
+		<img src="../common/libs/musicNote/images/count_4.png" alt="">
+		<img src="../common/libs/musicNote/images/count_5.png" alt="">
+		<img src="../common/libs/musicNote/images/count_6.png" alt="">
+	</div>
+	<div class="js-audioPlayer audioPlayer">
+		<div class="bar">
+			<span class="allLabel">전체 듣기</span>
+			<div class="js-controls controls"></div>
+			<span class="allLabel">구간 듣기</span>
+			<div class="js-section section iconType"></div>	
+			<div class="js-options options"></div>
+		</div>
+	</div>
+	<!-- counter & player END -->
+	<!-- svg data load container START -->
+	<div>
+		<object class="js-svgData svgData" data-svg-index="1" data="./svgs/new_shoes_01.svg" type="image/svg+xml"></object>
+		<object class="js-svgData svgData" data-svg-index="2" data="./svgs/new_shoes_02.svg" type="image/svg+xml"></object>
+		<object class="js-svgData svgData" data-svg-index="3" data="./svgs/new_shoes_03.svg" type="image/svg+xml"></object>
+		<object class="js-svgData svgData" data-svg-index="4" data="./svgs/new_shoes_04.svg" type="image/svg+xml"></object>
+	</div>
+	<!-- svg data load container END -->
+	<div class="sheetContainer">
+		<h1>새 신</h1>
+		<div class="svgContainer">
+			<div class="js-svgList svgList active" data-svg-index="1" data-title="">
+				<div class="sectionIcon section_1">1</div>
+			</div>
+			<div class="js-svgList svgList active" data-svg-index="2" data-title="">
+				<div class="sectionIcon section_2">2</div>
+			</div>
+			<div class="js-svgList svgList" data-svg-index="3" data-title="">
+				<div class="sectionIcon section_3">3</div>
+			</div>
+			<div class="js-svgList svgList" data-svg-index="4" data-title="">
+				<div class="sectionIcon section_4">4</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			window.musicNote({
+				svgInfo: {
+					container: document.querySelectorAll('.js-svgList'),
+					data: document.querySelectorAll('.js-svgData'),
+					title: document.querySelector('h1'),
+				},
+				settings: {volume: 1},
+				tracks: {
+					normal: './media/3-1 새신(학생 창_노래와 반주).mp3',
+					half: './media/3-1 새신(학생 창_조성 내림_노래와 반주).mp3',
+					one: './media/3-1 새신(학생 창_조성 올림_노래와 반주).mp3',
+				},
+				syncInfo: {
+					/* 
+						pageType(재생 악보 보기: default = split): scroll or split,
+
+						playMode(재생 모드: default = normal): repeat(따라부르기) or normal,
+
+						songMode(곡 모드: default = all): all(합창) / up(윗성부) / down(아랫성부),
+
+						textMode(가사 보기: default = lyrics): lyrics(가사) or syllable(계이름),
+
+						meter(박자): 3(4분의 3박이면 3을 입력),
+
+						start(노래 시작 시간): 0.00,
+
+						bridges(절과 절 사이 쉬는 시간(간주)): [
+							{
+								section: 간주 끝나고 시작하는 구간
+								end: 간주 끝나는 시간(다음 절 시작 시간)
+								page: 다음 페이지(절)로 이동할 시간
+							}
+						],
+
+						speedAdjust(속도): -0.429(숫자가 높을수록 느려짐),
+
+						noteSyncData: [
+							{
+								time(음표별 재생 시간): [1, 0.5, ...],
+
+								// cut, delay는 필요없는 경우 삭제
+								cut(구간 끝부분 자름): 0.00, 
+
+								delay(구간 끝나고 추가 재생(절 끝에 곡이 자연스럽게 끝나도록 재생 시간 추가)): 0.00,
+
+								speedChange(곡 중간에 속도가 바뀌는 경우 사용 - 0은 쓰면 안됨): 1,
+							}
+						]
+					*/
+
+					playMode: 'repeat', // repeat | normal
+					songMode: 'all', // all | up | down
+					textMode: 'lyrics', // lyrics | syllable
+					meter: 2, 
+					start: 8.464,
+					speedAdjust: -0.098,
+					bridges: [
+						{
+							section: 3,
+							end: 32.854,
+							page: 30
+						}
+					],
+					noteSyncData: [
+						// section 1
+						{
+							time: [
+								1, 0.75, 0.25,
+								1, 1,
+								0.75, 0.25, 0.5, 0.5, 
+								0.5, 0.5, 0.5, 0.5,
+
+								1, 0.75, 0.25,
+								1, 1,
+								0.75, 0.25, 0.5, 0.5, 
+								0.5, 0.5, 0.5, 0.5,
+							],
+							cut: 0., 
+						}, 
+
+						// section 2
+						{
+							time: [
+								1, 0.75, 0.25,
+								0.5, 0.5, 0.5, 0.5,
+								1, 1, 
+								2,
+
+								1, 0.75, 0.25,
+								0.5, 0.5, 0.5, 0.5,
+								1, 1, 
+								2,
+							],
+							cut: 0., 
+						}, 
+						// section 3
+						{
+							time: [
+								1, 0.75, 0.25,
+								1, 1,
+								0.75, 0.25, 0.5, 0.5, 
+								0.5, 0.5, 0.5, 0.5,
+
+								1, 0.75, 0.25,
+								1, 1,
+								0.75, 0.25, 0.5, 0.5, 
+								0.5, 0.5, 0.5, 0.5,
+							],
+							cut: 0., 
+						}, 
+
+						// section 4
+						{
+							time: [
+								1, 0.75, 0.25,
+								0.5, 0.5, 0.5, 0.5,
+								1, 1, 
+								2,
+
+								1, 0.75, 0.25,
+								0.5, 0.5, 0.5, 0.5,
+								1, 1, 
+								2,
+							],
+							cut: 0.,
+							delay: 0.1
+						}, 
+					]
+				}
+			});
+
+		}, false);
+	    	
+	</script>
+</body>
+</html>

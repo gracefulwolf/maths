@@ -1,0 +1,158 @@
+
+@charset "utf-8";
+
+/************* vocalPractice ************/
+main {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	background: #fff url(../images/bg.png) center no-repeat;
+	background-size: 1170px auto;
+	overflow: hidden;
+}
+main.vocalPractice > h1 {
+	margin-top: 80px;
+	margin-bottom: 180px;
+}
+
+.buttonContainer { overflow: hidden; }
+.buttonContainer > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.buttonContainer > div.leftBox {
+	float: left;
+	margin-left: 60px;
+}
+.buttonContainer > div.rightBox {
+	float: right;
+	margin-right: 60px;
+}
+
+/* button */
+button {
+	cursor: pointer;
+	margin: 0 4px;
+}
+/* left */
+button.step5 {
+	width: 178px;
+	height: 61px;
+	background: url(../images/btn_step5.png) center no-repeat;
+	background-size: contain;
+}
+button.step5.hover,
+button.step5.on {
+	width: 178px;
+	height: 61px;
+	background: url(../images/btn_step5_on.png) center no-repeat;
+	background-size: contain;
+}
+button.step3 {
+	width: 138px;
+	height: 61px;
+	background: url(../images/btn_step3.png) center no-repeat;
+	background-size: contain;
+}
+button.step3.hover,
+button.step3.on {
+	width: 138px;
+	height: 61px;
+	background: url(../images/btn_step3_on.png) center no-repeat;
+	background-size: contain;
+}
+/* right */
+button[data-play-btn] {
+	width: 45px;
+	height: 50px;
+	margin: 0;
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+	-ms-transform: translateY(2px);
+	transform: translateY(2px);
+}
+button[data-play-btn].off { display: none; }
+button.play {
+	background: url(../images/btn_play.png) center no-repeat;
+	background-size: contain;
+}
+button.play.hover,
+button.play.on {
+	background: url(../images/btn_play_on.png) center no-repeat;
+	background-size: contain;
+}
+button.pause {
+	background: url(../images/btn_pause.png) center no-repeat;
+	background-size: contain;
+}
+button.pause.hover,
+button.pause.on {
+	background: url(../images/btn_pause_on.png) center no-repeat;
+	background-size: contain;
+}
+button.stop {
+	background: url(../images/btn_stop.png) center no-repeat;
+	background-size: contain;
+}
+button.stop.hover,
+button.stop.on {
+	background: url(../images/btn_stop_on.png) center no-repeat;
+	background-size: contain;
+}
+
+button.listen { width: 156px; height: 49px; }
+button[data-listen-btn="updown"] {
+	width: 185px;
+	background: url(../images/btn_listen_updown.png) center no-repeat;
+	background-size: contain;
+}
+button[data-listen-btn="updown"].hover,
+button[data-listen-btn="updown"].on {
+	width: 185px;
+	background: url(../images/btn_listen_updown_on.png) center no-repeat;
+	background-size: contain;
+}
+button[data-listen-btn="up"] {
+	background: url(../images/btn_listen_up.png) center no-repeat;
+	background-size: contain;
+}
+button[data-listen-btn="up"].hover,
+button[data-listen-btn="up"].on {
+	background: url(../images/btn_listen_up_on.png) center no-repeat;
+	background-size: contain;
+}
+button[data-listen-btn="down"] {
+	background: url(../images/btn_listen_down.png) center no-repeat;
+	background-size: contain;
+}
+button[data-listen-btn="down"].hover,
+button[data-listen-btn="down"].on {
+	background: url(../images/btn_listen_down_on.png) center no-repeat;
+	background-size: contain;
+}
+
+/* page */
+section[data-step-page] {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	height: 200px;
+	/*outline: 1px solid tomato;*/
+}
+section[data-step-page].step5 {
+	background: url(../images/step5_bg.svg) center no-repeat;
+	background-size: contain;
+}
+section[data-step-page].step3 {
+	background: url(../images/step3_bg.svg) center no-repeat;
+	background-size: contain;
+}
+section[data-step-page].on { display: flex; }
+section[data-step-page] > ul > li { display: none; }
+section[data-step-page] > ul > li.on { display: flex; }

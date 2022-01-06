@@ -4,22 +4,22 @@ CONTENTS = (function () {
     start: function () {
       setTimeout(function(){
         if($ts.getEl('[data-open-gate]')) {
-          $ts.loadScriptFile('common/contents/js/cmn_openGate.js', function(){
+          $ts.loadScriptFile('../common/contents/js/cmn_openGate.js', function(){
             openGateInit();
           });
         }
         if($ts.getEl('[data-addLine-container]')) {
-          $ts.loadScriptFile('common/contents/js/quiz/quiz_addLine.js', function(){
+          $ts.loadScriptFile('../common/contents/js/quiz/quiz_addLine.js', function(){
             addLineInit();
           });
         }
         if($ts.getEl('[data-puzzle-container]')) {
-          $ts.loadScriptFile('common/contents/js/quiz/quiz_math_word.js', function(){
+          $ts.loadScriptFile('../common/contents/js/quiz/quiz_math_word.js', function(){
             puzzleQuizInit();
           });
         }
         if($ts.getEl('[data-calc-container]')) {
-          $ts.loadScriptFile('common/contents/js/quiz/quiz_math_calc.js', function(){
+          $ts.loadScriptFile('../common/contents/js/quiz/quiz_math_calc.js', function(){
             mathCalculationInit();
           });
         }
@@ -29,12 +29,12 @@ CONTENTS = (function () {
           });
         }
         if($ts.getEl('.wordQuizContent').length) {
-          $ts.loadScriptFile('common/contents/js/quiz/quiz_life_wordQuiz.js', function(){
+          $ts.loadScriptFile('../common/contents/js/quiz/quiz_life_wordQuiz.js', function(){
             wordQuizHint();
           });
         }
         if($ts.getEl('.fishing').length) {
-          $ts.loadScriptFile('common/contents/js/quiz/quiz_life_fishingGame.js', function(){
+          $ts.loadScriptFile('../common/contents/js/quiz/quiz_life_fishingGame.js', function(){
             fishingGame();
           });
         }
@@ -43,7 +43,7 @@ CONTENTS = (function () {
     },
     reset: function () {
       if($ts.getEl('[data-addLine-container]')) {
-        $ts.loadScriptFile('common/contents/js/quiz/quiz_addLine.js', function(){
+        $ts.loadScriptFile('../common/contents/js/quiz/quiz_addLine.js', function(){
           resetAddLine();
         });
       }
