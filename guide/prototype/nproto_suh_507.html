@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+  <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+  <style type="text/css">
+    .study_guide {
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+  <header>
+    <div class="title">내용 전개 일반 대발문입니다.</div>
+  </header>
+  <main>
+    <div class="contentsBox">
+      <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div>
+      <h2><ins class="dot orange"></ins><span>질문을 만들어 친구들과 묻고 답해 보세요.</span></h2>
+      <section>
+        <div id="spriteAniBox_1"></div>
+      </section>
+    </div>
+  </main>
+</div>
+<div id="loadingContainer">
+  <div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    $prite.add({
+      target: $ts.getEl('#spriteAniBox_1'),
+      spriteId: 'sprite1',
+      spriteList: [
+        {
+          name: 'boy_1',
+          // circle: 'blue',
+          top: 140,
+          left: 160,
+          width: 270,
+          height: 360,
+          thumbNail: 'common/contents/images/character/boy_1.png',
+          spriteSheet: 'common/contents/images/character/boy_1_sprite.png',
+          sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3',
+          textBubble: {
+            text: '사람마다 고장에 대한 생각과 느낌이 달라요.',
+            class: 'balloon bottom sky',
+            top: 30,
+            left: 55,
+            width: 460,
+            textAlign: 'center',
+            wordBreak: 'keep-all'
+          },
+          sheetWidth: 54000,
+          sheetHeight: 360,
+          endSheet: 0,
+          delay: 40
+        },
+        {
+          name: 'girl_2',
+          // circle: 'green',
+          top: 140,
+          left: 560,
+          width: 270,
+          height: 360,
+          thumbNail: 'common/contents/images/character/girl_2.png',
+          spriteSheet: 'common/contents/images/character/girl_2_sprite.png',
+          sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
+          textBubble: {
+            text: '우리 고장의 주요 장소를 살펴봤어요.',
+            class: 'balloon bottom yellow',
+            top: 30,
+            left: 460,
+            width: 460,
+            textAlign: 'center',
+            wordBreak: 'keep-all'
+          },
+          sheetWidth: 54000,
+          sheetHeight: 360,
+          endSheet: 0,
+          delay: 40
+        }
+
+      ]
+    });
+
+  }, false);
+
+</script>
+
+</body>
+</html>
