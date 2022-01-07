@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+  <link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
+  <style type="text/css">
+    .balloon .textAlignC {
+      margin-bottom: 10px;
+    }
+    .balloon_1:after { top: 90px; }
+    .balloon_2:after { top: 280px; }
+    img {width: 100%;}
+  </style>
+</head>
+
+<body>
+
+<div id="wrap">
+  <header>
+    <div class="title">가 보고 싶은 나라에 대하여 이야기해 봅시다.</div>
+  </header>
+  <main>
+    <div class="contentsBox">
+      <div class="study_guide right"><em>인물</em>을 <em>클릭</em>하세요.</div>
+
+      <div id="spriteAniBox_1"></div>
+    </div>
+  </main>
+</div>
+<div id="loadingContainer">
+  <div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    // $prite.add({ // 스프라이트 생성 영역마다 생성
+    //   target: $ts.getEl('#spriteAniBox_1'), // 스프라이트가 생성될 영역
+    //   spriteId: 'sprite1', // 스프라이트 고유 id(여러 그룹일 경우에는)
+    //   spriteList: [
+    //     {
+    //       name: 'boy_1',  // 영역 내에 name으로 class 지정
+    //       circle: 'green', // 노출될 시 원형일 경우 사용 - 색상
+    //         circlePlayMode: { // 클릭시 원형이 될 경우 사용
+    //         class: 'yellow', // 색상
+    //             top: -10, // 클릭 후 원형이 됐을 경우 top
+    //             left: 0, // 클릭 후 원형이 됐을 경우 left
+    //             imagesParentClass: 'textAlignC', // 말풍선 내 이미지가 있을 경우 부모의 class
+    //             images: ['./images/sample/034_1.png', 'images/sample/034_2.png'], // 이미지 경로
+    //             imagesHeight: [300, 300], // 이미지 세로 값
+    //             rewind: false // 음원 재생이 끝나면 원래 대로 돌아가는지? true ? false?
+    //         },
+    //       top: 140, // 캐릭터 top값, 없어도 상관 없음, css 제어
+    //       left: 394, // 캐릭터 left 값, 없어도 상관 없음, css 제어
+    //       width: 270, // 고정 가로 값
+    //       height: 360, // 고정 세로 값
+    //       thumbNail: 'common/contents/images/character/boy_1.png', // 처음 노출되는 썸네일
+    //       spriteSheet: 'common/contents/images/character/boy_1_sprite.png', // 스프라이트 실행될 sheet
+    //       sound: "./media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3", // 스프라이트 실행될 때 재생될 음원
+    //       textBubble: { // 스프라이트 실행될 때 나타날 말풍선 // 없을 경우 삭제
+    //         text: "다양한 분수의 덧셈과<br/>뺄셈을 배울 것 같아요.", // 말풍선 내 텍스트
+    //         class: 'balloon bottom sky', // 말풍선 클래스
+    //         top: 34,  // 말풍선 top값, 없어도 상관 없음, css 제어
+    //         left: 305, // 말풍선 left 값, 없어도 상관 없음, css 제어
+    //         width: 450, // 말풍선 가로 값, 없어도 상관 없음, css 제어
+    //         textAlign: 'center', // 말풍선 정렬
+    //         wordBreak: 'keep-all' // 말풍선 wordBreak
+    //       },
+    //       sheetWidth: 54000, // 고정 값
+    //       sheetHeight: 360, // 고정 값
+    //       endSheet: 0, // 고정 값
+    //       delay: 40, // 고정 값
+    //       callbacks: {
+    //         start: function () {}, // 시작시 콜백
+    //         end: function () {} // 끝날시 콜백
+    //       }
+    //     }
+    //   ]
+    // });
+    $prite.add({
+      target: $ts.getEl('#spriteAniBox_1'),
+      spriteId: 'sprite1',
+      spriteList: [
+        {
+          name: 'girl_1',
+          circlePlayMode: {
+            class: 'deeppink',
+            top: 100,
+            left: 60,
+            imagesParentClass: 'textAlignC',
+            images: ['./images/win_0202_0102_0005_203/win_0202_0102_0005_203_02.png'],
+            imagesHeight: [380, 380],
+            rewind: false
+          },
+          top: 200,
+          left: 300,
+          width: 270,
+          height: 360,
+          thumbNail: '../common/contents/images/character/girl_1.png',
+          spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+          sound: './media/win_0202_0102_0005_203/win_0202_0102_0005_203_2.mp3',
+          textBubble: {
+            text: '만리장성을 직접 보고 싶어서 중국에 가고 싶어요.',
+            class: 'balloon balloon_1 left deeppink textAlignC',
+            top: 75,
+            left: 270,
+            width: 820,
+            textAlign: 'center',
+            wordBreak: 'keep-all'
+          },
+          sheetWidth: 54000,
+          sheetHeight: 360,
+          endSheet: 0,
+          delay: 40,
+          callbacks: {
+            start: function () {
+            },
+            end: function () {
+            }
+          }
+
+        },
+        {
+          name: 'boy_1',
+          circlePlayMode: {
+            class: 'deeppink',
+            top: 290,
+            left: 60,
+            imagesParentClass: 'textAlignC',
+            images: ['./images/win_0202_0102_0005_203/win_0202_0102_0005_203_03.png'],
+            imagesHeight: [380, 380],
+            rewind: false
+          },
+          top: 200,
+          left: 585,
+          width: 270,
+          height: 360,
+          thumbNail: '../common/contents/images/character/boy_1.png',
+          spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+          sound: './media/win_0202_0102_0005_203/win_0202_0102_0005_203_3.mp3',
+          textBubble: {
+            text: '파리의 에펠 탑이 멋져서 프랑스에 가고 싶어요.',
+            class: 'balloon balloon_2 left deeppink textAlignC',
+            top: 75,
+            left: 270,
+            width: 820,
+            textAlign: 'center',
+            wordBreak: 'keep-all'
+          },
+          sheetWidth: 54000,
+          sheetHeight: 360,
+          endSheet: 0,
+          delay: 40,
+          callbacks: {
+            start: function () {
+            },
+            end: function () {
+            }
+          }
+        }
+      ]
+    });
+  });
+
+</script>
+
+</body>
+</html>
