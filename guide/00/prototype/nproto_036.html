@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/s2_common.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+
+	<style>
+		section>figure {
+			margin-bottom: 10px;
+			width: 100%;
+			height: 340px;
+		}
+
+		section>figure img {
+			display: block;
+			margin: 0 auto;
+			width: auto;
+			height: 100%;
+		}
+
+		.toggle.box {
+			margin: 20px 0 0;
+		}
+
+		.toggle .answer {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.page_1 {
+			text-align: center;
+		}
+
+		.page_1 .toggle {
+			/* width: auto; */
+			/* margin: 20px 0 0; */
+		}
+
+		.page_1 .img_list {
+			overflow: hidden;
+			margin: 40px -5% 0 0;
+		}
+
+		.page_1 .img_list li {
+			float: left;
+			position: relative;
+			overflow: hidden;
+			width: 20%;
+			height: 250px;
+			margin: 0 5% 0 0;
+			text-align: center;
+		}
+
+		.page_1 .img_list li span {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: auto;
+			height: 250px;
+			transform: translate(-50%, 0);
+		}
+
+		.page_1 .img_list li img {
+			height: 100%;
+		}
+
+		.page_2 figure {
+			height: 280px;
+		}
+
+		.page_2 .toggle {
+			width: 30%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px auto;
+		}
+
+		.page_2 .toggle img {
+			height: 100px;
+		}
+
+		.page_2 .toggle .bullet.exam {
+			margin-top: 17px;
+		}
+		.page_1 .toggle.noBg.box.imgcheck{
+			pointer-events: none;
+		}
+		.page_1 .toggle.noBg.box.imgcheck::after {
+			display: none;
+		}
+		.page_1 .answer.imgcheck{
+			display: block;
+			margin-top: -20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header>
+			<div class="title">원을 알아봅시다.</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 +</li>
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 +</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>주변에서 원을 그릴 수 있는 물건을 찾아보세요. 원을 그릴 수 있는 물건은 무엇이 있나요?</span></h2>
+						<section>
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>풀 뚜껑, 동전, 음료수 캔, 컵, 모양 자 등이 있습니다.</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle noBg box imgcheck">
+								<div class="answer imgcheck" data-toggle-target="1">
+									<ul class="img_list">
+										<li>
+											<span><img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_01.jpg"
+													alt=""></span>
+										</li>
+										<li>
+											<span><img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_02.jpg"
+													alt=""></span>
+										</li>
+										<li>
+											<span><img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_03.jpg"
+													alt=""></span>
+										</li>
+										<li>
+											<span><img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_04.jpg"
+													alt=""></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>여러 가지 크기의 원을 그려 보세요.</span></h2>
+						<section>
+							<figure>
+								<img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_05.png" alt="">
+							</figure>
+							<div class="toggle box center" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div><img src="images/suh_0201_02_0002_203/suh_0201_02_0002_203_06.png"
+													alt=""></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>원을 잘 그리려면 어떻게 하면 좋을까요?</span></h2>
+						<section>
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>연필과 물체의 끝을 잘 맞추어서 그립니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle box" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>원을 본뜨고자 하는 물체가 움직이지 않도록 해야 합니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle box" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>원을 그리기 시작한 점과 끝나는 점이 잘 만나게 그려야 합니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>원에 대해 알게 된 점을 말해 보세요.</span></h2>
+						<section>
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>뾰족한 부분이 없습니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle box" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>크기는 다르지만 생긴 모양이 서로 같습니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle box" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									<!--     예 아이콘과 긴 문장     -->
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>길쭉하거나 찌그러진 곳 없이 어느 쪽에서 보아도 똑같이 동그란 모양입니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		window.$callBack.sliderReset = function (slide) {
+			console.log(slide)
+		}
+		document.addEventListener('DOMContentLoaded', function () {}, false);
+	</script>
+
+</body>
+
+</html>
