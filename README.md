@@ -58,6 +58,9 @@
     </li>
 </ul>
 
+약물 예
+<div class="bullet exam">예</div>
+
 ```
 
 #### 답박스
@@ -136,6 +139,10 @@
 - 마우스 버튼
 <div class="popBtn mouse" data-hover="" data-popup-mode="pageOff" data-popup-btn="1"></div>
 
+- vod 팝업 버튼
+<button class="videoSubPlayBtn right" data-video-link="M201801966_800K.mp4" data-hover="">활동영상 보기</button>
+
+------------------------------------------------------
 - 팝업 콘텐츠
 <section class="popup_container" data-popup-container="">
     <ul class="popup_pages">
