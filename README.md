@@ -33,6 +33,80 @@
     <div class="charSpriteImg girl_4"></div>
     <div class="charSpriteImg boy_4"></div>
 </div>
+
+보기박스
+<div class="bogi_wrap">
+    <div class="bogiContainer">
+        <div class="icon_bogi"></div>
+        <div class="inner">
+           ...
+        </div>
+    </div>
+</div>
+
+보기 아이콘
+<div class="icon_bogi"></div>
+
+약물 숫자박스
+<div class="bullet number orange inline">1</div>
+
+약물 도트
+<ul class="contentsList pos">
+    <li>
+        <ins class="dot"></ins>
+        <div class="boxCont">...</div>
+    </li>
+</ul>
+
+```
+
+#### 답박스
+```
+* 그룹 단위로 답노출 :data-group-index="1"
+
+<div data-quiz="toggle">
+    <div class="toggle box" data-toggle-obj="1">
+        <div class="answer" data-toggle-target="1">...</div>
+    </div>
+    <div class="toggle box" data-toggle-obj="2">
+        <div class="answer" data-toggle-target="2">
+            <!-- 예 아이콘과 긴 문장 -->
+            <ul class="contentsList">
+                <li>
+                    <div class="bullet exam">예</div>
+                    <div>연필과 물체의 끝을 잘 맞추어서 그립니다.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    //정답 확인 : data-quiz="toggle" 영역안의 답박스 확인
+    <div class="buttonContainer">
+        <button class="dapCheckBtn" data-answer-btn=""></button>
+    </div>
+</div>
+```
+
+#### 이미지 모션
+```
+<div class="imgBox">
+    <img 
+        data-sprite-btn="1" 
+        data-sprite-target="1" 
+        data-sprite-count="109" 
+        data-sprite-src="./images/suh_0301_05_0003_201_2/1km" 
+        data-sprite-delay="50" 
+    class="longImage" src="./images/suh_0301_05_0003_201_2/1km/001.png" />
+</div>
+```
+
+#### 직접입력 & 예보기
+```
+<input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="8" data-answer="예보기 텍스트"/>
+
+<div class="buttonContainer">
+    <button class="writeBtn" data-answer-btn=""></button>
+</div>
 ```
 
 #### 팝업
@@ -249,15 +323,18 @@ $prite.add({
                 <td class="redT">6</td>
             </tr>
             <tr>
-                <td>
+                <td colspan="3">
                     <div class="rowLine"></div>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
                 <td>
                     <div class="toggle" data-toggle-obj="1">
                         <div class="answer" data-toggle-target="1">2</div>
                     </div>
                 </td>
-            <td class="redT">7</td>
+                <td class="redT">7</td>
             </tr>
         </tbody>
     </table>
