@@ -121,7 +121,7 @@
 
 ```
 
-#### 메인 탭
+#### 탭
 ```
 - 메인탭
 <div class="basicSlider contentsBox" data-slide-container="main">
