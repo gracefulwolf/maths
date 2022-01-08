@@ -178,7 +178,8 @@
     <img src="../common/contents/images/character/girl_2_sprite.png" alt="">
     <img src="../common/contents/images/character/girl_3_sprite.png" alt="">
     <img src="../common/contents/images/character/girl_4_sprite.png" alt="">
-  </div>
+</div>
+
 $prite.add({
     target: $ts.getEl('#spriteAniBox_1'),
     spriteId: 'sprite1',
@@ -230,4 +231,37 @@ $prite.add({
       }
     ]
 }); 
+```
+
+#### 계산식
+```
+<div class="math_calc_table table_2">
+    <table>
+        <tbody>
+            <tr>
+                <td></td>
+                <td class="blueT">2</td>
+                <td class="redT">1</td>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td></td>
+                <td class="redT">6</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="rowLine"></div>
+                </td>
+                <td>
+                    <div class="toggle" data-toggle-obj="1">
+                        <div class="answer" data-toggle-target="1">2</div>
+                    </div>
+                </td>
+            <td class="redT">7</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="lineDotted line_1"></div>
+    <div class="lineDotted line_2"></div>
+</div>
 ```
