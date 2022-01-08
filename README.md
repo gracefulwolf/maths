@@ -163,5 +163,71 @@
     <audio class="">
       <source src="./media/mp3/sample1.mp3"  type="audio/mp3" />
     </audio>
+</div>
+```
+
+#### 캐릭터
+```
+이미지 미리 불러오기
+<div class="prev-img">
+    <img src="../common/contents/images/character/boy_1_sprite.png" alt="">
+    <img src="../common/contents/images/character/boy_2_sprite.png" alt="">
+    <img src="../common/contents/images/character/boy_3_sprite.png" alt="">
+    <img src="../common/contents/images/character/boy_4_sprite.png" alt="">
+    <img src="../common/contents/images/character/girl_1_sprite.png" alt="">
+    <img src="../common/contents/images/character/girl_2_sprite.png" alt="">
+    <img src="../common/contents/images/character/girl_3_sprite.png" alt="">
+    <img src="../common/contents/images/character/girl_4_sprite.png" alt="">
   </div>
+$prite.add({
+    target: $ts.getEl('#spriteAniBox_1'),
+    spriteId: 'sprite1',
+    spriteList: [
+      {
+        /* girl_1,girl_2,girl_3,girl_4,boy_1,boy_2,boy_3,boy_4 */
+        name: 'girl_1', 
+
+        /* 크롭(원) : blue, orange, purple, green */
+        // circle: 'blue',
+
+        top: 130,
+        left: -25,
+
+        /* 만약 위에 circle이 주석 해제 되었다면 width , height 필요없거나 1:1 비율이어야함 */
+        width: 270,
+        height: 360,
+
+        /* 왼쪽 이동 시에만 적용 */
+        movD: 'left', 
+        movPx:250, 
+        playMode: {
+            rewind: false
+        },
+
+        thumbNail: '../common/contents/images/character/girl_1.png',
+        spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
+
+        /* 말풍선 */
+        // textBubble: {
+        //   text: '지구는 아주 천천히 돌아갈 것 같습니다.',
+        //   class: 'balloon bottom sky',
+        //   top: 20,
+        //   left: 140,
+        //   width: 450,
+        //   textAlign: 'center',
+        //   wordBreak: 'keep-all'
+        // },
+
+        sheetWidth: 54000,
+        sheetHeight: 360,
+        endSheet: 0,
+        delay: 40,
+        callbacks: {
+          start: function () {},
+          end: function () {}
+        }
+      }
+    ]
+}); 
 ```
