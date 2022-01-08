@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         endSheet: 0,
         delay: 40,
         callbacks: {
-          start: function () {},
-          end: function () {}
+          start: function () { console.log('start'); },
+          end: function () { console.log('end'); }
         }
       },
       {
