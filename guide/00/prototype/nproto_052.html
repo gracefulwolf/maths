@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom.css">
+	<style type="text/css">
+		.colorBox.check {
+			width: 140px;
+			margin: 5px 0;
+			display: block;
+			text-align: center;
+		}
+		.tableContainer.brown table tr td{padding:10px 10px;}
+		.balloon.balloon_1{top: 300px;left: 210px;}
+		.balloon.balloon_2{top: 280px;left: 540px;}
+
+		.new-character.circle div:not(.nameBox).charSpriteImg.girl_2{top: 50px;left: 10px;}
+		.new-character.circle div:not(.nameBox).charSpriteImg.boy_4{top: 50px;left: 820px;}
+		.tableContainer table td, .tableContainer table th{font-size: 40px;}
+		.tableContainer table input{height:50px;}
+		textarea.answerMode, input.answerMode{font-size: 38px;font-weight: bold;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+    <header>
+		<div class="title">책가방에 있는 물건을 꺼내서 물건의 길이를 재어 봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="input">
+					<section>
+						<div class="tableContainer brown">
+							<table>
+								<colgroup>
+									<col style="width:20%">
+									<col style="width:40%">
+									<col style="width:40%">
+								</colgroup>
+								<tr>
+									<th>물건</th>
+									<th>cm와 mm로 나타내기</th>
+									<th>mm로 나타내기</th>
+								</tr>
+								<tr>
+									<th class="lightBrown">연필</th>
+									<td>15 cm 8 mm</td>
+									<td>158 mm</td>
+								</tr>
+								<tr>
+									<th class="lightBrown"><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="8" data-answer="공책"/></th>
+									<td><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="10" data-answer="25 cm 7 mm"/></td>
+									<td><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="10" data-answer="257 mm"/></td>
+								</tr>
+								<tr>
+									<th class="lightBrown"><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="8" data-answer="지우개"/></th>
+									<td><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="10" data-answer="7 cm 5 mm"/></td>
+									<td><input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj="" maxlength="10" data-answer="75 mm"/></td>
+								</tr>
+							</table>
+							<div class="characterImg new-character circle beige" data-answer="" data-hover="" data-ox-obj="1" data-ox-target="1" data-speaker="2">
+								<div class="charSpriteImg girl_2"></div>
+								<div class="praise_stemp"></div>
+							</div>
+							<div class="characterImg new-character circle sky" data-answer="" data-hover="" data-ox-obj="2" data-ox-target="2" data-speaker="1">
+								<div class="charSpriteImg boy_4"></div>
+								<div class="praise_stemp"></div>
+							</div>
+							<div class="balloon balloon_1 orange left ctTail textAlignC">
+								연필의 길이는<br>15 cm보다 8 mm<br>더 길어.
+							</div>
+							<div class="balloon balloon_2 green right ctTail textAlignC">
+								mm 단위로만<br>길이를 재니까 <br>단위 앞의 수가<br>더 커졌네.
+							</div>
+							
+						</div>
+
+
+						<div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+    // 예보기 클릭시 콜백
+    window.$callBack.inputAnswer = function (obj) {
+      $ts.getEl('.tableContainer')[0].setAttribute('class', 'tableContainer brown complete');
+    };
+    // 직접 쓰기 클릭시 콜백
+    window.$callBack.inputReset = function (obj) {
+      $ts.getEl('.tableContainer')[0].setAttribute('class', 'tableContainer brown');
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      }, false);
+</script>
+
+</body>
+</html>
