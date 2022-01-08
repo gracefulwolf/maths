@@ -2,18 +2,18 @@
 #### 박스
 ```
 라인 박스
-<div class="lineBox mb_10 pink">핑크</div>
-<div class="lineBox mb_10 deeppink">진한핑크</div>
-<div class="lineBox mb_10 yellow">옐로우</div>
-<div class="lineBox mb_10 sky">하늘색</div>
-<div class="lineBox mb_10 orange">오렌지</div>
-<div class="lineBox mb_10 beige">베이지</div>
-<div class="lineBox mb_10 purple">보라</div>
-<div class="lineBox mb_10 brown">브라운</div>
-<div class="lineBox mb_10 green">그린</div>
+<div class="lineBox pink">핑크</div>
+<div class="lineBox deeppink">진한핑크</div>
+<div class="lineBox yellow">옐로우</div>
+<div class="lineBox sky">하늘색</div>
+<div class="lineBox orange">오렌지</div>
+<div class="lineBox beige">베이지</div>
+<div class="lineBox purple">보라</div>
+<div class="lineBox brown">브라운</div>
+<div class="lineBox green">그린</div>
 
 색상 박스
-<div class="colorBox mb_10 pink">핑크</div>
+<div class="colorBox pink">핑크</div>
 ...
 
 캐릭터얼굴 색상 : girl or boy 선택해서 사용
@@ -58,6 +58,9 @@
 - 말풍선 버튼
 <div class="popBtn speech right" data-hover="" data-popup-mode="pageOff" data-popup-btn="1"></div>
 <div class="popBtn speech left" data-hover="" data-popup-mode="pageOff" data-popup-btn="2"></div>
+
+- 마우스 버튼
+<div class="popBtn mouse" data-hover="" data-popup-mode="pageOff" data-popup-btn="1"></div>
 
 - 팝업 콘텐츠
 <section class="popup_container" data-popup-container="">
@@ -120,6 +123,7 @@
 
 #### 메인 탭
 ```
+- 메인탭
 <div class="basicSlider contentsBox" data-slide-container="main">
     <ul class="basicSlider_tabs" data-tabs="">
         <li data-hover="">풀</li>
@@ -131,6 +135,22 @@
         <li class="page_2">...</div>
         <li class="page_3">...</div>
     </ul>
+</div>
+
+- 하단 발문
+<div class="imgContainer tab_1">...</div>
+<div class="imgContainer tab_2 displayN">...</div>
+<div class="introSlider" data-slide-container="intro">
+    <ul class="intro_circle_tabs" data-tabs="">
+        <li data-hover=""></li>
+        <li data-hover=""></li>
+    </ul>
+    <ul class="introSlider_slides" data-slides="">
+        <li class="tab_page_1">텍스트</li>
+        <li class="tab_page_2">...</li>
+    </ul>
+    <div class="introSlider_btn prev" data-btn-prev="" data-hover=""></div>
+    <div class="introSlider_btn next" data-btn-next="" data-hover=""></div>
 </div>
 ```
 
