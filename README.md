@@ -61,6 +61,8 @@
 약물 예
 <div class="bullet exam">예</div>
 
+약물 화살표
+<div class="icon_arrow big"></div>
 ```
 
 #### 답박스
