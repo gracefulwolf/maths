@@ -182,6 +182,11 @@
             </div>
         </li>
 
+        // image : image full popup
+        <li class="whole image pop_page_1" data-popup-page="1">
+            <img src="./image/suh_p_0301_01/수학_010.jpg" alt="">
+        </li>
+
         // whole zoom popup
         <li class="whole pop_page_1" data-popup-page="4">
             <div class="zoomContainer horizon" data-zoom-container="">
