@@ -93,6 +93,21 @@
         <button class="dapCheckBtn" data-answer-btn=""></button>
     </div>
 </div>
+
+//중앙기준 답박스
+<div class="textAlignC">
+    <div class="toggle" data-toggle-obj="1">
+        <div class="answer" data-toggle-target="1">
+            112＋124를 계산하여 구할 수 있습니다.
+        </div>
+    </div>
+</div>
+
+하단 정답버튼 풀이버튼 그룸일때
+<div class="buttonContainer">
+    <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+    <button class="dapCheckBtn" data-answer-btn=""></button>
+</div>
 ```
 
 #### 이미지 모션
