@@ -346,7 +346,9 @@ $prite.add({
         <tbody>
             <tr>
                 <td></td>
-                <td class="blueT">2</td>
+                <td class="blueT">2
+                    <sup class="sup redT">1</sup>
+                </td>
                 <td class="redT">1</td>
             </tr>
             <tr>
