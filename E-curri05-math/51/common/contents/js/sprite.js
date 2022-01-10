@@ -67,8 +67,9 @@ $prite = function() {
                         parent: i
                     });
                     if (s.innerHTML = r.textBubble.text, r.circlePlayMode) {
+                       
                         var l = document.createElement("div");
-                        if (l.className = r.circlePlayMode.imagesParentClass ? r.circlePlayMode.imagesParentClass : "textAlignC", r.circlePlayMode.images)
+                        if (l.className = r.circlePlayMode.imagesParentClass ? r.circlePlayMode.imagesParentClass : "textAlignC", r.circlePlayMode.images) {
                             for (var c = 0; c < r.circlePlayMode.images.length; c++) {
                                 var o = $ts.ce({
                                     tag: "img",
@@ -76,6 +77,8 @@ $prite = function() {
                                 });
                                 o.src = r.circlePlayMode.images[c], o.height = r.circlePlayMode.imagesHeight ? r.circlePlayMode.imagesHeight[c] : 300
                             }
+                        }
+                            
                         i.insertBefore(l, s)
                     }
                 }
@@ -179,6 +182,7 @@ $prite = function() {
         },
         initCirclePlayMode: function(e, i) {
             y.spriteList[e].characterList.forEach(function(e, t) {
+                e.parentNode.classList.remove('speech');
                 e.classList.add("circle"), e.classList.add(i[t].circlePlayMode.class), e.style.top = i[t].circlePlayMode.top + "px", e.style.left = i[t].circlePlayMode.left + "px"
             })
         },

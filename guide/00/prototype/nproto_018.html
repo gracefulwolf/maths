@@ -12,7 +12,7 @@
     <style>
         section{font-size: 40px;}
         .study_guide{right: 0;top: 0;}
-        .characterImg {top: 7%; left: 38%;}
+        /* .characterImg {top: 7%; left: 38%;} */
         header .title .popBtn.textInBtn.inline{top: 4px;}
         .popup_pages .zoomContainer .zoomImgContainer{text-align: center;}
         .popup_pages .zoomContainer .zoomImgContainer img{position: relative;width:40%;height: 39%;top: 50%;transform: translateY(-50%);}
@@ -47,7 +47,7 @@
 				<li data-hover="">물음 1</li>
 			</ul>
 			<ul class="basicSlider_slides" data-slides="">
-				<li class="page_1" data-quiz="toggle">
+				<li class="page_1">
 					<h2><ins class="dot"></ins><span>열량이란 무엇이며 어떻게 표시되어 있나요?</h2>
 					<section >
                         <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div>
@@ -56,7 +56,7 @@
                         </div>
 					</section>
                 </li>
-                <li class="page_2" data-quiz="toggle">
+                <li class="page_2">
 					<h2><ins class="dot"></ins><span>대화를 읽고 알 수 있는 건강한 생활 방법은 무엇일까요?</span></h2>
 					<section>
                         <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div>
@@ -142,6 +142,7 @@
                 playMode: {
                     rewind: false
                 },
+                speech:'right',
                 top: 0, // 캐릭터 top값, 없어도 상관 없음, css 제어
                 left: 0,
                 width: 270, // 고정 가로 값
@@ -153,16 +154,16 @@
                     text: '열량은 에너지의 양이며<br>킬로칼로리로 표시되어 있습니다.',
                     class: 'balloon left green ctTail left-s',
                     top: 150,
-                    left: -90,
+                    left: 450,
                     textAlign: 'center', // 말풍선 정렬
                     wordBreak: 'keep-all' // 말풍선 wordBreak
                 },
                 callbacks: {
                     start: function () {
-                        $ts.getEl('.page_1 .characterImg')[0].style.left = '200px';
+                        $ts.getEl('.page_1 .characterImg')[0].style.left = '-200px';
                     }, // 시작시 콜백
                     end: function () {
-                        $ts.getEl('.page_1 .characterImg')[0].style.left = '38%';
+                        $ts.getEl('.page_1 .characterImg')[0].style.left = 0;
                     } // 끝날시 콜백
                 }
             }
@@ -188,26 +189,26 @@
                     text: '필요한 만큼의 음식을 적당히 먹고<br>운동을 꾸준히 해야 합니다.',
                     class: 'balloon left yellow ctTail left-s',
                     top: 150,
-                    left: -90,
+                    left: 450,
                     textAlign: 'center', // 말풍선 정렬
                     wordBreak: 'keep-all' // 말풍선 wordBreak
                 },
                 callbacks: {
                     start: function () {
-                        $ts.getEl('.page_2 .characterImg')[0].style.left = '200px';
+                        $ts.getEl('.page_2 .characterImg')[0].style.left = '-200px';
                     }, // 시작시 콜백
                     end: function () {
-                        $ts.getEl('.page_2 .characterImg')[0].style.left = '38%';
+                        $ts.getEl('.page_2 .characterImg')[0].style.left = 0;
                     } // 끝날시 콜백
                 }
             }
         ]
     });
 
-    $('.basicSlider_tabs li').on('click', function () {
-            $('.page_1 .characterImg').css('left','38%');
-            $('.page_2 .characterImg').css('left','38%');
-        });
+    // $('.basicSlider_tabs li').on('click', function () {
+    //         $('.page_1 .characterImg').css('left','38%');
+    //         $('.page_2 .characterImg').css('left','38%');
+    //     });
 
 
 }, false);

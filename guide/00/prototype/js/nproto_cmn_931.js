@@ -361,14 +361,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sheetHeight: 360,
         endSheet: 0,
         delay: 40,
-        textBubble: {
-          text: '필요한 만큼의 음식을 적당히 먹고<br>운동을 꾸준히 해야 합니다.',
-          class: 'balloonSpeech left yellow ctTail left-s',
-          top: 150,
-          left: -90,
-          textAlign: 'center', // 말풍선 정렬
-          wordBreak: 'keep-all' // 말풍선 wordBreak
-      },
         callbacks: {
           start: function () {},
           end: function () {}
