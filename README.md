@@ -67,7 +67,7 @@
 약물 빈칸
 <span class="blankBox w50"></span>
 
-버튼 준비물
+약물 준비물
 <div class="supply_guide inline">준비물 2</div>
 
 버튼 다운로드
