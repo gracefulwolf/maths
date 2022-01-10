@@ -65,7 +65,7 @@
 <div class="icon_arrow big"></div>
 
 버튼 다운로드
-<a href="./data/(3-1-1)형성평가2_02차시.hwp" target="_blank" class="downloadBtn"></a>
+<a href="./data/(3-1-1)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 ```
 
 #### 답박스
