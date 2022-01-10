@@ -296,7 +296,10 @@ $prite.add({
       {
         /* girl_1,girl_2,girl_3,girl_4,boy_1,boy_2,boy_3,boy_4 */
         name: 'girl_1', 
-
+        
+         /* 말풍선아이콘 위치 : left, right */
+        speech: 'left', 
+        
         /* 크롭(원) : blue, orange, purple, green */
         // circle: 'blue',
 
