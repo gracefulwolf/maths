@@ -228,6 +228,19 @@
         <li class="speech bottom" data-popup-page="1">
             <div class="popup_contents">...</div>
         </li>
+        
+        //풀이 확인
+        <li class="solve pop_page_2" data-popup-page="2">
+            <div class="popup_contents">
+                <ul class="contentsList">
+                    <li>
+                        <div>
+                            ...
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </section>
 
