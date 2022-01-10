@@ -228,6 +228,19 @@
         <li class="speech bottom" data-popup-page="1">
             <div class="popup_contents">...</div>
         </li>
+        
+        //풀이 확인
+        <li class="solve pop_page_2" data-popup-page="2">
+            <div class="popup_contents">
+                <ul class="contentsList">
+                    <li>
+                        <div>
+                            ...
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </section>
 
@@ -384,4 +397,20 @@ $prite.add({
     <div class="lineDotted line_1"></div>
     <div class="lineDotted line_2"></div>
 </div>
+```
+
+#### hide > show
+```
+<div class="clickObj" data-name="aa"></div>
+<div class="visibleH" data-name="aa">...</div>
+
+var arrow = $ts.getEl('.page_2 .clickObj');
+arrow.forEach(function (objs, index) {
+    objs.addEventListener('click', function () {
+        var that = document.querySelector('.visibleH[data-name="'+ this.dataset.name +'"]');
+
+        that.classList.remove('visibleH');
+    });
+    objs.addEventListener('click', $efSound.click);
+});
 ```
