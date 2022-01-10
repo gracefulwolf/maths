@@ -67,6 +67,9 @@
 약물 빈칸
 <span class="blankBox w50"></span>
 
+버튼 준비물
+<div class="supply_guide inline">준비물 2</div>
+
 버튼 다운로드
 <a href="./data/(3-1-1)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 ```
