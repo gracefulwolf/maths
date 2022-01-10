@@ -64,6 +64,9 @@
 약물 화살표
 <div class="icon_arrow big"></div>
 
+약물 빈칸
+<span class="blankBox w50"></span>
+
 버튼 다운로드
 <a href="./data/(3-1-1)형성평가2_02차시.hwp" target="_blank" class="downloadBtn"></a>
 ```
