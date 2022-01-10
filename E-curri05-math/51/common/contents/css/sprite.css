@@ -445,13 +445,18 @@
 }
 
 
-.characterImg+.balloon.bottom:after,.characterImg+.balloon.top:after {
+.characterWrap+.balloon.bottom:after,.characterWrap+.balloon.top:after {
     left: 50%;
     transform: translate(-50%)
 }
 
 /* 말풍선추가 */
-.characterImg.speech.left:before {
+.characterWrap{
+    position: absolute;
+    display: inline-block;
+}
+.characterWrap .characterImg{position: relative;}
+.characterWrap.speech.left:before {
     content:"";
     display: block;
     width:64px;
@@ -460,8 +465,9 @@
     background:url("../images/button/btn_speech_balloon_right.png") no-repeat center / contain;
     top: 10px;
     left: 0;
+    z-index: 2;
 }
-.characterImg.speech:before {
+.characterWrap.speech.right:before {
     content:"";
     display: block;
     width:64px;
@@ -469,6 +475,13 @@
     position: absolute;
     background:url("../images/button/btn_speech_balloon_left.png") no-repeat center / contain;
     top: 10px;
-    left: 200px;
+    right: 0;
+    z-index: 2;
 }
-
+.characterWrap.speech.circle.right:before{
+    right:-40px;
+}
+.characterWrap.speech.left.circle:before{
+    left:-40px;
+}
+.characterImg{transition: left .2s ease-in, right .2s ease-in;}

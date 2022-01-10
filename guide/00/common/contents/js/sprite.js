@@ -31,7 +31,7 @@ $prite = function() {
                     class: "characterWrap",
                     parent: L.target
                 });
-                console.log(r.speech, L);
+                
                 r.speech && w.classList.add('speech');
                 r.speech && w.classList.add(r.speech);
                 r.top && (w.style.top = r.top + "px"), r.left && (w.style.left = r.left + "px");
