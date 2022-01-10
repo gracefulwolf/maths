@@ -450,21 +450,23 @@
     transform: translate(-50%)
 }
 
+/* 말풍선추가 */
+.balloonSpeech.view:before,
+.balloonSpeech.view:before{
+    display: none !important;
+}
 
-
-
-/* 
-
-.characterImg+.balloonSpeech.left:before, 
 .characterImg+.balloonSpeech.left:before {
     content:"";
     display: block;
     width:64px;
     height:64px;
     position: absolute;
-    background:url("../images/button/btn_speech_balloonSpeech_left.png") no-repeat center / contain;
+    background:url("../images/button/btn_speech_balloon_left.png") no-repeat center / contain;
+    bottom: 0;
+    left: 50%;
+    transform: translate(110%, 75%);
 }
-.characterImg+.balloonSpeech.right:before, 
 .characterImg+.balloonSpeech.right:before {
     content:"";
     display: block;
@@ -472,11 +474,15 @@
     height:64px;
     position: absolute;
     background:url("../images/button/btn_speech_balloon_right.png") no-repeat center / contain;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-190%, 75%);
 }
 
 .balloonSpeech{position: absolute; display: block !important;}
 .balloonSpeech > span {
-    display: none;
+    display: block;
+    visibility: hidden;
     padding: 10px 12px;
     text-align: justify;
     border-radius: 20px;
@@ -484,6 +490,9 @@
     line-height: 1.3em;
     font-family: NotoM;
     box-sizing: border-box
+}
+.balloonSpeech.view > span {
+    visibility: visible;
 }
 
 .characterImg+.balloonSpeech.bottom > span:after,
@@ -640,6 +649,6 @@
 
 .balloonSpeech.green > span:after {
     border-top: 25px solid #cee492
-} */
+}
 
 
