@@ -26,15 +26,24 @@ $prite = function() {
             console.warn("$sprite params: ", L);
             var h = L.spriteId;
             this.initSpriteListObj(h), 0 < L.spriteList.length ? L.spriteList.forEach(function(r, e) {
-                var t = $ts.ce({
+                var w = $ts.ce({
                     tag: "div",
-                    class: "characterImg",
+                    class: "characterWrap",
                     parent: L.target
                 });
                 console.log(r.speech, L);
-                t.classList.add('speech');
-                r.speech && t.classList.add(r.speech);
-                t.classList.add(r.name),  r.top && (t.style.top = r.top + "px"), r.left && (t.style.left = r.left + "px"), r.circle && (t.classList.add("circle"), t.classList.add(r.circle));
+                r.speech && w.classList.add('speech');
+                r.speech && w.classList.add(r.speech);
+                r.top && (w.style.top = r.top + "px"), r.left && (w.style.left = r.left + "px");
+                r.circle && (w.classList.add("circle"), w.classList.add(r.circle));
+
+                var t = $ts.ce({
+                    tag: "div",
+                    class: "characterImg",
+                    parent: w
+                });
+                
+                t.classList.add(r.name), r.circle && (t.classList.add("circle"), t.classList.add(r.circle));
                 var n = $ts.ce({
                     tag: "div",
                     class: "charSpriteImg",
@@ -89,7 +98,7 @@ $prite = function() {
                             for (i = 0; i < y.spriteList[h].sheetList.length; i++) y.spriteList[h].sheetList[i].style.pointerEvents = "auto"
                         }
                         var s = y.spriteList[h].textBubbleList[t];
-                        s && (s.style.display = "block", a.parentNode.classList.remove('speech')), clearInterval(y.currentAni), y.currentAni = null, y.index = 0, y.row = 0, y.spriteAnimate({
+                        s && (s.style.display = "block", a.parentNode.parentNode.classList.remove('speech')), clearInterval(y.currentAni), y.currentAni = null, y.index = 0, y.row = 0, y.spriteAnimate({
                             delay: r.delay,
                             duration: u * r.delay,
                             delta: makeEaseOut(linear),
@@ -216,7 +225,7 @@ $prite = function() {
                     this.spriteList[e].sheetList[t].classList.contains("waiting") && this.spriteList[e].sheetList[t].classList.remove("waiting");
                     this.spriteList[e].sheetList[t].style.opacity = 0;
                     this.spriteList[e].thumbNailList[t].style.opacity = 1;
-                    this.spriteList[e].thumbNailList[t].parentNode.classList.add('speech');
+                    this.spriteList[e].thumbNailList[t].parentNode.parentNode.classList.add('speech');
                     this.spriteList[e].textBubbleList[t] && (this.spriteList[e].textBubbleList[t].style.display = "none");
                 }
             }
