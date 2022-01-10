@@ -16,35 +16,33 @@
 	<style>
 		.checkContainer h2 .blankBox{margin-top:5px}
 		.gate_container .downloadBtn{right:20px; left:auto;}
-		.page_1	.flex-wrap{align-items: center;}
-		.page_1 .flex-item.n1{background:url(./images/suh_p_0301_01_0003_401_1_1.png) no-repeat 50% 50% / contain; height: 380px; min-width: 60%;}
-
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+
+		.page_1	.flex-wrap{align-items: center;}
+		.page_1 .flex-item.n1{background:url(./images/suh_p_0301_01_0003_401_1_1.png) no-repeat 50% 50% / contain; height: 380px; min-width: 60%;}
 
 		.page_2 .flex-wrap{text-align: center;}
 		.page_2 .math_calc_table{width:200px; font-size:40px; margin: 0 auto 80px; }
 		.page_2 .math_calc_table .rowLine{width: calc(100% + 10px);}
 		.page_2 .math_calc_table .answer {letter-spacing: 25px;}
-		
-		.lineBox .bullet.number,
-		h2 .bullet.number{margin-top:5px;}
 
-		.page_3 .img-warp{background: url(./images/suh_p_0301_01_0003_401_1_2.png) no-repeat 0 0 / 100%; width: 100%; height:300px; position: relative;}
-		.page_3 .img-warp .toggle{position: absolute; top:44px; left:443px;}
+		.page_3 .img-wrap{background: url(./images/suh_p_0301_01_0003_401_1_2.png) no-repeat 0 0 / 100%; width: 100%; height:300px; position: relative;}
+		.page_3 .img-wrap .toggle{position: absolute; top:44px; left:443px;}
 
-		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.page_4 .math_calc_table{width:260px; margin:60px auto; line-height: 1.6;}
 
-		.page_4 .boxs{justify-content: space-around; margin-bottom: 50px;}
-		.page_4 .boxs .colorBox{width:200px; height:200px; display: flex; justify-content: center; align-items: center; border-radius: 0; color: #000;}
-		.page_4 .boxs .colorBox.n2{border-radius: 50%;}
-		.page_4 .boxs .colorBox.n3{transform: rotate(45deg) translate(10px, 20px); width:160px; height:160px;}
-		.page_4 .boxs .colorBox.n3 >div{transform: rotate(-45deg);}
-
-		.page_5 .flex-item{padding:0 100px;}
-
-		.page_5 .tableContainer .toggle {background: transparent;}
-		.page_5 .tableContainer th{height:80px;}
+		.page_5 .img-wrap{background: url(./images/suh_p_0301_01_0003_401_1_3.png) no-repeat 0 0 / 100%; width: 100%; height:300px; position: relative; display: flex; justify-content: space-between;}
+		.page_5 .item2,
+		.page_5 .item1{position: relative; width:100%; min-width: 430px; max-width: 430px;}
+		.page_5 .item1 > div,
+		.page_5 .item2 > div{position: absolute; width:auto; display: block;}
+		.page_5 .img-wrap .n1{left:54px; top:202px;}
+		.page_5 .img-wrap .n2{left:170px; top:54px;}
+		.page_5 .img-wrap .toggle{right:36px; top:197px;}
 		
 		.page_6 .flex-item{display: flex; justify-content: center;}
 		.page_6 .flex-item .lineBox{
@@ -70,9 +68,9 @@
 			top: -2px;
 		}
 		.page_8 .imgBgContainer{
-			background-image: url(./images/suh_0301_01_0002_401_1_3_1.png),url(./images/suh_0301_01_0002_401_1_3_2.png);
+			background-image: url(./images/suh_p_0301_01_0003_401_1_4.png);
 			background-repeat: no-repeat, no-repeat;
-			background-position: left center, right center;
+			background-position: center;
 			background-size: contain;
 			height: 265px;
 			width: 730px;
@@ -81,7 +79,7 @@
 		.page_8 .flexListContainer{margin: 15px auto 0;width: 570px;}
 		.page_8 .balloon_1{left: -8%;top: 33%;}
 		.page_8 .balloon_2{right: -8%;top: 33%;}
-
+		.page_8 .checkContainer .contentsBox h2{margin-bottom: 0;}
 
 		.page_8 .flexListContainer > li {
 			display: flex;
@@ -260,7 +258,7 @@
 							그림을 보고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오. 
 						</span></h2>
 						<section>
-							<div class="img-warp">
+							<div class="img-wrap">
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
 										774
@@ -278,30 +276,59 @@
 
 					<li class="page_4" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							사각형 안에 쓰여진 두 수의 합을 구하시오.
+							<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
 						</span></h2>
 						<section>
-							<div class="flex-wrap boxs">
-								<div class="lineBox colorBox deeppink n1">
-									<div>153</div>
-								</div>
-								<div class="lineBox colorBox purple n2">
-									<div>651</div>
-								</div>
-								<div class="lineBox colorBox green n3">
-									<div>714</div>
-								</div>
+							<div class="math_calc_table">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														2
+													</div>
+												</div>
+											</td>
+											<td>3<sup class="sup blueT">1</sup></td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td>+</td>
+											<td>4</td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														5
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														8
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>6</td>
+											<td>9</td>
+											<td>3</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 
-							</div>
-							<div class="textAlignC mt_30">
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										867
-									</div>
-								</div>
-							</div>
+
 							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
@@ -312,47 +339,23 @@
 							<span><span class="blankBox w50"></span> 안에 두 수의 합을 써넣으시오.</span>
 						</h2>
 						<section>
-							<div class="flex-wrap mt_20">
-								<div class="flex-item">
-									<div class="tableContainer brown">
-										<table>
-											<tbody>
-												<tr>
-													<th>421</th>
-													<td rowspan="2">
-														<div class="toggle box textAlignC" data-toggle-obj="1">
-															<div class="answer" data-toggle-target="1">
-																658
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th>237</th>
-												</tr>
-											</tbody>
-										</table>
+							<div class="img-wrap">
+								<div class="item1">
+									<div class="n1">673</div>
+									<div class="n2">+254</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											658
+										</div>
 									</div>
 								</div>
-								<div class="flex-item">
-									<div class="tableContainer brown">
-										<table>
-											<tbody>
-												<tr>
-													<th>274</th>
-													<td rowspan="2">
-														<div class="toggle box textAlignC" data-toggle-obj="2">
-															<div class="answer" data-toggle-target="2">
-																798
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th>524</th>
-												</tr>
-											</tbody>
-										</table>
+								<div class="item2">
+									<div class="n1">673</div>
+									<div class="n2">+254</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											658
+										</div>
 									</div>
 								</div>
 							</div>
@@ -370,14 +373,14 @@
 								<div class="flex-item n1">
 									<div class="char1">
 										<div class="lineBox yellow">
-											413
+											519
 										</div>
 									</div>
 								</div>
 								<div class="flex-item n1">
 									<div class="char2">
 										<div class="lineBox yellow">
-											379
+											126
 										</div>
 									</div>
 								</div>
@@ -386,7 +389,7 @@
 							<div class="textAlignC ">
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										789
+										645
 									</div>
 								</div>
 							</div>
@@ -399,11 +402,11 @@
 						</span></h2>
 						<section>
 							<div class="lineBox orange">
-								235+443 
+								526 + 168 
 								<div class="toggle circle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_blue.png"></div>
 								</div> 
-								517+152
+								428 + 267
 							</div>
 
 							<div class="buttonContainer">
@@ -416,7 +419,8 @@
 						<h2 data-addline-container="">
 							<ins class="dot orange"></ins>
 							<span>
-								<span data-line-appear="2" class="givenLine">수일이네 가족은 호박과 당근을 다음과 같이 땄습니다.</span><span data-line-appear="1" class=""> 딴 호박과 당근은 모두 몇 개인지 구하시오.</span>
+								<span data-line-appear="2" class="givenLine">개미집에 병정개미가 345마리 있고 일개미는 병정개미보다 536마리 더 많습니다.
+								</span><span data-line-appear="1" class=""> 일개미는 모두 몇 마리인지 구하시오.</span>
 								<span class="addLineController">
 									<span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
 									<span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
@@ -425,15 +429,14 @@
 						</h2>
 						<section>
 							<div class="imgBgContainer">
-								<div class="balloon orange right keep center ctTail balloon_1">352개</div>
-								<div class="balloon orange left keep center ctTail balloon_2">546개</div>
+								
 							</div>
 							<ul class="flexListContainer">
 								<li>
 									<div class="colorBox check skyBlue">식</div>
 									<div>
 										<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">352+546=898</div>
+										<div class="answer" data-toggle-target="1">345+536=881</div>
 										</div>
 									</div>
 								</li>
@@ -441,7 +444,7 @@
 									<div class="colorBox check deepPurple">답</div>
 									<div>
 										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">898</div>
+											<div class="answer" data-toggle-target="2">881</div>
 										</div> 개
 									</div>
 								</li>
@@ -554,12 +557,12 @@
 						<ul class="contentsList">
 							<li>
 								<div>
-									235＋443＝678
+									526 + 168 = 694
 								</div>
 							</li>
 							<li>
 								<div>
-									517＋152＝669
+									428 + 267 = 695
 								</div>
 							</li>
 							
