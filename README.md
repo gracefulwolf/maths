@@ -374,7 +374,11 @@ $prite.add({
                 <td class="blueT">2
                     <sup class="sup redT">1</sup>
                 </td>
-                <td class="redT">1</td>
+                <td class="redT">1
+                    <div class="sup" data-toggle-obj="3" data-group-index="3">
+                        <div class="answer redT" data-toggle-target="3">1</div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>+</td>
