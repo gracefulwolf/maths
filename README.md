@@ -16,6 +16,9 @@
 <div class="colorBox pink">핑크</div>
 ...
 
+텍스트박스
+<div class="colorBox check skyBlue calBox4">답</div>
+
 캐릭터얼굴 색상 : girl or boy 선택해서 사용
 <div class="characterImg circle deeppink">
     <div class="charSpriteImg girl_1"></div>
@@ -371,7 +374,11 @@ $prite.add({
                 <td class="blueT">2
                     <sup class="sup redT">1</sup>
                 </td>
-                <td class="redT">1</td>
+                <td class="redT">1
+                    <div class="sup" data-toggle-obj="3" data-group-index="3">
+                        <div class="answer redT" data-toggle-target="3">1</div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>+</td>
