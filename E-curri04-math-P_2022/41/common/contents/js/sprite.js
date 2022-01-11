@@ -36,6 +36,7 @@ $prite = function() {
                 r.speech && w.classList.add(r.speech);
                 r.top && (w.style.top = r.top + "px"), r.left && (w.style.left = r.left + "px");
                 r.circle && (w.classList.add("circle"), w.classList.add(r.circle));
+                w.classList.add(r.name + '-wrap');
 
                 var t = $ts.ce({
                     tag: "div",
@@ -183,12 +184,13 @@ $prite = function() {
         initCirclePlayMode: function(e, i) {
             y.spriteList[e].characterList.forEach(function(e, t) {
                 e.parentNode.classList.remove('speech');
-                e.classList.add("circle"), e.classList.add(i[t].circlePlayMode.class), e.style.top = i[t].circlePlayMode.top + "px", e.style.left = i[t].circlePlayMode.left + "px"
+                e.parentNode.classList.add("speech-not")
+                e.classList.add("circle"), e.classList.add(i[t].circlePlayMode.class), e.parentNode.style.top = i[t].circlePlayMode.top + "px", e.parentNode.style.left = i[t].circlePlayMode.left + "px"
             })
         },
         rewindMode: function(i, s) {
             y.spriteList[i].characterList.forEach(function(e, t) {
-                e.style.top = s[t].top + "px", e.style.left = s[t].left + "px", y.spriteList[i].textBubbleList[t] && (y.spriteList[i].textBubbleList[t].style.display = "none"), y.spriteList[i].sheetList[t].classList.remove("waiting")
+                e.style.top = s[t].paretop + "px", e.style.left = s[t].left + "px", y.spriteList[i].textBubbleList[t] && (y.spriteList[i].textBubbleList[t].style.display = "none"), y.spriteList[i].sheetList[t].classList.remove("waiting")
             })
         },
         playSequence: function(e) {
