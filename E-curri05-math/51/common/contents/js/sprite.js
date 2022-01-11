@@ -36,6 +36,7 @@ $prite = function() {
                 r.speech && w.classList.add(r.speech);
                 r.top && (w.style.top = r.top + "px"), r.left && (w.style.left = r.left + "px");
                 r.circle && (w.classList.add("circle"), w.classList.add(r.circle));
+                w.classList.add(r.name + '-wrap');
 
                 var t = $ts.ce({
                     tag: "div",
