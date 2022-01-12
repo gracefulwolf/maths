@@ -20,7 +20,6 @@
 		.downloadBtn::before{content:attr(data-name);}
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
-		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
 		.checkContainer h2 .toggleBlank{margin-top:8px;}
 		.checkContainer .contentsBox .basicSlider_tabs {width: 600px}
 
@@ -31,16 +30,31 @@
 		.page_2 .math_calc_table .rowLine{width: calc(100% + 10px);}
 		.page_2 .math_calc_table .toggle .answer {letter-spacing: 25px;}
 
-		.page_4 .flex-wrap{text-align: center;}
-		.page_4 .math_calc_table{width:200px; font-size:40px; margin:0 auto 80px; }
-		.page_4 .math_calc_table .rowLine{width: calc(100% + 10px);}
-		.page_4 .math_calc_table .toggle .answer {letter-spacing: 27px;}
+
+		.page_3 table{width:600px; margin:0 auto;}
+		.page_3 td{width:200px; padding:10px; position: relative; }
+		.page_3 .lineBox,
+		.page_3 .colorBox {height:90px;width:200px; display: flex; align-items: center; justify-content: center;}
+		.page_3 .icon_arrow {position: absolute; z-index: 1;top:50%; left: 50%; margin:0;}
+		.page_3 .icon_arrow.n1 {transform: rotate(90deg) translate(110%,50%);}
+		.page_3 .icon_arrow.n2 {transform: translate(310%,-50%);}
+		.page_3 .icon_arrow.n3 {transform: rotate(90deg) translate(110%,50%);}
+		.page_3 .icon_arrow.n4 {transform: translate(310%,-50%);}
+		.page_3 .lineBox.toggle{background: #fff;}
+
+
+		.page_4 .lineBox{width:55%; margin:40px auto; display: flex; align-items: center; justify-content: center; position: relative;}
+		.page_4 .lineBox .toggle{margin:0 15px}
+		.page_4 .toggle.n1{position: absolute; bottom:-40px; left:12%}
+		.page_4 .toggle.n2{position: absolute; bottom:-40px; right:12%;}
+		.page_4 .toggle.hide.complete{opacity:1; background: #fff;}
+
+		.page_5 .flex-wrap{text-align: center;}
+		.page_5 .math_calc_table{width:200px; font-size:40px; margin:0 auto 80px; }
+		.page_5 .math_calc_table .rowLine{width: calc(100% + 10px);}
+		.page_5 .math_calc_table .toggle .answer {letter-spacing: 27px;}
 		
-		.page_3 .flexListContainer{margin: 15px auto 0;width: 570px;}
-		.page_3 .balloon_1{left: -8%;top: 33%;}
-		.page_3 .balloon_2{right: -8%;top: 33%;}
-		.page_3 .checkContainer .contentsBox h2{margin-bottom: 0;}
-		.page_3 .flexListContainer > li {display: flex;align-items: center;}
+		
 
 		.type-qs2.textAlignC{margin: 30px auto;width: 800px;}
 		.type-qs2 .flex-box{display: flex;justify-content: space-between;}
@@ -56,17 +70,45 @@
 
 		.page_6 .math_calc_table{width:260px; margin:60px auto; line-height: 1.6;}
 		
-		.page_7 .flexListContainer{margin: 0 auto 35px;width: 550px;}
-		.page_7 .lineBox{width: 110px;height: 110px;padding: 26px 0;box-sizing: border-box;}
-		.page_7 h2{position: relative; top: -10px;}
-		.page_7 .dot.orange{position: relative;top: -2px;}
+		/* .page_4 */
+		.page_7 .imgBgContainer{
+		background-image: url(./images/suh_p_0301_01_0005_401_1_2.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		height: 265px;
+		width: 730px;
+		margin: 0 auto;
+		}
+		.page_7 .flexListContainer{margin: 15px auto 0;width: 600px;}
+		.page_7 .flexListContainer li:nth-child(2) .toggle{padding: 6px 33.48px;}
+		.page_7 h2,
+		.page_8 h2{
+		position: relative; 
+		top: -10px;
+		}
+		.page_7 .dot.orange,
+		.page_8 .dot.orange{
+		position: relative;
+		top: -2px;
+		}
+		.page_7 .addLineController,
+		.page_8 .addLineController{
+		top: 6px;
+		}
 
-		.page_8 .lineBox{width: 90px;/* height: 90px; */}
-		.page_8 .oxContainer{display: flex;width: 700px;justify-content: space-between;margin: 0 auto;}
-		.page_8 .lineBox.orange{margin: 0 auto 60px;width: 700px;}
-		.page_8 .lineBox.orange > img {height: 35px;vertical-align: middle;margin: -8px 10px 0;}
-		.page_8 .blankBox{min-width: 45px;}
-		.page_8 .oxContainer .lineBox{display: flex;justify-content: center;align-items: center;height: 90px;}
+		.page_7 .flexListContainer > li,
+		.page_8 .flexListContainer > li{display: flex;align-items: center;}
+
+		.page_8 .imgBgContainer{
+		background-image: url(./images/suh_p_0301_01_0005_401_1_3.png);
+		background-position: center;
+		background-size: contain;
+		height: 265px;
+		width: 730px;
+		margin: 0 auto;
+		}
+		.page_8 .flexListContainer{margin: 15px auto 0;width: 600px;}
 
 		
 		.center{width: 100%; text-align: center;}
@@ -74,6 +116,10 @@
 		.pop_page_1 .flex-wrap{justify-content: space-around; width: 70%; margin: 0 auto;}
 		.pop_page_1 .flex-wrap > div{ width: 200px; margin: 0 30px;}
 		.pop_page_1 .contentsList > li{width: 100%;}
+
+		.pop_page_2 .flex-wrap{justify-content: space-around; width: 70%; margin: 0 auto;}
+		.pop_page_2 .flex-wrap > div{ width: 200px; margin: 0 30px;}
+		.pop_page_2 .contentsList > li{width: 100%;}
 	</style>
 </head>
 
@@ -215,10 +261,10 @@
 										</table>
 									</div>
 									<div>
-										365 + 145 =
+										818 + 113 =
 										<div class="toggle" data-toggle-obj="4">
 											<div class="answer" data-toggle-target="4">
-												510
+												705
 											</div>
 										</div>
 									</div>
@@ -239,67 +285,91 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">
-										시원이네 과수원에서 작년에는 복숭아를 588개 수확하였고 올해는 작년보다 115개 더 많이 수확하였습니다. 시원이네 과수원에서 올해 수확한 복숭아는 모두 몇 개인지 구하시오.
-									</p>
-								</div>
-							</li>
-							<li>
-								<ins class="bullet circleDot"></ins>
-								<div>
-									<p class="mb_10">
-										올해 수확한 복숭아는 모두 몇 개일지 어림해 보시오.
+										화살표 방향에 따라 계산하여 빈칸에 알맞은 수를 써넣으시오.
 									</p>
 									<div class="mb_10">
-										약 
-										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">
-												700
-											</div>
-										</div> 
-										개
+										<table>
+											<tr>
+												<td>
+													<div class="colorBox green">786</div>
+													<div class="icon_arrow n1"></div>
+												</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="colorBox green">－521</div>
+													<div class="icon_arrow n2"></div>
+												</td>
+												<td>
+													<div class="toggle lineBox green" data-toggle-obj="1">
+														<div class="answer" data-toggle-target="1">
+															265
+														</div>
+													</div>
+													<div class="icon_arrow n3"></div>
+												</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>
+													<div class="colorBox green">－134</div>
+													<div class="icon_arrow n4"></div>
+												</td>
+												<td>
+													<div class="toggle lineBox green" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															131
+														</div>
+													</div> 
+												</td>
+											</tr>
+										</table>
 									</div>
 								</div>
 							</li>
-							<li>
-								<ins class="bullet circleDot"></ins>
-								<div>
-									<p class="mb_10">
-										올해 수확한 복숭아는 모두 몇 개인지 구해 보시오.
-									</p>
-									<ul class="flexListContainer">
-										<li>
-											<div class="colorBox check skyBlue">식</div>
-											<div>
-												<div class="toggle" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">588+115=703</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="colorBox check deepPurple">답</div>
-											<div>
-												<div class="toggle" data-toggle-obj="2">
-													<div class="answer" data-toggle-target="2">703</div>
-												</div> 개
-											</div>
-										</li>
-									</ul>
-								</div>
-								
-							</li>
 						</ul>
 
-
-						
-
 						<a href="./data/(3-1-1)형성평가2_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 
 					<li class="page_4" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
+							<span>계산 결과를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png">, <img src="../common/contents/images/math/equalIcon.png">, <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.</span>
+						</span></h2>
+						<section>
+							<div class="lineBox orange">
+								654 - 312 
+								<div class="toggle hide n1" data-toggle-obj="1" data-group-index="1">
+									<div class="answer" data-toggle-target="1">=342</div>
+								</div> 
+
+								<div class="toggle circle" data-toggle-obj="1" data-group-index="1">
+									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_blue.png"></div>
+								</div> 
+
+								796 - 475
+								<div class="toggle hide n2" data-toggle-obj="1" data-group-index="1">
+									<div class="answer" data-toggle-target="1">=321</div>
+								</div> 
+							</div>
+
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							계산해 보시오.
 						</span></h2>
 						<section>
 							<div class="flex-wrap mt_60">
@@ -309,19 +379,15 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td>6<div class="sup" data-toggle-obj="1" data-group-index="1">
-														<div class="answer blueT" data-toggle-target="1">1</div>
-													</div></td>
-													<td>4<div class="sup" data-toggle-obj="1" data-group-index="1">
-														<div class="answer blueT" data-toggle-target="1">1</div>
-													</div></td>
-													<td>9</td>
+													<td>5</td>
+													<td>7</td>
+													<td>3</td>
 												</tr>
 												<tr>
-													<td>+</td>
+													<td>-</td>
+													<td>1</td>
+													<td>3</td>
 													<td>2</td>
-													<td>8</td>
-													<td>6</td>
 												</tr>
 												<tr>
 													<td colspan="4">
@@ -333,7 +399,7 @@
 													<td colspan="3">
 														<div class="toggle" data-toggle-obj="1">
 															<div class="answer" data-toggle-target="1">
-																935
+																441
 															</div>
 														</div>
 													</td>
@@ -349,19 +415,15 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td>4<div class="sup" data-toggle-obj="3" data-group-index="3">
-														<div class="answer blueT" data-toggle-target="3">1</div>
-													</div></td>
-													<td>8<div class="sup" data-toggle-obj="3" data-group-index="3">
-														<div class="answer blueT" data-toggle-target="3">1</div>
-													</div></td>
-													<td>4</td>
+													<td>7</td>
+													<td>5</td>
+													<td>2</td>
 												</tr>
 												<tr>
-													<td>+</td>
-													<td>9</td>
+													<td>-</td>
+													<td>1</td>
 													<td>2</td>
-													<td>8</td>
+													<td>1</td>
 												</tr>
 												<tr>
 													<td colspan="4">
@@ -369,10 +431,11 @@
 													</td>
 												</tr>
 												<tr>
-													<td colspan="4">
+													<td></td>
+													<td colspan="3">
 														<div class="toggle" data-toggle-obj="3">
 															<div class="answer" data-toggle-target="3">
-																1412
+																631
 															</div>
 														</div>
 													</td>
@@ -383,107 +446,38 @@
 								</div>
 							</div>
 							
-							<a href="./data/(3-1-1)형성평가2_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
 					</li>
 
-					<li class="page_5" data-quiz="toggle">
-						<h2><ins class="dot"></ins>
-							빈칸에 알맞은 수를 써넣으시오.
-						</h2>
-						<section>
-							<div class="textAlignC type-qs2">
-								<div class="flex-box">
-									<ul class="flexListContainer">
-										<li class="lineBox yellow lineBox01">464</li>
-										<li class="lineBox yellow circle">+768</li>
-										<li class="lineBox yellow lineBox02">
-											<div class="toggle noBg box center" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">1232</div>
-											</div>
-										</li>
-										<div class="curveLine top sky">
-											<div class="line"></div>
-										</div>
-									</ul>
-									<ul class="flexListContainer">
-										<li class="lineBox yellow lineBox01">718</li>
-										<li class="lineBox yellow circle">+194</li>
-										<li class="lineBox yellow lineBox02">
-											<div class="toggle noBg box center" data-toggle-obj="2">
-												<div class="answer" data-toggle-target="2">912</div>
-											</div>
-										</li>
-										<div class="curveLine top sky">
-											<div class="line"></div>
-										</div>
-									</ul>
-								</div>
-							</div>
-							
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</section>
-					</li>
-
+					
 					<li class="page_6" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
+							868－427을 두 가지 방법으로 계산해 보시오.
 						</span></h2>
 						<section>
-							<div class="math_calc_table">
-								<table>
-									<tbody>
-										<tr>
-											<td></td>
-											<td>
-												3<div class="sup" data-toggle-obj="2" data-group-index="2">
-													<div class="answer blueT" data-toggle-target="2">1</div>
-												</div>
-											</td>
-											<td>5<div class="sup" data-toggle-obj="1" data-group-index="1">
-												<div class="answer blueT" data-toggle-target="1">1</div>
-											</div></td>
-											<td>
-												<div class="toggle" data-toggle-obj="1" data-group-index="1">
-													<div class="answer" data-toggle-target="1">
-														7
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>+</td>
-											<td>6</td>
-											<td>
-												<div class="toggle" data-toggle-obj="2" data-group-index="2">
-													<div class="answer" data-toggle-target="2">
-														7
-													</div>
-												</div>
-											</td>
-											<td>
-												4
-											</td>
-										</tr>
-										<tr>
-											<td colspan="4">
-												<div class="rowLine"></div>
-											</td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>0</td>
-											<td>3</td>
-											<td>1</td>
-										</tr>
-									</tbody>
-								</table>
+							<div class="textAlignC">
+								<ul class="contentsList">
+									<li class="">
+										<div class="colorBox center skyBlue mr_20">방법 1</div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												백의 자리부터 빼주는 방법이 있습니다. 800－400, 60－20, 8－7을 계산하면 441이 됩니다.
+											</div>
+										</div>
+									</li>
+									<li class="">
+										<div class="colorBox center skyBlue mr_20">방법 2</div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												일의 자리부터 빼주는 방법이 있습니다. 8－7, 60－20, 800－400을 계산하면 441이 됩니다.
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -491,66 +485,68 @@
 					</li>
 
 					<li class="page_7" data-quiz="toggle">
-						<h2 data-addline-container="">
+						<h2 data-addLine-container="">
 							<ins class="dot orange"></ins>
 							<span>
-								3장의 수 카드를 한 번씩만 사용하여 만들 수 있는 세 자리 수 중에서 가장 큰 수와 가장 작은 수의 합을 구하시오. 
+								<span data-line-appear="2" style="letter-spacing: -1.6px;">동네 도서관에 책이 745권 있습니다. 사람들이 빌려간 책이 213권일 때, </span><span data-line-appear="1" style="letter-spacing: -1.6px;">도서관에 몇 권이 남았는지 구하시오.</span>
+								<span class="addLineController">
+									<span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+									<span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
 							</span>
 						</h2>
 						<section>
+							<div class="imgBgContainer"></div>
 							<ul class="flexListContainer">
-								<li class="lineBox sky center">1</li>
-								<li class="lineBox sky center">6</li>
-								<li class="lineBox sky center">8</li>
+								<li>
+									<div class="colorBox check skyBlue">식</div>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">745-213=532</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="colorBox check deepPurple">답</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">532</div>
+									</div>권
+								</li>
 							</ul>
-							<div class="textAlignC">
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">1029</div>
-								</div>
-							</div>
-							<div class="imgContainer"></div>
-
 							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
 					</li>
-
-					<li class="page_8" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
-						<h2>
+					<li class="page_8" data-quiz="toggle">
+						<h2 data-addLine-container="">
 							<ins class="dot orange"></ins>
-							<span><span class="blankBox w50"></span> 안에 들어갈 수 있는 수를 모두 고르시오.</span>
+							<span>
+								<span data-line-appear="2" style="letter-spacing: -1.6px;">배추를 489포기를 뽑았는데 이 중 165포기를 팔았습니다. </span><span data-line-appear="1" style="letter-spacing: -1.6px;">몇 포기가 남았는지 구하시오.</span>
+								<span class="addLineController">
+									<span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+									<span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+							</span>
 						</h2>
 						<section>
-							<div class="study_guide" style="margin-top: 10px;"><em>수 카드</em>를 <em>클릭</em>하세요.</div>
-							<div class="textAlignC">
-								<div class="lineBox orange center">
-									563 + <span class="blankBox" style="margin-top: 3px;"></span>29<img src="../common/contents/images/math/inequalIcon_2.png" alt="">1272
-								</div>
-								<ul class="oxContainer inline">
-									<li data-ox-obj="1">
-										<div class="lineBox yellow center">5</div>
-										<div class="icon icon_x" data-ox-target="1"></div>
-									</li>
-									<li data-ox-obj="2">
-										<div class="lineBox brown center">6</div>
-										<div class="icon icon_x" data-ox-target="2"></div>
-									</li>
-									<li data-ox-obj="3" data-answer="">
-										<div class="lineBox sky center">7</div>
-										<div class="icon icon_o" data-ox-target="3"></div>
-									</li>
-									<li data-ox-obj="4" data-answer="">
-										<div class="lineBox green center">8</div>
-										<div class="icon icon_o" data-ox-target="4"></div>
-									</li>
-									<li data-ox-obj="5" data-answer="">
-										<div class="lineBox purple center">9</div>
-										<div class="icon icon_o" data-ox-target="5"></div>
-									</li>
-								</ul>
-							</div>
+							<div class="imgBgContainer"></div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">식</div>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">489-165=324</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="colorBox check deepPurple">답</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">324</div>
+									</div>포기
+								</li>
+							</ul>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -599,8 +595,6 @@
 											</tbody>
 										</table>
 									</div>
-							
-									
 								</div>
 							</li>
 						</ul>
@@ -617,15 +611,15 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td>7<sup class="sup redT">1</sup></td>
-													<td>7<sup class="sup redT">1</sup></td>
+													<td>7</td>
+													<td>7</td>
 													<td>5</td>
 												</tr>
 												<tr>
-													<td>+</td>
-													<td>4</td>
+													<td>-</td>
 													<td>5</td>
-													<td>7</td>
+													<td>4</td>
+													<td>1</td>
 												</tr>
 												<tr>
 													<td colspan="4">
@@ -633,10 +627,10 @@
 													</td>
 												</tr>
 												<tr>
-													<td>1</td>
+													<td></td>
 													<td>2</td>
 													<td>3</td>
-													<td>3</td>
+													<td>4</td>
 												</tr>
 											</tbody>
 										</table>
@@ -647,15 +641,15 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td>3<sup class="sup redT">1</sup></td>
-													<td>6<sup class="sup redT">1</sup></td>
-													<td>5</td>
+													<td>8</td>
+													<td>1</td>
+													<td>8</td>
 												</tr>
 												<tr>
-													<td>+</td>
+													<td>-</td>
 													<td>1</td>
-													<td>4</td>
-													<td>5</td>
+													<td>1</td>
+													<td>3</td>
 												</tr>
 												<tr>
 													<td colspan="4">
@@ -664,9 +658,9 @@
 												</tr>
 												<tr>
 													<td></td>
-													<td>5</td>
-													<td>1</td>
+													<td>7</td>
 													<td>0</td>
+													<td>5</td>
 												</tr>
 											</tbody>
 										</table>
@@ -677,9 +671,143 @@
 					</div>
 				</li>
 
-				<li class="solve pop_page_3" data-popup-page="3">
+				<li class="solve pop_page_2" data-popup-page="3">
 					<div class="popup_contents">
-						<p>가장 큰 수는 861이고, 가장 작은 수는 168입니다. 따라서 두 수의 합은 861+168=1029입니다.</p>
+						<ul class="contentsList">
+							<li>
+								<div class="flex-wrap">
+									<div class="math_calc_table">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>7</td>
+													<td>8</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>-</td>
+													<td>5</td>
+													<td>2</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>2</td>
+													<td>6</td>
+													<td>5</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+							
+									<div class="math_calc_table">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>2</td>
+													<td>6</td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>-</td>
+													<td>1</td>
+													<td>3</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>1</td>
+													<td>3</td>
+													<td>1</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="solve pop_page_2" data-popup-page="4">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div class="flex-wrap">
+									<div class="math_calc_table">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>6</td>
+													<td>5</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>-</td>
+													<td>3</td>
+													<td>1</td>
+													<td>2</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>3</td>
+													<td>4</td>
+													<td>2</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+							
+									<div class="math_calc_table">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>7</td>
+													<td>9</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>-</td>
+													<td>4</td>
+													<td>7</td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>3</td>
+													<td>2</td>
+													<td>1</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</li>
 
@@ -705,32 +833,10 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		// ox quiz 정답 콜백
-		window.$callBack.oxCorrect = function (obj) {
-
-		}
-		// ox quiz 오답 콜백
-		window.$callBack.oxIncorrect = function (obj) {
-
-		}
-		// ox quiz 정답 확인 클릭시 콜백
-		window.$callBack.viewAnswer = function (obj) {
-			// if(obj.QUIZ.name=="ox1"){
-			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
-			// }
-		};
-		// ox quiz 정답 가리기 클릭시 콜백
-		window.$callBack.hideAnswer = function (obj) {
-			// if(obj.QUIZ.name=="ox1"){
-			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
-			// }
-		}
+		
 
 		document.addEventListener("DOMContentLoaded", function () {
-			$(".controlBtn").click(function(){
-				$efSound.click();
-			})
-
-
+			
 		}, false);
 		
 	</script>
