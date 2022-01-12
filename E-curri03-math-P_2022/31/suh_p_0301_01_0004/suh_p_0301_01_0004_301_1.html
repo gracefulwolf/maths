@@ -17,24 +17,21 @@
 
 		.math_calc_table {
 			width: 190px;
-			margin: 0 auto 40px;
+			margin: 32px auto;
+			top: -48px;
 		}
 
-		.math_calc_table tr td {
-			height: 50px;
-			box-sizing: border-box;
+		.lineBox {
+			margin-top: 40px;
+			height: 265px;
+			width: 50%;
+			margin: 20px auto;
 		}
 
-		.math_calc_table .rowLine {
-			top: 50px;
-			left: 0;
-			width: 200px;
+		.answer {
+			letter-spacing: 25px;
 		}
 
-		.math_calc_table .answer {letter-spacing: 25px;}
-
-		.lineBox{width:50%; margin:30px auto;}
-		.math_calc_table .sup{top:-30px;}
 	</style>
 </head>
 
@@ -63,13 +60,21 @@
 							<table>
 								<tr>
 									<td></td>
-									<td>9<sup class="sup blueT">1</sup></td>
-									<td>6<sup class="sup blueT">1</sup></td>
+									<td>9
+										<div class="sup" data-toggle-obj="1" data-group-index="1">
+											<div class="answer redT" data-toggle-target="1">1</div>
+										</div>
+									</td>
+									<td>
+										6
+										<div class="sup" data-toggle-obj="1" data-group-index="1">
+											<div class="answer redT" data-toggle-target="1">1</div>
+										</div>
+									</td>
 									<td>8</td>
 								</tr>
 								<tr>
 									<td>
-										<div class="rowLine"></div>
 										+
 									</td>
 									<td>1</td>
@@ -78,14 +83,22 @@
 								</tr>
 								<tr>
 									<td colspan="4">
-										<div class="toggle complete" data-toggle-obj="1">
-											<div class="answer on" data-toggle-target="1">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										<div class="toggle" data-toggle-obj="1" data-group-index="1">
+											<div class="answer" data-toggle-target="1">
 												1125
 											</div>
 										</div>
 									</td>
 								</tr>
 							</table>
+
+
+							
 						</div>
 					</div>
 				</section>
