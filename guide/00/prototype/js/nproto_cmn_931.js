@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_1.png',
         spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_2.png',
         spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_3.png',
         spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_4.png',
         spriteSheet: '../common/contents/images/character/girl_4_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3',
         
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_2.png',
         spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_3.png',
         spriteSheet: '../common/contents/images/character/boy_3_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_4.png',
         spriteSheet: '../common/contents/images/character/boy_4_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_1.png',
         spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_2.png',
         spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_3.png',
         spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/girl_4.png',
         spriteSheet: '../common/contents/images/character/girl_4_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_1.png',
         spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_2.png',
         spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_3.png',
         spriteSheet: '../common/contents/images/character/boy_3_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbNail: '../common/contents/images/character/boy_4.png',
         spriteSheet: '../common/contents/images/character/boy_4_sprite.png',
         sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
-        speech:'left',
+        speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
           class: 'balloon bottom sky',

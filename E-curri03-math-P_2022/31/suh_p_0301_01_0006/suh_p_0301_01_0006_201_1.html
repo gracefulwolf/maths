@@ -31,7 +31,7 @@
 	<div id="wrap" class="math">
 		<header>
 			<div class="title" style="letter-spacing: -1px;">
-				아빠는 선우보다 줄넘기를 몇 번 더 많이 했는지 알아봅시다.
+				지우고 남은 음악 파일은 몇 개인지 알아봅시다.
 			</div>
 		</header>
 		<main>
@@ -45,7 +45,7 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							아빠는 선우보다 줄넘기를 몇 번 더 많이 했을지 어림해 보세요. 
+							지우고 남은 음악 파일은 몇 개일지 어림해 보세요.
 						</span></h2>
 						<div class="textAlignC">
 							<div class="toggle" data-toggle-obj="1">
@@ -54,7 +54,7 @@
 										<li>
 											<div class="bullet exam">예</div>
 											<div>
-												140번 정도 더 많이 했을 것 같습니다.
+												파일이 120개쯤 남을 것 같습니다.
 											</div>
 										</li>
 									</ul>
@@ -69,21 +69,6 @@
 							어떻게 구할 수 있을지 이야기해 보세요.
 						</span></h2>
 
-						<div style="background: url(./images/suh_p_0301_01_0005_201_1_1.png) no-repeat 0 0 / cover; width:100%; height:340px; margin-bottom:10px;">
-							<div class="balloon bottom ctTail green characterText_1 textAlignC">
-								<div>
-									265에서 123이 될 때까지 <br>
-									거꾸로 세어 볼까?
-								</div>
-							</div>
-							<div class="balloon bottom ctTail deeppink characterText_2 textAlignC">
-								<div>
-									나는 수 모형을 이용하여 <br>
-									생각해 볼 거야!
-								</div>
-							</div>
-						</div>
-						
 						<div class="textAlignC">
 							<div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">
@@ -91,7 +76,7 @@
 										<li>
 											<div class="bullet exam">예</div>
 											<div>
-												수 모형을 놓고 빼는 수만큼 덜어 내어 구할 수 있습니다.
+												수 모형을 이용해 구할 수 있습니다.
 											</div>
 										</li>
 									</ul>
@@ -103,12 +88,12 @@
 
 					<li class="page_3" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							아빠는 선우보다 줄넘기를 몇 번 더 많이 했는지 구하는 식을 써 보세요.
+							지우고 남은 음악 파일은 몇 개인지 구하는 식을 써 보세요.
 						</span></h2>
 						<div class="textAlignC">
 							<div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">
-									265－123
+									251－138
 								</div>
 							</div>
 						</div>
@@ -126,12 +111,14 @@
 										<li>
 											<div class="bullet exam">예</div>
 											<div>
-												265만큼 수 모형을 놓고 거기에서 123만큼 덜어 낸 뒤 남은 수 모형의 개수를 세어 구할 수 있습니다.
+												각 자리의 숫자를 맞추어 적고, 차례대로 빼서 계산할 수 있습니다.
 											</div>
 										</li>
 									</ul>
 								</div>
 							</div>
+
+							<div id="spriteAniBox_1"></div>
 							
 						</section>
 						
@@ -162,7 +149,76 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			
+			$prite.add({
+				target: $ts.getEl('#spriteAniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'boy_1',
+						circle: 'deeppink',
+						speech:'left',
+						top: 230,
+						left: 360,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suh_p_0301_01_0006_201_1.mp3',
+						sheetWidth: 54000,
+						sheetHeight: 360,
+						endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '나는 같은 자리의 <br>수끼리 빼 <br>볼 거야!',
+							class: 'balloon right deeppink ctTail',
+							top:204,
+							left: 60,
+							textAlign: 'center', 
+							wordBreak: 'keep-all' 
+						},
+						callbacks: {
+							start: function () {
+								 
+							}, // 시작시 콜백
+							end: function () {
+								
+							} // 끝날시 콜백
+						}
+					},
+					{
+						name: 'girl_1',
+						speech:'right',
+						circle: 'deeppink',
+						top: 230,
+						left: 570,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/girl_1.png',
+						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+						sound: './media/audios/suh_p_0301_01_0006_201_2.mp3',
+						sheetWidth: 54000,
+						sheetHeight: 360,
+						endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '그런데 일의 자리 <br>수끼리 뺄 수가 <br>없어!',
+							class: 'balloon left deeppink ctTail',
+							top:226,
+							left: 770,
+							textAlign: 'center', 
+							wordBreak: 'keep-all' 
+						},
+						callbacks: {
+							start: function () {
+								 
+							}, // 시작시 콜백
+							end: function () {
+								
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
 		});
 	</script>
 

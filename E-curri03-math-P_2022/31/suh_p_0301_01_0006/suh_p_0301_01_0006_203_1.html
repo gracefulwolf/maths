@@ -18,6 +18,10 @@
 		.math_calc_table.n2{top:40px; right:200px;}
 		.n3{position: absolute; top:340px; left:50%; transform: translate(-50%, 0); font-size:40px;}
 		img{max-width: 100%;}
+
+		.pop_page_1 .flex-wrap{justify-content: space-around; width: 70%; margin: 0 auto;}
+		.pop_page_1 .flex-wrap > div{ width: 200px; margin: 0 30px;}
+		.pop_page_1 .contentsList > li{width: 100%;}
 	</style>
 </head>
 
@@ -38,15 +42,23 @@
 								<tbody>
 									<tr>
 										<td></td>
-										<td>6</td>
-										<td>8</td>
-										<td>9</td>
+										<td>3</td>
+										<td><span class="del blue" data-toggle-obj="1" data-group-index="1"></span>1
+											<div class=" sup" data-toggle-obj="1" data-group-index="1">
+												<div class="answer blueT" data-toggle-target="1">0</div>
+											</div>
+										</td>
+										<td>2
+											<div class=" sup" data-toggle-obj="1" data-group-index="1">
+												<div class="answer blueT" data-toggle-target="1">10</div>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>+</td>
-										<td>4</td>
+										<td>-</td>
 										<td>2</td>
-										<td>3</td>
+										<td>0</td>
+										<td>5</td>
 									</tr>
 									<tr>
 										<td colspan="4">
@@ -56,9 +68,9 @@
 									<tr>
 										<td></td>
 										<td colspan="3">
-											<div class="toggle" data-toggle-obj="1">
+											<div class="toggle" data-toggle-obj="1" data-group-index="1">
 												<div class="answer" data-toggle-target="1">
-													266
+													107
 												</div>
 											</div>
 										</td>
@@ -72,15 +84,24 @@
 								<tbody>
 									<tr>
 										<td></td>
-										<td>4</td>
+										<td><span class="del blue" data-toggle-obj="2" data-group-index="2"></span>
+											7
+											<div class=" sup" data-toggle-obj="2" data-group-index="2">
+												<div class="answer blueT" data-toggle-target="2">6</div>
+											</div>
+										</td>
+										<td>2
+											<div class=" sup" data-toggle-obj="2" data-group-index="2">
+												<div class="answer blueT" data-toggle-target="2">10</div>
+											</div>
+										</td>
 										<td>8</td>
-										<td>6</td>
 									</tr>
 									<tr>
-										<td>+</td>
+										<td>-</td>
 										<td>1</td>
 										<td>7</td>
-										<td>5</td>
+										<td>4</td>
 									</tr>
 									<tr>
 										<td colspan="4">
@@ -92,7 +113,7 @@
 										<td colspan="3">
 											<div class="toggle" data-toggle-obj="2">
 												<div class="answer" data-toggle-target="2">
-													311
+													554
 												</div>
 											</div>
 										</td>
@@ -102,15 +123,18 @@
 						</div>
 
 						<div class="n3">
-							817 + 512 = 
+							851 - 423 = 
 							<div class="toggle" data-toggle-obj="3">
 								<div class="answer" data-toggle-target="3">
-									305
+									428
 								</div>
 							</div>
 						</div>
 		
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -119,6 +143,58 @@
 			
 		</main>
 
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div class="flex-wrap">
+									<div class="math_calc_table n1 ">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>8</td>
+													<td>
+														<span class="del red complete"></span>
+														5
+														<div class="sup redT">4</div>
+													</td>
+													<td class="redT">
+														1
+														<div class="sup redT">10</div>
+													</td>
+												</tr>
+												<tr>
+													<td>-</td>
+													<td>4</td>
+													<td>2</td>
+													<td>3</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>4</td>
+													<td>2</td>
+													<td>8</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+			</ul>
+		</section>
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
