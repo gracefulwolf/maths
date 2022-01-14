@@ -387,7 +387,9 @@ $prite.add({
         <tbody>
             <tr>
                 <td></td>
-                <td class="blueT">2
+                <td class="blueT">
+                    <span class="del blue" data-toggle-obj="3" data-group-index="3"></span>
+                `   2
                     <sup class="sup redT">1</sup>
                 </td>
                 <td class="redT">1
