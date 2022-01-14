@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       {
         name: 'girl_4',
-        circle: 'green',
+        circle: 'purple',
         top: 60,
         left: 870,
         width: 340,
