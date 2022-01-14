@@ -191,6 +191,12 @@
             <h2>제목</h2>
             <div class="popup_contents">...</div>
         </li>
+
+        //타이틀 박스형태
+        <li class="whole pop_page_1 " data-popup-page="1">
+            <h2 class="box"><span>한 번 더 <b class="yellowT">1</b></span></h2>
+            <div class="popup_contents">...</div>
+        </li>
         
         // min : mini popup
         <li class="min pop_page_1" data-popup-page="2" data-drag>
