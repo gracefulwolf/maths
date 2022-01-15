@@ -1,7 +1,7 @@
 let loadedIndex = null;
 let mmPageData = [];
 let msPageData = [];
-let pathInclude = (window.jj) ? '/resource/include/' : '../../include/';
+let pathInclude = (window.jj) ? '/resource/include/' : '../../../include/';
 let pathApps = pathInclude + 'apps/';
 let pathChallenge = pathApps + 'challenge/game/';
 let pathActivity = pathInclude + 'activeHelper/';

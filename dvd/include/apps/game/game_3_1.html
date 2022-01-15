@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>땅따먹기 놀이</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="./css/common.css"></link>
+		<link type="text/css" rel="stylesheet" href="./css/game.css"></link>
+
+		<script type="text/javascript" src="./js/createjs.min.js"></script>
+		<script type="text/javascript" src="./animatecc/animate.js"></script>
+
+		<script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="./js/gsap.min.js"></script>
+
+		<script type="text/javascript" src="./js/animate.init.js"></script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/game.js"></script>
+
+	</head>
+	<body onselectstart="return false" ondragstart="return false">
+		<!-- wrap -->
+		<div id="wrap">
+			<!-- container -->
+			<div id="container">
+				<!-- game-content -->
+				<div id="game-content">
+                    
+                    <!-- intro -->
+                    <div id="intro" class="section">
+
+						<!-- lesson-con -->
+						<div class="lesson-con">
+							<div class="title">단원</div>
+							<div class="lesson-btns">
+								<div class="lesson-btn button active">1</div>
+								<div class="lesson-btn button">2</div>
+								<div class="lesson-btn button">3</div>
+								<div class="lesson-btn button">4</div>
+								<div class="lesson-btn button">5</div>
+								<div class="lesson-btn button">6</div>
+							</div>
+						</div>
+						<!-- //lesson-con -->
+
+						<!-- player-con -->
+						<div class="player-con">
+							<div class="title">모둠 수</div>
+							<div class="player-btns">
+								<div class="player-btn button active">2모둠</div>
+								<div class="player-btn button">3모둠</div>
+								<div class="player-btn button">4모둠</div>
+							</div>
+						</div>
+						<!-- //player-con -->
+
+						<!-- start-btn -->
+						<div class="start-btn button"><span>놀이 시작</span></div>
+						<!-- //start-btn -->
+
+						<!-- guide-btn -->
+						<div class="guide-btn button">놀이 방법</div>
+						<!-- //guide-btn -->
+
+						<!-- guide-pop -->
+						<div class="guide-pop hidden">
+							<div class="pop-wrap">
+								<div class="title">놀이 방법</div>
+								<ol>
+									<li>단원과 모둠 수를 선택합니다.</li>
+									<li>모둠별로 각 인원에게 고유 번호를 주고, 그 번호대로 모둠의 대표자가 됩니다.</li>
+									<li>돌림판으로 돌려 선택된 모둠을 기준으로 시계 방향으로 순서가 정해집니다.</li>
+									<li>정한 모둠 순서대로 땅을 고르고 한 문제 씩 풀 기회가 주어집니다.</li>
+									<li>대표자가 선택한 땅의 문제를 맞히면, 점수를 얻고 해당 땅을 획득합니다.</li>
+									<li>시간 제한이 다 되거나 문제를 틀렸을 경우에는 선택한 땅을 얻지 못합니다.</li>
+									<li>어떤 땅에는 두 배 찬스가 숨겨져 있습니다. 문제를 맞히면 점수를 2배로 얻을 수<br />있습니다.</li>
+								</ol>
+								<div class="close-btn button"></div>
+							</div>
+						</div>
+						<!-- //guide-pop -->
+
+                    </div>
+					<!-- //intro -->
+
+					<!-- select-modum -->
+                    <div id="select-modum" class="section hidden">
+
+						<!-- roulette -->
+						<div class="roulette-con">
+							<div class="roulette"></div>
+							<div class="point"></div>
+							<div class="rotate-btn button">돌리기</div>
+						</div>
+						<!-- //roulette -->
+
+						<!-- select-pop -->
+						<div class="select-pop hidden">
+							<div class="pop-wrap">
+								<div class="select-con">
+									
+								</div>
+								<div class="text-con">순서로 놀이를 진행합니다.</div>
+							</div>
+							<!-- start-btn -->
+							<div class="start-btn button"><span>놀이 시작</span></div>
+							<!-- //start-btn -->
+						</div>
+						<!-- //select-pop -->
+
+						<!-- title -->
+						<div class="title">순서 정하기</div>
+						<!-- //title -->
+
+						<!-- home-btn -->
+						<div class="home-btn button"></div>
+						<!-- //home-btn -->
+
+                    </div>
+					<!-- //select-modum -->
+
+					
+					<!-- game -->
+                    <div id="game" class="section hidden">
+
+						<!-- cloud -->
+						<div class="cloud"></div>
+						<!-- //cloud -->
+
+						<!-- map-con -->
+						<div class="map-con">
+							<!-- map-img -->
+							<div class="map-img"></div>
+							<!-- //map-img -->
+
+							<!-- on-ground -->
+							<div class="on-ground">
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+								<div class="ground"></div>
+							</div>
+							<!-- //on-ground -->
+
+							<!-- num-flag -->
+							<div class="num-flag">
+								<div class="flag"><span>1</span></div>
+								<div class="flag"><span>2</span></div>
+								<div class="flag"><span>3</span></div>
+								<div class="flag"><span>4</span></div>
+								<div class="flag"><span>5</span></div>
+								<div class="flag"><span>6</span></div>
+								<div class="flag"><span>7</span></div>
+								<div class="flag"><span>8</span></div>
+								<div class="flag"><span>9</span></div>
+								<div class="flag"><span>10</span></div>
+								<div class="flag"><span>11</span></div>
+								<div class="flag"><span>12</span></div>
+							</div>
+							<!-- //num-flag -->
+
+							<!-- modum-flag -->
+							<div class="modum-flag">
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+								<div class="flag"></div>
+							</div>
+							<!-- //modum-flag -->
+
+							<!-- svg -->
+							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="1280px" height="720px" viewBox="0 0 1280 720">
+								<defs>
+									<g id="Symbol_1_4_Layer0_0_FILL">
+										<path fill="#F4C576" stroke="none" d="M 58.7 0L 0 47.75 38.75 97.9 139.1 97.9 195.85 47.75 154.3 0 58.7 0 Z"/>
+									</g>
+
+									<g id="Layer1_1_FILL">
+										<path fill="#FFC78C" stroke="none" d="M 483.95 181.15L 390.45 181.15 336.6 226.8 378.15 274.55 476.15 274.55 528 226.8 483.95 181.15 Z"/>
+									</g>
+
+									<g id="Layer1_2_FILL">
+										<path fill="#FFD48C" stroke="none" d="M 364.6 377.45L 467.45 377.45 522 324.75 522.05 324.75 476.15 274.55 378.15 274.55 321.4 324.75 364.6 377.45 Z"/>
+									</g>
+
+									<g id="Layer1_3_FILL">
+										<path fill="#FDC261" stroke="none" d="M 467.45 377.45L 364.6 377.45 304.6 432.9 349.6 491.25 457.95 491.25 515.6 432.9 515.5 432.85 467.45 377.45 Z"/>
+									</g>
+
+									<g id="Layer1_4_FILL">
+										<path fill="#FDC261" stroke="none" d="M 623.6 226.8L 528 226.8 476.15 274.55 522.05 324.7 622.5 324.7 672 274.55 623.6 226.8 Z"/>
+									</g>
+
+									<g id="Layer1_5_FILL">
+										<path fill="#FFC78C" stroke="none" d="M 622.4 324.75L 522 324.75 467.45 377.45 515.5 432.85 621.05 432.85 673.2 377.45 622.4 324.75 Z"/>
+									</g>
+
+									<g id="Layer1_6_FILL">
+										<path fill="#FFC78C" stroke="none" d="M 764.4 181.15L 670.9 181.15 623.6 226.8 672 274.55 769.95 274.55 814.9 226.8 764.4 181.15 Z"/>
+									</g>
+
+									<g id="Layer1_7_FILL">
+										<path fill="#FFD48C" stroke="none" d="M 673.25 377.4L 776.15 377.4 823.15 324.7 769.95 274.55 672 274.55 622.5 324.7 673.25 377.4 Z"/>
+									</g>
+
+									<g id="Layer1_8_FILL">
+										<path fill="#FDC261" stroke="none" d="M 951.3 181.15L 898.85 137.55 807.45 137.55 764.4 181.15 814.9 226.8 910.6 226.8 951.3 181.15 Z"/>
+									</g>
+
+									<g id="Layer1_9_FILL">
+										<path fill="#F4C576" stroke="none" d="M 965.9 274.55L 910.6 226.8 814.9 226.8 769.95 274.55 823.15 324.7 923.5 324.7 965.9 274.55 Z"/>
+									</g>
+
+									<g id="Layer1_10_FILL">
+										<path fill="#FDC261" stroke="none" d="M 923.5 324.7L 823.15 324.7 776.15 377.4 832.2 432.8 937.75 432.8 981.85 377.4 923.5 324.7 Z"/>
+									</g>
+
+									<g id="Layer1_11_FILL">
+										<path fill="#FFC78C" stroke="none" d="M 1084.75 377.4L 1124.2 324.7 1063.8 274.55 965.9 274.55 923.5 324.7 981.85 377.4 1084.75 377.4 Z"/>
+									</g>
+								</defs>
+
+								<g transform="matrix( 1, 0, 0, 1, 182.3,226.8) ">
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Symbol_1_4_Layer0_0_FILL"/>
+								</g>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_1_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_2_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_3_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_4_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_5_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_6_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_7_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_8_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_9_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_10_FILL"/>
+								</g>
+
+								<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+								<use xlink:href="#Layer1_11_FILL"/>
+								</g>
+							</svg>
+							<!-- //svg -->
+
+						</div>
+						<!-- //map-con -->
+
+						<!-- top-title -->
+						<div class="top-title"><span></span>모둠은 땅을 선택하세요.</div>
+						<!-- //top-title -->
+
+						<!-- quiz -->
+						<div class="quiz-con">
+
+							<!-- lesson1 -->
+							<div class="quiz-set lesson1">
+								<div class="quiz">
+									<div class="title"><span></span>다음이 나타내는 수를 고르세요.</div>
+									<div class="quest">
+										<div>840보다 125만큼 더 큰 수</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">945</div>
+										<div class="list wrong">955</div>
+										<div class="list correct">965</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음이 나타내는 수를 고르세요.</div>
+									<div class="quest">
+										<div>576보다 237만큼 더 큰 수</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">803</div>
+										<div class="list correct">813</div>
+										<div class="list wrong">823</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음을 계산하세요.</div>
+									<div class="quest">
+										<div>457+352</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">809</div>
+										<div class="list wrong">819</div>
+										<div class="list wrong">829</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음을 계산하세요.</div>
+									<div class="quest">
+										<div>135+657</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">772</div>
+										<div class="list wrong">782</div>
+										<div class="list correct">792</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>물음에 알맞은 답을 고르세요.</div>
+									<div class="quest">
+										<div class="tl">은서네 학교 남학생은 423명이고, 여학생은 398명입니다. 은서네 학교 학생은 모두 몇 명일까요?</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">811명</div>
+										<div class="list correct">821명</div>
+										<div class="list wrong">831명</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음이 나타내는 수를 고르세요.</div>
+									<div class="quest">
+										<div>647보다 250만큼 더 작은 수</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">397</div>
+										<div class="list wrong">387</div>
+										<div class="list wrong">497</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음이 나타내는 수를 고르세요.</div>
+									<div class="quest">
+										<div>721보다 378만큼 더 작은 수</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">323</div>
+										<div class="list wrong">334</div>
+										<div class="list correct">343</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음을 계산하세요.</div>
+									<div class="quest">
+										<div>840-573</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">247</div>
+										<div class="list wrong">257</div>
+										<div class="list correct">267</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>다음을 계산하세요.</div>
+									<div class="quest">
+										<div>752-567</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">175</div>
+										<div class="list correct">185</div>
+										<div class="list wrong">195</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>물음에 알맞은 답을 고르세요.</div>
+									<div class="quest">
+										<div class="tl">주미네 학교 여학생은 544명이고, 남학생은 여학생보다 129명이 더 적습니다. 주미네 학교 남학생은 몇 명일까요?</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">415명</div>
+										<div class="list wrong">425명</div>
+										<div class="list wrong">426명</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>물음에 알맞은 답을 고르세요.</div>
+									<div class="quest">
+										<div class="tl">성은이는 책 342권을 가지고 있었는데, 170권을 기부했습니다. 성은이가 가지고 있는 책은 모두 몇 권일까요?</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">165권</div>
+										<div class="list correct">172권</div>
+										<div class="list wrong">183권</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>가장 큰 수와 가장 작은 수의 차를 구해 보세요.</div>
+									<div class="quest">
+										<div>756&nbsp&nbsp&nbsp729&nbsp&nbsp&nbsp247&nbsp&nbsp&nbsp251</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">482</div>
+										<div class="list wrong">505</div>
+										<div class="list correct">509</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson1 -->
+
+							<!-- lesson2 -->
+							<div class="quiz-set lesson2">
+								<div class="quiz">
+									<div class="title"><span></span>도형의 이름으로 알맞은 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_1.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">선분 ㄱㄴ</div>
+										<div class="list wrong">직선 ㄱㄴ</div>
+										<div class="list correct">반직선 ㄱㄴ</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>도형의 이름으로 알맞은 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_2.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">선분 ㅁㅂ</div>
+										<div class="list correct">직선 ㅁㅂ</div>
+										<div class="list wrong">반직선 ㅁㅂ</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>도형의 이름으로 알맞은 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_3.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">선분 ㄷㄹ</div>
+										<div class="list wrong">직선 ㄷㄹ</div>
+										<div class="list wrong">반직선 ㄷㄹ</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>각의 꼭짓점을 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_4.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">점 ㄱ</div>
+										<div class="list wrong">점 ㄴ</div>
+										<div class="list correct">점 ㄷ</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>각의 변이 아닌 것을 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_5.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">반직선 ㄴㄱ</div>
+										<div class="list wrong">반직선 ㄴㄷ</div>
+										<div class="list correct">반직선 ㄷㄴ</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>각이 모두 몇 개인지 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_6.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">1개</div>
+										<div class="list correct">2개</div>
+										<div class="list wrong">4개</div>
+									</div>
+								</div>
+								<div class="quiz two">
+									<div class="title"><span></span>도형에서 찾을 수 있는 직각은 모두 몇 개인지 구해 보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_7.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">1개</div>
+										<div class="list correct">2개</div>
+										<div class="list wrong">3개</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>직각삼각형을 모두 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_8.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">가, 나</div>
+										<div class="list correct">나, 라</div>
+										<div class="list wrong">다, 라</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>직사각형을 모두 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_9.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">가, 라</div>
+										<div class="list wrong">나, 다</div>
+										<div class="list correct">나, 라</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>정사각형이 모두 몇 개인지 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_10.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">1개</div>
+										<div class="list correct">2개</div>
+										<div class="list wrong">없음</div>
+									</div>
+								</div> 
+								<div class="quiz two">
+									<div class="title"><span></span>다음 그림에서 찾을 수 있는 크고 작은 직사각형은 모두 몇 개인지 구해 보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_11.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">3개</div>
+										<div class="list wrong">4개</div>
+										<div class="list correct">5개</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>정사각형의 네 변의 길이의 합을 구해 보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_2_12.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">14 cm</div>
+										<div class="list correct">28 cm</div>
+										<div class="list wrong">49 cm</div>
+									</div>
+								</div> 
+							</div>
+							<!-- //lesson2 -->
+
+							<!-- lesson3 -->
+							<div class="quiz-set lesson3">
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 말을 고르세요.</div>
+									<div class="quest">
+										<div>나눗셈식 10÷2=5에서 10은 <em class="box" style="width:70px;"></em>입니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">나누어지는 수</div>
+										<div class="list wrong">나누는 수</div>
+										<div class="list wrong">몫</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 말을 고르세요.</div>
+									<div class="quest">
+										<div>21÷3=7에서 7은 21을 3으로 나눈 <em class="box" style="width:70px;"></em>입니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">나누는 수</div>
+										<div class="list wrong">나누어지는 수</div>
+										<div class="list correct">몫</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div class="tl">사탕 18개를 6명이 똑같이 나누면 한 명이<br /><em class="box"></em>개씩 가질 수 있습니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">2</div>
+										<div class="list correct">3</div>
+										<div class="list wrong">4</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div class="tl">귤 15개를 한 접시에 5개씩 놓으려면 접시가<br /><em class="box"></em>개 필요합니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">2</div>
+										<div class="list correct">3</div>
+										<div class="list wrong">4</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>35에서 5씩 <em class="box"></em>번 덜어 낼 수 있습니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">5</div>
+										<div class="list wrong">6</div>
+										<div class="list correct">7</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>12-4-4-4=0<em class="arrow"></em>12÷4=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">3</div>
+										<div class="list wrong">4</div>
+										<div class="list wrong">12</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>8×7=56<em class="arrow"></em>56÷8=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">7</div>
+										<div class="list wrong">8</div>
+										<div class="list wrong">9</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title" style="letter-spacing: -1px;"><span></span>나눗셈식을 곱셈식으로 바르게 나타낸 것을 고르세요.</div>
+									<div class="quest">
+										<div>42÷6=7<em class="arrow"></em><em class="box" style="width: 80px;"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">6×6=36</div>
+										<div class="list correct">6×7=42</div>
+										<div class="list wrong">6×8=48</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 식을 고르세요.</div>
+									<div class="quest">
+										<div class="tl">18÷6의 몫은 곱셈식 <em class="box" style="width:110px;"></em>을/를 이용하여 구할 수 있습니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">6×3=18</div>
+										<div class="list wrong">6×4=24</div>
+										<div class="list wrong">6×5=30</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div class="tl">24÷8의 몫은 <em class="box"></em>단 곱셈구구를 이용하여 구할 수 있습니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">4</div>
+										<div class="list correct">8</div>
+										<div class="list wrong">6</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>28을 4로 나눈 몫은 <em class="box"></em>입니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">6</div>
+										<div class="list correct">7</div>
+										<div class="list wrong">8</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>54÷<em class="box"></em>=6</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">7</div>
+										<div class="list wrong">8</div>
+										<div class="list correct">9</div>
+									</div>
+								</div> 
+							</div>
+							<!-- //lesson3 -->
+
+							<!-- lesson4 -->
+							<div class="quiz-set lesson4">
+								
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>20×4=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">8</div>
+										<div class="list wrong">24</div>
+										<div class="list correct">80</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>17+17+17+17+17=<em class="box"></em><em class="arrow"></em>17×5=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">75</div>
+										<div class="list correct">85</div>
+										<div class="list wrong">95</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>26+26+26=<em class="box"></em><em class="arrow"></em>26×3=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">52</div>
+										<div class="list wrong">68</div>
+										<div class="list correct">78</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>24×2=<em class="box"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">26</div>
+										<div class="list correct">48</div>
+										<div class="list wrong">84</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>63×2=<em class="box" style="width:70px"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">126</div>
+										<div class="list wrong">136</div>
+										<div class="list wrong">186</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>16×5=<em class="box" style="width:70px"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">70</div>
+										<div class="list correct">80</div>
+										<div class="list wrong">90</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>47×4=<em class="box" style="width:70px"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">168</div>
+										<div class="list wrong">178</div>
+										<div class="list correct">188</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>37×7=<em class="box" style="width:70px"></em></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">259</div>
+										<div class="list wrong">269</div>
+										<div class="list wrong">279</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 들어갈 알맞은 식을 고르세요.</div>
+									<div class="quest">
+										<div>21×4=84에서 8은 <em class="box" style="width:70px"></em>를 나타냅니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">2×4</div>
+										<div class="list correct">20×4</div>
+										<div class="list wrong">1×8</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>질문에 알맞은 답을 찾으세요.</div>
+									<div class="quest">
+										<div class="tl">배 21상자를 포장했습니다. 한 상자에 배가 9개씩 들어갔다면, 배는 모두 몇 개일까요? </div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">169개</div>
+										<div class="list wrong">179개</div>
+										<div class="list correct">189개</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>질문에 알맞은 답을 찾으세요.</div>
+									<div class="quest">
+										<div class="tl">리본 350 cm가 있었습니다. 한 개에 24 cm씩 사용하여 리본 9개를 만들었습니다. 남은 리본은 몇 cm인가요?</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">134 cm</div>
+										<div class="list wrong">146 cm</div>
+										<div class="list wrong">158 cm</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="circle2"></em> 안에 >, =, <를 알맞게 넣으세요.</div>
+									<div class="quest">
+										<div>46×6<em class="circle2"></em>34×8</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct"><img src="./images/quiz/left.png" /></div>
+										<div class="list wrong"><img src="./images/quiz/same.png" /></div>
+										<div class="list wrong"><img src="./images/quiz/right.png" /></div>
+									</div>
+								</div> 
+
+							</div>
+							<!-- //lesson4 -->
+
+							<!-- lesson5 -->
+							<div class="quiz-set lesson5">
+								
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>5 cm 6 mm=<em class="box" style="width:70px"></em> mm</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">56</div>
+										<div class="list wrong">560</div>
+										<div class="list wrong">5600</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>2 km 530 m=<em class="box" style="width:70px"></em>m</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">253</div>
+										<div class="list correct">2530</div>
+										<div class="list wrong">25300</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>그림을 보고 (&nbsp;&nbsp;&nbsp;) 안에 알맞은 단위를 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_5_3.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">mm</div>
+										<div class="list wrong">cm</div>
+										<div class="list wrong">km</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>그림을 보고 (&nbsp;&nbsp;&nbsp;) 안에 알맞은 단위를 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_5_4.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">mm</div>
+										<div class="list correct">cm</div>
+										<div class="list wrong">km</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>가장 먼 거리를 고르세요.</div>
+									<div class="quest">
+										<ul>
+											<li><span class="circle"><em>ㄱ</em></span>: 4 km보다 385 m 더 먼 거리</li>
+											<li><span class="circle"><em>ㄴ</em></span>: 4530 m</li>
+											<li><span class="circle"><em>ㄷ</em></span>: 4 킬로미터 873 미터 </li>	
+										</ul>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list correct"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_5_6.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">1</div>
+										<div class="list correct">5</div>
+										<div class="list wrong">13</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>2분 35초=<em class="box" style="width:70px"></em>초</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">125</div>
+										<div class="list wrong">135</div>
+										<div class="list correct">155</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>5분 <em class="box" style="width:70px"></em>초=345초</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">25</div>
+										<div class="list correct">45</div>
+										<div class="list wrong">65</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>250초=<em class="box" style="width:70px"></em>분 10초</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">4</div>
+										<div class="list wrong">5</div>
+										<div class="list wrong">6</div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>7시 48분 30초+3분 35초=7시 <em class="box" style="width:70px"></em>분 5초</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">48</div>
+										<div class="list correct">52</div>
+										<div class="list wrong">53</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><div class="circle"><em>ㄱ</em></div>+<div class="circle"><em>ㄴ</em></div>은 얼마인지 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>5시 30분 40초-7분 25초=5시 <span class="circle"><em>ㄱ</em></span>분 <span class="circle"><em>ㄴ</em></span>초</div>
+									</div>
+									<div class="list-set">
+										<div class="list correct">38</div>
+										<div class="list wrong">39</div>
+										<div class="list wrong">40</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>민혁이가 집에 도착한 시각을 구해 보세요.</div>
+									<div class="quest">
+										<div class="tl">민혁이가 학교에서 출발한 시각은 3시 45분 35초입니다. 학교에서 집까지 가는 데 25분 45초가 걸립니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">4시 10분 20초</div>
+										<div class="list correct">4시 11분 20초</div>
+										<div class="list wrong">4시 11분 30초</div>
+									</div>
+								</div> 
+
+							</div>
+							<!-- //lesson5 -->
+
+							<!-- lesson6 -->
+							<div class="quiz-set lesson6">
+								
+								<div class="quiz">
+									<div class="title"><span></span>똑같이 나누어진 도형은 몇 개인지 찾아보세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_1.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">3개</div>
+										<div class="list correct">4개</div>
+										<div class="list wrong">5개</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div class="tl">
+											색칠한 부분은 전체를 똑같이 <em class="box"></em>(으)로 나눈 것 중의 2입니다.
+											<div style="text-align: center;margin-top:-25px;"><img src="./images/quiz/quiz_img_3_1_6_2.png" /></div>
+										</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">2</div>
+										<div class="list wrong">3</div>
+										<div class="list correct">5</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title" style="letter-spacing: -1px;"><span></span>색칠한 부분을 분수로 알맞게 나타낸 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_3.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list correct"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>단위분수를 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_4.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>분수를 그림으로 알맞게 나타낸 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_5.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list correct"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title" style="letter-spacing: -1px;font-size: 44px;padding-top: 12px;"><span></span>두 분수의 크기를 비교하여 <em class="circle2"></em> 안에 알맞은 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_6.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><img src="./images/quiz/left.png" /></div>
+										<div class="list wrong"><img src="./images/quiz/same.png" /></div>
+										<div class="list correct"><img src="./images/quiz/right.png" /></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>가장 큰 분수를 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_7.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span>소수를 분수로 알맞게 나타낸 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_8.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list correct"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div>
+								<div class="quiz">
+									<div class="title"><span></span><em class="box"></em> 안에 알맞은 수를 고르세요.</div>
+									<div class="quest">
+										<div>8 cm 2 mm는 <em class="box" style="width:70px;"></em> cm입니다.</div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong">8</div>
+										<div class="list correct">8.2</div>
+										<div class="list wrong">82</div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title" style="letter-spacing: -1px;font-size: 44px;padding-top: 12px;"><span></span>두 소수의 크기를 비교하여 <em class="circle2"></em> 안에 알맞은 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_10.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><img src="./images/quiz/left.png" /></div>
+										<div class="list wrong"><img src="./images/quiz/same.png" /></div>
+										<div class="list correct"><img src="./images/quiz/right.png" /></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>두 수의 크기를 올바르게 비교한 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_11.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list correct"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div> 
+								<div class="quiz">
+									<div class="title"><span></span>두 수의 크기를 올바르게 비교한 것을 고르세요.</div>
+									<div class="quest">
+										<div><img src="./images/quiz/quiz_img_3_1_6_12.png" /></div>
+									</div>
+									<div class="list-set">
+										<div class="list wrong"><span class="circle"><em>ㄱ</em></span></div>
+										<div class="list wrong"><span class="circle"><em>ㄴ</em></span></div>
+										<div class="list correct"><span class="circle"><em>ㄷ</em></span></div>
+									</div>
+								</div> 
+
+							</div>
+							<!-- //lesson6 -->
+
+						</div>
+						<!-- //quiz -->
+
+						<!-- modum-con -->
+						<div class="modum-con">
+							<div class="modums">
+								<div class="modum modum1" data-score="0">
+									<div class="on"></div>
+									<div class="score">0점</div>
+									<div class="time-con hidden">
+										<span class="num">15</span>
+									</div>
+									<div class="chance-con hidden"></div>
+								</div>
+								<div class="modum modum2" data-score="0">
+									<div class="on"></div>
+									<div class="score">0점</div>
+									<div class="time-con hidden">
+										<span class="num">15</span>
+									</div>
+									<div class="chance-con hidden"></div>
+								</div>
+								<div class="modum modum3" data-score="0">
+									<div class="on"></div>
+									<div class="score">0점</div>
+									<div class="time-con hidden">
+										<span class="num">15</span>
+									</div>
+									<div class="chance-con hidden"></div>
+								</div>
+								<div class="modum modum4" data-score="0">
+									<div class="on"></div>
+									<div class="score">0점</div>
+									<div class="time-con hidden">
+										<span class="num">15</span>
+									</div>
+									<div class="chance-con hidden"></div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- //modum-con -->
+
+						<!-- chance-pop -->
+						<div class="chance-pop"></div>
+						<!-- //chance-pop -->
+
+						<!-- ground-length -->
+						<div class="ground-length">
+							<div class="title">남은 땅</div>
+							<div class="num">12</div>
+						</div>
+						<!-- //ground-length -->
+
+						<!-- home-btn -->
+						<div class="home-btn button"></div>
+						<!-- //home-btn -->
+
+                    </div>
+					<!-- //game -->
+
+					<!-- result -->
+                    <div id="result" class="section hidden">
+						
+						<div class="char-ani"></div>
+						
+						<!-- result-pannel -->
+						<div class="result-pannel">
+							<div class="text-con">축하합니다~</div>
+							<div class="winner-con"></div>
+							<div class="score-con">
+								<div class="modum1">
+									<div class="score"></div>
+								</div>
+								<div class="modum2">
+									<div class="score"></div>
+								</div>
+								<div class="modum3">
+									<div class="score"></div>
+								</div>
+								<div class="modum4">
+									<div class="score"></div>
+								</div>
+							</div>
+							<div class="reset-btn button"><span>다시하기</span></div>
+						</div>
+						<!-- //result-pannel -->
+
+						<!-- result-top -->
+						<div class="result-top">
+							<h4>놀이 결과</h4>
+						</div>
+						<!-- //result-top -->	
+
+						<div class="fire1"></div>
+						<div class="fire2"></div>
+						<div class="fire3"></div>
+						<div class="fire4"></div>
+
+                    </div>
+					<!-- //result -->
+
+					<!-- animation_container -->
+					<div id="animation_container" style="background-color:transparent; width:1280px; height:720px">
+						<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:transparent;"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+					</div>
+					<!-- //animation_container -->
+
+				</div>
+				<!-- //game-content -->
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>
