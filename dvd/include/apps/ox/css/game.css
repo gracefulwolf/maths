@@ -1,0 +1,1287 @@
+﻿@charset "utf-8";
+
+@keyframes char-ani {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+input[type="text"]::placeholder{
+    color: #fff;
+}
+
+
+/* intro */
+#intro {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url('../images/intro_bg.jpg') no-repeat;
+}
+
+#intro .lesson-con {
+    position: absolute;
+    left: 452px;
+    top: 232px;
+    width: 378px;
+    height: 382px;
+    background: url('../images/lesson_bg.png') no-repeat;
+}
+
+#intro .lesson-con .title {
+    margin-top: 26px;
+    font-family: 'BMJUA';
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+#intro .lesson-btn {
+    position: absolute;
+    width: 122px;
+    height: 74px;
+    background: url('../images/lesson_btn_bg.png') no-repeat;
+    text-align:center;
+    font-family: 'BMJUA';
+    font-size: 50px;
+    color: #07668F;
+    line-height: 75px;
+}
+#intro .lesson-btn.active {
+    background-position-y: -74px;
+}
+
+#intro .lesson-btn:nth-child(1) {
+    left: 58px;
+    top: 98px;
+}
+#intro .lesson-btn:nth-child(2) {
+    left: 208px;
+    top: 98px;
+}
+#intro .lesson-btn:nth-child(3) {
+    left: 58px;
+    top: 184px;
+}
+#intro .lesson-btn:nth-child(4) {
+    left: 208px;
+    top: 184px;
+}
+#intro .lesson-btn:nth-child(5) {
+    left: 58px;
+    top: 269px;
+}
+#intro .lesson-btn:nth-child(6) {
+    left: 208px;
+    top: 269px;
+}
+
+#intro .start-btn {
+    position: absolute;
+    left: 546px;
+    top: 620px;
+}
+#intro .start-btn > span {
+    display: block;
+    width: 188px;
+    height: 78px;
+    background: url('../images/start_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 75px;
+}
+
+#intro .guide-btn {
+    position: absolute;
+    left: 1092px;
+    top: 632px;
+    width: 166px;
+    height: 68px;
+    background: url('../images/guid_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 65px;
+}
+
+#intro .guide-pop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+#intro .guide-pop .pop-wrap {
+    position: absolute;
+    left: 65px;
+    top: 40px;
+    width: 1162px;
+    height: 644px;
+    background: url('../images/guide_bg.png') no-repeat;
+    font-family: 'BMJUA';
+}
+#intro .guide-pop .title {
+    margin-top:38px;
+    font-size: 50px;
+    color: #fff;
+    text-align:center;
+}
+#intro .guide-pop ol {
+    margin-top: 45px;
+    padding: 0 65px;
+}
+#intro .guide-pop ol > li {
+    position: relative;
+    font-size: 40px;
+    color: #000;
+    padding-left: 60px;
+    margin-top: 30px;
+    letter-spacing: -0.1px;
+}
+#intro .guide-pop ol > li:first-child{
+    margin-top:0;
+}
+
+#intro .guide-pop ol > li:before{
+    position: absolute;
+    left:0;
+    top:0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #2073D8;
+    text-align: center;
+    color: #fff;
+    line-height: 46px;
+}
+
+#intro .guide-pop ol > li:nth-child(1):before {
+    content: '1';
+}
+#intro .guide-pop ol > li:nth-child(2):before {
+    content: '2';
+}
+#intro .guide-pop ol > li:nth-child(3):before {
+    content: '3';
+}
+#intro .guide-pop ol > li:nth-child(4):before {
+    content: '4';
+}
+#intro .guide-pop ol > li:nth-child(5):before {
+    content: '5';
+}
+#intro .guide-pop ol > li:nth-child(6):before {
+    content: '6';
+}
+
+#intro .guide-pop .close-btn {
+    position: absolute;
+    left: 1095px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    background: url('../images/guide_close.png') no-repeat;
+}
+
+
+/* game */
+#game {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url('../images/game_bg.jpg') no-repeat;
+}
+
+#game .home-btn {
+    position: absolute;
+    left: 27px;
+    top: 13px;
+    width: 87px;
+    height: 84px;
+    background: url('../images/home_btn.png') no-repeat;
+}
+
+#game .progress-con {
+    position: absolute;
+    left: 288px;
+    top: 37px;
+    width: 745px;
+    height: 47px;
+    background: url('../images/progress_bg.png') no-repeat;
+}
+
+#game .progress-wrap {
+    position: absolute;
+    left: 17px;
+    top: 11px;
+    width:712px;
+    height:19px;
+    border-radius: 19px;
+    overflow:hidden;
+}
+
+#game .progress-con .bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:712px;
+    height:19px;
+    background: url('../images/progress_bar.png') no-repeat;
+}
+
+#game .time-con {
+    position: absolute;
+    left: 258px;
+    top: 11px;
+    width: 72px;
+    height: 90px;
+    background: url('../images/time_bg.png') no-repeat;
+}
+
+#game .time-con > span {
+    margin-top:28px;
+    display: block;
+    width:100%;
+    text-align:center;
+    font-family: 'BMJUA'; 
+    font-size: 40px;
+    color: #2168AF;
+}
+
+#game .quiz-con {
+    position: absolute;
+    left: 109px;
+    top: 110px;
+    width: 1063px;
+    height: 491px;
+    background: url('../images/quiz_bg.png') no-repeat;
+}
+#game .quiz-set {
+    display: none;
+}
+
+#game .quiz-con .quiz {
+    position: absolute;
+    display: none;
+    left:24px;
+    top: 23px;
+    width: 1014px;
+    height: 438px;
+    font-family: 'NanumGothic';
+    font-size: 50px;
+}
+#game .quiz-con .quiz.active {
+    display: block;
+}
+#game .quiz-con .quiz .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 375px;
+}
+#game .quiz-con .quiz .title {
+    position: absolute;
+    left:0;
+    top: 25px;
+    width: 1015px;
+    text-align: center;
+}
+#game .quiz-con .quiz .title.tl{
+    text-align: left;
+    padding: 0 40px;
+}
+
+#game .quiz-con .quiz .box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: solid 3px #DBDBDB;
+    border-radius: 15px;
+    position: relative;
+    top: -2px;
+}
+#game .quiz-con .quiz .text {
+    text-align: center;
+}
+#game .quiz-con .quiz .text > img {
+    vertical-align: middle;
+}
+#game .quiz-con .quiz .text .hu{
+    font-family: 'HU고딕360';
+    font-size: 45px;
+}
+
+#game .quiz3-1 .lesson1 .quiz:nth-child(3) .text {
+    position: absolute;
+    left:496px;
+    top:157px;
+    width: 420px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson1 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:107px;
+    top:129px;
+}
+#game .quiz3-1 .lesson1 .quiz:nth-child(4) .text {
+    position: absolute;
+    left:496px;
+    top:157px;
+    width: 420px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson1 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:107px;
+    top:148px;
+}
+#game .quiz3-1 .lesson1 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:102px;
+    top:132px;
+}
+#game .quiz3-1 .lesson1 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:37px;
+    top:123px;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(2) .text {
+    position: absolute;
+    left:407px;
+    top:120px;
+    width: 546px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:94px;
+    top:140px;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(3) .text {
+    position: absolute;
+    left:407px;
+    top:120px;
+    width: 560px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:65px;
+    top:176px;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(5) .text {
+    position: absolute;
+    left: 550px;
+    top:126px;
+    width: 330px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(5) .image {
+    position: absolute;
+    left: 143px;
+    top:47px;
+}
+#game .quiz3-1 .lesson2 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:84px;
+    top:175px;
+}
+
+#game .quiz3-1 .lesson3 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:40px;
+    top:200px;
+}
+#game .quiz3-1 .lesson3 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:194px;
+    top:184px;
+}
+
+#game .quiz3-1 .lesson4 .quiz:nth-child(1) .text {
+    position: absolute;
+    left:397px;
+    top:125px;
+    width: 575px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson4 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:56px;
+    top: 112px;
+}
+#game .quiz3-1 .lesson4 .quiz:nth-child(8) .text {
+    position: absolute;
+    left:428px;
+    top:125px;
+    width: 575px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson4 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:59px;
+    top: 109px;
+}
+
+#game .quiz3-1 .lesson5 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:0;
+    top:115px;
+    width: 100%;
+}
+#game .quiz3-1 .lesson5 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:248px;
+    top: 202px;
+}
+#game .quiz3-1 .lesson5 .quiz:nth-child(7) .text {
+    position: absolute;
+    left:400px;
+    top:147px;
+    width: 575px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson5 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:39px;
+    top: 20px;
+}
+#game .quiz3-1 .lesson5 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:163px;
+    top: 162px;
+}
+
+
+#game .quiz3-1 .lesson6 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:200px;
+    top: 99px;
+}
+#game .quiz3-1 .lesson6 .quiz:nth-child(2) .text {
+    position: absolute;
+    left:464px;
+    top:117px;
+    width: 455px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson6 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:115px;
+    top: 56px;
+}
+#game .quiz3-1 .lesson6 .quiz:nth-child(4) .text {
+    position: absolute;
+    left:525px;
+    top:128px;
+    width: 455px;
+    text-align: left;
+}
+#game .quiz3-1 .lesson6 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:94px;
+    top: 145px;
+}
+
+
+#game .quiz3-2 .lesson1 .quiz:nth-child(3) .text {
+    position: absolute;
+    left:498px;
+    top:157px;
+    width: 400px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson1 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:212px;
+    top: 64px;
+}
+
+#game .quiz3-2 .lesson1 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:498px;
+    top:157px;
+    width: 400px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson1 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:177px;
+    top: 64px;
+}
+#game .quiz3-2 .lesson1 .quiz:nth-child(9) .text {
+    position: absolute;
+    left:537px;
+    top:157px;
+    width: 400px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson1 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:47px;
+    top: 9px;
+}
+
+#game .quiz3-2 .lesson2 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:234px;
+    top: 170px;
+}
+
+#game .quiz3-2 .lesson2 .quiz:nth-child(5) .text {
+    position: absolute;
+    left:410px;
+    top:95px;
+    width: 545px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson2 .quiz:nth-child(5) .image {
+    position: absolute;
+    left:62px;
+    top: 90px;
+}
+#game .quiz3-2 .lesson2 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:231px;
+    top: 94px;
+}
+
+
+#game .quiz3-2 .lesson3 .quiz:nth-child(1) .text {
+    position: absolute;
+    left:370px;
+    top:125px;
+    width: 620px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:51px;
+    top: 70px;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(4) .text {
+    position: absolute;
+    left: 457px;
+    top: 197px;
+    width: 485px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:59px;
+    top: 57px;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:428px;
+    top:125px;
+    width: 575px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:26px;
+    top: 27px;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(8) .text {
+    position: absolute;
+    left: 380px;
+    top:125px;
+    width: 630px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:42px;
+    top: 60px;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(10) .text {
+    position: absolute;
+    left:416px;
+    top:125px;
+    width: 545px;
+    text-align: left;
+}
+#game .quiz3-2 .lesson3 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:53px;
+    top: 63px;
+}
+
+#game .quiz3-2 .lesson5 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:44px;
+    top: 178px;
+}
+
+#game .quiz3-2 .lesson6 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:231px;
+    top: 150px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(2) .title .img1 {
+    top: 5px;
+    position: relative;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(2) .title .img2 {
+    top: 16px;
+    position: relative;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:200px;
+    top: 103px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:237px;
+    top: 157px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(5) .image {
+    position: absolute;
+    left:210px;
+    top: 190px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:210px;
+    top: 220px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:270px;
+    top: 124px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:270px;
+    top: 157px;
+}
+#game .quiz3-2 .lesson6 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:225px;
+    top: 153px;
+}
+
+
+#game .quiz4-1 .lesson1 .quiz:nth-child(6) .box {
+    width: 95px;
+    height:59px;
+    top:-6px;
+}
+
+
+#game .quiz4-1 .lesson2 .quiz:nth-child(1) .text {
+    position: absolute;
+    left:555px;
+    top:157px;
+    width: 415px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson2 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:102px;
+    top: 123px;
+}
+#game .quiz4-1 .lesson2 .quiz:nth-child(3) .text {
+    position: absolute;
+    left:408px;
+    top:188px;
+    width: 565px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson2 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:63px;
+    top: 126px;
+}
+#game .quiz4-1 .lesson2 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:496px;
+    top:157px;
+    width: 565px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson2 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:78px;
+    top: 86px;
+}
+
+#game .quiz4-1 .lesson4 .quiz:nth-child(4) .text {
+    position: absolute;
+    left:443px;
+    top:126px;
+    width: 495px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:112px;
+    top: 90px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(5) .image {
+    position: absolute;
+    left:256px;
+    top: 172px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:371px;
+    top:157px;
+    width: 565px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:90px;
+    top: 22px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:226px;
+    top: 205px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(8) .text {
+    position: absolute;
+    left:392px;
+    top:157px;
+    width: 565px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:81px;
+    top: 120px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:107px;
+    top: 193px;
+}
+#game .quiz4-1 .lesson4 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:161px;
+    top: 192px;
+}
+
+
+#game .quiz4-1 .lesson5 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:160px;
+    top: 112px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:200px;
+    top: 157px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:160px;
+    top: 112px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:188px;
+    top: 100px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:227px;
+    top: 150px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:227px;
+    top: 150px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:227px;
+    top: 160px;
+}
+#game .quiz4-1 .lesson5 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:227px;
+    top: 160px;
+}
+
+
+#game .quiz4-1 .lesson6 .quiz:nth-child(1) .text {
+    position: absolute;
+    left:479px;
+    top:157px;
+    width: 535px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(1) .image {
+    position: absolute;
+    left:94px;
+    top: 92px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(2) .text {
+    position: absolute;
+    left:479px;
+    top:157px;
+    width: 535px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:94px;
+    top: 92px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:320px;
+    top: 156px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:205px;
+    top: 167px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(5) .text {
+    position: absolute;
+    left:562px;
+    top:157px;
+    width: 535px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(5) .image {
+    position: absolute;
+    left:37px;
+    top: 124px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:479px;
+    top:157px;
+    width: 535px;
+    text-align: left;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:94px;
+    top: 92px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:96px;
+    top: 179px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:217px;
+    top: 142px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:86px;
+    top: 178px;
+}
+#game .quiz4-1 .lesson6 .quiz:nth-child(10) .image {
+    position: absolute;
+    left:116px;
+    top: 151px;
+}
+
+
+#game .quiz4-2 .lesson1 .quiz:nth-child(2) .text,
+#game .quiz4-2 .lesson1 .quiz:nth-child(4) .text,
+#game .quiz4-2 .lesson1 .quiz:nth-child(5) .text {
+    line-height: 110px;
+    margin-top:45px;
+}
+#game .quiz4-2 .lesson1 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:205px;
+    top: 116px;
+}
+
+#game .quiz4-2 .lesson2 .quiz:nth-child(2) .text {
+    position: absolute;
+    left:510px;
+    top:109px;
+    width: 480px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson2 .quiz:nth-child(2) .image {
+    position: absolute;
+    left:59px;
+    top: 40px;
+}
+#game .quiz4-2 .lesson2 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:530px;
+    top:137px;
+    width: 480px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson2 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:43px;
+    top: 111px;
+}
+#game .quiz4-2 .lesson2 .quiz:nth-child(9) .text {
+    position: absolute;
+    left:469px;
+    top:157px;
+    width: 480px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson2 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:80px;
+    top: 78px;
+}
+
+#game .quiz4-2 .lesson4 .quiz:nth-child(7) .text {
+    position: absolute;
+    left:469px;
+    top:157px;
+    width: 480px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson4 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:116px;
+    top: 177px;
+}
+
+#game .quiz4-2 .lesson5 .quiz:nth-child(3) .text {
+    position: absolute;
+    left:592px;
+    top:157px;
+    width: 420px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(3) .image {
+    position: absolute;
+    left:18px;
+    top: 32px;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(4) .text {
+    position: absolute;
+    left:606px;
+    top:106px;
+    width: 400px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:18px;
+    top: 32px;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(5) .text {
+    position: absolute;
+    left:513px;
+    top:125px;
+    width: 470px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(5) .image {
+    position: absolute;
+    left:47px;
+    top: 14px;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(6) .text {
+    position: absolute;
+    left:508px;
+    top:125px;
+    width: 470px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:47px;
+    top: 14px;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(9) .text {
+    position: absolute;
+    left:615px;
+    top:157px;
+    width: 430px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson5 .quiz:nth-child(9) .image {
+    position: absolute;
+    left:19px;
+    top: 26px;
+}
+
+#game .quiz4-2 .lesson6 .quiz:nth-child(4) .image {
+    position: absolute;
+    left:148px;
+    top: 173px;
+}
+#game .quiz4-2 .lesson6 .quiz:nth-child(6) .image {
+    position: absolute;
+    left:378px;
+    top: 180px;
+}
+#game .quiz4-2 .lesson6 .quiz:nth-child(7) .text {
+    position: absolute;
+    left:509px;
+    top:157px;
+    width: 430px;
+    text-align: left;
+}
+#game .quiz4-2 .lesson6 .quiz:nth-child(7) .image {
+    position: absolute;
+    left:63px;
+    top: 61px;
+}
+#game .quiz4-2 .lesson6 .quiz:nth-child(8) .image {
+    position: absolute;
+    left:288px;
+    top: 172px;
+}
+
+
+
+
+
+#game .quiz-con .page-con {
+    position: absolute;
+    left: 1037px;
+    top: 66px;
+    width:110px;
+    height: 56px;
+    text-align:center;
+    box-sizing: border-box;
+    font-family: 'BMJUA';
+    font-size: 27px;
+    color: #2F773C;
+    padding: 13px 0;
+    background: url('../images/page_bg.png') no-repeat;
+}
+#game .quiz-con .page-con .current {
+    font-size: 33px;
+    margin-right: 7px;
+}
+
+#game .answer-btn {
+    position: absolute;
+    left: 870px;
+    top: 380px;
+    width: 151px;
+    height: 62px;
+    background: url('../images/answer_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 60px;
+}
+#game .next-btn {
+    position: absolute;
+    left: 870px;
+    top: 380px;
+    width: 151px;
+    height: 62px;
+    background: url('../images/next_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 60px;
+}
+
+#game .o-img {
+    position: absolute;
+    left: 480px;
+    top: 180px;
+    width: 328px;
+    height: 327px;
+    background: url('../images/o.png') no-repeat;
+}
+
+#game .x-img {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+    width: 279px;
+    height: 279px;
+    background: url('../images/x.png') no-repeat;
+}
+
+#game .char-con .default {
+    position: absolute;
+    left: 382px;
+    top: 549px;
+    width: 508px;
+    height: 304px;
+    background: url('../images/char_default.png') no-repeat;
+    animation: char-ani 1s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+#game .char-con .o {
+    position: absolute;
+    display: none;
+    left: 399px;
+    top: 462px;
+    width: 486px;
+    height: 390px;
+    background: url('../images/char_o.png') no-repeat;
+}
+
+#game .char-con .x {
+    position: absolute;
+    display: none;
+    left: 386px;
+    top: 468px;
+    width: 497px;
+    height: 382px;
+    background: url('../images/char_x.png') no-repeat;
+}
+
+#game .restart-btn {
+    position: absolute;
+    left: 1092px;
+    top: 632px;
+    width: 166px;
+    height: 68px;
+    background: url('../images/guid_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 65px;
+}
+
+/* result */
+#result {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url('../images/result_bg.jpg') no-repeat;
+}
+
+#result .result-pannel{
+    position: absolute;
+    left: 286px;
+    top: 138px;
+    width: 708px;
+    height: 496px;
+    background: url('../images/result_pannel.png') no-repeat;
+}
+
+#result .result-pannel .input-con {
+    position: absolute;
+    left:109px;
+    top: 129px;
+    width:490px;
+    height:87px;
+    background-color: #D7D9DB;
+    border-radius: 87px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+#result .result-pannel .input-con input[type="text"] {
+    width: 420px;
+    font-family: 'BMJUA'; 
+    font-size:45px;
+    color: #000;
+    border:none;
+    outline: none;
+    background-color: transparent;
+    text-align:center;
+}
+#result .result-pannel .text-con {
+    position: absolute;
+    left:0;
+    top: 250px;
+    width: 100%;
+    font-family: 'BMJUA'; 
+    font-size:45px;
+    color: #000;
+    text-align: center;
+}
+#result .result-pannel .reset-btn {
+    position: absolute;
+    left: 278px;
+    top: 398px;
+}
+#result .result-pannel .reset-btn > span{
+    display: block;
+    width: 151px;
+    height: 62px;
+    background: url('../images/reset_btn.png') no-repeat;
+    text-align: center;
+    font-family: 'BMJUA';
+    font-size: 33px;
+    color: #fff;
+    line-height: 62px;
+}
+
+#result .result-top {
+    position: absolute;
+    left: 330px;
+    top: 85px;
+    width: 626px;
+    height: 156px;
+    background: url('../images/result_top.png') no-repeat;
+}
+
+#result .result-top > h4 {
+    margin-top: 18px;
+    font-family: 'BRBA_R';
+    font-weight: 900;
+    font-size: 60px;
+    color: #B10E00;
+    text-align:center;
+}
+
+#result .fire1 {
+    position: absolute;
+    left: 20px;
+    top: 53px; 
+    pointer-events: none; 
+}
+
+#result .fire2 {
+    position: absolute;
+    left: 1005px;
+    top: 155px;
+    pointer-events: none; 
+}
+
+#result .fire3 {
+    position: absolute;
+    left: -20px;
+    top: 253px;
+    pointer-events: none; 
+}
+
+#result .fire4 {
+    position: absolute;
+    left: 915px;
+    top: -5px;
+    pointer-events: none; 
+}
