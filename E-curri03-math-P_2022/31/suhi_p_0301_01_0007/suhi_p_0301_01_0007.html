@@ -32,7 +32,7 @@
 		.pop_page_1 .flex-wrap,
 		.page_2 .flex-wrap{justify-content:space-around; align-items: center; height: 300px;}
 		
-		.type-qs2.textAlignC{margin: 80px auto 0;width: 800px; position: relative;}
+		.type-qs2.textAlignC{margin: 80px auto 0;width: 800px; position: relative; z-index: 0;}
 		.type-qs2 .flex-box{display: flex;justify-content: center;}
 		.type-qs2 .flexListContainer{width: 40%;position: relative;}
 		.checkContainer .type-qs2 .colorBox{padding: 10px 12px;}
@@ -47,6 +47,9 @@
 		.type-qs2 .curveLine .line{clip: rect(0,250px,100px,0);width: 237px;height: 200px;}
 		.type-qs2 .curveLine:after{z-index: 999;transform: rotate(60deg);left: 235px;top: 81px;}
 
+		.page_4 .flexListContainer{margin: 15px auto 0;width: 100%; justify-content: center;}
+		.page_4 .flexListContainer > li {display: flex;align-items: center;margin: 0 20px;}
+
 		/* .pop_page_3 .flex-wrap{padding: 30px 0; width: 100%;}
 		.page_2 .flex-wrap{padding: 30px 4%;}
 		.pop_page_3 .lineBox,
@@ -54,14 +57,32 @@
 		.pop_page_3 .lineBox + .lineBox,
 		.page_2 .lineBox + .lineBox{ margin-left:20px;} */
 		
+		.page_5 .flex-wrap {width: 100%; justify-content: space-around; margin-top: 60px;}
+		.page_5 .math_calc_table{font-size: 40px;}
+		.pop_page_9 .flex-wrap {width: 100%; justify-content: space-around; margin-top: 60px;}
+		.pop_page_9 .math_calc_table{font-size: 40px;}
 
-		
+		.page_6 .flexListContainer{margin: 15px auto 0;width: 100%;}
+		.page_6 .flexListContainer > li {display: flex;align-items: flex-start; }
+		.page_6 .flexListContainer .answer {text-align: left; display: flex;}
+		.page_6 .flexListContainer >li > div + div{margin-top:-5px}
+
+		.pop_page_15 .flexListContainer{margin: 15px auto 0;width: 100%;}
+		.pop_page_15 .flexListContainer > li {display: flex;align-items: flex-start; }
+		.pop_page_15 .flexListContainer .answer {text-align: left; display: flex;}
+		.pop_page_15 .flexListContainer >li > div + div{margin-top:-5px}
+
+
+
+
+
 
 		.tbl-img{width:450px; margin:0 auto; padding:40px 40px 0; height:420px; background: url(./images/suhi_p_0301_01_0005_2.png) no-repeat 50% 0 / contain; position: relative;}
 		.tbl-img table{width: 100%; height: 363px; margin:16px 0 0 30px}
 		.tbl-img table td{width:33.33%; text-align: center;}
 		.tbl-img .toggle{background: transparent;}
 		.pop_page_2 .tbl-img{background: url(./images/suhi_p_0301_01_0005_3.png) no-repeat 50% 0 / contain;}
+
 		.pop_page_3 .flex-wrap{justify-content:space-around; width: 100%; margin:0 auto}
 
 		.page_4 .lineBox{width:55%; margin:40px auto; display: flex; align-items: center; justify-content: center; position: relative;}
@@ -280,41 +301,7 @@
 						<h2>
 							<ins class="number">3</ins>
 							<span>
-								<span>계산 결과를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png">, <img src="../common/contents/images/math/equalIcon.png">, <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.</span>
-							</span>
-						</h2>
-						<section class="full">
-							<div class="lineBox green">
-								224－101       
-								<div class="toggle hide n1" data-toggle-obj="1" data-group-index="1">
-									<div class="answer" data-toggle-target="1">=342</div>
-								</div> 
-								<div class="toggle circle" data-toggle-obj="1" data-group-index="1">
-									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-								</div> 
-								308－204
-								<div class="toggle hide n2" data-toggle-obj="1" data-group-index="1">
-									<div class="answer" data-toggle-target="1">=321</div>
-								</div> 
-							</div>
-
-							<div class="buttonContainer left">
-								<button class="characterBtn" data-popup-btn="4" data-hover="">
-									<span>쌍둥이 문제</span>
-								</button>
-							</div>
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</section>
-					</li>
-
-					<li class="page_5" data-quiz="toggle">
-						<h2>
-							<ins class="number">4</ins>
-							<span>
-								자전거 대여소에 자전거가 376대 있습니다. 그중에서 자전거 151대를 대여해 주었다면 대여소에 남은 자전거는 몇 대일까요?
+								빵 가게에 빵이 217개 있었습니다. 그중 139개가 팔렸다면 남아 있는 빵은 몇 개일까요?
 							</span>
 						</h2>
 						<section class="full">
@@ -324,7 +311,7 @@
 									<div>
 										<div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
-												376－151=225
+												217－139=78
 											</div>
 										</div>
 									</div>
@@ -334,24 +321,141 @@
 									<div>
 										<div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
-												225
+												78
 											</div>
-										</div> 대
+										</div> 개
 									</div>
 								</li>
 							</ul>
-
-
 							<div class="buttonContainer left">
-								<button class="characterBtn" data-popup-btn="7" data-hover="">
+								<button class="characterBtn" data-popup-btn="6" data-hover="">
 									<span>쌍둥이 문제</span>
-								</button>
-								<button class="characterBtn" data-popup-btn="8" data-hover="">
-									<span>한번 더!</span>
 								</button>
 							</div>
 							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="9" data-hover=""></button>
+								<button class="solveCheckBtn" data-popup-btn="7" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number">4</ins>
+							<span>
+								<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+							</span>
+						</h2>
+						<section class="full">
+							<div class="flex-wrap">
+								<div class="math_calc_table">
+									<table>
+										<tr>
+											<td></td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														7
+													</div>
+												</div>
+											</td>
+											<td>2</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>
+												-
+											</td>
+											<td>2</td>
+											<td>3</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>4</td>
+											<td>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">
+														8
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">
+														8
+													</div>
+												</div>
+											</td>
+											
+										</tr>
+									</table>
+								</div>
+							
+								<div class="math_calc_table">
+									<table>
+										<tr>
+											<td></td>
+											<td>
+												<div class="toggle" data-toggle-obj="12">
+													<div class="answer" data-toggle-target="12">
+														9
+													</div>
+												</div>
+											</td>
+											<td>
+												9
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="13" data-group-index="13">
+													<div class="answer" data-toggle-target="13">
+														4
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												-
+											</td>
+											<td>3</td>
+											<td>9</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>5</td>
+											<td>
+												<div class="toggle" data-toggle-obj="14">
+													<div class="answer" data-toggle-target="14">
+														9
+													</div>
+												</div>
+											</td>
+											<td>9</td>
+											
+										</tr>
+									</table>
+								</div>
+							</div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="9" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
@@ -359,24 +463,52 @@
 
 					<li class="page_6" data-quiz="toggle">
 						<h2>
-							<ins class="number star">5</ins>
+							<ins class="number">5</ins>
 							<span>
-								아린이는 친구에게 줄 생일 선물을 포장하려고 합니다. 선물을 포장하고 남은 리본은 몇 cm인지 구해 보세요.
+								수 카드 3장을 한 번씩만 사용하여 만들 수 있는 세 자리 수 중에서 가장 큰 수와 가장 작은 수의 차는 얼마인지 풀이 과정을 쓰고 답을 구해 보세요.
 							</span>
 						</h2>
 						<section class="full">
-							<div class="img-wrap">
-								<div class="balloon left green ctTail" style="top: 30px; left: 630px; display: block; text-align: center; word-break: keep-all;"><span>
-									리본 3 m 65 cm 중에서<br> 124 cm를 사용했어.
-								</span></div>
-							</div>
 							<div class="textAlignC">
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										241
-									</div>
-								</div> cm
+								<ul class="flexListContainer01">
+									<li>
+										<div class="lineBox sky center">6</div>
+									</li>
+									<li>
+										<div class="lineBox green center">8</div>
+									</li>
+									<li>
+										<div class="lineBox yellow center">2</div>
+									</li>
+								</ul>
 							</div>
+
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">풀이</div>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												<div class="bullet exam">예</div>
+												수 카드로 만들 수 있는 가장 큰 세 자리 수는 862이고 가장 작은 세 자리 수는 268입니다. <br>
+												따라서 862-268=594입니다.
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">답</div>
+									<div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												594
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
 
 							<div class="buttonContainer left">
 								<button class="characterBtn" data-popup-btn="12" data-hover="">
@@ -390,54 +522,7 @@
 						</section>
 					</li>
 
-					<li class="page_7" data-quiz="toggle">
-						<h2>
-							<ins class="number">6</ins>
-							<span>
-								337－125를 두 가지 방법으로 계산해 보세요.
-							</span>
-						</h2>
-						<section class="full">
-							<ul class="flexListContainer">
-								<li>
-									<div class="colorBox check skyBlue">방법 1</div>
-									<div>
-										<div class="toggle" data-toggle-obj="1">
-											<div class="answer" data-toggle-target="1">
-												<div class="bullet exam">예</div>
-												백의 자리부터 빼 주는 방법이 있습니다. <br>
-												300－100, 30－20, 7－5를 계산하면 212가 됩니다.												
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<ul class="flexListContainer mt_20">
-								<li>
-									<div class="colorBox check skyBlue">방법 2</div>
-									<div>
-										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">
-												<div class="bullet exam">예</div>
-												일의 자리부터 빼 주는 방법이 있습니다. <br>
-												7－5, 30－20, 300－100을 계산하면 212가 됩니다.
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-							
 
-							<div class="buttonContainer left">
-								<button class="characterBtn" data-popup-btn="15" data-hover="">
-									<span>쌍둥이 문제</span>
-								</button>
-							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</section>
-					</li>
 				</ul>
 			</div>
 		</main>
@@ -649,7 +734,6 @@
 								</table>
 							</div>
 						</div>
-
 					</div>
 				</li>
 
@@ -663,47 +747,24 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									<p class="mb_10">계
+									<p class="mb_10">
 										빈칸에 알맞은 수를 써넣으세요.
 									</p>
-									
-								</div>
-							</li>
-						</ul>
-						
-						<a href="./data/(3-1-1)수학익힘쌍둥이_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						<div class="buttonContainer">
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</div>
-				</li>
-			
-
-				<li class="whole pop_page_4" data-popup-page="4">
-					<h2 class="pop-tit">
-						<ins class="special type3"></ins>
-						<span></span>
-					</h2>
-					<div class="popup_contents" data-quiz="toggle">
-						<ul class="contentsList">
-							<li>
-								<ins class="bullet circleDot"></ins>
-								<div>
-									<p class="mb_10 equalIn">
-										<span>계산 결과를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png">, <img src="../common/contents/images/math/equalIcon.png">, <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.</span>
-									</p>
-									<div class="lineBox green">
-										466－235       
-										<div class="toggle hide n1" data-toggle-obj="1" data-group-index="1">
-											<div class="answer" data-toggle-target="1">=231</div>
-										</div> 
-										<div class="toggle circle" data-toggle-obj="1" data-group-index="1">
-											<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-										</div> 
-										587－204
-										<div class="toggle hide n2" data-toggle-obj="1" data-group-index="1">
-											<div class="answer" data-toggle-target="1">=383</div>
-										</div> 
+									<div class="textAlignC type-qs2">
+										<div class="flex-box">
+											<ul class="flexListContainer">
+												<li class="lineBox purple lineBox01">623</li>
+												<li class="colorBox purple ">-254</li>
+												<li class="lineBox purple lineBox02">
+													<div class="toggle noBg box center" data-toggle-obj="1">
+														<div class="answer" data-toggle-target="1">369</div>
+													</div>
+												</li>
+												<div class="curveLine top purple">
+													<div class="line"></div>
+												</div>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</li>
@@ -711,24 +772,104 @@
 						
 						<a href="./data/(3-1-1)수학익힘쌍둥이_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+				<li class="solve pop_page_4" data-popup-page="4">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+							<div class="math_calc_table ">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												5
+												<sup class="sup redT">4</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												4
+												<sup class="sup redT">13</sup>
+											</td>
+											<td>7
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>2</td>
+											<td>5</td>
+											<td>9</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>2</td>
+											<td>8</td>
+											<td>8</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</li>
 				<li class="solve pop_page_5" data-popup-page="5">
 					<div class="popup_contents">
-						224－101=123, 308－204=104 <div class="icon_arrow"></div> 123 <img src="../common/contents/images/math/inequalIcon_2_blue.png" style="transform: translate(0, 8px); width:20px;"> 104
-					</div>
-				</li>
-				<li class="solve pop_page_6" data-popup-page="6">
-					<div class="popup_contents">
-						466－235＝231, 587－204=383 <div class="icon_arrow"></div> 231 <img src="../common/contents/images/math/inequalIcon_2_blue.png" style="transform: rotate(180deg) translate(0, -8px); width:20px;"> 383
+						<div class="flex-wrap">
+							<div class="math_calc_table ">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												6
+												<sup class="sup redT">5</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												2
+												<sup class="sup redT">11</sup>
+											</td>
+											<td>3
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>2</td>
+											<td>5</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>3</td>
+											<td>6</td>
+											<td>9</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
 					</div>
 				</li>
 
-
-				<li class="whole pop_page_7" data-popup-page="7">
+				<li class="whole pop_page_6" data-popup-page="6">
 					<h2 class="pop-tit">
 						<ins class="special type3"></ins>
 						<span></span>
@@ -739,29 +880,42 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">
-										지운이네 학교 도서관에는 과학책이 647권 있습니다. 이 중 학생들이 215권을 빌려 갔다면 남아 있는 과학책은 몇 권인지 구해 보세요.
+										과일 가게에 사과가 314개 있었습니다. 그중 125개가 팔렸다면 남아 있는 사과는 몇 개일까요?
 									</p>
-									<section class="full">
-										<div class="textAlignC">
-											<div class="toggle" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													432
-												</div>
-											</div> 권
-										</div>
-									</section>
+									<div class="textAlignC">
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												189
+											</div>
+										</div> 개
+									</div>
 								</div>
 							</li>
 						</ul>
 						
 						<a href="./data/(3-1-1)수학익힘쌍둥이_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 					</div>
 				</li>
-				<li class="whole pop_page_8" data-popup-page="8">
+				<li class="solve pop_page_7" data-popup-page="7">
+					<div class="popup_contents">
+						(남은 빵 수)=(전체 빵 수)－(팔린 빵 수)<br>
+                        =217－139<br>
+						=78(개)
+					</div>
+				</li>
+				<li class="solve pop_page_8" data-popup-page="8">
+					<div class="popup_contents">
+						(남은 사과 수)=(전체 사과 수)－(팔린 사과 수)<br>
+                        =314－125<br>
+                        =189(개)
+					</div>
+				</li>
+
+				<li class="whole pop_page_9" data-popup-page="9">
 					<h2 class="pop-tit">
 						<ins class="special type3"></ins>
 						<span></span>
@@ -772,17 +926,110 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">
-										독도로 가는 배에 465명이 타기로 했습니다. 지금 121명이 탔다면 몇 명이 더 타야 할까요?
+										<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 									</p>
-									<section class="full">
-										<div class="textAlignC">
-											<div class="toggle" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													344
-												</div>
-											</div> 명
+									
+									<div class="flex-wrap">
+										<div class="math_calc_table">
+											<table>
+												<tr>
+													<td></td>
+													<td>
+														<div class="toggle" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1">
+																7
+															</div>
+														</div>
+													</td>
+													<td>1</td>
+													<td>3</td>
+												</tr>
+												<tr>
+													<td>
+														-
+													</td>
+													<td>2</td>
+													<td>3</td>
+													<td>7</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>4</td>
+													<td>
+														<div class="toggle" data-toggle-obj="2">
+															<div class="answer" data-toggle-target="2">
+																7
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="toggle" data-toggle-obj="3">
+															<div class="answer" data-toggle-target="3">
+																6
+															</div>
+														</div>
+													</td>
+													
+												</tr>
+											</table>
 										</div>
-									</section>
+									
+										<div class="math_calc_table">
+											<table>
+												<tr>
+													<td></td>
+													<td>
+														<div class="toggle" data-toggle-obj="12">
+															<div class="answer" data-toggle-target="12">
+																9
+															</div>
+														</div>
+													</td>
+													<td>
+														8
+													</td>
+													<td>
+														<div class="toggle" data-toggle-obj="13" data-group-index="13">
+															<div class="answer" data-toggle-target="13">
+																4
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														-
+													</td>
+													<td>4</td>
+													<td>9</td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>4</td>
+													<td>
+														<div class="toggle" data-toggle-obj="14">
+															<div class="answer" data-toggle-target="14">
+																8
+															</div>
+														</div>
+													</td>
+													<td>9</td>
+													
+												</tr>
+											</table>
+										</div>
+									</div>
 								</div>
 							</li>
 						</ul>
@@ -794,24 +1041,181 @@
 						</div>
 					</div>
 				</li>
-
-				<li class="solve pop_page_9" data-popup-page="9">
-					<div class="popup_contents">
-						(남은 자전거 수)<br>
-						= (전체 자전거 수)-(대여해 준 자전거 수)<br>
-						=376-151=225(대)
-					</div>
-				</li>
 				<li class="solve pop_page_10" data-popup-page="10">
 					<div class="popup_contents">
-						647－215＝432(권)
+						받아내림이 있음을 생각하여 계산합니다.<br>
+
+						<div class="flex-wrap mt_20">
+							<div class="math_calc_table ">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												7
+												<sup class="sup redT">6</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												2
+												<sup class="sup redT">11</sup>
+											</td>
+											<td>6
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>2</td>
+											<td>3</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>4</td>
+											<td>8</td>
+											<td>8</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+					
+							<div class="math_calc_table">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												9
+												<sup class="sup redT">8</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												9
+												<sup class="sup redT">18</sup>
+											</td>
+											<td>4
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>3</td>
+											<td>9</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>5</td>
+											<td>9</td>
+											<td>9</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</li>
 				<li class="solve pop_page_11" data-popup-page="11">
 					<div class="popup_contents">
-						465－121＝344(명)
+						받아내림이 있음을 생각하여 계산합니다.<br>
+
+						<div class="flex-wrap mt_20">
+							<div class="math_calc_table ">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												7
+												<sup class="sup redT">6</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												1
+												<sup class="sup redT">10</sup>
+											</td>
+											<td>3
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>2</td>
+											<td>3</td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>4</td>
+											<td>7</td>
+											<td>6</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+					
+							<div class="math_calc_table">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												9
+												<sup class="sup redT">8</sup>
+											</td>
+											<td>
+												<span class="del complete"></span>
+												8
+												<sup class="sup redT">17</sup>
+											</td>
+											<td>4
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>4</td>
+											<td>9</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>4</td>
+											<td>8</td>
+											<td>9</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</li>
+
 				<li class="whole pop_page_12" data-popup-page="12">
 					<h2 class="pop-tit">
 						<ins class="special type3"></ins>
@@ -823,94 +1227,66 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">
-										길이가 5 m 38 cm 철사 중에서 217 cm를 사용했습니다. 남은 철사는 몇 cm인지 구해 보세요.
+										수 카드 3장을 한 번씩만 사용하여 만들 수 있는 세 자리 수 중에서 가장 큰 수와 가장 작은 수의 차는 얼마인지 풀이 과정을 쓰고 답을 구해 보세요.
 									</p>
-									<section class="full">
-										<div class="textAlignC">
-											<div class="toggle" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													321
+									<div class="textAlignC">
+										<ul class="flexListContainer01">
+											<li>
+												<div class="lineBox sky center">5</div>
+											</li>
+											<li>
+												<div class="lineBox green center">9</div>
+											</li>
+											<li>
+												<div class="lineBox yellow center">2</div>
+											</li>
+										</ul>
+									</div>
+		
+									<ul class="flexListContainer">
+										<li>
+											<div class="colorBox check skyBlue">풀이</div>
+											<div>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														<div class="bullet exam">예</div>
+														가장 큰 수 : 952, 가장 작은 수 : 259
+														따라서 862-268=594입니다.<br>
+														<div class="icon_arrow"></div> 952-259=693
+													</div>
 												</div>
-											</div> cm
-										</div>
-									</section>
+											</div>
+										</li>
+									</ul>
+									<ul class="flexListContainer">
+										<li>
+											<div class="colorBox check skyBlue">답</div>
+											<div>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">
+														693
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
 								</div>
 							</li>
 						</ul>
-						
+
+
 						<a href="./data/(3-1-1)수학익힘쌍둥이_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 					</div>
 				</li>
 				<li class="solve pop_page_13" data-popup-page="13">
 					<div class="popup_contents">
-						1 m=100 cm이므로 3 m 65 cm=365 cm입니다.<br>
-						(남은 리본 길이)<br>
-						=365－(사용한 리본 길이)<br>
-						=365－124=241 (cm)
-					</div>
-				</li>
-				<li class="solve pop_page_14" data-popup-page="14">
-					<div class="popup_contents">
-						538－217＝321 (cm)
-					</div>
-				</li>
+						큰 수부터 차례로 백, 십, 일의 자리에 써서 가장 큰 세 자리 수를 만들고 반대로 가장 작은 세 자리 수를 만들어 뺍니다.
 
-				<li class="whole pop_page_15" data-popup-page="15">
-					<h2 class="pop-tit">
-						<ins class="special type3"></ins>
-						<span></span>
-					</h2>
-					<div class="popup_contents" data-quiz="toggle">
-						<ul class="contentsList">
-							<li>
-								<ins class="bullet circleDot"></ins>
-								<div>
-									<p class="mb_10">
-										464－231을 두 가지 방법으로 계산해 보세요.
-									</p>
-									<ul class="flexListContainer mt_30">
-										<li>
-											<div class="colorBox check skyBlue">방법 1</div>
-											<div>
-												<div class="toggle" data-toggle-obj="1">
-													<div class="answer" data-toggle-target="1">
-														<div class="bullet exam">예</div>
-														백의 자리부터 빼 주는 방법이 있습니다. <br>
-														400－200, 60－30, 4－1을 계산하면 233입니다.
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<ul class="flexListContainer mt_20">
-										<li>
-											<div class="colorBox check skyBlue">방법 2</div>
-											<div>
-												<div class="toggle" data-toggle-obj="2">
-													<div class="answer" data-toggle-target="2">
-														<div class="bullet exam">예</div>
-														일의 자리부터 빼 주는 방법이 있습니다. <br>
-														4－1, 60－30, 400－200을 계산하면 233입니다.
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-						
-						<a href="./data/(3-1-1)수학익힘쌍둥이_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						<div class="buttonContainer">
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
 					</div>
 				</li>
-				
 
 				
 
