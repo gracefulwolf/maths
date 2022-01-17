@@ -467,7 +467,8 @@
     background:url("../images/button/btn_speech_balloon_right.png") no-repeat center / contain;
     top: 10px;
     left: 0;
-    z-index: 2;
+    z-index: 4;
+    pointer-events: none;
 }
 .characterWrap.speech.right:before {
     content:"";
@@ -478,7 +479,8 @@
     background:url("../images/button/btn_speech_balloon_left.png") no-repeat center / contain;
     top: 10px;
     right: 0;
-    z-index: 2;
+    z-index: 4;
+   pointer-events: none;
 }
 
 .characterImg{left:0; transition: left .2s ease-out, right .2s ease-out;}
@@ -549,13 +551,14 @@
     left:45px;
 }
 
+
 .characterWrap.speech.circle.right:before{
-    top:-20px;
-    right:-40px;
+    top:0px;
+    right:-5px;
 }
 .characterWrap.speech.left.circle:before{
-    top:-20px;
-    left:-40px;
+    top:0;
+    left:-5px;
 }
 .characterWrap.speech-not::before{
     display: none !important;
