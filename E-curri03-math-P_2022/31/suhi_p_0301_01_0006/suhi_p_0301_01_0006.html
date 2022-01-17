@@ -22,8 +22,7 @@
 
 		.page_1 .img-wrap{width:100%; padding:0 20%; box-sizing: border-box;}
 		.page_1 .flex-wrap{justify-content:space-around; align-items: center; align-items: flex-start; padding: 0 10%;}
-		.page_1 .flex-wrap > div{width: 50%; min-width:50%; max-width:50%;}
-		.page_1 .flex-wrap > div + div{margin-left:30px;}
+		.page_1 .flex-wrap > div{width: 40%; min-width:40%; max-width:40%;}
 
 		.pop_page_1 .flex-wrap,
 		.page_2 .flex-wrap{justify-content:space-around; align-items: center; height: 300px;}
@@ -88,10 +87,15 @@
 		.popup_contents .tbl-img{width:830px; margin:0 auto; height:420px; background: url(./images/suhi_p_0301_01_0004_4.png) no-repeat 50% 0 / contain; position: relative;}
 		.popup_pages .flex-wrap{justify-content:space-around; width: 80%; margin:0 auto}
 
-		.page_7 .lineBox{width:55%; margin:40px auto; display: flex; align-items: center; justify-content: center;}
-		.page_7 .lineBox .toggle{margin:0 15px}
-		.pop_page_11 .lineBox{width:55%; margin:40px auto; display: flex; align-items: center; justify-content: center;}
-		.pop_page_11 .lineBox .toggle{margin:0 15px}
+		.page_7 .img-wrap{width:100%; height: 250px; background: url(./images/suhi_p_0301_01_0006_4.png) no-repeat 50% 0 / contain; margin-bottom:20px;}
+
+		.page_7 .basicSlider{height: 250px;}
+		.page_7 .basicSlider .buttonContainer{right:-56px;}
+		.pop_page_15 .lineBox{width:80%; margin: 0 auto; padding:30px}
+		.pop_page_15 .flexListContainer{margin: 0 auto 0;width: 100%; justify-content: center;}
+		.pop_page_15 .flexListContainer > li {display: flex; width:100%; align-items: center;margin: 0 20px;}
+		.pop_page_15 .dotList li > div{ width: 100%;}
+
 	</style>
 </head>
 
@@ -396,47 +400,93 @@
 						</section>
 					</li>
 
-					<li class="page_7" data-quiz="toggle">
+					<li class="page_7">
 						<h2>
 							<ins class="number star">6</ins>
 							<span>
-								세 자리 수끼리 더하여 크기를 비교했습니다. <span class="blankBox w50"></span> 안에 들어갈 수 있는 수를 모두 써 보세요. 
+								그림을 보고 물음에 답하세요.
 							</span>
 						</h2>
 						<section class="full">
-							<div class="lineBox sky">
-								378 + <span class="blankBox w50"></span>32 <img src="../common/contents/images/math/inequalIcon.png" style="width: 16px; margin:4px 10px 0;"> 800
+							<div class="img-wrap">
+								<div class="balloon right sky ctTail" style="top: 30px; left: 60px; display: block; text-align: center; word-break: keep-all;"><span>
+									어떤 수에 <br>
+									126을 더했더니 <br>
+									754가 되었어.
+								</span></div>
+								<div class="balloon left pink ctTail" style="top: 30px; left: 710px; display: block; text-align: center; word-break: keep-all;"><span>
+									그럼 나는 <br>
+									그 어떤 수에서<br>
+									319를 빼 볼래.
+								</span></div>
 							</div>
-
-							<div class="textAlignC">
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										1
-									</div>
-								</div>, 
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										2
-									</div>
-								</div>, 
-								<div class="toggle" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">
-										3
-									</div>
+							<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+								<div class="moveButtonContainer" data-slide-btn-container="">
+									<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+									<ul class="basicSlider_circle_tabs" data-tabs="">
+										<li data-hover=""></li>
+										<li data-hover=""></li>
+									</ul>
+									<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 								</div>
+								<ul class="basicSlider_slides" data-slides="">
+									<li class="innerTab_1" data-quiz="toggle">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet circleDot"></ins>
+												<div>
+													<p class="mb_10">어떤 수는 얼마인가요?</p>
+													<div class="textAlignC">
+														<div class="toggle" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1">
+																628
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+										<div class="buttonContainer">
+											<button class="solveCheckBtn" data-popup-btn="16" data-hover=""></button>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</div>
+									</li>
+									<li class="innerTab_2" data-quiz="toggle">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet circleDot"></ins>
+												<div>
+													<p class="mb_10">윤아가 계산한 값은 얼마인가요?</p>
+													<div class="textAlignC">
+														<div class="toggle" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1">
+																309
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+										<div class="buttonContainer">
+											<button class="solveCheckBtn" data-popup-btn="17" data-hover=""></button>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</div>
+										
+									</li>
+								</ul>
 							</div>
-									
+							
+
 							<div class="buttonContainer left">
-								<button class="characterBtn" data-popup-btn="11" data-hover="">
+								<button class="characterBtn" data-popup-btn="15" data-hover="">
 									<span>쌍둥이 문제</span>
 								</button>
 							</div>
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="12" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
+							
 						</section>
 					</li>
+
+					
 				</ul>
 			</div>
 		</main>
@@ -1073,13 +1123,118 @@
 				<li class="solve pop_page_13" data-popup-page="13">
 					<div class="popup_contents">
 						두 수의 차가 가장 크려면 가장 큰 수에서 가장 작은 수를 빼면 됩니다. <br>
-						<div class="icon_arrow big"></div> 882－259＝623
+						<div class="icon_arrow"></div> 882－259＝623
 					</div>
 				</li>
 				<li class="solve pop_page_14" data-popup-page="14">
 					<div class="popup_contents">
 						두 수의 차가 가장 크려면 가장 큰 수에서 가장 작은 수를 빼면 됩니다. <br>
-						<div class="icon_arrow big"></div> 971－143＝828
+						<div class="icon_arrow"></div> 971－143＝828
+					</div>
+				</li>
+
+				<li class="whole pop_page_15" data-popup-page="15">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">
+										다음을 읽고 물음에 답하세요.
+									</p>
+									<div class="lineBox purple">
+										<ul class="flexListContainer">
+											<li>
+												<div class="colorBox check skyBlue">연우</div>
+												<div>
+													: 어떤 수에 158을 더했더니 794가 되었어.
+												</div>
+											</li>
+										</ul>
+										<ul class="flexListContainer mt_10">
+											<li>
+												<div class="colorBox check green">수지</div>
+												<div>
+													: 그럼 나는 그 어떤 수에서 329를 빼 볼래.
+												</div>
+											</li>
+										</ul>
+									</div>
+									
+									<ul class="dotList green mt_30">
+										
+										<li>
+											<div>
+												어떤 수는 얼마인가요?
+												<br>
+												<div class="textAlignC">
+													<div class="toggle" data-toggle-obj="1">
+														<div class="answer" data-toggle-target="1">
+															636
+														</div>
+													</div> 
+												</div>
+											</div>
+										</li>
+										<li>
+											<div>
+												수지가 계산한 값은 얼마인가요?
+												<br>
+												<div class="textAlignC">
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															307
+														</div>
+													</div> 
+												</div>
+											</div>
+										</li>
+									</ul>
+
+									
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(3-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="18" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+				<li class="solve pop_page_16" data-popup-page="16">
+					<div class="popup_contents">
+						(어떤 수)+126=754이므로 어떤 수는 754에서 126을 빼면 구할 수 있습니다. <br>
+						<div class="icon_arrow"></div> 754－126＝628
+					</div>
+				</li>
+				<li class="solve pop_page_17" data-popup-page="17">
+					<div class="popup_contents">
+						어떤 수는 628이므로 윤아가 계산한 값은 <br>
+						<div class="icon_arrow"></div> 628-319=309
+					</div>
+				</li>
+				<li class="solve pop_page_17" data-popup-page="18">
+					<div class="popup_contents">
+						<ul class="dotList orange">
+							<li>
+								<div>
+									(어떤 수)＋158＝794이므로 어떤 수는 794에서 158을 빼면 구할 수 있습니다.<br>
+									<div class="icon_arrow"></div> 794－158＝636
+								</div>
+							</li>
+							<li>
+								<div>
+									어떤 수는 636이므로 수지가 계산한 값은<br>
+									<div class="icon_arrow"></div> 636－329＝307 
+								</div>
+							</li>
+						</ul>
 					</div>
 				</li>
 				
