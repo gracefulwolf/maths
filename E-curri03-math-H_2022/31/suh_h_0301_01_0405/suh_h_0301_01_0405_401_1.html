@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style>
+		.checkContainer h2 .blankBox{margin-top:5px}
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+
+		.math_calc_table.type-color td:nth-child(1),
+		.math_calc_table.type-color td:nth-child(2){color:green}
+		.math_calc_table.type-color td:nth-child(3){color:#107ce9}
+		.math_calc_table.type-color td:nth-child(4){color:#e94d40}
+
+
+		.page_2 .flex-wrap{text-align: center;}
+		.page_2 .math_calc_table{width:200px; font-size:40px; margin: 80px auto 80px; }
+		.page_2 .math_calc_table .toggle .answer {letter-spacing: 25px;}
+
+		.page_3 .flexListContainer01{display: flex;width: 600px;justify-content: space-between;margin:0 auto 15px;}
+		.page_3 .lineBox{width: 80px;height: 80px;padding: 12px 20px; line-height: 1;}
+		.page_3 .toggle{width: auto;}
+		.page_3 .answer .contentsList .exam + div{word-break: keep-all;}
+		.page_3 h2 span{position: relative;top: -4px;}
+		.page_3 .flexListContainer{margin: 50px auto 0;width:620px;}
+		.page_3 .flexListContainer > li {
+			display: flex;
+			align-items: center;
+		}
+		.page_3 table td{vertical-align: top;padding-bottom: 10px; font-size:0}
+		.page_3 table .colorBox{text-align: center;}
+
+		.page_4 .flex-wrap{text-align: center;}
+		.page_4 .math_calc_table{width:200px; font-size:40px; margin: 80px auto 80px; }
+		.page_4 .math_calc_table .toggle .answer {letter-spacing: 25px;}
+
+		
+
+		.type-qs2.textAlignC{margin: 30px auto;width: 800px;}
+		.type-qs2 .flex-box{display: flex;justify-content: space-between;}
+		.type-qs2 .flexListContainer{width: 40%;position: relative;}
+		.checkContainer .type-qs2 .lineBox{padding: 10px 12px;}
+		.type-qs2 .lineBox{position: absolute;z-index: 999;}
+		.type-qs2 .lineBox01{top: 100px;left: 0;}
+		.type-qs2 .lineBox02{top: 100px;right: 0;}
+		.type-qs2 .lineBox.circle{border-radius: 50%;left: 30%;top: -28px;}
+		.type-qs2 .curveLine{left: 13%;top: 36%;}
+		.type-qs2 .curveLine .line{clip: rect(0,250px,100px,0);width: 237px;height: 200px;}
+		.type-qs2 .curveLine:after{z-index: 999;transform: rotate(60deg);left: 235px;top: 81px;}
+
+
+		.page_6 .math_calc_table{width:260px; margin:60px auto; line-height: 1.6;}
+/* 		
+		.page_6 .flex-item{display: flex; justify-content: center;}
+		.page_6 .flex-item .lineBox{
+			width: 170px;
+			margin: 222px auto 0;
+			text-align: center;
+			padding: 10px 0;
+		}
+		.page_6 .char1{background: url(../common/contents/images/character/boy_1.png) no-repeat 50% -60px / contain; width: 300px; height:370px;}
+		.page_6 .char2{background: url(../common/contents/images/character/girl_1.png) no-repeat 50% -60px / contain; width: 300px; height: 370px;} */
+
+
+		.checkContainer h2 .toggleBlank{margin-top:8px;}
+
+		.page_7 .flexListContainer{margin: 0 auto 35px;width: 550px;}
+		.page_7 .lineBox{width: 110px;height: 110px;padding: 26px 0;box-sizing: border-box;}
+		.page_7 h2{position: relative; top: -10px;}
+		.page_7 .dot.orange{position: relative;top: -2px;}
+
+		.page_8 .lineBox{width: 90px;/* height: 90px; */}
+		.page_8 .oxContainer{display: flex;width: 700px;justify-content: space-between;margin: 0 auto;}
+		.page_8 .lineBox.orange{margin: 0 auto 60px;width: 700px;}
+		.page_8 .lineBox.orange > img {height: 35px;vertical-align: middle;margin: -8px 10px 0;}
+		.page_8 .blankBox{min-width: 45px;}
+		.page_8 .oxContainer .lineBox{display: flex;justify-content: center;align-items: center;height: 90px;}
+		.checkContainer .contentsBox .basicSlider_tabs {
+			width: 530px
+		}
+
+		.pop_page_1 .flex-wrap{justify-content: center;}
+		.pop_page_1 .flex-wrap > div + div{margin-left:50px}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/1단원_4, 5차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs " data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							계산해 보시오.
+						</span></h2>
+						<section>
+							<div class="flex-wrap">
+								<div class="flex-item n1">
+									<div>
+										345 + 476 =
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												821
+											</div>
+										</div>
+									</div>
+
+									<div class="math_calc_table n1">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>4
+														<div class="sup" data-toggle-obj="1" data-group-index="1">
+															<div class="answer blueT" data-toggle-target="1">1</div>
+														</div>
+													</td>
+													<td>5
+														<div class="sup" data-toggle-obj="1" data-group-index="1">
+															<div class="answer blueT" data-toggle-target="1">1</div>
+														</div>
+													</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>+</td>
+													<td>2</td>
+													<td>4</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td colspan="3">
+														<div class="toggle" data-toggle-obj="1" data-group-index="1">
+															<div class="answer" data-toggle-target="1">
+																700
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+								</div>
+								<div class="flex-item n2">
+									<div>
+										587 + 694 =
+										<div class="toggle" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">
+												1281
+											</div>
+										</div>
+									</div>
+									<div class="math_calc_table n1">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>8
+														<div class="sup" data-toggle-obj="3" data-group-index="3">
+															<div class="answer blueT" data-toggle-target="3">1</div>
+														</div>
+													</td>
+													<td>7
+														<div class="sup" data-toggle-obj="3" data-group-index="3">
+															<div class="answer blueT" data-toggle-target="3">1</div>
+														</div>
+													</td>
+													<td>9</td>
+												</tr>
+												<tr>
+													<td>+</td>
+													<td>1</td>
+													<td>4</td>
+													<td>3</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="toggle" data-toggle-obj="3">
+															<div class="answer" data-toggle-target="3">
+																1022
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+								</div>
+							</div>
+							
+							<a href="./data/1단원_4, 5차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							다음 숫자 카드를 한 번씩만 사용하여 만들 수 있는 가장 큰 수와 가장 작은 수를 더하면 얼마인지 구해 보시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<ul class="flexListContainer01">
+									<li>
+										<div class="lineBox green center">6</div>
+									</li>
+									<li>
+										<div class="lineBox orange center">9</div>
+									</li>
+									<li>
+										<div class="lineBox deeppink center">7</div>
+									</li>
+								</ul>
+							</div>
+							<table>
+								<col style="width:100px">
+								<col style="width:auto">
+								<tr>
+									<td>
+										<div class="colorBox check skyBlue calBox1">풀이</div>
+									</td>
+									<td>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															6, 9, 7로 만들 수 있는 가장 큰 수는 976이고, 가장 작은 수는 679이므로 가장 큰 수와 가장 작은 수를 더하면 976+679=1655입니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="colorBox check purple calBox1">답</div>
+									</td>
+									<td>
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												1655
+											</div>
+										</div> 
+									</td>
+								</tr>
+							</table>
+
+							<a href="./data/(3-1-1)형성평가2_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							계산해 보시오.
+						</span></h2>
+						<section>
+							<div class="flex-wrap">
+								<div class="flex-item n1">
+									<div class="math_calc_table n1">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>6
+														<div class="sup" data-toggle-obj="1" data-group-index="1">
+															<div class="answer blueT" data-toggle-target="1">1</div>
+														</div>
+													</td>
+													<td>4
+														<div class="sup" data-toggle-obj="1" data-group-index="1">
+															<div class="answer blueT" data-toggle-target="1">1</div>
+														</div>
+													</td>
+													<td>9</td>
+												</tr>
+												<tr>
+													<td>+</td>
+													<td>2</td>
+													<td>8</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td colspan="3">
+														<div class="toggle" data-toggle-obj="1" data-group-index="1">
+															<div class="answer" data-toggle-target="1">
+																935
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="flex-item n2">
+									<div class="math_calc_table n1">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>4
+														<div class="sup" data-toggle-obj="3" data-group-index="3">
+															<div class="answer blueT" data-toggle-target="3">1</div>
+														</div>
+													</td>
+													<td>8
+														<div class="sup" data-toggle-obj="3" data-group-index="3">
+															<div class="answer blueT" data-toggle-target="3">1</div>
+														</div>
+													</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>+</td>
+													<td>9</td>
+													<td>2</td>
+													<td>8</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="toggle" data-toggle-obj="3">
+															<div class="answer" data-toggle-target="3">
+																1412
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+								</div>
+							</div>
+							
+						
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins>
+							<span><span class="blankBox w50"></span> 안에 두 수의 합을 써넣으시오.</span>
+						</h2>
+						<section>
+							<div class="textAlignC type-qs2">
+								<div class="flex-box">
+									<ul class="flexListContainer">
+										<li class="lineBox yellow lineBox01">464</li>
+										<li class="lineBox yellow circle">+768</li>
+										<li class="lineBox yellow lineBox02" style="right:-16px;">
+											<div class="toggle noBg box center" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">1232</div>
+											</div>
+										</li>
+										<div class="curveLine top sky">
+											<div class="line"></div>
+										</div>
+									</ul>
+									<ul class="flexListContainer">
+										<li class="lineBox yellow lineBox01">718</li>
+										<li class="lineBox yellow circle">+194</li>
+										<li class="lineBox yellow lineBox02">
+											<div class="toggle noBg box center" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">912</div>
+											</div>
+										</li>
+										<div class="curveLine top sky">
+											<div class="line"></div>
+										</div>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_6" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="math_calc_table">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>
+												3
+												<div class="sup" data-toggle-obj="3" data-group-index="1">
+													<div class="answer blueT" data-toggle-target="3">1</div>
+												</div>
+											</td>
+											<td>5
+												<div class="sup" data-toggle-obj="4" data-group-index="2">
+													<div class="answer blueT" data-toggle-target="4">1</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="1" data-group-index="2">
+													<div class="answer" data-toggle-target="1">
+														7
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>+</td>
+											<td>6</td>
+											<td>
+												<div class="toggle" data-toggle-obj="2" data-group-index="1">
+													<div class="answer" data-toggle-target="2">
+														7
+													</div>
+												</div>
+											</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>0</td>
+											<td>3</td>
+											<td>1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							3장의 수 카드를 한 번씩만 사용하여 만들 수 있는 세 자리 수 중에서 가장 큰 수와 가장 작은 수의 합을 구하시오.
+						</span></h2>
+						<section>
+							<ul class="flexListContainer">
+								<li class="lineBox sky center">1</li>
+								<li class="lineBox sky center">6</li>
+								<li class="lineBox sky center">8</li>
+							</ul>
+							
+							<div class="textAlignC ">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										1029
+									</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_8" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span><span class="blankBox w50"></span> 안에 들어갈 수 있는 수를 모두 고르시오.</span>
+						</h2>
+						<section>
+							<div class="study_guide" style="margin-top: 10px;"><em>수 카드</em>를 <em>클릭</em>하세요.</div>
+							<div class="textAlignC">
+								<div class="lineBox orange center">
+									563 + <span class="blankBox" style="margin-top: 3px;"></span>29<img src="../common/contents/images/math/inequalIcon_2.png" alt="">1272
+								</div>
+								<ul class="oxContainer inline">
+									<li data-ox-obj="1">
+										<div class="lineBox yellow center">5</div>
+										<div class="icon icon_x" data-ox-target="1"></div>
+									</li>
+									<li data-ox-obj="2">
+										<div class="lineBox brown center">6</div>
+										<div class="icon icon_x" data-ox-target="2"></div>
+									</li>
+									<li data-ox-obj="3" data-answer="">
+										<div class="lineBox sky center">7</div>
+										<div class="icon icon_o" data-ox-target="3"></div>
+									</li>
+									<li data-ox-obj="4" data-answer="">
+										<div class="lineBox green center">8</div>
+										<div class="icon icon_o" data-ox-target="4"></div>
+									</li>
+									<li data-ox-obj="5" data-answer="">
+										<div class="lineBox purple center">9</div>
+										<div class="icon icon_o" data-ox-target="5"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>3</td>
+												<td>4<sup class="sup redT">1</sup></td>
+												<td>5</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>4</td>
+												<td>7</td>
+												<td>6</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>8</td>
+												<td>2</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+				
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>5<sup class="sup blueT">1</sup></td>
+												<td>8<sup class="sup redT">1</sup></td>
+												<td>7</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>6</td>
+												<td>9</td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>2</td>
+												<td>8</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</li>
+
+				<li class="solve pop_page_1" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>6<sup class="sup blueT">1</sup></td>
+												<td>4<sup class="sup redT">1</sup></td>
+												<td>9</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>2</td>
+												<td>8</td>
+												<td>6</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>9</td>
+												<td>3</td>
+												<td>5</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+				
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>4<sup class="sup blueT">1</sup></td>
+												<td>8<sup class="sup redT">1</sup></td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>9</td>
+												<td>2</td>
+												<td>8</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>4</td>
+												<td>1</td>
+												<td>2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</li>
+
+				<li class="solve pop_page_1" data-popup-page="3">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>4<sup class="sup blueT">1</sup></td>
+												<td>6<sup class="sup redT">1</sup></td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>7</td>
+												<td>6</td>
+												<td>8</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>2</td>
+												<td>3</td>
+												<td>2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+				
+							<div>
+								<div class="math_calc_table n1 type-color" style="width: 200px;">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>7<sup class="sup blueT">1</sup></td>
+												<td>1<sup class="sup redT">1</sup></td>
+												<td>8</td>
+											</tr>
+											<tr>
+												<td>+</td>
+												<td>1</td>
+												<td>9</td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>9</td>
+												<td>1</td>
+												<td>2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</li>
+
+				<li class="solve pop_page_1" data-popup-page="4">
+					<div class="popup_contents">
+						가장 큰 수는 861이고, 가장 작은 수는 168입니다.<br>
+						따라서 두 수의 합은 861+168=1029입니다.
+					</div>
+				</li>
+
+				<li class="solve pop_page_1" data-popup-page="5">
+					<div class="popup_contents">
+						563 + 629 = 1192이고, 563+729= 1292입니다.<br>
+						따라서 <span><span class="blankBox w50"></span>안에 들어갈 수 있는 수는 7, 8, 9입니다.
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+		
+	</script>
+</body>
+
+</html>
