@@ -85,21 +85,27 @@
 		.numcard-symbols.div{background-position: -126px 0;}
 		.numcard-symbols.equal{background-position: -168px 0;}
 
-		.cardCalc .wrap{width:70%; margin:0 auto;}
+		.cardCalc .dragObj{margin: 0;}
+		.cardCalc .wrap{width:450px;  margin:20px auto 0;}
 		.cardCalc .wrap .colorBox > div{text-align: right; position: relative;}
-		.cardCalc .wrap .colorBox {display: flex; justify-content: center; text-align: right; margin-bottom:10px; align-items: center; height: 90px;}
-		.cardCalc .wrap .n5,
-		.cardCalc .wrap .n3,
-		.cardCalc .wrap .n1{width:24%}
-		.cardCalc .wrap .n2,
-		.cardCalc .wrap .n4{width:9%}
-		.cardCalc .wrap .colorBox.pink{height: 110px;}
-		.cardCalc .wrap .colorBox.sky{height: 120px;}
-		.cardCalc .wrap .sup{transform: scale(0.7) translate(0,13px); }
-		.cardCalc .lineBox{width: 400px;
-			text-align: center;
-			margin: 0 auto;
-		}
+		.cardCalc .wrap .colorBox {display: flex; justify-content: center; text-align: right; margin-bottom:10px; align-items: top; height: 70px; padding:10px 30px 10px 0 ;}
+		.cardCalc .wrap .colorBox.large{padding-top: 50px;height: 110px;}
+		.cardCalc .wrap .colorBox .n1,
+		.cardCalc .wrap .colorBox .n3,
+		.cardCalc .wrap .colorBox .n5{width:95px;}
+		.cardCalc .wrap .colorBox .n4,
+		.cardCalc .wrap .colorBox .n2{width: 60px;}
+		.cardCalc .lineBox{width: 400px;text-align: center;margin: 0 auto;}
+		.cardCalc .colorBox .toggle{padding:0; background:transparent; width: 95px; text-align: right;}
+		.cardCalc .colorBox .toggle:after{left:80%;}
+		.cardCalc .sup.toggle{transform: scale(0.9) translate(4px,6px);}
+		.cardCalc .sup{position: absolute; top:-54px; right:0; transform: scale(0.9) translate(0,13px);}
+		.cardCalc-add img{width:100%;}
+		.cardCalc-add{position: absolute; width:217px; height:268px;  top:-6px; left:55px; z-index: 1;}
+		.cardCalc-add>div{position: absolute; right:0;}
+		.cardCalc-add .item1{top:30px; right:80px;}
+		.cardCalc-add .item2{top:118px; right:80px;}
+		.cardCalc-add .item3{top:235px; right:80px;}
 	</style>
 </head>
 
@@ -266,7 +272,7 @@
 									<li class="innerTab_2" data-quiz="toggle">
 										<section class="cardCalc">
 											<div class="wrap ">
-												<div class="colorBox pink">
+												<div class="colorBox pink large">
 													<div class="n1">
 														<div class="js-dragObj dragObj dragObj_8 n0 dragObjComplete"></div>
 													</div>
@@ -284,7 +290,7 @@
 														<div class="js-dragObj dragObj dragObj_1 n00 dragObjComplete"></div>
 													</div>
 												</div>
-												<div class="colorBox sky">
+												<div class="colorBox sky large">
 													<div class="n1">
 														<div class="js-dragObj dragObj dragObj_6 n00 dragObjComplete"></div>
 													</div>
@@ -298,12 +304,12 @@
 														<div class="numcard-symbols equal"></div>
 													</div>
 													<div class="n5">
-														<div class="toggle" data-toggle-obj="3" style="transform:scale(0.7) translate(0,0)">
+														<div class="toggle sup" data-toggle-obj="3">
 															<div class="answer" data-toggle-target="3">
 																30
 															</div>
 														</div>
-														<div class="toggle" data-toggle-obj="2" style="transform:translate(0,-7px)">
+														<div class="toggle" data-toggle-obj="2">
 															<div class="answer" data-toggle-target="2">
 																100
 															</div>

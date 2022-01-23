@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		.page_2 .characterText_1{top:o; left:100px;}
+		.page_2 .characterText_2{top:0; right:100px;}
+		img{width: 100%;}
+
+		.figureUL{width:470px; height: 360px; position: relative; margin: 0 auto; }
+		.btn_1.zoomBtn{width:100%; height: 360px;}
+		.popup_container{z-index: 100;}
+		.balloon{font-size: 30px;}
+		.popup_pages .balloon{font-size: 40px;}
+		.popup_pages .balloon.purple.ctTail:after{left:20%;}
+		.popup_pages .balloon.deeppink.ctTail:after{left:80%;}
+
+		.dropAreaUL{display: flex; width: 80%; margin:0 auto; justify-content: space-between;}
+		.dropAreaUL > div{width:50%; height:120px; position: relative; display: flex; justify-content: center; align-items: center; padding-top:30px}
+		.dropAreaUL > div + div{margin-left:20px;}
+		.dropAreaUL .tit{position: absolute; top:-40px; left:50%; transform: translate(-50%, 0); font-size: 35px; padding:5px 30px;}
+		.dropAreaUL .dragObj {display: inline-block; }
+		.card-wrap{display: flex; width: 740px; justify-content: space-between; height:220px; margin: 0 auto 50px; padding:20px 30px}
+		.card-wrap>div{position: relative}
+		.card100{width:260px}
+		.card10{width:200px}
+		.card1{width:140px}
+		.study_guide{top:-44px; right:0;}
+		.card-wrap .dragObj{position: absolute; width:80px; height:50px; text-align: center; z-index: 10; }
+		.card-wrap .dragObj_1{top:0; left:0}
+		.card-wrap .dragObj_2{top:0; left:33.33%}
+		.card-wrap .dragObj_3{top:0; left:66.6%}
+		.card-wrap .dragObj_4{top:60px; left:0}
+		.card-wrap .dragObj_5{top:60px; left:33.33%}
+		.card-wrap .dragObj_6{top:60px; left:66.6%}
+		.card-wrap .dragObj_7{top:120px; left:0}
+		.card-wrap .dragObj_8{top:120px; left:33.33%}
+		.card-wrap .dragObj_9{top:120px; left:66.6%}
+		.card-wrap .dragObjComplete{opacity: 0;}
+		.dragObj.n000{display: inline-block;background: url(../common/contents/images/numcard/numCard_hundred.png) no-repeat 0 0 / 810px; width:80px; height:50px; text-align: center; z-index: 10; margin:0 10px; }
+		.dragObj.n000.dragObj_1{background-position: 0 0;}
+		.dragObj.n000.dragObj_2{background-position: -81px 0;}
+		.dragObj.n000.dragObj_3{background-position: -162px 0;}
+		.dragObj.n000.dragObj_4{background-position: -243px 0;}
+		.dragObj.n000.dragObj_5{background-position: -324px 0;}
+		.dragObj.n000.dragObj_6{background-position: -405px 0;}
+		.dragObj.n000.dragObj_7{background-position: -486px 0;}
+		.dragObj.n000.dragObj_8{background-position: -567px 0;}
+		.dragObj.n000.dragObj_9{background-position: -648px 0;}
+
+		.dragObj.n00{display: inline-block;background: url(../common/contents/images/numcard/numCard_ten.png) no-repeat 0 0 / 600px; width: 60px; height:50px; text-align: center; z-index: 10; margin:0 10px;}
+		.dragObj.n00.dragObj_1{background-position: 0 0;}
+		.dragObj.n00.dragObj_2{background-position: -60px 0;}
+		.dragObj.n00.dragObj_3{background-position: -120px 0;}
+		.dragObj.n00.dragObj_4{background-position: -180px 0;}
+		.dragObj.n00.dragObj_5{background-position: -240px 0;}
+		.dragObj.n00.dragObj_6{background-position: -300px 0;}
+		.dragObj.n00.dragObj_7{background-position: -360px 0;}
+		.dragObj.n00.dragObj_8{background-position: -420px 0;}
+		.dragObj.n00.dragObj_9{background-position: -480px 0;}
+
+		.dragObj.n0{display: inline-block;background: url(../common/contents/images/numcard/numCard_one.png) no-repeat 0 0 / 462px; width: 42px; height:50px; text-align: center; z-index: 10; margin:0 10px;}
+		.dragObj.n0.dragObj_1{background-position: 0 0;}
+		.dragObj.n0.dragObj_2{background-position: -42px 0;}
+		.dragObj.n0.dragObj_3{background-position: -84px 0;}
+		.dragObj.n0.dragObj_4{background-position: -127px 0;}
+		.dragObj.n0.dragObj_5{background-position: -168px 0;}
+		.dragObj.n0.dragObj_6{background-position: -210px 0;}
+		.dragObj.n0.dragObj_7{background-position: -252px 0;}
+		.dragObj.n0.dragObj_8{background-position: -294px 0;}
+		.dragObj.n0.dragObj_9{background-position: -336px 0;}
+
+		.numcard-symbols{display: inline-block;background: url(../common/contents/images/numcard/numCard_symbols.png) no-repeat 0 0 / 210px; width: 42px; height: 50px;}
+		.numcard-symbols.plus{background-position: 0 0;}
+		.numcard-symbols.minus{background-position: -42px 0;}
+		.numcard-symbols.multi{background-position: -84px 0;}
+		.numcard-symbols.div{background-position: -126px 0;}
+		.numcard-symbols.equal{background-position: -168px 0;}
+
+		.cardCalc .dragObj{margin: 0;}
+		.cardCalc .wrap{width:450px;  margin:20px auto 0;}
+		.cardCalc .wrap .colorBox > div{text-align: right; position: relative;}
+		.cardCalc .wrap .colorBox {display: flex; justify-content: center; text-align: right; margin-bottom:10px; align-items: top; height: 70px; padding:10px 30px 10px 0 ;}
+		.cardCalc .wrap .colorBox.large{padding-top: 50px;height: 110px;}
+		.cardCalc .wrap .colorBox .n1,
+		.cardCalc .wrap .colorBox .n3,
+		.cardCalc .wrap .colorBox .n5{width:95px;}
+		.cardCalc .wrap .colorBox .n4,
+		.cardCalc .wrap .colorBox .n2{width: 60px;}
+		.cardCalc .lineBox{width: 400px;text-align: center;margin: 0 auto;}
+		.cardCalc .colorBox .toggle{padding:0; background:transparent; width: 95px; text-align: right;}
+		.cardCalc .colorBox .toggle:after{left:80%;}
+		.cardCalc .sup.toggle{transform: scale(0.9) translate(4px,6px);}
+		.cardCalc .sup{position: absolute; top:-54px; right:0; transform: scale(0.9) translate(0,13px);}
+		.cardCalc-add img{width:100%;}
+		.cardCalc-add{position: absolute; width:217px; height:268px;  top:-6px; left:55px; z-index: 1;}
+		.cardCalc-add>div{position: absolute; right:0;}
+		.cardCalc-add .item1{top:30px; right:80px;}
+		.cardCalc-add .item2{top:118px; right:80px;}
+		.cardCalc-add .item3{top:235px; right:80px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title" style="letter-spacing: -1px;">
+				올해 처음 참가한 사람은 몇 명인지 알아봅시다.
+				<div class="supply_guide inline">준비물 159쪽</div>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+					<li data-hover="">물음 4</li>
+					
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							올해 처음 참가한 사람은 몇 명인지 어림해 보세요.
+						</span></h2>
+						<ul class="figureUL">
+							<li>
+								<figure>
+									<div class="balloon right purple ctTail" style="font-size: 30px; position:absolute; top:70px; left:-280px; z-index: 4; width:270px; text-align: center;">
+										오늘은 책 672권을<br>
+										정리하면 돼요.
+									</div>
+									<div class="balloon left deeppink ctTail" style="font-size: 30px; position:absolute; top:100px; left:480px; z-index: 4; width:240px; text-align: center;">
+										지금까지 246권<br>
+										정리했으니까∙∙∙∙∙∙.
+									</div>
+
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1" style="background: url(./images/suh_h_0301_01_0007_102_3.png) no-repeat 50% 50% / cover; ">
+									</button>
+								</figure>
+							</li>
+						</ul>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>
+												400권쯤 남았을 것 같습니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							구하려는 것을 뺄셈식으로 나타내 보세요.
+						</span></h2>
+						<ul class="figureUL">
+							<li>
+								<figure>
+									<div class="balloon right purple ctTail" style="font-size: 30px; position:absolute; top:70px; left:-280px; z-index: 4; width:270px; text-align: center;">
+										오늘은 책 672권을<br>
+										정리하면 돼요.
+									</div>
+									<div class="balloon left deeppink ctTail" style="font-size: 30px; position:absolute; top:100px; left:480px; z-index: 4; width:240px; text-align: center;">
+										지금까지 246권<br>
+										정리했으니까∙∙∙∙∙∙.
+									</div>
+
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1" style="background: url(./images/suh_h_0301_01_0007_102_3.png) no-repeat 50% 50% / cover; ">
+									</button>
+								</figure>
+							</li>
+						</ul>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									672 - 246
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+
+					<li class="page_3" >
+						<h2><ins class="dot orange"></ins><span>
+							수 카드를 이용하여 구해 보세요.
+						</span></h2>
+						<section>
+							<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding-top:0;">
+								<div class="moveButtonContainer" data-slide-btn-container="">
+									<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+									<ul class="basicSlider_circle_tabs" data-tabs="">
+										<li data-hover=""></li>
+										<li data-hover=""></li>
+									</ul>
+									<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+								</div>
+								<ul class="basicSlider_slides" data-slides="">
+									<li class="innerTab_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="3">
+										<div class="study_guide" style="right:-60px;"> <em>수 카드</em>를 <em>드래그</em>하여 옮기세요.</div>
+										<div class="dragDropContainer">
+											<div class="card-wrap lineBox sky">
+												<div class="card100">
+													<ul class="dragObjUL n1">
+														<li class="js-dragObj dragObj dragObj_1 n000" data-name="drag-obj" data-drag-obj-answer="1"></li>
+														<li class="js-dragObj dragObj dragObj_2 n000" data-name="drag-obj" data-drag-obj-answer="2"></li>
+														<li class="js-dragObj dragObj dragObj_3 n000" data-name="drag-obj" data-drag-obj-answer="3"></li>
+														<li class="js-dragObj dragObj dragObj_4 n000" data-name="drag-obj" data-drag-obj-answer="4"></li>
+														<li class="js-dragObj dragObj dragObj_5 n000" data-name="drag-obj" data-drag-obj-answer="5"></li>
+														<li class="js-dragObj dragObj dragObj_6 n000" data-name="drag-obj" data-drag-obj-answer="6"></li>
+														<li class="js-dragObj dragObj dragObj_7 n000" data-name="drag-obj" data-drag-obj-answer="7"></li>
+														<li class="js-dragObj dragObj dragObj_8 n000" data-name="drag-obj" data-drag-obj-answer="8"></li>
+														<li class="js-dragObj dragObj dragObj_9 n000" data-name="drag-obj" data-drag-obj-answer="9"></li>
+													</ul>
+												</div>
+												<div class="card10">
+													<ul class="dragObjUL n2">
+														<li class="js-dragObj dragObj dragObj_1 n00" data-name="drag-obj" data-drag-obj-answer="10"></li>
+														<li class="js-dragObj dragObj dragObj_2 n00" data-name="drag-obj" data-drag-obj-answer="11"></li>
+														<li class="js-dragObj dragObj dragObj_3 n00" data-name="drag-obj" data-drag-obj-answer="12"></li>
+														<li class="js-dragObj dragObj dragObj_4 n00" data-name="drag-obj" data-drag-obj-answer="13"></li>
+														<li class="js-dragObj dragObj dragObj_5 n00" data-name="drag-obj" data-drag-obj-answer="14"></li>
+														<li class="js-dragObj dragObj dragObj_6 n00" data-name="drag-obj" data-drag-obj-answer="15"></li>
+														<li class="js-dragObj dragObj dragObj_7 n00" data-name="drag-obj" data-drag-obj-answer="16"></li>
+														<li class="js-dragObj dragObj dragObj_8 n00" data-name="drag-obj" data-drag-obj-answer="17"></li>
+														<li class="js-dragObj dragObj dragObj_9 n00" data-name="drag-obj" data-drag-obj-answer="18"></li>
+													</ul>
+												</div>
+												<div class="card1">
+													<ul class="dragObjUL n3">
+														<li class="js-dragObj dragObj dragObj_1 n0" data-name="drag-obj" data-drag-obj-answer="19"></li>
+														<li class="js-dragObj dragObj dragObj_2 n0" data-name="drag-obj" data-drag-obj-answer="20"></li>
+														<li class="js-dragObj dragObj dragObj_3 n0" data-name="drag-obj" data-drag-obj-answer="21"></li>
+														<li class="js-dragObj dragObj dragObj_4 n0" data-name="drag-obj" data-drag-obj-answer="22"></li>
+														<li class="js-dragObj dragObj dragObj_5 n0" data-name="drag-obj" data-drag-obj-answer="23"></li>
+														<li class="js-dragObj dragObj dragObj_6 n0" data-name="drag-obj" data-drag-obj-answer="24"></li>
+														<li class="js-dragObj dragObj dragObj_7 n0" data-name="drag-obj" data-drag-obj-answer="25"></li>
+														<li class="js-dragObj dragObj dragObj_8 n0" data-name="drag-obj" data-drag-obj-answer="26"></li>
+														<li class="js-dragObj dragObj dragObj_9 n0" data-name="drag-obj" data-drag-obj-answer="27"></li>
+													</ul>
+												</div>
+											</div>	
+
+											<div class="dropAreaUL">
+												<div class="n1 lineBox green">
+													<div class="lineBox yellow tit">672</div>
+													<div class="js-dragObj dragObj dragObj_6 n000 dragObjComplete"></div>
+													<div class="js-dragObj dragObj dragObj_7 n00 dragObjComplete"></div>
+													<div class="js-dragObj dragObj dragObj_2 n0 dragObjComplete"></div>
+												</div>
+												<div class="n2 lineBox green js-dropArea dropArea dropArea_1" data-drop-area-answer="2,13,24">
+													<div class="lineBox purple tit">246</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="buttonContainer">
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</div>	
+									</li>
+									<li class="innerTab_2" data-quiz="toggle">
+										<section class="cardCalc">
+											<div class="wrap ">
+												<div class="cardCalc-add ">
+													<div class="item1 js-dragObj dragObj dragObj_2 n0 dragObjComplete"></div>
+													<div class="item2 js-dragObj dragObj dragObj_7 n00 dragObjComplete"></div>
+													<div class="item3 js-dragObj dragObj dragObj_6 n000 dragObjComplete"></div>
+
+													<img src="./images/suh_h_0301_01_0007_202_5.png" alt="">
+												</div>
+												<div class="colorBox pink large">
+													<div class="n1">
+														<div class="js-dragObj dragObj dragObj_2 n0 dragObjComplete sup"></div>
+														<div class="js-dragObj dragObj dragObj_1 n00 dragObjComplete"></div>
+													</div>
+													<div class="n2">
+														<div class="numcard-symbols minus"></div>
+													</div>
+													<div class="n3">
+														<div class="js-dragObj dragObj dragObj_6 n0 dragObjComplete"></div>
+													</div>
+													<div class="n4">
+														<div class="numcard-symbols equal"></div>
+													</div>
+													<div class="n5">
+														<div class="js-dragObj dragObj dragObj_6 n0 dragObjComplete"></div>
+													</div>
+												</div>
+												<div class="colorBox sky">
+													<div class="n1">
+														<div class="js-dragObj dragObj dragObj_6 n00 dragObjComplete"></div>
+													</div>
+													<div class="n2">
+														<div class="numcard-symbols minus"></div>
+													</div>
+													<div class="n3">
+														<div class="js-dragObj dragObj dragObj_4 n00 dragObjComplete"></div>
+													</div>
+													<div class="n4">
+														<div class="numcard-symbols equal"></div>
+													</div>
+													<div class="n5">
+														<div class="toggle" data-toggle-obj="2" >
+															<div class="answer" data-toggle-target="2">
+																20
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="colorBox green">
+													<div class="n1"><div class="js-dragObj dragObj dragObj_6 n000 dragObjComplete"></div></div>
+													<div class="n2"><div class="numcard-symbols plus"></div></div>
+													<div class="n3"><div class="js-dragObj dragObj dragObj_2 n000 dragObjComplete"></div></div>
+													<div class="n4"><div class="numcard-symbols equal"></div></div>
+													<div class="n5">
+														<div class="toggle" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1">
+																400
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="lineBox sky">
+												672－246=<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">
+														426
+													</div>
+												</div>
+											</div>
+											
+										</section>
+										
+										<button class="dapCheckBtn" data-answer-btn=""></button>	
+									</li>
+								</ul>
+							</div>
+							
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							정리할 책은 몇 권 남았는지 말하고, 어림한 결과와 비교해 보세요.
+						</span></h2>
+						<section>
+							<div>	
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										426
+									</div>
+								</div> 권
+							</div>
+							
+							<div class="toggle complete" data-toggle-obj="2">
+								<div class="answer on" data-toggle-target="2">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>
+												어림한 400권과 26권만큼 차이가 납니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</section>
+						
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+
+				<li class="whole image pop_page_1" data-popup-page="1">
+					<div class="balloon bottom purple ctTail" style="font-size: 30px; position:absolute; top:90px; left:70px; z-index: 4; width:280px; text-align: center;">
+						오늘은 책 672권을<br>
+						정리하면 돼요.
+					</div>
+					<div class="balloon bottom deeppink ctTail" style="font-size: 30px; position:absolute; top:120px; left:580px; z-index: 4; width:240px; text-align: center;">
+						지금까지 246권<br>
+						정리했으니까∙∙∙∙∙∙.
+					</div>
+
+					<div class="balloon bottom sky ctTail" style="font-size: 30px; position:absolute; top:120px; left:850px; z-index: 4; width:240px; text-align: center;">
+						정리할 책은<br>
+						몇 권 남았는지 <br>
+						어림해 볼까?
+					</div>
+
+					<img src="./images/suh_h_0301_01_0007_102_4.png" alt="">
+				</li>
+
+				<li class="whole image pop_page_1" data-popup-page="2">
+					<div class="balloon bottom sky ctTail" style="top:70px; left:120px; z-index: 4; width:400px; text-align: center;">
+						우리가 가진 블록을<br>
+						합해서 더 큰 공룡을<br>
+						만들어 보자.
+					</div>
+
+					<div class="balloon bottom green ctTail" style="top:70px; left:670px; width:360px; text-align: center; z-index: 4;">
+						우리가 가진 블록은<br>
+						모두 몇 개인지<br>
+						어림해 볼까?
+					</div>
+					<img src="./images/suh_h_0301_01_0002_102/suh_h_0301_01_0002_102_1.png" alt="">
+				</li>
+
+			</ul>
+		</section>
+		
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>
