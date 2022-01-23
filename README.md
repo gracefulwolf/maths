@@ -281,6 +281,22 @@
     </ul>
 </div>
 
+-inner tab
+<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+    <div class="moveButtonContainer" data-slide-btn-container="">
+        <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+        <ul class="basicSlider_circle_tabs" data-tabs="">
+            <li data-hover=""></li>
+            <li data-hover=""></li>
+        </ul>
+        <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+    </div>
+    <ul class="basicSlider_slides" data-slides="">
+        <li class="innerTab_1">...</li>
+        <li class="innerTab_1">...</li>
+    </ul>
+</div>
+
 - 하단 발문
 <div class="imgContainer tab_1">...</div>
 <div class="imgContainer tab_2 displayN">...</div>
