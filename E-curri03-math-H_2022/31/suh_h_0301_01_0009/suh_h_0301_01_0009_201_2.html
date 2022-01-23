@@ -335,7 +335,7 @@
 									</div>
 								</div>
 								
-								<button class="resetBtn" data-answer-btn="2"></button>
+								<button class="resetBtn reset" data-answer-btn=""></button>
 							</li>
 							<li class="innerTab_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
 								<div class="flex-box">
@@ -393,7 +393,7 @@
 									</div>
 								</div>
 								
-								<button class="resetBtn" data-answer-btn="3"></button>
+								<button class="resetBtn reset" data-answer-btn=""></button>
 							</li>
 							<li class="innerTab_3">
 								<div class="flex-box">
@@ -449,16 +449,16 @@
 								
 								
 							</li>
-							<li class="innerTab_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
+							<li class="innerTab_4" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
 								<div class="flex-box">
-									<div class="bullet number orange mr_15 self" style="margin-top:5px;">2</div>
+									<div class="bullet number orange mr_15 self" style="margin-top:5px;">4</div>
 									<div>
 										<img src="./images/ico_minus.png" class="ico-pm" alt="">부스에서 체험하고 싶은 직업을 2개 고르고 점수의 합을 구해 보세요.
 									</div>
 								</div>
 								<div class="study_guide" style="right:0; top:60px;"> <em>부스</em>을 <em>드래그</em>하여 옮기세요.</div>
 								<div class="dragDropContainer">
-									<div class="lineBox green" style="position: relative; margin:20px auto; width:450px; height: 120px;">
+									<div class="lineBox green" style="position: relative; margin:20px auto; width:450px; height: 120px; z-index: 2;">
 										<div class="dragObjUL n1">
 											<div class="item-c1 js-dragObj dragObj" data-name="drag-obj" data-drag-obj-answer="1">
 												<div>곰 인형</div>
@@ -476,7 +476,7 @@
 									</div>
 
 									<div class="dropAreaUL" style="margin-top:50px">
-										<div class="lineBox green js-dropArea dropArea dropArea_1"  data-drop-area-answer="1" style="width:450px; height:120px; position: relative; padding:10px 70px;">
+										<div class="lineBox green js-dropArea dropArea dropArea_1"  data-drop-area-answer="1" style="width:450px; height:150px; position: relative; padding:40px 70px 10px;">
 											<div class="colorBox green tit" style="position:absolute; top:-30px; left:50%; transform: translate(-50%,0); width:350px;">
 												내가 살 수 있는 기념품
 											</div>
@@ -596,6 +596,17 @@
 <script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
 
 <script type="text/javascript">
+	const reset = document.querySelectorAll('.resetBtn');
+
+	for(let i = 0, len = reset.length; i < len; i++) {
+		reset[i].addEventListener('click', function(){
+			var that = this;
+			setTimeout(function(){
+				that.classList.add('reset');
+			},0);
+		});
+	}
+
 		window.$callBack.sliderReset = function(params) {
 			// $ts.getEl('.page_4 .characterImg')[0].style.left = '38%';
 		};
