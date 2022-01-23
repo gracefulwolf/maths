@@ -34,6 +34,8 @@
 		.page_2 .toggle .answer img {height:300px}
 		.page_3 .toggle {width:100%}
 		.page_3 .toggle .answer {display:flex;padding:10px;text-align:left}
+		.box-wrap {height:530px}
+		.writeBtn {z-index:10}
 	</style>
 </head>
 
@@ -51,12 +53,12 @@
 				<li data-hover="">물음 3</li>
 			</ul>
 			<ul class="basicSlider_slides" data-slides="">
-				<li class="page_1" data-quiz="input">
+				<li class="page_1">
 					<div class="content-box">
 						<div class="study_guide">직접<em>쓸 수</em> 있습니다.</div>
-						<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true">
-							<div class="scroll_inner" data-scroll-inner="">
-								<div class="scroll_content" data-scroll-content="touch">
+						<div  data-slide-container="" class="box-wrap">
+							<ul class="basicSlider_slides" data-slides="">
+								<li class="innerTab_1" data-quiz="input">
 									<ul class="question-list">
 										<li>
 											<h2><ins class="dot"></ins><span>만들고 싶은 건축물의 사진이나 그림 자료를 찾아보세요.</span></h2>
@@ -79,6 +81,11 @@
 												</div>
 											</div>
 										</li>
+									</ul>
+									<button class="writeBtn" data-answer-btn=""></button>
+								</li>
+								<li class="innerTab_2" data-quiz="input">
+									<ul class="question-list">
 										<li>
 											<h2><ins class="dot"></ins><span>건축물을 만드는데 사용할 콩알 크기의 고무찰흙과 막대의<br> 수를 각각 예상해 보세요.</span></h2>
 											<div class="answer-wrap afterDisplay" data-input-obj data-answer="true">
@@ -90,11 +97,19 @@
 											</div>
 										</li>
 									</ul>
-								</div>
+									<button class="writeBtn" data-answer-btn=""></button>
+								</li>
+							</ul>
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+									<li data-hover=""></li>
+									<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
 						</div>
 					</div>
-					<button class="writeBtn" data-answer-btn=""></button>
 				</li>
 				<li class="page_2" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>만들고 싶은 건축물을 고무찰흙과 막대로 만들어 보세요.</span></h2>
