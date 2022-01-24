@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		[class*='page_'] h2 {margin-bottom:10px}
+		[class*='page_'] h2 ~ h2 {margin-top:40px}
+		.toggle + .toggle {margin-top:10px}
+		.toggle .answer {display:flex;text-align:left}
+		.characterWrap {left:100px !important;transition:.5s}
+		.characterWrap.speech {left:300px !important}
+		#spriteAniBox .balloon.left:after {top:46px}
+		#spriteAniBox2 .balloon.left:after {top:112px}
+		.content-group .content-item {text-align:center}
+		.content-group .content-item.character-item {position:relative;height:385px}
+		.content-group .content-item.character-item .balloon {top:80px;left:200px}
+		.content-group .content-item.character-item .characterImg {left:580px}
+		.page_3 .balloon {left:300px !important;width:580px}
+		.page_3 .balloon::after {top:90px}
+		.page_3 .balloon .toggle {background-color:transparent}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title">친구들이 이야기하는 각기둥이나 각뿔이 무엇인지 알아맞혀 봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox right" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">문제</li>
+				<li data-hover="">계획</li>
+				<li data-hover="">실행</li>
+				<li data-hover="">반성</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>문제를 만들기 위해서는 어떤 조건들이 필요한가요?</span></h2>
+					<div class="toggle" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">
+							<span class="bullet exam">예</span>
+							<p>문제를 만들기 위해서는 그 도형의 꼭짓점의 수, 면의 수, 모서리의 수를 알고 있어야 합니다.</p>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+				<li class="page_2">
+					<h2><ins class="dot"></ins><span>어떤 방법으로 문제를 만들면 좋을까요?</span></h2>
+					<div id="spriteAniBox"></div>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>각기둥이나 각뿔 알아맞히기 문제를 만들어 보세요.</span></h2>
+					<div class="content-group">
+						<div class="content-item character-item">
+							<div class="charSpriteImg" style="background-image:url(../common/contents/images/character/girl_2.png);position:relative;top:-110px;width:340px;height:421px;opacity:1;"></div>
+							<div class="balloon left orange">
+								<div class="content-item" data-quiz="toggle">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<span class="bullet exam">예</span>
+											<p>이 입체도형은 꼭짓점이 10개입니다. 또한 모서리가 15개이고 면은 7개입니다.<br>어떤 입체도형일까요?</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+				<li class="page_4">
+					<h2><ins class="dot"></ins><span>각기둥이나 각뿔 알아맞히기 문제에서 친구들이 이야기한 내용이 맞는지 확인해 보세요.</span></h2>
+					<div id="spriteAniBox2"></div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#spriteAniBox'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'girl_1',
+					speech:'right',
+					top: 40,
+					left: 300,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_3.png',
+					spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+					sound: './media/audios/suh_0601_02_0009_202_1_1.mp3',
+					textBubble: {
+						text: '여러 가지 각기둥과 각뿔 중 <br>한 가지 도형을 고릅니다.',
+						class: 'balloon left orange',
+						top: 220,
+						left: 420,
+						width: 480,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 54000,
+					sheetHeight: 360,
+					endSheet: 0,
+					delay: 40
+				}
+			]
+		});
+		$prite.add({
+			target: $ts.getEl('#spriteAniBox2'),
+			spriteId: 'sprite2',
+			spriteList: [
+				{
+					name: 'girl_2',
+					speech:'right',
+					top: 40,
+					left: 300,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_3.png',
+					spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+					sound: './media/audios/suh_0601_02_0009_202_1_2.mp3',
+					textBubble: {
+						text: '친구들이 이야기하는 문제의 답이 맞는지 확인하고, 틀렸다면 왜 틀렸는지 서로 이야기하면서 잘못된 부분을 확인하여 바르게 고칩니다.',
+						class: 'balloon left orange',
+						top: 180,
+						left: 420,
+						width: 480,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 54000,
+					sheetHeight: 360,
+					endSheet: 0,
+					delay: 40
+				}
+			]
+		});
+	}, false);
+</script>
+</body>
+</html>
