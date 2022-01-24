@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>DonutDevideDrag</title>
+    <link rel="stylesheet" type="text/css" href="../include/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/beakerfill.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <script type="text/javascript" src="../include/js/libs/event.js"></script>
+    <script type="text/javascript" src="../include/js/libs/scene.js"></script>
+    <script type="text/javascript" src="../include/js/libs/dragdrop.js"></script>
+    <script type="text/javascript" src="../include/js/libs/animation.js"></script>
+    <script type="text/javascript" src="../include/js/libs/sound.js"></script>
+    <script type="text/javascript" src="../include/js/libs/logCounter.js"></script>
+    <script type="text/javascript" src="js/beakerfill.js"></script>
+  </head>
+
+  <body>
+    <div id="bgCanvas">
+      <div id="weightCounter"></div>
+      <div id="answerObject1"></div>
+      <!-- <div id="weightBall"></div> -->
+      <img src="images/boxfill_checkbtn.png" id="checkBtn" />
+    </div>
+
+    <script type="text/javascript">
+      // GLOBAL VARIABLES
+      var BEAKER_LABEL_LENGTH;
+      var BEAKER_WATER_INITIAL_TOP = 328;
+      (function setDrillContentsInit() {
+        var val = parent.$QUESTION,
+          answer = parent.$ANSWER;
+
+        gameManager.TOTAL_ANSWER_ARRAY = val;
+        gameManager.CURRENT_ANSWER = answer;
+
+        gameManager.choiceQuestion = [];
+        gameManager.choiceQuestionText = [];
+        gameManager.choiceQuestionPosition = [];
+        gameManager.zoomRate = 1;
+        gameManager.CURRENT_TYPE = "weight";
+
+        var streamSound;
+        BEAKER_LABEL_LENGTH = gameManager.TOTAL_ANSWER_ARRAY[0][2];
+
+        // initScale();
+
+        initScene();
+
+        initWeight();
+
+        answerTxtWater();
+
+        initPosition();
+
+        initSound();
+
+        logCounter = new LogCounter();
+        // logCounter.startTime();
+        // logCounter.onTimer();
+      })();
+
+      /*---------- test code start -----------*/
+      // window.onload = function () {
+      //   setDrillContentsInit(
+      //     [
+      //       [0, 5, 6],
+      //       [0, 5, 5],
+      //     ],
+      //     [[0, 2, 5]]
+      //   );
+      // };
+      /*---------- test code end -----------*/
+    </script>
+  </body>
+</html>
