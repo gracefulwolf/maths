@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Train3n4Row</title>
+    <link rel="stylesheet" type="text/css" href="../include/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/vic_rabbitcave.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <script type="text/javascript" src="../include/js/libs/event.js"></script>
+    <script type="text/javascript" src="../include/js/libs/scene.js"></script>
+    <script type="text/javascript" src="../include/js/libs/dragdrop.js"></script>
+    <script type="text/javascript" src="../include/js/libs/animation.js"></script>
+    <script type="text/javascript" src="../include/js/libs/sound.js"></script>
+    <script type="text/javascript" src="../include/js/libs/logCounter.js"></script>
+    <script type="text/javascript" src="js/vic_rabbitcave.js"></script>
+  </head>
+
+  <body>
+    <div id="bgCanvas">
+      <div id="carrotContainer" class="abso"></div>
+    </div>
+
+    <script type="text/javascript">
+      (function () {
+        var val = parent.$QUESTION,
+          answer = parent.$ANSWER;
+
+        gameManager.TOTAL_ANSWER_ARRAY = val;
+        gameManager.CURRENT_ANSWER = answer;
+
+        gameManager.carrotTextArray = [gameManager.TOTAL_ANSWER_ARRAY[0], gameManager.TOTAL_ANSWER_ARRAY[1]];
+        gameManager.carrotSymbolArray = ["images/plus.png", "images/minus.png", "images/multiplication.png", "images/division.png"];
+        gameManager.choiceQuestionPosition = [];
+        gameManager.choiceQuestion = [];
+        gameManager.choiceQuestionText = [];
+
+        for (var i = 2; i < gameManager.TOTAL_ANSWER_ARRAY.length - 1; i++) {
+          gameManager.choiceQuestion.push(gameManager.TOTAL_ANSWER_ARRAY[i]);
+          gameManager.choiceQuestionText.push(gameManager.TOTAL_ANSWER_ARRAY[i]);
+        }
+        gameManager.carrotPosition = [
+          [300, 205],
+          [300, 544],
+        ];
+        switch (gameManager.TOTAL_ANSWER_ARRAY[5]) {
+          case "+":
+            gameManager.SymbolIndex = 0;
+            break;
+          case "-":
+            gameManager.SymbolIndex = 1;
+            break;
+          case "*":
+            gameManager.SymbolIndex = 2;
+            break;
+          case "/":
+            gameManager.SymbolIndex = 3;
+            break;
+        }
+
+        gameManager.CURRENT_TYPE = "vic_rabbitcave";
+        gameManager.zoomRate = 1;
+
+        var streamSound;
+
+        // initScale();
+
+        initScene();
+
+        initSound();
+
+        rabbitcaveInit();
+
+        logCounter = new LogCounter();
+        // logCounter.startTime();
+        // logCounter.onTimer();
+      })();
+
+      /*---------- test code start -----------*/
+      // window.onload = function () {
+
+      // 	setDrillContentsInit([11, 22, 3,44, 5, '/'], [44]);
+
+      // }
+      /*---------- test code end -----------*/
+    </script>
+  </body>
+</html>

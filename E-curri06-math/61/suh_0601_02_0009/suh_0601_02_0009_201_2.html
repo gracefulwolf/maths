@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		header {height:60px}
+		header .popBtn {top:10px;right:60px}
+		.popup_pages .image.pop_page_1 {display:flex;justify-content:center;align-items:center}
+		.content-group .content-item {position:relative;text-align:center}
+		.content-group .content-item img {max-height:300px}
+		.content-group .content-item .name {position:absolute;bottom:90px}
+		.content-group .content-item .name.orange {left:0}
+		.content-group .content-item .name.sky {right:0}
+		.content-group .content-item .lineBox {width:630px;margin:20px auto;line-height:0;text-align:center}
+		.content-group .content-item .lineBox img {max-height:140px}
+		[class*='page_'] h2 {margin-bottom:10px}
+		[class*='page_'] h2 ~ h2 {margin-top:40px}
+		[class*='page_'] .dapCheckBtn {z-index:2}
+		.toggle + .toggle {margin-top:10px}
+		.toggle .answer {display:flex;text-align:justify}
+		.characterWrap.girl_1-wrap {left:100px !important;transition:.5s}
+		.characterWrap.girl_1-wrap.speech {left:300px !important}
+		.page_3 .innerTab_1 .answer-img {margin-top:40px;background-color:transparent}
+		.page_3 .innerTab_1 .answer-img::after {content:none}
+		.page_3 .innerTab_1 .answer {justify-content:center}
+		.page_3 .innerTab_1 .answer img {height:200px}
+		.page_3 .innerTab_2 .answer {font-size:.9em}
+		.popup_pages>li.whole.on {z-index:5}
+		.pop_page_1 .content-group .content-item .lineBox {width:850px}
+		.pop_page_1 .content-group .content-item img {max-height:400px}
+		.pop_page_1 .content-group .content-item .lineBox img {max-height:180px}
+		.pop_page_1 .content-group .content-item .name {bottom:130px}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="popBtn textInBtn eye orange" data-hover="" data-popup-btn="2" data-popup-parent="hidden">그림보기</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox right" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">문제</li>
+				<li data-hover="">계획</li>
+				<li data-hover="">실행</li>
+				<li data-hover="">반성</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>구하려는 것은 무엇인가요?</span></h2>
+					<div class="toggle" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">주어진 재료로 만들 수 있는 각기둥과 각뿔입니다.</div>
+					</div>
+					<h2><ins class="dot"></ins><span>문제에서 주어진 정보를 모두 써 보세요.</span></h2>
+					<div class="toggle" data-toggle-obj="2">
+						<div class="answer" data-toggle-target="2">
+							<span class="bullet exam">예</span>
+							<p>고무찰흙은 12개 있습니다.</p>
+						</div>
+					</div>
+					<div class="toggle" data-toggle-obj="3">
+						<div class="answer" data-toggle-target="3">
+							<span class="bullet exam">예</span>
+							<p>긴 막대는 6개, 짧은 막대는 12개 있습니다.</p>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+				<li class="page_2">
+					<h2><ins class="dot"></ins><span>문제를 해결할 수 있는 방법을 말해 보세요.</span></h2>
+					<div id="spriteAniBox"></div>
+				</li>
+				<li class="page_3" data-slide-container="">
+					<ul class="basicSlider_slides inner" data-slides="">
+						<li class="innerTab_1" data-quiz="toggle">
+							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>주어진 재료로 만들 수 있는 각기둥과 각뿔을 찾아보세요.</span></h2>
+							<div class="toggle" data-toggle-obj="1" data-show="1">
+								<div class="answer" data-toggle-target="1">
+									<span class="bullet exam">예</span>
+									<p>고무찰흙 5개와 짧은 막대 4개, 긴 막대 4개를 이용해서 사각뿔을 만들 수 있습니다.</p>
+								</div>
+							</div>
+							<div class="answer-img toggle type-b" data-toggle-obj="2" data-show="1">
+								<div class="answer"><img src="./images/suh_0601_02_0009_201_2_1.jpg"></div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>주어진 재료로 만들 수 있는 각기둥과 각뿔을 찾아보세요.</span></h2>
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<span class="bullet exam">예</span>
+									<p>만들 수 있는 각기둥은<br>삼각기둥: 고무찰흙 6개, 막대 9개<br>사각기둥: 고무찰흙 8개, 막대 12개<br>오각기둥: 고무찰흙 10개, 막대 15개<br>육각기둥: 고무찰흙 12개, 막대 18개입니다.</p>
+								</div>
+							</div>
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<span class="bullet exam">예</span>
+									<p>만들 수 있는 각뿔은<br>삼각뿔: 고무찰흙 4개, 막대 6개<br>사각뿔: 고무찰흙 5개, 막대 8개<br>오각뿔: 고무찰흙 6개, 막대 10개<br>육각뿔: 고무찰흙 7개, 막대 12개입니다.</p>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</li>
+						<li class="innerTab_3" data-quiz="toggle">
+							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>내가 찾은 각기둥과 각뿔을 친구들과 비교해 보세요.</span></h2>
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<span class="bullet exam">예</span>
+									<p>고무찰흙 6개와 짧은 막대 6개, 긴 막대 3개를 이용하여 삼각 기둥을 찾아 만들었습니다.<br>친구는 사각기둥을 찾아 만들었는데 저보다 고무찰흙 2개, 짧은 막대 2개, 긴 막대 1개를 더 사용했습니다.</p>
+								</div>
+							</div>
+							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>고무찰흙을 꼭짓점으로, 막대를 모서리로 생각할 때 꼭짓점, 모서리, 면의 수를 말해 보세요.</span></h2>
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<span class="bullet exam">예</span>
+									<p>삼각뿔을 만들었을 때 고무찰흙과 막대의 수를 살펴보면 꼭짓점 4개, 모서리 6개, 면 4개입니다.</p>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</li>
+					</ul>
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+				</li>
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>연수는 팔각기둥을 만들려고 합니다. 팔각기둥을 만들기 위해 준비해야 할 고무찰흙과 막대의 수를 구해 보세요.</span></h2>
+					<div class="toggle" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">
+							<span class="bullet exam">예</span>
+							<p>팔각기둥은 꼭짓점의 수가 16이고 모서리의 수가 24입니다. 따라서 준비해야 할 고무찰흙과 막대의 수는 각각 16, 24입니다.</p>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="5000">
+		<span class="btnInner"></span>
+	</button>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="textBookPopup" data-popup-page="1">
+				<div class="popupInner" data-popup-inner="">
+					<div class="study_guide">이 알림창은 잠시 후 닫힙니다.</div>
+					<div class="textTitle">연수와 준기가 그림과 같이 꼭짓점을 고무찰흙으로, 모서리를 막대로 나타내어 입체도형을 만들려고 합니다. 주어진 재료로 만들 수 있는 각기둥과 각뿔을 찾아봅시다.</div>
+				</div>
+			</li>
+			<li class="whole image pop_page_1" data-popup-page="2">
+				<div class="content-group">
+					<div class="content-item">
+						<img src="./images/suh_0601_02_0009_201_1_1.png">
+						<span class="name colorBox orange">연수</span>
+						<span class="name colorBox sky">준기</span>
+					</div>
+					<div class="content-item">
+						<div class="lineBox purple"><img src="./images/suh_0601_02_0009_201_1_2.png"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#spriteAniBox'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'girl_1',
+					speech:'right',
+					top: 100,
+					left: 300,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					sound: './media/audios/suh_0601_02_0009_201_2_1.mp3',
+					textBubble: {
+						text: '밑면의 모양에 따라 <br>순서대로 조사해봅니다.',
+						class: 'balloon left deeppink',
+						top: 240,
+						left: 420,
+						width: 400,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 54000,
+					sheetHeight: 360,
+					endSheet: 0,
+					delay: 40
+				}
+			]
+		});
+
+		var btnShow = document.querySelectorAll('.toggle');
+		for (var i = 0; i < btnShow.length; i++) {
+			btnShow[i].addEventListener('click', function(){
+				if (!!this.dataset.show) {
+					console.log(this.dataset.show);
+					document.querySelector('.toggle.type-b[data-show="'+ this.dataset.show +'"]').classList.add('complete');
+				}
+			})
+		}
+	}, false);
+</script>
+</body>
+</html>
