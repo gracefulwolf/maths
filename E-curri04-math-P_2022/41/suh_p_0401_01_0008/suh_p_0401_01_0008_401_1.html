@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<style>
+		.addLineController{top:8px;}
+		.checkContainer .contentsBox h2 {
+			font-size: 40px !important;
+			line-height: 1.3em !important;
+			margin-bottom: 30px;
+		}
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+
+		/* 상단 탭정렬 */
+		.checkContainer .contentsBox .basicSlider_tabs{width: 100%;justify-content: flex-end;}
+		.checkContainer .contentsBox .basicSlider_tabs li{margin-left: 8px;}
+
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.checkContainer .contentsBox h2{margin-top:0;}
+
+		.page_1 .lineBox img{width: 100%;}
+		.page_1 .right .tableContainer table td{font-size: 40px;}
+
+		.page_2 .it2-1{position: absolute;top: 280px;right: 50%;transform: translate(-210px)}
+		.page_2 .it2-2{left: 60px;}
+		.page_2 .it2-3{position: absolute;top: 280px;left: 50%;transform: translate(210px)}
+		.page_2 .it2-4{right: 60px;}
+		.page_2 .it2-5{padding-top: 300px;background: url(./images/suh_p_0401_01_0002_401_1-2.png) no-repeat 50% 90% / 480px auto;}
+
+
+		.type-qs2.textAlignC{margin: 0 auto 30px;width: 800px;height: 90px;}
+		.type-qs2 .flex-box{display: flex;justify-content: space-between;}
+		.type-qs2 .flexListContainer{width: 40%;position: relative;}
+		.type-qs2 .colorBox{position: absolute;z-index: 999;}
+		.type-qs2 .curveLine{left: 13%;top: 20px;}
+		.type-qs2 .curveLine .line{clip: rect(0,250px,100px,0);width: 220px;height: 200px;}
+		.type-qs2 .curveLine:after{z-index: 999;transform: rotate(60deg);left: 218px;top: 81px;}
+		.type-qs2 .it3-1{left: 120px;}
+		.type-qs2 .it3-2{left: 360px;}
+		.type-qs2 .it3-3{left: 580px;}
+		.type-qs2 .it3-4{left: 50px;}
+		.type-qs2 .it3-5{left: 280px;}
+		.type-qs2 .it3-6{left: 510px;}
+
+		.page_7 .type-qs2 .curveLine .line{width: 180px;}
+		.page_7 .type-qs2 .curveLine:after{left: 178px;}
+		.type-qs2 .it7-1{left: 60px;}
+		.type-qs2 .it7-2{left: 260px;}
+		.type-qs2 .it7-3{left: 460px;}
+		.type-qs2 .it7-4{left: 660px;}
+		.type-qs2 .it7-5{left: 0px;}
+		.type-qs2 .it7-6{left: 200px;}
+		.type-qs2 .it7-7{left: 400px;}
+		.type-qs2 .it7-8{left: 600px;}
+
+		.nemoBoxCon {position:relative;text-align:center;}
+		.nemoBoxCon ul li{display:inline-block;position:relative;}
+		ul.nemoBoxCon_1{position:relative;}
+		ul.nemoBoxCon_1 li:nth-child(2n+1) > div{position:relative;display:inline-block;width:160px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
+		ul.nemoBoxCon_1 li:nth-child(2n+2) > div{position:relative;top:-16px;display:inline-block;width:80px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
+		ul.nemoBoxCon_1 .qBox{width:160px;height:70px;}
+		ul.nemoBoxCon_2{position:relative;margin-top:30px;margin-left:40px;}
+		ul.nemoBoxCon_2 li:nth-child(2n+2) > div{position:relative;display:inline-block;width:160px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
+		ul.nemoBoxCon_2 li:nth-child(2n+1) > div{position:relative;top:-16px;display:inline-block;width:40px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
+		ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
+
+		.page_7 ul.nemoBoxCon_1 li:nth-child(2n+1) > div{width: 140px;}
+		/* 개별 */
+		.page_1 .flexListContainer{width:680px; margin:0 auto;}
+		.page_1 .lineBox{width:240px; text-align:center;}
+		.page_1 [data-ox-obj]{display:inline-block;}
+		.page_1 .icon[data-ox-target]{position:absolute; left:0; width:100%;}
+		.page_1 [data-ox-obj].complete,
+		.page_1 .complete [data-ox-obj]{pointer-events:none; cursor:default;}
+		.page_1 .icon[data-ox-target]{top:-5px; min-width:60px; height:60px;}
+
+		.page_2 .flexListContainer{width:680px; margin:0 auto;}
+		.page_2 .toggle.circle{margin:0 20px;}
+
+		.page_3 .lineBox{width:680px; margin:0 auto;}
+		.page_3 .contentsList .bullet{margin-top:7px !important;}
+
+		.page_6 .colorBox{width:400px; margin:0 auto;}
+		.page_6 .characterList{flex-wrap:wrap; width:550px; margin:20px auto 0;}
+		.page_6 .characterList>li{position:relative; width:100%;}
+		.page_6 .characterList>li:first-child{justify-content:flex-start;}
+		.page_6 .characterList>li:last-child{justify-content:flex-end;}
+		.page_6 .characterList>li .balloon{position:absolute; top:40px; width:auto;}
+		.page_6 .characterList>li:first-child .balloon{left:200px; right:0;}
+		.page_6 .characterList>li:last-child .balloon{left:0; right:200px;}
+
+		.cardbox{border:5px solid #fccd89; padding:5px 10px; margin-right:5px; margin-left:10px;}
+		.dotList>li{align-items:center; white-space:nowrap; letter-spacing:-0.5px;}
+		.dotList>li:first-child:before{margin-top:32px;}
+		.dotList>li:not(:last-of-type){margin-bottom:13px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+				<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1"  data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<h2><ins class="dot"></ins><span>
+							더 큰 수에  <div class="icon_o_title"></div>표 하세요.
+						</span></h2>
+						<section>
+							<!-- <div class="study_guide" style="margin-top: 10px;"> <em>( ) 안</em>을 <em>클릭</em>하세요.</div> -->
+							<div class="flexListContainer around">
+								<div class="lineBox orange ">
+									<div data-ox-obj="11">93670
+										<div class="icon icon_x" data-ox-target="11"></div>
+									</div>
+								</div>
+								<div class="lineBox orange">
+									<div data-ox-obj="12" data-answer="">115088
+										<div class="icon icon_o" data-ox-target="12"></div>
+									</div>
+								</div>
+							</div>
+
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+							<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
+							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
+								src="../common/contents/images/math/equalIcon.png">, <img
+								src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+						</span></h2>
+						<section>
+							<ul class="flexListContainer column">
+								<li class="lineBox deeppink textAlignC flexListContainer jcenter center">50782294
+									<div class="toggle circle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2"><img
+												src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+									</div>50709317
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<!--      solveCheckBtn 해설 팝업 버튼        -->
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							수의 크기를 비교하여 큰 수부터 순서대로 기호를 써 보시오.
+						</span></h2>
+						<section>
+							<ul class="multipleChoiceList column">
+								<li class="lineBox orange">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet number orange">ㄱ</div>
+											<div>35680638699</div>
+										</li>
+										<li>
+											<div class="bullet number orange">ㄴ</div>
+											<div>301069231610</div>
+										</li>
+										<li>
+											<div class="bullet number orange">ㄷ</div>
+											<div>90265403711</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">
+										<div class="bullet number orange">ㄴ</div>
+									</div>
+								</div>, <div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">
+										<div class="bullet number orange">ㄷ</div>
+									</div>
+								</div>, <div class="toggle" data-toggle-obj="33">
+									<div class="answer" data-toggle-target="33">
+										<div class="bullet number orange">ㄱ</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
+							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
+								src="../common/contents/images/math/equalIcon.png">, <img
+								src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+						</span></h2>
+						<section>
+							<div>
+								<div class="flexListContainer jcenter mt_50">
+									<div style="width: 300px; text-align: right;">26735</div>
+									<div class="toggle circle" data-toggle-obj="41" style="margin: -4px 20px;">
+										<div class="answer" data-toggle-target="41"><img
+											src="../common/contents/images/math/inequalIcon_blue.png"></div>
+										</div>
+									<div style="width: 300px;">468921</div>
+								</div>
+								<div class="flexListContainer jcenter mt_50">
+									<div style="width: 300px; text-align: right;">7419조 5824억</div>
+									<div class="toggle circle" data-toggle-obj="42" style="margin: -4px 20px;">
+										<div class="answer" data-toggle-target="42">
+											<img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+										</div>
+									<div style="width: 300px;">7401조 127만</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							세 수의 크기를 비교하여 작은 수부터 순서대로 수를 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox sky" style="width: 700px; margin: 0 auto;">
+								<div style="text-align: center;"><span>956300</span><span style="margin: 0 50px;">1030000</span>789000
+								</div>
+							</div>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="51">
+									<div class="answer" data-toggle-target="51">789000</div>
+								</div>,
+								<div class="toggle" data-toggle-obj="52" style="margin-left: 10px;">
+									<div class="answer" data-toggle-target="52">956300</div>
+								</div>,
+								<div class="toggle" data-toggle-obj="53" style="margin-left: 10px;">
+									<div class="answer" data-toggle-target="53">1030000</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_6" data-quiz="ox" data-option="answerSound, hide" data-quiz-name="character">
+						<h2><ins class="dot"></ins><span>
+							더 작은 수 말하기 대회에서 이긴 친구를 고르시오.
+						</span></h2>
+						<section>
+							<div class="study_guide" style="top:-28px;">
+								<em>캐릭터</em>를 <em>클릭</em>하세요.
+							</div>
+							<div class="colorBox sky textAlignC">
+								더 작은 수 말하기 대회
+							</div>
+							<ul class="characterList column">
+								<li data-ox-obj="1" data-ox-target="61" data-answer="" class="">
+									<div class="characterImg boy_2-wrap circle green left">
+										<div class="charSpriteImg boy_2"></div>
+									</div>
+									<div class="balloon green left"><span class="answerLine">60382419</span></div>
+								</li>
+								<li data-ox-obj="2" data-ox-target="62" class="">
+									<div class="balloon yellow right"><span>60724350</span></div>
+									<div class="characterImg boy_4-wrap circle yellow right">
+										<div class="charSpriteImg boy_4"></div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							교통 수단의 가격이 큰 것부터 차례로 쓰시오.
+						</span></h2>
+						<section>
+							<div class="lineBox sky textAlignC" style="width: 700px; margin: 0 auto;">
+								<div style="display:inline-block; text-align:left;">
+									<div>버스: 1억 5120만 원</div>
+									<div style="margin: 10px 0;">트럭: 3280만 원</div>
+									<div>기차: 386억 원</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="71">
+									<div class="answer" data-toggle-target="71">기차</div>
+								</div>,
+								<div class="toggle ml_10" data-toggle-obj="72">
+									<div class="answer" data-toggle-target="72">버스</div>
+								</div>,
+								<div class="toggle ml_10" data-toggle-obj="73">
+									<div class="answer" data-toggle-target="73">트럭</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						  </section>
+					</li>
+
+					<li class="page_8" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							설명에 알맞은 수를 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox sky">
+								<ul class="dotList orange">
+								<li>
+									수 카드
+									<div style="display: flex;align-items: flex-end;">
+										<span class="cardbox">2</span>, <span class="cardbox">3</span>, <span class="cardbox">4</span>, <span class="cardbox">5</span>, <span class="cardbox">6</span>
+									</div>을 모두 한 번씩만 사용하여<br>
+								</li>
+								<div style="position: relative;top: -17px;left: 20px;">만든 수입니다.</div>
+								<li>54000보다 큰 수입니다.</li>
+								<li>54300보다 작은 수입니다.</li>
+								<li>일의 자리 수는 홀수입니다.</li>
+								</ul>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="8">
+									<div class="answer" data-toggle-target="8">54263</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<ins class="dot orange"></ins>
+								<div>35×2=70
+									<div class="toggleBlank circle"><img
+											src="../common/contents/images/math/inequalIcon.png"></div>
+									28×3=84
+								</div>
+							</li>
+							<li>
+								<ins class="dot orange"></ins>
+								<div>23×4=92
+									<div class="toggleBlank circle"><img
+											src="../common/contents/images/math/equalIcon.png"></div>
+									46×2=92
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="ls1">
+							37×2=74, 28×3=84<br>
+							74+84=158입니다.
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

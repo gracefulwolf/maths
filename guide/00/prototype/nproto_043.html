@@ -70,7 +70,7 @@
                     <h2><ins class="dot"></ins><span>어떤 방법으로 문제를 해결하면 될까요?</span></h2>
                     <section>
                         <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div>
-						<div id="spriteAniBox_1" class="flexListContainer center jcenter"></div>
+						<div id="aniBox_1" class="flexListContainer center jcenter"></div>
 						<div class="imgContainer">
 							<div class="img popBtn zoomBtn" data-hover="" data-popup-btn="3">
 								<img src="images/suh_0301_01_0008_201_2/suh_0301_01_0008_201_2_1.png">
@@ -284,9 +284,9 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-            $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
+            // $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
             $prite.add({
-                target: $ts.getEl('#spriteAniBox_1'), // 스프라이트가 생성될 영역
+                target: $ts.getEl('#aniBox_1'), // 스프라이트가 생성될 영역
                 spriteId: 'sprite1',
                 spriteList: [{
                     name: 'girl_2', // class 들어갈 부분 ex) boy_1 boy_2 , girl_1 등 필요
@@ -294,6 +294,10 @@
                     playMode: {
                         rewind: false
                     },
+                    sheetWidth: 38418,
+                    sheetHeight: 421,
+                    endSheet: 0,
+                    delay: 40,
                     speech:'right',
                     top: 0, // 캐릭터 top값, 없어도 상관 없음, css 제어
                     left: 0,

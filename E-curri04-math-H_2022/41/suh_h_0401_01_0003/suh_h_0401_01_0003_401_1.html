@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<style>
+		.addLineController{top:8px;}
+		.checkContainer .contentsBox h2 {
+			font-size: 40px !important;
+			line-height: 1.3em !important;
+			margin-bottom: 30px;
+		}
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+
+		/* 상단 탭정렬 */
+		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
+		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
+
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.checkContainer h2 .toggleBlank{margin-top:8px;}
+		.checkContainer .contentsBox h2{margin-top:0;}
+
+		/* 개별 */
+		.tableContainer.brown.it-zigzag tr:nth-child(2n) td:last-of-type,
+		.tableContainer.brown.it-zigzag tr:nth-child(2n+1) td:first-of-type{background:#ae7c65;}
+		.tableContainer.brown.it-zigzag td{width:50%;}
+		.page_1 .tableContainer.brown td{height:80px;}
+
+		/* 숫자자리 table */
+		.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+		.tableContainer.it-colorful .it-pink{background:#ffece2;}
+		.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+		.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+		.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+		.tableContainer.it-colorful .it-green{background:#cee492;}
+		.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+		.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+		.tableContainer.it-colorful .it-orange{background:#fccd89;}
+		.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+		.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+		.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+		.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+		.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+		.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+		.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+		.tableContainer.it-colorful .it-white{background:#fff;}
+		.page_2 .lineBox{overflow:hidden; padding:0;}
+
+		.page_4 .lineBox{width:550px; margin:0 auto;}
+		.page_4 .contentsList{display:inline-block;}
+
+		.page_5 ul.nemoBoxCon{text-align:center;}
+		.page_5 ul.nemoBoxCon + ul.nemoBoxCon{margin:15px 0 0;}
+		.page_5 ul.nemoBoxCon li{display:inline-block; position:relative; text-align: center;}
+		.page_5 ul.nemoBoxCon li:first-child > div{width:180px; height:80px; line-height:80px; border: 5px solid #c1e8ec; background-color: #ffffff; border-radius:10px; z-index:2;}
+		.page_5 ul.nemoBoxCon li:last-child > div{width:500px; height:80px; line-height:80px; border: 5px solid #c1e8ec; background-color: #ffffff; border-radius:10px; z-index:2; text-align: center;}
+		.page_5 ul.nemoBoxCon li div.bgc_w{background-color:#ffffff;}
+		.page_5 ul.nemoBoxCon_2 li .qBox, ul.nemoBoxCon_4 li .qBox {width:500px;}
+		.page_5 ul.nemoBoxCon_3 li .qBox{width:180px;}
+		.page_5 ul.nemoBoxCon .toggle{line-height: 80px; vertical-align: top;}
+
+		.page_6 .contentsList{display: inline-block;}
+		.page_6 .contentsList > li {align-items: center;}
+
+		.page_8 .lineBox{display:inline-block; padding:20px;}
+		.page_8 .img_3{margin:0 auto; width:100%; height:300px; background:url(./images/suh_0401_01_0003_401_1_3.png) no-repeat; background-position:center; background-size:contain;}
+
+		/* 스텝클릭 */
+		[class*="it-btn-"]{position:absolute; z-index:1; border:6px solid #e94d40;}
+		[class*="it-btn-"].blinkOn{-webkit-animation-iteration-count: infinite; animation-iteration-count: infinite;}
+		[class*="it-btn-"]{display:none;}
+		.it-btn-1,
+		[class*="it-btn-"].complete + [class*="it-btn-"]{display:block;}
+		[class*="it-btn-"].complete{display:none !important;}
+		.it-btn-1{top:23px; left:145px; width:182px; height:80px;}
+		.it-btn-2{top:196px; left:501px; width:182px; height:80px;}
+		.it-btn-3{top:140px; left:73px; width:168px; height:80px;}
+		.it-btn-4{top:230px; left:280px; width:168px; height:80px;}
+		.it-btn-5{top:60px; left:412px; width:168px; height:80px;}
+		.it-btn-6{top:30px; left:678px; width:168px; height:80px;}
+		.it-btn-7{top:220px; left:743px; width:168px; height:80px;}
+		.it-btn-8{top:148px; left:294px; width:51px; height:51px; border-radius:50%;}
+		.it-btn-9{top:128px; left:608px; width:51px; height:51px; border-radius:50%;}
+		.it-btn-10{top:138px; left:865px; width:51px; height:51px; border-radius:50%;}
+		[class*="it-num-"]{display:none; position:absolute; width:38px; height:38px; border-radius:50%; font-size:32px; color:#fff; line-height:38px; text-align:center;}
+		[class*="it-num-"].on{display:block;}
+		[class*="it-num-"].it-green{background:#009a48;}
+		[class*="it-num-"].it-blue{background:#327be5;}
+		[class*="it-num-"].it-silver{background:#959595;}
+		[class*="it-num-"].it-bronze{background:#ee6e32;}
+		.it-num-1{top:50px; left:220px;}
+		.it-num-2{top:220px; left:575px;}
+		.it-num-3{top:165px; left:145px;}
+		.it-num-4{top:260px; left:350px;}
+		.it-num-5{top:90px; left:485px;}
+		.it-num-6{top:60px; left:750px;}
+		.it-num-7{top:250px; left:815px;}
+		.it-num-8{top:161px; left:307px;}
+		.it-num-9{top:141px; left:621px;}
+		.it-num-10{top:151px; left:877px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/1단원_3차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							빈칸에 알맞은 수나 말을 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="tableContainer brown it-zigzag">
+								<table>
+									<tbody>
+										<tr>
+											<td>34789</td>
+											<td>
+												<div class="toggle noBg" data-toggle-obj="11"><div class="answer" data-toggle-target="11">
+													삼만 사천칠백팔십구
+												</div></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="toggle noBg" data-toggle-obj="12"><div class="answer" data-toggle-target="12">
+													58304
+												</div></div>
+											</td>
+											<td>오만 팔천삼백사</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="buttonContainer">
+								<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/1단원_3차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							수를 보고 표의 빈칸에 알맞은 수를 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="lineBox orange">
+								<div class="tableContainer brown it-colorful">
+									<table>
+										<tbody>
+											<tr>
+												<td colspan="8">59147</td>
+											</tr>
+											<tr>
+												<td class="it-deeppink">만의 자리</td>
+												<td class="it-orange">천의 자리</td>
+												<td class="it-green">백의 자리</td>
+												<td class="it-sky">십의 자리</td>
+												<td class="it-deeppink">일의 자리</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>9</td>
+												<td>1</td>
+												<td>4</td>
+												<td>7</td>
+											</tr>
+											<tr>
+												<td>50000</td>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="21">
+														<div class="answer" data-toggle-target="21">
+															9000
+														</div>
+													</div>
+												</td>
+												<td>100</td>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="22">
+														<div class="answer" data-toggle-target="22">
+															40
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="22">
+														<div class="answer" data-toggle-target="22">
+															7
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/1단원_3차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><span class="blankBox"></span> 안에 알맞은 수를 써넣으시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								74532 = 70000 + 4000 + <div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">
+										500
+									</div>
+								</div> + 30 + <div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">
+										2
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/1단원_3차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							다음 수를 쓰고 읽어 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox deeppink textAlignC mb_50">
+								10000이 3개, 1000이 8개,<br>
+								10이 2개, 1이 4개인 수
+							</div>
+							<div class="textAlignC mt_50">
+								<ul class="contentsList">
+									<li>
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div class="toggle" data-toggle-obj="41">
+											<div class="answer" data-toggle-target="41">38024</div>
+										</div>
+									</li>
+									<li>
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="42">
+											<div class="answer" data-toggle-target="42">삼만 팔천이십사</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn reset" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							빈칸에 알맞은 수나 말을 써넣으시오.
+						</span></h2>
+						<section>
+							<ul class="nemoBoxCon nemoBoxCon_1">
+								<li><div>35687</div></li>
+								<li><div>삼만 오천육백팔십칠</div></li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_2">
+								<li><div>56273</div></li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="51" style="padding: 0;width: 100%;">
+											<div class="answer" data-toggle-target="51">오만 육천이백칠십삼</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_3">
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="52" style="padding: 0;width: 100%;">
+											<div class="answer" data-toggle-target="52">27036</div>
+										</div>
+									</div>
+								</li>
+								<li><div>이만 칠천삼십육</div></li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_4">
+								<li><div>75662</div></li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="53" style="padding: 0;width: 100%;">
+											<div class="answer" data-toggle-target="53">칠만 오천육백육십이</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_6" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							수를 보고 물음에 답하시오.
+						</span></h2>
+						<section>
+							<div class="lineBox deeppink" style="width: 400px; margin: 0 auto;">
+								<div class="textAlignC">34891</div>
+							</div>
+							<div class="textAlignC mt_50">
+								<ul class="contentsList">
+									<li>
+										<ins class="bracket mt">(1)</ins>
+										<div>
+											만의 자리 숫자를 구하시오.
+										</div>
+										<div class="toggle" data-toggle-obj="61" style="min-width: 100px;margin-left: 30px;">
+											<div class="answer" data-toggle-target="61">3</div>
+										</div>
+									</li>
+									<li>
+										<ins class="bracket mt">(2)</ins>
+										<div>
+											숫자 8이 나타내는 값을 써 보시오.
+										</div>
+										<div class="toggle" data-toggle-obj="62" style="min-width: 100px;margin-left: 30px;">
+											<div class="answer" data-toggle-target="62">800</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<div class="icon_bogi"></div>와 같이 각 자리의 숫자가 나타내는 값의 합으로 나타내어 보시오.
+						</span></h2>
+						<section>
+							<div class="bogiContainer textAlignC" style="width: 724px;">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<span>98765 = 90000 + 8000 + 700 + 60 + 5</span>
+								</div>
+							</div>
+							<ul class="contentsList mt_50">
+								<li>
+									<ins class="bracket mt">(1)</ins>
+									<div>
+									35468 =
+									<div class="toggle" data-toggle-obj="71">
+										<div class="answer" data-toggle-target="71">30000</div>
+									</div>
+									+
+									<div class="toggle" data-toggle-obj="72">
+										<div class="answer" data-toggle-target="72">5000</div>
+									</div>
+									+
+									<div class="toggle" data-toggle-obj="73">
+										<div class="answer" data-toggle-target="73">400</div>
+									</div>
+									+
+									<div class="toggle" data-toggle-obj="74">
+										<div class="answer" data-toggle-target="74">60</div>
+									</div>
+									+
+									<div class="toggle" data-toggle-obj="75">
+										<div class="answer" data-toggle-target="75">8</div>
+									</div>
+									</div>
+								</li>
+								<li>
+									<ins class="bracket mt">(2)</ins>
+									<div>
+										11535 =
+										<div class="toggle" data-toggle-obj="76">
+										<div class="answer" data-toggle-target="76">10000</div>
+										</div>
+										+
+										<div class="toggle" data-toggle-obj="77">
+										<div class="answer" data-toggle-target="77">1000</div>
+										</div>
+										+
+										<div class="toggle" data-toggle-obj="78">
+										<div class="answer" data-toggle-target="78">500</div>
+										</div>
+										+
+										<div class="toggle" data-toggle-obj="79">
+										<div class="answer" data-toggle-target="79">30</div>
+										</div>
+										+
+										<div class="toggle" data-toggle-obj="710">
+										<div class="answer" data-toggle-target="710">5</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_8" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							돈이 모두 얼마인지 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox pink" style="width: 100%;">
+								<div class="img_3"></div>
+								<div class="it-btn-1 blinkOn blinkOpacity" data-toggle-obj="1"></div>
+								<div class="it-btn-2 blinkOn blinkOpacity" data-toggle-obj="2"></div>
+								<div class="it-btn-3 blinkOn blinkOpacity" data-toggle-obj="3"></div>
+								<div class="it-btn-4 blinkOn blinkOpacity" data-toggle-obj="4"></div>
+								<div class="it-btn-5 blinkOn blinkOpacity" data-toggle-obj="5"></div>
+								<div class="it-btn-6 blinkOn blinkOpacity" data-toggle-obj="6"></div>
+								<div class="it-btn-7 blinkOn blinkOpacity" data-toggle-obj="7"></div>
+								<div class="it-btn-8 blinkOn blinkOpacity" data-toggle-obj="8"></div>
+								<div class="it-btn-9 blinkOn blinkOpacity" data-toggle-obj="9"></div>
+								<div class="it-btn-10 blinkOn blinkOpacity" data-toggle-obj="10"></div>
+								<div class="it-num-1 it-green" data-toggle-target="1">1</div>
+								<div class="it-num-2 it-green" data-toggle-target="2">2</div>
+								<div class="it-num-3 it-blue" data-toggle-target="3">1</div>
+								<div class="it-num-4 it-blue" data-toggle-target="4">2</div>
+								<div class="it-num-5 it-blue" data-toggle-target="5">3</div>
+								<div class="it-num-6 it-blue" data-toggle-target="6">4</div>
+								<div class="it-num-7 it-blue" data-toggle-target="7">5</div>
+								<div class="it-num-8 it-silver" data-toggle-target="8">1</div>
+								<div class="it-num-9 it-silver" data-toggle-target="9">2</div>
+								<div class="it-num-10 it-silver" data-toggle-target="10">3</div>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="11">
+									<div class="answer" data-toggle-target="11">25300원</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>
