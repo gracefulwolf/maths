@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		/* 팝업에 버튼 */
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		/* 기존 줄줄이네모박스 수정 */
+		.nemoBoxJool{position:relative; text-align:center; width:100%; margin:0 auto;}
+		.nemoBoxJool ul{display:flex; align-items:center; justify-content:space-between; position:relative; width:100%;}
+		.nemoBoxJool ul + ul{margin-top:20px;}
+		.nemoBoxJool ul + ul:before{right:0; width:calc(100% + 30px);}
+		.nemoBoxJool ul li{display:inline-block; position:relative;}
+		.nemoBoxJool li:before{content:""; display:block; position:absolute; top:50%; width:60px; margin-top:-2px; border-top:5px solid #fff;}
+		.nemoBoxJool li + li:before,
+		.nemoBoxJool ul + ul li:before{right:100%; margin-right:-5px;}
+		.nemoBoxJool ul li > div{display:block; position:relative; min-width:175px; height:70px; padding:0 5px; line-height:70px; background-color:#fff; border:5px solid #c1e8ec; border-radius:10px; z-index:1;}
+		.nemoBoxJool.it-pink li > div,
+		.nemoBoxJool.it-pink li:before{border-color:#ffece2;}
+		.nemoBoxJool.it-deeppink li > div,
+		.nemoBoxJool.it-deeppink li:before{border-color:#f7c1c9;}
+		.nemoBoxJool.it-beige li > div,
+		.nemoBoxJool.it-beige li:before{border-color:#efcfa6;}
+		.nemoBoxJool.it-yellow li > div,
+		.nemoBoxJool.it-yellow li:before{border-color:#f4e8bd;}
+		.nemoBoxJool.it-sky li > div,
+		.nemoBoxJool.it-sky li:before{border-color:#c1e8ec;}
+		.nemoBoxJool.it-orange li > div,
+		.nemoBoxJool.it-orange li:before{border-color:#fccd89;}
+		.nemoBoxJool.it-purple li > div,
+		.nemoBoxJool.it-purple li:before{border-color:#cabfe0;}
+		.nemoBoxJool.it-brown li > div,
+		.nemoBoxJool.it-brown li:before{border-color:#ae7c65;}
+		.nemoBoxJool.it-green li > div,
+		.nemoBoxJool.it-green li:before{border-color:#cee492;}
+		.nemoBoxJool.it-center ul{justify-content:center;}
+		.nemoBoxJool.it-center li{margin:0 15px;}
+		.nemoBoxJool.it-center li > div{padding:0 20px;}
+
+		.page_1 .it-green-bg{background:#cee492 !important;}
+		.page_1 .nemoBoxJool ul li + li > div{width:400px;}
+	</style>
+</head>
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title">빈칸에 알맞은 수나 말을 써넣어 봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span class="ls1_5">
+						각 자리의 숫자 5, 6, 3, 1, 9는 각각 얼마를 나타내는지 알아보세요.
+					</span></h2>
+					<section>
+						<div class="nemoBoxJool it-center it-green">
+							<ul>
+								<li>
+									<div class="it-green-bg">98953</div>
+								</li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">구만 팔천구백오십삼</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="nemoBoxJool it-center it-green mt_15">
+							<ul>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">40586</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="it-green-bg">사만 오백팔십육</div>
+								</li>
+							</ul>
+						</div>
+						<div class="nemoBoxJool it-center it-green mt_15">
+							<ul>
+								<li>
+									<div class="it-green-bg">39047</div>
+								</li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">삼만 구천사십칠</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+
+	document.addEventListener('DOMContentLoaded', function () {
+
+		//var arrow = $ts.getEl('.page_1 .clickObj');
+		//var arrowWrong = $ts.getEl('.page_1 .clickWrong');
+		//var pages = $ts.getEl('.page_1 .basicSlider_slides > li');
+		var _scrollrContent = $ts.getEl('.scroll_content');
+		var _scrollrHandle = $ts.getEl('.scroll_handler');
+
+		arrow.forEach(function (objs, index) {
+			objs.addEventListener('click', function(){
+				for(var i = 0; i < pages.length; i++){
+					pages[i].classList.remove('on');
+				}
+				pages[index+1].classList.add('on');
+				//_scrollrContent[index+1].setAttribute('style','top:'+ pages[index+1].dataset.y1 +'px;transition:top .2s;');
+				//_scrollrHandle[index+1].setAttribute('style', 'top:'+ pages[index+1].dataset.y2 +'px;transition:top .2s;');
+				window.$efSound.correct();
+			});
+		});
+
+	}, false);
+
+  </script>
+</html>

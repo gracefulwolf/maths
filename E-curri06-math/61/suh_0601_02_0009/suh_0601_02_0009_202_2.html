@@ -8,7 +8,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<!--<link rel="stylesheet" href="../../../__common__/css/custom_last.css">-->
 	<style>
 		[class*='page_'] h2 {margin-bottom:10px}
 		[class*='page_'] h2 ~ h2 {margin-top:40px}
@@ -16,8 +16,8 @@
 		.toggle .answer {display:flex;text-align:left}
 		.characterWrap {left:100px !important;transition:.5s}
 		.characterWrap.speech {left:300px !important}
-		#spriteAniBox .balloon.left:after {top:46px}
-		#spriteAniBox2 .balloon.left:after {top:112px}
+		#aniBox .balloon.left:after {top:46px}
+		#aniBox2 .balloon.left:after {top:112px}
 		.content-group .content-item {text-align:center}
 		.content-group .content-item.character-item {position:relative;height:385px}
 		.content-group .content-item.character-item .balloon {top:80px;left:200px}
@@ -55,7 +55,7 @@
 				</li>
 				<li class="page_2">
 					<h2><ins class="dot"></ins><span>어떤 방법으로 문제를 만들면 좋을까요?</span></h2>
-					<div id="spriteAniBox"></div>
+					<div id="aniBox"></div>
 				</li>
 				<li class="page_3" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>각기둥이나 각뿔 알아맞히기 문제를 만들어 보세요.</span></h2>
@@ -78,7 +78,7 @@
 				</li>
 				<li class="page_4">
 					<h2><ins class="dot"></ins><span>각기둥이나 각뿔 알아맞히기 문제에서 친구들이 이야기한 내용이 맞는지 확인해 보세요.</span></h2>
-					<div id="spriteAniBox2"></div>
+					<div id="aniBox2"></div>
 				</li>
 			</ul>
 		</div>
@@ -103,11 +103,11 @@
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
 		$prite.add({
-			target: $ts.getEl('#spriteAniBox'),
+			target: $ts.getEl('#aniBox'),
 			spriteId: 'sprite1',
 			spriteList: [
 				{
-					name: 'girl_1',
+					name: 'girl_3',
 					speech:'right',
 					top: 40,
 					left: 300,
@@ -125,19 +125,19 @@
 						textAlign: 'center',
 						wordBreak: 'keep-all'
 					},
-					sheetWidth: 54000,
-					sheetHeight: 360,
+					sheetWidth: 38418,
+					sheetHeight: 421,
 					endSheet: 0,
 					delay: 40
 				}
 			]
 		});
 		$prite.add({
-			target: $ts.getEl('#spriteAniBox2'),
+			target: $ts.getEl('#aniBox2'),
 			spriteId: 'sprite2',
 			spriteList: [
 				{
-					name: 'girl_2',
+					name: 'girl_3',
 					speech:'right',
 					top: 40,
 					left: 300,
@@ -155,8 +155,8 @@
 						textAlign: 'center',
 						wordBreak: 'keep-all'
 					},
-					sheetWidth: 54000,
-					sheetHeight: 360,
+					sheetWidth: 38418,
+					sheetHeight: 421,
 					endSheet: 0,
 					delay: 40
 				}

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* row트리
+	* 동글블릿: .it-treeRow-tail
+	* 뒤집기: .it-treeRow-reverse
+	* 텍스트: .it-treeRow-textOnly
+	*/
+	.it-treeRow > .it-treeRow-list{position:relative; min-height:60px; padding:5px 0 5px 50px;}
+	.it-treeRow.it-treeRow-textOnly > .it-treeRow-list{min-height:inherit;}
+	.it-treeRow > .it-treeRow-list:before{content:""; display:block; position:absolute; top:50%; left:0; overflow:hidden; width:30px; height:100%; margin-top:-2px; box-shadow:3px 3px 0 #000 inset; transform:scale(1.01);}
+	.it-treeRow > .it-treeRow-list:after{content:""; display:block;  position:absolute; top:50%; left:24px; overflow:hidden; width:12px; height:12px; margin-top:-6px; border-radius:50%; transform:scale(1.01);}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:after{left:auto; right:24px;}
+	.it-treeRow > .it-treeRow-list:last-child:before{height:4px; box-shadow:0 4px 0 #000 inset;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list{padding:5px 50px 5px 0; text-align:right;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:before{left:auto; right:0; box-shadow:-4px 4px 0 #000 inset;}
+	.it-treeRow.pink > .it-treeRow-list:before{box-shadow:4px 4px 0 #ffece2 inset;}
+	.it-treeRow.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:before{box-shadow:4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.yellow > .it-treeRow-list:before{box-shadow:4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.sky > .it-treeRow-list:before{box-shadow:4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.orange > .it-treeRow-list:before{box-shadow:4px 4px 0 #fccd89 inset;}
+	.it-treeRow.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.beige > .it-treeRow-list:before{box-shadow:4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.purple > .it-treeRow-list:before{box-shadow:4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.brown > .it-treeRow-list:before{box-shadow:4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.green > .it-treeRow-list:before{box-shadow:4px 4px 0 #cee492 inset;}
+	.it-treeRow.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:before{box-shadow:-4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:before{box-shadow:-4px 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:before{box-shadow:-4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-tail.pink > .it-treeRow-list:after{background:#ffece2;}
+	.it-treeRow.it-treeRow-tail.deeppink > .it-treeRow-list:after{background:#f7c1c9;}
+	.it-treeRow.it-treeRow-tail.yellow > .it-treeRow-list:after{background:#f4e8bd;}
+	.it-treeRow.it-treeRow-tail.sky > .it-treeRow-list:after{background:#c1e8ec;}
+	.it-treeRow.it-treeRow-tail.orange > .it-treeRow-list:after{background:#fccd89;}
+	.it-treeRow.it-treeRow-tail.beige > .it-treeRow-list:after{background:#efcfa6;}
+	.it-treeRow.it-treeRow-tail.purple > .it-treeRow-list:after{background:#cabfe0;}
+	.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
+	.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
+
+
+	/* 숫자자리 table */
+	.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+	.tableContainer.it-colorful .it-orange{background:#fccd89;}
+	.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+	.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+	.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+	.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+	.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+	.tableContainer.it-colorful .it-white{background:#fff;}
+
+	/* 개별 */
+	.page_0 .flexListContainer.n1,
+	.page_0 .flexListContainer.n2,
+	.page_0 .flexListContainer.n3{align-items:flex-end;}
+	.page_0 .flexListContainer.n1 .it-figure{position:relative; width:380px; height:130px; text-align:center; background:url(./images/content-0.png) no-repeat 0 -280px / 1200px auto;}
+	.page_0 .flexListContainer.n2 .it-figure{position:relative; width:380px; height:130px; text-align:center; background:url(./images/content-0.png) no-repeat -360px -280px / 1200px auto;}
+	.page_0 .flexListContainer.n3 .it-figure{position:relative; width:380px; height:130px; text-align:center; background:url(./images/content-0.png) no-repeat -770px -280px / 1200px auto;}
+	.page_0 .flexListContainer.n1 .it-txt-01{position:absolute; top:80px; left: 125px;}
+	.page_0 .flexListContainer.n1 .it-txt-02{position:absolute; top:80px; left: 280px;}
+	.page_0 .flexListContainer.n2 .it-txt-01{position:absolute; top:80px; left: 140px;}
+	.page_0 .flexListContainer.n2 .it-txt-02{position:absolute; top:80px; left: 298px;}
+	.page_0 .flexListContainer.n3 .it-txt-01{position:absolute; top:80px; left: 162px;}
+	.page_0 .flexListContainer.n3 .it-txt-02{position:absolute; top:80px; left: 320px;}
+
+	.page_1_comm .type-qs2.textAlignC{margin:0 auto 30px; width:800px; height:90px;}
+	.page_1_comm .type-qs2 .flex-box{display:flex; justify-content:space-between;}
+	.page_1_comm .type-qs2 .flexListContainer{width:40%; position:relative; z-index:0;}
+	.page_1_comm .type-qs2 .colorBox{position:absolute; z-index:999; white-space:nowrap;}
+	.page_1_comm .type-qs2 .curveLine{left:13%; top:20px; z-index:0;}
+	.page_1_comm .type-qs2 .curveLine .line{clip:rect(0,250px,100px,0); width:220px; height:200px;}
+	.page_1_comm .type-qs2 .curveLine:after{z-index:999; transform:rotate(60deg); left:218px; top:81px;}
+	.page_1_comm .type-qs2 .it-1{left:110px;}
+	.page_1_comm .type-qs2 .it-2{left:360px;}
+	.page_1_comm .type-qs2 .it-3{left:590px;}
+	.page_1_comm .type-qs2 .it-4{left:50px;}
+	.page_1_comm .type-qs2 .it-5{left:280px;}
+	.page_1_comm .type-qs2 .it-6{left:520px;}
+
+	.page_1_comm .type-qs2 .curveLine .line{width:230px;}
+	.page_1_comm .type-qs2 .curveLine:after{left:228px;}
+	.page_1_comm .type-qs2 .it7-1{left:60px;}
+	.page_1_comm .type-qs2 .it7-2{left:260px;}
+	.page_1_comm .type-qs2 .it7-3{left:460px;}
+	.page_1_comm .type-qs2 .it7-4{left:660px;}
+	.page_1_comm .type-qs2 .it7-5{left:0px;}
+	.page_1_comm .type-qs2 .it7-6{left:200px;}
+	.page_1_comm .type-qs2 .it7-7{left:400px;}
+	.page_1_comm .type-qs2 .it7-8{left:600px;}
+	.page_1_comm .nemoBoxCon {position:relative; z-index:0; text-align:center;}
+	.page_1_comm .nemoBoxCon ul li{display:inline-block;position:relative;}
+	.page_1_comm ul.nemoBoxCon_1{position:relative;}
+	.page_1_comm ul.nemoBoxCon_1 li:nth-child(2n+1) > div{position:relative; display:inline-block; width:160px; height:70px; line-height:70px; background-color:#ffffff; border:5px solid #c1e8ec; border-radius:10px; margin:0 -12px; z-index:4;}
+	.page_1_comm ul.nemoBoxCon_1 li:nth-child(2n+2) > div{display:inline-block; position:relative; margin:0 10px;}
+	.page_1_comm ul.nemoBoxCon_1 .qBox{width:160px; height:70px;}
+	.page_1_comm ul.nemoBoxCon_2{position:relative; margin-top:30px; margin-left:40px;}
+	.page_1_comm ul.nemoBoxCon_2 li:nth-child(2n+2) > div{position:relative; display:inline-block; width:160px; height:70px; line-height:70px; background-color:#ffffff; border:5px solid #c1e8ec; border-radius:10px; margin:0 -12px; z-index:4;}
+	.page_1_comm ul.nemoBoxCon_2 li:nth-child(2n+1) > div{position:relative; top:-16px; display:inline-block; width:40px; height:0px; border-top: 5px solid #c1e8ec; margin:0 -12px; z-index:3;}
+	.page_1_comm ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
+	.page_1_comm ul.nemoBoxCon_1 li:nth-child(2n+1) > div{width:180px;}
+	.page_1_comm .bullet.circleDot{margin-top:0.5em;}
+
+	.page_2_comm .nemoBoxCon{position:relative; text-align:center; width:100%;}
+	.page_2_comm .nemoBoxCon ul li{display:inline-block; position:relative;}
+	.page_2_comm ul.nemoBoxCon_3{position:relative; top:0px; left:0; z-index:0; width:100%;}
+	.page_2_comm ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display:inline-block; width:480px; height:70px; line-height:70px; background-color:#e7f6d4; border:5px solid #e7f6d4; border-radius:10px; z-index:4;}
+	.page_2_comm ul.nemoBoxCon_3 li:not(:last-of-type)>div{width:300px;}
+	.page_2_comm ul.nemoBoxCon_3 li div .qBox{background-color:#fff;}
+	.page_2_comm ul.nemoBoxCon_3 li:nth-child(2n+2)>div{position:relative; top:-16px; display:inline-block; width:40px; height:0px; border-top:5px solid #e7f6d4; margin:0 -18px; z-index:-1;}
+	.pop_page_22 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{background-color:#f7c1c9; border:5px solid #f7c1c9;}
+	.pop_page_22 ul.nemoBoxCon_3 li:nth-child(2n+2)>div{border-top:5px solid #f7c1c9;}
+	.page_2_comm ul.nemoBoxCon_3 li:nth-child(2n+1)>div.it-a,
+	.pop_page_22 ul.nemoBoxCon_3 li:nth-child(2n+1)>div.it-a{background:#fff;}
+
+	.pop_page_42 .icon_bogi.it-title{display:inline-block; align-self:flex-start; position:relative; height:36px; margin:8px 4px 0 4px; border-radius:10px; font-family:YGJAL; vertical-align:top; box-sizing:border-box; }
+	.pop_page_42 .icon_bogi.it-title:after{font-size:21px; line-height:36px;}
+
+	.page_5 .it-img,
+	.pop_page_52 .it-img{display:flex; align-items:center; justify-content:center; position:relative; width:1000px; height:180px; margin:0 auto; background:url(./images/content-5-bg.svg) no-repeat 50% -270px / 1240px auto;}
+	.page_5 .it-num{width:160px; text-align:center;}
+	.pop_page_52 .it-num{width:160px; text-align:center;}
+
+	.page_6 .it-wrap{display:flex; align-items:flex-end; justify-content:space-around; position:relative; width:100%; height:310px; margin:0 auto;}
+	.page_6 .it-wrap li{align-items:flex-end; position:relative; height:100%; }
+	.page_6 .it-wrap li .it-figure{position:absolute; top:20px; left:50%; width:210px; height:220px; background:url(./images/content-6-bg.png) no-repeat 50% -48px / 1280px auto; transform:translateX(-50%);}
+	.page_6 .it-wrap li:nth-child(1) .it-figure{background-position:-244px -36px;}
+	.page_6 .it-wrap li:nth-child(2) .it-figure{background-position:-542px -36px;}
+	.page_6 .it-wrap li:nth-child(3) .it-figure{background-position:-829px -36px;}
+	.page_6 .it-title{position:absolute; top:0px; width:100%; font-size:32px; text-align:center;}
+	.page_6 .it-num{position:absolute; top:192px; width:100%; font-size:32px; text-align:center;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">십만, 백만, 천만을 알아볼까요</span>
+		<span class="sub-page">12~13쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+					<!-- 개념 정리 -->
+				</span></h2>
+				<section>
+					<div class="flexListContainer jcenter n1">
+						<div class="flexListContainer center jcenter it-figure">
+							<span class="it-txt-01">만</span>
+							<span class="it-txt-02">일</span>
+						</div>
+						<div class="ml_20">
+							10만
+						</div>
+					</div>
+					<div class="flexListContainer jcenter n2 mt_20">
+						<div class="flexListContainer center jcenter it-figure">
+							<span class="it-txt-01">만</span>
+							<span class="it-txt-02">일</span>
+						</div>
+						<div class="ml_20">
+							100만
+						</div>
+					</div>
+					<div class="flexListContainer jcenter n3 mt_20">
+						<div class="flexListContainer center jcenter it-figure">
+							<span class="it-txt-01">만</span>
+							<span class="it-txt-02">일</span>
+						</div>
+						<div class="ml_20">
+							1000만
+						</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1 page_1_comm" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					빈칸에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section class="full">
+					<div class="textAlignC type-qs2">
+						<ul class="flexListContainer">
+							<li class="colorBox check purple it-1">10배</li>
+							<li class="colorBox check purple it-2">10배</li>
+							<li class="colorBox check purple it-3">10배</li>
+							<div class="curveLine top sky it-5">
+								<div class="line"></div>
+							</div>
+							<div class="curveLine top sky it-6">
+								<div class="line"></div>
+							</div>
+							<div class="curveLine top sky it-7">
+								<div class="line"></div>
+							</div>
+						</ul>
+					</div>
+					<div class="nemoBoxCon">
+						<ul class="nemoBoxCon_1">
+							<li><div>1만</div></li>
+							<li><div class="icon_arrow"></div></li>
+							<li><div>
+								<div>
+									<div class="toggle noBg" data-toggle-obj="11" style="padding: 0; width: 100%;">
+										<div class="answer" data-toggle-target="11">10만</div>
+									</div>
+								</div>
+							</div></li>
+							<li><div class="icon_arrow"></div></li>
+							<li><div>
+								<div>
+									<div class="toggle noBg" data-toggle-obj="12" style="padding: 0; width: 100%;">
+										<div class="answer" data-toggle-target="12">100만</div>
+									</div>
+								</div>
+							</div></li>
+							<li><div class="icon_arrow"></div></li>
+							<li><div>
+								<div>
+									<div class="toggle noBg" data-toggle-obj="13" style="padding: 0; width: 100%;">
+										<div class="answer" data-toggle-target="13">1000만</div>
+									</div>
+								</div>
+							</div></li>
+						</ul>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn it-green" data-popup-btn="12" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2 page_2_comm" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					빈칸에 알맞은 수나 말을 써넣으세요.
+				</span></h2>
+				<section class="full">
+					<div class="textAlignC">
+						<div class="nemoBoxCon">
+							<ul class="nemoBoxCon_3">
+								<li>
+									<div>87690000</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>팔천칠백육십구만</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon_3 mt_20">
+								<li>
+									<div class="it-a">
+										<div class="toggle noBg" data-toggle-obj="21" style="padding: 0; width: 100%;">
+											<div class="answer" data-toggle-target="21">370000</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>삼십칠만</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon_3 mt_20">
+								<li>
+									<div>4205000</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div class="it-a">
+										<div class="toggle noBg" data-toggle-obj="22" style="padding: 0; width: 100%;">
+											<div class="answer" data-toggle-target="22">사백이십만 오천</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="21" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn it-green" data-popup-btn="22" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					62390000을 표로 나타낸 것입니다. <ins class="blankBox w50"></ins> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="tableContainer brown it-colorful" style="width:100%;">
+						<table><tbody>
+						<tr>
+							<td class="it-green">6</td>
+							<td class="it-green">
+								<div class="toggle noBg" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">2</div>
+								</div>
+							</td>
+							<td class="it-green">3</td>
+							<td class="it-green">
+								<div class="toggle noBg" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">2</div>
+								</div>
+							</td>
+							<td class="it-orange">0</td>
+							<td class="it-orange">0</td>
+							<td class="it-orange">0</td>
+							<td class="it-orange">0</td>
+						</tr>
+						<tr>
+							<td class="it-lightgreen">천</td>
+							<td class="it-lightgreen">백</td>
+							<td class="it-lightgreen">십</td>
+							<td class="it-lightgreen">일</td>
+							<td class="it-lightorange">천</td>
+							<td class="it-lightorange">백</td>
+							<td class="it-lightorange">십</td>
+							<td class="it-lightorange">일</td>
+						</tr>
+						<tr>
+							<td class="it-white redT textAlignR" colspan="4">만</td>
+							<td class="it-white redT textAlignR" colspan="4">일</td>
+						</tr>
+						</tbody></table>
+					</div>
+					<div class="textAlignC mt_40">
+						62390000 = <div class="toggle" data-toggle-obj="33">
+							<div class="answer" data-toggle-target="33">60000000</div>
+						</div> + 2000000 + <div class="toggle" data-toggle-obj="34">
+							<div class="answer" data-toggle-target="34">300000</div>
+						</div> +  90000
+					</div>
+
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="31" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn it-green" data-popup-btn="32" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					<ins class="icon_bogi"></ins>와 같이 나타내 보세요.
+				</span></h2>
+				<section>
+					<div class="bogiContainer">
+						<div class="icon_bogi"></div>
+						<div class="inner">
+							<div class="flexListContainer center jcenter mt_20">
+								<div class="mr_20">
+									<div class="colorBox orange">31247569</div>
+								</div>
+								<div class="icon_arrow mr_20">
+								</div>
+								<div class="it-treeRow brown">
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<span class="underLine">
+											3124만 7569
+										</span>
+									</div>
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<span class="underLine">
+											삼천백이십사만 칠천오백육십구
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flexListContainer center jcenter mt_30">
+						<div class="mr_20">
+							<div class="colorBox orange">7263408</div>
+						</div>
+						<div class="icon_arrow mr_20">
+						</div>
+						<div class="it-treeRow brown">
+							<div class="it-treeRow-list flexListContainer center jcenter">
+								<div class="toggle" data-toggle-obj="41">
+									<div class="answer" data-toggle-target="41">
+										726만 3408
+									</div>
+								</div>
+							</div>
+							<div class="it-treeRow-list flexListContainer center jcenter">
+								<div class="toggle" data-toggle-obj="42">
+									<div class="answer" data-toggle-target="42">
+										칠백이십육만 삼천사백팔
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="41" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn it-green" data-popup-btn="42" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number star">5</ins><span>
+					1부터 8까지의 수 카드를 모두 한 번씩만 사용하여 십만 자리의 숫자가 5인 가장 큰 수를 만들고 읽어 보세요.
+				</span></h2>
+				<section>
+					<div class="it-img">
+						<div class="it-num">1</div>
+						<div class="it-num">2</div>
+						<div class="it-num">3</div>
+						<div class="it-num">4</div>
+						<div class="it-num">5</div>
+						<div class="it-num">6</div>
+						<div class="it-num">7</div>
+						<div class="it-num">8</div>
+					</div>
+					<div class="textAlignC">
+						<ul class="mt_30" style="display:inline-block;">
+							<li class="flexListContainer start center">
+								<div class="colorBox check deepOrange">쓰기</div>
+								<div>
+									<div class="toggle" data-toggle-obj="51">
+										<div class="answer" data-toggle-target="51">87564321</div>
+									</div>
+								</div>
+							</li>
+							<li class="flexListContainer start center mt_20">
+								<div class="colorBox check brown">읽기</div>
+								<div>
+									<div class="toggle" data-toggle-obj="52">
+										<div class="answer" data-toggle-target="52">팔천칠백오십육만 사천삼백이십일</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="51" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn it-green" data-popup-btn="52" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_6">
+				<h2><ins class="number star">6</ins><span>
+					어느 후원 단체에서 교육 활동을 지원한 전 세계 어린이의 수입니다. 지원받은 어린이의 수를 읽어 보고, 우리가 후원할 수 있는 방법도 생각해 봅시다.
+				</span></h2>
+				<section class="full" data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1" data-quiz="toggle">
+							<ul class="flexListContainer it-wrap">
+								<li class="flexListContainer">
+									<div class="it-figure"></div>
+									<div class="it-title">교육 시설 지원</div>
+									<div class="it-num">12000000명</div>
+									<div class="flexListContainer
+									 center">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="61">
+											<div class="answer" data-toggle-target="61">천이백만</div>
+										</div>명
+									</div>
+								</li>
+								<li class="flexListContainer">
+									<div class="it-figure"></div>
+									<div class="it-title">놀이 시설 지원</div>
+									<div class="it-num">6900000명</div>
+									<div class="flexListContainer center">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="62">
+											<div class="answer" data-toggle-target="62">육백구십만</div>
+										</div>명
+									</div>
+								</li>
+								<li class="flexListContainer">
+									<div class="it-figure"></div>
+									<div class="it-title">학습 물품 지원</div>
+									<div class="it-num">11300000명</div>
+									<div class="flexListContainer center">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="63">
+											<div class="answer" data-toggle-target="63">천백삼십만</div>
+										</div>명
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="61" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_2">
+							<div class="textAlignC">
+								<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+							</div>
+							<div class="buttonContainer left">
+								<button class="characterBtn it-green" data-popup-btn="62" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+
+<!-- 팝업 -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_11" data-popup-page="11">
+			<div class="popup_contents">
+				1만의 10배는 10만,<br>
+				10만의 10배는 100만,<br>
+				100만의 10배는 1000만입니다.
+			</div>
+		</li>
+		<li class="whole pop_page_12" data-popup-page="12">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10"><ins class="blankBox w50"></ins> 안에 알맞은 수를 써넣으세요.</p>
+							<!-- popup article -->
+							<div class="flexListContainer center jcenter mt_20">
+								<div class="mr_20">
+									10000이
+								</div>
+								<div class="it-treeRow orange">
+									<div class="it-treeRow-list">
+										10개인 수
+										<div class="icon_arrow"></div>
+										<div class="toggle" data-toggle-obj="121">
+											<div class="answer" data-toggle-target="121">
+												100000
+											</div>
+										</div>
+									</div>
+									<div class="it-treeRow-list">
+										10개인 수
+										<div class="icon_arrow"></div>
+										<div class="toggle" data-toggle-obj="122">
+											<div class="answer" data-toggle-target="122">
+												1000000
+											</div>
+										</div>
+									</div>
+									<div class="it-treeRow-list">
+										10개인 수
+										<div class="icon_arrow"></div>
+										<div class="toggle" data-toggle-obj="123">
+											<div class="answer" data-toggle-target="123">
+												10000000
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_21" data-popup-page="21">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>삼십칠만을 수로 나타내면 370000입니다.</li>
+					<li>4205000은 사백이십만 오천이라고 읽습니다.</li>
+				</ul>
+			</div>
+		</li>
+		<li class="whole pop_page_22 page_2_comm" data-popup-page="22">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">빈칸에 알맞은 수나 말을 써넣으세요.</p>
+							<!-- popup article -->
+							<div class="textAlignC">
+								<div class="nemoBoxCon">
+									<ul class="nemoBoxCon_3 mt_20">
+										<li>
+											<div>63720000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div class="it-a">
+												<div class="toggle noBg" data-toggle-obj="221" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="221">육천삼백칠십이만</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<ul class="nemoBoxCon_3 mt_20">
+										<li>
+											<div class="it-a">
+												<div class="toggle noBg" data-toggle-obj="222" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="222">480000</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>사십팔만</div>
+										</li>
+									</ul>
+									<ul class="nemoBoxCon_3 mt_20">
+										<li>
+											<div>3720000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div class="it-a">
+												<div class="toggle noBg" data-toggle-obj="223" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="223">삼백칠십이만</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_31" data-popup-page="31">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>62390000에서 2는 백만의 자리 숫자이고, 9는 만의 자리 숫자입니다.</li>
+					<li>62390000에서 6은 천만의 자리이므로 60000000을 나타내고, 3은 십만의 자리이므로 300000을 나타냅니다.</li>
+				</ul>
+			</div>
+		</li>
+		<li class="whole pop_page_32" data-popup-page="32">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">71480000을 표로 나타낸 것입니다. <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</p>
+							<!-- popup article -->
+							<div class="tableContainer brown it-colorful" style="width:100%;">
+								<table><tbody>
+								<tr>
+									<td class="it-green">7</td>
+									<td class="it-green">
+										<div class="toggle noBg" data-toggle-obj="321">
+											<div class="answer" data-toggle-target="321">1</div>
+										</div>
+									</td>
+									<td class="it-green">4</td>
+									<td class="it-green">
+										<div class="toggle noBg" data-toggle-obj="322">
+											<div class="answer" data-toggle-target="322">8</div>
+										</div>
+									</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+								</tr>
+								<tr>
+									<td class="it-lightgreen">천</td>
+									<td class="it-lightgreen">백</td>
+									<td class="it-lightgreen">십</td>
+									<td class="it-lightgreen">일</td>
+									<td class="it-lightorange">천</td>
+									<td class="it-lightorange">백</td>
+									<td class="it-lightorange">십</td>
+									<td class="it-lightorange">일</td>
+								</tr>
+								<tr>
+									<td class="it-white redT textAlignR" colspan="4">만</td>
+									<td class="it-white redT textAlignR" colspan="4">일</td>
+								</tr>
+								</tbody></table>
+							</div>
+							<div class="textAlignC mt_50">
+								71480000 = <div class="toggle" data-toggle-obj="323">
+									<div class="answer" data-toggle-target="323">70000000</div>
+								</div> + 1000000 + <div class="toggle" data-toggle-obj="324">
+									<div class="answer" data-toggle-target="324">400000</div>
+								</div> + 80000
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_41" data-popup-page="41">
+			<div class="popup_contents">
+				7263408을 네 자리씩 끊어 보면 726만 3408이고, 칠백이십육만 삼천사백팔이라고 읽습니다.
+			</div>
+		</li>
+		<li class="whole pop_page_42" data-popup-page="42">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10"><ins class="icon_bogi it-title"></ins>와 같이 나타내 보세요.</p>
+							<!-- popup article -->
+							<div class="bogiContainer mt_20">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<div class="flexListContainer center jcenter mt_20">
+										<div class="mr_20">
+											<div class="colorBox orange">42358670</div>
+										</div>
+										<div class="icon_arrow mr_20">
+										</div>
+										<div class="it-treeRow brown">
+											<div class="it-treeRow-list flexListContainer center jcenter">
+												<span class="underLine">
+													4235만 8670
+												</span>
+											</div>
+											<div class="it-treeRow-list flexListContainer center jcenter">
+												<span class="underLine">
+													사천이백삼십오만 팔천육백칠십
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flexListContainer center jcenter mt_20">
+								<div class="mr_20">
+									<div class="colorBox orange">92130245</div>
+								</div>
+								<div class="icon_arrow mr_20">
+								</div>
+								<div class="it-treeRow brown">
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<div class="toggle" data-toggle-obj="421">
+											<div class="answer" data-toggle-target="421">
+												9213만 245
+											</div>
+										</div>
+									</div>
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<div class="toggle" data-toggle-obj="422">
+											<div class="answer" data-toggle-target="422">
+												구천이백십삼만 이백사십오
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_51" data-popup-page="51">
+			<div class="popup_contents">
+				십만의 자리에 먼저 5를 놓고 가장 큰 수부터 높은 자리에 차례로 놓으면 87564321입니다. 87564321은 팔천칠백오십육만 사천삼백이십일이라고 읽습니다.
+			</div>
+		</li>
+		<li class="whole pop_page_52" data-popup-page="52">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">1부터 8까지의 수 카드를 모두 한 번씩만 사용하여 백만 자리의 수가 4인 가장 큰 수를 만들고 읽어 보세요.</p>
+							<!-- popup article -->
+							<div class="it-img">
+								<div class="it-num">1</div>
+								<div class="it-num">2</div>
+								<div class="it-num">3</div>
+								<div class="it-num">4</div>
+								<div class="it-num">5</div>
+								<div class="it-num">6</div>
+								<div class="it-num">7</div>
+								<div class="it-num">8</div>
+							</div>
+							<div class="textAlignC">
+								<ul class="mt_30" style="display:inline-block;">
+									<li class="flexListContainer start center">
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div>
+											<div class="toggle" data-toggle-obj="521">
+												<div class="answer" data-toggle-target="521">84765321</div>
+											</div>
+										</div>
+									</li>
+									<li class="flexListContainer start center mt_20">
+										<div class="colorBox check brown">읽기</div>
+										<div>
+											<div class="toggle" data-toggle-obj="522">
+												<div class="answer" data-toggle-target="522">팔천사백칠십육만 오천삼백이십일</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_61" data-popup-page="61">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>12000000명은 천이백만 명이라고 읽습니다.</li>
+					<li>6900000명은 육백구십만 명이라고 읽습니다.</li>
+					<li>11300000명은 천백삼십만 명이라고 읽습니다.</li>
+				</ul>
+			</div>
+		</li>
+		<li class="whole pop_page_62" data-popup-page="62">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">어느 후원 단체에서 교육 활동을 지원한 전 세계 어린이의 수입니다. 지원받은 어린이의 수를 모두 읽어 보세요.</p>
+							<!-- popup article -->
+							<div class="tableContainer green">
+								<table><tbody>
+									<tr>
+										<th>교육 시설 지원</th>
+										<th>놀이 시설 지원</th>
+										<th>학습 물품 지원</th>
+									</tr>
+									<tr>
+										<td>23500000명</td>
+										<td>7450000명</td>
+										<td>12860000명</td>
+									</tr>
+								</tbody></table>
+							</div>
+							<div class="textAlignC  mt_40">
+								<div style="display:inline-block;">
+									<div class="flexListContainer start center">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="621">
+											<div class="answer" data-toggle-target="621">이천삼백오십만</div>
+										</div>명
+									</div>
+									<div class="flexListContainer start center mt_20">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="622">
+											<div class="answer" data-toggle-target="622">칠백사십오만</div>
+										</div>명
+									</div>
+									<div class="flexListContainer start center mt_20">
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="623">
+											<div class="answer" data-toggle-target="623">천이백팔십육만</div>
+										</div>명
+									</div>
+								</div>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'boy_1',
+						circle: 'deeppink',
+						speech:'right',
+						top: 100,
+						left: 0,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suhi_p_0401_01_0004_1.mp3',
+						sheetWidth: 38420,
+						sheetHeight: 421,
+						endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '우리가 후원할 수 있는 <br>방법도 생각해 보자.',
+							class: 'balloon left sky ctTail',
+							top:118,
+							left: 450,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.innerTab_2  .characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.innerTab_2  .characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+	}, false);
+</script>
+
+</body>
+
+</html>

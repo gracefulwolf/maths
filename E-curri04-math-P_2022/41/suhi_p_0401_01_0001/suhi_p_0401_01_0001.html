@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.basicSlider_slides .page_2  h2 > span{margin-left:10px;}
+	.lineBox.sky{display:inline-block;padding:5px 10px;font-size:40px;}
+	.conImg{text-align:center;}
+	.conImg img{width:auto;height:100%;}
+	.popBtn.textInBtn.inline{margin:6px 0 0 7px;}
+	.page_2{text-align:center;}
+	.page_2 h2>ins.number{margin-right:0;}
+	.page_2 .conImg{height:340px;}
+	.dlTbl{display:table;margin:10px auto;}
+	.page_3 .dlTbl{width:243px;}
+	.dlTbl dt{display:table-cell;vertical-align: top;width:87px;text-align:center;}
+	.dlTbl dd{display:table-cell;vertical-align: top;padding-left:10px;}
+	.page_3 .dlTbl dd .toggle{width:147px;}
+	.contentsList .colorBox.check{height:57px;}
+	.page_6 .contentsList>li .textAlignC{margin-top:10px;}
+	.page_7 .icon_apple li {
+		display: inline-block;
+		line-height: 0;
+		vertical-align: bottom;
+	}
+	.page_7 .lineBox.sky{margin-bottom:10px;}
+	.icon_apple{text-align: left;}
+	.flexListContainer > li{text-align:center;}
+	.flexListContainer > li:nth-child(1){width: 55%;padding-right:20px;}
+	.flexListContainer > li:nth-child(2){width: 45%;}
+	.flexListContainer .conImg img{height:285px;}
+	.page_7 .bullet.exam{position: absolute;top:0;left:0;opacity: 0;transition: all .3s;}
+	.page_7 .bullet.exam.on{opacity: 1;transition: all .3s;}
+
+	/* 팝업 */
+	.popup_contents .box{text-align:center;width:900px;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);}
+	.popup_contents .tableContainer{margin-top:20px;}
+	.popup_contents .conImg{height:385px;margin-top:20px;}
+	.popup_contents .contentsList{font-size:35px !important;}
+	.tableContainer table td, .tableContainer table th{font-size: 40px;}
+
+	/* row트리
+	* 동글블릿: .it-treeRow-tail
+	* 뒤집기: .it-treeRow-reverse
+	*/
+	.it-treeRow > .it-treeRow-list{position:relative; min-height:60px; padding:5px 0 5px 50px;}
+	.it-treeRow.it-treeRow-textOnly > .it-treeRow-list{min-height:inherit;}
+	.it-treeRow > .it-treeRow-list:before{content:""; display:block; position:absolute; top:50%; left:0; overflow:hidden; width:30px; height:100%; margin-top:-2px; box-shadow:3px 3px 0 #000 inset; transform:scale(1.01);}
+	.it-treeRow > .it-treeRow-list:after{content:""; display:block;  position:absolute; top:50%; left:24px; overflow:hidden; width:12px; height:12px; margin-top:-6px; border-radius:50%; transform:scale(1.01);}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:after{left:auto; right:24px;}
+	.it-treeRow > .it-treeRow-list:last-child:before{height:4px; box-shadow:0 4px 0 #000 inset;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list{padding:5px 50px 5px 0; text-align:right;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:before{left:auto; right:0; box-shadow:-4px 4px 0 #000 inset;}
+	.it-treeRow.pink > .it-treeRow-list:before{box-shadow:4px 4px 0 #ffece2 inset;}
+	.it-treeRow.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:before{box-shadow:4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.yellow > .it-treeRow-list:before{box-shadow:4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.sky > .it-treeRow-list:before{box-shadow:4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.orange > .it-treeRow-list:before{box-shadow:4px 4px 0 #fccd89 inset;}
+	.it-treeRow.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.beige > .it-treeRow-list:before{box-shadow:4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.purple > .it-treeRow-list:before{box-shadow:4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.brown > .it-treeRow-list:before{box-shadow:4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.green > .it-treeRow-list:before{box-shadow:4px 4px 0 #cee492 inset;}
+	.it-treeRow.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:before{box-shadow:-4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:before{box-shadow:-4px 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:before{box-shadow:-4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-tail.pink > .it-treeRow-list:after{background:#ffece2;}
+	.it-treeRow.it-treeRow-tail.deeppink > .it-treeRow-list:after{background:#f7c1c9;}
+	.it-treeRow.it-treeRow-tail.yellow > .it-treeRow-list:after{background:#f4e8bd;}
+	.it-treeRow.it-treeRow-tail.sky > .it-treeRow-list:after{background:#c1e8ec;}
+	.it-treeRow.it-treeRow-tail.orange > .it-treeRow-list:after{background:#fccd89;}
+	.it-treeRow.it-treeRow-tail.beige > .it-treeRow-list:after{background:#efcfa6;}
+	.it-treeRow.it-treeRow-tail.purple > .it-treeRow-list:after{background:#cabfe0;}
+	.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
+	.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
+
+
+	/* 개별 */
+	.page_1 .lineBox{width:100%; margin:0 auto;}
+	.page_1 .it-img{width:100%; height:240px; background:url(./images/suhi_p_0401_01_0001_1.png) no-repeat 50% 50% / contain;}
+	.page_2 .flexListContainer > div{margin:0 10px;}
+	.pop_page_2 ul{width:400px; margin:0 auto; text-align:right;}
+	.pop_page_2 li{position:relative;}
+	.pop_page_2 .icon_arrow{position:absolute; top:50%; left:60%; transform:translate(-50%, -50%);}
+	.pop_page_2 .it-left{width:50%;}
+	.pop_page_2 .it-right{width:40%; margin-right:20px;}
+	.pop_page_2 .it-total{width:100%; margin:20px 0 0; padding:10px 20px 0; border-top:3px solid #000;}
+	.pop_page_4 ins{border-bottom:3px solid rgba(0,0,0,0);}
+	.pop_page_4 .it-point{position:relative; border-bottom:3px solid red;}
+	.pop_page_4 .it-point:before{content:""; display:block; position:absolute; top:100%; left:12px; width:100px; height:25px; box-shadow:-3px 3px 0 red;}
+	.pop_page_4 .it-point ~ .it-point:before{left:auto; right:12px; box-shadow:3px 3px 0 red;}
+	.pop_page_4 .it-why{margin:30px 0 0;}
+	.pop_page_4 .it-inequal-img img{display:block; width:20px; margin:0 10px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">배운 내용을 기억하고 있나요</span>
+		<span class="sub-page">7쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					그림을 보고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="lineBox green">
+						<div class="it-img"></div>
+					</div>
+					<div class="textAlignC mt_50">
+						100이 10개이면 <div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">1000</div>
+						</div>입니다.
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					그림을 보고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer center jcenter">
+						<div class="it-treeRow it-treeRow-reverse it-treeRow-textOnly sky">
+							<div class="it-treeRow-list">
+								1000이 5개
+							</div>
+							<div class="it-treeRow-list">
+								100이 2개
+							</div>
+							<div class="it-treeRow-list">
+								10이 0개
+							</div>
+							<div class="it-treeRow-list">
+								1이 7개
+							</div>
+						</div>
+						<div>
+							이면 <div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									5207
+								</div>
+							</div>입니다.
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer center jcenter">
+						<div>
+							7934＝<div class="toggle" data-toggle-obj="31">
+								<div class="answer" data-toggle-target="31">
+									7000
+								</div>
+							</div>＋<div class="toggle" data-toggle-obj="32">
+								<div class="answer" data-toggle-target="32">
+									900
+								</div>
+							</div>＋30＋4
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
+					<img src="../common/contents/images/math/inequalIcon_2.png">, <img
+						src="../common/contents/images/math/equalIcon.png">, <img
+						src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+				</span></h2>
+				<section>
+					<div class="flexListContainer center around">
+						<div class="flexListContainer center jcenter">
+							5120 <div class="toggle circle ml_10 mr_10" data-toggle-obj="41">
+								<div class="answer" data-toggle-target="41"><img
+										src="../common/contents/images/math/inequalIcon_blue.png"></div>
+							</div> 6341
+						</div>
+						<div class="flexListContainer center jcenter">
+							3010 <div class="toggle circle ml_10 mr_10" data-toggle-obj="42">
+								<div class="answer" data-toggle-target="42"><img
+										src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+							</div> 3003
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+
+		</ul>
+	</div>
+</main>
+
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_1" data-popup-page="1">
+			<div class="popup_contents">
+				100원짜리 동전이 10개이면 1000원입니다.
+				<div class="flexListContainer start center mt_5">
+					<ins class="icon_arrow mr_10"></ins> 100이 10개이면 1000입니다.
+				</div>
+			</div>
+		</li>
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<ul>
+					<li class="flexListContainer center">
+						<div class="it-left">1000이 5개</div>
+						<div class="icon_arrow"></div>
+						<div class="it-right">5000</div>
+					</li>
+					<li class="flexListContainer center">
+						<div class="it-left">100이 2개</div>
+						<div class="icon_arrow"></div>
+						<div class="it-right">200</div>
+					</li>
+					<li class="flexListContainer center">
+						<div class="it-left">10이 0개</div>
+						<div class="icon_arrow"></div>
+						<div class="it-right">0</div>
+					</li>
+					<li class="flexListContainer center">
+						<div class="it-left">1이 7개</div>
+						<div class="icon_arrow"></div>
+						<div class="it-right">7</div>
+					</li>
+					<li class="flexListContainer center end">
+						<div class="it-total">
+							5207
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="solve pop_page_3" data-popup-page="3">
+			<div class="popup_contents">
+				7934는 1000이 7개, 100이 9개, 10이 3개, 1이 4개인 수입니다.
+				<div class="flexListContainer start center mt_5">
+					<ins class="icon_arrow mr_10"></ins> 7934＝7000＋900＋30＋4
+				</div>
+			</div>
+		</li>
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<div class="flexListContainer center around">
+					<div>
+						<div class="flexListContainer center jcenter">
+							<ins class="it-point">5</ins><ins>120</ins> <div class="toggle circle complete ml_10 mr_10">
+								<div class="answer"><img src="../common/contents/images/math/inequalIcon_blue.png" alt=""></div>
+							</div> <ins class="it-point">6</ins><ins>341</ins>
+						</div>
+						<div class="flexListContainer center jcenter it-why" style="transform:translateX(-30px)">
+							5 <div class="it-inequal-img"><img src="../common/contents/images/math/inequalIcon.png" alt=""></div> 6
+						</div>
+					</div>
+					<div>
+						<div class="flexListContainer center jcenter">
+							<ins>30</ins><ins class="it-point">1</ins><ins>0</ins> <div class="toggle circle complete ml_10 mr_10">
+								<div class="answer"><img src="../common/contents/images/math/inequalIcon_2_blue.png" alt=""></div>
+							</div> <ins>30</ins><ins class="it-point">0</ins><ins>3</ins>
+						</div>
+						<div class="flexListContainer center jcenter it-why" style="transform: translateX(10px);">
+							1 <div class="it-inequal-img"><img src="../common/contents/images/math/inequalIcon_2.png" alt=""></div> 0
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+
+</html>

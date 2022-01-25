@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
-    <link rel="stylesheet" href="../../../__common__/css/custom.css">
+    <!--<link rel="stylesheet" href="../../../__common__/css/custom.css">-->
 	<link rel="stylesheet" href="./css/suh_0501_01_0007_201_2.css">
 
 </head>
@@ -58,7 +58,7 @@
 					<h2><ins class="dot"></ins><span>문제를 해결할 수 있는 방법을 말해 보세요.</span></h2>
 					<!-- <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div> -->
 					<div class="textAlignC">
-						<div id="spriteAniBox_1" class="flexListContainer center jcenter"></div>
+						<div id="aniBox_1" class="flexListContainer center jcenter"></div>
 					</div>
 				</li>
 				<li class="page_3" data-slide-container>
@@ -137,7 +137,7 @@
 					<h2><ins class="dot"></ins><span>문제 카드에서 만들어지는 식이 연결된 식 카드와 같나요? 계산 순서에 맞게 계산하였나요?</span></h2>
 					<!-- <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div> -->
 					<div class="textAlignC">
-						<div id="spriteAniBox_2" class="flexListContainer center jcenter"></div>
+						<div id="aniBox_2" class="flexListContainer center jcenter"></div>
 					</div>
 				</li>
 			</ul>
@@ -205,9 +205,9 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
-	$prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
+	// $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
 	$prite.add({
-		target: $ts.getEl('#spriteAniBox_1'), // 스프라이트가 생성될 영역
+		target: $ts.getEl('#aniBox_1'), // 스프라이트가 생성될 영역
 		spriteId: 'sprite1',
 		spriteList: [{
 			name: 'girl_2',
@@ -231,6 +231,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				textAlign: 'center', // 말풍선 정렬
 				wordBreak: 'keep-all' // 말풍선 wordBreak
 			},
+			sheetWidth: 38418,
+			sheetHeight: 421,
+			endSheet: 0,
+			delay: 40,
 			callbacks: {
 				start: function () {
 					$ts.getEl('.page_2 .characterImg')[0].style.left = '-200px';
@@ -242,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}]
 	});
 	$prite.add({
-		target: $ts.getEl('#spriteAniBox_2'), // 스프라이트가 생성될 영역
+		target: $ts.getEl('#aniBox_2'), // 스프라이트가 생성될 영역
 		spriteId: 'sprite2',
 		spriteList: [{
 			name: 'girl_2',
@@ -266,6 +270,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				textAlign: 'center', // 말풍선 정렬
 				wordBreak: 'keep-all' // 말풍선 wordBreak
 			},
+			sheetWidth: 38418,
+			sheetHeight: 421,
+			endSheet: 0,
+			delay: 40,
 			callbacks: {
 				start: function () {
 					$ts.getEl('.page_4 .characterImg')[0].style.left = '-200px';
