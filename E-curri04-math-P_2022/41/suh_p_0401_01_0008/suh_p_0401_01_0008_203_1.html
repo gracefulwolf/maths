@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style type="text/css">
+		.page_1 img,
+		.pop_page_1 img{width: 100%;}
+		/* 숫자자리 table */
+		.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+		.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+		.tableContainer.it-colorful .it-pink{background:#ffece2;}
+		.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+		.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+		.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+		.tableContainer.it-colorful .it-green{background:#cee492;}
+		.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+		.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+		.tableContainer.it-colorful .it-orange{background:#fccd89;}
+		.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+		.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+		.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+		.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+		.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+		.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+		.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+		.tableContainer.it-colorful .it-white{background:#fff;}
+
+		.page_1 .popBtn.textInBtn{top:-100px; left:590px;}
+		.page_1 .it-img{position:relative; width:100%; height:340px; background:url(./images/suh_p_0401_01_0008_203_1/suh_p_0401_01_0008_203_1.png) no-repeat 130px 0% / 840px auto;}
+		.page_1 .it-img > div{position:absolute; font-size:32px;}
+		.page_1 .it-img > .it-txt1{top:50px; left:55px;}
+		.page_1 .it-img > .it-txt2{top:195px; left:18px;}
+		.page_1 .it-img > .it-txt3{top:80px; left:340px;}
+		.page_1 .it-img > .it-txt4{top:190px; left:257px;}
+		.page_1 .it-img > .it-txt5{top:184px; left:500px;}
+		.page_1 .it-img > .it-txt6{top:120px; left:740px;}
+
+		.it-flexbox{flex-wrap:wrap; position:relative;}
+		.it-flexbox .colorBox{width:30%;margin:15px 0 0;}
+		.it-flexbox .toggle{position:absolute; z-index:1; width:30%; height:110px; padding:0; background:none;}
+		.it-flexbox .toggle.n1{top:15px; left:0;}
+		.it-flexbox .toggle.n2{top:15px; left:382px;}
+		.it-flexbox .toggle.n3{top:15px; left:763px;}
+		.it-flexbox .toggle.n4{top:141px; left:0;}
+		.it-flexbox .toggle.n5{top:141px; left:382px;}
+		.it-flexbox .toggle.n6{top:141px; left:763px;}
+		.it-flexbox .toggle:after{display:none;}
+
+		.it-flexbox .toggle.complete{display:none !important;}
+		.it-flexbox .toggle{display:none;}
+		.it-flexbox .toggle.n1{display:block;}
+		.it-flexbox .toggle.complete + .toggle{display:block;}
+		.it-flexbox .click-finger-Btn{top:25%; right: 10px;}
+
+	</style>
+</head>
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title">
+				관광 수입으로 보는 세계 지도입니다. 관광 수입이 가장 많은 나라와 두 번째로 많은 나라를 찾아봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1"  data-popup-parent="hidden">
+							단위로 비교하기
+						</div>
+						<div class="it-img">
+							<div class="colorBox white it-txt1 textAlignC">
+								영국<br>
+								53조 9000억 원
+							</div>
+							<div class="colorBox white it-txt2 textAlignC">
+								스페인<br>
+								74조 9000억 원
+							</div>
+							<div class="colorBox white it-txt3 textAlignC">
+								대한민국<br>
+								14조 7000억 원
+							</div>
+							<div class="colorBox white it-txt4 textAlignC">
+								태국<br>
+								63조 3000억 원
+							</div>
+							<div class="colorBox white it-txt5 textAlignC">
+								일본<br>
+								37조 5000억 원
+							</div>
+							<div class="colorBox white it-txt6 textAlignC">
+								미국<br>
+								232조 원
+							</div>
+						</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer textAlignL" data-toggle-target="1">
+									관광 수입이 가장 많은 나라는 미국이고, 두 번째로 <br>많은 나라는 스페인입니다.
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+
+					</li>
+				</ul>
+			</div>
+
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1" data-quiz="toggle">
+					<h2><span>
+						단위로 비교하기
+					</span></h2>
+					<div class="popup_contents">
+						<div class="tableContainer it-colorful brown">
+							<table><tbody>
+								<tr>
+									<td></td>
+									<td class="it-beige">백조</td>
+									<td class="it-purple">십조</td>
+									<td class="it-lightgreen">조</td>
+									<td class="it-pink">천억</td>
+									<td class="it-sky">백억</td>
+									<td class="it-yellow">십억</td>
+									<td class="it-green">억</td>
+									<td class="it-white">천만</td>
+									<td class="it-white">백만</td>
+									<td class="it-white">십만</td>
+									<td class="it-white">만</td>
+									<td class="it-white">천</td>
+									<td class="it-white">백</td>
+									<td class="it-white">십</td>
+									<td class="it-white">일</td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="11">영국</span></td>
+									<td class="it-beige"></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="11">5</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="11">3</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="11">9</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="11">0</span></td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="12">스페인</span></td>
+									<td class="it-beige"></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="12">7</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="12">4</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="12">9</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="12">0</span></td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="13">태국</span></td>
+									<td class="it-beige"></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="13">6</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="13">3</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="13">3</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="13">0</span></td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="14">대한민국</span></td>
+									<td class="it-beige"></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="14">1</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="14">4</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="14">7</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="14">0</span></td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="15">일본</span></td>
+									<td class="it-beige"></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="15">3</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="15">7</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="15">5</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="15">0</span></td>
+								</tr>
+								<tr>
+									<td><span class="answer" data-toggle-target="16">미국</span></td>
+									<td class="it-beige"><span class="answer" data-toggle-target="16">2</span></td>
+									<td class="it-purple"><span class="answer" data-toggle-target="16">3</span></td>
+									<td class="it-lightgreen"><span class="answer" data-toggle-target="16">2</span></td>
+									<td class="it-pink"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-sky"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-yellow"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-green"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+									<td class="it-white"><span class="answer" data-toggle-target="16">0</span></td>
+								</tr>
+							</tbody></table>
+						</div>
+
+						<div class="flexListContainer it-flexbox mt_20">
+							<div class="toggle n1" data-toggle-obj="11">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="toggle n2" data-toggle-obj="12">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="toggle n3" data-toggle-obj="13">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="toggle n4" data-toggle-obj="14">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="toggle n5" data-toggle-obj="15">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="toggle n6" data-toggle-obj="16">
+								<span class="click-finger-Btn blinkOn blinkOpacity" data-hover=""></span>
+							</div>
+							<div class="colorBox sky textAlignC">
+								영국<br>
+								53조 9000억 원
+							</div>
+							<div class="colorBox yellow textAlignC">
+								스페인<br>
+								74조 9000억 원
+							</div>
+							<div class="colorBox green textAlignC">
+								태국<br>
+								63조 3000억 원
+							</div>
+							<div class="colorBox deeppink textAlignC">
+								대한민국<br>
+								14조 7000억 원
+							</div>
+							<div class="colorBox purple textAlignC">
+								일본<br>
+								37조 5000억 원
+							</div>
+							<div class="colorBox orange textAlignC">
+								미국<br>
+								232조 원
+							</div>
+						</div>
+
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>

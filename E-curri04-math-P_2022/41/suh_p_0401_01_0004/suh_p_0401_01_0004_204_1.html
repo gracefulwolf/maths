@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style type="text/css">
+		img{max-width:100%;}
+		.title .icon_bogi{height:36px; margin:-5px 0 0 0; border:2px solid; border-radius:30px; background-color:#fcf7f4; vertical-align:6px;}
+		.title .icon_bogi:after{font-size:21px; line-height:25px;}
+		.title .icon_bogi:after{line-height:33px;}
+
+		/* row트리
+		* 동글블릿: .it-treeRow-tail
+		* 뒤집기: .it-treeRow-reverse
+		* 텍스트: .it-treeRow-textOnly
+		*/
+		.it-treeRow > .it-treeRow-list{position:relative; min-height:60px; padding:5px 0 5px 50px;}
+		.it-treeRow.it-treeRow-textOnly > .it-treeRow-list{min-height:inherit;}
+		.it-treeRow > .it-treeRow-list:before{content:""; display:block; position:absolute; top:50%; left:0; overflow:hidden; width:30px; height:100%; margin-top:-2px; box-shadow:3px 3px 0 #000 inset; transform:scale(1.01);}
+		.it-treeRow > .it-treeRow-list:after{content:""; display:block;  position:absolute; top:50%; left:24px; overflow:hidden; width:12px; height:12px; margin-top:-6px; border-radius:50%; transform:scale(1.01);}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list:after{left:auto; right:24px;}
+		.it-treeRow > .it-treeRow-list:last-child:before{height:4px; box-shadow:0 4px 0 #000 inset;}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list{padding:5px 50px 5px 0; text-align:right;}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list:before{left:auto; right:0; box-shadow:-4px 4px 0 #000 inset;}
+		.it-treeRow.pink > .it-treeRow-list:before{box-shadow:4px 4px 0 #ffece2 inset;}
+		.it-treeRow.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+		.it-treeRow.deeppink > .it-treeRow-list:before{box-shadow:4px 4px 0 #f7c1c9 inset;}
+		.it-treeRow.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+		.it-treeRow.yellow > .it-treeRow-list:before{box-shadow:4px 4px 0 #f4e8bd inset;}
+		.it-treeRow.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+		.it-treeRow.sky > .it-treeRow-list:before{box-shadow:4px 4px 0 #c1e8ec inset;}
+		.it-treeRow.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+		.it-treeRow.orange > .it-treeRow-list:before{box-shadow:4px 4px 0 #fccd89 inset;}
+		.it-treeRow.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+		.it-treeRow.beige > .it-treeRow-list:before{box-shadow:4px 4px 0 #efcfa6 inset;}
+		.it-treeRow.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+		.it-treeRow.purple > .it-treeRow-list:before{box-shadow:4px 4px 0 #cabfe0 inset;}
+		.it-treeRow.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+		.it-treeRow.brown > .it-treeRow-list:before{box-shadow:4px 4px 0 #ae7c65 inset;}
+		.it-treeRow.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+		.it-treeRow.green > .it-treeRow-list:before{box-shadow:4px 4px 0 #cee492 inset;}
+		.it-treeRow.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ffece2 inset;}
+		.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+		.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f7c1c9 inset;}
+		.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+		.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f4e8bd inset;}
+		.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+		.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:before{box-shadow:-4px 4px 0 #c1e8ec inset;}
+		.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+		.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:before{box-shadow:-4px 4px 0 #fccd89 inset;}
+		.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+		.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:before{box-shadow:-4px 4px 0 #efcfa6 inset;}
+		.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+		.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cabfe0 inset;}
+		.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+		.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ae7c65 inset;}
+		.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+		.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-tail.pink > .it-treeRow-list:after{background:#ffece2;}
+		.it-treeRow.it-treeRow-tail.deeppink > .it-treeRow-list:after{background:#f7c1c9;}
+		.it-treeRow.it-treeRow-tail.yellow > .it-treeRow-list:after{background:#f4e8bd;}
+		.it-treeRow.it-treeRow-tail.sky > .it-treeRow-list:after{background:#c1e8ec;}
+		.it-treeRow.it-treeRow-tail.orange > .it-treeRow-list:after{background:#fccd89;}
+		.it-treeRow.it-treeRow-tail.beige > .it-treeRow-list:after{background:#efcfa6;}
+		.it-treeRow.it-treeRow-tail.purple > .it-treeRow-list:after{background:#cabfe0;}
+		.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
+		.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title">
+				<ins class="icon_bogi"></ins>와 같이 나타내 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!-- <ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+				</ul> -->
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<!-- <h2><ins class="dot"></ins><span>
+						</span></h2> -->
+						<section>
+							<div class="bogiContainer">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<div class="flexListContainer center jcenter mt_20">
+										<div class="mr_20">
+											<div class="colorBox sky">9124259</div>
+										</div>
+										<div class="icon_arrow mr_20">
+										</div>
+										<div class="it-treeRow brown it-treeRow-textOnly">
+											<div class="it-treeRow-list flexListContainer center jcenter">
+												<span class="underLine">
+													9124만 2569
+												</span>
+											</div>
+											<div class="it-treeRow-list flexListContainer center jcenter">
+												<span class="underLine">
+													구천백이십사만 이천오백육십구
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flexListContainer center jcenter mt_30">
+								<div class="mr_20">
+									<div class="colorBox sky">67353802</div>
+								</div>
+								<div class="icon_arrow mr_20">
+								</div>
+								<div class="it-treeRow brown">
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<div class="toggle" data-toggle-obj="41">
+											<div class="answer" data-toggle-target="41">
+												6735만 3802
+											</div>
+										</div>
+									</div>
+									<div class="it-treeRow-list flexListContainer center jcenter">
+										<div class="toggle" data-toggle-obj="42">
+											<div class="answer" data-toggle-target="42">
+												육천칠백삼십오만 삼천팔백이
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</section>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (){
+
+		});
+	</script>
+
+
+</html>

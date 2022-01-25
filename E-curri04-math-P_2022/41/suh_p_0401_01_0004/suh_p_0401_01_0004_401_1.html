@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<style>
+		.addLineController{top:8px;}
+		.checkContainer .contentsBox h2 {
+			font-size: 40px !important;
+			line-height: 1.3em !important;
+			margin-bottom: 30px;
+		}
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+
+		/* 상단 탭정렬 */
+		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
+		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
+
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.checkContainer h2 .toggleBlank{margin-top:8px;}
+		.checkContainer .contentsBox h2{margin-top:0;}
+
+
+		/* 개별 */
+		.page_1 .dragLineContainer{height:340px; margin:0 30px;}
+		.page_1 .dragLineContainer > ul{display:flex; flex-direction:column;}
+		.page_1 .dragLineContainer > ul > li{min-width:245px;}
+		.page_1 .dragLineContainer .sky,
+		.page_1 .dragLineContainer .green{justify-content:space-between;}
+		.page_1 .top_1{top:30px;}
+		.page_1 .top_2{top:170px;}
+		.page_1 .top_3{top:310px;}
+		.page_1 .left_1{left:425px;}
+		.page_1 .left_2{left:700px;}
+
+		.page_2 .lineBox{width:940px; margin:0 auto;}
+
+		.page_4 .lineBox{width:550px; margin:0 auto;}
+		.page_4 .contentsList{display:inline-block;}
+		.page_4 .lineBox {display:inline-block; padding:20px;}
+		.page_4 .img_3{margin:0 auto; width:100%; height:300px; background:url(./images/suh_0401_01_0003_401_1_1.png) no-repeat; background-position:center; background-size:contain;}
+
+		.page_5 ul.nemoBoxCon{text-align:center;}
+		.page_5 ul.nemoBoxCon + ul.nemoBoxCon{margin:15px 0 0;}
+		.page_5 ul.nemoBoxCon li{display:inline-block; position:relative; text-align:center;}
+		.page_5 ul.nemoBoxCon li:first-child > div{width:300px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2;}
+		.page_5 ul.nemoBoxCon li:last-child > div{width:400px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2; text-align:center;}
+		.page_5 ul.nemoBoxCon li div.bgc_w{background-color:#ffffff;}
+		.page_5 ul.nemoBoxCon_2 li .qBox, ul.nemoBoxCon_4 li .qBox{width:500px;}
+		.page_5 ul.nemoBoxCon_3 li .qBox{width:180px;}
+		.page_5 ul.nemoBoxCon .toggle{line-height:80px; vertical-align:top;}
+
+		.page_6 .dragLineContainer{height:320px; margin:0 30px;}
+		.page_6 .dragLineContainer > ul{display:flex; flex-direction:column; justify-content:space-between;}
+		.page_6 .dragLineContainer > ul > li{min-width:285px; padding:14px 12px;}
+		.page_6 .top_1{top:69px;}
+		.page_6 .top_2{top:194px;}
+		.page_6 .top_3{top:321px;}
+		.page_6 .left_1{left:340px;}
+		.page_6 .left_2{left:660px;}
+
+		.page_7 .lineBox{width:940px; margin:0 auto;}
+
+		.page_8 .contentsList{display:inline-block;}
+		.page_8 .numCardCon{text-align:center;}
+		.page_8 .numCard{position:relative; display:inline-block; margin:0 5px; width:100px; height:122px; line-height:122px; text-align:center; box-shadow: 0 0 0 8px #fc0 inset;}
+		.page_8 .calContainer{margin-bottom:10px;}
+		.page_8 .qBox{top:3px;left:-8px;}
+		.page_8 .calBox{width:150px; height:76px; line-height:76px; margin-right:10px; text-align:center;}
+		.page_8 .rwCon{margin-left:150px;}
+
+		/* 스텝클릭 */
+		.page_4 .lineBox{position:relative;}
+		[class*="it-btn-"]{position:absolute; z-index:1; border:6px solid #e94d40;}
+		[class*="it-btn-"].blinkOn{-webkit-animation-iteration-count: infinite; animation-iteration-count: infinite;}
+		[class*="it-btn-"]{display:none;}
+		.it-btn-1,
+		[class*="it-btn-"].complete + [class*="it-btn-"]{display:block;}
+		[class*="it-btn-"].complete{display:none !important;}
+		.it-btn-1{top:18px; left:88px; width:182px; height:80px;}
+		.it-btn-2{top:18px; left:296px; width:182px; height:80px;}
+		.it-btn-3{top:18px; left:502px; width:182px; height:80px;}
+		.it-btn-4{top:18px; left:708px; width:182px; height:80px;}
+		.it-btn-5{top:124px; left:88px; width:182px; height:80px;}
+		.it-btn-6{top:124px; left:296px; width:182px; height:80px;}
+		.it-btn-7{top:124px; left:502px; width:182px; height:80px;}
+		.it-btn-8{top:124px; left:708px; width:182px; height:80px;}
+		.it-btn-9{top:228px; left:296px; width:182px; height:80px;}
+		.it-btn-10{top:228px; left:502px; width:182px; height:80px;}
+		[class*="it-num-"]{display:none; position:absolute; width:38px; height:38px; border-radius:50%; font-size:32px; color:#fff; line-height:38px; text-align:center;}
+		[class*="it-num-"].on{display:block;}
+		[class*="it-num-"].it-green{background:#009a48;}
+		[class*="it-num-"].it-blue{background:#327be5;}
+		[class*="it-num-"].it-silver{background:#959595;}
+		[class*="it-num-"].it-bronze{background:#ee6e32;}
+		.it-num-1{top:46px; left:160px;}
+		.it-num-2{top:46px; left:370px;}
+		.it-num-3{top:46px; left:580px;}
+		.it-num-4{top:46px; left:790px;}
+		.it-num-5{top:151px; left:160px;}
+		.it-num-6{top:151px; left:370px;}
+		.it-num-7{top:151px; left:580px;}
+		.it-num-8{top:151px; left:790px;}
+		.it-num-9{top:256px; left:370px;}
+		.it-num-10{top:256px; left:580px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="dragLine" data-option="answer" data-total-complete-count="3">
+						<h2><ins class="dot"></ins><span>
+							같은 수끼리 선으로 이어 보시오.
+						</span></h2>
+						<section>
+							<div class="study_guide">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
+							<div class="dragLineContainer">
+								<ul class="box sky">
+									<li>10000이 10개인 수</li>
+									<li>10000이 10개인 수</li>
+									<li>10000이 100개인 수</li>
+								</ul>
+								<ul class="box green">
+									<li>1000만</li>
+									<li>100만</li>
+									<li>10만</li>
+								</ul>
+							</div>
+							<svg class="js-svgContainer svgContainer"></svg>
+							<div class="js-dragLineArea dragLineArea left_1 top_1" data-group="1" data-name="dragLine1" data-answer="3"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_1" data-group="1" data-name="dragLine1" data-answer="3" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_1 top_3" data-group="1" data-name="dragLine3" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_3" data-group="1" data-name="dragLine3" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_2 top_1" data-group="2" data-name="dragLine5" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_1" data-group="2" data-name="dragLine5" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_2 top_2" data-group="2" data-name="dragLine6" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_2" data-group="2" data-name="dragLine6" data-answer="2" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_2 top_3" data-group="2" data-name="dragLine6" data-answer="3"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_3" data-group="2" data-name="dragLine6" data-answer="3" data-complete-count="1"></div>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							설명하는 수를 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox green textAlignC">
+								1000만이 8개, 100만이 2개, 10만이 3개인 수
+							</div>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										82300000
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><span class="icon_bogi"></span>와 같이 나타내 보시오.</span></h2>
+						<section>
+							<div class="flexListContainer center">
+								<div class="bogiContainer mr_40">
+									<div class="icon_bogi"></div>
+									<div class="inner">
+										이백육십칠만 오천백구십일
+										<div class="mt_15">
+											<span class="icon_arrow"></span>
+											267만 5191
+										</div>
+										<div class="mt_15">
+											<span class="icon_arrow"></span>
+											2675191
+										</div>
+									</div>
+								</div>
+								<div>
+									육백칠십만 사천오백팔십삼
+									<div class="mt_15">
+										<span class="icon_arrow"></span>
+										<div class="toggle" data-toggle-obj="31">
+											<div class="answer" data-toggle-target="31">
+												670만 4583
+											</div>
+										</div>
+									</div>
+									<div class="mt_15">
+										<span class="icon_arrow"></span>
+										<div class="toggle" data-toggle-obj="32">
+											<div class="answer" data-toggle-target="32">
+												6704583
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							돈이 모두 얼마인지 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox pink" style="width:100%;">
+								<div class="img_3"></div>
+								<div class="it-btn-1 blinkOn blinkOpacity" data-toggle-obj="401"></div>
+								<div class="it-btn-2 blinkOn blinkOpacity" data-toggle-obj="402"></div>
+								<div class="it-btn-3 blinkOn blinkOpacity" data-toggle-obj="403"></div>
+								<div class="it-btn-4 blinkOn blinkOpacity" data-toggle-obj="404"></div>
+								<div class="it-btn-5 blinkOn blinkOpacity" data-toggle-obj="405"></div>
+								<div class="it-btn-6 blinkOn blinkOpacity" data-toggle-obj="406"></div>
+								<div class="it-btn-7 blinkOn blinkOpacity" data-toggle-obj="407"></div>
+								<div class="it-btn-8 blinkOn blinkOpacity" data-toggle-obj="408"></div>
+								<div class="it-btn-9 blinkOn blinkOpacity" data-toggle-obj="409"></div>
+								<div class="it-btn-10 blinkOn blinkOpacity" data-toggle-obj="410"></div>
+								<div class="it-num-1 it-green" data-toggle-target="401">1</div>
+								<div class="it-num-2 it-green" data-toggle-target="402">2</div>
+								<div class="it-num-3 it-green" data-toggle-target="403">3</div>
+								<div class="it-num-4 it-green" data-toggle-target="404">4</div>
+								<div class="it-num-5 it-green" data-toggle-target="405">5</div>
+								<div class="it-num-6 it-green" data-toggle-target="406">6</div>
+								<div class="it-num-7 it-green" data-toggle-target="407">7</div>
+								<div class="it-num-8 it-green" data-toggle-target="408">8</div>
+								<div class="it-num-9 it-green" data-toggle-target="409">9</div>
+								<div class="it-num-10 it-green" data-toggle-target="410">10</div>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="4">
+									<div class="answer" data-toggle-target="4">100000</div>
+								</div>원
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							빈칸에 알맞은 수나 말을 써 보시오.
+						</span></h2>
+						<section>
+							<ul class="nemoBoxCon nemoBoxCon_1">
+								<li>
+									<div>280000</div>
+								</li>
+								<li>
+									<div>이십팔만</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_2">
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="51" style="padding:0;width:100%;">
+											<div class="answer" data-toggle-target="51">58370000</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div>오천팔백삼십칠만</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_3">
+								<li>
+									<div>3510000</div>
+								</li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="52" style="padding:0;width:100%;">
+											<div class="answer" data-toggle-target="52">삼백오십일만</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="nemoBoxCon nemoBoxCon_4">
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="53s" style="padding:0;width:100%;">
+											<div class="answer" data-toggle-target="53">14000000</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div>천사백만</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_6" data-quiz="dragLine" data-option="answer" data-total-complete-count="3">
+						<h2><ins class="dot"></ins><span class="ls1">
+							밑줄 친 숫자 3이 나타내는 값으로 알맞은 것끼리 이어 보시오.
+						</span></h2>
+						<section>
+							<div class="study_guide" style="top:-29px">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
+							<div class="dragLineContainer" style="margin-top:35px;">
+								<ul class="box">
+									<li class="colorBox sky">7<span style="text-decoration:underline;">3</span>320451</li>
+									<li class="colorBox sky">4091<span style="text-decoration:underline;">3</span>238</li>
+									<li class="colorBox sky">254811<span style="text-decoration:underline;">3</span>0</li>
+								</ul>
+								<ul class="box">
+									<li class="colorBox orange">30</li>
+									<li class="colorBox orange">3000000</li>
+									<li class="colorBox orange">3000</li>
+								</ul>
+							</div>
+							<svg class="js-svgContainer svgContainer"></svg>
+							<div class="js-dragLineArea dragLineArea left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1" data-complete-count="1"></div>
+							<div class="js-dragLineArea dragLineArea left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2" data-complete-count="1"></div>
+							<div class="js-dragLineArea dragLineArea left_1 top_3" data-group="1" data-name="dragLine3" data-answer="3"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_3" data-group="1" data-name="dragLine3" data-answer="3" data-complete-count="1"></div>
+
+							<!-group 2    --><div class="js-dragLineArea dragLineArea left_2 top_1" data-group="2" data-name="dragLine4" data-answer="3"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_1" data-group="2" data-name="dragLine4" data-answer="3" data-complete-count="1"></div>
+							<div class="js-dragLineArea dragLineArea left_2 top_2" data-group="2" data-name="dragLine5" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_2" data-group="2" data-name="dragLine5" data-answer="1" data-complete-count="1"></div>
+							<div class="js-dragLineArea dragLineArea left_2 top_3" data-group="2" data-name="dragLine6" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_3" data-group="2" data-name="dragLine6" data-answer="2" data-complete-count="1"></div>
+
+							<div class="buttonContainer">
+								<!-solveCheckBtn 해설 팝업 버  --><!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							설명하는 수가 얼마인지 써 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox green textAlignC">
+								100만이 93개, 10만이 7개, 만이 5개인 수
+							</div>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="7">
+									<div class="answer" data-toggle-target="7">
+										93750000
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_8" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							수 카드를 모두 한 번씩만 사용하여 가장 큰 수를 만들고 읽어 보시오.
+						</span></h2>
+						<section>
+							<div class="numCardCon">
+								<div class="numCard">
+									<div>0</div>
+								</div>
+								<div class="numCard">
+									<div>1</div>
+								</div>
+								<div class="numCard">
+									<div>2</div>
+								</div>
+								<div class="numCard">
+									<div>4</div>
+								</div>
+								<div class="numCard">
+									<div>5</div>
+								</div>
+								<div class="numCard">
+									<div>7</div>
+								</div>
+								<div class="numCard">
+									<div>8</div>
+								</div>
+								<div class="numCard">
+									<div>9</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_50">
+								<ul class="contentsList">
+									<li>
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div class="toggle" data-toggle-obj="81">
+											<div class="answer" data-toggle-target="81">98754210</div>
+										</div>
+									</li>
+									<li>
+										<div class="colorBox check brown">읽기</div>
+										<div class="toggle" data-toggle-obj="82">
+											<div class="answer" data-toggle-target="82">구천팔백칠십오만 사천이백십</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj){
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj){
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function (){
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

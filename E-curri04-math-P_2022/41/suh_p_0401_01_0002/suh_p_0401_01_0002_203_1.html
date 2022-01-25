@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style type="text/css">
+		.page_1 .it-wrap{justify-content: center;}
+		.page_1 .it-wrap .lineBox{flex: 2;display: flex;flex-direction: column;align-items: center;justify-content: center;height: 300px;}
+		.page_1 .it-wrap .lineBox + .lineBox{flex:1;margin-left:20px;}
+		.page_1 .it-wrap .lineBox > div:first-child{display: flex;align-items: center;min-height: 200px;}
+		.page_1 .it-wrap .lineBox img{max-height:180px;}
+		.popup_contents .flex-wrap{align-items: center;justify-content: space-between;width: 100%;min-height: 300px;padding-top: 185px;background: url(./images/suh_p_0401_01_0002_203_1-bg.png) no-repeat -30px 25px / 100% auto;box-sizing: border-box;}
+		.popup_contents .flex-wrap > div{min-height: 100px;}
+		.popup_contents .it-01{position: absolute;top: 270px;left: 130px;}
+		.popup_contents .it-02{position: absolute;top: 270px;left: 320px;}
+		.popup_contents .it-03{position: absolute;top: 270px;left: 630px;}
+		.popup_contents .it-04{position: absolute;top: 30px;left: 300px;}
+		.popup_contents .it-05{position: absolute;top: 80px;left: 420px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title">
+				10000원이 되려면 각각의 돈이 얼마나 필요한지 알아봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<div class="mathCalcContainer it-wrap">
+							<div class="lineBox sky">
+								<div>
+									<img src="./images/suh_p_0401_01_0002_203_1/suh_p_0401_01_0002_203_1_1.png" alt="">
+								</div>
+								<div class="textAlignC">10장</div>
+							</div>
+							<div class="lineBox sky">
+								<div>
+									<img src="./images/suh_p_0401_01_0002_203_1/suh_p_0401_01_0002_203_1_2.png" alt="">
+								</div>
+								<div class="textAlignC">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">100</div>
+									</div> 개
+								</div>
+							</div>
+							<div class="lineBox sky">
+								<div>
+									<img src="./images/suh_p_0401_01_0002_203_1/suh_p_0401_01_0002_203_1_3.png" alt="">
+								</div>
+								<div class="textAlignC">
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">1000</div>
+									</div> 개
+								</div>
+							</div>
+						</div>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div class="flex-wrap">
+									<div>
+										<img src="./images/suh_p_0401_01_0002_203_1-10.png" alt="">
+									</div>
+									<div>
+										<img src="./images/suh_p_0401_01_0002_203_1-100.png" alt="">
+									</div>
+									<div>
+										<img src="./images/suh_p_0401_01_0002_203_1-1000.png" alt="">
+									</div>
+									<div>
+										<img src="./images/suh_p_0401_01_0002_203_1-10000.jpg" alt="">
+									</div>
+								</div>
+								<div class="it-01">10개</div>
+								<div class="it-02">10개</div>
+								<div class="it-03">10장</div>
+								<div class="it-04">1000개</div>
+								<div class="it-05">100개</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>

@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style>
+		/* 커브 단계 */
+		.type-qs2.textAlignC{margin: 0 auto 30px;width: 800px;height: 90px;}
+		.type-qs2 .flex-box{display: flex;justify-content: space-between;}
+		.type-qs2 .flexListContainer{width: 100%;position: relative;}
+		.type-qs2 .colorBox{position: absolute;z-index: 999;}
+		.type-qs2 .curveLine{left: 13%;top: 20px;}
+		.type-qs2 .curveLine .line{clip: rect(0,250px,100px,0);width: 200px;height: 200px;}
+		.type-qs2 .curveLine:after{z-index: 999;transform: rotate(60deg);left: 198px;top: 81px;}
+		.nemoBoxCon{position:relative;text-align:center;}
+		.nemoBoxCon ul li{display:inline-block;position:relative;}
+		ul.nemoBoxCon_1{position:relative;}
+		ul.nemoBoxCon_1 li:nth-child(2n+1) > div{position:relative;display:inline-block;width:150px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
+		ul.nemoBoxCon_1 li:nth-child(2n+2) > div{position:relative;top:-16px;display:inline-block;width:80px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
+		ul.nemoBoxCon_1 .qBox{width:160px;height:70px;}
+		ul.nemoBoxCon_2{position:relative;margin-top:30px;margin-left:40px;}
+		ul.nemoBoxCon_2 li:nth-child(2n+2) > div{position:relative;display:inline-block;width:160px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
+		ul.nemoBoxCon_2 li:nth-child(2n+1) > div{position:relative;top:-16px;display:inline-block;width:40px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
+		ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
+		.type-qs2 .it1-1{left: 40px;}
+		.type-qs2 .it1-2{left: 250px;}
+		.type-qs2 .it1-3{left: 460px;}
+		.type-qs2 .it1-4{left: 670px;}
+		.type-qs2 .it1-5{left: -20px;}
+		.type-qs2 .it1-6{left: 190px;}
+		.type-qs2 .it1-7{left: 400px;}
+		.type-qs2 .it1-8{left: 610px;}
+
+		/* row트리
+		* 동글블릿: .it-treeRow-tail
+		* 뒤집기: .it-treeRow-reverse
+		* 텍스트: .it-treeRow-textOnly
+		*/
+		.it-treeRow > .it-treeRow-list{position:relative; min-height:60px; padding:5px 0 5px 50px;}
+		.it-treeRow.it-treeRow-textOnly > .it-treeRow-list{min-height:inherit;}
+		.it-treeRow > .it-treeRow-list:before{content:""; display:block; position:absolute; top:50%; left:0; overflow:hidden; width:30px; height:100%; margin-top:-2px; box-shadow:3px 3px 0 #000 inset; transform:scale(1.01);}
+		.it-treeRow > .it-treeRow-list:after{content:""; display:block;  position:absolute; top:50%; left:24px; overflow:hidden; width:12px; height:12px; margin-top:-6px; border-radius:50%; transform:scale(1.01);}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list:after{left:auto; right:24px;}
+		.it-treeRow > .it-treeRow-list:last-child:before{height:4px; box-shadow:0 4px 0 #000 inset;}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list{padding:5px 50px 5px 0; text-align:right;}
+		.it-treeRow.it-treeRow-reverse > .it-treeRow-list:before{left:auto; right:0; box-shadow:-4px 4px 0 #000 inset;}
+		.it-treeRow.pink > .it-treeRow-list:before{box-shadow:4px 4px 0 #ffece2 inset;}
+		.it-treeRow.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+		.it-treeRow.deeppink > .it-treeRow-list:before{box-shadow:4px 4px 0 #f7c1c9 inset;}
+		.it-treeRow.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+		.it-treeRow.yellow > .it-treeRow-list:before{box-shadow:4px 4px 0 #f4e8bd inset;}
+		.it-treeRow.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+		.it-treeRow.sky > .it-treeRow-list:before{box-shadow:4px 4px 0 #c1e8ec inset;}
+		.it-treeRow.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+		.it-treeRow.orange > .it-treeRow-list:before{box-shadow:4px 4px 0 #fccd89 inset;}
+		.it-treeRow.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+		.it-treeRow.beige > .it-treeRow-list:before{box-shadow:4px 4px 0 #efcfa6 inset;}
+		.it-treeRow.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+		.it-treeRow.purple > .it-treeRow-list:before{box-shadow:4px 4px 0 #cabfe0 inset;}
+		.it-treeRow.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+		.it-treeRow.brown > .it-treeRow-list:before{box-shadow:4px 4px 0 #ae7c65 inset;}
+		.it-treeRow.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+		.it-treeRow.green > .it-treeRow-list:before{box-shadow:4px 4px 0 #cee492 inset;}
+		.it-treeRow.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ffece2 inset;}
+		.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+		.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f7c1c9 inset;}
+		.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+		.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f4e8bd inset;}
+		.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+		.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:before{box-shadow:-4px 4px 0 #c1e8ec inset;}
+		.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+		.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:before{box-shadow:-4px 4px 0 #fccd89 inset;}
+		.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+		.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:before{box-shadow:-4px 4px 0 #efcfa6 inset;}
+		.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+		.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cabfe0 inset;}
+		.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+		.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ae7c65 inset;}
+		.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+		.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+		.it-treeRow.it-treeRow-tail.pink > .it-treeRow-list:after{background:#ffece2;}
+		.it-treeRow.it-treeRow-tail.deeppink > .it-treeRow-list:after{background:#f7c1c9;}
+		.it-treeRow.it-treeRow-tail.yellow > .it-treeRow-list:after{background:#f4e8bd;}
+		.it-treeRow.it-treeRow-tail.sky > .it-treeRow-list:after{background:#c1e8ec;}
+		.it-treeRow.it-treeRow-tail.orange > .it-treeRow-list:after{background:#fccd89;}
+		.it-treeRow.it-treeRow-tail.beige > .it-treeRow-list:after{background:#efcfa6;}
+		.it-treeRow.it-treeRow-tail.purple > .it-treeRow-list:after{background:#cabfe0;}
+		.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
+		.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
+
+
+
+		.innerTab_1 .mathCalcContainer{position: relative;z-index: 1;height: 440px;}
+		.innerTab_1 .it-border{position: absolute;z-index: 0;top: 215px;width: 100%;height: 5px;padding: 0;line-height: 0;}
+		.innerTab_1 .mathCalcContainer .lineBox{display: flex;align-items: center;justify-content: center;min-width: 16%;}
+		.innerTab_1 .it-wrap{display: flex;align-items: center;justify-content: space-evenly;position: absolute;top: 60px;width: 100%;}
+
+		.innerTab_2 .flexListContainer.it{align-items: center;justify-content: center;}
+		.innerTab_2 .flexListContainer.it > div{margin: 0 20px;}
+		.innerTab_2 .flexListContainer.it .it + .it{margin: 10px 0 0;}
+		.innerTab_2 .it-deco img{height: 210px;padding-top: 10px;}
+		.innerTab_2 .popBtn{bottom: 10px;}
+
+		.it-dot{position: relative;display: flex;flex-shrink: 0;width: 100%;color: #000;margin-bottom: 10px;line-height: 1.3em;font-size: 35px;font-family: NotoM;text-align: justify;}
+		.it-dot:before{content: "";  flex-shrink: 0;align-self: flex-start;width: 15px;height: 15px;border: 4px solid #f60;border-radius: 50%;background-color: #fff;margin: .4em 10px 0 0;box-sizing: border-box;}
+
+		.popup_contents .it-inner{position: relative;height: 610px;margin: 0 16px;}
+		.popup_contents .nemoBoxCon{display: flex;align-items: flex-end;position: relative;z-index: 1;height: 460px;}
+		.popup_contents .it-border{position: absolute;z-index: 0;bottom: 130px;width: 100%;height: 5px;padding: 0;line-height: 0;}
+		.popup_contents .nemoBoxCon .lineBox{display: flex;align-items: center;justify-content: center;min-width: 16%;}
+		.popup_contents .it-box-01{position: absolute;top: 70px;left: 320px;z-index: 1;}
+		.popup_contents .it-box-02{position: absolute;top: 160px;left: 480px;z-index: 1;}
+		.popup_contents .it-box-03{position: absolute;top: 250px;left: 620px;z-index: 1;}
+		.popup_contents .it-box-04{position: absolute;top: 330px;left: 740px;z-index: 1;}
+		.popup_contents .curveLine{top: 335px;left: 60px;}
+		.popup_contents .curveLine .line{clip: rect(0,250px,100px,0);width: 200px;height: 200px;}
+		.popup_contents .curveLine:after{z-index: 999;transform: rotate(60deg);left: 198px;top: 81px;}
+		.popup_contents .curveLine.it-pop1{top: 100px;}
+		.popup_contents .curveLine.it-pop1 .line{width: 900px;height: 680px;clip: rect(0,900px,340px,0);}
+		.popup_contents .curveLine.it-pop1:after{top: 320px;left: 898px;}
+		.popup_contents .curveLine.it-pop2{top: 180px;left: 240px;}
+		.popup_contents .curveLine.it-pop2 .line{width: 720px;height: 680px;clip: rect(0,710px,260px,0);}
+		.popup_contents .curveLine.it-pop2:after{top: 240px;left: 706px;}
+		.popup_contents .curveLine.it-pop3{top: 280px;left: 460px;}
+		.popup_contents .curveLine.it-pop3 .line{width: 480px;height: 400px;clip: rect(0,480px,160px,0);}
+		.popup_contents .curveLine.it-pop3:after{top: 140px;left: 471px;}
+		.popup_contents .curveLine.it-pop4{top: 350px;left: 650px;}
+		.popup_contents .curveLine.it-pop4 .line{width: 290px;height: 400px;clip: rect(0,550px,90px,0);}
+		.popup_contents .curveLine.it-pop4:after{top: 70px;left: 260px;}
+
+		.popup_container{z-index:5;}
+	</style>
+</head>
+<body>
+
+<div id="wrap" class="life">
+	<header>
+		<div class="title noTab">1000은 얼마큼의 수인지 알아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+			<div class="moveButtonContainer" data-slide-btn-container="">
+				<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+				<ul class="basicSlider_circle_tabs" data-tabs="">
+					<li data-hover=""></li>
+					<li data-hover=""></li>
+				</ul>
+				<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+			</div>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="innerTab_1" data-quiz="toggle">
+					<!-- <div class="mathCalcContainer">
+						<div class="lineBox sky">
+							1
+						</div>
+						<div class="lineBox sky">
+							10
+						</div>
+						<div class="lineBox sky">
+							<div class="toggle noBg" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">100</div>
+							</div>
+						</div>
+						<div class="lineBox sky">
+							1000
+						</div>
+						<div class="lineBox sky">
+							<div class="toggle noBg" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">10000</div>
+							</div>
+						</div>
+					</div>
+					<div class="colorBox sky it-border"></div>
+					<div class="it-wrap">
+						<div class="colorBox check sky">10배</div>
+						<div class="colorBox check sky">10배</div>
+						<div class="colorBox check sky">10배</div>
+						<div class="colorBox check sky">10배</div>
+					</div> -->
+
+					<section>
+						<div class="textAlignC type-qs2">
+							<ul class="flexListContainer">
+								<li class="colorBox check sky it1-1">10배</li>
+								<li class="colorBox check sky it1-2">10배</li>
+								<li class="colorBox check sky it1-3">10배</li>
+								<li class="colorBox check sky it1-4">10배</li>
+								<div class="curveLine top sky it1-5">
+									<div class="line"></div>
+								</div>
+								<div class="curveLine top sky it1-6">
+									<div class="line"></div>
+								</div>
+								<div class="curveLine top sky it1-7">
+									<div class="line"></div>
+								</div>
+								<div class="curveLine top sky it1-8">
+									<div class="line"></div>
+								</div>
+							</ul>
+						</div>
+						<div class="nemoBoxCon">
+							<ul class="nemoBoxCon_1">
+								<li><div>1</div></li>
+								<li><div></div></li>
+								<li><div>10</div></li>
+								<li><div></div></li>
+								<li><div>
+									<div class="toggle noBg" data-toggle-obj="11" style="padding: 0;width: 100%;">
+										<div class="answer" data-toggle-target="11">100</div>
+									</div>
+								</div></li>
+								<li><div></div></li>
+								<li><div>1000</div></li>
+								<li><div></div></li>
+								<li><div>
+									<div class="toggle noBg" data-toggle-obj="12" style="padding: 0;width: 100%;">
+										<div class="answer" data-toggle-target="12">10000</div>
+									</div>
+								</div></li>
+							</ul>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+
+				</li>
+				<li class="innerTab_2" data-quiz="toggle">
+					<div class="flexListContainer it">
+						<div>10000은</div>
+						<div class="it-treeRow green">
+							<div class="it-treeRow-list">9000보다
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										1000
+									</div>
+								</div>만큼 더 큰 수
+							</div>
+							<div class="it-treeRow-list">9900보다
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										100
+									</div>
+								</div>만큼 더 큰 수
+							</div>
+							<div class="it-treeRow-list">9990보다
+								<div class="toggle" data-toggle-obj="3">
+									<div class="answer" data-toggle-target="3">
+										10
+									</div>
+								</div>만큼 더 큰 수
+							</div>
+							<div class="it-treeRow-list">9999보다
+								<div class="toggle" data-toggle-obj="4">
+									<div class="answer" data-toggle-target="4">
+										1
+									</div>
+								</div>만큼 더 큰 수
+							</div>
+						</div>
+					</div>
+
+					<div class="textAlignC">
+						<div id="spriteAniBox_1" class="flexListContainer center jcenter"></div>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="1" data-hover="">
+							<span>더 알아보기</span>
+						</button>
+					</div>
+
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole pop_page_1" data-popup-page="1">
+				<h2 class="box">더 알아보기</h2>
+				<div class="popup_contents" data-quiz="toggle">
+					<div class="it-inner">
+						<div class="it-dot">
+							10000을 어떤 수의 몇 배로 나타내 보세요.
+						</div>
+						<div class="nemoBoxCon">
+							<ul class="nemoBoxCon_1">
+								<li><div>1</div></li>
+								<li><div></div></li>
+								<li><div>10</div></li>
+								<li><div></div></li>
+								<li><div>100</div></li>
+								<li><div></div></li>
+								<li><div>1000</div></li>
+								<li><div></div></li>
+								<li><div>10000</div></li>
+							</ul>
+						</div>
+						<div class="lineBox sky it-box-01">
+							<div class="toggle noBg" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">10000배</div>
+							</div>
+						</div>
+						<div class="lineBox sky it-box-02">
+							<div class="toggle noBg" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">1000배</div>
+							</div>
+						</div>
+						<div class="lineBox sky it-box-03">
+							<div class="toggle noBg" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">100배</div>
+							</div>
+						</div>
+						<div class="lineBox sky it-box-04">
+							<div class="toggle noBg" data-toggle-obj="4">
+								<div class="answer" data-toggle-target="4">10배</div>
+							</div>
+						</div>
+						<div class="curveLine top sky it-pop1">
+							<div class="line"></div>
+						</div>
+						<div class="curveLine top sky it-pop2">
+							<div class="line"></div>
+						</div>
+						<div class="curveLine top sky it-pop3">
+							<div class="line"></div>
+						</div>
+						<div class="curveLine top sky it-pop4">
+							<div class="line"></div>
+						</div>
+
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </section>
+
+</div>
+
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#spriteAniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'boy_1',
+					circle: 'sky',
+					speech:'right',
+					top: 320,
+					left: 0,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_1.png',
+					spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+					sound: './media/audios/suh_p_0301_01_0002_202_1.mp3',
+					sheetWidth: 54000,
+					sheetHeight: 360,
+					endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '10000을 나타내는<br>수를 더 찾아볼까?',
+						class: 'balloon left sky ctTail',
+						top:338,
+						left: 450,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					callbacks: {
+						start: function () {
+							$ts.getEl('.innerTab_2 .characterImg')[0].style.left = '-200px';
+						}, // 시작시 콜백
+						end: function () {
+							$ts.getEl('.innerTab_2 .characterImg')[0].style.left = 0;
+						} // 끝날시 콜백
+					}
+				}
+			]
+		});
+	});
+</script>
+
+</body>
+</html>

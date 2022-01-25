@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style>
+		img{width:100%;}
+		.pop_page_1{top:130px; left:220px;}
+		.pop_page_1 .tit{width:auto; background-color:#d4f3f6; display:inline-block; padding:5px 20px 7px; border-radius:20px;}
+		.pop_page_1 .basicSlider_slides > li{padding:30px; box-sizing:border-box;}
+		.pop_page_1 figure,
+		.pop_page_1 .it-figure{position:relative; width:90%; margin:0 auto; height:250px; display:flex; align-items:center; justify-content:center;}
+		.pop_page_1 .basicSlider_slides{width:760px; height:560px; box-sizing:border-box;}
+		.bullet.orange.number{margin-top:7px; margin-left:-40px}
+		.flex-wrap{width:100%; height:180px; box-sizing:border-box; justify-content:center;}
+		.flex-wrap .flex-item + .flex-item{margin-left:40px;}
+		.num-wrap{padding-left:40px;}
+
+		.page_2 .balloon {bottom:44px; width:470px; left:30px; display:block; text-align:center; word-break:keep-all;}
+		.page_2 .characterImg{left:540px; bottom:47px;}
+
+		.page_4 .balloon,
+		.page_5 .balloon {bottom:80px; width:320px; left:90px; display:block; text-align:center; word-break:keep-all;}
+		.page_4 .characterImg,
+		.page_5 .characterImg{left:450px; bottom:60px;}
+
+		.tit-box{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:10px 30px 14px; z-index:1;}
+
+		.lineBox{width:320px; position:absolute;  padding:10px 70px 10px 30px; z-index:1;}
+		.lineBox .popBtn{position:absolute; right:10px; bottom:10px;}
+		.lineBox.n1{top:30px; left:0;}
+		.lineBox.n2{top:-10px; left:340px;}
+		.lineBox.n3{top:50px; right:0;}
+		.lineBox.n4{top:280px; right:0;}
+		.lineBox.n5{bottom:0; left:350px;}
+		.lineBox.n6{bottom:30px; left:10px;}
+		.lineBox.n7{top:220px; left:10px;}
+		.pointContainer .contentsBox {padding-top:25px;}
+		svg{position:absolute;top:50%; left:50%; transform:translate(-50%, -50%); z-index:0;}
+
+		.page_1 .it-figure{display:flex;}
+		.page_1 .it-figure .lineBox{position:relative; padding:15px; text-align:center}
+		.page_1 .it-figure .lineBox > img{display:inline-block; width:auto; height:75px;}
+		.page_1 .it-figure .colorBox{margin:15px 0 0; font-size:32px;}
+		.page_1 .flex-wrap{justify-content:space-around;}
+		.page_1 .flex-wrap > div{display:flex; align-items:center; justify-content:center;}
+		.page_2 .color-deepPurple{color:#cabfe0;}
+		.page_2 .color-green{color:#cee492;}
+		.page_2 .color-deeppink{color:#f7c1c9;}
+		.page_2 .color-skyBlue{color:#5ca2e7;}
+		.page_2 .color-orange{color:#fccd89;}
+		.page_2 figure img{width: auto;}
+		.page_2 .flex-wrap{justify-content:space-around; height:100px;}
+		.page_2 .flex-wrap > div{display:flex; align-items:center; justify-content:center;}
+		.page_3 .it-figure{flex-direction:column; height:400px;}
+		.page_3 .it-figure > div{display:flex; align-items:center; justify-content:space-around; position:relative; width:520px; margin:15px 0 0;}
+		.page_3 .it-figure > div:not(:first-child){margin:15px 0 0;}
+		.page_3 .it-figure img{width:auto; height:110px;}
+		.page_3 .it-fig-txt{position:absolute; bottom:0;}
+		.page_3 .it-figure > div:nth-child(1) .it-fig-txt.n1{left:98px;}
+		.page_3 .it-figure > div:nth-child(1) .it-fig-txt.n2{left:245px;}
+		.page_3 .it-figure > div:nth-child(2) .it-fig-txt.n1{left:126px;}
+		.page_3 .it-figure > div:nth-child(2) .it-fig-txt.n2{left:266px;}
+		.page_3 .it-figure > div:nth-child(3) .it-fig-txt.n1{left:154px;}
+		.page_3 .it-figure > div:nth-child(3) .it-fig-txt.n2{left:294px;}
+		.page_4 .it-fig-txt{position:absolute;}
+		.page_4 .it-fig-txt.n1{left:200px; bottom:52px;}
+		.page_4 .it-fig-txt.n2{left:410px; bottom:47px;}
+		.page_4 .it-fig-txt.n3{left:582px; bottom:42px;}
+		.page_5 .it-fig-txt{position:absolute; bottom:52px;}
+		.page_5 .it-fig-txt.n1{left:167px; font-size:38px;}
+		.page_5 .it-fig-txt.n2{left:338px;}
+		.page_5 .it-fig-txt.n3{left:480px; font-size:28px}
+		.page_5 .it-fig-txt.n4{left:600px; font-size:24px;}
+		.page_6 .it-fig-txt{position:absolute; top:118px; transform:skew(0deg, -16deg);}
+		.page_6 .it-fig-txt.n1{left:10px;}
+		.page_6 .it-fig-txt.n2{left:148px;}
+		.page_6 .it-fig-txt.n3{left:276px;}
+		.page_6 .it-fig-txt.n4{left:403px;}
+		.page_6 .it-fig-txt.n5{left:530px;}
+		.page_7 .it-fig-txt{position:absolute; font-size:24px; line-height:1; text-align:center;}
+		.page_7 .it-fig-txt.n1{top:35px; left:70px;}
+		.page_7 .it-fig-txt.n2{top:40px; left:280px; transform:rotate(-10deg);}
+		.page_7 .it-fig-txt.n3{top:50px; right:10px; transform:rotate(-10deg);}
+		.page_7 .it-fig-txt.n4{top:116px; left:280px; transform:rotate(10deg);}
+		.page_7 .it-fig-txt.n5{top:150px; right:50px; transform:rotate(10deg);}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="pointContainer">
+		<header>
+			<h1><ins class="icon"></ins>
+				생각 그물
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!-- <ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">주장 펼치기</li>
+				<li data-hover="">반론하기</li>
+				<li data-hover="">주장 다지기</li>
+				</ul> -->
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1 on">
+						<div class="tit-box colorBox sky">
+							1. 큰 수
+						</div>
+						<div class="lineBox sky n1">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen1.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="1"></button>
+						</div>
+						<div class="lineBox sky n2">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen2.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="2"></button>
+						</div>
+						<div class="lineBox sky n3">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen3.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="3"></button>
+						</div>
+						<div class="lineBox sky n4">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen4.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="4"></button>
+						</div>
+						<div class="lineBox sky n5">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen5.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="5"></button>
+						</div>
+						<div class="lineBox sky n6">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen6.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="6"></button>
+						</div>
+						<div class="lineBox sky n7">
+							<img src="./images/suh_p_0401_01_0009_301_1_screen7.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="7"></button>
+						</div>
+
+						<svg width="1000" height="500" xmlns="http://w3.org/2000/svg" version="1.1" viewbox= "0 0 300 300">
+							<line x1="0" y1="150" x2="150" y2="150" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="150" y1="40" x2="150" y2="150" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="0" y1="40" x2="150" y2="150" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="0" y1="260" x2="150" y2="150" stroke="#c1e8ec" stroke-width="3" />
+
+							<line x1="150" y1="150" x2="300" y2="200" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="150" y1="150" x2="350" y2="40" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="150" y1="150" x2="170" y2="300" stroke="#c1e8ec" stroke-width="3" />
+						</svg>
+
+						<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="image pop_page_1" data-popup-page="1" data-drag>
+					<div class="basicSlider" data-slide-container="popup">
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="page_1">
+								<div>
+									<div class="tit">
+										만을 알아볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<div class="lineBox sky">
+										<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_1.png" alt="">
+										<div class="colorBox sky textAlignC">
+											1000원이 10장
+										</div>
+									</div>
+									<div class="ml_10 mr_10">
+										<img src="../common/contents/images/math/equalIcon.png" alt="">
+									</div>
+									<div class="lineBox green">
+										<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_2.png" alt="">
+										<div class="colorBox green textAlignC">
+											10000원이 1장
+										</div>
+									</div>
+								</div>
+								<div class="flex-wrap">
+									<div>
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div><span class="redT">10000</span> 또는 <span class="redT">1만</span></div>
+									</div>
+									<div>
+										<div class="colorBox check brown">읽기</div>
+										<div><span class="redT">만</span> 또는 <span class="redT">일만</span></div>
+									</div>
+								</div>
+							</li>
+							<li class="page_2">
+								<div>
+									<div class="tit">
+										다섯 자리 수를 알아볼까요
+									</div>
+								</div>
+								<figure>
+									<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_3.png" alt="">
+								</figure>
+								<div class="flex-wrap">
+									<div>
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div>35496</div>
+									</div>
+									<div>
+										<div class="colorBox check brown">읽기</div>
+										<div>삼만 오천사백구십육</div>
+									</div>
+								</div>
+								<div class="textAlignC">
+									<span class="color-deepPurple">3</span><span class="color-green">5</span><span class="color-deeppink">4</span><span class="color-skyBlue">9</span><span class="color-orange">6</span> = <span class="color-deepPurple">30000</span> + <span class="color-green">5000</span> + <span class="color-deeppink">400</span> + <span class="color-skyBlue">90</span> + <span class="color-orange">6</span>
+								</div>
+							</li>
+							<li class="page_3">
+								<div>
+									<div class="tit">
+										십만, 백만, 천만을 알아볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<div>
+										<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_4.png" alt="">
+										<span>10만</span>
+										<span class="it-fig-txt n1">만</span>
+										<span class="it-fig-txt n2">일</span>
+									</div>
+									<div>
+										<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_5.png" alt="">
+										<span>100만</span>
+										<span class="it-fig-txt n1">만</span>
+										<span class="it-fig-txt n2">일</span>
+									</div>
+									<div>
+										<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_6.png" alt="">
+										<span>1000만</span>
+										<span class="it-fig-txt n1">만</span>
+										<span class="it-fig-txt n2">일</span>
+									</div>
+								</div>
+							</li>
+							<li class="page_4">
+								<div>
+									<div class="tit">
+										억을 알아볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_7.png" alt="">
+									<span class="it-fig-txt n1">억</span>
+									<span class="it-fig-txt n2">만</span>
+									<span class="it-fig-txt n3">일</span>
+								</div>
+								<div class="flex-wrap">
+									<div class="balloon right green ctTail">
+										<span>천억까지는 <br>12자리나 되네.</span>
+									</div>
+									<div class="characterImg circle boy_2-wrap">
+										<div class="charSpriteImg boy_2"></div>
+									</div>
+								</div>
+							</li>
+							<li class="page_5">
+								<div>
+									<div class="tit">
+										조를 알아볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_8.png" alt="">
+									<span class="it-fig-txt n1">조</span>
+									<span class="it-fig-txt n2">억</span>
+									<span class="it-fig-txt n3">만</span>
+									<span class="it-fig-txt n4">일</span>
+								</div>
+								<div class="flex-wrap">
+									<div class="balloon right sky ctTail">
+										<span>천조까지는 <br>16자리나 돼.</span>
+									</div>
+									<div class="characterImg circle boy_1-wrap">
+										<div class="charSpriteImg boy_1"></div>
+									</div>
+								</div>
+							</li>
+							<li class="page_6">
+								<div>
+									<div class="tit">
+										뛰어 세기를 해 볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_9.png" alt="">
+									<span class="it-fig-txt n1"><span class="redT">4</span>00만</span>
+									<span class="it-fig-txt n2"><span class="redT">5</span>00만</span>
+									<span class="it-fig-txt n3"><span class="redT">6</span>00만</span>
+									<span class="it-fig-txt n4"><span class="redT">7</span>00만</span>
+									<span class="it-fig-txt n5"><span class="redT">8</span>00만</span>
+								</div>
+								<div class="flex-wrap">
+									<div class="flex-item">
+										<span class="redT">백만</span>의 자리 수가 1씩 커지므로 <span class="redT">100만</span>씩 뛰어 세었습니다.
+									</div>
+								</div>
+							</li>
+							<li class="page_7">
+								<div>
+									<div class="tit">
+										수의 크기를 비교해 볼까요
+									</div>
+								</div>
+								<div class="it-figure">
+									<img src="./images/suh_p_0401_01_0009_301_1/suh_p_0401_01_0009_301_1_10.png" alt="">
+									<span class="it-fig-txt n1">수의 크기<br>비교 방법</span>
+									<span class="it-fig-txt n2">자리 수가<br>다를 때</span>
+									<span class="it-fig-txt n3">자리 수가 많은 쪽이<br>더 큰 수</span>
+									<span class="it-fig-txt n4">자리 수가<br>같을 때</span>
+									<span class="it-fig-txt n5">높은 자리부터<br>비교하여<br>큰 쪽이 더 큰 수</span>
+								</div>
+							</li>
+						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript"></script>
+</body>
+
+</html>
