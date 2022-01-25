@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<style>
+		.addLineController{top:8px;}
+		.checkContainer .contentsBox h2 {
+			font-size: 40px !important;
+			line-height: 1.3em !important;
+			margin-bottom: 30px;
+		}
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+
+		/* 상단 탭정렬 */
+		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
+		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
+
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:5px;}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.checkContainer h2 .toggleBlank{margin-top:8px;}
+		.checkContainer .contentsBox h2{margin-top:0;}
+
+
+		/* 개별 */
+		.page_1 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
+		.page_1 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_1 ul.nemoBoxCon_3{position: relative; top: 0px; left: 12px; z-index: 3; display: flex;}
+		.page_1 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width:152px; padding: 0 20px; letter-spacing: -1.5px; height:50px; line-height:48px; background-color: #ffffff; border: 5px solid #cee492; border-radius: 10px; z-index: 4; position: relative; text-align:center;}
+		.page_1 ul.nemoBoxCon_3 li{margin-right: 10px;}
+		.page_1 .contentsList>li{justify-content:center;}
+		.page_1 .contentsList>li .bullet.mt{margin-top: 18px;}
+		.page_1 ul.nemoBoxCon_3:before{content: ''; display: block; position: absolute; top: 28px; left: 69px; width: 75%; height: 5px; background: #cee492;}
+		.page_1 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+
+		.page_2 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
+		.page_2 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_2 ul.nemoBoxCon_3{position: relative; top: 0px; left: 12px; z-index: 3; display: flex; justify-content: center;}
+		.page_2 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width:152px; padding: 0 20px; letter-spacing: -1.5px; height:50px; line-height:48px; background-color: #ffffff; border: 5px solid #c1e8ec; border-radius: 10px; z-index: 4; position: relative; text-align:center;}
+		.page_2 ul.nemoBoxCon_3 li{margin-right: 10px;}
+		.page_2 .contentsList>li{justify-content:center;}
+		.page_2 .contentsList>li .bullet.mt{margin-top: 18px;}
+		.page_2 ul.nemoBoxCon_3:before{content: ''; display: block; position: absolute; top: 28px; left: 69px; width: 75%; height: 5px; background: #c1e8ec;}
+		.page_2 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+
+		/* page_4 */
+		.page_4 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
+		.page_4 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_4 ul.nemoBoxCon_3{position: absolute; top: 0px; left: 35px; z-index: 3;}
+		.page_4 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width: 209px; height: 70px; line-height: 70px; background-color: #fff; border: 5px solid #c1e8ec; border-radius: 10px; z-index: 4;}
+		.page_4 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+		.page_4 ul.nemoBoxCon_3 li:nth-child(2n+2)>div{position: relative; top: -16px; display: inline-block; width: 40px; height: 0px; border-top: 5px solid #c1e8ec; margin: 0 -18px; z-index: -1;}
+		/* page_5 */
+		.page_5 .nemoBoxCon{position: relative; text-align: center; margin: 80px 0 30px; width: 100%; height: 100px;}
+		.page_5 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_5 ul.nemoBoxCon_3{position: absolute; top: 0px; left: 20px; z-index: 3;}
+		.page_5 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width: 167px; height: 70px; line-height: 70px; background-color: #fff; border: 5px solid #c1e8ec; border-radius: 10px; z-index: 4;}
+		.page_5 ul.nemoBoxCon_3 li:nth-child(2n+2)>div{position: relative; top: -16px; display: inline-block; width: 40px; height: 0px; border-top: 5px solid #c1e8ec; margin: 0 -18px; z-index: -1;}
+		/* page_6 */
+		.page_6 .nemoBoxCon{position: relative; text-align: center; /* top: 125px; */
+			top: 30px; width: 100%;}
+		.page_6 .toggle{margin-top: -4px;}
+		.page_6 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_6 ul.nemoBoxCon_3{position: absolute; top: 0px; left: 35px; z-index: 3;}
+		.page_6 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width: 209px; height: 70px; line-height: 70px; background-color: #fff; border: 5px solid #fccd89; border-radius: 10px; z-index: 4;}
+		.page_6 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+		.page_6 ul.nemoBoxCon_3 li:nth-child(2n+2)>div{position: relative; top: -16px; display: inline-block; width: 40px; height: 0px; border-top: 5px solid #fccd89; margin: 0 -18px; z-index: -1;}
+		.page_6 .arrow-box{display: flex; flex-wrap: wrap; padding-top: 170px; padding-left: 100px;}
+		.page_6 .contentsList{margin-left: 20px;}
+		.page_6 .icon_arrow.big{margin-top: 3px;}
+		.complete .point{color: red;}
+		.active .point{color: red;}
+		/* page_7 */
+		.page_7 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
+		.page_7 .nemoBoxCon ul li{display: inline-block; position: relative;}
+		.page_7 ul.nemoBoxCon_3{position: relative; top: 0px; left: 12px; z-index: 3; display: flex;}
+		.page_7 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; /* width: 209px; */
+			padding: 0 40px; letter-spacing: -1.5px; height: 70px; line-height: 70px; background-color: #ffffff; border: 5px solid #c1e8ec; border-radius: 10px; z-index: 4; position: relative;}
+		.page_7 ul.nemoBoxCon_3 li{margin-right: 10px;}
+		.page_7 .contentsList>li{justify-content:center;}
+		.page_7 .contentsList>li .bracket.mt{margin-top: 12px;}
+		.page_7 ul.nemoBoxCon_3:before{content: ''; display: block; position: absolute; top: 36px; left: 69px; width: 75%; height: 5px; background: #c1e8ec;}
+		.page_7 ul.nemoBoxCon_3 li div .qBox{background-color: #ffffff;}
+		.page_7 .contentsList li:nth-child(2) ul.nemoBoxCon_3 li:nth-child(2n+1)>div{padding: 0 11px;}
+		.page_7 .contentsList li:nth-child(2) .toggle.box{padding: 0 11px;}
+		.page_7 .contentsList .toggle.box{margin-top: 0; padding: 0 40px;}
+
+		/* page_8 */
+		.page_8 .tableContainer{width: 1000px; margin: 20px auto 0;}
+		.page_8 .tableContainer table.tableBorder{table-layout: fixed; border: none; border-collapse: collapse;}
+		.page_8 .tableContainer table.tableBorder tr td{border: 5px solid #fccd89; background-color: transparent;}
+		.page_8 .tableContainer table td{line-height: 1; padding: 4px 0;}
+		.page_8 .tableContainer table.tableBorder tr td.bgc_w{background-color: #ffffff;}
+		.page_8 .tableContainer table.tableBorder .borderNone{border: none;}
+		.page_8 .tableContainer .qBox{width: 100%; height: 100%;}
+		.page_8 .tableContainer .qBox .qBoxBg{text-align:center;}
+		.page_8 .qBox.noBox .qIcon:hover{background:url(images/common/qIcon_over.png) center center no-repeat; background-size:25px 38px;}
+		.checkContainer .contentsBox .page_8 h2{margin-bottom:0;}
+		.page_4 .toggle,
+		.page_7 .toggle{border-radius:5px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/1단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							규칙에 따라 뛰어 세어 보시오.
+						</span></h2>
+						<section>
+							<ul class="dotList orange">
+							<li>
+								<div>
+									<div class="flexListContainer start">
+										<ins class="colorBox green check">규칙</ins> : 20000씩 뛰어 세기
+									</div>
+									<ul class="nemoBoxCon_3 ml_100">
+									<li>
+										<div>30000</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>50000</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="11">
+												<div class="answer" data-toggle-target="11">
+													70000
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="12">
+												<div class="answer" data-toggle-target="12">
+													90000
+												</div>
+											</div>
+										</div>
+									</li>
+									</ul>
+								</div>
+							</li>
+							<li class="mt_15">
+								<div>
+									<div class="flexListContainer start">
+										<ins class="colorBox green check">규칙</ins> : 50만씩 뛰어 세기
+									</div>
+									<ul class="nemoBoxCon_3 ml_100">
+									<li>
+										<div>2350만</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>2400만</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="13">
+												<div class="answer" data-toggle-target="13">
+													2450만
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="14">
+												<div class="answer" data-toggle-target="14">
+													2500만
+												</div>
+											</div>
+										</div>
+									</li>
+									</ul>
+								</div>
+							</li>
+							<li class="mt_15">
+								<div>
+									<div class="flexListContainer start">
+										<ins class="colorBox green check">규칙</ins> : 300억씩 뛰어 세기
+									</div>
+									<ul class="nemoBoxCon_3 ml_100">
+									<li>
+										<div>3020억</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>3320억</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="15">
+												<div class="answer" data-toggle-target="15">
+													3620억
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div></div>
+									</li>
+									<li>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="16">
+												<div class="answer" data-toggle-target="16">
+													3920억
+												</div>
+											</div>
+										</div>
+									</li>
+									</ul>
+								</div>
+							</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/1단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							뛰어 세기를 보고 규칙을 찾아 써 보시오.
+						</span></h2>
+						<section>
+							<div>
+								<ul class="nemoBoxCon_3">
+								<li>
+									<div>10000</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>40000</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>70000</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>100000</div>
+								</li>
+								</ul>
+								<div class="flexListContainer end mt_5 mr_60">
+									<ul class="dotList orange">
+										<li class="flexListContainer center">
+											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="21">
+											<div class="answer" data-toggle-target="21">
+												30000
+											</div>
+										</div>씩 뛰어 세기</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mt_20">
+								<ul class="nemoBoxCon_3">
+								<li>
+									<div>640만</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>840만</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>1040만</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>1240만</div>
+								</li>
+								</ul>
+								<div class="flexListContainer end mt_5 mr_60">
+									<ul class="dotList orange">
+										<li class="flexListContainer center">
+											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="22">
+											<div class="answer" data-toggle-target="22">
+												200만
+											</div>
+										</div>씩 뛰어 세기</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mt_20">
+								<ul class="nemoBoxCon_3">
+								<li>
+									<div>420조</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>470조</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>520조</div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div>570조</div>
+								</li>
+								</ul>
+								<div class="flexListContainer end mt_5 mr_60">
+									<ul class="dotList orange">
+										<li class="flexListContainer center">
+											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="23">
+											<div class="answer" data-toggle-target="23">
+												50조
+											</div>
+										</div>씩 뛰어 세기</li>
+									</ul>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/1단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							1000000씩 뛰어 세어 보시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="nemoBoxCon">
+									<ul class="nemoBoxCon_3">
+										<li>
+											<div>4300000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>5300000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>
+												<div class="toggle noBg" data-toggle-obj="4" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="4">6300000</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>7300000</div>
+										</li>
+									</ul> <!-- nemoBoxCon_3 -->
+								</div> <!-- nemoBoxCon -->
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							얼마씩 뛰어 세었는지 써 보시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+
+							  <div class="nemoBoxCon">
+
+								<ul class="nemoBoxCon_3">
+
+								  <li>
+									<div>53087</div>
+								  </li>
+								  <li>
+									<div></div>
+								  </li>
+								  <li>
+									<div>63087</div>
+								  </li>
+								  <li>
+									<div></div>
+								  </li>
+								  <li>
+									<div>73087</div>
+								  </li>
+								  <li>
+									<div></div>
+								  </li>
+								  <li>
+									<div>83087</div>
+								  </li>
+								  <li>
+									<div></div>
+								  </li>
+								  <li>
+									<div>93087</div>
+								  </li>
+								</ul> <!-- nemoBoxCon_3 -->
+							  </div> <!-- nemoBoxCon -->
+
+							</div>
+							<div style="text-align: center;">
+							  <div class="toggle box" data-toggle-obj="5" style="width: auto;">
+								<div class="answer flex-box j-center a-center" data-toggle-target="5">
+									10000씩 뛰어 세었습니다.
+								</div>
+							  </div>
+							</div>
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_6" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							수를 뛰어서 세었습니다. <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="nemoBoxCon">
+									<ul class="nemoBoxCon_3">
+										<li>
+											<div>7<span class="point">2</span>10억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>7<span class="point">3</span>10억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>7<span class="point">4</span>10억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>7<span class="point">5</span>10억</div>
+										</li>
+									</ul> <!-- nemoBoxCon_3 -->
+
+								</div> <!-- nemoBoxCon -->
+								<div class="arrow-box">
+									<div class="icon_arrow big right"></div>
+									<ul class="contentsList">
+										<li>
+											<div class="toggle" data-toggle-obj="61">
+												<div class="answer" data-toggle-target="61">백억</div>
+											</div>
+											의 자릿수가 수가 1씩 커지므로
+										</li>
+										<li>
+											<div class="toggle" data-toggle-obj="62">
+												<div class="answer" data-toggle-target="62">백억</div>
+											</div>
+											씩 뛰어서 세었습니다.
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							빈칸에 알맞은 수를 써넣으시오.
+						</span></h2>
+						<section>
+							<ul class="contentsList">
+								<li>
+									<div>
+										<ul class="nemoBoxCon_3">
+										<li>
+											<div>46억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>47억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div style="padding: 0">
+											<div class="toggle box noBg" data-toggle-obj="71" style="width: 100%;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="71">
+												48억
+												</div>
+											</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div style="padding: 0">
+											<div class="toggle box noBg" data-toggle-obj="72" style="width: 100%;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="72">
+												49억
+												</div>
+											</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div style="padding: 0">
+											<div class="toggle box noBg" data-toggle-obj="73" style="width: 100%;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="73">
+												50억
+												</div>
+											</div>
+											</div>
+										</li>
+										</ul>
+									</div>
+								</li>
+								<li style="margin-top: 40px;">
+									<div>
+										<ul class="nemoBoxCon_3">
+										<li>
+											<div>2조 3650억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>2조 3750억</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div style="padding: 0">
+											<div class="toggle box noBg" data-toggle-obj="74" style="width: 100%;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="74">
+												2조 3850억
+												</div>
+											</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div style="padding: 0">
+											<div class="toggle box noBg" data-toggle-obj="75" style="width: 100%;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="75">
+												2조 3950억
+												</div>
+											</div>
+											</div>
+										</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_8" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							규칙에 따라 빈칸에 알맞은 수를 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+
+							  <div class="tableContainer">
+								<table class="tableBorder" cellpadding="0" cellspacing="0">
+								  <tbody>
+									<tr>
+										<td class="bgc_w">53억<br>6798만</td>
+										<td class="borderNone"></td>
+										<td class="borderNone"></td>
+										<td class="borderNone"></td>
+									</tr>
+									<tr>
+										<td class="bgc_w">43억<br>6798만</td>
+										<td class="borderNone"></td>
+										<td style="padding: 0;">
+											<div class="toggle box noBg" data-toggle-obj="4" style="width: 100%;line-height: 1;text-align: center;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="4">
+												35억<br>7798만
+												</div>
+											</div>
+										</td>
+										<td class="borderNone"></td>
+									</tr>
+									<tr>
+									  <td class="bgc_w">33억<br>6798만</td>
+									  <td class="bgc_w">34억<br>6798만</td>
+									  <td class="bgc_w">
+										<div class="boxType qBox noBox">
+
+										  <div class="qIconBox">
+											<div class="qIcon"></div>
+										  </div>
+										  <div class="qBoxBg"><span class="qText">35억<br>6798만</span></div>
+										</div>
+									  </td>
+									  <td class="bgc_w">36억<br>6798만</td>
+									</tr>
+									<tr>
+										<td style="padding: 0;">
+											<div class="toggle box noBg" data-toggle-obj="5" style="width: 100%;line-height: 1;text-align: center;">
+												<div class="answer flex-box j-center a-center" data-toggle-target="5">
+													23억<br>6798만
+												</div>
+											</div>
+										</td>
+										<td class="borderNone"></td>
+										<td class="bgc_w">35억<br>5798만</td>
+										<td class="borderNone"></td>
+									</tr>
+									<tr>
+										<td class="borderNone"></td>
+										<td class="borderNone"></td>
+										<td class="bgc_w">35억<br>4798만</td>
+										<td class="borderNone"></td>
+									</tr>
+								  </tbody>
+								</table>
+							  </div> <!-- tableContainer -->
+							</div>
+
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="dotList orange">
+							<li>
+								<div>
+									1억씩 뛰어 셉니다.
+								</div>
+							</li>
+							<li>
+								<ins class="dot orange"></ins>
+								<div>
+									100억씩 뛰어 셉니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj){
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj){
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function (){
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>
