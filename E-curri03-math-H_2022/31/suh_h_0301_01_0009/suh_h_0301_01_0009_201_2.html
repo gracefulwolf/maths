@@ -279,7 +279,7 @@
 							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 						</div>
 						<ul class="basicSlider_slides" data-slides="">
-							<li class="innerTab_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
+							<li class="innerTab_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="4">
 								<div class="flex-box">
 									<div class="bullet number orange mr_15 self" style="margin-top:5px;">1</div>
 									<div>
@@ -308,36 +308,37 @@
 											</div>
 										</div>
 									</div>
-
 									<div class="dropAreaUL">
 										<div class="bullet exam">예</div>
 										<div class="lineBox sky" style="height: 120px; padding:30px 20px 0">
 											직업
 										</div>
 										<div class="icon_arrow big" style="margin: 0 20px;"></div>
-										<div class="lineBox sky js-dropArea dropArea dropArea_1"  data-drop-area-answer="1" style="width:630px; height:120px; "></div>
+										<div class="lineBox sky js-dropArea dropArea dropArea_1" data-drop-area-answer="1" style="width:630px; height:120px; "></div>
 									</div>
-
 									<div class="mathCalcContainer">
-										<div class="mathCalcContainer-wrap" data-calc-container="" data-option="plus">
+										<div class="mathCalcContainer-wrap" >
 											<div class="colorBox check purple">점수</div>
 											<div class="inputBox">
-												<input type="text" placeholder="252" maxlength="3" data-calc-input="A"  />
+												<input type="text" placeholder="252" maxlength="3"  />
 											</div>
 											<div class="operator">+</div>
 											<div class="inputBox">
-												<input type="text" placeholder="114" maxlength="3" data-calc-input="B" />
+												<input type="text" placeholder="114" maxlength="3" />
 											</div>
 											<div class="operator">=</div>
-											<div class="answerBox" data-answer=""><div class="answer"></div>
+											<div class="inputBox">
+												<input type="text" placeholder="356" maxlength="3" />
 											</div>
+											<!-- <div class="answerBox" data-answer=""><div class="answer"></div>
+											</div> -->
 										</div>
 									</div>
 								</div>
-								
-								<button class="resetBtn reset" data-answer-btn=""></button>
+								<button class="resetBtn " data-answer-btn=""></button>
 							</li>
-							<li class="innerTab_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
+							
+							<li class="innerTab_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="4">
 								<div class="flex-box">
 									<div class="bullet number orange mr_15 self" style="margin-top:5px;">2</div>
 									<div>
@@ -366,7 +367,6 @@
 											</div>
 										</div>
 									</div>
-
 									<div class="dropAreaUL">
 										<div class="bullet exam">예</div>
 										<div class="lineBox sky" style="height: 120px; padding:30px 20px 0">
@@ -375,26 +375,28 @@
 										<div class="icon_arrow big" style="margin: 0 20px;"></div>
 										<div class="lineBox sky js-dropArea dropArea dropArea_1"  data-drop-area-answer="1" style="width:630px; height:120px; "></div>
 									</div>
-
 									<div class="mathCalcContainer">
-										<div class="mathCalcContainer-wrap" data-calc-container="" data-option="plus">
+										<div class="mathCalcContainer-wrap">
 											<div class="colorBox check purple">점수</div>
 											<div class="inputBox">
-												<input type="text" placeholder="225" maxlength="3" data-calc-input="A"  />
+												<input type="text" placeholder="225" maxlength="3" />
 											</div>
 											<div class="operator">+</div>
 											<div class="inputBox">
-												<input type="text" placeholder="217" maxlength="3" data-calc-input="B" />
+												<input type="text" placeholder="217" maxlength="3" />
 											</div>
 											<div class="operator">=</div>
-											<div class="answerBox" data-answer=""><div class="answer"></div>
+											<div class="inputBox">
+												<input type="text" placeholder="442" maxlength="3" />
 											</div>
+											<!-- <div class="answerBox" data-answer=""><div class="answer"></div>
+											</div> -->
 										</div>
 									</div>
 								</div>
-								
-								<button class="resetBtn reset" data-answer-btn=""></button>
+								<button class="resetBtn" data-answer-btn=""></button>
 							</li>
+
 							<li class="innerTab_3">
 								<div class="flex-box">
 									<div class="bullet number orange mr_15 self" style="margin-top:5px;">3</div>
@@ -446,8 +448,6 @@
 										</div>
 									</li>
 								</ul>
-								
-								
 							</li>
 							<li class="innerTab_4" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
 								<div class="flex-box">
@@ -596,21 +596,23 @@
 <script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
 
 <script type="text/javascript">
-	const reset = document.querySelectorAll('.resetBtn');
-
-	for(let i = 0, len = reset.length; i < len; i++) {
-		reset[i].addEventListener('click', function(){
-			var that = this;
-			setTimeout(function(){
-				that.classList.add('reset');
-			},0);
-		});
-	}
+	
 
 		window.$callBack.sliderReset = function(params) {
 			// $ts.getEl('.page_4 .characterImg')[0].style.left = '38%';
 		};
     	document.addEventListener('DOMContentLoaded', function () {
+			// const reset = document.querySelectorAll('.resetBtn');
+
+			// for(let i = 0, len = reset.length; i < len; i++) {
+			// 	reset[i].addEventListener('click', function(){
+			// 		var that = this;
+			// 		setTimeout(function(){
+			// 			that.classList.add('reset');
+			// 		},0);
+			// 	});
+			// }
+			
             // $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
             $prite.add({
 				target: $ts.getEl('#aniBox_1'),
