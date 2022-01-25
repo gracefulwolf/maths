@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
