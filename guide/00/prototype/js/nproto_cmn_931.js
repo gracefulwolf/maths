@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   $prite.add({
-    target: $ts.getEl('#spriteAniBox_1'),
+    target: $ts.getEl('#aniBox_1'),
     spriteId: 'sprite1',
     spriteList: [
       {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $prite.add({
-    target: $ts.getEl('#spriteAniBox_2'),
+    target: $ts.getEl('#aniBox_2'),
     spriteId: 'sprite2',
     spriteList: [
       {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $prite.add({
-    target: $ts.getEl('#spriteAniBox_3'),
+    target: $ts.getEl('#aniBox_3'),
     spriteId: 'sprite3',
     spriteList: [
       {
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 54000,
+        sheetWidth: 38420,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,

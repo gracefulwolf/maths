@@ -191,14 +191,14 @@
                 name: 'girl_2',
                 // circle: 'new-character', // 동그란부분 필요할때 주석 해제
                 playMode: {
-                    rewind: false
+                    rewind: true
                 },
                 top: 0, // 캐릭터 top값, 없어도 상관 없음, css 제어
                 left: 0,
-                width: 720, // 고정 가로 값
-                height: 360, // 고정 세로 값
-                thumbNail: '../../../__common__/images/character/girl_2_sprite.png', // 경로 new 에니메이션 있는곳으로 변경 필요
-                spriteSheet: '../../../__common__/images/character/girl_2_sprite.gif', // 경로 new 에니메이션 있는곳으로 변경 필요 에니메이션 캐릭터에 따라서 name변경 필요.
+                width: 340,
+                height: 421,
+                thumbNail: '../common/contents/images/character/boy_1.png',
+                spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
                 sound: './media/suh_0301_01_0010_201_2/suh_0301_01_0010_201_2_2.mp3',
                 textBubble: {
                     text: '필요한 만큼의 음식을 적당히 먹고<br>운동을 꾸준히 해야 합니다.',
@@ -208,6 +208,10 @@
                     textAlign: 'center', // 말풍선 정렬
                     wordBreak: 'keep-all' // 말풍선 wordBreak
                 },
+                sheetWidth: 38420,
+                sheetHeight: 421,
+                endSheet: 0,
+                delay: 40,
                 callbacks: {
                     start: function () {
                         $ts.getEl('.page_2 .characterImg')[0].style.left = '-200px';
