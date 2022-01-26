@@ -266,7 +266,7 @@
 					</div>
                 </li>
 
-				<li class="page_3" data-quiz="toggle">
+				<li class="page_3">
                     <div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding: 0;">
 						<div class="moveButtonContainer" data-slide-btn-container="">
 							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -335,8 +335,8 @@
 										</div>
 									</div>
 								</div>
-								<!-- <button class="resetBtn " data-answer-btn="2"></button> -->
-								<button class="dapCheckBtn" data-answer-btn="1"></button>
+								<button class="resetBtn reset" data-answer-btn=""></button>
+								<!-- <button class="dapCheckBtn" data-answer-btn="1"></button> -->
 							</li>
 							
 							<li class="innerTab_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="4">
@@ -395,7 +395,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="resetBtn" data-answer-btn=""></button>
+								<button class="resetBtn reset" data-answer-btn=""></button>
 							</li>
 
 							<li class="innerTab_3">
@@ -603,16 +603,35 @@
 			// $ts.getEl('.page_4 .characterImg')[0].style.left = '38%';
 		};
     	document.addEventListener('DOMContentLoaded', function () {
-			// const reset = document.querySelectorAll('.resetBtn');
+			const reset = document.querySelectorAll('.resetBtn');
+			const tab = document.querySelectorAll('li[data-hover]');
 
-			// for(let i = 0, len = reset.length; i < len; i++) {
-			// 	reset[i].addEventListener('click', function(){
-			// 		var that = this;
-			// 		setTimeout(function(){
-			// 			that.classList.add('reset');
-			// 		},0);
-			// 	});
-			// }
+			for(let i = 0, len = tab.length; i < len; i++) {
+				tab[i].addEventListener('click', function(){
+					var that = this;
+					setTimeout(function(){
+						for(let i = 0, len = reset.length; i < len; i++) {
+							setTimeout(function(){
+								reset[i].classList.add('reset');
+							},0);
+						}
+					},0);
+				});
+			}
+
+			for(let i = 0, len = reset.length; i < len; i++) {
+				setTimeout(function(){
+					reset[i].classList.add('reset');
+				},0);
+				
+				reset[i].addEventListener('click', function(){
+					var that = this;
+					setTimeout(function(){
+						that.classList.add('reset');
+					},0);
+				});
+			}
+
 			
             // $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
             $prite.add({
