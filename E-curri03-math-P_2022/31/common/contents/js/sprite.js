@@ -145,12 +145,16 @@ $prite = function() {
                     var e = (new Date - s) / i.duration;
                     1 < e && (e = 1);
                     var t = i.delta(e);
-                    i.step(t), 1 === e && clearInterval(r)
+                    i.step(t), 
+                    1 === e && clearInterval(r)
+
                 }, i.delay);
-            y.currentAni = r
+                r
+            y.currentAni = r;
+           
         },
         Sound: function(e) {
-            var t = this;
+            var t = this;``
             t.element = e.element, e.volume && (t.element.volume = e.volume), e.loop && (t.element.loop = e.loop), e.callBack && (t.callBack = e.callBack), t.endSound = function() {
                 t.element.removeEventListener("ended", t.endSound), e.callBack && e.callBack()
             }, t.loadAndPlay = function() {
