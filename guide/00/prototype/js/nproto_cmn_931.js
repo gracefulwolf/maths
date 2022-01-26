@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         height: 421,
         thumbNail: '../common/contents/images/character/boy_1.png',
         spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
-        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3',
+        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3.mp3',
         
         speech:'right',
         textBubble: {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
