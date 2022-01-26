@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
           textAlign: 'center',
           wordBreak: 'keep-all'
         },
-        sheetWidth: 38420,
+        sheetWidth: 102000,
         sheetHeight: 421,
         endSheet: 0,
         delay: 40,
