@@ -88,10 +88,11 @@ $prite = function() {
                     p = r.sheetHeight / r.height,
                     u = d * p - (r.endSheet + 1);
                 a.addEventListener("click", function(e) {
+                    console.log(h);
                     if (e.preventDefault(), y.currentSpriteId = h, y.originalSpriteList = L.spriteList, this.classList.contains("waiting")) this.classList.remove("waiting"), $prite.resetSprite(h), r.callbacks && r.callbacks.end && r.callbacks.end();
                     else {
                         var t = this.getAttribute("data-idx");
-                        y.allStopSound(), y.sound["sound_" + r.name].playSound(), y.hideOtherSprite();
+                        y.allStopSound(), y.sound["sound_" + r.name + '_' + h].playSound(), y.hideOtherSprite();
                         for (var i = 0; i < y.spriteList[h].sheetList.length; i++) y.spriteList[h].thumbNailList[i].style.opacity = 1, y.spriteList[h].sheetList[i].classList.remove("waiting"), y.spriteList[h].textBubbleList[i] && (y.spriteList[h].textBubbleList[i].style.display = "none");
                         if (n.style.opacity = 0, this.style.opacity = 1, this.classList.add("waiting"), y.changeSpritePos({
                                 x: "0",
@@ -116,11 +117,12 @@ $prite = function() {
                         }), r.callbacks && r.callbacks.start && r.callbacks.start()
                     }
                 }, !1), y.addSound({
-                    id: "sound_" + r.name,
+                    id: "sound_" + r.name + '_' + h,
                     src: r.sound,
                     autoPlay: !1,
                     volume: .7,
                     callBack: function() {
+                        
                         var e;
                         n.style.opacity = 1, a.style.opacity = 0, r.circlePlayMode && r.circlePlayMode.rewind && y.rewindMode(h, L.spriteList), y.spriteList[h].sequenceList && y.spriteList[h].sequenceList[y.currentSeq].callBack && y.spriteList[h].sequenceList[y.currentSeq].callBack(), y.currentSeq++, y.spriteList[h].sequenceList && y.spriteList[h].sequenceList[y.currentSeq] ? (e = y.spriteList[h].sequenceList[y.currentSeq].seq, y.spriteList[h].sheetList[e - 1].click()) : y.currentSeq = 0
                     }
@@ -145,16 +147,12 @@ $prite = function() {
                     var e = (new Date - s) / i.duration;
                     1 < e && (e = 1);
                     var t = i.delta(e);
-                    i.step(t), 
-                    1 === e && clearInterval(r)
-
+                    i.step(t), 1 === e && clearInterval(r)
                 }, i.delay);
-                r
-            y.currentAni = r;
-           
+            y.currentAni = r
         },
         Sound: function(e) {
-            var t = this;``
+            var t = this;
             t.element = e.element, e.volume && (t.element.volume = e.volume), e.loop && (t.element.loop = e.loop), e.callBack && (t.callBack = e.callBack), t.endSound = function() {
                 t.element.removeEventListener("ended", t.endSound), e.callBack && e.callBack()
             }, t.loadAndPlay = function() {
