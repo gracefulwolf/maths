@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* 숫자자리 table */
+	.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+	.tableContainer.it-colorful .it-orange{background:#fccd89;}
+	.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+	.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+	.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+	.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+	.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+	.tableContainer.it-colorful .it-white{background:#fff;}
+
+	/* 개별 */
+	.page_0 .lineBox{display:flex; align-items:center; justify-content:center; flex-direction:column; height:400px;}
+	.page_0 .it-bg{position:relative; width:100%; height:200px; background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_1.png) no-repeat 50% 50% / contain;}
+	.page_0 .it-num{position:absolute; width:140px; text-align:center;}
+	.page_0 .it-num.x1{top:38px; left:116px;}
+	.page_0 .it-num.x2{top:38px; left:330px;}
+	.page_0 .it-num.x3{top:38px; left:554px;}
+	.page_0 .it-num.x4{top:38px; left:765px;}
+	.page_0 .it-num.x5{top:111px; left:16px;}
+	.page_0 .it-num.x6{top:111px; left:228px;}
+	.page_0 .it-num.x7{top:111px; left:440px;}
+	.page_0 .it-num.x8{top:111px; left:654px;}
+	.page_0 .it-num.x9{top:111px; left:867px;}
+	.page_1 .innerTab_1 .it-img{background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_2.png) no-repeat 50% 50% / 960px auto;}
+	.page_1 .innerTab_2 .it-img{background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_3.png) no-repeat 50% 50% / 960px auto;}
+	.page_1 .it-txt.x1{position:absolute; top:34px; left:36px; font-size:35px;}
+	.page_1 .it-img ul{display:flex; justify-content:space-around; align-items:center; width:100%; height:320px;}
+	.page_1 .it-img ul li{padding-top:125px;}
+	.page_1 .it-img .it-txt.x3,
+	.page_1 .it-img .it-txt.x5{margin-top:60px;}
+	.page_1 .innerTab_2 .it-txt.x1{transform:translate(12px, 3px);}
+	.page_1 .innerTab_2 .it-txt.x2{transform:translate(2px, -5px);}
+	.page_1 .innerTab_2 .it-txt.x3{transform:translate(2px, 0px);}
+	.page_1 .innerTab_2 .it-txt.x4{transform:translate(6px, -10px);}
+	.page_1 .innerTab_2 .it-txt.x5{transform:translate(9px, 0px);}
+	.page_1 .innerTab_2 .it-txt.x6{transform:translate(2px, -10px);}
+	.page_2 .it-img{background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_4.png) no-repeat 50% 50% / contain;}
+	.page_2 .it-img ul{display:flex; justify-content:space-around; align-items:center; width:100%; height:320px; font-size:38px;}
+	.page_2 .it-txt.x1{transform:translate(40px, -32px);}
+	.page_2 .it-txt.x2{transform:translate(33px, 28px);}
+	.page_2 .it-txt.x3{transform:translate(28px, -32px);}
+	.page_2 .it-txt.x4{transform:translate(22px, 28px);}
+	.page_2 .it-txt.x5{transform:translate(14px, -32px);}
+	.pop_page_2 .it-box{position:relative; height:120px;}
+	.pop_page_2 .it-txt{position:relative; z-index:1; margin:0 auto;}
+	.pop_page_2 svg{position:absolute; top:0; left:0;}
+	.page_3 .innerTab_1 .it-img{background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_5.png) no-repeat 50% 50% / contain;}
+	.page_3 .innerTab_2 .it-img{background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_6.png) no-repeat 50% 50% / contain;}
+	.page_3 .it-txt.x1{position:absolute; top:32px; left:30px; font-size:35px;}
+	.page_3 .it-img ul{display:flex; justify-content:space-around; align-items:center; width:100%; height:320px;}
+	.page_3 .it-img li{width:20%; text-align:center;}
+	.page_3 .it-txt.x2{transform:translate(0px, 36px);}
+	.page_3 .it-txt.x3{transform:translate(0px, 84px);}
+	.page_3 .it-txt.x4{transform:translate(-8px, 38px);}
+	.page_3 .it-txt.x5{transform:translate(-8px, 84px);}
+	.page_3 .it-txt.x6{transform:translate(0px, 36px);}
+	.page_3 .innerTab_2 .it-txt.x1{left:40px;}
+	.page_3 .innerTab_2 .it-txt.x2{transform:translate(-5px, 32px);}
+	.page_3 .innerTab_2 .it-txt.x3{transform:translate(-2px, 78px);}
+	.page_3 .innerTab_2 .it-txt.x4{transform:translate(0, 32px);}
+	.page_3 .innerTab_2 .it-txt.x5{transform:translate(4px, 78px);}
+	.page_3 .innerTab_2 .it-txt.x6{transform:translate(6px, 32px);}
+	.page_4 .it-wrap{width:100%; height:440px; background:url(./images/suhi_h_0401_01_0006/suhi_h_0401_01_0006_7.png) no-repeat 50% 50% / contain;}
+	.page_4 .it-txt{position:absolute; width:190px; text-align:center;}
+	.page_4 .it-txt.x1{top:19px; left:136px;}
+	.page_4 .it-txt.x2{top:107px; left:136px;}
+	.page_4 .it-txt.x3{top:196px; left:136px;}
+	.page_4 .it-txt.x4{top:285px; left:136px;}
+	.page_4 .it-txt.x5{top:373px; left:136px;}
+	.page_4 .it-txt.x6{top:107px; left:352px;}
+	.page_4 .it-txt.x7{top:107px; left:566px;}
+	.page_4 .it-txt.x8{top:19px; left:778px;}
+	.page_4 .it-txt.x9{top:107px; left:778px;}
+	.page_4 .it-txt.x10{top:196px; left:778px;}
+	.page_4 .it-txt.x11{top:285px; left:778px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">뛰어 세기를 해 볼까요</span>
+		<span class="sub-page">18~19쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+
+			<li class="page_0" data-quiz="toggle">
+				<h2><ins class="special type2"></ins><span>
+					<!-- 개념 정리 -->
+				</span></h2>
+				<section class="full">
+					<div class="lineBox sky">
+						<div class="it-bg">
+							<div class="it-num x1">20000</div>
+							<div class="it-num x2">20000</div>
+							<div class="it-num x3">20000</div>
+							<div class="it-num x4">20000</div>
+							<div class="it-num x5">20000</div>
+							<div class="it-num x6">
+								<div class="toggle noBg" data-toggle-obj="1"><div class="answer" data-toggle-target="1">
+									40000
+								</div></div>
+							</div>
+							<div class="it-num x7">60000</div>
+							<div class="it-num x8">
+								<div class="toggle noBg" data-toggle-obj="2"><div class="answer" data-toggle-target="2">
+									80000
+								</div></div>
+							</div>
+							<div class="it-num x9">100000</div>
+						</div>
+						<div class="textAlignC mt_40">
+							10000의 자리 숫자가 2씩 커집니다.
+						</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1">
+				<h2><ins class="number">1</ins><span>
+					규칙에 따라 뛰어 세어 보세요.
+				</span></h2>
+				<section data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1" data-quiz="toggle">
+							<div class="it-img">
+								<div class="it-txt x1">10000씩 뛰어 세기</div>
+								<ul>
+									<li class="it-txt x2">50000</li>
+									<li class="it-txt x3">
+										<div class="toggle noBg" data-toggle-obj="11">
+											<div class="answer" data-toggle-target="11">
+												60000
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x4">
+										<div class="toggle noBg" data-toggle-obj="12">
+											<div class="answer" data-toggle-target="12">
+												70000
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x5">
+										<div class="toggle noBg" data-toggle-obj="13">
+											<div class="answer" data-toggle-target="13">
+												80000
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x6">
+										<div class="toggle noBg" data-toggle-obj="14">
+											<div class="answer" data-toggle-target="14">
+												90000
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<div class="it-img">
+								<div class="it-txt x1">20억씩 뛰어 세기</div>
+								<ul>
+									<li class="it-txt x2">302억</li>
+									<li class="it-txt x3">
+										<div class="toggle noBg" data-toggle-obj="15">
+											<div class="answer" data-toggle-target="15">
+												322억
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x4">
+										<div class="toggle noBg" data-toggle-obj="16">
+											<div class="answer" data-toggle-target="16">
+												342억
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x5">
+										<div class="toggle noBg" data-toggle-obj="17">
+											<div class="answer" data-toggle-target="17">
+												362억
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x6">
+										<div class="toggle noBg" data-toggle-obj="18">
+											<div class="answer" data-toggle-target="18">
+												382억
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="12" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					뛰어 세기를 보고 규칙을 찾아 써 보세요.
+				</span></h2>
+				<section>
+					<div class="it-img">
+						<ul>
+							<li class="it-txt x1">7461000</li>
+							<li class="it-txt x2">7661000</li>
+							<li class="it-txt x3">7861000</li>
+							<li class="it-txt x4">8061000</li>
+							<li class="it-txt x5">8261000</li>
+						</ul>
+					</div>
+					<div class="textAlignC">
+						<div class="toggle" data-toggle-obj="2">
+							<div class="answer" data-toggle-target="2">
+								200000
+							</div>
+						</div>씩 뛰어 세기
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3">
+				<h2><ins class="number">1</ins><span>
+					규칙에 따라 뛰어 세어 보세요.
+				</span></h2>
+				<section data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1" data-quiz="toggle">
+							<div class="it-img">
+								<div class="it-txt x1">10만씩 뛰어 세기</div>
+								<ul>
+									<li class="it-txt x2">1380만</li>
+									<li class="it-txt x3">
+										<div class="toggle noBg" data-toggle-obj="31">
+											<div class="answer" data-toggle-target="31">
+												1390만
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x4">
+										<div class="toggle noBg" data-toggle-obj="32">
+											<div class="answer" data-toggle-target="32">
+												1400만
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x5">
+										<div class="toggle noBg" data-toggle-obj="33">
+											<div class="answer" data-toggle-target="33">
+												1410만
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x6">
+										<div class="toggle noBg" data-toggle-obj="34">
+											<div class="answer" data-toggle-target="34">
+												1420만
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="31" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<div class="it-img">
+								<div class="it-txt x1">5조씩 뛰어 세기</div>
+								<ul>
+									<li class="it-txt x2">110조</li>
+									<li class="it-txt x3">
+										<div class="toggle noBg" data-toggle-obj="15">
+											<div class="answer" data-toggle-target="15">
+												115조
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x4">
+										<div class="toggle noBg" data-toggle-obj="16">
+											<div class="answer" data-toggle-target="16">
+												120조
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x5">
+										<div class="toggle noBg" data-toggle-obj="17">
+											<div class="answer" data-toggle-target="17">
+												125조
+											</div>
+										</div>
+									</li>
+									<li class="it-txt x6">
+										<div class="toggle noBg" data-toggle-obj="18">
+											<div class="answer" data-toggle-target="18">
+												130조
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="32" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					규칙에 따라 빈칸에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="it-wrap">
+						<div class="it-txt x1">324억</div>
+						<div class="it-txt x2">334억</div>
+						<div class="it-txt x3">344억</div>
+						<div class="it-txt x4">
+							<div class="toggle noBg" data-toggle-obj="41">
+								<div class="answer" data-toggle-target="41">
+									354억
+								</div>
+							</div>
+						</div>
+						<div class="it-txt x5">364억</div>
+						<div class="it-txt x6">
+							<div class="toggle noBg" data-toggle-obj="42">
+								<div class="answer" data-toggle-target="42">
+									434억
+								</div>
+							</div>
+						</div>
+						<div class="it-txt x7">534억</div>
+						<div class="it-txt x8">604억</div>
+						<div class="it-txt x9">634억</div>
+						<div class="it-txt x10">664억</div>
+						<div class="it-txt x11">
+							<div class="toggle noBg" data-toggle-obj="43">
+								<div class="answer" data-toggle-target="43">
+									694억
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					샛별이네 가족은 10월에 있는 할머니 생신 잔치를 위해 3월부터 한 달에 20만 원 씩 모으기로 하였습니다. 10월까지 모은 돈은 모두 얼마일까요?
+				</span></h2>
+				<section>
+					<div class="textAlignC mt_40">
+						<div class="toggle" data-toggle-obj="51">
+							<div class="answer" data-toggle-target="51">
+								160만 원
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="solve" pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							3월부터 10월까지 8개월 동안 모은 것이므로 0원에서 20만 원씩 8번 뛰어 세기를 하면 160만 원이 됩니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							왼쪽 세로는 십억의 자리 수가 1씩 커지므로 10억씩 뛰어 세기를 한 것입니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							가로는 백억의 자리 수가 1씩 커지므로 100억씩 뛰어 세기를 한 것입니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							오른쪽 세로는 십억의 자리 수가 3씩 커지므로 30억씩 뛰어 세기를 한 것입니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_32" data-popup-page="32">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							5조씩 뛰어 세면 조의 자리 수가 5씩 커집니다.<br>
+							(단, 조의 자리가 5이면 다음 수의 조의 자리는 0이 되고 십조의 자리 수가 1 커집니다.)
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_31" data-popup-page="31">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							10만씩 뛰어 세면 십만의 자리 수가 1씩 커집니다.<br>
+							(단, 십만의 자리가 9이면 다음 수의 십만의 자리는 0이 되고 백만의 자리 수가 1 커집니다.)
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<div class="textAlignC it-box">
+					<div class="it-txt">
+						7461000 - 7661000 - 7861000 ∙∙∙∙∙∙
+					</div>
+					<svg width="900" height="100">
+						<polyline points="208,44 208,85 370,85 370,54" fill="transparent" stroke="#f7c1c9" stroke-width="2"></polyline>
+						<path d="M370 44 L364 54 L376 54 Z" fill="#f7c1c9" stroke="transparent" stroke-width="0"></path>
+						<polyline points="382,44 382,85 550,85 550,54" fill="transparent" stroke="#f7c1c9" stroke-width="2"></polyline>
+						<path d="M550 44 L544 54 L556 54 Z" fill="#f7c1c9" stroke="transparent" stroke-width="0"></path>
+						<circle cx="205" cy="24" r="20" fill="#f7c1c9"/>
+						<circle cx="379" cy="24" r="20" fill="#f7c1c9"/>
+						<circle cx="554" cy="24" r="20" fill="#f7c1c9"/>
+					</svg>
+				</div>
+				<div>십만의 자리 수가 2씩 커지므로 200000씩 뛰어 세기를 한 것입니다.</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_12" data-popup-page="12">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							20억씩 뛰어 세면 십억의 자리 수가 2씩 커집니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_11" data-popup-page="11">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							10000씩 뛰어 세면 만의 자리 수가 1씩 커집니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+
+</html>

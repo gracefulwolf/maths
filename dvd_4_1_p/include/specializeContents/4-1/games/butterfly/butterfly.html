@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>hanger</title>
+    <link rel="stylesheet" type="text/css" href="../include/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/butterfly.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <script type="text/javascript" src="../include/js/libs/event.js"></script>
+    <script type="text/javascript" src="../include/js/libs/scene.js"></script>
+    <script type="text/javascript" src="../include/js/libs/dragdrop.js"></script>
+    <script type="text/javascript" src="../include/js/libs/animation.js"></script>
+    <script type="text/javascript" src="../include/js/libs/sound.js"></script>
+    <script type="text/javascript" src="../include/js/libs/logCounter.js"></script>
+    <script type="text/javascript" src="js/butterfly.js"></script>
+  </head>
+
+  <body>
+    <div id="bgCanvas">
+      <div id="Hanger"></div>
+      <div id="currentAnswer"></div>
+    </div>
+
+    <script type="text/javascript">
+      (function setDrillContentsInit() {
+        var val = parent.$QUESTION,
+          answer = parent.$ANSWER;
+
+        gameManager.TOTAL_ANSWER_ARRAY = val;
+        gameManager.CURRENT_ANSWER = answer;
+
+        gameManager.choiceQuestion = [];
+
+        for (var i = 2; i < gameManager.TOTAL_ANSWER_ARRAY.length; i++) {
+          gameManager.choiceQuestion.push(gameManager.TOTAL_ANSWER_ARRAY[i]);
+        }
+
+        gameManager.hangerpoint = gameManager.TOTAL_ANSWER_ARRAY[2];
+
+        gameManager.choiceQuestionText = [gameManager.TOTAL_ANSWER_ARRAY[0], gameManager.TOTAL_ANSWER_ARRAY[1]];
+        gameManager.choiceQuestionTextArray = [gameManager.TOTAL_ANSWER_ARRAY[0], gameManager.TOTAL_ANSWER_ARRAY[1]];
+
+        gameManager.CURRENT_TYPE = "butterfly";
+        gameManager.choiceQuestionPosition = [];
+        gameManager.zoomRate = 1;
+
+        var streamSound;
+
+        // initScale();
+
+        initScene();
+
+        inithangerBar();
+
+        initSound();
+
+        minority();
+
+        logCounter = new LogCounter();
+        // logCounter.startTime();
+        // logCounter.onTimer();
+      })();
+
+      /*---------- test code start -----------*/
+      window.onload = function () {
+        setDrillContentsInit([67, 5, 9, 13, 4, 2], [2, 13]);
+      };
+      /*---------- test code end -----------*/
+    </script>
+  </body>
+</html>

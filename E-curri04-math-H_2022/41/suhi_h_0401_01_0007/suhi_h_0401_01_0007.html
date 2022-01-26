@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* 숫자자리 table */
+	.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+	.tableContainer.it-colorful .it-orange{background:#fccd89;}
+	.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+	.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+	.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+	.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+	.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+	.tableContainer.it-colorful .it-white{background:#fff;}
+
+	.numCard.etc{width:54px; height:66px; background-image:url(./images/numCard_etc.png); background-size:auto 66px; background-position-x:calc(-54px * 10);}
+	.numCard.etc[data-index="0"]{background-position-x:calc(-54px * (1 - 1));}
+	.numCard.etc[data-index="1"]{background-position-x:calc(-54px * (2 - 1));}
+	.numCard.etc[data-index="2"]{background-position-x:calc(-54px * (3 - 1));}
+	.numCard.etc[data-index="3"]{background-position-x:calc(-54px * (4 - 1));}
+	.numCard.etc[data-index="4"]{background-position-x:calc(-54px * (5 - 1));}
+	.numCard.etc[data-index="5"]{background-position-x:calc(-54px * (6 - 1));}
+	.numCard.etc[data-index="6"]{background-position-x:calc(-54px * (7 - 1));}
+	.numCard.etc[data-index="7"]{background-position-x:calc(-54px * (8 - 1));}
+	.numCard.etc[data-index="8"]{background-position-x:calc(-54px * (9 - 1));}
+	.numCard.etc[data-index="9"]{background-position-x:calc(-54px * (10 - 1));}
+	.numCard.etc.dot{background-position-x:calc(-54px * (11 - 1));}
+
+	/* 개별 */
+	.page_0 .it-inner{width:50%; padding:0 15px; box-sizing:border-box;}
+	/* .page_0 .it-box .contentsList{font-size:35px;} */
+	.page_0 .it-inner:first-child{border-right:4px dashed #c1e8ec;}
+	.page_0 .contentsList > li{font-size:35px;}
+	.page_0 .it-box{width:50%;}
+	.page_0 .it-box > strong{display:block; margin:0 0 10px;}
+	.page_0 .it-box .it-bul{margin:0 20px;}
+	.page_0 .it-box .it-bul img{height:35px; vertical-align:-4px;}
+	.page_0 .it-box .it-calc{position:relative; width:100%; min-height:130px; padding-top:10px; text-align:center;}
+	.page_0 .it-division{width:2px; background:#ccc; margin:0 20px;}
+	.page_0 .it-svg{position:absolute; top:0; left:0;}
+	.page_0 .it-key{position:absolute; top:75px; padding:0 20px;background:#fff;}
+	.page_0 .it-key.n1{left:90px;}
+	.page_0 .it-key.n2{left:120px;}
+
+	.page_1 .tableContainer{width:100%;}
+	.page_2 .it-tip{position:relative; padding:20px 20px 40px; border-radius:50%; text-align:center;}
+	.page_2 .it-tip:after{content:""; display:block; position:absolute; bottom:-30px; left:0; width:100%; height:70px; margin:0 auto; background:url(./images/suh_h_0401_01_0007_203/suh_h_0401_01_0007_203_1_1.png) no-repeat 50% 50% / contain;}
+	.page_2 .horizonWrap{position:relative; min-height:100px;}
+	.page_2 .horizonContainer .horizonLine,
+	.pop_page_2 .horizonContainer .horizonLine{left:-35px;}
+	.page_2 .it-num{position:absolute; top:175px; white-space:nowrap;}
+	.page_2 .it-num.n1{left:-40px;}
+	.page_2 .it-num.n2{left:400px;}
+	.page_2 .it-num.n3{left:850px;}
+	.page_2 .it-start-wrap{position:relative; width:490px; height:140px;}
+	.page_2 .dragObj{position:absolute; top:15px;}
+	.page_2 .dragObj_1{left:70px;}
+	.page_2 .dragObj_2{left:280px;}
+	.page_2 .dropArea{position:absolute; top:65px; width:150px; height:120px;}
+	.page_2 .dropArea_1{left:140px;}
+	.page_2 .dropArea_2{left:680px;}
+	.page_2 .it-end-wrap{margin-top:10px; padding-top:30px;}
+	.page_2 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
+	.page_2 .it-end-wrap .dragObj.dragObjComplete{position:static; top:0; left:0;}
+	.page_2 .it-end-wrap .textContainer li{font-size:35px; transform: translateX(-25px);}
+	.pop_page_2 .horizonInner{position:relative; min-height:100px;padding:30px 30px 0;}
+	.pop_page_2 .textContainer > li{font-size:30px;transform:translateX(-23px);}
+	.pop_page_2 .it-n{position:absolute; top:65px; font-size:30px; text-align:center;}
+	.pop_page_2 .it-n.x1{left:165px;}
+	.pop_page_2 .it-n.x2{left:615px;}
+	.page_4 .contentsList{flex-wrap:wrap; width:800px; margin:0 auto; padding-left:80px;}
+	.page_4 .contentsList > li:not(:last-of-type){margin:0;}
+	.page_4 .contentsList > li{width:50%; padding:10px 0;}
+	.pop_page_4 .bullet.number{display:inline-block; vertical-align:4px;}
+	.page_5 .it-q{min-width:230px;}
+	.page_5 .numCard + .numCard{margin-left:30px;}
+	.page_6 .it-wrap{position:relative; width:100%; height:380px; background:url(./images/suhi_h_0401_01_0007/suhi_h_0401_01_0007_1.png) no-repeat 50% 100% / contain;}
+	.page_6 .balloon{font-size:32px;}
+	.page_6 .balloon.x1{top:60px; left:-10px;}
+	.page_6 .balloon.x2{top:10px; left:240px;}
+	.page_6 .balloon.x3{top:10px; left:440px;}
+	.page_6 .balloon.x4{top:28px; right:-10px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">1000이 10개인 수를 알아볼까요</span>
+		<span class="sub-page">10~11쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+					<!-- 개념 정리 -->
+				</span></h2>
+				<section>
+					<div class="lineBox sky flexListContainer">
+						<div class="it-inner">
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot mt_20"></ins>
+									<div>
+										<p class="mb_10 ls1">자리 수가 다른 수의 크기 비교</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="contentsList">
+								<li>
+									<ins class="icon_arrow"></ins>
+									<div class="it-box">
+										<p class="mb_10">자리 수가 많은 수가 더 큽니다.</p>
+										<div class="flexListContainer jcenter it-calc">
+											<div class="it-box">780000<br><span class="redT">(6자리)</span></div>
+											<span class="it-bul"><img src="../common/contents/images/math/inequalIcon.png"></span>
+											<div class="it-box">4210000<br><span class="redT">(7자리)</span></div>
+										</div>
+										<div class="flexListContainer jcenter it-calc">
+											<div class="it-box">25억<br><span class="redT">(10자리)</span></div>
+											<span class="it-bul"><img src="../common/contents/images/math/inequalIcon_2.png"></span>
+											<div class="it-box">25만<br><span class="redT">(6자리)</span></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="it-inner">
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot mt_20"></ins>
+									<div>
+										<p class="mb_10 ls1">자리 수가 같은 수의 크기 비교</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="contentsList">
+								<li>
+									<ins class="icon_arrow"></ins>
+									<div class="it-box">
+										<p class="mb_10">높은 자리 수부터 차례대로 비교합니다.</p>
+										<div class="flexListContainer jcenter it-calc">
+											<div class="it-box"><span class="redT underLine">2</span>470000</div>
+											<span class="it-bul"><img src="../common/contents/images/math/inequalIcon.png"></span>
+											<div class="it-box"><span class="redT underLine">3</span>980000</div>
+											<svg width="400" height="150" class="it-svg">
+												<polyline points="28,63 28,100 267,100 267,63" fill="transparent" stroke="#ff0000" stroke-width="2"></polyline>
+											</svg>
+											<div class="redT it-key n1">2 &lt; 3</div>
+										</div>
+										<div class="flexListContainer jcenter it-calc">
+											<div class="it-box">87<span class="redT underLine">4</span>50000</div>
+											<span class="it-bul"><img src="../common/contents/images/math/inequalIcon_2.png"></span>
+											<div class="it-box">87<span class="redT underLine">3</span>70000</div>
+											<svg width="400" height="150" class="it-svg">
+												<polyline points="58,63 58,100 297,100 297,63" fill="transparent" stroke="#ff0000" stroke-width="2"></polyline>
+											</svg>
+											<div class="redT it-key n2">4 &gt; 3</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1">
+				<h2><ins class="number">1</ins><span>
+					수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
+					<img src="../common/contents/images/math/inequalIcon_2.png">, <img
+						src="../common/contents/images/math/equalIcon.png">, <img
+						src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으세요.
+				</span></h2>
+				<section data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1" data-quiz="toggle">
+							<div class="tableContainer it-colorful">
+								<table>
+									<tbody>
+										<tr>
+											<td class="it-white textAlignR" colspan="4">(<span class="redT">만</span>)</td>
+											<td class="it-white textAlignR" colspan="4">(<span class="redT">일</span>)</td>
+										</tr>
+										<tr>
+											<td class="it-deeppink">4</td>
+											<td class="it-deeppink">6</td>
+											<td class="it-deeppink">1</td>
+											<td class="it-deeppink">6</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+										</tr>
+										<tr>
+											<td class="it-deeppink"></td>
+											<td class="it-deeppink">9</td>
+											<td class="it-deeppink">2</td>
+											<td class="it-deeppink">8</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+										</tr>
+										<tr>
+											<td class="it-deeppink">천</td>
+											<td class="it-deeppink">백</td>
+											<td class="it-deeppink">십</td>
+											<td class="it-deeppink">일</td>
+											<td class="it-green">천</td>
+											<td class="it-green">백</td>
+											<td class="it-green">십</td>
+											<td class="it-green">일</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="textAlignC mt_40">
+								<div class="flexListContainer center jcenter">
+									<span class="it-num">46160000</span> <div class="toggle circle ml_10 mr_10" data-toggle-obj="11">
+										<div class="answer" data-toggle-target="11"><img
+												src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+									</div> <span class="it-num">9280000</span>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<div class="tableContainer it-colorful">
+								<table>
+									<tbody>
+										<tr>
+											<td class="it-white textAlignR" colspan="3">(<span class="redT">억</span>)</td>
+											<td class="it-white textAlignR" colspan="4">(<span class="redT">만</span>)</td>
+											<td class="it-white textAlignR" colspan="4">(<span class="redT">일</span>)</td>
+										</tr>
+										<tr>
+											<td class="it-sky">5</td>
+											<td class="it-sky">2</td>
+											<td class="it-sky">3</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+										</tr>
+										<tr>
+											<td class="it-sky">5</td>
+											<td class="it-sky">1</td>
+											<td class="it-sky">9</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-deeppink">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+											<td class="it-green">0</td>
+										</tr>
+										<tr>
+											<td class="it-sky">백</td>
+											<td class="it-sky">십</td>
+											<td class="it-sky">일</td>
+											<td class="it-deeppink">천</td>
+											<td class="it-deeppink">백</td>
+											<td class="it-deeppink">십</td>
+											<td class="it-deeppink">일</td>
+											<td class="it-green">천</td>
+											<td class="it-green">백</td>
+											<td class="it-green">십</td>
+											<td class="it-green">일</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="textAlignC mt_40">
+								<div class="flexListContainer center jcenter">
+									<span class="it-num">52300000000</span> <div class="toggle circle ml_10 mr_10" data-toggle-obj="11">
+										<div class="answer" data-toggle-target="11"><img
+												src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+									</div> <span class="it-num">51900000000</span>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="12" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</li>
+
+			<li class="page_2"  data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="2">
+				<h2><ins class="number">2</ins><span>
+					758000과 752000을 수직선에 <span class="redT">↑</span>로 나타내고, 수의 크기를 비교해 보세요.
+				</span></h2>
+				<section>
+					<div class="study_guide">
+						<em>숫자</em>를 <em>드래그</em>하여 옮기세요.
+					</div>
+					<div class="dragDropContainer">
+						<div class="flexListContainer end">
+							<div class="lineBox green it-start-wrap dragObjUL">
+								<div class="js-dragObj dragObj dragObj_1 n1" data-name="drag-obj" data-drag-obj-answer="1">
+									<div class="textAlignC">
+										<span class="redT">↑</span><br>758000
+									</div>
+								</div>
+								<div class="js-dragObj dragObj dragObj_2 n2" data-name="drag-obj" data-drag-obj-answer="2">
+									<div class="textAlignC">
+										<span class="redT">↑</span><br>752000
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="horizonWrap it-end-wrap">
+							<div class="horizonContainer horizonContainer_1"></div>
+							<div class="it-target js-dropArea dropArea dropArea_1" data-drop-area-answer="2"></div>
+							<div class="it-target js-dropArea dropArea dropArea_2" data-drop-area-answer="1"></div>
+						</div>
+						<div class="textAlignC mt_40" data-quiz="toggle">
+							<div class="flexListContainer jcenter mt_20">
+								<div class="textAlignR" style="width: 300px;">758000</div>
+								<div class="toggle circle" data-toggle-obj="21" style="margin: -4px 20px;">
+									<div class="answer" data-toggle-target="21"><img
+										src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+									</div>
+								<div class="textAlignL" style="width: 300px;">752000</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					크기를 비교하여 <span class="toggleBlank circle" style="vertical-align:-4px;"></span> 안에
+					<img src="../common/contents/images/math/inequalIcon_2.png">, <img
+						src="../common/contents/images/math/equalIcon.png">, <img
+						src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+				</span></h2>
+				<section>
+					<div class="flexListContainer jcenter mt_20">
+						<div class="textAlignR" style="width: 300px;">924000</div>
+						<div class="toggle circle" data-toggle-obj="31" style="margin: -4px 20px;">
+							<div class="answer" data-toggle-target="31"><img
+								src="../common/contents/images/math/inequalIcon_blue.png"></div>
+							</div>
+						<div class="textAlignL" style="width: 300px;">2460000</div>
+					</div>
+					<div class="flexListContainer jcenter mt_30">
+						<div class="textAlignR" style="width: 300px;">71950000</div>
+						<div class="toggle circle" data-toggle-obj="32" style="margin: -4px 20px;">
+							<div class="answer" data-toggle-target="32"><img
+								src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+							</div>
+						<div class="textAlignL" style="width: 300px;">69430000</div>
+					</div>
+					<div class="flexListContainer jcenter mt_30">
+						<div class="textAlignR" style="width: 300px;">24조 8200억</div>
+						<div class="toggle circle" data-toggle-obj="33" style="margin: -4px 20px;">
+							<div class="answer" data-toggle-target="33"><img
+								src="../common/contents/images/math/inequalIcon_blue.png"></div>
+							</div>
+						<div class="textAlignL" style="width: 300px;">142조</div>
+					</div>
+					<div class="flexListContainer jcenter mt_30">
+						<div class="textAlignR" style="width: 300px;">3487억 7020만</div>
+						<div class="toggle circle" data-toggle-obj="34" style="margin: -4px 20px;">
+							<div class="answer" data-toggle-target="34"><img
+								src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+							</div>
+						<div class="textAlignL" style="width: 300px;">3487억 920만</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					수의 크기를 비교하여 큰 수부터 차례대로 기호를 써 보세요.
+				</span></h2>
+				<section>
+					<div class="lineBox green textAlignC it-lineBox mt_20">
+						<ul class="contentsList flexListContainer around center">
+							<li>
+								<ins class="bullet number orange">ㄱ</ins>
+								<div>
+									2740000000
+								</div>
+							</li>
+							<li>
+								<ins class="bullet number orange">ㄴ</ins>
+								<div>
+									37억 8400만
+								</div>
+							</li>
+							<li>
+								<ins class="bullet number orange">ㄷ</ins>
+								<div>
+									4100000000
+								</div>
+							</li>
+							<li>
+								<ins class="bullet number orange">ㄹ</ins>
+								<div>
+									27억 980만
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="flexListContainer center jcenter mt_40">
+						<div class="toggle" data-toggle-obj="41">
+							<div class="answer" data-toggle-target="41"><div class="bullet number orange">ㄷ</div></div>
+						</div> <ins class="icon_arrow ml_10 mr_10"></ins> <div class="toggle" data-toggle-obj="42">
+							<div class="answer" data-toggle-target="42"><div class="bullet number orange">ㄴ</div></div>
+						</div> <ins class="icon_arrow ml_10 mr_10"></ins> <div class="toggle" data-toggle-obj="43">
+							<div class="answer" data-toggle-target="43"><div class="bullet number orange">ㄱ</div></div>
+						</div> <ins class="icon_arrow ml_10 mr_10"></ins> <div class="toggle" data-toggle-obj="44">
+							<div class="answer" data-toggle-target="44"><div class="bullet number orange">ㄹ</div></div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					숫자 카드를 한 번씩 모두 사용하여 만들 수 있는 가장 큰 수와 가장 작은 수를 각각 써 보세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer center jcenter mt_20">
+						<div class="numCard etc" data-index="0"></div>
+						<div class="numCard etc" data-index="2"></div>
+						<div class="numCard etc" data-index="1"></div>
+						<div class="numCard etc" data-index="4"></div>
+						<div class="numCard etc" data-index="6"></div>
+						<div class="numCard etc" data-index="8"></div>
+						<div class="numCard etc" data-index="7"></div>
+						<div class="numCard etc" data-index="9"></div>
+					</div>
+					<ul class="contentsList mt_50">
+						<li>
+							<ins class="bullet circleDot"></ins>
+							<div class="flexListContainer start">
+								<div class="it-q">가장 큰 수</div>
+								<div class="toggle" data-toggle-obj="51">
+									<div class="answer" data-toggle-target="51">
+										98764210
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<ins class="bullet circleDot"></ins>
+							<div class="flexListContainer start">
+								<div class="it-q">가장 작은 수</div>
+								<div class="toggle" data-toggle-obj="52">
+									<div class="answer" data-toggle-target="52">
+										10246789
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_6" data-quiz="toggle">
+				<h2><ins class="number">6</ins><span>
+					대화를 보고 <span class="blankBox w50"></span> 안에 공통으로 들어갈 알맞은 수를 써 보세요.
+				</span></h2>
+				<section>
+					<div class="it-wrap">
+						<div class="balloon bottom ctTail textAlignC x1 sky">
+							4560000과<br>
+							<span class="blankBox w50"></span>0000 중에<br>
+							어느 것이 더 클까?
+						</div>
+						<div class="balloon bottom ctTail textAlignC x2 yellow">
+							4560000이<br>
+							더 크지.
+						</div>
+						<div class="balloon bottom ctTail textAlignC x3 sky">
+							그렇지?<br>
+							백만과 십만의 자리<br>
+							숫자는 같지만<br>
+							4560000의 만의 자리<br>
+							숫자가 더 크니까.
+						</div>
+						<div class="balloon bottom ctTail textAlignC x4 yellow">
+							그래, 4560000과<br>
+							<span class="blankBox w50"></span>0000의<br>
+							만의 자리의 차는<br>
+							3이잖아.
+						</div>
+					</div>
+					<div class="textAlignC mt_20">
+						<div class="toggle" data-toggle-obj="6">
+							<div class="answer" data-toggle-target="6">
+								453
+							</div>
+						</div>0000
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="solve pop_page_6" data-popup-page="6">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							4560000과 백만, 십만의 자리 숫자가 같으므로 구하려는 수의 백만의 자리 숫자는 4, 십만의 자리 숫자는 5입니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							만의 자리의 차는 3이고 4560000보다 작으므로 만의 자리 숫자는 3이 됩니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							따라서 <span class="blueT">453</span>0000입니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							가장 큰 수는 높은 자리의 수부터 차례대로 큰 숫자 카드를 놓으면 98764210이 됩니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							가장 작은 수는 가장 높은 자리의 수에 0을 제외한 가장 작은 숫자 카드를 놓고 그 다음 자리의 수부터는 0을 포함한 작은 수부터 차례대로 숫자 카드를 놓으면 10246789가 됩니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							<div class="bullet number orange">ㄱ</div>, <div class="bullet number orange">ㄴ</div>, <div class="bullet number orange">ㄷ</div>, <div class="bullet number orange">ㄹ</div> 모두 열 자리 수입니다.<br>
+							<div class="bullet number orange">ㄷ</div>이 십억의 자리 수가 4로 가장 크고 <div class="bullet number orange">ㄴ</div>이 3으로 두 번째로 큽니다. <div class="bullet number orange">ㄱ</div>과 <div class="bullet number orange">ㄹ</div>은 십억, 억의 자리 수는 같지만 천만의 자리 수를 비교하면 4&gt;0dlamfh <div class="bullet number orange">ㄱ</div>이 더 큽니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							따라서 큰 수부터 쓰면 <div class="bullet number orange">ㄷ</div>, <div class="bullet number orange">ㄴ</div>, <div class="bullet number orange">ㄱ</div>, <div class="bullet number orange">ㄹ</div>입니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+
+		<li class="solve pop_page_3" data-popup-page="3">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div class="ls1">
+							924000은 2460000보다 자리 수가 더 적으므로 더 작습니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							71950000과 69430000의 천만의 자리 수를 비교하면 7&gt;6이므로 71950000이 더 큽니다.
+						</div>
+					</li>
+					<li>
+						<div class="ls1">
+							24조 8200억은 142조보다 자리 수가 더 적으므로 더 작습니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							3487억 7020만과 3487억 920만은 천억, 백억, 십억, 억의 자리 수는 같지만 천만의 자리 수를 비교하면 7&gt;0이므로 3487억 7020만이 더 큽니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				수직선에서 오른쪽에 있는 758000이 더 큽니다.
+				<div class="horizonInner">
+					<div class="horizonContainer horizonContainer_2"></div>
+					<div class="it-n x1">
+						<span class="redT">↑</span><br>752000
+					</div>
+					<div class="it-n x2">
+						<span class="redT">↑</span><br>758000
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_11" data-popup-page="11">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							첫 번째 수직선에서 눈금 한 칸은 1000이므로 5000, 10000입니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							두 번째 수직선에서 눈금 한 칸은 100이므로 9400, 9500, 9900, 10000입니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_12" data-popup-page="12">
+			<div class="popup_contents">
+				52300000000과 51900000000은 백억의 자리 수는 같지만 십억의 자리 수를 비교하면 2&gt;1이므로 52300000000이 더 큽니다.
+			</div>
+		</li>
+
+		<li class="solve pop_page_11" data-popup-page="11">
+			<div class="popup_contents">
+				46160000은 9280000보다 자리 수가 더 많으므로 더 큽니다.
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		window.$horizonMaker({
+			container: $ts.getEl('.horizonContainer_1')[0],
+			lineSpace: 90,
+			inputTextArray: ['750000','','','','','755000','','','','','760000']
+		});
+
+		window.$horizonMaker({
+			container: $ts.getEl('.horizonContainer_2')[0],
+			lineSpace: 75,
+			inputTextArray: ['750000','','','','','755000','','','','','760000']
+		});
+	}, false);
+</script>
+
+</body>
+</html>

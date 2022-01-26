@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* 숫자자리 table */
+	.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+	.tableContainer.it-colorful .it-orange{background:#fccd89;}
+	.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+	.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+	.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+	.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+	.tableContainer.it-colorful .it-brown{background:#c7a08c;}
+	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+	.tableContainer.it-colorful .it-white{background:#fff;}
+
+	.numCard.etc{width:54px; height:66px; background-image:url(./images/numCard_etc.png); background-size:auto 66px; background-position-x:calc(-54px * 10);}
+	.numCard.etc[data-index="0"]{background-position-x:calc(-54px * (1 - 1));}
+	.numCard.etc[data-index="1"]{background-position-x:calc(-54px * (2 - 1));}
+	.numCard.etc[data-index="2"]{background-position-x:calc(-54px * (3 - 1));}
+	.numCard.etc[data-index="3"]{background-position-x:calc(-54px * (4 - 1));}
+	.numCard.etc[data-index="4"]{background-position-x:calc(-54px * (5 - 1));}
+	.numCard.etc[data-index="5"]{background-position-x:calc(-54px * (6 - 1));}
+	.numCard.etc[data-index="6"]{background-position-x:calc(-54px * (7 - 1));}
+	.numCard.etc[data-index="7"]{background-position-x:calc(-54px * (8 - 1));}
+	.numCard.etc[data-index="8"]{background-position-x:calc(-54px * (9 - 1));}
+	.numCard.etc[data-index="9"]{background-position-x:calc(-54px * (10 - 1));}
+	.numCard.etc.dot{background-position-x:calc(-54px * (11 - 1));}
+
+	/* 개별 */
+	.page_0 .it-wrap{width:450px;}
+	.page_0 .it-blue{color: #6495ed;}
+	.page_0 .it-green{color: green;}
+	.page_0 .colorBox.check{display:inline; height:46px; line-height:26px !important;}
+
+	.page_1 .it-wrap{width:100%; height:440px; background:url(./images/1_4_1.svg) no-repeat 50% 50% / 950px 450px;}
+	.page_1 .it-box{position:relative; height:216px; padding-left:260px; font-size:35px;}
+	.page_1 .it-1{position:absolute; top:90px; left:82px;}
+	.page_1 .it-2{display:flex; flex-direction:column; justify-content: space-around; height:100%; padding-top:8px; box-sizing:border-box;}
+
+	.page_2 .tableContainer{width:840px; margin:0 auto;}
+	.page_2 .tableContainer table{table-layout:fixed;}
+	.page_2 .tableContainer table td{height:60px;}
+	.pop_page_2 .colorBox{height:46px; line-height:26px !important;}
+	.pop_page_3 .it-f{float:left; margin-right:10px;}
+	.pop_page_3 .it-f + ul{float:left;}
+	.page_4 .it-title{width:480px; margin:0 auto;}
+	.page_5{background:url(./images/1_4_5.svg) no-repeat 50% 50% / 840px auto;}
+	.page_5 .top_1{top:60px;}
+	.page_5 .top_2{top:172px;}
+	.page_5 .top_3{top:283px;}
+	.page_5 .top_4{top:394px;}
+	.page_5 .left_1{left:355px; opacity:0;}
+	.page_5 .left_2{left:588px; opacity:0;}
+	.page_5 .box{font-size:27px; letter-spacing:-1px;}
+	.page_5 .box.x1{margin-top:-5px; margin-left:68px;}
+	.page_5 .box.x2{width:346px; margin-top:-5px; margin-right:108px;}
+	.page_5 .box li{display:flex; align-items:center; justify-content:center; height:90px; margin-top:21px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">억과 조를 알아볼까요</span>
+		<span class="sub-page">16~17쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+					<!-- 개념 정리 -->
+				</span></h2>
+				<section class="full">
+					<div class="lineBox sky">
+						<ul class="dotList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									1000만이 10개인 수
+									<div class="flexListContainer start mt_20">
+										<div class="icon_arrow mt_15 mr_20"></div>
+										<div>
+											<ul>
+											<li class="flexListContainer center start">
+												<div class="colorBox check deepOrange">쓰기</div>
+												<div>
+													<span class="blueT">100000000</span> 또는 <span class="blueT">1억</span>
+												</div>
+											</li>
+											<li class="flexListContainer center start mt_15">
+												<div class="colorBox check brown">읽기</div>
+												<div>
+													<span class="blueT">억</span> 또는 <span class="blueT">일억</span>
+												</div>
+											</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="mt_40">
+								<ins class="bullet circleDot"></ins>
+								<div>
+									1000억이 10개인 수
+									<div class="flexListContainer start mt_20">
+										<div class="icon_arrow mt_15 mr_20"></div>
+										<div>
+											<ul>
+											<li class="flexListContainer center start">
+												<div class="colorBox check deepOrange">쓰기</div>
+												<div>
+													<span class="blueT">1000000000000</span> 또는 <span class="blueT">1조</span>
+												</div>
+											</li>
+											<li class="flexListContainer center start mt_15">
+												<div class="colorBox check brown">읽기</div>
+												<div>
+													<span class="blueT">조</span> 또는 <span class="blueT">일조</span>
+												</div>
+											</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="it-wrap">
+						<div class="it-box">
+							<div class="it-1">1억은</div>
+							<div class="it-2">
+								<div>
+									9000만보다 <div class="toggle" data-toggle-obj="11">
+										<div class="answer" data-toggle-target="11">1000만</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+								<div>
+									9900만보다 <div class="toggle" data-toggle-obj="12">
+										<div class="answer" data-toggle-target="12">100만</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+								<div>
+									9990만보다 <div class="toggle" data-toggle-obj="13">
+										<div class="answer" data-toggle-target="13">10만</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+							</div>
+						</div>
+						<div class="it-box">
+							<div class="it-1">1조는</div>
+							<div class="it-2">
+								<div>
+									9000억보다 <div class="toggle" data-toggle-obj="14">
+										<div class="answer" data-toggle-target="14">1000억</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+								<div>
+									9990억보다 <div class="toggle" data-toggle-obj="15">
+										<div class="answer" data-toggle-target="15">10억</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+								<div>
+									9999억보다 <div class="toggle" data-toggle-obj="16">
+										<div class="answer" data-toggle-target="16">1억</div>
+									</div>만큼 더 큰 수 입니다.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					빈칸에 알맞은 수나 말을 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="tableContainer brown it-colorful">
+						<table>
+							<tbody>
+								<tr>
+									<td class="it-green">517900000000</td>
+									<td class="it-green">오천백칠십구억</td>
+								</tr>
+								<tr>
+									<td class="it-white">
+										<div class="toggle noBg" data-toggle-obj="21">
+											<div class="answer" data-toggle-target="21">
+												60200000000
+											</div>
+										</div>
+									</td>
+									<td class="it-green">육백이억</td>
+								</tr>
+								<tr>
+									<td class="it-green">602000000000</td>
+									<td class="it-white">
+										<div class="toggle noBg" data-toggle-obj="22">
+											<div class="answer" data-toggle-target="22">
+												육천이십억
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="it-white">
+										<div class="toggle noBg" data-toggle-obj="23">
+											<div class="answer" data-toggle-target="23">
+												3942000000000000
+											</div>
+										</div>
+									</td>
+									<td class="it-green">삼천구백사십이조</td>
+								</tr>
+								<tr>
+									<td class="it-green">8704000000000000</td>
+									<td class="it-white">
+										<div class="toggle noBg" data-toggle-obj="24">
+											<div class="answer" data-toggle-target="24">
+												팔천칠백사조
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					9746조는 얼마만큼의 수인지 알아보려고 합니다. 표의 빈칸과 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="tableContainer it-colorful">
+						<table>
+							<tbody>
+								<tr>
+									<td class="it-white textAlignR" colspan="4">(<span class="redT">조</span>)</td>
+									<td class="it-white textAlignR" colspan="4">(<span class="redT">억</span>)</td>
+									<td class="it-white textAlignR" colspan="4">(<span class="redT">만</span>)</td>
+									<td class="it-white textAlignR" colspan="4">(<span class="redT">일</span>)</td>
+								</tr>
+								<tr>
+									<td class="it-yellow">9</td>
+									<td class="it-yellow">7</td>
+									<td class="it-yellow">4</td>
+									<td class="it-yellow">6</td>
+									<td class="it-sky">0</td>
+									<td class="it-sky">0</td>
+									<td class="it-sky">0</td>
+									<td class="it-sky">0</td>
+									<td class="it-deeppink">0</td>
+									<td class="it-deeppink">0</td>
+									<td class="it-deeppink">0</td>
+									<td class="it-deeppink">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+								</tr>
+								<tr>
+									<td class="it-yellow">천</td>
+									<td class="it-yellow">백</td>
+									<td class="it-yellow">십</td>
+									<td class="it-yellow">일</td>
+									<td class="it-sky">천</td>
+									<td class="it-sky">백</td>
+									<td class="it-sky">십</td>
+									<td class="it-sky">일</td>
+									<td class="it-deeppink">천</td>
+									<td class="it-deeppink">백</td>
+									<td class="it-deeppink">십</td>
+									<td class="it-deeppink">일</td>
+									<td class="it-green">천</td>
+									<td class="it-green">백</td>
+									<td class="it-green">십</td>
+									<td class="it-green">일</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="textAlignC mt_40">
+						9746조=9000조+<div class="toggle" data-toggle-obj="31">
+							<div class="answer" data-toggle-target="31">700조</div>
+						</div>+<div class="toggle" data-toggle-obj="32">
+							<div class="answer" data-toggle-target="32">40조</div>
+						</div>+<div class="toggle" data-toggle-obj="33">
+							<div class="answer" data-toggle-target="33">6조</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					수를 보고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="colorBox purple black textAlignC it-title">
+						468074690651
+					</div>
+					<div class="lineBox green mt_40">
+						<ul class="dotList">
+							<li>
+								<ins class="bullet circleDot mt_25"></ins>
+								<div>
+									억이 <div class="toggle" data-toggle-obj="41">
+										<div class="answer" data-toggle-target="41">4680</div>
+									</div>개, 만이 <div class="toggle" data-toggle-obj="42">
+										<div class="answer" data-toggle-target="42">4680</div>
+									</div>개, 일이 <div class="toggle" data-toggle-obj="43">
+										<div class="answer" data-toggle-target="43">651</div>
+									</div>개인 수입니다.
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot mt_25"></ins>
+								<div>
+									맨 앞의 숫자 4는 <div class="toggle" data-toggle-obj="44">
+										<div class="answer" data-toggle-target="44">400000000000(또는 4000억)</div>
+									</div>을, 중간의 숫자 4는 <div class="toggle mt_5 mb_5" data-toggle-obj="45">
+										<div class="answer" data-toggle-target="45">4000000(또는 400만)</div>
+									</div>을 나타냅니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="dragLine" data-option="answer" data-total-complete-count="4">
+				<h2><ins class="number">5</ins><span>
+					수를 알맞게 설명한 것끼리 선으로 이어 보세요.
+				</span></h2>
+				<section>
+					<div class="study_guide mt_30">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
+					<div class="dragLineContainer">
+						<ul class="box x1">
+							<li>5068조</li>
+							<li>468704760000</li>
+							<li>20조 80억</li>
+							<li>1479578600000</li>
+						</ul>
+						<ul class="box x2">
+							<li>숫자 0의 개수가 12개입니다.</li>
+							<li>숫자 8은 8조를 나타냅니다.</li>
+							<li>천억의 자리 숫자와 십억의 자리 숫자를 더하면 13이 됩니다.</li>
+							<li>백억의 자리 숫자와 십억의 자리 숫자를 더하면 14가 됩니다.</li>
+						</ul>
+					</div>
+					<svg class="js-svgContainer svgContainer"></svg>
+					<div class="js-dragLineArea dragLineArea left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1"></div>
+					<div class="js-dragLineObj dragLineObj left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2"></div>
+					<div class="js-dragLineObj dragLineObj left_1 top_2" data-group="1" data-name="dragLine2" data-answer="2" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_1 top_3" data-group="1" data-name="dragLine3" data-answer="3"></div>
+					<div class="js-dragLineObj dragLineObj left_1 top_3" data-group="1" data-name="dragLine3" data-answer="3" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_1 top_4" data-group="1" data-name="dragLine4" data-answer="4"></div>
+					<div class="js-dragLineObj dragLineObj left_1 top_4" data-group="1" data-name="dragLine4" data-answer="4" data-complete-count="1"></div>
+
+					<div class="js-dragLineArea dragLineArea left_2 top_1" data-group="2" data-name="dragLine4" data-answer="3"></div>
+					<div class="js-dragLineObj dragLineObj left_2 top_1" data-group="2" data-name="dragLine4" data-answer="3" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_2 top_2" data-group="2" data-name="dragLine5" data-answer="1"></div>
+					<div class="js-dragLineObj dragLineObj left_2 top_2" data-group="2" data-name="dragLine5" data-answer="1" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_2 top_3" data-group="2" data-name="dragLine6" data-answer="4"></div>
+					<div class="js-dragLineObj dragLineObj left_2 top_3" data-group="2" data-name="dragLine6" data-answer="4" data-complete-count="1"></div>
+					<div class="js-dragLineArea dragLineArea left_2 top_4" data-group="2" data-name="dragLine6" data-answer="2"></div>
+					<div class="js-dragLineObj dragLineObj left_2 top_4" data-group="2" data-name="dragLine6" data-answer="2" data-complete-count="1"></div>
+
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							5068조의 숫자 8은 8조를 나타냅니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							468704760000에서 백억의 자리 숫자는 6, 십억의 자리 숫자는 8이므로 더하면 14가 됩니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							20조 80억은 20008000000000이므로 숫자 0의 개수는 12개입니다.
+						</div>
+					</li>
+					<li>
+						<div>
+							1479578600000에서 천억의 자리 숫자는 4, 십억의 자리 숫자는 9이므로 더하면 13이 됩니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							<span class="underLine red">4</span>68074690651 <ins class="icon_arrow"></ins> 천억의 자리, 400000000000
+						</div>
+					</li>
+					<li>
+						<div>
+							46807<span class="underLine red">4</span>690651 <ins class="icon_arrow"></ins> 백만의 자리, 4000000
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_3" data-popup-page="3">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div>
+							<div class="it-f">
+								9746조는
+							</div>
+							<ul>
+								<li><ins class="icon_arrow"></ins> 천조의 자리 숫자가 9입니다.</li>
+								<li><ins class="icon_arrow"></ins> 백조의 자리 숫자가 7</li>
+								<li><ins class="icon_arrow"></ins> 십조의 자리 숫자가 4</li>
+								<li><ins class="icon_arrow"></ins> 조의 자리 숫자가 6</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							각 자리의 숫자가 나타내는 값의 합으로 나타내면<br>
+							9000조+<span class="blueT">700조</span>+<span class="blueT">40조</span>+<span class="blueT">6조</span>입니다.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						<div class="flexListContainer center">
+							육백이억
+							<div class="icon_arrow ml_10 mr_10"></div>
+							<div class="colorBox deepOrange check">쓰기</div>
+							60200000000
+						</div>
+					</li>
+					<li>
+						<div class="flexListContainer center">
+							602000000000
+							<div class="icon_arrow ml_10 mr_10"></div>
+							<div class="colorBox brown check">읽기</div>
+							육천이십억
+						</div>
+					</li>
+					<li>
+						<div class="flexListContainer center">
+							삼천구백사십이조
+							<div class="icon_arrow ml_10 mr_10"></div>
+							<div class="colorBox deepOrange check">쓰기</div>
+							3942000000000000
+						</div>
+					</li>
+					<li>
+						<div class="flexListContainer center">
+							8704000000000000
+							<div class="icon_arrow ml_10 mr_10"></div>
+							<div class="colorBox brown check">읽기</div>
+							팔천칠백사조
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+</html>
