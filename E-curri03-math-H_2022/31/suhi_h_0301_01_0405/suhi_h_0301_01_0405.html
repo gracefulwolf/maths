@@ -49,7 +49,7 @@
 
 						<div class="lineBox sky" style="height:400px; padding-top:30px;">
 							<div class="flex-wrap">
-								<div class="flex-item">
+								<div class="flex-item vOn">
 									<div class="math_calc_table">
 										<table>
 											<tbody>
@@ -455,7 +455,9 @@
 							</span>
 						</h2>
 						<section>
-							<div id="aniBox_1"></div>
+							<div class="balloon right sky"><span>100이 9개,<br>10이 7개,<br>1이 2개인 수야</span></div>
+							<div class="single charSpriteImg boy_1"></div>
+
 							<div class="textAlignC" style="margin-top:370px;">
 								<div class="toggle mr_10" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
@@ -904,41 +906,7 @@
 				objs.addEventListener('click', $efSound.click);
 			});
 
-			$prite.add({
-				target: $ts.getEl('#aniBox_1'),
-				spriteId: 'sprite1',
-				spriteList: [
-				{
-					name: 'boy_1',
-					// circle: 'blue',
-					top: -80,
-					left: 370,
-					width: 340,
-					height: 421,
-					thumbNail: '../common/contents/images/character/boy_1.png',
-					spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
-					// sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
-					speech:'left',
-					textBubble: {
-					text: '100이 9개,<br>10이 7개,<br>1이 2개인 수야',
-					class: 'balloon right sky',
-					top: 70,
-					left: 130,
-					width: 290,
-					textAlign: 'center',
-					wordBreak: 'keep-all'
-					},
-					sheetWidth: 102000,
-					sheetHeight: 421,
-					//endSheet: 0,
-					delay: 40,
-					callbacks: {
-					start: function () { console.log('start'); },
-					end: function () { console.log('end'); }
-					}
-				}]
-			});
-				
+		
 		}, false);
 	</script>
 </body>
