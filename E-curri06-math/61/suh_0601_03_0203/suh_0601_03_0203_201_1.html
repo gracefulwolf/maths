@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style>
+		.img-box {width:50%;margin:0 auto;overflow:hidden;position:relative}
+		.img-box img {width:100%}
+
+		.item-wrap {position:relative;width:580px;height:55px;margin:20px auto 0;z-index:10}
+		[class*="weight-item-w"] {position:absolute}
+		.weight-item-w1 {top:0;width:32px;height:55px;background:url(./images/suh_0601_03_0203_201_1_3_1.png) no-repeat 0 0 / 579px}
+		.weight-item-w2 {top:25px;width:54px;height:30px;background:url(./images/suh_0601_03_0203_201_1_3_1.png) no-repeat -306px -25px / 579px}
+		.weight-item-w1::before {content:"1g";display:block;position:absolute;top:17px;left:5px;font-size:20px;text-align:center;z-index:10}
+		.weight-item-w2::before {content:"0.1g";display:block;position:absolute;top:1px;left:5px;font-size:20px;text-align:center;z-index:10}
+		.weight-item-1 {left:0}
+		.weight-item-2 {left:51px}
+		.weight-item-3 {left:102px}
+		.weight-item-4 {left:153px}
+		.weight-item-5 {left:204px}
+		.weight-item-6 {left:255px}
+		.weight-item-7 {left:306px}
+		.weight-item-8 {left:379px}
+		.weight-item-9 {left:452px}
+		.weight-item-10 {left:526px}
+		.dragObjUL .dragObjComplete {opacity:.2 !important}
+
+		.dropAreaUL {position:relative;width:580px;height:169px;margin:17px auto 0}
+		.dropArea {display:flex;justify-content:center;align-items:center;align-content:center;flex-wrap:wrap}
+		.dropArea .js-dragObj {position:relative;top:-15px;left:0;margin:2px 10px}
+		.dish-item {position:absolute;top:0;width:218px;height:168px;background:url(./images/suh_0601_03_0203_201_1_3_1.png) no-repeat -39px -72px / 579px}
+		.dish-item-1 {left:39px}
+		.dish-item-2 {left:323px}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title" style="letter-spacing:-.0425em">무게 재기 체험을 하러 간 연수와 준기는 1g 분동 6개와 0.1g 분동 4개를 똑같이 나누어 가진 뒤, 여러 가지 물건의 무게를 재어 보려고 합니다. 한 명이 가질 수 있는 분동은 몇 g인지 알아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>한 명이 가질 수 있는 분동은 몇 g인지 구하는 식을 써 보세요.</span></h2>
+					<section>
+						<div class="img-box mt_10">
+							<img src="./images/suh_0601_03_0203_101_1_1.png">
+						</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">6.4÷2</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>계산 결과를 어림해 보고, 어떻게 어림했는지 말해 보세요.</span></h2>
+					<section>
+						<div class="img-box mt_10">
+							<img src="./images/suh_0601_03_0203_101_1_1.png">
+						</div>
+						<div class="mt_20">
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer flex-box" data-toggle-target="1">
+									<div class="bullet exam">예</div>
+									<p>3보다는 클 것 같습니다. 6을 2로 나누면 3인데 6.4는 6보다 크기 때문입니다.</p>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_3" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="10">
+					<h2><ins class="dot"></ins><span>분동을 페트리 접시 2개에 똑같이 나누어 담아 보세요. <span class="supply_guide inline">준비물 4</span></span></h2>
+					<section>
+						<div class="dragDropContainer">
+							<div class="dragObjUL item-wrap">
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-1" data-name="drag-obj" data-drag-obj-answer="1"></div>
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-2" data-name="drag-obj" data-drag-obj-answer="2"></div>
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-3" data-name="drag-obj" data-drag-obj-answer="3"></div>
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-4" data-name="drag-obj" data-drag-obj-answer="4"></div>
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-5" data-name="drag-obj" data-drag-obj-answer="5"></div>
+								<div class="js-dragObj dragObj weight-item-w1 weight-item-6" data-name="drag-obj" data-drag-obj-answer="6"></div>
+								<div class="js-dragObj dragObj weight-item-w2 weight-item-7" data-name="drag-obj" data-drag-obj-answer="7"></div>
+								<div class="js-dragObj dragObj weight-item-w2 weight-item-8" data-name="drag-obj" data-drag-obj-answer="8"></div>
+								<div class="js-dragObj dragObj weight-item-w2 weight-item-9" data-name="drag-obj" data-drag-obj-answer="9"></div>
+								<div class="js-dragObj dragObj weight-item-w2 weight-item-10" data-name="drag-obj" data-drag-obj-answer="10"></div>
+							</div>
+							<div class="dropAreaUL">
+								<div class="js-dropArea dropArea dish-item dish-item-1" data-drop-area-answer="1,2,3,7,8"></div>
+								<div class="js-dropArea dropArea dish-item dish-item-2" data-drop-area-answer="4,5,6,9,10"></div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>한 명이 가질 수 있는 분동은 몇 g인가요?</span></h2>
+					<section>
+						<div class="dragDropContainer mt_40">
+							<div class="dropAreaUL">
+								<div class="js-dropArea dropArea dish-item dish-item-1" data-drop-area-answer="1,2,3,7,8">
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-1 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="1"></div>
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-2 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="2"></div>
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-3 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="3"></div>
+									<div class="js-dragObj dragObj weight-item-w2 weight-item-7 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="7"></div>
+									<div class="js-dragObj dragObj weight-item-w2 weight-item-8 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="8"></div>
+								</div>
+								<div class="js-dropArea dropArea dish-item dish-item-2" data-drop-area-answer="4,5,6,9,10">
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-4 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="4"></div>
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-5 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="5"></div>
+									<div class="js-dragObj dragObj weight-item-w1 weight-item-6 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="6"></div>
+									<div class="js-dragObj dragObj weight-item-w2 weight-item-9 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="9"></div>
+									<div class="js-dragObj dragObj weight-item-w2 weight-item-10 dragObjComplete" data-name="drag-obj" data-drag-obj-answer="10"></div>
+								</div>
+							</div>
+						</div>
+						<div class="textAlignC mt_30">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">3.2</div>
+							</div> g
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+
+  </script>
+</body>
+</html>
