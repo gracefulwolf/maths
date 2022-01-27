@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<!-- <link rel="stylesheet" href="../../../__common__/css/custom_last.css"> -->
+	<style type="text/css">
+		.study_guide{right:0}
+		.item-wrap{width:100%; height: 220px; position: relative; top:50px; left:14px;  z-index: 10;}
+		[class*="line-item-"]{position:absolute; width:140px; height:140px; background: url(./images/suh_p_0301_02_0002_202_1_1.png) no-repeat 0 0 / cover;}
+		[class*="line-item-"]::before{content:"가"; display: block; width:30px; height: 30px; position:absolute; top:7px; left:5px; font-size: 20px; text-align: center; list-style: 30px ; z-index: 10;}
+		.line-item-1{top:0; left:0; background-image: url(./images/suh_p_0301_02_0002_202_1_2.png)}
+		.line-item-2{top:0; left:16.6%; background-image: url(./images/suh_p_0301_02_0002_202_1_3.png)}
+		.line-item-3{top:0; left:33.3%; background-image: url(./images/suh_p_0301_02_0002_202_1_4.png)}
+		.line-item-4{top:0; left:49.9%; background-image: url(./images/suh_p_0301_02_0002_202_1_5.png)}
+		.line-item-5{top:0; left:66.5%; background-image: url(./images/suh_p_0301_02_0002_202_1_7.png)}
+		.line-item-6{top:0; left:83.1%; background-image: url(./images/suh_p_0301_02_0002_202_1_6.png)}
+		.line-item-1::before{content:"가"}
+		.line-item-2::before{content:"나"}
+		.line-item-3::before{content:"다"}
+		.line-item-4::before{content:"라"}
+		.line-item-5::before{content:"마"}
+		.line-item-6::before{content:"바"}
+		.dropArea{width:100%; height:140px}
+		.dragObjUL .dragObjComplete{opacity: .2 !important;}
+		.dropArea{display: flex; justify-content: center;}
+		.dropArea .js-dragObj {position: relative; top:0; left:0; margin: 0 10px;}
+
+		.flexListContainer{margin: 15px auto 0;width: 570px;}
+		.flexListContainer > li {display: flex;align-items: center;}
+		.flexListContainer .toggle{width:400px; text-align: left;}
+	</style>
+
+</head>
+
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+	</div>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title" style="letter-spacing: -1px;">
+				선을 모양에 따라 분류해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides type-calc-1" data-slides="">
+					<li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="6">
+						<h2><ins class="dot"></ins><span>
+							선을 분류해 보세요.
+						</span></h2>
+						<section>
+							<div class="study_guide"> <em>수 카드</em>를 <em>드래그</em>하여 옮기세요.</div>
+							<div class="dragDropContainer">
+								<div class="dragObjUL item-wrap">
+									<div class="js-dragObj dragObj line-item-1" data-name="drag-obj" data-drag-obj-answer="1"></div>
+									<div class="js-dragObj dragObj line-item-2" data-name="drag-obj" data-drag-obj-answer="2"></div>
+									<div class="js-dragObj dragObj line-item-3" data-name="drag-obj" data-drag-obj-answer="3"></div>
+									<div class="js-dragObj dragObj line-item-4" data-name="drag-obj" data-drag-obj-answer="4"></div>
+									<div class="js-dragObj dragObj line-item-5" data-name="drag-obj" data-drag-obj-answer="5"></div>
+									<div class="js-dragObj dragObj line-item-6" data-name="drag-obj" data-drag-obj-answer="6"></div>
+								</div>
+								<div class="dropAreaUL tableContainer brown">
+									<table>
+										<colgroup>
+											<col style="width:50%;">
+											<col style="width:50%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>곧은 선</th>
+												<th>굽은 선</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="js-dropArea dropArea" data-drop-area-answer="1,3,6"></div>
+												</td>
+												<td>
+													<div class="js-dropArea dropArea" data-drop-area-answer="2,4,5"></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+							
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							곧은 선과 굽은 선이 있는 물건을 각각 찾아 말해 보세요.
+						</span></h2>
+						<section>
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">곧은 선</div>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												<div class="bullet exam">예</div>
+												칠판, 텔레비전, 연필
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">굽은 선</div>
+									<div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												<div class="bullet exam">예</div>
+												시계, 안경
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				
+
+				</ul>
+			</div>
+		</main>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+
+	
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite3',
+				spriteList: [
+					{
+						name: 'boy_1',
+						circle: 'sky',
+						speech:'right',
+						top: 300,
+						left: 0,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suh_p_0301_01_0002_202_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						// //endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '어림한 값과 계산한 값을<br>비교해 볼까?',
+							class: 'balloon left sky ctTail',
+							top:320,
+							left: 450,
+							textAlign: 'center', 
+							wordBreak: 'keep-all' 
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.page_2 .characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.page_2 .characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+		});
+	</script>
+
+</body>
+</html>
