@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: YGJAL;
+    src: url("../../fonts/ygotjalnanfont.woff");
+    font-display: swap
+}
+
+.YGJAL {
+    font-family: YGJAL
+}
+
+@font-face {
+    font-family: GamjaFR;
+    src: url("../../fonts/GamjaFlower-Regular.woff");
+    font-display: swap
+}
+
+.GamjaFR {
+    font-family: GamjaFR
+}
+.btns-bottom-right{right:0;bottom:12px;}
+.btns-bottom-right > .button{
+    background: #5e3e18
+     url(../images/icon/icon_check.svg) 15px center/22px auto no-repeat;
+     width: 160px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-family: YGJAL;
+    text-align: left;
+    padding-left: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.btns-bottom-right > .button::before{
+    content: "정답 확인";
+    padding-left: 14px;
+    position: static;
+    width:auto;
+    height: auto;
+    background:none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    letter-spacing: -.1px;
+}
+.btns-bottom-right > .button.btn-ex:before {
+    content: "정답 확인";
+}
+.btns-bottom-right > .button.btn-retry::before{
+    content: "정답 가리기";
+}
+.btns-bottom-right > .button.btn-retry{
+    padding-left: 24px;
+    background-color: #9d00c4
+}
+.btns-bottom-right > .button:hover {
+    background-color: #9d00c4
+}
+.btns-bottom-right > .button.btn-retry:hover {
+    background-color: #5e3e18
+}
+
+
+.btn-retry > span,
+.btn-retry::after,
+.btns-bottom-right > .button.btn-ex::after,
+.btns-bottom-right > .button.btn-ex span{display: none;}
