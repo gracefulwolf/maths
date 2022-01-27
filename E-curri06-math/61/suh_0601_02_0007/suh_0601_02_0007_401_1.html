@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style>
+		.box-flex {display:flex}
+		.study_guide {right:0}
+
+		.img-answer-group {display:flex;justify-content:center;align-items:center}
+		.img-answer-group .img-answer {margin:0 100px;position:relative}
+		.img-answer {position:relative}
+		.img-answer img {height:200px;vertical-align:top}
+		.img-answer .toggle {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1s}
+		.img-answer .toggle:after {display:none}
+		.img-answer .toggle.complete {opacity:1}
+		.img-answer .toggle {background:url("./images/suh_0601_02_0007_202_1_2.png") no-repeat 50% 50% / auto 100%}
+
+		.tableContainer .toggle {background-color:transparent;text-align:center}
+
+		.contentsList {margin-top:20px}
+		.contentsList li {flex-direction:column;font-size:36px}
+		.contentsList li ~ li {margin-top:40px}
+		.contentsList .inline-flex-box {justify-content:center;align-items:center}
+
+		.page_1 .box-flex {justify-content:center;align-items:center}
+		.page_1 .box-item {position:relative;display:flex;justify-content:center;width:25%;margin:0 20px}
+		.page_1 .box-item img {height:150px;margin-top:40px}
+		.page_1 .box-item .text-item {position:absolute;top:0;left:0}
+
+		.page_3 .box-flex {align-items:center;justify-content:center;margin-top:50px}
+		.page_3 .img-box {margin-right:100px;position:relative}
+		.page_3 .img-box img {height:300px}
+		.page_3 .group-a .box-flex:first-of-type {margin-top:0}
+		.page_3 .group-a .box-flex ~ .box-flex {margin-top:20px}
+		.page_3 .group-a .box-flex .colorBox {width:110px;text-align:center}
+
+		.page_4 .box-flex {justify-content:center;align-items:center;margin:-10px 0 40px}
+		.page_4 .box-item {position:relative;display:flex;justify-content:center;width:30%;margin:0 20px}
+		.page_4 .box-item img {height:150px;margin-top:40px}
+		.page_4 .box-item .text-item {position:absolute;top:0;left:0}
+		.page_4 .img-box {width:80%;margin:0 auto}
+		.page_4 .img-box img {width:100%;vertical-align:top}
+		.page_4 .lineBox {width:80%;margin:30px auto 0}
+
+		.page_5 .lineBox {width:80%;margin:20px auto 40px;padding-left:40px;padding-right:40px}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs five" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2 data-addline-container=""><ins class="dot"></ins><span>각뿔을 찾아 기호를 써 보시오.</span></h2>
+						<section>
+							<div class="box-flex mt_40">
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_1.png">
+									<div class="text-item">가</div>
+								</div>
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_2.png">
+									<div class="text-item">나</div>
+								</div>
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_3.png">
+									<div class="text-item">다</div>
+								</div>
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_4.png">
+									<div class="text-item">라</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_80">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">나</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2 data-addline-container="">
+							<ins class="dot orange"></ins>
+							<span>각뿔을 보고 물음에 답하시오.</span>
+						</h2>
+						<section>
+							<div class="study_guide"><em>면</em>을 <em>클릭</em>하세요.</div>
+							<div class="img-answer-group">
+								<div class="img-answer">
+									<img src="./images/suh_0601_02_0007_202_1_1.png">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="contentsList">
+								<li>
+									<p>(1) 각뿔의 밑면을 찾아 색칠해 보시오.</p>
+								</li>
+								<li>
+									<p>(2) 밑면과 만나는 면은 모두 몇 개인지 구하시오.</p>
+									<div class="inline-flex-box mt_20">
+										<div class="toggle mr_10" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">4</div>
+										</div> 개
+									</div>
+								</li>
+							</ul>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2 data-addline-container="">
+							<ins class="dot orange"></ins>
+							<span>밑면과 옆면은 각각 몇 개인지 구하시오.</span>
+						</h2>
+						<section>
+							<div class="box-flex">
+								<div class="img-box">
+									<img src="./images/suh_0601_02_0007_401_1_1_2.png">
+								</div>
+								<div class="group-a">
+									<div class="box-flex">
+										<div class="colorBox check skyBlue">밑면</div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">1개</div>
+										</div>
+									</div>
+									<div class="box-flex">
+										<div class="colorBox check skyBlue">옆면</div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">6개</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2 data-addline-container=""><ins class="dot"></ins><span>표를 완성하시오.</span></h2>
+						<section>
+							<div class="box-flex">
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_4.png">
+									<div class="text-item">가</div>
+								</div>
+								<div class="box-item">
+									<img src="./images/suh_0601_02_0007_401_1_1_2.png">
+									<div class="text-item">나</div>
+								</div>
+							</div>
+							<div class="tableContainer brown">
+								<table>
+									<colgroup>
+										<col style="width:12%">
+										<col style="width:auto">
+										<col style="width:auto">
+										<col style="width:auto">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+									<tr>
+										<th scope="col">도형</th>
+										<th scope="col">밑면의 모양</th>
+										<th scope="col">옆면의 모양</th>
+										<th scope="col">밑면의 수(개)</th>
+										<th scope="col">옆면의 수(개)</th>
+									</tr>
+									<tr>
+										<th scope="row" class="lightBrown">가</th>
+										<td rowspan="2">오각형</td>
+										<td>직사각형</td>
+										<td>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">2</div>
+											</div>
+										</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row" class="lightBrown">나</th>
+										<td>
+											<div class="toggle box" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">삼각형</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle box" data-toggle-obj="3">
+												<div class="answer" data-toggle-target="3">1</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle box" data-toggle-obj="4">
+												<div class="answer" data-toggle-target="4">5</div>
+											</div>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="toggle">
+						<h2 data-addline-container="">
+							<ins class="dot"></ins>
+							<span>각뿔의 특징에 대해 잘못 말한 친구를 찾아보시오.</span>
+						</h2>
+						<section>
+							<div class="lineBox orange">
+								슬기: 각뿔의 모든 면은 다각형이야.<br>
+								준기: 각뿔의 밑면은 2개야.<br>
+								지혜: 각뿔의 옆면은 모두 삼각형이야.<br>
+								연수: 각뿔의 밑면은 1개야.
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										준기
+									</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									삼각뿔의 꼭짓점의 수: 4개, 모서리의 수: 6개 (합 10)
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									사각뿔의 꼭짓점의 수: 5개, 모서리의 수: 8개 (합 13)
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									오각뿔의 꼭짓점의 수: 6개, 모서리의 수: 10개 (합 16)
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									육각뿔의 꼭짓점의 수: 7개, 모서리의 수: 12개 (합 19)
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div style="letter-spacing:-.0425em">
+									꼭짓점의 수와 모서리의 수의 합이 16인 각뿔은 오각뿔입니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function () {
+		}, false);
+
+	</script>
+</body>
+
+</html>
