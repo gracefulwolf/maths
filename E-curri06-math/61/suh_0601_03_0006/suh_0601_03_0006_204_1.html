@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style>
+		.contentsBox {display:flex;flex-direction:column}
+		.question-group {display:flex;justify-content:center;flex-wrap:wrap;margin-top:40px}
+		.question-group .question-item {width:30%;margin:40px}
+
+		ul.columnCon > li {width:50px;text-align:center;box-sizing:border-box;line-height:55px}
+		ul.columnCon > li:nth-of-type(2) {width:20px}
+		div.columnCon {width:220px;text-align:right}
+		div.columnCon .toggle {padding-left:6px;padding-right:6px}
+		div.columnCon .toggle .answer > div {width:46px;text-align:center;box-sizing:border-box;line-height:55px}
+		.hLine {position:absolute;right:0;width:165px;height:0;border-bottom:3px solid #000}
+		.hLine2 {width:165px}
+		.hLine > img {position:absolute;left:-1px}
+		.hLine.line_1_1 {top:75px;left:55px;right:auto}
+		.toggle .dPoint {color:inherit}
+		.dPoint {position:absolute;top:0;right:-6.5px;color:#000;z-index:1}
+
+		.solve-group {display:flex;justify-content:space-between}
+		.solve-group .solve-item {width:20%}
+		.solve-group .solve-item .hLine {left:auto;right:0;width:120px}
+		.solve-group .solve-item .hLine.line_1_1 {top:55px;width:140px}
+		.solve-group .solve-item .hLine.line_1_2 {top:165px}
+		.solve-group .solve-item .hLine.line_1_3 {top:275px}
+		.solve-group .solve-item .hLine.line_1_4 {top:385px}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title">계산해 봅시다.</div>
+	</header>
+	<main>
+		<div class="contentsBox" data-quiz="toggle">
+			<h2><ins class="dot"></ins><span>한 명이 가질 수 있는 천은 몇 m인지 구하는 식을 써 보세요.</span></h2>
+			<section>
+				<div class="question-group">
+					<div class="question-item">
+						0.3÷2=
+						<div class="toggle inline-flex-box" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">0.15</div>
+						</div>
+					</div>
+					<div class="question-item">
+						5.4÷4=
+						<div class="toggle inline-flex-box" data-toggle-obj="2">
+							<div class="answer" data-toggle-target="2">1.35</div>
+						</div>
+					</div>
+					<div class="question-item">
+						<div class="qCon2 posRel">
+							<div class="columnCon mb_10">
+								<div class="toggle" data-toggle-obj="3">
+									<div class="answer inline-flex-box" data-toggle-target="3">
+										<div class="posRel">0<div class="dPoint">.</div></div><div>1</div><div>2</div>
+									</div>
+								</div>
+							</div>
+							<ul class="columnCon flex-box a-center">
+								<li>5</li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>6</li><li></li>
+							</ul>
+							<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
+						</div>
+					</div>
+					<div class="question-item">
+						<div class="posRel">
+							<div class="columnCon mb_10">
+								<div class="toggle" data-toggle-obj="4">
+									<div class="answer inline-flex-box" data-toggle-target="4">
+										<div class="posRel">1<div class="dPoint">.</div></div><div>7</div><div>5</div>
+									</div>
+								</div>
+							</div>
+							<ul class="columnCon flex-box cc">
+								<li>2</li><li></li><li class="posRel">3<div class="dPoint">.</div></li><li>5</li><li></li>
+							</ul>
+							<div class="hLine hLine2 line_1_1"><img src="./images/divide-black.png" /></div>
+						</div>
+					</div>
+				</div>
+				<div class="buttonContainer">
+					<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="solve pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="solve-group">
+						<div class="solve-item">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>1</li><li>5</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li>2</li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>3</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>0</li><li>2</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li></li><li>0</li>
+								</ul>
+								<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+							</div>
+						</div>
+						<div class="solve-item">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>3</li><li>5</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li>4</li><li></li><li class="posRel">5<div class="dPoint">.</div></li><li>4</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>4</li><li></li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>1</li><li>4</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>1</li><li>2</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>2</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>2</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li></li><li>0</li>
+								</ul>
+								<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+								<div class="hLine line_1_4"></div>
+							</div>
+						</div>
+						<div class="solve-item">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>1</li><li>2</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li>5</li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>6</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>0</li><li>5</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li></li><li>0</li>
+								</ul>
+								<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+							</div>
+						</div>
+						<div class="solve-item">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">1<div class="dPoint">.</div></li><li>7</li><li>5</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li>2</li><li></li><li class="posRel">3<div class="dPoint">.</div></li><li>4</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>2</li><li></li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>1</li><li>5</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>1</li><li>4</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>1</li><li>0</li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li></li><li>0</li>
+								</ul>
+								<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+								<div class="hLine line_1_4"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+
+  </script>
+</body>
+</html>
