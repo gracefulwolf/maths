@@ -19,7 +19,7 @@
 .GamjaFR {
     font-family: GamjaFR
 }
-.btns-bottom-right{right:0;bottom:12px;}
+.btns-bottom-right{right:-109px;bottom:12px;}
 .btns-bottom-right > .button{
     background: #5e3e18
      url(../images/icon/icon_check.svg) 15px center/22px auto no-repeat;
@@ -37,6 +37,23 @@
 }
 .btns-bottom-right > .button::before{
     content: "정답 확인";
+    padding-left: 14px;
+    position: static;
+    width:auto;
+    height: auto;
+    background:none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    letter-spacing: -.1px;
+}
+.btn-explan::after{
+    background: none;
+}
+.btn-explan > span{display: none;}
+.btns-bottom-right > .button.btn-explan::before{
+    content: "풀이 확인";
     padding-left: 14px;
     position: static;
     width:auto;
