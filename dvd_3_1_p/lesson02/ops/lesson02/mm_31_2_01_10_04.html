@@ -25,15 +25,18 @@
 			.btns-answer-part,
 			.re-style .ui-container{display: none;}
 			body.re-style{min-width: 0; min-height:0;}
-			.re-style .content-container{width:1058px; height: 522px;}
+			.re-style .content-container{width:1058px; height: 532px;}
 			.re-style .app-angle-tool .tool-container{top:0;right:0;}
 			.re-style .content-container > .content > .bg{background-size: 100%; height: 570px; transform: translate(0, -160px);}
 			.re-style .quiz-01-answer{left:-100px; top:-230px;}
 			.app-angle-tool.open .tool-box{left:-72px;}
-			.btns-bottom-right {right:61px}
+			.btns-bottom-right {right:61px;bottom:0;}
 			.button.btn-explan{position: absolute; right:170px; bottom:0}
 			.bg > img{width:1000px; height:auto; top:50px}
 			.app-angle-tool .not-obj {height:450px}
+			.re-style .q-box{transform: scale(.783) translate(-147px, 18px);}
+			
+
 
 		</style>
 	</head>
@@ -90,7 +93,7 @@
 					<div class="btns-bottom-right check-btns">
 						<div class="button btn-retry toggle remove"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
-						<div class="button btn-explan"><span></span></div>
+						<!-- <div class="button btn-explan"><span></span></div> -->
 					</div>
 
 				<!-- 그려보세요 :: 각도기 툴 -->
@@ -104,15 +107,22 @@
 
 
 			<!-- 팝업 :: 풀이 -->
-			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+			<div class="popup popup-dim popup-explan popup_container" data-ui="popup" data-option='{"btn":".btn-explan"}'>
 				<div class="bg"></div>
-				<div class="text-content" style="letter-spacing: -1px;">
-					선분 ㄱㄴ은 점 ㄱ과 점 ㄴ을 이은 곧은 선을 긋습니다.<Br>
-					직선 ㄱㄴ은 점 ㄱ과 점 ㄴ을 지나는 곧은 선을 긋습니다.<Br>
-					반직선 ㄱㄴ은 점 ㄱ에서 시작하여 점 ㄴ을 지나는 곧은 선을 긋습니다.
-
-				</div>
-				<div class="button btn-close ico-close-02"></div>
+				<ul class="popup_pages">
+					<li class="solve pop_page_1 on">
+						<div class="popup_contents">
+							<ul class="dotList orange">
+								<li>선분 ㄱㄴ은 점 ㄱ과 점 ㄴ을 이은 곧은 선을 긋습니다.</li>
+								<li>직선 ㄱㄴ은 점 ㄱ과 점 ㄴ을 지나는 곧은 선을 긋습니다.</li>
+								<li>반직선 ㄱㄴ은 점 ㄱ에서 시작하여 점 ㄴ을 지나는 곧은 선을 긋습니다.</li>
+							</ul>
+							
+						</div>
+					</li>
+				</ul>
+	
+				<div class="button btn-close ico-close-02 popup_closeBtn"></div>
 			</div>
 
 		</div>
