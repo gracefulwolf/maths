@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         height: 421,
         thumbNail: '../common/contents/images/character/girl_1.png',
         spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
-        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
+        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1111.mp3',
         speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         sheetWidth: 102000,
         sheetHeight: 421,
-        endSheet: 0,
+        // endSheet: 0,
         delay: 40,
         callbacks: {
           start: function () { console.log('start'); },
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
         height: 421,
         thumbNail: '../common/contents/images/character/girl_1.png',
         spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
-        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
+        sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3423.mp3',
         speech:'right',
         textBubble: {
           text: '지구는 아주 천천히 돌아갈 것 같습니다.',
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         sheetWidth: 102000,
         sheetHeight: 421,
-        endSheet: 0,
+        // endSheet: 0,
         delay: 40,
         callbacks: {
           start: function () {},

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style type="text/css">
+		.supply_guide{margin-top:11px !important;}
+		.study_guide{left:auto; right:0;}
+
+		.lineBox {width:700px; margin:0 auto; padding:20px}
+		.toggle.type-img{padding:0; background: transparent; margin:0 auto; }
+		.type-img .answer{position: absolute; top:0;}
+		.type-img .back,
+		.type-img .front{width:560px}
+		.type-img .exam{position: absolute; top:10px; left:10px}
+		.flexListContainer{margin: 50px auto 0;width:100%;justify-content: center; }
+		.flexListContainer > li { display: flex; align-items: center; margin:0 15px}
+		/* .anibox_1 {position: absolute; top:0; left:0;} */
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title" style="letter-spacing: -1px;">
+				친구가 정한 점을 꼭짓점으로 하는 각을 그리고, 각의 이름을 써 봅시다. 
+				<div class="supply_guide inline">꾸러미 5</div>
+			</div>
+		</header>
+		<main>
+			<div class="contentsBox">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1 on" data-quiz="toggle">
+						<section>
+							<div class="study_guide"><em>그림</em>을 <em>클릭</em>하세요.</div>
+							<div class="lineBox purple mt_50 flex-wrap">
+								<div class="toggle type-img" data-toggle-obj="1">
+									<img src="./images/suh_p_0301_02_0003_203_1_1_front.png" class="front">
+									<div class="answer" data-toggle-target="1">
+										<div class="bullet exam">예</div>
+
+										<img src="./images/suh_p_0301_02_0003_203_1_1_back.png" class="back">
+									</div>
+								</div>
+							</div>
+							
+							<div id="aniBox_1" class="anibox_1">
+
+							</div>
+
+							<ul class="flexListContainer">
+								<li>
+									<div>
+										<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											각 ㄴㄷㄹ(또는 각 ㄹㄷㄴ)
+										</div>
+										</div>
+									</div>
+								</li>
+							
+							</ul>
+
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				</ul>
+				
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_1',
+						circle: 'deeppink',
+						speech:'right',
+						top: 310,
+						left: 50,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/girl_1.png',
+						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+						sound: './media/audios/suh_p_0301_02_0003_201_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 0,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '각의 이름을 <br>쓸 때는 꼭짓점이<br> 가운데에 와야 해.',
+							class: 'balloon bottom pink ctTail',
+							top:118,
+							left:-10,
+							textAlign: 'center', 
+							wordBreak: 'keep-all' 
+						},
+						callbacks: {
+							start: function () {
+								// $ts.getEl('.page_1 .characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								// $ts.getEl('.page_1 .characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+		}, false);
+
+	</script>
+
+</html>

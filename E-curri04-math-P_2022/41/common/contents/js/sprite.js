@@ -139,7 +139,7 @@ $prite = function() {
             }
         },
         changeSpritePos: function(e) {
-            e.target.style.backgroundPositionX = e.x + "px", e.target.style.backgroundPositionY = e.y + "px", e.target.style.transform = "rotate(0.1deg)"
+            e.target.style.backgroundPositionX = e.x + "px", e.target.style.backgroundPositionY = 0 + "px", e.target.style.transform = "rotate(0.1deg)"
         },
         spriteAnimate: function(i) {
             var s = new Date,
