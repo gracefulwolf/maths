@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <!--<link rel="stylesheet" href="../../../__common__/css/custom.css">-->
+	<link rel="stylesheet" href="./css/suh_0501_02_0008_202_1.css">
+
+</head>
+
+<body>
+
+<div id="wrap">
+	<header>
+		<div class="title" style="letter-spacing: -1px;">친구와 함께 가로와 세로를 다르게 정하여 새로운 문제를 만들어 봅시다.</div>
+	</header>
+	<main>
+		<div class="contentsBox basicSlider right" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">문제</li>
+				<li data-hover="">계획</li>
+				<li data-hover="">실행</li>
+				<li data-hover="">반성</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides>
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>문제를 해결하려면 알아야 할 것을 말해 보세요.</span></h2>
+					
+					<div class="textAlignC">
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								가로와 세로를 알아야 합니다.
+							</div>
+						</div>
+					</div>
+
+					<div class="dapCheckBtn" data-answer-btn=""></div>
+				</li>
+				<li class="page_2">
+					<h2><ins class="dot"></ins><span>문제를 해결할 수 있는 방법을 말해 보세요.</span></h2>
+					<!-- <div class="study_guide"><em>인물</em>을 <em>클릭</em>하세요.</div> -->
+					<div class="textAlignC">
+						<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+						
+					</div>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>친구와 함께 문제를 해결해 보세요.</span></h2>
+					<ul class="contentsList">
+						<li>
+							<div class="colorBox check deepPurple">문제</div>
+							<div>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer ico_exam" data-toggle-target="1">
+										<div class="bullet exam">예</div>
+										가로가 40 ㎝, 세로가 56 ㎝인 직사각형 모양의 종이를 크기가 같은 정사각형 모양으로 남는 부분 없이 나누어 자르려고 합니다. 가장 큰 정사각형 모양으로 자르면 정사각형의 한 변의 길이는 몇 ㎝인가요?
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="colorBox check skyBlue">풀이</div>
+							<div>
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer ico_exam" data-toggle-target="2">
+										<div class="bullet exam">예</div>
+										40=2×2×2×5, 56=2×2×2×7이므로 가장 큰 정사각형의 한 변의 길이는 2×2×2=8 (㎝)입니다.
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dapCheckBtn" data-answer-btn=""></div>
+				</li>
+				<li class="page_4">
+					<ul class="contentsList">
+						<li>
+							<div class="bullet circleDot orange mt"></div>
+							<div>
+								바르게 구했는지 확인해 보세요.
+							</div>
+						</li>
+						<li>
+							<div class="bullet circleDot orange mt"></div>
+							<div>
+								해결한 방법을 친구들에게 설명해 보세요.
+							</div>
+						</li>
+					</ul>
+					<div class="textAlignC">
+						<div id="aniBox_2" class="flexListContainer center jcenter"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+	// $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
+	$prite.add({
+		target: $ts.getEl('#aniBox_1'), // 스프라이트가 생성될 영역
+		spriteId: 'sprite1',
+		spriteList: [{
+			name: 'girl_3',
+			// circle: 'new-character', // 동그란부분 필요할때 주석 해제
+			speech:'right',
+			top: -50, // 캐릭터 top값, 없어도 상관 없음, css 제어
+			left: 0,
+			width: 340,
+			height: 421,
+			thumbNail: '../common/contents/images/character/girl_3.png',
+			spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+			sound: './media/suh_0501_02_0008/suh_0501_02_0008_202_1.mp3',
+			textBubble: {
+				text: '주어진 조건을 확인하며<br />계획을 세웁니다.',
+				class: 'balloon left orange ctTail',
+				top: 115,
+				left: 400,
+				textAlign: 'center', // 말풍선 정렬
+				wordBreak: 'keep-all' // 말풍선 wordBreak
+			},
+			sheetWidth: 102000,
+			sheetHeight: 421,
+			/*endSheet: 0,*/
+			delay: 40,
+			callbacks: {
+				start: function () {
+					$ts.getEl('.page_2 .characterImg')[0].style.left = '-200px';
+				}, // 시작시 콜백
+				end: function () {
+					$ts.getEl('.page_2 .characterImg')[0].style.left = 0;
+				} // 끝날시 콜백
+			}
+		}]
+	});
+
+	$prite.add({
+		target: $ts.getEl('#aniBox_2'), // 스프라이트가 생성될 영역
+		spriteId: 'sprite2',
+		spriteList: [{
+			name: 'girl_3',
+			// circle: 'new-character', // 동그란부분 필요할때 주석 해제
+			speech:'right',
+			top: 20, // 캐릭터 top값, 없어도 상관 없음, css 제어
+			left: 0,
+			width: 340,
+			height: 421,
+			thumbNail: '../common/contents/images/character/girl_3.png',
+			spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+			sound: './media/suh_0501_02_0008/suh_0501_02_0008_202_2.mp3',
+			textBubble: {
+				text: '두 수의 최대공약수를 이용하여<br />문제를 해결했습니다.',
+				class: 'balloon left orange ctTail',
+				top: 200,
+				left: 410,
+				textAlign: 'center', // 말풍선 정렬
+				wordBreak: 'keep-all' // 말풍선 wordBreak
+			},
+			sheetWidth: 102000,
+			sheetHeight: 421,
+			/*endSheet: 0,*/
+			delay: 40,
+			callbacks: {
+				start: function () {
+					$ts.getEl('.page_4 .characterImg')[0].style.left = '-200px';
+				}, // 시작시 콜백
+				end: function () {
+					$ts.getEl('.page_4 .characterImg')[0].style.left = 0;
+				} // 끝날시 콜백
+			}
+		}]
+	});
+
+	window.$callBack.sliderReset = function(params) {
+		$ts.getEl('.page_2 .characterImg')[0].style.left = 0;
+		$ts.getEl('.page_4 .characterImg')[0].style.left = 0;
+	};
+
+}, false);
+</script>
+</body>
+</html>
