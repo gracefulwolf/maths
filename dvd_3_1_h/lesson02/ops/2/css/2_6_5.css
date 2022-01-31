@@ -1,0 +1,172 @@
+
+.contentsArea > h1 {
+  letter-spacing: -3px;
+}
+
+.drawContainer {
+  position: absolute;
+  top: -20px;
+  left: 370px;
+  width: 510px;
+  height: 520px;
+  box-sizing: border-box;
+  background: url(../images/paper.png) center / contain no-repeat;
+}
+.drawContainer.draw_1 {
+  background-image: url(../images/2_6/2_6_5_paper_1.svg);
+}
+.drawContainer.draw_2 {
+  background-image: url(../images/2_6/2_6_5_paper_2.svg);
+}
+.drawContainer.draw_3 {
+  background-image: url(../images/2_6/2_6_5_paper_3.svg);
+}
+.drawLine {
+  top: 50px;
+  left: 50px;
+  width: calc(100% - 70px);
+  height: calc(100% - 70px);
+}
+.drawLine > .resetButton {
+  bottom: 0;
+  right: -40px;
+}
+.drawLine > .resetButton.off {
+  pointer-events: none;
+}
+.drawContainer .line {
+  position: absolute;
+  width: 100px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 10px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+.dragObj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  transition: none;
+  z-index: 0;
+}
+.dragObj:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #b17d4b;
+  /* pointer */
+}
+.dragObj.horizon_1 { top: 40px; }
+.dragObj.horizon_2 { top: 120px; }
+.dragObj.horizon_3 { top: 200px; }
+.dragObj.horizon_4 { top: 280px; }
+.dragObj.horizon_5 { top: 360px; }
+.dragObj.horizon_6 { top: 440px; }
+
+.dragObj.vertical_1 { left: 20px; }
+.dragObj.vertical_2 { left: 100px; }
+.dragObj.vertical_3 { left: 180px; }
+.dragObj.vertical_4 { left: 260px; }
+.dragObj.vertical_5 { left: 340px; }
+.dragObj.vertical_6 { left: 420px; }
+
+.induceLight {
+  /* pointer-events: auto; */
+}
+
+/* draw_1 */
+.draw_1 .line_1 {
+  top: 142px;
+  left: 128px;
+  width: 246px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.draw_1 .line_2 {
+  top: 382px;
+  left: 123px;
+  width: 244px;
+}
+.draw_1 .light_1 {
+  top: 157px;
+  left: 136px;
+}
+.draw_1 .light_2 {
+  top: 398px;
+  left: 380px;
+}
+/* .draw_1 .dragObj.horizon_2.vertical_2,
+.draw_1 .dragObj.horizon_5.vertical_5 {
+  pointer-events: auto;
+} */
+
+/* draw_2 */
+.draw_2 .line_1 {
+  top: 224px;
+  left: 48px;
+  width: 226px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.draw_2 .line_2 {
+  top: 384px;
+  left: 202px;
+  width: 230px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.draw_2 .light_1 {
+  top: 236px;
+  left: 57px;
+}
+.draw_2 .light_2 {
+  top: 236px;
+  left: 379px;
+}
+/* .draw_2 .dragObj.horizon_3.vertical_1,
+.draw_2 .dragObj.horizon_3.vertical_5 {
+  pointer-events: auto;
+} */
+
+/* draw_3 */
+.draw_3 .line_1 {
+  top: 302px;
+  left: 48px;
+  width: 236px;
+}
+.draw_3 .light_1 {
+  top: 317px;
+  left: 57px;
+}
+.draw_3 .light_2 {
+  top: 317px;
+  left: 299px;
+}
+/* .draw_3 .dragObj.horizon_5.vertical_2,
+.draw_3 .dragObj.horizon_5.vertical_5 {
+  pointer-events: auto;
+} */
+
+.quizButtons {
+  bottom: auto;
+  top: 442px;
+  right: 272px;
+}

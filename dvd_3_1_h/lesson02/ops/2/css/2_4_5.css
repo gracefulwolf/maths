@@ -1,0 +1,288 @@
+
+.drawLine {
+  position: relative;
+}
+.dragObj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  transition: none;
+  /* outline: 1px solid tomato; */
+}
+.dragObj:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+/* figureBoard */
+.figureBoard {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  height: 370px;
+}
+.figureBoard > li {
+  margin: 0 20px;
+}
+.figureBoard > li:nth-of-type(1) {
+  margin-left: 40px;
+  margin-right: -10px;
+}
+.figureBoard .drawLine {
+  width: 367px;
+  height: 100%;
+  background-color: #cbdfab;
+  border-radius: 20px;
+  box-shadow: 10px 10px 0 0 #8dc242;
+}
+.figureBoard .drawLine.example,
+.figureBoard .drawLine.example *,
+.page2 .figureBoard .drawLine,
+.page2 .figureBoard .drawLine * {
+  pointer-events: none;
+}
+.figureBoard .drawLine.example {
+  transform: scale(.9);
+}
+.page2 .figureBoard .resetButton,
+.page2 .figureBoard .quizButtons { opacity: 0; }
+.page2 .example {
+  display: none;
+}
+.figureBoard .dragObj {}
+.figureBoard .dragObj:before {
+  background-color: #8dc242;
+  box-shadow: 2px 2px 0 0 #0a813f;
+}
+.figureBoard .dragObj.draggable {
+  z-index: 10;
+}
+.figureBoard .dragObj.draggable:before {
+  background-color: brown;
+}
+
+.figureBoard .dragObj.horizon_1 { top: 10px; }
+.figureBoard .dragObj.horizon_2 { top: 70px; }
+.figureBoard .dragObj.horizon_3 { top: 130px; }
+.figureBoard .dragObj.horizon_4 { top: 190px; }
+.figureBoard .dragObj.horizon_5 { top: 250px; }
+.figureBoard .dragObj.horizon_6 { top: 310px; }
+
+.figureBoard .dragObj.vertical_1 { left: 10px; }
+.figureBoard .dragObj.vertical_2 { left: 70px; }
+.figureBoard .dragObj.vertical_3 { left: 130px; }
+.figureBoard .dragObj.vertical_4 { left: 190px; }
+.figureBoard .dragObj.vertical_5 { left: 250px; }
+.figureBoard .dragObj.vertical_6 { left: 310px; }
+
+.dotPaper .dragObj.horizon_1 { top: 30px; }
+.dotPaper .dragObj.horizon_2 { top: 70px; }
+.dotPaper .dragObj.horizon_3 { top: 110px; }
+.dotPaper .dragObj.horizon_4 { top: 150px; }
+.dotPaper .dragObj.horizon_5 { top: 190px; }
+.dotPaper .dragObj.horizon_6 { top: 230px; }
+.dotPaper .dragObj.horizon_7 { top: 270px; }
+.dotPaper .dragObj.horizon_8 { top: 310px; }
+
+.dotPaper .dragObj.vertical_1 { left: 10px; }
+.dotPaper .dragObj.vertical_2 { left: 50px; }
+.dotPaper .dragObj.vertical_3 { left: 90px; }
+.dotPaper .dragObj.vertical_4 { left: 130px; }
+.dotPaper .dragObj.vertical_5 { left: 170px; }
+.dotPaper .dragObj.vertical_6 { left: 210px; }
+.dotPaper .dragObj.vertical_7 { left: 250px; }
+.dotPaper .dragObj.vertical_8 { left: 290px; }
+.dotPaper .dragObj.vertical_9 { left: 330px; }
+.dotPaper .dragObj.vertical_10 { left: 370px; }
+.dotPaper .dragObj.vertical_11 { left: 410px; }
+.dotPaper .dragObj.vertical_12 { left: 450px; }
+.dotPaper .dragObj.vertical_13 { left: 490px; }
+.dotPaper .dragObj.vertical_14 { left: 530px; }
+.dotPaper .dragObj.vertical_15 { left: 570px; }
+.dotPaper .dragObj.vertical_16 { left: 610px; }
+.dotPaper .dragObj.vertical_17 { left: 650px; }
+
+.figureBoard .resetButton {
+  right: -20px;
+  bottom: -60px;
+}
+
+/* dotPaper */
+.dotPaper {
+  position: absolute;
+  top: 86px;
+  left: 460px;
+  width: 736px;
+  height: 390px;
+  background: url(../images/2_4/2_4_5_01.svg) center / contain no-repeat;
+}
+.dotPaper .drawLine {
+  width: 100%;
+  height: 100%;
+  left: 17px;
+}
+.dotPaper .dragObj:before {
+  width: 9px;
+  height: 9px;
+  background-color: #ac7132;
+}
+
+.nextbutton {
+  position: absolute;
+  top: 525px;
+  left: 538px;
+  width: 150px;
+  height: 40px;
+  z-index: 1;
+}
+.nextbutton.hide {
+  display: none;
+}
+
+.dotPaper .resetButton {
+  right: 0;
+  bottom: 0;
+}
+
+
+/* page1 */
+.sampleBox {
+  position: absolute;
+  top: 80px;
+  left: 16px;
+  width: 790px;
+  height: 396px;
+  border-color: #8e8bc2;
+}
+.sampleBox:after {
+  top: -32px;
+  left: 0;
+  width: 90px;
+  background: url("../images/2_4/2_4_5_exam.svg") center/contain no-repeat;
+}
+
+.quizButtons.answer {
+  right: 30px;
+  bottom: -60px;
+}
+
+
+.circleButton {
+  position: absolute;
+  top: -10px;
+  left: 850px;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #F83C7B;
+  border-radius: 50%;
+  background: #fff url(../images/2_4/2_4_5_boy.png) -16px 8px/80px no-repeat;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.4);
+  cursor: pointer;
+}
+.circleButton:after {
+  content: '?';
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  font-family: MaplestoryB;
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  animation: opacityOne 2s cubic-bezier(0.47, 0, 0.75, 0.72) infinite;
+  -webkit-animation: opacityOne 2s cubic-bezier(0.47, 0, 0.75, 0.72) infinite;
+}
+.circleButton.hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+@keyframes opacityOne {
+  0%, 100% {opacity: 0;} 50% {opacity: 1;}
+}
+@-webkit-keyframes opacityOne {
+  0%, 100% {opacity: 0;} 50% {opacity: 1;}
+}
+@-ms-keyframes opacityOne {
+  0%, 100% {opacity: 0;} 50% {opacity: 1;}
+}
+
+.alertContainer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 5;
+}
+.alertContainer > figure {
+  position: relative;
+  width: 590px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px 60px;
+}
+.alertContainer > figure img {
+  width: 100%;
+  vertical-align: top;
+}
+.alertContainer.on {
+  display: flex;
+}
+.alertContainer.on > figure {
+  animation: zoomInAlert .5s ease-in-out;
+}
+@keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-o-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-moz-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-webkit-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+
+
+.prevButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 1px -2px 5px rgba(0, 0, 0,.3);
+  background: #2BABE3 url(../../include/math_3-1/images/icon_arrow_white.svg) center / auto 70% no-repeat;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.page1 .quizButtons.answer {
+  right: -20px;
+}
+.page1 .resetButton {
+  right: 30px;
+}

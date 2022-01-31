@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="./css/5_4_10.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 길이와 시간</span>
+          <span>분보다 작은 단위는 무엇일까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="107">수학<span>107</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="74">수학 익힘<span>74</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="107"></div>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <h1 data-index="1">알맞은 단위에 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section>
+            <ul class="list dot titleIndent">
+              <li>친구와 가위바위보를 한 번 하는 시간은 2( 초 , 분 , 시간 )<br/>입니다.</li>
+              <li>애국가 1절을 부르는 시간은 60( 초 , 분 , 시간 )입니다.</li>
+            </ul>
+            <div data-quiz="ox" data-quiz-name="ox_1" data-option="">
+              <div class="oxObj" data-ox-obj="1" data-answer>
+                <div class="icon icon_o" data-ox-target="1"></div>
+              </div>
+              <div class="oxObj" data-ox-obj="2">
+                <div class="icon icon_o" data-ox-target="2"></div>
+              </div>
+              <div class="oxObj" data-ox-obj="3">
+                <div class="icon icon_o" data-ox-target="3"></div>
+              </div>
+              <!-- <div class="oxObj" data-ox-obj="99">
+                <div class="icon icon_o" data-ox-target="99"></div> -->
+            </div>
+            <div data-quiz="ox" data-quiz-name="ox_2" data-option="">
+              <div class="oxObj" data-ox-obj="4" data-answer>
+                <div class="icon icon_o" data-ox-target="4"></div>
+              </div>
+              <div class="oxObj" data-ox-obj="5">
+                <div class="icon icon_o" data-ox-target="5"></div>
+              </div>
+              <div class="oxObj" data-ox-obj="6">
+                <div class="icon icon_o" data-ox-target="6"></div>
+              </div>
+              <!-- <div class="oxObj" data-ox-obj="99">
+                <div class="icon icon_o" data-ox-target="99"></div>
+              </div> -->
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="ox_1, ox_2" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$callBack.oxAnswer = function() {
+          var quiz = $ts.getEl('[data-quiz="ox"]');
+          var icon = $ts.getEl('.oxObj .icon');
+          var answerIcon = $ts.getEl('.oxObj[data-answer] .icon');
+
+          quiz.forEach(function(quiz) {
+            quiz.classList.add('answerComplete');
+          })
+          icon.forEach(function(target) {
+            if(target.classList.contains('on')) {
+              target.classList.remove('on');
+            }
+          })
+          answerIcon.forEach(function(answer) {
+            answer.classList.add('on');
+          })
+        }
+        window.$callBack.oxReset = function() {
+          var quiz = $ts.getEl('[data-quiz="ox"]');
+
+          quiz.forEach(function(quiz) {
+            quiz.classList.remove('answerComplete');
+          });
+        }
+        // window.$callBack.oxIncorrect = function(OX) {
+        //   var removeOn = function() {
+        //     OX.curTarget.forEach(function(target) {
+        //       target.classList.remove('on');
+        //     });
+        //   }
+        //   setTimeout(removeOn, 600);
+        // }
+      });
+    </script>
+  </body>
+</html>

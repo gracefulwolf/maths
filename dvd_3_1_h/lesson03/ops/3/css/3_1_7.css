@@ -1,0 +1,169 @@
+
+@charset "utf-8";
+
+.list.dot {
+  margin-bottom: 10px;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #008dd0;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* page1 */
+.page1 .dragBox {
+  width: 1080px;
+  height: 100px;
+  margin: 0 auto;
+}
+.page1 ins.circle {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  margin-right: 4px;
+  cursor: default;
+}
+.page1 .dragBox .circle {
+  position: absolute;
+  top: 26px;
+  left: 30px;
+}
+.page1 .dragBox .circle:nth-of-type(2) { left: calc(30px + (88px * (2 - 1)))}
+.page1 .dragBox .circle:nth-of-type(3) { left: calc(30px + (88px * (3 - 1)))}
+.page1 .dragBox .circle:nth-of-type(4) { left: calc(30px + (88px * (4 - 1)))}
+.page1 .dragBox .circle:nth-of-type(5) { left: calc(30px + (88px * (5 - 1)))}
+.page1 .dragBox .circle:nth-of-type(6) { left: calc(30px + (88px * (6 - 1)))}
+.page1 .dragBox .circle:nth-of-type(7) { left: calc(30px + (88px * (7 - 1)))}
+.page1 .dragBox .circle:nth-of-type(8) { left: calc(30px + (88px * (8 - 1)))}
+.page1 .dragBox .circle:nth-of-type(9) { left: calc(30px + (88px * (9 - 1)))}
+.page1 .dragBox .circle:nth-of-type(10) { left: calc(30px + (88px * (10 - 1)))}
+.page1 .dragBox .circle:nth-of-type(11) { left: calc(30px + (88px * (11 - 1)))}
+.page1 .dragBox .circle:nth-of-type(12) { left: calc(30px + (88px * (12 - 1)))}
+
+.page1 .dropAreaBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+.page1 .dropAreaBox > .char {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 193px;
+  height: 230px;
+  margin: 0 20px;
+  padding: 110px 30px 10px;
+  box-sizing: border-box;
+  background-position: 0 0;
+  background-size: auto 230px;
+  background-repeat: no-repeat;
+  background-image: url(../images/3_1/3_1_7_01.png);
+}
+.page1 .dropAreaBox > .char_2 {
+  background-position-x: -193px;
+}
+.page1 .dropAreaBox > .char_3 {
+  background-position-x: calc(-193px * 2);
+}
+
+.page1 .dragBox .dragObj.dragObjComplete {
+  opacity: .2;
+}
+.page1 .dropAreaBox .dragObj {
+  flex: 0 0 auto;
+  position: static;
+  margin: 2px;
+}
+
+/* page2 */
+.page2 .circleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+}
+.page2 .circleContainer > .circleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  /* margin-left: -2px; */
+  border-top: 3px solid #756fb3;
+  border-bottom: 3px solid #756fb3;
+  box-sizing: border-box;
+}
+.page2 .circleContainer > .circleBox:first-child {
+  border-left: 3px solid #756fb3;
+}
+.page2 .circleContainer > .circleBox:last-child {
+  border-right: 3px solid #756fb3;
+}
+.page2 .circleContainer > .circleBox:not(:last-child) {
+  border-right: 2px dashed #756fb3;
+}
+.page2 .circleContainer > .circleBox:after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #008dd0;
+  box-sizing: border-box;
+}
+.page2 .lineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 195px;
+  left: 70px;
+}
+.page2 .lineContainer > .line {
+  opacity: 0;
+  width: 334px;
+  height: 64px;
+  margin: 0 10px;
+  border-radius: 20px;
+  border: 3px solid #fa2f7f;
+}
+.page2 .lineContainer > .line.on {
+  opacity: 1;
+}
+.page2 .clickButton {
+  top: 150px;
+}
+.page2 .clickButton[data-toggle-target] {
+  visibility: hidden;
+}
+.page2 .clickButton[data-toggle-target].on {
+  visibility: visible;
+}
+.page2 .clickButton[data-toggle-obj="1"] { left: 136px; }
+.page2 .clickButton[data-toggle-obj="2"] { left: 500px; }
+.page2 .clickButton[data-toggle-obj="3"] { left: 854px; }
+
+/* page3 */
+.page3 {
+  background: url(../images/3_1/3_1_7_02.svg) center / auto 110px no-repeat;
+}
+.page3 input {
+  position: absolute;
+  top: 144px;
+  width: 100px;
+  text-align: center;
+}
+.page3 input[data-input-obj="1"] { left: 224px; }
+.page3 input[data-input-obj="2"] { left: 548px; }
+.page3 input[data-input-obj="3"] { left: 872px; }
+
+/* page4 */
+.page4 fomula {
+  margin-top: 140px;
+}

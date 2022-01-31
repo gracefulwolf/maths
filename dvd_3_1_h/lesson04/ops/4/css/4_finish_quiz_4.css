@@ -1,0 +1,66 @@
+
+@charset "utf-8";
+
+.quizContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.oxObj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 20px;
+  /* outline: 1px solid tomato; */
+  /* pointer-events: none; */
+}
+.oxObj[data-ox-obj] {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.oxObj .icon {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 70px;
+  max-height: 70px;
+  pointer-events: none;
+}
+
+
+.fns_imgBox {
+  position:relative;
+  width:100%;
+  text-align:center;
+  margin-top:60px;
+}
+
+
+ins.icon.icon_o {
+  top: 8px;
+}
+
+.quizContainer {
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quizContainer > .clickBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 134px;
+  /* outline: 1px solid tomato; */
+}
+
+[data-quiz="ox"].complete .icon.icon_o.on {
+  opacity: 0;
+}
+[data-quiz="ox"].complete [data-answer] .icon.icon_o.on {
+  opacity: 1;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="./css/3_finish_quiz_7.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap" class="finish quiz">      
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 나눗셈</span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="73">수학<span>73</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="50">수학 익힘<span>50</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="73"></div>
+      </header>
+      <main>
+        <div class="contentsArea page9">
+          <h2 data-index="7">나눗셈을 계산하고 몫이 큰 차례대로 기호를 써 보세요.</h2>
+          <section class="noUserSelect" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠<span> 64<ins class="mathSymbols division"></ins>8</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡<span> 45<ins class="mathSymbols division"></ins>5</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢<span> 36<ins class="mathSymbols division"></ins>6</span></div>
+            </div>
+            <div class="fns_contBox">
+                <div class="inputArea">
+                  <div class="js-dropArea dropArea colorBox gray"></div> -
+                  <div class="js-dropArea dropArea colorBox gray"></div> -
+                  <div class="js-dropArea dropArea colorBox gray"></div>
+                </div>
+            </div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+            <div class="dragResetButton" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/math/script/fomula.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(dragDrop) {
+            var dropArea, dropAreaElement, children;
+            dropArea = dragDrop.droppedArea;
+            if (!dropArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+
+            dropAreaElement = dragDrop.droppedArea.element;
+            children = dropAreaElement.children;
+
+            if (children.length > 1) {
+              dropAreaElement.removeChild(children[0]);
+            }
+          }
+
+          var isAnswered = false;
+          var dropArea = $ts.getEl('.js-dropArea');
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            dropArea[0].innerHTML = '㉡';
+            dropArea[1].innerHTML = '㉠';
+            dropArea[2].innerHTML = '㉢';
+            dropArea.forEach(function (area) {
+              area.classList.add('blue');
+            })
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            dropArea.forEach(function (area) {
+              area.innerHTML = '';
+              area.classList.remove('blue');
+            })
+          }
+
+          var resetButtons = $ts.getEl('.dragResetButton');
+          resetButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+            })
+          })
+        });
+      })();
+    </script>
+  </body>
+</html>

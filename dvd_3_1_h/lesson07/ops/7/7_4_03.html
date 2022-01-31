@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="css/7_4_3.css">
+  </head>
+	<body class="lesson_7 grade_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>창의·융합 프로젝트</span>
+          <span>방학 계획표 만들고 내 방 완성하기</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="154">수학<span>154</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="154"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="1">방학 계획표를 만들어 봅시다.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1 noUserSelect">
+                  <ul class="list dot titleIndent" data-quiz="input" data-quiz-name="input_1">
+                    <li>방학 계획표에 잠자는 시간만큼 색칠해 보세요.</li>
+                    <li class="bunsu">색칠한 부분을 분수로 나타내면 <bunsu class="hasInput"><input data-input-obj="1" data-answer="9">/24</bunsu>입니다.</li>
+                  </ul>
+                  <div class="imageBox" data-click-target="1">
+                    <ins class="exam" data-click-target="1">예</ins>
+                    <!-- <div class="floatText" data-click-target="1">(예)</div> -->
+                  </div>
+                  <div class="js-buttons quizButtons answer" data-click-obj="1" data-quiz-chain="input_1" data-hover=""></div>
+                  <canvas id="draw0" class="canvas_1" width="384px" height="384px"></canvas>
+                  <div class="drawBtn" data-parent="contentsArea"></div>
+                </li>
+                <li class="page2">
+                  <div class="js-supplies supplies">
+                    <div class="js-suppliesContent suppliesContent"><p>방 모형<ins class="downButton" data-download-file="3학년_1학기_181.pdf"></ins></p></div>
+                    <div class="js-suppliesButton suppliesButton"></div>
+                  </div>
+                  <ul class="list dot titleIndent">
+                    <li>방학 동안의 일과를 생각해 보고 방학 계획표를 만들어 보세요.</li>
+                  </ul>
+                  <div class="imageBox" data-click-target="1"></div>
+                  <div class="balloonText">일과를 방학 계획표로 <br/>만들고 꾸밉니다.</div>
+                  <div class="clickButton question" data-click-obj="1"></div>
+                </li>
+              </ul>
+            </div>
+            
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/libs/js/slider.min.js"></script>
+    <script src="../../../include/math/script/fraction.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          if (drawClear) drawClear(0);
+          document.querySelector('.canvas_1').classList.add('pointerOff');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          document.querySelector('.canvas_1').classList.remove('pointerOff');
+        }
+
+        
+        window.$callBack.sliderMove = function(SLIDER) {
+          if (drawClear) drawClear(0);
+          if (closeDraw) closeDraw();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+
+@charset "utf-8";
+
+main .contentsArea > section {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* left */
+.left {
+  flex: 0 0 auto;
+  width: 550px;
+  height: 100%;
+  background: url(../images/3_1/3_1_9_01.png) center / auto 340px no-repeat;
+}
+.lineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 64px;
+}
+.lineContainer .line {
+  opacity: 0;
+  width: 300px;
+  height: 76px;
+  margin: 1px 0;
+  border-radius: 20px;
+  border: 3px solid #fa2f7f;
+}
+.lineContainer .line.on {
+  opacity: 1;
+}
+
+.clickButton {
+  left: 390px;
+}
+.clickButton[data-toggle-obj="1"] { top: calc(40px + (84px * (1 - 1))); }
+.clickButton[data-toggle-obj="2"] { top: calc(40px + (84px * (2 - 1))); }
+.clickButton[data-toggle-obj="3"] { top: calc(40px + (84px * (3 - 1))); }
+.clickButton[data-toggle-obj="4"] { top: calc(40px + (84px * (4 - 1))); }
+
+/* right */
+.right {
+  flex: 1 1 auto;
+}
+
+.right input.inSentence {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  width: 100px;
+  margin: 0 8px;
+  text-align: center;
+}
+
+.right fomula {
+  justify-content: left;
+}

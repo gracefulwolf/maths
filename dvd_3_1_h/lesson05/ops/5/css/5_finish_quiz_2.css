@@ -1,0 +1,74 @@
+
+@charset "utf-8";
+
+.draw::after {
+    display:none;
+}
+
+.dragBox.top {
+    width:1080px;
+    height:98px;
+    margin:70px 0 0 70px;
+}
+
+.dropAreaWrap {
+    position:relative;
+    top:15px;
+    display:inline-block;
+    width:116px;
+    height:60px;
+}
+
+.dropArea {
+    z-index:1;
+    display:inline-block;
+    width:116px;
+    height:60px;
+    text-align: center;
+    border-radius:8px;
+    background-color:#eeeeee;
+}
+
+.dropArea .dragObjComplete {
+    position: static;
+    width: 100%;
+    text-align: center;
+}
+.dropArea.blue {
+    color:#0060e3;
+}
+.js-dragObj {
+    z-index:10;
+    top:20px;
+}
+.complete .dragBox > * {
+    pointer-events: none;
+}
+.dragBox .js-dragObj.dragObjComplete {
+    opacity:.3;
+}
+
+.js-dragObj[data-index="1"] {
+    left:231px;
+}
+.js-dragObj[data-index="2"] {
+    left:446px;
+}
+.js-dragObj[data-index="3"] {
+    left:655px;
+}
+.js-dragObj[data-index="4"] {
+    left:810px;
+}
+
+.list {
+    margin:0 0 0 70px;
+}
+
+.list li {
+    margin-top:70px !important;
+}
+
+.list.dot > li:before {
+    top:31px;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="./css/2_finish_quiz_6.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap" class="finish quiz">      
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 평면도형</span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="50">수학<span>50</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="38">수학 익힘<span>38</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="50"></div>
+      </header>
+      <main class="page6">
+        <div class="contentsArea" data-quiz="dragDrop" data-option="answer">
+          <h2 data-index="6">도형을 보고 물음에 답해 보세요.</h2>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li>
+                  <ul class="list dot">
+                    <li>직각삼각형을 모두 찾아 기호를 써 보세요.</li>
+                  </ul>
+                  <div class="js-dropArea dropBox textColor answer" data-answer-value="다, 바" data-drop-area-answer="1" data-drop-area="1"></div>
+                </li>
+                <li>
+                  <ul class="list dot">
+                    <li>직사각형을 모두 찾아 기호를 써 보세요.</li>
+                  </ul>
+                  <div class="js-dropArea dropBox textColor answer" data-answer-value="나, 라" data-drop-area-answer="2" data-drop-area="2"></div>
+                </li>
+                <li>
+                  <ul class="list dot">
+                    <li>정사각형을 찾아 기호를 써 보세요.</li>
+                  </ul>
+                  <div class="js-dropArea dropBox textColor answer" data-answer-value="라" data-drop-area-answer="3" data-drop-area="3"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="js-dropArea hide" data-drop-area-answer="0" data-drop-area="0"></div>
+            <div class="figureBox">
+              <div class="js-dragObj figure_1" data-value="가"  data-name="drag-obj" data-drag-obj-answer="0"></div>
+              <div class="js-dragObj figure_2" data-value="나"  data-name="drag-obj" data-drag-obj-answer="2"></div>
+              <div class="js-dragObj figure_3" data-value="다"  data-name="drag-obj" data-drag-obj-answer="1"></div>
+              <div class="js-dragObj figure_4" data-value="라"  data-name="drag-obj" data-drag-obj-answer="2, 3"></div>
+              <div class="js-dragObj figure_5" data-value="마"  data-name="drag-obj" data-drag-obj-answer="0"></div>
+              <div class="js-dragObj figure_6" data-value="바"  data-name="drag-obj" data-drag-obj-answer="1"></div>
+            </div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/libs/js/slider.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var ATTR_VALIE = 'data-value';
+        var ATTR_TYPE = 'data-type';
+        var dropAreas = $ts.getEl('.js-dropArea');
+        var dragAnswerButton = document.querySelector('.js-buttons');
+        var ATTR_ANSWER_VALUE = 'data-answer-value';
+        var isShowAnswer = false;
+
+        function showAnswer(dropArea) {
+          dropArea.innerHTML = '';
+          dropArea.innerHTML = dropArea.getAttribute(ATTR_ANSWER_VALUE);
+        }
+        function resetAnswer(dropArea) {
+          dropArea.innerHTML = '';
+        }
+
+        window.dragDropCallbacks = {
+          'drag-obj': function(DRAGDROP) {
+            var value = DRAGDROP.movingObj.element.getAttribute(ATTR_VALIE);
+
+            if (DRAGDROP.droppedArea) {
+              var dropIndex = DRAGDROP.droppedArea.element.getAttribute('data-drop-area');
+              var dragIndex = DRAGDROP.movingObj.element.getAttribute('data-drag-obj-answer');
+              var wasText = Array.prototype.filter.call(DRAGDROP.droppedArea.element.childNodes, function(child) { return child instanceof Text}).length > 0;
+
+              if (dragIndex.indexOf(dropIndex) > -1) {
+                DRAGDROP.droppedArea.element.innerHTML += wasText ? ', ' + value : value;
+              }
+            } else {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+          }
+        };
+
+        function reset() {
+          var dragDrops = $pm.array.quiz.inPage.filter(function(quiz) { return quiz.type === 'dragDrop'});
+          
+          dragDrops.forEach(function(quiz) {
+            quiz.reset();
+            quiz.quiz.game.initDragObjsCoords();
+          });
+        }
+
+        dragAnswerButton.addEventListener('click', function() {
+          if (isShowAnswer) {
+            isShowAnswer = false;
+            dropAreas.forEach(resetAnswer);
+          } else {
+            isShowAnswer = true;
+            dropAreas.forEach(showAnswer);
+          }
+        });
+
+        
+        window.$callBack.sliderMove = function(SLIDER) {
+          isShowAnswer = false;
+          dropAreas.forEach(resetAnswer);
+        }
+      });
+    </script>
+  </body>
+</html>

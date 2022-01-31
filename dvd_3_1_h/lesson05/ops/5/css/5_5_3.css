@@ -1,0 +1,134 @@
+
+@charset "utf-8";
+
+
+ul.list.dot {
+  margin-bottom: 10px;
+}
+
+.popupButton.head {
+  top: -75px;
+}
+
+.popup_pages > li.min[data-popup-page="1"] {
+  width: 1116px;
+  top: 104px;
+  right: 80px;
+}
+
+
+/* page1 */
+.page1 .timeLine {
+  position: relative;
+  width: 1120px;
+  height: 180px;
+  padding: 98px 61px 0 64px;
+  box-sizing: border-box;
+}
+.page1 .timeLine:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/5_5/5_5_3_01.svg) center / contain no-repeat;
+  pointer-events: none;
+}
+.page1 .clickBoxContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: changeOpacity 0.7s 5 forwards;
+  box-shadow: 0 0 0 6px yellow;
+}
+.page1 .clickBox {
+  width: 55.3px;
+  height: 78px;
+  cursor: pointer;
+}
+.page1 .clickBox:nth-of-type(13) {
+  margin-left: -1px;
+}
+.page1 .clickBox.complete {
+  background-color: #ee5367;
+}
+
+@-webkit-keyframes changeOpacity {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 0 6px yellow; }
+}
+@-ms-keyframes changeOpacity {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 0 6px yellow; }
+}
+@keyframes changeOpacity {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 0 6px yellow; }
+}
+
+.page1.complete .clickBox {
+  pointer-events: none !important;
+}
+
+/* page2 */
+
+.page2 fomula.vertical {
+  width: calc((160px * 3) + 90px);
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.page2 fomula.vertical.time > ul > li:not(:first-child) {
+  width: 160px;
+}
+.page2 fomula.vertical.time > ul > li > span:not(.answerBox) {
+  padding-right: 17px;
+}
+.page2 .answerBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 70px;
+  box-sizing: border-box;
+}
+.page2 .answerBox input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.complete .pink {
+  color: #C83164;
+}
+.complete .blue {
+  color: #008CCF;
+}
+.complete .green {
+  color: #00803D;
+}
+
+.answerBox_1 { margin-left: 20px; }
+.answerBox_2 { margin-left: 20px; }
+
+/* .flexBox_span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* page3 */
+.page3 ul.list.dot > li {
+  margin-bottom: 10px;
+}
+.page3 textarea {
+  height: 210px;
+}
+
+.page3 .answerText[data-after-target] {
+  position: absolute;
+  top: 5px;
+  left: 53px;
+  width: 1090px;
+  display: flex;
+  line-height: normal;
+}
