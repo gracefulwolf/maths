@@ -1,0 +1,75 @@
+
+@charset "utf-8";
+
+.dragBox {
+  height: 90px;
+  margin: -10px 0 20px 60px;
+}
+.dropArea {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 70px;
+  vertical-align: middle;
+  margin: -5px 0 0 0;
+  box-sizing: border-box;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 11px;
+  width: 110px;
+  height: 70px;
+  text-align: center;
+}
+.dragObj[data-index="1"] {
+  left: 240px;
+}
+.dragObj[data-index="2"] {
+  left: 428px;
+}
+.dragObj[data-index="3"] {
+  left: 612px;
+}
+.dragObj[data-index="4"] {
+  left: 800px;
+}
+.dropArea.complete .dragObj,
+.dropArea .dragObj.dragObjComplete {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+
+.inputQuizContainer {
+  text-align: center;
+}
+
+.imageBox {
+  width: 414px;
+  height: 300px;
+  margin: 0 auto 20px;
+  background: center / contain no-repeat;
+}
+
+/* page1 */
+.page1 .imageBox {
+  background-image: url(../images/5_3/5_3_6_01.png);
+}
+/* page2 */
+.page2 .imageBox {
+  background-image: url(../images/5_3/5_3_6_02.png);
+}
+/* page3 */
+.page3 .imageBox {
+  background: url("../images/5_3/5_3_6_03.svg") center/contain no-repeat, url("../images/5_3/5_3_6_03.png") center/contain no-repeat;
+}
+/* page4 */
+.page4 .imageBox {
+  background-image: url(../images/5_3/5_3_6_04.png);
+}

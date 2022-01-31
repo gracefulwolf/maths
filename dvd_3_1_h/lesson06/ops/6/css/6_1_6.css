@@ -1,0 +1,79 @@
+
+@charset "utf-8";
+
+
+h1 > .icon.icon_o {
+  opacity: 1;
+  position: relative;
+  top: 5px;
+  margin-left: 20px;
+}
+
+.icon.icon_o,
+.icon.icon_x {
+  opacity: 0;
+}
+
+.figureBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.figureBox > .figure {
+  width: 250px;
+  height: 250px;
+  margin: 90px 20px;
+}
+.figureBox > .figure:nth-of-type(1) {
+  background: url(../images/6_1/6_1_6_02.png) center / contain no-repeat;
+}
+.figureBox > .figure:nth-of-type(2) {
+  background: url(../images/6_1/6_1_6_01.png) center / contain no-repeat;
+}
+.figureBox > .figure:nth-of-type(3) {
+  background: url(../images/6_1/6_1_6_04.png) center / contain no-repeat;
+}
+.figureBox > .figure:nth-of-type(4) {
+  background: url(../images/6_1/6_1_6_03.png) center / contain no-repeat;
+}
+
+.oxQuizContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 250px;
+}
+.oxQuizContainer > div {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  margin: 0 20px;
+}
+
+
+[data-toggle-obj] {
+  cursor: pointer;
+}
+
+/* ox추가 수정 */
+/* .oxObj .icon.on { animation: none; } */
+.contentsArea.complete [data-toggle-obj] {
+  pointer-events: none;
+}
+.contentsArea.complete [data-toggle-obj]:not([data-answer]) .icon { opacity: 0; }
+.contentsArea.complete [data-toggle-obj][data-answer] .icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.displayN {
+  display: none;
+}

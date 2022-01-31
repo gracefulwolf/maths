@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+    
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="./css/5_3_9.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 길이와 시간</span>
+          <span>길이와 거리를 어림하고 재어 볼까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="105">수학<span>105</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="72">수학 익힘<span>72</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="105"></div>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <h1 data-index="1"><ins class="inputBox"></ins>안에 알맞은 단위를 찾아 써넣으세요.</h1>
+          <section class="noUserSelect" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">mm</div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">cm</div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">m</div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="4" data-drag-obj-answer="1">km</div>
+            </div>
+            <div>
+              <ul class="list dot titleIndent">
+                <li class="inputQuizContainer">
+                  실내화 긴 쪽의 길이는 약 220
+                  <div class="js-dropArea dropArea colorBox gray"></div>입니다.
+                </li>
+                <li class="inputQuizContainer">
+                  인천대교의 길이는 약 21
+                  <div class="js-dropArea dropArea colorBox gray"></div>입니다.
+                </li>
+                <li class="inputQuizContainer">
+                  교실의 높이는 약 3 
+                  <div class="js-dropArea dropArea colorBox gray"></div>입니다.
+                </li>
+              </ul>
+              <figure>
+                <img src="images/5_3/5_3_9_01.png" alt="이미지">
+                <figcaption>인천대교</figcaption>
+              </figure>
+              <div class="js-chainButtons quizButtons answer" data-quiz-chain="drag_1" data-hover=""></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(dragDrop) {
+            var dropArea, dropAreaElement, children;
+            dropArea = dragDrop.droppedArea;
+            if (!dropArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+
+            dropAreaElement = dragDrop.droppedArea.element;
+            children = dropAreaElement.children;
+
+            if (children.length > 1) {
+              dropAreaElement.removeChild(children[0]);
+            }
+          }
+
+          var isAnswered = false;
+          var dropArea = $ts.getEl('.js-dropArea');
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            dropArea[0].innerHTML = '<div class="js-dragObj dragObj figure">mm</div>';
+            dropArea[1].innerHTML = '<div class="js-dragObj dragObj figure">km</div>';
+            dropArea[2].innerHTML = '<div class="js-dragObj dragObj figure">m</div>';
+            dropArea.forEach(function (area) {
+              area.classList.add('complete');
+              area.classList.add('blue');
+            })
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            dropArea.forEach(function (area) {
+              area.innerHTML = '';
+              area.classList.remove('complete');
+              area.classList.remove('blue');
+            })
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

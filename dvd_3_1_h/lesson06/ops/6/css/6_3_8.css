@@ -1,0 +1,81 @@
+
+@charset "utf-8";
+
+
+h1 > p {
+  position: relative;
+  top: -24px;
+}
+h1 ins.icon.icon_o {
+  opacity: 1;
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
+
+section {
+  background: url(../images/6_3/6_3_8_01.svg) center top 50px / auto no-repeat;
+}
+
+.icon.icon_o,
+.icon.icon_x {
+  opacity: 0;
+}
+
+.oxBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 162px;
+  cursor: pointer;
+}
+
+.oxBox[data-toggle-obj="1"] {
+  top: 66px;
+  left: 44px;
+  width: 188px;
+  height: 182px;
+}
+.oxBox[data-toggle-obj="2"] {
+  top: 70px;
+  left: 345px;
+  width: 210px;
+  height: 152px;
+}
+.oxBox[data-toggle-obj="3"] {
+  top: 50px;
+  left: 663px;
+  height: 192px;
+}
+.oxBox[data-toggle-obj="4"] {
+  top: 66px;
+  left: 977px;
+}
+
+.oxBox > .oxObj {
+  position: static;
+}
+
+[data-toggle-obj] {
+  cursor: pointer;
+}
+
+/* ox추가 수정 */
+/* .oxObj .icon.on { animation: none; } */
+.contentsArea.complete [data-toggle-obj] {
+  pointer-events: none;
+}
+.contentsArea.complete [data-toggle-obj]:not([data-answer]) .icon { opacity: 0; }
+.contentsArea.complete [data-toggle-obj][data-answer] .icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.displayN {
+  display: none;
+}

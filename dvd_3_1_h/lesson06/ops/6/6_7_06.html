@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+    
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="./css/6_7_6.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 분수와 소수</span>
+          <span>소수를 알아볼까요(2)</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="135">수학<span>135</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="96">수학 익힘<span>96</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="135"></div>
+      </header>
+      <main class="act ">
+        <div class="contentsArea">
+          <h1 data-index="3"><ins class="inputBox"></ins> 안에 알맞은 소수를 쓰고 읽어 봅시다.</h1>
+          <section>
+            <div class="tAlign_center">
+              <img src="images/6_7/6_7_06_01.svg" alt="" class="img_01">
+              <img src="images/6_7/6_7_06_02.svg" alt="" class="img_02">
+            </div>
+
+            <ins class="read read_1"></ins>
+            <ins class="read read_2"></ins>
+            <!-- <div data-quiz="toggle" data-quiz-name="toggle_1">
+              <ins class="clickButton question" data-toggle-obj="1"></ins>
+              <ins class="clickButton question reflect" data-toggle-obj="2"></ins>
+              
+              <div class="textColor answer" data-toggle-target="1">일 점 오</div>
+              <div class="textColor answer" data-toggle-target="2">이 점 팔</div>
+            </div> -->
+
+            <div data-quiz="input" data-quiz-name="input_1">
+              <input data-input-obj="1" data-answer="1.5" class="input_1">
+              <input data-input-obj="2" data-answer="1.5" class="input_2">
+              <input data-input-obj="3" data-answer="2.8" class="input_3">
+              <input data-input-obj="4" data-answer="2.8" class="input_4">
+              <input data-input-obj="5" data-answer="일 점 오" class="input_5">
+              <input data-input-obj="6" data-answer="이 점 팔" class="input_6">
+            </div>
+
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="toggle_1, input_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min head slideleft" data-popup-page="1">
+            1 m의 끈을 똑같이 10조각으로 나누어 그중 6조각으로 팔찌를 만들었습니다. 
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/math/script/fraction.min.js"></script>
+    <script src="../../../include/libs/js/slider.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/libs/js/popup.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <!-- <script src="./js/6_4_3.js"></script> -->
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        // $pm.array.mainSlider.reset({idx: 1});
+
+        window.$callBack.toggleClick = function(TOGGLE) {
+          var ATTR_OBJ = 'data-toggle-obj';
+          var index = TOGGLE.curObj.getAttribute(ATTR_OBJ);
+          var sameObjs = TOGGLE.quiz.obj.filter(function(obj) {return obj.getAttribute(ATTR_OBJ) === index});
+          
+          sameObjs.forEach(function(obj) {
+            if (!obj.classList.contains('complete')) obj.classList.add('complete');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+    
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="../../../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../../../include/math/style/ruler.css">
+    <link rel="stylesheet" href="./css/5_finish_quiz_4.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_5">
+    <div id="wrap" class="finish quiz">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 길이와 시간</span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="116">수학<span>116</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="80">수학 익힘<span>80</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="116"></div>
+      </header>
+      <main>
+        <div class="contentsArea noUserSelect" data-quiz="dragLine" data-option="answer" data-total-complete-count="3" data-quiz-name="drag_1">
+          <h2 data-index="4">시간이 같은 것끼리 선으로 이어 보세요.</h2>
+          <section>
+            <div class="imgBox">
+                <img src="images/5_8/5_8_04_01.svg" alt="" style="width:1000px;">
+            </div>
+            <div class="dragLineContainer">
+              <svg class="js-svgContainer svgContainer"></svg>
+              <div class="js-dragLineArea dragLineArea dragObj" data-group="1" data-name="dragLine" data-answer="2"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="2" data-complete-count="1"><div class="induceLight"></div></div>
+              <div class="js-dragLineArea dragLineArea dragObj green" data-group="1" data-name="dragLine" data-answer="3"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="3" data-complete-count="1"><div class="induceLight"></div></div>
+              <div class="js-dragLineArea dragLineArea dragObj green" data-group="1" data-name="dragLine" data-answer="4"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="4" data-complete-count="1"><div class="induceLight"></div></div>
+              
+              <div class="js-dragLineArea dragLineArea dragObj green" data-group="2" data-name="dragLine" data-answer="2"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="2" data-complete-count="1"><div class="induceLight"></div></div>
+              <div class="js-dragLineArea dragLineArea dragObj" data-group="2" data-name="dragLine" data-answer="3"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="3" data-complete-count="1"><div class="induceLight"></div></div>
+              <div class="js-dragLineArea dragLineArea dragObj" data-group="2" data-name="dragLine" data-answer="4"></div>
+              <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="4" data-complete-count="1"><div class="induceLight"></div></div>
+              </div>
+          </section>
+          <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          <!-- <div class="quizButtons solve" data-hover="" data-popup-btn="1"></div> -->
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            1분<symbol class="equal"></symbol>60초이므로 7분 5초<symbol class="equal"></symbol>425초, 3분 17초<symbol class="equal"></symbol>197초, 1분 25초<symbol class="equal"></symbol>85초입니다.
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/libs/js/controller.min.js"></script>
+    <script src="../../../include/libs/js/popup.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+      
+          window.dragDropCallbacks = {
+            dragLine: dragLineCallback,
+          };
+
+          function dragLineCallback(dragdrop) {
+            if(!dragdrop.droppedArea){
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+            if (dragdrop.movingObj.DISABLED) {
+              var answer = dragdrop.movingObj.element.getAttribute('data-answer');
+              var curObjs = dragdrop.dragObjs.filter(function(obj) { return obj.element.getAttribute('data-answer') === answer; });
+
+              curObjs.forEach(function(obj) {
+                obj.element.classList.add('complete');
+              });
+              window.$efSound.correct();
+            }else{
+              window.$efSound.incorrect();
+            }
+
+          }
+          
+          // $pm.array.mainSlider.reset({idx: 3});
+        });
+
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          var dragObjs = $ts.getEl('.js-dragLineObj');
+          dragObjs.forEach(function(obj) {
+            obj.classList.add('complete');
+          });
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          var dragObjs = $ts.getEl('.js-dragLineObj');
+          dragObjs.forEach(function(obj) {
+            obj.classList.remove('complete');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

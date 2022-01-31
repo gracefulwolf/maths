@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../../../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fonts.css" />
+		<link rel="stylesheet" href="../../../common/css/OverlayScrollbars.min.css" />
+
+		<link rel="stylesheet" href="../../../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/theme04.css" />
+
+		<link rel="stylesheet" href="../../../common/css/common.css" />
+		<link rel="stylesheet" href="../../../common/css/content.css" />
+	</head>
+	<body>
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<img src="./images/mm_31_5_04_02_01/bg.png" alt="">
+				</div>
+
+				<div id="btn-popup-01" class="button ico-video-03" style="left: 99px; top:490px;"></div>
+				
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button btn-more-step more-01"><span>한 걸음 더</span></div>
+					<!-- <div class="button btn-more-step more-02"><span>한 걸음 더</span></div> -->
+					<!-- <div class="button btn-more-step more-03"><span>한 걸음 더</span></div> -->
+				</div>
+
+			</div>
+
+			<!-- 팝업 :: 한 걸음 더 -->
+			<div class="popup popup-more-step" data-ui="popup" data-option='{"btn":".btn-more-step.more-01"}'>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-step more-01"><span>한 걸음 더</span></div>
+					<div class="box-sub">
+						<span>1분보다 작은 단위를 나타내는 방법 생각해 보기</span>
+					</div>
+				</div>
+
+				<div class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div class="q-box">
+						<div class="bullet-text dot-blue">
+							<span>학생들이 달리기를 하고 동시에 들어오지 않았는데 왜 모두 2분 정도  걸렸다고 할까요?</span>
+						</div>
+
+						<div class="a-box">
+							<div id="quiz-01" class="quiz quiz-check type-box" data-ui="quiz-check" data-option='{"answer":[]}'>
+								<div class="check-list">
+									<div class="check-item content-con" data-answer-part-idx="0">
+										<span class="answer-text">
+											<span class="bullet-text bar-list">
+												2분 근처에 들어왔기 때문입니다. 
+											</span>
+											<span class="bullet-text bar-list">
+												2분보다 더 짧은 시간을 표현하는 방법을 모르기 때문입니다.
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="q-box">
+						<div class="bullet-text dot-blue">
+							<span>학생들이 달리기를 한 시간을 정확히 표현하려면 어떻게 해야 할까요?</span>
+						</div>
+
+						<div class="a-box">
+							<div id="quiz-02" class="quiz quiz-check type-box" data-ui="quiz-check" data-option='{"answer":[]}'>
+								<div class="check-list">
+									<div class="check-item content-con" data-answer-part-idx="1">
+										<span class="answer-text">
+											분보다 짧은 시간의 단위가 필요합니다.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-idx="0" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+						<div class="btn-answer-part" data-idx="1" data-option='{"quiz":["#quiz-02"], "quizGroup":["0"]}'></div>
+					</div>
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+					</div>
+
+				</div>
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+
+		</div>
+
+        <div class="fullpopup-container" data-ui="popup" data-option='{"btn":"#btn-popup-01"}'>
+			<div id="video-01" class="video-player" data-ui="videoplayer" data-option='{"fileName":"mm_31_5_04_02_01_ani"}'>
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+		</div>
+		
+		<script src="../../../common/ui/js/uiData.js"></script>
+		<script src="../../../common/ui/js/uiDataMs.js"></script>
+		<script src="./js/mm_31_5_04_02_01.js"></script>
+
+		<script src="../../../common/js/libs/polyfill.min.js"></script>
+		<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../../../common/js/libs/materialize.js"></script>
+		<script src="../../../common/js/libs/TweenMax.min.js"></script>
+		<script src="../../../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../../../common/js/libs/class.js"></script>
+		<script src="../../../common/js/common.js"></script>
+		<script src="../../../common/js/app/mindmap.js"></script>
+		<script src="../../../common/js/app/drawing.js"></script>
+		<script src="../../../common/js/app/angle.js"></script>
+		<script src="../../../common/js/cornerbase.js"></script>
+		<script src="../../../common/js/videoplayer.js"></script>
+		<script src="../../../common/js/quiz/quizMain.js"></script>
+		<script src="../../../common/js/quiz/quizCheck.js"></script>
+		<script src="../../../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../../../common/js/quiz/quizInput.js"></script>
+		<script src="../../../common/js/quiz/quizDraggable.js"></script>
+		<script src="../../../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../../../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../../../common/js/content.js"></script>
+
+
+	</body>
+
+</html>

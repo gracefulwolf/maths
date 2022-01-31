@@ -1,0 +1,174 @@
+
+@charset "utf-8";
+
+.quizContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.quizContainer > * {
+  flex: 0 0 auto;
+  width: 48%;
+  height: 74%;
+  margin-top: -20px;
+}
+.quizContainer .howBox input {
+  width: 126px;
+}
+
+[data-toggle-target] {
+  opacity: 0;
+  visibility: hidden;
+}
+[data-toggle-target].on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.howBox {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.howBox.how_1 {
+  padding-top: 150px;
+}
+.howBox symbol {
+  margin: 0 20px;
+}
+.flexBox {
+  display: flex;
+  align-items: center;
+  height: 73px;
+  margin-bottom: 20px;
+}
+
+.blueBox,
+.pinkBox {
+  padding: 6px 20px 2px;
+  border-radius: 10px;
+}
+.blueBox {
+  background-color: #B2D7F2;
+}
+.pinkBox {
+  background-color: #E9BCC1;
+}
+
+.blueBox [data-toggle-target],
+.pinkBox [data-toggle-target] {
+  opacity: 0;
+}
+.blueBox [data-toggle-target].on,
+.pinkBox [data-toggle-target].on {
+  opacity: 1;
+}
+
+.blueLineBox,
+.pinkLineBox {
+  position: absolute;
+  top: 30px;
+  padding: 4px 10px 0px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+  background-color: #FFF;
+}
+.blueLineBox:before,
+.pinkLineBox:before {
+  content: '';
+  opacity: .5;
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  height: 50px;
+}
+.blueLineBox symbol,
+.pinkLineBox symbol {
+  margin: 0 2px;
+}
+.blueLineBox {
+  left: 266px;
+  border-color: #008CCF;
+}
+.blueLineBox > span {
+  color: #008CCF;
+}
+.blueLineBox:before {
+  border-right: 2px dashed #008CCF;
+}
+.pinkLineBox {
+  left: 448px;
+  border-color: #C83164;
+}
+.pinkLineBox > span {
+  color: #C83164;
+}
+.pinkLineBox:before {
+  border-right: 2px dashed #C83164;
+}
+
+
+
+.how_1 .clickButton[data-toggle-obj="1"] {
+  top: 116px;
+  left: 370px;
+}
+.how_1 .clickButton[data-toggle-obj="2"] {
+  top: 116px;
+  left: 510px;
+}
+
+.how_2 .vertical {
+  justify-content: flex-start;
+  height: 230px;
+}
+.how_2 .vertical > ul {
+  height: 80px;
+}
+.how_2 .vertical > ul > li {
+  width: 70px;
+}
+.how_2 .vertical > ul > li.full {
+  width: 210px;
+}
+.how_2 .vertical > ul > li.full > .blueBox {
+  width: 100%;
+}
+.how_2 .vertical > ul > li.full > .blueBox ins {
+  padding: 0 22px;
+}
+.how_2 .arrow {
+  width: 80px;
+  background: url(../images/4_2/4_2_5_arrow.svg) center / auto 50px no-repeat;
+}
+
+.how_2 .clickButton[data-toggle-obj="3"] {
+  top: 252px;
+  left: 240px;
+}
+.how_2 .clickButton[data-toggle-obj="4"] {
+  top: 172px;
+  left: 240px;
+}
+
+.quizContainer .how_2 fomula input {
+  position: absolute;
+  left: 2px;
+  width: 62px;
+}
+
+
+fomula.vertical .line.dashedLine:nth-of-type(2) {
+  left: calc(70px * (2 - 1));
+}
+fomula.vertical .line.dashedLine:nth-of-type(3) {
+  left: calc(70px * (3 - 1));
+}
+fomula.vertical .line.dashedLine:nth-of-type(4) {
+  left: calc(70px * (4 - 1));
+}

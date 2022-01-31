@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+    
+    <link rel="stylesheet" href="../../../include/math/style/master.css">
+    <link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+    <link rel="stylesheet" href="../../../include/math/style/rotete.css">
+    <link rel="stylesheet" href="css/7_2_4.css">
+  </head>
+	<body class="lesson_7 grade_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>창의·융합 프로젝트</span>
+          <span>칠교판으로 모양 만들어 벽에 붙이기</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="151">수학<span>151</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="151"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="2">칠교판으로 토끼와 로켓 모양을 만들어 봅시다.</h1>
+          <section class="noUserSelect">
+            <div class="js-supplies supplies">
+              <div class="js-suppliesContent suppliesContent"><p>칠교판<ins class="downButton" data-download-file="3학년_1학기_185.pdf"></ins></p></div>
+              <div class="js-suppliesButton suppliesButton"></div>
+            </div>
+            <div class="imageBox">
+              <div class="balloonText">토끼</div>
+              <div class="balloonText">로켓</div>
+              <div class="answerImage" data-click-target="1"></div>
+            </div>
+            <div class="lineBox gray">
+              <div class="js-rotate rotateContainer piece_1">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_2">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_3">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_4">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_5">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_6">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer piece_7">
+                <div class="js-rotateTarget rotateTarget"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <div class="quizButtons answer" data-click-obj="1" data-quiz-chain=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/math/script/rotate.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 45,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+        var answerButton = document.querySelector('[data-quiz-chain]');
+        answerButton.addEventListener('click', function() {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

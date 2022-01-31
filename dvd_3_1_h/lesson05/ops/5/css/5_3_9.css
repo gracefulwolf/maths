@@ -1,0 +1,71 @@
+
+@charset "utf-8";
+
+.dragBox {
+  height: 90px;
+  margin: 20px 0 0 60px;
+}
+.dropArea {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 70px;
+  vertical-align: middle;
+  margin: -5px 0 0 0;
+  box-sizing: border-box;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 11px;
+  width: 110px;
+  height: 70px;
+  text-align: center;
+}
+.dragObj[data-index="1"] {
+  left: 240px;
+}
+.dragObj[data-index="2"] {
+  left: 428px;
+}
+.dragObj[data-index="3"] {
+  left: 612px;
+}
+.dragObj[data-index="4"] {
+  left: 800px;
+}
+.dropArea.complete .dragObj,
+.dropArea .dragObj.dragObjComplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inputQuizContainer {
+  /* text-align: center; */
+  margin-top: 40px;
+}
+
+figure {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  top: 230px;
+}
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+figure figcaption {
+  position: absolute;
+  font-size: 31px;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%);
+}
