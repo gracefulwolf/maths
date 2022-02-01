@@ -59,6 +59,7 @@ header{display: none !important;}
 main{top:0 !important}
 #wrap {background:#fff !important; width:100%; height: 100%; padding:0; box-shadow:none;}
 
+.contentsArea .js-resetButton.resetButton,
 .js-buttons.quizButtons{
     background: #5e3e18 url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
     width: 160px;
@@ -75,10 +76,30 @@ main{top:0 !important}
     bottom:10px;
     box-shadow: none;
 }
+.contentsArea .js-resetButton.resetButton{
+    background-color: #216cbe;
+    width: 150px;
+}
+.contentsArea .js-resetButton.resetButton.hover,
 .js-buttons.quizButtons.hover{transform: scale(1);}
 .js-buttons.quizButtons[data-type="reset"]:before {
     content: "정답 가리기";
 }
+.contentsArea .js-resetButton.resetButton:before {
+    content: "다시하기";
+    padding-left: 14px;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    letter-spacing: -.1px;
+}
+.dragBox.top::before,
+.dragBox.top:after{display: none;}
 .js-buttons.quizButtons:before {
     content: "정답 확인";
     padding-left: 14px;
@@ -99,6 +120,7 @@ main{top:0 !important}
 .js-buttons.quizButtons[data-type="reset"]:hover {
     background-color: #5e3e18
 }
+.contentsArea .js-resetButton.resetButton:hover,
 .js-buttons.quizButtons:hover {
     background-color: #9d00c4
 }
@@ -131,3 +153,62 @@ cursor: pointer;
     font-family: inherit;
     pointer-events: none;
 }
+
+.basicSlider_pageMove{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    transform: translateX(0);
+  }
+  .basicSlider_circle_tabs > li::after{display: none;}
+  .basicSlider_circle_tabs > li{
+    width: 62px;
+    height: 20px;
+    border-radius: 30px;
+    pointer-events: auto;
+    background-color: #b4b4b4;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .basicSlider_btn{
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: #a68965;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .basicSlider_btn.next{
+    background-position: 9px center;
+    background-image: url(../../../../E-curri03-math-P_2022/31/common/contents/images/button/btn_next_white.svg);
+  }
+  .basicSlider_btn.prev {
+    background-position: 6px center;
+    background-image: url(../../../../E-curri03-math-P_2022/31/common/contents/images/button/btn_prev_white.svg);
+  }
+  .basicSlider_btn {
+    position: static;
+    background-size: 16px;
+  }
+  .basicSlider_circle_tabs{
+    position: static;
+    width: auto;
+    margin: 0 12px;
+      bottom: 10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+  }

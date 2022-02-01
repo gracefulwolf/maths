@@ -8,22 +8,16 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
-	<link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
-	<!-- <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css"> -->
-	<!-- <link rel="stylesheet" href="../../../__common__/css/custom_last.css"> -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
-		.study_guide.right {
-			top: 30px;
-		}
-
-		.page-iframe {
-			width: 100%;
-			height: 582px;
-			overflow: hidden;
-			border: 0;
-		}
-
-		.balloon.sky:after{left:68% !important}
+		.supply_guide{position: absolute; top:10px; right:-20px;}
+		.videoSubPlayBtn{right:0; left:auto; top:0}
+		.img-wrap{margin-top:90px; position:relative;}
+		.img-wrap img{width: 100%;}
+		
+		.toggle{position: absolute; background: transparent;top:54px; left:811px; transform: rotate(134deg);}
+		.toggle .o{width:20px; height: 20px; border-top:4px solid red; border-right:4px solid red;}
+		.toggle:after{display: none;}
 	</style>
 </head>
 
@@ -31,20 +25,35 @@
 
 	<div id="wrap" class="math">
 		<header>
-			<div class="title chukchuk" style="letter-spacing: -1px;">
-				선분, 반직선, 직선을 그어 봅시다.
+			<div class="title active" style="letter-spacing: -1px;">
+				<ins class="icon"></ins>에서 접은 종이를 사용하여 삼각자에서 직각을 찾아봅시다.
+				<div class="supply_guide">준비물 163쪽</div>
 			</div>
 		</header>
 		<main>
-			<div class=contentsBox">
-				<div class="study_guide right"><em>드래그</em>하여 <em>그어</em> 보세요.</div>
-				<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_1_10.html" title="" class="page-iframe"
-					scrolling="no"></iframe>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1"  data-quiz="toggle">
+
+						<button class="videoSubPlayBtn right" data-video-link="M201801966_800K.mp4" data-hover="">활동영상 보기</button>
+
+						<div class="img-wrap">
+							<img src="./images/2_3_5_01.png" alt="">
+							<div class="toggle n1" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<div class="o"></div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					
+				</ul>
+
+				
 			</div>
+
 		</main>
-
-
-
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
@@ -64,7 +73,6 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			
 		}, false);
 
 	</script>
