@@ -15,8 +15,14 @@
 	<link rel="stylesheet" href="../../../include/math/style/drawLine.css">
 	<link rel="stylesheet" href="./css/2_4_5.css">
 	<style>
-		.contentsArea h1{display: none;}
-		.none{display: none !important;}
+		.contentsArea h1 {
+			display: none;
+		}
+
+		.none {
+			display: none !important;
+		}
+
 		/* .figureBoard{top:0; height:370px} */
 		main .contentsArea {
 			display: flex;
@@ -28,15 +34,89 @@
 			bottom: 0;
 			word-break: keep-all;
 		}
-		.figureBoard {left:-20px}
-		.js-figureBoardLine .js-quizButton.resetButton{display: block!important; bottom:-74px; right: 16px;}
-		.lineBox{position: absolute;
-		top: 50px;
-		width: 730px;
-		height: 430px;
-		left: 20px;}
-		.lineBox .exam{position: absolute; top:5px; left:10px}
-		.basicSlider {top:10px}
+
+		.figureBoard {
+			left: -20px
+		}
+
+		.js-figureBoardLine .js-quizButton.resetButton {
+			display: block !important;
+			bottom: -74px;
+			right: 16px;
+		}
+
+		.lineBox {
+			position: absolute;
+			top: 50px;
+			width: 730px;
+			height: 430px;
+			left: 20px;
+		}
+
+		.lineBox .exam {
+			position: absolute;
+			top: 5px;
+			left: 10px
+		}
+
+		.basicSlider {
+			top: 10px
+		}
+
+		.ex-on .ex-box {
+			display: block;
+		}
+
+		.ex-box {
+			display: none;
+			position: absolute;
+			width: 360px;
+			z-index: 10;
+			height: 380px;
+			top: 90px;
+			left: 780px;
+		}
+
+		.ex-box .tri1 {
+			position: absolute;
+			top: 89px;
+			left: 30px;
+			transform: scale(1.01);
+		}
+
+		.line.n1 {
+			position: absolute;
+			width: 185px;
+			height: 180px;
+			border-bottom: 4px solid blue;
+			border-left: 4px solid blue;
+			z-index: 10;
+			top: 5px;
+			left: -2px;
+		}
+
+		.line.n2 {
+			position: absolute;
+			width: 261px;
+			height: 0;
+			border-top: 4px solid blue;
+			z-index: 10;
+			top: 0;
+			left: 0;
+			transform: rotate(45deg);
+			transform-origin: top left;
+		}
+
+		.line.n3 {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 4px solid red;
+			border-right: 4px solid red;
+			top: 160px;
+			left: 0;
+
+		}
 	</style>
 </head>
 
@@ -101,20 +181,28 @@
 							</li>
 							<li class="js-figureBoardLine drawLine" data-option="copy">
 								<canvas class="js-drawArea drawArea"></canvas>
-								<div class="js-quizButton resetButton" data-type="reset"></div>
+								<div class="js-quizButton resetButton exBtn" data-type="reset" id="uiAddEvent"></div>
 								<div class="js-completeButton quizButtons answer" data-hover=""></div>
 							</li>
 						</ul>
-						<div class="js-nextbutton nextbutton"></div>
+						<div class="ex-box">
+							<div class="tri1">
+								<div class="line n1"></div>
+								<div class="line n2"></div>
+								<!-- <div class="line n3"></div> -->
+							</div>
+						</div>
 					</div>
-				</section>
+					<div class="js-nextbutton nextbutton"></div>
 			</div>
-		</main>
-		<div class="js-alert alertContainer none" >
-			<figure>
-				<img src="images/2_4/2_4_5_02.svg" alt="이미지">
-			</figure>
-		</div>
+			</section>
+	</div>
+	</main>
+	<div class="js-alert alertContainer none">
+		<figure>
+			<img src="images/2_4/2_4_5_02.svg" alt="이미지">
+		</figure>
+	</div>
 	</div>
 	<script src="../../../include/libs/js/ts.min.js"></script>
 	<script src="../../../include/libs/js/slider.min.js"></script>
@@ -124,7 +212,21 @@
 	<script src="../../../include/math/script/getAngles.min.js"></script>
 	<script src="./js/2_4_5.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () { });
+		document.addEventListener('DOMContentLoaded', function () {
+			const btn = document.querySelector('#uiAddEvent');
+
+			btn.addEventListener('click', function () {
+				if (this.dataset.ex !== 'true') {
+					document.querySelector('body').classList.add('ex-on');
+					this.dataset.ex = 'true';
+				} else {
+					document.querySelector('body').classList.remove('ex-on');
+					this.dataset.ex = 'false';
+				}
+
+			});
+
+		});
 	</script>
 </body>
 

@@ -59,6 +59,7 @@
 header{display: none !important;}
 main{top:0 !important}
 #wrap {background:#fff !important; width:100%; height: 100%; padding:0; box-shadow:none;}
+
 .contentsArea .js-quizButton.resetButton,
 .contentsArea .js-resetButton.resetButton,
 .js-buttons.quizButtons{
@@ -77,6 +78,7 @@ main{top:0 !important}
     bottom:10px;
     box-shadow: none;
 }
+.js-quizButton.resetButton.exBtn,
 .js-buttons.quizButtons.exBtn,
 .contentsArea .js-quizButton.resetButton,
 .contentsArea .js-resetButton.resetButton{
@@ -91,16 +93,32 @@ main{top:0 !important}
 .js-buttons.quizButtons[data-type="reset"]:before {
     content: "정답 가리기";
 }
+
+.js-quizButton.resetButton.exBtn,
 .js-buttons.quizButtons.reset.exBtn,
 .js-buttons.quizButtons[data-type="reset"].exBtn{
     padding-left: 24px;
     background-color: #216cbe
 }
 
+.ex-on .contentsArea .js-quizButton.resetButton.exBtn:before,
 .js-buttons.quizButtons.exBtn.reset:before,
 .js-buttons.quizButtons[data-type="reset"].exBtn:before {
   content: "다시하기";
   padding-left: 24px;
+}
+.contentsArea .js-quizButton.resetButton.exBtn::before{
+  content: "예 보기";
+  padding-left: 30px;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  pointer-events: none;
+  letter-spacing: -.1px;
 }
 .js-buttons.quizButtons.exBtn:before {
   content: "예 보기";

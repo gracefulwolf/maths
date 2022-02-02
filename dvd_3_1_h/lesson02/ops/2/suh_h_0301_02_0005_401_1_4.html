@@ -103,7 +103,7 @@
 								<div class="dotPaper">
 									<div class="js-drawLine drawLine" data-option="copy">
 										<canvas class="js-drawArea drawArea"></canvas>
-										<div class="js-quizButton resetButton " data-type="reset"></div>
+										<div class="js-quizButton resetButton exBtn " data-type="reset" id="uiAddEvent"></div>
 
 										
 									</div>
@@ -119,6 +119,18 @@
 							</li>
 							
 						</ul>
+						<div class="ex-box">
+							<div class="tri1">
+								<div class="line n1"></div>
+								<div class="line n2"></div>
+								<div class="line n3"></div>
+							</div>
+							<div class="tri2">
+								<div class="line n1"></div>
+								<div class="line n2"></div>
+								<div class="line n3"></div>
+							</div>
+						</div>
 						<div class="bullet exam">예</div>
 						<div class="lineBox brown"></div>
 
@@ -135,6 +147,7 @@
 								<div class="js-completeButton quizButtons answer" data-hover=""></div>
 							</li>
 						</ul>
+						
 						<div class="js-nextbutton nextbutton"></div>
 					</div>
 				</section>
@@ -155,7 +168,21 @@
 	<script src="../../../include/math/script/getAngles.min.js"></script>
 	<script src="./js/2_4_5.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () { });
+		document.addEventListener('DOMContentLoaded', function () {
+
+			const btn = document.querySelector('#uiAddEvent');
+
+			btn.addEventListener('click', function(){
+				if (this.dataset.ex !== 'true') {
+					document.querySelector('body').classList.add('ex-on');
+					this.dataset.ex = 'true';
+				} else{
+					document.querySelector('body').classList.remove('ex-on');
+					this.dataset.ex = 'false';
+				}
+				
+			})
+		 });
 	</script>
 </body>
 
