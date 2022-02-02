@@ -28,15 +28,40 @@
 			bottom: 0;
 			word-break: keep-all;
 		}
-		.figureBoard {left:-20px}
-		.js-figureBoardLine .js-quizButton.resetButton{display: block!important; bottom:-74px; right: 16px;}
+		.figureBoard {left:10px}
+		.js-drawLine .js-quizButton.resetButton{display: block!important; bottom:-58px; right:71PX}
 		.lineBox{position: absolute;
-		top: 50px;
-		width: 730px;
-		height: 430px;
-		left: 20px;}
-		.lineBox .exam{position: absolute; top:5px; left:10px}
+    top: 90px;
+    width: 720px;
+    height: 380px;
+    right: 20px;}
+		.exam{position: absolute; top: 105px;
+    left: 50px;
+    z-index: 10;}
+
 		.basicSlider {top:10px}
+		.dotPaper {left:420px; background: none;}
+		.line.n1{    
+			position: absolute;
+			width: 185px;
+			height: 180px;
+			border-bottom: 4px solid #000;
+			border-left: 4px solid #000;
+			z-index: 10;
+			top: 183px;
+			left: 63px;
+		}
+		.line.n2{    
+			position: absolute;
+			width: 261px;
+			height: 0;
+			border-top: 4px solid #000;
+			z-index: 10;
+			top: 178px;
+			left: 65px;
+			transform: rotate(45deg);
+			transform-origin: top left;
+		}
 	</style>
 </head>
 
@@ -58,7 +83,7 @@
 		<main class="act">
 			<div class="contentsArea">
 				<h1 data-index="2">도형판에 직각삼각형을 만들고, 점 종이에 옮겨 그려 봅시다.</h1>
-				<section class="page1">
+				<section class="page2">
 					<div class="basicSlider" data-slide-container="main">
 						<div class="basicSlider_pageMove hide">
 							<ul class="basicSlider_circle_tabs" data-tabs="main">
@@ -69,15 +94,8 @@
 							<div class="basicSlider_btn next" data-btn-next="main"></div>
 						</div>
 						<ul class="basicSlider_slides" data-slides="main">
-							<li class="none">
-								<ul class="list dot titleIndent">
-									<li>도형판에 직각삼각형을 만들어 보세요.</li>
-								</ul>
-								<div class="circleButton" data-hover=""></div>
-								<div class="sampleBox"></div>
-							</li>
 							<li>
-								<ul class="list dot titleIndent">
+								<ul class="list dot titleIndent none">
 									<li>만든 직각삼각형을 점 종이에 그려 보세요.</li>
 								</ul>
 								<div class="dotPaper">
@@ -86,12 +104,21 @@
 										<div class="js-quizButton resetButton " data-type="reset"></div>
 									</div>
 								</div>
-								<div class="js-prevbutton prevButton"></div>
+								<!-- <div class="js-prevbutton prevButton"></div> -->
 							</li>
+							<li>
+								<ul class="list dot titleIndent">
+									<li>도형판에 직각삼각형을 만들어 보세요.</li>
+								</ul>
+								<div class="circleButton" data-hover=""></div>
+								<div class="sampleBox"></div>
+							</li>
+							
 						</ul>
-						<div class="lineBox sky">
-							<div class="bullet exam">예</div>
-						</div>
+						<div class="bullet exam">예</div>
+						<div class="lineBox sky"></div>
+						<div class="line n1"></div>
+						<div class="line n2"></div>
 						<ul class="figureBoard">
 							<li class="js-figureBoardLine drawLine example" data-option="">
 								<canvas class="js-drawArea drawArea"></canvas>
