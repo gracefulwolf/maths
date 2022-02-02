@@ -11,31 +11,144 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
-	
-		.basicSlider_slides  section{padding-right:0;}
-		.basicSlider_slides .answer{width: 100%; text-align: left;}
-
-		.btn_1.zoomBtn{background: url(./images/suh_h_0301_02_0005_201_1_2.png) no-repeat 50% 50% / 100%; width:100%; height: 260px;}
-		.popup_container{z-index: 100;}
-		.balloon{font-size: 30px;}
-		
-		.popup_pages img{width:100%;}
-		.popup_pages figure{
-			width:100%; margin:0;
+		.basicSlider_slides section {
+			padding-right: 0;
 		}
-		.popup_pages .b1.balloon{top:20px; left:20px; z-index: 4; width:250px; text-align: center;}
-		.popup_pages .b2.balloon{top:20px; left:790px; z-index: 4; width:310px; text-align: center;}
-		
+
+		.basicSlider_slides .answer {
+			width: 100%;
+			text-align: left;
+		}
+
+		.btn_1.zoomBtn {
+			background: url(./images/suh_h_0301_02_0006_102_1_2.png) no-repeat 50% 50% / 100%;
+			width: 100%;
+			height:315px;
+		}
+
+		.popup_container {
+			z-index: 100;
+		}
+
+		.balloon {
+			font-size: 30px;
+		}
+
+		.popup_pages img {
+			width: auto;
+			position: relative;
+			height: 65%;
+			top: 0;
+			left: -10%;
+		}
+
+		.popup_pages figure {
+			width: 100%;
+			margin: 0;
+		}
+
+		.popup_pages .b1.balloon {
+			top: 210px;
+			left: 100px;
+			z-index: 4;
+			width: 280px;
+			text-align: center;
+		}
+
+		.popup_pages .b2.balloon {
+			top: 130px;
+			left: 840px;
+			z-index: 4;
+			width: 300px;
+			text-align: center;
+		}
+
 		figure {
 			position: relative;
-			width: 500px;
+			width: 630px;
 			margin: 0 auto 20px;
 		}
-		.b1.balloon{top:20px; left:-230px; z-index: 4; width:250px; text-align: center;}
-		.b2.balloon{top:20px; left:480px; z-index: 4; width:300px; text-align: center;}
 
+		.b1.balloon {
+			font-size: 30px;
+			top: 70px;
+			left: -210px;
+			z-index: 4;
+			width: 270px;
+			text-align: center;
+		}
 
-		.flex-wrap{flex-direction: column;}
+		.b2.balloon {
+			font-size: 30px;
+			top: 50px;
+			left: 440px;
+			z-index: 4;
+			width: 290px;
+			text-align: center;
+		}
+
+		.flex-wrap {
+			flex-direction: column;
+		}
+
+		.page_1 .toggle {
+			width: 820px;
+		}
+
+		.page_2 .toggle {
+			width: 500px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.page_4 .toggle {
+			width: 500px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.page_3 .figureUL {
+			position: relative;
+			width: 800px;
+			margin:0 auto;
+			background: url(./images/suh_h_0301_02_0006_102_1_3.png) no-repeat 50% 50% / 800px;
+			height: 420px;
+		} 
+		.page_3 .figureUL figure{
+			position: static;
+			width:100%;
+			margin:0;
+			height: 100%;;
+		}
+		.page_3 .btn_1.zoomBtn {
+			background: none;
+			border:0;
+			width: 63px;
+			height: 63px;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+		}
+		.page_3 .b1.balloon {
+			top: 30px;
+			left: 90px;
+		}
+		.page_3 .b1.balloon.ctTail.bottom:after{
+			left: 83%;
+		}
+		.page_3 .toggle{
+			position: absolute;
+			width:100%;
+			height: 100%;
+			background: transparent;
+			padding:0;
+		}
+		.page_3 .toggle img{
+			width:100%;
+		}
+		.page_3 .toggle:after{
+			display: none;
+		}
 	</style>
 </head>
 
@@ -58,9 +171,8 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							그림은 어떤 상황인가요?
-						</span></h2>
-						
+								그림은 어떤 상황인가요?
+							</span></h2>
 						<section>
 							<ul class="figureUL">
 								<li>
@@ -69,7 +181,7 @@
 											사각형을 이용하여<br>
 											로봇을 그려 봤어.
 										</div>
-	
+
 										<div class="b2 balloon left deeppink ctTail">
 											사각형의<br>
 											같은 점은 무엇일까?
@@ -79,15 +191,17 @@
 									</figure>
 								</li>
 							</ul>
-							<div class="toggle box" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">
-									사각형을 이용하여 로봇을 그렸습니다.
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										사각형을 이용하여 로봇을 그렸습니다.
+									</div>
 								</div>
-							</div>
 
-							<div class="toggle box mt_10" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">
-									이용한 사각형의 같은 점을 생각하고 있습니다.
+								<div class="toggle mt_10" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										이용한 사각형의 같은 점을 생각하고 있습니다.
+									</div>
 								</div>
 							</div>
 						</section>
@@ -96,9 +210,9 @@
 					</li>
 					<li class="page_2" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							로봇에는 어떤 도형이 있는지 찾아보세요.
-						</span></h2>
-						
+								로봇에는 어떤 도형이 있는지 찾아보세요.
+							</span></h2>
+
 						<section>
 							<ul class="figureUL">
 								<li>
@@ -107,7 +221,7 @@
 											사각형을 이용하여<br>
 											로봇을 그려 봤어.
 										</div>
-	
+
 										<div class="b2 balloon left deeppink ctTail">
 											사각형의<br>
 											같은 점은 무엇일까?
@@ -117,15 +231,17 @@
 									</figure>
 								</li>
 							</ul>
-							<div class="toggle box" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">
-									사각형이 있습니다.
+							<div class="textAlignC">
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										사각형이 있습니다.
+									</div>
 								</div>
-							</div>
 
-							<div class="toggle box mt_10" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">
-									직각이 있습니다.
+								<div class="toggle box mt_10" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										직각이 있습니다.
+									</div>
 								</div>
 							</div>
 						</section>
@@ -134,39 +250,38 @@
 					</li>
 					<li class="page_3" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							직각을 찾아 표시해 보세요.
-						</span></h2>
-						
+								직각을 찾아 표시해 보세요.
+							</span></h2>
+
 						<section>
 							<ul class="figureUL">
 								<li>
 									<figure>
-										<div class="b1 balloon right orange ctTail">
+										<div class="b1 balloon bottom orange ctTail">
 											사각형을 이용하여<br>
 											로봇을 그려 봤어.
 										</div>
 
 										<div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
-												
+												<img src="./images/suh_h_0301_02_0006_102_1_4.png" alt="">
 											</div>
 										</div>
-			
-										
+
 										<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
 										</button>
 									</figure>
 								</li>
 							</ul>
-						</section>	
+						</section>
 
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
 					<li class="page_4" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							이용한 사각형의 같은 점은 무엇인지 말해 보세요.
-						</span></h2>
-						
+								이용한 사각형의 같은 점은 무엇인지 말해 보세요.
+							</span></h2>
+
 						<section>
 							<ul class="figureUL">
 								<li>
@@ -175,7 +290,7 @@
 											사각형을 이용하여<br>
 											로봇을 그려 봤어.
 										</div>
-	
+
 										<div class="b2 balloon left deeppink ctTail">
 											사각형의<br>
 											같은 점은 무엇일까?
@@ -185,22 +300,24 @@
 									</figure>
 								</li>
 							</ul>
-							<div class="toggle box" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">
-									네 각이 모두 직각입니다.
+							<div class="textAlignC">
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										네 각이 모두 직각입니다.
+									</div>
 								</div>
-							</div>
-
-							<div class="toggle box mt_10" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">
-									반듯한 모양의 사각형입니다.
+	
+								<div class="toggle box mt_10" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										반듯한 모양의 사각형입니다.
+									</div>
 								</div>
 							</div>
 						</section>
 
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
-					
+
 				</ul>
 			</div>
 		</main>
@@ -209,7 +326,7 @@
 			<ul class="popup_pages">
 				<li class="whole image pop_page_1" data-popup-page="1">
 					<figure>
-						<<div class="b1 balloon bottom orange ctTail">
+						<div class="b1 balloon bottom orange ctTail">
 							사각형을 이용하여<br>
 							로봇을 그려 봤어.
 						</div>
@@ -218,13 +335,13 @@
 							사각형의<br>
 							같은 점은 무엇일까?
 						</div>
-						<img src="./images/suh_h_0301_02_0005_201_1_1.png" alt="">
+						<img src="./images/suh_h_0301_02_0006_102_1_1.png" alt="">
 					</figure>
 				</li>
 			</ul>
 		</section>
 
-		
+
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
