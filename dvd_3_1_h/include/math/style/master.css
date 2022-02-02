@@ -77,6 +77,7 @@ main{top:0 !important}
     bottom:10px;
     box-shadow: none;
 }
+.js-buttons.quizButtons.exBtn,
 .contentsArea .js-quizButton.resetButton,
 .contentsArea .js-resetButton.resetButton{
     background-color: #216cbe;
@@ -89,6 +90,30 @@ main{top:0 !important}
 .js-buttons.quizButtons.reset:before,
 .js-buttons.quizButtons[data-type="reset"]:before {
     content: "정답 가리기";
+}
+.js-buttons.quizButtons.reset.exBtn,
+.js-buttons.quizButtons[data-type="reset"].exBtn{
+    padding-left: 24px;
+    background-color: #216cbe
+}
+
+.js-buttons.quizButtons.exBtn.reset:before,
+.js-buttons.quizButtons[data-type="reset"].exBtn:before {
+  content: "다시하기";
+  padding-left: 24px;
+}
+.js-buttons.quizButtons.exBtn:before {
+  content: "예 보기";
+  padding-left: 20px;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  pointer-events: none;
+  letter-spacing: -.1px;
 }
 .contentsArea .js-quizButton.resetButton:before,
 .contentsArea .js-resetButton.resetButton:before {
