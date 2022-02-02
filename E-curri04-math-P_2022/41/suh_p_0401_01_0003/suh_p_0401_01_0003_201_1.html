@@ -503,25 +503,28 @@
 			spriteList: [{
 				name: 'girl_1',
 				// circle: 'new-character', // 동그란부분 필요할때 주석 해제
-				playMode: {
-					rewind: false
-				},
 				speech:'right',
-				top: 60, // 캐릭터 top값, 없어도 상관 없음, css 제어
+				top: 80, // 캐릭터 top값, 없어도 상관 없음, css 제어
 				left: 0,
 				width: 340,
 				height: 421,
 				thumbNail: '../common/contents/images/character/girl_1.png',
 				spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
-				sound: './media/audio/suh_p_0401_01_0003_201_1.mp3',
+				sound: './media/audios/suh_p_0401_01_0003_201_1.mp3',
+				speech:'right',
 				textBubble: {
 					text: '10000개짜리 상자가<br>2개이면 20000개야.',
 					class: 'balloon left green ctTail left-s',
 					top: 270,
 					left: 450,
+					width: 450,
 					textAlign: 'center', // 말풍선 정렬
 					wordBreak: 'keep-all' // 말풍선 wordBreak
 				},
+				sheetWidth: 102000,
+				sheetHeight: 421,
+				endSheet: 0,
+				delay: 40,
 				callbacks: {
 					start: function () {
 						$ts.getEl('.page_1 .characterImg')[0].style.left = '-200px';

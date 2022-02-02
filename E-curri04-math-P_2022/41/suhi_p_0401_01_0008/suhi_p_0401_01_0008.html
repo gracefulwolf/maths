@@ -46,9 +46,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.pop_page_22 .it-txt-4{position:absolute; top:80px; left:525px;}
 
 	.page_3 .it-img{position:relative; width:100%; height:290px; margin:0 auto; background:url(./images/suhi_p_0401_01_0008_3.png) no-repeat 50% 50% / contain;}
-	.page_3 .it-txt-1{position:absolute; top:100px; left:90px; font-size:32px; line-height:1;}
-	.page_3 .it-txt-2{position:absolute; top:140px; left:460px; font-size:32px; line-height:1;}
-	.page_3 .it-txt-3{position:absolute; top:105px; left:830px; font-size:32px; line-height:1;}
+	.page_3 .it-txt-1{position:absolute; top:100px; left:102px; font-size:30px; line-height:1; letter-spacing:-1px;}
+	.page_3 .it-txt-2{position:absolute; top:140px; left:470px; font-size:30px; line-height:1; letter-spacing:-1px;}
+	.page_3 .it-txt-3{position:absolute; top:105px; left:840px; font-size:30px; line-height:1; letter-spacing:-1px;}
+	.page_3 .it-ho{position:absolute; top:20px; font-size:25px; letter-spacing:-1px;}
+	.page_3 .it-ho.x1{left:113px;}
+	.page_3 .it-ho.x2{left:483px;}
+	.page_3 .it-ho.x3{left:846px;}
 
 	.page_5 .it-img{position:relative; width:100%; height:430px; margin-top:-60px; background:url(./images/suhi_p_0401_01_0008_4.jpg) no-repeat 100% 50% / 980px 100%;}
 	.page_5 .it-txt-1{position:absolute; top:247px; left:144px; font-size:32px; line-height:1; text-align:center;}
@@ -56,6 +60,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_5 .it-txt-3{position:absolute; top:222px; left:404px; font-size:32px; line-height:1; text-align:center;}
 	.page_5 .it-txt-4{position:absolute; top:242px; left:637px; font-size:32px; line-height:1; text-align:center;}
 	.page_5 .it-txt-5{position:absolute; top:172px; left:865px; font-size:32px; line-height:1; text-align:center;}
+	.page_5 .it-txt-6{position:absolute; bottom:10px; right:10px; font-size:30px; line-height:1; text-align:center;}
 
 </style>
 </head>
@@ -170,8 +175,11 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</span></h2>
 				<section>
 					<div class="it-img">
+						<div class="it-ho x1">801호</div>
 						<div class="it-txt-1">전기 요금<br>59100원</div>
+						<div class="it-ho x2">802호</div>
 						<div class="it-txt-2">전기 요금<br>53990원</div>
+						<div class="it-ho x3">803호</div>
 						<div class="it-txt-3">전기 요금<br>84590원</div>
 					</div>
 					<div class="textAlignC mt_20">
@@ -259,6 +267,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</div>
 						<div class="it-txt-5">
 							뉴욕<br>20817000명
+						</div>
+						<div class="it-txt-6">
+							[출처: 통계청, 2019]
 						</div>
 					</div>
 					<div class="textAlignC mt_20">
@@ -538,7 +549,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</ul>
 				<a href="./data/(4-1-1)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
-					<button class="solveCheckBtn" data-popup-btn="43" data-hover=""></button>
+					<!-- <button class="solveCheckBtn" data-popup-btn="43" data-hover=""></button> -->
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
 			</div>
@@ -678,7 +689,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</ul>
 				<a href="./data/(4-1-1)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
-					<button class="solveCheckBtn" data-popup-btn="61" data-hover=""></button>
+					<!-- <button class="solveCheckBtn" data-popup-btn="61" data-hover=""></button> -->
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
 			</div>
@@ -705,11 +716,16 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () {
-
-	}, false);
+	window.$callBack.sliderReset = function (slide) {
+			if (slide.idx === 5) {
+				setTimeout(function () {
+					$ts.getEl('.page_5 .textBookBtn')[0].click();
+					setTimeout(function () {
+						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					}, 3000);
+				});
+			}
+		}
 </script>
-
 </body>
-
 </html>

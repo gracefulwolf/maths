@@ -12,11 +12,24 @@
 	<style type="text/css">
 		.page_1 section{margin-top:50px;}
 		.page_1 img,
-		.pop_page_1 img{width: 100%;}
-		.page_1 .it-box{position:relative;}
+		.pop_page_1 img{width:100%;}
+		.page_1 .it-box{position:relative; height:220px;}
 		.page_1 .it-box .balloon:nth-of-type(1){top:20px; left:180px;}
 		.page_1 .it-box .balloon:nth-of-type(2){top:20px; left:480px;}
 		.page_1 .it-box .balloon:nth-of-type(3){top:20px; left:770px;}
+		.page_1 .it-num{position:absolute; top:165px; width:160px; text-align:center;}
+		.page_1 .it-num.x1{left:0px; width:150px;}
+		.page_1 .it-num.x2{left:290px;}
+		.page_1 .it-num.x3{left:585px;}
+		.page_1 .it-num.x4{left:885px;}
+		.pop_page_1 .colorBox.white{display:flex; align-items:center; position:relative; min-height:110px;}
+		.pop_page_1 .colorBox.white img{display:block; width:80%; margin:15px auto;}
+		.pop_page_1 .colorBox.beige:last-child .colorBox.white img{display:block; width:80%; margin:10px auto 30px;}
+		.pop_page_1 .it-box1{width:570px;}
+		.pop_page_1 .it-txt1{position:absolute; bottom:0; left:70px; width:120px;}
+		.pop_page_1 .it-txt2{position:absolute; bottom:0; left:240px; width:120px;}
+		.pop_page_1 .balloon{position:absolute; top:0; left:50%; transform:translateX(-50%);}
+		.pop_page_1 .colorBox.beige:not(:last-child) .colorBox.white .balloon{top:-40px;}
 	</style>
 </head>
 
@@ -46,8 +59,12 @@
 							<div class="balloon colorBox green bottom ctTail textAlignC">
 								10배
 							</div>
+							<div class="it-num x1">1장</div>
+							<div class="it-num x2">10장</div>
+							<div class="it-num x3">100장</div>
+							<div class="it-num x4">1000장</div>
 						</div>
-						<div class="toggle textAlignL mt_40" data-toggle-obj="1">
+						<div class="toggle textAlignL mt_20" data-toggle-obj="1">
 							<div class="answer" data-toggle-target="1">
 								10000이 10개인 수는 100000(10만),<br>
 								10000이 100개인 수는 1000000(100만),<br>
@@ -63,8 +80,6 @@
 				</ul>
 			</div>
 
-
-
 		</main>
 
 		<section class="popup_container" data-popup-container="">
@@ -74,34 +89,43 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flexListContainer center ">
-									<div class="mr_15 textAlignC" style="width: 700px;">모형 돈을 10묶음 씩<br> 묶어 세어<br> 십만, 백만, 천만을<br> 알 수 있습니다.</div>
-									<div>
-										<div class="flexListContainer center colorBox beige mt_15">
+								<div class="flexListContainer center">
+									<div class="mr_15 textAlignC it-box1">모형 돈을 10묶음 씩<br> 묶어 세어<br> 십만, 백만, 천만을<br> 알 수 있습니다.</div>
+									<div class="it-box2">
+										<div class="flexListContainer center colorBox beige">
 											<div class="mr_15">
-												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:180px;">
+												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:140px;">
 												10장
 											</div>
-											<div>
+											<div class="colorBox white">
 												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_2.png" alt="">
+												<div class="it-txt1">1장</div>
+												<div class="it-txt2">10장</div>
+												<div class="balloon colorBox green bottom ctTail textAlignC">10배</div>
 											</div>
 										</div>
-										<div class="flexListContainer center colorBox beige mt_15">
+										<div class="flexListContainer center colorBox beige mt_20">
 											<div class="mr_15">
-												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:180px;">
+												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:140px;">
 												100장
 											</div>
-											<div>
+											<div class="colorBox white">
 												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_3.png" alt="">
+												<div class="it-txt1">10장</div>
+												<div class="it-txt2">100장</div>
+												<div class="balloon colorBox green bottom ctTail textAlignC">10배</div>
 											</div>
 										</div>
-										<div class="flexListContainer center colorBox beige mt_15">
+										<div class="flexListContainer center colorBox beige mt_20">
 											<div class="mr_15">
-												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:180px;">
+												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_5.png" alt="" style="width:140px;">
 												1000장
 											</div>
-											<div>
+											<div class="colorBox white">
 												<img src="./images/suh_p_0401_01_0004_201_1/suh_p_0401_01_0004_201_1_4.png" alt="">
+												<div class="it-txt1">100장</div>
+												<div class="it-txt2">1000장</div>
+												<div class="balloon colorBox green bottom ctTail textAlignC">10배</div>
 											</div>
 										</div>
 									</div>
@@ -132,42 +156,7 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			$prite.add({
-				target: $ts.getEl('#aniBox_2'),
-				spriteId: 'sprite2',
-				spriteList: [{
-						name: 'boy_2',
-						// circle: 'green',
-						top: -160,
-						left: 685,
-						width: 340,
-						height: 421,
-						thumbNail: '../common/contents/images/character/boy_2.png',
-						spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
-						sound: './media/audios/suh_p_0401_01_0002_204_1.mp3',
-						speech:'right',
-						textBubble: {
-						text: '만 원이 되려면 <br>1000원짜리 지폐가 몇 장 <br>더 있어야 할까?',
-						class: 'balloon bottom sky',
-						top: -80,
-						left: 630,
-						width: 450,
-						textAlign: 'center',
-						wordBreak: 'keep-all'
-						},
-						sheetWidth: 102000,
-						sheetHeight: 421,
-						//endSheet: 0,
-						delay: 40,
-						callbacks: {
-						start: function () {},
-						end: function () {}
-						}
-					}
-				]
-			});
 		}, false);
-
 	</script>
 
 </html>
