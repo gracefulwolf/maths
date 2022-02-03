@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom.css">
+	<style>
+		/*.box-flex {display:flex}
+		.study_guide {right:0}
+
+		.img-answer-group {display:flex;justify-content:center;align-items:center}
+		.img-answer-group .img-answer {margin:0 100px;position:relative}
+		.img-answer {position:relative}
+		.img-answer img {height:200px;vertical-align:top}
+		.img-answer .toggle {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1s}
+		.img-answer .toggle:after {display:none}
+		.img-answer .toggle.complete {opacity:1}
+		.img-answer .toggle {background:url("./images/suh_0601_02_0007_202_1_2.png") no-repeat 50% 50% / auto 100%}
+
+		.tableContainer .toggle {background-color:transparent;text-align:center}
+
+		.contentsList {margin-top:20px}
+		.contentsList li {flex-direction:column;font-size:36px}
+		.contentsList li ~ li {margin-top:40px}
+		.contentsList .inline-flex-box {justify-content:center;align-items:center}
+
+		.page_1 .box-flex {justify-content:center;align-items:center}
+		.page_1 .box-item {position:relative;display:flex;justify-content:center;width:25%;margin:0 20px}
+		.page_1 .box-item img {height:150px;margin-top:40px}
+		.page_1 .box-item .text-item {position:absolute;top:0;left:0}
+
+		.page_3 .box-flex {align-items:center;justify-content:center;margin-top:50px}
+		.page_3 .img-box {margin-right:100px;position:relative}
+		.page_3 .img-box img {height:300px}
+		.page_3 .group-a .box-flex:first-of-type {margin-top:0}
+		.page_3 .group-a .box-flex ~ .box-flex {margin-top:20px}
+		.page_3 .group-a .box-flex .colorBox {width:110px;text-align:center}
+
+		.page_4 .box-flex {justify-content:center;align-items:center;margin:-10px 0 40px}
+		.page_4 .box-item {position:relative;display:flex;justify-content:center;width:30%;margin:0 20px}
+		.page_4 .box-item img {height:150px;margin-top:40px}
+		.page_4 .box-item .text-item {position:absolute;top:0;left:0}
+		.page_4 .img-box {width:80%;margin:0 auto}
+		.page_4 .img-box img {width:100%;vertical-align:top}
+		.page_4 .lineBox {width:80%;margin:30px auto 0}
+
+		.page_5 .lineBox {width:80%;margin:20px auto 40px;padding-left:40px;padding-right:40px}*/
+		.bogi_wrap {margin-left:30px}
+		.bogi_wrap .bunsuWrap.inline-flex-box,
+
+		.page_1 .answer .bunsuWrap.inline-flex-box {vertical-align:middle}
+
+		.page_2 .toggle.toggle-area {position:absolute;top:60px;width:100%;height:55px;background-color:transparent;z-index:10}
+		.page_2 .toggle.toggle-area::after {content:none}
+
+		.arrangeCon {position:relative;left:-50px;width:700px;display:flex;align-items:flex-start;justify-content:space-between;margin:0 auto}
+		.columnCon > li {width:50px;text-align:center;box-sizing:border-box;line-height:55px}
+		.columnCon > li:nth-of-type(2) {width:20px}
+		.columnCon {text-align:right;display:flex;justify-content:flex-end;width:100%}
+		.columnCon > div {width:50px;text-align:center;box-sizing:border-box;line-height:55px}
+		.columnCon .dPoint {color:inherit}
+		.hLine {position:absolute;right:0;width:170px;height:0;border-bottom:3px solid #000}
+		.hLine.hLine2 {top:55px;border-bottom:3px solid #000}
+		.hLine > img {position:absolute;left:-1px}
+		.line_1_2 {top:168px}
+		.line_1_3 {top:278px}
+		.line_1_4 {top:388px}
+		.dPoint {position:absolute;top:0;right:-6.5px;color:#000;z-index:1}
+
+		.page_2 .toggle {padding:0}
+		.page_2 .toggle.type-b {background:transparent;pointer-events:none}
+		.page_2 .toggle.type-b::after {content:none}
+		.page_2 .answer .columnCon {display:flex}
+		.page_2 .toggle [class*='line_1_'] {position:absolute;right:0;padding:0}
+		.page_2 .hLine:not(.line_1_1) {border-bottom:3px solid #00a0ff}
+
+		.page_3 .arrangeCon {position:relative;height:530px;display:flex;align-items:center;justify-content:center;}
+		.page_3 .box-flex {display:flex;justify-content:center}
+		.page_3 .box-flex ~ .box-flex {margin-top:60px}
+		.page_3 .box-flex ~ .box-flex .lineBox {padding:10px 20px;width:180px;flex-shrink:0}
+		.page_3 .box-flex .lineBox {margin:0 80px}
+		.page_3 .lineBox.sky.circle {border-radius:100%}
+		.page_3 .lineBox.sky {display:inline-flex;align-items:center;justify-content:center}
+		.page_3 .box-flex .lineBox .toggle {background-color:transparent}
+		.page_3 .box-wrap {position:relative}
+		.page_3 .arrow_1 {position:absolute;width:300px;height:95px}
+		.page_3 .arrow_1 {top:50px;left:350px}
+		.page_3 .arrow_1:after {content:'';position:absolute;width:0;height:0;border-style:solid;border-color:transparent transparent transparent #ff0000;top:85px;left:295px;border-width:8px 14px;transform:rotate(46deg)}
+
+		.page_4 .table-wrap {width:520px;margin:120px auto 0}
+		.page_4 .tableContainer table {table-layout:fixed;margin:20px auto 0}
+		.page_4 .tableContainer .toggle {background-color:transparent}
+		.page_4 .arrow-css {position:absolute;top:-50px;left:0;width:320px;margin:0;background-color:#F56E00;text-align:center}
+		.page_4 .arrow-css::after {border-color:transparent transparent transparent #F56E00;}
+		.page_4 .lineBox.orange {position:relative;top:-20px;left:5px;border-radius:100%;display:inline-block;padding:0;width:60px;height:60px;text-align:center;line-height:45px;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
+
+		.page_5 h2 > span {word-break:break-all}
+		.page_5 .box-flex {display:flex;align-items:flex-start}
+		.page_5 .box-flex .answer {text-align:justify}
+
+		.popup_pages .arrangeCon {justify-content:center}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs five" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2 data-addline-container="">
+							<ins class="dot"></ins>
+							<div><div class="icon_bogi"></div>와 같은 방법으로 계산해 보시오.</div>
+						</h2>
+						<section>
+							<div class="bogi_wrap">
+								<div class="bogiContainer">
+									<div class="icon_bogi"></div>
+									<div class="inner textAlignC">
+										1.5÷6＝
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>150</li>
+												<li>100</li>
+											</ul>
+										</div>
+										÷6＝
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>150÷6</li>
+												<li>100</li>
+											</ul>
+										</div>
+										=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>25</li>
+												<li>100</li>
+											</ul>
+										</div>
+										=0.25
+									</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_60">
+								8.1÷5＝
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>810</li>
+												<li>100</li>
+											</ul>
+										</div>
+										÷5＝
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>810÷5</li>
+												<li>100</li>
+											</ul>
+										</div>
+										=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>162</li>
+												<li>100</li>
+											</ul>
+										</div>
+										=1.63
+									</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>계산해 보시오.</span></h2>
+						<section>
+							<div class="study_guide"><em>문제</em>를 각각 <em>클릭</em>하세요.</div>
+							<div class="arrangeCon">
+								<div class="posRel">
+									<div class="toggle toggle-area" data-toggle-obj="1" data-group-index="1">
+										<div class="answer" data-toggle-target="1"></div>
+									</div>
+									<ul class="columnCon flex-box a-center" style="position:absolute;top:55px;z-index:9">
+										<li>5</li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>6</li><li></li>
+									</ul>
+									<div class="hLine hLine2 line_1_1" style="z-index:9"><img src="./images/divide-black.png"></div>
+									<div class="toggle type-b" data-toggle-obj="2" data-group-index="1">
+										<div class="answer">
+											<div class="columnCon">
+												<div></div><div></div><div class="posRel">0<div class="dPoint">.</div></div><div>1</div><div>2</div>
+											</div>
+											<ul class="columnCon flex-box a-center">
+												<li></li><li></li><li></li><li></li><li>0</li>
+											</ul>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div></div><div>5</div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div>1</div><div>0</div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div>1</div><div>0</div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div></div><div>0</div>
+											</div>
+											<div class="hLine line_1_2"></div>
+											<div class="hLine line_1_3"></div>
+										</div>
+									</div>
+								</div>
+								<div class="posRel">
+									<div class="toggle toggle-area" data-toggle-obj="3" data-group-index="2">
+										<div class="answer" data-toggle-target="3"></div>
+									</div>
+									<ul class="columnCon flex-box a-center" style="position:absolute;top:55px;z-index:9">
+										<li>2</li><li></li><li class="posRel">3<div class="dPoint">.</div></li><li>5</li><li></li>
+									</ul>
+									<div class="hLine hLine2 line_1_1" style="z-index:9"><img src="./images/divide-black.png"></div>
+									<div class="toggle type-b" data-toggle-obj="4" data-group-index="2">
+										<div class="answer">
+											<div class="columnCon">
+												<div></div><div></div><div class="posRel">1<div class="dPoint">.</div></div><div>7</div><div>5</div>
+											</div>
+											<ul class="columnCon flex-box a-center">
+												<li></li><li></li><li></li><li></li><li>0</li>
+											</ul>
+											<div class="columnCon">
+												<div></div><div></div><div>2</div><div></div><div></div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div>1</div><div>5</div><div></div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div>1</div><div>4</div><div></div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div>1</div><div>0</div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div>1</div><div>0</div>
+											</div>
+											<div class="columnCon">
+												<div></div><div></div><div></div><div></div><div>0</div>
+											</div>
+											<div class="hLine line_1_2"></div>
+											<div class="hLine line_1_3"></div>
+											<div class="hLine line_1_4"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>빈칸에 알맞은 수를 써넣으시오.</span></h2>
+						<section>
+							<div class="box-wrap">
+								<div class="box-flex">
+									<div class="lineBox colorBox sky circle">÷8</div>
+								</div>
+								<div class="box-flex">
+									<div class="lineBox colorBox sky bg lineBox_2">5.2</div>
+									<div class="lineBox sky lineBox_2">
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												0.65
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="arrow_1"></div></div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>빈칸에 알맞은 수를 써넣으시오.</span></h2>
+						<section>
+							<div class="table-wrap">
+								<div class="tableContainer brown">
+									<div class="arrow-css orange">
+										<div class="lineBox orange">÷</div>
+									</div>
+									<table>
+										<tr>
+											<th>2.1</th>
+											<th>6</th>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">0.35</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>4.6</th>
+											<th>4</th>
+											<td>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">1.15</div>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="toggle">
+						<h2 data-addline-container="">
+							<ins class="dot orange"></ins>
+							<span>
+								<span data-line-appear="2" class="givenLine">수가로가 5.1 m인 텃밭에 고추 모종 6개를 같은 간격으로 심으려고 합니다.</span> <span data-line-appear="1" class="">모종 사이의 간격을 몇 m로 해야 하는지 구하시오.</span>
+								<span class="addLineController">
+									<span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+									<span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+							</span>
+						</h2>
+						<section style="padding-left:30px">
+							<div class="box-flex">
+								<div class="colorBox check skyBlue">식</div>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										5.1÷6＝0.85
+									</div>
+								</div>
+							</div>
+							<div class="box-flex mt_20">
+								<div class="colorBox check purple">답</div>
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										0.85
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="arrangeCon">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>6</li><li>5</li>
+								</ul>
+								<div class="hLine hLine2 line_1_1"><img src="./images/divide-black.png"></div>
+								<ul class="columnCon flex-box a-center">
+									<li>8</li><li></li><li class="posRel">5<div class="dPoint">.</div></li><li>2</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>4</li><li>8</li><li></li>
+								</ul>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>4</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>4</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div></div><div>0</div>
+								</div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="arrangeCon">
+							<div class="posRel mr_80">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>3</li><li>5</li>
+								</ul>
+								<div class="hLine hLine2 line_1_1"><img src="./images/divide-black.png"></div>
+								<ul class="columnCon flex-box a-center">
+									<li>6</li><li></li><li class="posRel">2<div class="dPoint">.</div></li><li>1</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>1</li><li>8</li><li></li>
+								</ul>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>3</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>3</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div></div><div>0</div>
+								</div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+							</div>
+
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">1<div class="dPoint">.</div></li><li>1</li><li>5</li>
+								</ul>
+								<div class="hLine hLine2 line_1_1"><img src="./images/divide-black.png"></div>
+								<ul class="columnCon flex-box a-center">
+									<li>4</li><li></li><li class="posRel">4<div class="dPoint">.</div></li><li>6</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>4</li><li></li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>6</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li></li><li>4</li><li></li>
+								</ul>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>2</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>2</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div></div><div>0</div>
+								</div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+								<div class="hLine line_1_4"></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="solve pop_page_3" data-popup-page="3">
+					<div class="popup_contents">
+						<div class="arrangeCon">
+							<div class="posRel">
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li class="posRel">0<div class="dPoint">.</div></li><li>8</li><li>5</li>
+								</ul>
+								<div class="hLine hLine2 line_1_1"><img src="./images/divide-black.png"></div>
+								<ul class="columnCon flex-box a-center">
+									<li>6</li><li></li><li class="posRel">5<div class="dPoint">.</div></li><li>1</li><li></li>
+								</ul>
+								<ul class="columnCon flex-box a-center">
+									<li></li><li></li><li>4</li><li>8</li><li></li>
+								</ul>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>3</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div>3</div><div>0</div>
+								</div>
+								<div class="columnCon">
+									<div></div><div></div><div></div><div></div><div>0</div>
+								</div>
+								<div class="hLine line_1_2"></div>
+								<div class="hLine line_1_3"></div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function () {
+		}, false);
+
+	</script>
+</body>
+
+</html>
