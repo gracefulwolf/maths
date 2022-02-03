@@ -8,30 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 		<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 			<style>
-				.content-group {display:flex;width:90%;margin:40px auto 0}
-				.content-group .toggle {justify-content:center;width:120px;margin-left:10px}
-				.contentsBox > section h3 {display:flex}
-				.contentsBox > section h3 .dot {flex-shrink:0;align-self:flex-start;width:15px;height:15px;border:4px solid #f60;border-radius:50%;background-color:#fff;margin:.4em 10px 0 0;box-sizing:border-box}
-
-				.arrangeCon {position:relative;left:-80px;display:flex;align-items:center;justify-content:space-between;margin:0 auto}
-				ul.columnCon > li {width:50px;text-align:center;box-sizing:border-box;line-height:45px}
-				ul.columnCon > li:nth-of-type(2) {width:20px}
-				.hLine {position:absolute;right:0;width:170px;height:0;border-bottom:3px solid #000}
-				.hLine > img {position:absolute;left:-1px}
-				.hLine.line_1_1 {top:45px}
-				.hLine.line_1_2 {top:135px}
-				.hLine.line_1_3 {top:225px}
-				.hLine.line_1_4 {top:315px}
-				.vLine {position:absolute;top:0;width:0;height:100%;border-right:3px dotted #a6a6a6}
-				.vLine.line_2_1 {left:70px}
-				.vLine.line_2_2 {left:120px}
-				.vLine.line_2_3 {left:170px}
-				.vLine.line_2_4 {left:220px}
-				.dPoint {position:absolute;top:0px;right:-7px;color:#000;z-index:1}
-				.arrowLine {position:absolute;top:40px;left:120px;width:3px;height:35px;background-color:#f00}
-				.arrowLine:after {content:'';position:absolute;width:0;height:0;top:-13px;left:-4.5px;border-style:solid;border-width:10px 6px;border-color:transparent transparent #f00 transparent}
-				.greenT {color:#42b691}
-				.grayT {color:#ccc}
+				.box-flex {display:flex;position:relative;margin-top:10px;justify-content:center}
+				.box-flex .exam {position:absolute;top:0;left:350px}
+				.grayT {color:#999}
 			</style>
 	</head>
 
@@ -44,46 +23,107 @@
 				<div class="contentsBox" data-quiz="toggle">
 					<h2>(소수)÷(자연수) 계산하기(4)</h2>
 					<section>
-						<h3><ins class="dot"></ins><span>세로로 계산하고 소수점을 올립니다. 이때 계산이 끝나지 않으면 0을 하나 더 내려 계산합니다.</span></h3>
-						<div class="content-group">
-							<div class="bullet exam mr_20">예</div>
-							<div class="arrangeCon">
-								<div class="posRel">
-									<div class="icon_exam"></div>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li class="posRel redT">1<div class="dPoint">.</div></li><li class="blueT">7</li><li class="greenT">2</li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li>5</li><li></li><li class="posRel">8<div class="dPoint">.</div></li><li>6</li><li class="grayT">0</li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li class="redT">5</li><li></li><li></li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li>3</li><li>6</li><li></li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li class="blueT">3</li><li class="blueT">5</li><li></li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li></li><li>1</li><li>0</li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li></li><li class="greenT">1</li><li class="greenT">0</li>
-									</ul>
-									<ul class="columnCon flex-box a-center">
-										<li></li><li></li><li></li><li></li><li>0</li>
-									</ul>
-									<div class="hLine line_1_1"><img src="./images/divide-black.png" /></div>
-									<div class="hLine line_1_2"></div>
-									<div class="hLine line_1_3"></div>
-									<div class="hLine line_1_4"></div>
-									<div class="vLine line_2_1"></div>
-									<div class="vLine line_2_2"></div>
-									<div class="vLine line_2_3"></div>
-									<div class="vLine line_2_4"></div>
-									<div class="arrowLine line_2_1"></div>
-								</div>
+						<ul class="contentsList">
+							<li style="letter-spacing:1px"><div class="bullet circleDot orange"></div>세로로 계산하고 소수점을 올립니다. 이때 계산이 끝나지 않으면 0을 하나 더 내려 계산합니다.</li>
+						</ul>
+						<div class="box-flex">
+							<div class="bullet exam">예</div>
+							<div class="math_calc_table type2 col5">
+								<table>
+									<colgroup>
+										<col>
+										<col style="width:10px">
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="redT">1<div class="dot-point"></div></td>
+										<td class="blueT">7</td>
+										<td class="greenT">2</td>
+									</tr>
+									<tr class="line-tr">
+										<td></td>
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td class="line-td"></td>
+										<td>8<div class="dot-point"></div><div class="up-line"></div></td>
+										<td>6</td>
+										<td class="grayT">0</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="redT">5</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr class="line-tr">
+										<td></td>
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>3</td>
+										<td>6</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="blueT">3</td>
+										<td class="blueT">5</td>
+										<td></td>
+									</tr>
+									<tr class="line-tr">
+										<td></td>
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>1</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="greenT">1</td>
+										<td class="greenT">0</td>
+									</tr>
+									<tr class="line-tr">
+										<td></td>
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>0</td>
+									</tr>
+									</tbody>
+								</table>
+								<div class="lineDotted line_1"></div>
+								<div class="lineDotted line_2"></div>
+								<div class="lineDotted line_3"></div>
+								<div class="lineDotted line_4"></div>
 							</div>
 						</div>
 					</section>
