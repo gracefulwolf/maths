@@ -129,7 +129,7 @@
 캐릭터버튼
 <div class="buttonContainer left">
     <button class="characterBtn" data-popup-btn="1" data-hover="">
-        <span>한번더<b>1</b></span>
+        <span>한 번 <b>더1</b></span>
     </button>
 </div>
 ```
