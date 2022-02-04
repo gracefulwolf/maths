@@ -98,6 +98,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="11" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_3" data-quiz="toggle">
 						<h2>
@@ -130,6 +133,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="12" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_4" data-quiz="toggle">
 						<h2>
@@ -162,6 +168,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="13" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_5" data-quiz="toggle">
 						<h2>
@@ -298,6 +307,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="14" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_11" data-quiz="toggle">
 						<h2>
@@ -328,6 +340,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="15" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_12" data-quiz="toggle">
 						<h2>
@@ -359,6 +374,9 @@
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</section>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="16" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 					<li class="page_13" data-quiz="toggle">
 						<h2>
@@ -589,6 +607,37 @@
 						</ul>
 					</div>
 				</li>
+
+				<li class="textBookPopup popup_1" data-popup-page="11">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">2</ins> ~ <ins class="number">4</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="12">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">2</ins> ~ <ins class="number">4</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="13">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">2</ins> ~ <ins class="number">4</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
+				<li class="textBookPopup popup_2" data-popup-page="14">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">10</ins> ~ <ins class="number">11</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="15">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">10</ins> ~ <ins class="number">11</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="16">
+					<div class="popupInner" data-popup-inner="">
+						<p>[<ins class="number">10</ins> ~ <ins class="number">11</ins>] 도형을 보고 물음에 답해 보세요.</p>
+					</div>
+				</li>
 			</ul>
 		</section>
 	</div>
@@ -610,8 +659,29 @@
 	<!-- horizon -->
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () {
-		}, false);
+		window.$callBack.sliderReset = function (slide) {
+			console.log(slide.idx);
+
+			if (slide.idx === 1) {
+				setTimeout(function () {
+
+					$ts.getEl('.page_2 .textBookBtn')[0].click();
+					setTimeout(function () {
+						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					}, 3000);
+				});
+			}
+
+			if (slide.idx === 9) {
+				setTimeout(function () {
+
+					$ts.getEl('.page_10 .textBookBtn')[0].click();
+					setTimeout(function () {
+						$ts.getEl('.popup_2 .popup_closeBtn')[0].click();
+					}, 3000);
+				});
+			}
+		}
 	</script>
 </body>
 
