@@ -1,0 +1,922 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style>
+	.box-flex {display:flex}
+	.box-flex .group-a {width:50%;display:flex;align-items:center;margin-bottom:40px}
+	.page_1 .box-flex {justify-content:space-between;margin:60px 100px 0}
+	.bunsuWrap .toggle {margin:4px 0}
+
+	.page_2 .box-flex {justify-content:center;}
+	.page_3 .box-flex {margin-top:60px;justify-content:center}
+	.page_5 .lineBox {width:400px;margin:60px auto 0;padding:12px 20px}
+	.page_5 .lineBox .box-flex {align-items:center}
+	.page_5 .lineBox .box-flex ~ .box-flex {margin-top:20px}
+
+	.bunsuWrap.inline-flex-box {vertical-align:middle}
+
+	.page_1 .contentsList .dot {margin-top:40px}
+
+	.page_2 .line-box {border:1px solid #000;width:16px;height:16px;position:absolute;bottom:0;right:-8px}
+
+
+	.page_3 .box-flex {justify-content:space-around;flex-wrap:wrap;margin:20px auto 0}
+	.page_3 h2+section {padding:0}
+
+	.page_4 .box-flex {justify-content:center;position:relative;z-index:2}
+	.page_4 .box-flex ~ .box-flex {margin-top:50px}
+	.page_4 .box-flex ~ .box-flex .lineBox {padding:10px 20px;width:180px;flex-shrink:0;margin:0 80px}
+	.page_4 .box-flex .lineBox {margin:0 120px;padding:20px}
+	.page_4 .lineBox.green.circle {border-radius:100%}
+	.page_4 .lineBox.green {display:inline-flex;align-items:center;justify-content:center}
+	.page_4 .box-flex .lineBox .toggle {background-color:transparent}
+	.page_4 .box-wrap {position:relative}
+	.page_4 .arrow_1,
+	.page_4 .arrow_2 {position:absolute;width:330px;height:80px;background:url("./images/suh_0601_03_0004_4.png") no-repeat 50% 50% / auto 100%}
+	.page_4 .arrow_1 {top:50px;left:160px;}
+	.page_4 .arrow_2 {top:50px;left:510px;}
+
+	.page_5 .img-box {position:relative;text-align:center;margin-top:-50px;padding-bottom:50px}
+	.page_5 .img-box img {height:400px;vertical-align:top}
+	.page_5 .img-box .text-item {position:absolute}
+	.page_5 .img-box .text-item.n1 {top:270px;left:240px}
+	.page_5 .img-box .text-item.n2 {top:110px;left:660px}
+	.page_5 .img-box .text-item.n3 {top:390px;left:350px}
+	.page_5 .img-box .text-item.n4 {top:390px;left:590px}
+	.page_5 .img-box .text-item.n5 {top:380px;left:210px}
+	.page_5 .img-box .text-item.n6 {top:380px;left:730px}
+	.page_5 .box-flex {justify-content:center;align-items:flex-start;margin-top:80px}
+	.page_5 .buttonContainer {right:-30px;z-index:2}
+	.pop_page_5 .box-flex {justify-content:space-between;flex-wrap:wrap;width:60%;margin:0 auto}
+
+	.page_6 .img-box {position:relative}
+	.page_6 .img-box img {width:100%}
+	.page_6 .img-box .text-item {position:absolute;top:135px;left:465px;font-size:.75em}
+	.page_6 .img-box .text-item em {font-size:1.25em}
+	.page_6 .box-flex {justify-content:center;margin-top:60px;align-items:flex-start}
+	.page_6 .box-flex .colorBox.purple {margin-left:20px}
+
+	.popup_pages .solve.on {z-index:3}
+
+	.sup {font-size: 20px;line-height: 20px;position: relative;top: -25px;left: -4px;}
+	.sup2 {font-size: 20px;line-height: 20px;position: relative;top: -23px;left: -5px;}
+
+	.ex-box {display:flex;align-items:flex-start}
+	.ex-box .exam {flex-shrink:0;margin-top:20px !important;}
+
+	.buttonContainer {z-index:2}
+
+	.innerTab_1 .box-flex {justify-content:space-between;margin:160px 100px 0;position:relative}
+	.box-item {display:flex;align-items:center}
+	.innerTab_1 .box-flex .line-p {position:absolute}
+	.innerTab_1 .box-flex .line-p:before {content:'';height:10px;border:3px solid #ff0000;position:absolute}
+	.innerTab_1 .box-flex .line-p:after {content: '';position:absolute;width:0;height:0;right:-6px;border-style:solid;border-width:14px 8px}
+	.innerTab_1 .box-flex .line-p.n1 {left:50px;right:240px;top:-140px;text-align:center}
+	.innerTab_1 .box-flex .line-p.n1 .bunsuWrap {display:inline-block}
+	.innerTab_1 .box-flex .line-p.n1:before {border-bottom:none;left:0;right:0;bottom:-32px;border-color:#00a0ff}
+	.innerTab_1 .box-flex .line-p.n1:after {top:120px;border-color:#00a0ff transparent transparent transparent}
+	.innerTab_1 .box-flex .line-p.n2 {left:225px;right:50px;top:100px;text-align:center}
+	.innerTab_1 .box-flex .line-p.n2:before {border-top:none;left:0;right:0;top:-30px}
+	.innerTab_1 .box-flex .line-p.n2:after {top:-53px;border-color:transparent transparent #ff0000 transparent}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">(소수)÷(자연수)를 알아볼까요(2)</span>
+		<span class="sub-page">34~35쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_1" data-quiz="toggle">
+				<h2>
+					<ins class="number">1</ins>
+					<span><span class="icon_bogi"></span>와 같은 방법으로 계산해 보세요.</span>
+				</h2>
+				<section>
+					<div class="bogiContainer">
+						<div class="icon_bogi"></div>
+						<div class="inner textAlignC">
+							79.74÷3=
+							<div class="bunsuWrap inline-flex-box">
+								<ul>
+									<li>7974</li>
+									<li>100</li>
+								</ul>
+							</div>÷3=
+							<div class="bunsuWrap inline-flex-box">
+								<ul>
+									<li>7974÷3</li>
+									<li>100</li>
+								</ul>
+							</div>=
+							<div class="bunsuWrap inline-flex-box">
+								<ul>
+									<li>2658</li>
+									<li>100</li>
+								</ul>
+							</div>=26.58
+						</div>
+					</div>
+					<ul class="contentsList mt_40">
+						<li>
+							<ins class="dot deepGreen"></ins>
+							<div>
+								45.65÷5=
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>4565</li>
+												<li>100</li>
+											</ul>
+										</div>÷5=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>4565÷5</li>
+												<li>100</li>
+											</ul>
+										</div>=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>913</li>
+												<li>100</li>
+											</ul>
+										</div>=9.13
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<ins class="dot deepGreen"></ins>
+							<div>
+								65.44÷8=
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>6544</li>
+												<li>100</li>
+											</ul>
+										</div>÷8=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>6544÷8</li>
+												<li>100</li>
+											</ul>
+										</div>=
+										<div class="bunsuWrap inline-flex-box">
+											<ul>
+												<li>818</li>
+												<li>1000</li>
+											</ul>
+										</div>=8.185
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+			<li class="page_2" data-quiz="toggle">
+				<h2>
+					<ins class="number">2</ins>
+					<span>다음은 36.84÷6을 계산한 식입니다. 알맞은 위치에 소수점을 찍어 보세요.</span>
+				</h2>
+				<section>
+					<div class="box-flex">
+						<div class="math_calc_table type2 col6">
+							<table>
+								<colgroup>
+									<col>
+									<col style="width:10px">
+									<col>
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>6
+										<div class="line-box"></div>
+										<div class="table-answer" data-toggle-obj="2" data-group-index="1">
+											<div class="dot-point"></div>
+										</div>
+									</td>
+									<td>1
+										<div class="line-box">
+										</div>
+									</td>
+									</td>
+									<td>4</td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td class="line-td"></td>
+									<td>3</td>
+									<td>6<div class="dot-point"></div></td>
+									<td>8</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td>3</td>
+									<td>6</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>8</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>6</td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>4</td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>0</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>계산해 보세요.</span></h2>
+				<section>
+					<div class="study_guide"><em>문제</em>를 각각 <em>클릭</em>하세요.</div>
+					<div class="box-flex">
+						<div class="math_calc_table type2 col6">
+							<table>
+								<colgroup>
+									<col>
+									<col style="width:10px">
+									<col>
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<tbody class="table-answer" data-toggle-obj="2" data-group-index="1">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>6<div class="dot-point"></div></td>
+									<td>3</td>
+									<td>7</td>
+								</tr>
+								</tbody>
+								<tbody>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td class="line-td"></td>
+									<td>2</td>
+									<td>5<div class="dot-point"></div></td>
+									<td>4</td>
+									<td>8</td>
+								</tr>
+								</tbody>
+								<tbody class="table-answer" data-toggle-obj="1"  data-group-index="1">
+								<tr>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>4</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>1</td>
+									<td>4</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>1</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>8</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>8</td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>0</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="math_calc_table type2 col6">
+							<table>
+								<colgroup>
+									<col>
+									<col style="width:10px">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<tbody class="table-answer" data-toggle-obj="3" data-group-index="2">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>4<div class="dot-point"></div></td>
+									<td>1</td>
+									<td>3</td>
+								</tr>
+								</tbody>
+								<tbody>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="line-td"></td>
+									<td>1</td>
+									<td>2<div class="dot-point"></div></td>
+									<td>3</td>
+									<td>9</td>
+								</tr>
+								</tbody>
+								<tbody class="table-answer" data-toggle-obj="4"  data-group-index="2">
+								<tr>
+									<td></td>
+									<td></td>
+									<td>1</td>
+									<td>2</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>9</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>9</td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>0</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="math_calc_table type2 col6">
+							<table>
+								<colgroup>
+									<col>
+									<col style="width:10px">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<tbody class="table-answer" data-toggle-obj="6" data-group-index="3">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2<div class="dot-point"></div></td>
+									<td>3</td>
+									<td>6</td>
+								</tr>
+								</tbody>
+								<tbody>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td class="line-td"></td>
+									<td>1</td>
+									<td>6<div class="dot-point"></div></td>
+									<td>5</td>
+									<td>2</td>
+								</tr>
+								</tbody>
+								<tbody class="table-answer" data-toggle-obj="6"  data-group-index="3">
+								<tr>
+									<td></td>
+									<td></td>
+									<td>1</td>
+									<td>4</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>5</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+									<td>1</td>
+									<td></td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>4</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>4</td>
+									<td>2</td>
+								</tr>
+								<tr class="line-tr">
+									<td></td>
+									<td colspan="5">
+										<div class="rowLine"></div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>0</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</section>
+			</li>
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>빈칸에 알맞은 수를 써넣으시오.</span></h2>
+				<section>
+					<div class="box-wrap mt_20">
+						<div class="box-flex">
+							<div class="lineBox colorBox  green circle">÷3</div>
+							<div class="lineBox colorBox  green circle">÷5</div>
+						</div>
+						<div class="box-flex">
+							<div class="lineBox colorBox  green bg lineBox_2">37.35</div>
+							<div class="lineBox green lineBox_2">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										12.45
+									</div>
+								</div>
+							</div>
+							<div class="lineBox green lineBox_2">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										2.49
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow_1"></div>
+						<div class="arrow_2"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+			<li class="page_5" data-quiz="toggle">
+				<h2>
+					<ins class="number star">5</ins>
+				</h2>
+				<section>
+					<div class="img-box">
+						<img src="images/suhi_0601_03_0004.png" alt="">
+						<p class="text-item n1">4 cm</p>
+						<p class="text-item n2">8.56 cm</p>
+						<p class="text-item n3">2 cm</p>
+						<p class="text-item n4">2 cm</p>
+						<p class="colorBox green text-item n5">슬기</p>
+						<p class="colorBox green text-item n6">지혜</p>
+					</div>
+					<div class="textAlignC">
+						<div class="toggle mr_10 ml_60" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								2.14
+							</div>
+						</div>배
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+				<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="7" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+			<li class="page_6" data-slide-container="">
+				<h2>
+					<ins class="number star">6</ins>
+					<div style="letter-spacing:-1px" class="textAlignJ"><span class="blankBox w50"></span> 안에 알맞은 수를 써넣고, 5784÷4를 이용하여 57.84÷4를 계산하는 방법을 써 보세요.</div>
+				</h2>
+				<ul class="basicSlider_slides inner" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<div class="box-flex">
+							<div class="line-p n1">
+								<div class="bunsuWrap">
+									<ul>
+										<li>1</li>
+										<li>100</li>
+									</ul>배
+								</div>
+							</div>
+							<div class="box-item">
+								5784÷4=
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										1446
+									</div>
+								</div>
+							</div>
+							<div class="box-item">
+								57.84÷4=
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										14.46
+									</div>
+								</div>
+							</div>
+							<div class="line-p n2">
+								<div class="bunsuWrap">
+									<ul>
+										<li>1</li>
+										<li>100</li>
+									</ul>배
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<div class="box-flex">
+							<div class="colorBox check skyBlue">방법</div>
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<div class="ex-box">
+										<div class="bullet exam">예</div>
+										<div class="textAlignJ" style="word-break:break-all">
+											57.84는 5784의
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>1</li>
+													<li>100</li>
+												</ul>
+											</div>배이므로 몫도
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>1</li>
+													<li>100</li>
+												</ul>
+											</div>배입니다. <br>
+											5784÷4=1446이므로 57.84÷4의 몫은 1446의
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>1</li>
+													<li>100</li>
+												</ul>
+											</div>배인 14.46입니다.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+				</ul>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</main>
+
+<!-- 풀이확인 팝업 -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages">
+		<li class="textBookPopup popup_1" data-popup-page="7">
+			<div class="popupInner" data-popup-inner="">
+				<p>슬기는 밑변의 길이가 2 cm이고 높이가 4 cm인 삼각형을 그렸고, 지혜는 밑변의 길이가 2 cm익 높이가 8.56 cm인 삼각형을 그렸습니다. 지혜가 그린 삼각형의 넓이는 슬기가 그린 삼각형의 넓이의 몇 배인지 구해 보세요.</p>
+			</div>
+		</li>
+		<li class="solve pop_page_1" data-popup-page="1">
+			<div class="popup_contents">
+				<p style="letter-spacing:-2px">(소수)÷(자연수)는 (분수)÷(자연수)로 바꾸어 계산할 수 있습니다.</p>
+			</div>
+		</li>
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<p style="letter-spacing:-1px">(소수)÷(자연수)에서 소수점은 나누어지는 수의 소수점 위치에 맞춰 몫에 소수점을 찍어 줍니다.</p>
+			</div>
+		</li>
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<p>37.35÷3을 계산하면 12.45이고, 12.45를 다시 5로 나누면 2.49입니다.</p>
+			</div>
+		</li>
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet dot deepGreen"></ins>
+						<div>
+							슬기가 그린 삼각형의 넓이: 2×4÷2＝4(<span class="HUMjB">cm</span><span class="sup2">2</span>)
+						</div>
+					</li>
+					<li>
+						<ins class="bullet dot deepGreen"></ins>
+						<div>지혜가 그린 삼각형의 넓이: 2×8.56÷2＝8.56(<span class="HUMjB">cm</span><span class="sup2">2</span>)<br>
+							8.56÷4＝2.14이므로 지혜가 그린 삼각형의 넓이는 슬기가 그린 삼각형의 넓이의 2.14배입니다.</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="solve pop_page_6" data-popup-page="6">
+			<div class="popup_contents">
+				<div style="letter-spacing:-1px">
+					(자연수)÷(자연수)와 (소수)÷(자연수)를 비교하여 나누는 수가 같고 나누어지는 수가 자연수의
+					<div class="bunsuWrap inline-flex-box">
+						<ul>
+							<li>1</li>
+							<li>100</li>
+						</ul>
+					</div>배일 때 몫도
+					<div class="bunsuWrap inline-flex-box">
+						<ul>
+							<li>1</li>
+							<li>100</li>
+						</ul>
+					</div>배입니다.
+				</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	window.$callBack.sliderReset = function (slide) {
+		console.log(slide.idx);
+
+		if (slide.idx === 4) {
+			setTimeout(function () {
+
+				$ts.getEl('.page_5 .textBookBtn')[0].click();
+				setTimeout(function () {
+					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				}, 3000);
+			});
+		}
+	}
+</script>
+
+</body>
+
+</html>
