@@ -146,7 +146,7 @@
 										<td>
 											<div class="toggle box textAlignC" data-toggle-obj="2">
 												<div class="answer" data-toggle-target="2">
-													8÷4＝2(개)
+													8÷4=2(개)
 												</div>
 											</div>
 										</td>
@@ -162,7 +162,7 @@
 										<td>
 											<div class="toggle box textAlignC" data-toggle-obj="4">
 												<div class="answer" data-toggle-target="4">
-													8÷4＝2(장)
+													8÷4=2(장)
 												</div>
 											</div>
 										</td>
@@ -179,14 +179,14 @@
 											<div class="toggle box textAlignC" data-toggle-obj="6">
 												<div class="answer" data-toggle-target="6">
 													<div class="box-flex">
-														<div class="bunsuWrap mr-s">
+														<div class="bunsuWrap">
 															<ul>
 																<li>1</li>
 																<li>2</li>
 															</ul>
 														</div>
-														<div class="col-a mr-s">÷4 =</div>
-														<div class="bunsuWrap mr-s">
+														<div class="col-a">÷4=</div>
+														<div class="bunsuWrap">
 															<ul>
 																<li>1</li>
 																<li>8</li>
@@ -210,14 +210,14 @@
 											<div class="toggle box textAlignC" data-toggle-obj="8">
 												<div class="answer" data-toggle-target="8">
 													<div class="box-flex">
-														<div class="bunsuWrap mr-s">
+														<div class="bunsuWrap">
 															<ul>
 																<li>1</li>
 																<li>3</li>
 															</ul>
 														</div>
-														<div class="col-a mr-s">÷4 =</div>
-														<div class="bunsuWrap mr-s">
+														<div class="col-a">÷4=</div>
+														<div class="bunsuWrap">
 															<ul>
 																<li>1</li>
 																<li>12</li>
@@ -241,8 +241,8 @@
 											<div class="toggle box textAlignC" data-toggle-obj="10">
 												<div class="answer" data-toggle-target="10">
 													<div class="box-flex">
-														<div class="col-a mr-s">3÷4 =</div>
-														<div class="bunsuWrap mr-s">
+														<div class="col-a">3÷4=</div>
+														<div class="bunsuWrap">
 															<ul>
 																<li>3</li>
 																<li>4</li>
@@ -282,9 +282,15 @@
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () {
-		}, false);
+		// 예보기 클릭시 콜백
+		window.$callBack.inputAnswer = function (obj) {
+			$ts.getEl('.bg-box')[0].setAttribute('class', 'bg-box complete');
+		};
+		// 직접 쓰기 클릭시 콜백
+		window.$callBack.inputReset = function (obj) {
+			$ts.getEl('.bg-box')[0].setAttribute('class', 'bg-box');
+		};
 
 	</script>
-
+</body>
 </html>
