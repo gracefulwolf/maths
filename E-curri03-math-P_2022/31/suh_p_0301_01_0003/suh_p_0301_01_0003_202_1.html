@@ -12,23 +12,102 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/calc_type1.css">
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom_last.css"> -->
 	<style type="text/css">
-		img{width:100%; height: 100%;}
-		.contentsBox .list-box section{height: auto; margin-bottom: 30px;}
-		.math_calc_table .line_1{left:25%}
-		.math_calc_table .line_2{left:50%}
-		.math_calc_table .line_3{left:75%}
-		.math_calc_table .line_4{left:100%}
-		.type-calc-1 .page_3 .flex-wrap {align-items: center;}
-		.type-calc-1 .page_3 .flex-wrap .flex-item{padding:30px;}
+		img {
+			width: 100%;
+			height: 100%;
+		}
 
-		.page_1 .bg::before{content:""; display: block; position: absolute; top:0; left:0; width:750px; height:100%; background: url(./images/suh_p_0301_01_0003_202_1/suh_p_0301_01_0003_202_1_1.png) no-repeat 50% 0 / contain; }
-		.page_1 .bg{position: relative; width:100%; height:510px;}
+		.contentsBox .list-box section {
+			height: auto;
+			margin-bottom: 30px;
+		}
 
-		.page_2 .flex-wrap{height:300px;}
-		.page_2 .flex-wrap > *{height: 300px;}
-		.page_2 .flex-wrap img{width:auto; display: block ; margin: 0 auto;}
+		.math_calc_table .line_1 {
+			left: 25%
+		}
 
-		.type-calc-1 .mark{position: absolute; z-index: 1; top:310px; left:90px; font-size:40px}
+		.math_calc_table .line_2 {
+			left: 50%
+		}
+
+		.math_calc_table .line_3 {
+			left: 75%
+		}
+
+		.math_calc_table .line_4 {
+			left: 100%
+		}
+
+		.type-calc-1 .page_3 .flex-wrap {
+			align-items: center;
+		}
+
+		.type-calc-1 .page_3 .flex-wrap .flex-item {
+			padding: 30px;
+		}
+
+		.page_1 .bg::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 750px;
+			height: 100%;
+			background: url(./images/suh_p_0301_01_0003_202_1/suh_p_0301_01_0003_202_1_1.png) no-repeat 50% 0 / contain;
+		}
+
+		.page_1 .bg {
+			position: relative;
+			width: 100%;
+			height: 510px;
+		}
+
+		.page_2 .flex-wrap {
+			height: 300px;
+		}
+
+		.page_2 .flex-wrap>* {
+			height: 300px;
+		}
+
+		.page_2 .flex-wrap img {
+			width: auto;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.clickObj {
+			cursor: pointer;
+		}
+
+		.type-calc-1 .mark {
+			position: absolute;
+			z-index: 1;
+			top: 310px;
+			left: 90px;
+			font-size: 40px
+		}
+
+		.toggle.type-arrow {
+			background-color: transparent;
+		}
+
+		.toggle.type-arrow .answer {
+			height: 100%;
+			;
+		}
+
+		.type-calc-1 .page_2 .icon_arrow {
+			max-width: 70px;
+			position: absolute;
+			top: 120px;
+			lefT: -30px;
+		}
+
+		.toggle.type-arrow:after {
+			display: none;
+		}
 	</style>
 </head>
 
@@ -50,7 +129,8 @@
 		<header>
 			<div class="title" style="letter-spacing: -1px;">
 				132+129를 어떻게 계산하는지 알아봅시다.
-				<button class="videoSubPlayBtn inline" data-video-link="M202112407_800K.mp4" data-hover="">풀이 영상 보기</button>
+				<button class="videoSubPlayBtn inline" data-video-link="M202112407_800K.mp4" data-hover="">풀이 영상
+					보기</button>
 			</div>
 		</header>
 		<main>
@@ -99,7 +179,7 @@
 									<div class="lineDotted line_4"></div>
 								</div>
 							</div>
-							
+
 							<div class="balloon bottom colorBox sky ctTail n2">
 								<div class="math_calc_table class3 ">
 									<table>
@@ -107,7 +187,9 @@
 											<tr>
 												<td></td>
 												<td>1</td>
-												<td class="blueT">3</td>
+												<td class="blueT">3
+													<sup class="sup blueT">1</sup>
+												</td>
 												<td class="redT">2</td>
 											</tr>
 											<tr>
@@ -143,7 +225,9 @@
 											<tr>
 												<td></td>
 												<td class="greenT">1</td>
-												<td class="blueT">3</td>
+												<td class="blueT">3
+													<sup class="sup blueT">1</sup>
+												</td>
 												<td class="redT">2</td>
 											</tr>
 											<tr>
@@ -177,34 +261,45 @@
 
 					<li class="page_2" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							일 모형이 11개가 되면 어떻게 해야 할까요?
-						</span></h2>
+								일 모형이 11개가 되면 어떻게 해야 할까요?
+							</span></h2>
 						<section>
-							
+
 							<div class="flex-wrap">
 								<div class="n1">
 									<img src="./images/suh_p_0301_01_0003_202_1/suh_p_0301_01_0003_202_1_2.png" alt="">
 								</div>
-								<div class="icon_arrow dash big blinkOn blinkOpacity clickObj" data-name="aa"></div>
+								<div class="toggle mt_20 type-arrow" data-toggle-obj="1">
+									<div class="icon_arrow big blinkOn blinkOpacity"></div>
+									<div class="answer" data-toggle-target="1">
+										<img src="./images/suh_p_0301_01_0003_202_1/suh_p_0301_01_0003_202_1_3.png"
+											alt="">
+									</div>
+								</div>
+
+								<!-- <div class="icon_arrow big clickObj" data-name="aa"></div>
 								<div class="n2 visibleH" data-name="aa">
 									<img src="./images/suh_p_0301_01_0003_202_1/suh_p_0301_01_0003_202_1_3.png" alt="">
-								</div>
+								</div> -->
 
 							</div>
 
-							<div class="toggle mt_20" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">
-									일 모형 10개를 십 모형 1개로 바꾸어 줍니다. 그러면 십 모형 1개와 일 모형 1개가 됩니다.
+							<div class="textAlignC">
+								<div class="toggle mt_20" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										일 모형 10개를 십 모형 1개로 바꾸어 줍니다. <br>그러면 십 모형 1개와 일 모형 1개가 됩니다.
+									</div>
 								</div>
 							</div>
+
 						</section>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
 
 					<li class="page_3" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							계산하는 방법을 말해 보세요.
-						</span></h2>
+								계산하는 방법을 말해 보세요.
+							</span></h2>
 						<section>
 							<div class="flex-wrap">
 								<div class="flex-item n1 pink colorBox ">
@@ -242,10 +337,10 @@
 										<div class="lineDotted line_4"></div>
 									</div>
 								</div>
-								
+
 								<div class="icon_arrow big"></div>
 
-								<div class="flex-item n2 sky colorBox " >
+								<div class="flex-item n2 sky colorBox ">
 									<div class="math_calc_table class3 n2">
 										<table>
 											<tbody>
@@ -280,7 +375,7 @@
 										<div class="lineDotted line_4"></div>
 									</div>
 								</div>
-								
+
 								<div class="icon_arrow big"></div>
 
 								<div class="flex-item n3 green colorBox ">
@@ -318,9 +413,9 @@
 										<div class="lineDotted line_4"></div>
 									</div>
 								</div>
-								
+
 							</div>
-							
+
 							<div class="textAlignC mt_10">
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
@@ -342,7 +437,7 @@
 						</section>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
-				
+
 
 				</ul>
 			</div>
@@ -364,23 +459,22 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
-	
+
 	<script type="text/javascript">
-		
+
 		document.addEventListener('DOMContentLoaded', function () {
 			var arrow = $ts.getEl('.page_2 .clickObj');
 
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var that = document.querySelector('.visibleH[data-name="'+ this.dataset.name +'"]');
-					
+					var that = document.querySelector('.visibleH[data-name="' + this.dataset.name + '"]');
 					that.classList.remove('visibleH');
 				});
 				objs.addEventListener('click', $efSound.click);
 			});
 
-			
+
 			$prite.add({
 				target: $ts.getEl('#aniBox_1'),
 				spriteId: 'sprite3',
@@ -388,11 +482,11 @@
 					{
 						name: 'boy_1',
 						circle: 'sky',
-						speech:'right',
+						speech: 'right',
 						top: 320,
 						left: 0,
 						width: 340,
-        				height: 421,
+						height: 421,
 						thumbNail: '../common/contents/images/character/boy_1.png',
 						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
 						sound: './media/audios/suh_p_0301_01_0002_202_1.mp3',
@@ -403,10 +497,10 @@
 						textBubble: {
 							text: '어림한 값과 계산한 값을<br>비교해 볼까?',
 							class: 'balloon left sky ctTail',
-							top:336,
+							top: 336,
 							left: 450,
-							textAlign: 'center', 
-							wordBreak: 'keep-all' 
+							textAlign: 'center',
+							wordBreak: 'keep-all'
 						},
 						callbacks: {
 							start: function () {
@@ -420,11 +514,12 @@
 				]
 			});
 
-			window.$callBack.sliderReset = function(params) {
+			window.$callBack.sliderReset = function (params) {
 				$ts.getEl('.page_3 .characterImg')[0].style.left = 0;
 			};
 		});
 	</script>
 
 </body>
+
 </html>
