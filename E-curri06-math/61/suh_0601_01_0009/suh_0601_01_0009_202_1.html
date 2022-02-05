@@ -282,8 +282,14 @@
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () {
-		}, false);
+		// 예보기 클릭시 콜백
+		window.$callBack.inputAnswer = function (obj) {
+			$ts.getEl('.bg-box')[0].setAttribute('class', 'bg-box complete');
+		};
+		// 직접 쓰기 클릭시 콜백
+		window.$callBack.inputReset = function (obj) {
+			$ts.getEl('.bg-box')[0].setAttribute('class', 'bg-box');
+		};
 
 	</script>
 
