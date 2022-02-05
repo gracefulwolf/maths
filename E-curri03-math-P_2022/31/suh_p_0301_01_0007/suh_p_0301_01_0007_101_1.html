@@ -12,6 +12,17 @@
 		.pop_page_1{
 			top:100px; left:480px; width:600px;
 		}
+
+		.mediaContainer.video video {
+			position: relative;
+			top: -92px;
+			width: 1232px;
+			height: 876px;
+			max-width: none;
+			max-height: none;}
+		.mediaContainer.video.started video{
+			max-width: none;
+		}
 	</style>
 </head>
 
@@ -73,6 +84,7 @@
 					parentDocument.parentNode.style.position = 'relative';
 					parentDocument.parentNode.style.zIndex = 1000;
 				}
+				document.querySelector('.pop_page_1').classList.remove('on');
 			}
 			window.$callBack.videoClose = function (obj) {
 				obj.container.classList.remove('started');
