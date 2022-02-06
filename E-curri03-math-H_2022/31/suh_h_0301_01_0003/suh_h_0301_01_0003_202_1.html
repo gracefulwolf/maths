@@ -310,7 +310,7 @@
 													<td class="blueT">1
 														<sup class="sup redT">1</sup>
 													</td>
-													<td class="redT">2</td>
+													<td class="redT">5</td>
 												</tr>
 												<tr>
 													<td>+</td>
@@ -366,7 +366,7 @@
 													<td class="blueT">1
 														<sup class="sup redT">1</sup>
 													</td>
-													<td class="redT">2</td>
+													<td class="redT">5</td>
 												</tr>
 												<tr>
 													<td>+</td>
@@ -397,7 +397,7 @@
 							
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										541 입니다.
+										541입니다.
 									</div>
 								</div>
 							</div>
@@ -411,7 +411,7 @@
 						<section>
 							
 							<div class=" mt_10">
-								<div class="toggle box" data-toggle-obj="1">
+								<div class="toggle " data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
 										<ul class="contentsList">
 											<li>
@@ -467,6 +467,29 @@
 	
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove = function(SLIDER) {
+				var thats = document.querySelectorAll('.visibleH_');
+				var ons = document.querySelectorAll('.vOn');
+				var btn = document.querySelectorAll('.click-finger-Btn');
+
+				for (let i = 0, len = btn.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					btn[i].removeAttribute('style');
+				}
+
+				for (let i = 0, len = ons.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					ons[i].classList.remove('vOn');
+				}
+
+				for (let i = 0, len = thats.length; i < len; i++) {
+					thats[i].classList.add('visibleH');
+					thats[i].classList.remove('visibleH_');
+					thats[i].classList.remove('vOn');
+				}
+			}
+
+			
 			var arrow = $ts.getEl('.page_1 .click-finger-Btn');
 
 			arrow.forEach(function (objs, index) {
@@ -478,10 +501,12 @@
 
 					for (let i = 0, len = ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
+						// ons[i].classList.add('vOn_');
 					}
 
 					for (let i = 0, len = thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
+						thats[i].classList.add('visibleH_');
 						thats[i].classList.add('vOn');
 					}
 
@@ -506,9 +531,6 @@
 				});
 				objs.addEventListener('click', $efSound.click);
 			});
-
-
-			
 		});
 	</script>
 

@@ -8,11 +8,11 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
-	<!--  수학 -->
-	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../common/libs/css/master.css" />
+	<link rel="stylesheet" href="../common/contents/css/math.css" />
 	<link rel="stylesheet" href="../../../__common__/css/custom.css">
-	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<link rel="stylesheet" href="../../../default/css/custom.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style>
 		.checkContainer h2 .blankBox{margin-top:5px}
 		.gate_container .downloadBtn{right:20px; left:auto;}
@@ -21,6 +21,9 @@
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
 		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.checkContainer h2 .toggleBlank {
+			margin-top: 8px;
+		}
 
 		.math_calc_table.type-color td:nth-child(1),
 		.math_calc_table.type-color td:nth-child(2){color:green}
@@ -42,11 +45,13 @@
 			display: flex;
 			align-items: center;
 		}
+		.page_3 .colorBox.deepPurple{width:60px; display: block; float:right}
+		.page_3 table td .toggle{vertical-align: top;}
 		.page_3 table td{vertical-align: top;padding-bottom: 10px;}
-table td .toggle{vertical-align: top;}
 		.page_3 table .colorBox{text-align: center;}
 
-		.page_4 .lineBox {
+
+		/* .page_4 .lineBox {
 			width: 55%;
 			margin: 40px auto;
 			display: flex;
@@ -75,7 +80,17 @@ table td .toggle{vertical-align: top;}
 		.page_4 .toggle.hide.complete {
 			opacity: 1;
 			background: #fff;
-		}
+		} */
+
+		.page_4 .lineBox{width:55%; margin:40px auto; display: flex; align-items: center; justify-content: center; position: relative;padding:20px 0 60px;}
+		.page_4 .lineBox .toggle{margin:0 15px}
+		.page_4 .toggle.n1{position: absolute; bottom:10px; left:5%}
+		.page_4 .toggle.n2{position: absolute; bottom:10px; left:53%;}
+		.page_4 .toggle.hide.complete{opacity:1; background:transparent}
+
+
+
+
 
 		.page_5 .flex-wrap{text-align: center;}
 		.page_5 .math_calc_table{width:200px; font-size:40px; margin: 80px auto 80px; }
@@ -117,6 +132,11 @@ table td .toggle{vertical-align: top;}
 		.page_6 .toggle{width: auto;}
 		.page_6 .answer .contentsList .exam + div{word-break: keep-all;}
 		.page_6 h2 span{position: relative;top: -4px;}
+
+		.page_6 .colorBox.deepPurple{width:60px; display: block; float:right}
+		.page_6 table td .toggle{vertical-align: top;}
+		.page_6 table td{vertical-align: top;padding-bottom: 10px;}
+		.page_6 table .colorBox{text-align: center;}
 
 		.page_7 .boxs{justify-content: space-around; margin-bottom: 50px;}
 		.page_7 .boxs .colorBox{width:200px; height:200px; display: flex; justify-content: center; align-items: center; border-radius: 0; color: #000;}
@@ -227,8 +247,7 @@ table td .toggle{vertical-align: top;}
 							<div class="flex-wrap">
 								<div class="flex-item n1">
 									<div>
-										654 - 237 =
-										<div class="toggle" data-toggle-obj="2">
+										654－237=<div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
 												417
 											</div>
@@ -280,8 +299,7 @@ table td .toggle{vertical-align: top;}
 								</div>
 								<div class="flex-item n2">
 									<div>
-										795 - 168 =
-										<div class="toggle" data-toggle-obj="4">
+										795－168=<div class="toggle" data-toggle-obj="4">
 											<div class="answer" data-toggle-target="4">
 												627
 											</div>
@@ -318,7 +336,7 @@ table td .toggle{vertical-align: top;}
 												<tr>
 													<td></td>
 													<td colspan="3">
-														<div class="toggle" data-toggle-obj="3">
+														<div class="toggle" data-toggle-obj="3" data-group-index="3">
 															<div class="answer" data-toggle-target="3">
 																428
 															</div>
@@ -345,7 +363,6 @@ table td .toggle{vertical-align: top;}
 							현아네 농장에서는 닭을 453마리 키우고, 오리를 236마리 키웁니다. 닭이 오리보다 몇 마리 더 많은지 구해 보시오.
 						</span></h2>
 						<section>
-							
 							<table>
 								<col style="width:100px">
 								<col style="width:auto">
@@ -354,13 +371,13 @@ table td .toggle{vertical-align: top;}
 										<div class="colorBox check skyBlue calBox1">풀이</div>
 									</td>
 									<td>
-										<div class="toggle" data-toggle-obj="1">
+										<div class="toggle" data-toggle-obj="1" style="transform: translate(0, -4px);">
 											<div class="answer" data-toggle-target="1">
 												<ul class="contentsList">
 													<li>
 														<div class="bullet exam">예</div>
 														<div>
-															닭이 453마리, 오리가 236마리이므로 453-236=217, 즉 217마리 더 많습니다.
+															닭이 453마리, 오리가 236마리이므로 453－236= 217, 즉 217마리 더 많습니다.
 														</div>
 													</li>
 												</ul>
@@ -369,18 +386,19 @@ table td .toggle{vertical-align: top;}
 									</td>
 								</tr>
 								<tr>
-									<td>
-										<div class="colorBox check purple calBox1">답</div>
+									<td style="text-align: right;">
+										<div class="colorBox check deepPurple calBox1">답</div>
 									</td>
 									<td>
 										<div class="toggle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">
-												217 
+												217
 											</div>
-										</div>  마리
+										</div>마리
 									</td>
 								</tr>
 							</table>
+
 
 							<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 							<div class="buttonContainer">
@@ -548,35 +566,46 @@ table td .toggle{vertical-align: top;}
 									</li>
 								</ul>
 							</div>
-							<ul class="flexListContainer column">
-								<li>
-									<div class="colorBox check skyBlue">풀이</div>
-									<div class="toggle box" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<ul class="contentsList">
-												<li>
-													<ins class="bullet exam">예</ins>
-													<div>
-														가장 큰 수는 752이고, 가장 작은 수는 125입니다. 따라서 가장 큰 수와 가장 작은 수의 차는 752－125=627입니다.
-													</div>
-												</li>
-											</ul>
+
+
+							<table>
+								<col style="width:100px">
+								<col style="width:auto">
+								<tr>
+									<td>
+										<div class="colorBox check skyBlue calBox1">풀이</div>
+									</td>
+									<td>
+										<div class="toggle" data-toggle-obj="1" style="transform: translate(0, -4px);">
+											<div class="answer" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															가장 큰 수는 752이고, 가장 작은 수는 125입니다. 따라서 가장 큰 수와 가장 작은 수의 차는 752－125=627입니다.
+														</div>
+													</li>
+												</ul>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li style="margin-top: 10px;">
-									<div class="colorBox check deepPurple">답</div>
-									<div class="toggle box" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">
-											<ul class="contentsList">
-												<li>
-													<div>627</div>
-												</li>
-											</ul>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right;">
+										<div class="colorBox check deepPurple calBox1">답</div>
+									</td>
+									<td>
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												627
+											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
+									</td>
+								</tr>
+							</table>
+
+
+						
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -585,7 +614,7 @@ table td .toggle{vertical-align: top;}
 
 					<li class="page_7" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							사각형 안에 쓰여진 두 수의 합을 구하시오.
+							사각형 안에 쓰여진 두 수의 차를 구하시오.
 						</span></h2>
 						<section>
 							<div class="flex-wrap boxs">

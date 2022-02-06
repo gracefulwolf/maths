@@ -24,7 +24,7 @@
 		.popup_pages .balloon.purple.ctTail:after{left:20%;}
 		.popup_pages .balloon.deeppink.ctTail:after{left:80%;}
 
-		.dropAreaUL{display: flex; width: 80%; margin:0 auto; justify-content: space-between;}
+		.dropAreaUL{display: flex; width: 70%; margin:0 auto; justify-content: space-between;}
 		.dropAreaUL > div{width:50%; height:120px; position: relative; display: flex; justify-content: center; align-items: center; padding-top:30px}
 		.dropAreaUL > div + div{margin-left:20px;}
 		.dropAreaUL .tit{position: absolute; top:-40px; left:50%; transform: translate(-50%, 0); font-size: 35px; padding:5px 30px;}
@@ -34,7 +34,7 @@
 		.card100{width:260px}
 		.card10{width:200px}
 		.card1{width:140px}
-		.study_guide{top:-44px; right:0;}
+		.study_guide{top:-14px; right:0;}
 		.card-wrap .dragObj{position: absolute; width:80px; height:50px; text-align: center; z-index: 10; }
 		.card-wrap .dragObj_1{top:0; left:0}
 		.card-wrap .dragObj_2{top:0; left:33.33%}
@@ -93,20 +93,24 @@
 		.cardCalc .wrap .colorBox.large{padding-top: 50px;height: 110px;}
 		.cardCalc .wrap .colorBox .n1,
 		.cardCalc .wrap .colorBox .n3,
-		.cardCalc .wrap .colorBox .n5{width:95px;}
+		.cardCalc .wrap .colorBox .n5{width:105px;}
 		.cardCalc .wrap .colorBox .n4,
 		.cardCalc .wrap .colorBox .n2{width: 60px;}
-		.cardCalc .lineBox{width: 400px;text-align: center;margin: 0 auto;}
-		.cardCalc .colorBox .toggle{padding:0; background:transparent; width: 95px; text-align: right;}
-		.cardCalc .colorBox .toggle:after{left:80%;}
+		.cardCalc .lineBox{width: 410px;text-align: center;margin: 0 auto;}
+		
+		
 		.cardCalc .sup.toggle{transform: scale(0.9) translate(4px,6px);}
 		.cardCalc .sup{position: absolute; top:-54px; right:0; transform: scale(0.9) translate(0,13px);}
 		.cardCalc-add img{width:100%;}
-		.cardCalc-add{position: absolute; width:217px; height:268px;  top:-6px; left:55px; z-index: 1;}
+		.cardCalc-add{position: absolute; width:217px; height:268px;  top:-6px; left:145px; z-index: 1;}
 		.cardCalc-add>div{position: absolute; right:0;}
 		.cardCalc-add .item1{top:30px; right:80px;}
 		.cardCalc-add .item2{top:118px; right:80px;}
 		.cardCalc-add .item3{top:235px; right:80px;}
+
+		.cardCalc .colorBox .toggle{padding:0 10px; width: 90px; text-align: right;}
+		.page_3 > section{padding:0;}
+		.page_3 .contentsBox{padding:30px 0 0;}
 	</style>
 </head>
 
@@ -115,8 +119,8 @@
 	<div id="wrap" class="math">
 		<header>
 			<div class="title" style="letter-spacing: -1px;">
-				올해 처음 참가한 사람은 몇 명인지 알아봅시다.
-				<div class="supply_guide inline">준비물 159쪽</div>
+				정리할 책은 몇 권 남았는지 알아봅시다.
+				<div class="supply_guide inline" style="transform: translate(0,10px);">준비물 159쪽</div>
 			</div>
 		</header>
 		<main>
@@ -131,7 +135,7 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							올해 처음 참가한 사람은 몇 명인지 어림해 보세요.
+							정리할 책은 몇 권 남았는지 어림해 보세요.
 						</span></h2>
 						<ul class="figureUL">
 							<li>
@@ -190,7 +194,7 @@
 						<div class="textAlignC mt_20">
 							<div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">
-									672 - 246
+									672－246
 								</div>
 							</div>
 						</div>
@@ -214,7 +218,7 @@
 								<ul class="basicSlider_slides" data-slides="">
 									<li class="innerTab_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="3">
 										<div class="study_guide" style="right:-60px;"> <em>수 카드</em>를 <em>드래그</em>하여 옮기세요.</div>
-										<div class="dragDropContainer">
+										<div class="dragDropContainer" style="margin-top:30px">
 											<div class="card-wrap lineBox sky">
 												<div class="card100">
 													<ul class="dragObjUL n1">
@@ -360,27 +364,28 @@
 							정리할 책은 몇 권 남았는지 말하고, 어림한 결과와 비교해 보세요.
 						</span></h2>
 						<section>
-							<div>	
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										426
+							<div style="padding-left: 140px;">
+								<div>	
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											426권
+										</div>
 									</div>
-								</div> 권
-							</div>
-							
-							<div class="toggle complete" data-toggle-obj="2">
-								<div class="answer on" data-toggle-target="2">
-									<ul class="contentsList">
-										<li>
-											<div class="bullet exam">예</div>
-											<div>
-												어림한 400권과 26권만큼 차이가 납니다.
-											</div>
-										</li>
-									</ul>
+								</div>
+								
+								<div class="toggle complete" data-toggle-obj="2">
+									<div class="answer on" data-toggle-target="2">
+										<ul class="contentsList">
+											<li>
+												<div class="bullet exam">예</div>
+												<div>
+													어림한 400권과 26권만큼 차이가 납니다.
+												</div>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-
 						</section>
 						
 						<button class="dapCheckBtn" data-answer-btn=""></button>

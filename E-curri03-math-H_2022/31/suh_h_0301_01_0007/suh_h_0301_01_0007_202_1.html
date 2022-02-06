@@ -41,22 +41,26 @@
 		.left .row4 td:nth-child(4){padding-right: 34px;}
 
 		.center{position: relative; width: 300px;  top:10px;}
-.center .lineBox{padding: 0 10px 2px;}
+		.center .lineBox{padding: 0 10px 2px;}
 		.center .n1{position: absolute; top:210px; left:0; z-index:1;}
 		.center .n2{position: absolute; top:285px; left:0; z-index:1;}
 		.center .n3{position: absolute; top:360px; left:0; z-index:1;}
 		.center .line{position: absolute; left:-104px;}
 		.center .line1::before{content: ""; display: block; position: absolute; width:352px; border-bottom:3px dashed #f7c1c9;}
-		.center .line1::after{content: ""; display: block; position: absolute; width:300px; border-top:3px dashed #f7c1c9; border-left:3px dashed #f7c1c9; position:absolute; top:-126px; left:350px; height:120px;}
+		.center .line1::after{content: ""; display: block; position: absolute; width:300px; border-top:3px dashed #f7c1c9; border-left:3px dashed #f7c1c9; position:absolute; top:-106px; left:350px; height:106px;}
 		.center .line1{ top:246px; }
 		.center .line2::before{content: ""; display: block; position: absolute; width:402px; border-bottom:3px dashed #c1e8ec;}
-		.center .line2::after{content: ""; display: block; position: absolute; width:193px; border-top:3px dashed #c1e8ec; border-left:3px dashed #c1e8ec; position:absolute; top:-149px; left:402px; height:147px;}
+		.center .line2::after{content: ""; display: block; position: absolute; width:193px; border-top:3px dashed #c1e8ec; border-left:3px dashed #c1e8ec; position:absolute; top:-119px; left:402px; height:119px;}
 		.center .line2{ top:316px; }
 		.center .line3::before{content: ""; display: block; position: absolute; width:452px; border-bottom:3px dashed #cee492;}
-		.center .line3::after{content: ""; display: block; position: absolute; width:99px; border-top:3px dashed #cee492; border-left:3px dashed #cee492; position:absolute; top:-178px; left:452px; height:178px;}
+		.center .line3::after{content: ""; display: block; position: absolute; width:99px; border-top:3px dashed #cee492; border-left:3px dashed #cee492; position:absolute; top:-148px; left:452px; height:148px;}
 		.center .line3{ top:392px; }
 
-		.right .lineBox{position: absolute; top:120px; left:455px; transform: scale(1) translate(0, 0); padding:30px 30px 30px 20px; z-index: 10; background: url(./images/suh_h_0301_01_0002_202_9.png) no-repeat 0 0 / cover; border:0 !important; height:207px; width:260px;}
+		.right .math_calc_table.class3 tr.line-tr td, 
+		.right .math_calc_table.class3 tr.line td {height: 2px !important}
+
+		.right{margin-top:20px;}
+		.right .lineBox{position: absolute; top:160px; left:455px; transform: scale(1) translate(0, 0); padding:30px 30px 30px 20px; z-index: 10; background: url(./images/suh_h_0301_01_0002_202_9.png) no-repeat 0 0 / cover; border:0 !important; height:207px; width:260px;}
 		.page_2 .lineBox{background: url(./images/suh_h_0301_01_0002_202_9.png) no-repeat 0 0 / cover; border:0 !important; height:232px; width:290px;padding:40px 50px 30px 20px;margin:0 auto;text-align: center;}
 
 		.page_1 .colorBox .math_calc_table{position: relative; top:0 !important; right:0 !important;}
@@ -427,7 +431,7 @@
 							
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										426 입니다.
+										426입니다.
 									</div>
 								</div>
 							</div>
@@ -494,6 +498,29 @@
 	
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove = function(SLIDER) {
+				var thats = document.querySelectorAll('.visibleH_');
+				var ons = document.querySelectorAll('.vOn');
+				var btn = document.querySelectorAll('.click-finger-Btn');
+
+				for (let i = 0, len = btn.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					btn[i].removeAttribute('style');
+				}
+
+				for (let i = 0, len = ons.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					ons[i].classList.remove('vOn');
+				}
+
+				for (let i = 0, len = thats.length; i < len; i++) {
+					thats[i].classList.add('visibleH');
+					thats[i].classList.remove('visibleH_');
+					thats[i].classList.remove('vOn');
+				}
+			}
+
+			
 			var arrow = $ts.getEl('.page_1 .click-finger-Btn');
 
 			arrow.forEach(function (objs, index) {
@@ -505,10 +532,12 @@
 
 					for (let i = 0, len = ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
+						// ons[i].classList.add('vOn_');
 					}
 
 					for (let i = 0, len = thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
+						thats[i].classList.add('visibleH_');
 						thats[i].classList.add('vOn');
 					}
 
@@ -533,9 +562,6 @@
 				});
 				objs.addEventListener('click', $efSound.click);
 			});
-
-
-			
 		});
 	</script>
 
