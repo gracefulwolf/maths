@@ -43,7 +43,7 @@
 			</ul>
 			<ul class="basicSlider_slides" data-slides="">
 				<li class="page_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1" data-alert="">
-					<h2><ins class="dot"></ins><span>식에서 가장 먼저 계산해야 하는 부분에 <span class="icon_o_title"></span>표 하시오.</span></h2>
+					<h2><ins class="dot"></ins><span>식에서 가장 먼저 계산해야 하는 부분을 고르시오.</h2>
 					<section>
 						<div class="lineBox orange">
 							43-27+32÷16
@@ -86,14 +86,14 @@
 							<ul class="box sky">
 								<li>30－15＋24÷4
 									<span class="complete_txt">
-										=30-15+6<br />
+										=30－15+6<br />
 										=15+6=21
 									</span>
 								</li>
 								<li>72÷9＋32－5
 									<span class="complete_txt">
 										=8+32-5<br />
-										=40-5=35
+										=40－5=35
 									</span>
 								</li>
 								<li>12＋42÷(8－2)
@@ -124,11 +124,14 @@
 						<div class="js-dragLineArea dragLineArea left_2 top_3" data-group="2" data-name="dragLine6" data-answer="2"></div>
 						<div class="js-dragLineObj dragLineObj left_2 top_3" data-group="2" data-name="dragLine6" data-answer="2" data-complete-count="1"></div>
 
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</section>
 				</li>
 				<li class="page_3" data-quiz="toggle">
-					<h2><ins class="dot"></ins><span>계산 결과를 비교하여 <span class="icon_o_title"></span>안에
+					<h2><ins class="dot"></ins><span>계산 결과를 비교하여 <span class="icon_o_title"></span> 안에
 						<img src="../common/contents/images/math/inequalIcon_2.png">, 
 						<img src="../common/contents/images/math/equalIcon.png">,
 						<img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.</span>
@@ -232,8 +235,8 @@
 									<div class="colorBox check deepPurple">답</div>
 									<div class="bunsuContainer">
 										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">575g</div>
-										</div>
+											<div class="answer" data-toggle-target="2">575</div>
+										</div>g
 									</div>
 								</li>
 							</ul>
@@ -245,6 +248,41 @@
 			</ul>
 		</div>
 	</main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<!--      page에 solve 추가        -->
+			<li class="solve pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<ul class="contentsList">
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								30－15+24÷4＝30－15＋6<br />
+								<span class="nullBlank"></span>
+								＝15＋6＝21
+							</div>
+						</li>
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								72÷9+32－5＝8＋32－5<br />
+								<span class="nullBlank"></span>
+								＝40－5=35
+							</div>
+						</li>
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								12+42÷(8－2)＝12＋42÷6<br />
+								<span class="nullBlank"></span>
+								＝12＋7＝19
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</section>
 </div>
 
 <div id="loadingContainer">
