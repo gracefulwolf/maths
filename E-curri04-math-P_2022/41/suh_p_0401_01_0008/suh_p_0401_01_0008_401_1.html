@@ -10,6 +10,9 @@
 	<!--  수학 -->
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+
 		.addLineController{top:8px;}
 		.checkContainer .contentsBox h2 {
 			font-size: 40px !important;
@@ -26,9 +29,6 @@
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
 
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width: 100%;justify-content: flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left: 8px;}
 
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
@@ -45,43 +45,6 @@
 		.page_2 .it2-5{padding-top: 300px;background: url(./images/suh_p_0401_01_0002_401_1-2.png) no-repeat 50% 90% / 480px auto;}
 
 
-		.type-qs2.textAlignC{margin: 0 auto 30px;width: 800px;height: 90px;}
-		.type-qs2 .flex-box{display: flex;justify-content: space-between;}
-		.type-qs2 .flexListContainer{width: 40%;position: relative;}
-		.type-qs2 .colorBox{position: absolute;z-index: 999;}
-		.type-qs2 .curveLine{left: 13%;top: 20px;}
-		.type-qs2 .curveLine .line{clip: rect(0,250px,100px,0);width: 220px;height: 200px;}
-		.type-qs2 .curveLine:after{z-index: 999;transform: rotate(60deg);left: 218px;top: 81px;}
-		.type-qs2 .it3-1{left: 120px;}
-		.type-qs2 .it3-2{left: 360px;}
-		.type-qs2 .it3-3{left: 580px;}
-		.type-qs2 .it3-4{left: 50px;}
-		.type-qs2 .it3-5{left: 280px;}
-		.type-qs2 .it3-6{left: 510px;}
-
-		.page_7 .type-qs2 .curveLine .line{width: 180px;}
-		.page_7 .type-qs2 .curveLine:after{left: 178px;}
-		.type-qs2 .it7-1{left: 60px;}
-		.type-qs2 .it7-2{left: 260px;}
-		.type-qs2 .it7-3{left: 460px;}
-		.type-qs2 .it7-4{left: 660px;}
-		.type-qs2 .it7-5{left: 0px;}
-		.type-qs2 .it7-6{left: 200px;}
-		.type-qs2 .it7-7{left: 400px;}
-		.type-qs2 .it7-8{left: 600px;}
-
-		.nemoBoxCon {position:relative;text-align:center;}
-		.nemoBoxCon ul li{display:inline-block;position:relative;}
-		ul.nemoBoxCon_1{position:relative;}
-		ul.nemoBoxCon_1 li:nth-child(2n+1) > div{position:relative;display:inline-block;width:160px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
-		ul.nemoBoxCon_1 li:nth-child(2n+2) > div{position:relative;top:-16px;display:inline-block;width:80px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
-		ul.nemoBoxCon_1 .qBox{width:160px;height:70px;}
-		ul.nemoBoxCon_2{position:relative;margin-top:30px;margin-left:40px;}
-		ul.nemoBoxCon_2 li:nth-child(2n+2) > div{position:relative;display:inline-block;width:160px;height:70px;line-height:70px;background-color:#ffffff;border:5px solid #c1e8ec;border-radius:10px;margin:0 -12px;z-index:4;}
-		ul.nemoBoxCon_2 li:nth-child(2n+1) > div{position:relative;top:-16px;display:inline-block;width:40px;height:0px;border-top: 5px solid #c1e8ec;margin:0 -12px;z-index:3;}
-		ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
-
-		.page_7 ul.nemoBoxCon_1 li:nth-child(2n+1) > div{width: 140px;}
 		/* 개별 */
 		.page_1 .flexListContainer{width:680px; margin:0 auto;}
 		.page_1 .lineBox{width:240px; text-align:center;}
@@ -90,11 +53,13 @@
 		.page_1 [data-ox-obj].complete,
 		.page_1 .complete [data-ox-obj]{pointer-events:none; cursor:default;}
 		.page_1 .icon[data-ox-target]{top:-5px; min-width:60px; height:60px;}
+		h2 .icon_o_title,
+		h2 .toggleBlank.circle{transform:translateY(2px);}
 
 		.page_2 .flexListContainer{width:680px; margin:0 auto;}
 		.page_2 .toggle.circle{margin:0 20px;}
 
-		.page_3 .lineBox{width:680px; margin:0 auto;}
+		.page_3 .lineBox{margin:0 auto;}
 		.page_3 .contentsList .bullet{margin-top:7px !important;}
 
 		.page_6 .colorBox{width:400px; margin:0 auto;}
@@ -106,10 +71,12 @@
 		.page_6 .characterList>li:first-child .balloon{left:200px; right:0;}
 		.page_6 .characterList>li:last-child .balloon{left:0; right:200px;}
 
-		.cardbox{border:5px solid #fccd89; padding:5px 10px; margin-right:5px; margin-left:10px;}
+		.cardbox{border:5px solid #fccd89; padding:2px 10px; margin-right:5px; margin-left:10px;}
 		.dotList>li{align-items:center; white-space:nowrap; letter-spacing:-0.5px;}
 		.dotList>li:first-child:before{margin-top:32px;}
 		.dotList>li:not(:last-of-type){margin-bottom:13px;}
+
+		.page_7 .lineBox{display:inline-block; width:auto; margin:0 auto;}
 	</style>
 </head>
 
@@ -121,7 +88,7 @@
 			<div class="gate_title_container">
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
-				<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -145,7 +112,7 @@
 
 					<li class="page_1"  data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
 						<h2><ins class="dot"></ins><span>
-							더 큰 수에  <div class="icon_o_title"></div>표 하세요.
+							더 큰 수에  <div class="icon_o_title"></div>표 하시오.
 						</span></h2>
 						<section>
 							<!-- <div class="study_guide" style="margin-top: 10px;"> <em>( ) 안</em>을 <em>클릭</em>하세요.</div> -->
@@ -168,7 +135,7 @@
 					</li>
 
 					<li class="page_2" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1">
 							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
 							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
 								src="../common/contents/images/math/equalIcon.png">, <img
@@ -185,7 +152,7 @@
 							</ul>
 							<div class="buttonContainer">
 								<!--      solveCheckBtn 해설 팝업 버튼        -->
-								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 							<a href="./data/(4-1-1)형성평가2_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
@@ -238,7 +205,7 @@
 					</li>
 
 					<li class="page_4" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1">
 							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
 							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
 								src="../common/contents/images/math/equalIcon.png">, <img
@@ -270,7 +237,7 @@
 					</li>
 
 					<li class="page_5" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1_5">
 							세 수의 크기를 비교하여 작은 수부터 순서대로 수를 써 보시오.
 						</span></h2>
 						<section>
@@ -331,8 +298,8 @@
 							교통 수단의 가격이 큰 것부터 차례로 쓰시오.
 						</span></h2>
 						<section>
-							<div class="lineBox sky textAlignC" style="width: 700px; margin: 0 auto;">
-								<div style="display:inline-block; text-align:left;">
+							<div class="textAlignC">
+								<div class="lineBox sky">
 									<div>버스: 1억 5120만 원</div>
 									<div style="margin: 10px 0;">트럭: 3280만 원</div>
 									<div>기차: 386억 원</div>

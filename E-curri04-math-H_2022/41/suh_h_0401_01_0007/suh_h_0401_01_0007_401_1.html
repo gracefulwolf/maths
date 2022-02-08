@@ -26,26 +26,26 @@
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
 
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width: 100%;justify-content: flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left: 8px;}
-
 		.lineBox .bullet.number,
-		h2 .bullet.number{margin-top:5px;}
+		h2 .bullet.number{margin-top:4px;}
 		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
 		.checkContainer .contentsBox h2{margin-top:0;}
 
 		/* 개별 */
+		h2 .toggleBlank.circle{transform:translateY(2px);}
 		.page_2 .it-list{width:780px; margin:0 auto;}
 		.page_2 .it-list li{display:flex; align-items:center;}
+		.page_2 .bullet.number.orange{width:40px; height:40px; line-height:1.8em;}
 		.page_2 .it-list .bullet.number.orange{display:inline-block; align-self:center; margin-right:10px;}
 		.page_2 .flexListContainer{width:680px; margin:0 auto;}
 		.page_2 .toggle.circle{margin:0 20px;}
 		.page_2 .horizonContainer .horizonLine{left:-35px;}
 		.page_2 .horizonWrap{height:120px; margin-top:30px;}
-		.page_2 .horizonWrap .it-word{position:absolute; top:180px;}
+		.page_2 .horizonWrap .it-word{position:absolute; top:180px; opacity:0;}
 		.page_2 .horizonWrap .it-word.x1{left:560px;}
 		.page_2 .horizonWrap .it-word.x2{left:288px;}
+		.page_2 .horizonWrap .it-word.on{opacity:1;}
+		.page_2 .horizonContainer .textContainer>li{text-indent:-10px; white-space:nowrap;}
 
 		.page_6 .colorBox{width:400px; margin:0 auto;}
 		.page_6 .characterList{flex-wrap:wrap; width:550px; margin:20px auto 0;}
@@ -71,7 +71,7 @@
 			<div class="gate_title_container">
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
-				<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -92,8 +92,6 @@
 					<li data-hover="">문제 8</li>
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
-
-
 
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
@@ -156,8 +154,8 @@
 							</ul>
 							<div class="horizonWrap">
 								<div class="horizonContainer horizonContainer_1"></div>
-								<div class="bullet number orange it-word x1">ㄱ</div>
-								<div class="bullet number orange it-word x2">ㄴ</div>
+								<div class="bullet number orange it-word x1" data-toggle-target="21">ㄱ</div>
+								<div class="bullet number orange it-word x2" data-toggle-target="21">ㄴ</div>
 							</div>
 							<ul class="flexListContainer column">
 								<li class="lineBox textAlignC flexListContainer jcenter center">260억
@@ -196,7 +194,7 @@
 					</li>
 
 					<li class="page_4" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1">
 							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
 							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
 								src="../common/contents/images/math/equalIcon.png">, <img
@@ -228,7 +226,7 @@
 					</li>
 
 					<li class="page_5" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1_5">
 							세 수의 크기를 비교하여 작은 수부터 순서대로 수를 써 보시오.
 						</span></h2>
 						<section>
@@ -245,7 +243,6 @@
 									<div class="answer" data-toggle-target="53">1030000</div>
 								</div>
 							</div>
-							<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -269,10 +266,10 @@
 									<div class="characterImg boy_2-wrap circle green left">
 										<div class="charSpriteImg boy_2"></div>
 									</div>
-									<div class="balloon green left"><span class="answerLine">60382419</span></div>
+									<div class="balloon green left"><span class="answerLine" style="cursor:pointer;">60382419</span></div>
 								</li>
 								<li data-ox-obj="2" data-ox-target="62" class="">
-									<div class="balloon yellow right"><span>60724350</span></div>
+									<div class="balloon yellow right"><span style="cursor:pointer;">60724350</span></div>
 									<div class="characterImg boy_4-wrap circle yellow right">
 										<div class="charSpriteImg boy_4"></div>
 									</div>
@@ -289,7 +286,7 @@
 							교통 수단의 가격이 큰 것부터 차례로 쓰시오.
 						</span></h2>
 						<section>
-							<div class="lineBox sky textAlignC" style="width: 700px; margin: 0 auto;">
+							<div class="lineBox sky textAlignC" style="width:410px; margin:0 auto;">
 								<div style="display:inline-block; text-align:left;">
 									<div>버스: 1억 5120만 원</div>
 									<div style="margin: 10px 0;">트럭: 3280만 원</div>
@@ -344,237 +341,10 @@
 					</li>
 
 
-
-
-
-
-
-					<li class="page_1"  data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
-						<h2><ins class="dot"></ins><span>
-							더 큰 수에  <div class="icon_o_title"></div>표 하세요.
-						</span></h2>
-						<section>
-							<!-- <div class="study_guide" style="margin-top: 10px;"> <em>( ) 안</em>을 <em>클릭</em>하세요.</div> -->
-							<div class="flexListContainer around">
-								<div class="lineBox orange ">
-									<div data-ox-obj="11">93670
-										<div class="icon icon_x" data-ox-target="11"></div>
-									</div>
-								</div>
-								<div class="lineBox orange">
-									<div data-ox-obj="12" data-answer="">115088
-										<div class="icon icon_o" data-ox-target="12"></div>
-									</div>
-								</div>
-							</div>
-
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-							<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						</section>
-					</li>
-
-
-					<li class="page_2" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
-							두 수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에
-							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
-								src="../common/contents/images/math/equalIcon.png">, <img
-								src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
-						</span></h2>
-						<section>
-							<ul class="flexListContainer column">
-								<li class="lineBox deeppink textAlignC flexListContainer jcenter center">50782294
-									<div class="toggle circle" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2"><img
-												src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-									</div>50709317
-								</li>
-							</ul>
-							<div class="buttonContainer">
-								<!--      solveCheckBtn 해설 팝업 버튼        -->
-								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-							<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						</section>
-					</li>
-
-					<li class="page_3" data-quiz="toggle">
-						<h2><ins class="dot orange"></ins><span>
-							수의 크기를 비교하여 큰 수부터 순서대로 기호를 써 보시오.
-						</span></h2>
-						<section>
-							<ul class="multipleChoiceList column">
-								<li class="lineBox orange">
-									<ul class="contentsList">
-										<li>
-											<div class="bullet number orange">ㄱ</div>
-											<div>35680638699</div>
-										</li>
-										<li>
-											<div class="bullet number orange">ㄴ</div>
-											<div>301069231610</div>
-										</li>
-										<li>
-											<div class="bullet number orange">ㄷ</div>
-											<div>90265403711</div>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<div class="textAlignC mt_50">
-								<div class="toggle" data-toggle-obj="31">
-									<div class="answer" data-toggle-target="31">
-										<div class="bullet number orange">ㄴ</div>
-									</div>
-								</div>, <div class="toggle" data-toggle-obj="32">
-									<div class="answer" data-toggle-target="32">
-										<div class="bullet number orange">ㄷ</div>
-									</div>
-								</div>, <div class="toggle" data-toggle-obj="33">
-									<div class="answer" data-toggle-target="33">
-										<div class="bullet number orange">ㄱ</div>
-									</div>
-								</div>
-							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-							<a href="./data/1단원_7차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						</section>
-					</li>
-
-
-
-
-
-					<li class="page_6" data-quiz="ox" data-option="answerSound, hide" data-quiz-name="character">
-						<h2><ins class="dot"></ins><span>
-							더 작은 수 말하기 대회에서 이긴 친구를 고르시오.
-						</span></h2>
-						<section>
-							<div class="colorBox sky textAlignC">
-								더 작은 수 말하기 대회
-							</div>
-							<ul class="characterList column">
-								<li data-ox-obj="1" data-ox-target="61" data-answer="" class="">
-									<div class="characterImg boy_2-wrap circle green left">
-										<div class="charSpriteImg boy_2"></div>
-									</div>
-									<div class="balloon green left"><span class="answerLine">60382419</span></div>
-								</li>
-								<li data-ox-obj="2" data-ox-target="62" class="">
-									<div class="balloon yellow right"><span>60724350</span></div>
-									<div class="characterImg boy_4-wrap circle yellow right">
-										<div class="charSpriteImg boy_4"></div>
-									</div>
-								</li>
-							</ul>
-							<div class="buttonContainer">
-							  <button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</section>
-					</li>
-
-					<li class="page_7" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
-							교통 수단의 가격이 큰 것부터 차례로 쓰시오.
-						</span></h2>
-						<section>
-							<div class="lineBox sky textAlignC" style="width: 700px; margin: 0 auto;">
-								<div style="display:inline-block; text-align:left;">
-									<div>버스: 1억 5120만 원</div>
-									<div style="margin: 10px 0;">트럭: 3280만 원</div>
-									<div>기차: 386억 원</div>
-								</div>
-							</div>
-							<div class="textAlignC mt_50">
-								<div class="toggle" data-toggle-obj="71">
-									<div class="answer" data-toggle-target="71">기차</div>
-								</div>,
-								<div class="toggle ml_10" data-toggle-obj="72">
-									<div class="answer" data-toggle-target="72">버스</div>
-								</div>,
-								<div class="toggle ml_10" data-toggle-obj="73">
-									<div class="answer" data-toggle-target="73">트럭</div>
-								</div>
-							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						  </section>
-					</li>
-
-					<li class="page_8" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
-							설명에 알맞은 수를 써 보시오.
-						</span></h2>
-						<section>
-							<div class="lineBox sky">
-							  <ul class="dotList orange">
-								<li>
-								  수 카드
-								  <div style="display: flex;align-items: flex-end;">
-									<span class="cardbox">2</span>, <span class="cardbox">3</span>, <span class="cardbox">4</span>, <span class="cardbox">5</span>, <span class="cardbox">6</span>
-								  </div>
-
-								  을 모두 한 번씩만 사용하여<br>
-								</li>
-								<div style="position: relative;top: -17px;left: 20px;">만든 수입니다.</div>
-								<li>54000보다 큰 수입니다.</li>
-								<li>54300보다 작은 수입니다.</li>
-								<li>일의 자리 수는 홀수입니다.</li>
-							  </ul>
-							</div>
-							<div class="textAlignC mt_20">
-							  <div class="toggle" data-toggle-obj="8">
-								<div class="answer" data-toggle-target="8">54263</div>
-							  </div>
-							</div>
-							<div class="buttonContainer">
-							  <button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						  </section>
-					</li>
-
 				</ul>
 			</div>
 		</main>
-		<section class="popup_container" data-popup-container="">
-			<ul class="popup_pages">
-				<!--      page에 solve 추가        -->
-				<li class="solve pop_page_1" data-popup-page="1">
-					<div class="popup_contents">
-						<ul class="contentsList">
-							<li>
-								<ins class="dot orange"></ins>
-								<div>35×2=70
-									<div class="toggleBlank circle"><img
-											src="../common/contents/images/math/inequalIcon.png"></div>
-									28×3=84
-								</div>
-							</li>
-							<li>
-								<ins class="dot orange"></ins>
-								<div>23×4=92
-									<div class="toggleBlank circle"><img
-											src="../common/contents/images/math/equalIcon.png"></div>
-									46×2=92
-								</div>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="solve pop_page_2" data-popup-page="2">
-					<div class="popup_contents">
-						<div class="ls1">
-							37×2=74, 28×3=84<br>
-							74+84=158입니다.
-						</div>
-					</div>
-				</li>
-			</ul>
-		</section>
+
 	</div>
 
 	<div id="loadingContainer">

@@ -79,7 +79,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
 	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
 	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
-	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-pink{background:#ffe5e7;}
 	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
 	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
 	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
@@ -95,6 +95,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
 	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
 	.tableContainer.it-colorful .it-white{background:#fff;}
+
+	td .toggle{width:100%;}
 
 	/* 기존 줄줄이네모박스 수정 */
 	.nemoBoxJool{position:relative; text-align:center; width:100%; margin:0 auto;}
@@ -127,6 +129,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.nemoBoxJool.it-multi ul{justify-content:center;}
 	.nemoBoxJool.it-multi li{margin:0 15px;}
 	.nemoBoxJool.it-multi li > div{padding:0 20px;}
+	.nemoBoxJool .toggle{width:100%;}
 
 	/* 개별 */
 	.page_2 .tableContainer{width:680px; margin:0 auto;}
@@ -139,9 +142,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.pop_page_3 .colorBox{height:45px; line-height:25px !important;}
 	.page_4 .tableContainer{width:680px;}
 	.page_4 .it-list{display:inline-block;}
-	.page_5 .it-wrap{width:680px; margin:0 auto;}
+	.page_5 .it-wrap{width:640px; margin:0 auto;}
+	.page_5 .it-wrap + .it-wrap{padding-left:48px;}
+	.page_5 .bogiContainer .icon_bogi{position:absolute; top:0; left:50%; height:36px; border-radius:10px; transform:translate(-50%, -16px);}
+	.page_5 .bogiContainer .icon_bogi:after{font-size:21px; line-height:36px;}
 	.page_6 .lineBox{width:680px; margin:0 auto;}
 	.page_6 .contentsList>li:not(:last-of-type){margin-bottom:0;}
+	.page_6 .underLine.red{display:inline-block; line-height:1.2;}
 	.pop_page_6 .bullet.number{display:inline-block; vertical-align:4px;}
 	.page_7 .bullet.circleDot{margin-top:.5em;}
 	.page_8 .tableContainer{width:680px; margin:0 auto;}
@@ -149,9 +156,11 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_8 .tableContainer table tr:first-of-type>:last-child{border-radius:10px 10px 0 0;}
 	.page_8 .tableContainer table tr:last-of-type>:last-child{border-radius:0 0 10px 10px;}
 	.page_9 .lineBox,
-	.page_10 .lineBox{width:680px; margin:0 auto;}
+	.page_10 .lineBox,
+	.page_14 .lineBox{width:680px; margin:0 auto;}
 	.page_9 .contentsList,
 	.page_10 .contentsList{display:inline-block;}
+	.page_9 .underLine.red{display:inline-block; line-height:1.2;}
 	.pop_page_9 .bullet.number,
 	.pop_page_10 .bullet.number{display:inline-block; vertical-align:4px;}
 	.page_11 .it-wrap{width:680px; margin:20px auto 0;}
@@ -220,37 +229,37 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					수를 보고 표의 빈칸과 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 				</span></h2>
 				<section>
-					<div class="tableContainer brown it-colorful">
+					<div class="tableContainer brown it-colorful fix">
 						<table>
 							<tbody>
 								<tr>
-									<td colspan="5">49371</td>
+									<td colspan="5" class="it-white">49371</td>
 								</tr>
 								<tr>
-									<td class="it-purple">만</td>
-									<td class="it-yellow">천</td>
-									<td class="it-green">백</td>
+									<td class="it-lightpurple">만</td>
+									<td class="it-lightorange">천</td>
+									<td class="it-lightgreen">백</td>
 									<td class="it-sky">십</td>
-									<td class="it-deeppink">일</td>
+									<td class="it-pink">일</td>
 								</tr>
 								<tr>
-									<td>4</td>
-									<td>
+									<td class="it-white">4</td>
+									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="21">
 											<div class="answer" data-toggle-target="21">9</div>
 										</div>
 									</td>
-									<td>
+									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="22">
 											<div class="answer" data-toggle-target="22">3</div>
 										</div>
 									</td>
-									<td>
+									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="23">
 											<div class="answer" data-toggle-target="23">7</div>
 										</div>
 									</td>
-									<td>1</td>
+									<td class="it-white">1</td>
 								</tr>
 							</tbody>
 						</table>
@@ -321,14 +330,24 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<h2><ins class="number">4</ins><span>
 					다음이 나타내는 수를 쓰고 읽어 보세요.
 				</span></h2>
-				<section>
-					<div class="tableContainer it-colorful">
+				<section class="full">
+					<div class="tableContainer it-colorful fix">
 						<table>
 							<tbody>
 								<tr>
-									<td class="it-white textAlignR" colspan="4">(<span class="redT">만</span>)</td>
-									<td class="it-white textAlignR" colspan="4">(<span class="redT">일</span>)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="it-white textAlignC">(<span class="redT">만</span>)</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="it-white textAlignC">(<span class="redT">일</span>)</td>
 								</tr>
+							</tbody>
+						</table>
+						<table>
+							<tbody>
 								<tr>
 									<td class="it-deeppink">6</td>
 									<td class="it-deeppink">7</td>
@@ -445,13 +464,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="lineBox green textAlignC it-lineBox mt_20">
 						<ul class="contentsList flexListContainer around center pb_5">
 							<li>
-								<ins class="bullet number orange">ㄱ</ins>
+								<ins class="mr_10">㉠</ins>
 								<div>
 									691<span class="underLine red">5</span>0000
 								</div>
 							</li>
 							<li>
-								<ins class="bullet number orange">ㄴ</ins>
+								<ins class="mr_10">㉡</ins>
 								<div>
 									98<span class="underLine red">5</span>00000
 								</div>
@@ -460,7 +479,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					</div>
 					<div class="textAlignC mt_40">
 						<div class="toggle" data-toggle-obj="61">
-							<div class="answer" data-toggle-target="61"><div class="bullet number orange">ㄴ</div></div>
+							<div class="answer" data-toggle-target="61">㉡</div>
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -552,19 +571,19 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="lineBox green textAlignC it-lineBox mt_20">
 						<ul class="contentsList pb_5">
 							<li>
-								<ins class="bullet number orange">ㄱ</ins>
+								<ins class="mr_10">㉠</ins>
 								<div>
 									6127조 <span class="underLine red">3</span>000억
 								</div>
 							</li>
 							<li>
-								<ins class="bullet number orange">ㄴ</ins>
+								<ins class="mr_10">㉡</ins>
 								<div>
 									<span class="underLine red">3</span>7517000
 								</div>
 							</li>
 							<li>
-								<ins class="bullet number orange">ㄷ</ins>
+								<ins class="mr_10">㉢</ins>
 								<div>
 									2<span class="underLine red">3</span>조 6748억
 								</div>
@@ -573,11 +592,11 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					</div>
 					<div class="textAlignC mt_40">
 						<div class="toggle" data-toggle-obj="91">
-							<div class="answer" data-toggle-target="91"><div class="bullet number orange">ㄷ</div></div>
+							<div class="answer" data-toggle-target="91">㉢</div>
 						</div>, <div class="toggle" data-toggle-obj="92">
-							<div class="answer" data-toggle-target="92"><div class="bullet number orange">ㄱ</div></div>
+							<div class="answer" data-toggle-target="92">㉠</div>
 						</div>, <div class="toggle" data-toggle-obj="93">
-							<div class="answer" data-toggle-target="93"><div class="bullet number orange">ㄴ</div></div>
+							<div class="answer" data-toggle-target="93">㉡</div>
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -595,19 +614,19 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="lineBox green textAlignC it-lineBox mt_20">
 						<ul class="contentsList pb_5">
 							<li>
-								<ins class="bullet number orange">ㄱ</ins>
+								<ins class="mr_10">㉠</ins>
 								<div>
 									14750000000
 								</div>
 							</li>
 							<li>
-								<ins class="bullet number orange">ㄴ</ins>
+								<ins class="mr_10">㉡</ins>
 								<div>
 									6780조 981억
 								</div>
 							</li>
 							<li>
-								<ins class="bullet number orange">ㄷ</ins>
+								<ins class="mr_10">㉢</ins>
 								<div>
 									2237800000000
 								</div>
@@ -616,7 +635,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					</div>
 					<div class="textAlignC mt_40">
 						<div class="toggle" data-toggle-obj="10">
-							<div class="answer" data-toggle-target="10"><div class="bullet number orange">ㄴ</div></div>
+							<div class="answer" data-toggle-target="10">㉡</div>
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -754,7 +773,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<h2><ins class="number">12</ins><span>
 					뛰어 세기를 보고 규칙을 찾아 써 보세요.
 				</span></h2>
-				<section>
+				<section class="full">
 					<div class="nemoBoxJool it-beige it-multi mt_20">
 						<ul>
 							<li>
@@ -792,7 +811,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						src="../common/contents/images/math/equalIcon.png">, <img
 						src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으세요.
 				</span></h2>
-				<section>
+				<section class="full">
 					<div class="textAlignC">
 						<div class="flexListContainer center jcenter mt_20">
 							<span class="it-num">8406000</span> <div class="toggle circle ml_10 mr_10" data-toggle-obj="131">
@@ -824,7 +843,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<h2><ins class="number">14</ins><span>
 					0부터 9까지의 수 중에서 <span class="blankBox w50"></span> 안에 들어갈 수 있는 수를 모두 써 보세요.
 				</span></h2>
-				<section>
+				<section class="full">
 					<div class="lineBox green flexListContainer center jcenter">
 						<div>84<span class="blankBox w50"></span>80000</div>
 						<div class="ml_30 mr_30"><img src="../common/contents/images/math/inequalIcon_2.png" height="30"></div>
@@ -846,7 +865,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<h2><ins class="number">15</ins><span>
 					어떤 수에서 30만씩 3번 뛰어 세었더니 660만이 되었습니다. 어떤 수를 구해 보세요.
 				</span></h2>
-				<section>
+				<section class="full">
 					<div class="textAlignC mt_20">
 						<div class="toggle" data-toggle-obj="15">
 							<div class="answer" data-toggle-target="15">570만</div>
@@ -869,7 +888,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	<ul class="popup_pages basicSlider_slides">
 		<li class="solve pop_page_15" data-popup-page="15">
 			<div class="popup_contents">
-				660만에서 30만씩 거꾸로 3번 뛰어 세기를 하면 660만 - 630만 - 600만 - 570만이므로 어떤 수는 570만입니다.
+				660만에서 30만씩 거꾸로 3번 뛰어 세기를 하면 660만-630만-600만-570만이므로 어떤 수는 570만입니다.
 			</div>
 		</li>
 		<li class="solve pop_page_14" data-popup-page="14">
@@ -884,32 +903,32 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						8406000은 970000보다 자리 수가 더 많으므로 더 큽니다.
 					</div></li>
 					<li><div>
-						3167만 2700과 3169만 9000은 천만, 백만, 십만의 자리 수는 같지만 <span class="blueT">만의 자리 수를 비교하면 7&lt;9</span>이므로 3169만 9000이 더 큽니다.
+						3167만 2700과 3169만 9000은 천만, 백만, 십만의 자리 수는 같지만 만의 자리 수를 비교하면 7&lt;9이므로 3169만 9000이 더 큽니다.
 					</div></li>
 					<li><div>
-						164조 3100억과 164조 2900억은 백조, 십조, 조의 자리 수는 같지만 <span class="blueT">천억의 자리 수를 비교하면 3&gt;2</span>이므로 164조 3100억이 더 큽니다.
+						164조 3100억과 164조 2900억은 백조, 십조, 조의 자리 수는 같지만 천억의 자리 수를 비교하면 3&gt;2이므로 164조 3100억이 더 큽니다.
 					</div></li>
 				</ul>
 			</div>
 		</li>
 		<li class="solve pop_page_12" data-popup-page="12">
-			<div class="popup_contents">
+			<div class="popup_contents ls1">
 				십조의 자리 수가 5씩 커지므로 50조씩 뛰어 세기를 한 것입니다.
 			</div>
 		</li>
 		<li class="solve pop_page_10" data-popup-page="10">
 			<div class="popup_contents">
-				십억의 자리 숫자가 <div class="bullet number orange">ㄱ</div>은 4, <div class="bullet number orange">ㄴ</div>은 8, <div class="bullet number orange">ㄷ</div>은 7이므로 <div class="bullet number orange">ㄴ</div>이 가장 큽니다.
+				십억의 자리 숫자가 ㉠은 4, ㉡은 8, ㉢은 7이므로 ㉡이 가장 큽니다.
 			</div>
 		</li>
 		<li class="solve pop_page_9" data-popup-page="9">
 			<div class="popup_contents">
-				숫자 3이 나타내는 값이 <div class="bullet number orange">ㄱ</div>은 3000억, <div class="bullet number orange">ㄴ</div>은 3000만, <div class="bullet number orange">ㄷ</div>은 3조이므로 큰 수부터 차례대로 기호를 쓰면 <div class="bullet number orange">ㄷ</div>, <div class="bullet number orange">ㄱ</div>, <div class="bullet number orange">ㄴ</div>입니다.
+				숫자 3이 나타내는 값이 ㉠은 3000억, ㉡은 3000만, ㉢은 3조이므로 큰 수부터 차례대로 기호를 쓰면 ㉢, ㉠, ㉡입니다.
 			</div>
 		</li>
 		<li class="solve pop_page_6" data-popup-page="6">
 			<div class="popup_contents">
-				숫자 5가 나타내는 값이 <div class="bullet number orange">ㄱ</div>은 50000, <div class="bullet number orange">ㄴ</div>은 500000이므로 <div class="bullet number orange">ㄴ</div>이 더 큽니다.
+				숫자 5가 나타내는 값이 ㉠은 50000, ㉡은 500000이므로 ㉡이 더 큽니다.
 			</div>
 		</li>
 		<li class="solve pop_page_4" data-popup-page="4">
@@ -946,7 +965,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div>
 							49371은 만의 자리 숫자가 4, 천의 자리 숫자가 9, 백의 자리 숫자가 3, 십의 자리 숫자가 7, 일의 자리 숫자가 1입니다.<br>
 							각 자리의 숫자가 나타내는 값의 합으로 나타내면<br>
-							40000+9000+<span class="blueT">300</span>+<span class="blueT">70</span>+<span class="blueT">1</span>입니다.
+							40000+9000+300+70+1입니다.
 						</div>
 					</li>
 				</ul>

@@ -25,9 +25,9 @@
 			.it_act_09{top:105px; left:479px;}
 			.countOn .it_act > img{animation:ani-countBegin .3s ease-in-out .3s 1 forwards; transition:all .3s ease;}
 			.countOn .it_act_01 > img{animation-delay:0s;}
-			.countOn .it_act_02 > img{animation-delay:1s;}
-			.countOn .it_act_03 > img{animation-delay:2.5s;}
-			.countOn .it_act_04 > img{animation-delay:4s;}
+			.countOn .it_act_02 > img{animation-delay:1.5s;}
+			.countOn .it_act_03 > img{animation-delay:2.8s;}
+			.countOn .it_act_04 > img{animation-delay:4.3s;}
 			.countOn .it_act_05 > img{animation-delay:5.5s;}
 			.countOn .it_act_06 > img{animation-delay:7s;}
 			.countOn .it_act_07 > img{animation-delay:8.5s;}
@@ -40,6 +40,7 @@
 			.page_1 .lineBox.it1 > div:last-child{opacity:0;}
 			.page_1 .flexListContainer.it1{position:relative;}
 			.page_1 .flexListContainer .icon_arrow{margin:0 20px; transform:rotate(180deg);}
+			.page_1 .characterWrap.speech.circle.right:before{right:-30px;}
 			.it2_trig_wrap > .it2_trig{position:absolute; top:60px; left:887px; z-index:2; transition:all .5s ease; animation-iteration-count:infinite; -webkit-animation-iteration-count:infinite;}
 			.it2_trig_wrap > .it2_trig.blinkOn{cursor:pointer;}
 			.it2_trig_wrap.it_act2 > .it2_trig{top:105px; left:632px;}
@@ -48,14 +49,24 @@
 			.page_2 .popBtn{bottom:10px;}
 
 			.popup_contents .it-inner{position:relative; height:610px; margin:0 16px;}
-			.it-dot{position:relative; display:flex; flex-shrink:0; width:100%; color:#000; margin-bottom:10px; line-height:1.3em; font-size:35px; font-family:NotoM; text-align:justify;}
-			.it-dot:before{content:"";   flex-shrink:0; align-self:flex-start; width:15px; height:15px; border:4px solid #f60; border-radius:50%; background-color:#fff; margin:.4em 10px 0 0; box-sizing:border-box;}
-			.flexListContainer.it-pop{justify-content:space-around;}
-			.flexListContainer.it-pop img{width:300px;}
-			.flexListContainer.it-pop [data-ox-obj] {display:inline-block;}
-			.flexListContainer.it-pop .icon[data-ox-target] {position:absolute; left:0; width:100%;}
-			.flexListContainer.it-pop [data-ox-obj].complete, .complete [data-ox-obj] {pointer-events:none; cursor:default;}
-			.flexListContainer.it-pop .icon[data-ox-target] {top:50%; height:60px; margin-top:-30px;}
+			.popup_contents .contentsList{font-size:40px;}
+			.it-pop{position:relative;}
+			.it-pop-ox{position:absolute; top:0; width:335px; height:158px;}
+			.it-pop-ox.x1{left:0;}
+			.it-pop-ox.x2{left:362px;}
+			.it-pop-ox.x3{left:724px;}
+			.it-pop-dashline{position:absolute; top:-5px; left:-5px; width:calc(100% + 10px); height:calc(100% + 10px); border:5px dashed #ffff00; box-sizing:border-box; animation:ani_yellow_blink 1.5s ease-in infinite;}
+			.complete .it-pop-dashline{display:none;}
+			.it-pop [data-ox-obj] {display:inline-block;}
+			.it-pop .icon[data-ox-target] {position:absolute; left:0; width:100%;}
+			.it-pop [data-ox-obj].complete, .complete [data-ox-obj] {pointer-events:none; cursor:default;}
+			.it-pop .icon[data-ox-target] {top:50%; height:60px; margin-top:-30px;}
+
+			@keyframes ani_yellow_blink{
+				50% {opacity:1;}
+				0%, 100% {opacity:0;}
+			}
+
 		</style>
 		<script src="../common/libs/musicNote/js/setting_active.js"></script>
 	</head>
@@ -131,7 +142,7 @@
 						</span></h2>
 						<section>
 							<div class="toggle" data-toggle-obj="1">
-								<div class="answer textAlignL" data-toggle-target="1">
+								<div class="answer textAlignJ" data-toggle-target="1">
 										1000이 10개인 수를 10000 또는 1만이라고 쓰고, 만 또는 일만이라고 읽으면 좋을 것 같습니다.
 								</div>
 							</div>
@@ -155,30 +166,30 @@
 				<li class="whole pop_page_1" data-popup-page="1">
 					<h2 class="box"><span>더 알아보기</span></h2>
 					<div class="popup_contents" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>1000원짜리 9장은 구천 원입니다.</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>1000원짜리 10장과 같은 돈을 찾아볼까요?</div>
+							</li>
+						</ul>
 						<div class="it-inner">
-							<div class="it-dot">
-								1000원짜리 9장은 구천 원입니다.
-							</div>
-							<div class="it-dot">
-								1000원짜리 10장과 같은 돈을 찾아볼까요?
-							</div>
-
-							<div class="flexListContainer it-pop mt_20" style="height:150px; background: url(./images/suh_p_0401_01_0002_201_1/suh_p_0401_01_0002_201_1_2.png) no-repeat 50% 0 / contain;">
-								<div data-ox-obj="1">
-									<div style="width:320px; height:150px;">
-										<!-- <img src="./images/suh_p_0401_01_0002_201_1-pop1.png" alt=""> -->
+							<div class="it-pop mt_20" style="height:160px; background: url(./images/suh_p_0401_01_0002_201_1/suh_p_0401_01_0002_201_1_2.png) no-repeat 50% 0 / 1060px auto;">
+								<div class="it-pop-ox x1" data-ox-obj="1">
+									<div class="it-pop-dashline">
 									</div>
 									<div class="icon icon_x" data-ox-target="1"></div>
 								</div>
-								<div data-ox-obj="2">
-									<div style="width:320px; height:150px;">
-										<!-- <img src="./images/suh_p_0401_01_0002_201_1-pop2.png" alt=""> -->
+								<div class="it-pop-ox x2" data-ox-obj="2">
+									<div class="it-pop-dashline">
 									</div>
 									<div class="icon icon_x" data-ox-target="2"></div>
 								</div>
-								<div data-ox-obj="3" data-answer="">
-									<div style="width:320px; height:150px;">
-										<!-- <img src="./images/suh_p_0401_01_0002_201_1-pop3.png" alt=""> -->
+								<div class="it-pop-ox x3" data-ox-obj="3" data-answer="">
+									<div class="it-pop-dashline">
 									</div>
 									<div class="icon icon_o" data-ox-target="3"></div>
 								</div>
@@ -218,9 +229,9 @@
 				spriteList: [
 					{
 						name: 'girl_1',
-						//circle: 'sky',
+						circle: 'deeppink',
 						speech:'right',
-						top: 135,
+						top: 330,
 						left: 0,
 						width: 340,
 						height: 421,
@@ -233,8 +244,8 @@
 						delay: 40,
 						textBubble: {
 							text: '8장이면 8000원, 9장이면 <br>9000원, 10장이면 ••••••.',
-							class: 'balloon left green ctTail',
-							top:338,
+							class: 'balloon left deeppink ctTail',
+							top:350,
 							left: 450,
 							textAlign: 'center',
 							wordBreak: 'keep-all'

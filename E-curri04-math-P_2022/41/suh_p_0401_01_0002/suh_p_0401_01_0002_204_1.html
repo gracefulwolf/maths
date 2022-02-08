@@ -11,14 +11,18 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
 		.page_1 section{margin-top:50px;}
-		.page_1 img{width: 100%;}
-		.page_1 .flexListContainer figure{width: 700px;text-align: center;}
+		.page_1 img{width:100%;}
+		.page_1 .flexListContainer figure{position:relative; width:700px; text-align:center;}
 		.page_1 .flexListContainer + .flexListContainer{margin-top:80px;}
+		.page_1 .flexListContainer figure .colorBox{position:absolute; top:297px;}
+		.page_1 .flexListContainer figure .colorBox.x1{left:40px;}
+		.page_1 .flexListContainer figure .colorBox.x2{left:262px;}
+		.page_1 .flexListContainer figure .colorBox.x3{left:478px;}
 		.page_1 .right{width:400px;}
-		.page_1 .right .flexListContainer{align-items: flex-end;justify-content: center;height: 340px;}
-		.page_1 .right .flexListContainer li{display:flex;display:-ms-flexbox;}
+		.page_1 .right .flexListContainer{align-items:flex-end; justify-content:center; height:340px;}
+		.page_1 .right .flexListContainer li{display:flex; display:-ms-flexbox;}
 		.page_1 .right .flexListContainer + .flexListContainer{margin-top:15px;}
-
+		.it-vc{display:flex; align-items:center; height:420px;}
 	</style>
 </head>
 
@@ -34,22 +38,26 @@
 			<div class="basicSlider contentsBox" data-slide-container="main">
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
-
-						<div class="flexListContainer center">
-							<figure>
-								<img src="images/suh_p_0401_01_0002_204_1.png" alt="">
-							</figure>
-							<div class="right">
-								<div id="aniBox_2"></div>
-								<ul class="flexListContainer">
-									<li>
-										<div>
-											<div class="toggle" data-toggle-obj="1" style="width:140px;">
-												<div class="answer" data-toggle-target="1">2</div>
-											</div>장
-										</div>
-									</li>
-								</ul>
+						<div class="it-vc">
+							<div class="flexListContainer center">
+								<figure>
+									<img src="images/suh_p_0401_01_0002_204_1.png" alt="">
+									<div class="colorBox sky x1">10000원</div>
+									<div class="colorBox sky x2">2000원</div>
+									<div class="colorBox sky x3">3000원</div>
+								</figure>
+								<div class="right">
+									<div id="aniBox_2"></div>
+									<ul class="flexListContainer">
+										<li>
+											<div>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">2</div>
+												</div>장
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 
@@ -105,8 +113,8 @@
 				spriteList: [{
 						name: 'boy_2',
 						// circle: 'green',
-						top: -160,
-						left: 685,
+						top: -120,
+						left: 705,
 						width: 340,
 						height: 421,
 						thumbNail: '../common/contents/images/character/boy_2.png',
@@ -116,7 +124,7 @@
 						textBubble: {
 						text: '만 원이 되려면 <br>1000원짜리 지폐가 몇 장 <br>더 있어야 할까?',
 						class: 'balloon bottom sky',
-						top: -80,
+						top: -40,
 						left: 630,
 						width: 450,
 						textAlign: 'center',

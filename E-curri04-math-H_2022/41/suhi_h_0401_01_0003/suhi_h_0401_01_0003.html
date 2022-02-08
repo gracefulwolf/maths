@@ -25,7 +25,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
 	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
 	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
-	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-green{background:#cfe593;}
 	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
 	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
 	.tableContainer.it-colorful .it-orange{background:#fccd89;}
@@ -52,9 +52,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_0 .innerTab_3 .it-txt.x2{top:20px; left:550px;}
 	.page_2 .tableContainer{width:680px; margin:0 auto;}
 	.page_2 .tableContainer table{table-layout:fixed;}
-	.page_2 .tableContainer table td{height:60px;}
+	.page_2 .tableContainer table tr td{height:60px; border-color:#cfe593 !important;}
+	.page_2 .tableContainer table .toggle{width:100%;}
 	.pop_page_2 .colorBox.check{vertical-align:4px;}
-	.page_4 ins.bullet.number{display:inline-block; width:35px; height:35px; margin-right:0; line-height:1.5em; vertical-align:4px;}
+	.page_4 .lineBox .bullet.number{display:inline-block; align-self:center; margin-top:0; width:40px; height:40px; margin-top:0; line-height:1.8em;}
 	.it-bwrap{position:relative; width:100%; min-height:360px; margin-top:-20px; background:url(./images/suhi_h_0401_01_0003/suhi_h_0401_01_0003_1.png) no-repeat 50% 0 / auto 100%;}
 	.it-bwrap .oxCheckContainer{position:absolute; top:0; left:0; width:100%;}
 	.it-bwrap img{width:100%;}
@@ -83,6 +84,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.pop_page_5 .it-bwrap .grayBox.it-white.x3{top:338px; left:660px;}
 	.pop_page_5 .it-bwrap .grayBox.it-white.x4{top:338px; left:954px;}
 	.page_6 .it-wrap img{width:100%;}
+
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
 </style>
 </head>
 
@@ -117,29 +124,33 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<!-- 개념 정리 -->
 				</span></h2>
 				<section class="full">
-					<div class="lineBox sky">
-						<div class="ls0_5">
-							10000이 3개, 1000이 4개, 100이 8개, 10이 7개, 1이 2개인 수
-						</div>
-						<div class="flexListContainer top start mt_20">
-							<div class="icon_arrow mt_15 ml_15 mr_15"></div>
-							<div>
-								<div class="flexListContainer start">
-									<div class="colorBox check deepOrange">쓰기</div>
+					<div class="vMid">
+						<div>
+							<div class="lineBox sky">
+								<div class="ls1 textAlignC">
+									10000이 3개, 1000이 4개, 100이 8개, 10이 7개, 1이 2개인 수
+								</div>
+								<div class="flexListContainer top start mt_20">
+									<div class="icon_arrow mt_15 ml_15 mr_15"></div>
 									<div>
-										<span class="redT">34872</span>
+										<div class="flexListContainer start">
+											<div class="colorBox check deepOrange mr_15">쓰기</div>
+											<div>
+												<span class="redT">34872</span>
+											</div>
+										</div>
+										<div class="flexListContainer start mt_20">
+											<div class="colorBox check brown mr_15">읽기</div>
+											<div>
+												<span class="redT">삼만 사천팔백칠십이</span>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="flexListContainer start mt_20">
-									<div class="colorBox check brown">읽기</div>
-									<div>
-										<span class="redT">삼만 사천팔백칠십이</span>
-									</div>
+								<div class="textAlignL mt_30 pb_20" style="padding-left:160px;">
+									34872=30000+4000+800+70+2
 								</div>
 							</div>
-						</div>
-						<div class="textAlignC mt_30 pb_20">
-							34872 = 30000 + 4000 + 800 + 70 + 2
 						</div>
 					</div>
 				</section>
@@ -174,7 +185,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</div>개인 수입니다.
 					</div>
 					<div class="buttonContainer">
-						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</section>
@@ -189,8 +200,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<table>
 							<tbody>
 								<tr>
-									<td class="it-green">42198</td>
-									<td class="it-green">사만 이천백구십팔</td>
+									<td class="it-lightgreen">42198</td>
+									<td class="it-lightgreen">사만 이천백구십팔</td>
 								</tr>
 								<tr>
 									<td class="it-white">
@@ -200,10 +211,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											</div>
 										</div>
 									</td>
-									<td class="it-green">오만 사백육십</td>
+									<td class="it-lightgreen">오만 사백육십</td>
 								</tr>
 								<tr>
-									<td class="it-green">93047</td>
+									<td class="it-lightgreen">93047</td>
 									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="22">
 											<div class="answer" data-toggle-target="22">
@@ -461,27 +472,27 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<ul class="dotList deepGreen">
 					<li>
 						<div>
-							72486에서 만의 자리 숫자는 <span class="blueT">7</span>입니다. <ins class="icon_arrow"></ins> ㉠=7
+							72486에서 만의 자리 숫자는 7입니다. <ins class="icon_arrow"></ins> ㉠=7
 						</div>
 					</li>
 					<li>
 						<div>
-							42047에서 <span class="blueT">2</span>는 2000을 나타냅니다. <ins class="icon_arrow"></ins> ㉡=2
+							42047에서 2는 2000을 나타냅니다. <ins class="icon_arrow"></ins> ㉡=2
 						</div>
 					</li>
 					<li>
 						<div>
-							83476에서 백의 자리 숫자는 <span class="blueT">4</span>입니다. <ins class="icon_arrow"></ins> ㉢=4
+							83476에서 백의 자리 숫자는 4입니다. <ins class="icon_arrow"></ins> ㉢=4
 						</div>
 					</li>
 					<li>
 						<div>
-							94631에서 <span class="blueT">3</span>은 30을 나타냅니다. <ins class="icon_arrow"></ins> ㉣=3
+							94631에서 3은 30을 나타냅니다. <ins class="icon_arrow"></ins> ㉣=3
 						</div>
 					</li>
 				</ul>
 				<div class="mt_20">
-					<ins class="icon_arrow"></ins> ㉠ &gt; ㉢ &gt; ㉣ &gt; ㉡
+					<ins class="icon_arrow"></ins> ㉠&gt;㉢&gt;㉣&gt;㉡
 				</div>
 			</div>
 		</li>

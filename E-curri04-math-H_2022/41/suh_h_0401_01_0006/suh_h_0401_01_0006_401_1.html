@@ -27,10 +27,6 @@
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
 
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
-
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
 		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
@@ -41,13 +37,15 @@
 		/* 개별 */
 		.page_1 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
 		.page_1 .nemoBoxCon ul li{display: inline-block; position: relative;}
-		.page_1 ul.nemoBoxCon_3{position: relative; top: 0px; left: 12px; z-index: 3; display: flex;}
-		.page_1 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width:152px; padding: 0 20px; letter-spacing: -1.5px; height:50px; line-height:48px; background-color: #ffffff; border: 5px solid #cee492; border-radius: 10px; z-index: 4; position: relative; text-align:center;}
-		.page_1 ul.nemoBoxCon_3 li{margin-right: 10px;}
+		.page_1 ul.nemoBoxCon_3{position: relative; top: 0px; left: 25px; z-index: 3; display: flex;}
+		.page_1 ul.nemoBoxCon_3 li:nth-child(2n+1)>div{display: inline-block; width:160px; padding: 0; letter-spacing: -1.5px; height:50px; line-height:48px; background-color: #ffffff; border: 5px solid #cee492; border-radius: 10px; z-index: 4; position: relative; text-align:center;}
+		.page_1 ul.nemoBoxCon_3 li{margin-right: 20px;}
 		.page_1 .contentsList>li{justify-content:center;}
 		.page_1 .contentsList>li .bullet.mt{margin-top: 18px;}
 		.page_1 ul.nemoBoxCon_3:before{content: ''; display: block; position: absolute; top: 28px; left: 69px; width: 75%; height: 5px; background: #cee492;}
 		.page_1 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+		.page_1 .toggle{width:100%;}
+		.page_1 .colorBox{margin-right:10px; padding:0 12px;}
 
 		.page_2 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
 		.page_2 .nemoBoxCon ul li{display: inline-block; position: relative;}
@@ -58,6 +56,9 @@
 		.page_2 .contentsList>li .bullet.mt{margin-top: 18px;}
 		.page_2 ul.nemoBoxCon_3:before{content: ''; display: block; position: absolute; top: 28px; left: 69px; width: 75%; height: 5px; background: #c1e8ec;}
 		.page_2 ul.nemoBoxCon_3 li div .qBox{background-color: #fff;}
+		.page_2 .colorBox{padding:2px 12px;}
+		.page_2 .toggle{min-width:150px;}
+		.page_2 .it-a{display:flex; justify-content:center; width:100%;}
 
 		/* page_4 */
 		.page_4 .nemoBoxCon{position: relative; text-align: center; top: 125px; width: 100%;}
@@ -84,6 +85,7 @@
 		.page_6 .arrow-box{display: flex; flex-wrap: wrap; padding-top: 170px; padding-left: 100px;}
 		.page_6 .contentsList{margin-left: 20px;}
 		.page_6 .icon_arrow.big{margin-top: 3px;}
+		.page_6 .on .point,
 		.complete .point{color: red;}
 		.active .point{color: red;}
 		/* page_7 */
@@ -126,7 +128,7 @@
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/1단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/1단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활용지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -156,7 +158,7 @@
 							<li>
 								<div>
 									<div class="flexListContainer start">
-										<ins class="colorBox green check">규칙</ins> : 20000씩 뛰어 세기
+										<ins class="colorBox green">규칙</ins> : 20000씩 뛰어 세기
 									</div>
 									<ul class="nemoBoxCon_3 ml_100">
 									<li>
@@ -198,7 +200,7 @@
 							<li class="mt_15">
 								<div>
 									<div class="flexListContainer start">
-										<ins class="colorBox green check">규칙</ins> : 50만씩 뛰어 세기
+										<ins class="colorBox green">규칙</ins> : 50만씩 뛰어 세기
 									</div>
 									<ul class="nemoBoxCon_3 ml_100">
 									<li>
@@ -240,7 +242,7 @@
 							<li class="mt_15">
 								<div>
 									<div class="flexListContainer start">
-										<ins class="colorBox green check">규칙</ins> : 300억씩 뛰어 세기
+										<ins class="colorBox green">규칙</ins> : 300억씩 뛰어 세기
 									</div>
 									<ul class="nemoBoxCon_3 ml_100">
 									<li>
@@ -317,9 +319,9 @@
 								</li>
 								</ul>
 								<div class="flexListContainer end mt_5 mr_60">
-									<ul class="dotList orange">
+									<ul class="orange it-a">
 										<li class="flexListContainer center">
-											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="21">
+											<ins class="colorBox green mr_5">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="21">
 											<div class="answer" data-toggle-target="21">
 												30000
 											</div>
@@ -352,9 +354,9 @@
 								</li>
 								</ul>
 								<div class="flexListContainer end mt_5 mr_60">
-									<ul class="dotList orange">
+									<ul class="orange it-a">
 										<li class="flexListContainer center">
-											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="22">
+											<ins class="colorBox green mr_5">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="22">
 											<div class="answer" data-toggle-target="22">
 												200만
 											</div>
@@ -387,9 +389,9 @@
 								</li>
 								</ul>
 								<div class="flexListContainer end mt_5 mr_60">
-									<ul class="dotList orange">
+									<ul class="orange it-a">
 										<li class="flexListContainer center">
-											<ins class="colorBox green check">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="23">
+											<ins class="colorBox green mr_5">규칙</ins> : <div class="toggle ml_10" data-toggle-obj="23">
 											<div class="answer" data-toggle-target="23">
 												50조
 											</div>
@@ -452,11 +454,8 @@
 						</span></h2>
 						<section>
 							<div class="textAlignC">
-
 							  <div class="nemoBoxCon">
-
 								<ul class="nemoBoxCon_3">
-
 								  <li>
 									<div>53087</div>
 								  </li>
@@ -503,12 +502,12 @@
 
 					<li class="page_6" data-quiz="toggle">
 						<h2><ins class="dot orange"></ins><span>
-							수를 뛰어서 세었습니다. <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.
+							수를 뛰어서 세었습니다. <span class="blankBox"></span> 안에 알맞은 수를 써넣으시오.
 						</span></h2>
 						<section>
 							<div class="textAlignC">
-								<div class="nemoBoxCon">
-									<ul class="nemoBoxCon_3">
+								<div class="nemoBoxCon" data-toggle-target="61">
+									<ul class="nemoBoxCon_3" data-toggle-target="62">
 										<li>
 											<div>7<span class="point">2</span>10억</div>
 										</li>

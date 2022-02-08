@@ -13,6 +13,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
 <link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
 <style type="text/css">
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_pages .vMid{height:490px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:6px;}
+	.tableContainer table th,
+	.tableContainer table td{font-size:40px;}
+	.tableContainer.it-colorful .toggle{width:100%;}
+
 	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
 	.popup_pages .buttonContainer{right:40px; bottom:20px;}
 
@@ -148,6 +156,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_1_comm ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
 	.page_1_comm ul.nemoBoxCon_1 li:nth-child(2n+1) > div{width:180px;}
 	.page_1_comm .bullet.circleDot{margin-top:0.5em;}
+	.pop_page_12 .it-q{display:inline-block; min-width:215px;}
+	.pop_page_12 .toggle{min-width:210px;}
 
 	.page_2_comm .nemoBoxCon{position:relative; text-align:center; width:100%;}
 	.page_2_comm .nemoBoxCon ul li{display:inline-block; position:relative;}
@@ -161,6 +171,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_2_comm ul.nemoBoxCon_3 li:nth-child(2n+1)>div.it-a,
 	.pop_page_22 ul.nemoBoxCon_3 li:nth-child(2n+1)>div.it-a{background:#fff;}
 
+	.page_3 .vMid{height:370px;}
+	.page_3 .tableContainer .table,
+	.pop_page_32 .tableContainer .table{table-layout:fixed;}
+	.pop_page_32 .vMid{height:450px;}
+
+	.page_4 .toggle{min-width:430px;}
 	.pop_page_42 .icon_bogi.it-title{display:inline-block; align-self:flex-start; position:relative; height:36px; margin:8px 4px 0 4px; border-radius:10px; font-family:YGJAL; vertical-align:top; box-sizing:border-box; }
 	.pop_page_42 .icon_bogi.it-title:after{font-size:21px; line-height:36px;}
 
@@ -169,14 +185,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_5 .it-num{width:160px; text-align:center;}
 	.pop_page_52 .it-num{width:160px; text-align:center;}
 
-	.page_6 .it-wrap{display:flex; align-items:flex-end; justify-content:space-around; position:relative; width:100%; height:310px; margin:0 auto;}
+	.page_6 .it-wrap{display:flex; align-items:flex-end; justify-content:space-around; position:relative; width:100%; height:370px; margin:0 auto;}
 	.page_6 .it-wrap li{align-items:flex-end; position:relative; height:100%; }
-	.page_6 .it-wrap li .it-figure{position:absolute; top:20px; left:50%; width:210px; height:220px; background:url(./images/content-6-bg.png) no-repeat 50% -48px / 1280px auto; transform:translateX(-50%);}
-	.page_6 .it-wrap li:nth-child(1) .it-figure{background-position:-244px -36px;}
-	.page_6 .it-wrap li:nth-child(2) .it-figure{background-position:-542px -36px;}
-	.page_6 .it-wrap li:nth-child(3) .it-figure{background-position:-829px -36px;}
-	.page_6 .it-title{position:absolute; top:0px; width:100%; font-size:32px; text-align:center;}
-	.page_6 .it-num{position:absolute; top:192px; width:100%; font-size:32px; text-align:center;}
+	.page_6 .it-wrap li .it-figure{position:absolute; top:20px; left:50%; width:330px; height:290px; background:url(./images/content-6-bg.png) no-repeat 50% -48px / 1600px auto; transform:translateX(-50%);}
+	.page_6 .it-wrap li:nth-child(1) .it-figure{background-position:-274px -30px;}
+	.page_6 .it-wrap li:nth-child(2) .it-figure{background-position:-640px -30px;}
+	.page_6 .it-wrap li:nth-child(3) .it-figure{background-position:-1005px -30px;}
+	.page_6 .it-title{position:absolute; top:0px; width:100%; text-align:center;}
+	.page_6 .it-num{position:absolute; top:250px; width:100%; text-align:center;}
+	.page_6 .characterWrap.speech.circle.right:before{right:-28px;}
+
+	.popup_container{z-index: 4;}
 </style>
 </head>
 
@@ -248,50 +267,54 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					빈칸에 알맞은 수를 써넣으세요.
 				</span></h2>
 				<section class="full">
-					<div class="textAlignC type-qs2">
-						<ul class="flexListContainer">
-							<li class="colorBox check purple it-1">10배</li>
-							<li class="colorBox check purple it-2">10배</li>
-							<li class="colorBox check purple it-3">10배</li>
-							<div class="curveLine top sky it-5">
-								<div class="line"></div>
-							</div>
-							<div class="curveLine top sky it-6">
-								<div class="line"></div>
-							</div>
-							<div class="curveLine top sky it-7">
-								<div class="line"></div>
-							</div>
-						</ul>
-					</div>
-					<div class="nemoBoxCon">
-						<ul class="nemoBoxCon_1">
-							<li><div>1만</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>
-								<div>
-									<div class="toggle noBg" data-toggle-obj="11" style="padding: 0; width: 100%;">
-										<div class="answer" data-toggle-target="11">10만</div>
+					<div class="vMid">
+						<div>
+							<div class="textAlignC type-qs2">
+								<ul class="flexListContainer">
+									<li class="colorBox black purple it-1">10배</li>
+									<li class="colorBox black purple it-2">10배</li>
+									<li class="colorBox black purple it-3">10배</li>
+									<div class="curveLine top sky it-5">
+										<div class="line"></div>
 									</div>
-								</div>
-							</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>
-								<div>
-									<div class="toggle noBg" data-toggle-obj="12" style="padding: 0; width: 100%;">
-										<div class="answer" data-toggle-target="12">100만</div>
+									<div class="curveLine top sky it-6">
+										<div class="line"></div>
 									</div>
-								</div>
-							</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>
-								<div>
-									<div class="toggle noBg" data-toggle-obj="13" style="padding: 0; width: 100%;">
-										<div class="answer" data-toggle-target="13">1000만</div>
+									<div class="curveLine top sky it-7">
+										<div class="line"></div>
 									</div>
-								</div>
-							</div></li>
-						</ul>
+								</ul>
+							</div>
+							<div class="nemoBoxCon">
+								<ul class="nemoBoxCon_1">
+									<li><div>1만</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="11" style="padding: 0; width: 100%;">
+												<div class="answer" data-toggle-target="11">10만</div>
+											</div>
+										</div>
+									</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="12" style="padding: 0; width: 100%;">
+												<div class="answer" data-toggle-target="12">100만</div>
+											</div>
+										</div>
+									</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>
+										<div>
+											<div class="toggle noBg" data-toggle-obj="13" style="padding: 0; width: 100%;">
+												<div class="answer" data-toggle-target="13">1000만</div>
+											</div>
+										</div>
+									</div></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
@@ -310,49 +333,53 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					빈칸에 알맞은 수나 말을 써넣으세요.
 				</span></h2>
 				<section class="full">
-					<div class="textAlignC">
-						<div class="nemoBoxCon">
-							<ul class="nemoBoxCon_3">
-								<li>
-									<div>87690000</div>
-								</li>
-								<li>
-									<div></div>
-								</li>
-								<li>
-									<div>팔천칠백육십구만</div>
-								</li>
-							</ul>
-							<ul class="nemoBoxCon_3 mt_20">
-								<li>
-									<div class="it-a">
-										<div class="toggle noBg" data-toggle-obj="21" style="padding: 0; width: 100%;">
-											<div class="answer" data-toggle-target="21">370000</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div></div>
-								</li>
-								<li>
-									<div>삼십칠만</div>
-								</li>
-							</ul>
-							<ul class="nemoBoxCon_3 mt_20">
-								<li>
-									<div>4205000</div>
-								</li>
-								<li>
-									<div></div>
-								</li>
-								<li>
-									<div class="it-a">
-										<div class="toggle noBg" data-toggle-obj="22" style="padding: 0; width: 100%;">
-											<div class="answer" data-toggle-target="22">사백이십만 오천</div>
-										</div>
-									</div>
-								</li>
-							</ul>
+					<div class="vMid">
+						<div>
+							<div class="textAlignC">
+								<div class="nemoBoxCon">
+									<ul class="nemoBoxCon_3">
+										<li>
+											<div>87690000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>팔천칠백육십구만</div>
+										</li>
+									</ul>
+									<ul class="nemoBoxCon_3 mt_20">
+										<li>
+											<div class="it-a">
+												<div class="toggle noBg" data-toggle-obj="21" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="21">370000</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div>삼십칠만</div>
+										</li>
+									</ul>
+									<ul class="nemoBoxCon_3 mt_20">
+										<li>
+											<div>4205000</div>
+										</li>
+										<li>
+											<div></div>
+										</li>
+										<li>
+											<div class="it-a">
+												<div class="toggle noBg" data-toggle-obj="22" style="padding: 0; width: 100%;">
+													<div class="answer" data-toggle-target="22">사백이십만 오천</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -369,51 +396,55 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 
 			<li class="page_3" data-quiz="toggle">
 				<h2><ins class="number">3</ins><span>
-					62390000을 표로 나타낸 것입니다. <ins class="blankBox w50"></ins> 안에 알맞은 수를 써넣으세요.
+					62390000을 표로 나타낸 것입니다. <ins class="blankBox"></ins> 안에 알맞은 수를 써넣으세요.
 				</span></h2>
 				<section>
-					<div class="tableContainer brown it-colorful" style="width:100%;">
-						<table><tbody>
-						<tr>
-							<td class="it-green">6</td>
-							<td class="it-green">
-								<div class="toggle noBg" data-toggle-obj="31">
-									<div class="answer" data-toggle-target="31">2</div>
-								</div>
-							</td>
-							<td class="it-green">3</td>
-							<td class="it-green">
-								<div class="toggle noBg" data-toggle-obj="32">
-									<div class="answer" data-toggle-target="32">2</div>
-								</div>
-							</td>
-							<td class="it-orange">0</td>
-							<td class="it-orange">0</td>
-							<td class="it-orange">0</td>
-							<td class="it-orange">0</td>
-						</tr>
-						<tr>
-							<td class="it-lightgreen">천</td>
-							<td class="it-lightgreen">백</td>
-							<td class="it-lightgreen">십</td>
-							<td class="it-lightgreen">일</td>
-							<td class="it-lightorange">천</td>
-							<td class="it-lightorange">백</td>
-							<td class="it-lightorange">십</td>
-							<td class="it-lightorange">일</td>
-						</tr>
-						<tr>
-							<td class="it-white redT textAlignR" colspan="4">만</td>
-							<td class="it-white redT textAlignR" colspan="4">일</td>
-						</tr>
-						</tbody></table>
-					</div>
-					<div class="textAlignC mt_40">
-						62390000 = <div class="toggle" data-toggle-obj="33">
-							<div class="answer" data-toggle-target="33">60000000</div>
-						</div> + 2000000 + <div class="toggle" data-toggle-obj="34">
-							<div class="answer" data-toggle-target="34">300000</div>
-						</div> +  90000
+					<div class="vMid">
+						<div>
+							<div class="tableContainer brown it-colorful" style="width:100%;">
+								<table><tbody>
+								<tr>
+									<td class="it-green">6</td>
+									<td class="it-green">
+										<div class="toggle noBg" data-toggle-obj="31">
+											<div class="answer" data-toggle-target="31">2</div>
+										</div>
+									</td>
+									<td class="it-green">3</td>
+									<td class="it-green">
+										<div class="toggle noBg" data-toggle-obj="32">
+											<div class="answer" data-toggle-target="32">9</div>
+										</div>
+									</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+								</tr>
+								<tr>
+									<td class="it-lightgreen">천</td>
+									<td class="it-lightgreen">백</td>
+									<td class="it-lightgreen">십</td>
+									<td class="it-lightgreen">일</td>
+									<td class="it-lightorange">천</td>
+									<td class="it-lightorange">백</td>
+									<td class="it-lightorange">십</td>
+									<td class="it-lightorange">일</td>
+								</tr>
+								<tr>
+									<td class="it-white redT textAlignR" colspan="4">만</td>
+									<td class="it-white redT textAlignR" colspan="4">일</td>
+								</tr>
+								</tbody></table>
+							</div>
+							<div class="textAlignC mt_30">
+								62390000 = <div class="toggle" data-toggle-obj="33">
+									<div class="answer" data-toggle-target="33">60000000</div>
+								</div> + 2000000 + <div class="toggle" data-toggle-obj="34">
+									<div class="answer" data-toggle-target="34">300000</div>
+								</div> +  90000
+							</div>
+						</div>
 					</div>
 
 					<div class="buttonContainer">
@@ -457,7 +488,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							</div>
 						</div>
 					</div>
-					<div class="flexListContainer center jcenter mt_30">
+					<div class="flexListContainer center jcenter mt_30 pr_70">
 						<div class="mr_20">
 							<div class="colorBox orange">7263408</div>
 						</div>
@@ -541,7 +572,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 
 			<li class="page_6">
 				<h2><ins class="number star">6</ins><span>
-					어느 후원 단체에서 교육 활동을 지원한 전 세계 어린이의 수입니다. 지원받은 어린이의 수를 읽어 보고, 우리가 후원할 수 있는 방법도 생각해 봅시다.
+					어느 후원 단체에서 교육 활동을 지원한 전 세계 어린이의 수입니다. 지원받는 어린이의 수를 읽어 보세요.
 				</span></h2>
 				<section class="full" data-slide-container="">
 					<div class="moveButtonContainer" data-slide-btn-container="">
@@ -634,37 +665,41 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<li>
 						<ins class="bullet circleDot"></ins>
 						<div>
-							<p class="mb_10"><ins class="blankBox w50"></ins> 안에 알맞은 수를 써넣으세요.</p>
+							<p class="mb_10"><ins class="blankBox"></ins> 안에 알맞은 수를 써넣으세요.</p>
 							<!-- popup article -->
-							<div class="flexListContainer center jcenter mt_20">
-								<div class="mr_20">
-									10000이
-								</div>
-								<div class="it-treeRow orange">
-									<div class="it-treeRow-list">
-										10개인 수
-										<div class="icon_arrow"></div>
-										<div class="toggle" data-toggle-obj="121">
-											<div class="answer" data-toggle-target="121">
-												100000
-											</div>
+							<div class="vMid">
+								<div>
+									<div class="flexListContainer center jcenter">
+										<div class="mr_20">
+											10000이
 										</div>
-									</div>
-									<div class="it-treeRow-list">
-										10개인 수
-										<div class="icon_arrow"></div>
-										<div class="toggle" data-toggle-obj="122">
-											<div class="answer" data-toggle-target="122">
-												1000000
+										<div class="it-treeRow orange">
+											<div class="it-treeRow-list">
+												<div class="it-q">10개인 수</div>
+												<div class="icon_arrow"></div>
+												<div class="toggle" data-toggle-obj="121">
+													<div class="answer" data-toggle-target="121">
+														100000
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div class="it-treeRow-list">
-										10개인 수
-										<div class="icon_arrow"></div>
-										<div class="toggle" data-toggle-obj="123">
-											<div class="answer" data-toggle-target="123">
-												10000000
+											<div class="it-treeRow-list">
+												<div class="it-q">100개인 수</div>
+												<div class="icon_arrow"></div>
+												<div class="toggle" data-toggle-obj="122">
+													<div class="answer" data-toggle-target="122">
+														1000000
+													</div>
+												</div>
+											</div>
+											<div class="it-treeRow-list">
+												<div class="it-q">1000개인 수</div>
+												<div class="icon_arrow"></div>
+												<div class="toggle" data-toggle-obj="123">
+													<div class="answer" data-toggle-target="123">
+														10000000
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -701,53 +736,57 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div>
 							<p class="mb_10">빈칸에 알맞은 수나 말을 써넣으세요.</p>
 							<!-- popup article -->
-							<div class="textAlignC">
-								<div class="nemoBoxCon">
-									<ul class="nemoBoxCon_3 mt_20">
-										<li>
-											<div>63720000</div>
-										</li>
-										<li>
-											<div></div>
-										</li>
-										<li>
-											<div class="it-a">
-												<div class="toggle noBg" data-toggle-obj="221" style="padding: 0; width: 100%;">
-													<div class="answer" data-toggle-target="221">육천삼백칠십이만</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<ul class="nemoBoxCon_3 mt_20">
-										<li>
-											<div class="it-a">
-												<div class="toggle noBg" data-toggle-obj="222" style="padding: 0; width: 100%;">
-													<div class="answer" data-toggle-target="222">480000</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div></div>
-										</li>
-										<li>
-											<div>사십팔만</div>
-										</li>
-									</ul>
-									<ul class="nemoBoxCon_3 mt_20">
-										<li>
-											<div>3720000</div>
-										</li>
-										<li>
-											<div></div>
-										</li>
-										<li>
-											<div class="it-a">
-												<div class="toggle noBg" data-toggle-obj="223" style="padding: 0; width: 100%;">
-													<div class="answer" data-toggle-target="223">삼백칠십이만</div>
-												</div>
-											</div>
-										</li>
-									</ul>
+							<div class="vMid">
+								<div>
+									<div class="textAlignC">
+										<div class="nemoBoxCon">
+											<ul class="nemoBoxCon_3">
+												<li>
+													<div>63720000</div>
+												</li>
+												<li>
+													<div></div>
+												</li>
+												<li>
+													<div class="it-a">
+														<div class="toggle noBg" data-toggle-obj="221" style="padding: 0; width: 100%;">
+															<div class="answer" data-toggle-target="221">육천삼백칠십이만</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<ul class="nemoBoxCon_3 mt_20">
+												<li>
+													<div class="it-a">
+														<div class="toggle noBg" data-toggle-obj="222" style="padding: 0; width: 100%;">
+															<div class="answer" data-toggle-target="222">480000</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div></div>
+												</li>
+												<li>
+													<div>사십팔만</div>
+												</li>
+											</ul>
+											<ul class="nemoBoxCon_3 mt_20">
+												<li>
+													<div>3720000</div>
+												</li>
+												<li>
+													<div></div>
+												</li>
+												<li>
+													<div class="it-a">
+														<div class="toggle noBg" data-toggle-obj="223" style="padding: 0; width: 100%;">
+															<div class="answer" data-toggle-target="223">삼백칠십이만</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- //popup article -->
@@ -779,50 +818,54 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<li>
 						<ins class="bullet circleDot"></ins>
 						<div>
-							<p class="mb_10">71480000을 표로 나타낸 것입니다. <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</p>
+							<p class="mb_10">71480000을 표로 나타낸 것입니다. <span class="blankBox"></span> 안에 알맞은 수를 써넣으세요.</p>
 							<!-- popup article -->
-							<div class="tableContainer brown it-colorful" style="width:100%;">
-								<table><tbody>
-								<tr>
-									<td class="it-green">7</td>
-									<td class="it-green">
-										<div class="toggle noBg" data-toggle-obj="321">
-											<div class="answer" data-toggle-target="321">1</div>
-										</div>
-									</td>
-									<td class="it-green">4</td>
-									<td class="it-green">
-										<div class="toggle noBg" data-toggle-obj="322">
-											<div class="answer" data-toggle-target="322">8</div>
-										</div>
-									</td>
-									<td class="it-orange">0</td>
-									<td class="it-orange">0</td>
-									<td class="it-orange">0</td>
-									<td class="it-orange">0</td>
-								</tr>
-								<tr>
-									<td class="it-lightgreen">천</td>
-									<td class="it-lightgreen">백</td>
-									<td class="it-lightgreen">십</td>
-									<td class="it-lightgreen">일</td>
-									<td class="it-lightorange">천</td>
-									<td class="it-lightorange">백</td>
-									<td class="it-lightorange">십</td>
-									<td class="it-lightorange">일</td>
-								</tr>
-								<tr>
-									<td class="it-white redT textAlignR" colspan="4">만</td>
-									<td class="it-white redT textAlignR" colspan="4">일</td>
-								</tr>
-								</tbody></table>
-							</div>
-							<div class="textAlignC mt_50">
-								71480000 = <div class="toggle" data-toggle-obj="323">
-									<div class="answer" data-toggle-target="323">70000000</div>
-								</div> + 1000000 + <div class="toggle" data-toggle-obj="324">
-									<div class="answer" data-toggle-target="324">400000</div>
-								</div> + 80000
+							<div class="vMid">
+								<div>
+									<div class="tableContainer brown it-colorful" style="width:100%;">
+										<table><tbody>
+										<tr>
+											<td class="it-green">7</td>
+											<td class="it-green">
+												<div class="toggle noBg" data-toggle-obj="321">
+													<div class="answer" data-toggle-target="321">1</div>
+												</div>
+											</td>
+											<td class="it-green">4</td>
+											<td class="it-green">
+												<div class="toggle noBg" data-toggle-obj="322">
+													<div class="answer" data-toggle-target="322">8</div>
+												</div>
+											</td>
+											<td class="it-orange">0</td>
+											<td class="it-orange">0</td>
+											<td class="it-orange">0</td>
+											<td class="it-orange">0</td>
+										</tr>
+										<tr>
+											<td class="it-lightgreen">천</td>
+											<td class="it-lightgreen">백</td>
+											<td class="it-lightgreen">십</td>
+											<td class="it-lightgreen">일</td>
+											<td class="it-lightorange">천</td>
+											<td class="it-lightorange">백</td>
+											<td class="it-lightorange">십</td>
+											<td class="it-lightorange">일</td>
+										</tr>
+										<tr>
+											<td class="it-white redT textAlignR" colspan="4">만</td>
+											<td class="it-white redT textAlignR" colspan="4">일</td>
+										</tr>
+										</tbody></table>
+									</div>
+									<div class="textAlignC mt_40">
+										71480000 = <div class="toggle" data-toggle-obj="323">
+											<div class="answer" data-toggle-target="323">70000000</div>
+										</div> + 1000000 + <div class="toggle" data-toggle-obj="324">
+											<div class="answer" data-toggle-target="324">400000</div>
+										</div> + 80000
+									</div>
+								</div>
 							</div>
 							<!-- //popup article -->
 						</div>

@@ -46,14 +46,16 @@
 		.tableContainer table td{padding-top:16px; padding-bottom:16px;}
 		.tableContainer table .it-line td{padding-top:0; padding-bottom:5px;}
 
-		.it-a{display:flex; flex-wrap:wrap; width:600px; margin:0 auto; padding:20px 0 0;}
-		.it-a > div{width:50%; margin-top:20px; text-align:center;}
+		.it-a{display:flex; flex-wrap:wrap; width:720px; margin:0 auto; padding:20px 0 0;}
+		.it-a > div{display:flex; align-items:center; justify-content:center; width:50%; margin-top:20px; text-align:center;}
+		.it-a ._nums{min-width:70px;}
+		.it-a .toggle{min-width:160px;}
 
 		.it-s{padding-left:50%;}
 		.blinkOpacity.on{
-			-webkit-animation: opacity 1.5s ease-in 3;
-			-o-animation: opacity 1.5s ease-in 3;
-			animation: opacity 1.5s ease-in 3
+			-webkit-animation: opacity 1s ease-in 2;
+			-o-animation: opacity 1s ease-in 2;
+			animation: opacity 1s ease-in 2;
 		}
 
 
@@ -76,7 +78,7 @@
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
+						<h2><ins class="dot"></ins><span class="ls1">
 							각 자리의 숫자 2, 4, 5, 9는 각각 얼마를 나타내는지 알아볼까요?
 						</span></h2>
 						<div class="flexListContainer">
@@ -143,28 +145,28 @@
 						</div>
 						<div class="flexListContainer center around it-a">
 							<div>
-								2 = <div class="toggle" data-toggle-obj="11">
+								<div class="_nums">2</div> <ins class="icon_arrow mr_20"></ins> <div class="toggle" data-toggle-obj="11">
 									<div class="answer" data-toggle-target="11">
 										2천조
 									</div>
 								</div>
 							</div>
 							<div>
-								4 = <div class="toggle" data-toggle-obj="12">
+								<div class="_nums">4</div> <ins class="icon_arrow mr_20"></ins> <div class="toggle" data-toggle-obj="12">
 									<div class="answer" data-toggle-target="12">
 										4백조
 									</div>
 								</div>
 							</div>
 							<div>
-								5 = <div class="toggle" data-toggle-obj="13">
+								<div class="_nums">5</div> <ins class="icon_arrow mr_20"></ins> <div class="toggle" data-toggle-obj="13">
 									<div class="answer" data-toggle-target="13">
 										5십조
 									</div>
 								</div>
 							</div>
 							<div>
-								9 = <div class="toggle" data-toggle-obj="14">
+								<div class="_nums">9</div> <ins class="icon_arrow mr_20"></ins> <div class="toggle" data-toggle-obj="14">
 									<div class="answer" data-toggle-target="14">
 										9조
 									</div>
@@ -178,7 +180,7 @@
 
 					<li class="page_2" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							각 자리의 숫자가 나타내는 값의 합으로 나타내 볼까요?
+							각 자리의 숫자가 나타내는 값의 합으로 나타내 보세요.
 						</span></h2>
 						<div class="flexListContainer">
 							<div class="tableContainer it-colorful">
@@ -242,7 +244,7 @@
 								</tbody></table>
 							</div>
 						</div>
-						<div class="textAlignC mt_30 it-a2">
+						<div class="textAlignC mt_20 it-a2">
 							2459000000000000 = <div class="toggle" data-toggle-obj="21">
 								<div class="answer" data-toggle-target="21">
 									2000000000000000
@@ -256,9 +258,9 @@
 									+ 50000000000000
 								</div>
 								<div class="mt_10">
-									<div class="toggle" data-toggle-obj="22">
+									+ <div class="toggle" data-toggle-obj="22">
 										<div class="answer" data-toggle-target="22">
-											900000000
+											9000000000000
 										</div>
 									</div>
 								</div>

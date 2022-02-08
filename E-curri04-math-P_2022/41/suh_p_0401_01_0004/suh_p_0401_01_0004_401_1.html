@@ -11,6 +11,8 @@
 	<!--  수학 -->
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
 		.addLineController{top:8px;}
 		.checkContainer .contentsBox h2 {
 			font-size: 40px !important;
@@ -24,12 +26,6 @@
 
 		/* 활동지 다운로드 */
 		.gate_container .downloadBtn{right:20px; left:auto;}
-		.downloadBtn{left:0;}
-		.downloadBtn::before{content:attr(data-name);}
-
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
 
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
@@ -47,10 +43,12 @@
 		.page_1 .top_1{top:30px;}
 		.page_1 .top_2{top:170px;}
 		.page_1 .top_3{top:310px;}
-		.page_1 .left_1{left:425px;}
+		.page_1 .left_1{left:445px;}
 		.page_1 .left_2{left:700px;}
 
-		.page_2 .lineBox{width:940px; margin:0 auto;}
+		.page_2 .lineBox{display:inline-block; margin:0 auto;}
+
+		.page_3 .bogiContainer{margin:0;}
 
 		.page_4 .lineBox{width:550px; margin:0 auto;}
 		.page_4 .contentsList{display:inline-block;}
@@ -58,7 +56,7 @@
 		.page_4 .img_3{margin:0 auto; width:100%; height:300px; background:url(./images/suh_0401_01_0003_401_1_1.png) no-repeat; background-position:center; background-size:contain;}
 
 		.page_5 ul.nemoBoxCon{text-align:center;}
-		.page_5 ul.nemoBoxCon + ul.nemoBoxCon{margin:15px 0 0;}
+		.page_5 ul.nemoBoxCon + ul.nemoBoxCon{margin:10px 0 0;}
 		.page_5 ul.nemoBoxCon li{display:inline-block; position:relative; text-align:center;}
 		.page_5 ul.nemoBoxCon li:first-child > div{width:300px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2;}
 		.page_5 ul.nemoBoxCon li:last-child > div{width:400px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2; text-align:center;}
@@ -76,7 +74,7 @@
 		.page_6 .left_1{left:340px;}
 		.page_6 .left_2{left:660px;}
 
-		.page_7 .lineBox{width:940px; margin:0 auto;}
+		.page_7 .lineBox{display:inline-block; margin:0 auto;}
 
 		.page_8 .contentsList{display:inline-block;}
 		.page_8 .numCardCon{text-align:center;}
@@ -85,6 +83,8 @@
 		.page_8 .qBox{top:3px;left:-8px;}
 		.page_8 .calBox{width:150px; height:76px; line-height:76px; margin-right:10px; text-align:center;}
 		.page_8 .rwCon{margin-left:150px;}
+		.page_8 .contentsList>li{align-items:center;}
+		.page_8 .contentsList>li>.colorBox.check+*{width:auto;}
 
 		/* 스텝클릭 */
 		.page_4 .lineBox{position:relative;}
@@ -132,7 +132,7 @@
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/(4-1-1)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -158,12 +158,12 @@
 							같은 수끼리 선으로 이어 보시오.
 						</span></h2>
 						<section>
-							<div class="study_guide">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
+							<div class="study_guide" style="margin-top:35px;">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
 							<div class="dragLineContainer">
 								<ul class="box sky">
 									<li>10000이 10개인 수</li>
-									<li>10000이 10개인 수</li>
 									<li>10000이 100개인 수</li>
+									<li>10000이 1000개인 수</li>
 								</ul>
 								<ul class="box green">
 									<li>1000만</li>
@@ -202,8 +202,10 @@
 							설명하는 수를 써 보시오.
 						</span></h2>
 						<section>
-							<div class="lineBox green textAlignC">
-								1000만이 8개, 100만이 2개, 10만이 3개인 수
+							<div class="textAlignC">
+								<div class="lineBox green">
+									1000만이 8개, 100만이 2개, 10만이 3개인 수
+								</div>
 							</div>
 							<div class="textAlignC mt_50">
 								<div class="toggle" data-toggle-obj="2">
@@ -223,7 +225,7 @@
 					<li class="page_3" data-quiz="toggle">
 						<h2><ins class="dot orange"></ins><span><span class="icon_bogi"></span>와 같이 나타내 보시오.</span></h2>
 						<section>
-							<div class="flexListContainer center">
+							<div class="flexListContainer center jcenter">
 								<div class="bogiContainer mr_40">
 									<div class="icon_bogi"></div>
 									<div class="inner">
@@ -401,11 +403,13 @@
 
 					<li class="page_7" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							설명하는 수가 얼마인지 써 보시오.
+							설명하는 수를 써 보시오.
 						</span></h2>
 						<section>
-							<div class="lineBox green textAlignC">
-								100만이 93개, 10만이 7개, 만이 5개인 수
+							<div class="textAlignC">
+								<div class="lineBox green">
+									100만이 93개, 10만이 7개, 만이 5개인 수
+								</div>
 							</div>
 							<div class="textAlignC mt_50">
 								<div class="toggle" data-toggle-obj="7">
@@ -453,7 +457,7 @@
 								</div>
 							</div>
 							<div class="textAlignC mt_50">
-								<ul class="contentsList">
+								<ul class="contentsList center">
 									<li>
 										<div class="colorBox check deepOrange">쓰기</div>
 										<div class="toggle" data-toggle-obj="81">

@@ -9,6 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
+		.vMid{display:flex; align-items:center; justify-content:center; height:470px;}
+		.vMid > div{width:100%;}
+		.popup_contents{font-size:40px;}
+
 		img{max-width:100%;}
 
 		/* 커브 단계 */
@@ -38,11 +42,15 @@
 		.type-qs2 .it1-7{left:400px;}
 		.type-qs2 .it1-8{left:610px;}
 
-		.bullet.exam{opacity:0; transition:opacity .2s ease;}
-		.bullet.exam.on{opacity:1;}
+		.page_1 .bullet.exam{opacity:0; transition:opacity .2s ease;}
+		.page_1 .bullet.exam.on{opacity:1;}
 
 		.popup_container{z-index:5;}
 		.popup_container .buttonContainer{right:40px; bottom:20px;}
+
+		.page_1 .toggle{width:100%;}
+		.page_2 .characterWrap.speech.circle.right:before{right:-28px;}
+		.popup_contents .nemoBoxCon .toggle{width:100%;}
 	</style>
 </head>
 
@@ -64,48 +72,53 @@
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1 pagewrapper" data-quiz="toggle">
-						<div class="nemoBoxCon">
-							<div class="textAlignL mb_10">
-								<ins class="bullet exam" data-toggle-target>예</ins>
+						<div class="vMid">
+							<div>
+								<div class="nemoBoxCon">
+									<div class="textAlignL mb_10 pl_30">
+										<ins class="bullet exam" data-toggle-target>예</ins>
+									</div>
+									<ul class="nemoBoxCon_1">
+										<li><div>
+											<div class="toggle noBg" data-toggle-obj="11">
+												<div class="answer" data-toggle-target="11">
+													4억
+												</div>
+											</div>
+										</div></li>
+										<li><div></div></li>
+										<li><div>
+											<div class="toggle noBg" data-toggle-obj="12">
+												<div class="answer" data-toggle-target="12">
+													6억
+												</div>
+											</div>
+										</div></li>
+										<li><div></div></li>
+										<li><div>
+											8억
+										</div></li>
+										<li><div></div></li>
+										<li><div>
+											<div class="toggle noBg" data-toggle-obj="13">
+												<div class="answer" data-toggle-target="13">
+													10억
+												</div>
+											</div>
+										</div></li>
+										<li><div></div></li>
+										<li><div>
+											<div class="toggle noBg" data-toggle-obj="14">
+												<div class="answer" data-toggle-target="14">
+													12억
+												</div>
+											</div>
+										</div></li>
+									</ul>
+								</div>
 							</div>
-							<ul class="nemoBoxCon_1">
-								<li><div>
-									<div class="toggle noBg" data-toggle-obj="11">
-										<div class="answer" data-toggle-target="11">
-											4억
-										</div>
-									</div>
-								</div></li>
-								<li><div></div></li>
-								<li><div>
-									<div class="toggle noBg" data-toggle-obj="12">
-										<div class="answer" data-toggle-target="12">
-											6억
-										</div>
-									</div>
-								</div></li>
-								<li><div></div></li>
-								<li><div>
-									8억
-								</div></li>
-								<li><div></div></li>
-								<li><div>
-									<div class="toggle noBg" data-toggle-obj="13">
-										<div class="answer" data-toggle-target="13">
-											10억
-										</div>
-									</div>
-								</div></li>
-								<li><div></div></li>
-								<li><div>
-									<div class="toggle noBg" data-toggle-obj="14">
-										<div class="answer" data-toggle-target="14">
-											12억
-										</div>
-									</div>
-								</div></li>
-							</ul>
 						</div>
+
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
@@ -175,7 +188,6 @@
 								<ul class="basicSlider_circle_tabs" data-tabs="">
 									<li data-hover=""></li>
 									<li data-hover=""></li>
-									<li data-hover=""></li>
 								</ul>
 								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
@@ -224,22 +236,14 @@
 												</div></li>
 											</ul>
 										</div>
-										<div class="textAlignL mt_40">
+										<div class="textAlignL mt_30">
 											<div class="toggle" data-toggle-obj="215">
-												<div class="answer" data-toggle-target="215">
+												<div class="answer textAlignJ" data-toggle-target="215">
 													6억-7억-8억-9억-10억으로 1억씩 늘어나는 규칙으로 뛰어 세었습니다.
 												</div>
 											</div>
 										</div>
-									</section>
-									<div class="buttonContainer">
-										<button class="dapCheckBtn" data-answer-btn=""></button>
-									</div>
-								</li>
-
-								<li class="innerTab_2 pagewrapper" data-quiz="toggle">
-									<section>
-										<div class="nemoBoxCon">
+										<div class="nemoBoxCon mt_40">
 											<div class="textAlignL mb_10">
 												<ins class="bullet exam" data-toggle-target>예</ins>
 											</div>
@@ -281,17 +285,17 @@
 												</div></li>
 											</ul>
 										</div>
-										<div class="textAlignL mt_40">
+										<div class="textAlignL mt_30">
 											<div class="toggle" data-toggle-obj="225">
-												<div class="answer" data-toggle-target="225">
+												<div class="answer textAlignJ" data-toggle-target="225">
 													10억-9억-8억-7억-6억으로 1억씩 작아지는 규칙으로 뛰어 세었습니다.
 												</div>
 											</div>
 										</div>
+										<div class="buttonContainer">
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</div>
 									</section>
-									<div class="buttonContainer">
-										<button class="dapCheckBtn" data-answer-btn=""></button>
-									</div>
 								</li>
 
 								<li class="innerTab_3 pagewrapper" data-quiz="toggle">
@@ -338,17 +342,17 @@
 												</div></li>
 											</ul>
 										</div>
-										<div class="textAlignL mt_40">
+										<div class="textAlignL mt_30">
 											<div class="toggle" data-toggle-obj="235">
-												<div class="answer" data-toggle-target="235">
+												<div class="answer textAlignJ" data-toggle-target="235">
 													12억-10억-8억-6억-4억으로 2억씩 작아지는 규칙으로 뛰어 세었습니다.
 												</div>
 											</div>
 										</div>
+										<div class="buttonContainer">
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</div>
 									</section>
-									<div class="buttonContainer">
-										<button class="dapCheckBtn" data-answer-btn=""></button>
-									</div>
 								</li>
 
 							</ul>
@@ -396,7 +400,7 @@
 			spriteList: [
 				{
 					name: 'boy_1',
-					circle: 'green',
+					circle: 'sky',
 					speech:'right',
 					top: 280,
 					left: 0,
@@ -411,7 +415,7 @@
 					delay: 40,
 					textBubble: {
 						text: '짝이 정한 규칙도 <br>찾아볼까?',
-						class: 'balloon left green ctTail',
+						class: 'balloon left sky ctTail',
 						top:280,
 						left: 450,
 						textAlign: 'center',

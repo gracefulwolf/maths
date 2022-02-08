@@ -12,6 +12,14 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
 	<style type="text/css">
+		.vMid{display:flex; align-items:center; justify-content:center; height:480px;}
+		.vMid > div{width:100%;}
+		.popup_contents .vMid{height:520px;}
+		.gate_container .downloadBtn{right:20px; left:auto; background-image:url(./images/icon_down.svg);}
+		.downloadBtn{background-image:url(./images/icon_down.svg);}
+		.downloadBtn::before{content:attr(data-name);}
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 		}
@@ -21,11 +29,19 @@
 		.flex-wrap + .flex-wrap{padding-top:30px}
 		img{max-width: 100%;}
 		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.popup_pages .downloadBtn{bottom:20px;}
 
 		.it-box{min-width:450px; text-align:right;}
 		.it-box > div{display:inline-block;}
 		.icon_arrow + .it-box{text-align:left;}
 		.it-box .underLine{display:inline-block;}
+
+		.contentsBox .colorBox{min-width:275px; text-align:center;}
+		.contentsBox .toggle{min-width:250px;}
+		.pop_page_1 .colorBox{min-width:280px; text-align:center;}
+		.pop_page_1 .toggle{min-width:230px;}
+		.pop_page_2 .colorBox{min-width:300px; text-align:center;}
+		.pop_page_2 .toggle{min-width:230px;}
 	</style>
 </head>
 
@@ -41,35 +57,39 @@
 		<main>
 			<div class="contentsBox" data-quiz="toggle">
 				<section>
-					<div class="flexListContainer jcenter center">
-						<div class="it-box">
-							<div class="colorBox sky"><span class="underLine red">4</span>13750</div>
-						</div>
-						<div class="icon_arrow mr_20 ml_20"></div>
-						<div class="it-box">
-							<div class="toggle" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">400000</div>
+					<div class="vMid">
+						<div>
+							<div class="flexListContainer jcenter center">
+								<div class="it-box">
+									<div class="colorBox sky"><span class="underLine red">4</span>13750</div>
+								</div>
+								<div class="icon_arrow mr_20 ml_20"></div>
+								<div class="it-box">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">400000</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class="flexListContainer jcenter center mt_40">
-						<div class="it-box">
-							<div class="colorBox sky">6<span class="underLine red">4</span>100000000</div>
-						</div>
-						<div class="icon_arrow mr_20 ml_20"></div>
-						<div class="it-box">
-							<div class="toggle" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">4000000000</div>
+							<div class="flexListContainer jcenter center mt_40">
+								<div class="it-box">
+									<div class="colorBox sky">6<span class="underLine red">4</span>100000000</div>
+								</div>
+								<div class="icon_arrow mr_20 ml_20"></div>
+								<div class="it-box">
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">4000000000</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="buttonContainer left">
 						<button class="characterBtn" data-popup-btn="101" data-hover="">
-							<span>한 번 <b>더1</b></span>
+							<span>한 번 더 <b>1</b></span>
 						</button>
 						<button class="characterBtn" data-popup-btn="102" data-hover="">
-							<span>한 번 <b>더2</b></span>
+							<span>한 번 더 <b>2</b></span>
 						</button>
 					</div>
 					<div class="buttonContainer">
@@ -92,25 +112,29 @@
 									<p class="mb_10">
 										숫자 6이 나타내는 값은 얼마인지 써 보세요.
 									</p>
-									<div class="flexListContainer jcenter center">
-										<div class="it-box">
-											<div class="colorBox sky"><span class="underLine red">6</span>39871</div>
-										</div>
-										<div class="icon_arrow mr_20 ml_20"></div>
-										<div class="it-box">
-											<div class="toggle" data-toggle-obj="1011">
-												<div class="answer" data-toggle-target="1011">600000</div>
+									<div class="vMid">
+										<div>
+											<div class="flexListContainer jcenter center">
+												<div class="it-box">
+													<div class="colorBox sky"><span class="underLine red">6</span>39871</div>
+												</div>
+												<div class="icon_arrow mr_20 ml_20"></div>
+												<div class="it-box">
+													<div class="toggle" data-toggle-obj="1011">
+														<div class="answer" data-toggle-target="1011">600000</div>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div class="flexListContainer jcenter center mt_40">
-										<div class="it-box">
-											<div class="colorBox sky">84<span class="underLine red">6</span>10000000</div>
-										</div>
-										<div class="icon_arrow mr_20 ml_20"></div>
-										<div class="it-box">
-											<div class="toggle" data-toggle-obj="1012">
-												<div class="answer" data-toggle-target="1012">600000000</div>
+											<div class="flexListContainer jcenter center mt_40">
+												<div class="it-box">
+													<div class="colorBox sky">84<span class="underLine red">6</span>10000000</div>
+												</div>
+												<div class="icon_arrow mr_20 ml_20"></div>
+												<div class="it-box">
+													<div class="toggle" data-toggle-obj="1012">
+														<div class="answer" data-toggle-target="1012">600000000</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -134,25 +158,29 @@
 									<p class="mb_10">
 										숫자 8이 나타내는 값은 얼마인지 써 보세요.
 									</p>
-									<div class="flexListContainer jcenter center">
-										<div class="it-box">
-											<div class="colorBox sky"><span class="underLine red">8</span>763671</div>
-										</div>
-										<div class="icon_arrow mr_20 ml_20"></div>
-										<div class="it-box">
-											<div class="toggle" data-toggle-obj="1021">
-												<div class="answer" data-toggle-target="1021">8000000</div>
+									<div class="vMid">
+										<div>
+											<div class="flexListContainer jcenter center">
+												<div class="it-box">
+													<div class="colorBox sky"><span class="underLine red">8</span>763671</div>
+												</div>
+												<div class="icon_arrow mr_20 ml_20"></div>
+												<div class="it-box">
+													<div class="toggle" data-toggle-obj="1021">
+														<div class="answer" data-toggle-target="1021">8000000</div>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div class="flexListContainer jcenter center mt_40">
-										<div class="it-box">
-											<div class="colorBox sky">357<span class="underLine red">8</span>10000000</div>
-										</div>
-										<div class="icon_arrow mr_20 ml_20"></div>
-										<div class="it-box">
-											<div class="toggle" data-toggle-obj="1022">
-												<div class="answer" data-toggle-target="1022">800000000</div>
+											<div class="flexListContainer jcenter center mt_40">
+												<div class="it-box">
+													<div class="colorBox sky">357<span class="underLine red">8</span>10000000</div>
+												</div>
+												<div class="icon_arrow mr_20 ml_20"></div>
+												<div class="it-box">
+													<div class="toggle" data-toggle-obj="1022">
+														<div class="answer" data-toggle-target="1022">800000000</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>

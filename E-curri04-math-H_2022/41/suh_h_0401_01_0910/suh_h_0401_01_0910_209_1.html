@@ -24,17 +24,22 @@
 		.it-img .toggle.n2{left:640px;}
 		.it-img .toggle.n3{left:125px;}
 
-		.page_1 .balloon.n1{top:25px; left:0;}
+		.page_1 .balloon.n1{top:25px; left:10px;}
+		.page_1 .balloon.n1:after{transform:rotate(-90deg) translate(50%) skewX(-30deg);}
 		.page_1 .balloon.n2{top:-40px; left:310px;}
 		.page_1 .balloon.n3{top:-50px; left:600px;}
+		.page_1 .balloon.n3:after{transform: translate(-100px) skewX(-40deg);}
 		.page_1 .balloon.n4{top:150px; left:40px;}
 		.page_1 .balloon.n5{top:100px; left:640px;}
-		.pop_page_1 .balloon.n1{top:70px; left:120px;}
-		.pop_page_1 .balloon.n2{top:40px; left:400px;}
-		.pop_page_1 .balloon.n3{top:70px; left:720px;}
+		.page_1 .balloon.n5:after{transform:rotate(90deg) translate(20px) skewX(30deg);}
+		.page_1 .it-note-txt{position:absolute; bottom:-25px; right:210px; font-size:24px;}
+		.pop_page_1 .balloon.n1{top:100px; left:120px;}
+		.pop_page_1 .balloon.n2{top:80px; left:400px;}
+		.pop_page_1 .balloon.n3{top:100px; left:720px;}
 		.pop_page_1 .balloon.n4{top:400px; left:40px;}
-		.pop_page_1 .balloon.n5{top:400px; left:800px;}
+		.pop_page_1 .balloon.n5{top:420px; left:800px;}
 		.pop_page_1 .it-txt{position:absolute; bottom:40px; right:40px;}
+		.pop_page_1 .it-pop-img{width:100%; height:100%; background:url(./images/suh_h_0401_01_0910_209/suh_h_0401_01_0910_209_1.png) no-repeat 50% 50% / contain;}
 
 		/* 기존 줄줄이네모박스 수정 */
 		.nemoBoxJool{position:relative; text-align:center; width:100%; margin:0 auto;}
@@ -72,6 +77,9 @@
 		.nemoBoxJool.it-center li{margin-bottom:40px;}
 		.nemoBoxJool .it-label{position:absolute; bottom:-40px; left:0; width:100%; text-align:center;}
 		.nemoBoxJool.it-sky .it-bg{background:#e9f7f9;}
+
+		.title{display:flex; flex-shrink:0; position: relative; text-align:justify; margin-bottom:15px;}
+		.title > .bullet{flex-shrink: 0; align-self: flex-start; margin: 8px 10px 0 0; vertical-align: top;}
 	</style>
 </head>
 
@@ -80,7 +88,7 @@
 		<!-- 스프라이트 있을 시에 무조건 추가 -->
 		<header>
 			<div class="title active">
-				<div class="bullet number orange inline">9</div>
+				<ins class="bullet number orange inline">9</ins>
 				다음은 세계 여러 나라의 2030년 예상 인구수입니다. 물음에 답해 보세요.
 			</div>
 		</header>
@@ -115,13 +123,14 @@
 							<div class="balloon left ctTail textAlignC pink n5">
 								프랑스<br>약 66696000명
 							</div>
+							<div class="it-note-txt">(출처: KOSIS 국가통계포털, 2019년)</div>
 						</div>
-						<ul class="contentsList mt_20">
+						<ul class="contentsList mt_30">
 							<li>
 								<ins class="bullet circleDot orange"></ins>
 								<div>
-									예상 인구수가 많은 나라부터 차례대로 나라 이름을 써 보세요.
-									<div class="textAlignC mt_20">
+									<p class="ls1">예상 인구수가 많은 나라부터 차례대로 나라 이름을 써 보세요.</p>
+									<div class="textAlignC mt_10">
 										<div class="toggle" data-toggle-obj="101">
 											<div class="answer" data-toggle-target="101">
 												중국
@@ -171,12 +180,12 @@
 								프랑스<br>약 66696000명
 							</div>
 						</div>
-						<ul class="contentsList mt_20">
+						<ul class="contentsList mt_10">
 							<li>
 								<ins class="bullet circleDot orange"></ins>
 								<div>
-									예상 인구수가 많은 나라부터 차례대로 나라 이름을 써 보세요.
-									<div class="textAlignC mt_20">
+									대한민국 인구가 1년에 20만 명씩 늘어난다면 처음으로 예상 인구수가 5300만 명이 넘는 해는 몇 년도일까요?
+									<div class="textAlignC mt_10">
 										<div class="toggle" data-toggle-obj="201">
 											<div class="answer" data-toggle-target="201">
 												2036년
@@ -201,7 +210,8 @@
 			<ul class="popup_pages">
 				<li class="whole pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
-						<img src="./images/suh_h_0401_01_0910_209/suh_h_0401_01_0910_209_1.png" alt="">
+						<div class="it-pop-img"></div>
+						<!-- <img src="./images/suh_h_0401_01_0910_209/suh_h_0401_01_0910_209_1.png" alt=""> -->
 						<div class="balloon bottom ctTail textAlignC pink n1">
 							대한민국<br>약 51927000명
 						</div>
@@ -222,11 +232,11 @@
 				</li>
 				<li class="solve pop_page_2" data-popup-page="2">
 					<div class="popup_contents">
-						자리 수가 가장 많은 중국의 인구수가 가장 많고, 자리 수가 같은 나라끼리 인구수를 비교해 봅니다.<br>
-						(미국) 349642000 &gt; 120832000 (이집트)<br>
-						(대한민국) 51927000 &lt; 66696000 (프랑스)
-						<div class="flexListContainer start center mt_10">
-							<ins class="icon_arrow mr_10"></ins> 중국 &gt; 이집트 &gt; 프랑스 &gt; 대한민국
+						<p>자리 수가 가장 많은 중국의 인구수가 가장 많고, 자리 수가 같은 나라끼리 인구수를 비교해 봅니다.</p>
+						<div class="mt_10">(미국) <span class="underLine">3</span>49642000 &gt; <span class="underLine">1</span>20832000 (이집트)</div>
+						<div class="mt_20">(대한민국) <span class="underLine">5</span>1927000 &lt; <span class="underLine">6</span>6696000 (프랑스)</div>
+						<div class="flexListContainer start center mt_20">
+							<ins class="icon_arrow mr_10"></ins> 중국 &gt; 미국 &gt; 이집트 &gt; 프랑스 &gt; 대한민국
 						</div>
 					</div>
 				</li>

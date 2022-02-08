@@ -26,10 +26,6 @@
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
 
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
-
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
 		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
@@ -41,7 +37,8 @@
 		.tableContainer.brown.it-zigzag tr:nth-child(2n) td:last-of-type,
 		.tableContainer.brown.it-zigzag tr:nth-child(2n+1) td:first-of-type{background:#ae7c65;}
 		.tableContainer.brown.it-zigzag td{width:50%;}
-		.page_1 .tableContainer.brown td{height:80px;}
+		.page_1 .tableContainer.brown td{}
+		.page_1 td .toggle{width:100%; padding:20px 0;}
 
 		/* 숫자자리 table */
 		.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
@@ -65,9 +62,10 @@
 		.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
 		.tableContainer.it-colorful .it-white{background:#fff;}
 		.page_2 .lineBox{overflow:hidden; padding:0;}
+		.page_2 td .toggle{width:100%; padding:2px 0;}
 
 
-		.page_3 .lineBox{width:640px; margin:0 auto;}
+		.page_3 .lineBox{width:260px; margin:0 auto;}
 
 		.page_4 .lineBox{width:550px; margin:0 auto;}
 		.page_4 .contentsList{display:inline-block;}
@@ -77,12 +75,12 @@
 		.page_5 ul.nemoBoxCon{text-align:center;}
 		.page_5 ul.nemoBoxCon + ul.nemoBoxCon{margin:15px 0 0;}
 		.page_5 ul.nemoBoxCon li{display:inline-block; position:relative; text-align:center;}
-		.page_5 ul.nemoBoxCon li:first-child > div{width:300px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2;}
-		.page_5 ul.nemoBoxCon li:last-child > div{width:400px; height:80px; line-height:80px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2; text-align:center;}
+		.page_5 ul.nemoBoxCon li:first-child > div{width:300px; height:72px; line-height:72px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2;}
+		.page_5 ul.nemoBoxCon li:last-child > div{width:400px; height:72px; line-height:72px; border:5px solid #c1e8ec; background-color:#ffffff; border-radius:10px; z-index:2; text-align:center;}
 		.page_5 ul.nemoBoxCon li div.bgc_w{background-color:#ffffff;}
 		.page_5 ul.nemoBoxCon_2 li .qBox, ul.nemoBoxCon_4 li .qBox{width:500px;}
 		.page_5 ul.nemoBoxCon_3 li .qBox{width:180px;}
-		.page_5 ul.nemoBoxCon .toggle{line-height:80px; vertical-align:top;}
+		.page_5 ul.nemoBoxCon .toggle{line-height:72px; vertical-align:top;}
 
 		.page_6 .dragLineContainer{height:320px; margin:0 30px;}
 		.page_6 .dragLineContainer > ul{display:flex; flex-direction:column; justify-content:space-between;}
@@ -93,7 +91,7 @@
 		.page_6 .left_1{left:340px;}
 		.page_6 .left_2{left:660px;}
 
-		.page_7 .lineBox{width:940px; margin:0 auto;}
+		.page_7 .lineBox{width:750px; margin:0 auto;}
 
 		.page_8 .contentsList{display:inline-block;}
 		.page_8 .numCardCon{text-align:center;}
@@ -102,6 +100,8 @@
 		.page_8 .qBox{top:3px;left:-8px;}
 		.page_8 .calBox{width:150px; height:76px; line-height:76px; margin-right:10px; text-align:center;}
 		.page_8 .rwCon{margin-left:150px;}
+		.page_8 .contentsList>li{align-items:center;}
+		.page_8 .contentsList>li>.colorBox.check+*{width:auto;}
 
 		/* 스텝클릭 */
 		.page_4 .lineBox{position:relative;}
@@ -148,7 +148,7 @@
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/1단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/1단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -204,11 +204,21 @@
 					</li>
 
 					<li class="page_2" data-quiz="toggle">
-						<h2><ins class="dot orange"></ins><span>수를 보고 표의 빈칸과 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣어 보시오.</span></h2>
+						<h2><ins class="dot orange"></ins><span>수를 보고 표의 빈칸과 <span class="blankBox"></span> 안에 알맞은 수를 써넣어 보시오.</span></h2>
 						<section>
 							<div class="lineBox orange">
 								<div class="tableContainer brown it-colorful">
 									<table>
+										<colgroup>
+											<col style="width:auto;">
+											<col style="width:auto;">
+											<col style="width:auto;">
+											<col style="width:10%;">
+											<col style="width:10%;">
+											<col style="width:10%;">
+											<col style="width:10%;">
+											<col style="width:10%;">
+										</colgroup>
 										<tbody>
 											<tr>
 												<td colspan="8">73840000</td>
@@ -225,7 +235,7 @@
 											</tr>
 											<tr>
 												<td>7</td>
-												<td>2</td>
+												<td>3</td>
 												<td>8</td>
 												<td>4</td>
 												<td>0</td>
@@ -259,7 +269,7 @@
 									</table>
 								</div>
 							</div>
-							<div class="textAlignC mt_20">
+							<div class="textAlignC mt_20 ls0_5">
 								73840000 = 70000000 + <div class="toggle" data-toggle-obj="23">
 									<div class="answer" data-toggle-target="23">
 										3000000
@@ -333,7 +343,7 @@
 								<div class="it-num-10 it-green" data-toggle-target="410">10</div>
 							</div>
 							<div class="textAlignC mt_20">
-								<div class="toggle" data-toggle-obj="4">
+								<div class="toggle" id="item_tg" data-toggle-obj="4">
 									<div class="answer" data-toggle-target="4">100000</div>
 								</div>원
 							</div>
@@ -440,7 +450,7 @@
 
 					<li class="page_7" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							설명하는 수가 얼마인지 써 보시오.
+							설명하는 수를 써 보시오.
 						</span></h2>
 						<section>
 							<div class="lineBox sky textAlignC">
@@ -561,6 +571,10 @@
 			$(".controlBtn").click(function(){
 				$efSound.click();
 			})
+
+			document.querySelector( "#item_tg" ).addEventListener("click",function(){
+				document.querySelector( ".page_4 .dapCheckBtn" ).click();
+			});
 
 
 		}, false);

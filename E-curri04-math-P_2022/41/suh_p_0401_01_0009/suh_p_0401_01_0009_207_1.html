@@ -12,6 +12,15 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
 	<style type="text/css">
+		.vMid{display:flex; align-items:center; justify-content:center; height:480px;}
+		.vMid > div{width:100%;}
+		.popup_contents .vMid{height:520px;}
+		.gate_container .downloadBtn{right:20px; left:auto; background-image:url(./images/icon_down.svg);}
+		.downloadBtn{background-image:url(./images/icon_down.svg);}
+		.downloadBtn::before{content:attr(data-name);}
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 		}
@@ -21,6 +30,7 @@
 		.flex-wrap + .flex-wrap{padding-top:30px}
 		img{max-width: 100%;}
 		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.popup_pages .downloadBtn{bottom:20px;}
 		.it-char-wrap{background:url(./images/suh_p_0401_01_0009_207_1/suh_p_0401_01_0009_207_1_1.png) no-repeat 50% 150px / 860px auto;}
 		.it-char{position:relative; width:32.8%; height:480px; padding-top:130px; box-sizing:border-box;}
 		.it-char .balloon{top:0;}
@@ -59,30 +69,22 @@
 									<div>새로 산 컴퓨터의<br/>가격은 120만 원이야.</div>
 								</div>
 								<!-- <div class="it-figure"></div> -->
-								<div class="colorBox check sky calBox">민수</div>
+								<div class="colorBox sky calBox">민수</div>
 							</div>
 							<div class="it-char n2">
 								<div class="balloon bottom ctTail yellow characterText_2 textAlignC">
 									<div>서울에 사는 인구수는<br/>10억 명이라고 해.</div>
 								</div>
 								<!-- <div class="it-figure"></div> -->
-								<div class="colorBox check yellow calBox">지안</div>
+								<div class="colorBox yellow calBox">지안</div>
 							</div>
 							<div class="it-char n3">
 								<div class="balloon bottom ctTail green characterText_3 textAlignC ls1_5">
 									<div>아빠가 산 새 자동차의<br/>가격은 3800만 원이야.</div>
 								</div>
 								<!-- <div class="it-figure"></div> -->
-								<div class="colorBox check green calBox">란주</div>
+								<div class="colorBox green calBox">란주</div>
 							</div>
-						</div>
-						<div class="buttonContainer left">
-							<button class="characterBtn" data-popup-btn="101" data-hover="">
-								<span>한 번 <b>더1</b></span>
-							</button>
-							<button class="characterBtn" data-popup-btn="102" data-hover="">
-								<span>한 번 <b>더2</b></span>
-							</button>
 						</div>
 					</li>
 					<li class="innerTab_2" data-quiz="toggle">
@@ -111,10 +113,10 @@
 						</div>
 						<div class="buttonContainer left">
 							<button class="characterBtn" data-popup-btn="101" data-hover="">
-								<span>한 번 <b>더1</b></span>
+								<span>한 번 더 <b>1</b></span>
 							</button>
 							<button class="characterBtn" data-popup-btn="102" data-hover="">
-								<span>한 번 <b>더2</b></span>
+								<span>한 번 더 <b>2</b></span>
 							</button>
 						</div>
 						<div class="buttonContainer">
@@ -139,27 +141,27 @@
 										적절하지 않게 이야기한 사람을 쓰고, 그 까닭을 써 보세요.
 									</p>
 									<div class="lineBox sky">
-										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">한서</div>
+										<div class="flexListContainer center it-box">
+											<div class="colorBox sky mr_10">한서</div>
 											<div>
 												우리 학교 전체 학생 수는 5000만 명이야.
 											</div>
 										</div>
-										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">태양</div>
+										<div class="flexListContainer center it-box">
+											<div class="colorBox sky mr_10">태양</div>
 											<div>
 												나는 용돈을 모아서 5만 원을 기부했어.
 											</div>
 										</div>
-										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">보경</div>
+										<div class="flexListContainer center it-box">
+											<div class="colorBox sky mr_10">보경</div>
 											<div>
 												내가 산 장난감 자동차는 25000원이야.
 											</div>
 										</div>
-										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">란주</div>
-											<div class="ls1_5">
+										<div class="flexListContainer center it-box">
+											<div class="colorBox sky mr_10">란주</div>
+											<div class="ls2">
 												우리 가족은 여행을 가기 위해 매달 20만 원을 모으고 있어.
 											</div>
 										</div>
@@ -176,18 +178,16 @@
 									</div>
 									<div class="flexListContainer it-box">
 										<div class="colorBox check skyBlue">까닭</div>
-										<div>
-											<div class="toggle" data-toggle-obj="1012">
-												<div class="answer" data-toggle-target="1012">
-													<ul class="contentsList">
-														<li>
-															<div class="bullet exam">예</div>
-															<div>
-																우리나라 사람 수가 5000만 명이므로 우리 학교 학생 수가 5000만 명이 될 수 없습니다.
-															</div>
-														</li>
-													</ul>
-												</div>
+										<div class="toggle" data-toggle-obj="1012">
+											<div class="answer" data-toggle-target="1012">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															우리나라 사람 수가 5000만 명이므로 우리 학교 학생 수가 5000만 명이 될 수 없습니다.
+														</div>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
@@ -213,26 +213,26 @@
 									</p>
 									<div class="lineBox sky">
 										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">한서</div>
+											<div class="colorBox sky mr_10">한서</div>
 											<div>
 												우리 가족은 매월 만 원씩 기부를 해.
 											</div>
 										</div>
 										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">태양</div>
+											<div class="colorBox sky mr_10">태양</div>
 											<div>
 												휴대 전화의 가격은 90만 원이야.
 											</div>
 										</div>
 										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">보경</div>
+											<div class="colorBox sky mr_10">보경</div>
 											<div>
 												우리나라에 사는 외국인 수는 5000만 명이야.
 											</div>
 										</div>
 										<div class="flexListContainer it-box">
-											<div class="colorBox check sky">란주</div>
-											<div class="ls1_5">
+											<div class="colorBox sky mr_10">란주</div>
+											<div class="ls2_5">
 												아버지의 자동차가 1년 동안 달린 주행 거리는 24176 km야.
 											</div>
 										</div>
@@ -249,18 +249,16 @@
 									</div>
 									<div class="flexListContainer it-box">
 										<div class="colorBox check skyBlue">까닭</div>
-										<div>
-											<div class="toggle" data-toggle-obj="1022">
-												<div class="answer" data-toggle-target="1022">
-													<ul class="contentsList">
-														<li>
-															<div class="bullet exam">예</div>
-															<div>
-																우리나라 인구는 약 5000만 명이므로 우리나라에 사는 외국인 수가 5000만 명이 될 수 없습니다.
-															</div>
-														</li>
-													</ul>
-												</div>
+										<div class="toggle" data-toggle-obj="1022">
+											<div class="answer" data-toggle-target="1022">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															우리나라 인구는 약 5000만 명이므로 우리나라에 사는 외국인 수가 5000만 명이 될 수 없습니다.
+														</div>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>

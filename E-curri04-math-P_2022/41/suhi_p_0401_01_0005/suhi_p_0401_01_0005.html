@@ -13,6 +13,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
 <link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
 <style type="text/css">
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_pages .vMid{height:490px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:6px;}
+	.tableContainer table th,
+	.tableContainer table td{font-size:40px;}
+
 	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
 	.popup_pages .buttonContainer{right:40px; bottom:20px;}
 
@@ -140,19 +147,34 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_1_comm ul.nemoBoxCon_2 .qBox {width:160px;height:70px;}
 	.page_1_comm ul.nemoBoxCon_1 li:nth-child(2n+1) > div{width:140px;}
 	.page_1_comm .bullet.circleDot{margin-top:0.5em;}
+	.nemoBoxCon .toggle{width:100%;}
 
-	.page_4 .tableContainer table{height:320px;}
+	.page_2 .toggle{min-width:160px;}
+	.pop_page_22 .toggle{min-width:160px;}
 
-	.bullet.it-green{display:inline-block; color:#6dbc4b; border:2px solid #a3d48e; vertical-align:5px;}
+	.page_3 .vMid{height:370px;}
+
+	.page_4 .tableContainer .toggle{width:100%; padding:10px 0;}
+	.page_4 .vMid{height:370px;}
+	.pop_page_42 .vMid{height:450px;}
+	.pop_page_42 .tableContainer .toggle{width:100%; padding:10px 0;}
+
+	.suhi h2 ins.number.bullet.it-green{display:inline-block; width:40px; height:40px; line-height: 1.8em;}
+	.bullet.it-green{display:inline-block; width:40px; height:40px; color:#6dbc4b; border:2px solid #a3d48e; line-height: 1.8em;}
 	.page_5_comm .it-lineBox{position:relative; width:550px; margin:0 auto; padding-bottom:70px;}
 	.page_5_comm .it-lineBox > span{display:inline-block; border-bottom: 3px solid rgba(0,0,0,0); line-height:1.1;}
 	.page_5_comm .it-lineBox .it-1{position:relative; border-bottom:3px solid #e94d40;}
 	.page_5_comm .it-lineBox .it-2{position:relative; border-bottom:3px solid #e94d40;}
 	.page_5_comm .it-lineBox .bullet.it-green{position:absolute; top:100%; left:50%; margin-top:15px; transform:translateX(-50%);}
+	.page_5 .vMid{height:370px;}
+	.page_5 .bullet.number{margin-top:8px;}
+	.pop_page_51 .bullet.it-green{vertical-align:4px;}
+	.pop_page_52 .bullet.it-green{margin:0; vertical-align:6px;}
 
 	.page_6 .it-article{padding:15px; border-radius:10px; background:#f2f2f2; font-size:38px; text-align:justify;}
 	.page_6 .it-article .underLine{display:inline-block;}
 	.page_6 .it-article .it-figure{float:right; width:273px; height: 181px; margin:10px 0 0 30px; background:url(./images/suhi_p_0401_01_0005_2.png) no-repeat 50% 50% / contain;}
+	.page_6 .characterWrap.speech.circle.right:before{right:-28px;}
 	.pop_page_61.on{z-index:5 !important;}
 	.pop_page_62 .icon_bogi.it-title{display:inline-block; align-self:flex-start; position:relative; height:36px; margin:8px 4px 0 4px; border-radius:10px; font-family:YGJAL; vertical-align:top; box-sizing:border-box; }
 	.pop_page_62 .icon_bogi.it-title:after{font-size:21px; line-height:36px;}
@@ -160,6 +182,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.pop_page_62 .it-sect ul{display:inline-block; min-width:500px;}
 	.pop_page_62 .it-sect .dotList > li:before{align-self:center; margin-top:0;}
 	.pop_page_62 .it-sect li > div:first-of-type{min-width:250px;}
+	.popup_container{z-index:4;}
 </style>
 </head>
 
@@ -212,50 +235,54 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					빈칸에 알맞은 수를 써넣으세요.
 				</span></h2>
 				<section class="full">
-					<div class="textAlignC type-qs2">
-						<ul class="flexListContainer">
-							<li class="colorBox check purple it7-1">10배</li>
-							<li class="colorBox check purple it7-2">10배</li>
-							<li class="colorBox check purple it7-3">10배</li>
-							<li class="colorBox check purple it7-4">10배</li>
-							<div class="curveLine top sky it7-5">
-								<div class="line"></div>
-							</div>
-							<div class="curveLine top sky it7-6">
-								<div class="line"></div>
-							</div>
-							<div class="curveLine top sky it7-7">
-								<div class="line"></div>
-							</div>
-							<div class="curveLine top sky it7-8">
-								<div class="line"></div>
-							</div>
-						</ul>
-					</div>
-					<div class="nemoBoxCon">
-						<ul class="nemoBoxCon_1">
-							<li><div>1만</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>10만</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>
-								<div class="toggle noBg" data-toggle-obj="11">
-									<div class="answer" data-toggle-target="11">
-										100만
+					<div class="vMid">
+						<div>
+							<div class="textAlignC type-qs2">
+								<ul class="flexListContainer">
+									<li class="colorBox black purple it7-1">10배</li>
+									<li class="colorBox black purple it7-2">10배</li>
+									<li class="colorBox black purple it7-3">10배</li>
+									<li class="colorBox black purple it7-4">10배</li>
+									<div class="curveLine top sky it7-5">
+										<div class="line"></div>
 									</div>
-								</div>
-							</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>1000만</div></li>
-							<li><div class="icon_arrow"></div></li>
-							<li><div>
-								<div class="toggle noBg" data-toggle-obj="12">
-									<div class="answer" data-toggle-target="12">
-										1억
+									<div class="curveLine top sky it7-6">
+										<div class="line"></div>
 									</div>
-								</div>
-							</div></li>
-						</ul>
+									<div class="curveLine top sky it7-7">
+										<div class="line"></div>
+									</div>
+									<div class="curveLine top sky it7-8">
+										<div class="line"></div>
+									</div>
+								</ul>
+							</div>
+							<div class="nemoBoxCon">
+								<ul class="nemoBoxCon_1">
+									<li><div>1만</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>10만</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>
+										<div class="toggle noBg" data-toggle-obj="11">
+											<div class="answer" data-toggle-target="11">
+												100만
+											</div>
+										</div>
+									</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>1000만</div></li>
+									<li><div class="icon_arrow"></div></li>
+									<li><div>
+										<div class="toggle noBg" data-toggle-obj="12">
+											<div class="answer" data-toggle-target="12">
+												1억
+											</div>
+										</div>
+									</div></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
@@ -271,7 +298,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 
 			<li class="page_2" data-quiz="toggle">
 				<h2><ins class="number">2</ins><span>
-					<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+					<span class="blankBox"></span> 안에 알맞은 수를 써넣으세요.
 				</span></h2>
 				<section class="full">
 					<div class="flexListContainer center jcenter">
@@ -307,7 +334,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</div>
 						<div class="icon_arrow ml_20 mr_20"></div>
 						<div>
-							<div class="colorBox orange check">
+							<div class="colorBox orange">
 								1억
 							</div>
 						</div>
@@ -329,16 +356,20 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					543700000000을 각 자리의 숫자가 나타내는 값의 합으로 나타내 보세요.
 				</span></h2>
 				<section class="full">
-					<div class="textAlignC mt_50">
-						543700000000  =  500000000000  + <div class="toggle" data-toggle-obj="31">
-							<div class="answer" data-toggle-target="31">40000000000</div>
-						</div>
-					</div>
-					<div class="textAlignR mt_20">
-						+ <div class="toggle" data-toggle-obj="32">
-							<div class="answer" data-toggle-target="32">3000000000</div>
-						</div> + <div class="toggle" data-toggle-obj="33">
-							<div class="answer" data-toggle-target="33">700000000</div>
+					<div class="vMid">
+						<div>
+							<div class="textAlignC">
+								543700000000  =  500000000000  + <div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">40000000000</div>
+								</div>
+							</div>
+							<div class="textAlignR mt_20 pr_100 mr_5">
+								+ <div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">3000000000</div>
+								</div> + <div class="toggle" data-toggle-obj="33">
+									<div class="answer" data-toggle-target="33">700000000</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -358,43 +389,47 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					어느 후원 단체에서 모금한 금액을 다양한 방법으로 나타낸 표입니다. 빈칸에 알맞은 금액을 써넣으세요.
 				</span></h2>
 				<section class="full">
-					<div class="tableContainer green">
-						<table><tbody>
-							<tr>
-								<th>구분</th>
-								<th colspan="3">금액(원)</th>
-							</tr>
-							<tr>
-								<th>회원 모금</th>
-								<td>127억 7000만</td>
-								<td>12770000000</td>
-								<td>
-									<div class="toggle noBg" data-toggle-obj="41">
-										<div class="answer" data-toggle-target="41">백이십칠억 칠천만</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th>캠페인 모금</th>
-								<td>
-									<div class="toggle noBg" data-toggle-obj="42">
-										<div class="answer" data-toggle-target="42">28억 5000만</div>
-									</div>
-								</td>
-								<td>2850000000</td>
-								<td>이십팔억 오천만</td>
-							</tr>
-							<tr>
-								<th>국가 지원금</th>
-								<td>11억 6000만</td>
-								<td>
-									<div class="toggle noBg" data-toggle-obj="43">
-										<div class="answer" data-toggle-target="43">1160000000</div>
-									</div>
-								</td>
-								<td>십일억 육천만</td>
-							</tr>
-						</tbody></table>
+					<div class="vMid">
+						<div>
+							<div class="tableContainer green">
+								<table><tbody>
+									<tr>
+										<th>구분</th>
+										<th colspan="3">금액(원)</th>
+									</tr>
+									<tr>
+										<th>회원 모금</th>
+										<td>127억 7000만</td>
+										<td>12770000000</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="41">
+												<div class="answer" data-toggle-target="41">백이십칠억 칠천만</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>캠페인 모금</th>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="42">
+												<div class="answer" data-toggle-target="42">28억 5000만</div>
+											</div>
+										</td>
+										<td>2850000000</td>
+										<td>이십팔억 오천만</td>
+									</tr>
+									<tr>
+										<th>국가 지원금</th>
+										<td>11억 6000만</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="43">
+												<div class="answer" data-toggle-target="43">1160000000</div>
+											</div>
+										</td>
+										<td>십일억 육천만</td>
+									</tr>
+								</tbody></table>
+							</div>
+						</div>
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="41" data-hover=""></button>
@@ -413,13 +448,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<ins class="bullet number it-green">ㄱ</ins>이 나타내는 값은 <ins class="bullet number it-green">ㄴ</ins>이 나타내는 값의 몇 배인지 구해 보세요.
 				</span></h2>
 				<section class="full">
-					<div class="lineBox green textAlignC it-lineBox">
-						<span>8</span><span class="it-1"><ins class="bullet number it-green">ㄱ</ins>5</span><span>734</span><span class="it-2"><ins class="bullet number it-green">ㄴ</ins>5</span><span>60129</span>
-					</div>
-					<div class="textAlignC mt_40">
-						<div class="toggle" data-toggle-obj="51">
-							<div class="answer" data-toggle-target="51">10000</div>
-						</div>배
+					<div class="vMid">
+						<div>
+							<div class="lineBox green textAlignC it-lineBox">
+								<span>8</span><span class="it-1"><ins class="bullet number it-green">ㄱ</ins>5</span><span>734</span><span class="it-2"><ins class="bullet number it-green">ㄴ</ins>5</span><span>60129</span>
+							</div>
+							<div class="textAlignC mt_40">
+								<div class="toggle" data-toggle-obj="51">
+									<div class="answer" data-toggle-target="51">10000</div>
+								</div>배
+							</div>
+						</div>
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="51" data-hover=""></button>
@@ -449,17 +488,16 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<ul class="basicSlider_slides" data-slides="">
 						<li class="innerTab_1">
 							<div class="it-article">
-								<strong>“누구나 깨끗한 물을 마시며 건강하게 자랄 권리가 있습니다.”</strong>
-								<div>
-									세계보건기구(WHO)가 제공한 이 보고서에 따르면 세계 인구 중 21억 명이 집에서 물을 마시지 못하며, <span class="underLine red">4500000000</span>명이 깨끗하지 못한 환경에서 살고 있는 것으로 나타났습니다. <br><div class="it-figure"></div>
-									집에서 물을 마시지 못하는 21억 명의 인구 중 <span class="underLine red">844000000</span>명은 마을에서조차 먹을 수 있는 샘물이나 수도 시설 없이 살고 있습니다.
+								<div class="textAlignC">
+									<strong>“누구나 깨끗한 물을 마시며 건강하게 자랄 권리가 있습니다.”</strong>
+								</div>
+								<div class="ti_20">
+									세계보건기구(WHO)가 제공한 이 보고서에 따르면 세계 인구 중 21억 명이 집에서 물을 마시지 못하며, <span class="underLine red ti_0">4500000000</span>명이 깨끗하지 못한 환경에서 살고 있는 것으로 나타났습니다. <br><div class="it-figure"></div>
+								</div>
+								<div class="ti_20">
+									집에서 물을 마시지 못하는 21억 명의 인구 중 <span class="underLine red ti_0">844000000</span>명은 마을에서조차 먹을 수 있는 샘물이나 수도 시설 없이 살고 있습니다.
 									<div class="textAlignR">[출처: 뉴시스, 2017. 7. 13.]</div>
 								</div>
-							</div>
-							<div class="buttonContainer left">
-								<button class="characterBtn it-green" data-popup-btn="62" data-hover="">
-									<span>쌍둥이 문제</span>
-								</button>
 							</div>
 						</li>
 						<li class="innerTab_2" data-quiz="toggle">
@@ -537,17 +575,21 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div>
 							<p class="mb_10">나타내는 수를 써 보세요.</p>
 							<!-- popup article -->
-							<div class="lineBox green textAlignC mt_40" style="width:600px; margin:0 auto;">
-								1000만을 10배 한 수
-							</div>
-							<div class="textAlignC mt_50">
-								<div class="toggle" data-toggle-obj="121">
-									<div class="answer" data-toggle-target="121">
-										1억
+							<div class="vMid">
+								<div>
+									<div class="lineBox green textAlignC" style="width:600px; margin:0 auto;">
+										1000만을 10배 한 수
 									</div>
-								</div> 또는 <div class="toggle" data-toggle-obj="122">
-									<div class="answer" data-toggle-target="122">
-										100000000
+									<div class="textAlignC mt_50">
+										<div class="toggle" data-toggle-obj="121">
+											<div class="answer" data-toggle-target="121">
+												1억
+											</div>
+										</div> 또는 <div class="toggle" data-toggle-obj="122">
+											<div class="answer" data-toggle-target="122">
+												100000000
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -566,7 +608,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			<div class="popup_contents">
 				<div class="flexListContainer center jcenter">
 					<div>
-						<div class="colorBox check orange">
+						<div class="colorBox orange">
 							1억
 						</div>
 					</div>
@@ -598,11 +640,11 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<li>
 						<ins class="bullet circleDot"></ins>
 						<div>
-							<p class="mb_10"><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</p>
+							<p class="mb_10"><span class="blankBox"></span> 안에 알맞은 수를 써넣으세요.</p>
 							<!-- popup article -->
 							<div class="flexListContainer center jcenter mt_20">
 								<div>
-									<div class="colorBox orange check mr_20">
+									<div class="colorBox orange mr_20">
 										1억
 									</div>
 								</div>
@@ -659,7 +701,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 									<div class="answer" data-toggle-target="31">30000000000</div>
 								</div>
 							</div>
-							<div class="textAlignR mt_20">
+							<div class="textAlignR mt_20 pr_100">
 								+ <div class="toggle" data-toggle-obj="321">
 									<div class="answer" data-toggle-target="321">2000000000</div>
 								</div> + <div class="toggle" data-toggle-obj="322">
@@ -704,43 +746,47 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div>
 							<p class="mb_10">어느 후원 단체에서 모금한 금액을 다양한 방법으로 나타낸 표입니다. 빈칸에 알맞은 금액을 써넣으세요.</p>
 							<!-- popup article -->
-							<div class="tableContainer green">
-								<table style="height:300px;"><tbody>
-									<tr>
-										<th>구분</th>
-										<th colspan="3">금액(원)</th>
-									</tr>
-									<tr>
-										<th>회원 모금</th>
-										<td>105억</td>
-										<td>10500000000</td>
-										<td>
-											<div class="toggle noBg" data-toggle-obj="421">
-												<div class="answer" data-toggle-target="421">백오억</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<th>캠페인 모금</th>
-										<td>
-											<div class="toggle noBg" data-toggle-obj="422">
-												<div class="answer" data-toggle-target="422">147억</div>
-											</div>
-										</td>
-										<td>14700000000</td>
-										<td>백사십칠억</td>
-									</tr>
-									<tr>
-										<th>국가 지원금</th>
-										<td>42억 5000만</td>
-										<td>
-											<div class="toggle noBg" data-toggle-obj="423">
-												<div class="answer" data-toggle-target="423">4250000000</div>
-											</div>
-										</td>
-										<td>사십이억 오천만</td>
-									</tr>
-								</tbody></table>
+							<div class="vMid">
+								<div>
+									<div class="tableContainer green">
+										<table><tbody>
+											<tr>
+												<th>구분</th>
+												<th colspan="3">금액(원)</th>
+											</tr>
+											<tr>
+												<th>회원 모금</th>
+												<td>105억</td>
+												<td>10500000000</td>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="421">
+														<div class="answer" data-toggle-target="421">백오억</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>캠페인 모금</th>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="422">
+														<div class="answer" data-toggle-target="422">147억</div>
+													</div>
+												</td>
+												<td>14700000000</td>
+												<td>백사십칠억</td>
+											</tr>
+											<tr>
+												<th>국가 지원금</th>
+												<td>42억 5000만</td>
+												<td>
+													<div class="toggle noBg" data-toggle-obj="423">
+														<div class="answer" data-toggle-target="423">4250000000</div>
+													</div>
+												</td>
+												<td>사십이억 오천만</td>
+											</tr>
+										</tbody></table>
+									</div>
+								</div>
 							</div>
 							<!-- //popup article -->
 						</div>
@@ -754,7 +800,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 		</li>
 
 		<li class="solve pop_page_51" data-popup-page="51">
-			<div class="popup_contents">
+			<div class="popup_contents ls0_5">
 				<div class="bullet number it-green">ㄱ</div>은 억의 자리이므로 600000000을 나타내고,<br>
 				<div class="bullet number it-green">ㄴ</div>은 십만의 자리이므로 600000을 나타냅니다.<br>
 				따라서 <div class="bullet number it-green">ㄱ</div>이 나타내는 값은 <div class="bullet number it-green">ㄴ</div>이 나타내는 값의 1000배입니다.
@@ -772,13 +818,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div>
 							<p class="mb_10"><ins class="bullet number it-green">ㄱ</ins>이 나타내는 값은 <ins class="bullet number it-green">ㄴ</ins>이 나타내는 값의 몇 배인지 구해 보세요.</p>
 							<!-- popup article -->
-							<div class="lineBox green textAlignC it-lineBox mt_40">
-								<span>27</span><span class="it-1"><ins class="bullet number it-green">ㄱ</ins>6</span><span>54</span><span class="it-2"><ins class="bullet number it-green">ㄴ</ins>6</span><span>90318</span>
-							</div>
-							<div class="textAlignC mt_40">
-								<div class="toggle" data-toggle-obj="521">
-									<div class="answer" data-toggle-target="521">1000</div>
-								</div>배
+							<div class="vMid">
+								<div>
+									<div class="lineBox green textAlignC it-lineBox">
+										<span>27</span><span class="it-1"><ins class="bullet number it-green">ㄱ</ins>6</span><span>54</span><span class="it-2"><ins class="bullet number it-green">ㄴ</ins>6</span><span>90318</span>
+									</div>
+									<div class="textAlignC mt_40">
+										<div class="toggle" data-toggle-obj="521">
+											<div class="answer" data-toggle-target="521">1000</div>
+										</div>배
+									</div>
+								</div>
 							</div>
 							<!-- //popup article -->
 						</div>

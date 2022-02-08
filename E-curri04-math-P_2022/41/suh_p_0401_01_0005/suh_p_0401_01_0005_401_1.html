@@ -11,6 +11,11 @@
 	<!--  수학 -->
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+		.it-vc{display:flex; align-items:center; justify-content:center; height:350px;}
+		.it-vc > div{width:100%;}
+
+
 		.addLineController{top:8px;}
 		.checkContainer .contentsBox h2 {
 			font-size: 40px !important;
@@ -24,12 +29,6 @@
 
 		/* 활동지 다운로드 */
 		.gate_container .downloadBtn{right:20px; left:auto;}
-		.downloadBtn{left:0;}
-		.downloadBtn::before{content:attr(data-name);}
-
-		/* 상단 탭정렬 */
-		.checkContainer .contentsBox .basicSlider_tabs{width:100%; justify-content:flex-end;}
-		.checkContainer .contentsBox .basicSlider_tabs li{margin-left:8px;}
 
 		.lineBox .bullet.number,
 		h2 .bullet.number{margin-top:5px;}
@@ -40,8 +39,6 @@
 
 		/* 개별 */
 		.page_1 .flexListContainer.n0{transform:translateY(50px);}
-		.page_1 .colorBox,
-		.page_1 .lineBox{min-width: 170px}
 		.page_1 .arrowLine{top:50px; width:50px;}
 		.page_1 .arrowLine.n1{left:195px;}
 		.page_1 .arrowLine.n2{left:470px;}
@@ -49,11 +46,42 @@
 		.page_1 .arrowLine.tbt.sky:after{top:-8px; right:-16px; transform:rotate(90deg);}
 		.page_1 .arrowLine:before{content:"10배"; position:absolute; top:-100px; left:50%; width:175px; text-align:center; white-space:nowrap; transform:translateX(-50%);}
 
+		/* 커브 단계 */
+		.type-qs2.textAlignC{margin:0 auto 30px; width:800px; height:90px; }
+		.type-qs2 .flex-box{display:flex; justify-content:space-between;}
+		.type-qs2 .flexListContainer{position:relative; width:100%;}
+		.type-qs2 .colorBox{position:absolute; z-index:999; top:-30px;}
+		.type-qs2 .curveLine{top:0; left:13%;}
+		.type-qs2 .curveLine .line{width:240px; height:240px; clip:rect(0,260px,130px,0);}
+		.type-qs2 .curveLine:after{top:101px; left:238px; z-index:999; transform:rotate(60deg); }
+		.nemoBoxCon{position:relative; text-align:center;}
+		.nemoBoxCon ul li{display:inline-block; position:relative;}
+		ul.nemoBoxCon_1{position:relative;}
+		ul.nemoBoxCon_1 li:nth-child(2n+1) > div{display:inline-block; position:relative; z-index:2; width:190px; height:70px; margin:0 -12px; border:5px solid #c1e8ec; border-radius:10px; background-color:#ffffff; line-height:70px; vertical-align:middle;}
+		ul.nemoBoxCon_1 li:nth-child(2n+2) > div{display:inline-block; position:relative; top:-6px; z-index:1; width:80px; height:0px; margin:0 -12px; border-top:5px solid #c1e8ec;}
+		ul.nemoBoxCon_1 .qBox{width:160px; height:70px;}
+		ul.nemoBoxCon_2{position:relative; margin-top:30px; margin-left:40px;}
+		ul.nemoBoxCon_2 li:nth-child(2n+2) > div{display:inline-block; position:relative; z-index:2; width:160px; height:70px; margin:0 -12px; border:5px solid #c1e8ec; border-radius:10px; background-color:#fff; line-height:70px;}
+		ul.nemoBoxCon_2 li:nth-child(2n+1) > div{display:inline-block; position:relative; top:-16px; z-index:1; width:40px; height:0px; margin:0 -12px; border-top: 5px solid #c1e8ec;}
+		ul.nemoBoxCon_2 .qBox {width:160px; height:70px;}
+		.type-qs2 .it1-1{left:80px;}
+		.type-qs2 .it1-2{left:335px;}
+		.type-qs2 .it1-3{left:595px;}
+		.type-qs2 .it1-4{left:670px;}
+		.type-qs2 .it1-5{left:10px;}
+		.type-qs2 .it1-6{left:270px;}
+		.type-qs2 .it1-7{left:530px;}
+		.type-qs2 .it1-8{left:610px;}
+
 		.page_2 .lineBox{width:550px; margin:0 auto;}
 
 		.page_3 .contentsList .bullet{margin-top:7px !important;}
+		.page_3 .lineBox{width:620px; margin:0 auto;}
 
 		.page_4 .lineBox{width:480px;}
+
+		.page_5 .it-ac{text-align:center;}
+		.page_5 .it-ac > div{display:inline-block;}
 
 		.page_7 .lineBox{width:550px; margin:0 auto;}
 
@@ -64,6 +92,10 @@
 		.page_8 .qBox{top:3px;left:-8px;}
 		.page_8 .calBox{width:150px; height:76px; line-height:76px; margin-right:10px; text-align:center;}
 		.page_8 .rwCon{margin-left:150px;}
+
+		.contentsList>li{align-items:center;}
+		.contentsList>li>.colorBox.check+*{width:auto;}
+		.page_8 .it-exam{position:absolute; top:-45px; left:0;}
 	</style>
 </head>
 
@@ -76,7 +108,7 @@
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/(4-1-1)형성평가2_05차시.hwp" target="_blank" class="downloadBtn" data-name="다운로드"></a>
+				<a href="./data/(4-1-1)형성평가2_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</div>
 		<header>
@@ -102,24 +134,45 @@
 							빈칸에 알맞은 수를 써넣으시오.
 						</span></h2>
 						<section>
-							<div class="flexListContainer n0">
-								<div class="colorBox sky flexListContainer center jcenter">10만</div>
-								<div class="arrowLine sky tbt n1"></div>
-								<div class="colorBox sky flexListContainer center jcenter">100만</div>
-								<div class="arrowLine sky tbt n2"></div>
-								<div class="lineBox sky">
-									<div class="toggle noBg" data-toggle-obj="11" style="padding: 0;width: 100%;">
-										<div class="answer" data-toggle-target="11">1000만</div>
+							<div class="it-vc">
+								<div>
+									<div class="textAlignC type-qs2">
+										<ul class="flexListContainer">
+											<li class="colorBox black purple it1-1">10배</li>
+											<li class="colorBox black purple it1-2">10배</li>
+											<li class="colorBox black purple it1-3">10배</li>
+											<div class="curveLine top sky it1-5">
+												<div class="line"></div>
+											</div>
+											<div class="curveLine top sky it1-6">
+												<div class="line"></div>
+											</div>
+											<div class="curveLine top sky it1-7">
+												<div class="line"></div>
+											</div>
+										</ul>
 									</div>
-								</div>
-								<div class="arrowLine sky tbt n3"></div>
-								<div class="lineBox sky">
-									<div class="toggle noBg" data-toggle-obj="12" style="padding: 0;width: 100%;">
-										<div class="answer" data-toggle-target="12">1억</div>
+									<div class="nemoBoxCon">
+										<ul class="nemoBoxCon_1">
+											<li><div>1만</div></li>
+											<li><div></div></li>
+											<li><div>10만</div></li>
+											<li><div></div></li>
+											<li><div>
+												<div class="toggle noBg" data-toggle-obj="11" style="padding: 0;width: 100%;">
+													<div class="answer" data-toggle-target="11">1000만</div>
+												</div>
+											</div></li>
+											<li><div></div></li>
+											<li><div>
+												<div class="toggle noBg" data-toggle-obj="12" style="padding: 0;width: 100%;">
+													<div class="answer" data-toggle-target="12">1억</div>
+												</div>
+											</div></li>
+										</ul>
 									</div>
 								</div>
 							</div>
-
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -228,10 +281,12 @@
 							설명하는 수가 얼마인지 써 보시오.
 						</span></h2>
 						<section>
-							<div class="lineBox sky textAlignC">
-								칠천사백이십일억 육천이백십구만
+							<div class="it-ac">
+								<div class="lineBox sky textAlignC">
+									칠천사백이십일억 육천이백십구만
+								</div>
 							</div>
-							<div class="flexListContainer jcenter mt_50">
+							<div class="flexListContainer jcenter center mt_50">
 								<div class="colorBox check deepOrange">쓰기</div>
 								<div class="toggle" data-toggle-obj="5">
 									<div class="answer" data-toggle-target="5">
@@ -246,8 +301,8 @@
 					</li>
 
 					<li class="page_6" data-quiz="toggle">
-						<h2><ins class="dot orange"></ins><span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.</span></h2>
-						<section>
+						<h2><ins class="dot orange"></ins><span><span class="blankBox"></span> 안에 알맞은 수를 써넣으시오.</span></h2>
+						<section style="padding-left:25px;">
 							<ul class="contentsList">
 								<li>
 									<ins class="bracket mt">(1)</ins>
@@ -301,7 +356,7 @@
 									<div class="answer" data-toggle-target="7">
 										7
 									</div>
-								</div> 개
+								</div>개
 							</div>
 							<div class="buttonContainer">
 								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
@@ -347,12 +402,15 @@
 									<div>9</div>
 								</div>
 							</div>
-							<div class="textAlignC mt_50">
+							<div class="textAlignC mt_60">
 								<ul class="contentsList">
 									<li>
 										<div class="colorBox check deepOrange">쓰기</div>
 										<div class="toggle" data-toggle-obj="81">
-											<div class="answer" data-toggle-target="81">2013456789</div>
+											<div class="answer" data-toggle-target="81">
+												<ins class="bullet exam it-exam">예</ins>
+												2013456789
+											</div>
 										</div>
 									</li>
 									<li>

@@ -37,33 +37,39 @@
 		.it-lineBox .colorBox{margin:0 12px 0 0; border-radius:0;}
 		.tableContainer .colorBox{padding:0 12px;}
 
-		.it-box-side{width:330px; height:200px;}
-		.it-box-side{padding-top:45px; padding-right:15px;}
-		.it-box-side li{position:relative; margin-top:12px; text-align:center;}
+		.it-box-side{width:360px; height:200px; padding-top:34px; padding-right:10px; padding-left:25px;}
+		.it-box-side li{position:relative; margin-top:30px; text-align:left;}
+		.it-box-side li + li{margin-top:10px;}
 		.it-box-side .icon_arrow{position:absolute; top:50%; right:0; transform:translateY(-50%);}
 		.tableContainer{position:relative; width:100%;}
 		.tableContainer table{table-layout:fixed;}
-		.tableContainer table td{padding-top:16px; padding-bottom:16px;}
+		.tableContainer table tr td{height:45px;}
+		.tableContainer table + table tr td{height:76px;}
 		.tableContainer table .it-line td{padding-top:0; padding-bottom:5px;}
+		.tableContainer table td .toggle{width:100%; padding:15px 0;}
 
-		.page_2 .it-tip{position:relative; padding:20px 20px 40px; border-radius:50%; text-align:center;}
+		/* .page_2 .it-tip{position:relative; padding:20px 20px 40px; border-radius:50%; text-align:center;} */
+		.page_2 .it-tip{position:relative; min-height:190px; margin-bottom:10px; text-align:center;}
 		.page_2 .it-tip:after{content:""; display:block; position:absolute; bottom:-30px; left:0; width:100%; height:70px; margin:0 auto; background:url(./images/suh_h_0401_01_0007_203/suh_h_0401_01_0007_203_1_1.png) no-repeat 50% 50% / contain;}
 		.page_2 .horizonWrap{position:relative;}
 		.page_2 .horizonContainer .horizonLine{left:-35px;}
 		.page_2 .it-num{position:absolute; top:175px; white-space:nowrap;}
 		.page_2 .it-num.n1{left:-40px;}
-		.page_2 .it-num.n2{left:400px;}
-		.page_2 .it-num.n3{left:850px;}
-		.page_2 .it-start-wrap{position:relative; width:500px;}
-		.page_2 .dragObj{position:absolute; top:25px;}
+		.page_2 .it-num.n2{left:388px;}
+		.page_2 .it-num.n3{left:842px;}
+		.page_2 .it-start-wrap{position:relative; width:500px; height:180px;}
+		.page_2 .dragObj{position:absolute; top:15px; line-height:1.2;}
 		.page_2 .dragObj_1{left:100px;}
 		.page_2 .dragObj_2{left:290px;}
-		.page_2 .dropArea{position:absolute; top:0; width:120px; height:160px;}
-		.page_2 .dropArea_1{left:155px;}
-		.page_2 .dropArea_2{left:695px;}
+		.page_2 .dropArea{position:absolute; top:-15px; width:135px; height:160px;}
+		.page_2 .dropArea_1{left:148px;}
+		.page_2 .dropArea_2{left:688px;}
 		.page_2 .it-end-wrap{margin-top:10px; padding-top:130px;}
 		.page_2 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
 		.page_2 .it-end-wrap .dragObj.dragObjComplete{position:static; top:0; left:0;}
+
+		.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+		.vMid > div{width:100%;}
 	</style>
 </head>
 
@@ -100,9 +106,12 @@
 									</li>
 								</ul>
 							</div>
-							<div class="tableContainer it-colorful">
+							<div class="tableContainer it-colorful fix">
 								<table><tbody>
 									<tr class="it-line">
+										<td>(<span class="redT">조</span>)</td>
+										<td></td>
+										<td></td>
 										<td></td>
 										<td>(<span class="redT">억</span>)</td>
 										<td></td>
@@ -251,20 +260,25 @@
 							</div>
 							<div class="dragDropContainer">
 								<div class="flexListContainer mb_201">
-									<div class="it-tip colorBox yellow">
-										수직선에서<br>
-										눈금 한 칸은<br>
-										10억이야.
+									<div class="it-tip">
+										<div class="characterImg boy_1-wrap circle sky">
+											<div class="charSpriteImg boy_1"></div>
+										</div>
+										<div class="balloon sky left ctTail textAlignC" style="left:200px; width:220px;">
+											수직선에서<br>
+											눈금 한 칸은<br>
+											10억이야.
+										</div>
 									</div>
 									<div class="lineBox green it-start-wrap dragObjUL">
 										<div class="js-dragObj dragObj dragObj_1 n1" data-name="drag-obj" data-drag-obj-answer="1">
 											<div class="textAlignC">
-												<span class="redT">↓</span><br>1조<br>4520억
+												1조<br>4520억<br><span class="redT">↓</span>
 											</div>
 										</div>
 										<div class="js-dragObj dragObj dragObj_2 n2" data-name="drag-obj" data-drag-obj-answer="2">
 											<div class="textAlignC">
-												<span class="redT">↓</span><br>1조<br>4580억
+												1조<br>4580억<br><span class="redT">↓</span>
 											</div>
 										</div>
 									</div>
@@ -289,17 +303,19 @@
 							크기를 비교하여 <span class="toggleBlank circle" style="vertical-align:-4px;"></span> 안에
 							<img src="../common/contents/images/math/inequalIcon_2.png">, <img
 								src="../common/contents/images/math/equalIcon.png">, <img
-								src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+								src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으세요.
 						</span></h2>
 						<section>
-							<div class="pt_20">
-								<div class="flexListContainer jcenter">
-									<div style="width: 300px; text-align: right;">1조 4580억</div>
-									<div class="toggle circle" data-toggle-obj="1" style="margin: -4px 20px;">
-										<div class="answer" data-toggle-target="1"><img
-											src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-										</div>
-									<div style="width: 300px;">1조 4520억</div>
+							<div class="vMid">
+								<div>
+									<div class="flexListContainer jcenter">
+										<div style="width: 300px; text-align: right;">1조 4580억</div>
+										<div class="toggle circle" data-toggle-obj="1" style="margin: -4px 20px;">
+											<div class="answer" data-toggle-target="1"><img
+												src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
+											</div>
+										<div style="width: 300px;">1조 4520억</div>
+									</div>
 								</div>
 							</div>
 							<div class="buttonContainer">

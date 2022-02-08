@@ -10,6 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
+		.vMid{display:flex; align-items:center; justify-content:center; height:470px;}
+		.vMid > div{width:100%;}
+
+
 		.page_1 img,
 		.pop_page_1 img{width: 100%;}
 		/* 숫자자리 table */
@@ -33,10 +37,17 @@
 		.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
 		.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
 		.tableContainer.it-colorful .it-white{background:#fff;}
+		.tableContainer .toggle{width:100%;}
 
-		.it-lineBox .lineBox{overflow:hidden; padding:0 12px 0 0;}
+		.it-lineBox .lineBox{overflow:hidden; height:75px; padding:0 12px 0 0; border-color:#d4f3f6;}
 		.it-lineBox .colorBox{margin:0 12px 0 0; border-radius:0;}
-		.tableContainer .colorBox{padding:0 12px;}
+		.tableContainer .colorBox{display:inline-block; min-width:126px; padding:2px 0; text-align:center;}
+		.tableContainer table{table-layout:fixed;}
+		.tableContainer table tr td:first-child{width:126px;}
+		.tableContainer table tr td{height:56px;}
+		.tableContainer table tr:nth-child(1) td{height:85px; line-height:1;}
+		.tableContainer table tr:nth-child(1) td:nth-child(2){border-radius:10px 0 0 0;}
+		.tableContainer table tr:nth-child(3) td:nth-child(2){border-radius:0 0 0 10px;}
 	</style>
 </head>
 
@@ -70,7 +81,7 @@
 								5조 8410억
 							</div>
 						</div>
-						<div class="tableContainer it-colorful mt_20">
+						<div class="tableContainer it-colorful mt_10">
 							<table><tbody>
 								<tr>
 									<td></td>
@@ -168,7 +179,7 @@
 								5조 8410억
 							</div>
 						</div>
-						<div class="tableContainer it-colorful mt_20">
+						<div class="tableContainer it-colorful mt_10">
 							<table><tbody>
 								<tr>
 									<td></td>
@@ -255,106 +266,104 @@
 						<h2><ins class="dot"></ins><span>
 							어떻게 비교했는지 이야기해 보세요.
 						</span></h2>
-						<section>
-							<div class="flexListContainer around it-lineBox">
-								<div class="lineBox sky flexListContainer center">
-									<div class="colorBox sky mr_10">미국</div>
-									34조 2160억
-								</div>
-								<div class="lineBox sky flexListContainer center">
-									<div class="colorBox sky mr_10">스웨덴</div>
-									5조 8410억
-								</div>
+						<div class="flexListContainer around it-lineBox">
+							<div class="lineBox sky flexListContainer center">
+								<div class="colorBox sky mr_10">미국</div>
+								34조 2160억
 							</div>
-							<div class="tableContainer it-colorful mt_20">
-								<table><tbody>
-									<tr>
-										<td></td>
-										<td class="it-deepPurple">십조</td>
-										<td class="it-deepPurple">조</td>
-										<td class="it-skyBlue">천억</td>
-										<td class="it-skyBlue">백억</td>
-										<td class="it-skyBlue">십억</td>
-										<td class="it-skyBlue">억</td>
-										<td class="it-green">천만</td>
-										<td class="it-green">백만</td>
-										<td class="it-green">십만</td>
-										<td class="it-green">만</td>
-										<td class="it-deepOrange">천</td>
-										<td class="it-deepOrange">백</td>
-										<td class="it-deepOrange">십</td>
-										<td class="it-deepOrange">일</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="colorBox sky">
-												미국
-											</span>
-										</td>
-										<td class="it-purple">3</td>
-										<td class="it-purple">4</td>
-										<td class="it-sky">
-												2
-										</td>
-										<td class="it-sky">1</td>
-										<td class="it-sky">
-												6
-										</td>
-										<td class="it-sky">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-									</tr>
-									<tr>
-										<td>
-											<span class="colorBox sky">
-												스웨덴
-											</span>
-										</td>
-										<td class="it-purple"></td>
-										<td class="it-purple">
-												5
-										</td>
-										<td class="it-sky">8</td>
-										<td class="it-sky">
-												4
-										</td>
-										<td class="it-sky">1</td>
-										<td class="it-sky">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-lightgreen">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-										<td class="it-orange">0</td>
-									</tr>
-								</tbody></table>
+							<div class="lineBox sky flexListContainer center">
+								<div class="colorBox sky mr_10">스웨덴</div>
+								5조 8410억
 							</div>
-							<div class="textAlignL mt_40">
-								<div class="toggle" data-toggle-obj="6">
-									<div class="answer" data-toggle-target="6">
-										<ul class="contentsList">
-											<li>
-												<div class="bullet exam">예</div>
-												<div>
-													십조 단위와 조 단위이므로 십조 단위의 수가 더 큰 수라는 것을 이용하여 비교했습니다.
-												</div>
-											</li>
-										</ul>
-									</div>
+						</div>
+						<div class="tableContainer it-colorful mt_10">
+							<table><tbody>
+								<tr>
+									<td></td>
+									<td class="it-deepPurple">십조</td>
+									<td class="it-deepPurple">조</td>
+									<td class="it-skyBlue">천억</td>
+									<td class="it-skyBlue">백억</td>
+									<td class="it-skyBlue">십억</td>
+									<td class="it-skyBlue">억</td>
+									<td class="it-green">천만</td>
+									<td class="it-green">백만</td>
+									<td class="it-green">십만</td>
+									<td class="it-green">만</td>
+									<td class="it-deepOrange">천</td>
+									<td class="it-deepOrange">백</td>
+									<td class="it-deepOrange">십</td>
+									<td class="it-deepOrange">일</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="colorBox sky">
+											미국
+										</span>
+									</td>
+									<td class="it-purple">3</td>
+									<td class="it-purple">4</td>
+									<td class="it-sky">
+											2
+									</td>
+									<td class="it-sky">1</td>
+									<td class="it-sky">
+											6
+									</td>
+									<td class="it-sky">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="colorBox sky">
+											스웨덴
+										</span>
+									</td>
+									<td class="it-purple"></td>
+									<td class="it-purple">
+											5
+									</td>
+									<td class="it-sky">8</td>
+									<td class="it-sky">
+											4
+									</td>
+									<td class="it-sky">1</td>
+									<td class="it-sky">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-lightgreen">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+								</tr>
+							</tbody></table>
+						</div>
+						<div class="textAlignL mt_10">
+							<div class="toggle" data-toggle-obj="6">
+								<div class="answer" data-toggle-target="6">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>
+												십조 단위와 조 단위이므로 십조 단위의 수가 더 큰 수라는 것을 이용하여 비교했습니다.
+											</div>
+										</li>
+									</ul>
 								</div>
 							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</section>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>

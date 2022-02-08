@@ -12,6 +12,15 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
 	<style type="text/css">
+		.vMid{display:flex; align-items:center; justify-content:center; height:480px;}
+		.vMid > div{width:100%;}
+		header .title .blankBox{box-sizing:border-box;}
+		.gate_container .downloadBtn{right:20px; left:auto; background-image:url(./images/icon_down.svg);}
+		.downloadBtn{background-image:url(./images/icon_down.svg);}
+		.downloadBtn::before{content:attr(data-name);}
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 		}
@@ -21,6 +30,7 @@
 		.flex-wrap + .flex-wrap{padding-top:30px}
 		img{max-width: 100%;}
 		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.popup_pages .downloadBtn{bottom:20px;}
 
 		/* row트리
 		* 동글블릿: .it-treeRow-tail
@@ -81,6 +91,12 @@
 		.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
 		.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
 
+		.contentsBox .toggle{min-width:120px;}
+		.popup_pages .blankBox{min-width:auto; width:40px; height:40px; margin-top:6px;}
+		.pop_page_1 .toggle{min-width:120px;}
+		.pop_page_1 .vMid{height:520px;}
+		.pop_page_2 .toggle{min-width:120px;}
+		.pop_page_2 .vMid{height:520px;}
 	</style>
 </head>
 
@@ -90,47 +106,51 @@
 		<header>
 			<div class="title active">
 				<div class="bullet number orange inline">1</div>
-				<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+				<span class="blankBox white w50"></span> 안에 알맞은 수를 써넣으세요.
 			</div>
 		</header>
 		<main>
 			<div class="contentsBox" data-quiz="toggle">
 				<section>
-					<div class="flexListContainer center jcenter">
-						<div class="mr_20">
-							10000은
+					<div class="vMid">
+						<div>
+							<div class="flexListContainer center jcenter">
+								<div class="mr_20">
+									10000은
+								</div>
+								<div class="it-treeRow green">
+									<div class="it-treeRow-list">
+										9999보다 <div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												1
+											</div>
+										</div>만큼 더 큰 수입니다.
+									</div>
+									<div class="it-treeRow-list">
+										9900보다 <div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												100
+											</div>
+										</div>만큼 더 큰 수입니다.
+									</div>
+									<div class="it-treeRow-list">
+										9000보다 <div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												1000
+											</div>
+										</div>만큼 더 큰 수입니다.
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="101" data-hover="">
+									<span>한 번 더 <b> 1</b></span>
+								</button>
+								<button class="characterBtn" data-popup-btn="102" data-hover="">
+									<span>한 번 더 <b> 2</b></span>
+								</button>
+							</div>
 						</div>
-						<div class="it-treeRow green">
-							<div class="it-treeRow-list">
-								9999보다 <div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										1
-									</div>
-								</div>만큼 더 큰 수입니다.
-							</div>
-							<div class="it-treeRow-list">
-								9900보다 <div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										100
-									</div>
-								</div>만큼 더 큰 수입니다.
-							</div>
-							<div class="it-treeRow-list">
-								9000보다 <div class="toggle" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">
-										1000
-									</div>
-								</div>만큼 더 큰 수입니다.
-							</div>
-						</div>
-					</div>
-					<div class="buttonContainer left">
-						<button class="characterBtn" data-popup-btn="101" data-hover="">
-							<span>한 번 <b>더1</b></span>
-						</button>
-						<button class="characterBtn" data-popup-btn="102" data-hover="">
-							<span>한 번 <b>더2</b></span>
-						</button>
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="103" data-hover=""></button>
@@ -152,31 +172,35 @@
 									<p class="mb_10">
 										<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 									</p>
-									<div class="flexListContainer center jcenter">
-										<div class="mr_20">
-											10000은
-										</div>
-										<div class="it-treeRow green">
-											<div class="it-treeRow-list">
-												9990보다 <div class="toggle" data-toggle-obj="1011">
-													<div class="answer" data-toggle-target="1011">
-														10
+									<div class="vMid">
+										<div>
+											<div class="flexListContainer center jcenter">
+												<div class="mr_20">
+													10000은
+												</div>
+												<div class="it-treeRow green">
+													<div class="it-treeRow-list">
+														9990보다 <div class="toggle" data-toggle-obj="1011">
+															<div class="answer" data-toggle-target="1011">
+																10
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
-											</div>
-											<div class="it-treeRow-list">
-												9800보다 <div class="toggle" data-toggle-obj="1012">
-													<div class="answer" data-toggle-target="1012">
-														200
+													<div class="it-treeRow-list">
+														9800보다 <div class="toggle" data-toggle-obj="1012">
+															<div class="answer" data-toggle-target="1012">
+																200
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
-											</div>
-											<div class="it-treeRow-list">
-												8000보다 <div class="toggle" data-toggle-obj="1013">
-													<div class="answer" data-toggle-target="1013">
-														2000
+													<div class="it-treeRow-list">
+														8000보다 <div class="toggle" data-toggle-obj="1013">
+															<div class="answer" data-toggle-target="1013">
+																2000
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
+												</div>
 											</div>
 										</div>
 									</div>
@@ -200,31 +224,35 @@
 									<p class="mb_10">
 										<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 									</p>
-									<div class="flexListContainer center jcenter">
-										<div class="mr_20">
-											10000은
-										</div>
-										<div class="it-treeRow green">
-											<div class="it-treeRow-list">
-												9000보다 <div class="toggle" data-toggle-obj="1021">
-													<div class="answer" data-toggle-target="1021">
-														1000
+									<div class="vMid">
+										<div>
+											<div class="flexListContainer center jcenter">
+												<div class="mr_20">
+													10000은
+												</div>
+												<div class="it-treeRow green">
+													<div class="it-treeRow-list">
+														9000보다 <div class="toggle" data-toggle-obj="1021">
+															<div class="answer" data-toggle-target="1021">
+																1000
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
-											</div>
-											<div class="it-treeRow-list">
-												9900보다 <div class="toggle" data-toggle-obj="1022">
-													<div class="answer" data-toggle-target="1022">
-														100
+													<div class="it-treeRow-list">
+														9900보다 <div class="toggle" data-toggle-obj="1022">
+															<div class="answer" data-toggle-target="1022">
+																100
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
-											</div>
-											<div class="it-treeRow-list">
-												9990보다 <div class="toggle" data-toggle-obj="1023">
-													<div class="answer" data-toggle-target="1023">
-														10
+													<div class="it-treeRow-list">
+														9990보다 <div class="toggle" data-toggle-obj="1023">
+															<div class="answer" data-toggle-target="1023">
+																10
+															</div>
+														</div>만큼 더 큰 수입니다.
 													</div>
-												</div>만큼 더 큰 수입니다.
+												</div>
 											</div>
 										</div>
 									</div>
