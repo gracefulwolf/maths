@@ -29,12 +29,32 @@
 		.item1 .dragObjComplete{display: none;}
 		.dragDropContainer .colorBox{position: relative; height: 100px; width:450px; margin:0 auto;}
 		.carditem{position: absolute; top:20px; left:0; width:52px; height:64px;}
-		.carditem.n1{left:20px; background: url(./images/numCard_etc_2.png) no-repeat 0 0 / cover;}
-		.carditem.n2{left:90px; background: url(./images/numCard_etc_5.png) no-repeat 0 0 / cover;}
-		.carditem.n3{left:160px; background: url(./images/numCard_etc_6.png) no-repeat 0 0 / cover;}
-		.carditem.n4{left:230px; background: url(./images/numCard_etc_7.png) no-repeat 0 0 / cover;}
-		.carditem.n5{left:300px; background: url(./images/numCard_etc_8.png) no-repeat 0 0 / cover;}
-		.carditem.n6{left:370px; background: url(./images/numCard_etc_9.png) no-repeat 0 0 / cover;}
+		.carditem.n1{left:20px; background: url(./images/numCard_etc_1.png) no-repeat 0 0 / cover;}
+		.carditem.n2{left:90px; background: url(./images/numCard_etc_2.png) no-repeat 0 0 / cover;}
+		.carditem.n3{left:160px; background: url(./images/numCard_etc_3.png) no-repeat 0 0 / cover;}
+		.carditem.n4{left:230px; background: url(./images/numCard_etc_4.png) no-repeat 0 0 / cover;}
+		.carditem.n5{left:300px; background: url(./images/numCard_etc_5.png) no-repeat 0 0 / cover;}
+		.carditem.n6{left:370px; background: url(./images/numCard_etc_6.png) no-repeat 0 0 / cover;}
+		.carditem.n7{left:160px; background: url(./images/numCard_etc_7.png) no-repeat 0 0 / cover;}
+		.carditem.n8{left:230px; background: url(./images/numCard_etc_8.png) no-repeat 0 0 / cover;}
+		.carditem.n9{left:300px; background: url(./images/numCard_etc_9.png) no-repeat 0 0 / cover;}
+
+
+		.page_1 .carditem.n2{left:20px;}
+		.page_1 .carditem.n5{left:90px;}
+		.page_1 .carditem.n6{left:160px;}
+		.page_1 .carditem.n7{left:230px;}
+		.page_1 .carditem.n8{left:300px;}
+		.page_1 .carditem.n9{left:370px;}
+
+		.page_2 .carditem.n2{left:20px;}
+		.page_2 .carditem.n5{left:90px;}
+		.page_2 .carditem.n8{left:160px;}
+		.page_2 .carditem.n5{left:230px;}
+		.page_2 .carditem.n6{left:300px;}
+		.page_2 .carditem.n9{left:370px;}
+
+
 		.dropAreaUL{display: flex;  height: 100px; width:450px; margin:50px auto; justify-content: space-between;}
 		.dropAreaUL .dropArea{width:52px; height:64px; border:2px solid #ccc; border-radius:6px; margin:0 2px;}
 		.dropAreaUL .dropArea:nth-child(4){margin-left:50px;}
@@ -47,6 +67,8 @@
 		.page_2 .flex-wrap {justify-content: center; }
 		.page_2 .flex-wrap > *{width:220px; margin: 0 50px; padding:10px 26px 10px 10px; position: relative;}
 		.page_2 .flex-wrap > * .exam{position: absolute; top:10px; left:10px;}
+
+		.study_guide{bottom:-30px;}
 	</style>
 </head>
 
@@ -70,20 +92,22 @@
 						<h2>
 							<ins class="dot"></ins><span>
 							세 자리 수 두 개를 만들어 보세요.
+
+							<div class="study_guide" style="right:0;"> 
+								<em>숫자 카드</em>를 <em>드래그</em>하여 옮기세요.
+							</div>
 						</h2>
-						<div class="study_guide" style="right:0; top:30px;"> 
-							<em>숫자 카드</em>를 <em>드래그</em>하여 옮기세요.
-						</div>
 						
-						<div class="dragDropContainer">
+						
+						<div class="dragDropContainer" style="margin-top:40px">
 							
 							<div class="item1 colorBox yellow">
-								<div class="js-dragObj dragObj n1 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
 								<div class="js-dragObj dragObj n2 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
-								<div class="js-dragObj dragObj n3 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
-								<div class="js-dragObj dragObj n4 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
 								<div class="js-dragObj dragObj n5 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
 								<div class="js-dragObj dragObj n6 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
+								<div class="js-dragObj dragObj n7 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
+								<div class="js-dragObj dragObj n8 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
+								<div class="js-dragObj dragObj n9 carditem" data-name="drag-obj" data-drag-obj-answer="1"></div>
 							</div>
 							<div class="dropAreaUL">
 								<div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
@@ -193,7 +217,9 @@
 							<ins class="dot"></ins><span>
 							뺄셈식을 올바르게 만들려면 어떻게 해야 할까요?
 						</h2>
-						<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+						<div class="single charSpriteImg boy_3" style="position:absolute; top: 70px;left: 170px;"></div>
+						<div class="bullet exam" style="position: absolute; top:80px; left:530px">예</div>
+						<div class="balloon left sky ctTail" style="top: 138px; left: 530px; display: block; text-align: center; word-break: keep-all;"><span><div class="flex-wrap">내가 만든 수와 <br>친구가 만든 수 중에서 <br>큰 수에서 작은 수를 <br>빼야 합니다.</div></span></div>
 					</li>
 				</ul>
 			</div>
@@ -238,42 +264,7 @@
 				});
 			}
 
-			$prite.add({
-				target: $ts.getEl('#aniBox_1'),
-				spriteId: 'sprite1',
-				spriteList: [
-					{
-						name: 'boy_3',
-						// circle: 'sky',
-						speech:'right',
-						top:70,
-						left: 340,
-						width: 340,
-        				height: 421,
-						thumbNail: '../common/contents/images/character/boy_3.png',
-						spriteSheet: '../common/contents/images/character/boy_3_sprite.png',
-						// sound: './media/audios/suh_h_0301_01_0009_201_2_1.mp3',
-						sheetWidth: 102000,
-						sheetHeight: 421,
-						endSheet: 0,
-						delay: 40,
-						textBubble: {
-							text: '<div class="flex-wrap"><div class="bullet exam">예</div><div style="text-align:left;">내가 만든 수와 친구가 만든 수 중에서 큰 수에서 작은 수를 빼야 합니다.</div></div>',
-							class: 'balloon left sky ctTail',
-							top:58,
-							left: 680,
-							textAlign: 'center', 
-							wordBreak: 'keep-all' 
-						},
-						callbacks: {
-							start: function () {
-							}, // 시작시 콜백
-							end: function () {
-							} // 끝날시 콜백
-						}
-					}
-				]
-			});
+			
 		}, false);
 
 	</script>
