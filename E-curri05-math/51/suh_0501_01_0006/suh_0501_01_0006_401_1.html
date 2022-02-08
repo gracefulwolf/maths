@@ -100,21 +100,9 @@
 						</div>
 						<div class="dragLineContainer">
 							<ul class="box sky">
-								<li>20+5×3÷5-6
-									<span class="complete_txt">
-										=20+15÷5-6 <br />=20+3-6 =23-6 =17
-									</span>
-								</li>
-								<li>(9+27)÷4×2-5
-									<span class="complete_txt">
-										=36÷4×2-5 <br />=9×2-5 =18-5 =13
-									</span>
-								</li>
-								<li>(8+1)×4-30÷3
-									<span class="complete_txt">
-										=9×4-10 =36-10 <br />=26
-									</span>
-								</li>
+								<li>20+5×3÷5－6</li>
+								<li>(9+27)÷4×2－5</li>
+								<li>(8+1)×4－30÷3</li>
 							</ul>
 							<ul class="box yellow">
 								<li>13</li>
@@ -137,7 +125,10 @@
 						<div class="js-dragLineArea dragLineArea left_2 top_3" data-group="2" data-name="dragLine6" data-answer="1"></div>
 						<div class="js-dragLineObj dragLineObj left_2 top_3" data-group="2" data-name="dragLine6" data-answer="1" data-complete-count="1"></div>
 
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</section>
 				</li>
 				<li class="page_3" data-quiz="toggle">
@@ -150,9 +141,9 @@
 									<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">×</div>
 									</div>
-									4=2
+									4＝2
 									<div class="complete_txt">
-										＝20+2-20<br />=22-20<br />=2
+										＝20+2-20<br />＝22-20<br />＝2
 									</div>
 								</div>
 							</li>
@@ -202,7 +193,7 @@
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</section>
 				</li>
-				<li class="page_5" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox2" data-alert="">
+				<li class="page_5">
 					<h2 data-addline-container="">
 						<ins class="dot orange"></ins>
 						<span>
@@ -214,32 +205,85 @@
 							</span>
 						</span>
 					</h2>
-					<section>
-
-						<div class="lineBox purple" data-ox-obj="1">
-							<div>6500-200×7-2400÷12×6</div>
-							<div class="icon icon_x" data-ox-target="1"></div>
-						</div>
-						<div class="lineBox purple" data-ox-obj="2" data-answer>
-							<div>6500-200×7-2400÷6×12</div>
-							<div class="icon icon_o" data-ox-target="2"></div>
-						</div>
-						
-						<!-- <div class="formula_answer">
-							<div class="colorBox check deepPurple">답</div>
-							<div class="bunsuContainer">
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">300</div>
+					<section data-slide-container>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="page_5_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox2">
+								<div class="lineBox purple" data-ox-obj="1">
+									<div>6500-200×7-2400÷12×6</div>
+									<div class="icon icon_x" data-ox-target="1"></div>
 								</div>
-							</div>원
-						</div> -->
-
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+								<div class="lineBox purple" data-ox-obj="2" data-answer>
+									<div>6500-200×7-2400÷6×12</div>
+									<div class="icon icon_o" data-ox-target="2"></div>
+								</div>
+								
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+							<li class="page_5_2" data-quiz="toggle">
+								<div class="formula_answer">
+									<div class="colorBox check deepPurple">답</div>
+									<div class="bunsuContainer">
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">300</div>
+										</div>
+									</div>원
+								</div>
+								
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
 					</section>
 				</li>
 			</ul>
 		</div>
 	</main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<!--      page에 solve 추가        -->
+			<li class="solve pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<ul class="contentsList">
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								20+5×3÷5－6＝20+15÷5－6<br />
+								<span class="nullBlank"></span>
+								＝20＋3－6<br />
+								<span class="nullBlank"></span>
+								＝23－6＝17
+							</div>
+						</li>
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								(9+27)÷4×2－5＝36÷4×2－5<br />
+								<span class="nullBlank"></span>
+								＝9×2－5<br />
+								<span class="nullBlank"></span>
+								＝18－5＝13
+							</div>
+						</li>
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								(8+1)×4－30÷3＝9×4－10<br />
+								<span class="nullBlank"></span>
+								＝36－10＝26
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</section>
 </div>
 
 <div id="loadingContainer">
