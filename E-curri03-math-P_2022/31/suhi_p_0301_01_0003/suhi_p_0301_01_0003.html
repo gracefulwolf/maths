@@ -52,16 +52,19 @@
 
 		.page_4 .flex-wrap{width: 100%; justify-content: center; align-items: center; height: 300px; position: relative;}
 		.page_4 .flex-wrap .math_calc_table{margin-top:90px; margin-left:-440px;}
-		.page_4 .flex-wrap .popBtn {bottom:-20px; left:400px;}
+		.flex-wrap .popBtn {bottom:-20px; left:150px;}
 		.page_4 .icon_arrow{position: absolute; top:170px; left:530px;}
 		.page_4 .icon {position: absolute; width:100%; height:100%;}
 		.pop_page_5 .full{position: relative;}
 		.pop_page_5 .icon {position: absolute; width:100%; height:100%;}
 		.pop_page_5 .flex-wrap{width: 100%; justify-content: center; align-items: center; height: 300px; position: relative;}
 		.pop_page_5 .flex-wrap .math_calc_table{margin-top:90px; margin-left:-440px;}
-		.pop_page_5 .flex-wrap .popBtn {bottom:-20px; left:470px;}
+		/* .pop_page_5 .flex-wrap .popBtn {bottom:-20px; left:390px;} */
 		.pop_page_5 .icon_arrow{position: absolute; top:170px; left:530px;}
 
+		.pop_page_5 .ps::after{display: none;}
+		.pop_page_5 .ps{position:absolute; top:226px; left:263px; background-color: transparent; height:50px; width: 150px;}
+		.pop_page_5 .ps .icon_o_title{width:60px; height:60px; margin-top:-12px;}
 
 		.oxOk-on .oxOk{opacity: 1;}
 		.oxOk{opacity: 1; padding:40px 30px 40px 20px; width: auto; position: absolute;top: 80px;left: 700px;  transition: opacity .3s ease-in;}
@@ -70,7 +73,7 @@
 		.page_5 .flexListContainer{margin: 15px auto 0;width: 570px;}
 		.page_5 .flexListContainer > li {display: flex;align-items: center;}
 
-		.page_6 .colorBox {text-align: center; padding:40px; width: 60%; margin:0 auto 60px}
+		.page_6 .colorBox {text-align: center; padding:40px; width: 70%; margin:0 auto 60px}
 		.page_6 .colorBox span{display: inline-block; margin: 0 20px;}
 		.pop_page_10 .colorBox {text-align: center; padding:40px; width: 50%; margin:40px auto 60px}
 		.pop_page_10 .colorBox span{display: inline-block; margin: 0 20px;}
@@ -79,6 +82,11 @@
 		.page_7 .math_calc_table{font-size: 40px;}
 		.pop_page_12 .flex-wrap {width: 100%; justify-content: space-around; margin-top: 60px;}
 		.pop_page_12 .math_calc_table{font-size: 40px;}
+		.page_7 .math_calc_table.class3 .toggle .answer{right:-13px;}
+		.page_4 .ps::after{display: none;}
+		.page_4 .ps{position:absolute; top:225px; left:257px; background-color: transparent; height:50px; width: 150px;}
+		.page_4 .ps .icon_o_title{width:60px; height:60px; margin-top:-12px;}
+		.ps.complete .click-finger-Btn{display: none;}
 	</style>
 </head>
 
@@ -270,7 +278,7 @@
 						</section>
 					</li>
 
-					<li class="page_4" data-quiz="ox" data-option="hide, answerSound">
+					<li class="page_4" data-quiz="toggle">
 						<h2>
 							<ins class="number">3</ins>
 							<span>
@@ -299,25 +307,29 @@
 													<div class="rowLine"></div>
 												</td>
 											</tr>
-											<tr class="oxList">
+											<tr >
 												<td></td>
-												<td data-ox-obj="1">
-													<div class="icon icon_x" data-ox-target="1"></div>
+												<td>
 													8
 												</td>
-												<td data-ox-obj="2" data-answer="">
-													<div class="icon icon_o" data-ox-target="2"></div>
+												<td>
 													4
 												</td>
-												<td data-ox-obj="3">
-													<div class="icon icon_x" data-ox-target="3"></div>
+												<td>
 													2
 												</td>
 											</tr>
 										</tbody>
 									</table>
+									
 								</div>
-								<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity"></span>
+								<div class="toggle ps" data-toggle-obj="1">
+									<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity"></span>
+									<div class="answer" data-toggle-target="1">
+										<span class="icon_o_title"></span>
+									</div>
+								</div>
+								
 							</div>
 							<div class="icon_arrow big"></div>
 							<div class="oxOk lineBox green">
@@ -328,7 +340,10 @@
 												<td></td>
 												<td>3</td>
 												<td>3
-													<sup class="sup blueT">1</sup>
+													<div class="sup" data-toggle-obj="2" data-group-index="2">
+														<div class="answer redT" data-toggle-target="2">1</div>
+													</div>
+
 												</td>
 												<td>7</td>
 											</tr>
@@ -345,9 +360,13 @@
 											</tr>
 											<tr class="grey">
 												<td></td>
-												<td class="item">8</td>
-												<td class="item">5</td>
-												<td class="item">2</td>
+												<td colspan="3">
+													<div class="toggle" data-toggle-obj="2" data-group-index="2">
+														<div class="answer" data-toggle-target="2">
+															852
+														</div>
+													</div>
+												</td>
 											</tr>
 										</tbody>
 									</table>
@@ -752,7 +771,7 @@
 						<ins class="special type3"></ins>
 						<span></span>
 					</h2>
-					<div class="popup_contents" data-quiz="ox" data-option="hide, answerSound">
+					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
 								<ins class="bullet circleDot"></ins>
@@ -785,23 +804,26 @@
 														</tr>
 														<tr class="oxList">
 															<td></td>
-															<td data-ox-obj="1">
-																<div class="icon icon_x" data-ox-target="1"></div>
+															<td>
 																6
 															</td>
-															<td data-ox-obj="2" data-answer="">
-																<div class="icon icon_o" data-ox-target="2"></div>
+															<td>
 																6
 															</td>
-															<td data-ox-obj="3">
-																<div class="icon icon_x" data-ox-target="3"></div>
+															<td>
 																3
 															</td>
 														</tr>
 													</tbody>
 												</table>
 											</div>
-											<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity"></span>
+											<div class="toggle ps" data-toggle-obj="1">
+												<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity"></span>
+												<div class="answer" data-toggle-target="1">
+													<span class="icon_o_title"></span>
+												</div>
+											</div>
+											
 				
 										</div>
 			
@@ -815,7 +837,9 @@
 															<td></td>
 															<td>1</td>
 															<td>5
-																<sup class="sup redT">1</sup>
+																<div class="sup" data-toggle-obj="2" data-group-index="2">
+																	<div class="answer redT" data-toggle-target="2">1</div>
+																</div>
 															</td>
 															<td>8</td>
 														</tr>
@@ -832,9 +856,13 @@
 														</tr>
 														<tr class="grey">
 															<td></td>
-															<td class="item">6</td>
-															<td class="item">7</td>
-															<td class="item">3</td>
+															<td colspan="3">
+																<div class="toggle" data-toggle-obj="2" data-group-index="2">
+																	<div class="answer" data-toggle-target="2">
+																		673
+																	</div>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
