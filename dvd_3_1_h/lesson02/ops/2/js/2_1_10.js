@@ -4,7 +4,7 @@
   var answers = [
     [{
       start: {x: 72, y: 246},
-      end: {x: 332, y: 246}
+      end: {x: 282, y: 246}
     }],
     [{
       start: {x: 72, y: 145},
