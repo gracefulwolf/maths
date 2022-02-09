@@ -5,67 +5,103 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
-	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
-	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../../E-curri03-math-H_2022/31/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../E-curri03-math-H_2022/31/common/contents/css/math.css" />
 	<link rel="stylesheet" href="../../../../__common__/css/custom.css">
 	<link rel="stylesheet" href="../../../../default/css/custom.css">
 
 	<link rel="stylesheet" href="../../../include/math/style/master.css">
 	<link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
 	<link rel="stylesheet" href="../../../include/math/style/drawLine.css">
-	<link rel="stylesheet" href="./css/2_1_3.css">
-
+	<link rel="stylesheet" href="./css/2_5_5.css">
 	<link rel="stylesheet" href="../../../../E-curri03-math-H_2022/31/suh_h_0301_02_0005/css/suh_h_0301_02_0005_401_1.css" />
 	<style>
-		.ruler{top:300px;}
-		.contentsArea > section{left:0;}
-		.js-buttons.quizButtons{right:97px; bottom:0;}
-		main .contentsArea{top:0; left:0; right:0; bottom:0; width:1094px; height:100%;}
-		.drawArea{width: 1094px !important; height: 100% !important;}
+		#wrap{
+			width: 995px;
+   			 height: 460px;
+		}
+		.js-buttons.quizButtons {
+			position: absolute;
+			bottom: 4px;
+			top: auto;
+			left: auto;
+			right: 26px;
+		}
+		main .contentsArea{
+			top:0; left:0; right:0; bottom:0; 
+		}
+
+
 	</style>
 </head>
 
-<body class="lesson_2 page_3">
+<body class="lesson_2">
 	<div id="wrap">
 		<header>
 			<div class="js-addThingsMenu addThingsMenu"></div>
 			<div class="js-indexButton indexButton" data-hover=""></div>
 			<div class="indexBox">
 				<span>2. 평면도형</span>
-				<span>선의 종류에는 어떤 것이 있을까요</span>
+				<span>직사각형을 알아볼까요</span>
 				<span class="step develop">전개</span>
 			</div>
-			<div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="34">수학<span>34</span>쪽</div>
-			<div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="26">수학 익힘<span>26</span>쪽</div>
+			<div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="43">수학<span>43</span>쪽</div>
+			<div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="34">수학 익힘<span>34</span>쪽</div>
 			<div class="js-addThingsButton addThingsButton"></div>
-			<div class="js-closeButton closeButton" data-type="ebook" data-page="34"></div>
+			<div class="js-closeButton closeButton" data-type="ebook" data-page="43"></div>
 		</header>
-		<main class="act">
-			<div class="contentsArea">	
-				
+		<main class="act page_3">
+			<div class="contentsArea">
+				<h1 data-index="2">직사각형을 완성해 봅시다.</h1>
+				<section>
+					<div class="basicSlider" data-slide-container="main">
 
-				</div>				
-				<div class="js-drawLine drawLine" data-option="drawing">
-					<div class="bg">
-						<div class="bullet exam">예</div>
+						<ul class="basicSlider_slides" data-slides="main">
+							<li>
+								<div class="drawContainer draw_2">
+									<div class="sectionPaper"></div>
+									<div class="js-drawLine drawLine" data-option="free, copy">
+										<canvas class="js-drawArea drawArea"></canvas>
+										<div class="js-dragObj dragObj" data-type="drag" data-index="1"></div>
+										<div class="js-dragObj dragObj" data-type="drag" data-index="2"></div>
+										<div class="js-resetButton resetButton exBtn" data-type="reset" data-hover="" id="uiAddEvent"></div>
+
+										<div class="exline"></div>
+									</div>
+									<div class="line line_1"></div>
+
+									<div class="induceLight light_1"></div>
+									<div class="induceLight light_2"></div>
+								</div>
+							</li>
+							
+						</ul>
 					</div>
-					<canvas class="js-drawArea drawArea"></canvas>
-					<div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
-					<div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
-					<div class="js-resetButton resetButton" data-hover=""></div>
-				</div>
-					
-				
-				<div class="js-buttons quizButtons exBtn" data-hover="" data-type="answer"></div>
+					<!-- <div class="js-buttons quizButtons exBtn" data-hover="" data-type="answer"></div> -->
+				</section>
 			</div>
 		</main>
 	</div>
 	<script src="../../../include/libs/js/ts.min.js"></script>
+	<script src="../../../include/libs/js/slider.min.js"></script>
 	<script src="../../../include/contents/js/pageManager.min.js"></script>
 	<script src="../../../include/math/script/newDrawLine.min.js"></script>
-	<script src="./js/suh_h_0301_02_0005_401_1_3.js"></script>
+	<script src="./js/suh_h_0301_02_0006_401_1_3.js"></script>
 	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () { });
+		document.addEventListener('DOMContentLoaded', function () { 
+			const btn = document.querySelector('#uiAddEvent');
+
+			btn.addEventListener('click', function () {
+				if (this.dataset.ex !== 'true') {
+					document.querySelector('body').classList.add('ex-on');
+					this.dataset.ex = 'true';
+				} else {
+					document.querySelector('body').classList.remove('ex-on');
+					this.dataset.ex = 'false';
+				}
+
+			});
+		});
 	</script>
 </body>
 
