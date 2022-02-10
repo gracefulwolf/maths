@@ -309,11 +309,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							</div>
 						</div>
 						<div class="group-a ex">
-							<div class="toggle ex-type" data-toggle-obj="3" data-group-index="1">
-								<div class="answer" data-toggle-target="3">
-									<div class="bullet exam">예</div>
-								</div>
-							</div>
+							<div class="bullet exam">예</div>
 							<div class="box-flex mr-s">
 								<div class="box-flex">
 									<div class="bunsuWrap mr-s">
@@ -360,14 +356,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="group-a" style="padding-left:24px">
 							<div class="box-flex mr-s">
 								<div class="box-flex">
-									<div class="bunsuWrap mr-s">
+									<div class="bunsuWrap">
 										<ul>
 											<li>2</li>
 											<li>3</li>
 										</ul>
 									</div>
-									<div class="col-a mr-s">×</div>
-									<div class="bunsuWrap mr-s">
+									<div class="col-a">×</div>
+									<div class="bunsuWrap">
 										<ul>
 											<li>1</li>
 											<li>4</li>
@@ -379,14 +375,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							<div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">
 									<div class="box-flex">
-										<div class="bunsuWrap mr-s">
+										<div class="bunsuWrap">
 											<ul>
 												<li>1</li>
 												<li>6</li>
 											</ul>
 										</div>
-										<div class="col-a mr-s">(=</div>
-										<div class="bunsuWrap mr-s">
+										<div class="col-a">(=</div>
+										<div class="bunsuWrap">
 											<ul>
 												<li>2</li>
 												<li>12</li>
@@ -400,14 +396,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="group-a">
 							<div class="box-flex mr-s">
 								<div class="box-flex">
-									<div class="bunsuWrap mr-s">
+									<div class="bunsuWrap">
 										<ul>
 											<li>7</li>
 											<li>5</li>
 										</ul>
 									</div>
-									<div class="col-a mr-s">×</div>
-									<div class="bunsuWrap mr-s">
+									<div class="col-a">×</div>
+									<div class="bunsuWrap">
 										<ul>
 											<li>1</li>
 											<li>3</li>
@@ -433,14 +429,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							<div class="box-flex mr-s">
 								<div class="box-flex">
 									<div class="col-a">2</div>
-									<div class="bunsuWrap mr-s">
+									<div class="bunsuWrap">
 										<ul>
 											<li>1</li>
 											<li>4</li>
 										</ul>
 									</div>
-									<div class="col-a mr-s">×</div>
-									<div class="bunsuWrap mr-s">
+									<div class="col-a">×</div>
+									<div class="bunsuWrap">
 										<ul>
 											<li>1</li>
 											<li>2</li>
@@ -453,14 +449,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="answer" data-toggle-target="3">
 									<div class="box-flex">
 										<div class="col-a">1</div>
-										<div class="bunsuWrap mr-s">
+										<div class="bunsuWrap">
 											<ul>
 												<li>1</li>
 												<li>8</li>
 											</ul>
 										</div>
-										<div class="col-a mr-s">(=</div>
-										<div class="bunsuWrap mr-s">
+										<div class="col-a">(=</div>
+										<div class="bunsuWrap">
 											<ul>
 												<li>9</li>
 												<li>8</li>
@@ -499,6 +495,24 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
 	}, false);
+</script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+
+	$(document).ready(function(){
+		$('.group-a.ex .toggle').on('click',function(){
+			// efSound('./media/tab_click.mp3');
+			$(".page_4 .bullet.exam").css("opacity",1);
+		});
+		window.$callBack.hideAnswer = function (obj) {
+			$(".page_4 .bullet.exam").removeAttr("style");
+		}
+		window.$callBack.sliderReset = function (obj) {
+			$(".page_4 .bullet.exam").removeAttr("style");
+		}
+	});
+
 </script>
 
 </body>
