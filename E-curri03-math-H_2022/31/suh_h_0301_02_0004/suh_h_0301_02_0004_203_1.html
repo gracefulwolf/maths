@@ -25,6 +25,7 @@
 		.moveButtonContainer{width:auto; left:50%; transform: translate(-50%,0);}
 		.contentsBox .basicSlider_slides>li{display: block; visibility: hidden; position: absolute; z-index:-1; top:0;}
 		.contentsBox .basicSlider_slides>li.on{visibility: visible;position: relative; z-index: 0;}
+		.supply_guide{margin-top:10px !important}
 	</style>
 </head>
 
@@ -51,7 +52,7 @@
 					<li class="innerTab_1">
 						<div class="study_guide" style="right:56px; left:auto; top:20px; z-index: 3;"><em>삼각자</em>를 <em>드래그</em>하여 옮기세요.</div>
 
-						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_3_06.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_3_06.html" title="" class="page-iframe" id="iframepage1" scrolling="no"></iframe>
 						
 						<div class="buttonContainer iframe">
 							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
@@ -60,7 +61,7 @@
 					<li class="innerTab_1 on">
 						<div class="study_guide" style="right:56px; left:auto; top:20px; z-index: 3;"><em>삼각자</em>를 <em>드래그</em>하여 옮기세요.</div>
 
-						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_3_06_2.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_3_06_2.html" title="" class="page-iframe" id="iframepage2" scrolling="no"></iframe>
 						
 						<div class="buttonContainer iframe">
 							<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
@@ -113,6 +114,11 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove = function(SLIDER) {
+				document.getElementById('iframepage1').contentDocument.location.reload(true);
+				document.getElementById('iframepage2').contentDocument.location.reload(true);
+			}
+
 		}, false);
 
 	</script>
