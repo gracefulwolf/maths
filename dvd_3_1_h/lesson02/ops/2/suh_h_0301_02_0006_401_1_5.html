@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+	<link rel="stylesheet" href="../../../../default/css/custom.css">
+
+	<link rel="stylesheet" href="../../../include/math/style/master.css">
+	<link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+	<link rel="stylesheet" href="../../../include/math/style/drawLine.css">
+	<link rel="stylesheet" href="./css/2_4_5.css">
+	<link rel="stylesheet"
+		href="../../../../E-curri03-math-H_2022/31/suh_h_0301_02_0006/css/suh_h_0301_02_0006_401_1.css" />
+	<style>
+		.basicSlider_slides {
+			z-index: 2;
+		}
+
+		.contentsArea h1 {
+			display: none;
+		}
+
+		.none {
+			display: none !important;
+		}
+
+		/* .figureBoard{top:0; height:370px} */
+		main .contentsArea {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			word-break: keep-all;
+		}
+
+		.figureBoard {
+			left: 10px
+		}
+
+		.js-drawLine .js-quizButton.resetButton {
+			display: block !important;
+			bottom: -58px;
+			right: 71PX
+		}
+
+		.lineBox {
+			position: absolute;
+			top: 90px;
+			width: 720px;
+			height: 380px;
+			right: 20px;
+		}
+
+		.exam {
+			position: absolute;
+			top: 105px;
+			left: 50px;
+			z-index: 10;
+		}
+
+		.basicSlider {
+			top: 10px
+		}
+
+		.dotPaper {
+			width: 640px;
+			height:240px;
+			border: 5px solid #ae7c65;
+			border-radius: 10px;
+    		box-sizing: border-box;
+			left: 0;
+			background: none;
+		}
+
+		.dotPaper .drawLine {
+			left: 0;
+			top: -20px;
+		}
+
+		.line.n1 {
+			position: absolute;
+			width: 185px;
+			height: 180px;
+			border-bottom: 4px solid #000;
+			border-left: 4px solid #000;
+			z-index: 10;
+			top: 183px;
+			left: 63px;
+		}
+
+		.line.n2 {
+			position: absolute;
+			width: 261px;
+			height: 0;
+			border-top: 4px solid #000;
+			z-index: 10;
+			top: 178px;
+			left: 65px;
+			transform: rotate(45deg);
+			transform-origin: top left;
+		}
+	</style>
+</head>
+
+<body class="lesson_2 page_5">
+	<div class="contentsArea">
+		<div class="flex-wrap">
+			<div class="dotPaper ">
+				<div class="js-drawLine drawLine" data-option="copy">
+					<div class="exline">
+						<div class="line"></div>
+						<div class="line ex"></div>
+					</div>
+					<canvas class="js-drawArea drawArea"></canvas>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="js-quizButton resetButton exBtn" data-type="reset" id="uiAddEvent"></div>
+
+
+	</div>
+
+
+
+	<script src="../../../include/libs/js/ts.min.js"></script>
+	<script src="../../../include/libs/js/slider.min.js"></script>
+	<script src="../../../include/contents/js/pageManager.min.js"></script>
+	<script src="../../../include/math/script/newBoardLine.min.js"></script>
+	<script src="../../../include/math/script/newDrawLine.min.js"></script>
+	<script src="../../../include/math/script/getAngles.min.js"></script>
+	<script type="text/javascript">
+		(function () {
+			var paperDotLength = [5, 15];
+
+			function createElement(container, i, j) {
+				var dot = document.createElement("div");
+				dot.classList.add("js-dragObj");
+				dot.classList.add("dragObj");
+				dot.classList.add("horizon_" + (i + 1));
+				dot.classList.add("vertical_" + (j + 1));
+				dot.setAttribute("data-type", "drag");
+				dot.setAttribute("data-index", "1");
+				container.appendChild(dot);
+
+				return dot;
+			}
+
+			function createDot(container, dotLength) {
+				for (var i = 0; i < dotLength[0]; i++) {
+					for (var j = 0; j < dotLength[1]; j++) {
+						createElement(container, i, j);
+					}
+				}
+			}
+
+			function setDrawLine(container, dotLength) {
+				createDot(container, dotLength);
+
+				return new DrawLine({
+					container: container,
+					resetButton: container.querySelector(".js-quizButton"),
+					lineWidth: 6,
+					callback: {
+						start: function (DrawLine) { },
+						move: function (DrawLine) { },
+						end: function (DrawLine) { },
+						out: function (DrawLine) { },
+						correct: function (DrawLine) {
+							var startObj = DrawLine.DRAGDROP.startObj;
+							var savedLines = DrawLine.savedLines;
+
+							startObj.resetPosition();
+						},
+						incorrect: function (DrawLine) { },
+					},
+				});
+			}
+
+			window.addEventListener("load", function () {
+
+				var section = document.querySelector(".contentsArea > section");
+				var drawLine = setDrawLine(
+					document.querySelector(".js-drawLine"),
+					paperDotLength
+				);
+
+
+				window.$callBack.sliderMove = function (SLIDER) {
+					section.className = "page" + (SLIDER.idx + 1);
+					drawLine.reset();
+				};
+
+
+				this.document.querySelector('.exBtn').addEventListener('click', function () {
+					drawLine.reset();
+				});
+
+				setTimeout(function () {
+					drawLine.reset();
+				}, 100);
+			});
+		})();
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+
+			const btn = document.querySelector('#uiAddEvent');
+
+			btn.addEventListener('click', function () {
+				if (this.dataset.ex !== 'true') {
+					document.querySelector('body').classList.add('ex-on');
+					this.dataset.ex = 'true';
+				} else {
+					document.querySelector('body').classList.remove('ex-on');
+					this.dataset.ex = 'false';
+				}
+
+			})
+		});
+	</script>
+</body>
+
+</html>
