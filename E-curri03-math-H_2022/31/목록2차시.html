@@ -111,28 +111,28 @@
     </div><br>
     <script>
 
-        const linka = document.querySelectorAll('.link');
+        const linka=document.querySelectorAll('.link');
 
-        for (let i = 0, len = linka.length; i < len; i++) {
-            const that = linka[i];
-            let href_ = that.dataset.href;
-            href_ = href_.split('/').reverse()[0];
+        for (let i=0, len=linka.length; i < len; i++) {
+            const that=linka[i];
+            let href_=that.dataset.href;
+            href_=href_.split('/').reverse()[0];
             console.log(href_);
             
-            that.textContent = href_;
+            that.textContent=href_;
 
             that.addEventListener('click', function(){
-                for (let i = 0, len = linka.length; i < len; i++) {
-                    const that = linka[i];
+                for (let i=0, len=linka.length; i < len; i++) {
+                    const that=linka[i];
 
                     that.classList.remove('on');
                 }
                 this.classList.add('on')
                 if (document.querySelector('#preview').src !== this.dataset.href) {
-                    document.querySelector('#preview').src = this.dataset.href;
-                    // document.querySelector('.name').href = this.dataset.href;
-                    document.querySelector('.pagelink').href = this.dataset.href;
-                    document.querySelector('.name').textContent = this.dataset.href;
+                    document.querySelector('#preview').src=this.dataset.href;
+                    // document.querySelector('.name').href=this.dataset.href;
+                    document.querySelector('.pagelink').href=this.dataset.href;
+                    document.querySelector('.name').textContent=this.dataset.href;
                 }
                
 

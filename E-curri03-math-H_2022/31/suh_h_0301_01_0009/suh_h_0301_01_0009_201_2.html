@@ -641,18 +641,18 @@
 <script type="text/javascript">
 	
 
-		window.$callBack.sliderReset = function(params) {
-			// $ts.getEl('.page_4 .characterImg')[0].style.left = '38%';
+		window.$callBack.sliderReset=function(params) {
+			// $ts.getEl('.page_4 .characterImg')[0].style.left='38%';
 		};
     	document.addEventListener('DOMContentLoaded', function () {
-			const reset = document.querySelectorAll('.resetBtn');
-			const tab = document.querySelectorAll('li[data-hover]');
+			const reset=document.querySelectorAll('.resetBtn');
+			const tab=document.querySelectorAll('li[data-hover]');
 
-			for(let i = 0, len = tab.length; i < len; i++) {
+			for(let i=0, len=tab.length; i < len; i++) {
 				tab[i].addEventListener('click', function(){
-					var that = this;
+					var that=this;
 					setTimeout(function(){
-						for(let i = 0, len = reset.length; i < len; i++) {
+						for(let i=0, len=reset.length; i < len; i++) {
 							setTimeout(function(){
 								reset[i].classList.add('reset');
 							},0);
@@ -661,13 +661,13 @@
 				});
 			}
 
-			for(let i = 0, len = reset.length; i < len; i++) {
+			for(let i=0, len=reset.length; i < len; i++) {
 				setTimeout(function(){
 					reset[i].classList.add('reset');
 				},0);
 				
 				reset[i].addEventListener('click', function(){
-					var that = this;
+					var that=this;
 					setTimeout(function(){
 						that.classList.add('reset');
 					},0);
@@ -675,7 +675,7 @@
 			}
 
 			
-            // $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
+            // $prite.changeSpritePos=function(){}; // backgroundPosition 무한루프 방지
             $prite.add({
 				target: $ts.getEl('#aniBox_1'),
 				spriteId: 'sprite1',

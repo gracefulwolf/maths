@@ -284,16 +284,14 @@
 						<section class="full">
 							<div class="flex-wrap mt_30" style="height:80px">
 								<div class="box-flex">
-									247+331=
-									<div class="toggle" data-toggle-obj="1">
+									247+331=<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											578
 										</div>
 									</div>
 								</div>
 								<div class="box-flex">
-									521+465=
-									<div class="toggle" data-toggle-obj="2">
+									521+465=<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">
 											986
 										</div>
@@ -389,18 +387,17 @@
 									<div class="answer" data-toggle-target="1">
 										800
 									</div>
-								</div> + 
+								</div>+
 								<div class="toggle" data-toggle-obj="2">
 									<div class="answer" data-toggle-target="2">
 										40
 									</div>
-								</div> + 
+								</div>+
 								<div class="toggle" data-toggle-obj="3">
 									<div class="answer" data-toggle-target="3">
 										6
 									</div>
-								</div> = 
-								<div class="toggle" data-toggle-obj="4">
+								</div>=<div class="toggle" data-toggle-obj="4">
 									<div class="answer" data-toggle-target="4">
 										846
 									</div>
@@ -581,10 +578,10 @@
 	<!-- horizon -->
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
-		// window.$popCallBack = {
+		// window.$popCallBack={
 		// 	open: function (popup) {
 		// 		if (popup.page.classList.contains('solve')) {
-		// 			var inQuizArray = $pm.array.inPage.quiz;
+		// 			var inQuizArray=$pm.array.inPage.quiz;
 		// 			inQuizArray.forEach(function (quiz) {
 		// 				quiz.reset();
 		// 				if (quiz.QUIZ.answerBtn) quiz.QUIZ.answerBtn.classList.remove('reset');
@@ -593,20 +590,20 @@
 		// 	}
 		// };
 		document.addEventListener('DOMContentLoaded', function () {
-			var arrow = $ts.getEl('.icon_arrow');
+			var arrow=$ts.getEl('.icon_arrow');
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var thats = document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons = document.querySelectorAll('.vOn');
+					var thats=document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons=document.querySelectorAll('.vOn');
 
 					console.log(ons);
 
-					for (let i = 0, len = ons.length; i < len; i++) {
+					for (let i=0, len=ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
 					}
 
-					for (let i = 0, len = thats.length; i < len; i++) {
+					for (let i=0, len=thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
 						thats[i].classList.add('vOn');
 					}

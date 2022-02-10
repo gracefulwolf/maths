@@ -56,7 +56,7 @@
 		<main>
 			<div class="contentsBox" data-quiz="toggle">
 				<h2 class="flex-box a-center">받아올림이 두 번, 세 번 있는<br>
-					(세 자리 수) + (세 자리 수)의 계산
+					(세 자리 수)+(세 자리 수)의 계산
 				</h2>
 				<section>
 					<div class="lineBox sky" style="height:410px">
@@ -265,20 +265,20 @@
 
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			var arrow = $ts.getEl('.icon_arrow');
+			var arrow=$ts.getEl('.icon_arrow');
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var thats = document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons = document.querySelectorAll('.vOn');
+					var thats=document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons=document.querySelectorAll('.vOn');
 
 					console.log(ons);
 
-					for (let i = 0, len = ons.length; i < len; i++) {
+					for (let i=0, len=ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
 					}
 
-					for (let i = 0, len = thats.length; i < len; i++) {
+					for (let i=0, len=thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
 						thats[i].classList.add('vOn');
 					}

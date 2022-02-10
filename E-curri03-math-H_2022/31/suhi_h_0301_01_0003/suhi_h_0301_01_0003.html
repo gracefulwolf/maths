@@ -261,8 +261,7 @@
 								<div class="ex-img"><img src="./images/suhi_h_0301_01_0003_1.png" alt=""></div>
 								<div class="icon_arrow big"></div>
 								<div class="q-box">
-									436+255=
-									<div class="toggle" data-toggle-obj="1">
+									436+255=<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											691
 										</div>
@@ -285,16 +284,14 @@
 						<section class="full">
 							<div class="flex-wrap mt_30" style="height:80px">
 								<div class="box-flex">
-									514+238=
-									<div class="toggle" data-toggle-obj="1">
+									514+238=<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											752
 										</div>
 									</div>
 								</div>
 								<div class="box-flex">
-									316+492=
-									<div class="toggle" data-toggle-obj="2">
+									316+492=<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">
 											808
 										</div>
@@ -706,7 +703,7 @@
 						<ul class="dotList deepGreen">
 							<li>
 								<div>
-									554 + 237 = 791
+									554+237=791
 								</div>
 							</li>
 							<li class="mt_10">
@@ -738,10 +735,10 @@
 	<!-- horizon -->
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
-		window.$popCallBack = {
+		window.$popCallBack={
 			open: function (popup) {
 				if (popup.page.classList.contains('solve')) {
-					var inQuizArray = $pm.array.inPage.quiz;
+					var inQuizArray=$pm.array.inPage.quiz;
 					inQuizArray.forEach(function (quiz) {
 						quiz.reset();
 						if (quiz.QUIZ.answerBtn) quiz.QUIZ.answerBtn.classList.remove('reset');
@@ -750,20 +747,20 @@
 			}
 		};
 		document.addEventListener('DOMContentLoaded', function () {
-			var arrow = $ts.getEl('.icon_arrow');
+			var arrow=$ts.getEl('.icon_arrow');
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var thats = document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons = document.querySelectorAll('.vOn');
+					var thats=document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons=document.querySelectorAll('.vOn');
 
 					console.log(ons);
 
-					for (let i = 0, len = ons.length; i < len; i++) {
+					for (let i=0, len=ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
 					}
 
-					for (let i = 0, len = thats.length; i < len; i++) {
+					for (let i=0, len=thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
 						thats[i].classList.add('vOn');
 					}

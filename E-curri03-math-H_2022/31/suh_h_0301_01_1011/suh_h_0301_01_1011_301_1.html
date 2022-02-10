@@ -182,18 +182,18 @@
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
 
-			const star = document.querySelectorAll('.star');
+			const star=document.querySelectorAll('.star');
 
-			for (let i = 0, len = star.length; i < len; i++) {
-				const that = star[i];
+			for (let i=0, len=star.length; i < len; i++) {
+				const that=star[i];
 
 				that.addEventListener('click', starCheck);
 			}
 
 			function starCheck(e){
-				const this_stat = e.target;
-				const wrap = this_stat.parentNode;
-				const idx = this_stat.dataset.idx;
+				const this_stat=e.target;
+				const wrap=this_stat.parentNode;
+				const idx=this_stat.dataset.idx;
 				console.log(wrap,wrap.getAttribute('class'),wrap.classList.item);
 				!!wrap.getAttribute('class') && wrap.classList.remove(wrap.getAttribute('class'));
 				wrap.classList.add('n' + idx);

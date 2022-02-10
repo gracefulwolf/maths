@@ -463,12 +463,12 @@
 	<script type="text/javascript">
 
 		document.addEventListener('DOMContentLoaded', function () {
-			var arrow = $ts.getEl('.page_2 .clickObj');
+			var arrow=$ts.getEl('.page_2 .clickObj');
 
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var that = document.querySelector('.visibleH[data-name="' + this.dataset.name + '"]');
+					var that=document.querySelector('.visibleH[data-name="' + this.dataset.name + '"]');
 					that.classList.remove('visibleH');
 				});
 				objs.addEventListener('click', $efSound.click);
@@ -504,18 +504,18 @@
 						},
 						callbacks: {
 							start: function () {
-								$ts.getEl('.page_3 .characterImg')[0].style.left = '-200px';
+								$ts.getEl('.page_3 .characterImg')[0].style.left='-200px';
 							}, // 시작시 콜백
 							end: function () {
-								$ts.getEl('.page_3 .characterImg')[0].style.left = 0;
+								$ts.getEl('.page_3 .characterImg')[0].style.left=0;
 							} // 끝날시 콜백
 						}
 					}
 				]
 			});
 
-			window.$callBack.sliderReset = function (params) {
-				$ts.getEl('.page_3 .characterImg')[0].style.left = 0;
+			window.$callBack.sliderReset=function (params) {
+				$ts.getEl('.page_3 .characterImg')[0].style.left=0;
 			};
 		});
 	</script>

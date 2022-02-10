@@ -44,22 +44,22 @@
 	<script type="text/javascript">
 
 		document.addEventListener('DOMContentLoaded', function () {
-			window.$callBack.mediaStart = function (obj) {
+			window.$callBack.mediaStart=function (obj) {
 				obj.container.classList.add("started");
 				$ts.getEl('.aniContainer')[0].classList.add('full');
 				if (parent.document.querySelector('iframe')) {
-					var parentDocument = parent.document.querySelector('iframe');
-					parentDocument.parentNode.style.position = 'relative';
-					parentDocument.parentNode.style.zIndex = 1000;
+					var parentDocument=parent.document.querySelector('iframe');
+					parentDocument.parentNode.style.position='relative';
+					parentDocument.parentNode.style.zIndex=1000;
 				}
 			}
-			window.$callBack.videoClose = function (obj) {
+			window.$callBack.videoClose=function (obj) {
 				obj.container.classList.remove('started');
 				$ts.getEl('.aniContainer')[0].classList.remove('full');
 				if (parent.document.querySelector('iframe')) {
-					var parentDocument = parent.document.querySelector('iframe');
-					parentDocument.parentNode.style.position = 'static';
-					parentDocument.parentNode.style.zIndex = 1;
+					var parentDocument=parent.document.querySelector('iframe');
+					parentDocument.parentNode.style.position='static';
+					parentDocument.parentNode.style.zIndex=1;
 				}
 			}
 		}, false);
