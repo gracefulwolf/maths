@@ -66,7 +66,7 @@
 							<em>칠교판</em>을 <em>드래그</em>하세요.
 						</div>
 
-						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_4_07.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_4_07.html" title="" class="page-iframe" id="iframepage1" scrolling="no"></iframe>
 					</li>
 				</ul>
 			</div>
@@ -95,7 +95,9 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			
+			window.$callBack.sliderMove = function(SLIDER) {
+				document.getElementById('iframepage1').contentDocument.location.reload(true);
+			}
 		}, false);
 
 	</script>

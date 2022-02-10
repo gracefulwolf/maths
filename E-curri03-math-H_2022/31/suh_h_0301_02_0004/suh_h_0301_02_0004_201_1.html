@@ -28,7 +28,7 @@
 		.page_3 .flex-item .img-wrap img{width:200px; margin: 0 auto; display: block;}
 		.page_3 .flex-item + .flex-item{margin-left:50px;}
 		.page_3 .flex-wrap .icon_arrow{margin:0; }
-		.page_3 .icon_arrow {position:absolute; right:-50px; top:79px; cursor: pointer;}
+		.page_3 .icon_arrow {position:absolute; right:-50px; top:79px;}
 		.page_3 .balloon{position: absolute; top:240px; left:-102px; width:420px; text-align: center;}
 		.vOn .icon_arrow {
 			animation-name: arrow;
@@ -50,6 +50,9 @@
 		.page_3 .exam{position: absolute; top:20px; left:0;}
 
 		.videoSubPlayBtn{right:0; left:auto; top:-50px}
+		header .title .supply_guide.inline, header .title .pages_guide.inline{
+			margin-top:10px;
+		}
 	</style>
 </head>
 
@@ -77,12 +80,12 @@
 						<section>
 							<button class="videoSubPlayBtn right" data-video-link="M201801966_800K.mp4" data-hover="">활동영상 보기</button>
 
-							<div class="flex-wrap">
-								<div class="flex-item vOn">
+							<div class="flex-wrap ui-next-wrap">
+								<div class="flex-item vOn" data-first="true">
 									<div class="img-wrap">
 										<img src="./images/2_3_3_01.png" alt="">
 									</div>
-									<div class="icon_arrow big" data-name="aa"></div>
+									<div class="icon_arrow big ui-next" data-name="aa"></div>
 								</div>
 								
 								<div class="flex-item visibleH" data-name="aa">
@@ -92,14 +95,14 @@
 									<div class="balloon top sky ctTail">
 										앞에서 접은 선이 맞닿도록 <br>한 번 더 접어 주세요.
 									</div>
-									<div class="icon_arrow big" data-name="bb"></div>
+									<div class="icon_arrow big ui-next" data-name="bb"></div>
 								</div>
 								
 								<div class="flex-item visibleH" data-name="bb">
 									<div class="img-wrap">
 										<img src="./images/2_3_3_03.png" alt="">
 									</div>
-									<div class="icon_arrow big" data-name="cc"></div>
+									<div class="icon_arrow big ui-next" data-name="cc"></div>
 								</div>
 								
 								<div class="flex-item visibleH" data-name="cc">
@@ -135,30 +138,30 @@
 						</span></h2>
 						<section>
 							<div class="bullet exam">예</div>
-							<div class="flex-wrap">
-								<div class="flex-item vOn">
+							<div class="flex-wrap ui-next-wrap">
+								<div class="flex-item vOn" data-first="true" >
 									<div class="img-wrap">
 										<img src="./images/suh_0301_02_0004_202_1_1_1.png" alt="">
 									</div>
-									<div class="icon_arrow big" data-name="aa"></div>
+									<div class="icon_arrow big ui-next" data-name="aa2"></div>
 								</div>
 								
-								<div class="flex-item visibleH" data-name="aa">
+								<div class="flex-item visibleH" data-name="aa2">
 									<div class="img-wrap">
 										<img src="./images/suh_0301_02_0004_202_1_1_2.png" alt="">
 									</div>
 									
-									<div class="icon_arrow big" data-name="bb"></div>
+									<div class="icon_arrow big ui-next" data-name="bb2"></div>
 								</div>
 								
-								<div class="flex-item visibleH" data-name="bb">
+								<div class="flex-item visibleH" data-name="bb2">
 									<div class="img-wrap">
 										<img src="./images/suh_0301_02_0004_202_1_1_3.png" alt="">
 									</div>
-									<div class="icon_arrow big" data-name="cc"></div>
+									<div class="icon_arrow big ui-next" data-name="cc2"></div>
 								</div>
 								
-								<div class="flex-item visibleH" data-name="cc">
+								<div class="flex-item visibleH" data-name="cc2">
 									<div class="img-wrap">
 										<img src="./images/suh_0301_02_0004_202_1_1_4.png" alt="">
 									</div>
@@ -192,28 +195,78 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			var arrow = $ts.getEl('.icon_arrow');
+			var arrow = $ts.getEl('.ui-next');
 
 			arrow.forEach(function (objs, index) {
 				objs.addEventListener('click', function () {
-					var thats = document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons = document.querySelectorAll('.vOn');
+					var wrap = this.parentNode.parentNode;
 
-					console.log(ons);
+					var thats = wrap.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons = wrap.querySelectorAll('.vOn');
 
 					for (let i = 0, len = ons.length; i < len; i++) {
 						ons[i].classList.remove('vOn');
+						// ons[i].classList.add('vOn_');
 					}
 
 					for (let i = 0, len = thats.length; i < len; i++) {
 						thats[i].classList.remove('visibleH');
+						thats[i].classList.add('visibleH_');
 						thats[i].classList.add('vOn');
 					}
 
+					switch (this.dataset.name) {
+						case 'aa' :
+							wrap.querySelector('.click-finger-Btn.btn1').style.display = 'none';
+							wrap.querySelector('.click-finger-Btn.btn2').style.display = 'block';
+							break;
+						case 'bb' :
+							wrap.querySelector('.click-finger-Btn.btn2').style.display = 'none';
+							wrap.querySelector('.click-finger-Btn.btn3').style.display = 'block';
+							break;
+						case 'cc' :
+							wrap.querySelector('.click-finger-Btn.btn3').style.display = 'none';
+							wrap.querySelector('.click-finger-Btn.btn4').style.display = 'block';
+							break;
+						case 'dd' :
+							wrap.querySelector('.click-finger-Btn.btn4').style.display = 'none';
+							break;
+					}
 
 				});
 				objs.addEventListener('click', $efSound.click);
 			});
+
+
+			window.$callBack.sliderMove = function(SLIDER) {
+				var thats = document.querySelectorAll('.visibleH_');
+				var ons = document.querySelectorAll('.vOn');
+				var btn = document.querySelectorAll('.ui-next');
+				var first = document.querySelectorAll('[data-first]');
+
+				
+				for (let i = 0, len = btn.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					btn[i].removeAttribute('style');
+				}
+
+				for (let i = 0, len = ons.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					ons[i].classList.remove('vOn');
+				}
+
+				for (let i = 0, len = thats.length; i < len; i++) {
+					thats[i].classList.add('visibleH');
+					thats[i].classList.remove('visibleH_');
+					thats[i].classList.remove('vOn');
+				}
+				
+				for (let i = 0, len = first.length; i < len; i++) {
+					console.log(i)
+					// ons[i].classList.remove('vOn_');
+					first[i].classList.add('vOn');
+				}
+			}	
 
 		}, false);
 
