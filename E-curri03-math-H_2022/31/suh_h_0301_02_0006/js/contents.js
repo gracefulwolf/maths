@@ -27,6 +27,8 @@ CONTENTS = (function () {
           $ts.loadScriptFile('http://e.tsherpa.co.kr/include/js/tsherpa.js', function(){
             tSherpaVideoInit();
           });
+        }if($ts.getEl('[data-video-link2]')) {
+            tSherpaVideoInit2();
         }
         if($ts.getEl('.wordQuizContent').length) {
           $ts.loadScriptFile('../common/contents/js/quiz/quiz_life_wordQuiz.js', function(){
@@ -63,6 +65,40 @@ function tSherpaVideoInit() {
   function tSherpaGoLink() {
     viewChunjaeMedia(this.getAttribute('data-video-link'));
   }
+}
+
+function tSherpaVideoInit2() {
+  var tVideo = $ts.getEl('[data-video-link2]');
+  tVideo.forEach(function (video) {
+    video.addEventListener('click', tSherpaGoLink_n);
+    video.addEventListener('click', $efSound.click);
+  });
+  function tSherpaGoLink_n() {
+    viewChunjaeMedia_n(this.getAttribute('data-video-link2'));
+  }
+}
+
+function viewChunjaeMedia_n(mID) {
+  var strURL, strFeature;
+  var width, height;
+  var x, y;
+
+  width = 855;
+  height = 560;
+  x = (screen.width - width) / 2;
+  y = (screen.height - height) / 2;
+
+  if (mID.toLowerCase().indexOf("_800k.mp4") > -1 || mID.toLowerCase().indexOf("_300k.mp4") > -1) {
+      strURL = "http://e.tsherpa.co.kr/media/mediaframe3.aspx?mid=" + mID;
+  }
+  else {
+      strURL = "http://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("http://chunjae.gscdn.com") > -1 ? mID.replace("http://", "") : mID);
+  }
+  strFeature = "left=" + x + ", top=" + y + ", width=" + width + ", height=" + height + ", menubar=no, status=no, location=no, toolbar=no, resizable=no, scrollbars=no";
+  var win = window.open(strURL, "win_ChunjaeMedia", strFeature);
+
+  win.focus();
+  return;
 }
 
 

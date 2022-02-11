@@ -76,7 +76,8 @@
 			border: 5px solid #ae7c65;
 			border-radius: 10px;
     		box-sizing: border-box;
-			left: 0;
+			left: 170px;
+			top:40px;
 			background: none;
 		}
 
@@ -84,28 +85,28 @@
 			left: 0;
 			top: -20px;
 		}
-
-		.line.n1 {
+		.ex-on .dotPaper .exline .line{display: block;}
+		.exline .line.n1{
+			display: none;
 			position: absolute;
-			width: 185px;
-			height: 180px;
-			border-bottom: 4px solid #000;
-			border-left: 4px solid #000;
-			z-index: 10;
-			top: 183px;
-			left: 63px;
+			border: 5px solid #00a0ff;
+			width: 155px;
+			height: 75px;
+			top: 92px;
+			left: 72px;
+		}
+		.exline .line.n2{
+			display: none;
+			position: absolute;
+			border: 5px solid #00a0ff;
+			width: 115px;
+			height: 155px;
+			top: 52px;
+			left: 392px;
 		}
 
-		.line.n2 {
-			position: absolute;
-			width: 261px;
-			height: 0;
-			border-top: 4px solid #000;
-			z-index: 10;
-			top: 178px;
-			left: 65px;
-			transform: rotate(45deg);
-			transform-origin: top left;
+		.contentsArea .js-quizButton.resetButton.exBtn{
+			bottom: 10px;
 		}
 	</style>
 </head>
@@ -116,8 +117,8 @@
 			<div class="dotPaper ">
 				<div class="js-drawLine drawLine" data-option="copy">
 					<div class="exline">
-						<div class="line"></div>
-						<div class="line ex"></div>
+						<div class="line n1"></div>
+						<div class="line n2"></div>
 					</div>
 					<canvas class="js-drawArea drawArea"></canvas>
 				</div>
