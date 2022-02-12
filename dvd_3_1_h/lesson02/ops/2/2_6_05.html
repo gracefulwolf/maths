@@ -13,6 +13,58 @@
     <link rel="stylesheet" href="../../../include/math/style/drawLine.css">
     <link rel="stylesheet" href="./css/2_6_5.css">
     <style>
+      #wrap{
+			  width: 1170px;
+    		height: 554px;
+		  }
+      .drawContainer.draw_3,
+      .drawContainer.draw_2,
+      .drawContainer.draw_1{background: none;}
+      .drawContainer {
+        top: 30px;
+        left: 330px;
+        width:440px;
+        height:440px
+      }
+      .drawContainer .js-drawLine.drawLine{
+        transform: translate(-37px,-60px);
+      }
+      .js-resetButton.resetButton{display: none;}
+      .js-buttons.quizButtons.exBtn{
+        bottom: 6px;
+        position: absolute;
+        top: auto;
+        right: 20px;
+      }
+      .draw_1 .light_1{
+        top: 97px;
+        left: 99px;
+      }
+      .draw_1 .light_2 {
+        top: 338px;
+        left: 343px;
+      }
+
+      .draw_2 .light_1{
+        top:176px;
+        left: 19px;
+      }
+      .draw_2 .light_2 {
+        top: 176px;
+        left: 341px;
+      }
+
+      .draw_3 .light_1{
+        top:257px;
+        left: 19px;
+      }
+      .draw_3 .light_2 {
+        top: 257px;
+        left: 261px;
+      }
+
+      .js-buttons.quizButtons.exBtn[data-type="reset"]::before{content:"다시하기";padding-left:15px;}
+      /* .drawLine {left:10px; top:-10px;} */
     </style>
   </head>
 	<body class="lesson_2">
@@ -46,7 +98,19 @@
               </div>
               <ul class="basicSlider_slides" data-slides="main">
                 <li>
-                  <div class="drawContainer draw_1">
+                  <div class="drawContainer draw_1 lineBox sky">
+                      <div class="js-drawLine drawLine" data-option="copy">
+                        <canvas class="js-drawArea drawArea"></canvas>
+                        <div class="line line_1"></div>
+                        <div class="line line_2"></div>
+                        <div class="js-resetButton resetButton" data-hover=""></div>
+                      </div>
+                      <div class="induceLight light_1"></div>
+                      <div class="induceLight light_2"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="drawContainer draw_2 lineBox sky">
                     <div class="js-drawLine drawLine" data-option="copy">
                       <canvas class="js-drawArea drawArea"></canvas>
                       <div class="line line_1"></div>
@@ -58,19 +122,7 @@
                   </div>
                 </li>
                 <li>
-                  <div class="drawContainer draw_2">
-                    <div class="js-drawLine drawLine" data-option="copy">
-                      <canvas class="js-drawArea drawArea"></canvas>
-                      <div class="line line_1"></div>
-                      <div class="line line_2"></div>
-                      <div class="js-resetButton resetButton" data-hover=""></div>
-                    </div>
-                    <div class="induceLight light_1"></div>
-                    <div class="induceLight light_2"></div>
-                  </div>
-                </li>
-                <li>
-                  <div class="drawContainer draw_3">
+                  <div class="drawContainer draw_3 lineBox sky">
                     <div class="js-drawLine drawLine" data-option="copy">
                       <canvas class="js-drawArea drawArea"></canvas>
                       <div class="line line_1"></div>
@@ -82,7 +134,7 @@
                 </li>
               </ul>
             </div>
-            <div class="js-buttons quizButtons" data-hover="" data-type="answer"></div>
+            <div class="js-buttons quizButtons exBtn" data-hover="" data-type="answer"></div>
           </section>
         </div>
       </main>
