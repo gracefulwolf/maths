@@ -137,7 +137,12 @@
 		.mathCalcContainer .answerBox .answer,
 		.mathCalcContainer input{text-align: center;}
 		.mathCalcContainer .inputBox.noline{border-color:transparent}
+		.mathCalcContainer .inputBox.noline input{color:#000;}
 		/* .dotList li div{text-align: justify;} */
+		.page_3 .innerTab_3 .mathCalcContainer .answerBox.complete{padding-bottom:3px;}
+		.page_3 .innerTab_3 .mathCalcContainer-wrap .answer{justify-content: center;}
+		.page_3 .innerTab_3 .mathCalcContainer .inputBox{padding-top:5px;}
+
     </style>
 </head>
 <body>
@@ -172,13 +177,11 @@
                                 <p class="mb_10">
 									그림은 어떤 상황인가요?
 								</p>
-								<div class="textAlignC">
-									<div class="toggle" data-toggle-obj="1">
+									<div class="toggle box" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											직업 체험 계획을 세우려고 합니다.
 										</div>
 									</div>
-								</div>
                             </div>
                         </li>
                         <li>
@@ -187,14 +190,12 @@
                                 <p class="mb_10">
 									<img src="./images/ico_plus.png" class="ico-pm" alt="">부스와 <img src="./images/ico_minus.png" alt="" class="ico-pm">부스를 나누는 기준은 무엇일까요?
 								</p>
-								<div class="textAlignC">
-									<div class="toggle mb_10" data-toggle-obj="2">
+									<div class="toggle box mb_10" data-toggle-obj="2">
 										<div class="answer textAlignL" data-toggle-target="2">
 											<img src="./images/ico_plus.png" class="ico-pm" alt="">부스는 체험 재료비가 필요하지 않은 직업이고,<br>
 											<img src="./images/ico_minus.png" alt="" class="ico-pm">부스는 체험 재료비가 필요한 직업입니다.
 										</div>
 									</div>
-								</div>
                             </div>
                         </li>
                     </ul>
@@ -225,7 +226,7 @@
 												<em>1</em>
 												<div class="n1">
 													<img src="./images/ico_plus.png" class="ico-pm" alt="">부스에서 체험하고<br>
-													싶은 직업을 골라요
+													싶은 직업을 골라요.
 												</div>
 												<div class="toggle box" data-toggle-obj="1">
 														<div class="answer" data-toggle-target="1">
@@ -483,15 +484,16 @@
 										</div>
 									</li>
 								</ul>
+								<button class="resetBtn reset" data-answer-btn=""></button>
 							</li>
 							<li class="innerTab_4" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop" data-total-complete-count="0">
 								<div class="flex-box">
 									<div class="bullet number orange mr_15 self" style="margin-top:5px;">4</div>
 									<div>
-										<img src="./images/ico_minus.png" class="ico-pm" alt="">부스에서 체험하고 싶은 직업을 2개 고르고 점수의 합을 구해 보세요.
+										내가 살 수 있는 기념품을 적어 보세요
 									</div>
 								</div>
-								<div class="study_guide" style="right:0; top:90px;"> <em>부스</em>을 <em>드래그</em>하여 옮기세요.</div>
+								<div class="study_guide" style="right:0; top:50px;"> <em>부스</em>를 <em>드래그</em>하여 옮기세요.</div>
 								<div class="dragDropContainer" style="margin-top:20px">
 									<div class="lineBox green" style="position: relative; margin:20px auto; width:450px; height: 120px; z-index: 2;">
 										<div class="dragObjUL n1">
@@ -515,12 +517,12 @@
 											<div class="colorBox green tit" style="position:absolute; top:-30px; left:50%; font-size:30px; transform: translate(-50%,0); width:350px; text-align: center;">
 												내가 살 수 있는 기념품
 											</div>
-											<div class="bullet exam" style="position:absolute; top:10px; left:10px;">예</div>
+											<!-- <div class="bullet exam" style="position:absolute; top:10px; left:10px;">예</div> -->
 										</div>
 									</div>
 								</div>
 								
-								<button class="dapCheckBtn" data-answer-btn="1"></button>
+								<button class="resetBtn reset" data-answer-btn=""></button>
 							</li>
 						</ul>
 					</div>
@@ -643,6 +645,13 @@
 
 		window.$callBack.sliderReset=function(params) {
 			// $ts.getEl('.page_4 .characterImg')[0].style.left='38%';
+
+			// const calcInps = document.querySelectorAll('[data-calc-input]');
+
+			// for(let i = 0, len = calcInps.length; i < len; i++) {
+			// 	calcInps[i].value = '';
+			// }
+
 		};
     	document.addEventListener('DOMContentLoaded', function () {
 			const reset=document.querySelectorAll('.resetBtn');
