@@ -58,33 +58,49 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_0 .colorBox.check{display:inline; height:46px; line-height:26px !important;}
 	.page_0 .bullet.circleDot{margin-top:0.5em;}
 
-	.page_1 .it-wrap{width:100%; height:440px; background:url(./images/1_4_1.svg) no-repeat 50% 50% / 950px 450px;}
-	.page_1 .it-box{position:relative; height:216px; padding-left:260px; font-size:35px;}
-	.page_1 .it-1{position:absolute; top:90px; left:82px;}
+	.page_1 .it-wrap{width:100%; height:440px;}
+	.page_1 .it-box{display:flex; position:relative; height:220px; padding-left:230px; font-size:38px;}
+	.page_1 .it-1{position:absolute; top:82px; left:40px;}
+	.page_1 .it-1:after{content:""; display:block; position:absolute; top:27px; left:110px; width:80px; height:5px;}
+	.page_1 .it-1.orange:after{background:#fccd89;}
+	.page_1 .it-1.purple:after{background:#cabfe0;}
 	.page_1 .it-2{display:flex; flex-direction:column; justify-content: space-around; height:100%; padding-top:8px; box-sizing:border-box;}
 	.page_1 .toggle{min-width:160px;}
 
 	.page_2 .tableContainer{width:840px; margin:0 auto;}
 	.page_2 .tableContainer table{table-layout:fixed;}
-	.page_2 .tableContainer table td{height:60px; border-color:#cfe593 !important;}
-	.page_2 .tableContainer table .toggle{width:100%;}
+	.page_2 .tableContainer table th,
+	.page_2 .tableContainer table td{height:66px;}
+	.page_2 .tableContainer table .toggle{width:100%;padding:10px 0;}
 	.pop_page_2 .colorBox{height:46px; line-height:26px !important;}
+	.page_3 .tableContainer table tr:not(:first-child) td{height:60px;}
+	.page_3 .tableContainer table tr:nth-child(2)>:first-child{border-radius:10px 0 0 0;}
+	.page_3 .tableContainer table tr:nth-child(2)>:last-child{border-radius:0 10px 0 0;}
 	.pop_page_3 .it-f{float:left; margin-right:10px;}
 	.pop_page_3 .it-f + ul{float:left;}
-	.page_4 .it-title{width:480px; margin:0 auto;}
+	.page_4 .it-title{width:480px; margin:0 auto; line-height:1.3em !important;}
 	.page_4 .lineBox .toggle{line-height:1.2;}
 	.pop_page_4 .underLine.red{display:inline-block; line-height:1.2;}
-	.page_5{background:url(./images/1_4_5.svg) no-repeat 50% 50% / 840px auto;}
-	.page_5 .top_1{top:60px;}
-	.page_5 .top_2{top:172px;}
-	.page_5 .top_3{top:283px;}
-	.page_5 .top_4{top:394px;}
-	.page_5 .left_1{left:355px; opacity:0;}
-	.page_5 .left_2{left:588px; opacity:0;}
-	.page_5 .box{font-size:27px; letter-spacing:-1px;}
-	.page_5 .box.x1{margin-top:-5px; margin-left:68px;}
-	.page_5 .box.x2{width:346px; margin-top:-5px; margin-right:108px;}
-	.page_5 .box li{display:flex; align-items:center; justify-content:center; height:90px; margin-top:21px;}
+	/* .page_5{background:url(./images/1_4_5.svg) no-repeat 50% 50% / 840px auto;} */
+	.page_5 .top_1{top:54px;}
+	.page_5 .top_2{top:174px;}
+	.page_5 .top_3{top:295px;}
+	.page_5 .top_4{top:415px;}
+	.page_5 .left_1{left:330px; opacity:0;}
+	.page_5 .left_2{left:477px; opacity:0;}
+	.page_5 .left_2.top_1{top:60px;}
+	.page_5 .left_2.top_2{top:150px;}
+	.page_5 .left_2.top_3{top:258px;}
+	.page_5 .left_2.top_4{top:384px;}
+	.page_5 .box{font-size:40px; letter-spacing:-2px;}
+	.page_5 .box.x1{margin-top:0px;}
+	.page_5 .box.x1 li{display:flex; align-items:center; justify-content:center; width:310px; min-height:110px; padding-right:56px; background:url(./images/1_4_5.svg) no-repeat 0px -22px / 970px auto;}
+	.page_5 .box.x1 .it-cbx{height:80px; line-height:80px;}
+	.page_5 .box.x2{width:520px; margin-top:20px; margin-right:40px;}
+	.page_5 .box.x2 > div{display:flex; align-items:center; min-height:80px; line-height:1.2 !important;}
+	.page_5 .box.x2 > div:before{content:""; display:block; position:absolute; top:50%; left:-40px; width:40px; height:40px; margin-top:-20px; background:url(./images/1_4_5.svg) no-repeat -533px -58px / 970px auto;}
+	.page_5 .box.x1 li + li,
+	.page_5 .box.x2 > div + div{margin-top:10px;}
 </style>
 </head>
 
@@ -130,13 +146,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											<li class="flexListContainer center start">
 												<div class="colorBox check deepOrange">쓰기</div>
 												<div>
-													<span class="blueT">100000000</span> 또는 <span class="blueT">1억</span>
+													<span class="redT">100000000</span> 또는 <span class="redT">1억</span>
 												</div>
 											</li>
 											<li class="flexListContainer center start mt_15">
 												<div class="colorBox check brown">읽기</div>
 												<div>
-													<span class="blueT">억</span> 또는 <span class="blueT">일억</span>
+													<span class="redT">억</span> 또는 <span class="redT">일억</span>
 												</div>
 											</li>
 											</ul>
@@ -155,13 +171,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											<li class="flexListContainer center start">
 												<div class="colorBox check deepOrange">쓰기</div>
 												<div>
-													<span class="blueT">1000000000000</span> 또는 <span class="blueT">1조</span>
+													<span class="redT">1000000000000</span> 또는 <span class="redT">1조</span>
 												</div>
 											</li>
 											<li class="flexListContainer center start mt_15">
 												<div class="colorBox check brown">읽기</div>
 												<div>
-													<span class="blueT">조</span> 또는 <span class="blueT">일조</span>
+													<span class="redT">조</span> 또는 <span class="redT">일조</span>
 												</div>
 											</li>
 											</ul>
@@ -181,39 +197,39 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<section>
 					<div class="it-wrap">
 						<div class="it-box">
-							<div class="it-1">1억은</div>
-							<div class="it-2">
+							<div class="it-1 colorBox orange">1억은</div>
+							<div class="it-2 lineBox orange">
 								<div>
 									9000만보다 <div class="toggle" data-toggle-obj="11">
 										<div class="answer" data-toggle-target="11">1000만</div>
 									</div>만큼 더 큰 수 입니다.
 								</div>
-								<div>
+								<div class="mt_5">
 									9900만보다 <div class="toggle" data-toggle-obj="12">
 										<div class="answer" data-toggle-target="12">100만</div>
 									</div>만큼 더 큰 수 입니다.
 								</div>
-								<div>
+								<div class="mt_5">
 									9990만보다 <div class="toggle" data-toggle-obj="13">
 										<div class="answer" data-toggle-target="13">10만</div>
 									</div>만큼 더 큰 수 입니다.
 								</div>
 							</div>
 						</div>
-						<div class="it-box">
-							<div class="it-1">1조는</div>
-							<div class="it-2">
+						<div class="it-box mt_10">
+							<div class="it-1 colorBox purple black">1조는</div>
+							<div class="it-2 lineBox purple">
 								<div>
 									9000억보다 <div class="toggle" data-toggle-obj="14">
 										<div class="answer" data-toggle-target="14">1000억</div>
 									</div>만큼 더 큰 수 입니다.
 								</div>
-								<div>
+								<div class="mt_5">
 									9990억보다 <div class="toggle" data-toggle-obj="15">
 										<div class="answer" data-toggle-target="15">10억</div>
 									</div>만큼 더 큰 수 입니다.
 								</div>
-								<div>
+								<div class="mt_5">
 									9999억보다 <div class="toggle" data-toggle-obj="16">
 										<div class="answer" data-toggle-target="16">1억</div>
 									</div>만큼 더 큰 수 입니다.
@@ -232,12 +248,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					빈칸에 알맞은 수나 말을 써넣으세요.
 				</span></h2>
 				<section>
-					<div class="tableContainer brown it-colorful">
+					<div class="tableContainer green">
 						<table>
 							<tbody>
 								<tr>
-									<td class="it-lightgreen">517900000000</td>
-									<td class="it-lightgreen">오천백칠십구억</td>
+									<th>517900000000</th>
+									<th>오천백칠십구억</th>
 								</tr>
 								<tr>
 									<td class="it-white">
@@ -247,10 +263,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											</div>
 										</div>
 									</td>
-									<td class="it-lightgreen">육백이억</td>
+									<th>육백이억</th>
 								</tr>
 								<tr>
-									<td class="it-lightgreen">602000000000</td>
+									<th>602000000000</th>
 									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="22">
 											<div class="answer" data-toggle-target="22">
@@ -267,10 +283,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											</div>
 										</div>
 									</td>
-									<td class="it-lightgreen">삼천구백사십이조</td>
+									<th>삼천구백사십이조</th>
 								</tr>
 								<tr>
-									<td class="it-lightgreen">8704000000000000</td>
+									<th>8704000000000000</th>
 									<td class="it-white">
 										<div class="toggle noBg" data-toggle-obj="24">
 											<div class="answer" data-toggle-target="24">
@@ -419,17 +435,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="study_guide mt_30">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
 					<div class="dragLineContainer">
 						<ul class="box x1">
-							<li>5068조</li>
-							<li>468704760000</li>
-							<li>20조 80억</li>
-							<li>1479578600000</li>
+							<li><div class="it-cbx">5068조</div></li>
+							<li><div class="it-cbx">468704760000</div></li>
+							<li><div class="it-cbx">20조 80억</div></li>
+							<li><div class="it-cbx">1479578600000</div></li>
 						</ul>
-						<ul class="box x2">
-							<li>숫자 0의 개수가 12개입니다.</li>
-							<li>숫자 8은 8조를 나타냅니다.</li>
-							<li class="textAlignJ">천억의 자리 숫자와 십억의 자리 숫자를 더하면 13이 됩니다.</li>
-							<li class="textAlignJ">백억의 자리 숫자와 십억의 자리 숫자를 더하면 14가 됩니다.</li>
-						</ul>
+						<div class="box x2">
+							<div class="colorBox deeppink textAlignJ">숫자 0의 개수가 12개입니다.</div>
+							<div class="colorBox deeppink textAlignJ">숫자 8은 8조를 나타냅니다.</div>
+							<div class="colorBox deeppink textAlignJ">천억의 자리 숫자와 십억의 자리 숫자를 더하면 13이 됩니다.</div>
+							<div class="colorBox deeppink textAlignJ">백억의 자리 숫자와 십억의 자리 숫자를 더하면 14가 됩니다.</div>
+						</div>
 					</div>
 					<svg class="js-svgContainer svgContainer"></svg>
 					<div class="js-dragLineArea dragLineArea left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1"></div>
@@ -595,7 +611,19 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
+	window.$popCallBack={
+		open: function (popup) {
+			if (popup.page.classList.contains('solve')) {
+				var inQuizArray=$pm.array.inPage.quiz;
+				inQuizArray.forEach(function (quiz) {
+					quiz.reset();
+					if (quiz.QUIZ.answerBtn) quiz.QUIZ.answerBtn.classList.remove('reset');
+				});
+			}
+		}
+	};
 	document.addEventListener('DOMContentLoaded', function () {
+
 	}, false);
 </script>
 

@@ -21,7 +21,7 @@
 
 		.page_2 .it-tg{position:relative; z-index:-1; visibility:hidden;}
 		.page_2 .it-wrap.n2.on .it-tg{position:relative; z-index:0; visibility:visible;}
-		.page_2 .it-arrow{display:flex; align-items:center; justify-content:center; width:50px; height:50px; box-sizing:border-box; animation:ani_borderBlinkBlink 1s linear infinite;}
+		.page_2 .it-arrow{display:flex; align-items:center; justify-content:center; width:50px; height:50px; box-sizing:border-box; animation:left-to-right-again 2s linear infinite;}
 		.page_2 .it-arrow.complete{animation:none;}
 		@keyframes ani_borderBlinkBlink {
 			0%, 100% {
@@ -29,6 +29,17 @@
 			}
 			50% {
 				border: 3px dashed transparent;
+			}
+		}
+		@keyframes left-to-right-again{
+			0%, 100% {
+				opacity: 0.1;
+				transform: translate(-20px)
+			}
+
+			50% {
+				opacity: 1;
+				transform: translate(0)
 			}
 		}
 	</style>
