@@ -14,10 +14,11 @@
 		.pop_page_1 img{width: 100%;}
 
 		.it-list-wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; width:775px;}
-		.it-list{position:relative; width:190px; height:190px; margin:5px 0 0; color:#fff; text-align:center;}
+		.it-list{position:relative; width:190px; height:190px; margin:5px 0 0; color:#fff; text-align:center; cursor:pointer;}
 		.it-list .it-tit{width:150px; margin:10px auto 0; background:#000;}
 		.it-list .it-km{display:none; position:absolute; bottom:15px; left:0; width:100%; font-size:26px; letter-spacing:-1px;}
 		.it-list.popupOn .it-km{display:block;}
+		.it-list.toggleOn .it-km{display:block;}
 		.it-list.n1{background:url(./images/suh_p_0401_01_0008_402_1_1.png) no-repeat 50% 50% / cover;}
 		.it-list.n2{background:url(./images/suh_p_0401_01_0008_402_1_2.png) no-repeat 50% 50% / cover;}
 		.it-list.n3{background:url(./images/suh_p_0401_01_0008_402_1_3.png) no-repeat 50% 50% / cover;}
@@ -34,19 +35,19 @@
 
 		.it-whole-img{width:100%; height:640px; background:url(./images/suh_p_0401_01_0008_402_1_9.jpg) no-repeat 50% 100px / contain;}
 
-		.it-planet{position:absolute; background:#000; font-size:30px; color:#fff;}
-		.it-planet.n1{top:200px; left:800px;}
-		.it-planet.n2{top:154px; left:330px;}
-		.it-planet.n3{top:357px; left:830px;}
-		.it-planet.n4{top:325px; left:620px;}
-		.it-planet.n5{top:514px; left:840px;}
-		.it-planet.n6{top:565px; left:760px;}
-		.it-planet.n7{top:462px; left:450px;}
-		.it-planet.n8{top:540px; left:310px;}
+		.it-planet{position:absolute; background:#000; font-size:40px; color:#fff; line-height:1; letter-spacing:-1.5px;}
+		.it-planet.n1{top:188px; left:716px;}
+		.it-planet.n2{top:134px; left:360px;}
+		.it-planet.n3{top:336px; left:815px;}
+		.it-planet.n4{top:321px; left:530px;}
+		.it-planet.n5{top:510px; left:774px;}
+		.it-planet.n6{top:568px; left:710px;}
+		.it-planet.n7{top:459px; left:345px;}
+		.it-planet.n8{top:540px; left:280px;}
 		.it-planet.n9{top:320px; left:270px;}
 
 		.click-finger-Btn{top:260px; left:350px;}
-
+		.study_guide{top:42px; left:auto; right:0;}
 	</style>
 </head>
 <body>
@@ -66,8 +67,11 @@
 								태양에서 가장 가까운 행성부터 차례로 알아보세요.
 							</span>
 						</h2>
+						<div class="study_guide">
+							<em>행성</em>을 <em>클릭</em>하세요.
+						</div>
 						<div>
-							<span class="popBtn click-finger-Btn blinkOn blinkOpacity" data-popup-btn="6" data-hover=""></span>
+							<!-- <span class="popBtn click-finger-Btn blinkOn blinkOpacity" data-popup-btn="6" data-hover=""></span> -->
 							<div class="flexListContainer it-list-wrap">
 								<div class="it-list n1" data-popup-btn="1">
 									<div class="it-tit">해왕성</div>
@@ -149,15 +153,15 @@
 				<li class="whole pop_page_9" data-popup-page="9">
 					<div class="popup_contents">
 						<div class="it-whole-img">
-							<div class="it-planet n1">해왕성(44억 9840만 km)</div>
-							<div class="it-planet n2">천왕성(28억 7066만 km)</div>
-							<div class="it-planet n3">토성(14억 2667만 km)</div>
-							<div class="it-planet n4">목성(7억 7834만 km)</div>
-							<div class="it-planet n5">화성(2억 2794만 km)</div>
-							<div class="it-planet n6">지구(1억 4960만 km)</div>
-							<div class="it-planet n7">금성(1억 821만 km)</div>
-							<div class="it-planet n8">수성(5791만 km)</div>
-							<div class="it-planet n9">태양</div>
+							<div class="it-planet n1 textAlignC">해왕성(44억 9840만 km)</div>
+							<div class="it-planet n2 textAlignC">천왕성<br>(28억 7066만 km)</div>
+							<div class="it-planet n3 textAlignC">토성<br>(14억 2667만 km)</div>
+							<div class="it-planet n4 textAlignC">목성(7억 7834만 km)</div>
+							<div class="it-planet n5 textAlignC">화성(2억 2794만 km)</div>
+							<div class="it-planet n6 textAlignC">지구(1억 4960만 km)</div>
+							<div class="it-planet n7 textAlignC">금성(1억 821만 km)</div>
+							<div class="it-planet n8 textAlignC">수성(5791만 km)</div>
+							<div class="it-planet n9 textAlignC">태양</div>
 						</div>
 					</div>
 				</li>
@@ -182,6 +186,20 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			const _itList = document.querySelectorAll(".it-list");
+			const _dap = document.querySelector(".dapCheckBtn");
+			_itList.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					obj.classList.add("toggleOn");
+				});
+			});
+
+			_dap.addEventListener( "click", function(e) {
+				for(elem of _itList){
+					elem.classList.remove("toggleOn");
+				}
+			});
+
 		}, false);
 
 	</script>
