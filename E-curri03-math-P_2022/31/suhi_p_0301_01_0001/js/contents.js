@@ -24,11 +24,10 @@ CONTENTS = (function () {
           });
         }
         if($ts.getEl('[data-video-link]')) {
-          $ts.loadScriptFile('http://e.tsherpa.co.kr/include/js/tsherpa.js', function(){
-            tSherpaVideoInit();
-          });
-        }if($ts.getEl('[data-video-link2]')) {
-            tSherpaVideoInit2();
+          tSherpaVideoInitLayer();
+          // $ts.loadScriptFile('http://e.tsherpa.co.kr/include/js/tsherpa.js', function(){
+          //   tSherpaVideoInit();
+          // });
         }
         if($ts.getEl('.wordQuizContent').length) {
           $ts.loadScriptFile('../common/contents/js/quiz/quiz_life_wordQuiz.js', function(){
@@ -56,15 +55,38 @@ CONTENTS = (function () {
 })();
 
 // 티셀파 비디오 링크
-function tSherpaVideoInit() {
+function tSherpaVideoInitLayer() {
   var tVideo = $ts.getEl('[data-video-link]');
   tVideo.forEach(function (video) {
     video.addEventListener('click', tSherpaGoLink);
     video.addEventListener('click', $efSound.click);
   });
   function tSherpaGoLink() {
-    viewChunjaeMedia(this.getAttribute('data-video-link'));
+    viewChunjaeMediaLayer(this.getAttribute('data-video-link'));
   }
+}
+
+function viewChunjaeMediaLayer(mID) {
+  var strURL;
+  var laypopHtml = '<div id="layerPop_vid" class="layerPop_vid"><div>';
+  laypopHtml += '<div class="layerPop_vid-close"></div>';
+  laypopHtml += '<div class="layerPop_vid-content">';
+
+  if (mID.toLowerCase().indexOf("_800k.mp4") > -1 || mID.toLowerCase().indexOf("_300k.mp4") > -1) {
+    strURL = "http://e.tsherpa.co.kr/media/mediaframe3.aspx?mid=" + mID;
+  }
+  else {
+    strURL = "http://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("http://chunjae.gscdn.com") > -1 ? mID.replace("http://", "") : mID);
+  }
+
+  laypopHtml += '<iframe width="100%" height="100%" src="'+strURL+'" allowfullscreen=""></iframe>';
+  laypopHtml += '</div>';
+  laypopHtml += '</div></div>';
+
+  var el_wrap = document.querySelector('#wrap');
+
+  el_wrap.insertAdjacentHTML('beforeend',laypopHtml );
+
 }
 
 function tSherpaVideoInit2() {
@@ -74,32 +96,11 @@ function tSherpaVideoInit2() {
     video.addEventListener('click', $efSound.click);
   });
   function tSherpaGoLink_n() {
-    viewChunjaeMedia_n(this.getAttribute('data-video-link2'));
+    viewChunjaeMedia(this.getAttribute('data-video-link2'));
   }
 }
 
-function viewChunjaeMedia_n(mID) {
-  var strURL, strFeature;
-  var width, height;
-  var x, y;
 
-  width = 855;
-  height = 560;
-  x = (screen.width - width) / 2;
-  y = (screen.height - height) / 2;
-
-  if (mID.toLowerCase().indexOf("_800k.mp4") > -1 || mID.toLowerCase().indexOf("_300k.mp4") > -1) {
-      strURL = "http://e.tsherpa.co.kr/media/mediaframe3.aspx?mid=" + mID;
-  }
-  else {
-      strURL = "http://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("http://chunjae.gscdn.com") > -1 ? mID.replace("http://", "") : mID);
-  }
-  strFeature = "left=" + x + ", top=" + y + ", width=" + width + ", height=" + height + ", menubar=no, status=no, location=no, toolbar=no, resizable=no, scrollbars=no";
-  var win = window.open(strURL, "win_ChunjaeMedia", strFeature);
-
-  win.focus();
-  return;
-}
 
 
 // 자음모음 퀴즈_힌트 보기
