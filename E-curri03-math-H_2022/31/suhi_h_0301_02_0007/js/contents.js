@@ -87,7 +87,13 @@ function viewChunjaeMediaLayer(mID) {
 
   var el_wrap = document.querySelector('#wrap');
 
-  el_wrap.insertAdjacentHTML('beforeend',laypopHtml );
+   el_wrap.insertAdjacentHTML('beforeend',laypopHtml );
+
+  var closeBtn = document.querySelector('.layerPop_vid-close');
+
+  closeBtn.addEventListener('click', function(){
+    document.querySelector('#layerPop_vid').remove();
+  });
 
 }
 

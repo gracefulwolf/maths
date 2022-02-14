@@ -92,7 +92,6 @@ function viewChunjaeMediaLayer(mID) {
   closeBtn.addEventListener('click', function(){
     document.querySelector('#layerPop_vid').remove();
   });
-
 }
 
 
