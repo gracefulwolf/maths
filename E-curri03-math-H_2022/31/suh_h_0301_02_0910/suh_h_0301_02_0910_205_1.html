@@ -16,24 +16,54 @@
 </head>
 
 <body>
-	<div id="wrap" class="q3">
+	<div id="wrap" class="q5">
 		<header>
-			<div class="title active">
-				<div class="bullet number orange inline">3</div>
-				<div class="icon_bogi"></div>와 같이 직각을 찾아 <img src="./images/suh_h_0301_02_0004_204_1_1.png" alt="">로 표시해 보세요.
+			<div class="title active flex-wrap">
+				<div class="bullet number orange inline">5</div>
+				<div>
+					모눈종이에 그어진 선을 따라 잘랐을 때 생기는 직각삼각형은 모두 몇 개인가요?
+				</div>
 
 			</div>
 		</header>
 		<main>
-			<div class="contentsBox">
-				<h2>
-					<div class="study_guide" style="z-index: 3;">
-						<em>도형판</em>을 <em>드래그</em>하세요.
+			<div class="contentsBox" data-quiz="toggle">
+				<section>
+					<div class="flex-wrap">
+						<div class="flex-item f1">
+							<div class="img-wrap">
+								<img src="./images/2_finish_quiz_5_01.svg" alt="">
+							</div>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">4개</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
-				</h2>
-				<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_8_04.html" title="" class="page-iframe" id="iframe1" scrolling="no"></iframe>
+					
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
 			</div>
 		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+
+							<img src="./images/2_finish_quiz_5_02.svg" alt="">
+							
+						</div>
+						
+					</div>
+				</li>
+			</ul>
+		</section>
 	
 	</div>
 	<div id="loadingContainer">
@@ -54,6 +84,10 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('iframepage1').contentDocument.location.reload(true);
+				document.getElementById('iframepage2').contentDocument.location.reload(true);
+			}
 		}, false);
 
 	</script>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style type="text/css">
+		#wrap header .title .bullet.number {
+			margin-top: 5px;
+		}
+		.eval-box{width: 100%; display:flex; justify-content: space-around; padding-top:150px}
+		.eval-item.n2{background: url(./images/suh_h_0301_01_1011_301_2.png) no-repeat 50% 100% / 100%; transform: translate(0, -130px);}
+		.eval-item.n3{background: url(./images/suh_h_0301_01_1011_301_3.png) no-repeat 50% 100% / 100%;}
+		.eval-item{position: relative; top:0; left:0; width:300px; height:260px; background: url(./images/suh_h_0301_01_1011_301_1.png) no-repeat 50% 100% / 100%;}
+		
+		.eval-box .text{position:absolute; bottom:60px; width:100%; text-align: center; font-size:30px;}
+		.eval-box .text img{width:30px}
+		.star-wrap{display: flex;	justify-content: space-around; width:90%; margin: 0 auto; position: relative; z-index: 1;}
+		.star-wrap .star{width:56px; height: 56px; background:url(./images/suh_h_0301_01_1011_301_1_2.png) no-repeat 50% 50% / 56px; position: absolute; cursor: pointer;}
+		.star-wrap .star:nth-child(1){top:77px; left:-5px;}
+		.star-wrap .star:nth-child(2){top:22px; left:40px;transform: rotate(-35deg);}
+		.star-wrap .star:nth-child(3){top:-3px; left:50%; margin-left:-28px;}
+		.star-wrap .star:nth-child(4){top:22px; right:40px;transform: rotate(35deg);}
+		.star-wrap .star:nth-child(5){top:77px; right:-5px;}
+
+		.eval-item.n2 .star-wrap .star{background-image:url(./images/suh_h_0301_01_1011_301_2_2.png)}
+		.eval-item.n3 .star-wrap .star{background-image:url(./images/suh_h_0301_01_1011_301_3_2.png)}
+
+		.eval-item.n1 .n1 .star:nth-child(1),
+		.eval-item.n1 .n2 .star:nth-child(1),
+		.eval-item.n1 .n2 .star:nth-child(2),
+		.eval-item.n1 .n3 .star:nth-child(1),
+		.eval-item.n1 .n3 .star:nth-child(2),
+		.eval-item.n1 .n3 .star:nth-child(3),
+		.eval-item.n1 .n4 .star:nth-child(1),
+		.eval-item.n1 .n4 .star:nth-child(2),
+		.eval-item.n1 .n4 .star:nth-child(3),
+		.eval-item.n1 .n4 .star:nth-child(4),
+		.eval-item.n1 .n5 .star:nth-child(1),
+		.eval-item.n1 .n5 .star:nth-child(2),
+		.eval-item.n1 .n5 .star:nth-child(3),
+		.eval-item.n1 .n5 .star:nth-child(4),
+		.eval-item.n1 .n5 .star:nth-child(5){background-image:url(./images/suh_h_0301_01_1011_301_1_1.png)}
+
+		.eval-item.n2 .n1 .star:nth-child(1),
+		.eval-item.n2 .n2 .star:nth-child(1),
+		.eval-item.n2 .n2 .star:nth-child(2),
+		.eval-item.n2 .n3 .star:nth-child(1),
+		.eval-item.n2 .n3 .star:nth-child(2),
+		.eval-item.n2 .n3 .star:nth-child(3),
+		.eval-item.n2 .n4 .star:nth-child(1),
+		.eval-item.n2 .n4 .star:nth-child(2),
+		.eval-item.n2 .n4 .star:nth-child(3),
+		.eval-item.n2 .n4 .star:nth-child(4),
+		.eval-item.n2 .n5 .star:nth-child(1),
+		.eval-item.n2 .n5 .star:nth-child(2),
+		.eval-item.n2 .n5 .star:nth-child(3),
+		.eval-item.n2 .n5 .star:nth-child(4),
+		.eval-item.n2 .n5 .star:nth-child(5){background-image:url(./images/suh_h_0301_01_1011_301_2_1.png)}
+
+		.eval-item.n3 .n1 .star:nth-child(1),
+		.eval-item.n3 .n2 .star:nth-child(1),
+		.eval-item.n3 .n2 .star:nth-child(2),
+		.eval-item.n3 .n3 .star:nth-child(1),
+		.eval-item.n3 .n3 .star:nth-child(2),
+		.eval-item.n3 .n3 .star:nth-child(3),
+		.eval-item.n3 .n4 .star:nth-child(1),
+		.eval-item.n3 .n4 .star:nth-child(2),
+		.eval-item.n3 .n4 .star:nth-child(3),
+		.eval-item.n3 .n4 .star:nth-child(4),
+		.eval-item.n3 .n5 .star:nth-child(1),
+		.eval-item.n3 .n5 .star:nth-child(2),
+		.eval-item.n3 .n5 .star:nth-child(3),
+		.eval-item.n3 .n5 .star:nth-child(4),
+		.eval-item.n3 .n5 .star:nth-child(5){background-image:url(./images/suh_h_0301_01_1011_301_3_1.png)}
+
+
+		</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header>
+			<div class="title">
+				오늘 학습한 내용을 떠올려 보고, 스스로 평가해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="contentsBox">
+				<section>
+					<div class="eval-box">
+						<div class="eval-item n1">
+							<div class="star-wrap">
+								<div>
+									<div class="star" data-idx="1"></div>
+									<div class="star" data-idx="2"></div>
+									<div class="star" data-idx="3"></div>
+									<div class="star" data-idx="4"></div>
+									<div class="star" data-idx="5"></div>
+								</div>
+							</div>
+							<div class="text ">
+								이해한<br>
+								만큼<br>
+								<img src="./images/suh_h_0301_01_1011_301_1_2.png"  alt="">
+								에 색칠해 주세요.
+							</div>
+						</div>
+						<div class="eval-item n2">
+							<div class="star-wrap">
+								<div>
+									<div class="star" data-idx="1"></div>
+									<div class="star" data-idx="2"></div>
+									<div class="star" data-idx="3"></div>
+									<div class="star" data-idx="4"></div>
+									<div class="star" data-idx="5"></div>
+								</div>
+							</div>
+							<div class="text ">
+								재밌었던<br>
+								만큼<br>
+								<img src="./images/suh_h_0301_01_1011_301_2_2.png"  alt="">
+								에 색칠해 주세요.
+							</div>
+						</div>
+						<div class="eval-item n3">
+							<div class="star-wrap">
+								<div>
+									<div class="star" data-idx="1"></div>
+									<div class="star" data-idx="2"></div>
+									<div class="star" data-idx="3"></div>
+									<div class="star" data-idx="4"></div>
+									<div class="star" data-idx="5"></div>
+								</div>
+							</div>
+							<div class="text ">
+								참여한<br>
+								만큼<br>
+								<img src="./images/suh_h_0301_01_1011_301_3_2.png"  alt="">
+								에 색칠해 주세요.
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						(이동한 전체 거리)<br>
+						=(집에서 문구점까지의 거리) + (문구점에서 학교까지의 거리)<br>
+						=324+282=606 (m)입니다.
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+			const star=document.querySelectorAll('.star');
+
+			for (let i=0, len=star.length; i < len; i++) {
+				const that=star[i];
+
+				that.addEventListener('click', starCheck);
+			}
+
+			function starCheck(e){
+				const this_stat=e.target;
+				const wrap=this_stat.parentNode;
+				const idx=this_stat.dataset.idx;
+				console.log(wrap,wrap.getAttribute('class'),wrap.classList.item);
+				!!wrap.getAttribute('class') && wrap.classList.remove(wrap.getAttribute('class'));
+				wrap.classList.add('n' + idx);
+				$efSound.click();
+			}
+
+
+			
+
+		}, false);
+
+	</script>
+
+</body>
+
+</html>
