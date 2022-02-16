@@ -1,6 +1,6 @@
 @import 'character.css';
 
-/* ê³µí†µ ìˆ˜ì • */
+/* 공통 수정 */
 img{
   image-rendering: -moz-crisp-edges;         /* Firefox */
   image-rendering:   -o-crisp-edges;         /* Opera */
@@ -13,17 +13,17 @@ img{
   font-style: normal;
 }
 
-/* ê¸°ë³¸ í°íŠ¸ */
+/* 기본 폰트 */
 #wrap main {
   font-size: 40px;
 }
 
-/* ë§í’ì„  í°íŠ¸ */
+/* 말풍선 폰트 */
 .balloon {
   font-size: 35px !important;
 }
 
-/* ëŒ€ë°œë¬¸ pageManager.css  */
+/* 대발문 pageManager.css  */
 /*#wrap header .title {
   font-size: 37px;
 }*/
@@ -34,13 +34,13 @@ img{
   width: 37px;
   height: 37px;
 }
-/* ì†Œë°œë¬¸  pageManager.css */
+/* 소발문  pageManager.css */
 h2 .dot+span,
 h2 .dot+span+span{
   font-size: 40px;
 }
 
-/* í™•ì¸ë¬¸ì œ êµ¬í•´ì•¼ í• ê²ƒ , ì£¼ì–´ì§„ê²ƒ ë°‘ì¤„*/
+/* 쓰기 세기 기존유지box.css */
 h2[data-addLine-container] {
   line-height: 2em;
 }
@@ -49,55 +49,55 @@ h2[data-addLine-container]>.dot {
   margin-top: 0.5em;
 }
 
-/* ì“°ê¸° ì„¸ê¸° ê¸°ì¡´ìœ ì§€box.css */
+/* 쓰기 세기 기존유지box.css */
 .colorBox.check {
   font-size: 24px;
 }
-/* ox  í€´ì¦ˆ ì„±ê³µì‹œ ë¹„í™œì„±í™” ì²˜ë¦¬  */
+/* ox  퀴즈 성공시 비활성화 처리  */
 [data-ox-obj].complete, .complete [data-ox-obj]{
   pointer-events: none;
   cursor:default;
 }
-/* ì •ë‹µ í…ìŠ¤íŠ¸ quiz.css */
+/* 정답 텍스트 quiz.css */
 .answer {
   font-size: 38px;
   font-weight: bold;
 }
 
-/* ì½˜í…ì¸  ë°•ìŠ¤ ë° í…Œì´ë¸”  */
+/* 콘텐츠 박스 및 테이블  */
 .contentsList {
   font-size: 40px;
 }
 
-/* ì¸íŠ¸ë¡œ ìŠ¬ë¼ì´ë“œ think.css
-í•˜ë‹¨ ë°œë¬¸ í¬ê¸°ëŠ” 40px
-í™œë™ì˜ì—­ 40px
-ëŒ€ë°œë¬¸ì´ í•¨ê»˜ ë‚˜ì˜¤ëŠ” íŽ˜ì´ì§€ëŠ” ëŒ€ë°œë¬¸ 37, í•˜ë‹¨ ë°œë¬¸ 40
-íŠ¹ì´ ì¼€ì´ìŠ¤ë¡œ í…ŒìŠ¤íŠ¸ ê¸¸ì´ê°€ ê¸¸ì–´ì„œ ë‘ ì¤„ë¡œ ë‚˜ì˜¬ê±°ê°™ìœ¼ë©´ ë³´ë“œ ë‚´ì— 30pxë¡œ
-ì¤„ì—¬ë‹¬ë¼ê³  ë”°ë¡œ ê¸°ìž¬í•  ìˆ˜ ìžˆìœ¼ë‹ˆ ë³´ë“œì— ë”°ë¼ì£¼ì„¸ìš”.
+/* 인트로 슬라이드 think.css
+하단 발문 크기는 40px
+활동영역 40px
+대발문이 함께 나오는 페이지는 대발문 37, 하단 발문 40
+특이 케이스로 테스트 길이가 길어서 두 줄로 나올거같으면 보드 내에 30px로
+줄여달라고 따로 기재할 수 있으니 보드에 따라주세요.
 */
 .introSlider_slides>li {
   font-size: 40px;
 }
 
-/* ë§í’ì„ , ë§ì¤„ìž„/íŽ¼ì¹¨, í™•ì¸ë¬¸ì œ ë§í’ì„  35px */
+/* 말풍선, 말줄임/펼침, 확인문제 말풍선 35px */
 
-/* ì¹­ì°¬í•˜ê¸°, ì§„ì§„ê°€ 35px */
+/* 칭찬하기, 진진가 35px */
 
-/* í•µì‹¬ì •ë¦¬ íƒ€ì´í‹€, ë‚´ìš©(ì •ë‹µì œì™¸) 40px */
+/* 핵심정리 타이틀, 내용(정답제외) 40px */
 
-/* ì—°í•„ ì•„ì´ì½˜ */
+/* 연필 아이콘 */
 #wrap header .title:before {
   top: 7px;
 }
 
-/* í™œë™+ ì•„ì´ì½˜ */
+/* 활동+ 아이콘 */
 #wrap header .title.active .icon {
   position: relative;
   top: -4px;
 }
 
-/* 3,4 í•™ë…„ ëŒ€ë°œë¬¸ ë†’ì´ ìˆ˜ì •
+/* 3,4 학년 대발문 높이 수정
 #wrap header .title {
   margin: 23px 0 40px 0 !important;
 }
@@ -128,34 +128,34 @@ h2[data-addLine-container]>.dot {
   min-height: 95px;
 }
 
-/* í•™ìŠµì°½ ë‚´ ì•ˆë‚´ ê¸€ìž í¬ê¸° */
+/* 학습창 내 안내 글자 크기 */
 .popup_pages>li.explain .explainContainer .desc {
   font-size: 35px !important;
 }
 
-/* í•™ìŠµì°½ ë‚´ ë¶„ìˆ˜ í…ìŠ¤íŠ¸ í¬ê¸° */
+/* 학습창 내 분수 텍스트 크기 */
 .verticalFormulaCon {
   font-size: 40px !important;
 }
 
-/* í•™ìŠµì°½ ë‚´ í…ìŠ¤íŠ¸ í¬ê¸° */
+/* 학습창 내 텍스트 크기 */
 .playDataList dd {
   font-size: 40px;
 }
 
-/*íŒì—…ì°½ í™œë™ë°©ë²• bullet ìˆ˜ì •*/
+/*팝업창 활동방법 bullet 수정*/
 .bullet.number {
   width: 40px;
   height: 40px;
   line-height: 1.8em;
 }
 
-/* toggle answer > contentsList ì•ˆì˜ í…ìŠ¤íŠ¸ í¬ê¸° */
+/* toggle answer > contentsList 안의 텍스트 크기 */
 .answer .contentsList .exam + div {
   font-size: 38px;
 }
 
-/* ë‹¤ìŒ ì‹œê°„ì—ëŠ” ë¬´ì—‡ì„ ë°°ìš¸ê¹Œìš”? */
+/* 다음 시간에는 무엇을 배울까요? */
 .fixOpacity {
   opacity: 1 !important;
 }
@@ -164,17 +164,17 @@ h2[data-addLine-container]>.dot {
   box-shadow: inset 3px 3px 0 0 #ececec, inset -3px 0 0 0 #ececec;
 }
 
-/* í’€ì´ íŒì—… í’€ì´ ë¶€ë¶„ í…ìŠ¤íŠ¸ */
+/* 풀이 팝업 풀이 부분 텍스트 */
 .popup_pages .solve .popup_contents {
   font-size: 35px;
 }
 
-/* í•µì‹¬ì •ë¦¬ */
+/* 핵심정리 */
 .pointContainer .contentsBox h2 {
   font-size: 40px;
 }
 
-/* ì˜ˆ ì•½ë¬¼ */
+/* 예 약물 */
 .toggle .bullet.exam {
   margin-right: 10px;
 }
@@ -191,7 +191,7 @@ h2[data-addLine-container]>.dot {
 }
 
 
-/* ì•„ì´ì½˜ ìƒ‰ê¹” ë ˆë“œ ì¶”ê°€ */
+/* 아이콘 색깔 레드 추가 */
 h2 .icon_o_red {
   margin: 3px 0 0 0;
 }
@@ -202,16 +202,16 @@ h2 .icon_o_red {
 
 
 .icon_o_red {
-    width: 36px;
-    height: 36px;
-    background-image: url(../images/icon/icon_O_red.png);
+  width: 36px;
+  height: 36px;
+  background-image: url(../images/icon/icon_O_red.png);
 }
 /*-----------------------------------------------------------------------------------------*/
-/*! ìˆ˜í•™ìµíž˜ css ìž…ë‹ˆë‹¤.! */
+/*! 수학익힘 css 입니다.! */
 
-/* ëŒ€ë°œë¬¸ pageManager.css  */
+/* 대발문 pageManager.css  */
 
-/* ì†Œë°œë¬¸  pageManager.css */
+/* 소발문  pageManager.css */
 .suhi h2{
   font-size: 40px;
 }
@@ -245,7 +245,7 @@ h2 .icon_o_red {
   margin-top:10px;
 }
 
-/* ëŒ€ë°œë¬¸ íŒì—… ë†’ì´ ì§€ì • */
+/* 대발문 팝업 높이 지정 */
 .popup_pages .textBookPopup .popupInner {
   height: 240px;
 }
@@ -324,8 +324,8 @@ h2 .icon_o_red{
 h2 {top:0!important ; font-size: 40px!important;}
 
 h2 .dot {
-    margin: .5em 10px 0 0!important;
-    top:0!important
+  margin: .5em 10px 0 0!important;
+  top:0!important
 }
 
 h2 .dot + span{top:0!important}
@@ -337,7 +337,8 @@ h2 .icon_bogi {margin:8px 4px 0 4px!important}
 /* etb.lim */
 
 /* 2021.04.06 */
-/* ì• ë‹ˆë©”ì´ì…˜ h2 */
 .aniContainer .mediaSubContainer h2 {
   font-size: 70px!important;
 }
+
+.solve .contentsList {font-size:35px}
