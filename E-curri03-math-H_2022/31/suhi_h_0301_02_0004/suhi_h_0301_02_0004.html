@@ -44,7 +44,7 @@
 						</h2>
 						<div class="lineBox sky">
 							<ul class="contentsList">
-								<li>
+								<li style="margin-bottom: 0;">
 									<ins class="bullet circleDot deepGreen"></ins>
 									<div>
 										그림과 같이 종이를 두 번 접었을 때 생기는 각을
@@ -54,7 +54,26 @@
 										이라고 합니다.
 									</div>
 								</li>
-								<li></li>
+								<li>
+									<div class="flex-wrap">
+										<div class="flex-item f1 vOn">
+											<div class="m1">
+												<div class="n1">ㄱ</div>
+												<div class="n2">ㄴ</div>
+												<div class="n3">ㄷ</div>
+											</div>
+											<div class="icon_arrow big" data-name="aa"></div>
+										</div>
+										
+										<div class="flex-item f2 visibleH" data-name="aa">
+											<div class="m2">
+												<div class="n1">ㄱ</div>
+												<div class="n2">ㄴ</div>
+												<div class="n3">ㄷ</div>
+											</div>
+										</div>
+									</div>
+								</li>
 								<li>
 									<ins class="bullet circleDot deepGreen"></ins>
 									<div>
@@ -278,7 +297,38 @@
 	<!-- horizon -->
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
+		window.$callBack.sliderMove=function(SLIDER) {
+			document.querySelector('.page_1 .f2').classList.add('visibleH');
+			document.querySelector('.page_1 .f2').classList.remove('vOn');
+
+			document.querySelector('.page_1 .f1').classList.add('vOn');
+			
+		}
+	
 		document.addEventListener('DOMContentLoaded', function () {
+
+			var arrow=$ts.getEl('.icon_arrow');
+
+			arrow.forEach(function (objs, index) {
+				objs.addEventListener('click', function () {
+					var thats=document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons=document.querySelectorAll('.vOn');
+
+					console.log(ons);
+
+					for (let i=0, len=ons.length; i < len; i++) {
+						ons[i].classList.remove('vOn');
+					}
+
+					for (let i=0, len=thats.length; i < len; i++) {
+						thats[i].classList.remove('visibleH');
+						thats[i].classList.add('vOn');
+					}
+
+
+				});
+				objs.addEventListener('click', $efSound.click);
+			});
 		}, false);
 	</script>
 </body>
