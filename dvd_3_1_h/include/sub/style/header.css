@@ -1,0 +1,544 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* header.css *
+***********************/
+
+header:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+.MYCLASSMAKER header {
+  display: none;
+}
+
+/* indexButton */
+header .indexButton {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 26px;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+header .indexButton > div {
+  width: 14px;
+  height: 4px;
+  margin: 2px 0;
+  border-radius: 10px;
+  background-color: #888;
+}
+header .indexButton > div:first-child { width: 26px; }
+header .indexButton > div:last-child { width: 20px; }
+header .indexButton.hover > div {
+  width: 26px;
+  transition: width .3s ease-in-out;
+}
+
+/* buttons */
+header .mainBookButton,
+header .subBookButton,
+header .addThingsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  height: calc(100% - 20px);
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  /* outline: 1px solid tomato; */
+}
+header .mainBookButton:before,
+header .subBookButton:before,
+header .addThingsButton:before {
+  content: '';
+  display: block;
+  position: relative;
+  top: -2px;
+  width: 24px;
+  height: 100%;
+  margin-right: 14px;
+}
+header .mainBookButton:after,
+header .subBookButton:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 17px;
+  width: 18px;
+  height: 16px;
+  background: url(../../sub/images/header/header_arrow.svg) center / contain no-repeat;
+  -webkit-animation: arrow-moving 1s infinite;
+  -ms-animation: arrow-moving 1s infinite;
+  animation: arrow-moving 1s infinite;
+}
+header .mainBookButton span,
+header .subBookButton span {
+  min-width: 34px;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-family: GMSansB;
+  text-align: right;
+}
+header .mainBookButton.hover:after,
+header .subBookButton.hover:after {
+  left: 14px;
+  animation: none;
+}
+header .mainBookButton.hover span,
+header .subBookButton.hover span {
+  color: inherit;
+}
+
+/* mainBookButton */
+header .mainBookButton {
+  right: 440px;
+}
+header .mainBookButton:before {
+  background: url(../../sub/images/header/header_icon_mainBook.svg) center / contain no-repeat;
+}
+header .mainBookButton.hover {
+  color: #5bc1c9;
+  
+}
+
+/* subBookButton */
+header .subBookButton {
+  right: 260px;
+}
+header .subBookButton:before {
+  background: url(../../sub/images/header/header_icon_subBook.svg) center / contain no-repeat;
+}
+header .subBookButton.hover {
+  color: #c6c636;
+  
+}
+
+
+/* addThingsButton */
+header .addThingsButton {
+  top: 8px;
+  right: 50px;
+}
+header .addThingsButton:before {
+  top: -2px;
+  width: 50px;
+  height: 50px;
+  background: url(../../sub/images/header/header_icon_addThings.png) center / contain no-repeat;
+  animation: rocket-flying 1.5s ease-in-out infinite;
+}
+header .addThingsButton:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 17px;
+  width: 16px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .15);
+  animation: rocket-shadow-moving 1.5s ease-in-out infinite;
+  /* z-index: -1; */
+}
+header .addThingsButton.on {
+  top: 50px;
+  right: 30px;
+  transform: scale(1.3);
+  animation: rocket-movedown .5s ease-out;
+}
+header .addThingsButton.hover {
+  transform: scale(1.2);
+}
+
+/* addThingsMenu */
+header .addThingsMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  height: 34px;
+  color: #3b559c;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background-color: rgba(220, 220, 220, .95);
+  /* animation: downMotion .3s ease-in-out; */
+  z-index: -1;
+}
+header .addThingsMenu.open {
+  /* top: 46px; */
+  height: 100px;
+  padding-top: 50px;
+  animation: menuOpen .5s ease-out;
+}
+header .addThingsMenu.close {
+  animation: menuClose .1s ease-out;
+}
+
+header .addThingsMenu > * {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: -12px 20px 0;
+  height: 32px;
+  min-width: 32px;
+  padding-left: 40px;
+  padding-top: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+header .addThingsMenu .hover {
+  /* font-family: GMSansB; */
+  /* text-shadow: 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff, 0px 0px 2px #fff; */
+}
+header .addThingsMenu.open > * {
+  opacity: 1;
+}
+header .addThingsMenu > *:after,
+header .addThingsMenu > *:before {
+  font-size: 17px;
+  font-family: GMSansB;
+}
+header .addThingsMenu .helper {
+  background: url(../../sub/images/header/header_icon_helper.svg) left center / contain no-repeat;
+}
+header .addThingsMenu .helper:before {
+  content: '활동 도우미';
+  margin-right: 6px;
+}
+header .addThingsMenu .wordCard {
+  background: url(../../sub/images/header/header_icon_wordCard.svg) left center / contain no-repeat;
+}
+header .addThingsMenu .wordCard.hover {
+  /* color: #d47a2f; */
+  color: transparent;
+}
+header .addThingsMenu .wordCard:after,
+header .addThingsMenu .wordCard:before {
+  content: '용어 카드';
+}
+header .addThingsMenu .special {
+  background: url(../../sub/images/header/header_icon_special.svg) left center / contain no-repeat;
+}
+header .addThingsMenu .special.hover {
+  /* color: #739a27; */
+  color: transparent;
+}
+header .addThingsMenu .special:after,
+header .addThingsMenu .special:before {
+  content: '놀이 수학';
+}
+header .addThingsMenu > *:after {
+  display: block;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  height: 0;
+  color: #fff;
+  overflow: hidden;
+}
+header .addThingsMenu > *.hover:after {
+  height: 100%;
+  animation: fillHeight .3s ease-out;
+}
+
+header .addThingsMenu .helper > * {
+  display: flex;
+  position: relative;
+  padding: 0 8px;
+  font-size: 14px;
+  overflow: hidden;
+}
+header .addThingsMenu .helper > *:not(:last-child):after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 1px;
+  height: 14px;
+  background-color: #3b559c;
+}
+header .addThingsMenu .helper > *.hover {
+  /* color: #a978e6; */
+  color: transparent;
+}
+header .addThingsMenu .helper > *:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* bottom: 0; */
+  width: 100%;
+  height: 0;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+header .addThingsMenu .helper > *.hover:before {
+  height: 100%;
+  animation: fillHeight .3s ease-out;
+}
+header .addThingsMenu .helper > *.boardButton:before { content: '칠판'; }
+header .addThingsMenu .helper > *.blackPageButton:before { content: '깜깜이'; }
+header .addThingsMenu .helper > *.bellButton:before { content: '집중벨'; }
+header .addThingsMenu .helper > *.timer:before { content: '타이머'; }
+header .addThingsMenu .helper > *.diceButton:before { content: '주사위'; }
+header .addThingsMenu .helper > *.groupStickerButton:before { content: '붙임딱지'; }
+
+/* block area */
+header .pageBlockArea {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  background: rgba(0, 0, 0, .7);
+  z-index: -2;
+}
+header .pageBlockArea.visible {
+  opacity: 1;
+  visibility: visible;
+  animation: viewBlockArea .5s ease-in-out;
+}
+
+header .closeButton {
+  position: absolute;
+  right: 30px;
+  top: 23px;
+  width: 22px;
+  height: 22px;
+  background: url(../images/header/header_buttons_close.svg) center/ 100% auto no-repeat;
+  cursor: pointer;
+}
+
+
+/* pageBox */
+header .pageBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  right: 130px;
+  height: 40px;
+  color: #888;
+  font-family: GMSansM;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+header .pageBox > .page {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 4px;
+}
+header .pageBox > .page > span {
+  opacity: .6;
+  font-size: 14px;
+}
+header .pageBox > .page > .current,
+header .pageBox > .page > .total {
+  width: 20px;
+  margin: 0 2px;
+}
+header .pageBox > .page > .current {
+  opacity: 1;
+  font-size: 16px;
+  text-align: right;
+}
+header .pageBox > .page > .total {
+  text-align: left;
+}
+header .pageBox > .next {
+  order: 1;
+}
+header .pageBox > .prev,
+header .pageBox > .next {
+  width: 24px;
+  height: 24px;
+  /* background-color: #50aad6; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+header .pageBox > .page > .total {
+}
+header .pageBox > .prev {
+  background-image: url(../../sub/images/header/header_buttons_page_prev.svg);
+}
+header .pageBox > .next {
+  background-image: url(../../sub/images/header/header_buttons_page_next.svg);
+}
+
+header .pageBox.first .prev,
+header .pageBox.last .next {
+  opacity: .2;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/************************* animation *************************/
+/* dropdown menu */
+@-webkit-keyframes downMotion {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0px); }
+}
+@-ms-keyframes downMotion {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0px); }
+}
+@keyframes downMotion {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0px); }
+}
+/* book arrow */
+@-webkit-keyframes arrow-moving {
+  50% { transform: translateX(2px); } 100% { transform: translateX(0px); }
+}
+@-ms-keyframes arrow-moving {
+  50% { transform: translateX(2px); } 100% { transform: translateX(0px); }
+}
+@keyframes arrow-moving {
+  50% { transform: translateX(2px); } 100% { transform: translateX(0px); }
+}
+/* viewBlockArea */
+@-webkit-keyframes viewBlockArea {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes viewBlockArea {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes viewBlockArea {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* rocket flying */
+@-webkit-keyframes rocket-flying {
+  50% { transform: translateY(5px); } 100% { transform: translateY(0px); }
+}
+@-ms-keyframes rocket-flying {
+  50% { transform: translateY(5px); } 100% { transform: translateY(0px); }
+}
+@keyframes rocket-flying {
+  50% { transform: translateY(5px); } 100% { transform: translateY(0px); }
+}
+@-webkit-keyframes rocket-shadow-moving {
+  50% { transform: scaleX(1.7); } 100% { transform: scaleX(1); }
+}
+@-ms-keyframes rocket-shadow-moving {
+  50% { transform: scaleX(1.7); } 100% { transform: scaleX(1); }
+}
+@keyframes rocket-shadow-moving {
+  50% { transform: scaleX(1.7); } 100% { transform: scaleX(1); }
+}
+@-webkit-keyframes rocket-movedown {
+  0% { top: 8px; right: 50px; } 50% { top: 50px; right: 30px; } 100% { transform: scale(1.3); }
+}
+@-ms-keyframes rocket-movedown {
+  0% { top: 8px; right: 50px; } 50% { top: 50px; right: 30px; } 100% { transform: scale(1.3); }
+}
+@keyframes rocket-movedown {
+  0% { top: 8px; right: 50px; } 50% { top: 50px; right: 30px; } 100% { transform: scale(1.3); }
+}
+/* @-webkit-keyframes rocket-moveup {
+  0% { top: 30px; right: 10px; transform: scale(1.3); }
+  50% { top: -10px; right: 0px; transform: scale(1); } 100% { top: 0; }
+}
+@-ms-keyframes rocket-moveup {
+  0% { top: 30px; right: 10px; transform: scale(1.3); }
+  50% { top: -10px; right: 0px; transform: scale(1); } 100% { top: 0; }
+}
+@keyframes rocket-movedup {
+  0% { top: 30px; right: 10px; transform: scale(1.3); }
+  50% { top: -10px; right: 0px; transform: scale(1); } 100% { top: 0; }
+} */
+
+/* menu open */
+@-webkit-keyframes menuOpen {
+  0% { height: 30px; } 30% { height: 110px; } 100% { height: 100px; }
+}
+@-moz-keyframes menuOpen {
+  0% { height: 30px; } 30% { height: 110px; } 100% { height: 100px; }
+}
+@keyframes menuOpen {
+  0% { height: 30px; } 30% { height: 110px; } 100% { height: 100px; }
+}
+@-webkit-keyframes bgMotion_open {
+  30% { transform: scaleY(1.2); } 100% { transform: scaleY(1); }
+}
+@-moz-keyframes bgMotion_open {
+  30% { transform: scaleY(1.2); } 100% { transform: scaleY(1); }
+}
+@keyframes bgMotion_open {
+  30% { transform: scaleY(1.2); } 100% { transform: scaleY(1); }
+}
+/* menu close */
+@-webkit-keyframes menuClose {
+  0% { height: 100px; } 30% { height: 110px; } 100% { height: 30px; }
+}
+@-moz-keyframes menuClose {
+  0% { height: 100px; } 30% { height: 110px; } 100% { height: 30px; }
+}
+@keyframes menuClose {
+  0% { height: 100px; } 30% { height: 110px; } 100% { height: 30px; }
+}
+@-webkit-keyframes bgMotion_close {
+  30% { transform: scaleY(1.2); } 100% {  transform: scaleY(1); }
+}
+@-moz-keyframes bgMotion_close {
+  30% { transform: scaleY(1.2); } 100% {  transform: scaleY(1); }
+}
+@keyframes bgMotion_close {
+  30% { transform: scaleY(1.2); } 100% {  transform: scaleY(1); }
+}
+
+/* addThings menu hover */
+@keyframes fillHeight {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-o-keyframes fillHeight {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-moz-keyframes fillHeight {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-webkit-keyframes fillHeight {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+
+/******************** header End ********************/
