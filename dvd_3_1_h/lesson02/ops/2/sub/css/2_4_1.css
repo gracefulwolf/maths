@@ -1,0 +1,66 @@
+
+@charset "utf-8";
+
+.contentsArea > section {
+  background: url(../images/2_4/2_4_1_01.png) center / auto 100% no-repeat;
+}
+
+ins.icon.icon_o, ins.icon.icon_x, ins.icon.icon_tri { top: 0; }
+
+
+[data-quiz="ox"].complete .toggleButton {
+  pointer-events: none;
+}
+.toggleButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  /* outline: 1px solid tomato; */
+}
+.toggleButton[data-toggle-obj="1"] {
+  top: 206px;
+  left: 564px;
+}
+.toggleButton[data-toggle-obj="2"] {
+  top: 472px;
+  left: 325px;
+}
+.toggleButton[data-toggle-obj="3"] {
+  top: 472px;
+  left: 564px;
+}
+.toggleButton[data-toggle-obj="4"] {
+  top: 206px;
+  left: 325px;
+}
+.toggleButton[data-toggle-obj="5"] {
+  top: 206px;
+  left: 803px;
+}
+.toggleButton[data-toggle-obj="6"] {
+  top: 472px;
+  left: 803px;
+}
+
+.toggleButton > .icon {
+  opacity: 0;
+}
+.toggleButton.complete .icon {
+  opacity: 1;
+}
+
+.complete .toggleButton {
+  pointer-events: none !important;
+}
+.complete .toggleButton:not([data-answer]) .icon.on,
+.complete .toggleButton:not([data-answer]) .icon {
+  opacity: 0;
+}
+.displayN {display: none;}
+
+.solve p > span {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+
+@charset "utf-8";
+
+.image {
+  position: relative;
+  width: 330px;
+  height: 370px;
+  margin: 0 auto;
+  background: url(../images/2_7/2_7_7_01.svg) center / auto calc(88px * 3.6) no-repeat;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0;
+  /* outline: 1px solid; */
+}
+.toggleButton.complete {
+  opacity: 1;
+}
+
+.toggleButton:after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-top: 3px solid #eb008b;
+  border-right: 3px solid #eb008b;
+}
+.toggleButton.rotate_270:after {
+  transform: rotate(270deg);
+}
+.toggleButton[data-toggle-obj="1"] {
+  top: 145px;
+  left: 155px;
+}
+.toggleButton[data-toggle-obj="2"] {
+  top: 165px;
+  left: 125px;
+  width: 40px;
+  height: 40px;
+}
+.toggleButton[data-toggle-obj="2"]:after {
+  transform: rotate(-135deg);
+}
+.toggleButton[data-toggle-obj="3"] {
+  top: 185px;
+  left: 145px;
+  width: 40px;
+  height: 40px;
+}
+.toggleButton[data-toggle-obj="3"]:after {
+  transform: rotate(135deg);
+}
+.solve .flexBox {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.solve .solveImage {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  margin-left: 30px;
+  background: url(../images/2_7/2_7_7_solve.png) center / contain no-repeat;
+}
+
+.titleIndent {
+  text-align: center;
+}
+.titleIndent .inlineBox {
+  width: 200px;
+  margin-right: 5px;
+}
