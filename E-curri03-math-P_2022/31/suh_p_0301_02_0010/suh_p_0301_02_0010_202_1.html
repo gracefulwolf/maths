@@ -15,6 +15,8 @@
 		.bogiContainer .inner {display: flex; justify-content: space-around;}
 		.page_3 .page-iframe{width:998px; height:553px; overflow: hidden; border:0; position: absolute; }
 		.page_3 .contentsList{position:relative; z-index:2; width: 720px;}
+		.b1::after{left:80% !important}
+		.b2::after{left:20% !important}
 	</style>	
 </head>
 
@@ -201,50 +203,7 @@
 				</ul>
 			</div>
 		</main>
-		<section class="popup_container" data-popup-container="">
-			<ul class="popup_pages">
-				<li class="whole pop_page_1" data-popup-page="1">
-					<div class="popup_contents">
-						<figure class="img2">
-							<div class="text">
-								직각이 없는 사각형이 3개<br>
-								직각이 1개만 있는 사각형이 2개<br>
-								직각이 2개만 있는 사각형이 2개<br>
-								상자 안에 있는 사각형의 직각의 개수는 모두 14개<br>
-								직사각형의 개수를 구해 보시오.
-							</div>
-							<div class="balloon bottom deeppink ctTail b1">
-								흠…
-							</div>
-							<div class="balloon bottom sky ctTail b2">
-								머릿속으로만 <br>생각하기에는 <br>너무 복잡하다.
-							</div>
-						</figure>
-					</div>
-				</li>
-
-				<li class="solve pop_page_2" data-popup-page="2">
-					<div class="popup_contents">
-						<ul class="dotList orange">
-							<li> 
-								<div>
-									<div class="bullet exam">예</div> 직사각형이 1개면 직각이 4개가 있는 사각형의 직각의 개수의 합은 4이므로 상자 안에 있는 사각형의 직각의 개수는 모두 2+4+4=10입니다. 즉, 주어진 단서와 맞지 않습니다.
-								</div>
-							</li>
-
-							<li>직사각형이 2개면 직각이 4개가 있는 사각형의 직각의 개수의 합은 4+4=8이므로 상자 안에 있는 사각형의 직각의 개수는 모두 2+4+8=14입니다. 즉, 주어진 단서와 맞습니다. 따라서 직사각형은 2개입니다.</li>
-
-							<li>
-								<div>
-									직사각형의 개수를 <span class="blankBox w50"></span>라 하고 식을 세우면<br> 직각이 4개가 있는 사각형의 직각의 개수의 합은 14-2-4=8이므로 4×<span class="blankBox w50"></span>=8, <span class="blankBox w50"></span>=2, 따라서 직사각형은 2개입니다.
-								</div>
-							</li>
-								
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</section>
+		
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
@@ -300,10 +259,10 @@
 						//endSheet: 0,
 						delay: 40,
 						textBubble: {
-							text: '표현하고자 하는 것을 <br>잘 표현하였는지 <br>확인해요.',
-							class: 'balloon bottom orange ctTail',
-							top:148,
-							left: 250,
+							text: '표현하고자 하는 것을 <br>잘 표현하였는지 확인해요.',
+							class: 'b1 balloon bottom orange ctTail',
+							top:118,
+							left: 60,
 							textAlign: 'center', 
 							wordBreak: 'keep-all' 
 						},
@@ -331,9 +290,9 @@
 						delay: 40,
 						textBubble: {
 							text: '자신이 세운 계획에  <br>맞게 도형을 사용하였는지  <br>확인해요.',
-							class: 'balloon bottom deeppink ctTail',
-							top:190,
-							left: 513,
+							class: 'b2 balloon bottom deeppink ctTail',
+							top:150,
+							left: 593,
 							textAlign: 'center', 
 							wordBreak: 'keep-all' 
 						},
