@@ -13,18 +13,47 @@
 		.supply_guide{margin-top:11px !important;}
 		.study_guide{left:auto; right:0;}
 
-		.lineBox {width:600px; margin:0 auto; padding:40px}
-		.toggle.type-img{padding:0; background: transparent; margin:0 auto; }
+		.lineBox {width:600px; margin:0 auto; padding:40px; height: 320px;}
+		.toggle.type-img{padding:0; background: transparent; margin:0 auto; width: 100%;}
 		.type-img .answer{position: absolute; top:0;}
 		.type-img .back,
 		.type-img .front{width:400px}
-		.type-img .word{position: absolute;}
-		.type-img .word.n1{top:0px; left:120px}
-		.type-img .word.n2{top:230px; left:380px}
-		.type-img .word.n3{top:230px; left:20px}
-
+		.type-img .word{position: absolute; z-index: 2;}
+		.type-img .word.n1{top:0px; left:150px}
+		.type-img .word.n2{top:210px; left:420px}
+		.type-img .word.n3{top:210px; left:50px}
+		.type-img .word::before{
+			content:"";
+			display: block;
+			width:12px;
+			height: 12px;
+			border-radius: 50%;
+			background:#000;
+			position: absolute;
+			top:-8px;
+			left:12px
+		}
 		.flexListContainer{margin: 50px auto 0;width:100%;justify-content: center; }
 		.flexListContainer > li { display: flex; align-items: center; margin:0 15px}
+
+		.line.n1{
+			position: absolute;
+    width: 370px;
+    height: 1px;
+    border-top: 5px solid #00a0ff;
+    top: 204px;
+    left: 70px;
+		}
+		.line.n2{
+			position: absolute;
+    width: 346px;
+    height: 1px;
+    border-top: 5px solid #00a0ff;
+    top: 210px;
+    left: 438px;
+    transform: rotate(-142deg);
+	transform-origin: top left;
+		}
 	</style>
 </head>
 
@@ -48,9 +77,9 @@
 									<div class="word n1">ㄱ</div>
 									<div class="word n2">ㄴ</div>
 									<div class="word n3">ㄷ</div>
-									<img src="./images/suh_p_0301_02_0003_202_1_1_front.png" class="front">
 									<div class="answer" data-toggle-target="1">
-										<img src="./images/suh_p_0301_02_0003_202_1_1_back.png" class="back">
+										<div class="line n1"></div>
+										<div class="line n2"></div>
 									</div>
 								</div>
 							</div>

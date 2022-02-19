@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+	<link rel="stylesheet" href="../../../../default/css/custom.css">
+
+    <link rel="stylesheet" href="../../../include/sub/style/master.css">
+    <link rel="stylesheet" href="../../../include/sub_3-1/style/sub_3-1.css">
+    <link rel="stylesheet" href="../../../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./sub/css/2_7_8.css">
+    <style>
+      .lesson_2 {
+			background: #fff;
+		}
+
+		header,
+		h1 {
+			display: none;
+		}
+
+		#wrap {
+			display: block;
+			background: #fff;
+			box-shadow: none;
+			flex-direction: column;
+			position: relative;
+			width: 1280px;
+			height: 510px;
+			color: #111;
+			font-family: Noto;
+			padding:0;
+		}
+
+		#main {
+			width: 100%;
+			height: 100%;
+		}
+
+		main {
+			top: 0;
+		}
+
+		.main {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			font-size: 40px;
+			font-family: NotoB;
+			top: 0;
+		}
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 평면도형</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="49">수학<span>49~51</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="39">수학 익힘<span>39</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="39"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="8">주어진 선분과 이어서 직각을 그릴 수 있는 점을 찾아보 세요.</h1>
+          <section data-quiz="input">
+
+            <div class="drawContainer draw_1">
+              <div class="js-drawLine drawLine" data-option="free, copy">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragObj" data-type="drag" data-index="1"></div>
+                <div class="js-dragObj dragObj" data-type="drag" data-index="2"></div>
+                <div class="js-resetButton resetButton" data-hover=""></div>
+              </div>
+              <div class="induceLight light_1"></div>
+              <div class="induceLight light_2"></div>
+            </div>
+
+            <div class="titleIndent">
+              <input type="text" class="maxWidth" data-input-obj="1" data-answer="점 ㄹ">
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <div class="flexBox">
+              <p>주어진 선분과 이어서 직각을 그릴 수 있는 점은 오른쪽과 같이 <span class="">점 ㄹ</span>입니다.</p>
+            <div class="solveImage"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../../../include/libs/js/ts.min.js"></script>
+    <script src="../../../include/libs/js/popup.min.js"></script>
+    <script src="../../../include/libs/js/slider.min.js"></script>
+    <script src="../../../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../../../include/contents/js/pageManager.min.js"></script>
+    <script src="../../../include/math/script/newDrawLine.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var induceLights = $ts.getEl('.induceLight');
+        var drawLines = [];
+        var answers = [
+          [{
+            end: {x: 302.0008348003757, y: 132.00082486227598},
+            start: {x: 218, y: 49}
+          }]
+        ];
+
+        function lightOff() {
+          var _off = function(el) {
+            el.classList.add('hide');
+          }
+          induceLights.forEach(_off);
+        }
+        function lightOn() {
+          var _on = function(el) {
+            el.classList.remove('hide');
+          }
+          induceLights.forEach(_on);
+        }
+        function resetAnswer(drawLine) {
+          drawLine.reset();
+        }
+
+        function setDrawLine(container, index) {
+          drawLines.push(new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-buttons'),
+            answer: answers[index],
+            callback: {
+              start: function(DrawLine) {
+                lightOff();
+              },
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+              },
+              showAnswer: function(DrawLine) {
+                lightOff();
+              },
+              reset: function(DrawLine) {
+                lightOn();
+              },
+            },
+          }));
+        }
+
+        function pageReset() {
+          drawLines.forEach(resetAnswer);
+        }
+
+        window.addEventListener('load', function() {
+          $ts.getEl('.js-drawLine').forEach(setDrawLine);
+
+          window.$callBack.sliderMove = function(Slider) {
+            pageReset();
+          }
+
+          setTimeout(function() { drawLines.forEach(resetAnswer); }, 100);
+        });
+      })();
+    </script>
+  </body>
+</html>
