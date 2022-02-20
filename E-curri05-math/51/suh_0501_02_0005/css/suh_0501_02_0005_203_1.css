@@ -56,18 +56,22 @@ header .title .textInBtn.inline {top:4px;}
 .contentsList li .bunsuContainer {margin:0;}
 .contentsList li .dapCheckBtn {z-index:2;}
 
-.divide_box {display:inline-flex;align-items:center;}
-.divide_box .row span {display:block;width:60px;height:48px;text-align:center;}
+.divide_box {display:inline-flex;align-items:start;}
+.divide_box .row span {display:block;width:60px;height:48px;padding:5px;text-align:center;}
 .divide_box .row span {border-bottom:3px solid #000;}
-.divide_box .row span:last-child {border-bottom:none;}
-.divide_box .row.integer span {width:auto;padding:0 5px 0 0;}
-.divide_box .row.integer span {border-bottom:none;}
-.divide_box .row.integer + .row {position:relative;}
-.divide_box .row.integer + .row:after {display:block;content:")";position:absolute;left:-3px;top:0;width:5px;height:45px;}
+.divide_box .row span:last-child {border-bottom:3px solid transparent;}
+.divide_box .row.integer span {width:auto;}
+.divide_box .row.integer span {border-bottom:3px solid transparent;}
+.divide_box .row.integer + .row span {position:relative;}
+.divide_box .row.integer + .row span:after {display:block;content:"";position:absolute;left:-6px;bottom:-3px;width:18px;height:58px;background:url('../images/divide-black.png') no-repeat center/contain;}
+.divide_box .row.integer + .row span:last-child:after {display:none;}
 
+.toggle .answer {line-height:48px;}
 .toggle .answer .divide_box .row span {border-bottom:3px solid #00a0ff;}
-.toggle .answer .divide_box .row span:last-child {border-bottom:none;}
-.toggle .answer .divide_box .row.integer span {border-bottom:none;}
+.toggle .answer .divide_box .row span:last-child {border-bottom:3px solid transparent;}
+.toggle .answer .divide_box .row.integer span {border-bottom:3px solid transparent;}
+.toggle .answer .divide_box .row.integer + .row span:after {display:block;content:"";position:absolute;left:-6px;bottom:-3px;width:18px;height:58px;background:url('../images/divide-blue.png') no-repeat center/contain;}
+.toggle .answer .divide_box .row.integer + .row span:last-child:after {display:none;}
 
 .page_3 .toggle .answer {display:flex;align-items:center;}
 .page_3 .toggle .answer .icon_arrow {margin:0 20px;}
