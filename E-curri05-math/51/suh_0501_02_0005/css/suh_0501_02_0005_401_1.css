@@ -6,15 +6,15 @@
 .contentsBox .toggle.duplicate:after {display:none;}
 .contentsBox .toggleBlank {vertical-align:-3px;}
 
-.divide_box {display:inline-flex;align-items:center;}
-.divide_box .row span {display:block;width:60px;height:63px;line-height:initial;text-align:center;border-bottom:3px solid #000;}
-.divide_box .row span:last-child {border-bottom:none;}
-.divide_box .row.integer span {width:auto;padding:0 5px 0 0;}
-.divide_box .row.integer span {border-bottom:none;}
+.divide_box {display:inline-flex;align-items:start;}
+.divide_box .row span {display:block;width:60px;height:48px;padding:5px;text-align:center;}
+.divide_box .row span {border-bottom:3px solid #000;}
+.divide_box .row span:last-child {border-bottom:3px solid transparent;}
+.divide_box .row.integer span {width:auto;}
+.divide_box .row.integer span {border-bottom:3px solid transparent;}
 .divide_box .row.integer + .row span {position:relative;}
-.divide_box .row.integer + .row span:after {display:block;content:")";position:absolute;left:-3px;top:0;width:5px;height:45px;}
+.divide_box .row.integer + .row span:after {display:block;content:"";position:absolute;left:-6px;bottom:-3px;width:18px;height:58px;background:url('../images/divide-black.png') no-repeat center/contain;}
 .divide_box .row.integer + .row span:last-child:after {display:none;}
-.divide_box .row span .toggle .answer {line-height:1.2;}
 
 h2 .bullet {display:inline-block;vertical-align:6px;}
 
@@ -34,6 +34,8 @@ h2 .bullet {display:inline-block;vertical-align:6px;}
 .page_2 .exam_box > li .contentsList li .colorBox {display:flex;justify-content:space-around;align-items:center;width:156px;margin:0 40px 0 0;}
 .page_2 .exam_box > li .contentsList li .bunsuContainer {margin:0;}
 .page_2 .exam_box > li .contentsList li:first-child .bunsuContainer {height:240px;}
+.page_2 .divide_box .toggle {width:60px;padding:5px 0;}
+.page_2 .divide_box .toggle .answer {text-align:center;}
 
 .page_3 .quiz_box {display:flex;justify-content:space-around;}
 .page_3 .quiz_box > div {position:relative;margin:0 20px 0 0;}

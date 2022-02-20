@@ -52,14 +52,15 @@ h2 .icon_way,h3 .icon_way {
 header .title .textInBtn.inline {top:4px;}
 /* header .title .supply_guide.inline {vertical-align:4px;} */
 
-.divide_box {display:inline-flex;align-items:center;}
-.divide_box .row span {display:block;width:60px;height:48px;text-align:center;}
+.divide_box {display:inline-flex;align-items:start;}
+.divide_box .row span {display:block;width:60px;height:48px;padding:5px;text-align:center;}
 .divide_box .row span {border-bottom:3px solid #000;}
-.divide_box .row span:last-child {border-bottom:none;}
-.divide_box .row.integer span {width:auto;padding:0 5px 0 0;}
-.divide_box .row.integer span {border-bottom:none;}
-.divide_box .row.integer + .row {position:relative;}
-.divide_box .row.integer + .row:after {display:block;content:")";position:absolute;left:-3px;top:0;width:5px;height:45px;}
+.divide_box .row span:last-child {border-bottom:3px solid transparent;}
+.divide_box .row.integer span {width:auto;}
+.divide_box .row.integer span {border-bottom:3px solid transparent;}
+.divide_box .row.integer + .row span {position:relative;}
+.divide_box .row.integer + .row span:after {display:block;content:"";position:absolute;left:-6px;bottom:-3px;width:18px;height:58px;background:url('../images/divide-black.png') no-repeat center/contain;}
+.divide_box .row.integer + .row span:last-child:after {display:none;}
 
 .toggle_formula_box .row_case {display:flex;justify-content:space-around;margin:20px 0 0;}
 .toggle_formula_box .row_case:first-child {margin:0;}
@@ -100,6 +101,7 @@ header .title .textInBtn.inline {top:4px;}
 .page_3 .page_3_2 .exam_box {display:flex;align-items:center;}
 .page_3 .page_3_2 .exam_box .way_wrap {margin:0 40px 0 0;}
 .page_3 .page_3_2 .exam_box .way_wrap .ex_box {position:relative;width:570px;}
-.page_3 .page_3_2 .exam_box .way_wrap .ex_box .ex01 .divide_box .row.integer span:last-child {border-bottom:none;}
+.page_3 .page_3_2 .exam_box .way_wrap .ex_box .ex01 .divide_box .row.integer + .row span:after {display:block;content:"";position:absolute;left:-6px;bottom:-3px;width:18px;height:58px;background:url('../images/divide-black.png') no-repeat center/contain;}
+.page_3 .page_3_2 .exam_box .way_wrap .ex_box .ex01 .divide_box .row.integer span:last-child {border-bottom:3px solid transparent;}
 .page_3 .page_3_2 .exam_box .way_wrap .ex_box .ex01 .divide_box .row span:last-child {border-bottom:3px solid #000;;}
 .page_3 .page_3_2 .exam_box .way_wrap .ex_box .ex02 {padding-left:23px;}
