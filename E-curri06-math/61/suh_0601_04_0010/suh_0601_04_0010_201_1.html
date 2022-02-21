@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.content-colgroup {display:flex}
+		.content-col {position:relative}
+		.content-col.img-col {margin-right:40px;padding:100px 0 0 40px}
+		.content-col.img-col img {width:600px}
+		.content-col.img-col .txt-item {position:absolute;font-size:.5em}
+		.content-col.img-col .txt-item.n1 {top:75px;left:40px}
+		.content-col.img-col .txt-item.n2 {top:100px;left:-5px}
+		.content-col .balloon.top.orange span {display:block;font-size:24px;line-height:1.4}
+		.content-col .balloon.top.orange::after {top:100%}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title">여러 글씨체를 살펴보고 물음에 답해봅시다.</div>
+	</header>
+	<main>
+		<div class="contentsBox">
+			<div class="content-colgroup">
+				<div class="content-col img-col">
+					<img src="./images/suh_0601_04_0010_201_1_1.png" alt="">
+					<div class="txt-item n1">1cm</div>
+					<div class="txt-item n2">1cm</div>
+				</div>
+				<div class="content-col">
+					<div id="aniBox_1"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#aniBox_1'), // #aniBox_ 는 포함하고 설정 필요
+			spriteId: 'sprite1',
+			spriteList: [{
+				name: 'boy_1', // class 들어갈 부분 ex) boy_1 boy_2 , girl_1 등 필요
+				speech:'right',
+				top: 80,
+				left:35,
+				width: 340,
+				height: 421,
+				thumbNail: '../common/contents/images/character/boy_1.png',
+				spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+				movPx:250, //
+				playMode: {
+					rewind: false
+				},
+				delay: 40,
+				textBubble: {
+					text: '타이포그래피는 글씨체나 글자 배치를 구성하고 표현하는 활동을 말해요. 선의 길이, 선의 간격, 자음과 모음 글자의 가로·세로의 비율을 조정하여 글씨체를 만들어요.',
+					class: 'balloon top orange ctTail',
+					top: 0,
+					left: 0,
+					width: 400,
+					textAlign: 'center', // 말풍선 정렬
+					wordBreak: 'keep-all' // 말풍선 wordBreak
+				},
+			}]
+		});
+	}, false);
+
+  </script>
+</body>
+</html>
