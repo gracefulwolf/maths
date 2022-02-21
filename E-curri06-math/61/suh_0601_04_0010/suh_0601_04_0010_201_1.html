@@ -19,6 +19,18 @@
 		.content-col.img-col .txt-item.n2 {top:100px;left:-5px}
 		.content-col .balloon.top.orange span {display:block;font-size:24px;line-height:1.4}
 		.content-col .balloon.top.orange::after {top:100%}
+
+		.tableContainer {width:100%;margin-top:20px;padding-left:30px;table-layout:fixed}
+		.tableContainer .img-box {position:relative;padding:40px 0 10px}
+		.tableContainer .img-box img {width:300px}
+		.tableContainer .img-box .txt-item {position:absolute;font-size:.5em}
+		.tableContainer .toggle {background-color:transparent}
+		.innerTab_1 .tableContainer .img-box .txt-item.n1 {top:15px;left:25px}
+		.innerTab_1 .tableContainer .img-box .txt-item.n2 {top:45px;left:0}
+		.innerTab_2 .tableContainer .img-box .txt-item.n1 {top:15px;left:45px}
+		.innerTab_2 .tableContainer .img-box .txt-item.n2 {top:42px;left:10px}
+		.innerTab_3 .tableContainer .img-box .txt-item.n1 {top:15px;left:45px}
+		.innerTab_3 .tableContainer .img-box .txt-item.n2 {top:42px;left:10px}
 	</style>
 </head>
 
@@ -29,17 +41,191 @@
 		<div class="title">여러 글씨체를 살펴보고 물음에 답해봅시다.</div>
 	</header>
 	<main>
-		<div class="contentsBox">
-			<div class="content-colgroup">
-				<div class="content-col img-col">
-					<img src="./images/suh_0601_04_0010_201_1_1.png" alt="">
-					<div class="txt-item n1">1cm</div>
-					<div class="txt-item n2">1cm</div>
-				</div>
-				<div class="content-col">
-					<div id="aniBox_1"></div>
-				</div>
-			</div>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">그림</li>
+				<li data-hover="">물음 1</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1">
+					<div class="content-colgroup">
+						<div class="content-col img-col">
+							<img src="./images/suh_0601_04_0010_201_1_1.png" alt="">
+							<div class="txt-item n1">1cm</div>
+							<div class="txt-item n2">1cm</div>
+						</div>
+						<div class="content-col">
+							<div id="aniBox_1"></div>
+						</div>
+					</div>
+				</li>
+				<li class="page_2">
+					<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding: 0;">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<h2><ins class="dot"></ins><span style="letter-spacing:-1px">자음 글자 ‘ㅁ’에서 바깥쪽 직사각형의 가로에 대한 세로의 비율을 각각 구해 보세요.</span></h2>
+								<div class="tableContainer brown">
+									<table>
+										<colgroup>
+											<col style="width:35%">
+											<col style="width:18%">
+											<col style="width:18%">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="col">글자 모양</th>
+											<th scope="col">가로(㎝)</th>
+											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로에 대한<br>세로의 비율</th>
+										</tr>
+										<tr>
+											<td>
+												<div class="img-box">
+													<img src="./images/suh_0601_04_0010_201_2_1.png" alt="">
+													<div class="txt-item n1">1cm</div>
+													<div class="txt-item n2">1cm</div>
+												</div>
+											</td>
+											<td>8</td>
+											<td>3</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="1">
+													<div class="answer textAlignC" data-toggle-target="1">
+														<div class="bunsuWrap inline">
+															<ul>
+																<li>3</li>
+																<li>8</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2><ins class="dot"></ins><span style="letter-spacing:-1px">자음 글자 ‘ㅁ’에서 바깥쪽 직사각형의 가로에 대한 세로의 비율을 각각 구해 보세요.</span></h2>
+								<div class="tableContainer brown">
+									<table>
+										<colgroup>
+											<col style="width:35%">
+											<col style="width:18%">
+											<col style="width:18%">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="col">글자 모양</th>
+											<th scope="col">가로(㎝)</th>
+											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로에 대한<br>세로의 비율</th>
+										</tr>
+										<tr>
+											<td>
+												<div class="img-box">
+													<img src="./images/suh_0601_04_0010_201_2_2.png" alt="">
+													<div class="txt-item n1">1cm</div>
+													<div class="txt-item n2">1cm</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="1">
+													<div class="answer textAlignC" data-toggle-target="1">8</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="2">
+													<div class="answer textAlignC" data-toggle-target="2">5</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="3">
+													<div class="answer textAlignC" data-toggle-target="3">
+														<div class="bunsuWrap inline">
+															<ul>
+																<li>5</li>
+																<li>8</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+							<li class="innerTab_3" data-quiz="toggle">
+								<h2><ins class="dot"></ins><span style="letter-spacing:-1px">자음 글자 ‘ㅁ’에서 바깥쪽 직사각형의 가로에 대한 세로의 비율을 각각 구해 보세요.</span></h2>
+								<div class="tableContainer brown">
+									<table>
+										<colgroup>
+											<col style="width:35%">
+											<col style="width:18%">
+											<col style="width:18%">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="col">글자 모양</th>
+											<th scope="col">가로(㎝)</th>
+											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로에 대한<br>세로의 비율</th>
+										</tr>
+										<tr>
+											<td>
+												<div class="img-box">
+													<img src="./images/suh_0601_04_0010_201_2_3.png" alt="">
+													<div class="txt-item n1">1cm</div>
+													<div class="txt-item n2">1cm</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="1">
+													<div class="answer textAlignC" data-toggle-target="1">6</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="2">
+													<div class="answer textAlignC" data-toggle-target="2">5</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle box" data-toggle-obj="3">
+													<div class="answer textAlignC" data-toggle-target="3">
+														<div class="bunsuWrap inline">
+															<ul>
+																<li>5</li>
+																<li>6</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</main>
 </div>
