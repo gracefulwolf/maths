@@ -75,10 +75,10 @@ function viewChunjaeMediaLayer(mID) {
   laypopHtml += '<div class="layerPop_vid-content">';
 
   if (mID.toLowerCase().indexOf("_800k.mp4") > -1 || mID.toLowerCase().indexOf("_300k.mp4") > -1) {
-    strURL = "http://e.tsherpa.co.kr/media/mediaframe3.aspx?mid=" + mID;
+    strURL = "https://e.tsherpa.co.kr/media/mediaframe3.aspx?mid=" + mID;
   }
   else {
-    strURL = "http://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("http://chunjae.gscdn.com") > -1 ? mID.replace("http://", "") : mID);
+    strURL = "https://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("https://chunjae.gscdn.com") > -1 ? mID.replace("https://", "") : mID);
   }
 
   laypopHtml += '<iframe width="100%" height="100%" src="'+strURL+'" allowfullscreen=""></iframe>';
