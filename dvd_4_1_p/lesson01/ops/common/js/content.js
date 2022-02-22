@@ -56,12 +56,12 @@ function scale() {
 
 	viewport.left = (scaleW < scaleH2) ? 0 : parseInt((viewport.width - (viewbase.width * viewport.scale))/2);
 	// min-width 1280으로 셋팅
-	// if(viewport.scale < 1)
-	// {
-	// 	viewport.scale = 1;
-	// 	viewport.left = parseInt((viewport.width - viewbase.width)/2);
-	// 	if(viewport.left < 0) viewport.left = 0;
-	// }
+	if(viewport.scale < 1)
+	{
+		viewport.scale = 1;
+		viewport.left = parseInt((viewport.width - viewbase.width)/2);
+		if(viewport.left < 0) viewport.left = 0;
+	}
 
 	// document.querySelector('.content-container').style.transform = 'scale(' + viewport.scale + ')' + 'translate(' + viewport.left + 'px, 0)';
 	document.querySelector('.content-container').style.transform = 'scale(' + viewport.scale + ')';
@@ -70,11 +70,9 @@ function scale() {
 
 	// --------- 도전 프레임 리사이징
 	var hasChallenge = document.querySelector('.challenge-container') !== null;
-	console.log(!hasChallenge )
 	if(!hasChallenge) return;
 	if(hasChallenge)
 	{
-
 		viewportOrigin.width = window.innerWidth;
 		viewportOrigin.height = window.innerHeight;
 		viewportOrigin.scale = Math.min(scaleW, scaleH);
