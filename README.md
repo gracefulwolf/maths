@@ -280,9 +280,9 @@
         <li data-hover="">삽화</li>
     </ul>
     <ul class="basicSlider_slides" data-slides="">
-        <li class="page_1">...</div>
-        <li class="page_2">...</div>
-        <li class="page_3">...</div>
+        <li class="page_1">...</li>
+        <li class="page_2">...</li>
+        <li class="page_3">...</li>
     </ul>
 </div>
 
