@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="../common/css/content.css" />
 		<style>
 			.ui-container.loaded{display:none !important;}
+			#challenge-frame{transform-origin: 0 60px;}
 		</style>
 
 	</head>
@@ -39,7 +40,7 @@
 
 		</div>
 
-		<div class="challenge-container">
+		<div class="challenge-container" class="content-container">
 			<iframe id="challenge-frame" frameborder="0" width="1280" height="720" scrolling="no"></iframe>
 		</div>
 
@@ -71,7 +72,13 @@
 		<script src="../../../../../js/binder_web.min.js"></script>
 		<script src="../common/js/content.js"></script>
 
-
+		<script>
+			$( ".btn-box" ).on('click',function(){
+				$( "#challenge-frame" ).attr( "style", $( ".content-container" ).attr( "style" ) );
+			});
+			const _btnBox = document.querySelectorAll()
+			document.querySelector()
+		</script>
 	</body>
 
 </html>

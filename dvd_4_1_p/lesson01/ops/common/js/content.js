@@ -17,10 +17,10 @@ let otherData = (thisBookType=="mm") ? uiDataMs : uiData;
 let currentPage = categoryData.volume[PAGE_DEPTH.vi].part[PAGE_DEPTH.pi].chapter[PAGE_DEPTH.ci].section[PAGE_DEPTH.si].page;
 if(typeof currentPage == "object") currentPage = currentPage[PAGE_DEPTH.ti] || currentPage[0];
 
-// -- ie css 
+// -- ie css
 let browse = navigator.userAgent.toLowerCase();
 if ((navigator.appName == 'Netscape' && browse.indexOf('trident') != -1) || browse.indexOf('msie') != -1) {
-    	
+
     let ie = document.createElement('link');
     ie.setAttribute('rel', 'stylesheet');
     ie.setAttribute('href', '../common/css/ie.css');
@@ -56,12 +56,12 @@ function scale() {
 
 	viewport.left = (scaleW < scaleH2) ? 0 : parseInt((viewport.width - (viewbase.width * viewport.scale))/2);
 	// min-width 1280으로 셋팅
-	if(viewport.scale < 1) 
-	{
-		viewport.scale = 1;
-		viewport.left = parseInt((viewport.width - viewbase.width)/2);
-		if(viewport.left < 0) viewport.left = 0;
-	}
+	// if(viewport.scale < 1)
+	// {
+	// 	viewport.scale = 1;
+	// 	viewport.left = parseInt((viewport.width - viewbase.width)/2);
+	// 	if(viewport.left < 0) viewport.left = 0;
+	// }
 
 	// document.querySelector('.content-container').style.transform = 'scale(' + viewport.scale + ')' + 'translate(' + viewport.left + 'px, 0)';
 	document.querySelector('.content-container').style.transform = 'scale(' + viewport.scale + ')';
@@ -70,14 +70,16 @@ function scale() {
 
 	// --------- 도전 프레임 리사이징
 	var hasChallenge = document.querySelector('.challenge-container') !== null;
+	console.log(!hasChallenge )
 	if(!hasChallenge) return;
 	if(hasChallenge)
 	{
+
 		viewportOrigin.width = window.innerWidth;
 		viewportOrigin.height = window.innerHeight;
 		viewportOrigin.scale = Math.min(scaleW, scaleH);
 		viewportOrigin.left = (scaleW < scaleH) ? 0 : parseInt((viewportOrigin.width - (viewbase.width * viewportOrigin.scale))/2);
-		if(viewportOrigin.scale < 1) 
+		if(viewportOrigin.scale < 1)
 		{
 			viewportOrigin.scale = 1;
 			viewportOrigin.left = parseInt((viewportOrigin.width - viewbase.width)/2);
@@ -160,7 +162,7 @@ $(function(){
 	}
 });
 
-// 앱 등록 
+// 앱 등록
 $(function(){
 	// 마인드 맵
 	$("*[data-ui='app-mind-map']").each(function ( i )
@@ -229,7 +231,7 @@ function init() {
 			$(this).addClass("bulb");
 		}
 	});
-	
+
 	console.log("init - 컨텐츠 공통 부분 개발 셋팅");
 	// $(window).on("resize", function() {});
 
@@ -257,31 +259,31 @@ function init() {
 		$(this).popup(option);
 	});
 
-	// video-player 
+	// video-player
 	$("*[data-ui='videoplayer']").each(function (i) {
 		let option = $(this).attr("data-option") ? $.parseJSON($(this).attr("data-option")) : {};
 		$(this).videoPlayer(option);
 		$(this).data("instance").setData({});
 	});
 
-	// CornerBase < ICorner 
+	// CornerBase < ICorner
 	$("*[data-ui='cornerBase']").each(function (i) {
 		let option = $(this).attr("data-option") ? $.parseJSON($(this).attr("data-option")) : {};
 		$(this).cornerBase(option);
 	});
 
-	// CornerMsLast41 < ICorner 
+	// CornerMsLast41 < ICorner
 	$("*[data-ui='cornerMsLast41']").each(function (i) {
 		let option = $(this).attr("data-option") ? $.parseJSON($(this).attr("data-option")) : {};
 		$(this).cornerMsLast41(option);
 	});
 
-	// CornerChallenge < ICorner 
+	// CornerChallenge < ICorner
 	$("*[data-ui='cornerChallenge']").each(function (i) {
 		let option = $(this).attr("data-option") ? $.parseJSON($(this).attr("data-option")) : {};
 		$(this).cornerChallenge(option);
-	});	
-	
+	});
+
 	// 스크롤바 디자인 적용
 	$(".scroll-box").each(function(){
 		let overflowY = $(this).data("overflow-y") || "scroll";
@@ -316,10 +318,10 @@ function load() {
 	container.setAttribute('class', 'nav-area');
 
 	console.log("-------------------- load");
-	if(!categoryData) 
+	if(!categoryData)
 	{
 		let message = "!! categoryData 정보가 없습니다!! categoryData 필수";
-		console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message); 
+		console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message);
 		return;
 	}
 
@@ -430,10 +432,10 @@ function load() {
 
 		document.querySelector('.sidenav .books').appendChild(container);
 
-		if(!window.hasOwnProperty("PAGE_DEPTH")) 
+		if(!window.hasOwnProperty("PAGE_DEPTH"))
 		{
 			let message = "!! PAGE_DEPTH 정보가 없습니다!! PAGE_DEPTH 입력 필수";
-			console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message); 
+			console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message);
 			return;
 		}
 
@@ -457,7 +459,7 @@ function load() {
 			for(let i = 0; i < section.length; i++) {
 				let tab = document.createElement('button');
 				let tabTitle = document.createElement('span');
-				
+
 				if(!section[i].tab) continue;
 
 				tab.dataset.idx = i;
@@ -545,7 +547,7 @@ function uiInit() {
 			categoryReset();
 		},
 	});
-	
+
 	$('.sidenav-trigger').on("click", function(e){
 		if($(this).hasClass("open"))
 		{
@@ -577,7 +579,7 @@ function uiInit() {
 
 	$('.books').overlayScrollbars({
 	});
-	
+
 	// 활동도우미 버튼
 	$('.btn-more').dropdown({
 		alignment: 'right',
@@ -592,7 +594,7 @@ function uiInit() {
 		var strType = $(this).find('i').attr('class');
 		console.log($(this).find('span').text());
 		console.log(strType);
-		
+
 		var path = '';
 		var url = '';
 		switch(strType)
@@ -658,18 +660,18 @@ function uiInit() {
 				path = 'dic/dic.html';
 				url = pathApps + path;
 			break;
-				
+
 		}
-		
+
 		console.log(strType, url);
-	
+
 		gojjLink('html', url, '_blank', {maximize: true});
 		M.Dropdown.getInstance($('.btn-more')).close();
 
 		e.preventDefault();
 		e.stopPropagation();
 	});
-	
+
 	// 수학 익힘 버튼 활성화
 	if(categoryData.grade == 4)
 	{
@@ -741,7 +743,7 @@ function uiInit() {
 
 			document.querySelector('.sidenav').classList.add('extend');
 			document.querySelector('.corners').classList.add('active');
-			
+
 			setPosCorners(sections);
 		}
 	});
@@ -763,7 +765,7 @@ function uiInit() {
 
 		$('nav.tabs button').removeClass('active');
 		$(this).addClass('active');
-		
+
 		let tabIdx = $(this).data("idx");
 
 		let index = {};
@@ -858,7 +860,7 @@ function loadContent(index) {
 	document.querySelector('nav.global .pager .index').innerHTML = currentPage;
 
 	let otherPage = categoryData.volume[index.vi].part[index.pi].chapter[index.ci].section[index.si].otherPage;
-	 
+
 	document.querySelector('nav.global .btn-ext').classList.remove('type1');
 	document.querySelector('nav.global .btn-ext').classList.remove('type2');
 	if(thisBookType == "mm")
@@ -871,8 +873,8 @@ function loadContent(index) {
 		document.querySelector('nav.global .btn-ext').classList.add('type2');
 		document.querySelector('nav.global .btn-ext > span').innerHTML = "수학";
 	}
-	
-	if(otherPage > -1) 
+
+	if(otherPage > -1)
 	{
 		document.querySelector('nav.global .btn-ext').removeAttribute("disabled");
 		$('nav.global .btn-ext').data("otherPage", otherPage);
@@ -910,7 +912,7 @@ function categoryReset() {
 
 function goContentPage(index) {
 	console.log("goContentPage: ", index);
-	
+
 	let section = categoryData.volume[index.vi].part[index.pi].chapter[index.ci].section[index.si];
 	let bookType = (categoryData.bookType == "ms") ? "ms_" : "";
 	let lesson = $.pad(index.pi + 1, 2);
@@ -937,13 +939,13 @@ function goContentPage(index) {
 
 			if(!pageJson) {
 				let message = "페이지 데이타 오류";
-				console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message); 
+				console.log('%c%s', 'color: blue; font-size: 16px; font-weight:bold', message);
 			}
 			else
 			{
 				page = pageJson.page;
 			}
-			
+
 			// 1. 같은 단원으로 이동할 때
 			// alert("현재 단원:" + PAGE_DEPTH.pi + " / 이동할 단원:" + index.pi);
 			if(PAGE_DEPTH.pi == index.pi)
@@ -960,7 +962,7 @@ function goContentPage(index) {
 				let folder = (categoryData.bookType == "ms") ? "contents_sub" : "contents";
 				// let jjURL = '/viewer/' + type + '/index.html?contentInformationURL=' + '../../resource/' + folder + '/' + lessonStr +'&page='+page;
 				let jjURL = '/viewer/' + type + '/index.html?contentInformationURL=' + '../../resource/' + folder + '/' + lessonStr +'&pageName='+pageName;
-	
+
 				jj.link.html(jjURL, '_top');
 			}
 
@@ -972,19 +974,19 @@ function goContentPage(index) {
 		alert("이동할 section.url 정보를 찾지 못 했습니다.")
 		return;
 	}
-	
+
 }
 
 function goOtherContentPage() {
 	console.log("다른 책 해당 차시 첫 번째 컨텐츠로 이동");
 	let bookType = (categoryData.bookType == "ms") ? "mm_" : "ms_";
 	let bookFolder = (categoryData.bookType == "ms") ? "" : "ms_";
-	
+
 	let filename = otherData.volume[PAGE_DEPTH.vi].part[PAGE_DEPTH.pi].chapter[PAGE_DEPTH.ci].section[0].url[0];
 
 	let lesson = $.pad(PAGE_DEPTH.pi + 1, 2);
 	let lessonStr = "lesson" + lesson;
-	let url = "../" + bookFolder + "lesson" + lesson + "/" + filename; 
+	let url = "../" + bookFolder + "lesson" + lesson + "/" + filename;
 
 	if(!window.jj)
 	{
@@ -995,11 +997,11 @@ function goOtherContentPage() {
 	else
 	{
 		// 뷰어에서 다른 콘텐츠 뷰어로 이동(교과서 -> 익힘 or 익힘 -> 교과서)
-		
+
 		let type = 'contents'; // 'ebook', 'contents'
 		let folder = 'ebook'; // 'ebook', 'ebook_sub', ''contents'', 'contents_sub'
 		folder = (bookType == "mm_") ? 'contents' : 'contents_sub';
-		
+
 		let jjURL = '/viewer/' + type + '/index.html?contentInformationURL=' + '../../resource/' + folder + '/' + lessonStr +'&pageName='+filename;
 
 		// let pageData = categoryData.volume[PAGE_DEPTH.vi].part[PAGE_DEPTH.pi].chapter[PAGE_DEPTH.ci].section[PAGE_DEPTH.si];
@@ -1040,7 +1042,7 @@ function gojjLink(type, url, windowName, params) {
 	switch(type)
 	{
 		case 'html':
-			if(!window.hasOwnProperty("jj")) 
+			if(!window.hasOwnProperty("jj"))
 			{
 				var win = window.open(url, windowName);
 				return;
