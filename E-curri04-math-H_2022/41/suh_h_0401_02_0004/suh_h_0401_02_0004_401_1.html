@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+		/* 그려 아이프레임 */
+		.page-iframe{position:absolute; z-index:1; top:0; left:-30px; overflow:hidden; width:1060px; height:475px; border:0; background:transparent;}
+		.toggle.z2{z-index:2;}
+
+		.page_1 .--img{position:relative; height:170px; background:url(./images/suh_h_0401_02_0004_401_1/suh_h_0401_02_0004_401_1_1.png) no-repeat 50% 50% / contain;}
+		.page_1 .--img .--text{position:absolute;}
+		.page_1 .--img .--text.x1{top: 132px;left: 290px;}
+		.page_1 .--img .--text.x2{top: 132px;left: 490px;}
+		.page_1 .--img .--text.x3{top: 20px;left: 324px;}
+		.page_1 .--answer{position:absolute; width:100%; height:100%; background:url(./images/mm_41_2_03_07_02/answer_01.svg) no-repeat -50px -200px / 1060px auto;}
+
+
+		.page_2 .lineBox{position:relative; width:480px; height:380px; margin:0 auto; }
+		.page_2 .--img{position:absolute; top:0; left:0; width:100%; height:100%; background:url(./images/suh_h_0401_02_0004_401_1/suh_h_0401_02_0004_401_1_2.png) no-repeat 30px 290px / 290px auto;}
+		.page_2 .colorBox{position:absolute; top:10px; left:10px;}
+		.page_2 .--answer{position:absolute; top:0; left:0; width:100%; height:100%;}
+		.page_2 .--answer .exam{position:absolute;top: 20px;left: 130px;}
+		.page_2 .--line{position:absolute;top: 166px;left: 420px;width:200px;height:3px;background:#00a0ff;transform:rotate(140deg);transform-origin:0 0;}
+		.page_2 .--text{position:absolute;}
+		.page_2 .--text.x1{top: 290px;left: 30px;}
+		.page_2 .--text.x2{top: 290px;left: 250px;}
+		.page_2 .--text.x3{top: 170px;left: 400px;}
+		.page_2 .--text.dot{top: 174px;left: 396px;width:11px;height:11px;border-radius:50%;background:#00a0ff;}
+
+		.page_3 .lineBox{position:relative; width:480px; height:380px; margin:0 auto; }
+		.page_3 .--img{position:absolute; top:0; left:0; width:100%; height:100%;}
+		.page_3 .colorBox{position:absolute; top:10px; left:10px;}
+		.page_3 .--answer{position:absolute; top:0; left:0; width:100%; height:100%;}
+		.page_3 .--answer .exam{position:absolute;top: 25px;left: 110px;}
+		.page_3 .--line{position:absolute;top: 320px;left: 250px;width:220px;height:3px;}
+		.page_3 .--line.x1{background:#000;transform: rotate(-50deg);transform-origin:0 0;}
+		.page_3 .--line.x2{background:#00a0ff;transform: rotate(-120deg);transform-origin:0 0;}
+
+
+		.examViewBtn.reset:before{content:"다시하기";}
+
+		.page_4 .study_guide {top: -59px;}
+		.page_4 .wrap {text-align: center;position: relative;width: 540px;margin: 60px auto 0;}
+		.page_4 .wrap>img {width: 100%;}
+		.page_4 .lineWrap {position: absolute;bottom: 0;right: 0;}
+		.page_4 .lineWrap p {font-size: 40px;position: absolute;}
+		.page_4 .lineWrap .text_1 {right: 248px;bottom: -33px;}
+		.page_4 .lineWrap .text_2 {right: -39px;bottom: -33px;}
+		.page_4 .lineWrap .line_1 {width: 300px;height: 5px;background: #000;position: absolute;right: -30px;bottom: 23px;}
+		.numberWrap {position: absolute;left: 0;top: 0;}
+		.circle-btn {position: absolute;}
+		.circle-btn .icon {position: absolute;left: -8px;top: -7px;}
+		.dot0 {width: 10px;height: 10px;border-radius: 100%;background: #000;position: absolute;}
+		.dot_1 {top: 31px;left: 130px;}
+		.dot_2 {top: 0px;left: 217px;}
+		.dot_3 {top: 0;left: 311px;}
+		.dot_4 {top: 31px;left: 400px;}
+		.dot_5 {top: 92px;left: 472px;}
+		.btn1 {left: 95px;top: -15px;}
+		.btn2 {left: 195px;top: -50px;}
+		.btn3 {left: 296px;top: -50px;}
+		.btn4 {left: 395px;top: -18px;}
+		.btn5 {left: 485px;top: 53px;}
+		.page_5 .line1 {border-top: 4px solid #E94D40;width: 400px;position: absolute;right: 99px;bottom: 26px;}
+		.page_5 .imgWrap {position: relative;text-align: center;padding-top: 40px;}
+		.page_5 .line2 {opacity: 0;transition: 0.5s;border-top: 4px solid #3899FA;width: 400px;position: absolute;top: 186px;left: 172px;transform: rotateZ(50deg);}
+		.page_5 .complete .line2 {opacity: 1;}
+		.page_5 .colorBox {position: absolute;left: 0;top: 0;}
+		.page_6 .lineBox {width: 600px;margin: 0 auto;position: relative;}
+		.page_6 .lineBox .colorBox {position: absolute;left: 50%;top: -38px;transform: translateX(-50%);}
+		.page_6 .bullet.exam {opacity: 0;transition: .3s;}
+		.page_6.complete .bullet.exam {opacity: 1;}
+		.page_6 .imgbox {text-align: center;}
+		.page_6 .lineBox img {opacity: 0;width: 50%;transition: 0.3s;}
+		.page_6.complete .lineBox img {opacity: 1;}
+		.flexBox {margin-top: 30px;display: flex;justify-content: center;align-items: center;}
+		.page_7 .icon_arrow {margin: 0 60px 0 50px;}
+		.page_7 .box1 {width: 250px}
+		.page_7 .box1 img {width: 100%;}
+		.page_7 .box2 {margin-right: 10px;position: relative;width: 320px;height: 300px;background: url(images/suh_0401_02_0004_401_1_5.png) center/contain no-repeat;}
+		.page_7 .line {opacity: 0;transition: 0.3s;position: absolute;left: 30.9px;top: 157px;width: 210px;height: 7px;background: #3899FA;transform: rotate(-35deg);}
+		.page_7.complete .line {opacity: 1;}
+		.page_8 .colorBox {display: inline-block;float: left;}
+		.page_8 .bogiContainer .imgBox {height: 280px;background: url(images/suh_0401_02_0004_401_1_2.png) 130px center/contain no-repeat;}
+		.page_8 .flexBox {width: 100%;justify-content: center;align-items: stretch;margin-top: 0;}
+		.page_8 .imgBox2 {opacity: 0;transition: .5s;height: 280px;background: url(images/suh_0401_02_0004_401_1_3.png) 78px 77px/66%no-repeat;}
+		.page_8.complete .imgBox2 {opacity: 1;}
+		.page_8 .bogiContainer {margin: 0;min-width: unset;margin-right: 40px;}
+		.page_8 .flexBox>div {width: 32%;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/2단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활용지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="" class="innerIframe">문제 2</li>
+					<li data-hover="" class="innerIframe">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="" class="innerIframe">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1" data-slide-container="">
+						<h2><ins class="dot"></ins><span>
+							각도기와 자를 이용하여 각도가 35˚인 각 ㄱㄴㄷ을 그리려고 합니다. <ins class="blankBox"></ins> 안에 알맞은 말을 써넣으시오.
+						</span></h2>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<div class="--img">
+									<div class="--text x1">ㄱ</div>
+									<div class="--text x2">ㄴ</div>
+									<div class="--text x3">ㄷ</div>
+								</div>
+								<div class="lineBox yellow">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet number orange">1</ins>
+											<div>
+												자를 사용하여 변 ㄴㄱ를 그립니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="--img">
+									<div class="--text x1">ㄱ</div>
+									<div class="--text x2">ㄴ</div>
+									<div class="--text x3">ㄷ</div>
+								</div>
+								<div class="lineBox yellow">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet number orange">1</ins>
+											<div>
+												각도기의 중심과 각의 꼭짓점 <div class="toggle" data-toggle-obj="11">
+													<div class="answer" data-toggle-target="11">
+														ㄴ
+													</div>
+												</div>을 맞추고, 각도기의 밑금과 변 <div class="toggle" data-toggle-obj="12">
+													<div class="answer" data-toggle-target="12">
+														ㄴㄱ
+													</div>
+												</div>을 맞춥니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+							<li class="innerTab_3" data-quiz="toggle">
+								<div class="--img">
+									<div class="--text x1">ㄱ</div>
+									<div class="--text x2">ㄴ</div>
+									<div class="--text x3">ㄷ</div>
+								</div>
+								<div class="lineBox yellow">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet number orange">1</ins>
+											<div>
+												각도기를 떼고, 자를 이용하여 변 <div class="toggle" data-toggle-obj="13">
+													<div class="answer" data-toggle-target="13">
+														ㄴㄷ
+													</div>
+												</div>을 그어 각도가 35˚인 각 ㄱㄴㄷ을 완성합니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+						<a href="./data/2단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							주어진 각도의 각 ㄱㄴㄷ을 완성해 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/ifr-suh_h_0401_02_0004_401_1.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<div class="lineBox orange">
+								<div class="colorBox orange">140°</div>
+								<div class="--img"></div>
+								<div class="--text x1">ㄱ</div>
+								<div class="--text x2">ㄴ</div>
+								<div class="answer --answer" data-toggle-obj="21" data-toggle-target="21">
+									<div class="--line"></div>
+									<div class="--text x3">ㄷ</div>
+									<div class="--text dot"></div>
+									<ins class="bullet exam">예</ins>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/2단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							주어진 각도의 각을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/ifr-suh_h_0401_02_0004_401_1.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<div class="lineBox orange">
+								<div class="colorBox orange">70°</div>
+								<div class="--line x1"></div>
+								<div class="answer --answer" data-toggle-obj="21" data-toggle-target="21">
+									<div class="--line x2"></div>
+									<ins class="bullet exam">예</ins>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/2단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1"> <!-- data-alert="" -->
+						<h2><ins class="dot"></ins><span>
+							각도기를 이용하여 크기가 80°인 각 ㄷㄱㄴ을 그리려고 합니다. 점 ㄷ을 어느 곳에 찍어야 하는지 구하시오.
+						</span></h2>
+						<section>
+							<div class="study_guide"><em>번호</em>를 <em>클릭</em>하세요.</div>
+							<div class="wrap">
+							  <img src="./images/suh_0401_02_0004_301_1_1.png" alt="">
+							  <div class="lineWrap">
+								<p class="text_1">ㄱ</p>
+								<p class="text_2">ㄴ</p>
+								<div class="line_1"></div>
+							  </div>
+							  <div class="numberWrap">
+								<div data-ox-obj="1" class="circle-btn btn1">
+								  <div class="bullet circle white" data-hover="">1
+									<div class="icon icon_x" data-ox-target="1"></div>
+								  </div>
+								</div>
+								<div data-ox-obj="2" class="circle-btn btn2">
+								  <div class="bullet circle white" data-hover="">2
+									<div class="icon icon_x" data-ox-target="2"></div>
+								  </div>
+								</div>
+								<div data-ox-obj="3" data-answer="" class="circle-btn btn3">
+								  <div class="bullet circle white" data-hover="">3
+									<div class="icon icon_o" data-ox-target="3"></div>
+								  </div>
+								</div>
+								<div data-ox-obj="4" class="circle-btn btn4">
+								  <div class="bullet circle white" data-hover="">4
+									<div class="icon icon_x" data-ox-target="4"></div>
+								  </div>
+								</div>
+								<div data-ox-obj="5" class="circle-btn btn5">
+								  <div class="bullet circle white" data-hover="">5
+									<div class="icon icon_x" data-ox-target="5"></div>
+								  </div>
+								</div>
+							  </div>
+							  <div class="dot0 dot_1"></div>
+							  <div class="dot0 dot_2"></div>
+							  <div class="dot0 dot_3"></div>
+							  <div class="dot0 dot_4"></div>
+							  <div class="dot0 dot_5"></div>
+
+							</div>
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							주어진 각도의 각을 각도기 위에 그려 보시오.
+						</span></h2>
+						<section>
+							<div class="colorBox sky">
+							  130°
+							</div>
+							<div class="imgWrap">
+								<img src="./images/suh_0401_02_0004_201_1_3.png" class="img_1" width="600px">
+								<div class="line1"></div>
+
+								<div data-toggle-obj="1" class="">
+									<div class="line2" data-toggle-target="1"></div>
+								</div>
+
+							</div>
+
+							<div class="buttonContainer">
+							  <button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						  </section>
+					</li>
+
+					<li class="page_6" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							각도기와 자를 이용하여 주어진 각도의 각을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/ifr-suh_h_0401_02_0004_401_1-2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<div class="lineBox sky mt_40">
+							  <div class="colorBox sky">
+								65°
+							  </div>
+							  <div data-toggle-obj="1" class="complete">
+								<div class="bullet exam">예</div>
+								<div class="imgbox on" data-toggle-target="1" style="background:url(./images/suh_0401_02_0004_401_1_1-1.png) no-repeat 50% 0% / 275px auto;">
+								  <img src="./images/suh_0401_02_0004_401_1_1-2.png" class="img_1">
+								</div>
+							  </div>
+							</div>
+							<div class="buttonContainer">
+							  <button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_7" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							각도기를 이용하여 왼쪽 각과 크기가 같은 각을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<div class="flexBox mt_80">
+								<div class="box1">
+									<img src="images/suh_0401_02_0004_401_1_4.png" alt="">
+								</div>
+								<div class="icon_arrow big"></div>
+								<div class="box2" data-toggle-obj="1">
+									<div class="line"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_8" data-quiz="toggle">
+						<h2 class="mb_30" style="line-height: 1.6em;"><ins class="dot"></ins><span>
+							<div class="icon_bogi" style="margin-top: 5px;"></div>와 같이 주어진 각도의 각을 그리고, 나머지 그림을 창의적으로 완성해 보시오.
+						  </span>
+						</h2>
+						<section>
+							<div class="flexBox">
+								<div class="bogiContainer" style="text-align: center">
+									<div class="icon_bogi"></div>
+									<div class="inner">
+										<div class="colorBox sky">
+											20°
+										</div>
+										<div class="imgBox">
+										</div>
+									</div>
+								</div>
+								<div class="lineBox sky" data-toggle-obj="1" style="pointer-events: none;">
+									<div class="colorBox sky">
+										85°
+									</div>
+									<div class="imgBox2"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		const _tabs = document.querySelectorAll(".innerIframe");
+		const _examViewBtn = document.querySelectorAll(".examViewBtn")
+		const _iframe = document.querySelectorAll(".page-iframe");
+		_tabs.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				//console.log(_iframe)
+				_iframe[index].contentWindow.location.reload();
+			});
+		});
+
+		_examViewBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				//console.log(_iframe)
+				_iframe[index].contentWindow.location.reload();
+			});
+		});
+
+	</script>
+</body>
+
+</html>

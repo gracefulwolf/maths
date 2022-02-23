@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_contents .vMid{height:500px;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+
+	.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+	.page-iframe .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.popup_pages>li.whole.on{z-index:10000;}
+
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+
+	/* 개별 */
+	.page_0 .lineBox > div{}
+	.page_0 .lineBox:before{content:""; position:absolute; top:50px; left:50%; width:1px; height: 320px; border-left: 2px dotted #aaa;}
+	.page_0 .--img{position:relative; width:320px; height:320px;}
+	.page_0 .--img.x1{background:url(./images/suhi_h_0401_02_0007_2.png) no-repeat 50% 50% / contain;}
+	.page_0 .--img.x2{background:url(./images/suhi_h_0401_02_0007_3.png) no-repeat 50% 50% / contain;}
+	.page_0 .--text{position:absolute;}
+	.page_0 .--text.x1{top: 210px;left: 75px;}
+	.page_0 .--text.x2{top: 248px;left: 115px;}
+	.page_0 .--text.x3{top: 200px;left: 55px;}
+	.page_0 .--text.x4{top: 248px;left: 145px;}
+
+	.page_1 .--img{position:relative; width:100%; height:250px; margin-top:100px; background:url(./images/suhi_h_0401_02_0007_4.png) no-repeat 50% 50% / contain;}
+	.page_1 .--img .icon_arrow{position:absolute; top:120px; left:570px;}
+	.page_1 .toggle{min-width:100px;}
+
+	.page_2 .--img{position:relative; width:100%; height:250px; margin-top:100px; background:url(./images/suhi_h_0401_02_0007_5.png) no-repeat 50% 50% / contain;}
+	.page_2 .--img .icon_arrow{position:absolute; top:120px; left:610px;}
+	.page_2 .toggle{min-width:100px;}
+
+	.page_3 .flexListContainer{flex-wrap:wrap;}
+	.page_3 .flexListContainer li{width:50%; text-align:center;}
+	.page_3 .flexListContainer li:nth-child(2) ~ li{margin-top:60px;}
+	.page_3 .flexListContainer .toggle{min-width:100px;}
+
+	.page_4 .--img{position:relative;width: 450px;height: 320px;/* border: 1px red solid; */}
+	.page_4 .--img.x1{background: url(./images/suhi_h_0401_02_0007_6.png) no-repeat -214px 100% / auto 280px;}
+	.page_4 .--img.x2{background: url(./images/suhi_h_0401_02_0007_6.png) no-repeat -720px 50% / auto 280px;}
+	.page_4 .--text{position:absolute;}
+	.page_4 .--text.x1{top: 140px;left: 190px;}
+	.page_4 .--text.x2{top: 160px;left:160px;}
+	.page_4 .toggle{min-width:100px;}
+
+	.page_5 .--img{position: relative; height:340px; background:url(./images/suhi_h_0401_02_0007_7.png) no-repeat 0% 50% / contain;}
+
+	.page_6 .--img{position:relative; width:100%; height:380px; background:url(./images/suhi_h_0401_02_0007_8.png) no-repeat 50% 50% / auto 320px;}
+	.page_6 .--text{position:absolute;}
+	.page_6 .--text.x1{top: 200px;left: 530px;}
+	.page_6 .--text.x2{top: 290px;left: 580px;}
+
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">각도는 어떻게 더하고 뺄까요</span>
+		<span class="sub-page">36~37쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+				</span></h2>
+				<section class="full">
+					<div class="vMid">
+						<div>
+							<div class="lineBox sky flexListContainer around center">
+								<div>
+									<div class="--img x1">
+										<div class="--text x1">40˚</div>
+										<div class="--text x2">20˚</div>
+									</div>
+									<div class="textAlignC mt_20">
+										100˚-20˚=80˚
+									</div>
+								</div>
+								<div>
+									<div class="--img x2">
+										<div class="--text x3">100˚</div>
+										<div class="--text x4">20˚</div>
+									</div>
+									<div class="textAlignC mt_20">
+										100˚-20˚=80˚
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span class="ls1_5">
+					각도기를 사용하여 각도를 각각 재고 두 각도의 합을 구해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="icon_arrow"></div>
+					</div>
+					<div class="textAlignC mt_10">
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">
+								30
+							</div>
+						</div>° + <div class="toggle" data-toggle-obj="12">
+							<div class="answer" data-toggle-target="12">
+								115
+							</div>
+						</div>° = <div class="toggle" data-toggle-obj="13">
+							<div class="answer" data-toggle-target="13">
+								140
+							</div>
+						</div>°
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span class="ls1_5">
+					각도기를 사용하여 각도를 각각 재고 두 각도의 차를 구해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="icon_arrow"></div>
+					</div>
+					<div class="textAlignC mt_10">
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">
+								145
+							</div>
+						</div>° － <div class="toggle" data-toggle-obj="12">
+							<div class="answer" data-toggle-target="12">
+								65
+							</div>
+						</div>° = <div class="toggle" data-toggle-obj="13">
+							<div class="answer" data-toggle-target="13">
+								80
+							</div>
+						</div>°
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					각도의 합과 차를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="vMid">
+						<div>
+							<ul class="flexListContainer around">
+								<li>
+									90˚+45˚=<div class="toggle" data-toggle-obj="31">
+										<div class="answer" data-toggle-target="31">135</div>
+									</div>°
+								</li>
+								<li>
+									27˚+99˚=<div class="toggle" data-toggle-obj="32">
+										<div class="answer" data-toggle-target="32">126</div>
+									</div>°
+								</li>
+								<li>
+									180˚­－45˚=<div class="toggle" data-toggle-obj="33">
+										<div class="answer" data-toggle-target="33">135</div>
+									</div>°
+								</li>
+								<li>
+									134˚－77˚=<div class="toggle" data-toggle-obj="34">
+										<div class="answer" data-toggle-target="34">57</div>
+									</div>°
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					두 각도의 합과 차를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="vMid">
+						<div>
+							<div class="flexListContainer around">
+								<div>
+									<div class="--img x1">
+										<div class="--text x1">134°</div>
+									</div>
+									<ul class="flexListContainer jcenter center mt_20">
+										<li class="flexListContainer center">
+											<div class="colorBox check skyBlue">합</div>
+											<div>
+												<div class="toggle" data-toggle-obj="41">
+													<div class="answer" data-toggle-target="41">200</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div>
+									<div class="--img x2">
+										<div class="--text x2">66°</div>
+									</div>
+									<ul class="flexListContainer jcenter center mt_20">
+										<li class="flexListContainer center">
+											<div class="colorBox check skyBlue">차</div>
+											<div>
+												<div class="toggle" data-toggle-obj="42">
+													<div class="answer" data-toggle-target="42">68</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					휴식을 할 때는 책을 읽을 때보다 다리 받침의 각도를 몇 도 더 크게 하였는지 구해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+					</div>
+					<div class="textAlignC mt_10">
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">
+								55°
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_6" data-quiz="toggle">
+				<h2><ins class="number">6</ins><span>
+					<ins class="blankBox"></ins> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="--text x1">
+							<div class="toggle" data-toggle-obj="61">
+								<div class="answer" data-toggle-target="61">
+									53
+								</div>
+							</div>°
+						</div>
+						<div class="--text x2">37°</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_6" data-popup-page="6">
+			<div class="popup_contents">
+				<p class="ls0">
+					90˚+<ins class="blankBox"></ins>˚+37˚=180˚<br>
+					127˚+<ins class="blankBox"></ins>˚=180˚<br>
+					<ins class="blankBox"></ins>˚=53˚
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						책을 읽을 때와 휴식을 할 때 다리 받침의 각도를 재면 각각 20˚, 75˚입니다.<br>
+						따라서 휴식을 할 때는 책을 읽을 때보다 다리 받침의 각도를 몇 도 더 높였는지 구하면 다음과 같습니다.
+					</li>
+				</ul>
+				<div>
+					<ins class="icon_arrow mr_10"></ins>75˚-20˚=55˚
+				</div>
+			</div>
+		</li>
+
+		<li class="solve pop_page_4" data-popup-page="4">
+			<div class="popup_contents">
+				<p class="ls0">
+					두 각도의 합과 차를 구하면 다음과 같습니다.<br>
+					134˚+66˚=200˚,  134˚-66˚=68˚
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_3" data-popup-page="3">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>
+						각도의 합과 차를 구하면 다음과 같습니다.<br>
+						90˚+45˚=135˚<br>
+						27˚+99˚=126˚<br>
+						180˚-45˚=135˚<br>
+						134˚-77˚=57˚
+					</li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<p class="ls0">
+					각도를 각각 재면 145˚, 65˚이므로 두 각도의 차는<br>
+					145˚-65˚=80˚입니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_1" data-popup-page="1">
+			<div class="popup_contents">
+				<p class="ls0">
+					각도를 각각 재면 25˚, 115˚이므로 두 각도의 합은 <br>
+					25˚+115˚=140˚입니다.
+				</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+	}, false);
+</script>
+
+</body>
+
+</html>

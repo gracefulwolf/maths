@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+
+	<style type="text/css">
+		.supply_guide{vertical-align:6px;}
+		.study_guide{left:auto; right:0; top:44px;}
+		.playDataList dl{width: 100%;}
+		.playDataList dl + dl{margin-top:20px;}
+		.playDataList dl > div{width: 50%; display: flex; }
+		.playDataList dl > div dt{max-width:186px; margin-right:20px;}
+		h2 .icon_o_title{margin-top:8px}
+
+		header .title .icon_o_title{vertical-align:-2px;}
+
+		.--inner{width:560px;}
+		.--ox{min-width:100%; height:320px;}
+		.--ox li{position:relative; min-width:50%; height:100%;}
+		.--ox .grayBox{width:100%; height:100%; cursor:pointer;}
+		.--ox .icon{position:absolute; top:50%; left:50%; width:90px; height:90px; margin:-45px 0 0 -45px;}
+		.--arrow li{width:100%;}
+		.--arrow .colorBox{display:inline-block;}
+
+		.--img{position:relative;}
+		.--img .--text{position:absolute;}
+		.--img .--answer{position:absolute; top:0; left:0; width:100%; height:100%;}
+
+		.innerTab_1 .--inner{margin:0 auto;}
+		.innerTab_1 .--ox{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_1.png) no-repeat 50% 50% / contain;}
+
+		.innerTab_2 .--inner{padding-top:40px;}
+		.innerTab_2 .--img{width:380px; height:350px; background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_2.png) no-repeat 50% 50% / contain;}
+		.innerTab_2 .--ox{height:180px;}
+		.innerTab_2 .--ox .grayBox.x1{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_3.png) no-repeat 50% 50% / contain;}
+		.innerTab_2 .--ox .grayBox.x2{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_4.png) no-repeat 50% 50% / contain;}
+
+		.innerTab_3 .--inner{padding-top:40px;}
+		.innerTab_3 .--img{width:380px; height:350px; background:url(./images/suh_h_0401_02_0013_201_1/img_playPage_3.png) no-repeat 50% 50% / contain;}
+		.innerTab_3 .--ox{height:180px;}
+		.innerTab_3 .--ox .grayBox.x1{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_5.png) no-repeat 50% 50% / contain;}
+		.innerTab_3 .--ox .grayBox.x2{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_6.png) no-repeat 50% 50% / contain;}
+
+		.innerTab_4 .--inner{padding-top:40px;}
+		.innerTab_4 .--img{position:relative; width:380px; height:350px; background:url(./images/suh_h_0401_02_0013_201_1/img_playPage_4.png) no-repeat 50% 50% / contain;}
+		.innerTab_4 .--text{position:absolute;}
+		.innerTab_4 .--text.x1{top:70px; left:50px;}
+		.innerTab_4 .--text.x2{top:220px; left:80px;}
+		.innerTab_4 .--text.x3{top:220px; left:280px;}
+		.innerTab_4 .--ox{height:180px;}
+		.innerTab_4 .--ox .grayBox.x1{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_7.png) no-repeat 50% 50% / contain;}
+		.innerTab_4 .--ox .grayBox.x2{background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_8.png) no-repeat 50% 50% / contain;}
+
+		.page_3 .--img{position:relative; width:360px; height:420px; margin:0 auto; background:url(./images/suh_h_0401_02_0013_201_1/suh_h_0401_02_0013_201_1_9.png) no-repeat 50% 50% / cover;}
+		.page_3 .--img .answer{position:absolute; top:0; left:0; width:100%; height:100%; background:url(./images/suh_h_0401_02_0013_201_1/img_complete.png) no-repeat 50% 50% / contain;}
+		.page_3 .--img .bullet.exam{position:absolute; top:0; left:-60px;}
+
+		.popup_pages>li.whole.pop_page_1 h2{display:flex; align-items:center; justify-content:center; font-size:30px !important; line-height:1.2;}
+		.pop-inner2 .--img{height:400px; margin-top:20px; background:url(./images/suh_h_0401_02_0013_201_1/play-1.png) no-repeat 50% 50% / 380px auto;}
+		.pop-inner2 .--text.x1{top:60px; left:350px;}
+		.pop-inner2 .--text.x2{top:210px; left:350px;}
+		.pop-inner2 .--text.x3{top:320px; left:370px;}
+		.pop-inner2 .--text.x4{top:320px; left:640px;}
+		.pop-inner4 .--img{height:400px; margin-top:20px; background:url(./images/suh_h_0401_02_0013_201_1/play-2.png) no-repeat 50% 50% / 380px auto;}
+		.pop-inner4 .--text.x1{top:120px; left:350px;}
+		.pop-inner4 .--text.x2{top:180px; left:440px;}
+		.pop-inner4 .--text.x3{top:320px; left:370px;}
+		.pop-inner4 .--text.x4{top:320px; left:640px;}
+		.pop-inner5 .--img{width:60%; height:450px; margin-top:20px; background:url(./images/suh_h_0401_02_0013_201_1/play-3.png) no-repeat 50% 50% / auto 420px;}
+		.pop-inner5 .--text.x1{top: 35px;left: 80px;}
+		.pop-inner5 .--text.x2{top: 240px;left: 80px;}
+		.pop-inner5 .--text.x3{top: 380px;left: 110px;}
+		.pop-inner5 .--text.x4{top: 380px;left: 480px;}
+		.pop-inner5 .--text.x5{top: 100px;left: 170px;}
+		.pop-inner5 .--text.x6{top: 150px;left: 210px;}
+		.pop-inner5 .--text.x7{top: 120px;left: 290px;}
+		.pop-inner5 .--text.x8{top: 60px;left: 340px;}
+		.pop-inner5 .--text.x9{top: 60px;left: 440px;}
+		.pop-inner5 .--text.x10{top: 290px;left: 160px;}
+		.pop-inner5 .--text.x11{top: 310px;left: 220px;}
+		.pop-inner5 .--text.x12{top: 280px;left: 320px;}
+		.pop-inner5 .--text.x13{top: 270px;left: 410px;}
+		.pop-inner5 .--para{width:40%; padding-right:85px; box-sizing:border-box;}
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div class="title">
+				<ins class="toggleBlank"></ins> 안에 들어갈 알맞은 말을 골라 그림에 <span class="icon_o_title"></span>표 하세요. <div class="supply_guide inline">준비물 177쪽, 179쪽</div>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">방법</li>
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1">
+						<ul class="playDataList">
+							<li>
+								<dl class="column">
+									<dt>활동 방법</dt>
+									<dd>
+										<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">1</div>
+												<p>
+													각도에 관한 문제를 해결하면서 알맞은 그림을 골라봅니다.
+												</p>
+											</li>
+											<li>
+												<div class="bullet number orange">2</div>
+												<p>
+													고른 그림으로 동물을 완성해 봅니다.
+												</p>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</li>
+					<li class="page_2" data-slide-container="">
+						<div class="study_guide">
+							<em>그림</em>을 <em>클릭</em>하세요.
+						</div>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+						<li class="innerTab_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+							<ul class="dotList orange" data-quiz="toggle">
+								<li>
+									<div>
+										직각의 크기는 <div class="toggle" data-toggle-obj="211">
+											<div class="answer" data-toggle-target="211">
+												90°
+											</div>
+										</div>입니다.
+									</div>
+								</li>
+							</ul>
+							<div class="--inner">
+								<ul class="flexListContainer --ox">
+									<li>
+										<div class="grayBox x1" data-ox-obj="212" data-answer="">
+											<div class="icon icon_o" data-ox-target="212"></div>
+										</div>
+									</li>
+									<li>
+										<div class="grayBox x2" data-ox-obj="213">
+											<div class="icon icon_x" data-ox-target="213"></div>
+										</div>
+									</li>
+								</ul>
+								<ul class="flexListContainer --arrow">
+									<li>
+										<div class="textAlignC">
+											<ins class="icon_arrow top"></ins><br>
+											<div class="colorBox green">90°이면</div>
+										</div>
+									</li>
+									<li>
+										<div class="textAlignC">
+											<ins class="icon_arrow top"></ins><br>
+											<div class="colorBox green">100°이면</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_2" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox2">
+							<ul class="dotList orange" data-quiz="toggle">
+								<li>
+									<div>
+										주어진 각도의 크기는 <div class="toggle" data-toggle-obj="221">
+											<div class="answer" data-toggle-target="221">
+												130°
+											</div>
+										</div>입니다.
+									</div>
+								</li>
+							</ul>
+							<div class="flexListContainer center">
+								<div class="--img">
+								</div>
+								<div class="--inner">
+									<ul class="flexListContainer --ox">
+										<li>
+											<div class="grayBox x1" data-ox-obj="222" data-answer="">
+												<div class="icon icon_o" data-ox-target="222"></div>
+											</div>
+										</li>
+										<li>
+											<div class="grayBox x2" data-ox-obj="233">
+												<div class="icon icon_x" data-ox-target="233"></div>
+											</div>
+										</li>
+									</ul>
+									<ul class="flexListContainer --arrow">
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">90°이면</div>
+											</div>
+										</li>
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">100°이면</div>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_3" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox3">
+							<ul class="dotList orange" data-quiz="toggle">
+								<li>
+									<div>
+										주어진 각은 <div class="toggle" data-toggle-obj="231">
+											<div class="answer" data-toggle-target="231">
+												예각
+											</div>
+										</div>입니다.
+									</div>
+								</li>
+							</ul>
+							<div class="flexListContainer center">
+								<div class="--img">
+								</div>
+								<div class="--inner">
+									<ul class="flexListContainer --ox">
+										<li>
+											<div class="grayBox x1" data-ox-obj="232" data-answer="">
+												<div class="icon icon_o" data-ox-target="232"></div>
+											</div>
+										</li>
+										<li>
+											<div class="grayBox x2" data-ox-obj="223">
+												<div class="icon icon_x" data-ox-target="223"></div>
+											</div>
+										</li>
+									</ul>
+									<ul class="flexListContainer --arrow">
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">예각이면</div>
+											</div>
+										</li>
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">둔각이면</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						<li class="innerTab_4" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox4">
+							<ul class="dotList orange" data-quiz="toggle">
+								<li>
+									<div>
+										사각형의 나머지 한 각의 크기는 <div class="toggle" data-toggle-obj="241">
+											<div class="answer" data-toggle-target="241">
+												90°
+											</div>
+										</div>입니다.
+									</div>
+								</li>
+							</ul>
+							<div class="flexListContainer center">
+								<div class="--img">
+									<div class="--text x1">70°</div>
+									<div class="--text x2">105°</div>
+									<div class="--text x3">95°</div>
+								</div>
+								<div class="--inner">
+									<ul class="flexListContainer --ox">
+										<li>
+											<div class="grayBox x1" data-ox-obj="242" data-answer="">
+												<div class="icon icon_o" data-ox-target="242"></div>
+											</div>
+										</li>
+										<li>
+											<div class="grayBox x2" data-ox-obj="243">
+												<div class="icon icon_x" data-ox-target="243"></div>
+											</div>
+										</li>
+									</ul>
+									<ul class="flexListContainer --arrow">
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">90°이면</div>
+											</div>
+										</li>
+										<li>
+											<div class="textAlignC">
+												<ins class="icon_arrow top"></ins><br>
+												<div class="colorBox green">80°이면</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</li>
+						</ul>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="dot"></ins><span>
+								<span class="icon_o_title"></span>표 한 그림으로 동물을 완성해 보세요.
+							</span>
+						</h2>
+						<div class="--img">
+							<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+								<div class="bullet exam">예</div>
+							</div>
+						</div>
+						<div class="buttonContainer left">
+							<button class="characterBtn" data-popup-btn="1" data-hover="">
+								<span>놀이 더 보기 1</span>
+							</button>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<h2>놀이 더 보기 1: <br>각도 달리기 놀이</h2>
+					<div class="popup_contents">
+
+						<div class="page_1" data-slide-container="popup">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+							<ul class="basicSlider_slides inner" data-slides="">
+							<li class="pop-inner1">
+								<ul class="playDataList">
+								<li>
+									<dl>
+										<div>
+											<dt>인원</dt>
+											<dd>2~6명</dd>
+										</div>
+									</dl>
+									<dl>
+										<div>
+											<dt>준비물</dt>
+											<dd>자, 각도기, 종이</dd>
+										</div>
+									</dl>
+								</li>
+								</ul>
+							</li>
+							<li class="pop-inner2">
+								<ul class="playDataList">
+								<li>
+									<dl class="column">
+										<dt>활동 방법</dt>
+										<dd>
+											<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">1</div>
+												<p>종이에 출발선과 결승선을 그리고, 팀별로 색을 정하여 출발선에 5 cm만큼의 선분을 그려 경기장을 꾸밉니다.</p>
+											</li>
+											</ul>
+										</dd>
+									</dl>
+								</li>
+								</ul>
+								<div class="--img">
+									<div class="--text x1">1팀</div>
+									<div class="--text x2">2팀</div>
+									<div class="--text x3">출발선</div>
+									<div class="--text x4">결승선</div>
+								</div>
+							</li>
+							<li class="pop-inner3">
+								<ul class="playDataList">
+								<li>
+									<dl class="column">
+										<dt>활동 방법</dt>
+										<dd>
+											<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">2</div>
+												<p>순서를 정한 후 주사위 세 개를 던집니다.</p>
+											</li>
+											<li>
+												<div class="bullet number orange">3</div>
+												<p>(주사위 눈의 수의 합)x10˚가 그려야 할 각도입니다.<br>
+													(주사위 눈의 수의 합이 12가 나왔다면 그려야 할 각도는 120˚가 됩니다.</p>
+											</li>
+											<li>
+												<div class="bullet number orange">4</div>
+												<p>자와 각도기를 사용하여 각을 그립니다. 이때 그려진 각들이 출발선에서 결승선으로 이어지게 하려면 방향을 바꾸어 가며 각을 그려야 하고 이에 따라 각도기를 놓는 방향을 잘 판단해야 합니다.</p>
+											</li>
+											</ul>
+										</dd>
+									</dl>
+								</li>
+								</ul>
+							</li>
+							<li class="pop-inner4">
+								<ul class="playDataList">
+								<li>
+									<dl class="column">
+										<dt>활동 방법</dt>
+										<dd>
+											<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">1</div>
+												<p>각도를 그릴 때 변의 길이는 처음 그은 변의 길이(5 cm)와 똑같이 그립니다.</p>
+											</li>
+											</ul>
+										</dd>
+									</dl>
+								</li>
+								</ul>
+								<div class="--img">
+									<div class="--text x1">1팀</div>
+									<div class="--text x2">120°</div>
+									<div class="--text x3">출발선</div>
+									<div class="--text x4">결승선</div>
+								</div>
+							</li>
+							<li class="pop-inner5">
+								<ul class="playDataList">
+								<li>
+									<dl class="column">
+										<dt>활동 방법</dt>
+										<dd>
+											<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">1</div>
+												<p>적은 횟수로 먼저 결승선을 통과하는 팀이 승리합니다.</p>
+											</li>
+											</ul>
+										</dd>
+									</dl>
+								</li>
+								</ul>
+								<div class="flexListContainer center">
+									<div class="--img">
+										<div class="--text x1">1팀</div>
+										<div class="--text x2">2팀</div>
+										<div class="--text x3">출발선</div>
+										<div class="--text x4">결승선</div>
+										<div class="--text x5">120°</div>
+										<div class="--text x6">70°</div>
+										<div class="--text x7">90°</div>
+										<div class="--text x8">110°</div>
+										<div class="--text x9">60°</div>
+										<div class="--text x10">50°</div>
+										<div class="--text x11">110°</div>
+										<div class="--text x12">90°</div>
+										<div class="--text x13">100°</div>
+									</div>
+									<div class="--para">
+										1팀은 5회, 2팀은 4회로 결승선을 통과했으므로 2팀이 승리했습니다.
+									</div>
+								</div>
+							</li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</body>
+
+</html>

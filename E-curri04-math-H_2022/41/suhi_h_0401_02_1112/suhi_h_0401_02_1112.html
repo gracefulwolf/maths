@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+
+@keyframes setOpacity {
+		from { opacity: .8; }
+		80% {
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+		}
+		100% {
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.induceLight{
+		width: 74px;
+		height: 72px;
+	}
+	.induceLight:before,
+	.induceLight:after {
+	content: '';
+	opacity: 0;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: yellow;
+	transform: translate(-50%, -50%);
+	}
+	.induceLight:before {
+	animation: setOpacity .8s ease-in-out infinite;
+	}
+	.induceLight:after {
+	animation: setOpacity .8s .3s ease-in-out infinite;
+	}
+
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_contents .vMid{height:500px;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+
+	.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+	.page-iframe .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.popup_pages>li.whole.on{z-index:10000;}
+
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+
+	/* 개별 */
+	.--img{position: relative;}
+	.--text{position: absolute;}
+	.page_1 .--img{height: 350px;background: url(./images/suhi_h_0401_02_1112_1.png) no-repeat 50% 25% / contain;}
+	.page_1 .--text.x1{top: 290px;left: 240px;}
+	.page_1 .--text.x2{top: 290px;left: 490px;}
+	.page_1 .--text.x3{top: 290px;left: 740px;}
+	.page_2 .--img{height: 350px;margin-top: 50px;background: url(./images/suhi_h_0401_02_1112_3.png) no-repeat 50% 50% / contain;}
+	.page_2 .--text{top: 190px; left: 450px;}
+
+	.page_3 .--img{width:600px; height:420px; margin:0 auto; background:url(./images/suhi_h_0401_02_1112_4.png) no-repeat 50% 50% / 70% auto;}
+	.page_3 .--trigger{position:absolute;}
+	.page_3 .--answerImg.on +.--answerDot,
+	.page_3 .answer + .--trigger{opacity:0; visibility:hidden;}
+	.page_3 .answer.on + .--trigger{opacity:1; visibility:visible;}
+	.page_3 .--trigger.complete{opacity:0 !important; visibility:hidden !important;}
+	.page_3 .--trigger.x1{top: 330px;left: 510px;}
+	.page_3 .--trigger.x2{top: 122px;left: 210px;}
+	.page_3 .--trigger.x3{top: 130px;left: 270px;}
+	.page_3 .--trigger.x4{top: 220px;left: 20px;}
+	.page_3 .--trigger.x5{top: 45px;left: 175px;}
+	.page_3 .--trigger.x6{top: 50px;left: 230px;}
+	.page_3 .--gakdogi{width: 740px;top: 41px;position: absolute;left: -266px;height:100%;background:url(./images/suhi_h_0401_02_1112_2.png) no-repeat 50% 50% / 70% auto;}
+	.page_3 .--answerDot{position:absolute;top: 154px;left: 239px;width: 13px;height: 13px;border-radius:50%;background:#00a0ff;}
+	.page_3 .--img.x1 .--answerDot{top: 95px;left: 113px;}
+	.page_3 .--answerImg{position:absolute; top:0; left:0;width:100%; height:100%;}
+	.page_3 .--img .--answerImg{background:url(./images/suhi_h_0401_02_1112_4_2.png) no-repeat 50% 50% / 70% auto;}
+	.page_3 .--img .--answerWord{position:absolute; top:100px; left:220px;}
+
+
+	.page_4 .--img{height:300px; margin:0 auto 40px; background:url(./images/suhi_h_0401_02_1112_5.png) no-repeat 50% 0% / 900px auto;}
+	.page_4 .--text.x1{top: 240px;left: 170px;}
+	.page_4 .--text.x2{top: 240px;left: 470px;}
+	.page_4 .--text.x3{top: 240px;left: 780px;}
+
+	.page_5 .--img{height:350px; background:url(./images/suhi_h_0401_02_1112_6.png) no-repeat 50% 25% / 900px auto;}
+	.page_5 .--text.x1{top: 300px;left: 140px;}
+	.page_5 .--text.x2{top: 300px;left: 460px;}
+	.page_5 .--text.x3{top: 300px;left: 770px;}
+
+	.--half{display:table;}
+	.--half > li{display:table-row;}
+	.--half > li > div{display:table-cell; padding:0 0 15px; vertical-align:middle;}
+	.--half > li > div:nth-child(1){width:45%; text-align:right;}
+	.--half > li > div:nth-child(2){width:55%; text-align:left;}
+	.--half .colorBox.check{display:inline-block; line-height:37px;}
+	.--half > li > div > *{vertical-align:middle;}
+	.--half .--whitespace{display:inline-block; min-width:54px; text-align:right;}
+
+	.page_6 .flexListContainer{align-items:flex-end; height:400px;}
+	.page_6 .flexListContainer > *{flex:1;}
+	.page_6 .--half{width:100%; margin-bottom:40px;}
+	.page_6 .toggle{min-width:154px;}
+	.page_6 .--img{height:340px; background:url(./images/suhi_h_0401_02_1112_7.png) no-repeat 50% 50% / auto 100%;}
+
+	.page_7 .flexListContainer{flex-wrap:wrap;}
+	.page_7 .flexListContainer li{width:50%; text-align:center;}
+	.page_7 .flexListContainer li:nth-child(2) ~ li{margin-top:60px;}
+	.page_7 .flexListContainer .toggle{min-width:100px;}
+
+	.page_8 .flexListContainer{margin-top:30px;}
+	.page_8 .--img{width:420px; height:340px; background:url(./images/suhi_h_0401_02_1112_8.png) no-repeat 50% 50% / contain;}
+	.page_8 .--text.x1{top: 270px;left: 60px;}
+	.page_8 .--text.x2{top: 80px;left: 160px;}
+	.page_8 .--text.x3{top: 35px;left: 250px;}
+	.page_8 .--a{width:300px;}
+
+	.page_9 .flexListContainer{margin-top:30px;}
+	.page_9 .--img{width:420px; height:340px; background:url(./images/suhi_h_0401_02_1112_9.png) no-repeat 50% 50% / contain;}
+	.page_9 .--text.x1{top: 95px;left: 160px;}
+	.page_9 .--text.x2{top: 170px;left: 170px;}
+	.page_9 .--text.x3{top: 185px;left: 270px;}
+	.page_9 .--text.x4{top: 90px;left: 270px;}
+	.page_9 .--a{width:300px;}
+
+	.page_10 .--img.x1{height:360px; background:url(./images/suhi_h_0401_02_1112_10.png) no-repeat 50% 50% / contain;}
+	.page_10 .--img.x2{height:360px; background:url(./images/suhi_h_0401_02_1112_11.png) no-repeat 50% 50% / contain;}
+	.page_10 .--text.x1{top: 90px;left: 640px;}
+	.page_10 .--text.x2{top: 250px;left: 410px;}
+	.page_10 .--text.x3{top: 265px;left: 705px;}
+	.page_10 .--text.x4{top: 60px;left: 400px;}
+	.page_10 .--text.x5{top: 280px;left: 370px;}
+	.page_10 .--text.x6{top: 280px;left: 630px;}
+	.page_10 .--text.x7{top: 150px;left: 710px;}
+
+	.page_11 .--img{height:190px; margin:20px auto 50px; background:url(./images/suhi_h_0401_02_1112_12.png) no-repeat 50% 50% / contain;}
+	.page_11 .--text.x1{top: -40px;left: 450px;}
+	.page_11 .--text.x2{top: 35px;left: 470px;}
+	.page_11 .--text.x3{top: 160px;left: 280px;}
+	.page_11 .--text.x4{top: 90px;left: 290px;}
+	.page_11 .--text.x5{top: 180px;left: 390px;}
+	.page_11 .--text.x6{top: 110px;left: 460px;}
+	.page_11 .--text.x7{top: 160px;left: 700px;}
+	.page_11 .--text.x8{top: 0;left: 0;}
+
+	.--flexQA{display:table; width:100%;}
+	.--flexQA li{display:table-row;}
+	.--flexQA li > div{display:table-cell; vertical-align:top;}
+	.--flexQA li + li .--Q,
+	.--flexQA li + li .--A{padding-top:15px;}
+	.--flexQA .--Q{min-width:94px; text-align:right;}
+	.--flexQA .--Q .colorBox{display:inline-block; white-space:nowrap;}
+	.--flexQA .--A .answer{text-align:justify;}
+
+	.page_12 .--img{height:350px; background:url(./images/suhi_h_0401_02_1112_13.png) no-repeat 50% 50% / contain;}
+	.page_12 .--text.x1{top: -10px;left: 260px;}
+	.page_12 .--text.x2{top: 240px;left: 270px;}
+	.page_12 .--text.x3{top: 190px;left: 341px;}
+	.page_12 .--text.x4{top: 330px;left: 711px;}
+	.page_12 .--text.x5{top: 250px;left: 640px;}
+	.page_12 .--text.x6{top: -20px;left: 591px;}
+	.page_12 .--text.x7{top: 45px;left: 655px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">공부를 잘했나요</span>
+		<span class="sub-page">42~43쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+			<li data-hover="">7</li>
+			<li data-hover="">8</li>
+			<li data-hover="">9</li>
+			<li data-hover="">10</li>
+			<li data-hover="">11</li>
+			<li data-hover="">12</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					각의 크기가 큰 각부터 순서대로 써 보세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="--text x1">가</div>
+						<div class="--text x2">나</div>
+						<div class="--text x3">다</div>
+					</div>
+					<div class="textAlignC mt_20">
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">다</div>
+						</div>, <div class="toggle" data-toggle-obj="12">
+							<div class="answer" data-toggle-target="12">가</div>
+						</div>, <div class="toggle" data-toggle-obj="13">
+							<div class="answer" data-toggle-target="13">나</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					각도기를 사용하여 각도를 재어 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="--text">
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">125</div>
+							</div>°
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					55˚의 각 ㄱㄴㄷ을 그려 보세요.
+				</span></h2>
+				<section>
+					<div class="--img lineBox sky">
+						<div class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity --trigger x1" data-toggle-obj="11"></div>
+						<div class="answer --gakdogi" data-toggle-target="11"></div>
+						<div class="answer bullet exam" data-toggle-target="11">예</div>
+						<div class="induceLight --trigger x2" data-toggle-obj="12" data-toggle-target="12"></div>
+						<div class="answer" data-toggle-target="12"></div>
+						<div class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity --trigger x3" data-toggle-obj="13"  data-toggle-obj="13"></div>
+						<div class="answer --answerImg" data-toggle-target="13"></div>
+						<div class="answer --answerWord" data-toggle-target="13">ㄱ</div>
+						<div class="answer --answerDot" data-toggle-target="12"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-slide-container="">
+				<h2><ins class="number">4</ins><span class="ls1">
+					각을 보고 물음에 답해 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<section class="full">
+							<div class="--img">
+								<div class="--text x1">가</div>
+								<div class="--text x2">나</div>
+								<div class="--text x3">다</div>
+							</div>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot"></ins>
+									<div>
+										예각을 찾아 기호를 써 보세요.
+										<div class="toggle ml_10" data-toggle-obj="41">
+											<div class="answer" data-toggle-target="41">
+												가
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="41" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<section class="full">
+							<div class="--img">
+								<div class="--text x1">가</div>
+								<div class="--text x2">나</div>
+								<div class="--text x3">다</div>
+							</div>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot"></ins>
+									<div>
+										둔각을 찾아 기호를 써 보세요.
+										<div class="toggle ml_10" data-toggle-obj="42">
+											<div class="answer" data-toggle-target="42">
+												다
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="42" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					시계의 긴바늘과 짧은바늘이 이루는 작은 쪽의 각이 예각, 둔각 중 어느 것인지 <ins class="blankBox"></ins> 안에 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="--text x1">
+							<div class="toggle" data-toggle-obj="51">
+								<div class="answer" data-toggle-target="51">둔각</div>
+							</div>
+						</div>
+						<div class="--text x2">
+							<div class="toggle" data-toggle-obj="52">
+								<div class="answer" data-toggle-target="52">예각</div>
+							</div>
+						</div>
+						<div class="--text x3">
+							<div class="toggle" data-toggle-obj="53">
+								<div class="answer" data-toggle-target="53">예각</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+
+			<li class="page_6" data-quiz="toggle">
+				<h2><ins class="number">6</ins><span>
+					각도를 어림하고 각도기로 확인해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="flexListContainer center">
+						<div class="--img x1"></div>
+						<div>
+							<ul class="--half">
+								<li>
+									<div>
+										<div class="colorBox sky check">어림한 각도</div>
+									</div>
+									<div>
+										<span class="--whitespace">약</span>
+										<div class="toggle" data-toggle-obj="61">
+											<div class="answer" data-toggle-target="61">
+												<span class="bullet exam --whitespsace">예</span>30
+											</div>
+										</div>°
+									</div>
+								</li>
+								<li>
+									<div>
+										<div class="colorBox sky check">잰 각도</div>
+									</div>
+									<div>
+										<span class="--whitespace"></span>
+										<div class="toggle" data-toggle-obj="62">
+											<div class="answer" data-toggle-target="62">
+												30
+											</div>
+										</div>°
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_7" data-quiz="toggle">
+				<h2><ins class="number">7</ins><span>
+					각도의 합과 차를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="vMid">
+						<div>
+							<ul class="flexListContainer around">
+								<li>
+									55˚+70˚=<div class="toggle" data-toggle-obj="71">
+										<div class="answer" data-toggle-target="71">125</div>
+									</div>°
+								</li>
+								<li>
+									67˚+36˚=<div class="toggle" data-toggle-obj="72">
+										<div class="answer" data-toggle-target="72">103</div>
+									</div>°
+								</li>
+								<li>
+									150˚­－65˚=<div class="toggle" data-toggle-obj="73">
+										<div class="answer" data-toggle-target="73">85</div>
+									</div>°
+								</li>
+								<li>
+									123˚－47˚=<div class="toggle" data-toggle-obj="74">
+										<div class="answer" data-toggle-target="74">76</div>
+									</div>°
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_8" data-quiz="toggle">
+				<h2><ins class="number">8</ins><span>
+					똑같은 두 삼각자를 다음과 같이 맞대어 사각형을 만들었습니다. ㉠과 ㉡의 각도의 합을 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer jcenter center">
+						<div class="--img">
+							<div class="--text x1">60°</div>
+							<div class="--text x2">㉠</div>
+							<div class="--text x3">㉡</div>
+						</div>
+						<div class="--a ml_40">
+							<div class="toggle" data-toggle-obj="8">
+								<div class="answer" data-toggle-target="8">
+									120°
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_9" data-quiz="toggle">
+				<h2><ins class="number">9</ins><span>
+					사각형을 잘라서 네 꼭짓점이 한 점에 모이도록 겹치지 않게 이어 붙였습니다. ㉠의 각도를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer jcenter center">
+						<div class="--img">
+							<div class="--text x1">70°</div>
+							<div class="--text x2">90°</div>
+							<div class="--text x3">80°</div>
+							<div class="--text x4">㉠</div>
+						</div>
+						<div class="--a ml_40">
+							<div class="toggle" data-toggle-obj="9">
+								<div class="answer" data-toggle-target="9">
+									120°
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="9" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_10" data-slide-container="">
+				<h2><ins class="number">10</ins><span>
+					<ins class="blankBox"></ins> 안에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<div class="--img x1">
+							<div class="--text x1">75˚</div>
+							<div class="--text x2">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										35
+									</div>
+								</div>˚
+							</div>
+							<div class="--text x3">70˚</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="101" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<div class="--img x2">
+							<div class="--text x4">80˚</div>
+							<div class="--text x5">80˚</div>
+							<div class="--text x6">70˚</div>
+							<div class="--text x7">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										130
+									</div>
+								</div>˚
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="102" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_11" data-quiz="toggle">
+				<h2><ins class="number">11</ins><span>
+					삼각형 ㄱㄴㄷ은 직각삼각형입니다. ㉠의 각도를 구하는 풀이 과정을 쓰고 답을 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="--text x1">ㄱ</div>
+						<div class="--text x2">㉠</div>
+						<div class="--text x3">ㄴ</div>
+						<div class="--text x4">50°</div>
+						<div class="--text x5">ㄹ</div>
+						<div class="--text x6">110°</div>
+						<div class="--text x7">ㄷ</div>
+					</div>
+					<ul class="--flexQA">
+						<li>
+							<div class="--Q">
+								<div class="colorBox check skyBlue">풀이</div>
+							</div>
+							<div class="--A">
+								<div class="toggle" data-toggle-obj="1101">
+									<div class="answer" data-toggle-target="1101">
+										각 ㄴㄱㄹ의 크기를 구하면 180˚-50˚-110˚=20˚입니다. 각 ㄴㄱㄷ이 직각이므로 20˚+㉠=90˚, ㉠=70˚
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="--Q">
+								<div class="colorBox check deepPurple">답</div>
+							</div>
+							<div class="--A">
+								<div class="toggle" data-toggle-obj="1102">
+									<div class="answer" data-toggle-target="1102">
+										70°
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_12" data-slide-container="">
+				<h2><ins class="number">12</ins><span>
+					㉠과 ㉡의 각도의 합을 구하는 풀이 과정을 쓰고 답을 구해 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<section class="full">
+							<div class="--img">
+								<div class="--text x1">ㄱ</div>
+								<div class="--text x2">ㄴ</div>
+								<div class="--text x3">㉠</div>
+								<div class="--text x4">ㄷ</div>
+								<div class="--text x5">㉡</div>
+								<div class="--text x6">ㄹ</div>
+								<div class="--text x7">70°</div>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_1" data-quiz="toggle">
+						<section class="full">
+							<ul class="--flexQA">
+								<li>
+									<div class="--Q">
+										<div class="colorBox check skyBlue">풀이</div>
+									</div>
+									<div class="--A">
+										<div class="toggle" data-toggle-obj="1201">
+											<div class="answer" data-toggle-target="1201">
+												각 ㄱㄹㄷ의 크기를 구하면 180˚-70˚=110˚입니다.<br>
+												사각형의 네 각의 크기의 합은 360˚이므로<br>
+												90˚+㉠+㉡+110˚=360˚<br>
+												200˚+㉠+㉡=360˚<br>
+												㉠+㉡=160˚
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="--Q">
+										<div class="colorBox check deepPurple">답</div>
+									</div>
+									<div class="--A">
+										<div class="toggle" data-toggle-obj="1202">
+											<div class="answer" data-toggle-target="1202">
+												70°
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_101" data-popup-page="101">
+			<div class="popup_contents">
+				<p class="ls0">
+					삼각형의 세 각의 크기의 합은 180˚이므로<br>
+					75˚+<span class="blankBox"></span>˚+70˚=180˚<br>
+					145˚+<span class="blankBox"></span>˚=180˚<br>
+					<span class="blankBox"></span>˚=35˚
+				</p>
+			</div>
+		</li>
+		<li class="solve pop_page_102" data-popup-page="102">
+			<div class="popup_contents">
+				<p class="ls0">
+					사각형의 네 각의 크기의 합은 360˚이므로<br>
+					80˚+80˚+70˚+<span class="blankBox"></span>˚=360˚<br>
+					230˚+<span class="blankBox"></span>˚=360˚<br>
+					<span class="blankBox"></span>˚=130˚
+				</p>
+			</div>
+		</li>
+		<li class="solve pop_page_9" data-popup-page="9">
+			<div class="popup_contents">
+				<p class="ls0">
+					사각형의 네 각의 크기의 합은 360˚이므로<br>
+					70˚+90˚+80˚+㉠=360˚<br>
+					240˚+㉠=360˚<br>
+					㉠=120˚
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_8" data-popup-page="8">
+			<div class="popup_contents">
+				<p class="ls0">
+					삼각형의 세 각의 크기의 합은 180˚이므로<br>
+					60˚+90˚+㉠=180˚,  150˚+㉠=180˚,  ㉠=30˚<br>
+					㉡=90˚ (직각)<br>
+					따라서 ㉠과 ㉡의 각도의 합을 구하면 다음과 같습니다.<br>
+					㉠+㉡=30˚+90˚=120˚
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_6" data-popup-page="6">
+			<div class="popup_contents">
+				<p class="ls0">보이는 각도가 90˚보다 작아 보이므로 어림하면 약 30˚입니다.</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<ul class="dotList deepGreen">
+					<li>긴바늘과 짧은바늘이 이루는 작은 쪽의 각의 크기</li>
+				</ul>
+				<p>
+					<ins class="icon_arrow mr_10"></ins><span>7시일 때, 직각보다 크고 180도보다 작으므로 둔각입니다.</span>
+				</p>
+				<p>
+					<ins class="icon_arrow mr_10"></ins><span class="ls0_5">12시 15분일 때, 0˚보다 크고 직각보다 작으므로 예각입니다.</span>
+				</p>
+				<p>
+					<ins class="icon_arrow mr_10"></ins><span>8시 30분일 때, 0˚보다 크고 직각보다 작으므로 예각입니다.</span>
+				</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_42" data-popup-page="42">
+			<div class="popup_contents">
+				<p class="ls0">둔각은 각도가 직각보다 크고 180˚보다 작은 각이므로 둔각은 다입니다.</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_41" data-popup-page="41">
+			<div class="popup_contents">
+				<p class="ls0">예각은 각도가 0˚보다 크고 직각보다 작은 각이므로 예각은 가입니다.</p>
+			</div>
+		</li>
+
+		<li class="solve pop_page_1" data-popup-page="1">
+			<div class="popup_contents">
+				<p class="ls0">가, 나, 다의 각도를 재면 순서대로 55˚, 30˚, 60˚입니다. 따라서 각의 크기가 큰 각부터 순서대로 쓰면 다, 가, 나 입니다.</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+	}, false);
+</script>
+
+</body>
+
+</html>

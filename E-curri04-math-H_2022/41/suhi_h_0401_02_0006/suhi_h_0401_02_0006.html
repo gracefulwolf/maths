@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_contents .vMid{height:500px;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+	.page-iframe{position:fixed; z-index:1; top:210px; left:55px; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+	.page-iframe + .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.toggle.z2{z-index:2;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+
+	/* 개별 */
+	.gakdoQA{margin:20px 15px 0;}
+	.gakdoQA > li{align-items:center;}
+	.gakdoQA .--q{text-align:right;}
+	.gakdoQA .colorBox{line-height:36px;}
+	.gakdoQA .--a{position:relative; min-width:180px;}
+	.gakdoQA .--a .toggle{z-index:1; width:auto !important; text-align:center !important;}
+	.gakdoQA .--a .--beforeText{display:inline-block; min-width:40px;}
+	/* .gakdoQA .--a .bullet.exam{position:absolute; top:-50px; right:65px; opacity:0;}
+	.gakdoQA .--a .bullet.exam.on{opacity:1;} */
+	.gakdoQA li + li{margin-top:15px;}
+
+	.page_1 .page-iframe{top:210px; height:460px;}
+	.page_1 .basicSlider_slides.inner{padding:0;}
+	.page_1 .gakdoQA .--a .toggle{min-width:156px;}
+	.page_1 .--img{min-width:400px; height:180px; margin-top:90px;}
+	.page_1 .--img.x1{background:url(./images/suhi_h_0401_02_0006_2.png) no-repeat 50% 100% / contain;}
+	.page_1 .--img.x2{background:url(./images/suhi_h_0401_02_0006_3.png) no-repeat 50% 100% / contain;}
+	.page_1 .--img.x3{background:url(./images/suhi_h_0401_02_0006_4.png) no-repeat 50% 100% / contain;}
+	.page_1 .toggle{min-width:120px;}
+
+
+	.page_2 .page-iframe{top:210px; height:460px;}
+	.page_2 .lineBox{position: relative;width: 480px;height: 320px;margin:50px auto 0;}
+	.page_2 .lineBox .colorBox{position: absolute; top: -40px; left:50%; transform:translateX(-50%); min-width:100px; text-align:center;}
+	.page_2 .--img{position:absolute;top: 0;left: 0;width:100%;height:100%;}
+	.page_2 .--answerImg{position:absolute;top: 0;left: 0;width:100%;height:100%;}
+	.page_2 .--img.x1{background:url(./images/suhi_h_0401_02_0006_5.png) no-repeat 50% 50% / 90% auto;}
+	.page_2 .--img.x1 .--answerImg{background:url(./images/suhi_h_0401_02_0006_5_2.png) no-repeat 50% 50% / 90% auto;}
+	.page_2 .--img.x2{background:url(./images/suhi_h_0401_02_0006_6.png) no-repeat 50% 50% / 90% auto;}
+	.page_2 .--img.x2 .--answerImg{background:url(./images/suhi_h_0401_02_0006_6_2.png) no-repeat 50% 50% / 90% auto;}
+	.page_2 .gakdoQA .--q,
+	.page_2 .gakdoQA .--a{min-width:50%;}
+	.page_2 .gakdoQA .--q .colorBox{display:inline-block;}
+	.page_2 .bullet.exam{top:15px; left:25px;}
+
+
+	.page_3 .--img{position: relative;height: 220px;margin-top: 100px;background:url(./images/suhi_h_0401_02_0006_7.png) no-repeat 50% 50% / contain;}
+	.page_3 .--img .balloon.sky{top: -80px;left: 20px;}
+	.page_3 .--img .balloon.green{top: -80px;left: 470px;}
+	.page_3 .--img .colorBox.sky{position: absolute;top: 160px;left: 110px;}
+	.page_3 .--img .colorBox.green{position: absolute;top: 160px;left: 800px;}
+	.page_3 .gakdoQA .--q{min-width:310px; text-align: right;}
+	.page_3 .gakdoQA .--q .colorBox{display: inline-block;}
+	.page_3 .gakdoQA .--a{min-width:310px;}
+
+
+	.page_4 .page-iframe{top:210px; height:460px;}
+	.page_4 .--img{width:530px; height:480px; background:url(./images/suhi_h_0401_02_0006_8.png) no-repeat 50% 50% / contain;}
+	.page_4 .gakdoQA{margin-top:100px;}
+	.page_4 .--q .colorBox{display: inline-block;}
+	.page_4 .--a{min-width:200px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">각도를 어림해 볼까요</span>
+		<span class="sub-page">34~35쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_1" data-slide-container="">
+				<h2><ins class="number">1</ins><span>
+					각도를 어림하고 각도기로 확인해 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides inner" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true" style="top:170px; height:500px;"></iframe>
+						<section class="full">
+							<div class="--img x1"></div>
+							<ul class="flexListContainer around">
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+												<div class="toggle" data-toggle-obj="111">
+													<div class="answer" data-toggle-target="111"><ins class="bullet exam">예</ins>45</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="112">
+													<div class="answer" data-toggle-target="112">45</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+												<div class="toggle" data-toggle-obj="113">
+													<div class="answer" data-toggle-target="113"><ins class="bullet exam">예</ins>135</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="114">
+													<div class="answer" data-toggle-target="114">135</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true" style="top:170px; height:500px;"></iframe>
+						<section class="full">
+							<div class="--img x2"></div>
+							<ul class="flexListContainer around">
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+												<div class="toggle" data-toggle-obj="121">
+													<div class="answer" data-toggle-target="121"><ins class="bullet exam">예</ins>25</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="122">
+													<div class="answer" data-toggle-target="122">25</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+
+												<div class="toggle" data-toggle-obj="123">
+													<div class="answer" data-toggle-target="123"><ins class="bullet exam">예</ins>150</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="124">
+													<div class="answer" data-toggle-target="124">150</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="innerTab_3" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true" style="top:170px; height:500px;"></iframe>
+						<section class="full">
+							<div class="--img x3"></div>
+							<ul class="flexListContainer around">
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+												<div class="toggle" data-toggle-obj="121">
+													<div class="answer" data-toggle-target="121"><ins class="bullet exam">예</ins>110</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="122">
+													<div class="answer" data-toggle-target="122">110</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="gakdoQA">
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">어림한 각도</div>
+											<div class="--a">
+												<span class="--beforeText">약</span>
+
+												<div class="toggle" data-toggle-obj="123">
+													<div class="answer" data-toggle-target="123"><ins class="bullet exam">예</ins>85</div>
+												</div>°
+											</div>
+										</li>
+										<li class="flexListContainer end">
+											<div class="colorBox check sky --q">잰 각도</div>
+											<div class="--a">
+												<span class="--beforeText"></span>
+												<div class="toggle" data-toggle-obj="124">
+													<div class="answer" data-toggle-target="124">85</div>
+												</div>°
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_2" data-slide-container="">
+				<h2><ins class="number">2</ins><span>
+					주어진 각도의 각을 어림하여 그리고, 각도기로 확인해 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides inner" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section class="full">
+
+							<div class="lineBox orange">
+								<div class="colorBox orange">70°</div>
+								<div class="--img x1">
+									<div class="--answerImg answer" data-toggle-obj="211" data-toggle-target="211">
+										<div class="bullet exam">예</div>
+									</div>
+								</div>
+							</div>
+							<ul class="gakdoQA">
+								<li class="flexListContainer jcenter center">
+									<div class="--q">
+										<div class="colorBox check sky">잰 각도</div>
+									</div>
+									<div class="--a">
+										<div class="toggle" data-toggle-obj="212">
+											<div class="answer" data-toggle-target="212">70</div>
+										</div>°
+									</div>
+								</li>
+							</ul>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section class="full">
+
+							<div class="lineBox orange">
+								<div class="colorBox orange">70°</div>
+								<div class="--img x2">
+									<div class="--answerImg answer" data-toggle-obj="221" data-toggle-target="221">
+										<div class="bullet exam">예</div>
+									</div>
+								</div>
+							</div>
+							<ul class="gakdoQA">
+								<li class="flexListContainer jcenter center">
+									<div class="--q">
+										<div class="colorBox check sky">잰 각도</div>
+									</div>
+									<div class="--a">
+										<div class="toggle" data-toggle-obj="222">
+											<div class="answer" data-toggle-target="222">120</div>
+										</div>°
+									</div>
+								</li>
+							</ul>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span class="ls0_5">
+					둘 중 누구의 어림이 더 정확한지 쓰고, 각도기로 확인해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="balloon sky bottom ctTail textAlignC">
+							내 생각에는 60°쯤<br>되는 것 같아.
+						</div>
+						<div class="balloon green bottom ctTail textAlignC">
+							내 생각에는 40°쯤<br>되는 것 같아.
+						</div>
+						<div class="colorBox sky">울림</div>
+						<div class="colorBox green">샛별</div>
+					</div>
+					<ul class="gakdoQA">
+						<li class="flexListContainer jcenter">
+							<div class="--q">
+								<div class="colorBox check sky">어림을 더 정확히 한 사람</div>
+							</div>
+							<div class="--a">
+								<div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31"><ins class="bullet exam">예</ins>샛별</div>
+								</div>
+							</div>
+						</li>
+						<li class="flexListContainer jcenter">
+							<div class="--q">
+								<div class="colorBox check sky">잰 각도</div>
+							</div>
+							<div class="--a">
+								<div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">45</div>
+								</div>°
+							</div>
+						</li>
+					</ul>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					그림에서 보이는 각도를 어림하고 각도기로 확인해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="flexListContainer center jcenter">
+						<div class="--img">
+						</div>
+						<ul class="gakdoQA">
+							<li class="flexListContainer end">
+								<div class="--q">
+									<div class="colorBox check sky">어림한 각도</div>
+								</div>
+								<div class="--a">
+									<div class="--beforeText">약</div>
+									<div class="toggle" data-toggle-obj="31">
+										<div class="answer" data-toggle-target="31"><ins class="bullet exam">예</ins>40</div>
+									</div>°
+								</div>
+							</li>
+							<li class="flexListContainer end">
+								<div class="--q">
+									<div class="colorBox check sky">잰 각도</div>
+								</div>
+								<div class="--a">
+									<div class="--beforeText"></div>
+									<div class="toggle" data-toggle-obj="32">
+										<div class="answer" data-toggle-target="32">40</div>
+									</div>°
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve pop_page_3" data-popup-page="3">
+			<div class="popup_contents">
+				<p class="ls0">각도기로 잰 각도가 45˚이므로 샛별이의 어림이 더 정확합니다.</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+
+</html>

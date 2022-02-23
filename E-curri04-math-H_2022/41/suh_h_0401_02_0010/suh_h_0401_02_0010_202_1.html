@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:50px; left:30px; height:510px;}
+		.page-iframe .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+
+		/* 페이지 개별 위치 */
+		.popup_pages .pop_page_1 .page-iframe{top:40px; left:70px; height:598px;}
+
+		.title .btn_1{top:5px; left:auto; right:0;}
+		.contentsBox .basicSlider_slides.inner{padding:0;}
+		.popup_pages .buttonContainer{right:40px; bottom:10px;}
+		.examViewBtn,
+		.examViewBtn.hover{background-color:#236cbb !important;}
+		.examViewBtn:before,
+		.examViewBtn.reset:before{padding-left:20px; content:"다시하기";}
+
+		.page_2 .bullet.number{margin-top:8px;}
+		.--img.x1{width:100%; height:350px; background:url(./images/suh_h_0401_02_0010_202_1/2_powerup_page2_ex1.svg) no-repeat 50% 0px / auto 350px;}
+		.--img.x2{width:100%; height:400px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_1.png) no-repeat 50% 43px / auto 368px;}
+		.--img.x3{width:100%; height:400px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_2.png) no-repeat 50% 50% / auto 420px;}
+		.--text{position:absolute; text-align:center;}
+		.--text.x1{top:360px; left:120px;}
+		.--text.x2{top:360px; left:426px;}
+		.--text.x3{top:360px; left:734px;}
+		.--img.x4{position:relative; width:100%; height:450px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_3.png) no-repeat 50% 50% / auto 420px;}
+		.--img.x4 .popBtn{top:20px; left:790px;}
+
+		.--list{display:flex; align-items:center;}
+		.--list > div:not(.icon_arrow){width:220px; height:180px; padding-top:28px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_4.png) no-repeat 50% 50% / contain; text-align:center;box-sizing:border-box;}
+
+		.dragDropContainer{align-items:flex-end;}
+		.dragDropContainer .lineBox.sky{width:300px; height:510px;}
+		.dragDropContainer .lineBox.green{flex:1; height:470px;}
+		.dragDropContainer .dragObj{position:absolute; box-sizing:border-box;}
+		.dragDropContainer .dragObj_1{top:10px; left:10px; width:280px; height:220px; padding:30px 0 0 26px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_4.png) no-repeat 50% 50% / contain; font-size:32px;}
+		.dragDropContainer .dragObj_2{top:228px; left:30px; width:40px; height:40px;}
+		.dragDropContainer .dragObj_3{top:228px; left:90px; width:40px; height:40px;}
+		.dragDropContainer .dragObj_4{top:228px; left:150px; width:40px; height:40px;}
+		.dragDropContainer .dragObj_5{top:228px; left:210px; width:40px; height:40px;}
+		.dragDropContainer .dragObj_6{top:285px; left:10px; width:280px; height:220px; padding:30px 0 0 26px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_4.png) no-repeat 50% 50% / contain; font-size:32px;}
+		.dragDropContainer .dropArea{width:200%; height:200%; transform:scale(0.5); transform-origin:0 0;}
+		.dragDropContainer .dropArea .dragObj.dragObjComplete{display:inline-block; position:static;}
+		.dragDropContainer .dropArea .dragObj_1.dragObjComplete,
+		.dragDropContainer .dropArea .dragObj_6.dragObjComplete{vertical-align:middle;}
+		.dragDropContainer .inputBox{width:135px; height:50px; margin:2px; background:#fff; line-height:50px;}
+
+		.--popImg{position:relative; width:100%; height:100%; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_5.png) no-repeat 50% 50% / contain;}
+		.--popImg .balloon{bottom:30px; left:230px;}
+		.--popImg .bullet.exam{top:40px; left:70px;}
+
+		.innerTab_1.on{z-index:0 !important;}
+		.--popImg2{position:relative; width:100%; height:500px; background:url(./images/suh_h_0401_02_0010_202_1/suh_h_0401_02_0010_202_1_3.png) no-repeat 50% 50% / contain;}
+		/* .pop_page_1 .innerTab_1 .it-img{position:relative; width:840px; height:590px; margin:40px auto 0; border-radius:20px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_1_1.png) no-repeat 50% 50% / 840px auto;}
+		.pop_page_1 .innerTab_1 .balloon.n1{top:70px; left:-120px;}
+		.pop_page_1 .innerTab_1 .balloon.n1:after{left:180px;}
+		.pop_page_1 .innerTab_1 .balloon.n2{top:160px; left:300px;}
+		.pop_page_1 .innerTab_1 .balloon.n3{top:10px; right:-120px;}
+		.pop_page_1 .innerTab_1 .balloon.n4{top:130px; left:20px;}
+		.pop_page_1 .innerTab_1 .balloon.n5{top:110px; left:90px;}
+		.pop_page_1 .innerTab_2 .it-txt{position:absolute; z-index:2; width:200px; font-size:14px;}
+		.pop_page_1 .innerTab_2 .it-txt li{margin:0 0 6px;}
+		.pop_page_1 .innerTab_2 .it-txt.n1{top:69px; left:202px;}
+		.pop_page_1 .innerTab_2 .it-txt.n2{top:84px; left:694px;}
+		.pop_page_1 .innerTab_2 .it-txt.n3{top:506px; left:204px;}
+		.pop_page_1 .innerTab_2 .it-txt.n4{top:517px; left:707px;}
+		.pop_page_1 .innerTab_2 .it-txt ._fx{display:flex;}
+		.pop_page_1 .innerTab_2 .it-txt ._fx > span:first-child{margin-right:4px; white-space:nowrap;}
+
+		.page_2 .study_guide{top:-24px; right:0;}
+		.page_2 .it-start-wrap{position:relative; z-index:1; width:100%; height:200px;}
+		.page_2 .dragObj{position:absolute; width:280px; height:170px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_1.png) no-repeat 50% 50% / 100% 100%; font-size:27px; line-height:1.3;}
+		.page_2 .dragObj_1{left:60px;}
+		.page_2 .dragObj_2{left:360px;}
+		.page_2 .dragObj_3{left:660px;}
+		.page_2 .dragObj > div{display:flex; align-items:center; justify-content:center; height:100%; padding:0 20px 0 40px;}
+		.page_2 .it-end-wrap{position:relative; height:200px; margin:20px 0 0; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_2.png) no-repeat 50% 50% / contain;}
+		.page_2 .dropArea{position:absolute; top:0; width:260px; height:200px;}
+		.page_2 .dropArea_1{left:130px;}
+		.page_2 .dropArea_2{left:395px;}
+		.page_2 .dropArea_3{left:660px;}
+		.page_2 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
+		.page_2 .it-end-wrap .dragObj.dragObjComplete{left:-20px; height:100%; background:none;}
+		.page_2 .it-balloon{position:relative; min-width:300px; transform:translate(-40px, -80px);}
+
+		.page_3 .study_guide{top:-18px; right:0;}
+		.page_3 .supply_guide.inline{position:absolute; top:-105px; right:175px;}
+		.page_3 .dragDropContainer{padding:20px 0 0;}
+		.page_3 .it-start-wrap{position:relative; z-index:1; width:100%; height:150px;}
+		.page_3 .dragObj{position:absolute; top:8px; width:184px;height:124px;}
+		.page_3 .dragObj_1{left:40px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_3.png) no-repeat 50% 50% / 100% 100%;}
+		.page_3 .dragObj_2{left:280px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_4.png) no-repeat 50% 50% / 100% 100%;}
+		.page_3 .dragObj_3{left:520px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_5.png) no-repeat 50% 50% / 100% 100%;}
+		.page_3 .dragObj_4{left:760px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_6.png) no-repeat 50% 50% / 100% 100%;}
+		.page_3 .it-end-wrap{position:relative; height:270px; margin:10px 0 0; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_7.png) no-repeat 50% 50% / contain;}
+		.page_3 .dropArea{position:absolute; top:80px; width:184px; height:124px;}
+		.page_3 .dropArea_1{left:72px;}
+		.page_3 .dropArea_2{left:265px;}
+		.page_3 .dropArea_3{left:458px;}
+		.page_3 .dropArea_4{left:650px;}
+		.page_3 .it-txt{position:absolute; bottom:-35px; font-size:30px;}
+		.page_3 .it-txt.n1{left:180px;}
+		.page_3 .it-txt.n2{left:330px;}
+		.page_3 .it-txt.n3{left:560px;}
+		.page_3 .it-txt.n4{left:720px;}
+		.page_3 .it-txt.n5{bottom:8px; left:940px;}
+		.page_3 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
+		.page_3 .it-end-wrap .dragObj.dragObjComplete{top:0; left:0; width:100%; height:100%; background-size:100% 100%;}
+		.page_3 .it-img-box{position:relative; width:100%; height:360px; background:url(./images/suh_h_0401_01_0008_201/suh_h_0401_01_0008_201_2_8.png) no-repeat 50% 50% / 940px auto;}
+		.page_3 .innerTab_2 .it-txt{bottom:-15px;}
+		.page_3 .innerTab_2 .it-txt.n1{left:140px;}
+		.page_3 .innerTab_2 .it-txt.n2{left:300px;}
+		.page_3 .innerTab_2 .it-txt.n3{left:550px;}
+		.page_3 .innerTab_2 .it-txt.n4{left:720px;}
+		.page_3 .innerTab_2 .it-txt.n5{bottom:36px; left:auto; right:-30px;}
+		.pop_page_2 .lineBox{font-size:35px; letter-spacing:-1.75px;} */
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<div class="title">
+				<span class="ls1_5">꿀벌이 꽃을 모두 지나가도록 안내판을 배열해 봅시다.</span> <div class="supply_guide inline" style="vertical-align:6px;">꾸러미 3</div>
+				<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="2" data-popup-parent="hidden">그림 보기</div>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox right" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제</li>
+					<li data-hover="">계획</li>
+					<li data-hover="">실행</li>
+					<li data-hover="">반성</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10 ls1_5">꿀벌이 다니는 길과 관련하여 더 알 수 있는 정보를 찾아보세요.</p>
+									<div class="toggle box" data-toggle-obj="11">
+										<div class="answer textAlignJ" data-toggle-target="11">
+											꿀벌이 지나가는 길은 삼각형으로 이루어져 있습니다.
+										</div>
+									</div>
+									<div class="toggle box mt_15" data-toggle-obj="12">
+										<div class="answer textAlignJ" data-toggle-target="12">
+											길에 있는 각도를 재어 보니 모두 60˚입니다.
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="mt_20">
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">꿀벌이 4개의 꽃을 모두 지나갈 수 있는 길은 몇 가지나 있을까요?</p>
+									<div class="toggle box" data-toggle-obj="13">
+										<div class="answer" data-toggle-target="13">
+											<ul class="contentsList">
+												<li>
+													<ins class="bullet exam">예</ins>
+													<div>
+														다양한 길이 있을 것 같습니다.
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="page_2">
+						<div class="basicSlider_slides" data-slide-container="">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+							<ul class="basicSlider_slides inner" data-slides="">
+								<li class="innerTab_1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">단순한 문제부터 해결해 보세요.</p>
+												<div>
+													<ul class="contentsList">
+														<li>
+															<ins class="bullet exam">예</ins>
+															<div>꿀벌이 2개의 꽃을 모두 지나가도록 안내판을 배열해 봅시다.</div>
+														</li>
+													</ul>
+													<div class="--img x1">
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_2">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">단순한 문제부터 해결해 보세요.</p>
+												<div>
+													<ul class="contentsList">
+														<li>
+															<ins class="bullet number orange">1</ins>
+															<div>지나가는 경로를 표시합니다.</div>
+														</li>
+													</ul>
+													<div class="--img x2">
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_3" data-quiz="toggle">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">단순한 문제부터 해결해 보세요.</p>
+												<div>
+													<ul class="contentsList">
+														<li>
+															<ins class="bullet number orange">2</ins>
+															<div>경로를 알 수 있도록 안내판의 빈칸을 채우고 배열합니다.</div>
+														</li>
+													</ul>
+													<div class="--img x3">
+														<div class="--text x1">
+															앞으로<br>
+															<div class="toggle" data-toggle-obj="21">
+																<div class="answer" data-toggle-target="21">
+																	3
+																</div>
+															</div>칸 이동
+														</div>
+														<div class="--text x2">
+															<div class="toggle" data-toggle-obj="22">
+																<div class="answer" data-toggle-target="22">
+																	왼
+																</div>
+															</div>쪽으로<br>
+															<div class="toggle" data-toggle-obj="23">
+																<div class="answer" data-toggle-target="23">
+																	60
+																</div>
+															</div>° 돌기
+														</div>
+														<div class="--text x3">
+															앞으로<br>
+															<div class="toggle" data-toggle-obj="24">
+																<div class="answer" data-toggle-target="24">
+																	2
+																</div>
+															</div>칸 이동
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="buttonContainer">
+										<button class="solveChekBtn" data-popup-btn="1" data-hover=""></button>
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="page_3">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">꽃이 4개인 문제를 해결해 보세요.</p>
+									<div class="--img x4">
+										<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity" data-popup-btn="1" data-hover=""></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">친구들과 안내판의 개수와 순서를 비교해 보세요.</p>
+									<div class="--list">
+										<div>오른쪽으로<br>60° 돌기</div>
+										<div class="icon_arrow"></div>
+										<div>앞으로<br>3칸 이동</div>
+										<div class="icon_arrow"></div>
+										<div>왼쪽으로<br>60° 돌기</div>
+										<div class="icon_arrow"></div>
+										<div>앞으로<br>8칸 이동</div>
+									</div>
+									<div class="--list">
+										<div class="icon_arrow"></div>
+										<div>왼쪽으로<br>60° 돌기</div>
+										<div class="icon_arrow"></div>
+										<div>앞으로<br>6칸 이동</div>
+										<div class="icon_arrow"></div>
+										<div>왼쪽으로<br>120° 돌기</div>
+										<div class="icon_arrow"></div>
+										<div>앞으로<br>5칸 돌기</div>
+									</div>
+									<div class="textAlignC mt_20">
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div>
+															안내판의 개수와 순서가 다양합니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<h2 style="opacity:0;"></h2>
+					<div class="popup_contents" data-slide-container="popup">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<iframe src="../../../dvd_4_1_h/contents/lesson02/ops/2/ifr-suh_h_0401_02_0010_202_1.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+								<section>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">꿀벌이 4개의 꽃을 모두 지나가는 경로를 그림에 표시해 보세요.</p>
+												<div class="--popImg2"></div>
+											</div>
+										</li>
+									</ul>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="dragDrop" data-option="copy" data-quiz-name="dragDrop" data-total-complete-count="">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">경로를 알 수 있도록 안내판의 빈칸을 채우고 배열해 보세요.</p>
+											<div class="study_guide" style="top:170px; right:40px;">
+												<em>10000</em>을 <em>클릭</em>하세요.
+											</div>
+											<div class="dragDropContainer flexListContainer">
+												<div class="--start-wrap lineBox sky dragObjUL mr_20">
+													<div class="js-dragObj dragObj dragObj_1" data-name="drag-obj" data-drop-area-answer="1">
+														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">쪽으로<br>
+														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">° 돌기
+													</div>
+													<div class="js-dragObj dragObj dragObj_2 icon_arrow" data-name="drag-obj"></div>
+													<div class="js-dragObj dragObj dragObj_3 icon_arrow bottom" data-name="drag-obj"></div>
+													<div class="js-dragObj dragObj dragObj_4 icon_arrow left" data-name="drag-obj"></div>
+													<div class="js-dragObj dragObj dragObj_5 icon_arrow top" data-name="drag-obj"></div>
+													<div class="js-dragObj dragObj dragObj_6" data-name="drag-obj">
+														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">쪽으로<br>
+														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">° 돌기
+													</div>
+												</div>
+												<div class="--end-wrap lineBox green">
+													<div class="js-dropArea dropArea dropArea_1"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button id="it_reset_btn" class="examViewBtn reset" data-answer-btn="" data-type="reset"></button>
+								</div>
+							</li>
+							<li class="innerTab_3" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">앞의 안내판으로 꿀벌이 4개의 꽃을 모두 지나가는지 확인해 보세요.</p>
+											<div>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														<ul class="contentsList">
+															<li>
+																<ins class="bullet exam">예</ins>
+																<div>안내판으로 꿀벌이 4개의 꽃을 모두 지나갑니다.</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				  </li>
+				<li class="whole pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="--popImg">
+							<ins class="bullet exam">예</ins>
+							<div class="balloon left ctTail textAlignC deeppink">친구들과 안내판의<br>
+								개수와 순서를<br>
+								비교해 보세요.
+							</div>
+							<svg width="1000" height="540">
+								<polyline points="120,70 120,252 580,516 926,318 638,152" fill="transparent" stroke="#00a0ff" stroke-width="4"></polyline>
+							</svg>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelector("#it_reset_btn").addEventListener("click", function(){
+				if( !this.classList.contains( "reset" ) ){
+					this.classList.add( "reset" );
+				}
+			});
+
+			var it_tab = $ts.getEl( ".basicSlider_tabs li" );
+			it_tab.forEach(function (objs, index){
+				objs.addEventListener('click', function () {
+					document.querySelector("#it_reset_btn").classList.add( "reset" );
+				});
+			});
+		}, false);
+
+		// window.dragDropCallbacks = {
+		// 	"drag-obj": function(DRAGDROP) {
+		// 	if (DRAGDROP.droppedArea) {
+		// 		if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+		// 	}
+		// 	},
+		// };
+
+	</script>
+
+</body>
+
+</html>
