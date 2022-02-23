@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:680px;margin:0 auto 10px}
+      .clickButton{opacity:0}
+      .answerImage{opacity:0;position: absolute;top:214px;left:660px;width:252px;height:100px;background:url('images/6_0/6_0_3_answer.svg') no-repeat}
+      .answerImage.on{opacity:1}
+      textarea {
+        height: 127px;
+      }
+      textarea.answerMode {}
+      [data-after-target] {
+        position: absolute;
+        top: 379px;
+        left: 93px;
+        font-size: 42px;
+      }
+      [data-after-target] > li {
+        display: flex;
+      }
+      [data-after-target] ins.exam {
+        position: static;
+        flex-shrink: 0;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0px 10px 0 0;
+      }
+      [data-after-target] ins.exam + * { flex-shrink: 0; margin-right: 10px;}
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 규칙 찾기</span>
+          <span>공부할 준비가 되어 있나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="130">수학<span>130~131</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="87">수학 익힘<span>87</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="87"></div>
+      </header>
+      <main class="ready">
+        <div class="contentsArea">
+          <h1 data-index="2">규칙을 찾아 무늬를 완성해 보세요.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1" data-quiz="input" data-quiz-name="input_1">
+                  <div class="inputQuizContainer">
+                    <figure><img src="images/6_0/6_0_3.svg" alt=""></figure>
+                    <ul class="list dot">
+                      <li>찾을 수 있는 규칙을 써 보세요.<br>
+                        <textarea type="text" class="maxWidth" data-input-obj="1" data-answer=" "></textarea>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul data-after-target="input_1">
+                    <li>
+                      <ins class="exam">예</ins>
+                      <span class="shrink textColor answer">→</span>
+                      <span class="textColor answer">방향으로 □, ○, △ 모양이 반복됩니다.</span>
+                    </li>
+                    <li>
+                      <ins class="exam">예</ins>
+                      <span class="shrink textColor answer">→</span>
+                      <span class="textColor answer">방향으로 색칠된 도형과 색칠되지 않은 도형이 반복됩니다.</span>
+                    </li>
+                  </ul>
+                  <!-- <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div> -->
+                  <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+                </li>
+                <li class="page2" data-quiz="toggle">
+                  <div class="inputQuizContainer">
+                    <figure><img src="images/6_0/6_0_3.svg" alt=""></figure>
+                    <ul class="list dot">
+                      <li>빈칸에 알맞은 모양을 그리고, 색칠해 보세요.</li>
+                    </ul>
+                    <div class="answerImage" data-toggle-target="1"></div>
+                    <div class="clickButton question" data-toggle-obj="1"></div>
+                  </div>
+                  <!-- <div class="quizButtons solve" data-hover="" data-popup-btn="2" data-popup-option="toggle" data-solve-btn=""></div> -->
+                  <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p</p>
+          </li>
+        </ul>
+      </section>
+    
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() { });
+    </script>
+  </body>
+</html>

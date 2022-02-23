@@ -1,0 +1,377 @@
+/********* url **********/
+/********* color **********/
+/********* size **********/
+/********* import **********/
+@font-face {
+  font-family: NotoSansBold;
+  src: url("../../libs/fonts/NotoSans-Bold.woff");
+}
+@font-face {
+  font-family: NotoSansMedium;
+  src: url("../../libs/fonts/NotoSans-Medium.woff");
+}
+@font-face {
+  font-family: NotoSansLight;
+  src: url("../../libs/fonts/NotoSans-Light.woff");
+}
+.bold {
+  font-family: NotoSansBold;
+}
+
+.medium {
+  font-family: NotoSansMedium;
+}
+
+.light {
+  font-family: NotoSansLight;
+}
+
+.progress {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+  z-index: 100;
+}
+.progress ul, .progress li, .progress h2, .progress p {
+  margin: 0;
+  padding: 0;
+}
+.progress input {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+}
+.progress.on {
+  visibility: visible;
+}
+.progress .progressPopup {
+  position: absolute;
+  top: 0px;
+  width: 1280px;
+  height: 720px;
+  font-size: 20px;
+}
+.progress .progressPopup * {
+  box-sizing: border-box;
+}
+.progress .progressPopup.isMain .addListButton {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.progress .progressPopup.isMain .closeButton {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -32px;
+  left: 0px;
+  width: 90px;
+  height: auto;
+  color: #fff;
+  font-size: 20px;
+  font-family: NotoSansLight;
+  background-image: none;
+  cursor: pointer;
+}
+.progress .progressPopup.isMain .closeButton:before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 2px;
+  width: 33px;
+  height: 17px;
+  margin-right: 6px;
+  background-image: url("../images/arrow.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.progress .progressPopup section {
+  position: absolute;
+  top: 110px;
+  left: 290px;
+  width: 700px;
+  height: 500px;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.progress h2 {
+  text-align: center;
+  color: #462f73;
+  font-size: 30px;
+  font-family: NotoSansBold;
+  padding-bottom: 10px;
+}
+.progress .garbageButton {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  width: 25px;
+  height: 28px;
+  background-image: url("../images/progress/progress_garbage.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.progress .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2IDE2IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiM4RjhGOEYiIHBvaW50cz0iMTUuNDI1LDEuMjgyIDE0LjcxOCwwLjU3NSA4LDcuMjkzIDEuMjgyLDAuNTc1IDAuNTc1LDEuMjgyIDcuMjkzLDggMC41NzUsMTQuNzE4IDEuMjgyLDE1LjQyNSANCgk4LDguNzA3IDE0LjcxOCwxNS40MjUgMTUuNDI1LDE0LjcxOCA4LjcwNyw4ICIvPg0KPC9zdmc+DQo=");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.progress .addListButton,
+.progress .toggleSelectButton {
+  position: absolute;
+  bottom: 14px;
+  font-size: 18px;
+  padding: 2px 10px;
+  color: #462f73;
+  font-family: NotoSansMedium;
+  border: 1px solid #462f73;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.progress .addListButton {
+  left: 40px;
+}
+.progress .toggleSelectButton {
+  left: 140px;
+}
+
+.progress .progressPopup section ul li {
+  display: flex;
+  align-items: center;
+  height: 54px;
+  font-family: NotoSansLight;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8;
+}
+.progress .progressPopup section ul li > * {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress .progressPopup section ul li > *:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 18px;
+  color: #fff;
+  font-family: NotoSansMedium;
+  font-size: 12px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.progress .progressPopup section ul li > *:nth-of-type(1) {
+  flex: 0 0 10%;
+}
+.progress .progressPopup section ul li input {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #b3b3b3;
+}
+.progress .progressPopup section ul li input[checked] {
+  background-color: #b3b3b3;
+}
+.progress .progressPopup section .head {
+  border-top: 2px solid #462f73;
+}
+.progress .progressPopup section .head li {
+  font-family: NotoSansMedium;
+  color: #5e5e5e;
+  border-bottom: 1px solid #462f73;
+}
+.progress .progressPopup section .head li > * {
+  border-right: 1px solid #e8e8e8;
+}
+.progress .progressPopup section .head li > *:last-child {
+  border-right: none;
+}
+.progress .progressPopup section .head li .sort {
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: 0 4px;
+  background-image: url("../images/progress/progress_sort.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.progress .progressPopup section .list {
+  height: 325px;
+  border-bottom: 1px solid #bbabde;
+  overflow-y: auto;
+}
+.progress .progressPopup section .list .smart:before {
+  content: "SMART";
+  background-color: #ffabba;
+}
+.progress .progressPopup section .list .ebook:before {
+  content: "EBOOK";
+  background-color: #95bef5;
+}
+
+.progressAlert {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: NotoSansMedium;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+  z-index: 100;
+}
+.progressAlert p {
+  margin: 0;
+  padding: 0;
+}
+.progressAlert input {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+}
+.progressAlert.on {
+  visibility: visible;
+}
+.progressAlert[data-type=add] p, .progressAlert[data-type=close] p {
+  height: auto;
+  padding-top: 48px;
+}
+.progressAlert[data-type=add] .inputContainer, .progressAlert[data-type=close] .inputContainer {
+  margin: 18px 0;
+}
+.progressAlert[data-type=add] .add {
+  display: flex;
+}
+.progressAlert[data-type=close] .close {
+  display: flex;
+}
+.progressAlert[data-type=remove] .remove {
+  display: flex;
+}
+.progressAlert[data-type=select] .select {
+  display: flex;
+}
+.progressAlert section {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  width: 470px;
+  height: 250px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.35);
+}
+.progressAlert section p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 174px;
+  color: #3d3d3d;
+  font-size: 28px;
+}
+.progressAlert section > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progressAlert section > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  font-family: NotoSansLight;
+  color: #fff;
+  margin: 0 12px;
+  padding-bottom: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.progressAlert section > div > div.correct {
+  background-color: #19143b;
+}
+.progressAlert section > div > div.incorrect {
+  background-color: #342e69;
+}
+.progressAlert section input {
+  height: 140px;
+  width: 150px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #b3b3b3;
+}
+.progressAlert section .afterText {
+  font-size: 30px;
+  margin-left: 10px;
+}
+.progressAlert section .popCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2IDE2IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiM4RjhGOEYiIHBvaW50cz0iMTUuNDI1LDEuMjgyIDE0LjcxOCwwLjU3NSA4LDcuMjkzIDEuMjgyLDAuNTc1IDAuNTc1LDEuMjgyIDcuMjkzLDggMC41NzUsMTQuNzE4IDEuMjgyLDE1LjQyNSANCgk4LDguNzA3IDE0LjcxOCwxNS40MjUgMTUuNDI1LDE0LjcxOCA4LjcwNyw4ICIvPg0KPC9zdmc+DQo=");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/*******************/
+.progressButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 258px;
+  left: 182px;
+  width: 110px;
+  height: 30px;
+  font-size: 18px;
+  font-family: NotoSansBold;
+  color: #514b94;
+  border-radius: 20px;
+  background-color: #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+.progressButton span {
+  position: relative;
+  top: -2px;
+  cursor: pointer;
+}
+.progressButton:hover {
+  color: #fff;
+  background-color: #847dd1;
+}

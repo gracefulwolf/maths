@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+  <link rel="stylesheet" href="css/1_7_10.css">
+</head>
+<body class="lesson_1">
+<div id="wrap">
+  <header>
+    <div class="js-addThingsMenu addThingsMenu"></div>
+    <div class="js-indexButton indexButton" data-hover=""></div>
+    <div class="indexBox">
+      <span>1. 큰 수</span>
+      <span>공부를 잘했나요</span>
+    </div>
+    <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="29">수학<span>29~31</span>쪽</div>
+    <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="23">수학 익힘<span>23</span>쪽</div>
+    <div class="js-addThingsButton addThingsButton"></div>
+    <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="23"></div>
+  </header>
+  <main class="finish">
+    <div class="contentsArea">
+      <h1 data-index="10">십억의 자리 숫자가 가장 큰 수의 기호를 써 보세요.</h1>
+      <section  data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+        <div class="dragBox top">
+          <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠<span> 14750000000</span></div>
+          <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡<span> 6780조 981억</span></div>
+          <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢<span> 2237800000000</span></div>
+        </div>
+
+        <div class="colorBox gray">
+          <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+        </div>
+        <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+        <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+      </section>
+    </div>
+  </main>
+  <section class="popup_container" data-popup-container="">
+    <ul class="popup_pages">
+      <li class="min solve slideup" data-popup-page="1">
+        십억의 자리 숫자가 ㉠은 4, ㉡은 8, ㉢은 7이므로 ㉡이 가장 큽니다.
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="../include/libs/js/ts.min.js"></script>
+<script src="../include/math/script/fomula.min.js"></script>
+<script src="../include/libs/js/popup.min.js"></script>
+<script src="../include/libs/js/slider.min.js"></script>
+<script src="../include/contents/js/quiz/quiz.min.js"></script>
+<script src="../include/contents/js/pageManager.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    window.addEventListener('load', function() {
+      // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+      window.$efSound.muted(true);
+      window.$efSound.incorrect(); // 오답 사운드
+
+      function setSound() {
+        if (isMuted) {
+          window.$efSound.muted(false);
+          isMuted = false;
+        }
+      }
+      var isMuted = true;
+      document.body.addEventListener('mousedown', setSound);
+      document.body.addEventListener('touchstart', setSound);
+      // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+      window.dragDropCallbacks = {
+        "drag-obj": dragCallback,
+      };
+
+      function dragCallback(dragDrop) {
+        var dropArea, dropAreaElement, children;
+        dropArea = dragDrop.droppedArea;
+        if (!dropArea) {
+          window.$efSound.incorrect();
+          return console.log('dropArea 없음.');
+        }
+
+        dropAreaElement = dragDrop.droppedArea.element;
+        children = dropAreaElement.children;
+
+        if (children.length > 1) {
+          dropAreaElement.removeChild(children[0]);
+        }
+      }
+      var isAnswered = false;
+      window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+        var dropArea = document.querySelector('.js-dropArea');
+        dropArea.innerHTML = '㉡';
+        dropArea.classList.add('blue');
+      }
+      window.$callBack.quizChainReset = function(QUIZCHAIN) {
+        var dropArea = document.querySelector('.js-dropArea');
+        dropArea.innerHTML = '';
+        dropArea.classList.remove('blue');
+      }
+    });
+  })();
+</script>
+</body>
+</html>

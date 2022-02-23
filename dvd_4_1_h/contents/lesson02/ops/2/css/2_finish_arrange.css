@@ -1,0 +1,175 @@
+
+
+@charset "utf-8";
+
+
+.contentsArea h1 {
+  letter-spacing: -3.5px;
+}
+
+
+
+.button {
+  position: relative;;
+  width: 1090px;
+  height: 100px;
+  height: 100px;
+  padding-top: 17px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: 'NSquareREB';
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.button:after {
+  content: none;
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background: url(../images/2_finish_arrange/check.svg) center / contain no-repeat;
+} 
+.button[data-index="1"] {
+  background-color: #ffb8bd;
+  box-shadow: inset 0 -8px 0 0 #f09199;
+}
+.button[data-index="2"] {
+  background-color: #92c0f7;
+  box-shadow: inset 0 -8px 0 0 #6c9bd2;
+}
+.button[data-index="3"] {
+  background-color: #b09edb;
+  box-shadow: inset 0 -8px 0 0 #8275a2;
+}
+.button.pointerOff {
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
+}
+.button.selected,
+.button.hover {
+  transform: scale(1.1);
+}
+.button.selected:after {
+  content: '';
+}
+
+
+
+.dragBox {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+}
+.dragBox .rotateContainer {
+  top: 14px;
+  left: 10px;
+}
+
+.rotateContainer.showRotate {
+  width: 470px;
+  height: 250px;
+}
+
+/* page1 */
+.page1 {
+  background: url(../images/2_finish_arrange/2_finish_arrange_01.svg) center / contain no-repeat;
+}
+
+.page1 .drawLine {
+  top: 160px;
+  left: 348px;
+  width: 846px;
+  height: 396px;
+  /* outline: 1px solid tomato; */
+}
+.page1 .resetButton {
+  right: -40px;
+  bottom: 30px;
+}
+
+.page1 .dragBox {
+  top: 460px;
+  left: 42px;
+}
+
+
+.page1 .inputContainer {
+  position: absolute;
+  top: 190px;
+  left: 44px;
+}
+
+.page1 .inputContainer > input {
+  width: 150px;
+  margin-right: 4px;
+}
+
+.page1 .quizButtons {
+  display: none;
+  right: -15px;
+  bottom: 90px;
+}
+
+.rotateContainer .rotateTarget:after {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+}
+
+
+/* page2 */
+.page2 {
+  background: url(../images/2_finish_arrange/2_finish_arrange_02.svg) center / auto 540px no-repeat;
+}
+
+.page2 .drawLine {
+  top: 124px;
+  left: 58px;
+  width: 766px;
+  height: 416px;
+  /* outline: 1px solid tomato; */
+}
+.page2 .resetButton {
+  right: -15px;
+  bottom: 395px;
+}
+
+.page2 input {
+  position: absolute;
+  width: 120px;
+}
+
+.page2 input[data-input-obj="1"] {
+  top: 182px;
+  right: 152px;
+}
+.page2 input[data-input-obj="2"] {
+  top: 450px;
+  right: 94px;
+}
+
+.page2 .quizButtons {
+  right: 30px;
+  bottom: 90px;
+}
+
+
+/* page3 */
+fomula {
+  margin-bottom: 140px;
+}
+
+.page3 .quizButtons {
+  right: 90px;
+}
+
+.type01value,
+.type02value {
+  pointer-events: none;
+  background-image: none;
+}

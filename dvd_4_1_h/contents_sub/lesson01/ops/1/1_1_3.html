@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <style>
+      .inputQuizContainer {
+        position: relative;
+        width: 1100px;
+        margin: 0 auto;
+        height: 90%;
+        background: url('images/1_1/1_1_3.svg') 50% 20% / contain no-repeat;
+      }
+
+      .answerImage {
+        position: absolute;
+        left: 14px;
+        top: 30px;
+        width: 900px;
+        height: 380px;
+        background: url('images/1_1/1_1_3_answer.svg') 50% 20% / contain no-repeat
+      }
+      canvas {
+        position: absolute;
+        top: 59px;
+        left: 0;
+      }
+      .drawBtn {
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+      .pen_tool {
+        top: 94px;
+        left: 778px;
+      }
+      canvas.pointerOff {
+        pointer-events: none;
+      }
+    </style>
+  </head>
+	<body class="lesson_1">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>1. 큰 수</span>
+          <span>1000이 10개인 수를 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="10">수학<span>10~11</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="10">수학 익힘<span>10</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="10"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea noUserSelect">
+          <h1 data-star="1" data-index="3">10000이 되도록 묶어 보세요</h1>
+          <section data-quiz="toggle" data-quiz-name="toggle_1">
+            <div class="inputQuizContainer">
+              <canvas id="draw0" class="canvas_1" width="1100px" height="184px"></canvas>
+              <div class="drawBtn" data-parent="contentsArea"></div>
+              <div class="answerImage" data-toggle-target="1" data-toggle-obj="1"></div>
+            </div>
+           
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="toggle_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>10개를 묶으면 정답으로 인정합니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          if (drawClear) drawClear(0);
+          document.querySelector('.canvas_1').classList.add('pointerOff');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          document.querySelector('.canvas_1').classList.remove('pointerOff');
+        }
+
+      });
+    </script>
+  </body>
+</html>

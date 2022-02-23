@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+    <style>
+      html,body,#wrap{background: transparent !important;}
+      #wrap{width:1060px;height:558px;padding:0; box-shadow:none;}
+      header,header:before,main:before{display:none !important;}
+      body, .content-container{width:100%; max-width:1060px; height:680px;}
+      main .contentsArea,main{top:0 !important;}
+
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1100px;margin:0 auto 30px}
+      .drawLine {
+        position:absolute;
+        left: 430px;
+        top:110px;
+        width: 600px;
+        height: 355px;
+        /* background: rgba(0,0,0,.2) */
+        }
+
+        .resetButton {
+        right: 0;
+        bottom: 10px;
+        }
+
+        .dot_1 {
+        top: 288px;
+        left: 378px;
+        }
+        .dot_2 {
+        top: 289px;
+        left: 641px;
+        }
+        .dot_3 {
+        top: 93px;
+        left: 799px;
+        }
+        .drawDotBox > .dot_3.text:before {
+        top: 24px;
+        left: -18px;
+        }
+        ins.exam {
+            position: absolute;
+            top: 108px;
+            left: 530px;
+        }
+		.pointerOff ins.exam{visibility: visible; opacity: 1;}
+
+        .solve .solveImage {
+          width:900px;
+          height: 300px;
+          background: url(./images/2_1/2_1_2_solve.svg) center / contain no-repeat;
+        }
+
+        .--cbox{padding-top:40px; text-align: center;}
+        .--cbox .colorBox{display: inline-block; min-width: 150px; text-align: center;}
+        .draw_1.lineBox{display:block; width:600px; height:350px; margin:-5px auto 0;}
+        .draw_2.lineBox{display:block; width:600px; height:350px; margin:-5px auto 0;}
+        .bullet.exam.exam_1{top:130px; left:280px;font-family: YGJAL;}
+        .dapCheckBtn{right:2px; letter-spacing: 0;}
+        main .contentsArea{left:0; right:auto; width:100%;}
+        .examViewBtn:before{letter-spacing: 0;}
+        .examViewBtn.complete:before{content:"다시하기";}
+        /* .--line{position:absolute; top:243px; left:176px; width:310px; height:4px; background:#000; transform:rotate(10deg); transform-origin:0 0;} */
+        .--line{position:absolute; top:410px; left:656px; width:310px; height:4px; background:#000; transform:rotate(10deg); transform-origin:0 0;}
+        /* .--line2{position:absolute; top:305px; left:406px; width:310px; height:4px; background:#000; transform:rotate(-60deg); transform-origin:0 0;} */
+        .--line2{position:absolute; top:409px; left:655px; width:310px; height:4px; background:#000; transform:rotate(-60deg); transform-origin:0 0;}
+    </style>
+  </head>
+	<body class="">
+    <div id="wrap">
+      <header>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <section>
+            <div class="inputQuizContainer">
+              <div class="js-drawLine drawLine" data-option="drawing">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+                <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                <!-- <div class="js-resetButton resetButton" data-hover=""></div> -->
+              </div>
+            </div>
+            <!-- <ins class="exam exam_1" data-click-target="1">예</ins>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons" data-hover="" data-type="answer" data-click-obj="1"></div> -->
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+
+            <p>직각보다 크기가 큰 각을 그리면 다음과 같습니다.</p>
+            <div class="solveImage"></div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script type="text/javascript">
+
+(function() {
+  var ATTR_TYPE = 'data-type';
+  var drawLines = [];
+
+  function off(btn) {
+    btn.classList.add('off');
+  }
+  function on(btn) {
+    btn.classList.remove('off');
+  }
+  function showAnswer(drawLine) {
+    drawLine.showAnswer();
+  }
+  function resetAnswer(drawLine) {
+    drawLine.reset();
+  }
+
+  function showAnswers() {
+    if (this.getAttribute(ATTR_TYPE) === 'answer') {
+      this.setAttribute(ATTR_TYPE, 'reset');
+      drawLines.forEach(showAnswer);
+      $ts.getEl('.js-resetButton').forEach(off);
+    } else {
+      this.setAttribute(ATTR_TYPE, 'answer');
+      drawLines.forEach(resetAnswer);
+      $ts.getEl('.js-resetButton').forEach(on);
+    }
+  }
+
+  window.addEventListener('load', function() {
+    var quizButton = document.querySelector('.js-buttons');
+
+    drawLines.push(new DrawLine({
+      container: document.querySelector('.js-drawLine'),
+      resetButton: document.querySelector('.js-resetButton'),
+      answer: [{
+        start: {x: 248, y: 268},
+        end: {x: 84, y: 93}
+      },{
+        start: {x: 248, y: 268},
+        end: {x: 498, y: 268}
+      }],
+      callback: {
+        correct: function(DrawLine) {
+          console.log('isCallback - correct', DrawLine.startPointer, DrawLine.endPointer);
+        },
+        showAnswer: function(DrawLine) {},
+      },
+    }));
+
+    setTimeout(function() { drawLines.forEach(resetAnswer); }, 100);
+    quizButton.addEventListener('click', showAnswers);
+  });
+})();
+      document.addEventListener('DOMContentLoaded', function() { });
+    </script>
+  </body>
+</html>

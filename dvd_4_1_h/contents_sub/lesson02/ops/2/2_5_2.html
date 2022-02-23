@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <!-- <link rel="stylesheet" href="./css/2_1_2.css"> -->
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1100px;margin:0 auto 30px}
+      .drawLine {
+        position:absolute;
+        left: 48px;
+        top:67px;
+        width: 435px;
+        height: 280px;
+        /* background:rgba(0,0,0,0.5) */
+        }
+        .draw_2 .drawLine {
+            position:absolute;
+            left: 628px;
+            top:67px;
+            width: 510px;
+            height: 280px;
+            overflow:hidden;
+        }
+
+        .resetButton {
+        right: 0;
+        bottom: 10px;
+        }
+.answerImage {
+    position: absolute;
+    top: 20px;
+    left: 23px;
+    width: 209px;
+    height: 212px;
+    pointer-events: none;    
+    background: url(images/2_5/2_5_2_02.svg) center / contain no-repeat;
+    display:none;
+}
+.pointerOff .answerImage{display:block}
+.answerImage2 {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 240px;
+    height: 210px;
+    background: url(images/2_5/2_5_2_03.svg) center / contain no-repeat;
+}
+.drawLine.pointerOff .drawArea{opacity:0}
+[class*='inp'] input{display:inline-block;width:170px;text-align: center;}
+      .inp1{position:absolute;left:5px;top:370px;width:540px;text-align:center;}
+      .inp2{position:absolute;left:612px;top:370px;width:540px;text-align:center;}
+      .contentsArea h1{
+        word-break: normal;
+        letter-spacing: -2px;
+      }
+      .dragBox {
+        position: absolute;
+        top: -70px;
+        right: 20px;
+        width: 200px;
+        height: 100px;
+      }
+      .rotateContainer {
+        top: 14px;
+        left: 40px;
+      }
+      .rotateContainer.showRotate {
+        width: 420px;
+        height: 240px;
+      }
+      ins.exam{display:none;left:30px;top:30px}
+      .pointerOff ins.exam{display:flex}
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 각도</span>
+          <span>각도를 어림해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="46">수학<span>46~47</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="35">수학 익힘<span>35</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="35"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea noUserSelect">
+          <h1 data-star="2" data-index="2">주어진 각도의 각을 어림하여 그리고, 각도기로 확인해 보세요.</h1>
+          <section data-quiz="input">
+            <div class="inputQuizContainer">
+                <figure><img src="images/2_5/2_5_2.svg" alt=""></figure>
+                <div class="drawContainer draw_1">
+                    <div class="js-drawLine drawLine" data-option="drawing">
+                        <canvas class="js-drawArea drawArea"></canvas>
+                        <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                        <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                        <div class="answerImage"></div>
+                        <ins class="exam">예</ins>
+                        <div class="js-resetButton resetButton" data-hover=""></div>
+                    </div>
+                </div>
+                <div class="drawContainer draw_2">
+                    <div class="js-drawLine drawLine" data-option="drawing">
+                        <canvas class="js-drawArea drawArea"></canvas>
+                        <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                        <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                        <div class="answerImage answerImage2"></div>
+                        <ins class="exam">예</ins>
+                        <div class="js-resetButton resetButton" data-hover=""></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="inp1">잰 각도 <input type="text" data-input-obj="1" data-answer="70"> ˚</div>
+                    <div class="inp2">잰 각도 <input type="text" data-input-obj="1" data-answer="120"> ˚</div>
+                </div>
+            </div>
+            
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <!-- <div class="js-buttons quizButtons" data-hover="" data-type="answer"></div> -->
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>주어진 각도의 각을 어림하여 그리고 각도기로 확인하면 다음과 같습니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+          var drawLines = [];
+          var answers = [
+            [{
+              start: {x: 78, y: 242},
+              end: {x: 280, y: 68}
+            }],
+            [{
+              start: {x: 18, y: 31},
+              end: {x: 219, y: 203}
+            }]
+          ];
+        
+          function resetAnswer(drawLine) {
+            drawLine.reset();
+          }
+        
+          function createDrawLine(container, index) {
+            drawLines.push(new DrawLine({
+              container: container.querySelector('.js-drawLine'),
+              resetButton: container.querySelector('.js-resetButton'),
+              answerButton: document.querySelector('.js-buttons'),
+              answer: answers[index],
+              callback: {
+                correct: function(DrawLine) {
+                  // console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+                },
+                showAnswer: function(DrawLine) {},
+              },
+            }));
+          }
+          
+          window.addEventListener('load', function() {
+            [document.querySelector('.draw_1'), 
+            document.querySelector('.draw_2')].forEach(createDrawLine);
+          
+            setTimeout(function() { drawLines.forEach(resetAnswer); }, 100);
+          });
+        })();
+    </script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$popupCallBack = window.$popupCallBack || {};
+
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        }
+
+        window.$popupCallBack.open = function(POPUP) {
+          var index = POPUP.btn.getAttribute('data-index')-1;
+          $pm.array.inPopup.slider[0].reset({idx: index});
+        };
+        window.$popupCallBack.close = function(POPUP) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        };
+
+        var rotateArray = $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 5,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+  <!-- <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css"> -->
+
+  <style>
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 0 auto
+    }
+
+    .inputQuizContainer figure {
+      width: 450px;
+      margin: -20px 50px 0 auto
+    }
+
+    h1 {
+      word-break: normal;
+    }
+
+    .dragBox {
+      width: 373px;
+      height: 245px;
+      z-index: 1;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+    }
+
+
+    .dragObj {
+      width: 92px;
+      height: 92px;
+      background: url(./images/4_5/4_5_4_answer.svg) center / contain no-repeat;
+    }
+
+    .dragObj[data-drag-obj-answer="1"] {
+      left: 85px;
+      top: 20px;
+    }
+
+    .dragObj[data-drag-obj-answer="2"] {
+      transform: rotate(90deg);
+      left: 194px;
+      top: 20px;
+    }
+
+    .dragObj[data-drag-obj-answer="3"] {
+      transform: rotate(-90deg);
+      left: 85px;
+      top: 130px;
+    }
+
+    .dragObj[data-drag-obj-answer="4"] {
+      transform: rotate(-180deg);
+      left: 194px;
+      top: 130px;
+    }
+
+    .imageBox {
+      position: absolute;
+      left: 650px;
+      top: -20px;
+      width: 430px;
+      height: 430px;
+      /* background: url(../images/4_4/4_7_5_bg_1.svg) center / contain no-repeat; */
+    }
+
+    .imageBox .dropArea {
+      width: 115px;
+      height: 115px;
+      position: absolute;
+      overflow: hidden;
+      /* background:rgba(0,0,0,0.5); */
+    }
+
+    .imageBox .dragObj {
+      width: 115px;
+      height: 115px;
+      position: static;
+    }
+
+    .imageBox .dropArea_2 {
+      left: 324px;
+      top: 111px;
+    }
+
+    .imageBox .dropArea_1 {
+      left: 213px;
+      top: 222px;
+    }
+
+    .imageBox .dropArea_3 {
+      left: 101px;
+      top: 334px;
+    }
+  </style>
+</head>
+<body class="lesson_4">
+<div id="wrap">
+  <header>
+    <div class="js-addThingsMenu addThingsMenu"></div>
+    <div class="js-indexButton indexButton" data-hover=""></div>
+    <div class="indexBox">
+      <span>4. 평면도형의 이동</span>
+      <span>무늬를 꾸며 볼까요</span>
+    </div>
+    <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="100">수학<span>100~101</span>쪽</div>
+    <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="71">수학 익힘<span>71</span>쪽</div>
+    <div class="js-addThingsButton addThingsButton"></div>
+    <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="71"></div>
+  </header>
+  <main class="act">
+    <div class="contentsArea noUserSelect">
+      <h1 data-star="2" data-index="4">규칙에 따라 무늬를 만들었습니다. 빈칸을 채워 무늬를 완성해 보세요.</h1>
+      <section class="noUserSelect" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+        <div class="inputQuizContainer">
+          <figure><img src="images/4_5/4_5_4.svg" alt=""></figure>
+          <div class="dragBox top">
+            <div class="js-dragObj dragObj ico01" data-name="drag-obj" data-drag-obj-answer="1"></div>
+            <div class="js-dragObj dragObj ico02" data-name="drag-obj" data-drag-obj-answer="2"></div>
+            <div class="js-dragObj dragObj ico03" data-name="drag-obj" data-drag-obj-answer="3"></div>
+            <div class="js-dragObj dragObj ico04" data-name="drag-obj" data-drag-obj-answer="4"></div>
+          </div>
+          <div class="imageBox">
+            <div class="js-dropArea dropArea dropArea_2" data-drop-area-answer="4"></div>
+            <div class="js-dropArea dropArea dropArea_1" data-drop-area-answer="4"></div>
+            <div class="js-dropArea dropArea dropArea_3" data-drop-area-answer="1"></div>
+          </div>
+        </div>
+
+        <div class="js-chainButtons quizButtons answer" data-quiz-chain="drag_1" data-hover="" data-type="answer"></div>
+      </section>
+    </div>
+  </main>
+  <section class="popup_container" data-popup-container="">
+    <ul class="popup_pages">
+      <li class="min solve slideup" data-popup-page="1">
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="../include/libs/js/ts.min.js"></script>
+<script src="../include/libs/js/popup.min.js"></script>
+<script src="../include/libs/js/slider.min.js"></script>
+<script src="../include/contents/js/quiz/quiz.min.js"></script>
+<script src="../include/contents/js/pageManager.min.js"></script>
+<script src="../3/js/4_5_4.js"></script>
+</body>
+</html>

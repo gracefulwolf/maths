@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+
+    <style>
+     ins.icon.icon_o{top:0}
+    .dflex{display:flex;justify-content:space-between;margin:0 5px 0 0;padding:0 60px}
+    .dflex li{width:240px;text-align:center}
+    .dflex:first-child{padding-top:240px;padding-bottom:45px}
+    .inputQuizContainer {
+      width:1000px;margin:0 auto;
+      height:80%;
+      background: url(./images/4_3/4_3_1.svg) 50% 20% / contain no-repeat;
+    }
+    .dflex .ox-wrap {
+      display: flex;
+      align-items: center;
+      width: 190px;
+      margin: 10px auto 0;
+      /* color:transparent; */
+    }
+    .dflex .oxObj {
+      width: 100%;
+      height: 70px;
+    }
+    fomula.vertical {
+      width: 240px;
+      margin: 0 auto;
+      transform: scale(.8);
+    }
+    fomula.vertical > ul {
+      width: calc(80px * 3);
+    }
+    fomula.vertical > ul > li {
+      flex: 1 0 auto;
+    }
+    .flexListContainer{display:flex}
+    .obj1{position: absolute;left:506px;top:278px}
+    .obj2{position: absolute;left:885px;top:278px}
+    .supplies {
+    top: 70px;
+    right: 0;
+}
+      .displayN { display: none; }
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 평면도형의 이동</span>
+          <span>평면도형을 돌려 볼까요 </span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="94">수학<span>94~97</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="66">수학 익힘<span>66</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="66"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="1" data-index="1">모양 조각을 시계 방향으로 90˚만큼 돌린 모양으로 알맞은 것을 찾아 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <div class="js-supplies supplies">
+            <div class="js-suppliesContent suppliesContent"><p>여러 가지 모양<ins class="downButton" data-download-file="../ebook_sub/익힘_4학년_1학기_131.pdf"></ins></p></div>
+            <div class="js-suppliesButton suppliesButton"></div>
+          </div>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer">
+              <ul class="dflex">
+                <li class="obj1" ><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="1"><div class="icon icon_o" data-ox-target="1"></div></div>)</div></li>
+                <li class="obj2" ><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="2" data-answer=""><div class="icon icon_o" data-ox-target="2"></div></div>)</div></li>
+                <li class="displayN" ><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="3" data-answer=""><div class="" data-ox-target="3"></div></div>)</div></li>
+              </ul>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            모양 조각을 시계 방향으로 90˚만큼 돌리면 도형의 위쪽이 오른쪽으로 바뀝니다.
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.quizButtons');
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if(this.className.indexOf('reset') === -1){ }
+            else{
+              oxObjs.forEach(function (obj) {
+                obj.classList.remove('on');
+                if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+              })
+            }
+          })
+        })
+      });
+    </script>
+  </body>
+</html>

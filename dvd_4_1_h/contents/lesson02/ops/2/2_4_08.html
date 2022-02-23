@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="./css/2_4_8.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 각도</span>
+          <span>직각보다 작은 각과 큰 각을 알아볼까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="45">수학<span>45</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="32">수학 익힘<span>32</span>쪽</div>
+                <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="45"></div>
+      </header>
+      <main class="act quiz with">
+        <div class="contentsArea">
+          <h1 data-index="1">짝이 말한 시각을 모형 시계에 그리고, 그린 시각의 긴바늘과 짧은바늘이 이루는 작은 쪽의 각이 예각, 직각, 둔각 중 무엇인지 써 보세요.</h1>
+          <section>
+            <div class="js-supplies supplies">
+              <div class="js-suppliesContent suppliesContent"><p>시계 모형과 활동지<ins class="downButton" data-download-file="4학년_1학기_171.pdf"></ins></p></div>
+              <div class="js-suppliesButton suppliesButton"></div>
+            </div>
+            <div class="imageBox"></div>
+            <div class="clickButton question" data-popup-btn="1"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min middleSize slideup drawPopup" data-popup-page="1">
+            <!-- <ins class="draw"></ins> -->
+            <div class="imageBox">
+              <div class="quizContainer" data-quiz="input" data-quiz-name="input_1">
+                <input type="text" class="inlineBox" data-input-obj="1" data-answer="  "> 시 
+                <input type="text" class="inlineBox" data-input-obj="1" data-answer="  "> 분은<br/>
+                ( 예각 , 직각 , 둔각 )<br/>
+                입니다.
+              </div>
+              <div class="quizContainer" data-quiz="toggle" data-option="toggle" data-quiz-name="toggle_1">
+                <div class="oxObj" data-toggle-obj="1">
+                  <div class="icon icon_o" data-toggle-target="1"></div>
+                </div>
+                <div class="oxObj" data-toggle-obj="2">
+                  <div class="icon icon_o" data-toggle-target="2"></div>
+                </div>
+                <div class="oxObj" data-toggle-obj="3">
+                  <div class="icon icon_o" data-toggle-target="3"></div>
+                </div>
+              </div>
+            </div>
+            <canvas id="draw0" class="canvas_1" width="344px" height="344px"></canvas>
+            <div class="drawBtn" data-parent="drawPopup"></div>
+            <div class="js-chainButtons quizButtons answer" data-type="reset" data-quiz-chain="input_1, toggle_1" data-hover=""></div>
+          </li> 
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          // if (drawClear) drawClear(0);
+          // document.querySelector('.canvas_1').classList.add('pointerOff');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          if (drawClear) drawClear(0);
+          document.querySelector('.canvas_1').classList.remove('pointerOff');
+        }
+      });
+    </script>
+  </body>
+</html>

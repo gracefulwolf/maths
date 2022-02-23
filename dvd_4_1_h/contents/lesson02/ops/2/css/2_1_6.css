@@ -1,0 +1,244 @@
+
+@charset "utf-8";
+.act.quiz .contentsArea > h1 {
+  word-break: break-all;
+}
+
+
+.supplies {
+  top: -75px;
+  right: 0; /* 팝업 버튼 기본 위치 */
+}
+
+
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-top: -10px;
+  background: url(../images/2_1/2_1_6_01.png) center / contain no-repeat;
+}
+
+
+.inputQuizContainer {
+  margin-top: 40px;
+}
+
+
+/* page2 */
+.clickButton {
+  top: 240px;
+}
+.clickButton[data-popup-btn="1"] {
+  left: 520px;
+}
+.clickButton[data-popup-btn="2"] {
+  left: 940px;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 260px;
+  left: 0;
+  width: 100%;
+}
+.flexBox > div {
+  position: relative;
+  margin: 0 60px;
+}
+
+.flexBox span {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  width: 300px;
+  font-size: 40px;
+  font-family: MapleStoryL;
+}
+
+
+.howImage {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 10px 0 0 110px;
+  border-radius: 50%;
+  border: 5px solid;
+}
+.howImage .paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 130px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.how_1 .howImage {
+  border-color: #60bbb9;
+  background-color: rgba(0, 0, 0, .05);
+}
+.how_2 .howImage {
+  border-color: #f499a2;
+  background: url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+
+
+.foldingFan {
+  opacity: 0.7;
+  background: url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+
+
+
+/* popup */
+.popup_pages h5 {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  color: #fff;
+  font-size: .6em;
+  padding: 6px 26px 4px 70px;
+  border-radius: 50px;
+}
+.popup_pages > li.min h5:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border-width: 6px;
+  border-style: solid;
+  box-sizing: border-box;
+  background: center / auto 72px no-repeat;
+}
+
+
+.popup_pages > li[data-popup-page="1"] h5 {
+  background-color: #60bbb9;
+}
+.popup_pages > li.min[data-popup-page="1"] h5:before {
+  border-color: #60bbb9;
+  background-color: #EEE;
+}
+.popup_pages > li.min[data-popup-page="1"] h5:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  width: 30px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.popup_pages > li[data-popup-page="1"] .imageBox {
+  height: 300px;
+  margin-top: 170px;
+}
+.popup_pages .imageBox > .image {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  pointer-events: none;
+}
+.popup_pages > li[data-popup-page="1"] .imageBox > .image.on {
+  pointer-events: auto;
+}
+.popup_pages > li[data-popup-page="1"] .imageBox .rotateContainer {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup_pages .imageBox .image[data-click-target="1"] {
+  width: 160px;
+  height: 160px;
+  top: 148px;
+  left: 157px;
+}
+.imageBox .image[data-click-target="1"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_6_01_1.svg) center / 80% no-repeat;
+}
+.popup_pages .imageBox .image[data-click-target="2"] {
+  width: 240px;
+  height: 240px;
+  top: 45px;
+  left: 504px;
+}
+.imageBox .image[data-click-target="2"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_6_01_2.svg) center / 80% no-repeat;
+}
+.popup_pages .imageBox .image[data-click-target="3"] {
+  width: 136px;
+  height: 290px;
+  top: 10px;
+  left: 820px;
+}
+.imageBox .image[data-click-target="3"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_6_01_3.svg) center / 80% no-repeat;
+}
+
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="1"] {
+  top: 300px;
+  left: 320px;
+}
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="2"] {
+  top: 234px;
+  left: 740px;
+}
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="3"] {
+  top: 234px;
+  left: 920px;
+}
+
+
+.popup_pages > li[data-popup-page="2"] h5 {
+  background-color: #f499a2;
+}
+.popup_pages > li.min[data-popup-page="2"] h5:before {
+  border-color: #f499a2;
+  background:  #FFF url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+
+.popup_pages > li.min[data-popup-page="2"] .imageBox {
+  height: 300px;
+  margin-top: 210px;
+}
+
+.dragBox {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 200px;
+  height: 110px;
+}
+.rotateContainer {
+  width: 150px;
+  height: 80px;
+  top: 15px;
+  left: 25px;
+}
+.rotateContainer.showRotate {
+  width: 500px;
+  height: 300px;
+}
+
+.popup_pages ins.draw {
+  top: 50px;
+  right: 20px;
+}
+.popup_pages > li[data-popup-page="1"] ins.draw:after {
+  content: '본을 뜨고 드래그 하세요.';
+}
+.popup_pages > li[data-popup-page="2"] ins.draw:after {
+  content: '투명 부채를 드래그 하세요.';
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>OX 퀴즈</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="./css/common.css"></link>
+		<link type="text/css" rel="stylesheet" href="./css/game.css"></link>
+
+		<script type="text/javascript" src="./js/createjs.min.js"></script>
+		<script type="text/javascript" src="./animatecc/animate.js"></script>
+
+		<script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="./js/gsap.min.js"></script>
+
+		<script type="text/javascript" src="./js/animate.init.js"></script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/game.js"></script>
+
+	</head>
+	<body onselectstart="return false" ondragstart="return false">
+		<!-- wrap -->
+		<div id="wrap">
+			<!-- container -->
+			<div id="container">
+				<!-- game-content -->
+				<div id="game-content">
+                    
+                    <!-- intro -->
+                    <div id="intro" class="section">
+
+						<!-- lesson-con -->
+						<div class="lesson-con">
+							<div class="title">단원</div>
+							<div class="lesson-btns">
+								<div class="lesson-btn button active">1</div>
+								<div class="lesson-btn button">2</div>
+								<div class="lesson-btn button">3</div>
+								<div class="lesson-btn button">4</div>
+								<div class="lesson-btn button">5</div>
+								<div class="lesson-btn button">6</div>
+							</div>
+						</div>
+						<!-- //lesson-con -->
+
+						<!-- start-btn -->
+						<div class="start-btn button"><span>놀이 시작</span></div>
+						<!-- //start-btn -->
+
+						<!-- guide-btn -->
+						<div class="guide-btn button">놀이 방법</div>
+						<!-- //guide-btn -->
+
+						<!-- guide-pop -->
+						<div class="guide-pop hidden">
+							<div class="pop-wrap">
+								<div class="title">놀이 방법</div>
+								<ol>
+									<li>단원과 출제 문항 수를 정합니다.</li>
+									<li>15초의 제한 시간 동안 학생들은 문제의 O,X를 몸으로 나타냅니다.</li>
+									<li>모든 학생들이 답을 나타내면 선생님은 정답을 확인합니다.</li>
+									<li>문제를 틀린 학생은 탈락하고, 맞힌 학생은 다음 문제를 풉니다.</li>
+									<li>모든 학생이 문제를 다 풀지 못하고 탈락했을 경우, <img src="./images/guide_img.png" />를 이용하여 퀴즈를 초기화 합니다.</li>
+									<li>끝까지 문제를 다 푼 학생의 이름을 입력합니다.</li>
+								</ol>
+								<div class="close-btn button"></div>
+							</div>
+						</div>
+						<!-- //guide-pop -->
+
+                    </div>
+					<!-- //intro -->
+					
+					<!-- game -->
+                    <div id="game" class="section hidden">
+
+						<!-- home-btn -->
+						<div class="home-btn button"></div>
+						<!-- //home-btn -->
+
+						<!-- progress-con -->
+						<div class="progress-con">
+							<div class="progress-wrap">
+								<div class="bar"></div>
+							</div>
+						</div>
+						<!-- //progress-con -->
+
+						<!-- time-con -->
+						<div class="time-con">
+							<span>15</span>
+						</div>
+						<!-- //time-con -->
+
+						<!-- quiz -->
+						<div class="quiz-con quiz4-1">
+
+							<!-- lesson1 -->
+							<div class="quiz-set lesson1">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">1000이 100개인 수를 10만이라고 씁니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">5억을 100배 한 수는 50억입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">한 달에 5000원씩 9개월 동안<br />돈을 모으면 모두 45000원입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">억이 6035개, 만이 192개, 십이 52개인 수를<br />읽으면 육천삼십오억 백구십이만 오이입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">1000만이 6개, 100만이 7개, 10만이 5개인<br />수는 육천칠백오십만입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">452억 - 492억 - <span class="box"></span> - 572억 - 612억일 때,<br />빈 곳에 들어가는 수는 532억입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">사천칠백팔십이만과<br />478200000와 같은 수입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">98560000에서<br />숫자 5는 500000를 나타냅니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">124853226400을 읽으면 천이백사십팔억<br />오천삼백이이백 육천사백입니다. </div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">2350조 - 2500조 - 2650조- 2800조<br /> - 2950조는 150조씩 뛰어 세기 했습니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson1 -->
+
+							<!-- lesson2 -->
+							<div class="quiz-set lesson2">
+								<div class="quiz" data-answer="x">
+									<div class="text">두 피자의 각도는 같습니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_2_1.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">직각은 90°입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">각도를 바르게 재었습니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_2_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">0°보다 크고 직각보다<br />작은 각을 둔각이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">삼각형의 세 각의 크기의 합은 180°입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">빈칸에 알맞은 각도는 140°입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_2_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">삼각형 2개 각의 합은<br />사각형 1개 각의 합과 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">360° - 155° = 205°입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">각도가 직각보다 크고 360°보다<br />작은 각을 둔각이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">수진이는 밤 10시에 잠을 잤습니다.<br />수진이가 잠을 잔 시각의 두 바늘이 이루는<br />작은 쪽의 각은 예각입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson2 -->
+
+							<!-- lesson3 -->
+							<div class="quiz-set lesson3">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">210×2=420의 10배는 4200입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">590×4=2360, 590×40=<span class="box"></span>일 때,<br /><span class="box"></span>는 23600입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">300×50을 계산하면 150입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">132x43은 132x3과 132x40을<br />더하여 계산합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">210÷3은 21÷3과 몫이 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">나머지는 나누는 수보다 큽니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">계산 확인하기는 (나누는 수) × (몫) + (나머지)<br />= (나누어지는 수)입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">나머지가 나누는 수와 같을 때는<br />몫을 1 작게 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">900÷34의 몫은 한 자리 수입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">250÷10의 몫은 두 자리 수입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson3 -->
+
+							<!-- lesson4 -->
+							<div class="quiz-set lesson4">
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">평면도형 밀었을 때<br />모양과 위치는 변하지 않습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">평면도형을 왼쪽이나 오른쪽으로 뒤집으면<br />왼쪽과 오른쪽의 방향이 바뀝니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">평면도형을 위쪽이나 아래쪽으로 뒤집으면<br />위쪽과 아래쪽의 방향이 바뀝니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">다음 도형을 돌리거나, 뒤집어도 모양은 똑같습니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_4.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title"><img src="./images/quiz/quiz_4_1_4_5_1.png" /> 도형을 오른쪽으로 밀면<br /><img src="./images/quiz/quiz_4_1_4_5_2.png" /> 도형이 됩니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_5_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">삼각형을 위로 밀면 같은 모양의 삼각형이 나옵니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">왼쪽 모양 조각을 시계 반대 방향으로<br />180°만큼 돌리면 오른쪽 모양 조각이 됩니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">95를 시계 방향으로 180°만큼 돌리면 56이 됩니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_8.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">아래로 뒤집었을 때, 처음 조각과<br />방향이 같은 것은 모두 3개입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">125를 오른쪽으로 뒤집으면<br />152가 됩니다</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_4_10.png" /></div>
+								</div>
+							</div>
+							<!-- //lesson4 -->
+
+							<!-- lesson5 -->
+							<div class="quiz-set lesson5">
+								<div class="quiz" data-answer="o">
+									<div class="title">햄버거를 좋아하는 학생은 6명입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_1.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">가장 좋아하는 간식은 피자이고,<br />두 번째로 좋아하는 음식은 햄버거입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">조사한 학생 수는 모두 30명입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">막대그래프는 변하는 수량을<br />한눈에 알 수 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">막대그래프는 조사한 자료의 수의 크기를<br />서로 비교하기 쉽습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">막대그래프의 눈금 한 칸의 크기는 2그루입니다. </div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">나무 수가 가장 많은 마을은 마 마을이고,<br />나무 수는 20그루입니다. </div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">마을별 나무 수를 나타낸 막대그래프입니다.<br />가 마을은 나 마을보다 6그루 많습니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_8.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">하루 동안 팔린 주스의 양입니다.<br />가장 많이 팔린 주스는 딸기 주스입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">막대그래프에서 하루 동안 팔린 주스 양을<br />종류별로 한눈에 비교할 수 있습니다.  </div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_5_10.png" /></div>
+								</div>
+							</div>
+							<!-- //lesson5 -->
+
+							<!-- lesson6 -->
+							<div class="quiz-set lesson6">
+								<div class="quiz" data-answer="o">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 900입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_1.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 120입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">빈칸에 알맞은 식은<br />400+1000-600=800입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">정사각형 조각의 수가<br />4개씩 늘어나는 규칙입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_4.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">빈칸에 알맞은 수는 7220입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_5.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 800입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">350씩 커지는 규칙입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">빈칸에 알맞은 수는 1입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_8.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">2배로 커지는 규칙입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">다섯째 정사각형 조각의 수는 11개입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_1_6_10.png" /></div>
+								</div>
+							</div>
+							<!-- //lesson6 -->
+							
+
+							<!-- page-con -->
+							<div class="page-con">
+								<span class="current">1</span>/10
+							</div>
+							<!-- page-con -->
+
+							<div class="answer-btn button">정답</div>
+							<div class="next-btn button hidden">다음 문제</div>
+						</div>
+						<!-- //quiz -->
+
+						<!-- o-img -->
+						<div class="o-img hidden"></div>
+						<!-- //o-img -->
+
+						<!-- x-img -->
+						<div class="x-img hidden"></div>
+						<!-- //x-img -->
+
+						<!-- char-con -->
+						<div class="char-con">
+							<div class="default"></div>
+							<div class="o"></div>
+							<div class="x"></div>
+						</div>
+						<!-- //char-con -->
+
+						<div class="restart-btn button">처음부터</div>
+
+                    </div>
+					<!-- //game -->
+
+					<!-- result -->
+                    <div id="result" class="section hidden">
+						
+						<!-- result-pannel -->
+						<div class="result-pannel">
+							<div class="input-con">
+								<input type="text" placeholder="이름을 입력해 주세요.">
+							</div>
+							<div class="text-con">
+								친구들이 끝까지 잘 풀었어요.<br />
+								모두 축하해 주세요.
+							</div>
+							<div class="reset-btn button"><span>다시 하기</span></div>
+						</div>
+						<!-- //result-pannel -->
+
+						<!-- result-top -->
+						<div class="result-top">
+							<h4>놀이 결과</h4>
+						</div>
+						<!-- //result-top -->
+
+						<div class="fire1"></div>
+						<div class="fire2"></div>
+						<div class="fire3"></div>
+						<div class="fire4"></div>
+
+                    </div>
+					<!-- //result -->
+
+					<!-- animation_container -->
+					<div id="animation_container" style="background-color:transparent; width:1280px; height:720px">
+						<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:transparent;"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+					</div>
+					<!-- //animation_container -->
+
+				</div>
+				<!-- //game-content -->
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>

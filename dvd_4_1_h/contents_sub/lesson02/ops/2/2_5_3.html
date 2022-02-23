@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+
+    <style>
+      .inputQuizContainer{width:1100px;margin:-20px auto 0}
+      .inputQuizContainer figure{width:1000px;margin:40px auto 0}
+      .popup_pages figure{width:700px}
+      .bt1{position:absolute;left:100px;top:47px;font-size:28px}
+      .bt2{position:absolute;left:876px;top:44px;font-size:28px}
+      [class*='inp'] input{display:inline-block;width:170px; text-align: center;}
+      .inp1{position:absolute;left:80px;top:362px;width:700px}
+      .inp1 input{text-align:left;padding-left:70px}
+      .inp2{position:absolute;left:768px;top:362px;width:400px;}
+      /* .inp2 input{text-align:left;padding-left:70px} */
+      .popup_pages > li.solve > *:not(:first-child){display: inline-block;}
+      ul.list > li{padding-left:1.25em;margin-bottom:0}
+      .dragBox {
+        position: absolute;
+        top: -80px;
+        right: 20px;
+        width: 200px;
+        height: 100px;
+      }
+      .rotateContainer {
+        top: 14px;
+        left: 40px;
+      }
+      .rotateContainer.showRotate {
+        width: 420px;
+        height: 240px;
+      }
+      .inp1 ins.exam{left:495px;top:10px}
+      .inp2 ins.exam{left:160px;top:10px}
+      .txtleIndent {
+        text-indent: 60px;
+      }
+      .solve > ins.exam {
+      top: 18px;
+      left: 18px;
+    }
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 각도</span>
+          <span>각도를 어림해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="46">수학<span>46~47</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="35">수학 익힘<span>35</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="35"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea noUserSelect">
+          <h1 data-star="3" data-index="3">둘 중 누구의 어림이 더 정확한지 쓰고, 각도기로 확인해 보세요.</h1>
+          <section data-quiz="input">
+            <div class="inputQuizContainer">
+              <figure><img src="images/2_5/2_5_3.svg" alt=""></figure>
+              <div class="balloonText bt1">내 생각에는 60˚쯤<br>되는 것 같아</div>
+              <div class="balloonText bt2">내 생각에는 40˚쯤<br>되는 것 같아</div>
+              <div class="inp1">어림을 더 정확히 한 사람 <input type="text" data-input-obj="1" data-answer="샛별"><ins class="exam" data-after-target="input">예</ins></div>
+              <div class="inp2">잰 각도 <input type="text" data-input-obj="1" data-answer="45"> ˚</div>
+            </div>
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+           
+              <ins class="exam">예</ins> <div class="txtleIndent"> 샛별이의 어림이 더 정확한 것 같습니다.<br>
+              각도기로 잰 각도가 <span class="textColor answer">45</span>˚이므로 샛별이의 어림이 더 정확합니다.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() { });
+    </script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$popupCallBack = window.$popupCallBack || {};
+
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        }
+
+        // window.$popupCallBack.open = function(POPUP) {
+        //   var index = POPUP.btn.getAttribute('data-index')-1;
+        //   $pm.array.inPopup.slider[0].reset({idx: index});
+        // };
+        window.$popupCallBack.close = function(POPUP) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        };
+
+        var rotateArray = $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 5,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <!-- <link rel="stylesheet" href="./css/1_1_2.css"> -->
+    <style>
+.flexContainer .ox-wrap {
+  display: flex;
+  align-items: center;
+  width: 190px;
+  margin: 10px auto 0;
+}
+.flexContainer .oxObj{width:100%;height:70px}
+.h80{height:80%}
+.imgBx{padding-bottom:50px}
+.flexContainer li{text-align:center;width:300px;background:url('images/3_5/3_5_5.svg') 30px 0 / 450px no-repeat;padding-top:20px}
+.inputQuizContainer1 figure{width:700px;margin:0 0 20px}
+      .displayN {
+        display: none;
+      }
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 곱셈과 나눗셈</span>
+          <span>(세 자리 수)÷(두 자리 수)를 계산해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="72">수학<span>72~73</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="55">수학 익힘<span>55</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="55"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="5">나머지가 더 큰 것을 찾아 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <ul class="flexContainer h80 around center">
+              <li>
+                <div class="imgBx">
+                  348<symbol class="division"></symbol>27
+                </div>
+                <div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="1" data-answer=""><div class="icon icon_o" data-ox-target="1"></div></div>)</div>
+              </li>
+              <li>
+                <div class="imgBx">
+                  386<symbol class="division"></symbol>28
+                </div>
+                <div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="2"><div class="icon icon_o" data-ox-target="2"></div></div>)</div>
+              </li>
+            </ul>
+            <div class="displayN" data-ox-obj="3" data-ox-target="3" data-answer=""></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <div class="inputQuizContainer1">
+              <figure><img src="images/3_5/3_5_5_solve.svg" alt=""></figure>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.js-buttons')[0];
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else{
+            oxObjs.forEach(function (obj) {
+              obj.classList.remove('on');
+              if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

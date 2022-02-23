@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="./css/2_2_5.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 각도</span>
+          <span>각의 크기는 얼마일까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="39">수학<span>39</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="28">수학 익힘<span>28</span>쪽</div>
+                <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="39"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="2">각도기를 사용하여 각도를 재는 방법을 알아봅시다.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <div class="imageBox"></div>
+                  <div class="char">
+                    <div class="balloonText">먼저 각도기의<br/>
+                      중심과 각도기의<br/>
+                      밑금이 어디인지<br/>
+                      알아야 해요.
+                    </div>
+                  </div>
+                </li>
+                <li class="page2">
+                  <div class="imageBox">
+                    <div class="image" data-click-target="1"></div>
+                    <div class="image" data-click-target="2"></div>
+                    <div class="image" data-click-target="3"></div>
+                    <div class="textBox">
+                      <p data-click-target="1">각의 꼭짓점을 각도기의 중심에 맞추기</p>
+                      <p data-click-target="2">각의 변 하나를 각도기의 밑금에 맞추기</p>
+                      <p data-click-target="3">나머지 각의 변 하나가 가리키는<br/>
+                        각도기의 눈금 확인하기</p>
+                    </div>
+                  </div>
+                  <div class="clickButton question" data-click-obj="1"></div>
+                  <div class="clickButton question" data-click-obj="2"></div>
+                  <div class="clickButton question" data-click-obj="3"></div>
+                </li>
+                <li class="page3" data-quiz="ox" data-quiz-name="ox_1">
+                  <ul class="list dot titleIndent">
+                    <li>각도기의 중심을 바르게 맞춘 것에 <ins class="icon icon_o"></ins>표 하세요.</li>
+                  </ul>
+                  <div class="imageBox">
+                    <div class="oxObj" data-ox-obj="1" data-answer="">
+                      <div class="icon icon_o" data-ox-target="1"></div>
+                    </div>
+                    <div class="oxObj" data-ox-obj="2">
+                      <div class="icon icon_o" data-ox-target="2"></div>
+                    </div>
+                    <div class="displayN" data-ox-obj="3" data-answer="">
+                      <div data-ox-target=3"></div>
+                    </div>
+                  </div>
+                  <div class="quizButtons answer" data-answer-btn="" data-hover=""></div>
+                </li>
+                <li class="page4" data-quiz="ox">
+                  <ul class="list dot titleIndent">
+                    <li>각도기의 밑금을 바르게 맞춘 것에 <ins class="icon icon_o"></ins>표 하세요.</li>
+                  </ul>
+                  <div class="imageBox">
+                    <div class="oxObj" data-ox-obj="1" data-answer="">
+                      <div class="icon icon_o" data-ox-target="1"></div>
+                    </div>
+                    <div class="oxObj" data-ox-obj="2">
+                      <div class="icon icon_o" data-ox-target="2"></div>
+                    </div>
+                    <div class="displayN" data-ox-obj="3" data-answer="">
+                      <div data-ox-target=3"></div>
+                    </div>
+                  </div>
+                  <div class="quizButtons answer" data-answer-btn="" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.quizButtons');
+
+        window.$callBack.oxCorrect = function(OX) {
+          OX.quiz.totalCompleteCount = 1000;
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          OX.quiz.totalCompleteCount = 1000;
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+            obj.parentNode.classList.remove('complete');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if(this.className.indexOf('reset') === -1){ }
+            else{
+              oxObjs.forEach(function (obj) {
+                obj.classList.remove('on');
+                if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+              })
+            }
+          })
+        })
+      });
+    </script>
+  </body>
+</html>

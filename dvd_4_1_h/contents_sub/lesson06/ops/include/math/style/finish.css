@@ -1,0 +1,668 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* finish.css *
+***********************/
+
+
+
+
+/************************* contents *************************/
+/* header */
+/* .finish header .mainBookButton { right: 210px; } */
+
+/* step - arrange */
+header .indexBox .step.finish_arrange {
+  background-color: #b16c4f;
+}
+/* step - quiz */
+.lesson_1 header .indexBox .step.finish_quiz { 
+  background-color: #2c73a4; 
+}
+.lesson_2 header .indexBox .step.finish_quiz { 
+  background-color: #616b9d; 
+}
+.lesson_3 header .indexBox .step.finish_quiz { 
+  background-color: #00989f; 
+}
+.lesson_4 header .indexBox .step.finish_quiz { 
+  background-color: #8e4882; 
+}
+.lesson_5 header .indexBox .step.finish_quiz { 
+  background-color: #408d52; 
+}
+.lesson_6 header .indexBox .step.finish_quiz { 
+  background-color: #dc623d; 
+}
+
+
+
+/* title - arrange */
+.finish .contentsArea > h1 {
+  padding-left: 1.4em;
+  background-size: auto 1.05em;
+}
+.finish .contentsArea > h1:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-size: auto 50px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/finish/finish_title_icon.svg);
+}
+.lesson_1 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (1 - 1));
+}
+.lesson_2 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (2 - 1));
+}
+.lesson_3 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (3 - 1));
+}
+.lesson_4 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (4 - 1));
+}
+.lesson_5 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (5 - 1));
+}
+.lesson_6 .finish .contentsArea > h1 {
+  background-position-x: calc(-60px * (6 - 1));
+}
+
+
+
+
+
+
+
+/* nextButton */
+.finish.arrange .nextButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  width: 80px;
+  height: 70px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+  background-color: #8dc63f;
+  overflow: hidden;
+  cursor: pointer;
+}
+.finish.arrange .nextButton.hide {
+  display: none;
+}
+.finish.arrange .nextButton:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../math/images/finish/arrow_next.svg) center / 60% no-repeat;
+  animation: finish_arrange_flash .7s infinite;
+}
+.finish.arrange .nextButton:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: -80px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffc301;
+  transition: all .3s ease-in-out;
+}
+.finish.arrange .nextButton.hover {
+  background-color: #ffc301;
+  transition: all .1s .3s ease-in-out;
+}
+.finish.arrange .nextButton.hover:after {
+  animation: none;
+}
+.finish.arrange .nextButton.hover:before {
+  border-radius: 30px;
+  left: 0px;
+}
+.finish.arrange .nextButton.home {
+  background-color: #ff8aa7;
+}
+.finish.arrange .nextButton.home.hover {
+  background-color: #ffc301;
+  transition: all .1s .3s ease-in-out;
+}
+.finish.arrange .nextButton.home:after {
+  background: url(../../math/images/finish/icon_home.svg) center / 60% no-repeat;
+  animation: none;
+}
+.finish.arrange .nextButton.home:before {
+  left: 0;
+  top: 70px;
+}
+.finish.arrange .nextButton.home.hover:before {
+  left: 0;
+  top: 0;
+}
+@keyframes finish_arrange_flash {
+  40% { background-position-x: 20px; }
+}
+@-o-keyframes finish_arrange_flash {
+  40% { background-position-x: 20px; }
+}
+@-moz-keyframes finish_arrange_flash {
+  40% { background-position-x: 20px; }
+}
+@-webkit-keyframes finish_arrange_flash {
+  40% { background-position-x: 20px; }
+}
+
+
+
+
+
+/* title - quiz */
+.finish.quiz .contentsArea h2 {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 10px;
+}
+.finish.quiz .contentsArea h2:after {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 7px;
+  width: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+  font-family: BMJUA;
+}
+.finish.quiz .contentsArea h2[data-index="1"]:after { content: '1'; }
+.finish.quiz .contentsArea h2[data-index="2"]:after { content: '2'; }
+.finish.quiz .contentsArea h2[data-index="3"]:after { content: '3'; }
+.finish.quiz .contentsArea h2[data-index="4"]:after { content: '4'; }
+.finish.quiz .contentsArea h2[data-index="5"]:after { content: '5'; }
+.finish.quiz .contentsArea h2[data-index="6"]:after { content: '6'; }
+.finish.quiz .contentsArea h2[data-index="7"]:after { content: '7'; }
+.finish.quiz .contentsArea h2[data-index="8"]:after { content: '8'; }
+.finish.quiz .contentsArea h2[data-index="9"]:after { content: '9'; }
+.finish.quiz .contentsArea h2[data-index="10"]:after { content: '10'; }
+.finish.quiz .contentsArea h2[data-index="11"]:after { content: '11'; }
+.finish.quiz .contentsArea h2[data-index="12"]:after { content: '12'; }
+.finish.quiz .contentsArea h2[data-index="13"]:after { content: '13'; }
+.finish.quiz .contentsArea h2[data-index="14"]:after { content: '14'; }
+.finish.quiz .contentsArea h2[data-index="15"]:after { content: '15'; }
+
+.finish.quiz .contentsArea h2:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 56px;
+  height: 56px;
+  background-position: 0 0;
+  background-size: auto 56px;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/finish/finish_quiz_title_icon.svg); 
+}
+
+.lesson_1 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (1 - 1)); 
+}
+.lesson_2 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (2 - 1)); 
+}
+.lesson_3 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (3 - 1)); 
+}
+.lesson_4 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (4 - 1)); 
+}
+.lesson_5 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (5 - 1)); 
+}
+.lesson_6 .finish.quiz .contentsArea h2:before { 
+  background-position-x: calc(-56px * (6 - 1)); 
+}
+
+
+.finish.quiz .titleIndent {
+  margin-left: 70px;
+  box-sizing: border-box;
+}
+
+
+/* popupButton */
+.finish .popupButton { top: 0; }
+
+
+
+
+/* star(self) */
+.finish.quiz .self .contentsArea h2 {
+  flex: 0 0 auto;
+  font-size: 0;
+  height: 140px;
+  margin-bottom: -40px;
+  background: url(../images/finish/finish_self_title.svg) left center / contain no-repeat;
+}
+.finish.quiz .self .contentsArea h2:before {
+  content: none;
+  background-position: 0 0;
+  background-image: url(../../math/images/finish/finish_icon_self.svg);
+}
+.finish.quiz .self section {
+  display: flex;
+  flex-direction: row;
+}
+.finish.quiz .self section > .starContainer {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+  height: 330px;
+  margin: 0 10px;
+  background-size: auto 254px;
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/finish/finish_self_starContainer.svg);
+  /* outline: 1px solid tomato; */
+}
+.finish.quiz .self section > .starContainer.yellow {
+  background-position-x: -386px;
+}
+.finish.quiz .self section > .starContainer.green {
+  top: 0;
+}
+.finish.quiz .self section > .starContainer.purple {
+  background-position-x: calc(-386px * 2);
+}
+.finish.quiz .self section > .starContainer > .star {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-size: auto 70px;
+  background-position: 70px 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.finish.quiz .self section > .starContainer > .star:nth-of-type(1),
+.finish.quiz .self section > .starContainer > .star:nth-of-type(5) {
+  top: 94px;
+  margin: 0 -25px;
+  transform: rotate(2deg);
+}
+.finish.quiz .self section > .starContainer > .star:nth-of-type(2),
+.finish.quiz .self section > .starContainer > .star:nth-of-type(4) {
+  top: 26px;
+  margin: 0 12px;
+  transform: rotate(38deg);
+}
+
+.finish.quiz .self section > .yellow .star {
+  background-position: -70px 0;
+  background-image: url(../../math/images/finish/finish_self_star_yellow.svg);
+}
+.finish.quiz .self section > .green .star {
+  background-position: -70px 0;
+  background-image: url(../../math/images/finish/finish_self_star_green.svg);
+}
+.finish.quiz .self section > .purple .star {
+  background-position: -70px 0;
+  background-image: url(../../math/images/finish/finish_self_star_purple.svg);
+}
+.finish.quiz .self section > .yellow .star.fill {
+  background-position: 0 0;
+}
+.finish.quiz .self section > .green .star.fill {
+  background-position: 0 0;
+}
+.finish.quiz .self section > .purple .star.fill {
+  background-position: 0 0;
+}
+/*********************** contents END ***********************/
+
+
+
+/************************* intro *************************/
+.finish section.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d2145;
+  z-index: 10;
+}
+.finish section.intro.hide {
+  opacity: 1;
+  top: -1200px;
+  animation: finish_hideIntro 1s ease-in-out;
+}
+.finish > section.intro.hide:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 200px;
+  left: -110px;
+  width: 1500px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: #6a72af;
+}
+.lesson_1 .finish > section.intro.hide:before { 
+  background-color: #F6881F;
+}
+.lesson_2 .finish > section.intro.hide:before { 
+  background-color: #6A72AF;
+}
+.lesson_3 .finish > section.intro.hide:before { 
+  background-color: #00ABB0;
+}
+.lesson_4 .finish > section.intro.hide:before { 
+  background-color: #AA5EA5;
+}
+.lesson_5 .finish > section.intro.hide:before { 
+  background-color: #53B056;
+}
+.lesson_6 .finish > section.intro.hide:before { 
+  background-color: #F36C44;
+}
+/*********************** intro END ***********************/
+
+
+
+/************************* startButton *************************/
+.finish section.intro .startButton {
+  position: relative;
+  width: 260px;
+  height: 90px;
+  margin-top: 400px;
+  background: #e77d9d url(../../math/images/btn_start_text_and_arrow.svg) center / contain no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  animation: finish_showButton 3.5s linear;
+  cursor: pointer;
+}
+.powerup > section.intro .startButton.hover {
+  transform: scale(1.05);
+}
+/*********************** startButton END ***********************/
+
+
+
+
+/************************* bg *************************/
+.finish > section.intro .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+/* plant */
+.finish > section.intro > .bg .plant {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 604px;
+  transform-origin: top center;
+  animation: finish_plantUp .7s ease-out;
+}
+.lesson_1 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_1.svg);
+}
+.lesson_2 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_2.svg);
+}
+.lesson_3 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_3.svg);
+}
+.lesson_4 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_4.svg);
+}
+.lesson_5 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_5.svg);
+}
+.lesson_6 .finish > section.intro > .bg .plant {
+  background-image: url(../../math/images/finish/finish_plant_lesson_6.svg);
+}
+
+
+
+/* star */
+.finish > section.intro > .bg .star {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../../math/images/finish/finish_star.svg) center / contain no-repeat;
+  animation: finish_twinkle 3s ease-in-out infinite;
+  z-index: -1;
+}
+.finish > section.intro > .bg .finish_shootingStar_small {
+  position: absolute;
+  top: -70px;
+  right: -50px;
+  width: 70px;
+  height: 50px;
+  background: url(../../math/images/finish/finish_finish_shootingStar_small.svg) center / contain no-repeat;
+  animation: finish_shootingStar 2s ease-in-out;
+}
+.finish > section.intro > .bg .finish_shootingStar_big {
+  position: absolute;
+  top: -150px;
+  right: -110px;
+  width: 150px;
+  height: 110px;
+  background: url(../../math/images/finish/finish_finish_shootingStar_big_sheet.svg) 0 0 / auto 110px no-repeat;
+  animation: finish_shootingStar 2s ease-in-out, finish_shootingStarMotion .3s steps(4) infinite;
+}
+
+
+
+
+/* title */
+.finish > section.intro > .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+}
+.finish > section.intro > .title > * {
+  position: absolute;
+}
+.finish > section.intro > .title .char_start,
+.finish > section.intro > .title .char_repeat {
+  top: 190px;
+  left: 18px;
+  transform: scale(1.1);
+  /* animation: char_bounce ease-in-out 1.5s infinite, zoomInChar 2.5s ease-in-out; */
+}
+.finish > section.intro > .title .char_repeat {
+  opacity: 0.001;
+}
+.finish > section.intro > .title .char_repeat.on {
+  opacity: 1;
+}
+.finish > section.intro > .title .title {
+  top: 338px;
+  left: 500px;
+  width: 458px;
+  height: 111px;
+  background: url(../../math/images/finish/finish_title.svg) center / contain no-repeat;
+  animation: finish_showFinishTitle 3.5s ease-out;
+}
+.finish > section.intro > .title .math {
+  display: none;
+  top: 324px;
+  left: 957px;
+  width: 124px;
+  height: 130px;
+  background: url(../../math/images/finish/finish_arrange.svg) center / contain no-repeat;
+  animation: finish_zoomInSubTitle 4s ease-in-out;
+}
+.finish.arrange > section.intro > .title .math {
+  width: 152px;
+  background-image: url(../../math/images/finish/finish_arrange.svg);
+}
+.finish.quiz > section.intro > .title .math {
+  background-image: url(../../math/images/finish/finish_quiz.svg);
+}
+/*********************** bg END ***********************/
+
+
+
+
+
+/************************* animation *************************/
+@keyframes finish_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-o-keyframes finish_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-moz-keyframes finish_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-webkit-keyframes finish_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+
+@keyframes finish_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-o-keyframes finish_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-moz-keyframes finish_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-webkit-keyframes finish_showButton {
+  0%, 90% { opacity: 0; }
+}
+
+@keyframes finish_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.2); }
+}
+@-o-keyframes finish_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.2); }
+}
+@-moz-keyframes finish_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.2); }
+}
+@-webkit-keyframes finish_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.2); }
+}
+
+@keyframes finish_shootingStar {
+  100% { opacity: 0; transform: translateX(-600px) translateY(400px); }
+}
+@-o-keyframes finish_shootingStar {
+  100% { opacity: 0; transform: translateX(-600px) translateY(400px); }
+}
+@-moz-keyframes finish_shootingStar {
+  100% { opacity: 0; transform: translateX(-600px) translateY(400px); }
+}
+@-webkit-keyframes finish_shootingStar {
+  100% { opacity: 0; transform: translateX(-600px) translateY(400px); }
+}
+
+@keyframes finish_shootingStarMotion {
+  100% { background-position-x: -600px; }
+}
+@-o-keyframes finish_shootingStarMotion {
+  100% { background-position-x: -600px; }
+}
+@-moz-keyframes finish_shootingStarMotion {
+  100% { background-position-x: -600px; }
+}
+@-webkit-keyframes finish_shootingStarMotion {
+  100% { background-position-x: -600px; }
+}
+
+
+@keyframes finish_showFinishTitle {
+  0%, 80% { background-position-x: -460px; }
+}
+@-o-keyframes finish_showFinishTitle {
+  0%, 80% { background-position-x: -460px; }
+}
+@-moz-keyframes finish_showFinishTitle {
+  0%, 80% { background-position-x: -460px; }
+}
+@-webkit-keyframes finish_showFinishTitle {
+  0%, 80% { background-position-x: -460px; }
+}
+
+@keyframes finish_zoomInSubTitle {
+  0%, 88% { transform: scale(0); }
+  88.1% { transform: scale(0.3); }
+  97% { transform: scale(1.1); }
+}
+@-o-keyframes finish_zoomInSubTitle {
+  0%, 88% { transform: scale(0); }
+  88.1% { transform: scale(0.3); }
+  97% { transform: scale(1.1); }
+}
+@-moz-keyframes finish_zoomInSubTitle {
+  0%, 88% { transform: scale(0); }
+  88.1% { transform: scale(0.3); }
+  97% { transform: scale(1.1); }
+}
+@-webkit-keyframes finish_zoomInSubTitle {
+  0%, 88% { transform: scale(0); }
+  88.1% { transform: scale(0.3); }
+  97% { transform: scale(1.1); }
+}
+
+@keyframes finish_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-o-keyframes finish_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-moz-keyframes finish_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-webkit-keyframes finish_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+/*********************** animation END ***********************/

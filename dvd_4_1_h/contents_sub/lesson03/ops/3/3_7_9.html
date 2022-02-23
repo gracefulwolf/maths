@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+
+    <style>
+    .dflex{display:flex;justify-content:space-between;margin:0 5px 0 0;padding:0;padding-right:20px}
+    .dflex li{width:240px;text-align:center}
+    .dflex:first-child{padding-top:130px;padding-bottom:45px}
+    .inputQuizContainer {
+      width:1100px;margin:0 auto;
+      height:80%;
+      background: url(./images/3_7/3_7_9.svg) 50% 20% / contain no-repeat;
+    }
+    .dflex .ox-wrap {
+      display: flex;
+      align-items: center;
+      width: 190px;
+      margin: 10px auto 0;
+      /* color:transparent; */
+    }
+    .dflex .oxObj {
+      width: 100%;
+      height: 70px;
+    }
+    fomula.vertical {
+      width: 240px;
+      margin: 0 auto;
+      transform: scale(.8);
+    }
+    fomula.vertical > ul {
+      width: calc(80px * 3);
+    }
+    fomula.vertical > ul > li {
+      flex: 1 0 auto;
+    }
+    [data-quiz].complete [data-toggle-target],
+    .displayN {display:none;}
+    [data-quiz].complete [data-toggle-obj] { pointer-events: none; }
+    .complete[data-answer] [data-toggle-target] { display: block;}
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 곱셈과 나눗셈</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="79">수학<span>79~81</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="59">수학 익힘<span>59</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="59"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="9">어떤 수를 38로 나누었을 때 나머지가 될 수 없는 수에 모두 <ins class="icon icon_o"></ins>표 하세요.</ins></h1>
+          <section data-quiz="toggle" data-option="toggle">
+            <div class="inputQuizContainer titleIndent">
+              <!--  -->
+              <ul class="dflex">
+                <li>43</li>
+                <li>0</li>
+                <li>38</li>
+                <li>24</li>
+              </ul>
+              <ul class="dflex">
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-toggle-obj="1" data-answer=""><div class="icon icon_o" data-toggle-target="1"></div></div>)</div></li>
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-toggle-obj="2"><div class="icon icon_o" data-toggle-target="2"></div></div>)</div></li>
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-toggle-obj="3" data-answer=""><div class="icon icon_o" data-toggle-target="3"></div></div>)</div></li>
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-toggle-obj="4"><div class="icon icon_o" data-toggle-target="4"></div></div>)</div></li>
+              </ul>
+            </div>
+            <div class="displayN" data-toggle-obj="5" data-toggle-target="5" data-answer=""></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>38로 나누었을 때의 나머지는 38보다 작아야 하므로<br>나머지가 될 수 없는 수는 43, 38입니다.</p>   
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        // var oxObjs = $ts.getEl('[data-ox-target]');
+        // var answerBtn = $ts.getEl('.js-buttons')[0];
+        //
+        // window.$callBack.oxCorrect = function(OX) {
+        //   clickOXTarget(OX);
+        // };
+        // window.$callBack.oxIncorrect = function(OX) {
+        //   clickOXTarget(OX);
+        // };
+        //
+        // function clickOXTarget(OX) {
+        //   // oxObjs.forEach(function (obj) {
+        //   //   obj.classList.remove('on');
+        //   // })
+        //   OX.curTarget[0].classList.add('on');
+        // }
+        //
+        // answerBtn.addEventListener('click', function () {
+        //   if(this.className.indexOf('reset') === -1){ }
+        //   else{
+        //     oxObjs.forEach(function (obj) {
+        //       obj.classList.remove('on');
+        //       if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+        //     })
+        //   }
+        // })
+      });
+    </script>
+  </body>
+</html>

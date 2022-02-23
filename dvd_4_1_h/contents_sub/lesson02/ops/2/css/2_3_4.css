@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+.contentsArea h1{word-break: normal;}
+
+.inputQuizContainer{width:1100px;margin:-10px auto 0}
+.inputQuizContainer figure{width:800px;margin:0 auto 30px}
+.drawLine {
+  position:absolute;
+  left: 615px;
+  top:12px;
+  width: 375px;
+  height: 424px;
+  /* background:rgba(0,0,0,0.5) */
+}
+
+.dragBox {
+  position: absolute;
+  top: -70px;
+  right: 20px;
+  width: 200px;
+  height: 100px;
+}
+.dragBox.left:before,
+.dragBox.left:after {
+  top: 14px;
+  left: -51px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.resetButton {
+  right: 0;
+  bottom: 10px;
+}
+.answerImage {
+  position: absolute;
+  top: 80px;
+  left: -7px;
+  width: 400px;
+  height: 280px;
+  pointer-events: none;
+  background: url(../images/2_3/2_3_4_answer.png) center / contain no-repeat;
+  display:none;
+}
+.pointerOff .answerImage{display:block}
+
+.drawLine.pointerOff .drawArea{opacity:0}
+
+
+.rotateContainer {
+  top: 14px;
+  left: 40px;
+}
+.rotateContainer.showRotate {
+  width: 420px;
+  height: 240px;
+}
+ins.exam {
+  position: absolute;
+  top: 80px;
+  left: 640px;
+}
+.pointerOff ins.exam{visibility: visible; opacity: 1;}
+
+.rotateContainer .rotateTarget:after {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 15%;
+}
+

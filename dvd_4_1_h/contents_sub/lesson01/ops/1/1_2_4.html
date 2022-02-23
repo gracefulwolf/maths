@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <link rel="stylesheet" href="css/1_2_4.css">
+  </head>
+	<body class="lesson_1">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>1. 큰 수</span>
+          <span>다섯 자리 수를 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="12">수학<span>12~13</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="13">수학 익힘<span>13</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="13"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea noUserSelect">
+          <h1 data-star="2" data-index="4">㉠, ㉡, ㉢, ㉣에 알맞은 수가 큰 것부터 차례대로 기호를 써 보세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1"><span>72486에서 만의 자리 숫자는 </span>㉠<span>입니다.</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1"><span>42047에서 </span>㉡<span>은 2000을 나타냅니다.</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1"><span>83476에서 백의 자리 숫자는 </span>㉢<span>입니다.</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="4" data-drag-obj-answer="1"><span>94631에서 </span>㉣<span>은 30을 나타냅니다.</span></div>
+            </div>
+            <div class="titleIndent">
+              <div class="colorBox gray">
+                <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+              </div>
+            </div>
+
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+            <div class="dragResetButton" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="list dot">
+              <li>72486에서 만의 자리 숫자는 <span class="textColor answer">7</span>입니다. <ins class="arrow pink right noAni"></ins> ㉠=7</li>
+              <li>42047에서 <span class="textColor answer">2</span>는 2000을 나타냅니다. <ins class="arrow pink right noAni"></ins> ㉡=2</li>
+              <li>83476에서 백의 자리 숫자는 <span class="textColor answer">4</span>입니다. <ins class="arrow pink right noAni"></ins> ㉢=4</li>
+              <li>94631에서 <span class="textColor answer">3</span>은 30을 나타냅니다. <ins class="arrow pink right noAni"></ins> ㉣=3</li>
+              <ins class="arrow pink right noAni"></ins> ㉠<symbol data-ox-target="1-1" class="inequal_left"></symbol>㉢<symbol data-ox-target="1-1" class="inequal_left"></symbol>㉣<symbol data-ox-target="1-1" class="inequal_left"></symbol>㉡
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(DRAG) {
+            console.log('DRAG: ', DRAG);
+            if(!DRAG.droppedArea){
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              if (isCorrect) {
+                if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                  DRAG.droppedArea.element.innerHTML += DRAG.movingObj.element.innerHTML;
+                }
+                else DRAG.droppedArea.element.innerHTML += ', ' + DRAG.movingObj.element.innerHTML;
+              }
+            }
+          }
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉠, ㉢, ㉣, ㉡';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+          }
+
+          var resetButtons = $ts.getEl('.dragResetButton');
+          resetButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+            })
+          })
+        });
+      })();
+    </script>
+  </body>
+</html>

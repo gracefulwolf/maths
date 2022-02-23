@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <!-- <link rel="stylesheet" href="./css/2_5_7.css"> -->
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+    <style>
+.imageBox {
+  width: 100%;
+  height: 350px;
+  margin: 20px 0 30px;
+
+}
+.quizContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quizContainer > div {
+  flex: 0 0 auto;
+  width: 580px;
+  height: 100%;
+  margin-left: -80px;
+  text-align: center;
+}
+
+input.inlineBox {
+  width: 160px;
+  margin: 0 4px;
+  margin-bottom: 20px
+}
+
+.afterText {
+  position: absolute;
+  top: 100px;
+  left: 440px;
+}
+.dragBox {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+}
+.rotateContainer {
+  top: 14px;
+  left: 40px;
+}
+.rotateContainer.showRotate {
+  width: 420px;
+  height: 240px;
+}
+.drawLine {
+  top: 30px;
+  left: 250px;
+  width: 560px;
+  height: 324px;
+  background: url(images/2_5/2_5_7_01.svg) no-repeat -41px -44px / 660px auto;
+}
+
+.drawLine .resetButton {
+  right: -280px;
+  bottom: -180px;
+}
+
+.drawLine .dragObj {
+  top: 250px;
+  left: 98px;
+}
+
+.drawLine .induceLight {
+  top: 246px;
+  left: 82px;
+}
+
+html,body,#wrap{background: transparent !important;}
+#wrap{width:1060px;height:488px;padding:0; box-shadow:none;}
+header,header:before,main:before{display:none !important;}
+body, .content-container{width:100%; max-width:1060px; height:680px;}
+main .contentsArea,main{top:0 !important;}
+.--cbox{text-align: center;}
+.--cbox .colorBox{display: inline-block; min-width: 150px; text-align: center;}
+.imageBox.lineBox{display:block; width:750px; margin:-10px auto 0;}
+.imageBox.lineBox .exam{top:0; left:10px;}
+.dapCheckBtn{right:31px; letter-spacing: 0;}
+main .contentsArea{left:0; right:auto; width:100%;}
+.bullet.exam{position:absolute; z-index:1; top: -50px; left:-160px; font-family: YGJAL;}
+
+.colorBox:after{display: none;}
+    </style>
+  </head>
+	<body class="">
+    <div id="wrap">
+      <header>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <section  data-quiz="input" data-quiz-name="input_1">
+            <div class="study_guide" style="top:0; right:0;">
+              <em>각도기</em>를 <em>드래그</em>하여 옮기세요.
+            </div>
+            <div class="imageBox">
+              <div class="afterText" data-after-target="input_1"><ins class="bullet exam">예</ins></div>
+            </div>
+            <div class="js-drawLine drawLine lineBox sky" data-option="free">
+              <canvas class="js-drawArea drawArea"></canvas>
+              <div class="js-dragObj dragObj" data-type="drag" data-index="1"></div>
+              <!-- <div class="js-resetButton resetButton" data-hover=""></div> -->
+              <div class="induceLight"></div>
+              <div class="answerImage" data-click-target="1"></div>
+            </div>
+            <div class="quizContainer">
+              <div class="inputBox">
+                <div><span class="colorBox sky">잰 각도</span> <input placeholder="직접 쓰기" maxlength="3" class="inlineBox" data-input-obj="1" data-answer="70">˚</div>
+              </div>
+            </div>
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <div class="js-chainButtons dapCheckBtn" data-quiz-chain="input_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        function offLights() {
+          var light = $ts.getEl('.induceLight');
+          if (light && light.length > 0) light.forEach(function(obj) { obj.classList.add('hide'); })
+        }
+
+        new DrawLine({
+          container: document.querySelector('.js-drawLine'),
+          resetButton: document.querySelector('.js-drawLine').querySelector('.js-resetButton'),
+          answerButton: document.querySelector('.js-chainButtons'),
+          answer: [
+            {
+              start: {x: 124, y: 282}, // DrawLine.startPointer
+              end: {x: 208, y: 50} // DrawLine.endPointer
+            }
+          ],
+          callback: {
+            start: function(DrawLine) {
+              offLights();
+            },
+            correct: function(DrawLine) {
+              console.log('correct', DrawLine);
+              // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+            },
+            showAnswer: function(DrawLine) {
+              offLights();
+            },
+            reset: function(DrawLine) {
+              offLights();
+            }
+          },
+        })
+
+        var rotateArray = $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 5,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

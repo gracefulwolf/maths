@@ -1,0 +1,263 @@
+
+@charset "utf-8";
+
+
+
+
+.supplies {
+  top: -75px;
+  right: 46px;
+}
+
+.popupButton {
+  top: -75px;
+}
+
+
+
+/* page1 */
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-top: 60px;
+  background: url(../images/2_1/2_1_4_01.svg) center / contain no-repeat;
+}
+
+
+
+
+
+/* page2 */
+.clickButton {
+  top: 100px;
+}
+.clickButton[data-popup-btn="1"] {
+  left: 520px;
+}
+.clickButton[data-popup-btn="2"] {
+  left: 1080px;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.flexBox > div {
+  width: 100%;
+}
+
+.howIcon {
+  position: relative;
+}
+.howIcon > span {
+  position: absolute;
+  left: 140px;
+  width: 300px;
+  font-size: 40px;
+  font-family: MapleStoryL;
+}
+
+
+.howImage {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 10px 0 0 110px;
+  border-radius: 50%;
+  border: 5px solid;
+}
+.howImage .paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.how_1 + .howImage {
+  border-color: #60bbb9;
+  background-color: rgba(0, 0, 0, .05);
+}
+.how_2 + .howImage {
+  border-color: #f499a2;
+  background: url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+
+
+.foldingFan {
+  opacity: 0.6;
+  background: url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+
+
+
+/* popup */
+.popup_pages h5 {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  color: #fff;
+  font-size: .6em;
+  padding: 6px 26px 4px 70px;
+  border-radius: 50px;
+}
+.popup_pages > li.min h5:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border-width: 6px;
+  border-style: solid;
+  box-sizing: border-box;
+  background: center / auto 72px no-repeat;
+}
+
+.char {
+  position: absolute;
+  right: -70px;
+  bottom: 260px;
+  width: 230px;
+  height: 340px;
+  background: url(../images/2_1/2_1_4_02_char.png) center / contain no-repeat;
+}
+.balloonText {
+  margin-top: 38px;
+}
+[data-popup-page="2"] .balloonText {
+  margin-top: 26px;
+}
+.popup_pages > li[data-popup-page="1"] h5 {
+  background-color: #60bbb9;
+}
+.popup_pages > li.min[data-popup-page="1"] h5:before {
+  border-color: #60bbb9;
+  background-color: #EEE;
+}
+.popup_pages > li.min[data-popup-page="1"] h5:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  width: 30px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.popup_pages > li[data-popup-page="1"] .imageBox {
+  height: 300px;
+  margin-top: 170px;
+}
+.popup_pages > li[data-popup-page="1"] .imageBox > .image {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  pointer-events: none;
+}
+.popup_pages > li[data-popup-page="1"] .imageBox > .image.on {
+  pointer-events: auto;
+}
+.popup_pages > li[data-popup-page="1"] .imageBox .rotateContainer {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.imageBox .image[data-click-target="1"] {
+  top: -14px;
+  left: 55px;
+}
+.imageBox .image[data-click-target="1"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_4_01_1.svg) center / auto 240px no-repeat;
+}
+.imageBox .image[data-click-target="2"] {
+  top: -11px;
+  left: 401px;
+}
+.imageBox .image[data-click-target="2"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_4_01_2.svg) center / auto 240px no-repeat;
+}
+.imageBox .image[data-click-target="3"] {
+  top: -27px;
+  left: 743px;
+}
+.imageBox .image[data-click-target="3"] .rotateTarget {
+  background: rgba(0, 0, 0, .05) url(../images/2_1/2_1_4_01_3.svg) center / auto 240px no-repeat;
+}
+
+.popup_pages > li[data-popup-page="1"] .clickButton {
+  top: 190px;
+}
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="1"] {
+  left: 230px;
+}
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="2"] {
+  left: 590px;
+}
+.popup_pages > li[data-popup-page="1"] .clickButton[data-click-obj="3"] {
+  left: 860px;
+}
+
+
+.popup_pages > li[data-popup-page="2"] ins.draw {
+  top: 80px;
+  right: auto;
+  left: 240px;
+}
+.popup_pages > li[data-popup-page="2"] ins.draw:after {
+  content: '투명 부채를 드래그 하세요.';
+}
+
+.popup_pages > li[data-popup-page="2"] .char {
+  right: -80px;
+  bottom: 190px;
+  width: 260px;
+  height: 390px;
+  background: url(../images/2_1/2_1_4_03_char.png) center / contain no-repeat;
+}
+
+
+
+.popup_pages > li[data-popup-page="2"] h5 {
+  background-color: #f499a2;
+}
+.popup_pages > li.min[data-popup-page="2"] h5:before {
+  border-color: #f499a2;
+  background:  #FFF url(../images/2_1/2_1_4_foldingFan.svg) center / contain no-repeat;
+}
+.popup_pages > li.min[data-popup-page="2"] .imageBox {
+  height: 300px;
+  margin-top: 210px;
+}
+
+.dragBox {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 200px;
+  height: 110px;
+}
+.rotateContainer {
+  width: 150px;
+  height: 80px;
+  top: 15px;
+  left: 25px;
+}
+.rotateContainer.showRotate {
+  width: 500px;
+  height: 300px;
+}
+
+/* page3 */
+.popup_pages > li.min[data-popup-page="3"] .textColor.answer {
+  font-size: 46px;
+}

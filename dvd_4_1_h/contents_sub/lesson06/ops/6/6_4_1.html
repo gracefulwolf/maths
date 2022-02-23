@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:400px;margin:0 auto 30px}
+      .drawContainer {
+        position: relative;
+        top: -10px;
+        left: 70px;
+        width: 928px;
+        height: 468px;
+        box-sizing: border-box;
+        background: url(./images/6_4/6_4_1.svg) center / contain no-repeat;
+        /* background-color:rgba(0,0,0,0.5); */
+      }
+      .drawLine {
+        width: 100%;
+        height: 100%;
+      }
+      .drawLine > .resetButton {
+        bottom: 0px;
+        right: 230px;
+      }
+      .drawLine > .resetButton.off {
+        pointer-events: none;
+      }
+      .drawContainer .line {
+        position: absolute;
+        width: 100px;
+        height: 6px;
+        background-color: #000;
+        border-radius: 10px;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        pointer-events: none;
+      }
+      
+      /* draw_1 */
+      .draw_1 .line {
+        top: 135px;
+        left: 126px;
+        width: 242px;
+      }
+      
+      /* draw_2 */
+      .draw_2 .line {
+        top: 218px;
+        left: 50px;
+        width: 342px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .flexListContainer{display: flex; justify-content: space-around;}
+      .drawLine.pointerOff .drawArea{display:none}
+
+      .answerImage {
+          position: absolute;
+          top: 147px;
+          left: 180px;
+          width: 562px;
+          height: 235px;
+          pointer-events: none;  
+          background: url(images/6_4/6_4_1_answer.svg) center / contain no-repeat;
+          display:none;
+      }
+      .pointerOff .answerImage{display:block}
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 규칙 찾기</span>
+          <span>도형의 배열에서 규칙을 찾아볼까요(2)</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="138">수학<span>138~139</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="94">수학 익힘<span>94</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="94"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h2><span class="lessonColorText">[<ins class="titleNumber" data-index="1"></ins>~<ins class="titleNumber" data-index="3"></ins>]</span> 삼각형의 배열을 보고 물음에 답해 보세요.</h2>
+          <h1 data-star="1" data-index="1">넷째에 알맞은 모양을 그려 보세요.</h1>
+          <section data-quiz="input">
+            <div class="inputQuizContainer">
+              <!-- <figure><img src="images/6_4/6_4_1.svg" alt=""></figure> -->
+              <div class="drawContainer draw_1">
+                <!-- <div class="sectionPaper"></div> -->
+                <div class="js-drawLine drawLine" data-option="drawing">
+                  <canvas class="js-drawArea drawArea"></canvas>
+                  <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                  <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div> 
+                  <div class="answerImage"></div>
+                  <div class="js-resetButton resetButton" data-hover=""></div>
+                </div>
+                <!-- <div class="line"></div> -->
+              </div>
+            </div>
+
+            <!-- <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div> -->
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p></p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var drawLines = [];
+      
+        function resetAnswer(drawLine) {
+          drawLine.reset();
+        }
+      
+        function pageReset(btn) {
+          var reset = function() {
+            drawLines.forEach(resetAnswer);
+            //window.ruler.reset();
+          }
+      
+          btn.addEventListener('click', reset);
+        }
+      
+        function createDrawLine(container, index) {
+          var answers = [
+            [{
+              start: {x: 402, y: 129},
+              end: {x: 775, y: 129}
+            },{
+              start: {x: 775, y: 129},
+              end: {x: 590, y: 376}
+            },{
+              start: {x: 590, y: 376},
+              end: {x: 217, y: 376}
+            },{
+              start: {x: 217, y: 376},
+              end: {x: 402, y: 129}
+            }],
+            [{
+              start: {x: 47, y: 219},
+              end: {x: 287, y: 219}
+            },{
+              start: {x: 287, y: 219},
+              end: {x: 287, y: 459}
+            }]
+          ];
+          drawLines.push(new DrawLine({
+            container: container.querySelector('.js-drawLine'),
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-buttons'),
+            answer: answers[index],
+            callback: {
+              correct: function(DrawLine) {
+                // console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+              },
+              showAnswer: function(DrawLine) {},
+            },
+          }));
+        }
+        
+        window.addEventListener('load', function() {
+          var pageMoveBtns = $ts.getEl('.basicSlider_btn');
+          var pageTabBtns = $ts.getEl('[data-tabs] > li');
+      
+          [document.querySelector('.draw_1')].forEach(createDrawLine);
+      
+          // window.ruler = new $Ruler({
+          //   container: document.querySelector('.contentsArea'),
+          //   target: document.querySelector('.js-ruler'),
+          //   rotateRightButton: document.querySelector('.js-rotateRightButton'),
+          //   rotateLeftButton: document.querySelector('.js-rotateLeftButton'),
+          //   scale: 1.5,
+          //   degree: 45,
+          // });
+      
+          pageMoveBtns.forEach(pageReset);
+          pageTabBtns.forEach(pageReset);
+          setTimeout(function() { drawLines.forEach(resetAnswer, 100); });
+        });
+      })();
+    </script>
+  </body>
+</html>

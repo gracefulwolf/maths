@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+
+    <style>
+    .dflex{display:flex;justify-content:space-between;margin:0 5px 0 0;padding:0 70px 0 50px}
+    .dflex li{width:240px;text-align:center}
+    .dflex:first-child{padding-top:240px;padding-bottom:45px}
+    .inputQuizContainer {
+      width:1100px;margin:0 auto;
+      height:80%;
+      background: url(./images/3_4/3_4_3.png) 50% 20% / contain no-repeat;
+    }
+    .dflex .ox-wrap {
+      display: flex;
+      align-items: center;
+      width: 190px;
+      margin: 10px auto 0;
+      /* color:transparent; */
+    }
+    .dflex .oxObj {
+      width: 100%;
+      height: 70px;
+    }
+    fomula.vertical {
+      width: 240px;
+      margin: 0 auto;
+      transform: scale(.8);
+    }
+    fomula.vertical > ul {
+      width: calc(80px * 3);
+    }
+    fomula.vertical > ul > li {
+      flex: 1 0 auto;
+    }
+    .flexListContainer{display:flex}
+      .displayN { display: none; }
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 곱셈과 나눗셈</span>
+          <span>몇십몇으로 나누어 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="70">수학<span>70~71</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="53">수학 익힘<span>53</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="53"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="3">나머지가 가장 큰 것에 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer titleIndent">
+              <!--  -->
+              <ul class="dflex">
+                <li>85<symbol class="division"></symbol>15</li>
+                <li>99<symbol class="division"></symbol>13</li>
+                <li>135<symbol class="division"></symbol>14</li>
+              </ul>
+              <ul class="dflex">
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="1" data-answer=""><div class="icon icon_o" data-ox-target="1"></div></div>)</div></li>
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="2"><div class="icon icon_o" data-ox-target="2"></div></div>)</div></li>
+                <li><div class="ox-wrap">(<div class="oxObj inline" data-ox-obj="3"><div class="icon icon_o" data-ox-target="3"></div></div>)</div></li>
+              </ul>
+
+              <div class="displayN" data-ox-obj="4" data-answer=""><div class="icon" data-ox-target="4"></div></div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>85<symbol class="division"></symbol>15<symbol class="equal"></symbol>5	…	10, 99<symbol class="division"></symbol>13<symbol class="equal"></symbol>7	…	8,<br>
+              135<symbol class="division"></symbol>14<symbol class="equal"></symbol>9	…	9<br>
+              나머지가	가장	큰	것은	85<symbol class="division"></symbol>15입니다.</p>   
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-obj]');
+        var oxTargets = $ts.getEl('[data-ox-target]');
+
+        window.$callBack.oxCorrect = function(OX) {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        };
+
+        var quizButton = $ts.getEl('.quizButtons.answer')[0];
+        quizButton.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else {
+            oxObjs.forEach(function (obj) {
+              console.log(obj.hasAttribute('data-answer'))
+              if(obj.hasAttribute('data-answer')) {
+                obj.querySelector('.icon').classList.add('on');
+              }else{
+                obj.querySelector('.icon').classList.remove('on');
+              }
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+  <link rel="stylesheet" href="css/5_5_7.css">
+</head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 막대그래프</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="125">수학<span>125~127​</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="84">수학 익힘<span>84</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="84"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="7">막대그래프로 나타내 보세요.</h1>
+            <section data-quiz="input">
+              <div class="graphBox">
+                <figure><img src="images/5_5/5_5_7.svg" alt=""></figure>
+                <div class="graphContainer">
+                  <div class="fillContainer">
+                    <div class="js-fillContainer square square_1" data-length="11" data-answer="4"></div>
+                    <div class="js-fillContainer square square_2" data-length="11" data-answer="10"></div>
+                    <div class="js-fillContainer square square_3" data-length="11" data-answer="8"></div>
+                    <div class="js-fillContainer square square_4" data-length="11" data-answer="6"></div>
+                  </div>
+                  <input type="text" data-input-obj="" data-answer="좋아하는 곤충" class="input_1">
+                  <input type="text" data-input-obj="" data-answer="명" class="input_2 noBox">
+                  <input type="text" data-input-obj="" data-answer="10" class="input_3">
+                  <input type="text" data-input-obj="" data-answer="5" class="input_4">
+                  <input type="text" data-input-obj="" data-answer="학생 수" class="noBox input_5">
+                  <input type="text" data-input-obj="" data-answer="곤충" class="noBox input_6">
+                  <input type="text" data-input-obj="" data-answer="개미" class="noBox input_7">
+                  <input type="text" data-input-obj="" data-answer="나비" class="noBox input_8">
+                  <input type="text" data-input-obj="" data-answer="메뚜기" class="noBox input_9">
+                  <input type="text" data-input-obj="" data-answer="매미" class="noBox input_10">
+                  <ins class="exam" data-after-target="input">예</ins>
+                </div>
+              </div>
+              <div class="popupButton head" data-popup-btn="2" data-popup-option="toggle"></div>
+              <div class="quizButtons solve" data-popup-btn="1" data-popup-option="toggle"></div>
+              <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+            </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p class="ls4">자료의 수에 맞게 막대를 그려 막대그래프로 나타냅니다.​</p>
+          </li>
+          <li class="min head slideleft" data-popup-page="2">
+            <figure><img src="images/5_5/5_5_5.svg" alt=""></figure>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fillTarget.min.js"></script>
+
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        $ts.getEl('.js-fillContainer').forEach(function (container) {
+          new FillTarget({
+            container: container,
+            answerButton: document.querySelector('.quizButtons.answer')
+          });
+        });
+        window.$callBack.filledTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+              obj.classList.add('last');
+            }
+          })
+          // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        }
+        window.$callBack.toggleTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+              obj.classList.add('last');
+            }
+          })
+        }
+      });
+    </script>
+  </body>
+</html>

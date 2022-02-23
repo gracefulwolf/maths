@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수학 4-1 지도서</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="Lesson--1">
+    <div id="responsive" class="Responsive">
+      <header>
+        <div class="Header__Area Left">
+          <div id="tocButton" class="Hamberger-Button">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div id="subjectName" class="Header__Subject">초등 수학 4-1</div>
+          <div id="archiveText" class="Header__Text--Hidden">자료실</div>
+        </div>
+        <div class="Header__Area Right">
+          <div class="Header__My-Class-Maker">
+            <div class="Header__Text Header__Text--Main">내 수업하기</div>
+            <div id="goToMyClassMakerButton" class="Header__Text Header__Text--Sub">수업 만들기</div>
+            <div id="openMyClassMakerButton" class="Header__Text Header__Text--Sub">수업 목록</div>
+          </div>
+          <div id="archiveButton" class="Header__Text Header__Text--Main">자료실</div>
+          <div id="progressButton" class="Header__Text Header__Text--Main">진도보기</div>
+          <div id="helpButton" class="Header__Help" data-help-link="../../data/manual.pdf"></div>
+        </div>
+      </header>
+      <main>
+        <div class="Main__Inner">
+          <div id="mainCanvas" class="Main__Canvas"></div>
+          <div id="mainToc" class="Main__Toc">
+            <div class="Main__Toc__Background"></div>
+            <div class="Main__Toc__Lesson-Name"></div>
+            <div class="Main__Toc__Lesson-Number"></div>
+            <div class="Main__Toc__Line"></div>
+            <div class="Main__Toc__List"></div>
+            <div class="Main__Toc__Additional">
+              <div class="Main__Toc__Additional__Button Left" data-link="../wordCard/index.html">
+                <div class="Main__Toc__Additional__Button__Icon"></div>
+                용어 카드
+              </div>
+              <div class="Main__Toc__Additional__Line"></div>
+              <div class="Main__Toc__Additional__Button Right" data-link="../specializeContents/index.html">
+                <div class="Main__Toc__Additional__Button__Icon"></div>
+                놀이 수학
+              </div>
+            </div>
+          </div>
+          <div id="archive" class="Archive">
+            <div id="archiveTable" class="Archive__Table"></div>
+            <div id="archiveCommonTable" class="Archive__Table Sub"></div>
+            <div id="archiveClose" class="Archive__Close"></div>
+            <div id="archiveMove" class="Archive__Move">
+              <div class="Archive__Move__Button Prev"></div>
+              <div class="Archive__Move__Page-Number Current">1</div>
+              <div class="Archive__Move__Page-Number Divider">/</div>
+              <div class="Archive__Move__Page-Number Total">6</div>
+              <div class="Archive__Move__Button Next"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        본 저작물은 수업 목적으로만 사용해야 하며, 그 이외의 용도로 사용할 수 없습니다.
+        <div id="resourcePopupButton" class="Resource-Popup__Button">자료 출처</div>
+      </footer>
+      <div id="tocPopup" class="Toc-Popup">
+        <div class="Toc-Popup__Background"></div>
+        <div class="Toc-Popup__Inner">
+          <div id="tocPopupContent" class="Toc-Popup__Content"></div>
+        </div>
+        <div id="tocPopupClose" class="Toc-Popup__Close"></div>
+      </div>
+      <div id="progress" class="Progress">
+        <div class="Progress__Background"></div>
+        <div class="Progress__Inner">
+          <div class="Progress__Title">진도 보기</div>
+          <div class="Progress__Line Dark"></div>
+          <div id="progressTable" class="Progress__Table">
+            <div class="Progress__Table__Row Head">
+              <div class="Progress__Table__Cell Checkbox">
+                <div class="Progress__Checkbox"></div>
+              </div>
+              <div class="Progress__Table__Cell Class">
+                학급
+                <div class="Progress__Ordering className"></div>
+              </div>
+              <div class="Progress__Table__Cell Page">교과서 페이지</div>
+              <div class="Progress__Table__Cell Date">
+                일자
+                <div class="Progress__Ordering date"></div>
+              </div>
+            </div>
+            <div class="Progress__Line Dark Thick"></div>
+            <div id="progressList" class="Progress__Table__Body"></div>
+          </div>
+          <div class="Progress__Line"></div>
+          <div class="Progress__Bottom">
+            <!-- <div id="progressSelectAllButton" class="Progress__Button Big Select">전체 선택 · 해제</div> -->
+            <div id="progressDeleteButton" class="Progress__Button Delete">삭제</div>
+          </div>
+          <div id="progressCloseButton" class="Progress__Close"></div>
+        </div>
+      </div>
+    </div>
+    <div id="resourcePopup" class="Resource-Popup">
+      <div id="resourcePopupResponsive" class="Resource-Popup__Responsive">
+        <div id="resourcePopupInner" class="Resource-Popup__Inner">
+          <div class="Resource-Popup__Title">
+            <div class="Resource-Popup__Title__Icon"></div>
+            자료 출처
+          </div>
+          <div class="Resource-Popup__Content">
+            <div class="Resource-Popup__Content__Item">
+              <div class="Resource-Popup__Content__Item__Bullet"></div>
+              <div class="Resource-Popup__Content__Item__Text">집필진의 직접 집필인 경우 출처를 밝히지 않았음.</div>
+            </div>
+            <div class="Resource-Popup__Content__Item">
+              <div class="Resource-Popup__Content__Item__Bullet"></div>
+              <div class="Resource-Popup__Content__Item__Text">출처 표시를 안 한 사진 및 삽화 등은 저작자 및 발행사에서 저작권을 가지고 있는 경우임.</div>
+            </div>
+            <div class="Resource-Popup__Content__Item">
+              <div class="Resource-Popup__Content__Item__Bullet"></div>
+              <div class="Resource-Popup__Content__Item__Text">교과서와 익힘책, 지도서에 제시된 사진 및 삽화 등의 출처는 밝히지 않았음.</div>
+            </div>
+          </div>
+          <div id="resourcePopupClose" class="Resource-Popup__Close"></div>
+          <div id="resourcePopupConfirm" class="Resource-Popup__Confirm">확인</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 > toc -->
+    <script src="./src/static/toc/math_4-1.js"></script>
+
+    <!-- 자료실 > toc -->
+    <script src="./src/static/archive/math_4-1.js"></script>
+
+    <!-- 메인 > 캐릭터 애니메이션 -->
+    <script src="./src/static/canvasAni/createjs-2015.11.26.min.js"></script>
+    <!-- 4-1 -->
+    <script src="./src/static/canvasAni/4_1_1_normal/ma_411_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_1_over/ma_411_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_2_normal/ma_412_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_2_over/ma_412_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_3_normal/ma_413_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_3_over/ma_413_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_4_normal/ma_414_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_4_over/ma_414_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_5_normal/ma_415_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_5_over/ma_415_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_6_normal/ma_416_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_6_over/ma_416_over_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_7_normal/3_1_7_normal_HTML5 Canvas.min.js"></script>
+    <script src="./src/static/canvasAni/4_1_7_over/3_1_7_over.min.js"></script>
+
+    <!-- 메인 > 캐릭터 위치 & 크기 설정 -->
+    <script>
+      window.mainCharConfigs = {
+        normalScale: 0.2,
+        hoverScale: 0.25,
+        activeScale: 0.9,
+        positions: [
+          [140, -100],
+          [-90, -320],
+          [-240, -330],
+          [-360, -240],
+          [-370, -60],
+          [-310, 100],
+          [-170, 140],
+        ],
+      };
+    </script>
+
+    <!-- 메인 script -->
+    <script src="main.js"></script>
+
+    <!-- 내 수업하기 > 수업 목록 script -->
+    <script src="../myClassMaker/progress.js"></script>
+  </body>
+</html>

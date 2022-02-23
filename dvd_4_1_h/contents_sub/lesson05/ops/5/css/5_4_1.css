@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+.contentsArea h1 {
+  word-break: normal;
+  letter-spacing: -1px;
+}
+.dragBox {
+  height: 200px;
+  margin: 0px 0 30px 50px;
+}
+.complete .dragBox .dragObj {
+  pointer-events: none;
+}
+.dropArea {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 78px;
+  text-align: center;
+  vertical-align: middle;
+  margin: -12px 0 0 0;
+  box-sizing: border-box;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  height: 60px;
+}
+.dragObj[data-index="1"],
+.dragObj[data-index="2"] {
+  top: 35px;
+}
+
+.dragObj[data-index="3"],
+.dragObj[data-index="4"] {
+  top: 110px;
+}
+
+.dragObj[data-index="1"],
+.dragObj[data-index="3"]{
+  left: 70px;
+}
+.dragObj[data-index="2"],
+.dragObj[data-index="4"]{
+  left: 460px;
+}
+.dragObj[data-index="1"] {
+  width: 340px;
+}
+.dragObj[data-index="2"] {
+  width: 510px;
+}
+.dragObj[data-index="3"] {
+  width: 300px;
+}
+.dragObj[data-index="4"] {
+  width: 610px;
+}
+
+.dropArea .dragObj.dragObjComplete {
+  position: static;
+  width: 100%;
+  text-align: center;
+}
+.dropArea .dragObj.dragObjComplete span {
+  display: none;
+}
+
+
+.tAlign_right {
+  text-align: right;
+  padding-top: 30px
+}
+
+
+.popup_pages > li.min.solve.on {
+  z-index: 4;
+}

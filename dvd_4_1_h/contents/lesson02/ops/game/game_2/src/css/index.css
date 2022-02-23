@@ -1,0 +1,300 @@
+.page--start {
+	background-image: url('../image/startPage__background.png');
+}
+.page--game {
+	background-image: url('../image/gamePage__background.png');
+}
+
+.gamePage__title__icon {
+	flex-shrink: 0;
+	width: 49px;
+    height: 55px;
+    background: url('../image/gamePage__title__icon.png') center / contain no-repeat;
+}
+.gamePage__introMessage {
+	/*
+	width: 593px;
+	height: 342px;
+	background: url('../image/gamePage__introMessage.png') center / contain no-repeat;
+	text-align: center;
+	*/
+}
+.inputBox {
+	position: relative;
+	width: 52px;
+	height: 52px;
+	display: inline-block;
+	border: 3px solid #4ac8ff;
+	border-radius: 16px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	vertical-align: text-top;
+	margin-right: 5px;	
+}
+.iconO.title {
+	position: relative;
+	top: -7px;
+	width: 65px;
+	height: 65px;
+	display: inline-block;
+	vertical-align: text-top;
+	background: url('../image/icon_O.png') center / contain no-repeat;
+}
+
+/* gamePage 그림들 */
+.selectPlay {
+	position: absolute;
+    background: center / contain no-repeat;
+}
+.selectPlay--selected {
+	transform: scale(1.1);
+}
+.selectPlay[data-play-index="1"] {
+    top: 166px;
+    left: 157px;
+	width: 254px;
+	height: 165px;
+}
+.selectPlay[data-play-index="2"] {
+    top: 152px;
+    left: 495px;
+	width: 307px;
+	height: 190px;
+}
+.selectPlay[data-play-index="3"] {
+    top: 445px;
+    left: 155px;
+	width: 260px;
+	height: 103px;
+}
+.selectPlay[data-play-index="4"] {
+	top: 438px;
+    left: 511px;
+	width: 290px;
+	height: 112px;
+}
+.selectPlay[data-play-index="1"] .selectPlay__image { background-image: url('../image/selectPlay_1.png'); }
+.selectPlay[data-play-index="2"] .selectPlay__image { background-image: url('../image/selectPlay_2.png'); }
+.selectPlay[data-play-index="3"] .selectPlay__image { background-image: url('../image/selectPlay_3.png'); }
+.selectPlay[data-play-index="4"] .selectPlay__image { background-image: url('../image/selectPlay_4.png'); }
+.selectPlay[data-play-index="1"] .selectPlay__completeMark { top: -18px; left: 30px; }
+.selectPlay[data-play-index="2"] .selectPlay__completeMark { top: -23px; left: 32px; }
+.selectPlay[data-play-index="3"] .selectPlay__completeMark { top: -51px; left: 0px; }
+.selectPlay[data-play-index="4"] .selectPlay__completeMark { top: -36px; left: 15px; }
+
+/* 완성된 동물 그림 */
+.completeAnimal {
+	position: absolute;
+    top: 190px;
+    left: 889px;
+	width: 312px;
+	height: 355px;
+}
+.completeAnimal .animal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: center / contain no-repeat;
+	display: none;
+}
+.completeAnimal .animal.view {
+	display: block;
+}
+.completeAnimal .animal.face {
+	background-image: url('../image/img_complete_face.png');
+	display: block;
+}
+.completeAnimal .animal.body { background-image: url('../image/img_complete_body.png'); }
+.completeAnimal .animal.hair { background-image: url('../image/img_complete_hair.png'); }
+.completeAnimal .animal.eye { background-image: url('../image/img_complete_eye.png'); }
+.completeAnimal .animal.mouse { background-image: url('../image/img_complete_mouse.png'); }
+
+/* playPage */
+.playPage {
+	background: center / contain no-repeat;
+	background-image: url('../image/playPage__background.png');
+}
+/*
+.playPage[data-play-page="1"] { background-image: url('../image/playPage__background_1.png'); }
+
+.playPage .selectPlay {
+	transition-duration: 1s;
+	transform: scale(1.2);
+}
+.playPage--on .selectPlay[data-play-index="1"] { transform: translate(8px, 162px) scale(1) }
+*/
+
+/* playPage 동물 클릭 */
+.selectTarget {
+	position: absolute;
+	cursor: pointer;
+}
+.selectTarget.selected {
+	cursor: default;
+	pointer-events: none;
+}
+.selectTarget.hovered {
+	transform: scale(1.1);
+}
+.selectTarget .iconCorrect {
+	width: 162px;
+	height: 162px;
+	background: url('../image/icon_correct.png') center / contain no-repeat;
+	display: none;
+}
+.selectTarget.selected .iconCorrect {
+	display: block;
+}
+.playPage[data-play-page="1"] .selectTarget[data-select-index="1"] {
+    top: 356px;
+    left: 172px;
+	width: 149px;
+	height: 168px;
+}
+.playPage[data-play-page="1"] .selectTarget[data-select-index="2"] {
+    top: 433px;
+    left: 539px;
+    width: 111px;
+    height: 161px;
+}
+.playPage[data-play-page="2"] .selectTarget[data-select-index="1"] {
+    top: 354px;
+    left: 134px;
+	width: 191px;
+	height: 188px;
+}
+.playPage[data-play-page="2"] .selectTarget[data-select-index="2"] {
+    top: 436px;
+    left: 490px;
+	width: 214px;
+	height: 107px;
+}
+.playPage[data-play-page="3"] .selectTarget[data-select-index="1"] {
+    top: 360px;
+    left: 156px;
+	width: 143px;
+	height: 131px;
+}
+.playPage[data-play-page="3"] .selectTarget[data-select-index="2"] {
+    top: 438px;
+    left: 522px;
+	width: 143px;
+	height: 131px;
+}
+.playPage[data-play-page="4"] .selectTarget[data-select-index="1"] {
+    top: 358px;
+    left: 148px;
+	width: 159px;
+	height: 146px;
+}
+.playPage[data-play-page="4"] .selectTarget[data-select-index="2"] {
+    top: 436px;
+    left: 514px;
+	width: 158px;
+	height: 146px;
+}
+.selectTarget .selectTarget__image {
+	background: center / contain no-repeat;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.playPage[data-play-page="1"] .selectTarget[data-select-index="1"] .selectTarget__image { background-image: url('../image/selectTarget_1_1.png'); }
+.playPage[data-play-page="1"] .selectTarget[data-select-index="2"] .selectTarget__image { background-image: url('../image/selectTarget_1_2.png'); }
+.playPage[data-play-page="2"] .selectTarget[data-select-index="1"] .selectTarget__image { background-image: url('../image/selectTarget_2_1.png'); }
+.playPage[data-play-page="2"] .selectTarget[data-select-index="2"] .selectTarget__image { background-image: url('../image/selectTarget_2_2.png'); }
+.playPage[data-play-page="3"] .selectTarget[data-select-index="1"] .selectTarget__image { background-image: url('../image/selectTarget_3_1.png'); }
+.playPage[data-play-page="3"] .selectTarget[data-select-index="2"] .selectTarget__image { background-image: url('../image/selectTarget_3_2.png'); }
+.playPage[data-play-page="4"] .selectTarget[data-select-index="1"] .selectTarget__image { background-image: url('../image/selectTarget_4_1.png'); }
+.playPage[data-play-page="4"] .selectTarget[data-select-index="2"] .selectTarget__image { background-image: url('../image/selectTarget_4_2.png'); }
+
+/* playPage 텍스트들 */
+.optionBox, .qBox {
+	position: absolute;
+    color: #111111;
+    font-size: 46px;
+    font-family: "NanumSquareRoundB";
+    letter-spacing: -1px;
+}
+.optionBox .inputBox {
+	width: 94px;
+	border-radius: 10px;
+}
+.playPage[data-play-page="1"] .optionBox { top: 118px; left: 277px; }
+.playPage[data-play-page="2"] .optionBox { top: 92px; left: 292px; }
+.playPage[data-play-page="3"] .optionBox { top: 93px; left: 295px; }
+.playPage[data-play-page="4"] .optionBox { top: 89px; left: 500px; }
+.playPage[data-play-page="4"] .optionBox .inputBox {
+	margin-left: 60px;
+}
+.playPage[data-play-page="2"] .optionBox .optionImg {
+	position: absolute;
+    top: 7px;
+    left: 249px;
+	width: 255px;
+	height: 128px;
+	background: url('../image/img_playPage_2.png') center / contain no-repeat;	
+}
+.playPage[data-play-page="3"] .optionBox .optionImg {
+	position: absolute;
+    top: 27px;
+    left: 253px;
+	width: 231px;
+	height: 126px;
+	background: url('../image/img_playPage_3.png') center / contain no-repeat;	
+}
+.playPage[data-play-page="4"] .optionBox .optionImg {
+	position: absolute;
+    top: -5px;
+    left: -177px;
+	width: 161px;
+	height: 112px;
+	background: url('../image/img_playPage_4.png') center / contain no-repeat;	
+}
+.playPage[data-play-page="4"] .optionBox .optionImg .degree {
+	position: absolute;
+	font-size: 26px;
+	font-family: "NanumSquareRoundB";
+}
+.playPage[data-play-page="4"] .optionBox .optionImg .degree.d1 { top: 12px; left: 16px; }
+.playPage[data-play-page="4"] .optionBox .optionImg .degree.d2 { top: 72px; left: 32px; }
+.playPage[data-play-page="4"] .optionBox .optionImg .degree.d3 { top: 80px; left: 106px; }
+.playPage[data-play-page="1"] .qBox_1 { top: 277px; left: 155px; }
+.playPage[data-play-page="1"] .qBox_2 { top: 353px; left: 504px; }
+.playPage[data-play-page="2"] .qBox_1 { top: 277px; left: 139px; }
+.playPage[data-play-page="2"] .qBox_2 { top: 353px; left: 522px; }
+.playPage[data-play-page="3"] .qBox_1 { top: 270px; left: 150px; }
+.playPage[data-play-page="3"] .qBox_2 { top: 346px; left: 515px; }
+.playPage[data-play-page="4"] .qBox_1 { top: 277px; left: 155px; }
+.playPage[data-play-page="4"] .qBox_2 { top: 353px; left: 522px; }
+
+.page--end {
+	background: url('../image/playPage__background__end.png') center / contain no-repeat;
+}
+
+.resultCompleteAnimal {
+	position: absolute;
+    top: 42px;
+    left: 710px;
+	width: 312px;
+	height: 355px;
+	background: url('../image/img_complete.png') center / contain no-repeat;
+}
+
+div.resultPanel {
+    top: calc((720px - 417px) / 2);
+    left: calc((1280px - 1038px) / 2);
+    width: 1038px;
+    height: 437px;
+	background: url('../image/resultPanel.png') center / contain no-repeat;
+    padding-top: 6px;
+    padding-right: 260px;
+}
+div.regameButton {
+	top: 316px;
+    left: calc((1038px - 400px) / 2);
+}

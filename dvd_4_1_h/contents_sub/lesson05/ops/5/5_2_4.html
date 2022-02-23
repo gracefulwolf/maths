@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+
+  <style>
+    h2 {    word-break: break-all;
+
+    }
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 40px auto 0;
+    }
+
+    .inputQuizContainer figure {
+      width: 547px;
+      margin: 9px auto 30px
+    }
+
+    .graphContainer {
+      position: absolute;
+      left: 320px;
+      top: 95px;
+    }
+
+    .fillContainer {
+      display: flex;
+      justify-content: space-around;
+      padding: 71px 8px 0 127px;
+      width: 400px;
+      height: 264px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .fillContainer .square {
+      display: flex;
+      width: 46px;
+      flex-direction: column-reverse;
+      border-bottom: none;
+      box-sizing: border-box;
+    }
+
+    .square > .target {
+      width: 100%;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .square > .target.fill[index] {
+      background-color: #EDC6CA;
+      border: 2px solid #c83164;
+      border-bottom: 0;
+      border-top: 0;
+      animation: none;
+    }
+
+    .square > .target.fill.last {
+      border-top: 2px solid #c83164;
+    }
+
+    .square > .target[index="0"] {
+      animation: targetOpacity 1s ease-in-out infinite;
+    }
+    @keyframes targetOpacity {
+      50% {
+        background-color: yellow;
+      }
+    }
+
+    @-o-keyframes targetOpacity {
+      50% {
+        background-color: yellow;
+      }
+    }
+
+    @-ms-keyframes targetOpacity {
+      50% {
+        background-color: yellow;
+      }
+    }
+
+    @-webkit-keyframes targetOpacity {
+      50% {
+        background-color: yellow;
+      }
+    }
+    input {
+      position: absolute;
+      padding: 5px 4px 4px;
+      font-size: 23px;
+      height: 48px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .input_1 {
+      top: 8px;
+      left: 18px;
+      width: 505px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .input_2 {
+      top: 76px;
+      left: 6px;
+      width: 64px;
+    }
+
+    .input_3,
+    .input_4 {
+      left: 80px;
+      width: 58px;
+      text-align: right;
+      letter-spacing: 0;
+    }
+
+    .input_3 {
+      top: 90px;
+    }
+
+    .input_4 {
+      top: 200px;
+    }
+
+    .input_5 {
+      top: 336px;
+      left: 0;
+      width: 116px;
+      text-align: left;
+    }
+
+    .input_6 {
+      width: 80px;
+      top: 366px;
+      left: 74px;
+      text-align: left;
+    }
+
+    .input_7,
+    .input_8,
+    .input_9,
+    .input_10 {
+      width: 98px;
+      top: 350px;
+      font-size: 21px;
+      padding: 5px 0px 4px;
+    }
+
+    .input_7 {
+      left: 141px;
+    }
+
+    .input_8 {
+      left: 241px;
+    }
+
+    .input_9 {
+      left: 340px;
+    }
+
+    .input_10 {
+      left: 439px;
+    }
+
+    .popup_pages > li.head {
+      top: 153px;
+      right: 100px;
+      width: 1120px;
+    }
+
+    .popupButton.head {
+      top: 4px;
+    }
+
+    .titleIndent > ins.exam {
+      top: 8px;
+      left: -62px;
+    }
+
+    .page2 h2:after {
+      content: '';
+      position: absolute;
+      top: 58px;
+      left: 2px;
+      width: 44px;
+      height: 20px;
+      background-image: url(../../include/sub/images/act/icon_level_star.svg);
+      background-size: auto 20px;
+      /* background-position-x: calc(-44px * 1); */
+      background-position-x: calc(-44px * 2);
+      /* background-position-x: calc(-44px * 3); */
+      background-position-y: 0;
+    }
+    .page2 ins.exam {
+      position: absolute;
+      top: 105px;
+      left: 250px;
+    }
+  </style>
+</head>
+<body class="lesson_5">
+<div id="wrap">
+  <header>
+    <div class="js-addThingsMenu addThingsMenu"></div>
+    <div class="js-indexButton indexButton" data-hover=""></div>
+    <div class="indexBox">
+      <span>5. 자료와 막대그래프</span>
+      <span>막대그래프로 나타내 볼까요</span>
+    </div>
+    <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="114">수학<span>114~115</span>쪽</div>
+    <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="79">수학 익힘<span>79</span>쪽</div>
+    <div class="js-addThingsButton addThingsButton"></div>
+    <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="79"></div>
+  </header>
+  <main class="act">
+    <div class="contentsArea">
+      <section>
+        <div class="basicSlider" data-slide-container="main">
+          <div class="basicSlider_pageMove">
+            <ul class="basicSlider_circle_tabs" data-tabs="main">
+              <li></li>
+              <li></li>
+            </ul>
+            <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+            <div class="basicSlider_btn next" data-btn-next="main"></div>
+          </div>
+          <ul class="basicSlider_slides" data-slides="main">
+            <li class="page1">
+              <h2><span class="lessonColorText">[<ins class="titleNumber" data-index="4"></ins>~<ins class="titleNumber" data-index="5"></ins>]</span> 우주네 반 학생들이 알뜰 시장에서 팔려고 모은 물건을 조사하여 나타낸 표를 막대그래프로 나타내려고 합니다. 물음에 답해 보세요.</h2>
+              <figure><img src="images/5_2/5_2_4_0.svg" alt=""></figure>
+            </li>
+            <li class="page2" data-quiz="input" data-quiz-name="input_1">
+              <!-- <h2><ins class="titleNumber" data-star="2" data-index="4"></ins> <span class="NSquareREB">막대그래프로 나타내 보세요.</span></h2> -->
+              <h1 data-star="2" data-index="4">막대그래프로 나타내 보세요.</h1>
+              <section>
+                <div class="inputQuizContainer">
+                  <figure><img src="images/5_2/5_2_4.svg" alt=""></figure>
+                  <div class="graphContainer">
+                    <div class="fillContainer">
+                      <div class="js-fillContainer square square_1" data-length="12" data-answer="10"></div>
+                      <div class="js-fillContainer square square_2" data-length="12" data-answer="5"></div>
+                      <div class="js-fillContainer square square_3" data-length="12" data-answer="11"></div>
+                      <div class="js-fillContainer square square_4" data-length="12" data-answer="9"></div>
+                    </div>
+                    <div class="titleIndent">
+                      <input type="text" data-input-obj="" data-answer="알뜰 시장에서 팔려고 모은 물건" class="input_1">
+                      <input type="text" data-input-obj="" data-answer="개" class="input_2 noBox">
+                      <input type="text" data-input-obj="" data-answer="10" class="input_3">
+                      <input type="text" data-input-obj="" data-answer="5" class="input_4">
+                      <input type="text" data-input-obj="" data-answer="가방" class="noBox input_7">
+                      <input type="text" data-input-obj="" data-answer="인형" class="noBox input_8">
+                      <input type="text" data-input-obj="" data-answer="모자" class="noBox input_9">
+                      <input type="text" data-input-obj="" data-answer="공" class="noBox input_10">
+                      <ins class="exam" data-after-target="input">예</ins>
+                    </div>
+                  </div>
+                </div>
+                <ins class="exam" data-click-target="1">예</ins>
+              </section>
+              <div class="popupButton head" data-popup-btn="2" data-popup-option="toggle"></div>
+              <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn="" data-click-obj="1"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+  <section class="popup_container" data-popup-container="">
+    <ul class="popup_pages">
+      <li class="min solve slideup" data-popup-page="1">
+        <p>세로 눈금 한 칸의 크기를 정한 후 자료의 수에 맞게 막대를 그려 막대그래프로 나타냅니다. </p>
+      </li>
+      <li class="min head slideleft" data-popup-page="2">
+        <figure><img src="images/5_2/5_2_4_0.svg" alt=""></figure>
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="../include/libs/js/ts.min.js"></script>
+<script src="../include/libs/js/popup.min.js"></script>
+<script src="../include/libs/js/slider.min.js"></script>
+<script src="../include/contents/js/quiz/quiz.min.js"></script>
+<script src="../include/contents/js/pageManager.min.js"></script>
+<script src="../include/math/script/fillTarget.min.js"></script>
+<script type="text/javascript">
+  window.addEventListener('load', function () {
+    var fillArray = [];
+    $ts.getEl('.js-fillContainer').forEach(function (container) {
+      fillArray.push(
+        new FillTarget({
+          container: container,
+          answerButton: document.querySelector('.quizButtons')
+        })
+      )
+    });
+    window.$callBack.filledTarget = function (el) {
+      var fillArray = el.container.querySelectorAll('.fill');
+      fillArray.forEach(function (obj) {
+        obj.classList.remove('last');
+        if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+          obj.classList.add('last');
+        }
+      })
+      // console.log(el.targets.querySelectorAll('.fill').lastChild)
+    }
+    window.$callBack.toggleTarget = function (el) {
+      var fillArray = el.container.querySelectorAll('.fill');
+      fillArray.forEach(function (obj) {
+        obj.classList.remove('last');
+        if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+          obj.classList.add('last');
+        }
+      })
+    }
+
+    window.$callBack.sliderMove = function(SLIDER) {
+      fillArray.forEach(function (fill) {
+        fill.fillReset();
+      })
+    }
+  });
+</script>
+</body>
+</html>

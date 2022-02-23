@@ -1,0 +1,89 @@
+@charset "utf-8";
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 20px;
+  width: 800px;
+
+}
+figure {
+  height: 322px;
+}
+figure img {
+  width: auto;
+  height: 100%;
+  pointer-events: none;
+}
+figure input {
+  position: absolute;
+  top: 202px;
+  left: 70px;
+  width: 179px;
+  height: 60px;
+  font-size: 43px;
+  text-align: right;
+  letter-spacing: 28px;
+}
+figure input.textLength_1 {
+  letter-spacing: 0;
+}
+figure input.textLength_2 {
+  padding-left: 81px;
+}
+figure input.textLength_3,
+figure input.answerMode {
+  padding-left: 28px;
+}
+
+
+.dragBox {
+  width: 360px;
+  height: 250px;
+}
+.colorBox {
+  position: relative;
+  margin: 0 auto;
+  width: 1080px;
+  height: 80px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.dropArea {
+  position:relative;
+  padding-top: 3px;
+  width: 100%;
+  height: 100%;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  left: 49px;
+  width: 280px;
+  height: 64px;
+}
+.dragObj > * {
+  pointer-events: none;
+}
+.dragObj[data-index="1"] {
+  top: 20px;
+}
+.dragObj[data-index="2"] {
+  top: 99px;
+}
+.dragObj[data-index="3"] {
+  top: 177px;
+}
+
+.dropArea .dragObj {
+  position: static;
+}
+.dropArea span {
+  display: none;
+}
+
+/* popup */
+
+.popup_pages ins.inputBox {
+  margin: 0 10px 0 0;
+}

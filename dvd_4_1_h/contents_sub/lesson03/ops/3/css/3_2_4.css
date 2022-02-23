@@ -1,0 +1,53 @@
+@charset "utf-8";
+.dragBox {
+  width: 1040px;
+  height: 210px;
+  margin: 50px auto 60px;
+  background: url(../images/3_2/3_2_4.svg) center / 1000px no-repeat;
+}
+.colorBox {
+  position:relative;
+  margin:0 auto;
+  width:1080px;
+  height:115px;
+  padding-left:50px;
+  box-sizing: border-box;
+}
+.dropArea {
+  position:relative;
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  position: absolute;
+  top: 39px;
+  width: 260px;
+  height: 136px;
+  text-align: center;
+}
+.dragObj[data-index="1"] {
+  left: 18px;
+}
+.dragObj[data-index="2"] {
+  left: 389px;
+}
+.dragObj[data-index="3"] {
+  left: 766px;
+}
+
+.fakeBox  span {
+  opacity: 0;
+}
+.fakeBox .symbolBox { margin-top: -10px; }
+.js-dragObj .symbolBox {
+  display: none;
+}
+.dropArea .symbolBox,
+.dropArea .dragObj.dragObjComplete {
+  display: none;
+  pointer-events: none;
+}

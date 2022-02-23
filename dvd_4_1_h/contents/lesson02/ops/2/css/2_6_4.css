@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+.supplies {
+  top: -75px;
+  right: 0; /* 팝업 버튼 기본 위치 */
+}
+
+
+.angleImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imageName {
+  position: absolute;
+  top: 380px;
+  font-size: 40px;
+}
+
+.angleImageBox_1 {
+  position: absolute;
+  width: 330px;
+  height: 200px;
+}
+.angleImageBox_2 {
+  position: absolute;
+  width: 220px;
+  height: 160px;
+}
+.angleImageBox_4 {
+  width: 330px;
+  height: 200px;
+  background: url(../images/2_6/2_6_4_04.svg) center bottom / contain no-repeat;
+}
+
+.angleImageBox_1:after,
+.angleImageBox_2:after,
+.angleImageBox_2:after,
+.angleImageBox_4:after {
+  position: absolute;
+  bottom: -60px;
+  left: calc(50% - 10px);
+  font-size: 40px;
+}
+
+.angleImageBox_1 .angleImage {
+  background: url(../images/2_6/2_6_4_01.svg) center bottom / contain no-repeat;
+}
+.angleImageBox_2 .angleImage {
+  background: url(../images/2_6/2_6_4_02.svg) center bottom / contain no-repeat;
+}
+
+
+
+
+.dragBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+}
+.dragBox .rotateContainer {
+  top: 14px;
+  left: 40px;
+}
+.dragBox .rotateContainer.showRotate {
+  width: 420px;
+  height: 240px;
+}
+
+
+/* page1 */
+.page1 .imageName.image_1 {
+  left: 200px;
+}
+.page1 .imageName.image_2 {
+  left: 560px;
+}
+.page1 .imageName.image_3 {
+  left: 910px;
+}
+
+.page1 .angleImageBox_1,
+.page1 .angleImageBox_2 {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+}
+.page1 .angleImageBox_1 {
+  bottom: 170px;
+  left: 82px;
+}
+.page1 .angleImageBox_2 {
+  bottom: 170px;
+  left: 456px;
+}
+
+.page1 .rotateContainer.angleImageBox_1.on > .rotateTarget,
+.page1 .rotateContainer.angleImageBox_2.on > .rotateTarget {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.page1 .angleImageBox_3 {
+  position: absolute;
+  bottom: 170px;
+  left: 815px;
+  width: 330px;
+  height: 240px;
+  background: url(../images/2_6/2_6_4_03.svg) center bottom / contain no-repeat;
+}
+.page1 .angleImageBox_3 .angleImage {
+  background: url(../images/2_6/2_6_4_answer.svg) center bottom / contain no-repeat;
+}
+
+.page1 .arrow.pink {
+  position: absolute;
+  top: 281px;
+  left: 722px;
+}
+
+
+
+
+
+
+/* page2 */
+.page2 .imageName.image_3 {
+  top: 294px;
+  left: 518px;
+}
+
+.page2 .angleImageBox_4 {
+  /* position: relative; */
+  width: 100%;
+  height: 270px;
+  margin: 20px 0 50px;
+  background: url(../images/2_6/2_6_4_04.svg) center bottom / contain no-repeat;
+}
+
+
+
+
+
+/* page3 */
+fomula input {
+  width: 120px;
+}
+
+
+.imageBox {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  height: 270px;
+  margin: 20px 0 50px;
+}
+.page3 .imageBox .angleImageBox_1,
+.page3 .imageBox .angleImageBox_2 {
+  position: relative;
+  margin: 0 100px;
+}
+
+.page3 .angleImageBox_1:after {
+  content: '가';
+}
+.page3 .angleImageBox_2:after {
+  content: '나';
+}
+
+
+
+/* page4 */
+.page4 .imageBox > * {
+  position: relative;
+  margin: 0 30px;
+}
+.page4 .arrow.pink {
+  align-self: center;
+}
+
+
+.page4 .angleImageBox_1:after {
+  content: '가';
+}
+.page4 .angleImageBox_2:after {
+  content: '나';
+}
+.page4 .angleImageBox_4:after {
+  content: '다';
+  left: 50%;
+}
+
+
+.popupButton {
+  top: -75px;
+  right: 0;
+}
+.popup_pages > li.head {
+  width: 420px;
+  top: 105px;
+  right: 80px;
+}
+
+
+
+/* page5 */
+textarea {
+  height: 214px;
+}
+
+.afterText {
+  position: absolute;
+  top: 80px;
+  left: 108px;
+  display: flex;
+}
+.afterText > span {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.afterText ul.list {
+  width: 100%;
+}
+.afterText ul.list > li {
+  margin-bottom: 10px;
+}

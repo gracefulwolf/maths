@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+  <link rel="stylesheet" href="../include/math/style/rotete.css">
+
+  <style>
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 20px auto 0
+    }
+
+    .inputQuizContainer figure {
+      width: 500px;
+      margin: 0 auto
+    }
+
+    .popup_pages figure {
+      width: 700px
+    }
+
+    [class*='inp'] input {
+      display: inline-block;
+      width: 170px;
+      text-align: center;
+    }
+
+    .inp1 {
+      position: absolute;
+      left: 362px;
+      top: 329px;
+      width: 500px;
+      text-align: right
+    }
+
+    .inp1 input {
+      text-align: left;
+      padding-left: 70px
+    }
+    
+
+    .inp2 {
+      position: absolute;
+      left: 460px;
+      top: 407px;
+      width: 500px;
+      /* text-align: right */
+    }
+    .inp2 input {
+      text-align: center;
+      margin-left: 55px
+    }
+
+    ul.list>li {
+      padding-left: 1.25em;
+      margin-bottom: 0
+    }
+
+    ins.exam {
+      top: 10px;
+      left: 315px
+    }
+
+    .solve ins.exam {
+      top: 4px;
+      left: 5px
+    }
+
+    .dragBox {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      width: 200px;
+      height: 100px;
+    }
+
+    .rotateContainer {
+      top: 14px;
+      left: 40px;
+    }
+
+    .rotateContainer.showRotate {
+      width: 420px;
+      height: 240px;
+    }
+  </style>
+</head>
+
+<body class="lesson_2">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>2. 각도</span>
+        <span>공부를 잘했나요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="57">수학<span>57~59</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="42">수학 익힘<span>42</span>쪽</div>
+      <div class="js-addThingsButton addThingsButton"></div>
+      <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="42"></div>
+    </header>
+    <main class="finish">
+      <div class="contentsArea noUserSelect">
+        <h1 data-index="6">각도를 어림하고 각도기로 확인해 보세요.</h1>
+        <section data-quiz="input">
+          <div class="inputQuizContainer">
+            <figure><img src="images/2_9/2_9_6.svg" alt=""></figure>
+            <div class="inp1">어림한 각도 약 <input type="text" data-input-obj="1" data-answer="30"><ins class="exam"
+                data-after-target="input">예</ins> ˚</div>
+            <div class="inp2">잰 각도 <input type="text" data-input-obj="1" data-answer="30"> ˚</div>
+          </div>
+          <div class="dragBox noIcon">
+            <div class="js-rotate rotateContainer">
+              <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+              <div class="js-rotateButton rotateButton right"></div>
+              <div class="js-rotateButton rotateButton left"></div>
+            </div>
+          </div>
+          <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <p>
+            ‌주어진 각도를 어림하고 각도기로 확인하면 다음과 같습니다.
+          <ul class="list">
+            <li><ins class="exam">예</ins> 어림한 각도 약 <span class="textColor answer">30</span>˚, 잰 각도 <span
+                class="textColor answer">30</span>˚</li>
+          </ul>
+          </p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/rotate.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () { });
+  </script>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+      window.$popupCallBack = window.$popupCallBack || {};
+
+
+      window.$callBack.sliderMove = function (SLIDER) {
+        rotateArray.forEach(function (rotate) {
+          rotate.reset();
+        });
+      }
+
+      // window.$popupCallBack.open = function(POPUP) {
+      //   var index = POPUP.btn.getAttribute('data-index')-1;
+      //   $pm.array.inPopup.slider[0].reset({idx: index});
+      // };
+      window.$popupCallBack.close = function (POPUP) {
+        rotateArray.forEach(function (rotate) {
+          rotate.reset();
+        });
+      };
+
+      var rotateArray = $ts.getEl('.js-rotate').map(function (obj) {
+        return new $Rotate({
+          obj: obj,
+          target: obj.querySelector('.js-rotateTarget'),
+          degree: 5,
+          rightButton: obj.querySelector('.js-rotateButton.right'),
+          leftButton: obj.querySelector('.js-rotateButton.left'),
+          resetButton: false,
+          copy: false,
+          callback: {
+            move: function (Rotate) { },
+            end: function (Rotate) { }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

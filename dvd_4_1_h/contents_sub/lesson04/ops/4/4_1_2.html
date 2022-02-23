@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+  <link rel="stylesheet" href="../include/math/style/drawLine.css">
+  <style>
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 0 auto
+    }
+
+    .inputQuizContainer figure {
+      width: 550px;
+      margin: -60px auto 0px
+    }
+
+    .drawLine {
+      position: absolute;
+      left: 310px;
+      top: 230px;
+      width: 230px;
+      height: 220px;
+      /* background:rgba(0,0,0,0.5); */
+    }
+
+    .draw_2 .drawLine {
+      position: absolute;
+      left: 640px;
+      top: -60px;
+      width: 230px;
+      height: 220px;
+    }
+
+    .resetButton {
+      right: 0;
+      bottom: 10px;
+    }
+
+    .answerImage {
+      position: absolute;
+      top: 45px;
+      left: 46px;
+      width: 136px;
+      height: 131px;
+      pointer-events: none;
+      background: url(images/4_1/4_1_2_01_answer.svg) center / contain no-repeat;
+      display: none;
+    }
+
+    .pointerOff .answerImage {
+      display: block
+    }
+
+    .answerImage2 {
+      position: absolute;
+      top: 44px;
+      left: 45px;
+      width: 142px;
+      height: 134px;
+      background: url(images/4_1/4_1_2_02_answer.svg) center / contain no-repeat;
+    }
+
+    .drawLine.pointerOff .drawArea {
+      opacity: 0
+    }
+
+    .contentsArea h1 {
+      word-break: normal;
+      letter-spacing: -1px;
+    }
+    .supplies {
+    top: 70px;
+    right: 0;
+}
+  </style>
+</head>
+
+<body class="lesson_4">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>4. 평면도형의 이동</span>
+        <span>평면도형을 밀어 볼까요 </span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="86">수학<span>86~89</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="62">수학 익힘<span>62</span>쪽</div>
+      <div class="js-addThingsButton addThingsButton"></div>
+      <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="62"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea">
+        <h1 data-star="1" data-index="2">도형을 주어진 방향으로 밀었을 때의 도형을 각각 그려 보세요.</h1>
+        <div class="js-supplies supplies">
+          <div class="js-suppliesContent suppliesContent">
+            <p>여러 가지 모양<ins class="downButton" data-download-file="../ebook_sub/익힘_4학년_1학기_129.pdf"></ins></p>
+          </div>
+          <div class="js-suppliesButton suppliesButton"></div>
+        </div>    
+        <section>
+          <div class="inputQuizContainer">
+            <figure><img src="images/4_1/4_1_2.svg" alt=""></figure>
+            <div class="drawContainer draw_1">
+              <div class="js-drawLine drawLine" data-option="drawing">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+                <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                <div class="answerImage"></div>
+                <div class="js-resetButton resetButton" data-hover=""></div>
+              </div>
+            </div>
+            <div class="drawContainer draw_2">
+              <div class="js-drawLine drawLine" data-option="drawing">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+                <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                <div class="answerImage answerImage2"></div>
+                <div class="js-resetButton resetButton" data-hover=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="">
+          </div>
+          <div class="js-buttons quizButtons" data-hover="" data-type="answer"></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <p>도형을 아래쪽, 위쪽으로 밀었을 때의 모양은 처음 도형과 같습니다.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/newDrawLine.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      var drawLines = [];
+      var answers = [
+        [{
+          start: { x: 78, y: 242 },
+          end: { x: 280, y: 68 }
+        }],
+        [{
+          start: { x: 18, y: 31 },
+          end: { x: 219, y: 203 }
+        }]
+      ];
+
+      function resetAnswer(drawLine) {
+        drawLine.reset();
+      }
+
+      function createDrawLine(container, index) {
+        drawLines.push(new DrawLine({
+          container: container.querySelector('.js-drawLine'),
+          resetButton: container.querySelector('.js-resetButton'),
+          answerButton: document.querySelector('.js-buttons'),
+          answer: answers[index],
+          callback: {
+            correct: function (DrawLine) {
+              // console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+            },
+            showAnswer: function (DrawLine) { },
+          },
+        }));
+      }
+
+      window.addEventListener('load', function () {
+        [document.querySelector('.draw_1'),
+        document.querySelector('.draw_2')].forEach(createDrawLine);
+
+        setTimeout(function () { drawLines.forEach(resetAnswer); }, 100);
+      });
+    })();
+  </script>
+</body>
+
+</html>

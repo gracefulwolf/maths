@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>OX 퀴즈</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="./css/common.css"></link>
+		<link type="text/css" rel="stylesheet" href="./css/game.css"></link>
+
+		<script type="text/javascript" src="./js/createjs.min.js"></script>
+		<script type="text/javascript" src="./animatecc/animate.js"></script>
+
+		<script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="./js/gsap.min.js"></script>
+
+		<script type="text/javascript" src="./js/animate.init.js"></script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/game.js"></script>
+
+	</head>
+	<body onselectstart="return false" ondragstart="return false">
+		<!-- wrap -->
+		<div id="wrap">
+			<!-- container -->
+			<div id="container">
+				<!-- game-content -->
+				<div id="game-content">
+                    
+                    <!-- intro -->
+                    <div id="intro" class="section">
+
+						<!-- lesson-con -->
+						<div class="lesson-con">
+							<div class="title">단원</div>
+							<div class="lesson-btns">
+								<div class="lesson-btn button active">1</div>
+								<div class="lesson-btn button">2</div>
+								<div class="lesson-btn button">3</div>
+								<div class="lesson-btn button">4</div>
+								<div class="lesson-btn button">5</div>
+								<div class="lesson-btn button">6</div>
+							</div>
+						</div>
+						<!-- //lesson-con -->
+
+						<!-- start-btn -->
+						<div class="start-btn button"><span>놀이 시작</span></div>
+						<!-- //start-btn -->
+
+						<!-- guide-btn -->
+						<div class="guide-btn button">놀이 방법</div>
+						<!-- //guide-btn -->
+
+						<!-- guide-pop -->
+						<div class="guide-pop hidden">
+							<div class="pop-wrap">
+								<div class="title">놀이 방법</div>
+								<ol>
+									<li>단원과 출제 문항 수를 정합니다.</li>
+									<li>15초의 제한 시간 동안 학생들은 문제의 O,X를 몸으로 나타냅니다.</li>
+									<li>모든 학생들이 답을 나타내면 선생님은 정답을 확인합니다.</li>
+									<li>문제를 틀린 학생은 탈락하고, 맞힌 학생은 다음 문제를 풉니다.</li>
+									<li>모든 학생이 문제를 다 풀지 못하고 탈락했을 경우, <img src="./images/guide_img.png" />를 이용하여 퀴즈를 초기화 합니다.</li>
+									<li>끝까지 문제를 다 푼 학생의 이름을 입력합니다.</li>
+								</ol>
+								<div class="close-btn button"></div>
+							</div>
+						</div>
+						<!-- //guide-pop -->
+
+                    </div>
+					<!-- //intro -->
+					
+					<!-- game -->
+                    <div id="game" class="section hidden">
+
+						<!-- home-btn -->
+						<div class="home-btn button"></div>
+						<!-- //home-btn -->
+
+						<!-- progress-con -->
+						<div class="progress-con">
+							<div class="progress-wrap">
+								<div class="bar"></div>
+							</div>
+						</div>
+						<!-- //progress-con -->
+
+						<!-- time-con -->
+						<div class="time-con">
+							<span>15</span>
+						</div>
+						<!-- //time-con -->
+
+						<!-- quiz -->
+						<div class="quiz-con quiz4-2">
+
+							<!-- lesson1 -->
+							<div class="quiz-set lesson1">
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text"><img src="./images/quiz/quiz_4_2_1_1_1.png" /> + <img src="./images/quiz/quiz_4_2_1_1_2.png" />는 분자 3과 2는 그대로 두고,<br />분모끼리 더합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text"><span style="margin-right:5px">4</span><img src="./images/quiz/quiz_4_2_1_2_1.png" />는 자연수 4에서 1만큼을<br /><img src="./images/quiz/quiz_4_2_1_2_2.png" />로 바꾸어 계산합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text"><img src="./images/quiz/quiz_4_2_1_3_1.png" />은 <img src="./images/quiz/quiz_4_2_1_3_2.png" />입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">우유 <img src="./images/quiz/quiz_4_2_1_4_1.png" /> L를 사서 집에 오니<br />냉장고에 우유 <img src="./images/quiz/quiz_4_2_1_4_2.png" /> L가 남아 있었습니다.<br />우유는 모두 <img src="./images/quiz/quiz_4_2_1_4_3.png" /> L가 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">
+											잘못 계산한 친구는 은빈이입니다.<br />
+											<img src="./images/quiz/quiz_4_2_1_5.png" />
+										</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text" style="line-height:85px;"><img src="./images/quiz/quiz_4_2_1_6_1.png" /> = <span class="box" style="margin-right:5px"></span><img src="./images/quiz/quiz_4_2_1_6_2.png" />에서<br /><span class="box"></span> 안에 수는 4입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text"><img src="./images/quiz/quiz_4_2_1_7_1.png" /> + <img src="./images/quiz/quiz_4_2_1_7_2.png" /> = <img src="./images/quiz/quiz_4_2_1_7_3.png" />입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text"><img src="./images/quiz/quiz_4_2_1_8_1.png" /> <span class="hu">-</span> <img src="./images/quiz/quiz_4_2_1_8_2.png" />에서 자연수는 자연수끼리,<br />분수는 분수끼리 뺍니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title"><span class="box"></span> 안에 알맞은 수는 3입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_1_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text"><img src="./images/quiz/quiz_4_2_1_10_1.png" /> + <img src="./images/quiz/quiz_4_2_1_10_2.png" /> = <img src="./images/quiz/quiz_4_2_1_10_3.png" />입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson1 -->
+
+							<!-- lesson2 -->
+							<div class="quiz-set lesson2">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">두 변의 길이가 같은 삼각형을<br />이등변삼각형이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">이등변삼각형일 때, <span class="box"></span> 안에 알맞은 수는 7입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_2_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">정삼각형은 세 각의 크기가 모두 다릅니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">한 각이 예각인 삼각형을<br />예각삼각형이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">정삼각형은 예각삼각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x"">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 50입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_2_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">한 각이 둔각인 삼각형은 둔각삼각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">이등변삼각형은 예각삼각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 60입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_2_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">세 변의 길이가 4 cm, 3 cm, 4 cm인 삼각형은<br />이등변삼각형입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson2 -->
+
+							<!-- lesson3 -->
+							<div class="quiz-set lesson3">
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text" style="line-height:70px;">분수 <img src="./images/quiz/quiz_4_2_3_1.png" />는 소수로 0.24라 쓰고,<br />영 점 이십사라고 읽습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">8.173의 소수 둘째 자리 숫자는 7입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">0.520과 0.52는 다른 수입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">소수 5.265는 0.001이 5265개인 수입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">0.01의 10배는 0.001입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">1.9+0.8=2.7입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">0.123과 0.124 중에서<br />더 큰 소수는 0.124입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">685의 <img src="./images/quiz/quiz_4_2_3_8.png" />은 0.685입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">5.2<span class="hu">-</span>0.85=4.35입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">1.63보다 4.5만큼 더 큰 수는 2.08입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson3 -->
+
+							<!-- lesson4 -->
+							<div class="quiz-set lesson4">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">두 직선이 만나서 이루는 각이 직각일 때,<br />두 직선은 서로 수직이라고 합니다. </div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">서로 만나지 않는 두 직선을 평행하다고 하고,<br />평행한 두 직선을 평행선이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">마름모는 네 변의 길이가<br />모두 같은 사각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">마름모는 네 각이 모두 직각인 사각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">정사각형은 마주 보는 두 쌍의 변이 평행합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">마주 보는 한 쌍의 변이 평행한 사각형을<br />평행사변형이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title tl">주어진 물건에서 평행선을 찾을 수 있는 것은<br />공책과 철봉입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_4_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">평행사변형은 마주 보는<br />각의 크기가 서로 다릅니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">직사각형은 네 변의 길이가<br />모두 같은 사각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">평행한 변이 한 쌍이라도 있는 사각형을<br />사다리꼴이라고 합니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson4 -->
+
+							<!-- lesson5 -->
+							<div class="quiz-set lesson5">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">꺾은선그래프는 수량의 변화를<br />한눈에 알 수 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">꺾은선그래프에서 필요 없는 부분은<br />물결선으로 줄여서 그릴 수 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">체온이 가장 낮은<br />시각은 11시입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_5_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">체온의 변화가 가장 적은 시간은 9시에서 10시 사이입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_5_4.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">물결선으로 줄일 수 있는 가장 큰 수는 30℃입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_5_5.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">가로 눈금에는 기온을 나타내고, 세로 눈금에는 지역을 나타냅니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_5_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">학교의 학생 수가 변화하는 모습을 보려면<br />막대그래프로 나타내면 됩니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">꺾은선그래프는 각 수량을<br />그림으로 나타냅니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">작은 눈금 한 칸의 크기는 0.2입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_5_9.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">변화하는 모습을 뚜렷하게 알기 위해<br />세로 눈금 한 칸의 크기를 크게 잡아야 합니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson5 -->
+
+							<!-- lesson6 -->
+							<div class="quiz-set lesson6">
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">선분으로만 둘러싸인 도형을<br />정다각형이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">정다각형은 모든 각의 크기와<br />모든 변의 길이가 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">대각선은 정다각형에만 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">대각선의 개수가 가장 많은 것은<br />정팔각형입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_6_4.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">정팔각형의 한 각의 크기는 135°입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">사각형만으로는 아래 도형을<br />빈틈없이 채울 수 없습니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_6_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text"><span class="box"></span> 안에 알맞은 수는 15입니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_6_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">두 도형은 모든 변의 길이가 같지 않기 때문에<br />정다각형이 아닙니다.</div>
+									<div class="image"><img src="./images/quiz/quiz_4_2_6_8.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">삼각형의 대각선 수는 2개입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">정삼각형 7개로 정칠각형을 만들 수 있습니다. </div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson6 -->
+							
+
+							<!-- page-con -->
+							<div class="page-con">
+								<span class="current">1</span>/10
+							</div>
+							<!-- page-con -->
+
+							<div class="answer-btn button">정답</div>
+							<div class="next-btn button hidden">다음 문제</div>
+						</div>
+						<!-- //quiz -->
+
+						<!-- o-img -->
+						<div class="o-img hidden"></div>
+						<!-- //o-img -->
+
+						<!-- x-img -->
+						<div class="x-img hidden"></div>
+						<!-- //x-img -->
+
+						<!-- char-con -->
+						<div class="char-con">
+							<div class="default"></div>
+							<div class="o"></div>
+							<div class="x"></div>
+						</div>
+						<!-- //char-con -->
+
+						<div class="restart-btn button">처음부터</div>
+
+                    </div>
+					<!-- //game -->
+
+					<!-- result -->
+                    <div id="result" class="section hidden">
+						
+						<!-- result-pannel -->
+						<div class="result-pannel">
+							<div class="input-con">
+								<input type="text" placeholder="이름을 입력해 주세요.">
+							</div>
+							<div class="text-con">
+								친구들이 끝까지 잘 풀었어요.<br />
+								모두 축하해 주세요.
+							</div>
+							<div class="reset-btn button"><span>다시 하기</span></div>
+						</div>
+						<!-- //result-pannel -->
+
+						<!-- result-top -->
+						<div class="result-top">
+							<h4>놀이 결과</h4>
+						</div>
+						<!-- //result-top -->
+
+						<div class="fire1"></div>
+						<div class="fire2"></div>
+						<div class="fire3"></div>
+						<div class="fire4"></div>
+
+                    </div>
+					<!-- //result -->
+
+					<!-- animation_container -->
+					<div id="animation_container" style="background-color:transparent; width:1280px; height:720px">
+						<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:transparent;"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+					</div>
+					<!-- //animation_container -->
+
+				</div>
+				<!-- //game-content -->
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>

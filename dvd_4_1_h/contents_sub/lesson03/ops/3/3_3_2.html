@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-1/style/sub_4-1.css">
+    <style>
+      fomula{justify-content: flex-start;}
+      fomula.vertical {
+        width: 240px;
+        margin: 0 auto;
+        
+      }
+      fomula.vertical > ul {
+        width: calc(80px * 3);
+      }
+      fomula.vertical > ul > li {
+        flex: 1 0 auto;
+      }
+      .flexListContainer {
+        display: flex;
+        align-items: center;
+        height: 420px;
+        margin: 0 auto 0;
+        width: 1070px;
+      }
+      .flexListContainer > li {
+        flex: 1 0 auto;
+      }
+      .flexListContainer fomula.vertical {
+        width: 240px;
+        margin: 0 auto;
+      }
+      /* ins{display: inline-block;} */
+      .cont{display:flex;padding-top:20px;align-items: center}
+      input.inlineBox{width:200px}
+      .spaceAround{justify-content: space-around;}
+      figure{padding:50px}
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 곱셈과 나눗셈</span>
+          <span>몇십으로 나누어 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="68">수학<span>68~69</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="50">수학 익힘<span>50</span>쪽</div>
+ <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="50"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="1" data-index="2">계산해 보세요.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1" data-quiz="input">
+                  <ul class="flexListContainer">
+                    <li>
+                      <flex class="spaceAround">
+                        <div>
+                          120<symbol class="division"></symbol>40 
+                          <div class="cont"><ins class="balloon line">몫</ins><input type="text" data-input-obj="1" data-answer="3" class="inlineBox"></div>
+                          <div class="cont"><ins class="balloon line">나머지</ins><input type="text" data-input-obj="1" data-answer="0" class="inlineBox"></div>
+                        </div>
+                        <div>
+                          562<symbol class="division"></symbol>70
+                          <div class="cont"><ins class="balloon line">몫</ins><input type="text" data-input-obj="1" data-answer="8" class="inlineBox"></div>
+                          <div class="cont"><ins class="balloon line">나머지</ins><input type="text" data-input-obj="1" data-answer="2" class="inlineBox"></div>
+                        </div>
+                      </flex>
+                    </li>
+                  </ul>
+                  <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+                  <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+                </li>
+                <li class="page2" data-quiz="input">
+                  <ul class="flexListContainer">
+                    <li>
+                      <flex class="spaceAround">
+                        <div>
+                          <div><fomula class="horizon divisionBox">90 810</fomula></div>
+                          <div class="cont"><ins class="balloon line">몫</ins><input type="text" data-input-obj="1" data-answer="9" class="inlineBox"></div>
+                          <div class="cont"><ins class="balloon line">나머지</ins><input type="text" data-input-obj="1" data-answer="0" class="inlineBox"></div>
+                        </div>
+                        <div>
+                          <div><fomula class="horizon divisionBox">40 285</fomula></div>
+                          <div class="cont"><ins class="balloon line">몫</ins><input type="text" data-input-obj="1" data-answer="7" class="inlineBox"></div>
+                          <div class="cont"><ins class="balloon line">나머지</ins><input type="text" data-input-obj="1" data-answer="5" class="inlineBox"></div>
+                        </div>
+                      </flex>
+                    </li>
+                  </ul>
+                  <div class="quizButtons solve" data-hover="" data-popup-btn="2" data-popup-option="toggle" data-solve-btn=""></div>
+                  <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <figure><img src="images/3_3/3_3_2_01.svg" alt=""></figure>
+          </li>
+          <li class="min solve slideup" data-popup-page="2">
+            <figure><img src="images/3_3/3_3_2_02.svg" alt=""></figure>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() { });
+    </script>
+  </body>
+</html>
