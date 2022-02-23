@@ -81,7 +81,7 @@ function viewChunjaeMediaLayer(mID) {
     strURL = "https://e.tsherpa.co.kr/media/mediaframe1.aspx?fname=" + (mID.toLowerCase().indexOf("https://chunjae.gscdn.com") > -1 ? mID.replace("https://", "") : mID);
   }
 
-  laypopHtml += '<iframe width="100%" height="100%" src="'+strURL+'" allowfullscreen=""></iframe>';
+  laypopHtml += '<iframe width="100%" height="100%" src="'+strURL+'" allowfullscreen="" allow="autoplay"></iframe>';
   laypopHtml += '</div>';
   laypopHtml += '</div></div>';
 
