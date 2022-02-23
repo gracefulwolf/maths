@@ -16,9 +16,43 @@
 
 		<link rel="stylesheet" href="../../../common/css/common.css" />
 		<link rel="stylesheet" href="../../../common/css/content.css" />
-		<link rel="stylesheet" href="./css/mm_31_3_03_04_01.css" />
+		<!-- <link rel="stylesheet" href="./css/mm_31_3_03_04_01.css" /> -->
+
+		<!-- restyle -->
+		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
+		<style type="text/css">
+			.restyle .ui-container,
+			.restyle .title-h1,
+			.restyle .info-box,
+			.restyle .q-box,
+			.restyle .bottom-tabs,
+			.restyle .btns-bottom-right,
+			.restyle .quiz-input-text .btn-check {
+				display: none;
+				padding: 0;
+				margin: 0;
+			}
+			.restyle .content-container > .content > .bg {
+				display: none;
+			}
+			.restyle .content-container {
+				position: relative;
+				width: 100%;
+				height: 553px;
+				overflow: hidden;
+			}
+			.restyle .app-ccAnimation {
+				position: relative;
+			}
+			.restyle #btn-play-ani {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
 	</head>
-	<body>
+	<body class="restyle">
         <div class="content-container">
 			<div class="content" data-ui="cornerBase">
 				<div class="bg"></div>
@@ -40,7 +74,7 @@
 
 				<!-- app-animation -->
 				<div id="animation-01" class="app-ccAnimation" 
-					data-ui="app-ccAnimation" data-option='{"width":1280, "height":720, "left": "0px", "top": "0px", "buttons":["#btn-play-ani"]}'>
+					data-ui="app-ccAnimation" data-option='{"width":1280, "height":553, "left": "0", "top": "0", "buttons":["#btn-play-ani"]}'>
 					<canvas></canvas>
 				</div>
 				<!-- 애니 재생 버튼 -->
