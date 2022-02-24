@@ -18,8 +18,85 @@
 		<link rel="stylesheet" href="../../../common/css/content.css" />
 
 		<link rel="stylesheet" href="./css/mm_31_3_03_03_01.css" />
+		<!-- restyle -->
+		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
+		<style type="text/css">
+			.restyle .ui-container,
+			.restyle .bg,
+			.restyle .title-h1,
+			.restyle .info-box,
+			.restyle .q-box,
+			.restyle .bottom-tabs,
+			.restyle #btn-hint-01 {
+				display: none;
+				padding: 0;
+				margin: 0;
+			}
+			.restyle .content-container {
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+			}
+			.restyle .btn-answer>span,
+			.restyle .btns-bottom-right>.button::after {
+				display: none;
+			}
+			.restyle .btns-bottom-right {
+				display: none;
+			}
+			.restyle #btn-play-ani {
+				position: absolute;
+				top: 115px;
+				left: 469px;
+				width: 51px;
+				height: 70px;
+				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;
+				-webkit-animation: opacity 1.5s ease-in 3;
+				-o-animation: opacity 1.5s ease-in 3;
+				animation: opacity 1.5s ease-in 3;
+			}
+			@keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
+			}
+			@-webkit-keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
+			}
+			@-ms-keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
+			}
+		</style>
 	</head>
-	<body>
+	<body class="restyle">
         <div class="content-container">
 			<div class="content" data-ui="cornerBase">
 				<div class="bg"></div>
@@ -42,7 +119,7 @@
 
 					<!-- app-animation -->
 					<div id="animation-01" class="app-ccAnimation" 
-						data-ui="app-ccAnimation" data-option='{"width":1280, "height":720, "left": "0px", "top": "0px", "buttons":["#btn-play-ani"]}'>
+						data-ui="app-ccAnimation" data-option='{"width":1280, "height":400, "left": "-60px", "top": "-200px", "buttons":["#btn-play-ani"]}'>
 						<canvas></canvas>
 					</div>
 					<!-- 애니 재생 버튼 -->
