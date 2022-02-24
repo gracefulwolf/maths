@@ -14,7 +14,7 @@
 .imageBox {
   width: 100%;
   height: 350px;
-  margin: 20px 0 30px;
+  margin: 20px 0;
 
 }
 .quizContainer {
@@ -101,7 +101,7 @@ main .contentsArea{left:0; right:auto; width:100%;}
       </header>
       <main class="act quiz">
         <div class="contentsArea">
-          <section  data-quiz="input" data-quiz-name="input_1">
+          <section  data-quiz="toggle" data-quiz-name="input_1">
             <div class="study_guide" style="top:0; right:0;">
               <em>각도기</em>를 <em>드래그</em>하여 옮기세요.
             </div>
@@ -113,11 +113,17 @@ main .contentsArea{left:0; right:auto; width:100%;}
               <div class="js-dragObj dragObj" data-type="drag" data-index="1"></div>
               <!-- <div class="js-resetButton resetButton" data-hover=""></div> -->
               <div class="induceLight"></div>
-              <div class="answerImage" data-click-target="1"></div>
+              <div class="answerImage" data-toggle-obj="2" data-toggle-obj="2"></div>
             </div>
             <div class="quizContainer">
-              <div class="inputBox">
+              <!-- <div class="inputBox">
                 <div><span class="colorBox sky">잰 각도</span> <input placeholder="직접 쓰기" maxlength="3" class="inlineBox" data-input-obj="1" data-answer="70">˚</div>
+              </div> -->
+              <div style="display: flex;justify-content: center;">
+                <div class="colorBox check sky mr_10" style="line-height: 38px;">잰 각도</div>
+                <div class="toggle" data-hover="" data-toggle-obj="1">
+                  <div class="answer " data-toggle-target="1">70</div>
+                </div>°
               </div>
             </div>
             <div class="dragBox noIcon">
