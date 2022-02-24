@@ -26,19 +26,17 @@
 			.restyle .info-box,
 			.restyle .q-box,
 			.restyle .bottom-tabs,
-			.restyle .btns-bottom-right,
-			.restyle .quiz-input-text .btn-check {
+			.restyle .quiz-input-text .btn-check,
+			.restyle .btns-bottom-right span,
+			.restyle .btns-bottom-right > .button::after {
 				display: none;
 				padding: 0;
 				margin: 0;
 			}
-			.restyle .content-container > .content > .bg {
-				display: none;
-			}
 			.restyle .content-container {
 				position: relative;
 				width: 100%;
-				height: 553px;
+				height: 300px;
 				overflow: hidden;
 			}
 			.restyle .app-ccAnimation {
@@ -46,9 +44,53 @@
 			}
 			.restyle #btn-play-ani {
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+				top: 80px;
+				left: 469px;
+				width: 51px;
+				height: 70px;
+				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;
+				-webkit-animation: opacity 1.5s ease-in 3;
+				-o-animation: opacity 1.5s ease-in 3;
+				animation: opacity 1.5s ease-in 3;
+			}
+			@keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
+			}
+			@-webkit-keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
+			}
+			@-ms-keyframes opacity {
+				0% {
+					opacity: 1
+				}
+
+				50% {
+					opacity: 0
+				}
+
+				100% {
+					opacity: 1
+				}
 			}
 		</style>
 	</head>
@@ -74,7 +116,7 @@
 
 				<!-- app-animation -->
 				<div id="animation-01" class="app-ccAnimation" 
-					data-ui="app-ccAnimation" data-option='{"width":1280, "height":553, "left": "0", "top": "0", "buttons":["#btn-play-ani"]}'>
+					data-ui="app-ccAnimation" data-option='{"width":1280, "height":400, "left": "-120px", "top": "-200px", "buttons":["#btn-play-ani"]}'>
 					<canvas></canvas>
 				</div>
 				<!-- 애니 재생 버튼 -->
