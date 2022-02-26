@@ -12,7 +12,8 @@
 	<style>
 		.content-colgroup {display:flex}
 		.content-col {position:relative}
-		.content-col.img-col {margin-right:40px;padding:100px 0 0 40px}
+		.content-col .single.charSpriteImg {margin-top:60px}
+		.content-col.img-col {margin-right:40px;padding:100px 0 0 40px;margin-top:70px}
 		.content-col.img-col img {width:600px}
 		.content-col.img-col .txt-item {position:absolute;font-size:.5em}
 		.content-col.img-col .txt-item.n1 {top:75px;left:40px}
@@ -24,13 +25,17 @@
 		.tableContainer .img-box {position:relative;padding:40px 0 10px}
 		.tableContainer .img-box img {width:300px}
 		.tableContainer .img-box .txt-item {position:absolute;font-size:.5em}
-		.tableContainer .toggle {background-color:transparent}
+		.tableContainer .toggle {background-color:transparent;height:238px;display:flex;align-items:center;justify-content:center}
 		.innerTab_1 .tableContainer .img-box .txt-item.n1 {top:15px;left:25px}
 		.innerTab_1 .tableContainer .img-box .txt-item.n2 {top:45px;left:0}
 		.innerTab_2 .tableContainer .img-box .txt-item.n1 {top:15px;left:45px}
 		.innerTab_2 .tableContainer .img-box .txt-item.n2 {top:42px;left:10px}
 		.innerTab_3 .tableContainer .img-box .txt-item.n1 {top:15px;left:45px}
 		.innerTab_3 .tableContainer .img-box .txt-item.n2 {top:42px;left:10px}
+
+		.page_1 .popBtn.speech {top:160px;left:50px}
+		.popup_pages>li.speech.popup_1  {top:160px;left:590px;right:50px;}
+		.popup_pages>li.speech.bottom:after {right:200px}
 	</style>
 </head>
 
@@ -55,7 +60,9 @@
 							<div class="txt-item n2">1cm</div>
 						</div>
 						<div class="content-col">
-							<div id="aniBox_1"></div>
+							<div class="popBtn speech right popBtn_1" data-hover="" data-popup-mode="pageOff" data-popup-btn="1"></div>
+							<div class="single charSpriteImg boy_1"></div>
+							<!--<div id="aniBox_1"></div>-->
 						</div>
 					</div>
 				</li>
@@ -84,8 +91,8 @@
 										<tbody>
 										<tr>
 											<th scope="col">글자 모양</th>
-											<th scope="col">가로(㎝)</th>
-											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로(cm)</th>
+											<th scope="col">세로(cm)</th>
 											<th scope="col">가로에 대한<br>세로의 비율</th>
 										</tr>
 										<tr>
@@ -129,8 +136,8 @@
 										<tbody>
 										<tr>
 											<th scope="col">글자 모양</th>
-											<th scope="col">가로(㎝)</th>
-											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로(cm)</th>
+											<th scope="col">세로(cm)</th>
 											<th scope="col">가로에 대한<br>세로의 비율</th>
 										</tr>
 										<tr>
@@ -182,8 +189,8 @@
 										<tbody>
 										<tr>
 											<th scope="col">글자 모양</th>
-											<th scope="col">가로(㎝)</th>
-											<th scope="col">세로(㎝)</th>
+											<th scope="col">가로(cm)</th>
+											<th scope="col">세로(cm)</th>
 											<th scope="col">가로에 대한<br>세로의 비율</th>
 										</tr>
 										<tr>
@@ -228,6 +235,13 @@
 			</ul>
 		</div>
 	</main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="speech bottom popup_1" data-popup-page="1">
+				<div class="popup_contents">타이포그래피는 글씨체나 글자 배치를 구성하고 표현하는 활동을 말해요. 선의 길이, 선의 간격, 자음과 모음 글자의 가로·세로의 비율을 조정하여 글씨체를 만들어요.</div>
+			</li>
+		</ul>
+	</section>
 </div>
 <div id="loadingContainer">
 	<div class="loadingIconAnimation"></div>
