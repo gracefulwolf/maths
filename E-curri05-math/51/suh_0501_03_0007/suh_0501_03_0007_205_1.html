@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		#wrap header .title.type-number:before {display:none}
+		#wrap header .title.type-number {padding-left:50px}
+		.title.type-number .number {position:absolute;left:0;top:2px}
+
+		.tableContainer {width:100%}
+		.tableContainer .toggle {background-color:transparent;width:100%;display:flex;height:150px;align-items:center;justify-content:center}
+
+		.dapCheckBtn {z-index:2}
+
+		.ex-box {display:flex;align-items:flex-start}
+		.ex-box .exam {align-self:flex-start;margin:6px 10px 0 0 !important;;flex-shrink:0}
+		.ex-box p {text-align:justify}
+
+		.box-flex {display:flex}
+		.box-flex .lineBox {margin:-40px 10px 0;padding-top:36px}
+		.box-flex .box-item {width:calc(100% / 3);position:relative}
+		.box-flex .box-item .characterImg {position:relative;z-index:2}
+		.box-flex .lineBox.colorBox {position:absolute;right:10px;top:120px;padding-top:10px}
+		.box-flex .lineBox.colorBox.orange {background-color:#fff1d0}
+		.box-flex .lineBox.colorBox.purple {background-color:#ece5ff;color:#000}
+	</style>
+</head>
+
+<body>
+<div id="wrap" class="math" >
+	<header>
+		<div class="title type-number">
+			<ins class="bullet number orange">5</ins>
+			<p class="textAlignJ">한 사람에게 공책을 2권씩 나누어 주려고 합니다. 사람의 수와 공책의 수 사이의 대응 관계를 잘못 이야기한 친구를 찾아 옳게 고쳐 보세요.</p>
+		</div>
+	</header>
+	<main>
+		<div class="contentsBox basicSlider" data-slide-container="main">
+			<ul class="basicSlider_slides" data-slides>
+				<li class="page_1" data-slide-container="">
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1">
+							<div class="box-flex">
+								<div class="box-item">
+									<div class="characterImg new-character circle">
+										<div class="charSpriteImg boy_4"></div>
+									</div>
+									<div class="lineBox colorBox green">슬기</div>
+									<div class="lineBox green">
+										<p>대응 관계를 알면 사람의 수가 많을 때도 공책의 수를 쉽게 알 수 있어.</p>
+									</div>
+								</div>
+								<div class="box-item">
+									<div class="characterImg new-character circle">
+										<div class="charSpriteImg girl_2"></div>
+									</div>
+									<div class="lineBox colorBox orange">지혜</div>
+									<div class="lineBox orange">
+										<p>사람의 수를 □, 공책의 수를 △라고 할 때, 두 양 사이의 대응 관계는 △÷2=□야.</p>
+									</div>
+								</div>
+								<div class="box-item">
+									<div class="characterImg new-character circle">
+										<div class="charSpriteImg boy_3"></div>
+									</div>
+									<div class="lineBox colorBox purple">준기</div>
+									<div class="lineBox purple">
+										<p style="letter-spacing:-1px">대응 관계를 나타낸 식 ☆×2=◇에서 ☆은 공책의 수, ◇는 사람의 수를 나타내.</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<div class="tableContainer brown">
+								<table>
+									<colgroup>
+										<col style="width:auto">
+										<col style="width:63%">
+									</colgroup>
+									<tbody>
+									<tr>
+										<th scope="col">잘못 이야기한 친구</th>
+										<th scope="col">옳게 고치기</th>
+									</tr>
+									<tr>
+										<td>
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													준기
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<p>공책의 수가 사람의 수의 2배이므로 ☆×2=◇에서 ☆은 사람의 수, ◇는 공책의 수입니다.</p>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn="1"></button>
+						</li>
+					</ul>
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+
+	</script>
+</body>
+</html>
