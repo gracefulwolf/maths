@@ -7,7 +7,7 @@
 <title></title>
 <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<!--<link rel="stylesheet" href="../../../__common__/css/custom_last.css">-->
 <style>
 	header .title {text-align:justify}
 
@@ -47,6 +47,8 @@
 	.popup_container .popup_3 {left:740px;top:210px}
 	.popup_container .popup_pages>li.speech.popup_3.bottom:after {left:160px;}
 	.popup_container .popup_pages>li.speech.popup_3 .guide_txt {width:320px;text-align:center;font-size:35px;word-break:keep-all}
+
+	.characterImg.circle.girl_2 .charSpriteAni {background-position:top 10px}
 </style>
 </head>
 
@@ -136,7 +138,7 @@
 				<li class="page_5" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>백분율 구하는 방법을 이야기해 보세요.</span></h2>
 					<section>
-						<div class="content-colgroup">
+						<!--<div class="content-colgroup">
 							<div class="content-col">
 								<div class="characterImg circle deeppink girl_1-wrap">
 									<div class="charSpriteImg girl_1"></div>
@@ -155,7 +157,8 @@
 								</div>
 								<div class="popBtn speech right popBtn_3" data-hover="" data-popup-mode="pageOff" data-popup-btn="3"></div>
 							</div>
-						</div>
+						</div>-->
+						<div id="aniBox_1"></div>
 					</section>
 				</li>
 			</ul>
@@ -226,6 +229,100 @@
 				}
 			})
 		}
+
+		$prite.add({
+			target: $ts.getEl('#aniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'girl_1',
+					circle: 'deeppink',
+					top: 220,
+					left: 100,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					// sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_3423.mp3',
+					speech:'left',
+					textBubble: {
+						text: '소수나 분수로<br> 나타낸 비율을<br>어떻게 백분율로 나타낼 수 있을까?',
+						class: 'balloon bottom deeppink',
+						top: -30,
+						left: 5,
+						width: 360,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					// endSheet: 0,
+					delay: 40,
+					callbacks: {
+						start: function () {},
+						end: function () {}
+					}
+				},
+				{
+					name: 'boy_1',
+					circle: 'sky',
+					top: 220,
+					left: 450,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_1.png',
+					spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+					// sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_2.mp3',
+					speech:'left',
+					textBubble: {
+						text: '<div class="bunsuWrap inline"><ul><li>14</li><li>25</li></ul>=<ul><li>56</li><li>100</li></ul>=56%</div>야.',
+						class: 'balloon bottom sky',
+						top: 70,
+						left: 345,
+						width: 380,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					endSheet: 0,
+					delay: 40,
+					callbacks: {
+						start: function () {},
+						end: function () {}
+					}
+				},
+				{
+					name: 'girl_2',
+					circle: 'purple',
+					top: 220,
+					left: 800,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_2.png',
+					spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+					// sound: './media/mp3/bom_0201_0102_1112_101/bom_0201_0102_1112_101_1.mp3',
+					speech:'left',
+					textBubble: {
+						text: '<div class="bunsuWrap inline"><ul><li>14</li><li>25</li></ul>×100=56</div>을<br> 구한 다음, 기호 %를<br> 붙이면 돼.',
+						class: 'balloon bottom purple',
+						top: -20,
+						left: 705,
+						width: 360,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					endSheet: 0,
+					delay: 40,
+					callbacks: {
+						start: function () {},
+						end: function () {}
+					}
+				}
+			]
+		});
 	}, false);
   </script>
 </body>
