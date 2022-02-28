@@ -203,7 +203,7 @@
 							<span>각 ㄱㄴㄷ을 그리시오.</span>
 						</h2>
 						<section>
-							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0003_401_1_6.html" title="" class="page-iframe" scrolling="no"></iframe>
+							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0003_401_1_6.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
 
 			
 						</section>
@@ -278,7 +278,7 @@
 				</li>
 
 				<li class="solve pop_page_2" data-popup-page="2">
-					<div class="popup_contents">
+					<div class="popup_contents" style="letter-spacing: -1px;">
 						점 ㄴ이 꼭짓점이 되도록 반직선 ㄴㄱ과 반직선 ㄴㄷ을 긋습니다.
 					</div>
 				</li>
@@ -316,6 +316,13 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
+		}, false);
+
+
 		// ox quiz 정답 콜백
 		window.$callBack.oxCorrect=function (obj) {
 

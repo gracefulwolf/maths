@@ -88,7 +88,7 @@
 							삼각자를 이용하여 주어진 점을 꼭짓점으로 하는 직각을 완성해 보세요.
 						</span></h2>
 						<section>
-						<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0004_401_1_2.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0004_401_1_2.html" title="" id="ifm1" class="page-iframe" scrolling="no"></iframe>
 				
 
 						<a href="./data/(3-1-2)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
@@ -361,34 +361,16 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
-		// ox quiz 정답 콜백
-		window.$callBack.oxCorrect=function (obj) {
-
-		}
-		// ox quiz 오답 콜백
-		window.$callBack.oxIncorrect=function (obj) {
-
-		}
-		// ox quiz 정답 확인 클릭시 콜백
-		window.$callBack.viewAnswer=function (obj) {
-			// if(obj.QUIZ.name=="ox1"){
-			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
-			// }
-		};
-		// ox quiz 정답 가리기 클릭시 콜백
-		window.$callBack.hideAnswer=function (obj) {
-			// if(obj.QUIZ.name=="ox1"){
-			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
-			// }
-		}
-
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener('DOMContentLoaded', function () {
 			$(".controlBtn").click(function(){
 				$efSound.click();
 			})
 
-
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
+
 		
 	</script>
 </body>

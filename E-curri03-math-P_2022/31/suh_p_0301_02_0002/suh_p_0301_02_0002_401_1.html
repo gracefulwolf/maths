@@ -72,8 +72,7 @@
 									<div class="answer" data-toggle-target="1">
 										두 점을 곧게 이은 선
 									</div>
-								</div>
-								입니다. 
+								</div>입니다. 
 							</div>
 
 							<a href="./data/(3-1-2)형성평가2_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
@@ -86,6 +85,7 @@
 							도형의 이름을 써 보시오.
 						</span></h2>
 						<section>
+							<div class="lineBox sky"></div>
 							<div class="flex-wrap">
 								<div class="flex-item n1">
 									<div class="img-wrap">
@@ -141,7 +141,7 @@
 							선분, 직선, 반직선을 그어 보시오.
 						</span></h2>
 						<section>
-							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0002_401_1_3.html" title="" class="page-iframe" scrolling="no"></iframe>
+							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0002_401_1_3.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
 					
 
 							<a href="./data/(3-1-2)형성평가2_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
@@ -214,7 +214,49 @@
 							도형의 이름을 써 보시오.
 						</span></h2>
 						<section>
-							<div class="lineBox sky">
+							<div class="lineBox sky"></div>
+							<div class="flex-wrap">
+								<div class="flex-item n1">
+									<div class="img-wrap">
+										<div class="m1">ㄱ</div>
+										<div class="m2">ㄴ</div>
+									</div>
+								
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											선분 ㄱㄴ<br>(또는 선분 ㄴㄱ)
+										</div>
+									</div>
+								</div>
+								<div class="flex-item n2">
+									<div class="img-wrap">
+										<div class="m1">ㄷ</div>
+										<div class="m2">ㄹ</div>
+									</div>
+								
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											반직선 ㄹㄷ
+										</div>
+									</div>
+								</div>
+								<div class="flex-item n3">
+									<div class="img-wrap">
+										<div class="m1">ㅁ</div>
+										<div class="m2">ㅂ</div>
+									</div>
+								
+									<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											직선 ㅁㅂ<br>(또는 직선 ㅂㅁ)
+										</div>
+									</div>
+								</div>
+							
+							</div>
+
+
+							<!-- <div class="lineBox sky">
 								<div class="imgBgContainer">
 									<span class="text01">ㄱ</span>
 									<span class="text02">ㄴ</span>
@@ -240,7 +282,7 @@
 										<p>직선 ㅁㅂ<br>(또는 직선 ㅂㅁ)</p>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<button class="dapCheckBtn reset" data-answer-btn=""></button>
 						</section>
 					</li>
@@ -249,7 +291,7 @@
 							<ins class="dot orange"></ins>
 							<span>점을 이용하여 선분 ㄱㄴ, 반직선 ㄷㄹ, 직선 ㅁㅂ을 그어 보시오.</span>
 						</h2>
-						<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0002_401_1_7.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0002_401_1_7.html" title="" class="page-iframe" id="ifm2" scrolling="no"></iframe>
 						
 					</li>
 					<li class="page_8" data-quiz="toggle">
@@ -298,7 +340,7 @@
 						<ul class="dotList orange">
                             <li>선분 ㄱㄴ은 점 ㄱ과 점 ㄴ을 이은 곧은 선을 긋습니다.</li>
 							<li>직선 ㄱㄴ은 점 ㄱ과 점 ㄴ을 지나는 곧은 선을 긋습니다.</li>
-							<li>반직선 ㄱㄴ은 점 ㄱ에서 시작하여 점 ㄴ을 지나는 곧은 선을 긋습니다</li>
+							<li>반직선 ㄱㄴ은 점 ㄱ에서 시작하여 점 ㄴ을 지나는 곧은 선을 긋습니다.</li>
                         </ul>
 					</div>
 				</li>
@@ -342,6 +384,14 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+				document.getElementById('ifm2').contentDocument.location.reload(true);
+			}
+		}, false);
+
+
 		// ox quiz 정답 콜백
 		window.$callBack.oxCorrect=function (obj) {
 
