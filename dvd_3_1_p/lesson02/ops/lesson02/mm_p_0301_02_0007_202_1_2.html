@@ -26,7 +26,15 @@
 				left: 511px;
 				top: 198px;
 			}
-			.exam-wrap{background: #fff; padding: 20px; position: absolute; top:17px; left:193px; z-index: 5;}
+			.bullet.exam{display: none;}
+			/* .bullet.exam{
+				display: none;
+				position: absolute;
+				top: -170px;
+				left: -240px;
+			} */
+			.exam-wrap{background: #fff; padding: 20px; position: absolute; top:17px; left:193px; z-index: 5; width: 30px;
+    height: 100px;}
 		</style>
 	</head>
 	<body>
@@ -75,7 +83,19 @@
 
 		<script src="../../../../../js/binder_web.min.js"></script>
 		<script src="../../../common/js/content.js"></script>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function () {
+				
+				document.querySelector('#btn-play-ani').addEventListener('click', function(){
+					document.querySelector('.bullet.exam').style.display = 'inline-flex';
+				})
 
+
+
+			}, false);
+	
+	
+		</script>
 
 	</body>
 

@@ -121,7 +121,7 @@
 						</h2>
 						<section>
 							<!-- <div class="study_guide"><em>그림</em>을 <em>클릭</em>하세요.</div> -->
-							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_3.html" title="" class="page-iframe" scrolling="no"></iframe>
+							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_3.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
 
 							<a href="./data/(3-1-2)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 							<div class="buttonContainer iframe">
@@ -135,14 +135,14 @@
 					<li class="page_4">
 						<h2><ins class="dot"></ins><span>점 종이 위에 직사각형을 완성해 보시오.</span></h2>
 						<section>
-							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_4.html" title="" class="page-iframe" scrolling="no"></iframe>
+							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_4.html" title="" class="page-iframe" id="ifm2" scrolling="no"></iframe>
 						</section>
 					</li>
 					<li class="page_5" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>점 종이 위에 직사각형을 완성해 보시오.
 						</span></h2>
 						<section>
-							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_5.html" title="" class="page-iframe" scrolling="no"></iframe>
+							<iframe src="../../../dvd_3_1_p/lesson02/ops/lesson02/mm_p_0301_02_0006_401_1_5.html" title="" class="page-iframe" id="ifm3" scrolling="no"></iframe>
 						</section>
 						
 					</li>
@@ -192,7 +192,7 @@
 								</div>
 							</div>
 							<div class="textAlignC">
-								<div class="toggle box center" data-toggle-obj="1">
+								<div class="toggle center" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1"><span class="bullet number orange" style="display: inline-block; top: -5px; position: relative;">ㄱ</span> , 네 각이 모두 직각인 사각형이 아닙니다.</div>
 								</div>
 							</div>
@@ -309,7 +309,13 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			$(".controlBtn").click(function(){
 				$efSound.click();
-			})
+			});
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+				document.getElementById('ifm2').contentDocument.location.reload(true);
+				document.getElementById('ifm3').contentDocument.location.reload(true);
+			}
+
 
 
 		}, false);
