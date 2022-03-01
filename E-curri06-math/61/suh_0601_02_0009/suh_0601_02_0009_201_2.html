@@ -80,13 +80,13 @@
 					<div id="aniBox"></div>
 				</li>
 				<li class="page_3" data-slide-container="">
-					<ul class="basicSlider_slides" data-slides="">
+					<ul class="basicSlider_slides inner" data-slides="">
 						<li class="innerTab_1" data-quiz="toggle">
 							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>주어진 재료로 만들 수 있는 각기둥과 각뿔을 찾아보세요.</span></h2>
 							<div class="toggle" data-toggle-obj="1" data-show="1">
 								<div class="answer" data-toggle-target="1">
 									<span class="bullet exam">예</span>
-									<p style="letter-spacing:1px">고무찰흙 5개와 짧은 막대 4개, 긴 막대 4개를 이용해서 사각뿔을 만들 수 있습니다.</p>
+									<p>고무찰흙 5개와 짧은 막대 4개, 긴 막대 4개를 이용해서 사각뿔을 만들 수 있습니다.</p>
 								</div>
 							</div>
 							<div class="answer-img toggle type-b" data-toggle-obj="2" data-show="1">
@@ -118,7 +118,7 @@
 									<p>고무찰흙 6개와 짧은 막대 6개, 긴 막대 3개를 이용하여 삼각 기둥을 찾아 만들었습니다.<br>친구는 사각기둥을 찾아 만들었는데 저보다 고무찰흙 2개, 짧은 막대 2개, 긴 막대 1개를 더 사용했습니다.</p>
 								</div>
 							</div>
-							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span style="letter-spacing:.2px">고무찰흙을 꼭짓점으로, 막대를 모서리로 생각할 때 꼭짓점, 모서리, 면의 수를 말해 보세요.</span></h2>
+							<h2 style="letter-spacing:-1px"><ins class="dot"></ins><span>고무찰흙을 꼭짓점으로, 막대를 모서리로 생각할 때 꼭짓점, 모서리, 면의 수를 말해 보세요.</span></h2>
 							<div class="toggle" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">
 									<span class="bullet exam">예</span>
@@ -152,7 +152,7 @@
 		</div>
 	</main>
 
-	<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="5000">
+	<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="">
 		<span class="btnInner"></span>
 	</button>
 	<section class="popup_container" data-popup-container="">
@@ -196,6 +196,9 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelector('.textBookBtn').click();
+
+
 		$prite.add({
 			target: $ts.getEl('#aniBox'),
 			spriteId: 'sprite1',
