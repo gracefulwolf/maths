@@ -27,6 +27,10 @@
 		.img-answer .toggle:after {display:none}
 		.img-answer .toggle.complete {opacity:1}
 
+		.page_2 .tableContainer {width:600px;margin:0 auto}
+		.page_2 .tableContainer th,
+		.page_2 .tableContainer td {font-size:40px}
+
 		.page_3 .box-flex {align-items:center;justify-content:center;margin-top:50px}
 		.page_3 .img-box {margin-right:100px;position:relative}
 		.page_3 .img-box img {height:300px}
@@ -235,7 +239,7 @@
 									</div>
 									<div class="item">
 										<ins class="bullet number orange">ㄴ</ins>
-										옆면의 수
+										면의 수
 									</div>
 									<div class="item">
 										<ins class="bullet number orange">ㄷ</ins>
@@ -250,11 +254,14 @@
 							<div class="textAlignC mt_20">
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										<ins class="bullet number orange">ㄱ</ins>, <ins class="bullet number orange">ㄷ</ins>
+										<ins class="bullet number orange">ㄱ</ins>, <ins class="bullet number orange">ㄴ</ins>
 									</div>
 								</div>
 							</div>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
 						</section>
 					</li>
 					<li class="page_5" data-quiz="toggle">
@@ -291,36 +298,89 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<ins class="bullet circleDot deepGreen"></ins>
+								<ins class="dot orange"></ins>
 								<div>
 									삼각뿔의 꼭짓점의 수: 4개, 모서리의 수: 6개 (합 10)
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot deepGreen"></ins>
+								<ins class="dot orange"></ins>
 								<div>
 									사각뿔의 꼭짓점의 수: 5개, 모서리의 수: 8개 (합 13)
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot deepGreen"></ins>
+								<ins class="dot orange"></ins>
 								<div>
 									오각뿔의 꼭짓점의 수: 6개, 모서리의 수: 10개 (합 16)
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot deepGreen"></ins>
+								<ins class="dot orange"></ins>
 								<div>
 									육각뿔의 꼭짓점의 수: 7개, 모서리의 수: 12개 (합 19)
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot deepGreen"></ins>
+								<ins class="dot orange"></ins>
 								<div style="letter-spacing:-.0425em">
 									꼭짓점의 수와 모서리의 수의 합이 16인 각뿔은 오각뿔입니다.
 								</div>
 							</li>
 						</ul>
+					</div>
+				</li>
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="tableContainer brown">
+							<table>
+								<colgroup>
+									<col style="width:18%">
+									<col style="width:22%">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+								</colgroup>
+								<tbody>
+								<tr>
+									<th scope="col">도형</th>
+									<th scope="col">밑면의 <br>변의 수(개)</th>
+									<th scope="col">꼭짓점의 수(개)</th>
+									<th scope="col">면의 수(개)</th>
+									<th scope="col">모서리의 수(개)</th>
+								</tr>
+								<tr>
+									<th scope="row" class="lightBrown">삼각뿔</th>
+									<td>3</td>
+									<td>4</td>
+									<td>4</td>
+									<td>6</td>
+								</tr>
+								<tr>
+									<th scope="row" class="lightBrown">사각뿔</th>
+									<td>4</td>
+									<td>5</td>
+									<td>5</td>
+									<td>8</td>
+								</tr>
+								<tr>
+									<th scope="row" class="lightBrown">오각뿔</th>
+									<td>5</td>
+									<td>6</td>
+									<td>6</td>
+									<td>10</td>
+								</tr>
+								<tr>
+									<th scope="row" class="lightBrown">육각뿔</th>
+									<td>6</td>
+									<td>7</td>
+									<td>7</td>
+									<td>12</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<p class="mt_10">(꼭짓점의 수)＝(면의 수)</p>
 					</div>
 				</li>
 			</ul>
