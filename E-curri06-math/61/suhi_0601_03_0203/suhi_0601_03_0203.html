@@ -17,6 +17,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.gray-box {background-color:#efefef;border-radius:8px;height:44px;width:44px;display:inline-block;position:relative;top:4px;margin-right:4px}
 	.bullet.green.number {border:2px solid #6dbc4b;color:#6dbc4b}
 
+	.page_1 .balloon {left:310px;right:0;top:50px;padding:20px}
+	.page_1 .balloon:after {top:160px}
+
+	.page_2 .balloon {left:310px;right:0;top:50px;padding:20px}
+	.page_2 .balloon:after {top:160px}
+
 	.content-group {display:flex;margin-top:40px}
 	.content-group .content-item {position:relative}
 	.content-group .content-item ~ .content-item {margin-left:20px}
@@ -25,7 +31,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.content-group .content-item.character-item .characterImg {left:20px}
 	.content-group .lineBox.purple .toggle {justify-content:center;width:110px;margin:4px 0}
 
-	.page_3 .img-box {position:relative;width:100%;height:400px;margin:40px -40px 0;background:url(./images/suhi_0601_03_0203_1_1.png) no-repeat 228px 20px / 121px, url(./images/suhi_0601_03_0203_1_2.png) no-repeat 678px 20px / 121px, url(./images/suhi_0601_03_0203_1_3.png) no-repeat 110px 15px / 241px, url(./images/suhi_0601_03_0203_1_4.png) no-repeat 676px 15px / 241px}
+	.page_3 .img-box {position:relative;width:100%;height:400px;margin:40px -40px 0;background:url(./images/suhi_0601_03_0203_1_1.png) no-repeat 228px 20px / 121px, url(./images/suhi_0601_03_0203_1_2.png) no-repeat 690px 20px / 121px, url(./images/suhi_0601_03_0203_1_3.png) no-repeat 110px 15px / 241px, url(./images/suhi_0601_03_0203_1_4.png) no-repeat 690px 15px / 241px}
 	.page_3 .img-box img {width:100%}
 	.page_3 .img-box .text-item {position:absolute}
 	.page_3 .img-box .n1 {top:-10px;left:360px}
@@ -39,14 +45,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_3 .img-box .n5 .lineBox {display:flex !important;justify-content:center;align-items:center;border-radius:50% !important;font-size:.9em}
 	.page_3 .img-box .n4 .lineBox .bunsuWrap,
 	.page_3 .img-box .n5 .lineBox .bunsuWrap {margin-left:8px}
-	.page_3 .img-box .n6 {top:60px;left:735px}
-	.page_3 .img-box .n7 {top:145px;left:850px}
+	.page_3 .img-box .n6 {top:60px;left:745px}
+	.page_3 .img-box .n7 {top:145px;left:860px}
 	.page_3 .img-box .answer.inline-flex-box .inline-flex-box,
 	.page_3 .img-box .answer .bunsuWrap.inline-flex-box {vertical-align:middle}
 
 	.page_5 .img-box {position:relative;width:100%;height:240px;margin-top:20px}
 	.page_5 .img-box img {width:100%}
-	.page_5 .img-box .text-item {position:absolute}
+	.page_5 .img-box .text-item {position:absolute;white-space:nowrap}
 	.page_5 .img-box .n1 {top:-20px;left:190px}
 	.page_5 .img-box .n2 {top:-20px;left:715px}
 	.page_5 .img-box .n3 {top:-10px;left:30px}
@@ -75,6 +81,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_6 .answer .bunsuWrap.inline-flex-box {vertical-align:middle}
 
 	.popup_pages .bunsuWrap.inline-flex-box {vertical-align:middle}
+
+	.pop_page_4 .icon_arrow {display:inline-block;vertical-align:middle;margin:0 20px;position:relative;top:-4px}
 </style>
 </head>
 
@@ -104,7 +112,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			<li class="page_1" data-quiz="toggle">
 				<h2>
 					[<ins class="number" style="margin-right:0">1</ins>~<ins class="number" style="margin-right:0">2</ins>]
-					<span class="ml_5" style="letter-spacing:-2px">슬기와 연수의 설명을 읽고 <span class="gray-box"></span>안에 알맞은 수를 써넣으세요.</span>
+					<span class="ml_5" style="letter-spacing:-2px">슬기와 연수의 설명을 읽고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</span>
 				</h2>
 				<section>
 					<div class="content-group">
@@ -114,26 +122,25 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="charSpriteImg boy_4"></div>
 							</div>
 						</div>
-						<div class="content-item">
-							<div class="lineBox green textAlignL mt_30">
-								끈 84.2cm를 두 사람에게 똑같이 나누어 주려고 합니다. 1cm=10mm이므로 84.2cm=842mm 입니다.
-								842÷2=
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										421
-									</div>
-								</div>, 한 명에게 줄 수 있는  끈은
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										421
-									</div>
-								</div>mm이므로
-								<div class="toggle" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">
-										42.1
-									</div>
-								</div>cm입니다.
-							</div>
+						<div class="balloon green left">
+							끈 84.2 cm를 두 사람에게 똑같이 나누어 주려고 합니다. 1cm＝10 mm이므로 <br>
+							84.2 cm＝842 mm입니다.
+							842÷2＝
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									421
+								</div>
+							</div>, 한 명에게 줄 수 있는  끈은
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									421
+								</div>
+							</div> mm이므로<br>
+							<div class="toggle" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									42.1
+								</div>
+							</div> cm입니다.
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -145,7 +152,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			<li class="page_2" data-quiz="toggle">
 				<h2>
 					[<ins class="number" style="margin-right:0">1</ins>~<ins class="number" style="margin-right:0">2</ins>]
-					<span class="ml_5" style="letter-spacing:-2px">슬기와 연수의 설명을 읽고 <span class="gray-box"></span>안에 알맞은 수를 써넣으세요.</span>
+					<span class="ml_5" style="letter-spacing:-2px">슬기와 연수의 설명을 읽고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</span>
 				</h2>
 				<section>
 					<div class="content-group">
@@ -155,26 +162,26 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="charSpriteImg girl_1 sub-cal"></div>
 							</div>
 						</div>
-						<div class="content-item">
-							<div class="lineBox green textAlignL mt_30">
-								끈 6.33m를 두 사람에게 똑같이 나누어 주려고 합니다. 1m=100cm이므로 6.33m=633cm 입니다.
-								633÷3=
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										221
-									</div>
-								</div>, 한 명에게 줄 수 있는  끈은
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										221
-									</div>
-								</div>cm이므로
-								<div class="toggle" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">
-										2.11
-									</div>
-								</div>m입니다.
-							</div>
+						<div class="balloon green left">
+							끈 6.33 m를 3명에게 똑같이 나누어 주려고 합니다. 1m＝100 cm이므로<br>
+							6.33 m＝633 cm입니다.
+							633÷3＝
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									221
+								</div>
+							</div>, <br>
+							한 명에게 줄 수 있는  끈은
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									221
+								</div>
+							</div> cm이므로<br>
+							<div class="toggle" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									2.11
+								</div>
+							</div> m입니다.
 						</div>
 					</div>
 					<div class="buttonContainer">
@@ -186,24 +193,24 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			<li class="page_3" data-quiz="toggle">
 				<h2>
 					<ins class="number">3</ins>
-					<span><span class="gray-box"></span>안에 알맞은 수를 써넣으세요.</span>
+					<span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</span>
 				</h2>
 				<section>
 					<div class="img-box">
 						<div class="text-item n1">
-							<span class="lineBox sky">426</span>÷2=
+							<span class="lineBox sky">426</span>÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">213</div>
 							</div>
 						</div>
 						<div class="text-item n2">
-							<span class="lineBox sky">42.6</span>÷2=
+							<span class="lineBox sky">42.6</span>÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">21.3</div>
 							</div>
 						</div>
 						<div class="text-item n3">
-							<span class="lineBox sky">4.26</span>÷2=
+							<span class="lineBox sky">4.26</span>÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="3">
 								<div class="answer" data-toggle-target=3">2.13</div>
 							</div>
@@ -271,23 +278,23 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<section>
 					<div class="content-group" style="justify-content:center">
 						<div class="content-item lineBox purple">
-							286÷2 = 143<br>
-							28.6÷2=
+							286÷2＝143<br>
+							28.6÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">14.3</div>
 							</div><br>
-							2.86÷2=
+							2.86÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">1.43</div>
 							</div>
 						</div>
 						<div class="content-item lineBox purple ml_80">
-							339÷3 = 113<br>
-							33.8÷3=
+							339÷3＝113<br>
+							33.8÷3＝
 							<div class="toggle inline-flex-box" data-toggle-obj="3">
 								<div class="answer" data-toggle-target="3">11.3</div>
 							</div><br>
-							3.39÷3=
+							3.39÷3＝
 							<div class="toggle inline-flex-box" data-toggle-obj="4">
 								<div class="answer" data-toggle-target="4">1.13</div>
 							</div>
@@ -309,10 +316,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<img src="./images/suhi_0601_03_0203_04.png">
 						<span class="text-item colorBox orange n1">준기</span>
 						<span class="text-item colorBox green n2">연수</span>
-						<span class="text-item n3"><em>112</em>cm</span>
-						<span class="text-item n4"><em>336</em>cm</span>
-						<span class="text-item n5"><span class="gray-box"></span>m</span>
-						<span class="text-item n6"><em>3.36</em>m</span>
+						<span class="text-item n3"><em>112</em> cm</span>
+						<span class="text-item n4"><em>336</em> cm</span>
+						<span class="text-item n5"><span class="gray-box"></span> m</span>
+						<span class="text-item n6"><em>3.36</em> m</span>
 					</div>
 					<div class="textAlignC">
 						<div class="toggle" data-toggle-obj="1">
@@ -328,12 +335,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			<li class="page_6" data-quiz="toggle">
 				<h2>
 					<ins class="number star">6</ins>
-					<span><span class="gray-box"></span>안에 알맞은 수를 써넣고 그 이유를 써 보세요.</span>
+					<span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣고 그 이유를 써 보세요.</span>
 				</h2>
 				<section>
 					<div class="img-box">
 						<div class="text-item n1">
-							682÷2=
+							682÷2＝
 							<div class="toggle inline-flex-box" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">341</div>
 							</div>
@@ -341,10 +348,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="text-item n2">
 							<div class="toggle inline-flex-box" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">6.82</div>
-							</div>÷
-							<div class="toggle inline-flex-box" data-toggle-obj="3">
+							</div>÷<div class="toggle inline-flex-box" data-toggle-obj="3">
 								<div class="answer" data-toggle-target="3">2</div>
-							</div>=
+							</div>＝
 							<div class="toggle inline-flex-box" data-toggle-obj="4">
 								<div class="answer" data-toggle-target="4">3.41</div>
 							</div>
@@ -386,7 +392,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 											<li>100</li>
 										</ul>
 									</div>
-									가 되려면 나누어지는 수가<br> 682의
+									배가 되려면 나누어지는 수가<br> 682의
 									<div class="bunsuWrap inline-flex-box a-center">
 										<ul>
 											<li>1</li>
@@ -410,12 +416,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	<ul class="popup_pages">
 		<li class="solve pop_page_1" data-popup-page="1">
 			<div class="popup_contents">
-				<p style="letter-spacing:-1px">842÷2＝421이고 1cm는 10mm이므로 421mm는 42.1cm로 나타냅니다.</p>
+				<p style="letter-spacing:-1.6px">842÷2＝421이고 1 cm는 10 mm이므로 421 mm는 42.1 cm로 나타냅니다.</p>
 			</div>
 		</li>
 		<li class="solve pop_page_2" data-popup-page="2">
 			<div class="popup_contents">
-				<p>633÷3＝211이고 1m는 100cm이므로 211cm는 2.11m로 나타냅니다.</p>
+				<p style="letter-spacing:-1px">633÷3＝211이고 1 m는 100 cm이므로 211 cm는 2.11 m로 나타냅니다.</p>
 			</div>
 		</li>
 		<li class="solve pop_page_3" data-popup-page="3">
@@ -455,8 +461,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<li>
 						<ins class="bullet dot deepGreen"></ins>
 						<div>
-							<p>준기가 가진 리본을 3등분하는 식＝<em style="font-weight:bold">336÷3</em></p>
-							<p>연수가 가진 리본을 3등분하는 식＝<em style="font-weight:bold">3.36÷3</em></p>
+							<p>준기가 가진 리본을 3등분하는 식<span class="icon_arrow"></span><em style="font-weight:bold">336÷3</em></p>
+							<p>연수가 가진 리본을 3등분하는 식<span class="icon_arrow"></span><em style="font-weight:bold">3.36÷3</em></p>
 						</div>
 					</li>
 					<li>
@@ -474,7 +480,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 									<li>1</li>
 									<li>100</li>
 								</ul>
-							</div>배인 1.12m입니다.
+							</div>배인 1.12 m입니다.
 						</div>
 					</li>
 				</ul>
