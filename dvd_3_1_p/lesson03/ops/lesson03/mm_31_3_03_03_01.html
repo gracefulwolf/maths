@@ -17,8 +17,12 @@
 		<link rel="stylesheet" href="../../../common/css/common.css" />
 		<link rel="stylesheet" href="../../../common/css/content.css" />
 
-		<link rel="stylesheet" href="./css/mm_31_3_03_03_01.css" />
 		<!-- restyle -->
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom_last.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+		<link rel="stylesheet" href="./css/mm_31_3_03_03_01.css" />
 		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
 		<style type="text/css">
 			.restyle .ui-container,
@@ -32,22 +36,20 @@
 				padding: 0;
 				margin: 0;
 			}
-			.restyle .content-container {
-				width: 100%;
-				height: 300px;
+			.restyle .content-container{
+				width:1280px; 
+				height: 720px; 
 				overflow: hidden;
 			}
 			.restyle .btn-answer>span,
-			.restyle .btns-bottom-right>.button::after {
-				display: none;
-			}
-			.restyle .btns-bottom-right {
+			.restyle .btns-bottom-right,
+			.restyle .input-cont {
 				display: none;
 			}
 			.restyle #btn-play-ani {
 				position: absolute;
-				top: 115px;
-				left: 469px;
+				top: 300px;
+				left: 564px;
 				width: 51px;
 				height: 70px;
 				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;
@@ -97,10 +99,10 @@
 		</style>
 	</head>
 	<body class="restyle">
-        <div class="content-container">
+		<div class="content-container">
 			<div class="content" data-ui="cornerBase">
 				<div class="bg"></div>
-
+		
 				<div class="title-h1">
 					<div class="left-inner">
 						<span class="ico-title-h1 num-01"><em class="text">1</em></span>
@@ -109,31 +111,32 @@
 						<span>화살을 몇 명에게 나누어 줄 수 있는지 알아봅시다.</span>
 					</div>
 				</div>
-				
+		
 				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
 					<div class="q-box">
 						<div class="bullet-text dot-blue">
 							<span>화살 12개를 2개씩 덜어 내어 보세요.</span>
 						</div>
-					</div>	
-
+					</div>
+		
 					<!-- app-animation -->
-					<div id="animation-01" class="app-ccAnimation" 
-						data-ui="app-ccAnimation" data-option='{"width":1280, "height":400, "left": "-60px", "top": "-200px", "buttons":["#btn-play-ani"]}'>
+					<div id="animation-01" class="app-ccAnimation" data-ui="app-ccAnimation"
+						data-option='{"width":1280, "height":720, "left": "0px", "top": "0px", "buttons":["#btn-play-ani"]}'>
 						<canvas></canvas>
 					</div>
 					<!-- 애니 재생 버튼 -->
 					<div id="btn-play-ani" class="btn-play-ani ico-toggle-01" style="pointer-events: none;"></div>
 					<!-- // app-animation -->
-
+		
 					<div class="q-box" style="top: 240px;">
 						<div class="bullet-text dot-blue">
 							<span>2개씩 몇 번 덜어 낼 수 있는지 뺄셈으로 나타내 보세요.</span>
 						</div>
-					</div>	
-
-
-					<div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":["2","2","2","2","2","2"]}'>
+					</div>
+		
+		
+					<div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text"
+						data-option='{"answer":["2","2","2","2","2","2"]}'>
 						<ul>
 							<li class="input-cont">
 								<input type="text" class="input"></input>
@@ -167,7 +170,7 @@
 							</li>
 						</ul>
 					</div>
-
+		
 					<!-- 부분 정답 :: absolute -->
 					<div class="btns-answer-part hide">
 						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
@@ -177,39 +180,39 @@
 						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["4"]}'></div>
 						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["5"]}'></div>
 					</div>
-					
+		
 					<!-- 우측 하단 영역 고정 버튼 -->
 					<div class="btns-bottom-right check-btns">
 						<div class="button btn-retry toggle remove"><span></span></div>
 						<div class="button btn-answer-all toggle"><span></span></div>
 					</div>
-
+		
 					<!-- 기타 버튼 -->
 					<div id="btn-hint-01" class="btn-hint ico-hint-01 chara" data-chara-idx=2></div>
-
+		
 				</div>
-
+		
 				<!-- 좌측 하단 영역 고정 버튼 -->
 				<div class="btns-bottom-left">
 					<!-- <div class="button btn-more-step more-01"><span>한 걸음 더</span></div> -->
 				</div>
-
+		
 				<!-- 하단 탭 -->
 				<ul class="bottom-tabs" data-ui="tabs" data-option='{"list":[0,0]}'></ul>
-
+		
 			</div>
-			
+		
 			<!-- 팝업 :: 캐릭터 힌트 -->
 			<div class="popup popup-dim popup-hint" data-ui="popup" data-option='{"btn":"#btn-hint-01"}'>
 				<div class="bg"></div>
 				<div class="text-content">
-					화살을 모두 나누어<br/>
-					줄 때까지 덜어<br/>
+					화살을 모두 나누어<br />
+					줄 때까지 덜어<br />
 					내어 볼까?
 				</div>
 				<div class="button btn-close ico-close-02"></div>
 			</div>
-
+		
 		</div>
 		
 		<script src="../../../common/ui/js/uiData.js"></script>

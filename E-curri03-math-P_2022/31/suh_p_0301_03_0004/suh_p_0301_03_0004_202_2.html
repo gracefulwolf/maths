@@ -12,40 +12,43 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
-        h2 .dot+span {
-            color: #fff;
-            margin-bottom: 30px;
-        }
-        .lineBox {
-            display: inline-block;
-            width: 55%;
-            text-align: center;
-        }
+		h2 .bullet + span {color: #fff; margin-bottom: 30px;}
+		.lineBox {display: inline-block; text-align: center;}
+		.lineBox.circle {min-width: 80px; padding: 10px; border-radius: 50%;}
+		.lineBox.n2 {z-index: 1;}
+		.lineBox.n3 {position: relative; top: -30px; padding: 20px; z-index: 0;}
+		.textAlignC { width: 840px; margin: 0 auto;}
+		.flexListContainer {justify-content: flex-start;align-items: center;}
+		.flexListContainer.n1 {padding-left: 50px;}
+		.flexListContainer.n2 {margin: 10px 0 10px 220px;}
 	</style>
 </head>
 
 <body>
-
 	<div id="wrap" class="math">
 		<header>
 			<div class="title">
-				바둑돌 14개를 색종이 2장에 똑같이 나누면 색종이 한 장에 몇 개씩 놓을 수 있는지 알아봅시다.
+				바둑돌 15개를 3개씩 묶으면 몇 묶음이 되는지 알아봅시다.
 			</div>
 		</header>
 		<main>
 			<div class="contentsBox board" data-quiz="toggle">
 				<div>
-					<h2><ins class="dot"></ins><span>
-						바둑돌 14개를 색종이 2장에 똑같이 나누면 색종이 한 장에 7개씩 놓을 수 있습니다.
-					</span></h2>
+					<h2><ins class="bullet circleDot"></ins><span>15에서 3씩 5번 빼면 0이 됩니다. 이것을 나눗셈식으로 나타내면 15÷3＝5입니다.</span></h2>
 				</div>
-                <div class="textAlignC">
-                    <div class="lineBox pink">
-                        14÷2＝7
+				<div class="textAlignC">
+					<div>15－3 －3－3－3－3＝0</div>
+                    <div class="flexListContainer n1">
+                        <div>15</div>÷ <div>3</div> ＝ <div class="lineBox pink circle n1"> 5</div>
                     </div>
-                    <div>몫<br>색종이 한 장에 놓이는 바둑돌 수</div>
-                </div>
-
+					<div class="flexListContainer n2"><div class="icon_arrow bottom"></div></div>
+					<div class="flexListContainer wrap  n3" style="padding-left: 200px;">
+						<div class="lineBox circle pink n2">몫</div>
+						<div class="lineBox pink n3">
+							3씩 묶었을 때 묶음의 수
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
 
