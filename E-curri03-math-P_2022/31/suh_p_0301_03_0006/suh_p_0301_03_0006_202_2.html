@@ -4,16 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
-		h2 .dot+span {color: #fff;margin-bottom: 30px;}
+		h2 .bullet + span {color: #fff;margin-bottom: 30px;}
 		.lineBox {display: inline-block;width: 55%;text-align: center;}
+		.arrow-wrap .text {position: relative;display: inline-block;padding-bottom: 50px;margin-left: -30px;}
+		.arrow-long {width:100px; height:2px; background-color: #e94d40; position: absolute; transform-origin: top left;}
+		.arrow-long::after{content:""; display: block; width:10px; height: 10px; border-top:2px solid #e94d40; border-right:2px solid red; right:4px;position: absolute; transform: rotate(45deg) translate(0, -7.5px);}
+		.arrow-long.n1 {top: 54px;left: 50px;transform: rotate(37deg); width: 60px;}
+		.arrow-long.n2 {top: 54px;left: 108px;transform: rotate(37deg); width: 60px;}
 	</style>
 </head>
 
@@ -29,27 +33,29 @@
 			<div class="contentsBox board" data-quiz="toggle">
 				<div>
 					<h2>
-						<ins class="dot"></ins>
+						<ins class="bullet circleDot"></ins>
 						<span>
-							42÷6＝
-							<div class="toggle yellow" data-toggle-obj="1">
+							42÷6＝<div class="toggle yellow" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">7</div>
 							</div> 
-							의 몫 
-							<div class="toggle yellow" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">7</div>
-							</div>
-							은 6×7＝42를 이용하여 구할 수 있습니다.
+							의 몫 <div class="toggle yellow" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">7</div>
+								</div>은 6×7＝42를 이용하여 구할 수 있습니다.
 						</span>
 					</h2>
 				</div>
 				<div class="textAlignC">
-					<div>
-						6 × 7 ＝ 42
+					<div class="n1">
+						<div class="arrow-wrap">
+							<div class="text">
+								6×7＝42
+								<div class="arrow-long n1"></div>
+								<div class="arrow-long n2"></div>
+							</div>
+						</div>
 					</div>
-					<div>
-						42 ÷ 6 ＝
-						<div class="toggle yellow" data-toggle-obj="3">
+					<div class="n2">
+						42÷6＝<div class="toggle yellow" data-toggle-obj="3">
 							<div class="answer" data-toggle-target="3">7</div>
 						</div>
 					</div>
