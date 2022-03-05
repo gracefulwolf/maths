@@ -89,6 +89,7 @@
       }
       function hideTargets(index) {
         oxTargets.forEach(function(target) {
+          console.log(target);
           if (target.getAttribute('data-ox-target').split('-')[0] == index) target.classList.remove('on');
         });
       }

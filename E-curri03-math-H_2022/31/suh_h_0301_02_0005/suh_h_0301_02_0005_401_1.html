@@ -77,8 +77,7 @@
 									<div class="answer" data-toggle-target="4">
 										직각
 									</div>
-								</div>
-								인 삼각형을 직각삼각형이라고 합니다.
+								</div>인 삼각형을 직각삼각형이라고 합니다.
 							</div>
 
 
@@ -133,7 +132,7 @@
 							<div class="study_guide"><em>드래그</em>하여 <em>선</em>을 <em>그어</em> 보세요.</div>
 						</h2>
 						<section>
-							<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0005_401_1_3.html" title=""
+							<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0005_401_1_3.html" title="" id="ifm1"
 								class="page-iframe" scrolling="no"></iframe>
 
 							<a href="./data/2단원_5차시 형성평가.hwp" target="_blank" class="downloadBtn"
@@ -151,7 +150,7 @@
 							<div class="study_guide"><em>점 종이를 드래그</em>하세요.</div>
 						</h2>
 						<section>
-							<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0005_401_1_4.html" title=""
+							<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0005_401_1_4.html" title="" id="ifm2"
 								class="page-iframe" scrolling="no"></iframe>
 						</section>
 					</li>
@@ -183,11 +182,27 @@
 								</div>
 							</div>
 							<div class="textAlignC">
-								<div class="toggle center" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1"><span class="bullet number orange"
-											style="display: inline-block; top: -5px; position: relative;">ㄱ</span> , 한
-										각이 직각인 삼각형이 아닙니다.</div>
+								<div class="flex-wrap">
+									<div>
+										<div class="colorBox check deepPurple calBox1">답</div>
+									</div>
+									<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											<span class="bullet number orange" style="transform: translate(0,-4px);">ㄱ</span>
+										</div>
+									</div>
 								</div>
+								<div class="flex-wrap mt_10">
+									<div>
+										<div class="colorBox check skyBlue calBox1">풀이</div>
+									</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											한 각이 직각인 삼각형이 아닙니다.
+										</div>
+									</div>
+								</div>
+								
 							</div>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -275,7 +290,7 @@
 							<div class="n3">다</div>
 							<div class="line"></div>
 						</div>
-						한 각이 직각인 삼각형을 직각삼각형이라 하므로 <br>직각삼각형은 다입니다.
+						한 각이 직각인 삼각형을 직각삼각형이라 하므로 직각삼각형은 다입니다.
 					</div>
 				</li>
 
@@ -342,7 +357,14 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			$(".controlBtn").click(function () {
 				$efSound.click();
-			})
+			});
+
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+				document.getElementById('ifm2').contentDocument.location.reload(true);
+			}
+
+
 
 
 		}, false);
