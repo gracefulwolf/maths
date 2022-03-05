@@ -18,6 +18,7 @@
 	<style>
 		.lesson_2 {
 			background-color: #fff;
+			background-image: none;
 		}
 
 		header,
@@ -35,7 +36,7 @@
 			height: 510px;
 			color: #111;
 			font-family: Noto;
-			padding:0;
+			padding: 0;
 		}
 
 		#main {
@@ -55,109 +56,127 @@
 			font-family: NotoB;
 			top: 0;
 		}
-		.drawLine{top:0}
-		.draw_1{
-			top:-20px;
-			left:0;
-		}
-		.draw_2{
-			top:-20px;
-			left:510px;
-			background-position:0 0;
-;
-		}
-		.drawLine .resetButton{display: none;}
 
-		.exBtn{
+		.drawLine {
+			top: 0
+		}
+
+		.draw_1 {
+			top: -20px;
+			left: 0;
+			/* background:none; */
+		}
+
+		.draw_2 {
+			top: -20px;
+			left: 510px;
+			background-position: 0 0;
+			;
+		}
+
+		.drawLine .resetButton {
+			display: none;
+		}
+
+		.exBtn {
 			background: #5e3e18 url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
-    width: 150px;
-    height: 50px;
-    color: #fff;
-    font-size: 20px;
-    font-family: YGJAL;
-    text-align: left;
-    padding-left: 32px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-sizing: border-box;
-    z-index: 1;
-    bottom: 10px;
-    box-shadow: none;
-	z-index: 9;
-    position: absolute;
-    bottom: -11px;
-    right: 173px;
-	padding-left: 24px;
-    background-color: #216cbe;
+			width: 150px;
+			height: 50px;
+			color: #fff;
+			font-size: 20px;
+			font-family: YGJAL;
+			text-align: left;
+			padding-left: 32px;
+			border-radius: 8px;
+			cursor: pointer;
+			box-sizing: border-box;
+			z-index: 1;
+			bottom: 10px;
+			box-shadow: none;
+			z-index: 9;
+			position: absolute;
+			bottom: -11px;
+			right: 173px;
+			padding-left: 24px;
+			background-color: #216cbe;
 		}
-		.exBtn::before{
+
+		.exBtn::before {
 			content: "예 보기";
-    padding-left: 30px;
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    pointer-events: none;
-    letter-spacing: -.1px;
+			padding-left: 30px;
+			position: static;
+			width: auto;
+			height: auto;
+			background: none;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			pointer-events: none;
+			letter-spacing: -.1px;
 		}
 
-		.line.n1{
-			border:4px solid #00a0ff;
-			width:176px;
+		.line.n1 {
+			border: 4px solid #00a0ff;
+			width: 176px;
 			height: 176px;
-			border-top:0; border-left: 0;
+			border-top: 0;
+			border-left: 0;
 			position: absolute;
-			top:115px;
-			left:132px;
+			top: 115px;
+			left: 132px;
 		}
-		.line.n1::after{
+
+		.line.n1::after {
 			content: "";
 			display: block;
 			position: absolute;
-			right:0;
-			bottom:0;
-			width:20px;
+			right: 0;
+			bottom: 0;
+			width: 20px;
 			height: 20px;
-			border:4px solid red;
-			border-bottom:0; border-right: 0;
+			border: 4px solid red;
+			border-bottom: 0;
+			border-right: 0;
 		}
 
-		.line.n2{
-			border-left:4px solid #00a0ff;
-			width:1px;
+		.line.n2 {
+			border-left: 4px solid #00a0ff;
+			width: 1px;
 			height: 176px;
 			position: absolute;
-			top:115px;
-			left:819px;
+			top: 115px;
+			left: 819px;
 		}
-		.line.n2::after{
+
+		.line.n2::after {
 			content: "";
 			display: block;
 			position: absolute;
-			right:4px;
-			top:0;
-			width:20px;
+			right: 4px;
+			top: 0;
+			width: 20px;
 			height: 20px;
-			border:4px solid red;
-			border-top:0; border-right: 0;
+			border: 4px solid red;
+			border-top: 0;
+			border-right: 0;
 		}
-		.line.n3{
-			border-left:4px solid #00a0ff;
-			width:1px;
+
+		.line.n3 {
+			border-left: 4px solid #00a0ff;
+			width: 1px;
 			height: 256px;
 			position: absolute;
-			top:115px;
-			left:637px;
+			top: 115px;
+			left: 637px;
 			transform: rotate(-45deg);
 			transform-origin: top left;
 		}
-		.ex.line{
+
+		.ex.line {
 			display: none;
 		}
-		.ex-on .ex.line{
+
+		.ex-on .ex.line {
 			display: block;
 		}
 	</style>
@@ -181,6 +200,8 @@
 			<div class="contentsArea">
 				<h1 data-star="2" data-index="3">직각삼각형을 완성해 보세요.</h1>
 				<section class="noUserSelect">
+					<div class="n1 lineBox sky"></div>
+					<div class="n2 lineBox orange"></div>
 					<div class="js-drawLine drawLine draw_1" data-option="">
 						<canvas class="js-drawArea drawArea"></canvas>
 						<div class="js-resetButton resetButton" data-hover=""></div>
