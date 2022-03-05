@@ -9,14 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
-		.colorBox.green {width: 55%;padding: 20px;margin: 0 auto 30px;text-align: center;}
-		.colorBox.check {width: 132px;text-align: center;}
-		.img-wrap + .flexListContainer {margin-top: 30px;}
-		.img-wrap > img {width: 100%;height: auto;}
-		.flexListContainer > li {display: flex;flex-wrap: wrap;align-items: center;width: 100%;}
-		.flexListContainer > li + li {margin-top: 15px;}
-		.page_1 .toggle.none {background: none;}
-		.page_1 .toggle.none::after {display: none;}
+		.flexListContainer {margin-top: 50px;}
+		.flexListContainer .toggle-wrap.n1 + .toggle-wrap.n2 {margin-top: 15px;}
+		.arrow-wrap .text {position: relative;padding-right: 100px;}
+		.arrow-long {width:100px; height:2px; background-color: #e94d40; position: absolute; transform-origin: top left;}
+		.arrow-long::after{content:""; display: block; width:10px; height: 10px; border-top:2px solid #e94d40; border-right:2px solid red; right:4px;position: absolute; transform: rotate(45deg) translate(0, -7.5px);}
+		.arrow-long.n1 {top: 30px;right: 20px;transform: rotate(326deg);width: 60px;}
+		.arrow-long.n2 {top: 30px;right: 20px;transform: rotate(31deg);width: 60px;}
 	</style>
 </head>
 
@@ -25,53 +24,42 @@
 	<div id="wrap" class="math">
 		<header>
 			<div class="title" style="letter-spacing: -1px;">
-				연의 수를 곱셈식으로 나타낸 다음 나눗셈식으로 나타내 봅시다.
+				나눗셈의 몫을 구하고, 나눗셈식을 곱셈식으로 나타내 봅시다.
 			</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
 				<ul class="basicSlider_slides" data-slides="">		
-					<li class="page_1" data-quiz="toggle">
-						<div class="img-wrap">
-							<img src="./images/suh_p_0301_03_0005_203_1/suh_p_0301_03_0005_203_1.png" alt="">
-						</div>
-						<ul class="flexListContainer wrap">
+					<li  data-quiz="toggle">
+						<ul class="flexListContainer jcenter center">
 							<li>
-								<div class="colorBox check skyBlue">곱셈식</div>
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">5</div>
+								<div class="arrow-wrap">
+									<div class="text">
+										48÷8＝<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">6</div>
+										</div>
+										<div class="arrow-long n1"></div>
+										<div class="arrow-long n2"></div>
 									</div>
-								</div>×
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">2</div>
-									</div>
-								</div>＝10  
-								<div class="toggle none" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">(또는 2×5＝10)</div>
 								</div>
 							</li>
 							<li>
-								<div class="colorBox check skyBlue">나눗셈식</div>10÷
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="3">
-										<div class="answer" data-toggle-target="3">5</div>
+								<div class="toggle-wrap n1">
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">8</div>
+									</div>×<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">6</div>
+									</div>＝<div class="toggle" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">48</div>
 									</div>
-								</div>＝
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="4">
-										<div class="answer" data-toggle-target="4">2</div>
-									</div>
-								</div>,&nbsp;10÷
-								<div class="bunsuContainer">
+								</div>
+								<div class="toggle-wrap n2">
 									<div class="toggle" data-toggle-obj="5">
-										<div class="answer" data-toggle-target="5">2</div>
-									</div>
-								</div>＝
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="6">
-										<div class="answer" data-toggle-target="6">5</div>
+										<div class="answer" data-toggle-target="5">6</div>
+									</div>×<div class="toggle" data-toggle-obj="6">
+										<div class="answer" data-toggle-target="6">8</div>
+									</div>＝<div class="toggle" data-toggle-obj="7">
+										<div class="answer" data-toggle-target="7">48</div>
 									</div>
 								</div>
 							</li>
