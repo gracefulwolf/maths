@@ -11,14 +11,39 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
-		.supply_guide{position: absolute; top:10px; right:0;}
+		.supply_guide{position: absolute; top:10px; right:-30px;}
 		.videoSubPlayBtn{right:0; left:auto; top:0}
 		.img-wrap{margin-top:90px; position:relative;}
 		.img-wrap img{width: 100%;}
 		
-		.toggle{position: absolute; background: transparent;top:54px; left:811px; transform: rotate(134deg);}
+		.toggle{position: absolute; background: transparent;top:54px; left:811px; }
 		.toggle .o{width:20px; height: 20px; border-top:4px solid red; border-right:4px solid red;}
 		.toggle:after{display: none;}
+
+		.icon.active{
+			display: inline-flex;
+			margin-right: 14px;
+			font-size: 26px;
+			font-family: YGJAL;
+			transform: translate(4px, -4px);
+		}
+		.icon.active::after{
+			content: attr(data-number);
+			color: #ff9e01;
+			padding-right: 3px;
+		}
+		.icon.active::before{
+			content: '활동';
+			color: #ff6200;
+			padding-right: 3px;
+		}
+		.icon.active::before,
+		.icon.active::after{
+			text-shadow: #fff 3px 0 0, #fff 2.83487px 0.981584px 0, #fff 2.35766px 1.85511px 0, #fff 1.62091px 2.52441px 0, #fff 0.705713px 2.91581px 0, #fff -0.287171px 2.98622px 0, #fff -1.24844px 2.72789px 0, #fff -2.07227px 2.16926px 0, #fff -2.66798px 1.37182px 0, #fff -2.96998px 0.42336px 0, #fff -2.94502px -0.571704px 0, #fff -2.59586px -1.50383px 0, #fff -1.96093px -2.27041px 0, #fff -1.11013px -2.78704px 0, #fff -0.137119px -2.99686px 0, #fff 0.850987px -2.87677px 0, #fff 1.74541px -2.43999px 0, #fff 2.44769px -1.73459px 0, #fff 2.88051px -0.838247px 0;
+		}
+		.click-finger-Btn{top:10px; left:20px}
+		.toggle.complete .click-finger-Btn{display: none;}
+		.toggle .answer{transform: rotate(134deg);}
 	</style>
 </head>
 
@@ -26,9 +51,9 @@
 
 	<div id="wrap" class="math">
 		<header>
-			<div class="title active" style="letter-spacing: -1px;">
-				<ins class="icon"></ins>에서 접은 종이를 사용하여 삼각자에서 직각을 찾아봅시다.
-				<div class="supply_guide">준비물 163쪽</div>
+			<div class="title " style="letter-spacing: -1px;">
+				<ins class="icon active" data-number="1"></ins>에서 접은 종이를 사용하여 삼각자에서 직각을 찾아봅시다.
+				<!-- <div class="supply_guide">준비물 163쪽</div> -->
 			</div>
 		</header>
 		<main>
@@ -41,6 +66,8 @@
 						<div class="img-wrap">
 							<img src="./images/2_3_5_01.png" alt="">
 							<div class="toggle n1" data-toggle-obj="1">
+								<span class=" click-finger-Btn blinkOn blinkOpacity" ></span>
+
 								<div class="answer" data-toggle-target="1">
 									<div class="o"></div>
 								</div>

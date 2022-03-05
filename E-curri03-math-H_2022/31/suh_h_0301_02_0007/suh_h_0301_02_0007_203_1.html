@@ -14,7 +14,7 @@
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom_last.css"> -->
 	<style type="text/css">
 
-		.page_1 .flex-wrap{justify-content:space-between; margin-top:30px}
+		.page_1 .flex-wrap{justify-content:space-between; margin-top:80px}
 		.page_1 .flex-item{position: relative;}
 		.page_1 .flex-item .img-wrap{width: 100%;}
 		.page_1 .flex-item .img-wrap img{ margin: 0 auto; display: block; }
@@ -50,7 +50,7 @@
 
 		.page_3 .exam{position: absolute; top:20px; left:0;}
 
-		.videoSubPlayBtn{right:0; left:auto; top:-50px}
+		.videoSubPlayBtn{right:0; left:auto; top:-0px}
 		header .title .supply_guide.inline, header .title .pages_guide.inline{
 			margin-top:10px;
 		}
@@ -144,37 +144,42 @@
 				objs.addEventListener('click', function () {
 					var wrap=this.parentNode.parentNode;
 
-					var thats=wrap.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons=wrap.querySelectorAll('.vOn');
+					if (!this.dataset.disabled) {
+						this.dataset.disabled = true;
 
-					for (let i=0, len=ons.length; i < len; i++) {
-						ons[i].classList.remove('vOn');
-						// ons[i].classList.add('vOn_');
-					}
+						var thats=wrap.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+						var ons=wrap.querySelectorAll('.vOn');
 
-					for (let i=0, len=thats.length; i < len; i++) {
-						thats[i].classList.remove('visibleH');
-						thats[i].classList.add('visibleH_');
-						thats[i].classList.add('vOn');
-					}
+						for (let i=0, len=ons.length; i < len; i++) {
+							ons[i].classList.remove('vOn');
+							// ons[i].classList.add('vOn_');
+						}
 
-					switch (this.dataset.name) {
-						case 'aa' :
-							wrap.querySelector('.click-finger-Btn.btn1').style.display='none';
-							wrap.querySelector('.click-finger-Btn.btn2').style.display='block';
-							break;
-						case 'bb' :
-							wrap.querySelector('.click-finger-Btn.btn2').style.display='none';
-							wrap.querySelector('.click-finger-Btn.btn3').style.display='block';
-							break;
-						case 'cc' :
-							wrap.querySelector('.click-finger-Btn.btn3').style.display='none';
-							wrap.querySelector('.click-finger-Btn.btn4').style.display='block';
-							break;
-						case 'dd' :
-							wrap.querySelector('.click-finger-Btn.btn4').style.display='none';
-							break;
+						for (let i=0, len=thats.length; i < len; i++) {
+							thats[i].classList.remove('visibleH');
+							thats[i].classList.add('visibleH_');
+							thats[i].classList.add('vOn');
+						}
+
+						switch (this.dataset.name) {
+							case 'aa' :
+								wrap.querySelector('.click-finger-Btn.btn1').style.display='none';
+								wrap.querySelector('.click-finger-Btn.btn2').style.display='block';
+								break;
+							case 'bb' :
+								wrap.querySelector('.click-finger-Btn.btn2').style.display='none';
+								wrap.querySelector('.click-finger-Btn.btn3').style.display='block';
+								break;
+							case 'cc' :
+								wrap.querySelector('.click-finger-Btn.btn3').style.display='none';
+								wrap.querySelector('.click-finger-Btn.btn4').style.display='block';
+								break;
+							case 'dd' :
+								wrap.querySelector('.click-finger-Btn.btn4').style.display='none';
+								break;
+						}
 					}
+					
 
 				});
 				objs.addEventListener('click', $efSound.click);

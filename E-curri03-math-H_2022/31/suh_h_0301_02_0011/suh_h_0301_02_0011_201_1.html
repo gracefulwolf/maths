@@ -344,7 +344,7 @@
 						<div class="popup-title-wrap">
 							<div class="popup-title">
 								<h1>놀이 더 보기:<br>
-									덧셈과 뺄셈을 활용한 수 만들기
+									직사각형 모양의 종이로 딱지 접기
 								</h1>
 							</div>
 						</div>
@@ -369,10 +369,10 @@
 										<dl class="column">
 											<dt>놀이 방법</dt>
 											<dd>
-												<ul  class="contentsList">
+												<ul  class="contentsList mt_10">
 													<li class="mb_10">
 														<div class="bullet number orange">1</div>
-														<div style="letter-spacing:-1px">직사각형 모양의 종이를 이용하여 다음과 같이 딱지를 접어 봅니다.
+														<div style="letter-spacing:-2px">직사각형 모양의 종이를 이용하여 다음과 같이 딱지를 접어 봅니다.
 														</div>
 													</li>
 													
@@ -495,18 +495,22 @@
 				objs.addEventListener('click', function () {
 					var wrap=this.parentNode.parentNode;
 
-					var thats=wrap.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
-					var ons=wrap.querySelectorAll('.vOn');
+					if (!this.dataset.disabled) {
+						this.dataset.disabled = true;
 
-					for (let i=0, len=ons.length; i < len; i++) {
-						ons[i].classList.remove('vOn');
-						// ons[i].classList.add('vOn_');
-					}
+						var thats=wrap.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+						var ons=wrap.querySelectorAll('.vOn');
 
-					for (let i=0, len=thats.length; i < len; i++) {
-						thats[i].classList.remove('visibleH');
-						thats[i].classList.add('visibleH_');
-						thats[i].classList.add('vOn');
+						for (let i=0, len=ons.length; i < len; i++) {
+							ons[i].classList.remove('vOn');
+							// ons[i].classList.add('vOn_');
+						}
+
+						for (let i=0, len=thats.length; i < len; i++) {
+							thats[i].classList.remove('visibleH');
+							thats[i].classList.add('visibleH_');
+							thats[i].classList.add('vOn');
+						}
 					}
 
 				});
