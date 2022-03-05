@@ -20,18 +20,18 @@
 
 
 		.supply_guide{vertical-align: 6px;}
-		.--img{position:relative; width:100%; height:320px;}
+		.--img{position:relative; width:100%; height:320px; margin-top:40px;}
 		.--text{position: absolute;}
 		.--text.x1{top: 250px;left: 100px;}
 		.--text.x2{top: 250px;left: 450px;}
 		.--text.x3{top: 250px;left: 800px;}
 		.--img{background:url(./images/suh_h_0401_02_0002_202_1/suh_h_0401_02_0002_202_1_1.png) no-repeat 50% 0 / contain;}
 		.page_2 .colorBox.sky{display: inline-block;}
-		.btn_1{top:-54px;right: 0;}
+		.btn_1{top:-16px;right: 0;}
 		.--character{position:absolute; top:400px; left:0; width:100%;}
 		.--character .single{position:absolute; top:-160px; left:240px;}
 		.--character .characterImg{top:120px; left:330px;}
-		.--character .balloon{top:90px; left:540px;}
+		.--character .balloon{top:70px; left:540px;}
 		.--character .balloon.x2{top:120px; left:540px;}
 	</style>
 </head>
@@ -42,7 +42,7 @@
 		<header>
 			<div class="title">
 				세 각의 크기를 여러 가지 방법으로 비교해 봅시다. <div class="supply_guide inline">준비물 167, 169쪽</div>
-				<button class="videoSubPlayBtn right" data-video-link="M202201159_800K.mp4" data-hover="" style="position:absolute;top:42px; left:780px;">활동영상 보기</button>
+
 			</div>
 		</header>
 		<main>
@@ -68,6 +68,7 @@
 									투명 종이로 세 각의 크기를 비교해 보세요.
 								</span></h2>
 								<section>
+									<button class="videoSubPlayBtn right" data-video-link="M202201159_800K.mp4" data-hover="" style="position:absolute; top:-58px; right:0;">활동영상 보기</button>
 									<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">투명 종이 이용하기</div>
 									<div class="--img">
 										<div class="--text x1">가</div>
@@ -77,7 +78,7 @@
 									<div class="textAlignC mt_10">
 										<div class="toggle" data-toggle-obj="11">
 											<div class="answer textAlignJ" data-toggle-target="11">
-												가, 나, 다의 순서로 각의 크기가 큽니다.
+												가, 다, 나의 순서로 각의 크기가 큽니다.
 											</div>
 										</div>
 									</div>
@@ -91,6 +92,7 @@
 									투명 부채로 세 각의 크기를 비교해 보세요.
 								</span></h2>
 								<section>
+									<button class="videoSubPlayBtn right" data-video-link="M202201159_800K.mp4" data-hover="" style="position:absolute; top:-58px; right:0;">활동영상 보기</button>
 									<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="2" data-popup-parent="hidden">투명 부채 이용하기</div>
 									<div class="--img">
 										<div class="--text x1">가</div>
@@ -264,6 +266,14 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			const _examViewBtn = document.querySelectorAll(".popup_closeBtn")
+			const _iframe = document.querySelectorAll(".page-iframe");
+			_examViewBtn.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					//console.log(_iframe)
+					_iframe[index].contentWindow.location.reload();
+				});
+			});
 		}, false);
 
 	</script>

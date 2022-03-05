@@ -99,7 +99,12 @@
 					<div class="popup_contents">
 						<ul class="dotList orange">
 							<li>투명 종이에 각을 본뜨고 겹쳐 보면 각의 크기는 나, 다, 가의 순서로 큽니다.</li>
-							<li>투명 부채를 겹쳐 보니 각 가의 크기는 부챗살이 이루는 각 6개의 크기와 같고, 각 나의 크기는 부챗살이 이루는 각 8개의 크기와 같고, 각 다의 크기는 부챗살이 이루는 각 7개의 크기와 같습니다.</li>
+							<li>
+								투명 부채를 겹쳐 보니 각 가의 크기는 부챗살이 이루는<br>
+								각 6개의 크기와 같고, 각 나의 크기는 부챗살이 이루는<br>
+								각 8개의 크기와 같고, 각 다의 크기는 부챗살이 이루는<br>
+								각 7개의 크기와 같습니다.
+							</li>
 							<li>따라서 각의 크기는 나, 다, 가의 순서로 큽니다.</li>
 						</ul>
 					</div>
@@ -127,6 +132,16 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+
+			const _examViewBtn = document.querySelectorAll(".popup_closeBtn")
+			const _iframe = document.querySelectorAll(".page-iframe");
+			_examViewBtn.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					//console.log(_iframe)
+					_iframe[index].contentWindow.location.reload();
+				});
+			});
+
 		}, false);
 
 	</script>
