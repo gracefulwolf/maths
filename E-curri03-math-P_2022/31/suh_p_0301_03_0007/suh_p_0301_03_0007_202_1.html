@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.contentsBox h2 {margin-bottom: 30px;}
+		.img-wrap + .textAlignC {margin-top: 30px;}
+		.img-wrap {width: 100%;text-align: center;}
+		.img-wrap > img {width: auto;height: 250px;}
+		.contentsBox .page_3 section, .page_3 .contentsBox {padding: 0;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title">제기차기를 하려고 학생 20명이 모여 있습니다. 한 모둠에 4명씩 모이면 몇 모둠이 되는지 구해 봅시다.			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+					<li data-hover="">물음 4</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>몇 모둠이 되는지 나눗셈식으로 나타내 보세요.</span></h2>
+						<section>
+							<div class="textAlignC">
+								20÷<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">4</div>
+								</div>＝
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">5</div>
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>나눗셈의 몫을 곱셈구구로 구해 보세요.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">4단 곱셈구구에서 4×5=20이므로 20÷4의 몫은 5입니다.</div>
+								</div>
+							</div>
+							<div class="textAlignC">
+								<div id="aniBox_1" class="flexListContainer jcenter center"></div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2 style="letter-spacing: -1.2px;"><ins class="dot"></ins><span>한 모둠에 5명씩 모이면 몇 모둠이 되는지 곱셈구구로 구해 보세요.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">4모둠이 됩니다.</div>
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>나눗셈의 몫을 곱셈구구로 구하는 방법을 이야기해 보세요.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<div class="bullet exam">예</div>
+												<div style="letter-spacing: -.6px;">
+													나눗셈의 몫을 구할 때, 나누는 수의 단 곱셈구구에서 곱이 나누어지는 수가 되는 곱셈식을 찾으면 몫을 구할 수 있습니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				</ul>
+			</div>
+		</main>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'boy_2',
+						circle: 'green',
+						speech: 'right',
+						top: 220,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/boy_2.png',
+						spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
+						sound: './media/audios/suh_p_0301_03_0007_202_2.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '몇 단 곱셈구구로<br>몫을 구할 수 있을까?',
+							class: 'balloon left green ctTail',
+							top: 240,
+							left: 450,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+			window.$callBack.sliderReset = function (params) {
+				$ts.getEl('.characterImg')[0].style.left = 0;
+			};
+		});
+	</script>
+
+</html>

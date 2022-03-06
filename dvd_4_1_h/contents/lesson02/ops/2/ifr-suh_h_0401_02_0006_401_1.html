@@ -70,12 +70,12 @@ input.inlineBox {
 }
 
 .drawLine .dragObj {
-  top: 250px;
+  top: 257px;
   left: 98px;
 }
 
 .drawLine .induceLight {
-  top: 246px;
+  top: 242px;
   left: 82px;
 }
 
@@ -152,6 +152,11 @@ main .contentsArea{left:0; right:auto; width:100%;}
           if (light && light.length > 0) light.forEach(function(obj) { obj.classList.add('hide'); })
         }
 
+        function onLights() {
+          var light = $ts.getEl('.induceLight');
+          if (light && light.length > 0) light.forEach(function(obj) { obj.classList.remove('hide'); })
+        }
+
         new DrawLine({
           container: document.querySelector('.js-drawLine'),
           resetButton: document.querySelector('.js-drawLine').querySelector('.js-resetButton'),
@@ -174,7 +179,7 @@ main .contentsArea{left:0; right:auto; width:100%;}
               offLights();
             },
             reset: function(DrawLine) {
-              offLights();
+              onLights()
             }
           },
         })

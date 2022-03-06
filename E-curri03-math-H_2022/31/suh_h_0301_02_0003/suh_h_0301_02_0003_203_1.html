@@ -16,22 +16,57 @@
 
 		.page-iframe{width:100%; height: 497px;}
 		
-		.flex-wrap{justify-content: space-between; margin-top: 30px;}
+		.flex-wrap{justify-content: space-between; margin-top:60px;}
 		.lineBox{ flex:1; text-align: center; position: relative; height: 250px;}
 		.lineBox + .lineBox{margin-left:30px;}
-		.l1{background: url(./images/suh_h_0301_02_0003_203_1_1.png) no-repeat 50% 50% /200px;}
-		.l2{background: url(./images/suh_h_0301_02_0003_203_1_2.png) no-repeat 50% 50% /200px;}
-		.l3{background: url(./images/suh_h_0301_02_0003_203_1_3.png) no-repeat 50% 50% /200px;}
+		.l1{background: url(./images/suh_h_0301_02_0003_203_1_1.png) no-repeat 50% 64% / 162px;}
+		.l2{background: url(./images/suh_h_0301_02_0003_203_1_2.png) no-repeat 50% 62% / 200px;;}
+		.l3{background: url(./images/suh_h_0301_02_0003_203_1_3.png) no-repeat 50% 40% / 200px;}
 		.lineBox > div{position:absolute;}
-		.l1 .n1{top:5px; left:76px;}
-		.l1 .n2{top:20px; left:270px;}
-		.l1 .n3{top:150px; left:140px;}
-		.l2 .n1{top:60px; left:220px;}
-		.l2 .n2{top:20px; left:30px;}
-		.l2 .n3{top:135px; left:20px;}
-		.l3 .n1{top:100px; left:50px;}
-		.l3 .n2{top:190px; left:140px;}
-		.l3 .n3{top:50px; left:250px;}
+		.l1 .n1 {
+			top: 25px;
+			left: 84px;
+		}
+
+		.l1 .n2 {
+			top: 20px;
+			left: 220px;
+		}
+
+		.l1 .n3 {
+			top: 150px;
+			left: 150px;
+		}
+
+		.l2 .n1 {
+			top: 70px;
+			left: 220px;
+		}
+
+		.l2 .n2 {
+			top: 20px;
+			left: 30px;
+		}
+
+		.l2 .n3 {
+			top: 145px;
+			left: 20px;
+		}
+
+		.l3 .n1 {
+			top: 70px;
+			left: 40px;
+		}
+
+		.l3 .n2 {
+			top: 179px;
+			left: 140px;
+		}
+
+		.l3 .n3 {
+			top: 40px;
+			left: 250px;
+		}
 	</style>
 </head>
 
@@ -41,7 +76,7 @@
 		<header>
 			<div class="title" style="letter-spacing: -1px;">
 				각 ㄱㄴㄷ을 완성해 봅시다.
-				<div class="supply_guide inline">준비물 자</div>
+				<div class="supply_guide inline" style="transform: translate(0,10px);">준비물 자</div>
 			</div>
 		</header>
 		<main>
@@ -61,7 +96,7 @@
 							<div class="study_guide" style="right:0; left:auto; top:20px;"><em>노란색 부분</em>을 <em>드래그</em>하세요.</div>
 						</h2>
 						
-						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0003_203_1_1.html" title="" class="page-iframe" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suh_h_0301_02_0003_203_1_1.html" title="" id="ifm1" class="page-iframe" scrolling="no"></iframe>
 						
 					</li>
 
@@ -126,7 +161,7 @@
 								<div class="answer" data-toggle-target="1">
 									변 ㄴㄱ
 								</div>
-							</div>, 
+							</div>, &nbsp;
 							<div class="toggle" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">
 									변 ㄴㄷ
@@ -159,7 +194,11 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
+
 
 	</script>
 

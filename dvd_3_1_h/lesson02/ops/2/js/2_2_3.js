@@ -11,10 +11,10 @@
 
   function setDrawLine(container, index) {
     var answers = [
-      [{start: {x: 95, y: 133}, end: {x: 53, y: 7}}, {start: {x: 95, y: 133}, end: {x: 137, y: 9}},],
-      [{start: {x: 163, y: 189}, end: {x: 324, y: 190}}, {start: {x: 163, y: 189}, end: {x: 35, y: 62}},],
-      [{start: {x: 40, y: 270}, end: {x: 38, y: 35}}, {start: {x: 40, y: 270}, end: {x: 261, y: 49}},],
-      [{start: {x: 149, y: 165}, end: {x: 289, y: 166}}, {start: {x: 149, y: 165}, end: {x: 149, y: 29}},]
+      [{start: {x: 95, y: 163}, end: {x: 53, y: 37}}, {start: {x: 95, y: 163}, end: {x: 137, y: 39}},],
+      [{start: {x: 163, y: 219}, end: {x: 324, y: 220}}, {start: {x: 163, y: 219}, end: {x: 35, y: 92}},],
+      [{start: {x: 40, y: 300}, end: {x: 38, y: 65}}, {start: {x: 40, y: 300}, end: {x: 261, y: 79}},],
+      [{start: {x: 149, y: 195}, end: {x: 289, y: 196}}, {start: {x: 149, y: 195}, end: {x: 149, y: 59}},]
     ];
 
     drawLines.push(new DrawLine({

@@ -376,7 +376,7 @@
     height: 100%;
   }
   .page_6 .toggle .bullet.exam{position:absolute; top:0; left:0;}
-
+  .page_6.complete .page-iframe{z-index: 0;}
 
 
   .col .toggle {
@@ -464,7 +464,8 @@
   .page_8 .tableContainer .toggle{min-width:80px;}
   .page_7 .--exam,
   .page_8 .--exam{left:340px;}
-
+  .page_7 .bullet.exam,
+  .page_8 .bullet.exam{position:absolute; top:-45px; left:0;}
 
 .--half{display:table;}
 .--half > li{display:table-row;}
@@ -480,9 +481,9 @@
 .page_4 .--half{min-width:460px;}
 .page_4 .toggle{min-width: 150px;}
 .page_7 .--half{min-width:460px;}
-.page_7 .toggle{min-width: 150px;}
+.page_7 .toggle{min-width: 110px;}
 .page_8 .--half{min-width:460px;}
-.page_8 .toggle{min-width: 150px;}
+.page_8 .toggle{min-width: 110px;}
 
 .examViewBtn.reset:before{content:"다시하기";}
 
@@ -711,7 +712,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tableContainer brown" style="width:760px; margin:0;">
+							<div class="tableContainer brown" style="width:773px; margin:0 0 0 40px;">
 								<table>
 									<colgroup>
 										<col style="width:auto;">
@@ -719,7 +720,7 @@
 									</colgroup>
 									<tbody>
 										<tr>
-											<th class="textAlignR">어림을 더 잘했다고 생각하는 사람</th>
+											<th class="textAlignR pr_20">어림을 더 잘했다고 생각하는 사람</th>
 											<td>
 												<div class="toggle noBg" data-toggle-obj="41">
 													<div class="answer" data-toggle-target="41">
@@ -729,7 +730,7 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="textAlignR">잰 각도</th>
+											<th class="textAlignR pr_20">잰 각도</th>
 											<td>
 												<div class="toggle noBg" data-toggle-obj="42" style="margin-left:18px;">
 													<div class="answer" data-toggle-target="42">
@@ -772,7 +773,7 @@
 										</div>
 									</div>
 								</div>
-								</div>
+							</div>
 							<div class="buttonContainer">
 								<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
 								<button class="examViewBtn" data-answer-btn=""></button>
@@ -796,7 +797,7 @@
 									</div>
 									</div>
 								</div>
-								<ul class="--half mt_40">
+								<ul class="--half mt_70">
 									<li>
 										<div>
 											<div class="colorBox sky check">어림한 각도</div>
@@ -804,11 +805,9 @@
 										<div>
 											<span class="--whitespace">약</span>
 											<div class="toggle" data-toggle-obj="72">
-												<div class="answer" data-toggle-target="72">
-													<ul class="contentsList"><li>
-														<ins  class="bullet exam">예</ins>
-														<div>40</div>
-													</li></ul>
+												<div class="answer textAlignC" data-toggle-target="72">
+													<ins class="bullet exam">예</ins>
+													40
 												</div>
 											</div>°
 										</div>
@@ -845,7 +844,7 @@
 								<div class="imgwrap">
 									<img src="./images/suh_0401_02_0006_401_1_3.jpg">
 								</div>
-								<ul class="--half mt_40">
+								<ul class="--half mt_70">
 									<li>
 										<div>
 											<div class="colorBox sky check">어림한 각도</div>
@@ -853,11 +852,9 @@
 										<div>
 											<span class="--whitespace">약</span>
 											<div class="toggle" data-toggle-obj="81">
-												<div class="answer" data-toggle-target="81">
-													<ul class="contentsList"><li>
-														<ins  class="bullet exam">예</ins>
-														<div>120</div>
-													</li></ul>
+												<div class="answer textAlignC" data-toggle-target="81">
+													<ins class="bullet exam">예</ins>
+													120
 												</div>
 											</div>°
 										</div>
@@ -963,6 +960,14 @@
 			}
 		}
 
+
+		document.querySelector(".page_6 .examViewBtn").addEventListener( "click", function(e) {
+			if( !this.classList.contains( "reset" ) ){
+				setTimeout(function(){
+					document.querySelector("#ifrPage6").contentWindow.location.reload();
+				},0);
+			}
+		});
 
 	</script>
 </body>

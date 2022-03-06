@@ -83,11 +83,24 @@
 
 		.ex-box .tri1 {
 			position: absolute;
-			top: 89px;
-			left: 30px;
-			transform: scale(1.01);
+			top: 101px;
+    		left: 17px;
+			transform: scale(.89);
 		}
-
+		.js-figureBoardLine .js-quizButton.resetButton{
+			transform: scale(1.11);
+			bottom: -102px;
+		}
+		.figureBoard .drawLine{position: relative;}
+		.figureBoard .drawLine::after{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0; left:0;
+			z-index: 10;
+		}
 		.line.n1 {
 			position: absolute;
 			width: 185px;
@@ -121,6 +134,7 @@
 			left: 0;
 
 		}
+		.figureBoard > li{margin:0;}
 	</style>
 </head>
 
@@ -183,7 +197,7 @@
 							<li class="js-figureBoardLine drawLine example" data-option="">
 								<canvas class="js-drawArea drawArea"></canvas>
 							</li>
-							<li class="js-figureBoardLine drawLine" data-option="copy">
+							<li class="js-figureBoardLine drawLine" data-option="copy" style="transform: scale(.89);">
 								<canvas class="js-drawArea drawArea"></canvas>
 								<div class="js-quizButton resetButton exBtn" data-type="reset" id="uiAddEvent"></div>
 								<div class="js-completeButton quizButtons answer" data-hover=""></div>
