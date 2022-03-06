@@ -15,7 +15,7 @@
 		.page-iframe .popup_contents .toggle,
 		.page-iframe + section .toggle{z-index:1;}
 		.popup_pages>li.whole.on{z-index:10000;}
-		.supply_guide{vertical-align:6px;}
+		.supply_guide{position:relative; left:100%; vertical-align:6px; transform: translate(-120px);}
 
 		.page_1 .lineBox{position:relative; width:100%; height:350px; }
 		.page_1 .lineBox .toggle{position:absolute; top:0; left:0; width:100%; height:100%; background:url(./images/suh_p_0401_02_0008_202_1/suh_p_0401_02_0008_202_1_2.png) no-repeat 50% 50% / 540px auto;}
@@ -26,8 +26,9 @@
 		.page_2 .lineBox{position:relative; margin-top:30px;}
 		.page_2 .colorBox{position:absolute; top:-30px; left:-5px;}
 		.page_2 .--img{width:100%; height:170px; background:url(./images/suh_p_0401_02_0008_202_1/suh_p_0401_02_0008_202_1_4.png) no-repeat 190px 35px / auto 130px;}
-		.page_2 .--answer{position:absolute; top:40px; left:0; width:100%; height:170px; background:url(./images/suh_p_0401_02_0008_202_1/suh_p_0401_02_0008_202_1_5.png) no-repeat 420px 30px / auto 100px;}
-		.page_2 .bullet.exam{position:absolute; top:10px; left:410px;}
+		.page_2 .--toggle{position:absolute;top: 40px;left: 430px;width: 450px;height: 140px;}
+		.page_2 .--answer{position:absolute;top:0;left:0;width:100%;height: 100%;background: url(./images/suh_p_0401_02_0008_202_1/suh_p_0401_02_0008_202_1_5.png) no-repeat 20px 30px / auto 100px;}
+		.page_2 .bullet.exam{position:absolute;top:10px;left: 0px;}
 
 
 	</style>
@@ -36,7 +37,7 @@
 
 	<div id="wrap" class="math">
 		<header>
-			<div class="title ls1">
+			<div class="title ls1 mb_40">
 				자신이 그린 삼각형을 잘라서 삼각형의 세 각의 크기의 합을 알아봅시다. <div class="supply_guide inline">꾸러미 4</div>
 			</div>
 		</header>
@@ -79,8 +80,10 @@
 							<div class="lineBox sky it-box">
 								<div class="colorBox sky">한 점에 모이도록 붙이기</div>
 								<div class="--img"></div>
-								<div class="answer --answer" data-toggle-obj="21" data-toggle-target="21">
-									<ins class="bullet exam">예</ins>
+								<div class="toggle --toggle noBg" data-toggle-obj="21" >
+									<div class="answer --answer" data-toggle-target="21">
+										<ins class="bullet exam">예</ins>
+									</div>
 								</div>
 							</div>
 							<div class="textAlignC --char">
@@ -156,7 +159,7 @@
 						height: 421,
 						thumbNail: '../common/contents/images/character/boy_1.png',
 						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
-						sound: './media/audios/suh_p_0401_02_0008_201_1.mp3',
+						sound: './media/audios/suh_p_0401_02_0008_202_1.mp3',
 						sheetWidth: 102000,
 						sheetHeight: 421,
 						//endSheet: 0,
@@ -183,5 +186,9 @@
 			});
 
 		}, false);
+
+		window.$callBack.sliderMove = function (params) {
+			$ts.getEl('.page_2 .characterImg')[0].style.left = 0;
+		};
 	</script>
 </html>
