@@ -139,8 +139,8 @@
 		}
 		.page_3 .toggle{
 			position: absolute;
-			width: 100%;
-			height: 100%;
+			width: 0%;
+			height: 0%;
 			background: transparent;
 			padding: 0;
 			top: -10px;
@@ -157,6 +157,10 @@
 		.page_1 .answer,
 		.page_4 .answer,
 		.page_2 .answer{text-align: center !important;}
+
+		.page_3 .toggle.complete{z-index: 4;}
+		.page_3 figure::after{content: ""; display: block; position:absolute; top:0; left:0; width:100%; height:100%; z-index: 2;}
+		.page_3 .popBtn {z-index: 3;}
 	</style>
 </head>
 
