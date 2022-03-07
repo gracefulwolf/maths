@@ -15,19 +15,90 @@
 		.study_guide.right {
 			top: 30px; z-index: 3;
 		}
-
+		.contentsBox{padding:0;}
+		.iframe-wrap{width:100%; position: absolute; top:0; left:0;
+		height:582px; overflow: hidden;}
 		.page-iframe {
 		    width: 100%;
-			height: 583px;
+			height: 582px;
 			overflow: hidden;
 			border: 0;
 			position: absolute;
-			top: 0;
 			z-index: 1;
 		}
-		.contentsBox{padding:30px 0 0}
+		.innerTab_2{padding:15px 30px 5px;}
 		.balloon.sky:after{left:68% !important}
 		header .title .supply_guide.inline{margin-top:10px; }
+		.moveButtonContainer{z-index: 2; width:auto; left:50%; transform: translate(-50%, 0);}
+
+		.images {
+			display: flex;
+			width: 100%;
+			height: 300px;
+			justify-content: space-between;
+			margin: 60px 0 30px;
+		}
+		.images > img {
+			flex: 0 1 auto;
+			height: inherit;
+			pointer-events: none;
+		}
+		.innerTab_2 .line{position: absolute; width:100px; height:6px; border-radius:3px; background-color: #00a0ff; z-index: 2; transform-origin: top left;}
+
+		.innerTab_2 .line.n1{
+			top: 212px;
+			left: 121px;
+			transform: rotate(253deg);
+			width: 160px;
+		}
+		.innerTab_2 .line.n2{
+			top: 212px;
+			left: 121px;
+			transform: rotate(289deg);
+			width: 160px;
+		}
+
+		.innerTab_2 .line.n3{
+			top: 262px;
+			left: 371px;
+			transform: rotate(226deg);
+			width: 160px;
+		}
+		.innerTab_2 .line.n4{
+			top: 262px;
+			left: 371px;
+			transform: rotate(360deg);
+			width: 160px;
+		}
+
+		.innerTab_2 .line.n5{
+			top: 342px;
+			left: 583px;
+			transform: rotate(270deg);
+			width: 240px;
+		}
+		.innerTab_2 .line.n6{
+			top: 342px;
+			left: 583px;
+			transform: rotate(316deg);
+			width: 320px;
+		}
+
+		.innerTab_2 .line.n7{
+			top: 240px;
+			left: 969px;
+			transform: rotate(270deg);
+			width: 160px;
+		}
+		.innerTab_2 .line.n8{
+			top: 240px;
+			left: 969px;
+			transform: rotate(360deg);
+			width: 160px;
+		}
+
+
+		.innerTab_2 .dapCheckBtn{right:56px}
 	</style>
 </head>
 
@@ -35,16 +106,55 @@
 
 	<div id="wrap" class="math">
 		<header>
-			<div class="title" style="letter-spacing: -1px;">
+			<div class="title noTab">
 				점선을 따라 선을 긋고, 그린 도형의 같은 점을 말해 봅시다.
 				<div class="supply_guide inline" style="z-index: 3;">준비물  자</div>
 			</div>
 		</header>
 		<main>
-			<div class="contentsBox"> 
-				<div class="study_guide right"><em>노란색 부분</em>을 <em>드래그</em>하세요.</div>
-				<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_2_03.html" title="" class="page-iframe"
-					scrolling="no"></iframe>
+			<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<div class="study_guide right"><em>노란색 부분</em>을 <em>드래그</em>하세요.</div>
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_h/lesson02/ops/2/2_2_03.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+						</div>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<div>
+							<div class="images">
+								<div class="line n1"></div>
+								<div class="line n2"></div>
+								<div class="line n3"></div>
+								<div class="line n4"></div>
+								<div class="line n5"></div>
+								<div class="line n6"></div>
+								<div class="line n7"></div>
+								<div class="line n8"></div>
+								<img src="./images/2_2_3_01.png" alt="">
+								<img src="./images/2_2_3_02.png" alt="">
+								<img src="./images/2_2_3_03.png" alt="" style="transform: translate(-4px ,0);">
+								<img src="./images/2_2_3_04.png" alt="" style="transform: translate(-8px ,0);">
+							</div>
+						</div>
+						<div class="textAlignC">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									반직선(선분) 2개로 이루어져 있습니다.
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				</ul>
 			</div>
 		</main>
 
@@ -69,7 +179,9 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			
+			window.$callBack.sliderMove=function(SLIDER) {
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
 
 	</script>
