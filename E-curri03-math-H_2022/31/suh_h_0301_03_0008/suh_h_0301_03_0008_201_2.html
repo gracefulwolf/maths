@@ -223,20 +223,169 @@
 						</div>
 					</li>
 
-					<li class="page_3">
+					<li class="page_3" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">내가 가져온 카드의 나눗셈식을 써 보세요.
 										<div class="supply_guide inline" style="margin-top:10px">준비물 169쪽, 171쪽, 173 쪽</div>
-
-
 									</p>
 								</div>
 							</li>
-	
 						</ul>
+
+						<div style="width: 620px; margin-top: 30px;">
+							<div class="tableContainer brown">
+								<table>
+									<colgroup>
+										<col style="width:50%;">
+										<col style="width:auto;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>나눗셈식</th>
+											<th>나눗셈식</th>
+										</tr>
+										<tr>
+											<td><span class="bullet exam">예</span>28÷7=4</td>
+											<td>36÷9=4</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														35
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">
+														5
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">
+														7
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="21">
+													<div class="answer" data-toggle-target="1">
+														42
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="22">
+													<div class="answer" data-toggle-target="2">
+														6
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="23">
+													<div class="answer" data-toggle-target="3">
+														7
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="31">
+														27
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="32">
+														9
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="33">
+														3
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="21">
+													<div class="answer" data-toggle-target="41">
+														12
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="22">
+													<div class="answer" data-toggle-target="42">
+														4
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="23">
+													<div class="answer" data-toggle-target="43">
+														3
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="51">
+														25
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="52">
+														5
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="53">
+														5
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="21">
+													<div class="answer" data-toggle-target="61">
+														15
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="22">
+													<div class="answer" data-toggle-target="62">
+														3
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="23">
+													<div class="answer" data-toggle-target="63">
+														5
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="71">
+														16
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="72">
+														2
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="73">
+														8
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="21">
+													<div class="answer" data-toggle-target="81">
+														56
+													</div>
+												</div>÷<div class="toggle" data-toggle-obj="22">
+													<div class="answer" data-toggle-target="82">
+														7
+													</div>
+												</div>=<div class="toggle" data-toggle-obj="23">
+													<div class="answer" data-toggle-target="83">
+														8
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div id="aniBox1"></div>
+
+						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
 
 					<li class="page_4">
@@ -244,7 +393,7 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									<p class="mb_10">문제를 해결한 방법을 친구들에게 이야기해 보세요.
+									<p class="mb_10">놀이를 하며 느낀 점이나 새롭게 알게 된 점을 이야기해 보세요.
 
 									</p>
 								</div>
@@ -384,8 +533,46 @@
 			// $prite.changeSpritePos=function(){}; // backgroundPosition 무한루프 방지
 
 			$prite.add({
-				target: $ts.getEl('#aniBox_2'),
+				target: $ts.getEl('#aniBox1'),
 				spriteId: 'sprite2',
+				spriteList: [
+					{
+						name: 'boy_1',
+						circle: 'sky',
+						speech:'right',
+						top:320,
+						left: 744,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suh_h_0301_03_0008_201_2_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '직28÷7과 36÷9의 <br>몫은 4이므로 <br>28÷7＝4와 36÷9＝4를 씁니다.',
+							class: 'balloon bottom sky ctTail',
+							top:70,
+							left: 623,
+							width: 410,
+							textAlign: 'center', 
+							wordBreak: 'keep-all' 
+						},
+						callbacks: {
+							start: function () {
+							}, // 시작시 콜백
+							end: function () {
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+			$prite.add({
+				target: $ts.getEl('#aniBox_2'),
+				spriteId: 'sprite3',
 				spriteList: [
 					{
 						name: 'girl_2',
@@ -397,16 +584,17 @@
         				height: 421,
 						thumbNail: '../common/contents/images/character/girl_2.png',
 						spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
-						sound: './media/audios/suh_h_0301_02_0008_201_2_1.mp3',
+						sound: './media/audios/suh_h_0301_03_0008_201_2_2.mp3',
 						sheetWidth: 102000,
 						sheetHeight: 421,
 						//endSheet: 0,
 						delay: 40,
 						textBubble: {
-							text: '직사각형의 개수를 <br>예상하고 확인하여 <br>잘 해결했습니다.',
+							text: '몫이 같은 카드를 찾다 보니 계산을 재미있고 빠르게 연습할 수 있었습니다.',
 							class: 'balloon bottom deeppink ctTail',
-							top:148,
-							left: 250,
+							top:108,
+							left: 211,
+							width:370,
 							textAlign: 'center', 
 							wordBreak: 'keep-all' 
 						},
@@ -427,16 +615,17 @@
         				height: 421,
 						thumbNail: '../common/contents/images/character/boy_2.png',
 						spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
-						sound: './media/audios/suh_h_0301_02_0008_201_2_2.mp3',
+						sound: './media/audios/suh_h_0301_03_0008_201_2_3.mp3',
 						sheetWidth: 102000,
 						sheetHeight: 421,
 						//endSheet: 0,
 						delay: 40,
 						textBubble: {
-							text: '직사각형의 개수를 <br><span class="blankBox w50"></span>라 하고 식을 세워 <br>잘 해결했습니다.',
+							text: '친구는 몫이 같은 나눗셈식을 바르게 썼습니다.',
 							class: 'balloon bottom green ctTail',
 							top:190,
-							left: 513,
+							left: 543,
+							width:280,
 							textAlign: 'center', 
 							wordBreak: 'keep-all' 
 						},
