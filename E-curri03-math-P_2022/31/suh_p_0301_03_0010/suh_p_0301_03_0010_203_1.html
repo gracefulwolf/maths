@@ -11,22 +11,11 @@
     <link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
     <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
     <style>
-        .flexListContainer {
-            flex-wrap: wrap;
-        }
-        .flexListContainer > li {
-            display: flex;
-            align-items: center
-        }
-        .flexListContainer > li + li {
-            margin-top: 15px;
-        }
-        .flexListContainer > li:nth-child(1) {
-            align-items: flex-start;
-        }
-        .flexListContainer > li:nth-child(1) .colorBox.check {
-            margin-top: 3px;
-        }
+        .flexListContainer.column li {display: flex;align-items: flex-start;}
+        .flexListContainer.column li + li {margin-top: 15px;}
+        .flexListContainer.column li > div {display: flex;}
+        .flexListContainer.column li > div:first-child:not(.exam) {display: flex;justify-content: flex-end;min-width: 132px;}
+        .flexListContainer.column li .colorBox.check {margin-top: 3px;}
     </style>
 </head>
 
@@ -42,27 +31,35 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
                     <li  data-quiz="toggle">
-                        <ul class="flexListContainer">
+                        <ul class="flexListContainer column">
                             <li>
-                                <div class="colorBox check skyBlue">풀이</div>
-                                <div class="toggle box" data-toggle-obj="1">
-                                    <div class="answer" data-toggle-target="1">
-                                        <ul class="contentsList">
-                                            <li>
-                                                <div class="bullet exam">예</div>
-                                                <div>
-                                                    준우네 반 학생 수는 36명입니다. 준우를 제외한 35명이 5모둠을 만들려고 하므로 35를 5로 나눈 몫이 한 모둠에 모여야 하는 학생 수입니다. 5단 곱셈구구에서 5×7＝35이므로 35÷5＝7입니다.
-                                                </div>
-                                            </li>
-                                        </ul>
+                                <div>
+                                    <div class="colorBox check skyBlue">풀이</div>
+                                </div>
+                                <div>
+                                    <div class="toggle box" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <ul class="contentsList">
+                                                <li>
+                                                    <div class="bullet exam">예</div>
+                                                    <div>
+                                                        준우네 반 학생 수는 36명입니다. 준우를 제외한 35명이 5모둠을 만들려고 하므로 35를 5로 나눈 몫이 한 모둠에 모여야 하는 학생 수입니다. 5단 곱셈구구에서 5×7＝35이므로 35÷5＝7입니다.
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="colorBox check purple">답</div>
-                                <div class="toggle box" data-toggle-obj="2">
-                                    <div class="answer" data-toggle-target="2">
-                                        7명
+                                <div>
+                                    <div class="colorBox check purple">답</div>
+                                </div>
+                                <div>
+                                    <div class="toggle box" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            7명
+                                        </div>
                                     </div>
                                 </div>
                             </li>

@@ -86,7 +86,9 @@
 								</div>
 							</li>
 						</ul>
-						<button class="dapCheckBtn" data-answer-btn="1"></button>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 
 					<li class="page_2" data-quiz="toggle">
@@ -112,7 +114,9 @@
 								</div>
 							</li>
 						</ul>
-						<button class="dapCheckBtn" data-answer-btn="1"></button>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 
 					<li class="page_3" data-quiz="toggle">
@@ -148,9 +152,12 @@
 								</div>
 							</li>
 						</ul>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 
-					<li class="page_4">
+					<li class="page_4" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
 								<ins class="bullet circleDot"></ins>
@@ -158,11 +165,9 @@
 									<p class="mb_10">
 										자신이 세운 계획에 따라 문제를 바르게 해결했는지 확인해 보세요.
 									</p>
-									<div class="textAlignC">
-										<div class="toggle" data-toggle-obj="1">
-											<div class="answer" data-toggle-target="1">
-												나눗셈식을 올바르게 세웠는지 확인하고 나눗셈을 정확하게 했는지 검토합니다.
-											</div>
+									<div class="toggle box" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											나눗셈식을 올바르게 세웠는지 확인하고 나눗셈을 정확하게 했는지 검토합니다.
 										</div>
 									</div>
 								</div>
@@ -177,6 +182,9 @@
 								</div>
 							</li>
 						</ul>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -224,29 +232,29 @@
 					{
 						name: 'girl_2',
 						speech: 'right',
-						circle: 'deeppink',
-						top: 360,
+						// circle: 'deeppink',
+						top: 150,
 						left: 0,
-						width: 360,
+						width: 340,
 						height: 421,
 						thumbNail: '../common/contents/images/character/girl_2.png',
-						spriteSheet: '../common/contents/images/character/girl_2.png',
+						spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
 						sound: './media/audios/suh_p_0301_03_0010_202_1.mp3',
 						sheetWidth: 102000,
 						sheetHeight: 421,
 						//endSheet: 0,
 						delay: 40,
 						textBubble: {
-							text: '25를 5로 나누어 문제를 해결했습니다. 5단 곱셈구구에서 5×5＝25이므로 25÷5＝5입니다. 따라서 한 줄에 5명씩 다시 줄을 서면 5줄이 됩니다.',
+							text: '25를 5로 나누어 문제를 해결했습니다.<br>5단 곱셈구구에서 5×5＝25이므로<br>25÷5＝5입니다. 따라서 한 줄에 5명씩<br>다시 줄을 서면 5줄이 됩니다.',
 							class: 'balloon left deeppink ctTail',
-							top: 310,
-							left: 450,
+							top: 360,
+							left: 280,
 							textAlign: 'center',
 							wordBreak: 'keep-all'
 						},
 						callbacks: {
 							start: function () {
-								$ts.getEl('.characterImg')[0].style.left = '-200px';
+								$ts.getEl('.characterImg')[0].style.left = '-340px';
 							}, // 시작시 콜백
 							end: function () {
 								$ts.getEl('.characterImg')[0].style.left = 0;
