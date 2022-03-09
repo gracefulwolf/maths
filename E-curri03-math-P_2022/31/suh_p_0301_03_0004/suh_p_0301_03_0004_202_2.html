@@ -4,8 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
@@ -14,13 +13,22 @@
 	<style type="text/css">
 		h2 .bullet + span {color: #fff; margin-bottom: 30px;}
 		.lineBox {display: inline-block; text-align: center;}
-		.lineBox.circle {min-width: 80px; padding: 10px; border-radius: 50%;}
-		.lineBox.n2 {z-index: 1;}
-		.lineBox.n3 {position: relative; top: -30px; padding: 20px; z-index: 0;}
-		.textAlignC { width: 840px; margin: 0 auto;}
-		.flexListContainer {justify-content: flex-start;align-items: center;}
-		.flexListContainer.n1 {padding-left: 50px;}
-		.flexListContainer.n2 {margin: 10px 0 10px 220px;}
+		.lineBox.circle {min-width: 80px;border-radius: 50%;}
+		.flexListContainer.wrap {justify-content: flex-start;align-items: center;}
+		.flexListContainer.n1 {position: relative;}
+		.flexListContainer.n1:after {content: '';position: absolute;left: 97px;bottom: -21px;width: 251px;height:2px;background: #fff;display: inline-block;}
+		.flexListContainer.n2 {justify-content: flex-start;align-items: center;position: relative;padding-left: 50px;}
+		.flexListContainer.n2 .icon_arrow.n1 {margin-right: 10px;}
+		.flexListContainer.n2 .icon_arrow.n2 {position: absolute;right: 125px;bottom: -40px;}
+		.flexListContainer.n3 {position: relative;margin: 35px 0 0 450px;}
+		.flexListContainer.n3 .lineBox.circle {position: absolute;top: -45px;left: 5px;}
+		.flexListContainer.n3 .lineBox.pink:last-child {padding: 30px 20px;}
+		
+		.item {width: 420px;margin-left: 150px;letter-spacing: -1px;}
+		.item .textAlignC {padding-top: 30px;margin-left: 25px;}
+		.item .flexListContainer .line {position: relative;}
+		.item .flexListContainer .line:before {content: '';position: absolute;left: 50%;bottom: -20px;width: 2px;height: 20px;background: #fff;display: inline-block;}
+		.item .lineBox.circle {margin-left: 5px;}
 	</style>
 </head>
 
@@ -33,22 +41,33 @@
 		</header>
 		<main>
 			<div class="contentsBox board" data-quiz="toggle">
-				<div>
-					<h2><ins class="bullet circleDot"></ins><span>15에서 3씩 5번 빼면 0이 됩니다. 이것을 나눗셈식으로 나타내면 15÷3＝5입니다.</span></h2>
-				</div>
-				<div class="textAlignC">
-					<div>15－3 －3－3－3－3＝0</div>
-                    <div class="flexListContainer n1">
-                        <div>15</div>÷ <div>3</div> ＝ <div class="lineBox pink circle n1"> 5</div>
-                    </div>
-					<div class="flexListContainer n2"><div class="icon_arrow bottom"></div></div>
-					<div class="flexListContainer wrap  n3" style="padding-left: 200px;">
-						<div class="lineBox circle pink n2">몫</div>
-						<div class="lineBox pink n3">
+			<h2 style="letter-spacing: -1.4px;margin-bottom: 0;"><ins class="bullet circleDot"></ins><span>15에서 3씩 5번 빼면 0이 됩니다. 이것을 나눗셈식으로 나타내면 15÷3＝5입니다.</span></h2>
+				<section>
+					<div class="item">
+						<div class="flexListContainer n1">
+							<span>15</span>－
+							<span class="line">3</span>－
+							<span class="line">3</span>－
+							<span class="line">3</span>－
+							<span class="line">3</span>－
+							<span class="line">3</span>＝
+							<span>0</span>
+						</div>
+						<div class="textAlignC">5번</div>
+						<div class="flexListContainer n2">
+							<div class="icon_arrow n1"></div>
+							<div>15</div>÷<div>3</div>＝ 
+							<div class="lineBox pink circle n1">5</div>
+							<div class="icon_arrow n2"></div>
+						</div>
+					</div>
+					<div class="flexListContainer wrap n3">
+						<div class="lineBox circle pink">몫</div>
+						<div class="lineBox pink">
 							3씩 묶었을 때 묶음의 수
 						</div>
 					</div>
-				</div>
+				</section>
 			</div>
 		</main>
 
