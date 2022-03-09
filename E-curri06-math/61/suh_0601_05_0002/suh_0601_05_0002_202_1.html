@@ -10,9 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
     <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
     <style>
-        .img-box {height:340px;position:relative;width:730px;margin:0 auto}
-        .img-box .imgCon {height:100%}
-        .img-box .imgCon .popBtn {width:100%;height:100%;background:url("./images/suh_0601_05_0002_101_1_1.png") no-repeat 50% 50%;background-size:contain}
         .ex-box {display:flex}
         .ex-box .bullet {flex-shrink:0}
 
@@ -25,36 +22,31 @@
 
         .txt-a {text-align:right;font-size:30px}
 
-        .img-box .lineBox {position:absolute;top:0;left:-140px;z-index:3;pointer-events:none}
+        .img-box {position:relative;width:320px;height:360px;text-align:center;margin:10px auto 0}
+        .img-box img {height:100%;vertical-align:top}
         .img-box .txt-item {position:absolute;font-size:14px;pointer-events:none;z-index:3}
-        .img-box .txt-item.n1 {top: 13px;left: 220px;}
-        .img-box .txt-item.n2 {top: 33px;left: 320px;}
-        .img-box .txt-item.n3 {top: 107px;left: 240px;}
-        .img-box .txt-item.n4 {top: 115px;left: 347px;}
-        .img-box .txt-item.n5 {top: 168px;left: 250px;}
-        .img-box .txt-item.n6 {top: 290px;left: 240px;}
-        .img-box .txt-item.n7 {bottom:10px;right:60px}
+        .img-box .txt-item.n1 {top: 25px;left: 10px;}
+        .img-box .txt-item.n2 {top: 33px;left: 124px;}
+        .img-box .txt-item.n3 {top: 107px;left: 10px;}
+        .img-box .txt-item.n4 {top: 115px;left: 137px;}
+        .img-box .txt-item.n5 {top: 178px;left: 40px;}
+        .img-box .txt-item.n6 {top: 308px;left: 30px;}
+        .img-box .toggle {position:absolute;top:0;left:0;right:0;bottom:0;background-color:transparent;padding:0}
+        .img-box .toggle .answer {text-align:center}
+        .img-box .toggle img {height:360px}
+        .img-box .toggle:after {display:none}
+        .img-box .exam {position:absolute;top:10px;left:-60px}
+
         .img-box .img-text {position:absolute;font-size:40px;display:flex;align-items:flex-end}
         .img-box .img-text span {margin-left:10px;width:130px}
-        .img-box .img-text.n1 {right:20px;bottom: 120px;}
-        .img-box .img-text.n2 {right:20px;bottom: 70px;}
+        .img-box .img-text.n1 {right: -160px;bottom: 120px;}
+        .img-box .img-text.n2 {right: -150px;bottom: 60px;}
 
-        .full-img {height:100%;position:relative;box-sizing:border-box;padding-top:10%}
-        .full-img img {width:100%;vertical-align:bottom;height:100%;object-fit:contain}
-        .full-img .lineBox {position:absolute;top:10px;left:50%;transform:translateX(-50%)}
-        .full-img .txt-item {position:absolute;font-size:36px;pointer-events:none;z-index:3}
-        .full-img .txt-item.n1 {top: 123px;left: 220px;}
-        .full-img .txt-item.n2 {top: 164px;left: 500px;}
-        .full-img .txt-item.n3 {top: 315px;left: 250px;}
-        .full-img .txt-item.n4 {top: 315px;left: 517px;}
-        .full-img .txt-item.n5 {top: 428px;left: 310px;}
-        .full-img .txt-item.n6 {top: 660px;left: 340px;}
-        .full-img .txt-item.n7 {bottom: 20px;right:60px}
-        .full-img .img-text {position:absolute;font-size:40px;display:flex;align-items:flex-end}
-        .full-img .img-text img {width:auto;height:auto}
-        .full-img .img-text span {margin-left:10px;width: 150px;}
-        .full-img .img-text.n1 {right: 120px;bottom: 150px;}
-        .full-img .img-text.n2 {right: 120px;bottom: 90px;}
+        .box-flex {display:flex}
+        .box-flex .l-col {margin-right:60px}
+
+        .page_4 .img-box .img-text.n1 {right: -140px}
+        .page_4 .img-box .img-text.n2 {right: -130px}
     </style>
 </head>
 
@@ -228,71 +220,75 @@
                     </section>
                 </li>
                 <li class="page_1" data-quiz="toggle">
-                    <h2><ins class="dot"></ins><span style="letter-spacing:-2px">강원 권역의 초등학생 수는 제주 권역의 초등학생 수의 몇 배인가요?</span></h2>
-                    <section>
+                    <h2><ins class="dot"></ins><span>표를 보고 그림그래프로 나타내어 보세요.</span></h2>
+                    <section style="padding-right:0">
+                        <div class="lineBox orange">권역별 초등학교 수</div>
                         <div class="img-box">
-                            <div class="imgCon">
-                                <button class="popBtn btn_4 zoomBtn line trans" data-hover="" data-popup-btn="1">
-                                </button>
-                                <div class="lineBox purple">권역별 초등학생 수</div>
-                                <p class="txt-item n1">서울·인천·경기</p>
-                                <p class="txt-item n2">강원</p>
-                                <p class="txt-item n3">대전·세종·충청</p>
-                                <p class="txt-item n4">대구·부산<br/>·울산·경상</p>
-                                <p class="txt-item n5">광주·전라</p>
-                                <p class="txt-item n6">제주</p>
-                                <div class="img-text n1">
-                                    <img src="images/suh_0601_05_0002_101_1_2.png" alt="">
-                                    <span>10만 명</span>
-                                </div>
-                                <div class="img-text n2">
-                                    <img src="images/suh_0601_05_0002_101_1_3.png" alt="">
-                                    <span>1만 명</span>
-                                </div>
-                                <div class="txt-item n7">(출처: 초등학교 개황, 국가 통계 포털, 2018.)</div>
+                            <img src="./images/suh_0601_05_0002_202_1_3_1.png" alt="">
+                            <p class="txt-item n1">서울·인천·경기</p>
+                            <p class="txt-item n2">강원</p>
+                            <p class="txt-item n3">대전·세종·충청</p>
+                            <p class="txt-item n4">대구·부산<br/>·울산·경상</p>
+                            <p class="txt-item n5">광주·전라</p>
+                            <p class="txt-item n6">제주</p>
+                            <div class="img-text n1">
+                                <img src="images/suh_0601_05_0002_202_1_3_3.png" alt="">
+                                <span>1000개</span>
                             </div>
-                        </div>
-                        <div class="textAlignC">
-                            <div class="toggle mt_20" data-toggle-obj="1">
+                            <div class="img-text n2">
+                                <img src="images/suh_0601_05_0002_202_1_3_4.png" alt="">
+                                <span>100개</span>
+                            </div>
+                            <div class="toggle" data-toggle-obj="1">
                                 <div class="answer" data-toggle-target="1">
-                                    2배
+                                    <div class="bullet exam">예</div>
+                                    <div><img src="./images/suh_0601_05_0002_202_1_3_2.png" alt=""></div>
                                 </div>
                             </div>
                         </div>
                         <button class="dapCheckBtn" data-answer-btn=""></button>
                     </section>
                 </li>
-                <li class="page_1" data-quiz="toggle">
+                <li class="page_4" data-quiz="toggle">
                     <h2><ins class="dot"></ins><span>그림그래프를 보고 더 알 수 있는 내용을 말해 보세요.</span></h2>
-                    <section>
-                        <div class="img-box">
-                            <div class="imgCon">
-                                <button class="popBtn btn_4 zoomBtn line trans" data-hover="" data-popup-btn="1">
-                                </button>
-                                <div class="lineBox purple">권역별 초등학생 수</div>
-                                <p class="txt-item n1">서울·인천·경기</p>
-                                <p class="txt-item n2">강원</p>
-                                <p class="txt-item n3">대전·세종·충청</p>
-                                <p class="txt-item n4">대구·부산<br/>·울산·경상</p>
-                                <p class="txt-item n5">광주·전라</p>
-                                <p class="txt-item n6">제주</p>
-                                <div class="img-text n1">
-                                    <img src="images/suh_0601_05_0002_101_1_2.png" alt="">
-                                    <span>10만 명</span>
+                    <section style="padding-right:0">
+                        <div class="box-flex">
+                            <div class="l-col">
+                                <div class="lineBox orange">권역별 초등학교 수</div>
+                                <div class="img-box">
+                                    <img src="./images/suh_0601_05_0002_202_1_3_2.png" alt="">
+                                    <p class="txt-item n1">서울·인천·경기</p>
+                                    <p class="txt-item n2">강원</p>
+                                    <p class="txt-item n3">대전·세종·충청</p>
+                                    <p class="txt-item n4">대구·부산<br/>·울산·경상</p>
+                                    <p class="txt-item n5">광주·전라</p>
+                                    <p class="txt-item n6">제주</p>
+                                    <div class="img-text n1">
+                                        <img src="images/suh_0601_05_0002_202_1_3_3.png" alt="">
+                                        <span>1000개</span>
+                                    </div>
+                                    <div class="img-text n2">
+                                        <img src="images/suh_0601_05_0002_202_1_3_4.png" alt="">
+                                        <span>100개</span>
+                                    </div>
+                                    <div class="bullet exam">예</div>
                                 </div>
-                                <div class="img-text n2">
-                                    <img src="images/suh_0601_05_0002_101_1_3.png" alt="">
-                                    <span>1만 명</span>
-                                </div>
-                                <div class="txt-item n7">(출처: 초등학교 개황, 국가 통계 포털, 2018.)</div>
                             </div>
-                        </div>
-                        <div class="textAlignC">
-                            <div class="toggle mt_20" data-toggle-obj="1">
-                                <div class="answer" data-toggle-target="1">
-                                    <div class="ex-box">
-                                        <div class="bullet exam">예</div>
-                                        <p>권역별로 초등학생 수가 많이 차이 납니다.</p>
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div class="ex-box">
+                                            <div class="bullet exam">예</div>
+                                            <p class="textAlignJ">제주 권역의 초등학교가 가장 적습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="toggle mt_20" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div class="ex-box">
+                                            <div class="bullet exam">예</div>
+                                            <p class="textAlignJ">서울·인천 · 경기 권역의 초등학교가 가장 많습니다.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
