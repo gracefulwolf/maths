@@ -308,10 +308,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					</h2>
 
 					<div class="moveButtonContainer" data-slide-btn-container="">
-						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<div class="basicSlider_btn prev off" data-btn-prev="" data-hover=""></div>
 						<ul class="basicSlider_circle_tabs" data-tabs="">
-							<li data-hover=""></li>
-							<li data-hover=""></li>
+							<li data-hover="" class="on"></li>
+							<li data-hover="" class=""></li>
 						</ul>
 						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 					</div>
@@ -390,9 +390,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 										<ul><li>32</li><li>40</li></ul>
 									</div>
 								</li>
-							
 							</ul>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</li>
 						<li class="innerTab_2" data-quiz="toggle">
 
@@ -491,12 +489,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</li>
 					</ul>
-
-
-			
-
-
-
+					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</li>
 				<li class="page_4" data-quiz="toggle">
 					<h2>
@@ -656,38 +649,70 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</div>
 			</li>
 			<li class="solve pop_page_2" data-popup-page="2">
-				<div class="popup_contents" style="letter-spacing: -4px;">
-					주어진 수 카드에서 2장을 뽑아 만들 수 있는 진분수는
-					<div class="bunsuWrap">
-						<ul><li>2</li><li>4</li></ul>
-					</div>,&nbsp;
-					<div class="bunsuWrap">
-						<ul><li>2</li><li>5</li></ul>
-					</div>,&nbsp;
-					<div class="bunsuWrap">
-						<ul><li>4</li><li>5</li></ul>
-					</div>,&nbsp;
-					<div class="bunsuWrap">
-						<ul><li>2</li><li>8</li></ul>
-					</div>,&nbsp;
-					<div class="bunsuWrap">
-						<ul><li>4</li><li>8</li></ul>
-					</div>,&nbsp;
-					<div class="bunsuWrap">
-						<ul><li>5</li><li>8</li></ul>
-					</div>&nbsp;입니다. 이 분수들의 크기를 비교해보면 가장 큰 수는
-					<div class="bunsuWrap">
-						<ul><li>4</li><li>5</li></ul>
-					</div>입니다.<br>따라서
-					<div class="bunsuWrap">
-						<ul><li>4</li><li>5</li></ul>
-					</div>를 소수로 나타내면
-					<div class="bunsuWrap">
-						<ul><li>4</li><li>5</li></ul>
-					</div>＝
-					<div class="bunsuWrap">
-						<ul><li>8</li><li>10</li></ul>
-					</div>＝0.8입니다.
+				<div class="popup_contents">
+					<div style="letter-spacing: -3.2px;">
+						주어진 수 카드에서 2장을 뽑아 만들 수 있는 진분수는
+						<div class="bunsuWrap">
+							<ul>
+								<li>2</li>
+								<li>4</li>
+							</ul>
+						</div>,&nbsp;
+						<div class="bunsuWrap">
+							<ul>
+								<li>2</li>
+								<li>5</li>
+							</ul>
+						</div>,&nbsp;
+						<div class="bunsuWrap">
+							<ul>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>,&nbsp;
+						<div class="bunsuWrap">
+							<ul>
+								<li>2</li>
+								<li>8</li>
+							</ul>
+						</div>,&nbsp;
+						<div class="bunsuWrap">
+							<ul>
+								<li>4</li>
+								<li>8</li>
+							</ul>
+						</div>,&nbsp;
+						<div class="bunsuWrap">
+							<ul>
+								<li>5</li>
+								<li>8</li>
+							</ul>
+						</div>&nbsp;입니다. 이 분수들의 크기를 비교해보면 가장 큰 수는
+						<div class="bunsuWrap">
+							<ul>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>입니다.<br>따라서
+						<div class="bunsuWrap">
+							<ul>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>를 소수로 나타내면
+						<div class="bunsuWrap">
+							<ul>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>＝
+						<div class="bunsuWrap">
+							<ul>
+								<li>8</li>
+								<li>10</li>
+							</ul>
+						</div>＝0.8입니다.
+					</div>
 				</div>
 			</li>
 
@@ -713,21 +738,6 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="./js/contents.js"></script>
 <!-- horizon -->
 <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
-<script type="text/javascript">
-window.$callBack.sliderReset = function (slide) {
-	console.log(slide.idx);
-
-	if (slide.idx === 4) {
-		setTimeout(function () {
-				
-			$ts.getEl('.page_5 .textBookBtn')[0].click();
-			setTimeout(function () {
-				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
-			}, 3000);
-		});
-	}
-}
-</script>
 
 </body>
 
