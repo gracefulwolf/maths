@@ -65,17 +65,17 @@
 			pointer-events: none;
 		}
 
-		.draw_1 .dot_1 {
+		 .dot_1 {
 			top: 40px;
 			left: 200px;
 		}
 
-		.draw_1 .dot_2 {
+		 .dot_2 {
 			top: 260px;
 			left: 70px;
 		}
 
-		.draw_1 .dot_3 {
+		 .dot_3 {
 			top: 260px;
 			left: 325px;
 		}
@@ -179,6 +179,18 @@
 		}
 		.js-buttons.quizButtons[data-type="reset"]::before{content: "정답 가리기";padding-left:9px;}
 		.js-buttons.quizButtons[data-type="reset"]{background-color:#9d00c4}
+		.drawLine {
+			width: 446px;
+			height: 357px;
+			top: 50px;
+			left: 40px;
+		}
+		.drawLine.n2 {
+			width: 446px;
+			height: 357px;
+			top: 50px;
+			left: 516px;
+		}
 	</style>
 </head>
 
@@ -196,6 +208,14 @@
 							<div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
 							<div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
 						</div>
+					</div>
+					<div class="drawContainer draw_2">
+						<div class="js-drawLine drawLine n2" data-option="drawing">
+							<canvas class="js-drawArea drawArea"></canvas>
+							<div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+							<div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+						</div>
+					</div>
 						<div class="drawDotBox lineBox sky n1">
 							<div class="colorBox sky">
 								각 ㄱㄷㄴ
@@ -220,7 +240,7 @@
 							<div class="line ex line2"></div>
 						</div>
 
-					</div>
+		
 
 					<div class="js-buttons quizButtons" data-hover="" data-type="answer"></div>
 				</section>
@@ -235,6 +255,10 @@
 		(function () {
 			var drawLines = [];
 			var answers = [
+				[{
+					start: { x: -10, y: -10 },
+					end: { x: -10, y: -10 }
+				}],
 				[{
 					start: { x: -10, y: -10 },
 					end: { x: -10, y: -10 }
@@ -263,7 +287,9 @@
 			}
 
 			window.addEventListener('load', function () {
-				[document.querySelector('.draw_1')].forEach(createDrawLine);
+				[document.querySelector('.draw_1'), 
+    document.querySelector('.draw_2'),
+  ].forEach(createDrawLine);
 
 				setTimeout(function () { drawLines.forEach(resetAnswer); }, 100);
 			});

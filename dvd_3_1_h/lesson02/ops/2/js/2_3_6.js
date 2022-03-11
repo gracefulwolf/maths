@@ -19,24 +19,24 @@
   function createDrawLine(container, index) {
     var answers = [
       [{
-        start: {x: 127, y: 138},
-        end: {x: 127, y: 378}
+        start: {x:-10, y: -10},
+        end: {x:-10, y: -10}
       },{
-        start: {x: 367, y: 138},
-        end: {x: 127, y: 378}
+        start: {x: 367, y: -10},
+        end: {x:-10, y: -10}
       }],
       [{
-        start: {x: 47, y: 219},
-        end: {x: 287, y: 219}
+        start: {x: -10, y: -10},
+        end: {x: -10, y: -10}
       },{
-        start: {x: 287, y: 219},
-        end: {x: 287, y: 459}
+        start: {x: -10, y: -10},
+        end: {x: -10, y: -10}
       }]
     ];
     drawLines.push(new DrawLine({
       container: container.querySelector('.js-drawLine'),
       resetButton: container.querySelector('.js-resetButton'),
-      // answerButton: document.querySelector('.js-buttons'),
+      answerButton: document.querySelector('.js-quizButton'),
       answer: answers[index],
       callback: {
         correct: function(DrawLine) {

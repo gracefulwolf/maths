@@ -162,7 +162,7 @@
 							<div class="study_guide" style="bottom:-30px !important; z-index: 3;"><em>드래그</em>하여 <em>그어</em> 보세요.</div>
 						</h2>
 						
-						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suhi_h_0301_02_0007_4.html" title="" class="page-iframe"
+						<iframe src="../../../dvd_3_1_h/lesson02/ops/2/suhi_h_0301_02_0007_4.html" id="ifm1" title="" class="page-iframe"
 							scrolling="no"></iframe>
 					</li>
 					<li class="page_5" data-quiz="ox" data-option="hide, answerSound">
@@ -308,7 +308,11 @@
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
+
 	</script>
 </body>
 
