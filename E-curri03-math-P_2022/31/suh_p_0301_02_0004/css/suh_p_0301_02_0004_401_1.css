@@ -28,6 +28,7 @@ h2 .bullet.number{margin-top:5px;}
 .page_2 .q-bg .lineBox {width:700px; height:270px; margin: 50px auto 0; font-size: 40px; background-color: transparent;}
 .page_2 .q-bg .dot{display: block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; position: absolute; top:180px; left:400px;} 
 .page_2 .q-bg .line{position:absolute; top:186px; left:405px; width:200px; height:2px; background: #000; transform: rotate(10deg); transform-origin: left top;}
+.page_2 .exam {position:absolute;left:180px;top:70px}
 
 .page_2 .q-bg .word.n1::after{top:20px; left:50px;}
 .page_2 .q-bg .word.n3::after{top:50px; left:20px;}
@@ -85,13 +86,33 @@ h2 .bullet.number{margin-top:5px;}
     padding: 30px;
 }
 .page_5 .toggle{
-    top: 35px;
-    left: 41px;
-    pointer-events: none;
+    background-color:transparent;
+    position:absolute;
+    width:270px;
+    height:200px;
+    overflow:hidden;
+    top:64px;
 }
-.page_5 .toggle::after{
-    display: none;
+.page_5 .toggle.n1 {left:50px}
+.page_5 .toggle.n1 img {margin-left:10px}
+.page_5 .toggle.n2 {left:357px}
+.page_5 .toggle.n2 img {margin-left:-298px}
+.page_5 .toggle.n3 {left:670px}
+.page_5 .toggle.n3 img {margin-left:-611px}
+.page_5 .toggle.n3:after {left:54%}
+.page_5 .toggle:after {
+    width: 51px;
+    height: 70px;
+    border-radius:0;
+    border:none;
+    content:'';
+    background: url("../../common/contents/images/icon/icon_click_finger.png") center/contain no-repeat;
+    -webkit-animation: opacity 1.5s ease-in 3;
+    -o-animation: opacity 1.5s ease-in 3;
+    animation: opacity 1.5s ease-in 3
 }
+.page_5 .toggle.complete:after {display:none}
+
 .page_7 .flexListContainer{
     width: 60%;
     margin: 0 auto;
