@@ -641,10 +641,14 @@
 		window.$callBack.sliderReset = function (slide) {
 			if (slide.idx === 1) {
 				setTimeout(function () {
-					$ts.getEl('.page_1 .textBookBtn')[0].click();
-					setTimeout(function () {
-						$ts.getEl('.textBookPopup .popup_closeBtn')[0].click();
-					}, 3000);
+					console.log(slide)
+					if (slide.length === 6) {
+						$ts.getEl('.page_1 .textBookBtn')[0].click();
+					}
+					
+					// setTimeout(function () {
+					// 	$ts.getEl('.popup_2 .popup_closeBtn')[0].click();
+					// }, 3000);
 				});
 			}
 		}
