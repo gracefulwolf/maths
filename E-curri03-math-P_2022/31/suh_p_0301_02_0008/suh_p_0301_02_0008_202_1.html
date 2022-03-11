@@ -27,6 +27,7 @@
 			<div class="contentsBox" data-quiz="toggle">
 				<section>
 					<div class="lineBox green">
+						<div class="bullet exam">예</div>
 						<div class="item-1">
 							<div class="sup" data-toggle-obj="1" data-group-index="1">
 								<div class="answer" data-toggle-target="1">
@@ -193,7 +194,7 @@
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
 	</div>
-
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
 	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
 	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -209,7 +210,14 @@
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
 		}, false);
-
+		$(document).ready(function(){
+			$('.contentsBox [data-toggle-obj]').on('click',function(){
+				$(".contentsBox .bullet.exam").css("opacity",1);
+			});
+			window.$callBack.hideAnswer = function (obj) {
+				$(".bullet.exam").removeAttr("style");
+			}
+		});
 	</script>
 
 </body>
