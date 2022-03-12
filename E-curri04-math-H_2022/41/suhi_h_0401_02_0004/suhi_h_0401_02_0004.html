@@ -384,6 +384,28 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		const _iframe = document.querySelectorAll(".page-iframe");
+		window.$callBack.sliderMove = function(SLIDER) {
+			console.log( SLIDER )
+			if( ( SLIDER.container.classList.contains("page_2") && SLIDER.idx == "0") || (SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "2") ){
+				_iframe[0].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("page_2") && SLIDER.idx == "1" ){
+				_iframe[1].contentWindow.location.reload();
+			}
+			if( (SLIDER.container.classList.contains("page_3") && SLIDER.idx == "0") || (SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "3") ){
+				_iframe[2].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("page_3") && SLIDER.idx == "1" ){
+				_iframe[3].contentWindow.location.reload();
+			}
+			if( (SLIDER.container.classList.contains("page_4") && SLIDER.idx == "1") || (SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "4") ){
+				_iframe[4].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "5" ){
+				_iframe[5].contentWindow.location.reload();
+			}
+		}
 	}, false);
 </script>
 

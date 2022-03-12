@@ -18,11 +18,13 @@
 		.popup_pages>li.whole.on{z-index:10000;}
 
 		/* 페이지 개별 위치 */
-		.popup_pages .pop_page_1 .page-iframe{top:40px; left:70px; height:618px;}
+		.popup_pages .pop_page_1 .innerTab_1,
+		.popup_pages .pop_page_1 .innerTab_2{position: fixed !important;}
+		.popup_pages .pop_page_1 .page-iframe{top:50px; height:610px;}
 
 		.title .btn_1{top:5px; left:auto; right:0;}
 		.contentsBox .basicSlider_slides.inner{padding:0;}
-		.popup_pages .buttonContainer{right:40px; bottom:10px;}
+		/* .popup_pages .buttonContainer{right:40px; bottom:10px;} */
 		.examViewBtn,
 		.examViewBtn.hover{background-color:#236cbb !important;}
 		.examViewBtn:before,
@@ -77,23 +79,26 @@
 
 		.page_4 .icon_arrow{margin:-20px 0 0;}
 
-		.pop_page_3 .--img.x10{width: 860px;height: 540px;margin: 140px auto 0;background: url(./images/suh_h_0401_02_0010_201_1/suh_h_0401_02_0010_201_1_1.png) no-repeat 50% 50% / cover;border-radius: 10px;}
-		.pop_page_3 .--img.x10 .balloon.x1{top: 270px;left:20px}
-		.pop_page_3 .--img.x10 .balloon.x2{top: 80px;left: 210px;}
+		.pop_page_3 .--img.x10{width: 950px;height: 600px;margin: 80px auto 0;background: url(./images/suh_h_0401_02_0010_201_1/suh_h_0401_02_0010_201_1_1.png) no-repeat 50% 50% / cover;border-radius: 10px;}
+		.pop_page_3 .--img.x10 .balloon.x1{top: 230px;left: 10px;}
+		.pop_page_3 .--img.x10 .balloon.x2{top: 40px;left: 210px;}
 		.pop_page_3 .--img.x10 .balloon.x2:after{margin-left: 40px;}
-		.pop_page_3 .--img.x10 .balloon.x3{top: 150px;left: 550px;}
+		.pop_page_3 .--img.x10 .balloon.x3{top: 130px;left: 550px;}
 		.pop_page_3 .--img.x10 .balloon.x3:after{margin-left:-70px;}
-		.pop_page_3 .--img.x10 .balloon.x4{top: 430px;left: auto;right: 10px;}
-		.pop_page_3 .--img.x10 .--text.x5{top: 295px;left: 690px;font-size: 27px;transform:rotate(-12deg);}
-		.pop_page_3 .--img.x10 .--text.x6{top: 330px;left: 830px;font-size: 27px;transform:rotate(10deg);}
+		.pop_page_3 .--img.x10 .balloon.x4{top: 390px;left: auto;right: 10px;}
+		.pop_page_3 .--img.x10 .--text.x5{top: 260px;left: 706px;font-size: 27px;transform:rotate(-12deg);}
+		.pop_page_3 .--img.x10 .--text.x6{top: 294px;left: 857px;font-size: 27px;transform:rotate(10deg);}
 		.pop_page_3 .--img.x10 .--text .toggleBlank{width:27px; height:27px; border:2px solid #3f928f; vertical-align:-2px;}
 		.pop_page_3 .--img.x10 .--text .toggleBlank ~ .toggleBlank{width:32px;}
-		.pop_page_3 .--img.x20{width: 860px;height: 540px;margin: 140px auto 0;background: url(./images/suh_h_0401_02_0010_201_1/suh_h_0401_02_0010_201_1_2.png) no-repeat 50% 50% / cover;border-radius: 10px;}
-		.pop_page_3 .--img.x20 .balloon.x9{top:110px; left:470px;}
-		.pop_page_3 .--img.x20 .balloon.x10{top:380px; left:20px;}
-		.pop_page_3 .--img.x20 .balloon.x10:after{margin-left:80px;}
+		.pop_page_3 .--img.x20{width: 950px;height: 600px;margin: 80px auto 0;background: url(./images/suh_h_0401_02_0010_201_1/suh_h_0401_02_0010_201_1_2.png) no-repeat 50% 50% / cover;border-radius: 10px;}
+		.pop_page_3 .--img.x20 .balloon.x9{top: 95px;left:470px;}
+		.pop_page_3 .--img.x20 .balloon.x10{top:380px;left: 110px;}
+		.pop_page_3 .--img.x20 .balloon.x10:after{/* margin-left:80px; */}
 
 		.popBtn.textInBtn.eye{top:-100px; left:auto; right:-75px;}
+
+		.pop_page_1 .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.pop_page_1 .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
 	</style>
 </head>
 
@@ -353,7 +358,7 @@
 										<div class="icon_arrow"></div>
 										<div>앞으로<br>5칸 이동</div>
 									</div>
-									<div class="textAlignC mt_20">
+									<div class="textAlignC mt_20 mr_30">
 										<div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
 												<ul class="contentsList">
@@ -370,6 +375,9 @@
 								</div>
 							</li>
 						</ul>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -380,7 +388,7 @@
 				<li class="whole pop_page_1" data-popup-page="1">
 					<h2 style="opacity:0; margin-bottom:0;"></h2>
 					<div class="popup_contents" data-slide-container="popup">
-						<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="" style="z-index: 2;">
 							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
 							<ul class="basicSlider_circle_tabs" data-tabs="">
 							<li data-hover=""></li>
@@ -399,7 +407,7 @@
 											<div>
 												<p class="mb_40">꿀벌이 4개의 꽃을 모두 지나가는 경로를 그림에 표시해 보세요.</p>
 												<div class="study_guide" style="top:55px; right:0;">
-													<em>드래그</em>해 보세요.
+													<em>드래그</em>하여 <em>그려</em>보세요.
 												</div>
 												<div class="--popImg2"></div>
 											</div>
@@ -408,39 +416,42 @@
 								</section>
 							</li>
 							<li class="innerTab_2" data-quiz="dragDrop" data-option="copy" data-quiz-name="dragDrop" data-total-complete-count="">
-								<ul class="contentsList">
-									<li>
-										<ins class="bullet circleDot"></ins>
-										<div>
-											<p class="mb_10">경로를 알 수 있도록 안내판의 빈칸을 채우고 배열해 보세요.</p>
-											<div class="study_guide" style="top:155px; right:40px;">
-												<em>안내판</em>과 <em>화살표</em>를 <em>드래그</em>해 보세요.
-											</div>
-											<div class="dragDropContainer flexListContainer">
-												<div class="--start-wrap lineBox sky dragObjUL mr_20">
-													<div class="js-dragObj dragObj dragObj_1" data-name="drag-obj" data-drop-area-answer="1">
-														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">쪽으로<br>
-														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">° 돌기
-													</div>
-													<div class="js-dragObj dragObj dragObj_2 icon_arrow" data-name="drag-obj"></div>
-													<div class="js-dragObj dragObj dragObj_3 icon_arrow bottom" data-name="drag-obj"></div>
-													<div class="js-dragObj dragObj dragObj_4 icon_arrow left" data-name="drag-obj"></div>
-													<div class="js-dragObj dragObj dragObj_5 icon_arrow top" data-name="drag-obj"></div>
-													<div class="js-dragObj dragObj dragObj_6" data-name="drag-obj">
-														앞으로<br>
-														<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">칸 이동
-													</div>
+								<iframe src="../../../dvd_4_1_h/contents/lesson02/ops/2/ifr-suh_h_0401_02_0010_202_1-2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+								<section>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">경로를 알 수 있도록 안내판의 빈칸을 채우고 배열해 보세요.</p>
+												<div class="study_guide" style="top:55px; right:0;">
+													<em>안내판</em>과 <em>화살표</em>를 <em>드래그</em>해 보세요.
 												</div>
-												<div class="--end-wrap lineBox green">
-													<div class="js-dropArea dropArea dropArea_1"></div>
-												</div>
+												<!-- <div class="dragDropContainer flexListContainer">
+													<div class="--start-wrap lineBox sky dragObjUL mr_20">
+														<div class="js-dragObj dragObj dragObj_1" data-name="drag-obj" data-drop-area-answer="1">
+															<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">쪽으로<br>
+															<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">° 돌기
+														</div>
+														<div class="js-dragObj dragObj dragObj_2 icon_arrow" data-name="drag-obj"></div>
+														<div class="js-dragObj dragObj dragObj_3 icon_arrow bottom" data-name="drag-obj"></div>
+														<div class="js-dragObj dragObj dragObj_4 icon_arrow left" data-name="drag-obj"></div>
+														<div class="js-dragObj dragObj dragObj_5 icon_arrow top" data-name="drag-obj"></div>
+														<div class="js-dragObj dragObj dragObj_6" data-name="drag-obj">
+															앞으로<br>
+															<input type="text" class="center inputBox" placeholder="직접 쓰기" data-input-obj="" maxlength="3" autocomplete="off">칸 이동
+														</div>
+													</div>
+													<div class="--end-wrap lineBox green">
+														<div class="js-dropArea dropArea dropArea_1"></div>
+													</div>
+												</div> -->
 											</div>
-										</div>
-									</li>
-								</ul>
-								<div class="buttonContainer">
-									<button id="it_reset_btn" class="examViewBtn reset" data-answer-btn="" data-type="reset"></button>
-								</div>
+										</li>
+									</ul>
+									<!-- <div class="buttonContainer">
+										<button id="it_reset_btn" class="examViewBtn reset" data-answer-btn="" data-type="reset"></button>
+									</div> -->
+								</section>
 							</li>
 							<li class="innerTab_3" data-quiz="toggle">
 								<ul class="contentsList">
@@ -449,14 +460,16 @@
 										<div>
 											<p class="mb_10">앞의 안내판으로 꿀벌이 4개의 꽃을 모두 지나가는지 확인해 보세요.</p>
 											<div>
-												<div class="toggle" data-toggle-obj="1">
-													<div class="answer" data-toggle-target="1">
-														<ul class="contentsList">
-															<li>
-																<ins class="bullet exam">예</ins>
-																<div>안내판으로 꿀벌이 4개의 꽃을 모두 지나갑니다.</div>
-															</li>
-														</ul>
+												<div class="textAlignC">
+													<div class="toggle" data-toggle-obj="1">
+														<div class="answer" data-toggle-target="1">
+															<ul class="contentsList">
+																<li>
+																	<ins class="bullet exam">예</ins>
+																	<div>안내판으로 꿀벌이 4개의 꽃을 모두 지나갑니다.</div>
+																</li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -548,23 +561,23 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			document.querySelector("#it_reset_btn").addEventListener("click", function(){
-				if( !this.classList.contains( "reset" ) ){
-					this.classList.add( "reset" );
-				}
-			});
+			// document.querySelector("#it_reset_btn").addEventListener("click", function(){
+			// 	if( !this.classList.contains( "reset" ) ){
+			// 		this.classList.add( "reset" );
+			// 	}
+			// });
 
-			var it_tab = $ts.getEl( ".pop_page_1 .basicSlider_circle_tabs li" );
-			it_tab.forEach(function (objs, index){
-				objs.addEventListener('click', function () {
-					console.log( 'ttt')
-					document.querySelector("#it_reset_btn").classList.add( "reset" );
-					document.querySelectorAll( "input[type=text]" ).forEach(function (objs, index){
-						objs.value = "";
-					});
-				});
+			// var it_tab = $ts.getEl( ".pop_page_1 .basicSlider_circle_tabs li" );
+			// it_tab.forEach(function (objs, index){
+			// 	objs.addEventListener('click', function () {
+			// 		console.log( 'ttt')
+			// 		document.querySelector("#it_reset_btn").classList.add( "reset" );
+			// 		document.querySelectorAll( "input[type=text]" ).forEach(function (objs, index){
+			// 			objs.value = "";
+			// 		});
+			// 	});
 
-			});
+			// });
 		}, false);
 	</script>
 

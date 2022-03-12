@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./css/2_powerup.css">
+	<link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+	<style>
+		html,body,#wrap{background: transparent !important;}
+		#wrap{width:1060px;padding:0; box-shadow:none;}
+		header,header:before{display:none !important;}
+		body, .content-container{width:100%; max-width:1060px; height:680px;}
+		.bullet.exam{font-family: YGJAL;}
+    .examViewBtn{letter-spacing: 0;}
+		.examViewBtn.reset{right:0; bottom:0;}
+		.examViewBtn.reset:before{content:"다시하기"; padding-left:20px;}
+		.pop2 .signBox input{border:4px solid #f4e8bd; background: #fff;}
+    .pop2 .arrIcon{top: 200px;}
+    .pop2 .signBox[data-index="2"]{top: 260px;}
+		.pop2 .arrIcon[data-index="3"]{width:40px; height:40px; background: url(../../../../../E-curri04-math-H_2022/41/common/contents/images/icon/icon_arrow.svg) center/contain no-repeat;}
+		.pop2 .arrIcon[data-index="4"]{width:40px; height:40px; background: url(../../../../../E-curri04-math-H_2022/41/common/contents/images/icon/icon_arrow.svg) center/contain no-repeat;transform: rotate(90deg);}
+		.pop2 .arrIcon[data-index="5"]{width:40px; height:40px; background: url(../../../../../E-curri04-math-H_2022/41/common/contents/images/icon/icon_arrow.svg) center/contain no-repeat;transform: rotate(180deg);}
+		.pop2 .arrIcon[data-index="6"]{width:40px; height:40px; background: url(../../../../../E-curri04-math-H_2022/41/common/contents/images/icon/icon_arrow.svg) center/contain no-repeat;transform: rotate(270deg);}
+    .pop2 .dragArea .js-dragObj.arrIcon{margin-left: 0; margin-right: 0;}
+		.pop2 .dragArea .js-dragObj.dragObjComplete.signBox{margin-left:-25px; margin-right: -25px;}
+    .pop2 .dragArea .js-dragObj.arrIcon[data-index="4"].dragObjComplete{transform: scale(0.8) rotate(90deg);}
+    .pop2 .dragArea .js-dragObj.arrIcon[data-index="5"].dragObjComplete{transform: scale(0.8) rotate(180deg);}
+    .pop2 .dragArea .js-dragObj.arrIcon[data-index="6"].dragObjComplete{transform: scale(0.8) rotate(270deg);}
+
+    .basicSlider{height: 590px;}
+		.dragBox.top{top: 20px; height: 485px;}
+		.dragBox.top:before,
+		.dragBox.top:after{display: none;}
+		.dragBox{border: 5px solid #c1e8ec;}
+		.pop2 .dragArea{top: 65px; width:720px; border: 5px solid #cee492;}
+
+		main{top:0;}
+	</style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap" class="powerup">
+      <header>
+      </header>
+      <main>
+          <div class="basicSlider" data-slide-container="main">
+            <ul class="basicSlider_slides" data-slides="main">
+				<div class="pop2 noUserSelect" data-quiz="dragDrop" data-option="copy" data-quiz-name="drag_1">
+					<div class="dragBox top" data-quiz="input" data-quiz-name="input_1">
+					  <div class="signBox js-dragObj" data-name="drag-obj" data-index="1">
+						<div class="txt">
+						  <input type="text" class="" data-input-obj="1" data-answer=" "> 쪽으로<br>
+						  <input type="text" class="" data-input-obj="2" data-answer=" "> ˚ 돌기
+						</div>
+					  </div>
+					  <div class="arrIcon js-dragObj" data-name="drag-obj" data-index="3"></div>
+					  <div class="arrIcon js-dragObj" data-name="drag-obj" data-index="4"></div>
+					  <div class="arrIcon js-dragObj" data-name="drag-obj" data-index="5"></div>
+					  <div class="arrIcon js-dragObj" data-name="drag-obj" data-index="6"></div>
+					  <div class="signBox js-dragObj" data-name="drag-obj" data-index="2">
+						<div class="txt">
+						  앞으로 <br> <input type="text" class="" data-input-obj="3" data-answer=" "> 칸 이동
+						</div>
+					  </div>
+					</div>
+					<div class="dragArea js-dropArea" data-drop-area-answer="1"></div>
+					<div class="js-buttons examViewBtn reset" data-hover=""></div>
+				  </div>
+
+            </ul>
+
+          </div>
+      </main>
+
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/controller.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/jquery.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/math/script/sprite.min.js"></script>
+    <!-- <script src="js/2_9_1.js"></script> -->
+    <script>
+
+
+window.addEventListener('load', function() {
+  var pop2Button = $ts.getEl('.js-buttons')[0];
+  pop2Button.addEventListener('click', function () {
+    console.log('123')
+    //setTimeout(function() { quiz.reset() }, 100);
+    window.$pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+  });
+
+
+  function toggleInputsPointer(bool) {
+    var inputs = document.querySelectorAll(".js-dragObj input");
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+      inputs[i].style.pointerEvents = bool ? "" : "none";
+    }
+  }
+  function dragObjStartCallback(dragDrop) {
+    toggleInputsPointer(true);
+  }
+  function dragObjMoveCallback(dragDrop) {
+    toggleInputsPointer(true);
+  }
+
+
+  function dragCallback(dragDrop) {
+    var dropArea, dropAreaElement, children;
+
+    if(dragDrop.droppedArea) {
+      dropAreaElement = dragDrop.droppedArea.element;
+      children = Array.prototype.slice.call(dropAreaElement.children);
+
+      children.forEach(function (obj) {
+        obj.addEventListener('click', removeChild);
+      })
+    }else{
+        window.$efSound.incorrect();
+        return console.log('dropArea 없음.');
+    }
+  }
+
+  function removeChild() {
+    this.parentNode.removeChild(this);
+  }
+
+  });
+
+    </script>
+  </body>
+</html>

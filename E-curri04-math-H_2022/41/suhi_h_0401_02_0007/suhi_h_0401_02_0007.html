@@ -26,7 +26,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
 	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
 	.page-iframe .popup_contents .toggle,
-	.page-iframe＋section .toggle{z-index:1;}
+	.page-iframe + section .toggle{z-index:1;}
 	.popup_pages>li.whole.on{z-index:10000;}
 
 	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
@@ -54,7 +54,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_2 .toggle{min-width:100px;}
 
 	.page_3 .flexListContainer{flex-wrap:wrap;}
-	.page_3 .flexListContainer li{width:50%; text-align:center;}
+	.page_3 .flexListContainer li{width:50%; padding-left:60px; text-align:left; box-sizing: border-box;}
 	.page_3 .flexListContainer li:nth-child(2) ~ li{margin-top:60px;}
 	.page_3 .flexListContainer .toggle{min-width:100px;}
 
@@ -144,7 +144,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="textAlignC mt_10" style="position:relative;z-index:1">
 						<div class="toggle" data-toggle-obj="11">
 							<div class="answer" data-toggle-target="11">
-								30
+								25
 							</div>
 						</div>°＋<div class="toggle" data-toggle-obj="12">
 							<div class="answer" data-toggle-target="12">
@@ -419,7 +419,23 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
-
+		window.$callBack.sliderMove = function(SLIDER) {
+			const _iframe = document.querySelectorAll(".page-iframe");
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "1" ){
+				_iframe[0].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "2" ){
+				_iframe[1].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "5" ){
+				_iframe[2].contentWindow.location.reload();
+			}
+			/*
+			if( (SLIDER.container.classList.contains("page_2") && SLIDER.idx == "0") || (SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "2") ){
+				_iframe[3].contentWindow.location.reload();
+			}
+			*/
+		}
 	}, false);
 </script>
 
