@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page_1 .toggle {text-align: center;}
+		.page_2 .textAlignC,
+		.page_3 .textAlignC  {padding: 0 30px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title">
+				마을 주민 모임에서 한 상자에 30개씩 들어 있는 부채 3상자를 경로당에 선물했습니다. 선물한 부채는 모두 몇 개인지 구해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음＋</li>
+					<li data-hover="">물음＋</li>
+					<li data-hover="">물음 1</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>부채는 몇 개씩 몇 상자를 경로당에 선물했나요?</span></h2>
+						<section>
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									한 상자에 30개씩 들어 있는 부채 3상자를 선물했습니다.
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>선물한 부채는 모두 몇 개인지 식을 써 보세요.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										30×3＝90입니다.
+									</div>
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>선물한 부채는 모두 몇 개일까요?</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										90개입니다.
+									</div>
+								</div>
+							</div>
+						</section>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_1',
+						speech: 'right',
+						circle: 'deeppink',
+						top: 290,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/girl_1.png',
+						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+						sound: './media/audios/suh_p_0301_04_0002_202_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '십 모형이 2개씩 3묶음이야.',
+							class: 'balloon left deeppink ctTail',
+							top: 335,
+							left: 440,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+	
+			window.$callBack.sliderReset = function (params) {
+				$ts.getEl('.characterImg')[0].style.left = 0;
+			};
+		});
+	</script>
+
+</html>

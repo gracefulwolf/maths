@@ -12,7 +12,24 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
-	<link rel="stylesheet" href="./css/suhi_p_0301_02_0005.css">
+	<link rel="stylesheet" href="./css/suhi_p_0301_03_0005.css">
+	<style>
+		.colorBox.inline,
+		.lineBox.inline {
+			display: inline-block;
+			min-width: 30%;
+			padding: 30px;
+			text-align: center;
+		}
+		.page_1 .img-wrap {text-align: center;}
+		.page_1 .img-wrap > img {width: 400px;height: auto;}
+		.page_1 .flexListContainer {position: relative;width: 600px;height: 150px;margin: 30px auto 0;}
+        .page_1 .flexListContainer .icon_arrow {position: absolute;left: 42%;}
+        .page_1 .flexListContainer .arrow_1, .page_1 .flexListContainer .arrow_3 {top: 27px;transform: rotate(-22deg);}
+        .page_1 .flexListContainer .arrow_2, .page_1 .flexListContainer .arrow_4 {bottom: 27px;transform: rotate(22deg);}
+		.page_1 .flex-wrap {align-items: center;}
+		.page_1 .flex-wrap + .flex-wrap {margin-top: 15px;}
+	</style>
 </head>
 
 <body>
@@ -21,10 +38,10 @@
 			<h1><ins class="suhi_title"></ins>
 				<span class="subInfo">
 					<span class="sub-text">
-						직각삼각형을 알아볼까요
+						곱셈과 뺄셈의 관계를 알아볼까요
 					</span>
 					<span class="sub-page">
-						28~29쪽
+						42~43쪽
 					</span>
 				</span>
 			</h1>
@@ -47,45 +64,63 @@
 							<ins class="special type2"></ins>
 							<span></span>
 						</h2>
-						<div class="b1 balloon bottom orange ctTail">
-							안녕~<br>
-							너는 한 각이 직각인<br>
-							삼각형이네!<br>
-							이름이 뭐야?
+						<div class="flexListContainer center">
+							<div class="n1">
+								<div class="img-wrap">
+									<img src="./images/suhi_p_0301_03_0005_1.png" alt="">
+								</div>
+								<div class="b1 balloon top green ctTail">
+									곱셈식을
+								</div>
+								<div class="b2 balloon top green ctTail">
+									나눗셈식을 2개로
+								</div>
+							</div>
+							<div id="aniBox_1" class="flexListContainer center jcenter"></div>
 						</div>
-						<div class="b2 balloon bottom sky ctTail">
-							나는 <br>
-							직각삼각형이야.
-						</div>
-						
-						
-						<div class="img-wrap">
-							<img src="./images/suhi_p_0301_02_0005_1.png" alt="">
-						</div>
+					
 					</li>
 
 					<li class="page_1" data-quiz="toggle">
 						<h2>
 							<ins class="number">1</ins>
 							<span>
-								<span class="blankBox w50"></span> 안에 알맞은 말을 써넣으세요.
+								그림을 보고 <span class="blankBox w50"></span> 에 알맞은 수를 써넣으세요.
 							</span>
 						</h2>
-						
-						<div class="flex-wrap">
-							<div class="flex-item-1">
-								<img src="./images/suhi_p_0301_02_0005_2.png" alt="">
+						<div class="img-wrap">
+							<img src="./images/suhi_p_0301_03_0005_4.png" alt="">
+						</div>
+						<div class="flexListContainer center">
+							<div>
+								<div class="colorBox inline green">
+									6×2＝12
+								</div>
+								<div class="icon_arrow arrow_1"></div>
+								<div class="icon_arrow arrow_2"></div>
 							</div>
-							<div class="lineBox green">
-								한 각이 직각인 삼각형을<br>
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										직각삼각형
+							<div class="toggle-wrap">
+								<div class="flex-wrap">
+									12÷
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">6</div>
+									</div>＝
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">2</div>
 									</div>
-								</div>이라고 합니다.
+								</div>
+								<div class="flex-wrap">
+									12÷
+									<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">2</div>
+									</div>＝
+									<div class="toggle" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">6</div>
+									</div>
+								</div>
 							</div>
 						</div>
-
+						
 						<div class="buttonContainer left">
 							<button class="characterBtn" data-popup-btn="100" data-hover="">
 								<span>쌍둥이 문제</span>
@@ -551,9 +586,11 @@
 	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
 	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<!-- horizon -->
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
+
 	<script type="text/javascript">
 		// window.$popCallBack={
 		// 	open: function (popup) {
@@ -566,12 +603,18 @@
 		// 		}
 		// 	}
 		// };
-		window.$callBack.sliderReset = function (slide) {
-			
-		}
 
+		// window.$callBack.sliderReset = function (slide) {
+		// 	if (slide.idx === 1) {
+		// 		setTimeout(function () {
+		// 			$ts.getEl('.page_1 .textBookBtn')[0].click();
+		// 			setTimeout(function () {
+		// 				$ts.getEl('.textBookPopup .popup_closeBtn')[0].click();
+		// 			}, 3000);
+		// 		});
+		// 	}
+		// }
 		document.addEventListener('DOMContentLoaded', function () {
-
 			// window.$horizonMaker({
 			// 	container: $ts.getEl('.horizonContainer_1')[0],
 			// 	lineSpace: 150,
@@ -587,7 +630,50 @@
 			// 	lineSpace: 200,
 			// 	inputTextArray: ['20', '40', '60', '80', '']
 			// });
-		}, false);
+
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_1',
+						speech: 'right',
+						circle: 'deeppink',
+						top: 350,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/girl_1.png',
+						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+						sound: './media/audios/suhi_p_0301_03_0005.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '나눗셈식을 곱셈식<br>2개로 나타낼 수도 있어!',
+							class: 'balloon bottom deeppink ctTail',
+							top: 110,
+							right: 0,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							// start: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = '-200px';
+							// }, // 시작시 콜백
+							// end: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = 0;
+							// } // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+			window.$callBack.sliderReset = function (params) {
+				$ts.getEl('.characterImg')[0].style.left = 0;
+			};
+		});
 	</script>
 </body>
 

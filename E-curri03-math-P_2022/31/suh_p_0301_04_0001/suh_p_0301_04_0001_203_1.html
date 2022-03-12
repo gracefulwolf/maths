@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
+	<script src="../common/libs/musicNote/js/musicNote.js"></script>
+	<!-- 노래익히기 IMPORT INCLUDE -->
+	<link rel="stylesheet" href="../common/libs/musicNote/css/musicNote.css">
+	<link rel="stylesheet" href="css/musicNote.css">
+	<script src="../common/libs/musicNote/js/setting_active.js"></script>
+	<style type="text/css">
+		.imgContainer {background: url(./images/suh_p_0301_04_0001_203_1/suh_p_0301_04_0001_203_1_1.png) no-repeat 70% 0 / cover;}
+		.controller {bottom: -50px;}
+		.mediaContainer{bottom: 50px;}
+		.contentsBox {padding: 0;}
+		#syncContainer {height: 585px;}
+		img {height: 595px; width: 100%;}
+	</style>
+</head>
+
+<body>
+<!-- 수정필요 : 오디오파일 -->
+<div id="wrap">
+	<header>
+		<div class="title">동시를 읽어 보세요.</div>
+	</header>
+	<main>
+		<div class="contentsBox imgContainer imgChangeContainer">
+			<div id="syncContainer" data-sync-container="1">
+
+				<div class="syncTarget" data-sync-target="1">
+					<div class="colorBox beige inline-flex-box a-center">
+						<span>다시 쓰고 아껴 써요</span>
+					</div>
+				</div>
+				<div class="syncTarget" data-sync-target="2">
+					<div class="colorBox beige">
+						<span>치렁치렁 몸집보다 큰 옷 입은 과일</span>
+					</div>
+                </div>
+				<div class="syncTarget" data-sync-target="3">
+					<div class="colorBox beige">
+						<span>옷이 너무 크니 집도 너무 크지</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="4">
+					<div class="colorBox beige">
+						<span>집이 크면 종이가 낭비되네</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="5">
+					<div class="colorBox beige">
+						<span>반들반들 참외의 옷을 바꿔 입히고</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="6">
+					<div class="colorBox beige">
+						<span>커다란 참외 상자에 쏙쏙</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="7">
+					<div class="colorBox beige">
+						<span>상자 속의 참외 개수 늘어나네</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="8">
+					<div class="colorBox beige">
+						<span>줄인 만큼 아낀 만큼 지구가 살아나</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="9">
+					<div class="colorBox beige">
+						<span>아껴 쓰고 다시 쓰고 줄여 쓰는</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="10">
+					<div class="colorBox beige">
+						<span>우리는 모두 모두 환경 지킴이</span>
+					</div>
+                </div>
+			</div>
+			<div class="mediaContainer" data-media-container="" data-media-control="" data-sync="1">
+				<audio class="" data-media-index="1">
+					<source src="./media/audios/suh_p_0301_04_0001_203_1_1.mp3" title="" type="audio/mp3" /> 
+					Your browser does not support the audio element.
+				</audio>				
+			</div>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+		
+		document.addEventListener('DOMContentLoaded', function () {
+			window.$run('$rolePlay', function(){
+				if ($ts.getEl('[data-sync]')) {
+					
+					$pm.array.sync.push($rolePlay({
+						type: 'target',
+						index: 1,
+						mediaIndex: 1,
+						preObjview: false, // 기본값은 false
+						sync: {
+							container: 1,
+							time: [
+								[0, 3],
+								[3, 8],
+								[8, 13],
+								[13, 17],
+								[17, 21],
+								[21, 25],
+								[25, 29],
+								[29, 34],
+								[34, 38],
+								[38, 43]
+							],
+							callbacks: {
+								activeSync: function(targetArray) {},
+								clearSync : function(targetArray) {}
+							}
+						}
+					}));
+					
+				}
+			});
+			// mediaControlFn();
+			
+		}, false);
+	</script>
+</body>
+</html>
