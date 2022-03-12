@@ -309,9 +309,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="--text x2">나</div>
 								<div class="--text x3">다</div>
 							</div>
-							<ul class="contentsList">
+							<ul class="contentsList ml_50">
 								<li>
-									<ins class="bullet circleDot"></ins>
+									<ins class="bullet circleDot mt"></ins>
 									<div>
 										예각을 찾아 기호를 써 보세요.
 										<div class="toggle ml_10" data-toggle-obj="41">
@@ -335,9 +335,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="--text x2">나</div>
 								<div class="--text x3">다</div>
 							</div>
-							<ul class="contentsList">
+							<ul class="contentsList ml_50">
 								<li>
-									<ins class="bullet circleDot"></ins>
+									<ins class="bullet circleDot mt"></ins>
 									<div>
 										둔각을 찾아 기호를 써 보세요.
 										<div class="toggle ml_10" data-toggle-obj="42">
@@ -732,7 +732,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				<p class="ls0">
 					삼각형의 세 각의 크기의 합은 180°이므로<br>
 					60°＋90°＋㉠＝180°,  150°＋㉠＝180°,  ㉠＝30°<br>
-					㉡＝90° (직각)<br>
+					㉡＝90°(직각)<br>
 					따라서 ㉠과 ㉡의 각도의 합을 구하면 다음과 같습니다.<br>
 					㉠＋㉡＝30°＋90°＝120°
 				</p>
@@ -801,7 +801,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
-
+		window.$callBack.sliderMove = function(SLIDER) {
+			const _iframe = document.querySelectorAll(".page-iframe");
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "1" ){
+				_iframe[0].contentWindow.location.reload();
+			}
+		}
 	}, false);
 </script>
 
