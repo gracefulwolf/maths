@@ -12,6 +12,56 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/calc_type1.css">
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom_last.css"> -->
 	<style type="text/css">
+		.contentsBox h2 {margin-bottom: 30px;}
+		.math_calc_table tr td {font-size: 40px;}
+		.math_calc_table .line_1{left:0%;}
+		.math_calc_table .line_2{left:33.3333%;}
+		.math_calc_table .line_3{left:66.6666%}
+		.math_calc_table .line_4{left:100%}
+
+		.page_1 .bg {position: relative;width: calc(100% + 56px);height: 360px;margin: -15px 0 0 -30px;background: url(./images/suh_p_0301_04_0005_202_1/suh_p_0301_04_0005_202_1_1.png) 50% 0 /60% no-repeat;}
+		.page_1 .bg .math_calc_table .rowLine {background-color: transparent;}
+		.page_1 .bg .flex-wrap {position: relative;width: 670px;height: 100%;margin: 0 auto;}
+		.page_1 .bg .flex-wrap .flex-item {display: flex;justify-content: center;position: relative;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .math {left: 12px;}
+		.page_1 .bg .flex-wrap .flex-item.n2 .math_calc_table .math,
+		.page_1 .bg .flex-wrap .flex-item.n2 .math_calc_table .math {left: 3px;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .vt {position: relative;top: -30px}
+		.page_1 .bg .flex-wrap .flex-item.n1 {top: -12px;left: 2px;flex: 2;justify-content: flex-start;}
+		.page_1 .bg .flex-wrap .flex-item.n2 {top: 58px;left: 3px;}
+		.page_1 .bg .flex-wrap .flex-item.n3 {top: 86px;left: 18px;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .line_1{left:33.3333%;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .line_2{left:66.6666%}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .line_3{left:100%}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table {width: 265px;}
+		.page_1 .bg .flex-wrap .flex-item.n2 .math_calc_table, 
+		.page_1 .bg .flex-wrap .flex-item.n3 .math_calc_table {width: 120px;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table td {line-height: 50px;}
+		.page_1 .bg .flex-wrap .flex-item.n1 .math_calc_table .space td {line-height: 25px;}
+		.page_1 .bg .flex-wrap .flex-item.n2 .math_calc_table td, 
+		.page_1 .bg .flex-wrap .flex-item.n3 .math_calc_table td {width: 33px;height: 33px;line-height: 33px;}
+		.page_1 .bg .text-wrap {position: absolute;top: 130px;left: 243px;display: flex;flex-wrap: wrap;}
+		.page_1 .bg .text {display: flex;align-items: center;letter-spacing: -6px;}
+		.page_1 .bg .text::before {content: '∙∙∙';color: #000;font-weight: 400;display: inline-block;font-size: 28px;letter-spacing: -10px;}
+		.page_1 .bg .text.n1 {color: #E94D40;}
+		.page_1 .bg .text.n2 {color: #107CE9;margin-top: 17px;}
+
+		.page_1 .matn-wrap .flex-wrap .math_calc_table {width: 120px;}
+		.page_1 .matn-wrap {width: 551px;height: 160px;}
+		.page_1 .matn-wrap .flex-wrap {justify-content: space-between;width: 100%;height: 100%;}
+		.page_1 .matn-wrap .flex-wrap div {display: flex;align-items: center;justify-content: center;}
+		.page_1 .flexListContainer.bottom {padding: 0 165px 0 65px;}
+
+		.page_2 .math_calc_table .line_1,
+		.page_3 .math_calc_table .line_1 {left:33.3333%;}
+		.page_2 .math_calc_table .line_2, 
+		.page_3 .math_calc_table .line_2 {left:66.6666%;}
+		.page_2 .math_calc_table .line_3,
+		.page_3 .math_calc_table .line_3 {left:100%}
+		.page_2 .toggle {padding: 0 50px;text-align: center;}
+		.balloon {position: absolute;bottom: 0;text-align: center;}
+	</style>
+	<!-- <style type="text/css">
 		img{max-width: 100%;}
         .contentsBox h2 {margin-bottom: 30px;}
 		.contentsBox .list-box section{height: auto; margin-bottom: 30px;}
@@ -40,7 +90,7 @@
 
 		.page_1 .flexListContainer div {display: flex;align-items: center;}
 		.balloon {text-align: center;}
-	</style>
+	</style> -->
 
 </head>
 
@@ -63,22 +113,47 @@
 					<li data-hover="">물음 1</li>
 				</ul>
 				<ul class="basicSlider_slides type-calc-1" data-slides="">
-					<li class="page_1">
+					<li class="page_1 on">
 						<div class="bg">
 							<div class="flex-wrap">
 								<div class="flex-item n1">
-									<div class="math_calc_table class3 n1 ">
+									<div class="math_calc_table">
 										<table>
 											<tbody>
+												<tr class="space">
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+												</tr>
 												<tr>
 													<td></td>
+													<td>3</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td class="math">×</td>
+													<td></td>
+													<td>4</td>
+												</tr>
+												<tr class="line-tr">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+												</tr>
+												<tr class="vt">
 													<td>1</td>
 													<td>2</td>
-												</tr>
-												<tr>
-													<td>×</td>
 													<td></td>
-													<td>4</td>
 												</tr>
 												<tr class="line-tr">
 													<td colspan="3">
@@ -86,50 +161,33 @@
 													</td>
 												</tr>
 												<tr>
-													<td></td>
-													<td></td>
-													<td>8</td>
-												</tr>
-												<tr>
-													<td></td>
+													<td>1</td>
+													<td>2</td>
 													<td>4</td>
-													<td>0</td>
-												</tr>
-												<tr class="line-tr">
-													<td colspan="3">
-														<div class="rowLine"></div>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td>4</td>
-													<td>8</td>
 												</tr>
 											</tbody>
 										</table>
-										<!-- <div class="lineDotted line_1"></div>
-										<div class="lineDotted line_2"></div>
-										<div class="lineDotted line_3"></div>
-										<div class="lineDotted line_4"></div> -->
 									</div>
-									<div class="text n1">
-										<span>2×4</span>
-									</div> 
-									<div class="text n2">
-										<span>10×4</span>
+									<div class="text-wrap">
+										<div class="text n1">
+											1×4
+										</div> 
+										<div class="text n2">
+											30×4
+										</div>
 									</div> 
 								</div>
 								<div class="flex-item n2">
-									<div class="math_calc_table class3 n2">
+									<div class="math_calc_table">
 										<table>
 											<tbody>
 												<tr>
 													<td></td>
+													<td>3</td>
 													<td>1</td>
-													<td>2</td>
 												</tr>
 												<tr>
-													<td>×</td>
+													<td class="math">×</td>
 													<td></td>
 													<td>4</td>
 												</tr>
@@ -141,27 +199,23 @@
 												<tr>
 													<td></td>
 													<td></td>
-													<td>8</td>
+													<td>4</td>
 												</tr>
 											</tbody>
 										</table>
-										<!-- <div class="lineDotted line_1"></div>
-										<div class="lineDotted line_2"></div>
-										<div class="lineDotted line_3"></div>
-										<div class="lineDotted line_4"></div> -->
 									</div>
 								</div>
 								<div class="flex-item n3">
-									<div class="math_calc_table class3 n3">
+									<div class="math_calc_table">
 										<table>
 											<tbody>
 												<tr>
 													<td></td>
+													<td>3</td>
 													<td>1</td>
-													<td>2</td>
 												</tr>
 												<tr>
-													<td>×</td>
+													<td class="math">×</td>
 													<td></td>
 													<td>4</td>
 												</tr>
@@ -173,11 +227,11 @@
 												<tr>
 													<td></td>
 													<td></td>
-													<td>8</td>
+													<td>4</td>
 												</tr>
 												<tr>
-													<td></td>
-													<td>4</td>
+													<td>1</td>
+													<td>2</td>
 													<td>0</td>
 												</tr>
 												<tr class="line-tr">
@@ -186,95 +240,96 @@
 													</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>1</td>
+													<td>2</td>
 													<td>4</td>
-													<td>8</td>
 												</tr>
 											</tbody>
 										</table>
 									</div>
 								</div>
 							</div>
-							<div class="b1 balloon right purple ctTail">
-								7×3＝21에서<br>십의 자리 숫자 2<br>를 작게 적어 올림하는 수를<br> 표시했어.
+						</div>
+						<div class="flexListContainer bottom">
+							<div class="matn-wrap">
+								<div class="flex-wrap">
+									<div class="flex-item n1">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+													<tr>
+														<td></td>
+														<td>3</td>
+														<td>1</td>
+													</tr>
+													<tr>
+														<td>×</td>
+														<td></td>
+														<td>4</td>
+													</tr>
+													<tr class="line-tr">
+														<td colspan="3">
+															<div class="rowLine"></div>
+														</td>
+													</tr>
+													<tr>
+														<td></td>
+														<td></td>
+														<td>4</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="lineDotted line_1"></div>
+											<div class="lineDotted line_2"></div>
+											<div class="lineDotted line_3"></div>
+											<div class="lineDotted line_4"></div>
+										</div>
+									</div>
+									<div class="arrow-wrap">
+										<div class="icon_arrow big"></div>
+									</div>
+									<div class="flex-item n2">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+													<tr>
+														<td></td>
+														<td>3</td>
+														<td>1</td>
+													</tr>
+													<tr>
+														<td>×</td>
+														<td></td>
+														<td>4</td>
+													</tr>
+													<tr class="line-tr">
+														<td colspan="3">
+															<div class="rowLine"></div>
+														</td>
+													</tr>
+													<tr>
+														<td>1</td>
+														<td>2</td>
+														<td>4</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="lineDotted line_1"></div>
+											<div class="lineDotted line_2"></div>
+											<div class="lineDotted line_3"></div>
+											<div class="lineDotted line_4"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div id="aniBox_1"></div>
 							</div>
 						</div>
-						<div class="flexListContainer center">
-							<div>
-								<div class="math_calc_table class3 n1">
-									<table>
-										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td>1</td>
-												<td>2</td>
-											</tr>
-											<tr>
-												<td>×</td>
-												<td></td>
-												<td></td>
-												<td>4</td>
-											</tr>
-											<tr class="line-tr">
-												<td colspan="4">
-													<div class="rowLine"></div>
-												</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td>8</td>
-											</tr>
-										</tbody>
-									</table>
-									<div class="lineDotted line_1"></div>
-									<div class="lineDotted line_2"></div>
-									<div class="lineDotted line_3"></div>
-									<div class="lineDotted line_4"></div>
-								</div>
-								<div class="icon_arrow big"></div>
-								<div class="math_calc_table class3 n2">
-									<table>
-										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td>1</td>
-												<td>2</td>
-											</tr>
-											<tr>
-												<td>×</td>
-												<td></td>
-												<td></td>
-												<td>4</td>
-											</tr>
-											<tr class="line-tr">
-												<td colspan="4">
-													<div class="rowLine"></div>
-												</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td>8</td>
-											</tr>
-										</tbody>
-									</table>
-									<div class="lineDotted line_1"></div>
-									<div class="lineDotted line_2"></div>
-									<div class="lineDotted line_3"></div>
-									<div class="lineDotted line_4"></div>
-								</div>
-							</div>
-							<div>
-								<div id="aniBox_1" class="flexListContainer center jcenter"></div>
-							</div>
+						<div class="b1 balloon right purple ctTail">
+							7×3＝21에서<br>십의 자리 숫자 2<br>를 작게 적어 올림하는 수를<br> 표시했어.
 						</div>
 					</li>
-			
 					<li class="page_2" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
 							세로 계산에서 21과 30은 무엇을 나타낼까요?
@@ -287,40 +342,35 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td></td>
 													<td>1</td>
 													<td>7</td>
 												</tr>
 												<tr>
 													<td>×</td>
 													<td></td>
-													<td></td>
 													<td>3</td>
 												</tr>
 												<tr class="line-tr">
-													<td colspan="4">
+													<td colspan="3">
 														<div class="rowLine"></div>
 													</td>
 												</tr>
 												<tr>
-													<td></td>
 													<td></td>
 													<td>2</td>
 													<td>1</td>
 												</tr>
                                                 <tr>
 													<td></td>
-													<td></td>
 													<td>3</td>
 													<td>0</td>
 												</tr>
                                                 <tr class="line-tr">
-													<td colspan="4">
+													<td colspan="3">
 														<div class="rowLine"></div>
 													</td>
 												</tr>
                                                 <tr>
-													<td></td>
 													<td></td>
 													<td>5</td>
 													<td>1</td>
@@ -330,7 +380,6 @@
 										<div class="lineDotted line_1"></div>
 										<div class="lineDotted line_2"></div>
 										<div class="lineDotted line_3"></div>
-										<div class="lineDotted line_4"></div>
 									</div>
 								</li>
 								
@@ -358,40 +407,35 @@
 											<tbody>
 												<tr>
 													<td></td>
-													<td></td>
 													<td>1</td>
 													<td>7</td>
 												</tr>
 												<tr>
 													<td>×</td>
 													<td></td>
-													<td></td>
 													<td>3</td>
 												</tr>
 												<tr class="line-tr">
-													<td colspan="4">
+													<td colspan="3">
 														<div class="rowLine"></div>
 													</td>
 												</tr>
 												<tr>
-													<td></td>
 													<td></td>
 													<td>2</td>
 													<td>1</td>
 												</tr>
                                                 <tr>
 													<td></td>
-													<td></td>
 													<td>3</td>
 													<td>0</td>
 												</tr>
                                                 <tr class="line-tr">
-													<td colspan="4">
+													<td colspan="3">
 														<div class="rowLine"></div>
 													</td>
 												</tr>
                                                 <tr>
-													<td></td>
 													<td></td>
 													<td>5</td>
 													<td>1</td>
@@ -401,7 +445,6 @@
 										<div class="lineDotted line_1"></div>
 										<div class="lineDotted line_2"></div>
 										<div class="lineDotted line_3"></div>
-										<div class="lineDotted line_4"></div>
 									</div>
 								</li>
 								
@@ -410,7 +453,14 @@
 							<div class="textAlignC mt_30">
 								<div class="toggle box" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										일의 자리를 계산한 값 21에서 1을 일의 자리에 쓰고 십의 자리를 계산한 값 30과 일의 자리를 계산한 값 21에서 20을 더하여 십의 자리에 5를 써서 계산합니다.
+										<ul class="contentsList">
+											<li>
+												<div class="bullet exam">예</div>
+												<div>
+													일의 자리를 계산한 값 21에서 1을 일의 자리에 쓰고 십의 자리를 계산한 값 30과 일의 자리를 계산한 값 21에서 20을 더하여 십의 자리에 5를 써서 계산합니다.
+												</div>
+											</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -450,7 +500,7 @@
 						name: 'boy_1',
 						speech: 'right',
 						circle: 'green',
-						top: 0,
+						top: 350,
 						right: 0,
 						width: 340,
 						height: 421,
@@ -464,15 +514,15 @@
 						textBubble: {
 							text: '어림한 값과 계산한 값을<br>비교해 볼까?',
 							class: 'balloon right sky ctTail',
-							width: 280,
-							top: 25,
-							right: 120,
+							width: 450,
+							top: 380,
+							left: 400,
 							textAlign: 'center',
 							wordBreak: 'keep-all'
 						},
 						callbacks: {
 							start: function () {
-								$ts.getEl('.characterImg')[0].style.right = '-200px';
+								$ts.getEl('.characterImg')[0].style.left = '-400px';
 							}, // 시작시 콜백
 							end: function () {
 								$ts.getEl('.characterImg')[0].style.right = 0;
