@@ -35,7 +35,6 @@
 					<li data-hover="">3</li>
 					<li data-hover="">4</li>
 					<li data-hover="">5</li>
-					<li data-hover="">6</li>
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1">
@@ -599,6 +598,11 @@
 		}
 
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
+
+			
 			var arrow=$ts.getEl('.icon_arrow');
 
 			arrow.forEach(function (objs, index) {

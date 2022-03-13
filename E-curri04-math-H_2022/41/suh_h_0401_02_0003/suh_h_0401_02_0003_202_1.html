@@ -183,6 +183,17 @@
 			}]
 		});
 	}, false);
+
+	window.$callBack.sliderMove = function(SLIDER) {
+		// const _iframe = document.querySelectorAll(".page-iframe");
+		console.log(SLIDER.container)
+		if( SLIDER.container.classList.contains("page_1") ){
+			setTimeout(function(){
+				document.querySelector(".page-iframe").contentWindow.location.reload();
+			},0);
+		}
+
+	}
 </script>
 
 </body>

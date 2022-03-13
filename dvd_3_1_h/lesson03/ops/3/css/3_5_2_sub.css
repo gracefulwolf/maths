@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+.quizContainer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.square{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: -4px 0 0 0;    
+    border: 4px solid #008dd0;
+    box-sizing: border-box;    
+    vertical-align: middle;
+}
+.triangle{
+    display: inline-block;
+    position: relative;    
+    margin: -4px 0 0 0;    
+    border-bottom: 50px solid #008dd0;
+    border-top: 0 solid transparent;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    box-sizing: border-box;    
+    vertical-align: middle;
+}
+.triangle:after{
+    display: inline-block;
+    content: '';
+    position: absolute;    
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 39px solid #fff;
+    border-top: 0 solid transparent;
+    border-left: 19px solid transparent;
+    border-right: 19px solid transparent;
+    box-sizing: border-box;
+}
+.big-tit{font-size: 40px}
+.imgBox {
+  width: 100%;
+  height: 290px;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/sub/1_5/1_5_2.png);
+  background-size: contain;
+}
+
+.list.dot {
+  margin-bottom: 10px;
+}
+.circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 4px solid #008dd0;
+  box-sizing: border-box;  
+}
+
+.dragBox-wrap{display: flex}
+.jimun{
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+.jimun .colr{  
+  color: #51B1BF;
+  font-weight: bold;
+}
+.shapes > li{
+  position: absolute;
+  width: 120px;
+  height: 100px; 
+  top: 0;
+  left: 0; 
+  transform: scale(0.8); 
+}
+.shapes li:nth-child(1){
+  top: 135px;
+  left: 313px;
+}
+.shapes li:nth-child(2){
+  top: 133px;
+  left: 539px;
+}
+.shapes li:nth-child(3){
+  top: 288px;
+  left: 310px;
+}
+.shapes li:nth-child(4){
+  top: 287px;
+  left: 536px;
+}
+.shapes li:nth-child(5){
+  top: 290px;
+  left: 760px;
+}
+.shapes li:nth-child(6){
+  top: 126px;
+  left: 757px;
+}
+.shapes li:nth-child(1) .triangle:after{
+  border-bottom-color: #edf1b7
+}
+.shapes li:nth-child(2) .triangle:after{
+  border-bottom-color: #f6dcea
+}
+.shapes li:nth-child(3) .triangle:after{
+  border-bottom-color: #f3ef79
+}
+.quizContainer .circle,
+.quizContainer .square,
+.quizContainer .triangle{    
+  margin-left: 10px;
+}
+.list.dot > li .circle {
+  margin: -3px 0 0 0;
+  vertical-align: middle;
+}
+
+.popup_pages .list.dot > li .circle {
+  margin: -7px 0 0 0;
+}
+.quizContainer .circle,
+.quizContainer .square{  
+  border-color: #ea008b;
+}
+.quizContainer .triangle{  
+  border-bottom-color: #ea008b;
+}
+.inputQuizContainer input.middle {
+  width: 120px;  
+  text-align: center;
+}
+.popup_pages .ico { display: inline-block; }
+.ico:before {
+    display: inline-block;
+    content: '';
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/1_2/1_2_2_02.svg);
+    background-size: contain;
+    vertical-align: -15px;
+}
+.popup_pages fomula{display: inline-flex}
+.popup_pages .circle{border-color: #ea008b}
+.popup_pages fomula.one span{color: #0060e3}
+.popup_pages .arrow.pink{display: inline-block}
+.popup_pages .row{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+
+.page1 .dragBox {
+  width: 1080px;
+  height: 100px;
+  margin: 0 auto 50px;
+}
+.page1 ins.circle {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  margin-right: 4px;
+  cursor: default;
+  vertical-align: top;
+  border-color: #c83164;
+}
+.page1 .dragBox .circle {
+  position: absolute;
+  top: 26px;
+  left: 30px;
+  margin: 0;
+}
+.page1 .dragBox .dragObj.circle.dragObjComplete {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.page1 .dragBox .circle:nth-of-type(2) { left: calc(30px + (88px * (2 - 1)))}
+.page1 .dragBox .circle:nth-of-type(3) { left: calc(30px + (88px * (3 - 1)))}
+.page1 .dragBox .circle:nth-of-type(4) { left: calc(30px + (88px * (4 - 1)))}
+.page1 .dragBox .circle:nth-of-type(5) { left: calc(30px + (88px * (5 - 1)))}
+.page1 .dragBox .circle:nth-of-type(6) { left: calc(30px + (88px * (6 - 1)))}
+.page1 .dragBox .circle:nth-of-type(7) { left: calc(30px + (88px * (7 - 1)))}
+.page1 .dragBox .circle:nth-of-type(8) { left: calc(30px + (88px * (8 - 1)))}
+.page1 .dragBox .circle:nth-of-type(9) { left: calc(30px + (88px * (9 - 1)))}
+.page1 .dragBox .circle:nth-of-type(10) { left: calc(30px + (88px * (10 - 1)))}
+.page1 .dragBox .circle:nth-of-type(11) { left: calc(30px + (88px * (11 - 1)))}
+.page1 .dragBox .circle:nth-of-type(12) { left: calc(30px + (88px * (12 - 1)))}
+
+
+.page1 .dropAreaBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1080px;
+}
+
+.page1 .dropArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 174px;
+  padding: 50px 0 0 0;
+  background: url(../images/sub/1_5/1_5_2_drop.png) center/contain no-repeat;
+  box-sizing: border-box;
+}
+
+.page1 .dropArea .dragObj {
+  position: static;
+  margin: 0;
+}
+.page1 .dropArea > .dragObj:nth-child(2) {
+  margin-left: 10px;
+}

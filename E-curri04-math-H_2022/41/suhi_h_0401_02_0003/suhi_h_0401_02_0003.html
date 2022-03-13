@@ -100,25 +100,25 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									각의 크기를 <strong>각도</strong>라고 합니다.
+									각의 크기를 <span class="redT">각도</span>라고 합니다.
 								</div>
 							</li>
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									각도를 나타내는 단위에는 <strong>도</strong>가 있습니다.
+									각도를 나타내는 단위에는 <span class="redT">도</span>가 있습니다.
 								</div>
 							</li>
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div class="ls1">
-									직각의 크기를 똑같이 90으로 나눈 것 중 하나를 <strong>1도</strong>라 하고, <strong>1°</strong>라고 씁니다.
+									직각의 크기를 똑같이 90으로 나눈 것 중 하나를 <span class="redT">1도</span>라 하고, <span class="redT">1°</span>라고 씁니다.
 								</div>
 							</li>
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									직각의 크기는 <strong>90°</strong>입니다.
+									직각의 크기는 <span class="redT">90°</span>입니다.
 								</div>
 							</li>
 						</ul>
@@ -293,7 +293,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</section>
 					</li>
 					<li class="innerTab_2" data-quiz="toggle">
-						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<iframe src="../../../dvd_4_1_h/contents_sub/lesson02/ops/2/app-gakdo-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
 						<section class="full">
 							<div class="--img x2">
 							</div>
@@ -374,6 +374,27 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		const _iframe = document.querySelectorAll(".page-iframe");
+		window.$callBack.sliderMove = function(SLIDER) {
+			//console.log(SLIDER.container)
+			//_iframe.forEach(function(obj, index){
+			//	_iframe[index].contentWindow.location.reload();
+			//});
+			if( SLIDER.container.classList.contains("page_2") ){
+				_iframe[SLIDER.idx].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("page_3") ){
+				_iframe[SLIDER.idx + 2].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "2" ){
+				_iframe[0].contentWindow.location.reload();
+			}
+			if( SLIDER.container.classList.contains("contentsBox") && SLIDER.idx == "3" ){
+				_iframe[2].contentWindow.location.reload();
+			}
+
+		}
+
 	}, false);
 </script>
 
