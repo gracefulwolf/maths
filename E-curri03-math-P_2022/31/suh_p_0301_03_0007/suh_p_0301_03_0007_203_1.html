@@ -10,12 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
 		.flexListContainer {margin-top: 50px;}
+		.flexListContainer li:not(.none) {display: flex;align-items: center;}
 		.flexListContainer .toggle-wrap.n1 + .toggle-wrap.n2 {margin-top: 15px;}
-		.arrow-wrap .text {position: relative;padding-right: 100px;}
-		.arrow-long {width:100px; height:2px; background-color: #e94d40; position: absolute; transform-origin: top left;}
-		.arrow-long::after{content:""; display: block; width:10px; height: 10px; border-top:2px solid #e94d40; border-right:2px solid red; right:4px;position: absolute; transform: rotate(45deg) translate(0, -7.5px);}
-		.arrow-long.n1 {top: 30px;right: 20px;transform: rotate(326deg);width: 60px;}
-		.arrow-long.n2 {top: 30px;right: 20px;transform: rotate(31deg);width: 60px;}
+		.arrows {margin: 0 20px;}
+		.arrows img {width: 70px;}
 	</style>
 </head>
 
@@ -33,17 +31,16 @@
 					<li  data-quiz="toggle">
 						<ul class="flexListContainer jcenter center">
 							<li>
-								<div class="arrow-wrap">
-									<div class="text">
-										48÷8＝<div class="toggle" data-toggle-obj="1">
-											<div class="answer" data-toggle-target="1">6</div>
-										</div>
-										<div class="arrow-long n1"></div>
-										<div class="arrow-long n2"></div>
+								<div class="text">
+									48÷8＝<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">6</div>
 									</div>
 								</div>
+								<div class="arrows">
+									<img src="./images/suh_p_0301_03_0007_203_1/suh_p_0301_03_0007_203_1.png" alt="">
+								</div>
 							</li>
-							<li>
+							<li class="none">
 								<div class="toggle-wrap n1">
 									<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">8</div>
