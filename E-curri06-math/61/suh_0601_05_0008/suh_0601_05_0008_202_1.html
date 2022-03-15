@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style>
+	#wrap header .title {padding-bottom:10px;letter-spacing:-1px;text-align:justify}
+
+	.ex-box {display:flex}
+	.ex-box .bullet.exam {flex-shrink:0}
+
+	.basicSlider.contentsBox.doItContent {padding:0}
+
+	.graph-content {text-align:center}
+	.graph-content .lineBox {display:inline-block;font-size:36px}
+	.graph-content [class*='graph-'] {position:relative;margin-top:20px}
+	.graph-content .txt-item {position:absolute}
+	.graph-content .graph-caption {margin-top:40px;font-size:24px}
+
+	.graph-1 img {width:420px}
+	.graph-1 .txt-item.num {font-size:24px;left:285px}
+	.graph-1 .txt-item.num.n1 {top:260px;left:300px}
+	.graph-1 .txt-item.num.n2 {top:203px}
+	.graph-1 .txt-item.num.n3 {top:150px}
+	.graph-1 .txt-item.num.n4 {top:95px}
+	.graph-1 .txt-item.num.n5 {top:45px}
+	.graph-1 .txt-item.num.n6 {top:-10px}
+	.graph-1 .txt-item.city {bottom:45px;font-size:14px;line-height:1;text-align:center}
+	.graph-1 .txt-item.city.n7 {left:355px}
+	.graph-1 .txt-item.city.n8 {left:410px}
+	.graph-1 .txt-item.city.n9 {left:512px}
+	.graph-1 .txt-item.city.n10 {left:588px}
+	.graph-1 .txt-item.city.n11 {left:668px}
+	.graph-1 .txt-item.unit {top:0;left:648px;font-size:16px}
+
+	.graph-2 img {width:480px}
+	.graph-2 .txt-item.num {font-size:22px;left:255px}
+	.graph-2 .txt-item.num.n1 {top:258px;left:270px}
+	.graph-2 .txt-item.num.n2 {top:220px}
+	.graph-2 .txt-item.num.n3 {top:188px}
+	.graph-2 .txt-item.num.n4 {top:155px}
+	.graph-2 .txt-item.num.n5 {top:122px}
+	.graph-2 .txt-item.num.n6 {top:88px}
+	.graph-2 .txt-item.num.n7 {top:55px}
+	.graph-2 .txt-item.num.n8 {top:22px}
+	.graph-2 .txt-item.num.n9 {top:-10px;left:210px}
+	.graph-2 .txt-item.month {font-size:22px;top:275px}
+	.graph-2 .txt-item.month.n10 {left:320px}
+	.graph-2 .txt-item.month.n11 {left:358px}
+	.graph-2 .txt-item.month.n12 {left:395px}
+	.graph-2 .txt-item.month.n13 {left:430px}
+	.graph-2 .txt-item.month.n14 {left:468px}
+	.graph-2 .txt-item.month.n15 {left:503px}
+	.graph-2 .txt-item.month.n16 {left:542px}
+	.graph-2 .txt-item.month.n17 {left:578px}
+	.graph-2 .txt-item.month.n18 {left:615px}
+	.graph-2 .txt-item.month.n19 {left:645px}
+	.graph-2 .txt-item.month.n20 {left:682px}
+	.graph-2 .txt-item.month.n21 {left:720px}
+	.graph-2 .txt-item.month.n22 {left:760px}
+
+	.graph-3 {width:1005px;margin:0 auto;padding:60px 0}
+	.graph-3 img {width:1005px}
+	.graph-3 .txt-item {font-size:22px}
+	.graph-3 .txt-item.n1 {top:90px;left:280px}
+	.graph-3 .txt-item.n2 {top:78px;left:655px}
+	.graph-3 .txt-item.n3 {top:78px;left:785px}
+	.graph-3 .txt-item.n4 {top:78px;left:885px}
+	.graph-3 .txt-item.n5 {top:180px;left:527px}
+	.graph-3 .txt-item.n6 {top:214px;left:772px}
+	.graph-3 .txt-item.unit {top:0;right:0}
+
+	.quiz-content {margin-top:10px}
+	.quiz-content dl {display:flex}
+	.quiz-content dl + dl {margin-top:20px}
+	.quiz-content dt {width:640px}
+	.quiz-content dd {flex:1 auto;margin-left:10px}
+	.quiz-content .colorBox {text-align:center}
+	.quiz-content .toggle {height:72px}
+	.quiz-content .toggle .answer {display:flex;height:100%;justify-content:center;align-items:center}
+
+	.quiz-content dl.type-vertical {flex-direction:column}
+	.quiz-content dl.type-vertical dt {width:100%}
+	.quiz-content dl.type-vertical dd {margin-top:10px;margin-left:0}
+	.quiz-content dl.type-vertical .colorBox {width:280px}
+	.quiz-content dl.type-vertical .toggle .answer {justify-content:flex-start}
+	.quiz-content dl.type-vertical .toggle {height:auto}
+</style>
+</head>
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title" style="letter-spacing:-2px">세계 주요 도시별 미세 먼지 농도, 우리나라의 월별 평균 미세 먼지 농도, 미세 먼지 배출량을 나타낸 그래프입니다. 여러 가지 그래프를 비교해 봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">그래프</li>
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1">
+					<div class="basicSlider contentsBox doItContent" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<div class="graph-content">
+									<div class="lineBox purple">세계 주요 도시별 미세 먼지 농도</div>
+									<div class="graph-1">
+										<img src="./images/suh_0601_05_0008_202_1-01.png" alt="">
+										<p class="graph-caption">(출처: 행정 간행물, 환경부, 2016.)</p>
+										<div class="txt-item num n1">0</div>
+										<div class="txt-item num n2">10</div>
+										<div class="txt-item num n3">20</div>
+										<div class="txt-item num n4">30</div>
+										<div class="txt-item num n5">40</div>
+										<div class="txt-item num n6">50</div>
+										<div class="txt-item city n7">한국<br>(서울)</div>
+										<div class="txt-item city n8">미국<br>(로스앤젤레스)</div>
+										<div class="txt-item city n9">일본<br>(도쿄)</div>
+										<div class="txt-item city n10">프랑스<br>(파리)</div>
+										<div class="txt-item city n11">영국<br>(런던)</div>
+										<div class="txt-item unit n12">(단위: ㎍/㎥)</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="graph-content">
+									<div class="lineBox purple">우리나라의 월별 평균 미세 먼지 농도</div>
+									<div class="graph-2">
+										<img src="./images/suh_0601_05_0008_202_2-01.png" alt="">
+										<p class="graph-caption">(출처: 미세 먼지 월별 도시별 대기 오염도, 국가 통계 포털, 2017.)</p>
+										<div class="txt-item num n1">0</div>
+										<div class="txt-item num n2">10</div>
+										<div class="txt-item num n3">20</div>
+										<div class="txt-item num n4">30</div>
+										<div class="txt-item num n5">40</div>
+										<div class="txt-item num n6">50</div>
+										<div class="txt-item num n7">60</div>
+										<div class="txt-item num n8">70</div>
+										<div class="txt-item num n9">(㎍/㎥)</div>
+										<div class="txt-item month n10">1</div>
+										<div class="txt-item month n11">2</div>
+										<div class="txt-item month n12">3</div>
+										<div class="txt-item month n13">4</div>
+										<div class="txt-item month n14">5</div>
+										<div class="txt-item month n15">6</div>
+										<div class="txt-item month n16">7</div>
+										<div class="txt-item month n17">8</div>
+										<div class="txt-item month n18">9</div>
+										<div class="txt-item month n19">10</div>
+										<div class="txt-item month n20">11</div>
+										<div class="txt-item month n21">12</div>
+										<div class="txt-item month n22">(월)</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_3" data-quiz="toggle">
+								<div class="graph-content">
+									<div class="lineBox purple">미세 먼지 배출량</div>
+									<div class="graph-3">
+										<img src="./images/suh_0601_05_0008_202_3-01.png" alt="">
+										<p class="graph-caption textAlignR">(출처: 행정 간행물, 환경부, 2016.)</p>
+										<div class="txt-item n1">제조업 연소<br/>(64 %)</div>
+										<div class="txt-item n2">비도로 이동<br/>오염원<br/>(13 %)</div>
+										<div class="txt-item n3">도로 이동<br/>오염원<br/>(11 %)</div>
+										<div class="txt-item n4">생산<br/>공정<br/>(6 %)</div>
+										<div class="txt-item n5">에너지 산업 연소(4 %)</div>
+										<div class="txt-item n6">비산업 연소(2 %)</div>
+										<div class="txt-item unit">(총 119980 t)</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>각 그래프가 어떤 그래프인지 말해 보세요.</span></h2>
+					<section>
+						<div class="quiz-content">
+							<dl>
+								<dt>
+									<div class="colorBox skyBlue">세계 주요 도시별 미세 먼지 농도</div>
+								</dt>
+								<dd>
+									<div class="toggle box" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">막대그래프</div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="colorBox skyBlue">우리나라의 월별 평균 미세 먼지 농도</div>
+								</dt>
+								<dd>
+									<div class="toggle box" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">꺾은선그래프</div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="colorBox skyBlue">미세 먼지 배출량</div>
+								</dt>
+								<dd>
+									<div class="toggle box" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">띠그래프</div>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_3">
+					<h2><ins class="dot"></ins><span>각 그래프를 보고 알 수 있는 내용을 말해 보세요.</span></h2>
+					<div class="basicSlider contentsBox doItContent" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<div class="quiz-content">
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">막대그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>한국(서울)의 미세 먼지 농도가 가장 높습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">꺾은선그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>5월의 미세 먼지 농도가 가장 높고, 8월의 미세 먼지 농도가 가장 낮습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="quiz-content">
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">띠그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>제조업 연소를 통해 나오는 미세 먼지가 가장 많습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="page_4">
+					<h2><ins class="dot"></ins><span>각 그래프는 어떤 특징이 있는지 말해 보세요.</span></h2>
+					<div class="basicSlider contentsBox doItContent" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<div class="quiz-content">
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">막대그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>수량의 많고 적음을 한눈에 비교하기 쉽습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">꺾은선그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>수량의 변화하는 모습과 정도를 쉽게 알 수 있습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="quiz-content">
+									<dl class="type-vertical">
+										<dt>
+											<div class="colorBox skyBlue">띠그래프</div>
+										</dt>
+										<dd>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<div class="ex-box">
+														<div class="bullet exam">예</div>
+														<div>전체에 대한 각 부분의 비율을 한눈에 알아보기 쉽습니다.</div>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+</html>
