@@ -20,7 +20,7 @@
 		.flexListContainer.n2 {justify-content: flex-start;align-items: center;position: relative;padding-left: 50px;}
 		.flexListContainer.n2 .icon_arrow.n1 {margin-right: 10px;}
 		.flexListContainer.n2 .icon_arrow.n2 {position: absolute;right: 125px;bottom: -40px;}
-		.flexListContainer.n3 {position: relative;margin: 35px 0 0 450px;}
+		.flexListContainer.n3 {position: relative;margin: 35px 0 0 480px;}
 		.flexListContainer.n3 .lineBox.circle {position: absolute;top: -45px;left: 5px;}
 		.flexListContainer.n3 .lineBox.pink:last-child {padding: 30px 20px;}
 		.item {width: 420px;margin-left: 150px;letter-spacing: -1px;}
@@ -28,6 +28,33 @@
 		.item .flexListContainer .line {position: relative;}
 		.item .flexListContainer .line:before {content: '';position: absolute;left: 50%;bottom: -20px;width: 2px;height: 20px;background: #fff;display: inline-block;}
 		.item .lineBox.circle {margin-left: 5px;}
+		.item .flexListContainer.n2 .arrow_line {
+			position: absolute;
+			border-left: 4px solid red;
+			border-bottom: 4px solid red;
+			width: 40px;
+			right: 50%;
+			transform: rotate(180deg);
+			top: 120px;
+			left: 278px;
+		}
+		.item .flexListContainer.n2 .arrow_line:before {
+			content: "<";
+			color: red;
+			position: absolute;
+			top: -22px;
+			left: -12px;
+		}
+		.item .flexListContainer.n2  .arrow_line:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1px;
+			border-right: 4px solid red;
+			height: 40px;
+			bottom: -40px;
+			right: 0;
+		}
 	</style>
 </head>
 
@@ -57,7 +84,7 @@
 							<div class="icon_arrow n1"></div>
 							<div>15</div>÷<div>3</div>＝ 
 							<div class="lineBox pink circle n1">5</div>
-							<div class="icon_arrow n2"></div>
+							<div class="arrow_line"></div>
 						</div>
 					</div>
 					<div class="flexListContainer wrap n3">
