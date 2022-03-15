@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		section {
+			font-size: 40px;
+		}
+
+		/* .math_calc_table {
+			width: 190px;
+			margin: 32px auto;
+			top: -48px;
+		} */
+
+		.lineBox {
+			margin-top: 40px;
+			height: 265px;
+			width: 50%;
+			margin: 20px auto;
+		}
+
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+
+
+		/* 개별 */
+		.--mathCalcTbl{width: 210px;}
+		.--mathCalcTbl td{height: 60px;}
+		.math_calc_table .rowLine{top:0; z-index: 1;}
+		.math_calc_table .bg{background: #eee;}
+		.--dotted1{left:25%}
+		.--dotted2{left:50%}
+		.--dotted3{left:75%}
+		.--dotted4{left:100%}
+
+		.flexListContainer{align-items: flex-start; padding-right: 210px;}
+
+		.icon_arrow{display: none; margin-top: 140px; animation: css-ani-arrow-leftToRight 1s linear 0s infinite;}
+		.--toggleTbl.on + .icon_arrow,
+		.icon_arrow.on{display: block;}
+		.icon_arrow.complete{animation: none;}
+		.--toggleTbl{opacity: 0;}
+		.--toggleTbl.on{opacity: 1;}
+
+		.--innerWrap{position: relative;}
+		.--lineArrow{position:absolute;top: 180px;left: 345px;width: 380px;height: 37px;border: solid #f7c1c9;border-width: 0 3px 3px 0;}
+		.--lineArrow:before{content: "";position: absolute;bottom: -5px;right: -10px;border-left: 8px solid transparent;border-right: 8px solid transparent;border-top: 14px solid #f7c1c9;}
+		.--lineArrow.x1{top: 80px;left: 218px;width: 454px;height: 60px;border-width: 3px 3px 0 3px;border-radius:15px 15px 0 0;}
+		.--lineArrow.x2{top: 254px;left: 342px;width: 472px;height: 60px;border: solid #cee492;border-width: 0 3px 3px 3px;border-radius: 0 0 15px 15px;}
+		.--lineArrow.x2:before{right: -10px;left: auto;border-top: none;border-bottom: 14px solid #cee492;bottom: 50px;}
+		.--lineArrow.x3{top: 214px;left: 390px;width: 433px;height: 80px; border: solid #e94d40; border-width: 0 3px 3px 3px;}
+		.--lineArrow.x3:before{right: -10px;left: auto;border-top: none; border-bottom: 14px solid #e94d40; bottom: 70px;}
+
+		.--text{position: absolute;}
+		.--text.x1{top: 128px;left: 190px;padding: 0 20px;}
+		.--text.x2{top: 188px;left: 190px;padding: 0 20px;}
+		.--line{position: absolute;}
+
+		.balloon.pink{top: 220px;left: -20px;width: 270px;}
+		.balloon.sky{top: 340px;left: -30px;width: 290px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="pointContainer">
+		<header>
+			<h1><ins class="icon"></ins>핵심 정리</h1>
+		</header>
+		<main>
+			<div class="contentsBox" data-quiz="toggle">
+				<h2 class="flex-box a-center">(세 자리 수)×(두 자리 수) 계산하기</h2>
+				<section>
+					<div class="flexListContainer">
+						<div class="math_calc_table --mathCalcTbl">
+							<table>
+								<tbody>
+									<tr>
+										<td></td>
+										<td class="redT bg">2</td>
+										<td class="redT bg">3</td>
+										<td class="redT bg">9</td>
+									</tr>
+									<tr>
+										<td>×</td>
+										<td></td>
+										<td>1</td>
+										<td class="redT bg">5</td>
+									</tr>
+									<tr class="line">
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td class="redT bg">1</td>
+										<td class="redT bg">1</td>
+										<td class="redT bg">9</td>
+										<td class="redT bg">5</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="lineDotted --dotted1"></div>
+							<div class="lineDotted --dotted2"></div>
+							<div class="lineDotted --dotted3"></div>
+							<div class="lineDotted --dotted4"></div>
+							<div class="balloon top ctTail textAlignC pink redT">
+								239×5＝1195
+							</div>
+						</div>
+						<ins class="icon_arrow on" data-toggle-obj="1"></ins>
+						<div class="math_calc_table --mathCalcTbl --toggleTbl" data-toggle-target="1">
+							<table>
+								<tbody>
+									<tr>
+										<td></td>
+										<td class="blueT bg">2</td>
+										<td class="blueT bg">3</td>
+										<td class="blueT bg">9</td>
+									</tr>
+									<tr>
+										<td>×</td>
+										<td></td>
+										<td class="blueT bg">1</td>
+										<td>5</td>
+									</tr>
+									<tr class="line">
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>1</td>
+										<td>9</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<td class="blueT bg">2</td>
+										<td class="blueT bg">3</td>
+										<td class="blueT bg">9</td>
+										<td class="blueT bg">0</td>
+									</tr>
+									<tr class="line">
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>6</td>
+										<td>3</td>
+										<td>1</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="lineDotted --dotted1"></div>
+							<div class="lineDotted --dotted2"></div>
+							<div class="lineDotted --dotted3"></div>
+							<div class="lineDotted --dotted4"></div>
+							<div class="balloon top ctTail textAlignC sky blueT">
+								239×10＝2390
+							</div>
+						</div>
+						<ins class="icon_arrow" data-toggle-obj="2"></ins>
+						<div class="math_calc_table --mathCalcTbl --toggleTbl" data-toggle-target="2">
+							<table>
+								<tbody>
+									<tr>
+										<td></td>
+										<td>2</td>
+										<td>3</td>
+										<td>9</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>×</td>
+										<td class="blueT">1</td>
+										<td class="redT">5</td>
+									</tr>
+									<tr class="line">
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td class="redT">1</td>
+										<td class="redT">1</td>
+										<td class="redT">9</td>
+										<td class="redT">5</td>
+									</tr>
+									<tr>
+										<td class="blueT">2</td>
+										<td class="blueT">3</td>
+										<td class="blueT">9</td>
+										<td class="blueT">0</td>
+									</tr>
+									<tr class="line">
+										<td colspan="4">
+											<div class="rowLine"></div>
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>5</td>
+										<td>8</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="lineDotted --dotted1"></div>
+							<div class="lineDotted --dotted2"></div>
+							<div class="lineDotted --dotted3"></div>
+							<div class="lineDotted --dotted4"></div>
+							<div class="--text x1" data-toggle-target="1">···239×<span class="redT">5</span></div>
+							<div class="--text x2" data-toggle-target="2">···239×<span class="blueT">10</span></div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript"></script>
+</body>
+
+</html>

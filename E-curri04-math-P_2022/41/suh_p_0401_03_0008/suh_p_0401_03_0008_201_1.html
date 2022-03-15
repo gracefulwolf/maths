@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+
+	<style>
+		.math_calc_table.type2 td{height: 50px;}
+		.math_calc_table.type2 .line-tr ~ .line-tr td{padding: 5px 0;}
+		.math_calc_table.type2 .line-tr ~ .line-tr .rowLine{top: 5px;}
+		.--lineArrow{position:absolute;top: 50%;left: -34px;width: 24px;height: auto;border: solid #e94d40;border-width: 3px 0 0 0;}
+		.--lineArrow.n2{left: 110px; width: 295px;}
+		.--lineArrow:before{content: "";position: absolute;top: -10px;left: -4px;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-right: 14px solid #e94d40;}
+
+		.page_2 .toggle{width: 100%;}
+		.page_4 .math_calc_table.col5,
+		.page_4 .math_calc_table.col5 table{width: 148px;}
+
+		.page_4 .lineBox{position: relative; height: 370px;}
+		.page_4 .lineBox.deeppink{z-index: 1; border-radius: 0;border-right: 0;padding-right: 180px; background: #fff;}
+		.page_4 .lineBox.deeppink:before,
+		.page_4 .lineBox.deeppink:after{content: ""; display: block; position: absolute; width: 1px; height: 196px;}
+		.page_4 .lineBox.deeppink:before,
+		.page_4 .lineBox.deeppink:after{border-right:5px solid #f7c1c9;}
+		.page_4 .lineBox.deeppink:before{top: 0; right: 0; transform: rotate(-22deg); transform-origin: 0 0;}
+		.page_4 .lineBox.deeppink:after{bottom: 0; right: 0; transform: rotate(22deg); transform-origin: 0 100%;}
+
+		.page_4 .lineBox.sky{padding-left: 10px;padding-right: 196px;}
+		.page_4 .lineBox.sky:before{content:"";display: block;position: absolute;top: 110px;left: -6px;border-top: 72px solid transparent;border-bottom: 72px solid transparent;border-left: 32px solid #fff;}
+
+		.page_4 .lineBox.orange .math_calc_table.col5{margin-right:20px;}
+		.page_4 .--text{position: absolute; white-space: nowrap;}
+		.page_4 .--text.x1{top: 110px;left: 210px;}
+		.page_4 .--text.x2{top: 170px;left: 210px;}
+		.page_4 .--text.x3{top: 221px;left: 210px;}
+		.page_4 .--text.x4{top: 281px;left: 210px;}
+
+
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title mb_40">묘목을 몇 묶음까지 만들 수 있고 남는 묘목은 몇 그루인지 알아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						묘목을 몇 묶음까지 만들 수 있을지 어림해 보세요.
+					</span></h2>
+					<section>
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet exam">예</ins>
+										<div>
+											217을 약 200으로 보면 13의 10배는 130이므로 10묶음보다 많을 것 같습니다.
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						묘목을 13그루 씩 몇십 묶음까지 만들 수 있고, 남는 묘목은 몇 그루인가요?
+					</span></h2>
+					<section>
+						<div class="toggle" data-toggle-obj="11">
+							<div class="answer" data-toggle-target="11">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet exam">예</ins>
+										<div>
+											13×10=130이므로 10묶음까지 만들 수 있고 87그루의 묘목이 남습니다.
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</li>
+
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						남는 묘목을 13그루 씩 몇 묶음까지 만들 수 있고, 남는 묘목은 몇 그루인가요?
+					</span></h2>
+					<section>
+						<div class="toggle" data-toggle-obj="31">
+							<div class="answer textAlignJ" data-toggle-target="31">
+								13씩 6묶음이면 78이고 87-78=9입니다. 따라서 6묶음까지 만들 수 있고 9그루가 남습니다.
+							</div>
+						</div>
+					</section>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</li>
+
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						217÷13을 계산하는 방법을 알아보세요.
+					</span></h2>
+					<section>
+						<div class="flexListContainer start center mt_40">
+							<div class="lineBox deeppink">
+								<div class="math_calc_table type2 col5">
+									<table>
+										<colgroup>
+											<col style="width:48px;">
+											<col style="width:10px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="blueT">1</td>
+											<td></td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td class="line-td"></td>
+											<td>2</td>
+											<td>1</td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td class="blueT">1</td>
+											<td class="blueT">3</td>
+											<td class="blueT">0</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>8</td>
+											<td>7</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="--text x1">
+									<div class="--lineArrow x1"></div>
+									13×<span class="blueT">10</span>
+								</div>
+								<div class="--text x2">
+									<div class="--lineArrow x1"></div>
+									217－<span class="blueT">130</span>
+								</div>
+							</div>
+							<div class="lineBox sky ml_40">
+								<div class="math_calc_table type2 col5">
+									<table>
+										<colgroup>
+											<col style="width:48px;">
+											<col style="width:10px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>1</td>
+											<td class="redT">6</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td class="line-td"></td>
+											<td>2</td>
+											<td>1</td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td>1</td>
+											<td>3</td>
+											<td>0</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>8</td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="redT">7</td>
+											<td class="redT">8</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>9</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="--text x3">
+									<div class="--lineArrow x1"></div>
+									13×<span class="redT">6</span>
+								</div>
+								<div class="--text x4">
+									<div class="--lineArrow x1"></div>
+									87－<span class="redT">78</span>
+								</div>
+							</div>
+							<ins class="icon_arrow big ml_5 mr_5"></ins>
+							<div class="lineBox orange">
+								<div class="toggle noBg" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="math_calc_table type2 col5">
+											<table>
+												<colgroup>
+													<col style="width:48px;">
+													<col style="width:10px;">
+													<col>
+													<col>
+													<col>
+												</colgroup>
+												<tbody>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td>1</td>
+													<td>6</td>
+												</tr>
+												<tr class="line-tr">
+													<td></td>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td>13</td>
+													<td class="line-td"></td>
+													<td>2</td>
+													<td>1</td>
+													<td>7</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td>1</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr class="line-tr">
+													<td></td>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td>8</td>
+													<td>7</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td>7</td>
+													<td>8</td>
+												</tr>
+												<tr class="line-tr">
+													<td></td>
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td>9</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

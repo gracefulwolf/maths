@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+/* page_1 */
+.page_1 .textAlignC {
+    width:600px;
+    margin: 50px auto;
+    position:relative;
+
+}
+.page_1 .textAlignC img{
+    width:100%;
+}
+.page_1 .textAlignC .toggle{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38%;
+}
+.page_1 .qBox {
+    position: absolute;
+    top: 224px;
+    left: 132px;
+    width: 0;
+    height: 0;
+}
+/* page_2 */
+.page_2 .img_part {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.page_2 .img_1 {
+    position: absolute;
+    top: 30px;
+    left: 63px;
+    width: 200px;
+    z-index: 10;
+}
+.page_2 .img_2 {
+    position: absolute;
+    top: 30px;
+    left: 470px;
+    width: 200px;
+}
+.page_2 .img_3 {
+    position: absolute;
+    top: 30px;
+    right: 75px;
+    width: 200px;
+}
+.page_2 .img_4 {
+    position: absolute;
+    top: 30px;
+    left: 63px;
+    width: 200px;
+    z-index: 10;
+}
+.page_2 .img_5 {
+    position: absolute;
+    top: 32px;
+    left: 470px;
+    width: 200px;
+    transform: rotateZ(90deg);
+}
+.page_2 .img_6 {
+    position: absolute;
+    top: 32px;
+    right: 75px;
+    width: 200px;
+    transform: rotateZ(270deg);
+}
+.page_2 .img_7{
+    position: absolute;
+    top: 86px;
+    z-index: 10;
+    left: 293px;
+}
+
+.page_2 .lineBox {
+    width: 370px;
+    height: 240px;
+}
+.page_2 .lineBox {
+    position: absolute;
+    top: 12px;
+    left: 44px;
+
+}
+.lineBox.blue {
+    border:4px solid #00a0ff;
+    border-radius:10px;
+    padding:10px;
+}
+.page_2 .oxContainer {
+    position: absolute;
+    top: 260px;
+    left: 540px;
+}
+.page_2 .oxContainer li {
+    vertical-align:top;
+    position: relative;
+    min-width: 46px;
+    display: inline-flex;
+    display: -ms-inline-flexbox;
+    align-items:center;
+    -ms-flex-align:center;
+    justify-content:center;
+    -ms-flex-pack:center;
+    width:60px;
+    height:60px;
+    line-height:1;
+    border-radius: 8px;
+    text-align: center;
+    text-indent: 0;
+    background-color: #efefef;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.page_2 .oxContainer li ~ li{
+    margin-left:183px;
+
+}
+.page_2 .oxContainer li span{
+    opacity:0;
+    transition:0.5s all;
+    vertical-align:top;
+}
+.page_2 .oxContainer li.on span{
+    opacity:1;
+}
+/* page_3 */
+.page_3 .img_part {
+    margin-top: 15px;
+    height: 235px;
+    text-align:center;
+}
+.page_3 .lineBox {
+    width: 250px;
+    /* height: 340px; */
+    display: inline-block;
+    text-align: center;
+}
+.page_3 .lineBox ~ .lineBox {
+    margin-left: 150px;
+}
+.page_3 .img_part img {
+    width: 170px;
+    margin:10px 0;
+}
+
+.page_3 .calBox1 {
+    position: absolute;
+    top: 245px;
+    left: 217px;
+}
+.page_3 .calBox2 {
+    position: absolute;
+    top: 245px;
+    left: 608px;
+}
+.page_5 .multipleChoiceList img{width:60px;}
+.page_5 .multipleChoiceList.wrap>li{cursor:default}
+.page_5 .multipleChoiceList.wrap>li .bullet{margin-top:0;}
+.titleIcon{display:inline;}
+.titleIcon img{width:35px;}
+
+
+		.page-iframe{position:fixed; z-index:1; top:170px; left:55px; overflow:hidden; width:1280px; height:565px; border:0; background:transparent; transform: scale(0.828125) translate(-130px, -20px);}
+		.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.study_guide{right: 0;}
+
+
+		.page_10 .--img{position: relative; height: 250px; margin-top: 0; background: url(./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_1.png) no-repeat 50% 50% / contain;}
+		.page_10 .--img .answer{position: absolute;top:0; left: 0; width: 100%;height: 100%;background: url(./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_2.png) no-repeat 50% 50% / contain;}
+
+		.page_20 .--img{position: relative; height: 250px; margin-top: 0; background: url(./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_3.png) no-repeat 50% 50% / contain;}
+		.page_20 .--img .answer{position: absolute;top:0; left: 0; width: 100%;height: 100%;background: url(./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_4.png) no-repeat 50% 50% / contain;}
+
+		.page_30 .colorBox.check{align-self: flex-start;}
+		.page_30 .bullet.exam{position: absolute; left: 0; top: -45px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/(4-1-4)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span class="ls0">
+							도형을 시계 방향으로 90°만큼 돌렸을 때의 도형을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section class="full">
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							도형을 시계 반대 방향으로 180°만큼 돌렸을 때의 도형을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section class="full">
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_30" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							왼쪽 도형을 돌렸더니 오른쪽 도형이 되었습니다. 어떻게 움직인 것인지 <ins class="icon_bogi"></ins>의 낱말을 사용하여 설명해 보시오.
+						</span></h2>
+						<section>
+							<div class="flexListContainer center around">
+								<div class="textAlignC">
+									<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5.png" alt="" width="400">
+								</div>
+								<div class="bogiContainer textAlignC">
+									<div class="icon_bogi"></div>
+									<div class="inner">
+										<div class="textAlignC">
+											시계 방향, 시계 반대 방향,<br>90°, 180°, 270°, 360°
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flexListContainer start mt_50">
+								<div class="colorBox skyBlue check">방법</div>
+								<div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer textAlignJ" data-toggle-target="1">
+											<span class="bullet exam">예</span>
+											왼쪽 도형을 시계 방향(시계 반대 방향)으로 180°만큼 돌렸습니다.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>도형을 시계 반대 방향으로 180°만큼 돌렸을 때의 도형을 그려 보시오.</span></h2>
+						<section>
+							<div class="textAlignC noClick">
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_4_1.png" class="img_1" />
+								<div class="toggle noBox" data-toggle-obj="1"><div class="answer" data-toggle-target="1"><img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_4_2.png" class="img_2" /></div></div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="ox" data-option="answerSound,hide" data-quiz-name="ox1">
+						<h2><ins class="dot orange"></ins><span>다음 도형을 시계 방향으로 90°만큼 돌렸습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하시오.</span></h2>
+						<section>
+							<div class="study_guide" style="top:-30px"><em>빈칸</em>을 <em>클릭</em>하세요.</div>
+							<div class="img_part">
+								<div class="lineBox sky"></div>
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_1.png" class="img_1" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_1.png" class="img_2" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_1.png" class="img_3" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_2.png" class="img_4" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_2.png" class="img_5" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_2.png" class="img_6" />
+								<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_3.png" class="img_7" />
+							</div>
+							<ul class="oxContainer">
+								<li data-ox-obj="1" data-answer><span data-ox-target="1" class="icon icon_o"></span></li>
+								<li data-ox-obj="2"><span data-ox-target="2" class="icon icon_x"></span></li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>두 자리 수가 적힌 카드를 시계 방향으로 180°만큼 돌렸을 때 만들어지는 수를 구해 보시오.</span></h2>
+						<section>
+							<div class="img_part">
+								<div class="lineBox sky">
+									<img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_3_2.png" />
+								</div>
+							</div>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1"><div class="answer" data-toggle-target="1">26</div></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><span class="blankBox"></span> 안에 알맞은 숫자를 써넣으시오.</span></h2>
+						<section>
+							<div class="lineBox orange" style="width: 780px; margin: 0 auto;">
+								시계 방향으로 90°만큼 돌린 도형과<br>
+								시계 반대 방향으로 <div class="toggle" data-toggle-obj="1">
+									<span class="answer" data-toggle-target="1">270</span>
+								</div>°만큼 돌린 도형은<br>
+								 서로 같습니다.
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>아래의 글자를 <span class="titleIcon"><img src="./images/suh_p_0401_04_0004_401_1/suh_p_0401_04_0004_401_1_5_3.png"></span> 와 같이 돌린 글자가 처음과 같은 것을 찾아 기호를 쓰시오.</span></h2>
+						<section>
+							<div class="lineBox yellow">
+								<ul class="multipleChoiceList wrap">
+									<li>
+										<div class="bullet number orange">ㄱ</div>
+										<div><img src="./images/suh_p_0401_04_0004_401_1/suh_0401_04_0004_401_1_5_1.png"></div>
+									</li>
+									<li>
+										<div class="bullet number orange">ㄴ</div>
+										<div><img src="./images/suh_p_0401_04_0004_401_1/suh_0401_04_0004_401_1_5_2.png"></div>
+									</li>
+									<li>
+										<div class="bullet number orange">ㄷ</div>
+										<div><img src="./images/suh_p_0401_04_0004_401_1/suh_0401_04_0004_401_1_5_3.png"></div>
+									</li>
+									<li>
+										<div class="bullet number orange">ㄹ</div>
+										<div><img src="./images/suh_p_0401_04_0004_401_1/suh_0401_04_0004_401_1_5_4.png"></div>
+									</li>
+									<li>
+										<div class="bullet number orange">ㅁ</div>
+										<div><img src="./images/suh_p_0401_04_0004_401_1/suh_0401_04_0004_401_1_5_5.png"></div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="textAlignC" style="margin-top: 40px;">
+								<div class="toggle" data-toggle-obj="1"><div class="answer" data-toggle-target="1"><div class="bullet number orange">ㄴ</div></div></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_10" data-popup-page="10">
+					<div class="popup_contents">
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+			const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+			_dapChkBtn.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					let _closestTg = obj.closest(".on");
+					if( _closestTg.querySelector(".page-iframe") ){
+						_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+					}
+				});
+			});
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

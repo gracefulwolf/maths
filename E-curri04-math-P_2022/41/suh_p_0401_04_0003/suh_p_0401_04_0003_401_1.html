@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+/* page_1 */
+/* page_1 */
+.page_1 .textAlignC {
+    width:600px;
+    margin: 50px auto;
+    position:relative;
+
+}
+.page_1 .textAlignC img{
+    width:100%;
+}
+.page_1 .textAlignC .toggle{
+    position:absolute;left:0;top:0;width:100%;
+}
+.page_1 .qBox {
+    position: absolute;
+    top: 224px;
+    left: 132px;
+    width: 0;
+    height: 0;
+}
+/* page_2 */
+.page_2 .img_part {
+    position: absolute;
+    top: -32px;
+    left: -20px;
+    width: 100%;
+    height: 300px;
+}
+.page_2 .img_1 {
+    width: 270px;
+    z-index: 10;
+    vertical-align:top;
+}
+.page_2 .img_2 {
+    position: absolute;
+    top: 30px;
+    left: 417px;
+    width: 270px;
+    transform: rotateZ(90deg);
+}
+.page_2 .img_3 {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 270px;
+    transform: rotateX(180deg);
+}
+
+.page_2 .img_4 {
+    position: absolute;
+    top: 82px;
+    left: 115px;
+    width: 165px;
+    z-index: 10;
+}
+.page_2 .img_5 {
+    position: absolute;
+    top: 82px;
+    left: 469px;
+    width: 165px;
+    transform: rotateZ(180deg) rotateX(180deg);
+}
+.page_2 .img_6 {
+    position: absolute;
+    top: 82px;
+    right: 53px;
+    width: 165px;
+}
+.page_2 .lineBox {
+    position: absolute;
+    top: 6px;
+    left: 63px;
+
+}
+.lineBox.blue {
+    border:4px solid #00a0ff;
+    border-radius:10px;
+    padding:10px;
+}
+.page_2 .oxContainer {
+    position: absolute;
+    top: 280px;
+    left: 500px;
+}
+.page_2 .oxContainer li {
+    vertical-align:top;
+    position: relative;
+    min-width: 46px;
+    display: inline-flex;
+    display: -ms-inline-flexbox;
+    align-items:center;
+    -ms-flex-align:center;
+    justify-content:center;
+    -ms-flex-pack:center;
+    width:60px;
+    height:60px;
+    line-height:1;
+    border-radius: 8px;
+    text-align: center;
+    text-indent: 0;
+    background-color: #efefef;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.page_2 .oxContainer li ~ li{
+    margin-left:243px;
+
+}
+.page_2 .oxContainer li span{
+    opacity:0;
+    transition:0.5s all;
+    vertical-align:top;
+}
+.page_2 .oxContainer li.on span{
+    opacity:1;
+}
+/* page_3 */
+.page_3 .img_part {
+    margin-top: 15px;
+    height: 304px;
+    text-align:center;
+}
+.page_3 .lineBox {
+    width: 250px;
+    /* height: 340px; */
+    display: inline-block;
+    text-align: center;
+    padding:10px 0;
+}
+.page_3 .lineBox ~ .lineBox {
+    margin-left: 150px;
+}
+.page_3 .img_part img {
+    width: 90px;
+    margin:10px 0;
+}
+
+.page_3 .calBox1 {
+    position: absolute;
+    top: 245px;
+    left: 227px;
+}
+.page_3 .calBox2 {
+    position: absolute;
+    top: 245px;
+    left: 623px;
+}
+.page_4 .lineBox{
+	width: 600px;
+	margin: 0 auto;
+}
+.page_5 .characterList li{margin-bottom:20px;}
+.page_5 .characterList li.complete .answerLine{font-family:NotoB;}
+
+
+		.page-iframe{position:fixed; z-index:1; top:160px; left:55px; overflow:hidden; width:1280px; height:565px; border:0; background:transparent; transform: scale(0.828125) translate(-130px, -20px);}
+		.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.study_guide{right: 0;}
+
+
+		.page_10 .--box{height: 240px; margin-top: 40px; background: url(./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_1.png) no-repeat 50% 50% / contain;}
+		.page_10 [data-ox-obj]{display:inline-block;position: absolute;width: 220px;height: 220px;}
+		.page_10 [data-ox-obj="1"]{top: 50px;left: 405px;}
+		.page_10 [data-ox-obj="2"]{top: 50px;left: 651px;}
+		.page_10 .icon{position:absolute; top:50%; left:50%; width: 90px; height: 90px; margin: -45px 0 0 -45px;}
+
+		.page_20 .--img{position: relative; height: 400px; margin-top: 0; background: url(./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_2.png) no-repeat 50% 50% / contain;}
+		.page_20 .--img .answer{position: absolute;top:0; left: 0; width: 100%;height: 100%;background: url(./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_3.png) no-repeat 50% 50% / contain;}
+		.page_20 .--text{position: absolute;}
+		.page_20 .--text.n1{top: 35px;left: 25px;}
+		.page_20 .--text.n2{top: -25px;left: 105px;}
+
+		.page_30 .bullet.exam{position: absolute; left: 0; top: -45px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/(4-1-4)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<h2><ins class="dot"></ins><span class="ls1_5">
+							도형을 위쪽으로 뒤집었습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하시오.
+						</span></h2>
+						<section>
+							<div class="--box">
+								<div data-ox-obj="1" data-answer="">
+									<div class="icon icon_o" data-ox-target="1"></div>
+								</div>
+								<div data-ox-obj="2">
+									<div class="icon icon_x" data-ox-target="2"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							도형을 오른쪽으로 밀었을 때의 도형을 그려 보시오.
+						</span></h2>
+						<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section class="full">
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_30" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							왼쪽 도형을 움직였더니 오른쪽 도형이 되었습니다. 도형의 이동 방법을 설명해 보시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_4.png" alt="" width="450s">
+							</div>
+							<div class="textAlignC mt_40">
+								<div style="display: inline-block;">
+									<div class="flexListContainer start center">
+										<div class="colorBox skyBlue check">방법</div>
+										<div>
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<span class="bullet exam">예</span>
+													왼쪽 도형을 오른쪽으로 뒤집었습니다.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>도형을 주어진 방향으로 뒤집었을 때의 도형을 그려 보시오.</span></h2>
+						<section>
+							<div class="textAlignC noClick">
+								<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_4_1.png" class="img_1" />
+								<div class="toggle noBox " data-toggle-obj="1"><div class="answer" data-toggle-target="1"><img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_4_2.png" class="img_2" /></div></div>
+							</div>
+
+
+							<div class="buttonContainer">
+								<!-- <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="ox" data-option="hide,answerSound" data-quiz-name="ox1">
+						<h2><ins class="dot orange"></ins><span>다음 도형을 위쪽으로 뒤집었습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하시오.</span></h2>
+						<section>
+							<div class="study_guide" style="top:-40px;"><em>빈칸</em>을 <em>클릭</em>하세요.</div>
+							<div class="img_part">
+								<div class="lineBox sky">
+									<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_5.png" class="img_1" />
+								</div>
+
+								<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_5.png" class="img_2" />
+								<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_5.png" class="img_3" />
+							</div>
+							<ul class="oxContainer">
+								<li data-ox-obj="1"><span class="icon icon_x" data-ox-target="1"></span></li>
+								<li data-ox-obj="2" data-answer><span class="icon icon_o" data-ox-target="2"></span></li>
+							</ul>
+							<div class="buttonContainer">
+								<!-- <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button> -->
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>숫자 '2'가 숫자 '5'가 되도록 뒤집는 방법을 설명해 보시오.</span></h2>
+						<section>
+							<div class="img_part">
+								<div class="lineBox sky">
+									<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_6_1.png" />
+								</div>
+								<div class="lineBox sky">
+									<img src="./images/suh_p_0401_04_0003_401_1/suh_p_0401_04_0003_401_1_6_2.png" />
+								</div>
+							</div>
+							<div class="colorBox skyBlue check calBox1">처음 숫자</div>
+							<div class="colorBox skyBlue check calBox2">움직인 숫자</div>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1"><div class="answer" data-toggle-target="1">'2'를 왼쪽(오른쪽)으로 뒤집으면 '5'가 됩니다.</div></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><span class="blankBox"></span> 안에 알맞는 말을 써넣으시오.</span></h2>
+						<section>
+							<div class="lineBox yellow textAlignC">
+								글씨 '몽'을 위쪽으로 뒤집으면<br>
+								글씨 '<div class="toggle" data-toggle-obj="1">
+									<span class="answer" data-toggle-target="1">움</span>
+								</div>'이 됩니다.
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="ox" data-option="answerSound, hide" data-quiz-name="character">
+						<h2><ins class="dot orange"></ins><span>옳은 말을 한 친구는 누구인지 고르시오.</span></h2>
+						<section>
+							<div class="study_guide">인물의 <em>말풍선</em>을 <em>클릭</em>하세요.</div>
+							<ul class="characterList column">
+								<li data-ox-obj="1" data-ox-target="1" class="">
+									<div class="characterImg boy_1-wrap circle sky left">
+										<div class="charSpriteImg boy_1"></div>
+									</div>
+									<div class="balloon sky left">숫자 9를 아래쪽으로 뒤집으면 <br>숫자 6이 돼.</div>
+								</li>
+								<li data-ox-obj="2" data-ox-target="2" data-answer="">
+									<div class="balloon deeppink right"><span class="answerLine">숫자 9를 아래쪽으로 뒤집은 다음<br> 또 다시 오른쪽으로 뒤집으면<br> 숫자 6이 돼.</span></div>
+									<div class="characterImg girl_1-wrap circle deeppink right">
+										<div class="charSpriteImg girl_1"></div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_10" data-popup-page="10">
+					<div class="popup_contents">
+						도형을 왼쪽으로 뒤집으면 도형의 오른쪽과 왼쪽이 서로 바뀝니다.
+					</div>
+				</li>
+				<li class="solve pop_page_20" data-popup-page="20">
+					<div class="popup_contents">
+						도형을 위쪽으로 뒤집으면 도형의 위쪽과 아래쪽이 서로 바뀝니다.
+					</div>
+				</li>
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						도형을 오른쪽으로 뒤집으면 도형의 오른쪽과 왼쪽이 서로 바뀝니다.
+					</div>
+				</li>
+				<li class="solve pop_page_1" data-popup-page="2">
+					<div class="popup_contents">
+						도형을 위쪽으로 뒤집으면 도형의 위쪽과 아래쪽이 서로 바뀝니다.
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+			const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+			_dapChkBtn.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					let _closestTg = obj.closest(".on");
+					if( _closestTg.querySelector(".page-iframe") ){
+						_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+					}
+				});
+			});
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.popup_pages .buttonContainer{bottom: 20px; right: 40px;}
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{top: -30px; right: 0;}
+
+		.page_2 .--img{position: relative;width: 100%;height: 350px;margin-top: 20px;background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_3.png) no-repeat 50px 90px / 680px auto;}
+		.page_2 .--img .--click{display: none; position: absolute;width: 60px;height: 60px;}
+		.page_2 .--img .--click.n1{display: block;top: 112px;left: 300px;background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_4.png) no-repeat 50% 50% / 38px auto;animation: css_ani_blink 1s ease 0s infinite forwards;}
+		.page_2 .--img .--click.n2{top: 102px;left: 660px;width: 78px;height: 78px;background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_6.png) no-repeat 50% 50% / contain;}
+		.page_2 .--img .--click.complete + .--click{display: block; animation: css_ani_blink 1s ease 0s infinite forwards;}
+		.page_2 .--img .--click.complete{display: none !important; animation: none !important; transition: all .5s ease;}
+		.page_2 .--img .answer{position: absolute;width: 210px;height: 210px;}
+		.page_2 .--img .answer.on{background: transparent; transition: all 1s ease;}
+		.page_2 .--img .answer.n1{top: 36px; left: 50px; background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_5.png) no-repeat 50% 50% / contain; transform: rotateY(180deg);}
+		.page_2 .--img .answer.n2{top: 36px; left: 390px; background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_7.png) no-repeat 50% 50% / contain; transform: rotate(-90deg);}
+		.page_2 .--img .answer.n1.on{top: 35px;left: 390px; transform: rotateX(0deg);}
+		.page_2 .--img .answer.n2.on{top: 30px;left: 740px; transform: rotate(0deg);}
+
+		.page_3 .--img{position: relative;width: 100%;height: 350px;margin-top: 20px;background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_8.png) no-repeat 50px 90px / 680px auto;}
+		.page_3 .--img .--click{display: none; position: absolute;width: 60px;height: 60px;}
+		.page_3 .--img .--click.n1{display: block;top: 103px;left: 296px; width: 78px;height: 78px; background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_6.png) no-repeat 50% 50% / contain;animation: css_ani_blink 1s ease 0s infinite forwards;}
+		.page_3 .--img .--click.n2{top: 112px;left: 686px;background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_4.png) no-repeat 50% 50% / 38px auto;}
+		.page_3 .--img .--click.complete + .--click{display: block; animation: css_ani_blink 1s ease 0s infinite forwards;}
+		.page_3 .--img .--click.complete{display: none !important; animation: none !important; transition: all .5s ease;}
+		.page_3 .--img .answer{position: absolute;width: 210px;height: 210px;}
+		.page_3 .--img .answer.on{background: transparent; transition: all 1s ease;}
+		.page_3 .--img .answer.n1{top: 36px; left: 50px; background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_9.png) no-repeat 50% 50% / contain; transform: rotate(-90deg);}
+		.page_3 .--img .answer.n2{top: 36px; left: 390px; background: url(./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_10.png) no-repeat 50% 50% / contain; transform: rotateY(180deg);}
+		.page_3 .--img .answer.n1.on{top: 35px;left: 430px; transform: rotate(0deg);}
+		.page_3 .--img .answer.n2.on{top: 30px;left: 740px; transform: rotateY(0deg);}
+
+
+		.pop_page_3 .--bg{padding: 120px 120px 0;}
+		.pop_page_3 .--bg img{width: 100%;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title  mb_40">
+			모형 조각을 뒤집고 돌리면 어떻게 되는지 알아봅시다. <ins class="supply_guide inline">꾸러미 7</ins>
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+					<li data-hover="">물음 4</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<h2><ins class="dot"></ins><span class="ls0_5">
+									<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_1.png" alt="" height="40">조각을 오른쪽으로 뒤집고 시계 방향으로 90°만큼 돌렸을 때와 시계 방향으로 90°만큼 돌리고 오른쪽으로 뒤집었을 때 어떻게 될지 생각해 보세요.
+								</span></h2>
+								<section>
+									<div class="textAlignC">
+										<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="3">
+											<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_2.png" alt="" width="320">
+										</button>
+									</div>
+									<div class="mt_10">
+										<div class="toggle" data-toggle-obj="1" style="width: 100%;">
+											<div class="answer textAlignJ" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div class="ls1">
+															조각을 오른쪽으로 뒤집으면 왼쪽에 있던 초록색 조각이 오른쪽으로 이동하고, 이것을 시계 방향으로 90°만큼 돌리면 오른쪽에 있던 초록색 조각이 아래쪽으로 이동할 것 같습니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2><ins class="dot"></ins><span class="ls0_5">
+									<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_1.png" alt="" height="40">조각을 오른쪽으로 뒤집고 시계 방향으로 90°만큼 돌렸을 때와 시계 방향으로 90°만큼 돌리고 오른쪽으로 뒤집었을 때 어떻게 될지 생각해 보세요.
+								</span></h2>
+								<section>
+									<div class="textAlignC">
+										<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="3">
+											<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_2.png" alt="" width="320">
+										</button>
+									</div>
+									<div class="mt_10">
+										<div class="toggle" data-toggle-obj="1" style="width: 100%;">
+											<div class="answer textAlignJ" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div class="ls1">
+															조각을 시계 방향으로 90°만큼 돌리면 왼쪽에 있던 초록색 조각이 위쪽으로 이동하고, 이것을 오른쪽으로 뒤집으면 왼쪽과 오른쪽이 바뀔 것 같습니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+								</section>
+							</li>
+						</ul>
+
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_1.png" alt="" height="40">조각을 오른쪽으로 뒤집고 시계 방향으로 90°만큼 돌려 보세요.
+						</span></h2>
+						<section>
+							<div class="study_guide">
+								<em>화살표</em>를 <em>클릭</em>하세요.
+							</div>
+							<div class="--img textAlignC">
+								<div class="--click n1" data-toggle-obj="1"></div>
+								<div class="--click n2" data-toggle-obj="2"></div>
+								<div class="answer n1" data-toggle-target="1"></div>
+								<div class="answer n2" data-toggle-target="2"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_1.png" alt="" height="40">조각을 시계 방향으로 90°만큼 돌리고, 오른쪽으로 뒤집어 보세요.
+						</span></h2>
+						<section>
+							<div class="study_guide">
+								<em>화살표</em>를 <em>클릭</em>하세요.
+							</div>
+							<div class="--img textAlignC">
+								<div class="--click n1" data-toggle-obj="1"></div>
+								<div class="--click n2" data-toggle-obj="2"></div>
+								<div class="answer n1" data-toggle-target="1"></div>
+								<div class="answer n2" data-toggle-target="2"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							모양 조각을 움직인 방법에 따라 어떻게 되는지 비교하여 이야기해 보세요.
+						</span></h2>
+						<section>
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									모양 조각을 움직인 방법이 같더라도 그 순서가 다르면 모양 조각의 방향이 다를 수 있습니다.
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+			<li class="whole pop_page_3" data-popup-page="3">
+				<div class="popup_contents">
+					<div class="--bg">
+						<img src="./images/suh_p_0401_04_0005_201_1/suh_p_0401_04_0005_201_1_2.png" alt="">
+					</div>
+				</div>
+			</li>
+			</ul>
+		</section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>
