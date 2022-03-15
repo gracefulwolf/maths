@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+.supplies {
+  top: -75px;
+  right: 0;
+}
+
+.imageBox {
+  position: relative;
+  width: 1000px;
+  height: 300px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 132px;
+  background: url(../images/4_4/4_4_6_bg.svg) center / contain no-repeat;
+}
+
+
+
+
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1210px;
+  height: 400px;
+  margin-left: 10px;
+}
+
+.flexBox > * {
+  width: 100%;
+  height: 100%;
+  /* outline: 1px solid tomato; */
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 580px;
+  margin-left: 40px;
+  padding: 40px;
+  letter-spacing: -2.7px;
+  word-break: normal;
+  box-sizing: border-box;
+  background: url(../images/4_4/4_4_6_bg.svg) center / contain no-repeat;
+}
+
+
+
+.dragBox {
+  height: 180px;
+}
+
+
+.rotateContainer {}
+
+.rotate_1 {
+  top: 28px;
+  left: 49px;
+  width: 130px;
+  height: 130px;
+}
+.rotate_2 {
+  top: 46px;
+  left: 230px;
+  width: 176px;
+  height: 90px;
+}
+.rotate_3 {
+  top: 2px;
+  left: 453px;
+  width: 90px;
+  height: 176px;
+}
+
+
+.rotate_1 .puzzle {
+  background: url(../images/4_4/4_4_6_02.svg) center / contain no-repeat;
+}
+.rotate_2 .puzzle {
+  background: url(../images/4_4/4_4_6_03.svg) center / contain no-repeat;
+}
+.rotate_3 .puzzle {
+  background: url(../images/4_4/4_4_6_04.svg) center / contain no-repeat;
+}
+
+.rotateContainer .puzzle > span {
+  position: absolute;
+  font-size: 30px;
+  font-family: 'NotoM';
+  line-height: 1;
+  pointer-events: none;
+}
+.rotateContainer.rotate_1 .puzzle > span {
+  top: -21px;
+  left: 50px;
+}
+.rotateContainer.rotate_2 .puzzle > span {
+  top: -39px;
+  left: 76px;
+}
+.rotateContainer.rotate_3 .puzzle > span {
+  top: 6px;
+  left: 55px;
+}
+.rotateContainer.showRotate .puzzle > span {
+  display: none;
+}
+
+.puzzleBox {
+  position: absolute;
+  top: 290px;
+  left: 82px;
+  width: 440px;
+  height: 140px;
+  background: url(../images/4_4/4_4_6_01.svg) center / contain no-repeat;
+}
+
+
+
+.oxObj {
+  cursor: pointer;
+}
+.complete .oxObj,
+.oxObj.complete {
+  /*pointer-events: none;*/
+}
+.oxObj[data-toggle-obj="1"] {
+  top: 63px;
+  left: 683px;
+}
+.oxObj[data-toggle-obj="2"] {
+  top: 64px;
+  left: 754px;
+}
+.oxObj[data-toggle-obj="3"] {
+  top: 64px;
+  left: 828px;
+}
+.oxObj[data-toggle-obj="1"] .icon.icon_o,
+.oxObj[data-toggle-obj="2"] .icon.icon_o,
+.oxObj[data-toggle-obj="3"] .icon.icon_o {
+  background-image: url("../images/icon_o_orange.svg");
+}
+.oxObj[data-toggle-obj="4"] {
+  top: 64px;
+  left: 978px;
+  width: 190px;
+}
+.oxObj[data-toggle-obj="5"] {
+  top: 129px;
+  left: 680px;
+  width: 310px;
+}
+
+.oxObj[data-toggle-obj="6"] {
+  top: 196px;
+  left: 939px;
+}
+.oxObj[data-toggle-obj="7"] {
+  top: 196px;
+  left: 1040px;
+  width: 126px;
+}
+
+
+.icon.icon_o,
+.icon.icon_x {
+  opacity: 0;
+}
+
+.displayN {
+  display: none;
+}
+.oxContainer.complete .oxObj { pointer-events: none; }
+.oxContainer.complete .oxObj:not([data-answer]) .icon.on,
+.oxContainer.complete .oxObj:not([data-answer]) .icon {
+  opacity: 0;
+}
+.oxContainer.complete .oxObj .icon.bluee {
+  background-image: url(../../include/math/images/quiz/icon_o_blue.svg);
+}

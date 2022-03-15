@@ -1,0 +1,32 @@
+var linkUrls = [
+	[
+		"game_world/game_4_1_1_easy.html", 
+		"game_world/game_4_1_1_normal.html", 
+		"game_world/game_4_1_1_hard.html"
+	],
+	[
+		"game_animal/game_4_1_2_easy.html", 
+		"game_animal/game_4_1_2_normal.html", 
+		"game_animal/game_4_1_2_hard.html"
+	],
+	[
+		"game_jungle/game_4_1_3_easy.html", 
+		"game_jungle/game_4_1_3_normal.html", 
+		"game_jungle/game_4_1_3_hard.html"
+	],
+	[
+		"game_world/game_4_1_4_easy.html", 
+		"game_world/game_4_1_4_normal.html", 
+		"game_world/game_4_1_4_hard.html"
+	],
+	[
+		"game_animal/game_4_1_5_easy.html", 
+		"game_animal/game_4_1_5_normal.html", 
+		"game_animal/game_4_1_5_hard.html"
+	],
+	[
+		"game_jungle/game_4_1_6_easy.html", 
+		"game_jungle/game_4_1_6_normal.html", 
+		"game_jungle/game_4_1_6_hard.html"
+	],
+]

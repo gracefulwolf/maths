@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/4_4_6.css">
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+    <style>
+		html,body,#wrap{background: transparent !important;}
+main{top: 0;}
+#wrap{width:1058px;/*height:495px; */padding:0; box-shadow:none;}
+header,header:before{display:none !important;}
+main .contentsArea{top:0; left:0; right:0; bottom: 0;}
+body, .content-container{width:100%; max-width:1060px; height:640px;}
+.bullet.exam{font-family: YGJAL;}
+.dapCheckBtn{letter-spacing: 0;}
+
+
+.flexBox{position:absolute; top: 40px; left: 200px; width: 600px;}
+.dragBox.top:before,
+.dragBox.top:after{display: none;}
+.puzzleBox{top: 250px; left:90px;}
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+
+          <section class="noUserSelect">
+            <div class="flexBox">
+              <div class="dragContainer">
+                <div class="puzzleBox"></div>
+                <div class="dragBox top">
+                  <div class="js-rotate rotateContainer rotate_1">
+                    <div class="js-reflectXBox"><div class="js-reflectYBox"><div class="js-rotateTarget rotateTarget puzzle"><span>가</span></div></div></div>
+                    <div class="js-rotateButton rotateButton right"></div>
+                    <div class="js-rotateButton rotateButton left"></div>
+                    <div class="js-reflectButton reflectIcon top" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon bottom" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon left" data-type="false"></div>
+                    <div class="js-reflectButton reflectIcon right" data-type="false"></div>
+                  </div>
+                  <div class="js-rotate rotateContainer rotate_2">
+                    <div class="js-reflectXBox"><div class="js-reflectYBox"><div class="js-rotateTarget rotateTarget puzzle"><span>나</span></div></div></div>
+                    <div class="js-rotateButton rotateButton right"></div>
+                    <div class="js-rotateButton rotateButton left"></div>
+                    <div class="js-reflectButton reflectIcon top" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon bottom" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon left" data-type="false"></div>
+                    <div class="js-reflectButton reflectIcon right" data-type="false"></div>
+                  </div>
+                  <div class="js-rotate rotateContainer rotate_3">
+                    <div class="js-reflectXBox"><div class="js-reflectYBox"><div class="js-rotateTarget rotateTarget puzzle"><span>다</span></div></div></div>
+                    <div class="js-rotateButton rotateButton right"></div>
+                    <div class="js-rotateButton rotateButton left"></div>
+                    <div class="js-reflectButton reflectIcon top" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon bottom" data-type="true"></div>
+                    <div class="js-reflectButton reflectIcon left" data-type="false"></div>
+                    <div class="js-reflectButton reflectIcon right" data-type="false"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- <div class="js-chainButtons quizButtons  dapCheckBtn" data-quiz-chain="ox_1, ox_2, ox_3" data-hover=""></div> -->
+
+
+            <div class="js-supplies supplies">
+              <div class="js-suppliesContent suppliesContent"><p>여러 가지 모양<ins class="downButton" data-download-file="4학년_1학기_185.pdf"></ins></p></div>
+              <div class="js-suppliesButton suppliesButton"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        function createRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            reflectXTarget: obj.querySelector('.js-reflectXBox'),
+            reflectYTarget: obj.querySelector('.js-reflectYBox'),
+            degree: 90,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            topReflectButton: obj.querySelector('.js-reflectButton.top'),
+            bottomReflectButton: obj.querySelector('.js-reflectButton.bottom'),
+            leftReflectButton: obj.querySelector('.js-reflectButton.left'),
+            rightReflectButton: obj.querySelector('.js-reflectButton.right'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {},
+              reset: function(Rotate) {}
+            }
+          });
+        }
+
+        var rotateArray = $ts.getEl('.js-rotate').map(createRotate);
+
+
+        // window.$callBack.oxCorrect = function(OX) {
+        //   OX.quiz.totalCompleteCount = 1000;
+        //   var oxObjs = OX.quiz.obj;
+        //   var oxTargets = OX.quiz.target;
+        //
+        //   oxObjs.forEach(function (obj) {
+        //     obj.classList.remove('complete');
+        //   })
+        //   oxTargets.forEach(function (obj) {
+        //     obj.classList.remove('on');
+        //   })
+        //   OX.curTarget[0].classList.add('on');
+        // };
+        // window.$callBack.oxIncorrect = function(OX) {
+        //   OX.quiz.totalCompleteCount = 1000;
+        //   var oxObjs = OX.quiz.obj;
+        //   var oxTargets = OX.quiz.target;
+        //
+        //   oxObjs.forEach(function (obj) {
+        //     obj.classList.remove('complete');
+        //   })
+        //   oxTargets.forEach(function (obj) {
+        //     obj.classList.remove('on');
+        //   })
+        //   OX.curTarget[0].classList.add('on');
+        // };
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          // 페이지 이동 시 초기화
+          //rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
+        }
+      });
+    </script>
+  </body>
+</html>

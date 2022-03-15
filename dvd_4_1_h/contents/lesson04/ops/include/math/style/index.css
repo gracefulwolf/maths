@@ -1,0 +1,481 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* index.css *
+***********************/
+
+/************************* Design *************************/
+/* lesson color */
+/* bg */
+body:before {
+  content: none;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#wrap {
+  text-align: justify;
+}
+#wrap:before {
+  content: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 710px;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+/* textColor */
+.textColor.answer {
+  color: #0060e3;
+}
+.lesson_1 .lessonColorText { color: #eea900; }
+.lesson_2 .lessonColorText { color: #616b9d; }
+.lesson_3 .lessonColorText { color: #af67a2; }
+.lesson_4 .lessonColorText { color: #b169a4; }
+.lesson_5 .lessonColorText { color: #70a73d; }
+.lesson_6 .lessonColorText { color: #e47551; }
+.creative .lessonColorText { color: #e47551; }
+
+/* .textColor.red { color: #e60012; } */
+.textColor.red { color: #C83164; }
+.textColor.blue { color: #008CCF; }
+.textColor.green { color: #00803D; }
+.textColor.black { color: #000000; }
+
+/*********************** Design End ***********************/
+
+
+/* input */
+input,
+ins.inputBox {
+  border-color: #c6c6cc;
+}
+
+/* input - 발문에 사용 */
+ins.inputBox {
+  display: inline-block;
+  position: relative;
+  top: 7px;
+  width: 46px;
+  height: 46px;
+  margin: 0 10px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+}
+
+
+
+
+/* pre-load image */
+.preLoadImage {
+  position: absolute;
+  opacity: 0.001;
+  pointer-events: none;
+}
+
+
+
+
+/* no user select (드래그 기능이 있는 페이지에 사용) */
+.noUserSelect {
+  -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+
+/* 따옴표 */
+quotes:after,
+quotes:before {
+  font-size: inherit;
+  color: inherit;
+  font-family: KopubBatangB;
+}
+quotes:before {
+  content: '‘';
+}
+quotes:after {
+  content: '’';
+}
+
+quotes.double:before {
+  content: '“';
+}
+quotes.double:after {
+  content: '”';
+}
+
+
+
+
+
+
+/* 화살표 */
+.arrow.pink {
+  width: 50px;
+  height: 50px;
+  transition: none;
+  cursor: pointer;
+}
+.arrow.pink:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../../math/images/icon_arrow_pink.svg) center / auto 90% no-repeat;
+  animation: arrow-move .5s ease-in-out infinite;
+  pointer-events: none;
+}
+.arrow.complete:after {
+  animation: none;
+}
+.arrow.pink.left {
+  transform: rotate(90deg);
+}
+.arrow.pink.right {
+  transform: rotate(-90deg);
+}
+.arrow.pink.top {
+  transform: rotate(180deg);
+}
+.arrow.noAni {
+  cursor: default;
+}
+.arrow.noAni:after {
+  animation: none;
+  -webkit-animation: none;
+}
+@keyframes arrow-move { 50% { transform: translateY(4px); }}
+@-o-keyframes arrow-move { 50% { transform: translateY(4px); }}
+@-moz-keyframes arrow-move { 50% { transform: translateY(4px); }}
+@-webkit-keyframes arrow-move { 50% { transform: translateY(4px); }}
+
+
+
+/* 얇은 화살표 */
+.thinArrow.red {
+  position: absolute;
+  height: 4px;
+  border-top: 4px solid #c8245b;
+  box-sizing: border-box;
+}
+.thinArrow.red:after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: -12px;
+  width: 30px;
+  height: 20px;
+  background: url(../images/icon_thinArrow_red.svg) 0 0/ auto 100% no-repeat;
+}
+.thinArrow.red.bottom {
+  transform-origin:top left;
+  transform: rotate(90deg);
+}
+.thinArrow.red.right {
+  transform-origin:top left;
+  transform: rotate(180deg);
+}
+.thinArrow.red.top {
+  transform-origin:top left;
+  transform: rotate(-90deg);
+}
+
+
+/* 예 아이콘 */
+ins.fomula,
+ins.answer,
+ins.exam {
+  display: inline-block;
+  top: 4px;
+  left: 0;
+  padding: 2px 10px 0;
+  font-size: 36px;
+  font-family: BMJUA;
+  border-radius: 10px;
+}
+
+ins.exam {
+  position: absolute;
+  background-color: #DDD;
+}
+ins.exam.circle {
+  position: static;
+  width: 50px;
+  height: 50px;
+  color: #111;
+  flex-shrink: 0;
+  margin: 0px 6px 0 0;
+  vertical-align: top;
+  border-radius: 50%;
+  padding: 0 0 0 9px;
+  line-height: 54px;
+  box-sizing: border-box;
+}
+ins.exam.circle.blue {
+  color: #fff;
+  background-color: #0060e3;
+}
+ins.exam.circle.brown {
+  color: #fff;
+  background-color: #E08439;
+}
+ins.exam.circle.brown2 {
+  color: #fff;
+  background-color: #e18538;
+}
+/* 답 */
+ins.answer {
+  background-color:#ff9e9e;
+}
+/* 식 */
+ins.fomula {
+  background-color:#f5da6c;
+}
+
+ins.balloon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 50px;
+  font-size: 30px;
+  font-family: BMJUA;
+  padding-top: 2px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  background: center / contain no-repeat;
+}
+ins.balloon.line {
+  background-image: url(../../math/images/icon_line_balloon.svg);
+}
+ins.balloon.fill {
+  color: #FFF;
+  background-image: url(../../math/images/icon_fill_balloon.svg);
+}
+
+
+/* 읽기 & 쓰기 */
+ins.read,
+ins.write {
+  display: inline-block;
+  position: relative;
+  width: 118px;
+  height: 50px;
+  vertical-align: middle;
+  background: url(../../math/images/icon_read_write.svg) 0 0 / auto 100% no-repeat;
+}
+ins.read {
+  background-position-x: -118px;
+}
+ins.write {
+  background-position-x: 0;
+}
+
+/* 규칙 */
+ins.rule {
+  display: inline-block;
+  position: relative;
+  width: 109px;
+  height: 45px;
+  vertical-align: middle;
+  background: url(../../math/images/icon_rule.svg) 0 0 / auto 100% no-repeat;
+}
+
+
+
+/* 말풍선 내부 텍스트 */
+.balloonText {
+  font-size: 30px;
+  font-family: MapleStoryL;
+  text-align: center;
+}
+.balloonText input {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+
+
+
+/* 수학 도구들 */
+.mathTools.ruler {
+  min-width: 150px;
+  min-height: 30px;
+  background: url(../../math/images/ruler.svg) center / contain no-repeat;
+}
+.mathTools.ruler_2 {
+  min-width: 88px;
+  min-height: 30px;
+  background: url(../../math/images/ruler_2.svg) center / contain no-repeat;
+}
+.mathTools.ruler_3 {
+  min-width: 88px;
+  min-height: 24px;
+  background: url(../../math/images/ruler_3.svg) center / contain no-repeat;
+}
+.mathTools.ruler.triangle {
+  min-width: 100px;
+  min-height: 100px;
+  background: url(../../math/images/ruler_triangle.svg) center / contain no-repeat;
+}
+
+.mathTools.ruler.triangle_2 {
+  min-width: 120px;
+  min-height: 70px;
+  background: url(../../math/images/ruler_triangle_2.svg) center / contain no-repeat;
+}
+
+.mathTools.compass {
+  min-width: 100px;
+  min-height: 70px;
+  background: url(../../math/images/compass.svg) center / contain no-repeat;
+}
+
+
+.mathTools.protractor {
+  min-width: 130px;
+  min-height: 70px;
+  background: url(../../math/images/protractor.svg) center / contain no-repeat;
+}
+
+
+
+/* 단위(명조체) */
+unit {
+  font-family: kopubBatangB;
+  margin: 0 4px;
+}
+
+
+
+
+
+/* 뷰어의 그리기 도구를 사용하세요 */
+ins.draw {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  padding-top: 2px;
+  padding-left: 36px;
+  padding-right: 18px;
+  font-size: 22px;
+  font-family: BMJUA;
+  letter-spacing: -1.5px;
+  box-sizing: border-box;
+  border: 3px solid #25b1ef;
+  border-radius: 50px;
+  background-color: #FFF;
+}
+ins.draw:before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: -14px;
+  width: 48px;
+  height: 56px;
+  background: url(../../math/images/icon_drawCharacter.svg) center  / contain no-repeat;
+}
+ins.draw:after {
+  content: '뷰어의 그리기 도구를 사용하세요.';
+}
+
+
+
+
+
+
+
+/* 회전 아이콘 */
+.rotateIcon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.rotateIcon.text:before {
+  position: absolute;
+  font-size: 24px;
+}
+.rotateIcon.rotate_90 {
+  background-image: url(../../math/images/icon_rotate_90.svg);
+}
+.rotateIcon.rotate_180 {
+  background-image: url(../../math/images/icon_rotate_180.svg);
+}
+.rotateIcon.rotate_270 {
+  background-image: url(../../math/images/icon_rotate_270.svg);
+}
+.rotateIcon.rotate_360 {
+  background-image: url(../../math/images/icon_rotate_360.svg);
+}
+.rotateIcon.rotate_90.reflect {
+  background-image: url(../../math/images/icon_rotate_reflect_90.svg);
+}
+.rotateIcon.rotate_180.reflect {
+  background-image: url(../../math/images/icon_rotate_reflect_180.svg);
+}
+.rotateIcon.rotate_270.reflect {
+  background-image: url(../../math/images/icon_rotate_reflect_270.svg);
+}
+.rotateIcon.rotate_360.reflect {
+  background-image: url(../../math/images/icon_rotate_reflect_360.svg);
+}
+.rotateIcon.text.rotate_90:before {
+  content: '90°';
+}
+.rotateIcon.text.rotate_180:before {
+  content: '180°';
+}
+.rotateIcon.text.rotate_270:before {
+  content: '270°';
+}
+.rotateIcon.text.rotate_360:before {
+  content: '360°';
+}
+
+
+
+
+
+/* 뒤집기 아이콘 */
+.reflectIcon.top,
+.reflectIcon.bottom {
+  width: 150px;
+  height: 50px;
+}
+.reflectIcon.left,
+.reflectIcon.right {
+  width: 50px;
+  height: 150px;
+}
+
+
+.reflectIcon.top {
+  background: url(../../math/images/icon_reflect_up.svg) center / contain no-repeat;
+}
+.reflectIcon.bottom {
+  background: url(../../math/images/icon_reflect_down.svg) center / contain no-repeat;
+}
+.reflectIcon.left {
+  background: url(../../math/images/icon_reflect_left.svg) center / contain no-repeat;
+}
+.reflectIcon.right {
+  background: url(../../math/images/icon_reflect_right.svg) center / contain no-repeat;
+}

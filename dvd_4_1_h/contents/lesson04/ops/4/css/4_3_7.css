@@ -1,0 +1,125 @@
+
+
+
+@charset "utf-8";
+
+
+
+.imageBox {
+  position: relative;
+  width: 1000px;
+  height: 300px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 132px;
+  background: url(../images/4_3/4_3_7_bg.svg) center / contain no-repeat;
+}
+/*.imageBox.complete .rotateButton {*/
+/*  visibility: hidden;*/
+/*  opacity: 0;*/
+/*}*/
+
+.examBox {
+  position: absolute;
+  top: 0;
+  left: 90px;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+}
+
+
+.rotateContainer {
+  position: absolute;
+  top: 85px;
+  left: 42px;
+  width: 132px;
+  height: 132px;
+}
+
+.figure {
+  background: url(../images/4_3/4_3_7_01.svg) center / contain no-repeat;
+}
+
+
+.clickButton {
+  top: 53px;
+  left: 158px;
+}
+
+[data-toggle-target] {
+  opacity: 1;
+  visibility: visible;
+}
+[data-toggle-target] .rotateButton {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.on .rotateButton {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+.dragBox {
+  position: absolute;
+  top: 0px;
+  right: 72px;
+  width: 734px;
+  height: 293px;
+}
+.dragBox .dragObjComplete {
+}
+.colorBox {
+  position: relative;
+  margin: 0 auto;
+  width: 1080px;
+  height:115px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.dropArea {
+  position:relative;
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  top: 89px;
+  width: 132px;
+  height: 131px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.dragObj span {
+  display: none;
+}
+.dragObj[data-index="1"] {
+  left: 55px;
+  background-image: url("../images/4_3/4_3_7_drag_01.svg");
+}
+.dragObj[data-index="2"] {
+  left: 298px;
+  background-image: url("../images/4_3/4_3_7_drag_02.svg");
+}
+.dragObj[data-index="3"] {
+  left: 546px;
+  background-image: url("../images/4_3/4_3_7_drag_03.svg");
+}
+.dropArea .dragObj {
+  position: static;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+.dropArea span {
+  display: block;
+}

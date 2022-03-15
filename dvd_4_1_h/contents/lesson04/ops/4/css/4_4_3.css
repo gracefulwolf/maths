@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+
+
+
+.supplies {
+  top: -75px;
+  right: 0; /* 팝업 버튼 기본 위치 */
+}
+
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1160px;
+  height: 320px;
+  margin: 50px auto 0;
+}
+.flexBox > * {
+  width: 100%;
+  height: 100%;
+  /* outline: 1px solid tomato; */
+}
+.flexBox > .lineBox {}
+
+.reflectIcon {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  width: 86px;
+  height: 352px;
+  flex-shrink: 0;
+  background: url(../images/icon_reflect_right.svg) center / contain no-repeat;
+}
+.rotateIcon {
+  flex: 0 0 auto;
+  width: 90px;
+  background: url(../images/icon_rotate_90.svg) center / auto 80px no-repeat;
+}
+
+
+.robot {
+  width: 250px;
+  height: 250px;
+  background: url(../images/4_4/4_4_3_robot.svg) center / contain no-repeat;
+}
+.robot.rotate_90 {
+  transform: rotate(90deg);
+}
+.robot.reflect {
+  transform: rotateY(180deg);
+}
+.robot.rotate_90.reflect {
+  transform: rotateY(180deg) rotate(-90deg);
+}
+.page2 .robot.rotate_90.reflect {
+  transform: rotateY(180deg) rotate(90deg);
+}
+
+.sample {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 260px;
+}
+.clickButton[data-toggle-obj="1"] {
+  top: 215px;
+  left: 395px;
+}
+.clickButton[data-toggle-obj="2"] {
+  top: 197px;
+  left: 847px;
+}
+
+
+
+
+/* page2 */
+.page2 .clickButton[data-toggle-obj="1"] {
+  top: 195px;
+  left: 405px;
+}
+.page2 .clickButton[data-toggle-obj="2"] {
+  top: 212px;
+  left: 853px;
+}
