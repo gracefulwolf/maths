@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
+	<script src="../common/libs/musicNote/js/musicNote.js"></script>
+	<!-- 노래익히기 IMPORT INCLUDE -->
+	<link rel="stylesheet" href="../common/libs/musicNote/css/musicNote.css">
+	<link rel="stylesheet" href="css/musicNote.css">
+	<script src="../common/libs/musicNote/js/setting_active.js"></script>
+	<style type="text/css">
+
+		.imgContainer {
+			background: url(./images/suh_p_0401_04_0001_203_1/suh_p_0401_04_0001_203_1_1.png) no-repeat 50% 50% / cover;
+		}
+		.controller {bottom: -50px;}
+		.mediaContainer{bottom: 50px;}
+		.contentsBox {padding: 0;}
+		#syncContainer {height: 584px;}
+		img {height: 585px; width: 100%;}
+		.it-txt{position:absolute; top:20px; left:20px;}
+	</style>
+</head>
+
+<body>
+<!-- 수정필요 : 오디오파일 -->
+<div id="wrap">
+	<header>
+		<div class="title">동시를 읽어 보세요.</div>
+	</header>
+	<main>
+		<div class="contentsBox imgContainer imgChangeContainer">
+			<div id="syncContainer" data-sync-container="1">
+				<div class="syncTarget syncFirst on" data-sync-target="1" data-target-on>
+				</div>
+				<div class="syncTarget" data-sync-target="2">
+					<div class="colorBox beige inline-flex-box a-center">
+						<span>가상 현실 세상</span>
+					</div>
+				</div>
+				<div class="syncTarget" data-sync-target="3">
+					<div class="colorBox beige">
+						<span>가상 현실 안경을 쓰고 자리에 앉으면</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="4">
+					<div class="colorBox beige">
+						<span>우아! 교실이 눈 깜짝할 사이에</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="5">
+					<div class="colorBox beige">
+						<span>고요한 연못으로 바뀌네.</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="6">
+					<div class="colorBox beige">
+						<span>가만히 연못 속을 들여다보면</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="7">
+					<div class="colorBox beige">
+						<span>물속에 커다란 건물이 비치네.</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="8">
+					<div class="colorBox beige">
+						<span>물속에다 어떻게 건물을 지었을까?</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="9">
+					<div class="colorBox beige">
+						<span>궁금해서 손을 대면</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="10">
+					<div class="colorBox beige">
+						<span>잡히는 것 하나 없네.</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="11">
+					<div class="colorBox beige">
+						<span>신기해서 고개를 갸웃 기울이면</span>
+					</div>
+                </div>
+                <div class="syncTarget" data-sync-target="12">
+					<div class="colorBox beige">
+						<span>세상이 전부 옆으로 돌아가네.</span>
+					</div>
+                </div>
+				<div class="syncTarget" data-sync-target="13">
+					<div class="colorBox beige">
+						<span>이게 웬일이지?</span>
+					</div>
+                </div>
+				<div class="syncTarget" data-sync-target="14">
+					<div class="colorBox beige">
+						<span>가상 현실 속 세상은 신나고 재미있어!</span>
+					</div>
+                </div>
+			</div>
+			<div class="mediaContainer" data-media-container="" data-media-control="" data-sync="1">
+				<audio class="" data-media-index="1">
+					<source src="./media/audios/suh_p_0401_04_0001_203_1_1.mp3" title="" type="audio/mp3" />
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function () {
+			window.$run('$rolePlay', function(){
+				if ($ts.getEl('[data-sync]')) {
+
+					$pm.array.sync.push($rolePlay({
+						type: 'target',
+						index: 1,
+						mediaIndex: 1,
+						preObjview: false, // 기본값은 false
+						sync: {
+							container: 1,
+							time: [
+							[0, 0],
+							[0, 2.5],
+							[2.5, 6],
+							[6, 9.5],
+							[9.5, 12],
+							[12, 15.5],
+							[15.5, 19],
+							[19, 22.5],
+							[22.5, 25.5],
+							[25.5, 28],
+							[28, 31.5],
+							[31.5, 34.5],
+							[34.5, 36.5],
+							[36.5, 42]
+							],
+							callbacks: {
+								activeSync: function(targetArray) {},
+								clearSync : function(targetArray) {}
+							}
+						}
+					}));
+
+				}
+			});
+			// mediaControlFn();
+
+		}, false);
+	</script>
+</body>
+</html>

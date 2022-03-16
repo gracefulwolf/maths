@@ -1,0 +1,202 @@
+
+
+@charset "utf-8";
+
+
+.contentsArea h1 {
+  letter-spacing: -3.5px;
+}
+
+
+
+.shapeBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: url(../images/4_finish_arrange/4_finish_arrange_01.svg) center / contain no-repeat;
+}
+.shapeBox > .shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.shapeBox > .shape .icon {
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+}
+.shapeBox > .shape.on .icon {
+  opacity: 1;
+}
+
+
+.shape[data-type="1"] {
+  background: url(../images/4_finish_arrange/4_finish_arrange_shape_1.svg) center / contain no-repeat;
+}
+.shape[data-type="2"] {
+  background: url(../images/4_finish_arrange/4_finish_arrange_shape_2.svg) center / contain no-repeat;
+}
+.shape[data-type="3"] {
+  background: url(../images/4_finish_arrange/4_finish_arrange_shape_3.svg) center / contain no-repeat;
+}
+.shape[data-type="4"] {
+  background: url(../images/4_finish_arrange/4_finish_arrange_shape_4.svg) center / contain no-repeat;
+}
+
+.button {
+  width: 1090px;
+  height: 100px;
+  height: 100px;
+  padding-top: 17px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: 'NSquareREB';
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.button[data-type="1"] {
+  background-color: #ffb8bd;
+  box-shadow: inset 0 -8px 0 0 #f09199;
+}
+.button[data-type="2"] {
+  background-color: #92c0f7;
+  box-shadow: inset 0 -8px 0 0 #6c9bd2;
+}
+.button[data-type="3"] {
+  background-color: #b09edb;
+  box-shadow: inset 0 -8px 0 0 #8275a2;
+}
+.button.pointerOff {
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+.dragBox {
+  position: absolute;
+  top: 180px;
+  left: 40px;
+  width: 300px;
+  height: 280px;
+  border: none;
+}
+
+.rotateContainer {
+  top: 66px;
+  left: 70px;
+  width: 150px;
+  height: 150px;
+}
+.showRotate .rotateButton {
+  top: -30px;
+}
+
+
+.dropArea {
+  position: absolute;
+  width: 168px;
+  height: 168px;
+  /* outline: 1px solid tomato; */
+}
+.dropArea.area_1 {
+  top: 0px;
+  left: 714px;
+}
+.dropArea.area_2 {
+  top: 238px;
+  left: 958px;
+}
+.dropArea.area_3 {
+  top: 452px;
+  left: 714px;
+}
+.dropArea.area_4 {
+  top: 238px;
+  left: 470px;
+}
+
+
+
+.dropArea .rotateContainer {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dropArea .js-reflectButton,
+.dropArea .js-rotateButton {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+.page1 .myShape,
+.page2 .myShape {
+  position: absolute;
+  top: 238px;
+  left: 714px;
+  width: 168px;
+  height: 168px;
+}
+
+
+.quizButtons {
+  right: 280px;
+}
+
+
+/* page1 */
+.page1 {
+  background: url(../images/4_finish_arrange/4_finish_arrange_03.svg) center left 470px / contain no-repeat;
+}
+.page1 .dragBox {
+  background: url(../images/4_finish_arrange/4_finish_arrange_02.svg) center / contain no-repeat;
+}
+
+
+
+
+/* page2 */
+.page2 {
+  background: url(../images/4_finish_arrange/4_finish_arrange_05.svg) center left 470px / contain no-repeat;
+}
+.page2 .dragBox {
+  background: url(../images/4_finish_arrange/4_finish_arrange_04.svg) center / contain no-repeat;
+}
+
+
+
+
+.dropArea.shape[data-reflect="true"] {
+  transform: rotateX(180deg);
+}
+.dropArea.shape[data-reflect="false"] {
+  transform: rotateY(180deg);
+}
+.dropArea.shape[data-rotate="90"] {
+  transform: rotate(90deg);
+}
+.dropArea.shape[data-rotate="180"] {
+  transform: rotate(180deg);
+}
+.dropArea.shape[data-rotate="270"] {
+  transform: rotate(270deg);
+}
+.dropArea.shape[data-rotate="360"] {
+  transform: rotate(360deg);
+}
+
+.basicSlider_slides > [class*="page"].complete .dropArea .js-dragObj {
+  opacity: 0;
+  visibility: hidden;
+}

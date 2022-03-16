@@ -1,0 +1,546 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* quiz.css *
+***********************/
+
+
+
+[data-after-target],
+[data-toggle-target],
+[data-click-target] {
+  opacity: 0;
+  visibility: hidden;
+}
+[data-after-target].on,
+[data-toggle-target].on,
+[data-click-target].on {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*********************** quiz ***********************/
+.quizButtons {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 50%;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, .2);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.quizButtons.hover {
+  /* background-color: tomato; */
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.quizButtons[data-type="answer"],
+.quizButtons.answer {
+  background-color: #ef5656;
+  background-image: url(../../math/images/quiz/icon_answer.svg);
+}
+.quizButtons[data-type="reset"],
+.quizButtons.example[data-type="reset"],
+.quizButtons.example.reset,
+.quizButtons.reset {
+  background-color: #f4ad0f;
+  background-image: url(../../math/images/quiz/icon_reset.svg);
+}
+.quizButtons.example {
+  background-color: #87C447;
+  background-image: url(../../math/images/quiz/icon_example.svg);
+}
+.quizButtons.solve {
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  right: 0px;
+  background-color: #7266d4;
+  background-image: url(../../math/images/quiz/icon_solve.svg);
+  /* z-index: 30; */
+}
+.quizButtons.solve.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quizButtons.solve + .answer,
+.quizButtons.solve + [data-type="answer"],
+.quizButtons.solve + .answer,
+.quizButtons.solve + [data-type="reset"],
+.quizButtons.solve + .example {
+  right: 48px;
+}
+
+
+
+.quizButtons.plus {
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  background-color: #ff7830;
+  background-image: url(../../math/images/quiz/icon_plus.svg);
+}
+.quizButtons.plus.on {
+  opacity: 1;
+  visibility: visible;
+}
+/********************* quiz End *********************/
+
+
+/*********************** input ***********************/
+textarea,
+input {
+  display: block;
+  /* height: 64px; */
+  color: #ee5367;
+  padding: 5px 14px 4px;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #c6c6cc;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, .1);
+  background: #fff url(../../math/images/quiz/icon_input.svg) 10px 10px / auto 1em no-repeat;
+}
+textarea {
+  resize: none;
+  word-break: normal;
+  text-align: justify;
+  overflow: hidden;
+}
+textarea.answerMode,
+input.answerMode {
+  opacity: 1;
+  color: #0060e3;
+  background-image: none;
+}
+textarea.maxWidth,
+input.maxWidth { width: 100%; }
+
+textarea.onFocus,
+textarea.offBg,
+input.onFocus,
+input.offBg {
+  background-image: none;
+}
+textarea.inTable,
+input.inTable {
+  width: 100%;
+  height: 100%;
+}
+textarea.noBox,
+input.noBox {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+input.inlineBox {
+  display: inline-block;
+  text-align: center;
+}
+input.onFocus {
+  letter-spacing: -0.05em !important;
+}
+/********************* input End *********************/
+
+
+/*********************** drawLine ***********************/
+/* drawDot */
+.drawDotBox {
+  font-size: 44px;
+  pointer-events: none;
+}
+.drawDotBox > .dot {
+  position: absolute;
+}
+.drawDotBox > .dot:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 0.26em; */
+  /* height: 0.26em; */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.drawDotBox > .dot.text:before {
+  top: -10px;
+  left: 16px;
+}
+.drawLine.pointerOff,
+.drawLine.pointerOff > *,
+.drawLine.pointerOff .dragObj {
+  pointer-events: none;
+}
+/********************* drawLine End *********************/
+
+
+/*********************** ox ***********************/
+.oxObj {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+.oxObj .icon {
+  width: 100%;
+  height: 100%;
+}
+.icon.icon_o {
+  background-image: url(../../math/images/quiz/icon_o_red.svg);
+}
+.icon.icon_x {
+  background-image: url(../../math/images/quiz/icon_x_red.svg);
+}
+.icon.icon_o.light {
+  background-image: url(../../math/images/quiz/icon_o_red_light.svg);
+}
+.icon.icon_x.light {
+  background-image: url(../../math/images/quiz/icon_x_red_light.svg);
+}
+.icon.icon_tri {
+  background-image: url(../../math/images/quiz/icon_tri_red.svg);
+}
+.icon.icon_tri.light {
+  background-image: url(../../math/images/quiz/icon_tri_red_light.svg);
+}
+.icon.icon_o.blue {
+  background-image: url(../../math/images/quiz/icon_o_blue.svg);
+}
+.icon.icon_x.blue {
+  background-image: url(../../math/images/quiz/icon_x_blue.svg);
+}
+.icon.icon_tri.blue {
+  background-image: url(../../math/images/quiz/icon_tri_blue.svg);
+}
+ins.icon.icon_o,
+ins.icon.icon_x,
+ins.icon.icon_tri {
+  opacity: 1;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+}
+.oxObj .icon.on {
+  -webkit-animation: iconZoomIn 0.5s;
+  -moz-animation: iconZoomIn 0.5s;
+  -ms-animation: iconZoomIn 0.5s;
+  animation: iconZoomIn 0.5s;
+}
+.oxObj.complete .icon {
+  pointer-events: none;
+}
+/********************* ox End *********************/
+
+
+/*********************** sign ***********************/
+.sign_circle {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #008dd0;
+  box-sizing: border-box;
+  margin: 0 30px;
+  cursor: pointer;
+}
+.sign_circle symbol {
+  display: none;
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.sign_circle symbol.on {
+  display: block;
+}
+/*ox*/
+.sign_oxBox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.sign_oxBox .icon {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.sign_oxBox .icon.on {
+  display: block;
+}
+.complete .sign_circle,
+.complete .sign_oxBox {
+  pointer-events: none;
+}
+.signPop {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 126px;
+  opacity: 0;
+  visibility: hidden;
+  padding: 3px 17px 44px 2px;
+  background: url(../images/quiz/sign_balloon.svg) center/contain no-repeat;
+  box-sizing: border-box;
+}
+.signPop.bottom {
+  padding: 40px 17px 12px 2px;
+  background: url(../images/quiz/sign_balloon_bottom.svg) center/contain no-repeat;
+}
+.signPop.on {
+  opacity: 1;
+  visibility: visible;
+}
+.signPop > div {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.signPop > div:not(:last-of-type) {
+  border-right: 3px solid #DCDCDC;
+}
+.signPop > div symbol {
+  margin: 0;
+}
+.signPop > div .icon {
+  opacity: 1;
+}
+
+.signPop .signSymbol { position: relative; }
+/*********************** sign End ***********************/
+
+
+/*********************** toggle ***********************/
+.toggleObj {
+  position: absolute;
+  min-height: 1.3em;
+  background-color: #fff;
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* box-shadow: 0px 3px 5px rgba(0, 0, 0, .2); */
+}
+.toggleObj.complete {
+  opacity: 0;
+  /* visibility: hidden; */
+}
+
+.toggleAnswer {
+  position: relative;
+  display: inline-block;
+  /* opacity: 0; */
+}
+.toggleAnswer.on {
+  -webkit-animation: showAnswer 0.5s;
+  -ms-animation: showAnswer 0.5s;
+  animation: showAnswer 0.5s; 
+}
+@-webkit-keyframes showAnswer {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-ms-keyframes showAnswer {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes showAnswer {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+
+
+/* toggleObj - space */
+.toggleObj.space {
+  background: #2d4d9e url(../../math/images/quiz/toggle_bg_stars.svg) center / auto repeat;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 0px rgb(68 91 218 / 30%);
+}
+.toggleObj.space:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../math/images/quiz/toggle_bg_light.svg) 0 0 / contain no-repeat;
+  pointer-events: none;
+}
+.toggleObj.space.complete:after {
+  content: none;
+}
+.toggleObj.space:before {
+  background: url(../../math/images/quiz/toggle_icon_rocket.svg) center / 50px auto no-repeat;
+  -webkit-animation: rocketMoving 1s infinite;
+  -ms-animation: rocketMoving 1s infinite;
+  animation: rocketMoving 1s infinite; 
+  pointer-events: none;
+}
+.toggleObj.hover.space:before {
+  -webkit-animation: rocketFlying 1s infinite;
+  -ms-animation: rocketFlying 1s infinite;
+  animation: rocketFlying 1s infinite; 
+}
+@-webkit-keyframes rocketMoving {
+  50% {
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
+@-ms-keyframes rocketMoving {
+  50% {
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
+@keyframes rocketMoving {
+  50% {
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
+@-webkit-keyframes rocketFlying {
+  50% { background-position: calc(50% + 70px) -70px; }
+  51% { background-position: calc(50% - 70px) calc(100% + 70px); }
+}
+@-ms-keyframes rocketFlying {
+  50% { background-position: calc(50% + 70px) -70px; }
+  51% { background-position: calc(50% - 70px) calc(100% + 70px); }
+}
+@keyframes rocketFlying {
+  50% { background-position: calc(50% + 70px) -70px; }
+  51% { background-position: calc(50% - 70px) calc(100% + 70px); }
+}
+/********************* toggle End *********************/
+
+
+
+/*********************** dragDrop ***********************/
+.isDragging {
+  z-index: 10;
+}
+
+.js-dragObj {
+  position: absolute;
+  cursor: pointer;
+}
+
+.dragResetButton {
+  position: absolute;
+  bottom: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff9603;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../math/images/quiz/icon_replay.svg);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, .2);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+.dragResetButton.hover {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.dragResetButton.off {
+  pointer-events: none;
+}
+.quizButtons + .dragResetButton {
+  right: 48px;
+}
+.quizButtons.solve + .quizButtons + .dragResetButton {
+  right: 96px;
+}
+/********************* dragDrop END *********************/
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************** dragLine ***********************/
+.dragLineObj, .dragLineArea {
+  width: 50px;
+  height: 50px;
+}
+[data-quiz="dragLine"] .svgContainer line {
+  stroke: #0060e3;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+/********************* dragLine End *********************/

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:6px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+	/* 개별 */
+	@keyframes css-ani-arrow-leftToRight{
+		0%,100%{transform:translateX(0);}
+		50%{transform:translateX(-10px);}
+	}
+	@keyframes css-ani-arrow-leftToRight2{
+		0%,100%{transform:translateX(0) rotate(180deg);}
+		50%{transform:translateX(-10px) rotate(180deg);}
+	}
+
+
+	.page_1 .--img{width: 100%;height: 400px;margin: -20px auto 0;background: url(./images/4_3_1.svg) no-repeat 50px 50% / 850px auto;}
+	.page_1 .icon.icon_o,
+	.page_1 .icon.icon_x{position: absolute; top: 50%; left: 50%; width: 90px; height: 90px; margin: -45px 0 0 -45px;}
+	.page_1 [data-ox-obj]{position: absolute;width: 250px;height: 250px;}
+	.page_1 [data-ox-obj="1"]{top: 50px;left: 425px;}
+	.page_1 [data-ox-obj="2"]{top: 50px;left: 695px;}
+
+	.page_2 .--img{position:relative;width: 620px;height: 440px;background: url(./images/4_3_2.svg) no-repeat 90px 0px / auto 440px;}
+	.page_2 .--finger.n1{position: absolute;top: 40px;left: 300px;}
+	.page_2 .--finger.n2{position: absolute;top: 205px;left: 130px;}
+	.page_2 .--finger.n3{position: absolute;top: 205px;left: 460px;}
+	.page_2 .--finger.n4{position: absolute;top: 370px;left: 295px;}
+	.page_2 .--finger.complete{display: none;}
+	.page_2 .--img .answer.n1{position: absolute;top: 0;left: 90px;width: 440px;height: 109px;background: url(./images/4_3_2_01.svg) no-repeat 18px 18px / auto 404px;}
+	.page_2 .--img .answer.n2{position: absolute;top: 0;left: 90px;width: 110px;height: 439px;background: url(./images/4_3_2_01.svg) no-repeat 18px 18px / auto 404px;}
+	.page_2 .--img .answer.n3{position: absolute;top: 0;left: 420px;width: 110px;height: 439px;background: url(./images/4_3_2_01.svg) no-repeat -312px 18px / auto 404px;}
+	.page_2 .--img .answer.n4{position: absolute;top: 330px;left: 90px;width: 440px;height: 109px;background: url(./images/4_3_2_01.svg) no-repeat 18px -312px / auto 404px;}
+	.page_2 .--text{position: absolute;font-size: 30px;}
+	.page_2 .--text.n1{top: 100px;left: 285px;}
+	.page_2 .--text.n2{top: 165px;left: 190px;}
+	.page_2 .--text.n3{top: 165px;left: 387px;}
+	.page_2 .--text.n4{top: 300px;left: 286px;}
+
+	.page_3 .--img{position:relative; width:100%; height:320px; margin-top: 30px; background: url(./images/4_3_3.png) no-repeat 50% 50% / contain;}
+	.page_3 .--img .answer.n1{position: absolute;top: 41px;left: 165px;width: 236px;height: 236px;background: url(./images/4_3_3_answer.svg) no-repeat 50% 50% / contain;}
+
+	.page_4 .--img{position:relative;width:100%;height: 180px;background: url(./images/4_3_4.svg) no-repeat 50% 50% / contain;}
+	.page_4 .--box{position: relative;}
+	.page_4 .--char.sky{top: 10px;left: 140px;}
+	.page_4 .--balloon.sky{top: 25px;left: 340px;}
+	.page_4 .--char.deeppink{top: 5px;left: 660px;}
+	.page_4 .--balloon.deeppink{top: 25px;left: 140px;}
+
+	.page_5 .--img{position:relative;width:100%;height: 250px;margin-top: 20px;background: url(./images/4_3_5.svg) no-repeat 50% 50% / contain;}
+
+	.pop_page_5 .--img{width: 100%; height: 120px; margin: 0 0 20px; background: url(./images/4_3_5_solve.svg) no-repeat 50% 50% / contain;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">평면도형을 돌려 볼까요</span>
+		<span class="sub-page">66~67쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox2">
+				<h2><ins class="number">1</ins><span>
+					모양 조각을 시계 방향으로 90˚만큼 돌린 모양으로 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하세요. <div class="supply_guide inline">준비물 131쪽</div>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div data-ox-obj="1">
+							<div class="icon icon_x" data-ox-target="1"></div>
+						</div>
+						<div data-ox-obj="2"  data-answer="">
+							<div class="icon icon_o" data-ox-target="2"></div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					도형을 시계 방향으로 주어진 각도만큼 돌렸을 때의 도형을 각각 그려 보세요. <div class="supply_guide inline">준비물 131쪽</div>
+				</span></h2>
+				<section>
+					<div class="flexListContainer center">
+						<div class="--img">
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n2" data-toggle-obj="2" data-hover=""></span>
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n3" data-toggle-obj="3" data-hover=""></span>
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n4" data-toggle-obj="4" data-hover=""></span>
+							<div class="answer n1" data-toggle-target="1"></div>
+							<div class="answer n2" data-toggle-target="2"></div>
+							<div class="answer n3" data-toggle-target="3"></div>
+							<div class="answer n4" data-toggle-target="4"></div>
+							<div class="--text n1">360°</div>
+							<div class="--text n2">270°</div>
+							<div class="--text n3">90°</div>
+							<div class="--text n4">180°</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					모양 조각을 시계 반대 방향으로 180˚만큼 돌렸을 때의 도형을 그려 보세요. <div class="supply_guide inline">준비물 131쪽</div>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="answer n1" data-toggle-obj="1" data-toggle-target="1"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<h2><ins class="number">4</ins><span>
+							<ins class="icon_bogi"></ins>에서 알맞은 도형을 골라 <ins class="blankBox"></ins> 안에 기호를 써넣으세요.
+						</span></h2>
+						<section>
+							<div class="bogiContainer textAlignC">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<div class="--img"></div>
+								</div>
+							</div>
+							<div class="--box mt_20">
+								<div class="characterImg boy_1-wrap circle sky --char">
+									<div class="charSpriteImg boy_1"></div>
+								</div>
+								<div class="balloon sky left ctTail textAlignC --balloon">
+									가 도형을 시계 방향으로<br>
+									90°만큼 돌리면 <div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											나
+										</div>
+									</div> 도형이 돼.
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="41" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<h2><ins class="number">4</ins><span>
+							<ins class="icon_bogi"></ins>에서 알맞은 도형을 골라 <ins class="blankBox"></ins> 안에 기호를 써넣으세요.
+						</span></h2>
+						<section>
+							<div class="bogiContainer textAlignC">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<div class="--img"></div>
+								</div>
+							</div>
+							<div class="--box mt_20">
+								<div class="balloon deeppink right ctTail textAlignC --balloon">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											나
+										</div>
+									</div> 도형을 시계 반대 방향으로<br>
+									180˚만큼 돌리면 라 도형이 돼.
+								</div>
+								<div class="characterImg girl_1-wrap circle deeppink --char">
+									<div class="charSpriteImg girl_1"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="42" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					세 자리 수가 적힌 카드를 시계 반대 방향으로 180˚만큼 돌렸을 때의 수를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+					</div>
+					<div class="textAlignC mt_40">
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								152
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve " data-popup-page="1">
+			<div class="popup_contents">
+				모양 조각을 시계 방향으로 90˚만큼 돌리면 도형의 위쪽이 오른쪽으로 바뀝니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="2">
+			<div class="popup_contents">
+				도형의 위쪽이 어느 쪽으로 바뀌는지 생각하며 주어진 각도만큼 돌렸을 때의 도형을 각각 그립니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="41">
+			<div class="popup_contents">
+				가 도형을 시계 방향으로 90˚만큼 돌리면 나 도형이 됩니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="42">
+			<div class="popup_contents">
+				<p class="ls1_5">나 도형을 시계 반대 방향으로 180˚만큼 돌리면 라 도형이 됩니다.</p>
+			</div>
+		</li>
+		<li class="solve pop_page_5" data-popup-page="5">
+			<div class="popup_contents">
+				<div class="--img">
+
+				</div>
+				<p class="ls1">251이 적힌 카드를 시계 반대 방향으로 180˚만큼 돌리면 152가 됩니다.</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+
+</html>

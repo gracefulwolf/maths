@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts.css" />
+		<link rel="stylesheet" href="../common/css/OverlayScrollbars.min.css" />
+
+		<link rel="stylesheet" href="../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../common/ui/css/theme04.css" />
+
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/content.css" />
+	</head>
+	<body>
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<img src="./images/mm_41_4_01_02_01/bg.png" alt="">
+				</div>
+
+				<div id="btn-popup-01" class="button ico-video-03" style="left: 99px; top:450px;"></div>
+				
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button btn-more-step more-01"><span>한 걸음 더</span></div>
+				</div>
+
+			</div>
+
+			<!-- 팝업 :: 한 걸음 더 -->
+			<div class="popup popup-more-step" data-ui="popup" data-option='{"btn":".btn-more-step.more-01"}'>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-step more-01"><span>한 걸음 더</span></div>
+					<div class="box-sub">
+						<span>퍼즐 조각의 움직임 이해하기</span>
+					</div>
+				</div>
+
+				<div class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div class="q-box">
+						<div class="bullet-text dot-blue">
+							<span>퍼즐의 숫자가 어떻게 정렬되어 있나요?</span>
+						</div>
+
+						<div class="a-box">
+							<div id="quiz-01" class="quiz quiz-check type-box" data-ui="quiz-check" data-option='{"answer":[]}'>
+								<div class="check-list">
+									<div class="check-item content-con" data-answer-part-idx="0">
+										<span class="answer-text">
+											10 뒤의 숫자가 순서에 맞지 않습니다.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="q-box">
+						<div class="bullet-text dot-blue">
+							<span>퍼즐을 완성하려면 어떻게 해야 할까요?</span>
+						</div>
+
+						<div class="a-box">
+							<div id="quiz-02" class="quiz quiz-check type-box" data-ui="quiz-check" data-option='{"answer":[]}'>
+								<div class="check-list">
+									<div class="check-item content-con" data-answer-part-idx="1">
+										<span class="answer-text">
+											숫자 11을 왼쪽으로 밀고, 12를 위쪽으로 밀어야 합니다.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-idx="0" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+						<div class="btn-answer-part" data-idx="1" data-option='{"quiz":["#quiz-02"], "quizGroup":["0"]}'></div>
+					</div>
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+					</div>
+
+				</div>
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+
+		</div>
+
+        <div class="fullpopup-container" data-ui="popup" data-option='{"btn":"#btn-popup-01"}'>
+			<div id="video-01" class="video-player" data-ui="videoplayer" data-option='{"fileName":"mm_41_4_01_02_01_ani"}'>
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+		</div>
+		
+		<script src="../common/ui/js/uiData.js"></script>
+		<script src="../common/ui/js/uiDataMs.js"></script>
+		<script src="./js/mm_41_4_01_02_01.js"></script>
+
+		<script src="../common/js/libs/polyfill.min.js"></script>
+		<script src="../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../common/js/libs/materialize.js"></script>
+		<script src="../common/js/libs/TweenMax.min.js"></script>
+		<script src="../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../common/js/libs/class.js"></script>
+		<script src="../common/js/common.js"></script>
+		<script src="../common/js/app/mindmap.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/app/angle.js"></script>		
+		<script src="../common/js/cornerbase.js"></script>
+		<script src="../common/js/videoplayer.js"></script>
+		<script src="../common/js/quiz/quizMain.js"></script>
+		<script src="../common/js/quiz/quizCheck.js"></script>
+		<script src="../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../common/js/quiz/quizInput.js"></script>
+		<script src="../common/js/quiz/quizDraggable.js"></script>
+		<script src="../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../common/js/content.js"></script>
+
+
+	</body>
+
+</html>

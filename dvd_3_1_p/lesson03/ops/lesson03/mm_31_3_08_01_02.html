@@ -20,16 +20,15 @@
 		<!-- restyle -->
 		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
 		<style type="text/css">
-			.restyle .title-box-top {
-				display: none;
-				padding: 0;
-				margin: 0;
-			}
+			.title-box-top,
+			.title-h1,
+			.ui-container{display: none;margin: 0;padding: 0;}
 			.restyle .content-container {
 				width: 100%;
 				height: 720px;
 			}
 			.restyle .math-play .scroll-box.title-line-1.bottom-has-btn {height: 100%;}
+			.math-play .scroll-box {height: 100%;}
 			.restyle .ico-box-text-02 {
 				position: relative;
 				display: inline-flex;
@@ -58,24 +57,17 @@
 			.restyle .btns-bottom-right > .button.btn-ex:before {
 				content: "예 보기";
 			}
-			.restyle .btns-bottom-right > .button.btn-retry {
-				padding-left: 30px;
-			}
 			.restyle .btns-bottom-right > .button.btn-retry::before {
 				content: "다시하기";
 			}
-			/* .scroll-bg img {
-				width: 600px;
-				height: auto;
+			.btns-bottom-right > .button.btn-retry.type-re {
+				padding-left: 24px !important;
+				background-color: #216cbe !important;
 			}
-			.scroll-inner {
-				margin: 30px auto 0;
-				text-align: center;
+			.btns-bottom-right > .button.btn-ex {
+				padding-left: 38px !important;
+				background-color: #30ade4 !important;
 			}
-			.pos-0-0 {
-				left: 50%;
-				transform: translateX(-50%);
-			} */
 		</style>
 	</head>
 	<body class="restyle">
@@ -454,7 +446,7 @@
 					
 					<!-- 우측 하단 영역 고정 버튼 -->
 					<div class="btns-bottom-right check-btns">
-						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-retry toggle remove type-re"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
 					</div>
 

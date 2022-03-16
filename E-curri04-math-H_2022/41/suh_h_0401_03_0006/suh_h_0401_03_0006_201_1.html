@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.--bg-green{display: inline-block;padding: 12px 2px;border-radius: 50%;background: #cee492;}
+		.--bg-sky{display: inline-block;padding: 12px 13px;border-radius: 50%;background: #d4f3f6;}
+
+		.page_2 .tableContainer table td{height: 72px;}
+		.page_2 .tableContainer table td .toggle{width: 100%; padding: 13px 0;}
+
+		.page_4 .math_calc_table .rowLine{top:0; z-index: 1;}
+		.page_4 .--dotted1{left:25%}
+		.page_4 .--dotted2{left:50%}
+		.page_4 .--dotted3{left:75%}
+		.page_4 .--dotted4{left:100%}
+		.page_4 .bg{background: #eee;}
+		.page_4 .--innerWrap{position: relative; padding-left: 50px;}
+		.page_4 .--mathCalcTbl,
+		.page_4 .--mathCalcTbl table{width: 270px;}
+		.page_4 .--mathCalcTbl td{height: 54px;}
+		.page_4 .--pink{background: #f7c1c9;}
+		.page_4 .--sky{background: #d4f3f6;}
+		.page_4 .--text{position: absolute; transition: all .3s ease;}
+		.page_4 .--text.on{opacity: 1 !important;}
+		.page_4 .--text.--step1.x2{top: 207px;left: 340px;opacity: 0;}
+		.page_4 .--text.--step2.x2{top: 317px;left: 340px;opacity: 0;}
+		.page_4 .--finger .click-finger-Btn{display: none; opacity: 0; animation: css_ani_blink 1s linear infinite forwards;}
+		.page_4 .--finger .click-finger-Btn.complete{display: none !important;}
+		.page_4 .--finger .click-finger-Btn:nth-child(1),
+		.page_4 .--finger .click-finger-Btn.complete + .click-finger-Btn{display: block;}
+		.page_4 .click-finger-Btn.x1{top:100px; left: 320px;}
+		.page_4 .click-finger-Btn.x2{top:340px; left: 320px;}
+
+		.page_4 .--toggleTg3{position: absolute;top: 0px;right: 150px;background: url(./images/suh_h_0401_03_0006_201_1.png) no-repeat 50% 50% / 100% 100%;padding: 20px 40px 40px 30px; opacity: 0; transition: all .3s ease 2s;}
+		.page_4 .--stepBox2.on .--toggleTg3{opacity: 1; right: 50px;}
+
+		.page_4 .--step1,
+		.page_4 .--step2{opacity: 0;}
+		.page_4 .--stepBox1.on .--step1{opacity: 1;}
+		.page_4 .--stepBox1.on .--step1.x1{transition: all .3s ease 0s;}
+		.page_4 .--step1.x2.on{transition: all .3s ease .5s;}
+		.page_4 .--stepBox1.on .--step1.x3{transition: all .3s ease 1s;}
+		.page_4 .--stepBox1.on .--step1.x4{transition: all .3s ease 1.5s;}
+		.page_4 .--stepBox2.on .--step2{opacity: 1;}
+		.page_4 .--stepBox2.on .--step2.x1{transition: all .3s ease 0s;}
+		.page_4 .--stepBox2.on .--step2.x2{transition: all .3s ease .5s;}
+		.page_4 .--stepBox2.on .--step2.x3{transition: all .3s ease 1s;}
+		.page_4 .--stepBox2.on .--step2.x4{transition: all .3s ease 1.5s;}
+		.page_4 .--stepBox3.on .--step1,
+		.page_4 .--stepBox3.on .--step2{background: #fff !important;}
+		.page_4 .--stepBox3.on .--step3-redT{color:#e94d40;}
+		.page_4 .--stepBox3.on .--step3-blackT{color:#000 !important;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">선물을 모두 몇 상자 포장할 수 있는지 알아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+				<li data-hover="">물음 5</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						구하려는 것을 나눗셈식으로 나타내 보세요.
+					</span></h2>
+					<section>
+						<div class="textAlignC">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									800÷25＝□
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						표를 완성해 보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown">
+							<table>
+								<tbody>
+									<tr>
+										<th>포장한 상자</th>
+										<th>사용한 리본(cm)</th>
+										<th>남은 리본(cm)</th>
+									</tr>
+									<tr>
+										<th>20상자</th>
+										<td>
+											25×<span class="--bg-sky">20</span>＝<span class="--bg-green">500</span>
+										</td>
+										<td>
+											800－<span class="--bg-green">500</span>＝300
+										</td>
+									</tr>
+									<tr>
+										<th>30상자</th>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="21">
+												<div class="answer" data-toggle-target="21">
+													25×30＝750
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="22">
+												<div class="answer" data-toggle-target="22">
+													800－750＝50
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						30상자를 포장하고 남은 리본으로 몇 상자 더 포장할 수 있나요?
+					</span></h2>
+					<section>
+						<div class="textAlignC">
+							<div class="toggle" data-toggle-obj="31">
+								<div class="answer" data-toggle-target="31">
+									2상자
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</li>
+
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						800÷25를 계산하는 방법을 알아보세요.
+					</span></h2>
+					<section class="full --stepBox3" data-toggle-target="3">
+						<div class="--innerWrap pt_20 --stepBox2" data-toggle-target="2">
+							<div class="--finger">
+								<span class="popBtn click-finger-Btn css_ani_blink x1" data-toggle-obj="1" data-hover=""></span>
+								<span class="popBtn click-finger-Btn css_ani_blink x2" data-toggle-obj="2" data-hover=""></span>
+							</div>
+							<div class="math_calc_table type2 col5 --mathCalcTbl mt_20 --stepBox1" data-toggle-target="1">
+								<table>
+									<colgroup>
+										<col>
+										<col style="width:11px;">
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step2 x1 redT bg">2</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step1 x1 blueT bg">3</td>
+											<td class="--step1 x1 blueT bg">0</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>25</td>
+											<td class="line-td"></td>
+											<td>8</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td class="--step1 x3 blueT bg">7</td>
+											<td class="--step1 x3 blueT bg">5</td>
+											<td class="--step1 x3 blueT bg">0</td>
+										</tr>
+										<tr class="line">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step1 x4">5</td>
+											<td class="--step1 x4">0</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step2 x3 redT bg">5</td>
+											<td class="--step2 x3 redT bg">0</td>
+										</tr>
+										<tr class="line">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step2 x4">0</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="lineDotted line_1"></div>
+								<div class="lineDotted line_2"></div>
+								<div class="lineDotted line_3"></div>
+								<div class="lineDotted line_4"></div>
+							</div>
+							<div class="--text --step1 x2" data-toggle-target="1">··· 25×<span class="blueT">30</span></div>
+							<div class="--text --step2 x2" data-toggle-target="2">··· 25×<span class="redT">2</span></div>
+
+							<div class="--toggleTg3 mt_20">
+								<div class="math_calc_table type2 col5 --mathCalcTbl mt_20">
+									<table>
+										<colgroup>
+											<col>
+											<col style="width:11px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="blueT">3</td>
+												<td class="redT">2</td>
+											</tr>
+											<tr class="line-tr">
+												<td></td>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>25</td>
+												<td class="line-td"></td>
+												<td>8</td>
+												<td>0</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>7</td>
+												<td>5</td>
+												<td>0</td>
+											</tr>
+											<tr class="line">
+												<td></td>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>5</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>5</td>
+												<td>0</td>
+											</tr>
+											<tr class="line">
+												<td></td>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>0</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="lineDotted line_1"></div>
+									<div class="lineDotted line_2"></div>
+									<div class="lineDotted line_3"></div>
+									<div class="lineDotted line_4"></div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div> -->
+					</section>
+				</li>
+
+				<li class="page_5" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span class="ls1">
+						달걀을 담은 보관함은 모두 몇 개인지 말하고, 어림한 결과와 비교해 보세요.
+					</span></h2>
+					<section>
+						<div class="pl_80">
+							<div class="toggle" data-toggle-obj="41">
+								<div class="answer" data-toggle-target="41">
+									6개
+								</div>
+							</div>
+						</div>
+						<div class="pl_80">
+							<div class="toggle mt_10" data-toggle-obj="42">
+								<div class="answer" data-toggle-target="42">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												어림한 5개와 1개만큼 차이가 납니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

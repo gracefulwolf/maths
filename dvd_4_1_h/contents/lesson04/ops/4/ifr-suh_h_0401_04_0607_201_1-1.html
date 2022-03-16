@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+	<link rel="stylesheet" href="../include/math/style/master.css">
+	<link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+	<link rel="stylesheet" href="../include/math/style/rotete.css">
+	<link rel="stylesheet" href="./css/4_3_3.css">
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+	<style>
+/* html{transform: scale(0.9059); transform-origin: 0 0;} */
+html,body,#wrap{background: transparent !important;}
+main{top: 0;}
+#wrap{width:1058px;height:495px; padding:0; box-shadow:none;}
+header,header:before{display:none !important;}
+main .contentsArea{top:0; left:0; right:0; bottom: 0;}
+body, .content-container{width:100%; max-width:1060px; height:640px;}
+.bullet.exam{font-family: YGJAL;}
+.dapCheckBtn{letter-spacing: 0;}
+.canvas_1{top: 30px; left: 600px; }
+.drawBtn{top:0; right:0;}
+.pen_tool{top:3px; right:60px;}
+.imageBox{height: 360px; margin-top: 40px;}
+.blankBox{top: 210px; left: 750px; height: 80px;}
+.answerImage{top: 213px; left: 753px; border-radius: 10px;}
+
+.dragBox{top: 40px;}
+.dragBox:before{display: none;}
+.dragBox:after{display: none;}
+.lineBox{top: 40px;}
+.rotateIcon{top: 170px;}
+	</style>
+  </head>
+	<body class="lesson_4">
+	<div id="wrap">
+	  <header>
+	  </header>
+	  <main class="act">
+		<div class="contentsArea">
+		  <section class="noUserSelect">
+			<div class="basicSlider" data-slide-container="main">
+			  <ul class="basicSlider_slides" data-slides="main">
+				<li class="page1" data-quiz="dragDrop" data-option="copy" data-quiz-name="drag_1">
+					<div style="transform-origin: 0 0; transform:scale(0.9);">
+						<div class="js-dropArea lineBox yellow area_2" data-click-target="1"></div>
+						<div class="js-dropArea lineBox yellow area_1" data-click-target="1"></div>
+						<div class="rotateIcon text rotate_90 reflect"></div>
+						<div class="rotateIcon text rotate_90"></div>
+						<div class="dragBox top">
+							<div class="js-rotate js-dragObj rotateContainer" data-name="drag-obj">
+							<div class="js-rotateTarget rotateTarget arrowImage"></div>
+							<div class="js-rotateButton rotateButton right"></div>
+							<div class="js-rotateButton rotateButton left"></div>
+							</div>
+						</div>
+					</div>
+					<div class="js-chainButtons dapCheckBtn" data-click-obj="1" data-quiz-chain="drag_1" data-hover=""></div>
+				</li>
+				<li class="page2" data-quiz="dragDrop" data-option="copy" data-quiz-name="drag_2">
+				  <ul class="list dot titleIndent">
+					<li>시계 반대 방향과 시계 방향으로 180°만큼 돌려 보세요.</li>
+				  </ul>
+				  <div class="js-dropArea lineBox yellow area_2" data-click-target="1"></div>
+				  <div class="js-dropArea lineBox yellow area_1" data-click-target="1"></div>
+				  <div class="rotateIcon text rotate_180 reflect"></div>
+				  <div class="rotateIcon text rotate_180"></div>
+				  <div class="dragBox top">
+					<div class="js-rotate js-dragObj rotateContainer" data-name="drag-obj">
+					  <div class="js-rotateTarget rotateTarget arrowImage"></div>
+					  <div class="js-rotateButton rotateButton right"></div>
+					  <div class="js-rotateButton rotateButton left"></div>
+					</div>
+				  </div>
+				  <div class="js-chainButtons quizButtons answer" data-click-obj="1" data-quiz-chain="drag_2" data-hover=""></div>
+				</li>
+			  </ul>
+			</div>
+			<div class="js-supplies supplies">
+			  <div class="js-suppliesContent suppliesContent"><p>여러 가지 모양<ins class="downButton" data-download-file="4학년_1학기_183.pdf"></ins></p></div>
+			  <div class="js-suppliesButton suppliesButton"></div>
+			</div>
+		  </section>
+		</div>
+	  </main>
+	</div>
+	<script src="../include/libs/js/ts.min.js"></script>
+	<script src="../include/math/script/rotate.min.js"></script>
+	<script src="../include/libs/js/slider.min.js"></script>
+	<script src="../include/libs/js/popup.min.js"></script>
+	<script src="../include/contents/js/quiz/quiz.min.js"></script>
+	<script src="../include/contents/js/pageManager.min.js"></script>
+	<script type="text/javascript">
+	  window.addEventListener('load', function() {
+		var rotateArray = [];
+
+		function createRotate(obj) {
+		  return new $Rotate({
+			obj: obj,
+			target: obj.querySelector('.js-rotateTarget'),
+			degree: 90,
+			rightButton: obj.querySelector('.js-rotateButton.right'),
+			leftButton: obj.querySelector('.js-rotateButton.left'),
+			resetButton: false,
+			copy: false,
+			noDrag: true,
+			callback: {
+			  move: function(Rotate) {},
+			  end: function(Rotate) {}
+			}
+		  });
+		}
+
+		window.dragDropCallbacks = {
+		  "drag-obj": function(DRAGDROP) {
+			if (DRAGDROP.droppedArea) {
+			  if (DRAGDROP.droppedArea.element.children.length > 1) {
+				DRAGDROP.droppedArea.element.removeChild(DRAGDROP.droppedArea.element.children[1]);
+				return;
+			  }
+
+			  rotateArray.push(createRotate(DRAGDROP.droppedArea.element.children[0]));
+			}else{
+				window.$efSound.incorrect();
+				return console.log('dropArea 없음.');
+			}
+		  },
+		};
+		// var rotateArray = $ts.getEl('.js-rotate').map(createRotate);
+
+		var answerButtons = $ts.getEl('.js-chainButtons').forEach(function(btn) {
+		  btn.addEventListener('click', function() {
+			$pm.array.quiz.inPage.forEach(function(quiz) {
+			  if (quiz.type === 'dragDrop') quiz.reset();
+			});
+			rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
+		  });
+		});
+
+		window.$callBack.sliderMove = function(SLIDER) {
+		  // 페이지 이동 시 초기화
+		  rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
+		}
+	  });
+	</script>
+  </body>
+</html>

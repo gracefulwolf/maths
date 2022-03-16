@@ -1,0 +1,330 @@
+
+body { 
+	position: fixed;
+	overflow: hidden;
+	background-color: #4CC8E6;
+	/* min-width: 1280px; */
+	/* min-height: 720px; */
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+	/* font-family: 'HUNemogulim170', sans-serif; */
+	/* line-height: 1.4; */
+	/* color: #1E1E1E; */
+}
+
+#content-bg {
+    position: absolute;
+    left: -100px;
+    top: 0px;
+    width: 1480px;
+    height: 920px;
+    transform-origin: 0px 0px;
+    background-repeat: no-repeat;
+	visibility: hidden;
+	z-index: -1;
+}
+.loaded #content-bg{visibility:visible;}
+#content-bg img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-container {
+	position: relative;
+	width: 1280px;
+	height: 720px;
+	background-position: center;
+	background-repeat: no-repeat;
+	/* overflow: hidden; */
+	transform-origin: 0 0;
+	opacity: 0;
+}
+.content-container::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/* background-color: #FFF; */
+	z-index: -1;
+}
+.content-container.loaded {
+	opacity: 1;
+}
+
+.content-container > .content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.content-container > .content > .bg {
+	pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: -1;
+
+	background-image: url(../images/bg01.png);;
+	/* background-image: url(../images/guide01.png); opacity: 0.8; */
+}
+.bg > img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1280px;
+	height: 720px;
+}
+
+/* cc 이미지 로드될 때 body로 로드하면서 생기는 스크롤 제거 */
+body > img {
+    display: none;
+}
+
+
+/* 단원별 bg */
+#bg-lesson {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1280px;
+	height: 720px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#bg-lesson::before {
+	content: 
+	url(../images/bg_lesson_0002.png)
+	url(../images/bg_lesson_0003.png)
+	url(../images/bg_lesson_0004.png)
+	url(../images/bg_lesson_0005.png)
+	url(../images/bg_lesson_0006.png)
+	url(../images/bg_lesson_0007.png);
+
+	pointer-events: none;
+	position: absolute;
+	visibility: hidden;
+}
+#bg-lesson.lesson01 { background-image: url(../images/bg_lesson_0001.png); }
+#bg-lesson.lesson02 { background-image: url(../images/bg_lesson_0002.png); }
+#bg-lesson.lesson03 { background-image: url(../images/bg_lesson_0003.png); }
+#bg-lesson.lesson04 { background-image: url(../images/bg_lesson_0004.png); }
+#bg-lesson.lesson05 { background-image: url(../images/bg_lesson_0005.png); }
+#bg-lesson.lesson06 { background-image: url(../images/bg_lesson_0006.png); }
+#bg-lesson.lesson07 { background-image: url(../images/bg_lesson_0007.png); }
+
+
+/* header - title */
+.header > .title > div {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.header > .title > .title-01 {
+	left: 84px;
+	top: 26px;
+	width: 210px;
+	height: 47px;
+}
+.grade-3-1 .header > .title > .title-01 {
+	background-image: url(../images/title_grade_0001.png);
+}
+.grade-3-2 .header > .title > .title-01 {
+	background-image: url(../images/title_grade_0002.png);
+}
+.grade-4-1 .header > .title > .title-01 {
+	background-image: url(../images/title_grade_0003.png);
+}
+.grade-4-2 .header > .title > .title-01 {
+	background-image: url(../images/title_grade_0004.png);
+}
+.header > .title > .title-02 {
+	left: 318px;
+	top: 9px;
+	width: 125px;
+	height: 52px;
+	background-image: url(../images/title_02.png);
+}
+
+/* header - 단원 버튼 */
+.btns-lesson {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	position: absolute;
+	left: 605px;
+	top: 29px;
+}
+.btns-lesson .btn-lesson {
+	position: relative;
+	width: 80px;
+	height: 31px;
+	margin: 0 5px 0 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.btns-lesson .btn-lesson:nth-child(1) { background-image: url(../images/btn_lesson_0001.png); }
+.btns-lesson .btn-lesson:nth-child(2) { background-image: url(../images/btn_lesson_0002.png); }
+.btns-lesson .btn-lesson:nth-child(3) { background-image: url(../images/btn_lesson_0003.png); }
+.btns-lesson .btn-lesson:nth-child(4) { background-image: url(../images/btn_lesson_0004.png); }
+.btns-lesson .btn-lesson:nth-child(5) { background-image: url(../images/btn_lesson_0005.png); }
+.btns-lesson .btn-lesson:nth-child(6) { background-image: url(../images/btn_lesson_0006.png); }
+.btns-lesson .btn-lesson:nth-child(7) { background-image: url(../images/btn_lesson_0007.png); }
+
+.btns-lesson .btn-lesson.hover:nth-child(1), .btns-lesson .btn-lesson.active:nth-child(1) { background-image: url(../images/btn_lesson_on_0001.png); }
+.btns-lesson .btn-lesson.hover:nth-child(2), .btns-lesson .btn-lesson.active:nth-child(2) { background-image: url(../images/btn_lesson_on_0002.png); }
+.btns-lesson .btn-lesson.hover:nth-child(3), .btns-lesson .btn-lesson.active:nth-child(3) { background-image: url(../images/btn_lesson_on_0003.png); }
+.btns-lesson .btn-lesson.hover:nth-child(4), .btns-lesson .btn-lesson.active:nth-child(4) { background-image: url(../images/btn_lesson_on_0004.png); }
+.btns-lesson .btn-lesson.hover:nth-child(5), .btns-lesson .btn-lesson.active:nth-child(5) { background-image: url(../images/btn_lesson_on_0005.png); }
+.btns-lesson .btn-lesson.hover:nth-child(6), .btns-lesson .btn-lesson.active:nth-child(6) { background-image: url(../images/btn_lesson_on_0006.png); }
+.btns-lesson .btn-lesson.hover:nth-child(7), .btns-lesson .btn-lesson.active:nth-child(7) { background-image: url(../images/btn_lesson_on_0007.png); }
+
+
+/* content-body */
+.content-body .lesson {
+	visibility: hidden;
+}
+.content-body .lesson.active {
+	visibility: visible;
+}
+.content-body .btns-part {
+	display: flex;
+	flex-direction: column;
+
+	position: absolute;
+}
+.content-body .btns-part.part-01 {
+	left: 192px;
+	top: 177px;
+}
+.content-body .btns-part.part-02 {
+	left: calc(192px + (150px * 1));
+	top: 177px;
+}
+.content-body .btns-part.part-03 {
+	left: calc(192px + (150px * 2));
+	top: 177px;
+}
+.content-body .btns-part.part-04 {
+	left: calc(192px + (150px * 3));
+	top: 177px;
+}
+.content-body .btns-part.part-05 {
+	left: calc(192px + (150px * 4));
+	top: 177px;
+}
+/* 단원별 자료 */
+.content-body .btns-part.part-06 {
+	justify-content: flex-start;
+	align-items: center;
+	padding: 41px 0 0 0;
+
+	width: 240px;
+	height: 560px;
+	left: 955px;
+	top: 138px;
+}
+.content-body .btns-part.part-06 > .btn-box {
+	margin-bottom: 20px;	
+}
+
+
+/* 단원별 자료 - 프로젝트 단원 */
+.content-body .lesson07 .btns-part.part-06 {
+	padding: 190px 0 0 0;
+}
+
+/* 총론 */
+.btn-outline {
+	position: absolute;
+    margin-left: 60px;
+    width: 122px;
+    height: 40px;
+    left: 974px;
+    top: 584px;
+}
+.debug .btn-outline { 
+	background-color: rgba(0,255,0,0.5);
+}
+
+.btn-source {
+	position: absolute;
+	margin-left: 60px;
+	width: 150px;
+    height: 40px;
+    left: 960px;
+    top: 638px;
+}
+.debug .btn-source { 
+	background-color: rgba(0,255,0,0.5);
+}
+
+.content-body .btns-part.part-07 > .btn-box {
+	margin-bottom: 20px;	
+}
+
+.content-body .btn-block {
+	position: relative;
+	width: 150px;
+	height: 40px;
+}
+.content-body .btn-block.line-2 {
+	height: 80px;
+}
+.content-body .btn-block.line-3 {
+	height: 120px;
+}
+.debug .content-body .btn-block {
+	background-color: rgba(255,0,0,0.2);
+}
+.content-body .btn-block::before {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.debug .content-body .btn-block::before {
+	border: 2px solid rgba(0,0,0,0.8);
+}
+.content-body .btn-block.line-0,
+.content-body .btn-block.blank {
+	visibility: hidden;
+}
+
+.content-body .btn-box {
+	position: relative;
+	width: 124px;
+	height: 40px;
+}
+.debug .content-body .btn-box { 
+	background-color: rgba(0,255,0,0.5);
+}
+
+.btn-close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 10px;
+	right: 10px;
+	
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: center center;
+	background-image: url(../images/ico/btn_close.png);
+
+	z-index: 2;
+}

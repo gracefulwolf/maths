@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:6px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+	/* 개별 */
+	@keyframes css-ani-arrow-leftToRight{
+		0%,100%{transform:translateX(0);}
+		50%{transform:translateX(-10px);}
+	}
+	@keyframes css-ani-arrow-leftToRight2{
+		0%,100%{transform:translateX(0) rotate(180deg);}
+		50%{transform:translateX(-10px) rotate(180deg);}
+	}
+
+
+	.page_1 .innerTab_1 .--img{width: 200px;height: 400px;margin: -20px auto 0;background: url(./images/4_2_2.svg) no-repeat 0% 50% / auto 100%;}
+	.page_1 .innerTab_2 .--img{width: 200px;height: 400px;margin: -20px auto 0;background: url(./images/4_2_2.svg) no-repeat -261px 50% / auto 100%;}
+	.page_1 .icon_arrow{position: absolute; top: 166px; left: calc(50% - 5px);}
+	.page_1 .innerTab_1 .--img .answer{position: absolute;top: 245px;left: 448px;width: 180px;height: 104px;background: url(./images/4_2_2_01_answer.svg) no-repeat 50% 50% / contain;}
+	.page_1 .innerTab_2 .--img .answer{position: absolute;top: 12px;left: 448px;width: 180px;height: 104px;background: url(./images/4_2_2_02_answer.svg) no-repeat 50% 50% / contain;}
+
+	.page_2 .--img{position:relative; width:100%; height:360px; background: url(./images/4_2_1.svg) no-repeat 50% 50% / contain;}
+	.page_2 .--finger.n1{position: absolute;top: 170px;left: 140px;}
+	.page_2 .--finger.n2{position: absolute;top: 170px;left: 870px;}
+	.page_2 .--finger.complete{display: none;}
+	.page_2 .--img .answer.n1{position: absolute;top: 99px;left: 23px;width: 220px;height: 165px;background: url(./images/4_2_1_answer.svg) no-repeat 50% 50% / contain;}
+	.page_2 .--img .answer.n2{position: absolute; top: 99px;left: 766px;width: 220px;height: 165px; background: url(./images/4_2_1_answer.svg) no-repeat 50% 50% / contain;}
+
+	.page_3 .--img{position:relative; width:100%; height:400px; background: url(./images/4_2_3.svg) no-repeat 50% 50% / contain;}
+	.page_3 .--finger.n1{position: absolute;top: 70px;left: 560px;}
+	.page_3 .--finger.n2{position: absolute;top: 290px;left: 560px;}
+	.page_3 .--finger.complete{display: none;}
+	.page_3 .--img .answer.n1{position: absolute;top: 25px;left: 500px;width: 125px;height: 125px;background: url(./images/4_2_3_02_answer.svg) no-repeat 50% 50% / contain;}
+	.page_3 .--img .answer.n2{position: absolute;top: 250px;left: 500px;width: 125px;height: 125px;background: url(./images/4_2_3_01_answer.svg) no-repeat 50% 50% / contain;}
+
+
+	.page_4 .--img{position:relative;width:100%;height: 240px;background: url(./images/4_2_4.svg) no-repeat 50% 50% / contain;}
+	.page_4 .--img .answer{position: absolute;top: 188px;left: 696px;width: 232px;height: 178px;background: url(./images/4_2_4_answer.svg) no-repeat 50% 50% / contain;}
+	.page_4 .--img .colorBox.sky{position: absolute;}
+	.page_4 .--img .colorBox.sky.n1{top: 200px;left: 270px;}
+	.page_4 .--img .colorBox.sky.n2{top: 200px;left: 545px;}
+	.page_4 .colorBox.skyBlue{align-self: flex-start;}
+
+	.page_5 .--img{position:relative;width:100%;height: 300px;margin-top: 20px;background: url(./images/4_2_5.svg) no-repeat 50% 50% / contain;}
+	.page_5 .--img .answer{position: absolute;top: 46px;left: 206px;width: 200px;height: 147px;background: url(./images/4_2_5_answer.svg) no-repeat 50% 50% / contain;}
+	.page_5 .--img .colorBox.sky{position: absolute;}
+	.page_5 .--img .colorBox.sky.n1{top: 255px;left: 220px;}
+	.page_5 .--img .colorBox.sky.n2{top: 255px;left: 595px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">평면도형을 뒤집어 볼까요</span>
+		<span class="sub-page">64~65쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+					<!-- 개념 정리 -->
+				</span></h2>
+				<section>
+					<div class="lineBox sky">
+						<ul class="contentsList dotList">
+							<li>
+								<ins class="dot deepGreen"></ins>
+								<div>
+									도형을 위쪽이나 아래쪽으로 뒤집으면 도형의 위쪽과 아래쪽이 서로 바뀝니다.
+								</div>
+							</li>
+							<li>
+								<ins class="dot deepGreen"></ins>
+								<div>
+									도형을 오른쪽이나 왼쪽으로 뒤집으면 도형의 오른쪽과 왼쪽이 서로 바뀝니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1" data-quiz="toggle">
+						<h2><ins class="number">1</ins><span>
+							도형을 주어진 방향으로 뒤집었을 때의 도형을 그려 보세요. <div class="supply_guide inline">준비물 129쪽</div>
+						</span></h2>
+						<section>
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<h2><ins class="number">2</ins><span>
+							도형을 주어진 방향으로 뒤집었을 때의 도형을 그려 보세요. <div class="supply_guide inline">준비물 129쪽</div>
+						</span></h2>
+						<section>
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="12" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					가운데 도형을 왼쪽으로 뒤집었을 때의 도형과 오른쪽으로 뒤집었을 때의 도형을 각각 그려 보세요. <div class="supply_guide inline">준비물 129쪽</div>
+				</span></h2>
+				<section>
+					<div class="flexListContainer center">
+						<div class="--img">
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+							<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n2" data-toggle-obj="2" data-hover=""></span>
+							<div class="answer n1" data-toggle-target="1"></div>
+							<div class="answer n2" data-toggle-target="2"></div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					숫자를 오른쪽으로 뒤집고 위쪽으로 뒤집었을 때의 도형을 각각 그려 보세요. <div class="supply_guide inline">준비물 129쪽</div>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+						<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n2" data-toggle-obj="2" data-hover=""></span>
+						<div class="answer n1" data-toggle-target="1"></div>
+						<div class="answer n2" data-toggle-target="2"></div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					도형을 오른쪽으로 8 cm 밀고 아래쪽으로 2 cm 밀었을 때의 도형을 그려 보세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="colorBox sky n1">처음 글자</div>
+						<div class="colorBox sky n2">움직인 글자</div>
+					</div>
+					<div class="flexListContainer start mt_50">
+						<div class="colorBox check skyBlue">방법</div>
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet exam">예</ins>
+										<div>
+											글자 ‘곰’을 위쪽으로 뒤집고 왼쪽으로 뒤집으면 ‘문‘이 됩니다.
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number">5</ins><span>
+					어떤 도형을 위쪽으로 3번 뒤집었을 때의 도형입니다. 처음 도형을 그려 보세요. <div class="supply_guide inline">준비물 129쪽</div>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+						<div class="colorBox sky n1">처음 도형</div>
+						<div class="colorBox sky n2">움직인 도형</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+		<li class="solve " data-popup-page="11">
+			<div class="popup_contents">
+				도형을 아래쪽으로 뒤집으면 도형의 위쪽과 아래쪽이 서로 바뀝니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="12">
+			<div class="popup_contents">
+				도형을 위쪽으로 뒤집으면 도형의 위쪽과 아래쪽이 서로 바뀝니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="2">
+			<div class="popup_contents">
+				도형을 오른쪽이나 왼쪽으로 뒤집으면 도형의 오른쪽과 왼쪽이 서로 바뀝니다.
+			</div>
+		</li>
+		<li class="solve " data-popup-page="5">
+			<div class="popup_contents">
+				도형을 같은 방향으로 2번 뒤집으면 처음 도형과 같아지므로 처음 도형을 위쪽으로 3번 뒤집었을 때의 도형은 위쪽으로 1번 뒤집었을 때의 도형과 같습니다.
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	}, false);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+
+	<style type="text/css">
+
+		.numCard.etc{width:54px; height:66px; background-image:url(./images/numCard_etc.png); background-size:auto 66px; background-position-x:calc(-54px * 10);}
+		.numCard.etc[data-index="0"]{background-position-x:calc(-54px * (1 - 1));}
+		.numCard.etc[data-index="1"]{background-position-x:calc(-54px * (2 - 1));}
+		.numCard.etc[data-index="2"]{background-position-x:calc(-54px * (3 - 1));}
+		.numCard.etc[data-index="3"]{background-position-x:calc(-54px * (4 - 1));}
+		.numCard.etc[data-index="4"]{background-position-x:calc(-54px * (5 - 1));}
+		.numCard.etc[data-index="5"]{background-position-x:calc(-54px * (6 - 1));}
+		.numCard.etc[data-index="6"]{background-position-x:calc(-54px * (7 - 1));}
+		.numCard.etc[data-index="7"]{background-position-x:calc(-54px * (8 - 1));}
+		.numCard.etc[data-index="8"]{background-position-x:calc(-54px * (9 - 1));}
+		.numCard.etc[data-index="9"]{background-position-x:calc(-54px * (10 - 1));}
+		.numCard.etc.dot{background-position-x:calc(-54px * (11 - 1));}
+
+		.page_1 .study_guide{top:0; right:0;}
+		.page_1 .it-start-wrap{position:relative; z-index:1; width:900px; height:120px;}
+		.page_1 .dragObj{position:absolute; top:20px;}
+		.page_1 .dragObj_1{left:120px;}
+		.page_1 .dragObj_2{left:220px;}
+		.page_1 .dragObj_3{left:320px;}
+		.page_1 .dragObj_4{left:420px;}
+		.page_1 .dragObj_5{left:520px;}
+		.page_1 .dragObj_6{left:620px;}
+		.page_1 .dragObj_7{left:720px;}
+		.page_1 .dragObj_8{left:820px;}
+		.page_1 .dragObj > div{display:flex; align-items:center; justify-content:center; height:100%; padding:0 20px 0 40px;}
+		.page_1 .it-end-wrap{position:relative; height:120px; margin:20px 0 0;}
+		.page_1 .dropArea{display:flex; align-items:center; justify-content:center; position:absolute; top:0; width:80px; height:100px; border:1px solid #ccc; border-radius:10px;}
+		.page_1 .dropArea_1{left:80px;}
+		.page_1 .dropArea_2{left:190px;}
+		.page_1 .dropArea_3{left:300px;}
+		.page_1 .dropArea_4{left:530px;}
+		.page_1 .dropArea_5{left:640px;}
+		.page_1 .dropArea_6{left:750px;}
+		.page_1 .dropArea_7{left:700px;}
+		.page_1 .dropArea_8{left:800px;}
+		.page_1 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
+		.page_1 .it-end-wrap .dragObj.dragObjComplete{position:static; top:0; left:0;}
+		.page_1 .it-btn,
+		.page_1 .it-btn.reset{background:#236cbb url(../common/contents/images/icon/icon_check.svg) no-repeat 15px center / 22px auto;}
+		.page_1 .it-btn:before,
+		.page_1 .it-btn.reset:before{content:"다시하기";padding-left:18px;}
+
+		.page_2 .--title{align-self: flex-start;}
+		.page_2 .innerTab_1 .lineBox{min-width: 70px; padding-top: 5px; padding-bottom: 5px; text-align: center;}
+		.page_2 .innerTab_2 .lineBox{min-width: 70px; min-height: 70px; padding-top: 5px; padding-bottom: 5px;}
+		.page_2 .innerTab_2 .answer{position: absolute;right: -4px;letter-spacing: 27.3px !important;text-align: right !important;top: 8px;}
+
+		.page_3 .math_calc_table.col6,
+		.page_3 .math_calc_table.col6 table{width:320px;}
+		.page_3 .math_calc_table .lineBox{height: 65px;}
+		.page_3 .math_calc_table .answer{position: absolute;right: -19px;letter-spacing: 39px !important;text-align: right !important;top: 5px;}
+		.page_3 .colorBox.skyBlue{min-width: 140px; text-align: center;}
+		.examViewBtn.reset:before{content:"다시하기";}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<div class="title ls1">
+				숫자 카드를 한 번씩만 사용하여 세 자리 수와 두 자리 수를 만들고 다음 활동을 해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1"  data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer"  data-total-complete-count="9">
+						<h2><ins class="dot orange"></ins><span>
+							숫자 카드를 이용해서 세 자리 수와 두 자리 수를 만들어보세요.
+						</span></h2>
+						<section>
+							<div class="study_guide">
+								<em>숫자 카드</em>을 <em>드래그</em>하여 옮기세요.
+							</div>
+							<div class="dragDropContainer mt_40">
+								<div class="it-start-wrap dragBox lineBox green dragObjUL">
+									<div class="js-dragObj dragObj dragObj_1 numCard etc" data-name="drag-obj" data-index="1" data-value="0" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_2 numCard etc" data-name="drag-obj" data-index="2" data-value="5" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_3 numCard etc" data-name="drag-obj" data-index="3" data-value="0" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_4 numCard etc" data-name="drag-obj" data-index="5" data-value="0" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_5 numCard etc" data-name="drag-obj" data-index="7" data-value="9" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_6 numCard etc" data-name="drag-obj" data-index="8" data-value="4" data-drag-obj-answer="0"></div>
+									<div class="js-dragObj dragObj dragObj_7 numCard etc" data-name="drag-obj" data-index="9" data-value="3" data-drag-obj-answer="0"></div>
+								</div>
+								<div class="flexListContainer around center pr_100 mt_20">
+									<div class="lineBox sky">세 자리 수</div>
+									<div class="lineBox purple mr_100">두 자리 수</div>
+								</div>
+								<div class="it-end-wrap">
+									<div class="js-dropArea dropArea dropArea_1" data-type="1" data-drop-area-answer="0.1"></div>
+									<div class="js-dropArea dropArea dropArea_2" data-type="2" data-drop-area-answer="0,1"></div>
+									<div class="js-dropArea dropArea dropArea_3" data-type="3" data-drop-area-answer="0,1"></div>
+									<div class="js-dropArea dropArea dropArea_4" data-type="4" data-drop-area-answer="0,1"></div>
+									<div class="js-dropArea dropArea dropArea_5" data-type="5" data-drop-area-answer="0,1"></div>
+									<div class="js-dropArea dropArea dropArea_6" data-type="6" data-drop-area-answer="0,1"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn it-btn reset" id="it_reset_btn" data-answer-btn="" data-type="reset"></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<h2><ins class="dot orange"></ins><span>
+									여러 가지 방법으로 계산해 보세요.
+								</span></h2>
+								<section>
+									<div class="flexListContainer jcenter pt_40 pr_80">
+										<div class="colorBox skyBlue mr_20 --title">방법 1</div>
+										<div>
+											<div class="flexListContainer start center">
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														5
+													</div>
+												</div>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														5
+													</div>
+												</div>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														5
+													</div>
+												</div>×<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														3
+													</div>
+												</div>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														9
+													</div>
+												</div>
+											</div>
+											<div class="flexListContainer start center mt_10">
+												＝<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														17340
+													</div>
+												</div>＋<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														5202
+													</div>
+												</div>
+											</div>
+											<div class="flexListContainer start center mt_10">
+												＝<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="21" data-toggle-target="21">
+														22542
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="examViewBtn" data-answer-btn=""></button>
+									</div>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2><ins class="dot orange"></ins><span>
+									여러 가지 방법으로 계산해 보세요.
+								</span></h2>
+								<div class="flexListContainer jcenter pt_0 pr_80">
+									<div class="colorBox skyBlue mr_40 --title">방법 2</div>
+									<div class="math_calc_table class3">
+										<table>
+											<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																9
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																7
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																8
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>×</td>
+													<td></td>
+													<td>
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																3
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																9
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr class="line-tr">
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																5202
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																17340
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr class="line-tr">
+													<td colspan="4">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<div class="lineBox beige">
+															<div class="answer" data-toggle-obj="22" data-toggle-target="22">
+																17340
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="buttonContainer">
+									<button class="examViewBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							나눗셈을 계산하고 계산 결과가 맞는지 확인해 보세요.
+						</span></h2>
+						<section>
+							<div class="flexListContainer jcenter">
+								<div class="math_calc_table type2 col6 mr_80">
+									<table>
+										<colgroup>
+											<col>
+											<col>
+											<col style="width:11px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														1
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														4
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														3
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														9
+													</div>
+												</div>
+											</td>
+											<td class="line-td"></td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														5
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														7
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														8
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														390
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														188
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														156
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td colspan="2">
+												<div class="lineBox beige">
+													<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+														32
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="--side pr_60">
+									<div class="flexListContainer start center">
+										<div class="colorBox skyBlue mr_10">몫</div>
+										<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												32
+											</div>
+										</div>
+									</div>
+									<div class="flexListContainer start center mt_10">
+										<div class="colorBox skyBlue mr_10">나머지</div>
+										<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												14
+											</div>
+										</div>
+									</div>
+									<div class="flexListContainer start center mt_10">
+										<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												39
+											</div>
+										</div>×<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												14
+											</div>
+										</div>＝<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												546
+											</div>
+										</div>
+									</div>
+									<div class="flexListContainer jcenter center mt_10">
+										<ins class="icon_arrow bottom"></ins>
+									</div>
+									<div class="flexListContainer start center mt_10">
+										<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												546
+											</div>
+										</div>＋<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												32
+											</div>
+										</div>＝<div class="lineBox beige">
+											<div class="answer" data-toggle-obj="31" data-toggle-target="31">
+												578
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (){
+			document.querySelector("#it_reset_btn").addEventListener("click", function(){
+				if( !this.classList.contains( "reset" ) ){
+					this.classList.add( "reset" );
+				}
+			});
+
+			var it_tab = $ts.getEl( ".basicSlider_tabs li" );
+			it_tab.forEach(function (objs, index){
+				objs.addEventListener('click', function () {
+					document.querySelector("#it_reset_btn").classList.add( "reset" );
+				});
+			});
+		}, false);
+
+
+		window.dragDropCallbacks = {
+			"drag-obj": function(DRAGDROP) {
+			if (DRAGDROP.droppedArea) {
+				if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+			}
+			},
+		};
+
+	</script>
+
+</body>
+
+</html>

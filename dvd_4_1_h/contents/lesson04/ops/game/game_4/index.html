@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+<link rel="stylesheet" href="./src/css/controller.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 108쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>고장 난</span><br/><span>수도관</span><br/><span>교체하기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+      <div class="imageText text_1">㉠</div>
+      <div class="imageText text_2">㉡</div>
+      <div class="imageText text_3">㉢</div>
+      <div class="imageText text_4">㉣</div>
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 방향으로<br/>90°만큼 돌려서<br/>교체합니다. <div class="circleNum">1</div></div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 반대 방향으로<br/>90°만큼 돌려서<br/>교체합니다. <div class="circleNum">2</div></div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="3">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 방향으로<br/>270°만큼 돌려서<br/>교체합니다. <div class="circleNum">3</div></div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="4">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 반대 방향으로<br/>180°만큼 돌려서<br/>교체합니다. <div class="circleNum">4</div></div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        
+        <div class="waterWrap selectPlay" data-play-index="7">
+            <div class="waterImg"></div>
+            <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+        </div>
+        <div class="waterWrap selectPlay" data-play-index="8">
+            <div class="waterImg"></div>
+            <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+        </div>
+      <div class="waterWrap selectPlay" data-play-index="9">
+        <div class="waterImg"></div>
+        <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+      </div>
+      <div class="waterWrap selectPlay" data-play-index="10">
+        <div class="waterImg"></div>
+        <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+      </div>
+        <div class="introWrap view">
+        	<div class="gamePage__title">
+                <div class="gamePage__title__icon"></div>
+                <div class="gamePage__title__text">고장 난 수도관을 새 수도관으로 교체해 보세요.</div>
+            </div>
+            
+            <div class="waterWrap selectPlay" data-play-index="5">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="6">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+
+            <div class="introText text_1">㉠을 <span class="circleText">➊</span> 로 교체하려면<br/>어떻게 해야 할까요?</div>
+            <div class="introText text_2"><span class="circleText">➊</span> 수도관을 시계 반대<br/>방향으로 90°만큼 돌려서<br/>㉠ 위치에 교체하면<br/>됩니다.</div>
+            <div class="introText text_3">㉡을 <span class="circleText">➋</span>로 교체하려면<br/>어떻게 해야 할까요?</div>
+            <div class="introText text_4"><span class="circleText">➋</span> 수도관을 시계 방향<br/>으로 90°만큼 돌리고<br/>왼쪽으로 뒤집어 ㉡<br/>위치에 교체하면 됩니다.</div>
+            
+            <!-- <div class="movieBtn" data-movie-num="1"></div>
+            <div class="movieBtn" data-movie-num="2"></div>
+            
+            <div class="mediaContainer video" data-media-container="video" data-movie-num="1">
+                <video poster="./media/1_intro.jpg" webkit-playsinline="" playsinline="">
+                    <source src="./media/1_intro.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <div class="videoInfoWrap">㉠을 ①로 교체하려면 어떻게 할까요?</div>
+                <div class="videoCloseBtn"></div>
+            </div>
+            <div class="mediaContainer video" data-media-container="video" data-movie-num="2">
+                <video poster="./media/2_intro.jpg" webkit-playsinline="" playsinline="">
+                    <source src="./media/2_intro.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <div class="videoInfoWrap">㉡을 ②로 교체하려면 어떻게 할까요?</div>
+                <div class="videoCloseBtn"></div>
+            </div> -->
+            
+            <button class="defaultButton nextStepButton intro-nextStepButton"></button>
+        </div> <!-- introWrap -->
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="playPage__text">시계 방향으로<br/>90°만큼 돌려서<br/>교체합니다.</div>
+        	
+			<div class="waterWrap selectPlay" data-play-index="11" data-water-index="1">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="12" data-water-index="4">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="13" data-water-index="3">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="14" data-water-index="2">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            
+            <div class="dropArea" drag-ans="1" drop-idx="0"></div>
+            
+            <div class="dragObj" drag-ans="1" drag-idx="0">
+            	<div class="dragImage" data-degree="90"></div>
+                <div class="rotateButton left"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            
+            <div class="dragClone" drag-ans="2" drag-idx="1"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="3" drag-idx="2"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="4" drag-idx="3"><div class="dragImage"></div></div>
+
+          <div class="imageText text_1">㉠</div>
+          <div class="imageText text_2">㉡</div>
+          <div class="imageText text_3">㉢</div>
+          <div class="imageText text_4">㉣</div>
+        </div> <!-- selectPlay[data-play-page="1"] -->
+        
+        <div class="playPage js-playPage" data-play-page="2">
+            <div class="playPage__text">시계 반대 방향으로<br/>90°만큼 돌려서<br/>교체합니다.</div>
+            
+            <div class="waterWrap selectPlay" data-play-index="15" data-water-index="1">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="16" data-water-index="4">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="17" data-water-index="3">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="18" data-water-index="2">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+        
+            <div class="dropArea" drag-ans="2" drop-idx="1"></div>
+            
+            <div class="dragObj" drag-ans="2" drag-idx="1">
+            	<div class="dragImage" data-degree="-90"></div>
+                <div class="rotateButton left"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            
+            <div class="dragClone" drag-ans="1" drag-idx="0"><div class="dragImage"></div></div>
+            <!--<div class="dragClone" drag-ans="2" drag-idx="1"><div class="dragImage"></div></div>-->
+            <div class="dragClone" drag-ans="3" drag-idx="2"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="4" drag-idx="3"><div class="dragImage"></div></div>
+
+          <div class="imageText text_1">㉠</div>
+          <div class="imageText text_2">㉡</div>
+          <div class="imageText text_3">㉢</div>
+          <div class="imageText text_4">㉣</div>
+        </div> <!-- selectPlay[data-play-page="2"] -->
+        
+        <div class="playPage js-playPage" data-play-page="3">
+            <div class="playPage__text">시계 방향으로<br/>270°만큼 돌려서<br/>교체합니다.</div>
+        	
+            <div class="waterWrap selectPlay" data-play-index="19" data-water-index="1">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="20" data-water-index="4">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="21" data-water-index="3">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="22" data-water-index="2">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            
+            <div class="dropArea" drag-ans="3" drop-idx="2"></div>
+            
+            <div class="dragObj" drag-ans="3" drag-idx="2">
+            	<div class="dragImage" data-degree="270"></div>
+                <div class="rotateButton left"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            
+            <div class="dragClone" drag-ans="1" drag-idx="0"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="2" drag-idx="1"><div class="dragImage"></div></div>
+            <!--<div class="dragClone" drag-ans="3" drag-idx="2"><div class="dragImage"></div></div>-->
+            <div class="dragClone" drag-ans="4" drag-idx="3"><div class="dragImage"></div></div>
+
+          <div class="imageText text_1">㉠</div>
+          <div class="imageText text_2">㉡</div>
+          <div class="imageText text_3">㉢</div>
+          <div class="imageText text_4">㉣</div>
+        </div> <!-- selectPlay[data-play-page="3"] -->
+        
+        <div class="playPage js-playPage" data-play-page="4">
+            <div class="playPage__text">시계 반대 방향으로<br/>180°만큼 돌려서<br/>교체합니다.</div>
+        	
+            <div class="waterWrap selectPlay" data-play-index="23" data-water-index="1">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="24" data-water-index="4">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="25" data-water-index="3">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            <div class="waterWrap selectPlay" data-play-index="26" data-water-index="2">
+            	<div class="waterImg"></div>
+            	<canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+            </div>
+            
+            <div class="dropArea" drag-ans="4" drop-idx="3"></div>
+            
+            <div class="dragObj" drag-ans="4" drag-idx="3">
+            	<div class="dragImage" data-degree="-180"></div>
+                <div class="rotateButton left"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            
+            <div class="dragClone" drag-ans="1" drag-idx="0"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="2" drag-idx="1"><div class="dragImage"></div></div>
+            <div class="dragClone" drag-ans="3" drag-idx="2"><div class="dragImage"></div></div>
+
+          <div class="imageText text_1">㉠</div>
+          <div class="imageText text_2">㉡</div>
+          <div class="imageText text_3">㉢</div>
+          <div class="imageText text_4">㉣</div>
+            <!--<div class="dragClone" drag-ans="4" drag-idx="3"><div class="dragImage"></div></div>-->
+        </div> <!-- selectPlay[data-play-page="4"] -->
+    
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>고장난 수도관을 <br/>선택하세요.</div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+    	<div class="waterWrap selectPlay" data-play-index="27">
+            <div class="waterImg"></div>
+            <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+        </div>
+        <div class="waterWrap selectPlay" data-play-index="28">
+            <div class="waterImg"></div>
+            <canvas class="spriteAni js-spriteAni" width="130" height="130" data-sprite-name="basic" data-sprite-frame="15" data-sprite-duration="0.8" data-sprite-loop="y" data-auto-play="y"></canvas>
+        </div>
+    
+        <div class="selectPlay" data-play-index="1">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 방향으로<br/>90°만큼 돌려서<br/>교체합니다.</div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="2">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 반대 방향으로<br/>90°만큼 돌려서<br/>교체합니다.</div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="3">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 방향으로<br/>270°만큼 돌려서<br/>교체합니다.</div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="4">
+            <div class="selectPlay__image">
+            	<div class="selectPlay__text">시계 반대 방향으로<br/>180°만큼 돌려서<br/>교체합니다.</div>
+            </div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text">고장난 <b>수도관</b>을 모두 교체했어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script src="./src/js/dragdropA.js" type="text/javascript"></script>
+<script src="./src/js/ts.min.js" type="text/javascript"></script>
+<script src="./src/js/controller.min.js" type="text/javascript"></script>
+<script>
+/* var video_1;
+var video_2;
+window.addEventListener('load', function() { 
+	video_1 = new $controller({
+		container: document.querySelector('.mediaContainer[data-movie-num="1"]'),
+		mediaType: 'video',
+		callBack: {
+			play: function (Control) {},
+			pause: function (Control) {},
+			stop: function (Control) {}
+		}
+	});
+	video_2 = new $controller({
+		container: document.querySelector('.mediaContainer[data-movie-num="2"]'),
+		mediaType: 'video',
+		callBack: {
+			play: function (Control) {},
+			pause: function (Control) {},
+			stop: function (Control) {}
+		}
+	});
+}); */
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.popup_contents .vMid{height:500px;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+	.page-iframe{position:fixed; z-index:1; top:170px; left:65px; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:170px; left:70px; height:590px;}
+	.page-iframe + .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.toggle.z2{z-index:2;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.page-iframe{top: 185px; width:1280px; height: 550px; border:0; transform: scale(0.828125) translate(-130px, -20px);}
+
+
+
+	/* 개별 */
+	.--text{position: absolute;}
+	.page_0 .--img{height: 450px; background: url(./images/suhi_p_0401_04_0002_1.png) no-repeat 0% 50% / auto 100%;}
+	.page_0 .balloon{top: 60px; left: 520px;}
+
+	[data-ox-obj] .icon{position:absolute; top:50%; left:50%; width: 90px; height: 90px; margin: -45px 0 0 -45px;}
+	.page_1 .--img{position: relative; height: 370px; background: url(./images/suhi_p_0401_04_0002_2.png) no-repeat 0 50% / 940px auto;}
+	.page_1 [data-ox-obj]{display:inline-block;position: absolute;width: 220px;height: 220px;}
+	.page_1 [data-ox-obj="1"]{top: 75px;left: 510px;}
+	.page_1 [data-ox-obj="2"]{top: 75px;left: 755px;}
+	.pop_page_10 .--img{position: relative; height: 370px; background: url(./images/suhi_p_0401_04_0002_3.png) no-repeat 0 50% / 940px auto;}
+	.pop_page_10 [data-ox-obj]{display:inline-block;position: absolute;width: 220px;height: 220px;}
+	.pop_page_10 [data-ox-obj="1"]{top: 75px;left: 510px;}
+	.pop_page_10 [data-ox-obj="2"]{top: 75px;left: 755px;}
+
+	.page_2 .--img{position: relative; height: 320px; background: url(./images/suhi_p_0401_04_0002_4.png) no-repeat 50% 50% / contain;}
+	.pop_page_20 .--img{position: relative; height: 320px; background: url(./images/suhi_p_0401_04_0002_5.png) no-repeat 50% 50% / contain;}
+
+	.page_3 .--img{position: relative; height: 380px; margin-top: 20px; background: url(./images/suhi_p_0401_04_0002_6.png) no-repeat 50% 50% / contain;}
+	.page_3 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_7.png) no-repeat 50% 50% / contain;}
+	.pop_page_30 .--img{position: relative; height: 380px; margin-top: 80px; background: url(./images/suhi_p_0401_04_0002_8.png) no-repeat 50% 50% / contain;}
+	.pop_page_30 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_9.png) no-repeat 50% 50% / contain;}
+
+	.page_4 .--img{position: relative; height: 290px; margin-top: 60px; background: url(./images/suhi_p_0401_04_0002_10.png) no-repeat 50% 50% / contain;}
+	.page_4 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_11.png) no-repeat 50% 50% / contain;}
+	.page_4 .--text.n1{top: -45px;left: 160px;}
+	.page_4 .--text.n2{top: 10px;left: 65px;}
+	.pop_page_40 .--img{position: relative; height: 290px; margin-top: 80px; background: url(./images/suhi_p_0401_04_0002_12.png) no-repeat 50% 50% / contain;}
+	.pop_page_40 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_13.png) no-repeat 50% 50% / contain;}
+	.pop_page_40 .--text.n1{top: -45px;left: 210px;}
+	.pop_page_40 .--text.n2{top: 10px;left: 120px;}
+
+	.bullet.--square{display: inline-block; width: 40px; height: 40px; border: 3px solid #000; vertical-align: -5px; box-sizing: border-box;}
+	.page_5 .--img{position: relative; height: 290px; margin-top: 80px; background: url(./images/suhi_p_0401_04_0002_14.png) no-repeat 50% 50% / contain;}
+	.page_5 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_15.png) no-repeat 50% 50% / contain;}
+	.pop_page_50 .--img{position: relative; height: 290px; margin-top: 140px; background: url(./images/suhi_p_0401_04_0002_16.png) no-repeat 50% 50% / contain;}
+	.pop_page_50 .--img .answer{position: absoute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0002_17.png) no-repeat 50% 50% / contain;}
+/*
+	.page_1 .--img{position:relative; width:100%; height:200px; margin-top:60px; background:url(./images/suhi_p_0401_04_0001_1.png) no-repeat 80px 50% / 835px auto;}
+	.page_2 .--img{position:relative; width:100%; height:320px; margin-top:60px; background:url(./images/suhi_p_0401_04_0001_2.png) no-repeat 50% 50% / contain;}
+	.page_2 .--img .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0001_3.png) no-repeat 50% 50% / contain;}
+	.page_2 .--img .bullet.exam{position: absolute; top: -50px; left: 130px;}
+
+	.page_3 .--img{position:relative; width:100%; height:320px; margin-top:60px; background:url(./images/suhi_p_0401_04_0001_5.png) no-repeat 50% 50% / contain;}
+	.page_3 .--img .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0001_6.png) no-repeat 50% 50% / contain;}
+	.page_3 .--img .bullet.exam{position: absolute; top: -50px; left: 130px;}
+
+	.page_4 .--img{position:relative; width:860px; height:320px; margin:50px auto 0; background:url(./images/suhi_p_0401_04_0001_9.png) no-repeat 50% 50% / contain;}
+	.page_4 .--img .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_04_0001_10.png) no-repeat 50% 50% / contain;} */
+
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">평면도형을 밀어 볼까요</span>
+		<span class="sub-page">58~59쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="balloon left ctTail textAlignC green">
+							도형을 어느 방향으로 밀어도<br>
+							모양은 변하지 않고<br>
+							도형의 위치만 변해.
+						</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+				<h2><ins class="number">1</ins><span>
+					모양 조각을 오른쪽으로 밀었습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div data-ox-obj="1" data-answer="">
+							<div class="icon icon_o" data-ox-target="1"></div>
+						</div>
+						<div data-ox-obj="2">
+							<div class="icon icon_x" data-ox-target="2"></div>
+						</div>
+					</div>
+
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="10" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					도형을 어떻게 움직였는지 설명해 보세요.
+				</span></h2>
+				<section>
+					<div class="--img">
+						<!-- <div class="--text n1">㉠</div>
+						<div class="--text n2">㉡</div> -->
+					</div>
+					<div class="textAlignC mt_20">
+						㉡ 도형을 <div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								왼
+							</div>
+						</div>쪽으로 밀면 ㉠ 도형이 됩니다.
+					</div>
+
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="20" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					도형을 주어진 방향으로 밀었을 때의 도형을 그려 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="answer" data-toggle-obj="1" data-toggle-target="1">
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="30" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number star">4</ins><span>
+					어떤 도형을 오른쪽으로 6 cm 밀었을 때의 도형입니다. 처음 도형을 그려 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="answer" data-toggle-obj="1" data-toggle-target="1">
+						</div>
+						<div class="--text n1">1 cm</div>
+						<div class="--text n2">1 cm</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="40" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number star">5</ins><span>
+					규칙에 따라서 <ins class="bullet --square"></ins> 모양을 밀어서 무늬를 완성해 보세요.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="--img">
+						<div class="answer" data-toggle-obj="1" data-toggle-target="1">
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="50" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="whole pop_page_50" data-popup-page="50">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<p class="mb_10 ls0">규칙에 따라서 <ins class="bullet --square"></ins>모양을 밀어서 무늬를 완성해 보세요.</p>
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-4)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="5">
+			<div class="popup_contents">
+				<p class="ls0">
+					<ins class="bullet --square"></ins>모양의 위치가 오른쪽으로 4칸, 아래쪽으로 2칸 이동하고, 오른쪽으로 4칸, 위쪽으로 2칸 이동하는 규칙으로 바뀝니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_40" data-popup-page="40">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<p class="mb_10 ls0">어떤 도형을 오른쪽으로 5 cm 밀었을 때의 도형입니다. 처음 도형을 그려 보세요.</p>
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+								<div class="--text n1">1 cm</div>
+								<div class="--text n2">1 cm</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-4)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="4">
+			<div class="popup_contents">
+				<p class="ls1">
+					오른쪽으로 6 cm 민 도형의 처음 도형은 도형을 왼쪽으로 6 cm 민 도형과 같습니다. 한 변을 기준으로 하여 왼쪽으로 6 cm 이동한 도형을 그립니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_30" data-popup-page="30">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<p class="mb_10 ls0">도형을 주어진 방향으로 밀었을 때의 도형을 그려 보세요.</p>
+							<div class="--img">
+								<div class="answer" data-toggle-obj="1" data-toggle-target="1">
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-4)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="3">
+			<div class="popup_contents">
+				<p class="ls0">
+					삼각형의 모양은 그대로이고, 위치는 아래쪽으로 이동합니다.<br>
+					사각형의 모양은 그대로이고, 위치는 위쪽으로 이동합니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_20" data-popup-page="20">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<p class="mb_10 ls0">도형을 어떻게 움직였는지 설명해 보세요.</p>
+							<div class="--img mt_60">
+								<!-- <div class="--text n1">㉠</div>
+								<div class="--text n2">㉡</div> -->
+							</div>
+							<div class="textAlignC mt_20">
+								㉠ 도형을 <div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										오른
+									</div>
+								</div>쪽으로 밀면 ㉡ 도형이 됩니다.
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-4)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="2">
+			<div class="popup_contents">
+				<p class="ls0">㉡ 도형의 위치가 왼쪽으로 바뀌었습니다.</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_10" data-popup-page="10">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox10">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<p class="mb_10 ls1">모양 조각을 왼쪽으로 밀었습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하세요.</p>
+							<div class="--img">
+								<div data-ox-obj="1">
+									<div class="icon icon_x" data-ox-target="1"></div>
+								</div>
+								<div data-ox-obj="2" data-answer="">
+									<div class="icon icon_o" data-ox-target="2"></div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-4)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+
+		<li class="solve" data-popup-page="1">
+			<div class="popup_contents">
+				<p class="ls0">모양 조각을 밀면 모양은 변화가 없고, 위치만 바뀝니다.</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+		_dapChkBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				let _closestTg = obj.closest(".on");
+				if( _closestTg.querySelector(".page-iframe") ){
+					_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+				}
+			});
+		});
+	}, false);
+</script>
+
+</body>
+
+</html>

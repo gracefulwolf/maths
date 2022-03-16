@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="./css/4_2_5.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 평면도형의 이동</span>
+          <span>평면도형을 뒤집어 볼까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="93">수학<span>93</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="64">수학 익힘<span>64</span>쪽</div>
+                <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="93"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="3">도형을 뒤집은 방향을 알아맞혀 봅시다.</h1>
+          <section class="noUserSelect">
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <div class="flexBox">
+                    <div class="char char_1">
+                      <div class="balloonText">내가 어느 방향으로 도형을<br/>
+                        뒤집었는지 맞혀 봐.</div>
+                    </div>
+                    <div class="figureBox" data-quiz="toggle" data-quiz-name="toggle_1">
+                      <div class="sample">
+                        <div class="before"></div>
+                        <div class="after"></div>
+                      </div>
+                      <div class="reflectBox">
+                        <div class="top noAnswer"></div>
+                        <div class="bottom noAnswer"></div>
+                        <div class="top" data-toggle-target="1"></div>
+                        <div class="bottom" data-toggle-target="2"></div>
+                        <div class="left" data-toggle-target="3"></div>
+                        <div class="right" data-toggle-target="4"></div>
+                      </div>
+                      <div class="clickButton question" data-toggle-obj="1"></div>
+                      <div class="clickButton question" data-toggle-obj="2"></div>
+                      <div class="clickButton question reflect" data-toggle-obj="3"></div>
+                      <div class="clickButton question" data-toggle-obj="4"></div>
+                    </div>
+                    <div class="char char_2" data-quiz="input" data-quiz-name="input_1">
+                      <div class="balloonText">너는 <input class="inlineBox" data-input-obj="1" data-answer="오른(왼)"><br/>
+                        쪽으로 뒤집었구나.</div>
+                    </div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="toggle_1, input_1" data-hover=""></div>
+                </li>
+                <li class="page2">
+                  <div class="flexBox">
+                    <div class="char char_1">
+                      <div class="balloonText">이번에는 네가 맞힐 <br/>
+                        차례야.</div>
+                    </div>
+                    <div class="figureBox" data-quiz="toggle" data-quiz-name="toggle_2">
+                      <div class="sample">
+                        <div class="before"></div>
+                        <div class="after"></div>
+                      </div>
+                      <div class="reflectBox">
+                        <div class="top" data-toggle-target="1"></div>
+                        <div class="bottom" data-toggle-target="2"></div>
+                        <div class="left" data-toggle-target="3"></div>
+                        <div class="right" data-toggle-target="4"></div>
+                        <div class="left noAnswer"></div>
+                        <div class="right noAnswer"></div>
+                      </div>
+                      <div class="clickButton question" data-toggle-obj="1"></div>
+                      <div class="clickButton question" data-toggle-obj="2"></div>
+                      <div class="clickButton question reflect" data-toggle-obj="3"></div>
+                      <div class="clickButton question" data-toggle-obj="4"></div>
+                    </div>
+                    <div class="char char_2" data-quiz="input" data-quiz-name="input_2">
+                      <div class="balloonText">너는 <input class="inlineBox" data-input-obj="1" data-answer="위(아래)"><br/>
+                        쪽으로 뒤집었네.</div>
+                    </div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="toggle_2, input_2" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var quizButtons = $ts.getEl('.quizButtons');
+        quizButtons.forEach(function (btn, index) {
+          btn.addEventListener('click', function () {
+            // if(this.className.indexOf('reset') === -1){
+            //   $ts.getEl('.page'+(index+1))[0].classList.remove('complete');
+            // }else{
+            //   $ts.getEl('.page'+(index+1))[0].classList.add('complete');
+            // }
+          })
+        })
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          // $ts.getEl('.page'+(SLIDER.idx+1))[0].classList.remove('complete');
+        }
+      });
+    </script>
+  </body>
+</html>

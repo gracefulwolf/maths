@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.--bg-green{display: inline-block;padding: 12px 2px;border-radius: 50%;background: #cee492;}
+		.--bg-sky{display: inline-block;padding: 12px 13px;border-radius: 50%;background: #d4f3f6;}
+
+		.page_0  .--img{height: 540px; background: url(./images/suh_h_0401_03_0007_202_1/suh_h_0401_03_0007_202_1_1.png) no-repeat 50% 50% / contain;}
+		.page_0 .balloon.x1{top: -20px;left: 0px;}
+		.page_0 .balloon.x1:after{margin-left:40px;}
+		.page_0 .balloon.x2{top: 40px;left: 660px;}
+
+		.page_2 .math_calc_table .rowLine{top:0; z-index: 1;}
+		.page_2 .--dotted1{left:25%}
+		.page_2 .--dotted2{left:50%}
+		.page_2 .--dotted3{left:75%}
+		.page_2 .--dotted4{left:100%}
+		.page_2 .bg{background: #eee;}
+		.page_2 .--innerWrap{position: relative; padding-left: 50px;}
+		.page_2 .--mathCalcTbl,
+		.page_2 .--mathCalcTbl table{width: 270px;}
+		.page_2 .--mathCalcTbl td{height: 54px;}
+		.page_2 .--pink{background: #f7c1c9;}
+		.page_2 .--sky{background: #d4f3f6;}
+		.page_2 .--text{position: absolute; transition: all .3s ease;}
+		.page_2 .--text.on{opacity: 1 !important;}
+		.page_2 .--text.--step1.x2{top: 183px;left: 330px;opacity: 0;}
+		.page_2 .--finger .click-finger-Btn{display: none; opacity: 0; animation: css_ani_blink 1s linear infinite forwards;}
+		.page_2 .--finger .click-finger-Btn.complete{display: none !important;}
+		.page_2 .--finger .click-finger-Btn:nth-child(1),
+		.page_2 .--finger .click-finger-Btn.complete + .click-finger-Btn{display: block;}
+		.page_2 .click-finger-Btn.x1{top:100px; left: 320px;}
+		.page_2 .click-finger-Btn.x2{top:340px; left: 320px;}
+		.page_2 .--toggleTg3{position: absolute;top: 0px;right: 150px;background: url(./images/bg_math_calc_table.png) no-repeat 50% 50% / 100% 100%;padding: 20px 40px 40px 30px; opacity: 0; transition: all .3s ease 2s;}
+		.page_2 .--stepBox1.on .--toggleTg3{opacity: 1; right: 50px;}
+
+		.page_2 .--step1,
+		.page_2 .--step2{opacity: 0;}
+		.page_2 .--stepBox1.on .--step1{opacity: 1;}
+		.page_2 .--stepBox1.on .--step1.x1{transition: all .3s ease 0s;}
+		.page_2 .--step1.x2.on{transition: all .3s ease .5s;}
+		.page_2 .--stepBox1.on .--step1.x3{transition: all .3s ease 1s;}
+		.page_2 .--stepBox1.on .--step1.x4{transition: all .3s ease 1.5s;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">뮤지컬 공연 시간은 몇 시간 몇 분인지 알아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">그림</li>
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+				<li data-hover="">물음 5</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_0">
+					<section>
+						<button class="videoSubPlayBtn right" data-video-link="M202201484_800K.mp4" data-hover="" style="right:0;">활동영상 보기</button>
+						<div class="--img">
+							<div class="balloon bottom ctTail textAlignC pink x1">
+								어린이 뮤지컬<br>
+								공연 보러 가자.<br>
+								공연 시간이<br>
+								152분이네.
+							</div>
+							<div class="balloon bottom ctTail textAlignC pink x2">
+								그럼 공연 시간은<br>
+								몇 시간 몇 분인<br>
+								거예요?
+							</div>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						구하려는 것을 나눗셈식으로 나타내 보세요.
+					</span></h2>
+					<section>
+						<div class="textAlignC">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									152÷60＝□
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						152÷60을 계산하는 방법을 알아보세요.
+					</span></h2>
+					<section class="full">
+						<div class="--innerWrap pt_20 --stepBox1" data-toggle-target="1">
+							<div class="--finger">
+								<span class="popBtn click-finger-Btn css_ani_blink x1" data-toggle-obj="1" data-hover=""></span>
+							</div>
+							<div class="math_calc_table type2 col5 --mathCalcTbl mt_50">
+								<table>
+									<colgroup>
+										<col>
+										<col style="width:11px;">
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step1 x1 redT bg">2</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>60</td>
+											<td class="line-td"></td>
+											<td>1</td>
+											<td>5</td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td class="--step1 x3 redT bg">1</td>
+											<td class="--step1 x3 redT bg">2</td>
+											<td class="--step1 x3 redT bg">0</td>
+										</tr>
+										<tr class="line">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="--step1 x4">3</td>
+											<td class="--step1 x4">2</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="lineDotted line_1"></div>
+								<div class="lineDotted line_2"></div>
+								<div class="lineDotted line_3"></div>
+								<div class="lineDotted line_4"></div>
+							</div>
+							<div class="--text --step1 x2" data-toggle-target="1">··· 60×<span class="redT">2</span></div>
+
+							<div class="--toggleTg3 mt_20">
+								<div class="math_calc_table type2 col5 --mathCalcTbl mt_20">
+									<table>
+										<colgroup>
+											<col>
+											<col style="width:11px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="redT">2</td>
+											</tr>
+											<tr class="line-tr">
+												<td></td>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>60</td>
+												<td class="line-td"></td>
+												<td>1</td>
+												<td>5</td>
+												<td>2</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>1</td>
+												<td>2</td>
+												<td>0</td>
+											</tr>
+											<tr class="line">
+												<td></td>
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td>3</td>
+												<td>2</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="lineDotted line_1"></div>
+									<div class="lineDotted line_2"></div>
+									<div class="lineDotted line_3"></div>
+									<div class="lineDotted line_4"></div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div> -->
+					</section>
+				</li>
+
+
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						152÷60의 몫과 나머지를 구해 보세요.
+					</span></h2>
+					<section>
+						<ul class="flexListContainer jcenter center mt_40">
+							<li class="flexListContainer center start">
+								<div class="colorBox check skyBlue">몫</div>
+								<div>
+									<div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">2</div>
+									</div>
+								</div>
+							</li>
+							<li class="flexListContainer center start ml_80">
+								<div class="colorBox check skyBlue">나머지</div>
+								<div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">32</div>
+								</div>
+							</li>
+						</ul>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						계산 결과가 맞는지 확인해 보세요.
+					</span></h2>
+					<section>
+						<div class="flexListContainer center jcenter mt_40">
+							<div class="colorBox check skyBlue mr_15">확인</div>
+							<div>
+								<div class="toggle" data-toggle-obj="31">
+									<div class="answer" data-toggle-target="31">
+										60×2＝120
+									</div>
+								</div>
+								<ins class="icon_arrow ml_20 mr_20"></ins>
+								<div class="toggle" data-toggle-obj="32">
+									<div class="answer" data-toggle-target="32">
+										120＋21＝152
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_5" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						뮤지컬 공연 시간은 <div class="toggle" data-toggle-obj="32">
+							<div class="answer" data-toggle-target="32">
+								2
+							</div>
+						</div>시간 <div class="toggle" data-toggle-obj="32">
+							<div class="answer" data-toggle-target="32">
+								32
+							</div>
+						</div>분입니다.
+					</span></h2>
+					<section>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

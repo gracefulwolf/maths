@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="./css/4_7_2.css">
+    <!-- <link rel="stylesheet" href="css/1_finish_quiz_1.css"> -->
+  </head>
+	<body class="lesson_4">
+    <div id="wrap" class="finish quiz">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 평면도형의 이동</span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="105">수학<span>105</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="72">수학 익힘<span>72</span>쪽</div>
+                <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="105"></div>
+      </header>
+      <main>
+        <div class="contentsArea">
+          <h1>이 단원에서 배운 내용을 이용하여 다음 문제를 풀어 봅시다.</h1>
+          <h2 data-index="1">도형을 오른쪽으로 8 cm 밀었을 때의 도형을 그려 보세요.</h2>
+          <div class="noUserSelect">
+            <div class="quizContainer" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+              <div class="js-dragObj dragObj" data-drag-obj-answer="1"></div>
+              <div class="js-dropArea dropArea area" data-drop-area-answer="1"></div>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="drag_1" data-hover=""></div>
+          </div>
+        </div>
+      </main>
+      <!-- <section class="intro"></section> -->
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/sprite.min.js"></script>
+    <!-- <script src="../include/math/script/intro_finish.js"></script> -->
+    <script type="text/javascript">
+      // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+      window.$efSound.muted(true);
+      window.$efSound.incorrect(); // 오답 사운드
+      function setSound() {
+        if (isMuted) {
+          window.$efSound.muted(false);
+          isMuted = false;
+        }
+      }
+      var isMuted = true;
+      document.body.addEventListener('mousedown', setSound);
+      document.body.addEventListener('touchstart', setSound);
+      window.addEventListener('load', function() {
+
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        window.$callBack.dragCorrect = function(DRAG) {
+        }
+        window.$callBack.dragIncorrect = function(DRAG) {
+          window.$efSound.incorrect();
+        }
+      });
+    </script>
+  </body>
+</html>
