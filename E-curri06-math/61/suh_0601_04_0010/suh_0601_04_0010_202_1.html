@@ -22,12 +22,14 @@
 		.img-box .answer .img-item {position:absolute;top:0;left:0}
 		.img-box .answer .img-item img {width:580px;height:485px}
 
-		.tableContainer {width:100%;padding-left:30px;table-layout:fixed}
+		.tableContainer {width:100%;padding-left:60px;table-layout:fixed}
 		.tableContainer .img-box {padding:6px}
 		.tableContainer .img-box img {width:auto;height:100px}
 		.tableContainer .img-box .txt-item {position:absolute;font-size:.5em}
 		.tableContainer th .toggle {margin:2px 0}
 		.tableContainer td .toggle {background-color:transparent;height:112px;display:flex;align-items:center;justify-content:center}
+		.tableContainer .bullet {position:absolute;left:0;top:0;opacity:0}
+		.complete .tableContainer .bullet {opacity:1}
 	</style>
 </head>
 
@@ -61,6 +63,7 @@
 				<li class="page_2" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>만든 자음 글자의 비율을 구해 보세요.</span></h2>
 					<div class="tableContainer brown">
+						<div class="bullet exam">예</div>
 						<table>
 							<colgroup>
 								<col style="width:35%">
@@ -76,17 +79,19 @@
 								<th scope="col">
 									<div class="toggle" data-toggle-obj="1">
 										<div class="answer textAlignC" data-toggle-target="1">가로</div>
-									</div>
-									에 대한<br>
+									</div>에 대한<br>
 									<div class="toggle" data-toggle-obj="2">
 										<div class="answer textAlignC" data-toggle-target="2">세로</div>
-									</div>
-									의 비율
+									</div>의 비율
 								</th>
 							</tr>
 							<tr>
 								<td>
-									<div class="img-box"><img src="./images/suh_0601_04_0010_202_2_1.png" alt=""></div>
+									<div class="toggle box" data-toggle-obj="9">
+										<div class="answer textAlignC" data-toggle-target="9">
+											<div class="img-box"><img src="./images/suh_0601_04_0010_202_2_1.png" alt=""></div>
+										</div>
+									</div>
 								</td>
 								<td>
 									<div class="toggle box" data-toggle-obj="3">
@@ -106,7 +111,11 @@
 							</tr>
 							<tr>
 								<td>
-									<div class="img-box"><img src="./images/suh_0601_04_0010_202_2_2.png" alt=""></div>
+									<div class="toggle box" data-toggle-obj="10">
+										<div class="answer textAlignC" data-toggle-target="10">
+											<div class="img-box"><img src="./images/suh_0601_04_0010_202_2_2.png" alt=""></div>
+										</div>
+									</div>
 								</td>
 								<td>
 									<div class="toggle box" data-toggle-obj="6">
@@ -143,7 +152,7 @@
 <div id="loadingContainer">
 	<div class="loadingIconAnimation"></div>
 </div>
-
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 <script type="text/javascript" src="../common/libs/js/ts.js"></script>
 <script type="text/javascript" src="../common/libs/js/animate.js"></script>
 <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -188,6 +197,17 @@
 		});
 	}, false);
 
+	$(document).ready(function(){
+		$('.tableContainer .toggle').on('click',function(){
+			$(".tableContainer .bullet.exam").css("opacity",1);
+		});
+		window.$callBack.hideAnswer = function (obj) {
+			$(".bullet.exam").removeAttr("style");
+		}
+		window.$callBack.sliderReset = function (obj) {
+			$(".bullet.exam").removeAttr("style");
+		}
+	});
   </script>
 </body>
 </html>
