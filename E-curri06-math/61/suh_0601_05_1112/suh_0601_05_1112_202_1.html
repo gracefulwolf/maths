@@ -17,9 +17,9 @@
 	.img-content {position:relative;padding-top:180px;text-align:center}
 	.img-content img {width:800px;padding-right:30px;vertical-align:top}
 	.img-content .balloon {position:absolute}
-	.img-content .balloon.n1 {top:40px;left:80px}
+	.img-content .balloon.n1 {top:40px;left:140px}
 	.img-content .balloon.n1::after {left:80%}
-	.img-content .balloon.n2 {top:10px;right:60px}
+	.img-content .balloon.n2 {top:10px;right:130px}
 	.img-content .balloon.n2::after {left:20%}
 
 	.tbl-content {display:flex;margin-top:20px;padding-left:30px}
@@ -37,7 +37,7 @@
 
 	.page_3 .lineBox.orange {display:inline-block}
 	.page_3 .lineBox.orange .toggle {padding:0;background-color:transparent;vertical-align:top}
-	.page_3 .lineBox.orange .toggle .bullet.exam {margin:0 10px 0 0}
+	.page_3 .lineBox.orange .toggle .bullet.exam {margin:10px 10px 0 0}
 	.page_3 .tableContainer {width:100%}
 	.page_3 .tableContainer th,
 	.page_3 .tableContainer td {padding:10px 0}
@@ -47,9 +47,13 @@
 
 	.page_6 .lineBox.orange {display:inline-block}
 	.page_6 .lineBox.orange .toggle {padding:0;background-color:transparent;vertical-align:top}
-	.page_6 .lineBox.orange .toggle .bullet.exam {margin:0 10px 0 0}
+	.page_6 .lineBox.orange .toggle .bullet.exam {margin:10px 10px 0 0}
 	.page_6 .tableContainer {width:100%}
 	.page_6 .tableContainer .toggle {background-color:transparent}
+
+	.complete .sub-answer {opacity:1}
+	.sub-answer {opacity:0;transition: opacity 0.5s ease-in-out;}
+	.sub-answer.complete {opacity:1}
 </style>
 </head>
 <body>
@@ -83,11 +87,7 @@
 				<li class="page_2" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>모둠 친구들과 알고 싶은 주제를 정해 보세요.</span></h2>
 					<div class="tbl-content">
-						<div class="toggle type-b" data-toggle-obj="5" data-show="1">
-							<div class="answer">
-								<div class="bullet exam">예</div>
-							</div>
-						</div>
+						<div class="bullet exam sub-answer">예</div>
 						<div class="tableContainer brown">
 							<table>
 								<colgroup>
@@ -198,11 +198,7 @@
 				<li class="page_4" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>모둠 친구들이 할 일을 정해 보세요.</span></h2>
 					<div class="tbl-content">
-						<div class="toggle type-b" data-toggle-obj="5" data-show="1">
-							<div class="answer">
-								<div class="bullet exam">예</div>
-							</div>
-						</div>
+						<div class="bullet exam sub-answer">예</div>
 						<div class="tableContainer brown">
 							<table>
 								<colgroup>
@@ -395,7 +391,7 @@
 <div id="loadingContainer">
 	<div class="loadingIconAnimation"></div>
 </div>
-
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 <script type="text/javascript" src="../common/libs/js/ts.js"></script>
 <script type="text/javascript" src="../common/libs/js/animate.js"></script>
 <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -420,6 +416,21 @@
 			})
 		}
 	}, false);
+
+	$(document).ready(function(){
+		$('.page_2 .tbl-content .toggle').on('click',function(){
+			$(".sub-answer").css("opacity",1);
+		});
+		$('.page_4 .tbl-content .toggle').on('click',function(){
+			$(".sub-answer").css("opacity",1);
+		});
+		window.$callBack.hideAnswer = function (obj) {
+			$(".sub-answer").removeAttr("style");
+		}
+		window.$callBack.sliderReset = function (obj) {
+			$(".sub-answer").removeAttr("style");
+		}
+	});
 </script>
 
 </body>
