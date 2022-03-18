@@ -40,11 +40,11 @@
 								12개의 <span class="ico-circle"></span>를 3묶음으로 똑같이 나누어 그려 보세요.
 							</span>
 							<div class="study_guide" style="bottom: -30px !important;">
-								<em>카드</em>를 <em>드래그</em>하여 옮기세요.
+								<em>○</em>을 주머니에  <em>드래그</em>하여 옮기세요.
 							</div>
 						</h2>
 						
-						<iframe src="../../../dvd_3_1_h/lesson03/ops/3/3_1_07.html" frameborder="0" class="page-iframe" scrolling="no" title=""></iframe>
+						<iframe src="../../../dvd_3_1_h/lesson03/ops/3/3_1_07.html" frameborder="0" class="page-iframe" id="ifm1" scrolling="no" title=""></iframe>
 					</li>
 					<li class="page_2" data-quiz="toggle">
 						<h2>
@@ -171,7 +171,11 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-		}, false);
+		window.$callBack.sliderMove=function(SLIDER) {
+		document.getElementById('ifm1').contentDocument.location.reload(true);
+		}
+	}, false);
+
 
 	</script>
 

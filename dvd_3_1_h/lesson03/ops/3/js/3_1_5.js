@@ -41,13 +41,18 @@
 
     window.dragDropCallbacks = {
       "drag-obj": function(DRAGDROP) {
+        
+
         if (DRAGDROP.droppedArea) {
+          window.$efSound.correct();
+
           if (DRAGDROP.droppedArea.element.children.length === 5) DRAGDROP.droppedArea.DISABLED = true;
         }
 
         if ($ts.getEl('.page2 .dragBox .dragObjComplete').length === 15) {
           dragAnswerButton.classList.add('reset');
         }
+
       },
     };
 
