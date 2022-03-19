@@ -27,18 +27,45 @@
 			</div>
 		</header>
 		<main>
-			<div class="contentsBox" data-quiz="toggle">
-				<div class="study_guide">
-					<em>찹쌀떡</em>을 <em>드래그</em>하여 표로 옮기세요.
+			<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 				</div>
-				<div class="iframe-wrap">
-					<iframe src="../../../dvd_3_1_h/lesson03/ops/3/3_6_02.html" id="ifm1" title="" class="page-iframe" scrolling="no"></iframe>
-				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<div class="study_guide">
+							<em>찹쌀떡</em>을 <em>드래그</em>하여 표로 옮기세요.
+						</div>
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_h/lesson03/ops/3/3_6_02.html" id="ifm1" title="" class="page-iframe" scrolling="no"></iframe>
+						</div>
+					</li>
+					<li class="innerTab_2">
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_h/lesson03/ops/3/3_6_02_ok.html" id="ifm2" title="" class="page-iframe" scrolling="no"></iframe>
+						</div>
+						<div class="ps">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									2개
+								</div>
+							</div>
+						</div>
 				
-				<div class="buttonContainer">
-					<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-				</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+					</li>
+				</ul>
 			</div>
+
+			
 		</main>
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
@@ -95,6 +122,9 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
 
 	</script>
