@@ -58,8 +58,8 @@
         if (DRAGDROP.droppedArea) {
           if (DRAGDROP.droppedArea.element.children.length === 2) DRAGDROP.droppedArea.DISABLED = true;
         }
-
-        if ($ts.getEl('.page1 .dragBox .dragObjComplete').length === 12) {
+        console.log($ts.getEl('.dragBox .dragObjComplete').length);
+        if ($ts.getEl('.dragBox .dragObjComplete').length === 8) {
           dragAnswerButton.classList.add('reset');
         }
       },
