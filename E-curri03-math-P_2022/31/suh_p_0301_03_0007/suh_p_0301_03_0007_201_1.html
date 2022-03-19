@@ -19,26 +19,35 @@
 		.page_1 .innerTab_2 .textAlignC {width: 700px;margin: 0 auto;}
 		.page_2 .lineBox.inline {width: 50%;padding: 30px 40px;margin: 0 auto 30px;text-align: center;}
 		.page_3 h2 {margin-top: -20px;}
-		.basicSlider_slides .flex-item.n1{flex: 4;}
-		.basicSlider_slides .flex-item.n2{margin-left:40px}
+		.page_3 .basicSlider_slides .flex-item.n2{margin-left:40px}
 		.btn_1.zoomBtn{top: -36px;right: -59px;background: url(./images/suh_p_0301_03_0007_102_1/suh_p_0301_03_0007_102_1_1.png) no-repeat 0 0 / cover; width:100%;}
-		.figureUL .tableContainer {position: relative;width: 100%;height: 100%;}
-		.figureUL .tableContainer table td, .tableContainer table th {padding: 1px 2px 2px;font-size: 35px;}
-		.figureUL .tableContainer .popBtn {border: none;}
-		.tableContainer table .lightBrown {background-color: #ddc9b1 !important;}
-		.popup_pages>li.image.whole {z-index: 4;}
-		.pop_page_1.whole .tableContainer td {width: 50px;height: 50px;font-size: 40px;}
-		.pop_page_1.whole .tableContainer {position: relative;width: 870px;margin: 10px auto 0;}
-		.pop_page_1.whole .tableContainer table{border-collapse:collapse;}
-		.pop_page_1.whole .tableContainer table .bg_pink{background:#fcd5b5 !important;}
-		.pop_page_1.whole .arrowLine{position:absolute;z-index:1;opacity: 0.6;}
-		.pop_page_1.whole .arrowLine.blue{top:189px;left:88px;width:693px;}
-		.pop_page_1.whole .arrowLine.orange{top:46px;left:304px;width:446px;}
-		.pop_page_1.whole .arrowLine.arrow2.blue{top:157px;left:827px;width:110px;}
-		.pop_page_1.whole .arrowLine.arrow2.orange{top:523px;left:87px;width:172px;}
+		.tableContainer table{position: relative;border-collapse:collapse;border-radius: 10px;overflow: hidden;}
+		.page_3 .figureUL .tableContainer {position: relative;width: 870px;}
+		.page_3 .figureUL .tableContainer table td, .tableContainer table th {width: 50px;padding: 1px 2px 2px;font-size: 35px;}
+		.page_3 .figureUL .tableContainer .popBtn {border: none;}
+		.page_3 .figureUL .arrowLine.blue{top: 160px;left: 87px;width: 696px;}
+		.page_3 .figureUL .arrowLine.orange{top: 46px;left:304px;width: 379px;}
+		.page_3 .figureUL .arrowLine.arrow2.blue{top: 139px;left:827px;width: 94px;}
+		.page_3 .figureUL .arrowLine.arrow2.orange{top: 447px;left: 84px;width: 177px;}
+		.page_3 .arrowLine {display: none;}
+		.page_3 .arrowLine.on {display: block;}
+		.page_3 .bg_pink {background-color: transparent;}
+		.page_3 .bg_pink.on {background: #fcd5b5;}
+
+		.tableContainer table .lightBrown {background-color: #ddc9b1;}
+		.arrowLine{position:absolute !important;z-index:1;opacity: 0.6;}
 		.arrowLine.orange:before, .arrowLine.blue:before{border-width:8px 0 0 0;}
         .arrowLine.arrow.blue:before {border-color: #83bcee;}
         .arrowLine.arrow.blue:after {border-color: transparent transparent transparent #83bcee;}
+		.popup_pages>li.image.whole {z-index: 4;}
+		.pop_page_1.whole .tableContainer {position: relative;width: 870px;margin: 0 auto;padding-top: 50px;}
+		.pop_page_1.whole .tableContainer table .bg_pink{background:#fcd5b5;}
+		.pop_page_1.whole .tableContainer th, .pop_page_1.whole .tableContainer td {width: 50px;font-size: 40px;}
+		.pop_page_1.whole .tableContainer td {width: 50px;height: 50px;}
+		.pop_page_1.whole .arrowLine.blue{top: 245px;left: 87px;width: 696px;}
+		.pop_page_1.whole .arrowLine.orange{top: 101px;left:304px;width: 465px;}
+		.pop_page_1.whole .arrowLine.arrow2.blue{top: 217px;left:827px;width: 119px;}
+		.pop_page_1.whole .arrowLine.arrow2.orange{top: 593px;left: 84px;width: 177px;}
 
 	</style>
 </head>
@@ -101,6 +110,12 @@
 													<li>
 														<figure>
 															<div class="tableContainer brown">
+																<div data-toggle-obj="1">
+																	<div class="arrowLine arrow bottom orange" data-toggle-target="1"></div>
+																	<div class="arrowLine arrow left arrow2 orange" data-toggle-target="1"></div>
+																	<div class="arrowLine arrow blue" data-toggle-target="1"></div>
+																	<div class="arrowLine arrow top arrow2 blue" data-toggle-target="1"></div>
+																</div>
 																<table>
 																	<tbody>
 																		<tr>
@@ -227,7 +242,7 @@
 																			<td>
 																				<div>24</div>
 																			</td>
-																			<td>
+																			<td class="bg_pink" data-toggle-target="1">
 																				<div>27</div>
 																			</td>
 																		</tr>
@@ -401,7 +416,7 @@
 																			<td>
 																				<div>18</div>
 																			</td>
-																			<td>
+																			<td class="bg_pink" data-toggle-target="1">
 																				<div>27</div>
 																			</td>
 																			<td>
@@ -455,343 +470,343 @@
 					</li>
 				</ul>
 			</div>
-			<section class="popup_container" data-popup-container="">
-				<ul class="popup_pages">
-					<li class="whole image pop_page_1" data-popup-page="1">
-						<div class="tableContainer brown">
-							<div class="arrowLine arrow bottom orange"></div>
-							<div class="arrowLine arrow left arrow2 orange"></div>
-							<div class="arrowLine arrow blue"></div>
-							<div class="arrowLine arrow top arrow2 blue"></div>
-							<table>
-								<tbody>
-									<tr>
-										<th>
-											<div>×</div>
-										
-										</th><th>
-											<div>1</div>
-										
-										</th><th>
-											<div>2</div>
-										
-										</th><th>
-											<div>3</div>
-										
-										</th><th>
-											<div>4</div>
-										
-										</th><th>
-											<div>5</div>
-										
-										</th><th>
-											<div>6</div>
-										
-										</th><th>
-											<div>7</div>
-										
-										</th><th>
-											<div>8</div>
-										
-										</th><th>
-											<div>9</div>
-										
-									</th></tr>
-									<tr>
-										<td class="lightBrown">
-											<div>1</div>
-										</td>
-										<td>
-											<div>1</div>
-										</td>
-										<td>
-											<div>2</div>
-										</td>
-										<td>
-											<div>3</div>
-										</td>
-										<td>
-											<div>4</div>
-										</td>
-										<td>
-											<div>5</div>
-										</td>
-										<td>
-											<div>6</div>
-										</td>
-										<td>
-											<div>7</div>
-										</td>
-										<td>
-											<div>8</div>
-										</td>
-										<td>
-											<div>9</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>2</div>
-										</td>
-										<td>
-											<div>2</div>
-										</td>
-										<td>
-											<div>4</div>
-										</td>
-										<td>
-											<div>6</div>
-										</td>
-										<td>
-											<div>8</div>
-										</td>
-										<td>
-											<div>10</div>
-										</td>
-										<td>
-											<div>12</div>
-										</td>
-										<td>
-											<div>14</div>
-										</td>
-										<td>
-											<div>16</div>
-										</td>
-										<td>
-											<div>18</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>3</div>
-										</td>
-										<td>
-											<div>3</div>
-										</td>
-										<td>
-											<div>6</div>
-										</td>
-										<td>
-											<div>9</div>
-										</td>
-										<td>
-											<div>12</div>
-										</td>
-										<td>
-											<div>15</div>
-										</td>
-										<td>
-											<div>18</div>
-										</td>
-										<td>
-											<div>21</div>
-										</td>
-										<td>
-											<div>24</div>
-										</td>
-										<td class="bg_pink">
-											<div>27</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>4</div>
-										</td>
-										<td>
-											<div>4</div>
-										</td>
-										<td>
-											<div>8</div>
-										</td>
-										<td>
-											<div>12</div>
-										</td>
-										<td>
-											<div>16</div>
-										</td>
-										<td>
-											<div>20</div>
-										</td>
-										<td>
-											<div>24</div>
-										</td>
-										<td>
-											<div>28</div>
-										</td>
-										<td>
-											<div>32</div>
-										</td>
-										<td>
-											<div>36</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>5</div>
-										</td>
-										<td>
-											<div>5</div>
-										</td>
-										<td>
-											<div>10</div>
-										</td>
-										<td>
-											<div>15</div>
-										</td>
-										<td>
-											<div>20</div>
-										</td>
-										<td>
-											<div>25</div>
-										</td>
-										<td>
-											<div>30</div>
-										</td>
-										<td>
-											<div>35</div>
-										</td>
-										<td>
-											<div>40</div>
-										</td>
-										<td>
-											<div>45</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>6</div>
-										</td>
-										<td>
-											<div>6</div>
-										</td>
-										<td>
-											<div>12</div>
-										</td>
-										<td>
-											<div>18</div>
-										</td>
-										<td>
-											<div>24</div>
-										</td>
-										<td>
-											<div>30</div>
-										</td>
-										<td>
-											<div>36</div>
-										</td>
-										<td>
-											<div>42</div>
-										</td>
-										<td>
-											<div>48</div>
-										</td>
-										<td>
-											<div>54</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>7</div>
-										</td>
-										<td>
-											<div>7</div>
-										</td>
-										<td>
-											<div>14</div>
-										</td>
-										<td>
-											<div>21</div>
-										</td>
-										<td>
-											<div>28</div>
-										</td>
-										<td>
-											<div>35</div>
-										</td>
-										<td>
-											<div>42</div>
-										</td>
-										<td>
-											<div>49</div>
-										</td>
-										<td>
-											<div>56</div>
-										</td>
-										<td>
-											<div>63</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>8</div>
-										</td>
-										<td>
-											<div>8</div>
-										</td>
-										<td>
-											<div>16</div>
-										</td>
-										<td>
-											<div>24</div>
-										</td>
-										<td>
-											<div>32</div>
-										</td>
-										<td>
-											<div>40</div>
-										</td>
-										<td>
-											<div>48</div>
-										</td>
-										<td>
-											<div>56</div>
-										</td>
-										<td>
-											<div>64</div>
-										</td>
-										<td>
-											<div>72</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="lightBrown">
-											<div>9</div>
-										</td>
-										<td>
-											<div>9</div>
-										</td>
-										<td>
-											<div>18</div>
-										</td>
-										<td class="bg_pink">
-											<div>27</div>
-										</td>
-										<td>
-											<div>36</div>
-										</td>
-										<td>
-											<div>45</div>
-										</td>
-										<td>
-											<div>54</div>
-										</td>
-										<td>
-											<div>63</div>
-										</td>
-										<td>
-											<div>72</div>
-										</td>
-										<td>
-											<div>81</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</li>
-				</ul>
-			</section>
 		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole image pop_page_1" data-popup-page="1">
+					<div class="tableContainer brown">
+						<div class="arrowLine arrow bottom orange"></div>
+						<div class="arrowLine arrow left arrow2 orange"></div>
+						<div class="arrowLine arrow blue"></div>
+						<div class="arrowLine arrow top arrow2 blue"></div>
+						<table>
+							<tbody>
+								<tr>
+									<th>
+										<div>×</div>
+									
+									</th><th>
+										<div>1</div>
+									
+									</th><th>
+										<div>2</div>
+									
+									</th><th>
+										<div>3</div>
+									
+									</th><th>
+										<div>4</div>
+									
+									</th><th>
+										<div>5</div>
+									
+									</th><th>
+										<div>6</div>
+									
+									</th><th>
+										<div>7</div>
+									
+									</th><th>
+										<div>8</div>
+									
+									</th><th>
+										<div>9</div>
+									
+								</th></tr>
+								<tr>
+									<td class="lightBrown">
+										<div>1</div>
+									</td>
+									<td>
+										<div>1</div>
+									</td>
+									<td>
+										<div>2</div>
+									</td>
+									<td>
+										<div>3</div>
+									</td>
+									<td>
+										<div>4</div>
+									</td>
+									<td>
+										<div>5</div>
+									</td>
+									<td>
+										<div>6</div>
+									</td>
+									<td>
+										<div>7</div>
+									</td>
+									<td>
+										<div>8</div>
+									</td>
+									<td>
+										<div>9</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>2</div>
+									</td>
+									<td>
+										<div>2</div>
+									</td>
+									<td>
+										<div>4</div>
+									</td>
+									<td>
+										<div>6</div>
+									</td>
+									<td>
+										<div>8</div>
+									</td>
+									<td>
+										<div>10</div>
+									</td>
+									<td>
+										<div>12</div>
+									</td>
+									<td>
+										<div>14</div>
+									</td>
+									<td>
+										<div>16</div>
+									</td>
+									<td>
+										<div>18</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>3</div>
+									</td>
+									<td>
+										<div>3</div>
+									</td>
+									<td>
+										<div>6</div>
+									</td>
+									<td>
+										<div>9</div>
+									</td>
+									<td>
+										<div>12</div>
+									</td>
+									<td>
+										<div>15</div>
+									</td>
+									<td>
+										<div>18</div>
+									</td>
+									<td>
+										<div>21</div>
+									</td>
+									<td>
+										<div>24</div>
+									</td>
+									<td class="bg_pink">
+										<div>27</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>4</div>
+									</td>
+									<td>
+										<div>4</div>
+									</td>
+									<td>
+										<div>8</div>
+									</td>
+									<td>
+										<div>12</div>
+									</td>
+									<td>
+										<div>16</div>
+									</td>
+									<td>
+										<div>20</div>
+									</td>
+									<td>
+										<div>24</div>
+									</td>
+									<td>
+										<div>28</div>
+									</td>
+									<td>
+										<div>32</div>
+									</td>
+									<td>
+										<div>36</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>5</div>
+									</td>
+									<td>
+										<div>5</div>
+									</td>
+									<td>
+										<div>10</div>
+									</td>
+									<td>
+										<div>15</div>
+									</td>
+									<td>
+										<div>20</div>
+									</td>
+									<td>
+										<div>25</div>
+									</td>
+									<td>
+										<div>30</div>
+									</td>
+									<td>
+										<div>35</div>
+									</td>
+									<td>
+										<div>40</div>
+									</td>
+									<td>
+										<div>45</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>6</div>
+									</td>
+									<td>
+										<div>6</div>
+									</td>
+									<td>
+										<div>12</div>
+									</td>
+									<td>
+										<div>18</div>
+									</td>
+									<td>
+										<div>24</div>
+									</td>
+									<td>
+										<div>30</div>
+									</td>
+									<td>
+										<div>36</div>
+									</td>
+									<td>
+										<div>42</div>
+									</td>
+									<td>
+										<div>48</div>
+									</td>
+									<td>
+										<div>54</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>7</div>
+									</td>
+									<td>
+										<div>7</div>
+									</td>
+									<td>
+										<div>14</div>
+									</td>
+									<td>
+										<div>21</div>
+									</td>
+									<td>
+										<div>28</div>
+									</td>
+									<td>
+										<div>35</div>
+									</td>
+									<td>
+										<div>42</div>
+									</td>
+									<td>
+										<div>49</div>
+									</td>
+									<td>
+										<div>56</div>
+									</td>
+									<td>
+										<div>63</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>8</div>
+									</td>
+									<td>
+										<div>8</div>
+									</td>
+									<td>
+										<div>16</div>
+									</td>
+									<td>
+										<div>24</div>
+									</td>
+									<td>
+										<div>32</div>
+									</td>
+									<td>
+										<div>40</div>
+									</td>
+									<td>
+										<div>48</div>
+									</td>
+									<td>
+										<div>56</div>
+									</td>
+									<td>
+										<div>64</div>
+									</td>
+									<td>
+										<div>72</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="lightBrown">
+										<div>9</div>
+									</td>
+									<td>
+										<div>9</div>
+									</td>
+									<td>
+										<div>18</div>
+									</td>
+									<td class="bg_pink">
+										<div>27</div>
+									</td>
+									<td>
+										<div>36</div>
+									</td>
+									<td>
+										<div>45</div>
+									</td>
+									<td>
+										<div>54</div>
+									</td>
+									<td>
+										<div>63</div>
+									</td>
+									<td>
+										<div>72</div>
+									</td>
+									<td>
+										<div>81</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</section>
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
