@@ -11,6 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
+		#wrap header .title {padding: 0 0 12px 42px;}
+		.popBtn.eye.orange {position: relative;display: inline-block;top: 3px !important;}
+		.img-wrap {width: 100%;text-align: center;}
 		.contentsBox .page_1 section {padding: 0;}
 		.contentsBox h2 {margin-bottom: 30px;}
 		.contentsBox .page_4 h2 {margin-bottom: 20px;}
@@ -20,16 +23,22 @@
 		.page_4 .flexListContainer {margin-right: 50px;}
 		.page_4 .textAlignC .toggle.noBg:after {display: none;}
 		.page_4 .arrow-wrap {margin: 5px auto;}
-		.pop_page_1 .text {position: absolute;top: 101px;right: 70px;text-align: center;color: green;font-size: 40px;z-index: 1;}
+		.pop_page_1 .text.n2 {position: absolute;top: 101px;right: 70px;text-align: center;color: green;font-size: 40px;z-index: 1;}
 		.popup_pages>li.image.whole img {position: relative;}
-		.popup_pages>li.image.whole .text {top: 142px;right: 244px;font-size: 40px;z-index: 1;}
+		.popup_pages>li.image.whole .text.n2 {top: 142px;right: 244px;font-size: 40px;z-index: 1;}
+		.popup_pages>li.image.whole, .popup_pages>li.whole.on {z-index: 4;}
+		.text.n1 span {color: #00A0FE;}
+		.text.n1 span.red {color: red;}
+		.pop_page_1.whole {position: relative;}
+		.pop_page_1.whole .text.n1 {position: absolute;top: 20px;left: 20px;z-index: 2;;width: 270px;flex-wrap: wrap;align-items: center;font-size: 40px;letter-spacing: -1px;}
+		.pop_page_1.whole .text.n2 {position: absolute;top: 142px;right: 242px;}
 	</style>
 </head>
 
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title">
+			<div class="title" style="letter-spacing: -1px;">
 				준비한 화분은 모두 몇 개인지 알아봅시다.
 				<div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div>
 			</div>
@@ -167,10 +176,14 @@
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<li class="whole image pop_page_1" data-popup-page="1">
-					<img src="./images/suh_p_0301_04_0005_102_1/suh_p_0301_04_0005_102_1_2.png" alt="">
-					<div class="text">
+					<div class="flex-wrap text n1">
+						<div><span>17개씩</span> 들어있는</div>
+						<div>화분 <span class="red">3상자</span></div>
+					</div>
+					<div class="text n2">
 						6월 5일<br>환경의 날
 					</div>
+					<img src="./images/suh_p_0301_04_0005_102_1/suh_p_0301_04_0005_102_1_2.png" alt="">
 				</li>
 				<li class="whole pop_page_2" data-popup-page="2">
 					<h2 class="box"><span>더 알아보기</span></h2>
@@ -256,7 +269,7 @@
 				spriteList: [
 					{
 						name: 'boy_2',
-						speech: 'top',
+						speech: 'right',
 						circle: 'green',
 						top: 220,
 						right: 0,
