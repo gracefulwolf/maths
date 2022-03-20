@@ -324,13 +324,14 @@
 						{
 							// 정답 액션
 							this.element.trigger("quizAnswer", [hitTarget.index(), this.touchTarget.index()]);
-							GlobalAudio.play("button")
-							// GlobalAudio.play(this.options.answerAudio);
+							
+							GlobalAudio.play(this.options.answerAudio);
 						}
 						else
 						{
 							// 오답 액션
 							this.element.trigger("quizWrong");
+							
 							GlobalAudio.play(this.options.failedAudio);
 						}
 					}

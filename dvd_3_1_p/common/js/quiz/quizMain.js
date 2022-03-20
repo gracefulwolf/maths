@@ -319,7 +319,8 @@
 				}
 				else
 				{
-					GlobalAudio.play("quiz_x");
+					//GlobalAudio.play("quiz_x");
+					GlobalAudio.play("button");
 				}
 				this.element.find(".btn-answer-part").addClass("active");
 
