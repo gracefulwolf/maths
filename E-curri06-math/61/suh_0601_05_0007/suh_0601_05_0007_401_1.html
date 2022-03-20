@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+<!--  수학 -->
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+<link rel="stylesheet" href="../../../__common__/css/custom.css">
+<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+<style>
+	.ex-box {display:flex}
+	.ex-box .bullet.exam {flex-shrink:0}
+
+	.graph-area {position:relative;height:260px}
+	.graph-area .zoom {position:absolute;top:-150px;left:170px;transform:scale(.45)}
+	.graph-area .popBtn.zoomBtn {position:absolute;top:-20px;left:120px;right:120px;bottom:-10px}
+	.graph-content {width:470px;margin:60px auto 0}
+	.graph-content .graph-box {position:relative}
+	.graph-content .graph-box img {width:470px}
+	.graph-content .graph-box .txt-item {position:absolute;font-size:36px;white-space:nowrap}
+	.graph-content .graph-box .txt-item.num {font-size:30px}
+	.graph-content .graph-box .txt-item.n1 {top:-40px;left:228px}
+	.graph-content .graph-box .txt-item.n2 {top:162px;left:430px}
+	.graph-content .graph-box .txt-item.n3 {bottom:-40px;left:220px}
+	.graph-content .graph-box .txt-item.n4 {top:162px;left:10px}
+	.graph-content .graph-box .txt-item.n5 {top:110px;left:262px}
+	.graph-content .graph-box .txt-item.n6 {top:284px;left:430px}
+	.graph-content .graph-box .txt-item.n7 {top:193px;left:-110px}
+	.graph-content .graph-box .txt-item.n8 {top:-24px;left:-40px}
+
+	.bar-graph {position:relative}
+	.bar-graph img {display:block;width:938px}
+	.bar-graph .txt-item {position:absolute;font-size:30px;white-space:nowrap}
+	.bar-graph .txt-item.num {font-size:20px}
+	.bar-graph .txt-item.n1 {top:-25px;left:-5px}
+	.bar-graph .txt-item.n2 {top:-25px;left:80px}
+	.bar-graph .txt-item.n3 {top:-25px;left:170px}
+	.bar-graph .txt-item.n4 {top:-25px;left:260px}
+	.bar-graph .txt-item.n5 {top:-25px;left:350px}
+	.bar-graph .txt-item.n6 {top:-25px;left:440px}
+	.bar-graph .txt-item.n7 {top:-25px;left:530px}
+	.bar-graph .txt-item.n8 {top:-25px;left:620px}
+	.bar-graph .txt-item.n9 {top:-25px;left:710px}
+	.bar-graph .txt-item.n10 {top:-25px;left:800px}
+	.bar-graph .txt-item.n11 {top:-25px;left:885px}
+	.bar-graph .txt-item.n12 {top:70px;left:110px}
+	.bar-graph .txt-item.n13 {top:70px;left:425px}
+	.bar-graph .txt-item.n14 {top:50px;left:678px}
+	.bar-graph .txt-item.n15 {top:50px;left:920px}
+
+	.graph-group {display:flex;height:100%}
+	.graph-group .graph-col {flex:1 100%;text-align:center}
+	.graph-group .graph-col + .graph-col {margin-left:60px}
+
+	.circle-graph {position:relative}
+	.circle-graph img {display:block}
+	.circle-graph .txt-item {position:absolute;font-size:30px;white-space:nowrap}
+
+	.popup_pages > li.whole.pop_page_1 {justify-content:center}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="checkContainer math" data-open-gate="">
+	<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+	<div class="gate_container">
+		<div class="gate_title_container">
+			<div class="gate_title_title">확인 문제</div>
+			<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+		</div>
+	</div>
+	<header>
+		<div class="checkTitle">
+			<span class="title"><span class="orange">확인</span> 문제</span>
+		</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs five" data-tabs="">
+				<li data-hover="">문제 1</li>
+				<li data-hover="">문제 2</li>
+				<li data-hover="">문제 3</li>
+				<li data-hover="">문제 4</li>
+				<li data-hover="">문제 5</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>지윤이네 반 학생들이 주말에 놀러 가고 싶은 장소를 조사하여 나타낸 원그래프입니다. 가장 많은 학생들이 주말에 놀러 가고 싶은 장소를 찾아보시오.</span></h2>
+					<section class="textAlignC">
+						<div class="graph-area">
+							<div class="zoom">
+								<div class="lineBox purple" style="display:inline-block">주말에 놀러 가고 싶은 장소별 학생 수</div>
+								<div class="graph-content">
+									<div class="graph-box">
+										<img src="./images/suh_0601_05_0007_401_1.png" alt="">
+										<div class="txt-item num n1">0</div>
+										<div class="txt-item num n2">25</div>
+										<div class="txt-item num n3">50</div>
+										<div class="txt-item num n4">75</div>
+										<div class="txt-item n5">극장<br>(40 %)</div>
+										<div class="txt-item n6">놀이공원<br>(25 %)</div>
+										<div class="txt-item n7">수영장<br>(20 %)</div>
+										<div class="txt-item n8">기타(15 %)</div>
+									</div>
+								</div>
+							</div>
+							<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="1"></button>
+						</div>
+						<div class="toggle mt_30" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">극장</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span style="letter-spacing:-1px">민영이네 반 학생들이 좋아하는 꽃을 조사하여 나타낸 띠그래프입니다. 띠그래프를 보고 더 알 수 있는 내용을 말해 보시오.</span></h2>
+					<section class="textAlignC">
+						<div class="lineBox purple" style="display:inline-block;padding:10px 20px">좋아하는 꽃별 학생 수</div>
+						<div class="bar-graph mt_40">
+							<img src="./images/suh_0601_05_0007_401_1_2.png" alt="">
+							<div class="txt-item num n1">0</div>
+							<div class="txt-item num n2">10</div>
+							<div class="txt-item num n3">20</div>
+							<div class="txt-item num n4">30</div>
+							<div class="txt-item num n5">40</div>
+							<div class="txt-item num n6">50</div>
+							<div class="txt-item num n7">60</div>
+							<div class="txt-item num n8">70</div>
+							<div class="txt-item num n9">80</div>
+							<div class="txt-item num n10">90</div>
+							<div class="txt-item num n11">100(%)</div>
+							<div class="txt-item flower n12">장미(40 %)</div>
+							<div class="txt-item flower n13">튤립(30 %)</div>
+							<div class="txt-item flower n14">무궁화<br>(20 %)</div>
+							<div class="txt-item flower n15">기타<br>(10 %)</div>
+						</div>
+						<div class="toggle box mt_20" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								<div class="ex-box">
+									<div class="bullet exam">예</div>
+									<p style="letter-spacing:-1px">민영이네 반 학생들이 가장 많이 좋아하는 꽃은 장미입니다.</p>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot orange"></ins><span style="letter-spacing:-1px">은희네 반 학생들이 태어난 계절별 학생 수를 조사하여 나타낸 원그래프입니다. 은희네 반 학생들은 어느 계절에 가장 적게 태어났습니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="lineBox orange" style="display:inline-block;padding:10px 20px">태어난 계절별 학생 수</div>
+								<div class="circle-graph mt_40">
+									<img src="" alt="">
+									<div class="txt-item num n1">0</div>
+									<div class="txt-item num n2">25</div>
+									<div class="txt-item num n3">50</div>
+									<div class="txt-item num n4">75</div>
+									<div class="txt-item n5">봄<br>(30 %)</div>
+									<div class="txt-item n6">여름<br>(40 %)</div>
+									<div class="txt-item n7">가을<br>(10 %)</div>
+									<div class="txt-item n8">겨울(20 %)</div>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">가을</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot orange"></ins><span style="letter-spacing:-1px">은희네 반 학생들이 태어난 계절별 학생 수를 조사하여 나타낸 원그래프입니다. 봄에 태어난 학생이 6명이라면 가을에 태어난 학생은 몇 명입니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="lineBox orange" style="display:inline-block;padding:10px 20px">태어난 계절별 학생 수</div>
+								<div class="circle-graph mt_40">
+									<img src="" alt="">
+									<div class="txt-item num n1">0</div>
+									<div class="txt-item num n2">25</div>
+									<div class="txt-item num n3">50</div>
+									<div class="txt-item num n4">75</div>
+									<div class="txt-item n5">봄<br>(30 %)</div>
+									<div class="txt-item n6">여름<br>(40 %)</div>
+									<div class="txt-item n7">가을<br>(10 %)</div>
+									<div class="txt-item n8">겨울(20 %)</div>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">2</div>
+								</div> 명
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="2" data-hover></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+				<li class="page_5" data-quiz="toggle">
+					<h2><ins class="dot orange"></ins><span style="letter-spacing:-1px">은희네 반 학생들이 태어난 계절별 학생 수를 조사하여 나타낸 원그래프입니다. 원그래프를 보고 알 수 있는 사실을 두 가지 적어 보시오.</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="lineBox orange" style="display:inline-block;padding:10px 20px">태어난 계절별 학생 수</div>
+								<div class="circle-graph mt_40">
+									<img src="" alt="">
+									<div class="txt-item num n1">0</div>
+									<div class="txt-item num n2">25</div>
+									<div class="txt-item num n3">50</div>
+									<div class="txt-item num n4">75</div>
+									<div class="txt-item n5">봄<br>(30 %)</div>
+									<div class="txt-item n6">여름<br>(40 %)</div>
+									<div class="txt-item n7">가을<br>(10 %)</div>
+									<div class="txt-item n8">겨울(20 %)</div>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="ex-box">
+											<div class="bullet exam">예</div>
+											<p>여름에 태어난 학생 수는 겨울에 태어난 학생 수의 2배입니다.</p>
+										</div>
+									</div>
+								</div>
+								<div class="toggle box mt_10" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<div class="ex-box">
+											<div class="bullet exam">예</div>
+											<p>여름에 태어난 학생이 가장 많습니다.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole pop_page_1" data-popup-page="1">
+				<section class="textAlignC">
+					<div class="lineBox purple" style="display:inline-block">주말에 놀러 가고 싶은 장소별 학생 수</div>
+					<div class="graph-content">
+						<div class="graph-box">
+							<img src="./images/suh_0601_05_0007_401_1.png" alt="">
+							<div class="txt-item num n1">0</div>
+							<div class="txt-item num n2">25</div>
+							<div class="txt-item num n3">50</div>
+							<div class="txt-item num n4">75</div>
+							<div class="txt-item n5">극장<br>(40 %)</div>
+							<div class="txt-item n6">놀이공원<br>(25 %)</div>
+							<div class="txt-item n7">수영장<br>(20 %)</div>
+							<div class="txt-item n8">기타(15 %)</div>
+						</div>
+					</div>
+				</section>
+			</li>
+			<li class="solve pop_page_2" data-popup-page="2">
+				<div class="popup_contents">
+					봄에 태어난 학생의 비율은 <strong>30 %</strong>이고, 가을에 태어난 학생의 비율이 <strong>10 %</strong>이므로 봄에 태어난 학생의 비율은 가을에 태어난 학생 수의 <strong>3배</strong>입니다.<br>
+					따라서 가을에 태어난 학생은 <strong>6÷3＝2(명)</strong>입니다.
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+	}, false);
+</script>
+</body>
+</html>
