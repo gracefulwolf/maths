@@ -324,7 +324,8 @@
 						{
 							// 정답 액션
 							this.element.trigger("quizAnswer", [hitTarget.index(), this.touchTarget.index()]);
-							GlobalAudio.play(this.options.answerAudio);
+							GlobalAudio.play("button")
+							// GlobalAudio.play(this.options.answerAudio);
 						}
 						else
 						{
