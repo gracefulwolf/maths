@@ -132,12 +132,13 @@
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
 
-			const _examViewBtn = document.querySelectorAll(".popup_closeBtn")
+			const _dapChkButt = document.querySelectorAll(".dapCheckBtn")
 			const _iframe = document.querySelectorAll(".page-iframe");
-			_examViewBtn.forEach(function(obj, index){
+			_dapChkButt.forEach(function(obj, index){
 				obj.addEventListener( "click", function(e) {
-					//console.log(_iframe)
-					_iframe[index].contentWindow.location.reload();
+					if( !obj.classList.contains( "reset" ) ){
+						_iframe[index].contentWindow.location.reload();
+					}
 				});
 			});
 

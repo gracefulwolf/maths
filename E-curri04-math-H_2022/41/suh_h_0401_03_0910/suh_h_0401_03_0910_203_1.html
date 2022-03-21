@@ -24,9 +24,14 @@
 		.popup_pages .blankBox{width:40px; height:40px; vertical-align:-7px;}
 
 		.--innerBox{position: relative;}
+		.--innerBox:before{content: ""; display: block; position: absolute; top: 40px; left: 160px; width: 280px; height: 380px; background: #fff;}
 		.--innerBox.x1{width:100%; height: 470px; background: url(./images/suh_h_0401_03_0910_203_1/suh_h_0401_03_0910_203_1_1.png) no-repeat 50% 50% / contain;}
 		.--innerBox.x2{width:100%; height: 470px; background: url(./images/suh_h_0401_03_0910_203_1/suh_h_0401_03_0910_203_1_2.png) no-repeat 50% 50% / contain;}
-		.--text{position: absolute;}
+		.--innerBox .math_calc_table{margin: 30px 0 0 180px;}
+		.--innerBox .math_calc_table td{height: 58px; padding: 4px 0;}
+		.--innerBox .math_calc_table.type2 .toggle{margin: 0;}
+		.--innerBox .colorBox.check{min-width: 110px; text-align: center;}
+		/* .--text{position: absolute;}
 		.--text.x1{top: 270px;left: 170px;white-space: nowrap;}
 		.--text.x2{top: 340px;left: 170px;white-space: nowrap;}
 		.--text.x3{top: 20px;left: 280px;}
@@ -35,7 +40,7 @@
 		.--text.x6{top: 310px;left: 230px;white-space: nowrap;}
 		.--text.x7{top: 380px;left: 230px;white-space: nowrap;}
 		.--text .colorBox{min-width: 120px; text-align: center;}
-		.--text .answer{position:relative; top: 4px; right: -23px; letter-spacing: 28px;}
+		.--text .answer{position:relative; top: 4px; right: -23px; letter-spacing: 28px;} */
 	</style>
 </head>
 
@@ -55,15 +60,140 @@
 
 						<div class="flexListContainer jcenter">
 							<div class="--innerBox x1">
-								<div class="--text x1 flexListContainer">
-									<div class="colorBox check skyBlue">몫</div>
+								<div class="math_calc_table type2 col5">
+									<table>
+										<colgroup>
+											<col>
+											<col style="width:10px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>1</td>
+											<td></td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>36</td>
+											<td class="line-td"></td>
+											<td>3</td>
+											<td>8</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td>3</td>
+											<td>6</td>
+											<td>0</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>2</td>
+											<td>0</td>
+										</tr>
+										</tbody>
+									</table>
 								</div>
-								<div class="--text x2 flexListContainer">
+								<div class="flexListContainer jcenter center mt_40 pl_40" style="position: relative;">
+									<div class="colorBox check skyBlue">몫</div>
+									<div>
+										<div class="textAlignC" style="min-width: 80px; height: 56px; border-bottom: 2px solid #000;">1</div>
+									</div>
+								</div>
+								<div class="--text x2 flexListContainer jcenter center mt_10 pl_40" style="position: relative;">
 									<div class="colorBox check skyBlue">나머지</div>
+									<div>
+										<div class="textAlignC" style="min-width: 80px; height: 56px; border-bottom: 2px solid #000;">20</div>
+									</div>
 								</div>
 							</div>
 							<div class="--innerBox x2">
-								<div class="--text x3 toggle" data-toggle-obj="1">
+								<div class="math_calc_table type2 col5">
+									<table>
+										<colgroup>
+											<col>
+											<col style="width:10px;">
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														<span style="opacity:0;">0</span>10
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>36</td>
+											<td class="line-td"></td>
+											<td>3</td>
+											<td>8</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">
+														360
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-tr">
+											<td></td>
+											<td colspan="4">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td colspan="3">
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">
+														<span style="opacity:0;">0</span>20
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- <div class="--text x3 toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
 										10
 									</div>
@@ -77,12 +207,26 @@
 									<div class="answer" data-toggle-target="3">
 										20
 									</div>
+								</div> -->
+								<div class="--text x6 flexListContainer jcenter center mt_40 pl_40">
+									<div class="colorBox check skyBlue">몫</div>
+									<div>
+										<div class="toggle" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">
+												10
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="--text x6 flexListContainer">
-									<div class="colorBox check skyBlue">몫</div> 10
-								</div>
-								<div class="--text x7 flexListContainer">
-									<div class="colorBox check skyBlue">나머지</div> 20
+								<div class="--text x7 flexListContainer jcenter center mt_10 pl_40">
+									<div class="colorBox check skyBlue">나머지</div>
+									<div>
+										<div class="toggle" data-toggle-obj="5">
+											<div class="answer" data-toggle-target="5">
+												20
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

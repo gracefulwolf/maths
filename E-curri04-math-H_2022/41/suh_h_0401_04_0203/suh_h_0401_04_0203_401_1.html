@@ -115,12 +115,15 @@
 }
 .page_2 .oxContainer {
     position: absolute;
-    top: 250px;
-    left: 520px;
+    top: 0px;
+    left: 416px;
+    border: 1px solid red;
 }
 .page_2 .oxContainer li {
     vertical-align:top;
-    position: relative;
+    position: absolute;
+    left: 0px;
+    top: 0;
     min-width: 46px;
     display: inline-flex;
     display: -ms-inline-flexbox;
@@ -128,19 +131,18 @@
     -ms-flex-align:center;
     justify-content:center;
     -ms-flex-pack:center;
-    width:80px;
-    height:80px;
+    width: 270px;
+    height: 215px;
     line-height:1;
     border-radius: 8px;
     text-align: center;
     text-indent: 0;
-    background-color: #efefef;
+    background-color: transparent;
     box-sizing: border-box;
     cursor: pointer;
 }
 .page_2 .oxContainer li ~ li{
-    margin-left:213px;
-
+    left: 311px;
 }
 .page_2 .oxContainer dl dd.grayBox.oxClick {
     margin-top: 30px;
@@ -148,6 +150,12 @@
 .page_2 .oxClick > span {
     display: inline-block;
     width: 50%;
+}
+.page_2 .icon.icon_o,
+.page_2 .icon.icon_tri,
+.page_2 .icon.icon_x{
+	width: 90px;
+	height: 90px;
 }
 .page_2 .oxClick > span:first-child {float: left;}
 .page_2 .oxClick > span:last-child {float: right;}
@@ -228,7 +236,7 @@
     height:407px;
     margin:0 auto;
     position:relative;
-    top:-10px;
+    top:20px;
 }
 .page_4 .img_1 {
     position: absolute;
@@ -294,6 +302,10 @@
     text-align: center;
     margin-left: 19px;
 }
+.page_4 .zoomContainer{margin-top: -30px;}
+.page_4 .zoomArea{height: 430px;}
+.page_4 .zoomContainer.horizon .zoomController{top: -40px; left: auto; right: 0;}
+
 
 .page_5 .img_part {
     margin: 0 auto;
@@ -324,10 +336,13 @@
 }
 
 
+
 		.page_10 .--box > *{flex: 1; margin: 0 30px;}
 		.page_10 img{width: 200px;}
 		.page_10 [data-ox-obj]{display:inline-block;}
 		.page_10 .icon{position:absolute; top:50%; left:50%; width: 90px; height: 90px; margin: -45px 0 0 -45px;}
+		.page_10 .icon_o{margin: -60px 0 0 -25px;}
+		.page_10 .icon_x{margin: -60px 0 0 -65px;}
 
 		.page_20 .--img{position: relative; height: 350px; background: url(./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_2_1.png) no-repeat 50% 50% / contain;}
 		.page_20 .--img .answer{position: absolute;top:0; left: 0; width: 100%;height: 100%;background: url(./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_2_2.png) no-repeat 50% 50% / contain;}
@@ -337,12 +352,14 @@
 
 		.page_30 .--img{position: relative; height: 150px; margin-top: 30px; background: url(./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_3.png) no-repeat 50% 50% / contain;}
 		.page_30 .--text{position: absolute;}
-		.page_30 .--text.n1{top: -50px;left: 195px;}
-		.page_30 .--text.n2{top: -5px;left: 120px;}
+		.page_30 .--text.n1{top: -58px;left: 195px;}
+		.page_30 .--text.n2{top: -7px;left: 117px;}
 		.page_30 .--text.n3{top: 40px;left: 284px;}
 		.page_30 .--text.n4{top: 40px;left: 652px;}
 		.page_30 .--text.n5{top: 60px;left: 485px;}
 		.page_30 .lineBox{width: 610px; margin: 20px auto 0;}
+		.page_30 .--dottedCircle.n1{position: absolute;top: -15px;left: 222px;width: 35px;height: 35px;border-radius: 50%;border: 3px dotted #000;clip: rect(0px, 70px, 15px, 0px );}
+		.page_30 .--dottedCircle.n2{position: absolute;top: -1px;left: 207px;width: 35px;height: 35px;border-radius: 50%;border: 3px dotted #000;clip: rect(0px, 15px, 68px, 0px );}
 	</style>
 </head>
 
@@ -445,6 +462,8 @@
 								<div class="--text n3">㉮</div>
 								<div class="--text n4">㉯</div>
 								<div class="--text n5 icon_arrow left"></div>
+								<div class="--dottedCircle n1"></div>
+								<div class="--dottedCircle n2"></div>
 							</div>
 							<div class="lineBox pink">
 								㉮ 도형은 ㉯ 도형을 <div class="toggle" data-toggle-obj="1">
@@ -485,7 +504,6 @@
 					<li class="page_2" data-quiz="ox" data-option="hide,answerSound" data-quiz-name="ox1">
 						<h2><ins class="dot orange"></ins><span>다음 도형을 오른쪽으로 밀었습니다. 알맞은 것을 찾아 <span class="icon_o_title"></span>표 하시오.</span></h2>
 						<section>
-							<div class="study_guide" style="top:-60px;"><em>빈칸</em>을 <em>클릭</em>하세요.</div>
 							<div class="img_part">
 								<div class="lineBox sky"></div>
 								<img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_5_1.png" class="img_1" />
@@ -551,14 +569,22 @@
 					<li class="page_4" data-quiz="toggle">
 						<h2><ins class="dot orange"></ins><span>도형을 오른쪽으로 11 cm 밀고 아래쪽으로 9 cm 밀었을 때의 도형을 그리시오. </span></h2>
 						<section>
-							<div class="quizArea noClick">
-								<img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_1.png" class="img_1" />
-								<img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_2.png" class="img_2" />
+							<div class="zoomContainer horizon container_1" data-zoom-container="">
+								<!--  zoom 영역  -->
+								<div class="zoomArea">
+								  <!--  이미지 영역  -->
+									<div class="zoomImgContainer">
+										<div class="quizArea noClick">
+												<img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_1.png" class="img_1" />
+												<img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_2.png" class="img_2" />
 
-								<div class="dotLine_1"><span>1 <span class="HUMjEB">cm</span></span></div>
-								<div class="dotLine_2"><span>1 <span class="HUMjEB">cm</span></span></div>
+												<div class="dotLine_1"><span>1 <span class="HUMjEB">cm</span></span></div>
+												<div class="dotLine_2"><span>1 <span class="HUMjEB">cm</span></span></div>
 
-								<div class="toggle noBox img_3" data-toggle-obj="1"><div class="answer" data-toggle-target="1"><img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_3.png" /></div></div>
+												<div class="toggle noBox img_3" data-toggle-obj="1"><div class="answer" data-toggle-target="1"><img src="./images/suh_h_0401_04_0203_401_1/suh_h_0401_04_0203_401_1_8_3.png" /></div></div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
