@@ -10,6 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
+		#wrap header .title {padding: 0 0 12px 42px;letter-spacing: -1.3px;}
+		.popBtn.eye.orange {position: relative;display: inline-block;top: -10px;}
 		.contentsBox .page_1 section {padding: 0;}
 		.page_1 .img-wrap {position: relative;width: 100%;height: 446px;margin-top: 30px;background: url(./images/suh_p_0301_04_0003_201_1/suh_p_0301_04_0003_201_1_1.png) 25% 0 /70% no-repeat;}
 		.page_1 .img-wrap .balloon {position: absolute;text-align: center;}
@@ -23,13 +25,23 @@
 		.page_4 .img-wrap.n2 > img {width: 40px;height: auto;}
 		.page_4 .img-wrap.n3 > img {width: 270px;height: auto;}
 		.pop_page_1.whole li div > p {font-size: 40px;}
+		.pop_page_2.whole .text {position: absolute;top: 20px;left: 20px;z-index: 2;flex-wrap: wrap;align-items: center;width: 240px;font-size: 40px;letter-spacing: -1px;}
+		.pop_page_2.whole img {position: relative;}
+		.pop_page_2.whole .balloon {top: 50px;right: 40px;font-size: 40px;z-index: 1;text-align: center;}
+		.pop_page_2.whole .balloon::after {left: 20%;}
+		.pop_page_2.whole .price {position: absolute;bottom: 10px;right: 252px;font-size: 40px;text-align: center;z-index: 1;}
+		.text span {color: #00A0FE;}
+		.text span.red {color: red;}
 	</style>
 </head>
 
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title" style="letter-spacing: -1px;">12개씩 4상자에 들어 있는 과자는 모두 몇 개인지 알아봅시다.</div>
+			<div class="title">
+				12개씩 4상자에 들어 있는 과자는 모두 몇 개인지 알아봅시다.
+				<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="2" data-popup-parent="hidden">그림보기</div>
+			</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
@@ -163,6 +175,19 @@
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 					</div>
+				</li>
+				<li class="whole image pop_page_2" data-popup-page="2">
+					<div class="flex-wrap text">
+						<div>12개씩 <span>4상자</span>,</div>
+						<div>8개씩 <span class="red">6상자</span></div>
+					</div>
+					<div class="b1 balloon bottom sky">
+						어느 것이 더<br>많이<br>들어 있을까?
+					</div>
+					<div class="price">
+						6000원
+					</div>
+					<img src="./images/suh_p_0301_04_0003_102_1/suh_p_0301_04_0003_102_1_2.png" alt="">
 				</li>
 			</ul>
 		</section>
