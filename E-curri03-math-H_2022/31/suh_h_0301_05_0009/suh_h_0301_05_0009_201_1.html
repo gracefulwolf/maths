@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="./css/suh_h_0301_05_0009_201_1.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+
+</head>
+
+<body>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title" style="letter-spacing: -1px;">
+				동물원 관람 계획을 세워 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding-top:0;">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<figure class="img1">
+							<div class="txt n1">동물원 지도</div>
+							<div class="txt n2">기린</div>
+							<div class="txt n3">타조</div>
+							<div class="txt n4">곰</div>
+							<div class="txt n5">코뿔소</div>
+							<div class="txt n6">독수리</div>
+							<div class="txt n7">악어</div>
+							<div class="txt n8">여우</div>
+							<div class="txt n9">사슴</div>
+							<div class="txt n10">호랑이</div>
+							<div class="txt n11">코끼리</div>
+							<div class="txt n12">얼룩말</div>
+							<div class="txt n13">사자</div>
+							<div class="txt n14">입구</div>
+							<div class="txt n15">출구</div>
+							<div class="txt n16">약 100 m</div>
+							<div class="txt n17">약 200 m</div>
+							<div class="txt n18">초원길</div>
+							<div class="txt n19"><span>&middot;</span>관람 순서: 입구 - 기린 - 타조 - 독수리 - 얼룩말 - 사자 - 출구</div>
+							<div class="txt n20"><span>&middot;</span>초원길의 길이: 약 1 km 100 m</div>
+						</figure>
+					</li>
+					<li class="innerTab_2">
+						<figure class="img2">
+							<div class="b1 balloon bottom orange ctTail">
+								지도를 보니<br>
+								점과 점 사이의 간격은<br>
+								약 100 m야.
+															</div>
+
+							<div class="b2 balloon bottom sky ctTail">
+								점끼리 곧은 선으로<br>
+								이어서 길을 <br>만들 수 있어.
+															</div>
+
+							<div class="b3 balloon bottom pink ctTail">
+								이제 보고 싶은 <br>동물을 찾아<br>
+								관람 계획을 <br>세워 보자.
+															</div>
+						</figure>
+					</li>
+					
+					
+				</ul>
+			</div>
+		</main>
+		
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript" src="./js/suh_p_0301_01_0002_202_1.js"></script>
+	
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			window.$callBack.sliderMove=function(SLIDER) {
+				var thats=document.querySelectorAll('.visibleH_');
+				var ons=document.querySelectorAll('.vOn');
+				var btn=document.querySelectorAll('.click-finger-Btn');
+
+				for (let i=0, len=btn.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					btn[i].removeAttribute('style');
+				}
+
+				for (let i=0, len=ons.length; i < len; i++) {
+					// ons[i].classList.remove('vOn_');
+					ons[i].classList.remove('vOn');
+				}
+
+				for (let i=0, len=thats.length; i < len; i++) {
+					thats[i].classList.add('visibleH');
+					thats[i].classList.remove('visibleH_');
+					thats[i].classList.remove('vOn');
+				}
+			}
+
+			
+			var arrow=$ts.getEl('.page_1 .click-finger-Btn');
+
+			arrow.forEach(function (objs, index) {
+				objs.addEventListener('click', function () {
+					var thats=document.querySelectorAll('.visibleH[data-name="'+ this.dataset.name +'"]');
+					var ons=document.querySelectorAll('.vOn');
+
+					console.log(ons);
+
+					for (let i=0, len=ons.length; i < len; i++) {
+						ons[i].classList.remove('vOn');
+						// ons[i].classList.add('vOn_');
+					}
+
+					for (let i=0, len=thats.length; i < len; i++) {
+						thats[i].classList.remove('visibleH');
+						thats[i].classList.add('visibleH_');
+						thats[i].classList.add('vOn');
+					}
+
+					switch (this.dataset.name) {
+						case 'aa' :
+							document.querySelector('.click-finger-Btn.btn1').style.display='none';
+							document.querySelector('.click-finger-Btn.btn2').style.display='block';
+							break;
+						case 'bb' :
+							document.querySelector('.click-finger-Btn.btn2').style.display='none';
+							document.querySelector('.click-finger-Btn.btn3').style.display='block';
+							break;
+						case 'cc' :
+							document.querySelector('.click-finger-Btn.btn3').style.display='none';
+							document.querySelector('.click-finger-Btn.btn4').style.display='block';
+							break;
+						case 'dd' :
+							document.querySelector('.click-finger-Btn.btn4').style.display='none';
+							break;
+					}
+
+				});
+				objs.addEventListener('click', $efSound.click);
+			});
+		});
+	</script>
+
+</body>
+</html>
