@@ -22,7 +22,7 @@
 
     drawLines.push(new DrawLine({
       container: container,
-      resetButton: container.querySelector('.js-resetButton'),
+      resetButton: document.querySelector('.js-resetButton'),
       // answerButton: document.querySelector('.js-buttons'),
       answer: answers[index],
       callback: {
