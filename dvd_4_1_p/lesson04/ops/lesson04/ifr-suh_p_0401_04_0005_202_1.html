@@ -31,12 +31,25 @@
 			.title-box-top,
             .title-h1,
 			.ui-container{display: none !important;}
-			.btns-bottom-right > .button.btn-retry{background-color:#236cbb;background-position:22px 50%;}
+			.btns-bottom-right > .button.btn-retry{background-color:#236cbb;background-position:15px 50%;}
 			.btns-bottom-right > .button.btn-retry::before{content:"다시하기"; padding-left:32px;}
 			.popup > .btn-close{top:30px; right:70px; background-color: #000; border-radius:50%; box-shadow: 0 0 0 2px #000;}
 
 			.scroll-box.title-line-1{top:0; height: 640px;}
 			.content .img-box, .content .image-answer{top:0;}
+
+			.content-container{height: 815px;}
+			.btns-bottom-right > .button.btn-retry.type-re::before{content:"정답 가리기";padding-left:20px;}
+			.--text{position: absolute; font-size:40px; /* 1 */}
+			.--text.n1{top: 70px;left: 310px;}
+			.--text.n2{top: 210px;left: 310px;}
+			.--text.n3{top: 210px;left: 530px;}
+			.--text.n4{top: 540px;left: 310px;}
+			.--text.n5{top: 400px;left: 310px;}
+			.--text.n6{top: 400px;left: 530px;}
+			.--text.n7{top: 450px;left: 930px;}
+			.--text.n8{top: 590px;left: 930px;}
+			.--text.n9{top: 590px;left: 710px;}
 		</style>
 
 	</head>
@@ -48,16 +61,23 @@
 				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
 
 					<!-- 스크롤 박스 -->
-					<div class="scroll-box w-max title-line-1 scroll-box-01">
-						<div class="scroll-inner">
+					<!-- <div class="scroll-box w-max title-line-1 scroll-box-01">
+						<div class="scroll-inner"> -->
 
 							<!-- quiz -->
+						<div style="transform-origin: 50% 50%; transform: scale(1);">
 							<div id="quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
 								<div class="base">
 									<img src="./images/mm_41_4_04_04_02/base_01.svg" alt="" width="1280" height="670">
+									<div class="--text n1">ㄱ</div>
+									<div class="--text n2">ㄴ</div>
+									<div class="--text n3">ㄷ</div>
 								</div>
 								<div class="answer">
 									<img src="./images/mm_41_4_04_04_02/answer_01.svg" alt="" width="1280" height="670">
+									<div class="--text n4">ㄱ</div>
+									<div class="--text n5">ㄴ</div>
+									<div class="--text n6">ㄷ</div>
 								</div>
 								<div class="check-list">
 									<div class="check-item" data-answer-part-idx="0"></div>
@@ -67,6 +87,9 @@
 							<div id="quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
 								<div class="answer">
 									<img src="./images/mm_41_4_04_04_02/answer_02.svg" alt="" width="1280" height="670">
+									<div class="--text n7">ㄱ</div>
+									<div class="--text n8">ㄴ</div>
+									<div class="--text n9">ㄷ</div>
 								</div>
 								<div class="check-list">
 									<div class="check-item hide" data-answer-part-idx="1"></div>
@@ -79,14 +102,14 @@
 								<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
 								<div class="btn-answer-part" data-option='{"quiz":["#quiz-02"], "quizGroup":["0"]}'></div>
 							</div>
-
 						</div>
-					</div>
+						<!-- </div>
+					</div> -->
 					<!-- //스크롤 박스 -->
 
 					<!-- 우측 하단 영역 고정 버튼 -->
 					<div class="btns-bottom-right check-btns">
-						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-retry toggle type-re remove"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
 					</div>
 

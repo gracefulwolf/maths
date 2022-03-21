@@ -181,6 +181,16 @@
 					},0);
 				});
 			}
+
+
+			window.dragDropCallbacks = {
+				"drag-obj": function(DRAGDROP) {
+				if (DRAGDROP.droppedArea) {
+					if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+				}
+				},
+			};
+
 		}, false);
 
 	</script>

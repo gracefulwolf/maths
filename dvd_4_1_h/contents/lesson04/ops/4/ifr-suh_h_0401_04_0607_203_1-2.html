@@ -30,6 +30,7 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 .dragBox:after{display: none;}
 .lineBox{top: 40px;}
 .rotateIcon{top: 170px;}
+.rotateButton{cursor: pointer;}
     </style>
   </head>
 	<body class="lesson_4">
@@ -101,6 +102,14 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
           // 페이지 이동 시 초기화
           rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
         }
+
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
+
       });
     </script>
   </body>

@@ -23,7 +23,8 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 .flexBox{position:absolute; top: 40px; left: 200px; width: 600px;}
 .dragBox.top:before,
 .dragBox.top:after{display: none;}
-.puzzleBox{top: 250px; left:90px;}
+.puzzleBox{top: 220px; left:90px;}
+.puzzleBox .bullet.number{position: absolute; top: 15px; left: 180px;}
     </style>
   </head>
 	<body class="lesson_4">
@@ -36,7 +37,7 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
           <section class="noUserSelect">
             <div class="flexBox">
               <div class="dragContainer">
-                <div class="puzzleBox"></div>
+                <div class="puzzleBox"><ins class="bullet number orange inline">ㄱ</ins></div>
                 <div class="dragBox top">
                   <div class="js-rotate rotateContainer rotate_1">
                     <div class="js-reflectXBox"><div class="js-reflectYBox"><div class="js-rotateTarget rotateTarget puzzle"><span>가</span></div></div></div>
@@ -104,15 +105,24 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
             copy: false,
             callback: {
               move: function(Rotate) {},
-              end: function(Rotate) {},
+              end: function(Rotate) {
+              },
               reset: function(Rotate) {}
             }
           });
         }
 
         var rotateArray = $ts.getEl('.js-rotate').map(createRotate);
+        // $(document).find('.rotateButton').on('click', function(){
+        //   window.$efSound.click();
+        // })
 
-
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
         // window.$callBack.oxCorrect = function(OX) {
         //   OX.quiz.totalCompleteCount = 1000;
         //   var oxObjs = OX.quiz.obj;
@@ -139,6 +149,8 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
         //   })
         //   OX.curTarget[0].classList.add('on');
         // };
+
+        //window.$efSound.correct();
 
         window.$callBack.sliderMove = function(SLIDER) {
           // 페이지 이동 시 초기화

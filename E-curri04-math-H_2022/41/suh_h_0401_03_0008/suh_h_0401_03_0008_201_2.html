@@ -30,24 +30,24 @@
 		.moveButtonContainer{left: 20%; width: 60%;}
 		.page_1 .toggleBlank{vertical-align: -6px;}
 		.innerTab_1.on{z-index:0 !important;}
-		.popBtn.textInBtn.eye{top:10px; left:auto; right:30px;}
+		.popBtn.textInBtn.eye{display: inline-block; position: static; vertical-align: 9px;}
 
-		.pop_page_1 .--img{height: 700px;border-radius: 15px;}
+		.pop_page_1 .--img{height: 680px;border-radius: 15px;margin-top: 20px;}
 		.pop_page_1 .--img.x1{background: url(./images/suh_h_0401_03_0008_201_2/suh_h_0401_03_0008_201_2_1.png) no-repeat 50% 50% / 100% auto;}
-		.pop_page_1 .--img.x2{background: url(./images/suh_h_0401_03_0008_201_2/suh_h_0401_03_0008_201_2_2.png) no-repeat 40px 50% / 850px 100%;}
+		.pop_page_1 .--img.x2{width:850px; background: url(./images/suh_h_0401_03_0008_201_2/suh_h_0401_03_0008_201_2_2.png) no-repeat 50% 50% / 850px 100%;}
 		.pop_page_1 .balloon.x1{top: 150px;left: 60px;}
 		.pop_page_1 .balloon.x2{top: 140px;left: 760px;}
 		.pop_page_1 .--text{position: absolute; letter-spacing: -1px;}
 		.pop_page_1 .--text.x0{top: 80px;left: 370px; font-size: 40px;}
-		.pop_page_1 .--text.x1{top: 345px;left: 95px;}
-		.pop_page_1 .--text.x2{top: 350px;left: 398px;}
-		.pop_page_1 .--text.x3{top: 345px;left: 495px;}
-		.pop_page_1 .--text.x4{top: 351px;left: 784px;}
-		.pop_page_1 .--text.x5{top: 615px;left: 10px;}
-		.pop_page_1 .--text.x6{top: 620px;left: 398px;}
-		.pop_page_1 .--text.x7{top: 615px;left: 495px;}
-		.pop_page_1 .--text.x8{top: 620px;left: 785px;}
-		.pop_page_1 .--text.x9{top: 694px;left: 506px;font-size: 23px;}
+		.pop_page_1 .--text.x1{top: 335px;left: 42px;font-size: 30px;width: 268px;height: 50px;padding: 5px 10px;line-height: 40px;text-align: center;}
+		.pop_page_1 .--text.x2{top: 343px;left: 320px;font-size: 27px;}
+		.pop_page_1 .--text.x3{top: 335px;left: 432px;font-size: 30px;width: 268px;height: 50px;padding: 5px 10px;line-height: 40px;text-align: center;}
+		.pop_page_1 .--text.x4{top: 344px;left: 712px;font-size: 27px;}
+		.pop_page_1 .--text.x5{top: 595px;left: 42px;font-size: 24px;width: 268px;height: 50px;padding: 5px 10px;line-height: 40px;text-align: center;}
+		.pop_page_1 .--text.x6{top: 606px;left: 324px;font-size: 27px;}
+		.pop_page_1 .--text.x7{top: 595px;left: 432px;font-size: 30px;width: 268px;height: 50px;padding: 5px 10px;line-height: 40px;text-align: center;}
+		.pop_page_1 .--text.x8{top: 606px;left: 712px;font-size: 27px;}
+		.pop_page_1 .--text.x9{top: 674px;left: 446px;font-size: 23px;}
 		.pop_page_1 .balloon.green:after{margin-left:55px;}
 
 		.page_2 .--imgBox{display: flex; align-items:center; justify-content: center; position: relative; max-width: 330px; height: 240px; margin-right: 40px; padding: 40px 80px; background: url(./images/suh_h_0401_03_0008_201_2/suh_h_0401_03_0008_201_2_3.png) no-repeat 50% 50% / contain;}
@@ -159,7 +159,7 @@
 								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
 							<ul class="basicSlider_slides inner" data-slides="">
-								<li class="innerTab_1">
+								<li class="innerTab_1" data-quiz="toggle">
 									<ul class="contentsList">
 										<li>
 											<ins class="bullet circleDot"></ins>
@@ -194,8 +194,11 @@
 											</div>
 										</li>
 									</ul>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
 								</li>
-								<li class="innerTab_2">
+								<li class="innerTab_2" data-quiz="toggle">
 									<ul class="contentsList">
 										<li>
 											<ins class="bullet circleDot"></ins>
@@ -230,6 +233,9 @@
 											</div>
 										</li>
 									</ul>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -265,7 +271,7 @@
 																	<th>237가구</th>
 																</tr>
 																<tr>
-																	<th rowspan="2" style="border-radius: 0 0 0 10px;">선풍기 끄기<br>930원</th>
+																	<th rowspan="2" style="height: 120px; border-radius: 0 0 0 10px;">선풍기 끄기<br>930원</th>
 																	<td>
 																		<div class="flexListContainer center start">
 																			<div class="colorBox check skyBlue">식</div>
@@ -339,7 +345,7 @@
 																	<th>237가구</th>
 																</tr>
 																<tr>
-																	<th rowspan="2" style="border-radius: 0 0 0 10px;">텔레비전<br>(TV) 끄기<br>713원</th>
+																	<th rowspan="2" style="height:120px; border-radius: 0 0 0 10px;">텔레비전<br>(TV) 끄기<br>713원</th>
 																	<td>
 																		<div class="flexListContainer center start">
 																			<div class="colorBox check skyBlue">식</div>
@@ -413,7 +419,7 @@
 																	<th>237가구</th>
 																</tr>
 																<tr>
-																	<th rowspan="2" style="border-radius: 0 0 0 10px;">컴퓨터 끄기<br>465원</th>
+																	<th rowspan="2" style="height: 120px; border-radius: 0 0 0 10px;">컴퓨터 끄기<br>465원</th>
 																	<td>
 																		<div class="flexListContainer center start">
 																			<div class="colorBox check skyBlue">식</div>
@@ -546,17 +552,24 @@
 								</section>
 							</li>
 							<li class="innerTab_2">
-								<div class="--img x2">
-									<div class="--text x0">전기 절약 방법</div>
-									<div class="--text x1 colorBox deeppink">낮에 8시간 등 끄기</div>
-									<div class="--text x2">744원</div>
-									<div class="--text x3 colorBox deeppink">선풍기 4시간 끄기</div>
-									<div class="--text x4">930원</div>
-									<div class="--text x5 colorBox deeppink">텔레비전(TV) 3시간 끄기</div>
-									<div class="--text x6">713원</div>
-									<div class="--text x7 colorBox deeppink">컴퓨터 2시간 끄기</div>
-									<div class="--text x8">465원</div>
-									<div class="--text x9">출처: 한국 전력공사 사이버지점, 2020년)</div>
+								<div class="zoomContainer horizon container_1" data-zoom-container="">
+									<div class="zoomArea">
+										<div class="zoomImgContainer">
+											<div class="--img x2">
+												<div class="--text x0">전기 절약 방법</div>
+												<div class="--text x1 colorBox deeppink">낮에 8시간 등 끄기</div>
+												<div class="--text x2">744원</div>
+												<div class="--text x3 colorBox deeppink">선풍기 4시간 끄기</div>
+												<div class="--text x4">930원</div>
+												<div class="--text x5 colorBox deeppink">텔레비전(TV) 3시간 끄기</div>
+												<div class="--text x6">713원</div>
+												<div class="--text x7 colorBox deeppink">컴퓨터 2시간 끄기</div>
+												<div class="--text x8">465원</div>
+												<div class="--text x9">출처: 한국 전력공사 사이버지점, 2020년)</div>
+											</div>
+
+										</div>
+									</div>
 								</div>
 								<div class="textAlignC">
 									<div id="aniBox_1"></div>
@@ -626,6 +639,11 @@
 					}
 				]
 			});
+
+			document.querySelector( "#aniBox_1" ).addEventListener("click", function(){
+				$efSound.click();
+			});
+
 		}, false);
 	</script>
 

@@ -31,6 +31,7 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 .lineBox{top: 40px;}
 .rotateIcon{top: 170px;}
 .reflectBox{top: -176px; left: -364px;}
+.rotateButton{cursor: pointer;}
 .page1 .reflectBox .figure{background-image: url(./images/suh_h_0401_04_0607_204_1_2.png)}
     </style>
   </head>
@@ -102,6 +103,13 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
           // 페이지 이동 시 초기화
           rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
         }
+
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
       });
     </script>
   </body>
