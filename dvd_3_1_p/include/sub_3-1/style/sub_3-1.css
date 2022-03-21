@@ -1,0 +1,178 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3학년 1학기 *
+***********************/
+
+@import "index.css";
+@import "indexPopup.css";
+
+.lesson_1 .lessonColorText { color: #F6871E; }
+.lesson_2 .lessonColorText { color: #6A75B0; }
+.lesson_3 .lessonColorText { color: #0f989e; }
+.lesson_4 .lessonColorText { color: #AA5FA5; }
+.lesson_5 .lessonColorText { color: #56AF46; }
+.lesson_6 .lessonColorText { color: #F37048; }
+/* icon */
+ins.icon.icon_o {
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px 0 0 0;
+  opacity: 1;
+}
+ins.circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: -4px 0 0 0;
+  border-radius: 50%;
+  border: 3px solid #008dd0;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+h1 symbol {
+  margin: 0;
+}
+ins.correctCalc {
+  display: inline-block;
+  width: 160px;
+  height: 70px;
+  background: url("../../sub/images/act/icon_correct_calculation.svg") center/contain no-repeat;
+}
+/* arrow Ani default */
+.arrow.noAni {
+  cursor: default;
+}
+.arrow.noAni:after {
+  animation: none;
+  -webkit-animation: none;
+}
+/* Quiz */
+/* Quiz  - input*/
+input.center {
+  text-align: center;
+}
+input.inline {
+  display: inline-block;
+}
+input.noBg {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+/* Quiz  -  ox */
+.oxObj {
+  cursor: pointer;
+}
+.oxObj.inline {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+.oxObj .icon {
+  opacity: 0;
+}
+[data-quiz="ox"].complete .oxObj {
+  cursor: default;
+  pointer-events: none;
+}
+/* Quiz  -  dragLine */
+.dragLineContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.dragLineContainer.column {
+  flex-direction: column;
+}
+.dragLineContainer > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dragLineContainer.column > ul {
+  flex-direction: row;
+}
+.dragLineContainer > ul > li {
+  text-align: center;
+  box-sizing: border-box;
+}
+/* circleBox */
+.circleBox {
+  position: relative;
+  border: 3px solid #008dd0;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.popup_pages .circleBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: -5px 10px 0;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+}
+.popup_pages .circleBox symbol {
+  margin: 3px 0 0 0;
+}
+
+/* fomula */
+fomula.inline.horizon {
+  display: inline-flex;
+}
+fomula.vertical.remainder > ul:nth-of-type(1) {
+  font-size: 0.7em;
+  height: 30px;
+}
+
+/* tag, class etc */
+/* flexList 기본 값 row */
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.flexContainer .shrink { flex-shrink: 0; }
+.flexContainer .shrink + * { width: 100%; }
+.flexContainer.wrap {
+  flex-wrap: wrap;
+}
+.flexContainer.jcenter {
+  justify-content: center;
+}
+.flexContainer.jcenter .shrink + * { width: auto; }
+.flexContainer.around {
+  justify-content: space-around;
+}
+.flexContainer.start {
+  justify-content: flex-start;
+}
+.flexContainer.end {
+  justify-content: flex-end;
+}
+.flexContainer.column {
+  flex-direction: column;
+}
+.flexContainer.center {
+  align-items: center;
+}
+.flexContainer.aStart {
+  align-items: flex-start;
+}
+.flexContainer.aEnd {
+  align-items: flex-end;
+}
+figure { position: relative; }
+figure img { width: 100%; vertical-align: top; }
+.imgBgContainer {
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}

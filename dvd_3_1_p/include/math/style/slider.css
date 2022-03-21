@@ -1,0 +1,104 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* slider.css *
+***********************/
+
+.basicSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.basicSlider_slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.basicSlider_pageMove {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.basicSlider_circle_tabs {
+  position: static;
+  width: auto;
+  margin: 0 4px;
+}
+.basicSlider_circle_tabs > li {
+  width: 40px;
+  margin: 0;
+}
+.basicSlider_circle_tabs > li:after {
+  opacity: .5;
+  width: 30px;
+  height: 14px;
+  border-radius: 20px;
+  /* background-color: #ff9daa; */
+  /* background-color: #fab4ba; */
+  background-color: #ccc;
+}
+.basicSlider_circle_tabs > li.on:after {
+  opacity: 1;
+  width: 30px;
+  border: none;
+  box-shadow: none;
+  /* background-color: #f76276; */
+  background-color: #FF6E7E;
+  transition: width 0.3s;
+  cursor: default;
+  pointer-events: none;
+}
+.basicSlider_btn {
+  position: static;
+  width: 34px;
+  height: 34px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 24px;
+}
+.basicSlider_btn.prev {
+  order: -1;
+  background-image: url(../../math/images/slider_button_prev.svg);
+}
+.basicSlider_btn.next {
+  background-image: url(../../math/images/slider_button_next.svg);
+}
+
+/* inner */
+/* .basicSlider[data-slide-container="popup"] .basicSlider_pageMove, */
+.basicSlider[data-slide-container="inner"] .basicSlider_pageMove {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: none;
+  pointer-events: none;
+}
+/* .basicSlider[data-slide-container="popup"] .basicSlider_btn, */
+.basicSlider[data-slide-container="inner"] .basicSlider_btn {
+  position: absolute;
+  height: 84px;
+  background-size: auto 66px;
+}
+/* .basicSlider[data-slide-container="popup"] .basicSlider_btn.next , */
+.basicSlider[data-slide-container="inner"] .basicSlider_btn.next {
+  right: 0;
+  background-image: url(../../math/images/slider_inner_button_next.svg);
+}
+/* .basicSlider[data-slide-container="popup"] .basicSlider_btn.prev, */
+.basicSlider[data-slide-container="inner"] .basicSlider_btn.prev {
+  left: 0;
+  background-image: url(../../math/images/slider_inner_button_prev.svg);
+}
+/********************* slider End *********************/
