@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+<!--  수학 -->
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+<link rel="stylesheet" href="../../../__common__/css/custom.css">
+<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+<style>
+	.ex-box {display:flex}
+	.ex-box .bullet.exam {flex-shrink:0}
+
+	.graph-area {position:relative;width:400px;height:300px;margin:0 auto}
+	.graph-area [class*='zoom-'] {position:absolute}
+	.graph-area .zoom-1 {top:-120px;left:0;transform:scale(.5)}
+	.graph-area .zoom-2 {top:-120px;left:-100px;transform:scale(.45)}
+	.graph-area .popBtn.zoomBtn {position:absolute;top:0;left:0;right:0;bottom:0}
+
+	.graph-group {display:flex;height:100%}
+	.graph-group .graph-col {flex:1 100%;text-align:center}
+	.graph-group .graph-col + .graph-col {margin-left:60px}
+
+	[class*='circle-graph-'] {position:relative;width:400px;margin:60px auto 0}
+	[class*='circle-graph-'] img {display:block;width:100%}
+	[class*='circle-graph-'] .txt-item {position:absolute;white-space:nowrap}
+	[class*='circle-graph-'] .txt-item.num {font-size:30px}
+	[class*='circle-graph-'] .txt-item.n1 {top:-35px;left:200px}
+	[class*='circle-graph-'] .txt-item.n2 {top:175px;left:410px}
+	[class*='circle-graph-'] .txt-item.n3 {bottom:-38px;left:195px}
+	[class*='circle-graph-'] .txt-item.n4 {top:175px;left:-25px}
+	.circle-graph-1 .txt-item.n5 {top:135px;left:225px}
+	.circle-graph-1 .txt-item.n6 {top:235px;left:125px}
+	.circle-graph-1 .txt-item.n7 {top:80px;left:-120px}
+	.circle-graph-1 .txt-item.n8 {top:-25px;left:-90px}
+	.circle-graph-2 {width:580px;margin-top:0}
+	.circle-graph-2 .txt-item.n1 {top:-35px;left:302px}
+	.circle-graph-2 .txt-item.n2 {top:258px;left:590px}
+	.circle-graph-2 .txt-item.n3 {bottom:-40px;left:295px}
+	.circle-graph-2 .txt-item.n4 {top:258px;left:-5px}
+	.circle-graph-2 .txt-item.n5 {top:105px;left:345px}
+	.circle-graph-2 .txt-item.n6 {top:300px;left:385px}
+	.circle-graph-2 .txt-item.n7 {top:340px;left:175px}
+	.circle-graph-2 .txt-item.n8 {top:40px;left:-115px}
+	.circle-graph-2 .txt-item.n9 {top:-40px;left:30px}
+
+	.popup_pages > li.whole.pop_page_1 {justify-content:center}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="checkContainer math" data-open-gate="">
+	<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+	<div class="gate_container">
+		<div class="gate_title_container">
+			<div class="gate_title_title">확인 문제</div>
+			<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+		</div>
+	</div>
+	<header>
+		<div class="checkTitle">
+			<span class="title"><span class="orange">확인</span> 문제</span>
+		</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs five" data-tabs="">
+				<li data-hover="">문제 1</li>
+				<li data-hover="">문제 2</li>
+				<li data-hover="">문제 3</li>
+				<li data-hover="">문제 4</li>
+				<li data-hover="">문제 5</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>은경이네 반 학생들이 생일에 받고 싶은 선물을 조사하여 나타낸 그래프입니다. 아래와 같이 전체에 대한 각 부분의 비율을 원 모양으로 나타낸 그래프를 무엇이라고 합니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="graph-area">
+									<div class="zoom-1">
+										<div class="lineBox orange" style="display:inline-block;padding:10px 20px">받고 싶은 선물</div>
+										<div class="circle-graph-1">
+											<img src="./images/suh_0601_05_0005_401_1.jpg" alt="">
+											<div class="txt-item num n1">0</div>
+											<div class="txt-item num n2">25</div>
+											<div class="txt-item num n3">50</div>
+											<div class="txt-item num n4">75</div>
+											<div class="txt-item n5">스마트폰<br>(40 %)</div>
+											<div class="txt-item n6">가방<br>(30 %)</div>
+											<div class="txt-item n7">운동화<br>(20 %)</div>
+											<div class="txt-item n8">지갑(10 %)</div>
+										</div>
+									</div>
+									<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="1"></button>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">원그래프</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>은경이네 반 학생들이 생일에 받고 싶은 선물을 조사하여 나타낸 그래프입니다. 생일 선물로 스마트폰을 받고 싶은 학생은 전체의 몇 %입니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="graph-area">
+									<div class="zoom-1">
+										<div class="lineBox orange" style="display:inline-block;padding:10px 20px">받고 싶은 선물</div>
+										<div class="circle-graph-1">
+											<img src="./images/suh_0601_05_0005_401_1.jpg" alt="">
+											<div class="txt-item num n1">0</div>
+											<div class="txt-item num n2">25</div>
+											<div class="txt-item num n3">50</div>
+											<div class="txt-item num n4">75</div>
+											<div class="txt-item n5">스마트폰<br>(40 %)</div>
+											<div class="txt-item n6">가방<br>(30 %)</div>
+											<div class="txt-item n7">운동화<br>(20 %)</div>
+											<div class="txt-item n8">지갑(10 %)</div>
+										</div>
+									</div>
+									<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="1"></button>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">40</div>
+								</div> %
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>성진이네 학교 6학년 학생들이 좋아하는 간식을 조사하여 나타낸 원그래프입니다. 가장 많은 학생이 좋아하는 간식은 무엇입니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="graph-area">
+									<div class="zoom-2">
+										<div class="circle-graph-2">
+											<img src="./images/suh_0601_05_0005_401_1.png" alt="">
+											<div class="txt-item num n1">0</div>
+											<div class="txt-item num n2">25</div>
+											<div class="txt-item num n3">50</div>
+											<div class="txt-item num n4">75</div>
+											<div class="txt-item n5">과자<br>(20 %)</div>
+											<div class="txt-item n6">과일<br>(25 %)</div>
+											<div class="txt-item n7">떡볶이<br>(30 %)</div>
+											<div class="txt-item n8">라면<br>(15 %)</div>
+											<div class="txt-item n9">기타<br>(10 %)</div>
+										</div>
+									</div>
+									<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="2"></button>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">떡볶이</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>성진이네 학교 6학년 학생들이 좋아하는 간식을 조사하여 나타낸 원그래프입니다. 과자와 라면을 좋아하는 학생 수는 전체의 몇 %입니까?</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="graph-area">
+									<div class="zoom-2">
+										<div class="circle-graph-2">
+											<img src="./images/suh_0601_05_0005_401_1.png" alt="">
+											<div class="txt-item num n1">0</div>
+											<div class="txt-item num n2">25</div>
+											<div class="txt-item num n3">50</div>
+											<div class="txt-item num n4">75</div>
+											<div class="txt-item n5">과자<br>(20 %)</div>
+											<div class="txt-item n6">과일<br>(25 %)</div>
+											<div class="txt-item n7">떡볶이<br>(30 %)</div>
+											<div class="txt-item n8">라면<br>(15 %)</div>
+											<div class="txt-item n9">기타<br>(10 %)</div>
+										</div>
+									</div>
+									<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="2"></button>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_100" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">35</div>
+								</div> %
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+				<li class="page_5" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>성진이네 학교 6학년 학생들이 좋아하는 간식을 조사하여 나타낸 원그래프입니다. 원그래프를 보고 알 수 있는 사실을 말해 보시오.</span></h2>
+					<section>
+						<div class="graph-group">
+							<div class="graph-col">
+								<div class="graph-area">
+									<div class="zoom-2">
+										<div class="circle-graph-2">
+											<img src="./images/suh_0601_05_0005_401_1.png" alt="">
+											<div class="txt-item num n1">0</div>
+											<div class="txt-item num n2">25</div>
+											<div class="txt-item num n3">50</div>
+											<div class="txt-item num n4">75</div>
+											<div class="txt-item n5">과자<br>(20 %)</div>
+											<div class="txt-item n6">과일<br>(25 %)</div>
+											<div class="txt-item n7">떡볶이<br>(30 %)</div>
+											<div class="txt-item n8">라면<br>(15 %)</div>
+											<div class="txt-item n9">기타<br>(10 %)</div>
+										</div>
+									</div>
+									<button class="popBtn zoomBtn line" data-hover="" data-popup-btn="2"></button>
+								</div>
+							</div>
+							<div class="graph-col">
+								<div class="toggle mt_50" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="ex-box">
+											<div class="bullet exam">예</div>
+											<p class="textAlignL">라면을 좋아하는 학생 수는 떡볶이를 좋아하는 학생 수의 절반입니다.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole pop_page_1" data-popup-page="1">
+				<section class="textAlignC">
+					<div class="lineBox orange" style="display:inline-block;padding:10px 20px">받고 싶은 선물</div>
+					<div class="circle-graph-1">
+						<img src="./images/suh_0601_05_0005_401_1_1.png" alt="">
+						<div class="txt-item num n1">0</div>
+						<div class="txt-item num n2">25</div>
+						<div class="txt-item num n3">50</div>
+						<div class="txt-item num n4">75</div>
+						<div class="txt-item n5">스마트폰<br>(40 %)</div>
+						<div class="txt-item n6">가방<br>(30 %)</div>
+						<div class="txt-item n7">운동화<br>(20 %)</div>
+						<div class="txt-item n8">지갑(10 %)</div>
+					</div>
+				</section>
+			</li>
+			<li class="whole pop_page_1" data-popup-page="2">
+				<section class="textAlignC">
+					<div class="circle-graph-2">
+						<img src="./images/suh_0601_05_0005_401_1.png" alt="">
+						<div class="txt-item num n1">0</div>
+						<div class="txt-item num n2">25</div>
+						<div class="txt-item num n3">50</div>
+						<div class="txt-item num n4">75</div>
+						<div class="txt-item n5">과자<br>(20 %)</div>
+						<div class="txt-item n6">과일<br>(25 %)</div>
+						<div class="txt-item n7">떡볶이<br>(30 %)</div>
+						<div class="txt-item n8">라면<br>(15 %)</div>
+						<div class="txt-item n9">기타<br>(10 %)</div>
+					</div>
+				</section>
+			</li>
+		</ul>
+	</section>
+</div>
+
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+	}, false);
+</script>
+</body>
+</html>
