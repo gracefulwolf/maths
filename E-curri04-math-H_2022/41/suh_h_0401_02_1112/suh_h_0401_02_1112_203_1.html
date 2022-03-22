@@ -37,6 +37,11 @@
 		.--text.x6{top: 110px;left: 700px;}
 		.--text .icon{position:absolute; top:50%; left:50%; margin:-25px 0 0 -25px;}
 		.innerTab_2 .icon.on{animation:none;}
+
+		.page_1 .icon_o {opacity:0}
+		.page_1 .icon_o.complete {opacity:1}
+		.title.active {display:flex;align-items:flex-start}
+		.title.active .number {margin-right:10px}
 	</style>
 </head>
 
@@ -46,78 +51,36 @@
 		<header>
 			<div class="title active">
 				<div class="bullet number orange inline">3</div>
-				각도가 60˚인 각을 그리려고 합니다. 점 ㄱ에서 어느 점을 지나도록 선을 그어야 할지 써 보세요.
+				<span style="letter-spacing:-1px">각도가 60˚인 각을 그리려고 합니다. 점 ㄱ에서 어느 점을 지나도록 선을 그어야 할지 써 보세요.</span>
 			</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
 				<ul class="basicSlider_slides" data-slides="">
-				<li class="page_1" data-slide-container="">
-					<div class="moveButtonContainer" data-slide-btn-container="">
-						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-						<ul class="basicSlider_circle_tabs" data-tabs="">
-							<li data-hover=""></li>
-							<li data-hover=""></li>
-						</ul>
-						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
-					</div>
-					<ul class="basicSlider_slides inner" data-slides="">
-						<li class="innerTab_1" data-quiz="ox" data-option="hide, answerSound">
-							<div class="study_guide"><em>기호</em>를 <em>클릭</em>하세요.</div>
-							<div class="--img x1">
-								<div class="--text x1">ㄱ</div>
-								<div data-ox-obj="1" class="--text x2">
-									<div class="--obj">ㄴ</div>
-									<div class="icon icon_x" data-ox-target="1"></div>
-								</div>
-								<div data-ox-obj="2" class="--text x3" data-answer="">
-									<div class="--obj">ㄷ</div>
-									<div class="icon icon_o" data-ox-target="2"></div>
-								</div>
-								<div data-ox-obj="3" class="--text x4">
-									<div class="--obj">ㄹ</div>
-									<div class="icon icon_x" data-ox-target="3"></div>
-								</div>
-								<div data-ox-obj="4" class="--text x5">
-									<div class="--obj">ㅁ</div>
-									<div class="icon icon_x" data-ox-target="4"></div>
-								</div>
-								<div data-ox-obj="5" class="--text x6">
-									<div class="--obj">ㅂ</div>
-									<div class="icon icon_x" data-ox-target="5"></div>
+					<li class="page_1" data-quiz="toggle">
+						<div class="--img x1">
+							<div class="--text x1">ㄱ</div>
+							<div class="--text x2">ㄴ</div>
+							<div class="--text x3 complete">
+								ㄷ
+								<div class="icon icon_o" data-toggle-obj="1" data-group-index="3"></div>
+							</div>
+							<div class="--text x4">ㄹ</div>
+							<div class="--text x5">ㅁ</div>
+							<div class="--text x6">ㅂ</div>
+						</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1" data-group-index="3">
+								<div class="answer" data-toggle-target="1">
+									점 ㄷ
 								</div>
 							</div>
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</li>
-						<li class="innerTab_2" data-quiz="toggle">
-							<div class="--img x1">
-								<div class="--text x1">ㄱ</div>
-								<div class="--text x2">ㄴ</div>
-								<div class="--text x3 complete">
-									ㄷ
-									<div class="icon icon_o on""></div>
-								</div>
-								<div class="--text x4">ㄹ</div>
-								<div class="--text x5">ㅁ</div>
-								<div class="--text x6">ㅂ</div>
-							</div>
-							<div class="textAlignC mt_20">
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										점 ㄷ
-									</div>
-								</div>
-							</div>
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</li>
-					</ul>
-				</li>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
 				</ul>
 			</div>
 
