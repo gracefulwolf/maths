@@ -9,83 +9,317 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
-	<style type="text/css">
-		.contentsBox h2 {margin-top: 30px;z-index: 1;}
-		.contentsBox section {padding: 0;}
-		.iframe-wrap{position: relative; width: 100%; height: 536px;overflow: hidden;}
-		.page-iframe{position: absolute; top:0; left:0;width: 1280px; height: 720px; margin: -158px 0 0 -110px;overflow: hidden; border:0;transform: scale(0.9);}
-		.study_guide {top: 22px; right: 0;}
-        .innerTab_2 .img-wrap {width: 100%;height: 170px;margin-top: 60px;text-align: center;}
-        .innerTab_2 .img-wrap > img {width: 645px;height: 100%;}
-        .innerTab_2 {padding: 30px 0;}
-        .innerTab_2 .flexListContainer.wrap {justify-content: flex-start;width: 800px;margin: 40px auto 0;}
-        .innerTab_2 .flexListContainer.wrap li {display: flex;align-items: center;}
-        .innerTab_2 .flexListContainer.wrap li + li {margin-top: 15px;}
-		.moveButtonContainer {width: auto;left: 50%;transform: translateX(-50%)}
-	</style>
+	<style>
+		#wrap header .title{margin: 23px 0 32px;}
+		h2 .dot{margin-top:0.5em}
+		/* .verticalFormula li:first-child{width:50px} */
+		.verticalFormulaCon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 380px;
+			margin: 50px 30px 100px;
+		}
+		.verticalFormula {
+			width: 286px;
+			padding-bottom: 10px;
+			text-align: right;
+			/* text-align: center; */
+		}
+		.verticalFormula_1 li, .verticalFormula_2 li {
+			position: relative;
+			display: inline-block;
+			width: 119px;
+		}
+		.verticalFormula_1 li span,
+		.verticalFormula_2 li span{display:inline-block;margin-right: 20px;}
+		.verticalFormula_2 {
+			border-bottom: 4px solid #000000;
+			text-align: right;
+			padding-right: 20px;
+		}
+		.verticalFormula_3 {
+			padding-top: 10px;
+			text-align: right;
+		}
+		.verticalFormula_3 li span {
+			display: inline-block;
+			width: 50px;
+		}
+	
+		.flex {
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+	
+		.divide {
+			margin-top : 50px;
+			margin-left: 85px;
+		}
+	
+		.divide .toggle{
+			width:100px;
+		}
+	
+		.divide + .divide{
+			margin-left: 125px;
+		}
+	
+		.verticalFormula .answer {
+			/* letter-spacing: 0.9em; */
+			text-align: right;
+		}
+	
+		.tableContainer table td, .tableContainer table th{font-size: 40px;}
+	
+		.page_1 .imgBox > img,
+		.page_2 .imgBox > img {
+		  width: 100%;
+		  height:100%
+		}
+		.page_2 .toggle{
+			margin: 50px auto 30px;
+		}
+		.page_2 .innerTab_2 >.textAlignC {margin-top:170px;}
+		.page_2 .innerTab_2 .toggle{margin:0;position: absolute;top:170px;left:49px;}
+	
+		.page_1 .txt{position:absolute;top: 169px;left: 410px;}
+		.answer .inline{display:inline;letter-spacing:-0.7px;}
+		.exBox{text-align:center;}
+		.imgConBox{text-align:center;margin: 0px auto;width: 100%;height: 458px;}
+		.imgConBox img{width:100%;height:100%;}
+		.popBtn.textInBtn.inline {position:absolute;top: 14px;right: 41px;}
+		.popup_container img{height: 790px;margin-top:20px;}
+		.popup_container .balloon{top: 40px;left: 180px;}
+		.popup_container .balloon_1{width: 410px;left: 3%;top: 447px;}
+		.popup_container .balloon_2{width: 341px;left: 69%;top: 217px;}
+	
+		.tableContainer table td, .tableContainer table th{padding: 9px 4px 10px;}
+		.page_2 .flex-box{width: 1110px;margin: 0 20px 0 0;text-align: center;}
+		.page_2 .flex-box .box{position:relative;vertical-align:middle;text-align: center;}
+		.page_2 .flex-box .toggle{position:absolute;top: 72px;left: 117px;border-radius: 50%;}
+		.page_2 .bottom .toggle{position:absolute;top: 300px;left: 179px;border-radius: 50%;}
+		.page_2 .textAlignL .toggle{width:70px}
+		.page_2 .toggle:after{display:none;}
+		.page_2 .lineBox{/* width:400px; */margin: 10px 70px;padding: 5px;}
+		.page_2 .text{position: absolute;top: 160px;left: 422px;}
+		.page_2 .icon_arrow{position: absolute;top: 223px;left: 490px;}
+		.page_2 .charSpriteImg.girl_1{top:40px  !important;left: -530px !important;}
+		.page_2 .charSpriteImg.boy_4{top:40px  !important;left:350px !important;}
+		.page_2 .balloon_1{top: 0px;left: 10px;}
+		.page_2 .balloon_2{top: -10px;left: 733px;}
+		.page_2 .balloon_2.balloon:after{left:80%}
+		.page_2 .study_guide{top: -50px;left: 773px;}
+		.page_2 .lineBox{/* width:400px; */margin: 0px 70px 10px;padding: 5px;text-align: center;}
+	
+		.page_2 .imgText_1 {
+			position: absolute;
+			top: 124px;
+			left: -15px;
+			width: 1023px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 35px;
+			letter-spacing: -3px;
+		}
+		.page_2 .imgText_2 {
+			position: absolute;
+			top: 172px;
+			left: 75px;
+			width: 246px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 26px;
+			letter-spacing: -4px;
+		}
+		.page_2 .imgText_3 {
+			position: absolute;
+			top: 172px;
+			left: 368px;
+			width: 246px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 26px;
+			letter-spacing: -4px;
+		}
+		.page_2 .imgText_4 {
+			position: absolute;
+			top: 172px;
+			left: 667px;
+			width: 246px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 26px;
+			letter-spacing: -4px;
+		}
+	
+	
+		/* page_1 */
+		.page_1 .toggle.box{width:83px;text-align: center;}
+		.page_1 .verticalFormula{width:386px}
+		.page_1 .topBox{margin-left: 90px;}
+		.page_1 .topBox .toggle{margin:-5px 0 0 10px}
+		.page_1 .bottomBox{margin: 0px 60px 0 280px;}
+		.page_1 .verticalFormulaCon .verticalFormula .toggle .answer{text-align: center;}
+	
+		.page_3 .toggle{width: 870px;}
+	
+		.innerTab_2 img{width:900px;height:auto;}
+		.innerTab_1 .dapCheckBtn,
+		.innerTab_2 .dapCheckBtn{right:-30px;}
+	  </style>
 </head>
 
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title" style="letter-spacing: -1px;">연필 18자루를 2명이 똑같이 나누면 한 명이 몇 자루씩 가질 수 있는지 구해 봅시다.</div>
+			<div class="title" style="letter-spacing: -1px;">시간을 더하는 방법을 알아봅시다.</div>
 		</header>
 		<main>
-            <div class="basicSlider contentsBox doItContent" data-slide-container="" style="padding-top:0;">
-                <div class="moveButtonContainer" data-slide-btn-container="">
-                    <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-                    <ul class="basicSlider_circle_tabs" data-tabs="">
-                        <li data-hover=""></li>
-                        <li data-hover=""></li>
-                    </ul>
-                    <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
-                </div>
-                <ul class="basicSlider_slides" data-slides="">
-                    <li class="innerTab_1 on">
-							
-                        <section>
-                           
-							<div class="iframe-wrap">
-								<iframe src="../../../dvd_3_1_p/lesson03/ops/lesson03/mm_31_3_02_05_01.html" title="" class="page-iframe" id="iframepage1" scrolling="no"></iframe>
-							</div>
-                            
-                        </section>
-                    </li>
-                    <li class="innerTab_2" data-quiz="toggle">
-                        <div class="img-wrap">
-                            <img src="./images/suh_p_0301_03_0003_203_1/suh_p_0301_03_0003_203_1_5.png" alt="">
-                        </div>
-                        <ul class="flexListContainer wrap">
-							<li>
-								<div>
-									<div class="colorBox check skyBlue">식</div>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+			  <!--   탭 버튼   -->
+			  <ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="" class="on">물음 1</li>
+				<li data-hover="" class="">물음 2</li>
+			  </ul>
+			  <ul class="basicSlider_slides" data-slides="">
+				<li class="page_2 on">
+				  <h2><ins class="dot"></ins><span>9시 38분 20초에서 2분 30초가 지난 시각을 구해 보세요.</span></h2>
+				  <section data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev off" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover="" class="on"></li>
+							<li data-hover="" class=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1 on" data-quiz="toggle">
+							<div class="flex-box mt_30">
+								<div class="box">
+									<img src="./images/suh_p_0301_05_0708_201_1/suh_p_0301_05_0708_201_1_2.png" alt="" height="200">
 								</div>
-								<div>
-									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<div>
-                                                18÷2＝9
-											</div>
+								<div class=" box">
+									<img src="./images/suh_p_0301_05_0708_201_1/suh_p_0301_05_0708_201_1_3.png" alt="" height="200">
+									<div class="toggle mt_10 noBg" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<img src="./images/suh_0301_05_0006_201_1/suh_0301_05_0006_201_1_1_3.png" alt="" height="200">
 										</div>
 									</div>
 								</div>
-							</li>
-							<li>
-								<div>
-									<div class="colorBox check deepPurple">답</div>
+								<div class="icon_arrow big"></div>
+								<div class="text">2분 20초 후</div>
+							</div>
+							<div class="dapCheckBtn" data-answer-btn=""></div>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<div class=" textAlignC">
+								<img src="./images/suh_0301_05_0006_201_1/suh_0301_05_0006_201_1_1_4.png" alt="" height="50" width="700">
+								<div class="toggle noBg" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="./images/suh_0301_05_0006_201_1/suh_0301_05_0006_201_1_1_5.png" alt="" height="50" width="700">
+									</div>
 								</div>
-								<div>
-                                    한 명이
-									<div class="toggle" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">9</div>
-									</div>자루씩 가질 수 있습니다.
+								<div class="txtBox">
+									<div class="imgText_1">
+										<div>11시 20분</div>
+										<div>11시 21분</div>
+										<div>11시 22분</div>
+										<div>11시 23분</div>
+									</div>
+									<div class="imgText_2">
+										<div>10초</div>
+										<div>20초</div>
+										<div>30초</div>
+										<div>40초</div>
+										<div>50초</div>
+									</div>
+									<div class="imgText_3">
+										<div>10초</div>
+										<div>20초</div>
+										<div>30초</div>
+										<div>40초</div>
+										<div>50초</div>
+									</div>
+									<div class="imgText_4">
+										<div>10초</div>
+										<div>20초</div>
+										<div>30초</div>
+										<div>40초</div>
+										<div>50초</div>
+									</div>
 								</div>
-							</li>
-						</ul>
-                    <button class="dapCheckBtn" data-answer-btn=""></button>
-                    </li>
-                </ul>
-            </div>
+							</div>
+							<div class="dapCheckBtn" data-answer-btn=""></div>
+						</li>
+					</ul>
+				</section>
+				</li>	
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>동요가 끝난 시각을 구해 보세요.</span></h2>
+					<section>
+						<div class="mt_20">
+							<div class="topBox flex-box textAlignC">
+								11시 20분 10초+2분 20초 =
+								<div class="toggle box textAlignC" data-toggle-obj="3">
+									<div class="answer" data-toggle-target="3">11</div>
+								</div>시
+								<div class="toggle box center" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">22</div>
+								</div>분
+								<div class="toggle box center" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">30</div>
+								</div>초
+							</div>
+							<div class="bottomBox">						
+								<div class="verticalFormulaCon">
+									<ul class="verticalFormula verticalFormula_1">
+										<li><span>11</span>시</li>
+										<li><span>20</span>분</li>
+										<li><span>10</span>초</li>
+									</ul>
+									<ul class="verticalFormula verticalFormula_2">
+										<li class="textAlignL">+</li>
+										<li><span>2</span>분</li>
+										<li><span>20</span>초</li>
+									</ul>
+									<div class="verticalFormula verticalFormula_3">
+										<div class="toggle box textAlignC" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">11</div>
+										</div>시
+										<div class="toggle box center" data-toggle-obj="5">
+											<div class="answer" data-toggle-target="5">22</div>
+										</div>분
+										<div class="toggle box center" data-toggle-obj="6">
+											<div class="answer" data-toggle-target="6">30</div>
+										</div>초
+									</div>
+								</div><!-- verticalFormulaCon -->
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>시간의 합을 구하는 방법을 이야기해 보세요.</span></h2>
+					<section class="textAlignC">
+						<div class="toggle box textAlignL" data-toggle-obj="2">
+							<div class="answer" data-toggle-target="2"><div class="bullet exam">예</div> 시는 시끼리, 분은 분끼리, 초는 초끼리 더합니다.</div>
+						</div>
+						<div class="dapCheckBtn" data-answer-btn=""></div>
+					</section>
+				</li>
+			</ul>
+		  
+		</div>
 		</main>
 	</div>
 	<div id="loadingContainer">

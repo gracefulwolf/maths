@@ -11,19 +11,16 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
 		.contentsBox h2 {margin-bottom: 30px;}
-		.img-wrap {width: 100%;margin-bottom: 30px;text-align: center;}
-		.img-wrap > img {width: auto;height: 300px;}
-		.flexListContainer.wrap {width: 252px;margin: 0 auto;}
-		.flexListContainer.wrap > li {display: flex;align-items: center;justify-content: space-between;width: 100%;text-align: justify;}
-		.flexListContainer.wrap li + li {margin-top: 15px;}
-		.toggle.n1 {min-width: 76px;}
+		.textAlignC {margin-top: 50px;}
+		.pop_page_1.solve .flex-item.n1 {min-width: 310px;}
+		.pop_page_1.solve .flex-item.n2 {flex: 2;}
 	</style>
 </head>
 
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title" style="letter-spacing: -1px;">그림을 보고 윷의 수를 곱셈식으로 나타내고, 나눗셈의 몫을 구해 봅시다.</div>
+			<div class="title" style="letter-spacing: -1px;">지우와 현수가 달리기를 했습니다. 지우는 1분 45초, 현수는 2분 15초가 걸렸다면 두 사람의 달리기 기록은 얼마나 차이가 나는지 구해 봅시다.</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
@@ -34,30 +31,39 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
                         <section>
-                            <div class="img-wrap">
-                                <img src="./images/suh_p_0301_03_0006_203_1/suh_p_0301_03_0006_203_1_1.png" alt="">
-                            </div>
-                            <ul class="flexListContainer wrap">
-                                <li>
-                                    4×<div class="toggle" data-toggle-obj="1">
-                                        <div class="answer" data-toggle-target="1">8</div>
-                                    </div>＝<div class="toggle n1" data-toggle-obj="2">
-                                        <div class="answer" data-toggle-target="2">32</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    32 ÷ 4 ＝<div class="toggle n1" data-toggle-obj="3">
-                                        <div class="answer" data-toggle-target="3">8</div>
-                                    </div>
-                                </li>
-                            </ul>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">30초</div>
+								</div>
+							</div>
                         </section>
-                        <button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</main>
-		
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1" style="display: block;">
+					<div class="popup_contents">
+						<div class="flex-wrap">
+							<div class="flex-item n1">
+								2분 15초－1분 45초
+							</div>
+							<div class="flex-item n2">
+								＝2분 15초－15초－30초－1분<br>
+								＝2분－30초－1분<br>
+								＝1분－30초＝30초
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>

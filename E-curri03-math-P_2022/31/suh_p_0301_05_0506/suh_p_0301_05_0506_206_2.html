@@ -4,14 +4,63 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<link rel="stylesheet" href="./css/suh_h_0301_03_0405_201_2.css">
+	<style>
+		.colorBox.bg {
+			position: relative;
+			margin: 45px auto 0;
+			height: 400px;
+			padding: 20px;
+			text-align: center;
+		}
+		.colorBox > img {
+			position: absolute;
+			top: 167px;
+			left: 62px;
+			width: 80%;
+		}
+		.colorBox.inline {
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: inline-block;
+		}
+		.text {
+			z-index: 0;
+		}
+		.toggle {
+			position: absolute;
+			width: 112px;
+			z-index: 2;
+		}
+		.toggle.n1 {
+			top: 97px;
+			right: 360px;
+			z-index: 1;
+		}
+		.toggle.n2 {
+			top: 316px;
+			right: 360px;
+		}
+		.flex-wrap {
+			position: absolute;
+			bottom: 32px;
+			left: 90px;
+		}
+		.flex-wrap div {
+			margin: 0 6px;
+		}
+		.flex-wrap .hidden {
+			opacity: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -19,7 +68,7 @@
 	<div id="wrap" class="math">
 		<header>
 			<div class="title">
-				봉투는 모두 몇 개 필요한지 알아봅시다.
+				시간을 나타내는 방법을 알아봅시다.
 			</div>
 		</header>
 		<main>
@@ -27,32 +76,31 @@
 				<ul class="contentsList">
 					<li>
 						<div class="bullet circleDot mt"></div>
-						<div>18을 3씩 묶어 세면 6묶음입니다.
-						</div>
-					</li>
-					<li>
-						<div class="bullet circleDot mt"></div>
-						<div>
-							이것을 나눗셈식으로 나타내면  <div class="toggle yellow" data-toggle-obj="2" data-group-index="1">
-								<div class="answer" data-toggle-target="2">18÷3＝6
-								</div>
-							</div>입니다.
-						</div>
+						<div>1분＝60초이므로 1분 30초는 90초로 나타낼 수 있습니다</div>
 					</li>
 				</ul>
 
-				<div class="lineBox sky">
-					<img src="./images/suh_h_0301_03_0405_201_2_1.png" alt="">
+				<div class="colorBox bg">
+					<div class="colorBox inline sky">
+						1분 30초＝90초
+					</div>
+					<div class="toggle yellow n1" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">1분</div>
+					</div>
+					<div class="toggle yellow n2" data-toggle-obj="2">
+						<div class="answer" data-toggle-target="2">60초</div>
+					</div>
+					<img src="./images/suh_p_0301_05_0506_206_2/suh_p_0301_05_0506_206_2_1.png" alt="">
 					<div class="flex-wrap">
-						<div>
-							나누어지는 <br>수
-						</div>
-						<div>
-							나누는 <br>수
-						</div>
-						<div>
-							몫
-						</div>
+						<div>10초</div>
+						<div>20초</div>
+						<div>30초</div>
+						<div>40초</div>
+						<div>50초</div>
+						<div class="hidden">60초</div>
+						<div>70초</div>
+						<div>80초</div>
+						<div>90초</div>
 					</div>
 				</div>
 			</div>
