@@ -728,7 +728,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</ul>
 					</div>
 					
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+
+					<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="3" data-close-inner="">
+						<span class="btnInner"></span>
+					</button>
+
 				</li>
 
 			</ul>
@@ -844,9 +849,28 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					</ul>
 				</div>
 			</li>
+
+			<li class="textBookPopup popup_1" data-popup-page="3">
+				<div class="popupInner" data-popup-inner="">
+					<div class="flex-box">
+						<h2>
+							<ins class="number star">6</ins>
+						</h2>
+						<span class="ls2">
+							지혜네 집에서 할머니 댁에 가려면 기차역을 지나야 합니다. 지혜네 집에서 기차역까지의 거리는
+							<div class="bunsuWrap inline">
+								<ul><li>4</li><li>7</li></ul>
+							</div>&nbsp;㎞이고, 기차역에서 할머니 댁까지의 거리는
+							<div class="bunsuWrap inline">
+								<ul><li>4</li><li>9</li></ul>
+							</div>&nbsp;㎞입니다. 지혜는 집에서 할머니 댁까지 가는 거리가 1&nbsp;㎞가 안 되면 걸어가고, 1&nbsp;㎞가 넘으면 자전거를 타고 가려고 합니다. 지혜가 집에서 할머니 댁까지 어느 방법으로 갈지 풀이 과정을 쓰고 답을 구해 보세요. 
+						</span>
+					</div>
+				</div>
+			</li>
+
 		</ul>
 	</section>
-  
 
 
 </div>
@@ -871,10 +895,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 window.$callBack.sliderReset = function (slide) {
 	console.log(slide.idx);
 
-	if (slide.idx === 4) {
+	if (slide.idx === 5) {
 		setTimeout(function () {
 				
-			$ts.getEl('.page_5 .textBookBtn')[0].click();
+			$ts.getEl('.page_6 .textBookBtn')[0].click();
 			setTimeout(function () {
 				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
 			}, 3000);
