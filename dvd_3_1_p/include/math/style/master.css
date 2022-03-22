@@ -1,0 +1,275 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* master.css *
+***********************/
+
+/* libs */
+@import "../../libs/css/reset.css";
+@import "../../libs/css/font.css";
+@import "../../libs/css/popup.css";
+@import "../../libs/css/scroll.css";
+@import "../../libs/css/slider.css";
+@import "../../libs/css/controller.css";
+@import "../../libs/css/draw.css";
+
+/* contents */
+@import "../../contents/css/quiz.css";
+@import "../../contents/css/pageManager.css";
+
+
+/* math */
+@import "../../math/style/loading.css";
+@import "../../math/style/light.css";
+@import "../../math/style/layout.css";
+@import "../../math/style/mathSymbols.css";
+@import "../../math/style/clickButton.css";
+@import "../../math/style/list.css";
+@import "../../math/style/boxDesign.css";
+@import "../../math/style/fomula.css";
+@import "../../math/style/table.css";
+@import "../../math/style/fraction.css";
+
+@import "../../math/style/slider.css";
+@import "../../math/style/popup.css";
+@import "../../math/style/controller.css";
+@import "../../math/style/quiz.css";
+
+@import "../../math/style/header.css";
+@import "../../math/style/index.css";
+@import "../../math/style/indexPopup.css";
+
+@import "../../math/style/today.css";
+@import "../../math/style/intro.css";
+@import "../../math/style/preCheck.css";
+@import "../../math/style/act.css";
+@import "../../math/style/promise.css";
+@import "../../math/style/study_arrange.css";
+@import "../../math/style/powerup.css";
+@import "../../math/style/finish.css";
+@import "../../math/style/game.css";
+
+.contentsArea > h1,
+/* .js-quizButton.resetButton,
+.js-resetButton.resetButton, */
+.js-supplies.supplies,
+header{display: none !important;}
+main{top:0 !important}
+#wrap {background:#fff !important; padding:0; box-shadow:none;}
+
+.contentsArea .js-quizButton.resetButton,
+.contentsArea .js-resetButton.resetButton,
+.js-buttons.quizButtons{
+    background: #5e3e18 url(../../../../E-curri03-math-H_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
+    width: 160px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-family: YGJAL;
+    text-align: left;
+    padding-left: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 1;
+    bottom:10px;
+    box-shadow: none;
+}
+.js-quizButton.resetButton.exBtn,
+.js-buttons.quizButtons.exBtn,
+.contentsArea .js-quizButton.resetButton,
+.contentsArea .js-resetButton.resetButton{
+    background-color: #216cbe;
+    width: 150px;
+}
+.contentsArea .js-quizButton.resetButton.hover,
+.contentsArea .js-resetButton.resetButton.hover,
+.js-buttons.quizButtons.hover{transform: scale(1);}
+
+.js-buttons.quizButtons.reset:before
+/* .js-buttons.quizButtons[data-type="reset"]:before  */
+{
+    content: "정답 가리기";
+}
+
+.js-quizButton.resetButton.exBtn,
+.js-buttons.quizButtons.reset.exBtn
+/* .js-buttons.quizButtons[data-type="reset"].exBtn */
+{
+    padding-left: 24px;
+    background-color: #216cbe
+}
+
+.ex-on .contentsArea .js-resetButton.resetButton.exBtn::before,
+.ex-on .contentsArea .js-quizButton.resetButton.exBtn:before,
+.js-buttons.quizButtons.exBtn.reset:before
+/* .js-buttons.quizButtons[data-type="reset"].exBtn:before  */
+{
+  content: "다시하기";
+  padding-left: 24px;
+}
+
+.contentsArea .js-resetButton.resetButton.exBtn::before,
+.contentsArea .js-quizButton.resetButton.exBtn::before{
+  content: "예 보기";
+  padding-left: 30px;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  pointer-events: none;
+  letter-spacing: -.1px;
+}
+.js-resetButton.resetButton.exBtn::before,
+.js-buttons.quizButtons.exBtn:before {
+  content: "예 보기";
+  padding-left: 20px;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  pointer-events: none;
+  letter-spacing: -.1px;
+}
+.contentsArea .js-quizButton.resetButton:before,
+.contentsArea .js-resetButton.resetButton:before {
+    content: "다시하기";
+    padding-left: 14px;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    letter-spacing: -.1px;
+}
+.dragBox.top::before,
+.dragBox.top:after{display: none;}
+.js-buttons.quizButtons:before {
+    content: "정답 확인";
+    padding-left: 14px;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    letter-spacing: -.1px;
+}
+.js-buttons.quizButtons.reset
+/* .js-buttons.quizButtons[data-type="reset"] */
+{
+    padding-left: 24px;
+    background-color: #9d00c4
+}
+.js-buttons.quizButtons.reset:hover
+/* .js-buttons.quizButtons[data-type="reset"]:hover  */
+{
+    background-color: #5e3e18
+}
+.contentsArea .js-quizButton.resetButton:hover,
+.contentsArea .js-resetButton.resetButton:hover,
+.js-buttons.quizButtons:hover {
+    background-color: #9d00c4
+}
+/* @import "tab.css"; */
+.toggleObj.base.complete{opacity: 1;}
+.toggleObj.base {
+position: relative;
+min-width: 46px;
+display: inline-block;
+padding: 6px 16px;
+border-radius: 8px;
+text-align: center;
+text-indent: 0;
+background-color: #efefef;
+box-sizing: border-box;
+cursor: pointer;
+}
+.toggleObj.base.complete .answer,
+.toggleObj.base .answer.on {
+    opacity: 1;
+    visibility:visible;
+}
+.toggleObj.base  .answer {
+    font-size: 38px;
+    font-weight: bold;
+
+    opacity: 0;
+    visibility: hidden;
+    color: #00a0ff;
+    font-family: inherit;
+    pointer-events: none;
+}
+
+.basicSlider_pageMove{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    transform: translateX(0);
+  }
+  .basicSlider_circle_tabs > li::after{display: none;}
+  .basicSlider_circle_tabs > li{
+    width: 62px;
+    height: 20px;
+    border-radius: 30px;
+    pointer-events: auto;
+    background-color: #b4b4b4;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .basicSlider_btn{
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: #a68965;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .basicSlider_btn.next{
+    background-position: 9px center;
+    background-image: url(../../../../E-curri03-math-H_2022/31/common/contents/images/button/btn_next_white.svg);
+  }
+  .basicSlider_btn.prev {
+    background-position: 6px center;
+    background-image: url(../../../../E-curri03-math-H_2022/31/common/contents/images/button/btn_prev_white.svg);
+  }
+  .basicSlider_btn {
+    position: static;
+    background-size: 16px;
+  }
+  .basicSlider_circle_tabs{
+    position: static;
+    width: auto;
+    margin: 0 12px;
+      bottom: 10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+  }
