@@ -1,0 +1,272 @@
+@font-face {
+	font-family: 'MaplestoryBold';
+	src: url('../MaplestoryBold.woff');
+}
+.fsMaple {
+	font-family: "MaplestoryBold";
+}
+
+.gamePage__title__icon {
+	flex-shrink: 0;
+	width: 49px;
+    height: 55px;
+    background: url('../image/gamePage__title__icon.png') center / contain no-repeat;
+}
+.gamePage__title__text {
+	text-align: justify;
+	letter-spacing: -2px;
+	word-break: break-all;
+}
+
+.page--start {
+	background-image: url('../image/startPage__background.png');
+}
+.page--game {
+	background-image: url('../image/gamePage__background.png');
+}
+
+/* 꿀벌들 */
+.selectPlay {
+	position: absolute;
+	background: center / contain no-repeat;
+}
+.selectPlay--selected {
+	transform: scale(1.1);
+}
+.selectPlay:hover {
+	z-index: 1;
+}
+.selectPlay[data-play-index="1"] {
+	top: 290px;
+    left: 365px;
+	width: 150px;
+	height: 250px;
+}
+.selectPlay[data-play-index="2"] {
+	top: 404px;
+	left: 530px;
+	width: 200px;
+	height: 250px;
+}
+.selectPlay[data-play-index="3"] {
+	top: 287px;
+	left: 725px;
+	width: 170px;
+	height: 250px;
+}
+.selectPlay[data-play-index="4"] {
+    top: 362px;
+    left: 895px;
+	width: 180px;
+	height: 250px;
+}
+.selectPlay[data-play-index="5"] {
+	top: 270px;
+	left: 1070px;
+	width: 190px;
+	height: 230px;
+}
+.selectPlay .selectPlay__image {
+	width: 300px;
+	height: 300px;
+}
+.selectPlay--completed .selectPlay__image {
+	opacity: 0.3 !important;
+}
+.selectPlay[data-play-index="1"] .selectPlay__image { background-image: url('../image/spritesheet/1_basic.png'); }
+.selectPlay[data-play-index="2"] .selectPlay__image { background-image: url('../image/spritesheet/2_basic.png'); }
+.selectPlay[data-play-index="3"] .selectPlay__image { background-image: url('../image/spritesheet/3_basic.png'); }
+.selectPlay[data-play-index="4"] .selectPlay__image { background-image: url('../image/spritesheet/4_basic.png'); }
+.selectPlay[data-play-index="5"] .selectPlay__image { background-image: url('../image/spritesheet/5_basic.png'); }
+.selectPlay[data-play-index="1"] .selectPlay__image, .selectPlay[data-play-index="1"] .spriteAni {
+    top: -42px;
+    left: -87px;
+}
+.selectPlay[data-play-index="2"] .selectPlay__image, .selectPlay[data-play-index="2"] .spriteAni {
+    top: -30px;
+    left: -54px;
+}
+.selectPlay[data-play-index="3"] .selectPlay__image, .selectPlay[data-play-index="3"] .spriteAni {
+    top: -24px;
+    left: -76px;
+}
+.selectPlay[data-play-index="4"] .selectPlay__image, .selectPlay[data-play-index="4"] .spriteAni {
+	top: -33px;
+    left: -66px;
+}
+.selectPlay[data-play-index="5"] .selectPlay__image, .selectPlay[data-play-index="5"] .spriteAni {
+    top: -41px;
+    left: -70px;
+}
+
+.selectPlay .selectPlay__text {
+	position: absolute;
+	font-size: 28px;
+	color: #60200a;
+	font-family: "NanumSquareRoundEB";
+	text-align: center;
+	letter-spacing: -1px;
+}
+.selectPlay[data-play-index="1"] .selectPlay__text {
+    top: 135px;
+    left: 21px;
+    transform: rotate(-9deg);
+}
+.selectPlay[data-play-index="2"] .selectPlay__text {
+    top: 146px;
+    left: 59px;
+    transform: rotate(-16deg);
+}
+.selectPlay[data-play-index="3"] .selectPlay__text {
+    top: 137px;
+    left: 39px;
+	line-height: 28px;
+    transform: rotate(-18deg);
+}
+.selectPlay[data-play-index="4"] .selectPlay__text {
+	top: 147px;
+    left: 33px;
+}
+.selectPlay[data-play-index="5"] .selectPlay__text {
+	top: 134px;
+    left: 28px;
+}
+.selectPlay[data-play-index="1"] .selectPlay__completeMark { top: 55px; left: 114px; }
+.selectPlay[data-play-index="2"] .selectPlay__completeMark { top: 62px; left: 140px; }
+.selectPlay[data-play-index="3"] .selectPlay__completeMark { top: 32px; left: 114px; }
+.selectPlay[data-play-index="4"] .selectPlay__completeMark { top: 74px; left: 108px; }
+.selectPlay[data-play-index="5"] .selectPlay__completeMark { top: 45px; left: 110px; }
+
+.playPage .selectPlay {
+	transition-duration: 1s;
+	transform: scale(1.2);
+}
+.playPage--on .selectPlay[data-play-index="1"] { 	transform: translate(-20px, -58px) scale(1.4); }
+.playPage--on .selectPlay[data-play-index="2"] { 	transform: translate(-220px, -180px) scale(1.4); }
+.playPage--on .selectPlay[data-play-index="3"] { 	transform: translate(-390px, -75px) scale(1.4); }
+.playPage--on .selectPlay[data-play-index="4"] { 	transform: translate(-550px, -140px) scale(1.4); }
+.playPage--on .selectPlay[data-play-index="5"] { 	transform: translate(-720px, -35px) scale(1.4); }
+
+.playPage {
+	background: url('../image/playPage__background.png') center / cover no-repeat;
+}
+
+/* 꽃과 펫말 전체 */
+.selectTarget {
+	position: absolute;
+	background: center / contain no-repeat;
+	cursor: pointer;
+}
+.selectTarget.answered {
+	cursor: default;
+	pointer-events: none;
+}
+.selectTarget.selected {
+	cursor: default;
+	pointer-events: none;
+}
+.selectTarget.hovered {
+	transform: scale(1.1);
+}
+.selectTarget[data-select-index="1"] {
+	top: 65px;
+	left: 818px;
+	width: 238px;
+	height: 100px;
+	background-image: url('../image/selectTarget_1.png');
+}
+.selectTarget[data-select-index="2"] {
+    top: 143px;
+    left: 958px;
+    width: 210px;
+    height: 140px;
+	background-image: url('../image/selectTarget_2.png');
+}
+.selectTarget[data-select-index="3"] {
+	top: 225px;
+    left: 846px;
+    width: 246px;
+    height: 196px;
+	background-image: url('../image/selectTarget_3.png');
+}
+.selectTarget[data-select-index="4"] {
+    top: 366px;
+    left: 887px;
+    width: 260px;
+    height: 180px;
+	background-image: url('../image/selectTarget_4.png');
+}
+.selectTarget[data-select-index="5"] {
+    top: 532px;
+    left: 701px;
+    width: 256px;
+    height: 170px;
+	background-image: url('../image/selectTarget_5.png');
+}
+
+/* 꽃봉오리(기본) */
+.selectTarget .selectTarget__image {
+	position: absolute;
+	background: center / contain no-repeat;	
+}
+.selectTarget[data-select-index="1"] .selectTarget__image {
+	top: -26px;
+	left: 125px;
+	width: 104px;
+	height: 65px;
+	background-image: url('../image/selectTarget_1_default.png');
+}
+.selectTarget[data-select-index="2"] .selectTarget__image {
+	top: -57px;
+    left: 77px;
+    width: 161px;
+    height: 110px;
+	background-image: url('../image/selectTarget_2_default.png');
+}
+.selectTarget[data-select-index="3"] .selectTarget__image {
+	top: -6px;
+    left: -30px;
+    width: 166px;
+    height: 134px;
+	background-image: url('../image/selectTarget_3_default.png');
+}
+.selectTarget[data-select-index="4"] .selectTarget__image {
+	top: 2px;
+    left: 97px;
+    width: 196px;
+    height: 130px;
+	background-image: url('../image/selectTarget_4_default.png');
+}
+.selectTarget[data-select-index="5"] .selectTarget__image {
+	top: -61px;
+    left: -29px;
+    width: 227px;
+    height: 132px;
+	background-image: url('../image/selectTarget_5_default.png');
+}
+
+/* 꽃봉오리(정답) */
+.selectTarget[data-select-index="1"].answered .selectTarget__image { background-image: url('../image/selectTarget_1_answered.png'); }
+.selectTarget[data-select-index="2"].answered .selectTarget__image { background-image: url('../image/selectTarget_2_answered.png'); }
+.selectTarget[data-select-index="3"].answered .selectTarget__image { background-image: url('../image/selectTarget_3_answered.png'); }
+.selectTarget[data-select-index="4"].answered .selectTarget__image { background-image: url('../image/selectTarget_4_answered.png'); }
+.selectTarget[data-select-index="5"].answered .selectTarget__image { background-image: url('../image/selectTarget_5_answered.png'); }
+
+/* 꽃 펫말 */
+.selectTarget__text {
+	position: absolute;
+	font-size: 21px;
+	color: #60200a;
+	font-family: "NanumSquareRoundEB";
+	letter-spacing: -2px;
+	word-spacing: 1px;
+}
+.selectTarget[data-select-index="1"] .selectTarget__text { top: 18px; left: 5px; }
+.selectTarget[data-select-index="2"] .selectTarget__text { top: 61px; left: 4px; }
+.selectTarget[data-select-index="3"] .selectTarget__text { top: 96px; left: 152px; }
+.selectTarget[data-select-index="4"] .selectTarget__text { top: 92px; left: 21px; }
+.selectTarget[data-select-index="5"] .selectTarget__text { top: 84px; left: 191px; }
+
+.page--end {
+	background: url('../image/playPage__background.png') center / contain no-repeat;
+}
