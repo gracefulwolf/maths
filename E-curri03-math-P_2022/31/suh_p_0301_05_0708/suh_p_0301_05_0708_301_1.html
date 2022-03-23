@@ -9,18 +9,95 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
-    <style type="text/css">
-        .textAlignC .lineBox.sky {text-align: center;padding: 10px 0 0 0;}
-        .textAlignC .imgCon {display: inline-block;text-align: center;margin: 0 30px;}
-        .textAlignC .imgCon {margin-left: 0;margin-right: 0;}
-        .textAlignC .imgCon .lineBox {padding: 15px 20px 5px 20px;}
-        .qCon div {vertical-align: middle;}
-        .colorBox{line-height: 36px !important;}
-        .colorBox.check {display: inline-block;width: 130px;padding: 6px 10px;font-size: 24px;text-align: center;vertical-align: middle;margin-bottom: 5px;}
-        .toggle {padding: 1px 18px 4px 18px;}
-        .toggle, .icon_arrow {margin-bottom: 5px;}
-        section + ul {margin-left: 18px;}
-    </style>
+    <style>
+		.lineBox {
+			position: relative;
+			display: flex;
+			margin: 20px auto 0;
+			padding:25px 12px 10px;
+			width: 954px;
+			height: 345px;
+			align-items: flex-start;
+			justify-content: center;
+		}
+
+		.lineBox .bullet {
+			position: absolute;
+			top: 5px;
+			left: 15px;
+		}
+
+		/* .verticalFormula li:first-child{width:50px} */
+	.verticalFormulaCon {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 400px;
+		margin: 50px 30px 100px;
+		width:480px;
+	}
+	.verticalFormula {
+		width: 460px;
+		padding-bottom: 10px;
+		text-align: right;
+		/* text-align: center; */
+	}
+	.verticalFormula_1 li, .verticalFormula_2 li {
+		position: relative;
+		display: inline-block;
+		width: 113px;
+	}
+
+
+		.verticalFormula_1 li:nth-child(2), .verticalFormula_2 li:nth-child(2){padding-right:34px;}
+		.verticalFormula_1 li:nth-child(2) span, .verticalFormula_2 li:nth-child(2) span{display:inline-block;padding-right: 21px;}
+		.verticalFormula_1 li:nth-child(3), .verticalFormula_2 li:nth-child(3){width: 131px;}
+		.verticalFormula_1 li:nth-child(3) span, .verticalFormula_2 li:nth-child(3) span{display:inline-block;padding-right: 20px;}
+		.verticalFormula_1 li:nth-child(4), .verticalFormula_2 li:nth-child(4){width: 131px;}
+		.verticalFormula_1 li:nth-child(4) span, .verticalFormula_2 li:nth-child(4) span{display:inline-block;padding-right: 21px;}
+
+	.verticalFormula_2 {
+		border-bottom: 4px solid #000000;
+		text-align: right;
+		padding-right: 20px;
+	}
+	.verticalFormula_3 {
+		padding-top: 10px;
+		text-align: right;
+	}
+	.verticalFormula_3 li span {
+		display: inline-block;
+		width: 50px;
+	}
+
+	.flex {
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+
+	.divide {
+		margin-top : 50px;
+		margin-left: 85px;
+	}
+
+	.divide .toggle{
+		width:100px;
+	}
+
+	.divide + .divide{
+		margin-left: 125px;
+	}
+
+	.verticalFormula .answer {
+		/* letter-spacing: 0.9em; */
+		text-align: right;
+	}
+	h2{font-size: 40px;}
+	.bullet + div{font-size: 40px;letter-spacing: -2.5px;}
+	.verticalFormula_3 .toggle{width:80px !important;margin-left:17px;}
+	.verticalFormula_3 .toggle .answer{text-align:center;}
+	</style>
 </head>
 
 <body>
@@ -29,47 +106,45 @@
 			<h1><ins class="icon"></ins>핵심 정리</h1>
 		</header>
 		<main>
-            <div class="contentsBox" data-quiz="toggle">
-                <h2 class=" flex-box a-center">나눗셈의 몫을 곱셈식으로 구하기</h2>
-                <section class="full">
-                    <div class="textAlignC mt_50">
-                        <div>
-                            <div class="imgCon">
-                                <div class="lineBox green"><img src="./images/suh_p_0301_03_0006_301_1/suh_p_0301_03_0006_301_1.png" width="360"></div>
-                            </div>
-                            <div class="imgCon">
-                                <div class="lineBox green"><img src="./images/suh_p_0301_03_0006_301_1/suh_p_0301_03_0006_301_1.png" width="360"></div>
-                            </div>
-                            <div class="imgCon mt_10">
-                                <div class="lineBox green"><img src="./images/suh_p_0301_03_0006_301_1/suh_p_0301_03_0006_301_1.png"  width="360"></div>
-                            </div>
-                            <div class="imgCon mt_10">
-                                <div class="lineBox green"><img src="./images/suh_p_0301_03_0006_301_1/suh_p_0301_03_0006_301_1.png" width="360"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <ul class="mb_30">
-                    <li>
-                        <div class="icon_arrow big arrow_1 v-alignM mr_10"></div>
-                        <span class="colorBox check skyBlue v-alignM">곱셈식</span>
-                        5×<div class="toggle v-alignM" data-toggle-obj="2">
-                            <div class="answer" data-toggle-target="2">
-                                4
-                            </div>
-                        </div>＝20
-                    </li>
-                    <li class="mt_10">
-                        <div class="icon_arrow big arrow_1 v-alignM mr_10"></div>
-                        <span class="colorBox check skyBlue v-alignM">나눗셈식</span>
-                        20÷5＝<div class="toggle v-alignM" data-toggle-obj="2">
-                            <div class="answer" data-toggle-target="2">
-                                4
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+			<div class="contentsBox" data-quiz="toggle">
+				<h2>시간을 더하고 빼는 방법 알아보기 </h2>
+				<section>
+					<ul class="contentsList">
+						<li>
+							<div class="bullet circleDot"></div>
+							<div>시는 시끼리, 분은 분끼리, 초는 초끼리 계산합니다.</div>
+						</li>
+					</ul>
+					<div class="lineBox sky">
+						<!-- <div class="bullet exam">예</div> -->
+						<div class="verticalFormulaCon">
+							<ul class="verticalFormula verticalFormula_1">
+								<li style="width:20px"></li>
+								<li><span>18</span>시</li>
+								<li><span>45</span>분</li>
+								<li><span>35</span>초</li>
+							</ul>
+							<ul class="verticalFormula verticalFormula_2">
+								<li class="textAlignL" style="width:20px"><div class="minus up"></div></li>
+								<li><span>12</span>시</li>
+								<li><span>32</span>분</li>
+								<li><span>14</span>초</li>
+							</ul>
+							<div class="verticalFormula verticalFormula_3">
+								<div class="toggle box textAlignC" data-toggle-obj="3">
+									<div class="answer" data-toggle-target="3">6</div>
+								</div>시간
+								<div class="toggle box center" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">13</div>
+								</div>분
+								<div class="toggle box center" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">21</div>
+								</div>초
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 		</main>
 	</div>
 	<div id="loadingContainer">

@@ -8,69 +8,38 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-	<style type="text/css">
-        .img-wrap {width: 80%;height: 300px;margin: 0 auto;background: url(./images/suh_p_0301_03_0004_203_1/suh_p_0301_03_0004_203_1_1.png) 50% 50% /100% no-repeat;}
-        .img-wrap .toggle {width: calc(100% + 14px);height: 100%;padding: 0;background: none;}
-        .img-wrap .toggle:after {display: none;}
-        .img-wrap .flex-wrap {position: relative;left: -7px;justify-content: space-between;}
-        .img-wrap .flex-wrap .lineBox {width: 200px;height: 300px;background: transparent;}
-        .flexListContainer.wrap {justify-content: flex-start;width: 648px;margin: 30px auto 0;}
-        .flexListContainer.wrap li {display: flex;align-items: center;}
-        .flexListContainer.wrap li + li {margin-top: 15px;}
-        .flexListContainer.wrap .text + .toggle {margin: 0 10px;}
-    </style>
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 </head>
 
 <body>
-
 	<div id="wrap" class="math">
 		<header>
-			<div class="title">
-                사과 24개를 한 봉지에 6개씩 담으면 몇 봉지가 되는지 구해 봅시다.
-			</div>
+			<div class="title">모둠별로 학교에서 주변에 있는 장소까지의 거리를 어림하고 확인해 봅시다.</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
-				<ul class="basicSlider_slides" data-slides="">		
-                    <li data-quiz="toggle">
-                        <div class="img-wrap">
-                            <div class="toggle n1" data-toggle-obj="1">
-                                <div class="answer" data-toggle-target="1">
-                                    <div class="flex-wrap">
-                                        <div class="lineBox sky"></div>
-                                        <div class="lineBox sky"></div>
-                                        <div class="lineBox sky"></div>
-                                        <div class="lineBox sky"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="flexListContainer wrap">
-                            <li>
-                                <span class="colorBox check skyBlue">식</span>
-                                <div>
-                                    <div class="toggle" data-toggle-obj="2">
-                                        <div class="answer" data-toggle-target="2">24÷6＝4</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="colorBox check deepPurple">답</span>
-                                한 봉지에 6개씩&nbsp;
-                                <div>
-                                    <div class="toggle" data-toggle-obj="3">
-                                        <div class="answer" data-toggle-target="3">4</div>
-                                    </div>
-                                </div>봉지가 됩니다.
-                            </li>
-                        </ul>
-                        <div class="buttonContainer">
-                            <button class="dapCheckBtn" data-answer-btn=""></button>
-                        </div>
-                    </li>
+				<!-- <ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover=""></li>
+				</ul> -->
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>모둠원 친구들과 학교에서 병원까지의 거리를 이용해서 다른 장소까지의 거리를 어림해 보세요.</span></h2>
+						<section>
+							<div class="textAlignC mt_30">
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1" style="letter-spacing: -1px;">
+										학교에서 놀이터까지의 거리는 약 1 km 500 m떨어져 있습니다.
+									</div>
+								</div>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
 				</ul>
 			</div>
 		</main>
+
 
 	</div>
 	<div id="loadingContainer">
@@ -89,10 +58,52 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
+
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-		}, false);
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'boy_1',
+						speech: 'right',
+						circle: 'sky',
+						top: 260,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suh_p_0301_03_0004_201_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '화살을 모두 나누어 줄 때까지<br> 덜어 내어 볼까?',
+							class: 'balloon left sky ctTail',
+							top: 278,
+							left: 450,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
 
+			window.$callBack.sliderReset = function (params) {
+				$ts.getEl('.characterImg')[0].style.left = 0;
+			};
+		});
 	</script>
 
 </html>
