@@ -11,17 +11,28 @@ ul.list.dot {
   right: 0px;
 }
 
-
+.icon_arrow{position: absolute;top: 239px;left: 638px;}
 /* page1 */
 .page1 .imagebox {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
   top: 130px;
-  left: 300px;
+  left: 710px;
   width: 270px;
   height: 270px;
+ 
+}
+.page1 .imagebox::after{
+  content:"";
+  display: block;
+  width:100%;
+  height: 100%;
   background: url(../images/6_3/6_3_03_01.png) center / contain no-repeat;
+  position: absolute;
+  top:0; left:0;
+  z-index: 0;
+  opacity: .3;
 }
 .dragContainer {
   position: absolute;
@@ -34,6 +45,7 @@ ul.list.dot {
   position: absolute;
   width: 135px;
   height: 135px;
+  opacity: .3;
 } 
 .dropArea.hide {
   background-color: #fff;
@@ -59,14 +71,15 @@ ul.list.dot {
 .dragBox {
   position: absolute;
   top: 110px;
-  right: 230px;
+  right: 600px;
   width: 300px;
   height: 300px;
+  border: 0;
 }
 .dragObj {
   width: 135px;
   height: 135px;
-  opacity: 0.3;
+  opacity: 1;
 }
 .dragObj[data-drag-obj-answer="1"] {
   top: 10px;
@@ -89,9 +102,14 @@ ul.list.dot {
   background: url(../images/6_3/6_3_3_01_4.png) center / contain no-repeat;
 }
 .dragBox .dragObj.dragObjComplete {
-  opacity: 0;
+  opacity: 0.2;
 }
-
+.js-buttons.quizButtons.answer{
+  top: 460px;
+    right: 56px;
+    opacity: 1;
+    visibility: visible;
+}
 .dropArea .dragObj {
   top: 0;
   left: 0;
