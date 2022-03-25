@@ -46,14 +46,15 @@
 
 .page_7 .lineBox {display:flex;justify-content:space-around;margin-top:-10px}
 .page_7 .lineBox li {text-align:center}
-.page_7 .lineBox img {display:block;width:130px;margin:0 auto}
+.page_7 .lineBox img {display:block;width:110px;margin:0 auto}
 .page_7 .lineBox .bullet.number {display:inline-block}
+.page_7 .img-box {height:100px;display:flex;align-items:center;justify-content:center}
 
 .page_8 .flex-box {justify-content:space-around}
 .page_8 .flex-box img {display:block;width:266px;height:250px;margin:0 auto}
 .page_8 .flex-box .box {position:relative;width:300px}
 .page_8 .flex-box .box .toggle {position:absolute;top:0;left:50%;margin-left:-133px;padding:0;background-color:transparent}
-.page_8 .flex-box .box .toggle::after {width:51px;height:70px;background: url(../common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;-webkit-animation: opacity 1.5s ease-in 3;-o-animation: opacity 1.5s ease-in 3;animation: opacity 1.5s ease-in 3;border:0 none}
+.page_8 .flex-box .box .toggle::after {content:'';width:51px;height:70px;background: url(../common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;-webkit-animation: opacity 1.5s ease-in 3;-o-animation: opacity 1.5s ease-in 3;animation: opacity 1.5s ease-in 3;border:0 none}
 .page_8 .flex-box .box .toggle .answer {background-color:#fff}
 .page_8 .flex-box .box .lineBox.green {margin-top:20px;text-align:center}
 
@@ -180,8 +181,8 @@
 								</div>
 							</div>
 
-							<div class="toggle box mt_20" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">슬기, 슬기가 자른 조각을 겹쳐 보면 크기와 모양이 똑같기 때문입니다.</div>
+							<div class="toggle box mt_10" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1" style="letter-spacing:1px">슬기, 슬기가 자른 조각을 겹쳐 보면 크기와 모양이 똑같기 때문입니다.</div>
 							</div>
 
 							<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -191,10 +192,10 @@
 						<h2><ins class="dot orange"></ins><span>그림을 보고 물음에 답하시오.</span></h2>
 						<section>
 							<ul class="lineBox deeppink center">
-								<li><img src="./images/suh_0301_06_0002_401_7_1.png" alt=""><div class="bullet number orange">ㄱ</div></li>
-								<li><img src="./images/suh_0301_06_0002_401_7_2.png" alt=""><div class="bullet number orange">ㄴ</div></li>
-								<li><img src="./images/suh_0301_06_0002_401_7_3.png" alt=""><div class="bullet number orange">ㄷ</div></li>
-								<li><img src="./images/suh_0301_06_0002_401_7_4.png" alt=""><div class="bullet number orange">ㄹ</div></li>
+								<li><div class="img-box"><img src="./images/suh_0301_06_0002_401_7_1.png" alt=""></div><div class="bullet number orange">ㄱ</div></li>
+								<li><div class="img-box"><img src="./images/suh_0301_06_0002_401_7_2.png" alt=""></div><div class="bullet number orange">ㄴ</div></li>
+								<li><div class="img-box"><img src="./images/suh_0301_06_0002_401_7_3.png" alt=""></div><div class="bullet number orange">ㄷ</div></li>
+								<li><div class="img-box"><img src="./images/suh_0301_06_0002_401_7_4.png" alt=""></div><div class="bullet number orange">ㄹ</div></li>
 							</ul>
 							<div class="mt_10">
 								(1) 똑같이 둘로 나누어진 도형을 쓰시오.
@@ -214,7 +215,10 @@
 									<div class="answer" data-toggle-target="3"><div class="bullet number orange">ㄹ</div></div>
 								</div>
 							</div>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
 						</section>
 					</li>
 					<li class="page_8" data-quiz="toggle">
@@ -250,12 +254,17 @@
 			<ul class="popup_pages">
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
-						<div style="letter-spacing:-1px">똑같이 나누어진 도형은 나누어진 조각의 크기가 같습니다. 똑같이 나누어지지 않은 도형은 나누어진 조각의 크기가 다릅니다.</div>
+						<div style="letter-spacing:-1.4px">똑같이 나누어진 도형은 나누어진 조각의 크기가 같습니다. 똑같이 나누어지지 않은 도형은 나누어진 조각의 크기가 다릅니다.</div>
 					</div>
 				</li>
 				<li class="solve pop_page_2" data-popup-page="2">
 					<div class="popup_contents">
 						<div style="letter-spacing:-1px">똑같이 나누어진 도형은 나누어진 조각의 크기가 같습니다.<br> <div class="bullet number orange inline">ㄱ</div>, <div class="bullet number orange inline">ㄴ</div> 으로 나눌 경우 도형을 둘로 똑같이 나눌 수 있습니다.</div>
+					</div>
+				</li>
+				<li class="solve pop_page_3" data-popup-page="3">
+					<div class="popup_contents">
+						<div style="letter-spacing:-1.4px">똑같이 나누어진 도형은 나누어진 조각의 크기가 같습니다. 똑같이 나누어지지 않은 도형은 나누어진 조각의 크기가 다릅니다.</div>
 					</div>
 				</li>
 			</ul>
