@@ -10,25 +10,9 @@
 	<link rel="stylesheet" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<link rel="stylesheet" href="../../../default/css/custom.css">
+	<link rel="stylesheet" href="./css/suh_p_0301_05_0009_201_1.css">
 	<style>
-		.contentsBox section {padding: 0;}
-		#wrap header .title{display: flex;justify-content: flex-start;text-align: justify;}
-		#wrap header .title .bullet.number {margin-top: 5px;margin-right:10px;}
-		#wrap.q5 header .title .bullet.number + .bullet.number{margin-right:2px}
-		/*iframe restyle*/
-		/* .iframe-wrap{position: relative !important;width: 1058px;height: 566px;overflow:hidden;z-index: 0 !important;}
-		.page-iframe{position: absolute;top: 0;left: 0;width:1058px;height: 566px;} */
-		.iframe-wrap{position: relative !important;width: 1058px;height: 270px;margin-top: 30px;overflow:hidden;z-index: 0 !important;}
-		.page-iframe{position: absolute;top: 0;left: 0;width:1058px;height: 270px;}
-		.contentsBox .flex-wrap {width: 800px;height: 200px;align-items: flex-end;margin: 0 auto;}
-		.flex-item {text-align: center;}
-		.flex-item.n1 img {width: 60px;}
-		.flex-item.n2 img {width: 300px;}
-		.img-wrap {margin-bottom: 10px;}
-		.popup_contents .textAlignC {width: 800px;margin: 10px auto 0;}
-		.popup_contents .textAlignC img {width: 650px;}
-		.popup_contents .flex-wrap {width: 1050px;margin: 0 auto;}
-		.pop_page_3 .popup_contents .textAlignC {margin-top: 60px;}
+		
 	</style>
 </head>
 
@@ -71,10 +55,14 @@
 							</div> mm
 						</div>
 					</div>
-					<div class="iframe-wrap">
+
+					<div class="ja" data-drag="">
+						
+					</div>
+					<!-- <div class="iframe-wrap">
 						<iframe src="../../../dvd_3_1_p/lesson05/ops/lesson05/mm_31_5_06_01_01.html" title=""
 							class="page-iframe" id="iframepage1" scrolling="no"></iframe>
-					</div>
+					</div> -->
 					
 					<div class="buttonContainer left">
 						<button class="characterBtn" data-popup-btn="101" data-hover="">
@@ -93,6 +81,11 @@
 		</main>
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
+				<li class="min dragitem on" data-popup-page="100" data-drag="">
+					<img src="./images/suh_p_0301_05_0009_201_1/ruler_02.svg">
+					<div class="popup_closeBtn"></div>
+				</li>
+
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
 						물건의 한쪽 끝을 자의 눈금 0에 맞추고 다른 쪽 끝에 있는 눈금을 읽습니다.
@@ -137,10 +130,11 @@
 								</div> mm
 							</div>
 						</div>
-						<div class="iframe-wrap">
+						
+						<!-- <div class="iframe-wrap">
 							<iframe src="../../../dvd_3_1_p/lesson05/ops/lesson05/mm_31_5_06_01_01.html" title=""
 								class="page-iframe" id="iframepage1" scrolling="no"></iframe>
-						</div>
+						</div> -->
 						<a href="./data/(3-1-3)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
@@ -182,10 +176,10 @@
 											</div> mm
 										</div>
 									</div>
-									<div class="iframe-wrap">
+									<!-- <div class="iframe-wrap">
 										<iframe src="../../../dvd_3_1_p/lesson05/ops/lesson05/mm_31_5_06_01_01.html" title=""
 											class="page-iframe" id="iframepage1" scrolling="no"></iframe>
-									</div>
+									</div> -->
 								</div>
 								<a href="./data/(3-1-3)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -215,6 +209,22 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			var btn = document.querySelectorAll('.characterBtn');
+			var close = document.querySelectorAll('.popup_closeBtn');
+			var el_ja = document.querySelector('.dragitem');
+
+			for (var i = 0; i < btn.length; i++) {
+				btn[i].addEventListener('click', reset);
+			}
+			for (var i = 0; i < close.length; i++) {
+				close[i].addEventListener('click', reset);
+			}
+
+			function reset(){
+				el_ja.removeAttribute('style');
+			}
+
+
 		}, false);
 
 	</script>
