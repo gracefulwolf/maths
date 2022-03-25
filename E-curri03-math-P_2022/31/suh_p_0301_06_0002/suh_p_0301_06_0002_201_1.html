@@ -14,7 +14,30 @@ header .title .supply_guide.inline {top:8px}
 .ex-box .bullet.exam {flex-shrink:0}
 .basicSlider_slides  section {padding-right:0}
 .basicSlider_slides .answer {width:100%;text-align:justify}
-#aniBox_1 {position:absolute;top:-60px;left:800px}
+#aniBox_1 {position:absolute;top:0;left:800px}
+.balloon {z-index: 3;}
+.page_1 h2{position: relative; z-index: 2;}
+.iframe-wrap{
+	width: 1170px;
+    position: absolute;
+    top: -30px;
+    left: -56px;
+    height: 584px;
+    overflow: hidden;
+}
+.page-iframe {
+	width: 1220px;
+    height: 684px;
+    overflow: hidden;
+    border: 0;
+    position: absolute;
+    z-index: 1;
+    top: -130px;
+    left: -50px;
+}
+.bullet.exam{position: absolute; z-index: 3; top:100px}
+.bullet.exam.n1{left: -25px;}
+.bullet.exam.n2{left: 480px;}
 </style>
 </head>
 
@@ -36,7 +59,12 @@ header .title .supply_guide.inline {top:8px}
 					<section class="posRel">
 						<div id="aniBox_1"></div>
 					</section>
-					<button class="dapCheckBtn" data-answer-btn=""></button>
+					<div class="bullet exam n1">예</div>
+					<div class="bullet exam n2">예</div>
+					<div class="iframe-wrap">
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_01_03_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+					</div>
+					<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
 				</li>
 				<li class="page_2" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>색종이를 각각 몇 조각으로 나누었나요?</span></h2>
@@ -91,6 +119,10 @@ header .title .supply_guide.inline {top:8px}
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+		}
+
 		$prite.add({
 			target: $ts.getEl('#aniBox_1'),
 			spriteId: 'sprite1',
