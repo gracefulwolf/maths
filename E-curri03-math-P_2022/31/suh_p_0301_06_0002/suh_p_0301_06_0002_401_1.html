@@ -10,6 +10,10 @@
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style>
+.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative; z-index:0; top:0}
+
+
 .gate_container .downloadBtn {right:20px;left:auto}
 .checkContainer .contentsBox h2+section {padding-left:30px}
 .checkContainer .contentsBox h2+section .downloadBtn {left:0}
@@ -59,6 +63,27 @@
 .page_8 .flex-box .box .lineBox.green {margin-top:20px;text-align:center}
 
 .pop_page_2 .bullet.number {vertical-align:middle}
+
+.iframe-wrap{
+	width: 1094px;
+	position: absolute;
+	top: -10px;
+	left: -50px;
+	height: 554px;
+	overflow: hidden;
+}
+.page-iframe {
+	width: 1280px;
+	height: 714px;
+	overflow: hidden;
+	border: 0;
+	position: absolute;
+	z-index: 1;
+	top: -60px;
+	left: -62px;
+}
+.page_3 h2,
+.page_2 h2{position:relative; z-index: 3;}
 </style>
 </head>
 
@@ -116,11 +141,16 @@
 					</li>
 					<li class="page_2">
 						<h2><ins class="dot"></ins><span>도형을 똑같이 여섯으로 나누어 보시오.</span></h2>
-						<section>DVD 개발물</section>
+
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_01_07_03.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+						</div>
 					</li>
 					<li class="page_3">
 						<h2><ins class="dot"></ins><span>도형을 주어진 수만큼 똑같이 나누어 보시오.</span></h2>
-						<section>DVD 개발물</section>
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_01_07_04.html" title="" class="page-iframe" id="ifm2" scrolling="no"></iframe>
+						</div>
 					</li>
 					<li class="page_4" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>도형을 똑같이 셋으로 나눈 것을 고르시오.</span></h2>
@@ -302,6 +332,11 @@
 	}
 
 	document.addEventListener("DOMContentLoaded", function () {
+		window.$callBack.sliderMove=function(SLIDER) {
+		document.getElementById('ifm1').contentDocument.location.reload(true);
+		document.getElementById('ifm2').contentDocument.location.reload(true);
+		}
+
 	}, false);
 </script>
 </body>
