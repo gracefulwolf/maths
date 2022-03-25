@@ -106,6 +106,9 @@
 		.flexListContainer.column li {display: flex;align-items: flex-start;}
 		.flexListContainer.column li > div {display: flex;}
 		.flexListContainer.column li > div:first-child {display: flex;justify-content: flex-end;}
+		.popup_contents .box.mt_40 {
+			padding: 0 30px;
+		}
 	</style>
 </head>
 
@@ -224,212 +227,209 @@
 			<ul class="popup_pages">
 				<li class="whole pop_page_2" data-popup-page="101">
 					<h2 class="box"><span>한 번 더 <b class="yellowT">1</b></span></h2>
-					<div class="popup_contents">
+					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
-							<li data-quiz="toggle">
+							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">잘못 계산한 곳을 찾아 까닭을 쓰고, 바르게 계산해 보세요.</p>
-									<div class="box mt_40">
-										<div class="flex-box a-center j-center">
-											<div>
-												<div class="verticalFormulaCon">
-													<ul class="verticalFormula verticalFormula_1">
-														<li></li>
-														<li>5</li>
-														<li>시</li>
-														<li>18</li>
-														<li>분</li>
-													</ul>
-													<ul class="verticalFormula verticalFormula_2">
-														<li>+</li>
-														<li>2</li>
-														<li>분</li>
-														<li>15</li>
-														<li>초</li>
-													</ul>
-													<ul class="verticalFormula verticalFormula_1">
-														<li></li>
-														<li>7</li>
-														<li>분</li>
-														<li>33</li>
-														<li>초</li>
-													</ul>
-												</div>
-											</div>
-											<div class="icon_arrow big" style="margin:0 50px;"></div>
-											<div class="lineBox green">
-												<div class="toggle noBg box" data-toggle-obj="1">
-													<div class="answer" data-toggle-target="1">
-														<div class="verticalFormulaCon">
-															<ul class="verticalFormula verticalFormula_1">
-																<li></li>
-																<li>5</li>
-																<li>시</li>
-																<li>18</li>
-																<li>분</li>
-																<li></li>
-																<li></li>
-															</ul>
-															<ul class="verticalFormula verticalFormula_2">
-																<li>+</li>
-																<li></li>
-																<li></li>
-																<li>2</li>
-																<li>분</li>
-																<li>15</li>
-																<li>초</li>
-															</ul>
-															<ul class="verticalFormula verticalFormula_1">
-																<li></li>
-																<li>5</li>
-																<li>시</li>
-																<li>20</li>
-																<li>분</li>
-																<li>15</li>
-																<li>초</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<ul class="flexListContainer column">
-											<li>
-												<div>
-													<div class="colorBox check skyBlue">까닭</div>
-												</div>
-												<div>
-													<div class="toggle" data-toggle-obj="2">
-														<div class="answer" data-toggle-target="2">
-															<ul class="contentsList">
-																<li>
-																	<div class="bullet exam">예</div>
-																	<div>
-																		‘분’은 ‘분’끼리 계산해야 하는데 다른 단위와 계산했습니다.
-																	</div>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</li>
+						
+								</div>
+							</li>
+						</ul>
+						<div class="box mt_40">
+							<div class="flex-box a-center j-center">
+								<div>
+									<div class="verticalFormulaCon">
+										<ul class="verticalFormula verticalFormula_1">
+											<li></li>
+											<li>5</li>
+											<li>시</li>
+											<li>18</li>
+											<li>분</li>
+										</ul>
+										<ul class="verticalFormula verticalFormula_2">
+											<li>+</li>
+											<li>2</li>
+											<li>분</li>
+											<li>15</li>
+											<li>초</li>
+										</ul>
+										<ul class="verticalFormula verticalFormula_1">
+											<li></li>
+											<li>7</li>
+											<li>분</li>
+											<li>33</li>
+											<li>초</li>
 										</ul>
 									</div>
 								</div>
+								<div class="icon_arrow big" style="margin:0 50px;"></div>
+								<div class="lineBox green">
+									<div class="toggle noBg box" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="verticalFormulaCon">
+												<ul class="verticalFormula verticalFormula_1">
+													<li></li>
+													<li>5</li>
+													<li>시</li>
+													<li>18</li>
+													<li>분</li>
+													<li></li>
+													<li></li>
+												</ul>
+												<ul class="verticalFormula verticalFormula_2">
+													<li>+</li>
+													<li></li>
+													<li></li>
+													<li>2</li>
+													<li>분</li>
+													<li>15</li>
+													<li>초</li>
+												</ul>
+												<ul class="verticalFormula verticalFormula_1">
+													<li></li>
+													<li>5</li>
+													<li>시</li>
+													<li>20</li>
+													<li>분</li>
+													<li>15</li>
+													<li>초</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="flexListContainer column">
+								<li>
+									<div>
+										<div class="colorBox check skyBlue">까닭</div>
+									</div>
+									<div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															‘분’은 ‘분’끼리 계산해야 하는데 다른 단위와 계산했습니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
 
-								<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn"
-									data-name="활동지 다운로드"></a>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</li>
-						</ul>
-
+						<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn"
+						data-name="활동지 다운로드"></a>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</li>
 
 				<li class="whole pop_page_3" data-popup-page="102">
 					<h2 class="box"><span>한 번 더 <b class="yellowT">2</b></span></h2>
-					<div class="popup_contents">
+					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
-							<li data-quiz="toggle">
+							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10">잘못 계산한 곳을 찾아 까닭을 쓰고, 바르게 계산해 보세요.</p>
-									<div class="box mt_40">
-										<div class="flex-box a-center j-center">
-											<div>
-												<div class="verticalFormulaCon">
-													<ul class="verticalFormula verticalFormula_1">
-														<li></li>
-														<li>3</li>
-														<li>분</li>
-														<li>20</li>
-														<li>초</li>
-													</ul>
-													<ul class="verticalFormula verticalFormula_2">
-														<li>+</li>
-														<li>4</li>
-														<li>시</li>
-														<li>32</li>
-														<li>분</li>
-													</ul>
-													<ul class="verticalFormula verticalFormula_1">
-														<li></li>
-														<li>7</li>
-														<li>시</li>
-														<li>52</li>
-														<li>분</li>
-													</ul>
-												</div>
-											</div>
-											<div class="icon_arrow big" style="margin:0 50px;"></div>
-											<div class="lineBox green">
-												<div class="toggle noBg box" data-toggle-obj="1">
-													<div class="answer" data-toggle-target="1">
-														<div class="verticalFormulaCon">
-															<ul class="verticalFormula verticalFormula_1">
-																<li></li>
-																<li></li>
-																<li></li>
-																<li>3</li>
-																<li>분</li>
-																<li>20</li>
-																<li>초</li>
-															</ul>
-															<ul class="verticalFormula verticalFormula_2">
-																<li>+</li>
-																<li>4</li>
-																<li>시</li>
-																<li>32</li>
-																<li>분</li>
-																<li></li>
-																<li></li>
-															</ul>
-															<ul class="verticalFormula verticalFormula_1">
-																<li></li>
-																<li>4</li>
-																<li>시</li>
-																<li>35</li>
-																<li>분</li>
-																<li>20</li>
-																<li>초</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<ul class="flexListContainer column">
-											<li>
-												<div>
-													<div class="colorBox check skyBlue">까닭</div>
-												</div>
-												<div>
-													<div class="toggle" data-toggle-obj="2">
-														<div class="answer" data-toggle-target="2">
-															<ul class="contentsList">
-																<li>
-																	<div class="bullet exam">예</div>
-																	<div>
-																		‘분’은 ‘분’끼리 계산해야 하는데 다른 단위와 계산했습니다.
-																	</div>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-
 								</div>
-
-								<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn"
-									data-name="활동지 다운로드"></a>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</li>
 						</ul>
-
+						<div class="box mt_40">
+							<div class="flex-box a-center j-center">
+								<div>
+									<div class="verticalFormulaCon">
+										<ul class="verticalFormula verticalFormula_1">
+											<li></li>
+											<li>3</li>
+											<li>분</li>
+											<li>20</li>
+											<li>초</li>
+										</ul>
+										<ul class="verticalFormula verticalFormula_2">
+											<li>+</li>
+											<li>4</li>
+											<li>시</li>
+											<li>32</li>
+											<li>분</li>
+										</ul>
+										<ul class="verticalFormula verticalFormula_1">
+											<li></li>
+											<li>7</li>
+											<li>시</li>
+											<li>52</li>
+											<li>분</li>
+										</ul>
+									</div>
+								</div>
+								<div class="icon_arrow big" style="margin:0 50px;"></div>
+								<div class="lineBox green">
+									<div class="toggle noBg box" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="verticalFormulaCon">
+												<ul class="verticalFormula verticalFormula_1">
+													<li></li>
+													<li></li>
+													<li></li>
+													<li>3</li>
+													<li>분</li>
+													<li>20</li>
+													<li>초</li>
+												</ul>
+												<ul class="verticalFormula verticalFormula_2">
+													<li>+</li>
+													<li>4</li>
+													<li>시</li>
+													<li>32</li>
+													<li>분</li>
+													<li></li>
+													<li></li>
+												</ul>
+												<ul class="verticalFormula verticalFormula_1">
+													<li></li>
+													<li>4</li>
+													<li>시</li>
+													<li>35</li>
+													<li>분</li>
+													<li>20</li>
+													<li>초</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="flexListContainer column">
+								<li>
+									<div>
+										<div class="colorBox check skyBlue">까닭</div>
+									</div>
+									<div>
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet exam">예</div>
+														<div>
+															‘분’은 ‘분’끼리 계산해야 하는데 다른 단위와 계산했습니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<a href="./data/(3-1-5)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn"
+						data-name="활동지 다운로드"></a>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</li>
 			</ul>

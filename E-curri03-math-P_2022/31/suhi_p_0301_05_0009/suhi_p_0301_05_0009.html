@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  math css -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+	<link rel="stylesheet" type="text/css" href="./css/template.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.contentsBox {height: 100%;}
+		iframe{width:1278px; height:100%; border:0; transform: scale(0.9) translate(-130px, -20px);}
+		.page_2 .innerBox {padding:0 0 0 33px !important;}
+		.noteText {height: 330px;}
+		.suhi textarea.answerMode {color:#00a0ff}
+		.suhi textarea{font-size: 38px;}
+		.noteText .textLine::placeholder {color: #24914d;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						정리해 보아요
+					</span>
+					<span class="sub-page">
+						72쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">정리하기</li>
+					<li data-hover="">수학 일기</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="bullet circleDot green" style="margin-top: 20px;"></ins>
+							<span>
+								길을 찾아 가며 배운 내용을 정리해 봅시다.
+							</span>
+						</h2>
+						<iframe src="../../../dvd_3_1_p/lesson05/ops/lesson05/ms_31_5_06_01_01.html" scrolling="no"></iframe>	
+					</li>
+					<li class="page_2" data-quiz="input">
+						<h2>
+							<ins class="bullet circleDot green" style="margin-top: 20px;"></ins>
+							<span>
+								배운 내용을 되돌아보고 기억에 남는 것을 써 봅시다.
+							</span>
+						</h2>
+						<div class="innerBox">
+							<ul class="tabContainer common"></ul>
+							<ul class="pageContainer">
+								<li class="page_1 textAlignC view">
+									<div class="noteText">
+										<textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj="" data-answer="1 cm보다 작은 단위인 mm에 대해 알아보았습니다.
+1 m보다 긴 단위인 km에 대해 알아보았습니다.
+1분보다 작은 단위인 초에 대해 알아보았습니다.
+길이와 거리를 어림하고 재어보았습니다.
+시간을 더하고 빼는 방법을 배워보았습니다.
+										" onfocus="placeholder=''" onblur="placeholder='직접 쓰기'" autocomplete="off" style="letter-spacing: -.5px;"></textarea>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="writeBtn" data-answer-btn></div>
+					</li>
+					
+				</ul>
+			</div>
+		</main>
+		
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
+	<script type="text/javascript">
+		window.$popCallBack={
+			open: function (popup) {
+				if (popup.page.classList.contains('solve')) {
+					var inQuizArray=$pm.array.inPage.quiz;
+					inQuizArray.forEach(function (quiz) {
+						quiz.reset();
+						if (quiz.QUIZ.answerBtn) quiz.QUIZ.answerBtn.classList.remove('reset');
+					});
+				}
+			}
+		};
+		document.addEventListener('DOMContentLoaded', function () {
+
+			window.$horizonMaker({
+				container: $ts.getEl('.horizonContainer_1')[0],
+				lineSpace: 150,
+				inputTextArray: ['95', '96', '', '98', '', '']
+			});
+			window.$horizonMaker({
+				container: $ts.getEl('.horizonContainer_2')[0],
+				lineSpace: 150,
+				inputTextArray: ['50', '60', '70', '', '90', '']
+			});
+			window.$horizonMaker({
+				container: $ts.getEl('.horizonContainer_3')[0],
+				lineSpace: 200,
+				inputTextArray: ['20', '40', '60', '80', '']
+			});
+		}, false);
+	</script>
+</body>
+
+</html>

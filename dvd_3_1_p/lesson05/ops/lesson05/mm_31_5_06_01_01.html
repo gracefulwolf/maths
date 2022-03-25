@@ -27,32 +27,46 @@
 		<link rel="stylesheet" href="./css/mm_31_5_03_07_03.css" />
 		<style>
 			.iframe-re {
-				width: 998px;
+				width: 1058px;
+				/* height: 566px; */
 				height: 270px;
 			}
 			.iframe-re .content-container {
-				width: 998px;
+				width: 1058px;
+				/* height: 566px; */
 				height: 270px;
 				transform-origin: 0;
 			}
 			.iframe-re .title-h1,
-			.iframe-re .img-box,
 			.iframe-re .tabs,
 			.iframe-re .global,
 			.iframe-re .bottom-tabs,
 			.iframe-re .btns-bottom-left,
-			.iframe-re .btns-bottom-right,
-			.iframe-re .input-cont {
+			.iframe-re .buttonContainer.left,
+			.iframe-re .input-cont,
+			.iframe-re .btn-explan {
 				display: none;
 			}
 			.iframe-re .bg {
+				/* height: 566px; */
 				height: 270px;
 				overflow: hidden;
 			}
+			.content .img-box-01 {
+				top: -130px;
+				width: 1058px;
+				/* height: 566px; */
+				height: 270px;
+			}
+			.content .img-box > img {
+				width: 1058px;
+				/* height: 566px; */
+				height: 270px;
+			}
 			.iframe-re .solve-check .scroll-box.title-line-1 {
 				top: -2px;
+				/* height: 506px; */
 				height: 270px;
-				background-color: #fff;
 			}
 		</style>
 	</head>
@@ -79,13 +93,13 @@
 						<div class="scroll-inner">
 							<div class="scroll-bg"></div>
 
-							<div class="img-box abs img-box-01">
+							<!-- <div class="img-box abs img-box-01">
 								<img src="./images/mm_31_5_06_01_01/bg.png" width="1280" height="720">
 								<img src="./images/mm_31_5_06_01_01/bg.svg" width="1280" height="720" class="abs">
-							</div>
+							</div> -->
 
 							<!-- quiz -->
-							<div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":["9", "7", "5"]}'>
+							<!-- <div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":["9", "7", "5"]}'>
 								<ul>
 									<li class="input-cont">
 										<input type="text" class="input"></input>
@@ -103,16 +117,16 @@
 										<div class="btn-check"></div>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 							<!-- //quiz -->
 				
 							<!-- 드래그 요소 :: 자 -->
 							<div class="drag-ruler quiz-draggable" data-ui="quiz-draggable" data-option='{"lockCenter":false, "onlyDrag":true}'>
 								<div class="area-con">
-									<div class="drag-area" style="left:144px; top:50px; width:710px; height:126px;"><span class="area"></span></div>
+									<div class="drag-area" style="left:174px; top:65px; width:710px; height:126px;"><span class="area"></span></div>
 								</div>
 								<div class="drag-con">
-									<div class="drag-item" x="164" y="68" scale="1" drag-scale="1" style="width:670px; height:90px">
+									<div class="drag-item" x="194" y="85" scale="1" drag-scale="1" style="width:670px; height:90px">
 										<img class="img" src="./images/ico/ruler_02.svg" alt="" width="670" height="90">
 										<span class="area btn-"></span>
 									</div>
@@ -131,15 +145,15 @@
 					</div>
 
 					<!-- 우측 하단 영역 고정 버튼 -->
-					<div class="btns-bottom-right check-btns">
+					<!-- <div class="btns-bottom-right check-btns">
 						<div class="button btn-retry toggle remove"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
 						<div class="button btn-explan"><span></span></div>
-					</div>
+					</div> -->
 				</div>
 
 					<!-- 팝업 :: 풀이 -->
-				<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<!-- <div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
 					<div class="bg"></div>
 					<div class="text-content">
 						<div style="letter-spacing: -1.5px;">
@@ -147,19 +161,19 @@
 						</div>
 					</div>
 					<div class="button btn-close ico-close-02"></div>
-				</div>
+				</div> -->
 			
 
 				<!-- 좌측 하단 영역 고정 버튼 -->
-				<div class="btns-bottom-left">
+				<!-- <div class="btns-bottom-left">
 					<div class="button box-type btn-twins twins-01"><span>한 번 더 <em class="num"></em></span></div>
 					<div class="button box-type btn-twins twins-02"><span>한 번 더 <em class="num"></em></span></div>
-				</div>
+				</div> -->
 		
 			</div>
 		
 			<!-- 팝업 :: 한 번 더 1 -->
-			<div class="popup popup-twins twins-01" data-ui="popup" data-option='{"btn":".btn-twins.twins-01"}'>
+			<div class="popup popup-twins twins-01" data-ui="popup" data-option='{"btn":".btn-twins.twins-01"}' style="display: none;">
 				<div class="bg">
 					<!-- <img src="./images/mm_31_5_06_01_01/twins_01_bg.svg"> -->
 				</div>
@@ -250,7 +264,7 @@
 			</div>
 		
 			<!-- 팝업 :: 한 번 더 2 -->
-			<div class="popup popup-twins twins-02" data-ui="popup" data-option='{"btn":".btn-twins.twins-02"}'>
+			<div class="popup popup-twins twins-02" data-ui="popup" data-option='{"btn":".btn-twins.twins-02"}' style="display: none;">
 				<div class="bg">
 					<!-- <img src="./images/mm_31_5_06_01_01/twins_02_bg.svg"> -->
 				</div>
