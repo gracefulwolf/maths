@@ -350,7 +350,7 @@
 							</div>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
-						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="2" data-close-inner="">
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="2" data-close-inner="" data-auto-close="3000">
 							<span class="btnInner"></span>
 						</button>
 					</li>
@@ -421,7 +421,7 @@
 
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
-				<li class="textBookPopup popup_1" data-popup-page="1">
+				<li class="textBookPopup popup_100" data-popup-page="1">
 					<div class="popupInner" data-popup-inner="">
 
 						<figure><img src="images/suhi_0201_05_0004/suhi_0201_05_0004_q1_1.png" alt="이미지1"></figure>
@@ -506,6 +506,9 @@
 			if (slide.idx === 1) {
 				setTimeout(function () {
 					$ts.getEl('.page_2 .textBookBtn')[0].click();
+					setTimeout(function () {
+						$ts.getEl('.popup_100 .popup_closeBtn')[0].click();
+					}, 3000);
 					// setTimeout(function () {
 					// 	$ts.getEl('.popup_2 .popup_closeBtn')[0].click();
 					// }, 3000);
