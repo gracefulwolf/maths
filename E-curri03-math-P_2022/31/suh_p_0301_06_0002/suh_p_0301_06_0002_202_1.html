@@ -12,6 +12,30 @@
 header .title .supply_guide.inline {top:8px}
 .basicSlider_slides  section {padding-right:0}
 .basicSlider_slides .answer {width:100%;text-align:justify}
+
+.iframe-wrap{
+	width: 1170px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 584px;
+	overflow: hidden;
+}
+.page-iframe {
+	
+    width: 1280px;
+    height: 714px;
+    overflow: hidden;
+    border: 0;
+    position: absolute;
+    z-index: 1;
+    top: -130px;
+    left: -72px;
+
+}
+.characterWrap+.balloon.bottom:after, .characterWrap+.balloon.top:after{
+	left:30%
+}
 </style>
 </head>
 
@@ -21,7 +45,12 @@ header .title .supply_guide.inline {top:8px}
 		<div class="title" style="letter-spacing:-1px">색종이를 여러 가지 방법으로 똑같이 넷으로 나누어 봅시다. <div class="supply_guide inline">꾸러미 17, 18</div></div>
 	</header>
 	<main>
-		<div class="contentsBox"></div>
+		<div class="iframe-wrap">
+			<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_01_04_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+		</div>
+		<section class="posRel">
+			<div id="aniBox_1"></div>
+		</section>
 	</main>
 </div>
 <div id="loadingContainer">
@@ -42,6 +71,37 @@ header .title .supply_guide.inline {top:8px}
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#aniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'girl_1',
+					speech: 'right',
+					 circle: 'pink',
+					top: 320,
+					left: 60,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					sound: './media/audios/suh_p_0301_06_0002_202_1.mp3',
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					//endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '똑같이 나누니까 <br>모양과 크기가······. ',
+						class: 'balloon bottom pink ctTail',
+						top: 130,
+						left: 48,
+						width: 290,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					}
+				}
+			]
+		});
 	}, false);
 </script>
 </body>

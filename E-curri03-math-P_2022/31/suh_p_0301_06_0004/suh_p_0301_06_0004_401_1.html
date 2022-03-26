@@ -10,6 +10,10 @@
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style>
+	.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative; z-index:0; top:0}
+
+
 .gate_container .downloadBtn {right:20px;left:auto}
 .checkContainer .contentsBox h2+section {padding-left:30px}
 .checkContainer .contentsBox h2+section .downloadBtn {left:0;bottom:10px}
@@ -58,6 +62,27 @@
 .page_8 .balloon.balloon_3 {left:727px}
 .page_8 .last {position:relative;margin-left:60px;text-indent:-60px}
 .page_8 .last .toggle {position:absolute;margin-left:10px}
+
+.iframe-wrap{
+	width: 1094px;
+	position: absolute;
+	top: -10px;
+	left: -50px;
+	height: 554px;
+	overflow: hidden;
+}
+.page-iframe {
+	width: 1280px;
+	height: 714px;
+	overflow: hidden;
+	border: 0;
+	position: absolute;
+	z-index: 1;
+	top: -60px;
+	left: -62px;
+}
+.page_3 h2,
+.page_2 h2{position:relative; z-index: 3;}
 </style>
 </head>
 
@@ -168,15 +193,17 @@
 				</li>
 				<li class="page_2" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>부분을 보고 전체를 완성하고, 그린 부분을 분수로 나타내 보시오.</span></h2>
-					<section>
-						DVD 개발물
-					</section>
+
+					<div class="iframe-wrap">
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_07_03.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+					</div>
 				</li>
 				<li class="page_3" data-quiz="toggle">
 					<h2><ins class="dot"></ins><span>주어진 분수만큼 색칠하고, 색칠하지 않은 부분을 분수로 나타내 보시오.</span></h2>
-					<section>
-						DVD 개발물
-					</section>
+					
+					<div class="iframe-wrap">
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_07_04.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+					</div>
 				</li>
 				<li class="page_4" data-quiz="toggle">
 					<h2>
@@ -491,6 +518,10 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
+		window.$callBack.sliderMove=function(SLIDER) {
+		document.getElementById('ifm1').contentDocument.location.reload(true);
+		document.getElementById('ifm2').contentDocument.location.reload(true);
+		}
 	}, false);
 </script>
 </body>
