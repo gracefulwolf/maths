@@ -107,8 +107,10 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 			copy: false,
 			noDrag: true,
 			callback: {
-			  move: function(Rotate) {},
-			  end: function(Rotate) {}
+			  move: function(Rotate) {
+			  },
+			  end: function(Rotate) {
+			  }
 			}
 		  });
 		}
@@ -120,7 +122,7 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 				DRAGDROP.droppedArea.element.removeChild(DRAGDROP.droppedArea.element.children[1]);
 				return;
 			  }
-
+			  window.$efSound.correct();
 			  rotateArray.push(createRotate(DRAGDROP.droppedArea.element.children[0]));
 			}else{
 				window.$efSound.incorrect();
@@ -143,6 +145,12 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
 		  // 페이지 이동 시 초기화
 		  rotateArray.forEach(function(rotate) { rotate && rotate.reset(); });
 		}
+
+		document.querySelector( "main" ).addEventListener("click", function(obj){
+			if( obj.path[0].classList.contains( "rotateButton" ) ){
+				window.$efSound.click();
+			}
+		});
 
 	  });
 	</script>
