@@ -4,11 +4,9 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
-	<!--  math css -->
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
@@ -16,13 +14,30 @@
 		.suhi h2 {
 			margin-bottom: 30px;
 		}
-		/*iframe restyle*/
-		.iframe-wrap{position: relative;width: 1058px;height: 503px;overflow:hidden;z-index: 1;border: 0;}
-		.page-iframe{position: absolute;top: 0;left: 0;width: 1058px;height: 503px;border: 0;}
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 			margin-right: 10px;
 		}
+		.page_1 .textAlignC {margin: 30px auto;}
+		.page_1 img {width: 800px;}
+		.page_1 .flex-wrap {width: 700px;justify-content: space-between;margin: 0 auto;}
+		.page_1 .flex-wrap div:nth-child(1) {margin-left: 40px;}
+		.page_1 h2+section {padding: 0;}
+		.dragitem{
+			box-shadow: none !important;
+			top: 75%;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: transparent !important;
+		}
+		.dragitem.active {
+			visibility: visible !important;
+			opacity: 1 !important;
+			z-index: 100;
+		}
+		.ruler-bg {margin-top: 70px;text-align: center;}
+		.ruler {height: 125px;width: 690px;margin: 0 auto;background-color: #FFF3A8;border-radius: 10px;}
+		.popup_pages>li.min .popup_closeBtn {display: none;}
 
 		.page_2 .flexListContainer {
 			align-items: center;
@@ -81,9 +96,28 @@
 							</span>
 						</h2>
 						<section>
-							<div class="iframe-wrap">
-								<iframe src="../../../dvd_3_1_p/lesson05/ops/lesson05/mm_31_5_06_01_01.html" title=""
-									class="page-iframe" id="iframepage1" scrolling="no"></iframe>
+							<div class="textAlignC">
+								<img src="./images/suhi_p_0301_05_0001_1.png" alt="">
+							</div>
+							<div class="flex-wrap">
+								<div>
+									<div class="toggle" data-toggle-obj="1">
+										<span class="answer" data-toggle-target="1">
+											6
+										</span>
+									</div> mm
+								</div>
+								<div>
+									<div class="toggle" data-toggle-obj="2">
+										<span class="answer" data-toggle-target="2">
+											4
+										</span>
+									</div> cm
+								</div>
+							</div>
+							<div class="ruler-bg">
+								<div class="ruler"></div>
+								<div class="ja" data-drag=""></div>
 							</div>
 						</section>
 						<div class="buttonContainer">
@@ -199,6 +233,10 @@
 
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
+				<li class="min dragitem" data-popup-page="100" data-drag="">
+					<img src="./images/ruler_02.svg">
+					<div class="popup_closeBtn"></div>
+				</li>
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
 						1 m＝100 cm이므로 4 m 3 cm＝403 cm가 됩니다.<br>
@@ -252,12 +290,38 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			var btn = document.querySelectorAll('.characterBtn');
+			var close = document.querySelectorAll('.popup_closeBtn');
+			var el_ja = document.querySelector('.dragitem');
 
-			// 선잇기 callback
-			function dragLineCallback(dragdrop) {
-				console.log(dragdrop);
+			for (var i = 0; i < btn.length; i++) {
+				btn[i].addEventListener('click', reset);
 			}
+			for (var i = 0; i < close.length; i++) {
+				close[i].addEventListener('click', reset);
+			}
+
+			function reset() {
+				el_ja.removeAttribute('style');
+			}
+
+			el_ja.classList.add('active');
+
+			window.$callBack.sliderReset = function (slide) {
+
+				if (slide.idx === 0) {
+					setTimeout(function () {
+
+						el_ja.classList.add('active');
+					});
+				}else {
+					el_ja.classList.remove('active');
+				}
+			}
+
+
 		}, false);
+
 	</script>
 </body>
 

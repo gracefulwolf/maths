@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../../../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fonts.css" />
+		<link rel="stylesheet" href="../../../common/css/OverlayScrollbars.min.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/theme04.css" />
+		<link rel="stylesheet" href="../../../common/css/common.css" />
+		<link rel="stylesheet" href="../../../common/css/content.css" />
+		<!-- restyle -->
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+		<link rel="stylesheet" href="../../../include/math/style/master.css">
+		<link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+		<link rel="stylesheet" href="./css/ms_31_5_01_03_02.css" />
+		<style>
+			.iframe-re {
+				width: 1058px;
+				height: 580px;
+				border: none;
+				background-color: #fff;
+			}
+			.iframe-re .content-container {
+				width: 1058px;
+				height: 580px;
+				transform-origin: 0;
+			}
+			.iframe-re .title-h1,
+			.iframe-re .global,
+			.iframe-re .tabs,
+			.iframe-re .bottom-tabs,
+			.iframe-re .btns-bottom-left {
+				display: none;
+			}
+			.iframe-re .app-angle-tool .tool-container {
+				top: 10px;
+				right: 0;
+			}
+			.iframe-re .base {
+				width: 1058px;
+				height: 580px;
+			}
+			.iframe-re .btns-bottom-right {
+				bottom: 0;
+				right: 0;
+			}
+			.iframe-re .btns-bottom-right>.button {
+				right: 0;
+				bottom: 0;
+				margin: 0;
+			}
+			.iframe-re .app-angle-tool .not-obj {
+				width: 1058px;
+				/* height: 580px; */
+				height: 483px;
+			}
+			.iframe-re .btn-ex>span,
+			.iframe-re .btn-retry>span {
+				margin: 0 -1px 0 0;
+			}
+			.iframe-re .btns-bottom-right>.button::after,
+			.iframe-re .btns-bottom-right>.button::before {
+				display: none;
+			}
+			.iframe-re .btns-bottom-right .btn-ex>span::before {
+				content: "정답 확인";
+				padding-left: 14px;
+				position: static;
+				width: auto;
+				height: auto;
+				background: none;
+				display: flex;
+				height: 100%;
+				align-items: center;
+				pointer-events: none;
+				letter-spacing: -.1px;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry>span::before {
+				content: "정답 가리기";
+				padding-left: 8px;
+				position: static;
+				width: auto;
+				height: auto;
+				background: none;
+				display: flex;
+				height: 100%;
+				align-items: center;
+				pointer-events: none;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry,
+			.iframe-re .btns-bottom-right>.btn-ex {
+				opacity: 1;
+				visibility: visible;
+				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
+				width: 160px;
+				height: 50px;
+				color: #fff;
+				font-size: 20px;
+				font-family: YGJAL;
+				text-align: left;
+				padding-left: 32px;
+				border-radius: 8px;
+				cursor: pointer;
+				box-sizing: border-box;
+				z-index: 1;
+				letter-spacing: -.1px;
+				transition: none;
+				transform: none;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry,
+			.iframe-re .btns-bottom-right>.button:hover {
+				background-color: #9d00c4;
+			}
+			.iframe-re .btns-bottom-right>.btn-ex {
+				background-color: #5e3e18;
+			}
+		</style>
+	</head>
+	<body class="iframe-re">
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg"></div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<span class="ico-title-h1 num-03"><em class="text">2</em></span>
+					</div>
+					<div class="right-inner">
+						<span>
+							자를 사용하여 주어진 길이를 그어 보세요.
+						</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div class="quiz-01-answer">
+						<img src="./images/ms_31_5_01_03_01/answer_02.svg" alt="" width="1280" height="720">
+					</div>
+
+					<!-- quiz -->
+					<div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":[""]}'>
+						<ul>
+							<!--  
+							<li class="input-cont ls-type-01">
+								<input type="text" class="input t-a-center"></input>
+								<div class="answer answer-part-00 t-a-center inner-text"></div>
+								<div class="btn-check"></div>
+							</li>
+							-->
+						</ul>
+					</div>
+					<!-- //quiz -->
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+					</div>
+					
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+						<!-- <div class="button btn-explan"><span></span></div> -->
+					</div>
+
+				</div>
+
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button box-type btn-more-one"><span>쌍둥이 문제</span></div>
+				</div>
+
+				<!-- 드래그 요소 :: 자 -->
+				<div id="drag-ruler-01" class="drag-ruler quiz-draggable st1" data-ui="quiz-draggable" data-option='{"lockCenter":false, "onlyDrag":true}'>
+					<div class="area-con">
+						<div class="drag-area" style="left:236px; top:358px; width:585px; height:100px;"><span class="area"></span></div>
+					</div>
+					<div class="drag-con">
+						<div class="drag-item" x="246" y="368" scale="1" scale="1" drag-scale="1" style="width:565px; height:80px">
+							<img class="img" src="../../../common/images/ruler.svg" alt="" width="565" height="80">
+							<span class="area btn-"></span>
+						</div>
+					</div>
+				</div>
+				<!-- 드래그 요소 :: 자 -->
+				
+				<!-- 그려보세요 :: 각도기 툴 -->
+				<div class="app-angle-tool" data-ui="app-angle-tool" data-option='{}'></div>
+
+			</div>
+
+			<!-- 팝업 :: 풀이 -->
+			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<div class="bg"></div>
+				<div class="text-content">
+					<!-- 1000원짜리 지폐가 8장이면 8000원이고, 8000은 10000보다 2000작은 수이다. -->
+					<div class="img-box">
+						<img src="./images/ms_31_5_01_03_01/img_01.svg" alt="" width="660" height="162">
+					</div>
+				</div>
+				<div class="button btn-close ico-close-02"></div>
+			</div>
+
+			<!-- 팝업 :: 쌍둥이 문제 -->
+			<div class="popup popup-more-one" data-ui="popup" data-option='{"btn":".btn-more-one"}'>
+				<div class="bg"></div>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-one"><span>쌍둥이 문제</span></div>
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<!-- <span class="ico-title-h1 num-01"><em class="text">1</em></span> -->
+					</div>
+					<div class="right-inner">
+						<span>자를 사용하여 주어진 길이를 그어 보세요.</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-02" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div class="quiz-02-answer">
+						<img src="./images/ms_31_5_01_03_01/answer_02.svg" alt="" width="1280" height="720">
+					</div>
+
+					<!-- quiz -->
+					<div id="quiz-02" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":[""]}'>
+						<ul>
+							<!--  
+							<li class="input-cont ls-type-01">
+								<input type="text" class="input t-a-center"></input>
+								<div class="answer answer-part-00 t-a-center inner-text"></div>
+								<div class="btn-check"></div>
+							</li>
+							-->
+						</ul>
+					</div>
+					<!-- //quiz -->
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-02"], "quizGroup":["0"]}'></div>
+					</div>
+					
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+					</div>
+
+				</div>
+
+				<!-- 드래그 요소 :: 자 -->
+				<div id="drag-ruler-02" class="drag-ruler quiz-draggable" data-ui="quiz-draggable" data-option='{"lockCenter":false, "onlyDrag":true}'>
+					<div class="area-con">
+						<div class="drag-area" style="left:309px; top:530px; width:666px; height:90px;"><span class="area"></span></div>
+					</div>
+					<div class="drag-con">
+						<div class="drag-item" x="309" y="530" scale="1" drag-scale="1" style="width:666px; height:90px">
+							<img class="img" src="../common/images/ruler.svg" alt="" width="666" height="90">
+							<span class="area btn-"></span>
+						</div>
+					</div>
+				</div>
+				<!-- 드래그 요소 :: 자 -->
+				
+				<!-- 그려보세요 :: 각도기 툴 -->
+				<div class="app-angle-tool" data-ui="app-angle-tool" data-option='{}'></div>
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+
+		</div>
+
+		<script src="../../../common/ui/js/uiData.js"></script>
+		<script src="../../../common/ui/js/uiDataMs.js"></script>
+		<script src="./js/ms_31_5_01_03_01.js"></script>
+	
+		<script src="../../../common/js/libs/polyfill.min.js"></script>
+		<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../../../common/js/libs/materialize.js"></script>
+		<script src="../../../common/js/libs/TweenMax.min.js"></script>
+		<script src="../../../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../../../common/js/libs/class.js"></script>
+		<script src="../../../common/js/common.js"></script>
+		<script src="../../../common/js/app/mindmap.js"></script>
+		<script src="../../../common/js/app/drawing.js"></script>
+		<script src="../../../common/js/app/angle.js"></script>
+		<script src="../../../common/js/cornerbase.js"></script>
+		<script src="../../../common/js/videoplayer.js"></script>
+		<script src="../../../common/js/quiz/quizMain.js"></script>
+		<script src="../../../common/js/quiz/quizCheck.js"></script>
+		<script src="../../../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../../../common/js/quiz/quizInput.js"></script>
+		<script src="../../../common/js/quiz/quizDraggable.js"></script>
+		<script src="../../../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../../../common/js/quiz/quizDrawLine.js"></script>
+	
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../../../common/js/content.js"></script>
+
+
+	</body>
+
+</html>
