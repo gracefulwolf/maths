@@ -84,7 +84,7 @@
     });
 
     $ts.getEl(".js-drawLine").forEach(setDrawLine);
-    $ts.getEl(".js-resetButton").forEach(setResetButtons);
+    // $ts.getEl(".js-resetButton").forEach(setResetButtons);
 
     setTimeout(function () {
       drawLines.forEach(function (drawLine) {
