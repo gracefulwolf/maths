@@ -12,6 +12,7 @@
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom.css"> -->
 	<style>
 		.page_2 .toggle {width: 800px;text-align: left;}
+		.ani-wrap {position: relative;height: 230px;margin-top: 30px;overflow: hidden;}
 	</style>
 </head>
 
@@ -89,6 +90,9 @@
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="1" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 
 					<li class="page_2" data-quiz="toggle">
@@ -117,6 +121,9 @@
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="2" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 
 					<li class="page_3" data-quiz="toggle">
@@ -155,6 +162,9 @@
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="3" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 
 					<li class="page_4" data-quiz="toggle">
@@ -181,17 +191,19 @@
 								</div>
 							</li>
 						</ul>
-						<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+						<div class="ani-wrap">
+							<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+							</div>
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="4" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 				</ul>
 			</div>
 		</main>
-		<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="5000">
-            <span class="btnInner"></span>
-        </button>
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
                 <li class="textBookPopup" data-popup-page="1">
@@ -201,6 +213,27 @@
                         </div>
                     </div>
                 </li>
+				<li class="textBookPopup" data-popup-page="2">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle">
+							지우네 반 친구들은 달리기를 하려고 운동장에 4명씩 6줄로 서 있습니다. 조금 늦게 온 친구 한 명을 포함하여 한 줄에 5명씩 다시 줄을 서면 몇 줄이 되는지 구해 봅시다.
+						</div>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="3">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle">
+							지우네 반 친구들은 달리기를 하려고 운동장에 4명씩 6줄로 서 있습니다. 조금 늦게 온 친구 한 명을 포함하여 한 줄에 5명씩 다시 줄을 서면 몇 줄이 되는지 구해 봅시다.
+						</div>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="4">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle">
+							지우네 반 친구들은 달리기를 하려고 운동장에 4명씩 6줄로 서 있습니다. 조금 늦게 온 친구 한 명을 포함하여 한 줄에 5명씩 다시 줄을 서면 몇 줄이 되는지 구해 봅시다.
+						</div>
+					</div>
+				</li>
             </ul>
         </section>
 
@@ -231,7 +264,7 @@
 						name: 'girl_2',
 						speech: 'right',
 						// circle: 'deeppink',
-						top: 150,
+						top: -200,
 						left: 0,
 						width: 340,
 						height: 421,
@@ -245,7 +278,7 @@
 						textBubble: {
 							text: '25를 5로 나누어 문제를 해결했습니다.<br>5단 곱셈구구에서 5×5＝25이므로<br>25÷5＝5입니다. 따라서 한 줄에 5명씩<br>다시 줄을 서면 5줄이 됩니다.',
 							class: 'balloon left deeppink ctTail',
-							top: 360,
+							top: 10,
 							left: 280,
 							textAlign: 'center',
 							wordBreak: 'keep-all'
@@ -266,7 +299,20 @@
 				$ts.getEl('.characterImg')[0].style.left = 0;
 			};
 
-			$ts.getEl('.textBookBtn')[0].click();
+			$ts.getEl('.page_1 .textBookBtn')[0].click();
+
+			window.$callBack.sliderReset = function (slide) {
+
+				if (slide.idx === 0) {
+					setTimeout(function () {
+
+						$ts.getEl('.page_1 .textBookBtn')[0].click();
+						// setTimeout(function () {
+						// 	$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+						// }, 3000);
+					});
+				}
+			}
 		});
 	</script>
 </body>

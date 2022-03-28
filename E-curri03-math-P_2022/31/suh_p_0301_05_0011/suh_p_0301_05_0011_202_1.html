@@ -55,7 +55,7 @@
 								<div>
 									<p class="mb_10">
 										구하려는 것은 무엇인가요?
-										<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="2">그림 보기</div>
+										<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="5">그림 보기</div>
 									</p>
 									<div class="toggle box" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1" style="letter-spacing: -1px;">
@@ -93,6 +93,9 @@
 								</div>
 							</li>
 						</ul>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="1" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
@@ -114,6 +117,9 @@
 								</div>
 							</li>
 						</ul>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="2" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
@@ -157,6 +163,9 @@
 								</div>
 							</li>
 						</ul>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="3" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 						<div class="buttonContainer">
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
@@ -176,13 +185,13 @@
 								</div>
 							</li>
 						</ul>
+						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="4" data-close-inner="">
+							<span class="btnInner"></span>
+						</button>
 					</li>
 				</ul>
 			</div>
 		</main>
-		<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="">
-            <span class="btnInner"></span>
-        </button>
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
                 <li class="textBookPopup" data-popup-page="1">
@@ -192,7 +201,28 @@
                         </div>
                     </div>
                 </li>
-				<li class="whole pop_page_1" data-popup-page="2">
+				<li class="textBookPopup" data-popup-page="2">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle" style="letter-spacing: -1px;">
+							민지의 공부 시간은 자유 시간보다 얼마나 긴지 구해 봅시다.
+						</div>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="3">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle" style="letter-spacing: -1px;">
+							민지의 공부 시간은 자유 시간보다 얼마나 긴지 구해 봅시다.
+						</div>
+					</div>
+				</li>
+				<li class="textBookPopup" data-popup-page="4">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle" style="letter-spacing: -1px;">
+							민지의 공부 시간은 자유 시간보다 얼마나 긴지 구해 봅시다.
+						</div>
+					</div>
+				</li>
+				<li class="whole pop_page_1" data-popup-page="5">
 					<div class="popup_contents">
 						<div class="img-wrap">
 							<img src="./images/suh_p_0301_05_0011_202_1/suh_p_0301_05_0011_202_1_1.png" alt="">
@@ -270,12 +300,25 @@
 					}
 				]
 			});
-
-			$ts.getEl('.textBookBtn')[0].click();
-
 			window.$callBack.sliderReset = function (params) {
 				$ts.getEl('.characterImg')[0].style.left = 0;
 			};
+			
+			$ts.getEl('.page_1 .textBookBtn')[0].click();
+
+			window.$callBack.sliderReset = function (slide) {
+
+				if (slide.idx === 0) {
+					setTimeout(function () {
+
+						$ts.getEl('.page_1 .textBookBtn')[0].click();
+						// setTimeout(function () {
+						// 	$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+						// }, 3000);
+					});
+				}
+			}
+
 
 		});
 	</script>
