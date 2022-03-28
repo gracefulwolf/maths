@@ -16,19 +16,121 @@
 
 		<link rel="stylesheet" href="../../../common/css/common.css" />
 		<link rel="stylesheet" href="../../../common/css/content.css" />
-		<link rel="stylesheet" href="./css/mm_31_5_06_01_01.css" />
-		<!-- restyle -->
+
 		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
 		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
 		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
 		<link rel="stylesheet" href="../../../../default/css/custom.css">
 		<link rel="stylesheet" href="../../../include/math/style/master.css">
 		<link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
-		<link rel="stylesheet" href="./css/mm_31_5_03_07_03.css" />
-		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/suh_p_0301_05_0009/css/suh_p_0301_05_0009_201_1.css" />
-
+		<link rel="stylesheet" href="./css/mm_31_5_06_01_01.css" />
 		<style>
-			/* . */
+			/* iframe reset */
+			.iframe-re {
+				width: 1058px;
+				height: 503px;
+			}
+			.iframe-re .content-container {
+				width: 1058px;
+				height: 503px;
+				transform-origin: 0;
+			}
+			.iframe-re .title-h1,
+			.iframe-re .global,
+			.iframe-re .tabs,
+			.iframe-re .bottom-tabs,
+			.iframe-re .btns-bottom-left,
+			.iframe-re .btn-explan,
+			.iframe-re .popup {
+				display: none;
+			}
+			/* bg */
+			.iframe-re .content-container > .content > .bg {
+				width: 1058px;
+				height: 503px;
+				/* background-size: 100%; */
+				margin-top: -70px;
+			}
+			/* 정답 이미지 */
+			.iframe-re .quiz-01-answer {
+				width: 1058px;
+				height: 470px;
+			}
+			.iframe-re .quiz-01-answer > img {
+				width: 100%;
+				height: 100%;
+			}
+			/* 그리기 도구 */
+			.iframe-re .app-angle-tool .tool-container {
+				top: 0;
+				right: 0;
+			}
+			/* 정답 확인 버튼 reset */
+			.iframe-re .btns-bottom-right {
+				right: 0;
+				bottom: 0;
+				z-index: 10;
+			}
+			.iframe-re .btn-ex>span,
+			.iframe-re .btn-retry>span {
+				margin: 0 -1px 0 0;
+			}
+			.iframe-re .btns-bottom-right>.button::after,
+			.iframe-re .btns-bottom-right>.button::before {
+				display: none;
+			}
+			.iframe-re .btns-bottom-right .btn-ex>span::before {
+				content: "정답 확인";
+				padding-left: 14px;
+				position: static;
+				width: auto;
+				height: auto;
+				background: none;
+				display: flex;
+				height: 100%;
+				align-items: center;
+				pointer-events: none;
+				letter-spacing: -.1px;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry>span::before {
+				content: "정답 가리기";
+				padding-left: 8px;
+				position: static;
+				width: auto;
+				height: auto;
+				background: none;
+				display: flex;
+				height: 100%;
+				align-items: center;
+				pointer-events: none;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry,
+			.iframe-re .btns-bottom-right>.btn-ex {
+				opacity: 1;
+				visibility: visible;
+				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
+				width: 160px;
+				height: 50px;
+				color: #fff;
+				font-size: 20px;
+				font-family: YGJAL;
+				text-align: left;
+				padding-left: 32px;
+				border-radius: 8px;
+				cursor: pointer;
+				box-sizing: border-box;
+				z-index: 1;
+				letter-spacing: -.1px;
+				transition: none;
+				transform: none;
+			}
+			.iframe-re .btns-bottom-right>.btn-retry,
+			.iframe-re .btns-bottom-right>.button:hover {
+				background-color: #9d00c4;
+			}
+			.iframe-re .btns-bottom-right>.btn-ex {
+				background-color: #5e3e18;
+			}
 		</style>
 	</head>
 	<body class="iframe-re">
