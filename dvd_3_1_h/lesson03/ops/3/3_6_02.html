@@ -135,7 +135,14 @@
         window.dragDropCallbacks = {
           "drag-obj": function(DRAGDROP) {
             if (DRAGDROP.droppedArea) {
-              if (DRAGDROP.droppedArea.element.children.length === 3) DRAGDROP.droppedArea.DISABLED = true;
+            
+              if (DRAGDROP.droppedArea.element.children.length === 2) {
+                DRAGDROP.droppedArea.DISABLED = true;
+              } 
+              window.$efSound.correct();
+              console.log(window.$efSound);
+            } else {
+              window.$efSound.incorrect();
             }
           },
         };

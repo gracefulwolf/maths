@@ -41,6 +41,9 @@
 
         if (DRAGDROP.droppedArea) {
           if (DRAGDROP.droppedArea.element.children.length === 4) DRAGDROP.droppedArea.DISABLED = true;
+          window.$efSound.correct();
+        } else {
+          window.$efSound.incorrect();
         }
 
         if ($ts.getEl('.page1 .dragBox .dragObjComplete').length === 12) {

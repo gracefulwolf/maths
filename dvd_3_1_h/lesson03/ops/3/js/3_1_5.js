@@ -43,9 +43,11 @@
         if (DRAGDROP.droppedArea) {
           window.$efSound.correct();
 
-          if (DRAGDROP.droppedArea.element.children.length === 5)
+          if (DRAGDROP.droppedArea.element.children.length === 6) {
             DRAGDROP.droppedArea.DISABLED = true;
-        }
+          }
+        } else {
+          window.$efSound.incorrect();        }
 
         if ($ts.getEl(".page2 .dragBox .dragObjComplete").length === 15) {
           dragAnswerButton.classList.add("reset");
@@ -70,9 +72,9 @@
       });
     });
 
-    window.dragDropCallbacks = {
-      dragLine: dragLineCallback,
-    };
+    // window.dragDropCallbacks = {
+    //   dragLine: dragLineCallback,
+    // };
 
     function dragLineCallback(dragdrop) {
       if (dragdrop.movingObj.DISABLED) window.$efSound.correct();
