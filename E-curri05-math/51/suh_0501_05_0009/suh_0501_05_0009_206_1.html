@@ -1,193 +1,323 @@
-
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
-<title></title>
-<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
-<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
-<style>
-    #wrap header .title.type-number:before {display:none}
-    /* #wrap header .title.type-number {padding-left:50px} */
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		#wrap header .title.type-number:before {
+			display: none
+		}
 
-    .box-flex {display:flex;align-items:center;margin-left:80px}
-    .box-flex ~ .box-flex {margin-top:20px;padding-left:284px}
+		/* #wrap header .title.type-number {padding-left:50px} */
+
+		.box-flex {
+			display: flex;
+			align-items: center;
+			margin-left: 80px
+		}
+
+		.box-flex~.box-flex {
+			margin-top: 20px;
+			padding-left: 284px
+		}
 
 
-    .textAlignJ{display: inline;}
-    .contentsList {margin:10px auto 0;}
-    .contentsList > li{display: inline-flex;align-items: center;}
-    .contentsList > li+li{margin-left:30px;}
-    .contentsList > li .bunsuContainer {margin:0;}
+		.textAlignJ {
+			display: inline;
+		}
 
-    .title.type-number .number{display: inline-block;}
+		.contentsList {
+			margin: 10px auto 0;
+		}
 
-    #wrap header .title{padding:initial;}
-    
-    .text-box{margin: 0 auto;}
-    .flex-box{align-items: center;justify-content: center;}
+		.contentsList>li {
+			display: inline-flex;
+			align-items: center;
+		}
 
-</style>
+		.contentsList>li+li {
+			margin-left: 30px;
+		}
+
+		.contentsList>li .bunsuContainer {
+			margin: 0;
+		}
+
+		.title.type-number .number {
+			display: inline-block;
+		}
+
+		#wrap header .title {
+			padding: initial;
+		}
+
+		.text-box {
+			/* margin: 0 auto; */
+		}
+
+		.flex-box {
+			position:relative;
+			width:100%;
+			align-items: center;
+		}
+		.flex-box .icon_o_title{position:absolute;top:-8px;left:476px;display:none;width:100px;height:100px;z-index:1;}
+		.flex-box .icon_o_title.on{display:block;}
+	</style>
 </head>
 
 <body>
-<div id="wrap" class="math" >
-	<header>
-		<div class="title type-number" style="margin-top: 25px;">
-			<ins class="bullet number orange">5</ins>
-			<p class="inline textAlignJ" style="letter-spacing:-2px;vertical-align: middle;">
-                준기가 <ins class="bullet number orange" style="top: -3px;">2</ins>번 문제에서 처음 잘못 계산한 부분을 찾아 <span class="icon_o_title" style="margin-top: 10px;"></span>&nbsp;표 하고, 옳게 고쳐 계산해 보세요.
-            </p>
-		</div>
-	</header>
-	<main>
-		<div class="contentsBox basicSlider" data-slide-container="main">
-			<ul class="basicSlider_slides" data-slides>
-				<li class="page_1" data-quiz="toggle">
-                    <ul class="text-box">
-                        <li style="margin-top: 0px;">
-                            <div class="flex-box">
-                                <ins class="bullet number orange" style="margin: 25px 10px 0 0;">2</ins>
-                                <div class="bunsuWrap inline">
-                                    7<ul><li>1</li><li>3</li></ul>
-                                </div>－
-                                <div class="bunsuWrap inline">
-                                    5<ul><li>5</li><li>6</li></ul>
-                                </div>＝
-                                <div class="bunsuWrap inline">
-                                    7<ul><li>2</li><li>6</li></ul>
-                                </div>－
-                                <div class="bunsuWrap inline">
-                                    5<ul><li>5</li><li>6</li></ul>
-                                </div>＝
-                                <div class="bunsuWrap inline">
-                                    6<ul><li>7</li><li>6</li></ul>
-                                </div>－
-                                <div class="bunsuWrap inline">
-                                    5<ul><li>5</li><li>6</li></ul>
-                                </div>
-                            </div>
-                            <div class="flex-box" style="margin-left: 50px;">
-                                ＝(6－5)＋
-                                (<div class="bunsuWrap inline">
-                                    <ul><li>7</li><li>6</li></ul>
-                                </div>－
-                                <div class="bunsuWrap inline">
-                                    <ul><li>5</li><li>6</li></ul>
-                                </div>)＝1＋
-                                <div class="bunsuWrap inline">
-                                    <ul><li>2</li><li>6</li></ul>
-                                </div>＝
-                                <div class="bunsuWrap inline">
-                                    1<ul><li>2</li><li>6</li></ul>
-                                </div>＝
-                                <div class="bunsuWrap inline">
-                                    1<ul><li>1</li><li>3</li></ul>
-                                </div>
-                            </div>
-                        </li>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title type-number" style="margin-top: 25px;">
+				<ins class="bullet number orange">5</ins>
+				<p class="inline textAlignJ" style="letter-spacing:-2px;vertical-align: middle;">
+					준기가 <ins class="bullet number orange" style="top: -3px;">2</ins>번 문제에서 처음 잘못 계산한 부분을 찾아 <span
+						class="icon_o_title" style="margin-top: 10px;"></span>&nbsp;표 하고, 옳게 고쳐 계산해 보세요.
+				</p>
+			</div>
+		</header>
+		<main>
+			<div class="contentsBox basicSlider" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides>
+					<li class="page_1" data-quiz="toggle">
+						<ul class="text-box">
+							<li style="margin-top: 0px;">
+								<div class="flex-box">
+									<ins class="bullet number orange" style="margin: 25px 10px 0 0;">2</ins>
+									<div class="bunsuWrap inline">
+										7<ul>
+											<li>1</li>
+											<li>3</li>
+										</ul>
+									</div>－
+									<div class="bunsuWrap inline">
+										5<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+										7<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>－
+									<div class="bunsuWrap inline">
+										5<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+										6<ul>
+											<li>7</li>
+											<li>6</li>
+										</ul>
+									</div>－
+									<div class="bunsuWrap inline">
+										5<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>
+									<div class="icon_o_title" data-toggle-target="1"></div>
+								</div>
+								<div class="flex-box" style="margin-left: 208px;">
+									＝(6－5)＋
+									(<div class="bunsuWrap inline">
+										<ul>
+											<li>7</li>
+											<li>6</li>
+										</ul>
+									</div>－
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>)＝1＋
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+										1<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+										1<ul>
+											<li>1</li>
+											<li>3</li>
+										</ul>
+									</div>
+								</div>
+							</li>
 
-                        <li style="margin: 30px 0 0 0px;">
-                            <div class="flex-box">
-                                <div class="bunsuWrap inline">
-                                    7<ul><li>1</li><li>3</li></ul>
-                                </div>－
-                                <div class="bunsuWrap inline">
-                                    5<ul><li>5</li><li>6</li></ul>
-                                </div>＝
-                                <div class="toggle" data-toggle-obj="1">
-                                    <div class="answer" data-toggle-target="1">
-                                        <div class="flex-box" style="justify-content:left;">
-                                            <div class="bunsuWrap inline">
-                                                7<ul><li>2</li><li>6</li></ul>
-                                            </div>－
-                                            <div class="bunsuWrap inline">
-                                                5<ul><li>5</li><li>6</li></ul>
-                                            </div>＝
-                                            <div class="bunsuWrap inline">
-                                                6<ul><li>8</li><li>6</li></ul>
-                                            </div>－
-                                            <div class="bunsuWrap inline">
-                                                5<ul><li>5</li><li>6</li></ul>
-                                            </div>
-                                        </div>
-                                        <div class="flex-box">
-                                            ＝(6－5)＋
-                                            <div class="bunsuWrap inline">
-                                                <ul><li>8</li><li>6</li></ul>
-                                            </div>－
-                                            <div class="bunsuWrap inline">
-                                                <ul><li>5</li><li>6</li></ul>
-                                            </div>＝1＋
-                                            <div class="bunsuWrap inline">
-                                                <ul><li>3</li><li>6</li></ul>
-                                            </div>－
-                                            <div class="bunsuWrap inline">
-                                                1<ul><li>3</li><li>6</li></ul>
-                                            </div>
-                                            <div class="bunsuWrap inline">
-                                                1<ul><li>1</li><li>2</li></ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <button class="dapCheckBtn" data-answer-btn=""></button>
-                </li>
+							<li style="margin: 30px 0 0 0px;">
+								<div class="flex-box">
+									<div class="bunsuWrap inline">
+										7<ul>
+											<li>1</li>
+											<li>3</li>
+										</ul>
+									</div>－
+									<div class="bunsuWrap inline">
+										5<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>＝
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="flex-box" style="justify-content:left;">
+												<div class="bunsuWrap inline">
+													7<ul>
+														<li>2</li>
+														<li>6</li>
+													</ul>
+												</div>－
+												<div class="bunsuWrap inline">
+													5<ul>
+														<li>5</li>
+														<li>6</li>
+													</ul>
+												</div>＝
+												<div class="bunsuWrap inline">
+													6<ul>
+														<li>8</li>
+														<li>6</li>
+													</ul>
+												</div>－
+												<div class="bunsuWrap inline">
+													5<ul>
+														<li>5</li>
+														<li>6</li>
+													</ul>
+												</div>
+												＝(6－5)＋
+												(<div class="bunsuWrap inline">
+													<ul>
+														<li>8</li>
+														<li>6</li>
+													</ul>
+												</div>－
+												<div class="bunsuWrap inline">
+													<ul>
+														<li>5</li>
+														<li>6</li>
+													</ul>
+												</div>)
+											</div>
+											<div class="flex-box">
+												＝1＋
+												<div class="bunsuWrap inline">
+													<ul>
+														<li>3</li>
+														<li>6</li>
+													</ul>
+												</div>－
+												<div class="bunsuWrap inline">
+													1<ul>
+														<li>3</li>
+														<li>6</li>
+													</ul>
+												</div>
+												<div class="bunsuWrap inline">
+													1<ul>
+														<li>1</li>
+														<li>2</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents" style="letter-spacing: -2.5px;">
+						<div class="bunsuWrap inline">
+							1<ul>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>＋<div class="bunsuWrap inline">
+							1<ul>
+								<li>1</li>
+								<li>3</li>
+							</ul>
+						</div>＝(1＋1)＋<div class="bunsuWrap inline">
+							<ul>
+								<li>12</li>
+								<li>15</li>
+							</ul>
+						</div>＋<div class="bunsuWrap inline">
+							<ul>
+								<li>5</li>
+								<li>15</li>
+							</ul>
+						</div>＝2＋<div class="bunsuWrap inline">
+							<ul>
+								<li>17</li>
+								<li>15</li>
+							</ul>
+						</div>＝2＋<div class="bunsuWrap inline">
+							1<ul>
+								<li>2</li>
+								<li>15</li>
+							</ul>
+						</div>＝<div class="bunsuWrap inline">
+							3<ul>
+								<li>2</li>
+								<li>15</li>
+							</ul>
+						</div>(컵)
+					</div>
+				</li>
 			</ul>
-		</div>
-	</main>
-    <section class="popup_container" data-popup-container="">
-        <ul class="popup_pages">
-            <li class="solve pop_page_1" data-popup-page="1">
-            <div class="popup_contents" style="letter-spacing: -2.5px;">
-                <div class="bunsuWrap inline">
-                    1<ul><li>4</li><li>5</li></ul>
-                </div>＋<div class="bunsuWrap inline">
-                    1<ul><li>1</li><li>3</li></ul>
-                </div>＝(1＋1)＋<div class="bunsuWrap inline">
-                    <ul><li>12</li><li>15</li></ul>
-                </div>＋<div class="bunsuWrap inline">
-                    <ul><li>5</li><li>15</li></ul>
-                </div>＝2＋<div class="bunsuWrap inline">
-                    <ul><li>17</li><li>15</li></ul>
-                </div>＝2＋<div class="bunsuWrap inline">
-                    1<ul><li>2</li><li>15</li></ul>
-                </div>＝<div class="bunsuWrap inline">
-                    3<ul><li>2</li><li>15</li></ul>
-                </div>(컵)
-            </div>
-            </li>
-        </ul>
-    </section>
-    
-</div>
+		</section>
 
-<div id="loadingContainer">
-	<div class="loadingIconAnimation"></div>
-</div>
+	</div>
 
-<script type="text/javascript" src="../common/libs/js/ts.js"></script>
-<script type="text/javascript" src="../common/libs/js/animate.js"></script>
-<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
-<script type="text/javascript" src="../common/libs/js/slider.js"></script>
-<script type="text/javascript" src="../common/libs/js/popup.js"></script>
-<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
-<script type="text/javascript" src="../common/libs/js/controller.js"></script>
-<script type="text/javascript" src="../common/libs/js/appear.js"></script>
-<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
-<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
-<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
-<script type="text/javascript" src="./js/contents.js"></script>
-<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () {
-	}, false);
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
 
 	</script>
 </body>
+
 </html>
