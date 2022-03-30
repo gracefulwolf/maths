@@ -33,9 +33,9 @@
       }
 
       var isReset = this.className.indexOf("reset") === -1;
-
-      if (isReset) dragReset();
-      else dragAnswer();
+      dragReset();
+      // if (isReset) dragReset();
+      //else dragAnswer();
     }
 
     window.dragDropCallbacks = {
@@ -95,6 +95,7 @@
         dragContainer.classList.remove("complete");
       } else {
         inputQuiz.showAnswer();
+        
         dragContainer.classList.add("complete");
       }
     });
