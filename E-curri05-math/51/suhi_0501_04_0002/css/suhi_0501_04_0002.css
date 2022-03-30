@@ -28,19 +28,24 @@
 
 
 .suhi h2+section .study_guide{top: -10px;}
+.img-answer {position:relative}
 .img-answer .before{display:inline-block;}
 .img-answer .after{display:none;}
 .img-answer.complete .before{display:none;}
 .img-answer.complete .after{display:inline-block;}
-.img-answer .toggle {position:absolute;top:0;left:0;opacity:0;}
-.img-answer .toggle:after {display:none}
+.img-answer .toggle {position:absolute;top:0;left:0;background-color:transparent;width:100%;height:100%;}
+.img-answer .toggle:after {content:'';width:51px;height:70px;background: url(../../common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;-webkit-animation: opacity 1.5s ease-in 3;-o-animation: opacity 1.5s ease-in 3;animation: opacity 1.5s ease-in 3;border:0 none}
+.img-answer.complete .toggle:after {display:none}
 .img-answer .toggle.complete {z-index:2;opacity:1}
 
 .page_1 h2 .bunsuWrap{vertical-align: middle;}
 .page_1 .img-answer{margin-top: 20px;}
 .page_1 .img-answer img{width:70%;vertical-align:top}
 .page_1 .flex-box{justify-content: center;margin-top: 10px;}
-.page_1 .textAlignC.text_ox{margin-top: 30px;}
+.page_1 .textAlignC.text_ox{margin-top: 30px;position:relative}
+.page_1 .textAlignC.text_ox .toggle {position:absolute;top:10px;left:470px;width:200px;height:60px;background-color:transparent}
+.page_1 .textAlignC.text_ox .toggle:after {display:none}
+.page_1 .textAlignC.text_ox .toggle .icon_o {position:absolute;top:50%;margin-top:-25px;left:25px}
 
 
 .page_2 .flex-box{justify-content: space-evenly;margin-top: 30px;}
@@ -77,6 +82,7 @@
 .page_6 .bunsuWrap{display: inline-block;}
 .page_6 .bunsuWrap{display: inline-block;}
 .page_6 .flex-box li{margin: 0 20px;}
+.page_6 .img-answer .toggle:after {left:805px}
 
 .text_ox .bunsuWrap{display: inline-block;}
 .ox_quiz{display: inline-block;}
