@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:158px; left:70px; height:535px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.vMid{display:flex; align-items:center; justify-content:center; height:480px;}
+		.popup_pages .vMid{height:520px;}
+		.vMid > div{width:100%;}
+		.bullet.number.inline{vertical-align:6px;}
+		.popup_pages .blankBox{width:40px; height:40px; vertical-align:-7px;}
+
+		.popup_pages .bullet.number{vertical-align: 3px;}
+
+
+
+		.--titleBox{display: inline-block; width: 480px; padding-top: 2px; padding-bottom: 2px; font-size: 40px; text-align: center;}
+		.tableContainer td .toggle{width: 100%; padding-top: 24px; padding-bottom: 24px;}
+		.examViewBtn.reset:before{content:"다시하기";}
+		.--graph{position: relative; width: 800px; height: 340px; margin: 0 auto; background: url(./images/suh_h_0401_05_0809_205_1/5_finish_quiz_6_05.svg) no-repeat 50% 50% / 800px 100%;}
+		.--text{position: absolute;font-size: 35px;}
+		.--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_h_0401_05_0506_203_1/suh_h_0401_05_0506_203_1_2.png) no-repeat 50% 50% / 800px 100%;}
+		.--text.n1{top: 12px;left: 8px;z-index: 1;}
+		.--text.n2{top: 213px;left: 158px;z-index: 1;}
+		.--text.n3{top: -26px;left: 136px;text-align: right;line-height: 112px;}
+		.--text.n4{top: 255px;left: 0px;}
+		.--text.n5{top: 288px;left: 110px;}
+		.--text.n6{top: 272px;left: 182px;display: flex;width: 615px;align-items: center;justify-content: space-around;}
+		.--text.n6 > div{flex:1;text-align: center;}
+		.--text.n7{top: 13px;left: 20px;}
+		.--border{position: absolute;bottom: 6px;height: 328px;border-left: 2px solid #00a0ff;}
+		.--border.n1{left: 304px;}
+		.--border.n2{left: 427px;}
+		.--border.n3{left: 550px;}
+		.--border.n4{left: 673px;}
+		.--stick{position: absolute;width: 60px;border: 2px solid #e94d40;background: #e94d4088;bottom: 83px;}
+		.--stick.n1{left: 212px;height: 65px;}
+		.--stick.n2{left: 334px;height: 87px;}
+		.--stick.n3{left: 457px;height: 178px;}
+		.--stick.n4{left: 582px;height: 20px;}
+		.--stick.n5{left: 705px;height: 43px;}
+
+
+		.--paper{position: relative; height: 490px; background: url(./images/suh_h_0401_05_0809_207_1/suh_h_0401_05_0809_207_1_1.png) no-repeat 50% 0% / contain;}
+		.--paper > p:nth-child(1){position: absolute;top: 70px;left: 225px;}
+		.--paper > p:nth-child(2){position: absolute;top: 70px;right: 180px;}
+		.--paper > p:nth-child(3){padding: 150px 178px 0;text-align: justify;letter-spacing: -0.3px;}
+
+
+
+
+.graphContainer {
+  position: relative;
+  width: 820px;
+  height: 425px;
+  margin: 10px auto 0;
+  background: url(./images/suh_h_0401_05_0809_207_1/suh_h_0401_05_0809_207_1_2.png) no-repeat 0 100% / contain;
+  box-sizing: border-box;
+}
+
+.graphContainer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.icoaft:after,
+.ico:before {
+  content: '';
+  display: inline-block;
+}
+
+.starTtit {
+  display: block;
+  font-family: MapleStoryL;
+  font-size: 42px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.starTtit:before {
+  width: 24px;
+  height: 24px;
+  background: url(../images/5_6/5_finish_quiz_1_03.svg) 0 center / auto 24px no-repeat;
+}
+
+.starTtit:after {
+  width: 24px;
+  height: 24px;
+  background: url(../images/5_6/5_finish_quiz_1_03.svg) 0 center / auto 24px no-repeat;
+}
+
+.popup_pages > li.head {
+  width: 970px;
+  top: 100px;
+  right: 80px;
+}
+
+.finish .popupButton {
+  top: -75px;
+}
+
+.graphContainer .fillContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 2px 0 213px;
+  height: 346px;
+}
+
+.graphContainer .fillContainer .square {
+  display: flex;
+  height: 35px;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.graphContainer .square > .target {
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+}
+
+.graphContainer .square > .target.fill[index] {
+  background-color: #EDC6CA;
+  border: 2px solid #c83164;
+  border-left: 0;
+  border-right: 0;
+  animation: none;
+}
+
+.graphContainer .square > .target.last {
+  border-right: 2px solid #c83164;
+}
+
+.graphContainer .square > .target.fill.last {
+  border-right: 2px solid #c83164;
+}
+
+.graphContainer .square > .target[index="0"] {
+  animation: targetOpacity 1s ease-in-out infinite;
+}
+
+
+@keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-o-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-ms-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-webkit-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+
+.graphContainer .square.complete {
+  pointer-events: none;
+}
+
+.graphContainer .square.complete > .target[index="0"] {
+  animation: none;
+}
+
+.cls-10 {
+  font-family: MapleStoryL;
+}
+
+.page2 ins.exam {
+  top: 74px;
+  left: 140px;
+  opacity: 0;
+  visibility: hidden;
+}
+.page2 .reset + ins.exam {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+[data-popup-page="1"] img {
+  width: 100%;
+}
+
+.--text{position: absolute;}
+.--text.n1{top: 1px;left: 40px;line-height: 86px;text-align: center;}
+.--text.n2{top: 344px;left: 2px;}
+.--text.n3{top: 347px;left: 106px;}
+.--text.n4{top: 350px;left: 220px;}
+.--text.n5{top: 350px;left: 460px;}
+.--text.n6{top: 350px;left: 413px;}
+.--text.n7{top: 375px;left: 756px;}
+.--text.n8{top: 0; left: 0;}
+.--text.n9{top: 0; left: 0;}
+.--text.n10{top: 0; left: 0;}
+.--text.n11{top: 0; left: 0;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 스프라이트 있을 시에 무조건 추가 -->
+		<header>
+			<div class="title active">
+				<div class="bullet number orange inline">7</div>
+				일기를 읽고 막대그래프를 완성해 보세요.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<div class="--paper">
+									<p>○월 ○일</p>
+									<p>날씨: 맑음</p>
+									<p>
+										우리 반 학생들이 어린이날에 하고 싶은 민속놀이를 조사했더니 윷놀이를 하고 싶어 하는 학생이 9명으로 가장 많았다. 제기차기와 널뛰기를 하고 싶어 하는 학생 수는 6명으로 같았다. 연날리기를 하고 싶어 하는 학생은 널뛰기를 하고 싶어 하는 학생보다 2명 더 적었다.
+									</p>
+								</div>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="textAlignC">
+									<div class="colorBox sky --titleBox">
+										하고 싶은 민속놀이
+									</div>
+								</div>
+								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<div class="graphContainer">
+									<div class="--text n1">윷놀이<br>연날리기<br>제기차기<br>널뛰기</div>
+									<div class="--text n2">민속놀이</div>
+									<div class="--text n3">학생 수</div>
+									<div class="--text n4">0</div>
+									<div class="--text n5">5</div>
+									<div class="--text n6">10</div>
+									<div class="--text n7">(명)</div>
+									<div class="fillContainer">
+										<div class="square square_1" data-length="12" data-answer="12"></div>
+										<div class="js-fillContainer square square_2" data-length="12" data-answer="4"></div>
+										<div class="square square_1" data-length="12" data-answer="12"></div>
+										<div class="js-fillContainer square square_2" data-length="12" data-answer="6"></div>
+									</div>
+								</div>
+								<div class="buttonContainer">
+									<button class="js-chainButtons dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script>
+		(function(){function t(t){function e(){s.targets.forEach(function(t){t.classList.remove(u)})}function n(){for(var t=[],e=0;e<s.length;e++){var n=document.createElement("div");n.classList.add("target"),n.setAttribute(c,e),n.addEventListener("click",r),n.addEventListener("click",$efSound.click),s.container.appendChild(n),t.push(n)}return t}function a(t){for(var e=[],n=0;n<=t;n++)s.container.querySelector('.target[index="'+n+'"]').classList.add(d),e.push(s.container.querySelector('.target[index="'+n+'"]'));s.container.querySelector('.target[index="'+t+'"]').classList.add(u),window.$callBack&&window.$callBack.filledTarget&&window.$callBack.filledTarget(s,e)}function i(t,e){var n=[],a=0==e,i=1===s.container.querySelectorAll(".fill").length;s.container.querySelector('.target[index="'+e+'"]').classList.add(u),i&&a&&(t.classList.remove(d),t.classList.remove(u),n.push(t));for(var r=e-0;r<s.length;r++){var c=s.container.querySelector('.target[index="'+(r+1)+'"]');c&&c.classList.remove(d),n.push(c)}window.$callBack&&window.$callBack.toggleTarget&&window.$callBack.toggleTarget(s,n)}function r(){var t=this.getAttribute(c);e(),this.classList.contains(d)?i(this,t):a(t)}var s=this,c="index",l="data-length",o="data-answer",d="fill",u="last";this.container=t.container,this.answerButton=t.answerButton,this.length=this.container.getAttribute(l),this.answer=this.container.getAttribute(o),this.targets=n();var g=!1;this.fillReset=function(){g=!1,s.container.classList.remove("complete"),s.targets.forEach(function(t){t.classList.remove(d),t.classList.remove(u)})},this.fillAnswer=function(){s.fillReset(),g=!0,s.container.classList.add("complete");for(var t=0;t<s.answer;t++)s.container.querySelector('.target[index="'+t+'"]').classList.add(d);s.container.querySelector('.target[index="'+(s.answer-1)+'"]')&&s.container.querySelector('.target[index="'+(s.answer-1)+'"]').classList.add(u)},s.answerButton.addEventListener("click",function(){g?s.fillReset():s.fillAnswer()})}window.FillTarget=t})();
+	</script>
+	<script type="text/javascript">
+		window.addEventListener('load', function() {
+			$ts.getEl('.js-fillContainer').forEach(function(container) {
+			new FillTarget({
+				container: container,
+				answerButton: document.querySelector('.js-chainButtons')
+			});
+			});
+			window.$callBack.filledTarget = function (el) {
+			var fillArray = el.container.querySelectorAll('.fill');
+			fillArray.forEach(function (obj) {
+				obj.classList.remove('last');
+				if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+			})
+			// console.log(el.targets.querySelectorAll('.fill').lastChild)
+			}
+			window.$callBack.toggleTarget = function (el) {
+			var fillArray = el.container.querySelectorAll('.fill');
+			fillArray.forEach(function (obj) {
+				obj.classList.remove('last');
+				if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+			})
+			}
+		});
+	</script>
+
+</body>
+
+</html>

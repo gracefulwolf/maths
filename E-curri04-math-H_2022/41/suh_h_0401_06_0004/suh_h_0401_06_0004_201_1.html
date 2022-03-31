@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:180px; left:55px; overflow:hidden; width:1060px; height:670px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:130px; left:70px; height:640px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.page-iframe{width:1280px; border:0; transform: scale(0.8265625); transform-origin: 0 0;}
+		.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
+
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.--bg-pink{display: inline-block; padding: 3px; border-radius:20px; background: #f7c1c9;}
+		.--bg-sky{display: inline-block; padding: 3px; border-radius:20px; background: #d4f3f6;}
+
+		.page_0 .--img{position: relative;top: 0;left: 0;width: 100%;height: 100%;background: url(./images/suh_h_0401_06_0004_201_1/suh_h_0401_06_0004_201_1_1.png) no-repeat 50% 160px / 1000px auto;}
+		.page_0 .--img .colorBox{position: absolute; padding-top: 5px; padding-bottom: 5px;}
+		.page_0 .--img .colorBox.n1{top: 60px;left: 0px;}
+		.page_0 .--img .colorBox.n2{top: 60px;left: 195px;}
+		.page_0 .--img .colorBox.n3{top: 60px;left: 470px;}
+		.page_0 .--img .colorBox.n4{top: 60px;left: 830px;}
+		.page_0 .--img .icon_arrow{position: absolute;}
+		.page_0 .--img .icon_arrow.n1{top: 300px;left: 110px;}
+		.page_0 .--img .icon_arrow.n2{top: 300px;left: 345px;}
+		.page_0 .--img .icon_arrow.n3{top: 300px;left: 660px;}
+
+
+		.page_2 .--img{position: relative;top: 0;left: 0;width: 100%;height: 310px;background: url(./images/suh_h_0401_06_0004_201_1/suh_h_0401_06_0004_201_1_1.png) no-repeat 50% 75% / 720px auto;}
+		.page_2 .--img .colorBox{position: absolute; padding-top: 5px; padding-bottom: 5px;}
+		.page_2 .--img .colorBox.n1{top: 0px;left: 106px;}
+		.page_2 .--img .colorBox.n2{top: 0px;left: 245px;}
+		.page_2 .--img .colorBox.n3{top: 0px;left: 443px;}
+		.page_2 .--img .colorBox.n4{top: 0px;left: 700px;}
+		.page_2 .--img .icon_arrow{position: absolute;}
+		.page_2 .--img .icon_arrow.n1{top: 165px;left: 194px;}
+		.page_2 .--img .icon_arrow.n2{top: 165px;left: 362px;}
+		.page_2 .--img .icon_arrow.n3{top: 165px;left: 592px;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">모형으로 만든 모양의 배열에서 규칙을 찾아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">그림</li>
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_0">
+					<div class="--img">
+						<div class="colorBox sky n1">첫째</div>
+						<div class="colorBox sky n2">둘째</div>
+						<div class="colorBox sky n3">셋째</div>
+						<div class="colorBox sky n4">넷째</div>
+						<div class="icon_arrow n1"></div>
+						<div class="icon_arrow n2"></div>
+						<div class="icon_arrow n3"></div>
+					</div>
+				</li>
+
+				<li class="page_1">
+					<h2><ins class="dot"></ins><span>
+						모형을 연결하여 위 모양을 차례대로 만들어 보세요.
+					</span></h2>
+					<iframe src="../../../dvd_4_1_h/contents/lesson06/ops/6/ifr-suh_h_0401_06_0004_201_1.html" title="" class="page-iframe" scrolling="no"></iframe>
+					<section>
+						<div class="study_guide">
+							<em>블록</em>을 <em>드래그</em>하여 옮기세요.
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						규칙을 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="--img">
+							<div class="colorBox sky n1">첫째</div>
+							<div class="colorBox sky n2">둘째</div>
+							<div class="colorBox sky n3">셋째</div>
+							<div class="colorBox sky n4">넷째</div>
+							<div class="icon_arrow n1"></div>
+							<div class="icon_arrow n2"></div>
+							<div class="icon_arrow n3"></div>
+						</div>
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet exam">예</ins>
+										<div>
+											+ 모양으로 위쪽, 아래쪽, 오른쪽, 왼쪽으로 각각 1개씩 늘어납니다.
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>
