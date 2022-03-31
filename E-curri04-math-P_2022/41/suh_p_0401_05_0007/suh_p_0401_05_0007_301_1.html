@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		img{width:100%;}
+		.pop_page_1{top:130px; left:220px; font-size:40px;}
+		.pop_page_1 .tit{position:relative; z-index:1; width:auto; background-color:#d4f3f6; display:inline-block; padding:5px 20px 7px; border-radius:20px; font-size:40px;}
+		.pop_page_1 .basicSlider_slides > li{padding:30px; box-sizing:border-box;}
+		.pop_page_1 figure{width:90%; margin:0 auto; height:250px; display:flex; align-items:center; justify-content:center;}
+		.pop_page_1 .basicSlider_slides{width:760px; height:560px; box-sizing:border-box;}
+		.bullet.orange.number{margin-top:7px; margin-left:-40px}
+		.flex-wrap{width:100%; height:180px; box-sizing:border-box; justify-content:center;}
+		.flex-wrap .flex-item + .flex-item{margin-left:10px;}
+		.num-wrap{padding-left:40px;}
+
+
+		.tit-box{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); padding:10px 30px 14px; z-index:1;}
+		.lineBox{display:flex; align-items:center; position:absolute; width:320px; height:192px; padding:10px 50px 10px 30px; z-index:1;}
+		.lineBox .popBtn{position:absolute; right:10px; bottom:10px;}
+		.lineBox.n1{top: 160px;left:0%;}
+		.lineBox.n2{top: 60px;right:0px;}
+		.lineBox.n3{top: 340px;right: 0px;}
+		.pointContainer .contentsBox {padding-top:25px;}
+		svg{position:absolute;top:50%; left:50%; transform:translate(-50%, -50%); z-index:0;}
+
+		.--innerWrap{position: relative; min-height: 400px;}
+		.--text{position: absolute; font-size: 35px;}
+		.page_1 .--innerWrap{width: 100%;height: 400px;background: url(./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1_1.png) no-repeat 0% 100% / 560px auto;}
+		.page_1 .--innerWrap .balloon{top: 0px;right: 0px;}
+		.page_1 .--innerWrap .--text.n1{top: 90px;left: 115px;}
+		.page_1 .--innerWrap .--text.n2{top: 140px;left: 0px;}
+		.page_1 .--innerWrap .--text.n3{top: 138px;left: 58px;}
+		.page_1 .--innerWrap .--text.n4{top: 222px;left: 78px;}
+		.page_1 .--innerWrap .--text.n5{top: 292px;left: 78px;}
+		.page_1 .--innerWrap .--text.n6{top: 320px;left: -20px;}
+		.page_1 .--innerWrap .--text.n7{top: 354px;left: 60px;}
+		.page_1 .--innerWrap .--text.n8{top: 338px;left: 103px;}
+		.page_1 .--innerWrap .--text.n9{top: 338px;left: 204px;}
+		.page_1 .--innerWrap .--text.n10{top: 338px;left: 302px;}
+
+		.page_2 .--innerWrap{width: 100%;height: 400px;background: url(./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1_2.png) no-repeat 0% 100% / 430px auto;}
+		.page_2 .--innerWrap .colorBox{position: absolute; right: 0px; font-size: 35px; text-align: justify;}
+		.page_2 .--innerWrap .colorBox.n1{top: 0px;}
+		.page_2 .--innerWrap .colorBox.n2{top: 180px;}
+		.page_2 .--innerWrap .--text.n1{top: 85px;left: 125px;}
+		.page_2 .--innerWrap .--text.n2{top: 132px;left: 4px;}
+		.page_2 .--innerWrap .--text.n3{top: 130px;left: 64px;}
+		.page_2 .--innerWrap .--text.n4{top: 220px;left: 84px;}
+		.page_2 .--innerWrap .--text.n5{top: 296px;left: 84px;}
+		.page_2 .--innerWrap .--text.n6{top: 320px;left: -20px;}
+		.page_2 .--innerWrap .--text.n7{top: 354px;left: 60px;}
+		.page_2 .--innerWrap .--text.n8{top: 344px;left: 111px;}
+		.page_2 .--innerWrap .--text.n9{top: 344px;left: 219px;}
+		.page_2 .--innerWrap .--text.n10{top: 344px;left: 325px;}
+
+		.page_3 .--innerWrap{width: 100%;height: 400px;background: url(./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1_3.png) no-repeat 50% 50% / contain;}
+		.page_3 .--innerWrap .--text{font-size: 27px; line-height: 1.1; letter-spacing: -1.5px;}
+		.page_3 .--innerWrap .--text.n1{top: 136px;left: 9px;text-align: center;}
+		.page_3 .--innerWrap .--text.n2{top: 222px;left: -6px;}
+		.page_3 .--innerWrap .--text.n3{top: 248px;left: 44px;}
+		.page_3 .--innerWrap .--text.n4{top: 235px;left: 82px;}
+		.page_3 .--innerWrap .--text.n5{top: 275px;left: 114px;}
+		.page_3 .--innerWrap .--text.n6{top: 160px;left: 244px;}
+		.page_3 .--innerWrap .--text.n7{top: 201px;left: 244px;}
+		.page_3 .--innerWrap .--text.n8{top: 222px;left: 174px;}
+		.page_3 .--innerWrap .--text.n9{top: 248px;left: 225px;}
+		.page_3 .--innerWrap .--text.n10{top: 235px;left: 263px;}
+		.page_3 .--innerWrap .--text.n11{top: 104px;left: 198px;text-align: center;}
+		.page_3 .--innerWrap .--text.n12{top: 160px;left: 423px;}
+		.page_3 .--innerWrap .--text.n13{top: 201px;left: 423px;}
+		.page_3 .--innerWrap .--text.n14{top: 222px;left: 353px;}
+		.page_3 .--innerWrap .--text.n15{top: 248px;left: 405px;}
+		.page_3 .--innerWrap .--text.n16{top: 235px;left: -385px;}
+		.page_3 .--innerWrap .--text.n17{top: 110px;left: 356px;}
+		.page_3 .--innerWrap .--text.n18{top: 160px;left: 600px;}
+		.page_3 .--innerWrap .--text.n19{top: 201px;left: 599px;}
+		.page_3 .--innerWrap .--text.n20{top: 222px;left: 528px;}
+		.page_3 .--innerWrap .--text.n21{top: 248px;left: 579px;}
+		.page_3 .--innerWrap .--text.n22{top: 236px;left: 618px;}
+		.page_3 .--innerWrap .--text.n23{top: 132px;left: 555px;}
+		.page_3 .--innerWrap .--text.n24{top: 78px;left: 565px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="pointContainer">
+		<header>
+			<h1><ins class="icon"></ins>
+				생각 그물
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!-- <ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">주장 펼치기</li>
+				<li data-hover="">반론하기</li>
+				<li data-hover="">주장 다지기</li>
+				</ul> -->
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1 on">
+						<div class="tit-box colorBox sky">
+							5. 막대그래프
+						</div>
+						<div class="lineBox sky n1">
+							<img src="./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1-1.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="1"></button>
+						</div>
+						<div class="lineBox sky n2">
+							<img src="./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1-2.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="2"></button>
+						</div>
+						<div class="lineBox sky n3">
+							<img src="./images/suh_p_0401_05_0007_301_1/suh_p_0401_05_0007_301_1-3.png" alt="">
+							<button class="popBtn btn_1 zoomBtn" data-hover="" data-popup-btn="1" data-slide="1" data-slide-page="3"></button>
+						</div>
+
+						<svg width="1000" height="500" xmlns="http://w3.org/2000/svg" version="1.1" viewbox= "0 0 300 300">
+							<line x1="20" y1="100" x2="130" y2="150" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="170" y1="150" x2="300" y2="60" stroke="#c1e8ec" stroke-width="3" />
+							<line x1="150" y1="150" x2="300" y2="220" stroke="#c1e8ec" stroke-width="3" />
+						</svg>
+
+						<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="image pop_page_1" data-popup-page="1" data-drag>
+					<div class="basicSlider" data-slide-container="popup">
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="page_1">
+								<div>
+									<div class="tit">
+										막대그래프를 알아볼까요
+									</div>
+								</div>
+								<div class="--innerWrap">
+									<div class="balloon bottom ctTail textAlignC pink">
+										조사한 자료의 수를<br>막대 모양으로<br>나타낸 것을<br><span class="redT">막대그래프</span>라고 해.
+									</div>
+									<div class="--text n1">좋아하는 빵</div>
+									<div class="--text n2">(명)</div>
+									<div class="--text n3">10</div>
+									<div class="--text n4">5</div>
+									<div class="--text n5">0</div>
+									<div class="--text n6">학생수</div>
+									<div class="--text n7">빵</div>
+									<div class="--text n8">치즈빵</div>
+									<div class="--text n9">채소빵</div>
+									<div class="--text n10">크림빵</div>
+								</div>
+							</li>
+							<li class="page_2">
+								<div>
+									<div class="tit ">
+										막대그래프에서 무엇을 알 수 있을까요
+									</div>
+								</div>
+								<div class="--innerWrap flexListContainer center">
+									<div class="--text n1">좋아하는 빵</div>
+									<div class="--text n2">(명)</div>
+									<div class="--text n3">10</div>
+									<div class="--text n4">5</div>
+									<div class="--text n5">0</div>
+									<div class="--text n6">학생수</div>
+									<div class="--text n7">빵</div>
+									<div class="--text n8">치즈빵</div>
+									<div class="--text n9">채소빵</div>
+									<div class="--text n10">크림빵</div>
+									<div class="colorBox yellow n1">
+										<span class="redT">눈금 한 칸의 크기</span>로<br>
+										몇 명이 좋아하는지<br>
+										알 수 있어.
+									</div>
+									<div class="colorBox yellow n2">
+										<span class="redT">가장 긴 막대</span>가<br>
+										가장 많은 학생이<br>
+										좋아하는 거야.
+									</div>
+								</div>
+							</li>
+							<li class="page_3">
+								<div>
+									<div class="tit">
+										막대그래프를 어떻게 그릴까요
+									</div>
+								</div>
+								<div class="--innerWrap flexListContainer center jcenter">
+									<div class="--text n1">세로<br>정하기</div>
+									<div class="--text n2">학생 수</div>
+									<div class="--text n3">빵</div>
+									<div class="--text n4">치즈빵</div>
+									<div class="--text n5">가로 정하기</div>
+									<div class="--text n6">5</div>
+									<div class="--text n7">0</div>
+									<div class="--text n8">학생 수</div>
+									<div class="--text n9">빵</div>
+									<div class="--text n10">치즈빵</div>
+									<div class="--text n11">눈금 한 칸의<br>크기 정하기</div>
+									<div class="--text n12">5</div>
+									<div class="--text n13">0</div>
+									<div class="--text n14">학생 수</div>
+									<div class="--text n15">빵</div>
+									<div class="--text n16">치즈빵</div>
+									<div class="--text n17">막대 그리기</div>
+									<div class="--text n18">5</div>
+									<div class="--text n19">0</div>
+									<div class="--text n20">학생 수</div>
+									<div class="--text n21">빵</div>
+									<div class="--text n22">치즈빵</div>
+									<div class="--text n23">좋아하는 빵</div>
+									<div class="--text n24">제목 쓰기</div>
+								</div>
+							</li>
+
+						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript"></script>
+</body>
+
+</html>

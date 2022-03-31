@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+		/* .--line{position:absolute;top: 28px;left: 681px;width: 30px;height: 64px;border: solid #e94d40;border-width: 3px 3px 3px 0;}
+		.--line.n2{position:absolute;top: 64px;left: 713px;width: 30px;height: 98px;border: solid #e94d40;border-width: 3px 3px 0 0;}
+		.--lineArrow{position:absolute;top: 162px;left: 683px;width: 60px;height: 98px;border: solid #e94d40;border-width: 3px 0 0 0;}
+		.--lineArrow.n2{left: 110px; width: 295px;}
+		.--lineArrow:before{content: "";position: absolute;top: -10px;left: -4px;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-right: 14px solid #e94d40;} */
+		section{padding: 0 30px !important;}
+        .tableContainer {margin:0;}
+        .contents {display:flex;align-items:center;justify-content:center;margin-top:80px;}
+        .contents .icon_arrow {margin:0 60px;}
+        .contents .toggle {padding: 8px 0;width: 75px;height: 65px;}
+        .contents .num {height:65px;width:65px;}
+        .contents .tableContainer:nth-child(2) {margin-top:30px;}
+        .addLineController {top:16px;}
+
+        .blt.toggle{position: relative;padding-left:80px;text-align:left;}
+        .blt.toggle .exam{position: absolute;top:8px;left:20px;}
+
+        .page_1 .con_1 {text-align: center;position: relative;margin-top:20px;}
+        .page_1 .con_1 .imgCon {display: inline-block;vertical-align: top;text-align: center;}
+        .page_1 .con_1 .imgCon img {display: inline-block;vertical-align: top;height: 200px;}
+        .page_1 .con_1 .imgCon:not(:last-child) {margin-right: 30px;}
+        .page_1 .con_1 .imgCon .text_1 {margin-bottom: 20px;font-size:40px;}
+        .page_1 .con_1 .imgCon_5 img {height:250px;}
+        .page_1 .imgCon_5 {position:relative;display:inline-block;}
+        .page_1 .img_3 {position:relative;}
+        .page_1 .img_3 .toggle {position:absolute;left:50%;top:0;transform:translateX(-50%);}
+        .page_1 .img_3 .toggle:after {display:none;}
+
+        .page_2 .con_1 {text-align: center;position: relative;margin-bottom:20px;}
+        .page_2 .con_1 .imgCon {display: inline-block;vertical-align: top;text-align: center;}
+        .page_2 .con_1 .imgCon img {display: inline-block;vertical-align: top;height: 150px;}
+        .page_2 .con_1 .imgCon:not(:last-child) {margin-right: 60px;}
+        .page_2 .con_1 .imgCon .text_1 {margin-bottom: 20px;font-size:40px;}
+
+        .page_3 .con_1 {text-align: center;position: relative;margin:0 auto 20px;}
+        .page_3 .con_1 .imgCon {display: inline-block;vertical-align: top;text-align: center;width:22%;padding:0 1%;}
+        .page_3 .con_1 .imgCon img {display: inline-block;vertical-align: top;width: auto;height:204px;}
+        .page_3 .con_1 .imgCon .text_1 {margin-bottom: 20px;font-size:40px;}
+
+        .page_4 .con_1 {text-align: center;position: relative;margin-bottom:20px;}
+        .page_4 .con_1 .imgCon {display: inline-block;vertical-align: top;text-align: center;}
+        .page_4 .con_1 .imgCon img {display: inline-block;vertical-align: top;height: 150px;}
+        .page_4 .con_1 .imgCon:not(:last-child) {margin-right: 56px;}
+        .page_4 .con_1 .imgCon .text_1 {margin-bottom: 20px;font-size:40px;}
+
+        .page_5 {text-align: center;position: relative;margin-bottom:20px;}
+        .page_5 .con_2 {margin-top:10px;}
+        .page_5 .imgCon {display: inline-block;vertical-align: top;text-align: center;}
+        .page_5 .imgCon img {display: inline-block;vertical-align: top;height: 150px;}
+        .page_5 .imgCon:not(:last-child) {margin-right: 60px;}
+        .page_5 .imgCon .text_1 {margin-bottom: 0;font-size:35px;}
+        .page_5 .img_3 {position:relative;}
+        .page_5 .img_3 .toggle {position:absolute;left:50%;top:0;transform:translateX(-50%);}
+        .page_5 .img_3 .toggle:after {display:none;}
+
+		/* 개별 */
+		.--QnA{display:table; width:100%;}
+		.--QnA li{display:table-row;}
+		.--QnA li > div{display:table-cell; vertical-align:top;}
+		.--QnA li + li .--Q,
+		.--QnA li + li .--A{padding-top:15px;}
+		.--QnA .--Q{min-width:94px; text-align:right;}
+		.--QnA .--Q .colorBox{display:inline-block; float:right; line-height:36px !important; white-space:nowrap;}
+		.--QnA .--A .answer{text-align:justify;}
+
+		.page_10 .tableContainer table td .toggle{width: 100%;}
+		.page_10 .--img{position: relative; padding-left: 40px;}
+		.page_10 .--img .flexListContainer{align-items: flex-end; justify-content: space-around;}
+		.page_10 .--img li{text-align: center;}
+		.page_10 .--img img{width: 50%;}
+		.page_10 .colorBox.orange{position: absolute; padding-top: 5px; padding-bottom: 5px;}
+		.page_10 .colorBox.orange.n1{top: -10px;left: 60px;}
+		.page_10 .colorBox.orange.n2{top: -10px;left: 230px;}
+		.page_10 .colorBox.orange.n3{top: -10px;left: 470px;}
+		.page_10 .colorBox.orange.n4{top: -10px;left: 772px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/6단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							배열에 사용된 모형의 수를 표에 써 보시오.
+						</span></h2>
+						<div class="--img pt_60">
+							<ul class="flexListContainer">
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_1.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_2.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_3.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_4.png" alt=""></li>
+							</ul>
+							<div class="colorBox orange n1">첫째</div>
+							<div class="colorBox orange n2">둘째</div>
+							<div class="colorBox orange n3">셋째</div>
+							<div class="colorBox orange n4">넷째</div>
+						</div>
+						<div class="tableContainer green mt_20">
+							<table>
+								<tr>
+									<th>순서</th>
+									<th class="lightGreen">첫째</th>
+									<th class="lightGreen">둘째</th>
+									<th class="lightGreen">셋째</th>
+									<th class="lightGreen">넷째</th>
+								</tr>
+								<tr>
+									<th>모형의 수</th>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												4
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												8
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												12
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												16
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+						<a href="./data/6단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+
+					<li class="page_20 page_10" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							다섯째 배열에서 사용될 모형은 모두 몇 개인가요?
+						</span></h2>
+						<div class="--img pt_60">
+							<ul class="flexListContainer">
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_1.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_2.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_3.png" alt=""></li>
+								<li><img src="./images/suh_h_0401_06_0004_401_1/suh_h_0401_06_0004_401_1_4.png" alt=""></li>
+							</ul>
+							<div class="colorBox orange n1">첫째</div>
+							<div class="colorBox orange n2">둘째</div>
+							<div class="colorBox orange n3">셋째</div>
+							<div class="colorBox orange n4">넷째</div>
+						</div>
+						<div class="textAlignC mt_40">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									20
+								</div>
+							</div>개
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="20" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+						<a href="./data/6단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+
+					<li class="page_1">
+						<h2><ins class="dot"></ins><span>도형의 배열을 보고 다섯째에 알맞은 도형을 그려 보시오.</span></h2>
+						<section data-quiz="toggle">
+
+							<div class="con con_1">
+
+								<div class="imgCon imgCon_1">
+									<div class="text_1">첫째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_1.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">둘째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_2.png" /></div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">셋째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_3.png" /></div>
+								</div> <!-- imgCon_3 -->
+
+								<div class="imgCon imgCon_4">
+									<div class="text_1">넷째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_4.png" /></div>
+								</div> <!-- imgCon_4 -->
+
+
+								<div class="imgCon imgCon_5">
+									<div class="text_1">다섯째</div>
+									<div class="img_3 noClick">
+										<img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_5.png" height="320">
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1"><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_6.png" height="320"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2">
+						<h2><ins class="dot"></ins><span>도형의 배열에서 규칙을 찾아보시오.</span></h2>
+						<section data-quiz="toggle">
+
+							<div class="con con_1">
+
+								<div class="imgCon imgCon_1">
+									<div class="text_1">첫째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_1.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">둘째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_2.png" /></div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">셋째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_3.png" /></div>
+								</div> <!-- imgCon_3 -->
+
+								<div class="imgCon imgCon_4">
+									<div class="text_1">넷째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_4.png" /></div>
+								</div> <!-- imgCon_4 -->
+
+							</div>
+							<div class="toggle blt" data-toggle-obj="1">
+								<div class="answer textAlignJ ls1" data-toggle-target="1">
+									<div class="bullet exam">예</div> 파란색 도형은 왼쪽과 위쪽으로 각각 1개씩 늘어납니다. 분홍색 도형은 가로, 세로가 각각 0개, 1개, 2개, 3개∙∙∙∙∙∙인 정사각형 모양이 됩니다.
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3">
+						<h2><ins class="dot"></ins><span>도형의 배열을 보고 다섯째에 알맞은 <img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2.png" width="40" style="vertical-align:-4px;"/>의 개수를 구하시오.</span></h2>
+						<section data-quiz="toggle" class="full">
+
+							<div class="con con_1">
+
+								<div class="imgCon imgCon_1">
+									<div class="text_1">첫째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2_1.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">둘째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2_2.png" /></div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">셋째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2_3.png" /></div>
+								</div> <!-- imgCon_3 -->
+
+								<div class="imgCon imgCon_4">
+									<div class="text_1">넷째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2_4.png" /></div>
+								</div> <!-- imgCon_4 -->
+							</div>
+
+							<div class="textAlignC mt_30">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">11개</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4">
+						<h2><ins class="dot"></ins><span>도형의 배열에서 여섯째에 알맞은 모형의 수를 구하시오.</span></h2>
+						<section data-quiz="toggle" class="full">
+
+							<div class="con con_1">
+
+								<div class="imgCon imgCon_1">
+									<div class="text_1">첫째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_4_1.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">둘째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_4_2.png" /></div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">셋째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_4_3.png" /></div>
+								</div> <!-- imgCon_3 -->
+
+								<div class="imgCon imgCon_4">
+									<div class="text_1">넷째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_4_4.png" /></div>
+								</div> <!-- imgCon_4 -->
+							</div>
+
+							<div class="textAlignC mt_30">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">12개</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_5">
+						<h2><ins class="dot"></ins><span>규칙에 따라 다섯째에 알맞은 도형을 그리시오.</span></h2>
+						<section data-quiz="toggle">
+
+							<div class="con con_1">
+								<div class="imgCon imgCon_1">
+									<div class="text_1">첫째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_1.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">둘째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_2.png" /></div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">셋째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_3.png" /></div>
+								</div> <!-- imgCon_3 -->
+							</div>
+
+							<div class="con con_2">
+								<div class="imgCon imgCon_1">
+									<div class="text_1">넷째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_4.png" /></div>
+								</div> <!-- imgCon_1 -->
+
+								<div class="imgCon imgCon_2">
+									<div class="text_1">다섯째</div>
+									<div class="img_3 noClick">
+										<img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_5.png">
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1"><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_7.png"></div>
+										</div>
+									</div>
+								</div> <!-- imgCon_2 -->
+
+								<div class="imgCon imgCon_3">
+									<div class="text_1">여섯째</div>
+									<div><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_6.png" /></div>
+								</div> <!-- imgCon_3 -->
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="7" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+
+				<li class="solve pop_page_10" data-popup-page="10">
+					<div class="popup_contents">
+						<p>모형이 개수가 4개씩 늘어납니다.</p>
+					</div>
+				</li>
+
+				<li class="solve pop_page_20" data-popup-page="20">
+					<div class="popup_contents">
+						<p>모형이 4개씩 늘어나므로 다섯째 배열에 사용될 모형은 넷째 배열에서 4개 늘어난 20개입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve pop_page_5" data-popup-page="5">
+					<div class="popup_contents">
+						<p><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2.png" width="40" style="vertical-align:-4px;"/>의 개수를 세어 보면 다음 표와 같습니다.</p>
+						<div class="tableContainer brown mt_10">
+							<table>
+								<tr>
+									<th></th>
+									<th>첫째</th>
+									<th>둘째</th>
+									<th>셋째</th>
+									<th>넷째</th>
+								</tr>
+								<tr>
+									<th><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2.png" width="40" style="vertical-align:-4px;"/>의 개수</th>
+									<td>3</td>
+									<td>5</td>
+									<td>7</td>
+									<td>9</td>
+								</tr>
+							</table>
+						</div>
+						<p class="mt_10">규칙을 이용하여 다섯째 도형의 <img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_2.png" width="40" style="vertical-align:-4px;"/>의 개수를 구해 보면 11개입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve pop_page_6" data-popup-page="6">
+					<div class="popup_contents">
+						<p>모형이 2개씩 늘어나므로 다섯째 배열에 사용될 모형은 넷째 배열에서 2개 늘어난 10개이며, 여섯째 배열에 사용될 모형은 다섯째 배열에서 <span class="blueT">2개 늘어난 12개</span>입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve pop_page_7" data-popup-page="7">
+					<div class="popup_contents">
+						<p>가운데 분홍색 네모를 중심으로 왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래 순서로 초록색 네모가 하나씩 추가되므로, 다섯째 모양은 <span class="blueT">왼쪽 위 초록색 네모를 하나 추가</span>합니다.</p>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

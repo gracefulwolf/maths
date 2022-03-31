@@ -1,0 +1,218 @@
+@charset "utf-8";
+figure { position: relative; }
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.flexContainer.wrap { flex-wrap: wrap; }
+.flexContainer .shrink { flex-shrink: 0; }
+
+.popupButton.head {
+  top: -75px;
+}
+.popup_pages > li.head {
+  width: 1080px;
+  top: 105px;
+  right: 80px;
+}
+.popup_pages > li.head img {
+  width: 100%;
+}
+ins.exam.circle[data-after-target] {
+  position: absolute;
+  margin: 0;
+}
+/* page */
+.flexContainer {
+
+}
+.flexContainer .left {
+  width: 550px;
+  word-break: break-all;
+}
+.flexContainer .left .list.dot {}
+.flexContainer .right {
+  position: relative;
+  width: 545px;
+  height: 450px;
+  margin: 6px 0 0 0;
+  background: url(../images/5_2/5_2_3_01.svg) center/contain no-repeat;
+  box-sizing: border-box;
+}
+.flexContainer .right:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/5_2/5_2_3_02.svg") center/contain no-repeat;
+  pointer-events: none;
+}
+.flexContainer .dotListIndent > input {
+  width: 100%;
+}
+.flexContainer .dotListIndent > li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.flexContainer .dotListIndent > li input {
+  display: inline-block;
+  width: 390px;
+}
+
+.page1 ins.exam.circle {
+  top: 212px;
+  left: 40px;
+}
+
+.page2 .dotListIndent input {
+  width: 150px;
+  margin-right: 5px;
+}
+.page2 .answerText {
+  position: absolute;
+  top: 147px;
+  left: 133px;
+  line-height: normal;
+}
+
+.page3 ins.exam.circle {
+  top: 147px;
+  left: 40px;
+}
+.page3 .flexContainer .dotListIndent > li input {
+  width: 430px;
+}
+
+.page4 .flexContainer .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 590px;
+}
+.page4 .flexContainer .left .list.dot > li {
+  letter-spacing: -4px;
+}
+.page4 .flexContainer .left figure {
+  width: 248px;
+  align-self: flex-end;
+}
+
+.page4 .flexContainer .right:after {
+  background-image: url("../images/5_2/5_2_3_03.svg");
+}
+.page4 .right input {
+  position: absolute;
+  padding: 5px 4px 4px;
+  font-size: 23px;
+  height: 48px;
+  text-align: center;
+  z-index: 1;
+}
+.page4 .right .input_1 {
+  top: 0;
+  left: 52px;
+  width: 444px;
+  font-size: 32px;
+  text-align: center;
+}
+.page4 .right .input_2 {
+  top: 72px;
+  left: 6px;
+  width: 64px;
+}
+.page4 .right .input_3,
+.page4 .right .input_4 {
+  left: 80px;
+  width: 58px;
+  text-align: right;
+  letter-spacing: 0;
+}
+.page4 .right .input_3 {
+  top: 90px;
+}
+.page4 .right .input_4 {
+  top: 200px;
+}
+.page4 .right .input_5 {
+  top: 336px;
+  left: 7px;
+  width: 116px;
+}
+.page4 .right .input_6 {
+  width: 116px;
+  top: 393px;
+  left: 25px;
+}
+.page4 .right .input_7,
+.page4 .right .input_8,
+.page4 .right .input_9 {
+  width: 98px;
+  top: 366px;
+  font-size: 21px;
+  padding: 5px 0px 4px;
+}
+.page4 .right .input_7 {
+  left: 241px;
+}
+.page4 .right .input_8 {
+  left: 340px;
+}
+.page4 .right .input_9 {
+  left: 439px;
+}
+
+.page4 .fillContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 71px 8px 0 143px;
+  height: 262px;
+}
+.page4 .fillContainer .square {
+  display: flex;
+  width: 46px;
+  flex-direction: column-reverse;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+.page4 .square > .target {
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+}
+.page4 .square > .target.fill[index] {
+  background-color: #EDC6CA;
+  border: 2px solid #c83164;
+  border-bottom: 0;
+  border-top: 0;
+  animation: none;
+}
+.page4 .square > .target.fill.last { border-top: 2px solid #c83164; }
+.page4 .square > .target[index="0"] {
+  animation: targetOpacity 1s ease-in-out infinite;
+}
+.page4 .square > div.target.fill:last-of-type {}
+
+@keyframes targetOpacity { 50% { background-color: yellow; }}
+@-o-keyframes targetOpacity { 50% { background-color: yellow; }}
+@-ms-keyframes targetOpacity { 50% { background-color: yellow; }}
+@-webkit-keyframes targetOpacity { 50% { background-color: yellow; }}
+
+
+.page4 .square.complete {
+  pointer-events: none;
+}
+.page4 .square.complete > .target[index="0"] {
+  animation: none;
+}
+
+.page4 .hidden { display: none; }
+
+.page4 ins.exam.circle {
+  top: 6px;
+  left: 672px;
+}

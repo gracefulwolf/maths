@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		header .title .blankBox{width:40px; height:40px; margin-top:2px;}
+		.popup_pages .blankBox{width:40px; height:40px; vertical-align:-5px;}
+		.textTitle .bullet.number{margin-top: 10px;}
+
+		.--lineBox{width: 100%; margin: 0 auto; padding: 5px; line-height: 40px;}
+		.tableContainer td .toggle{width: 100%;}
+
+		.--flex .--box{flex: 1;}
+		.--flex .--box + .--box{margin-left: 40px;}
+		.colorBox{padding-top: 3px; padding-bottom: 3px;}
+
+		.--text{position: absolute; font-size: 35px;}
+		.page_1 .--graph.n1{position: relative;width: 100%;height: 270px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_1.png) no-repeat 50% 50% / 100% 100%;}
+		.page_1 .--graph.n2{position: relative;width: 100%;height: 270px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_2.png) no-repeat 50% 50% / 100% 100%;}
+		.page_1 .--graph.n1 .--text.n1{top: 0px;left: 1px;}
+		.page_1 .--graph.n1 .--text.n2{top: -28px;left: 58px;text-align: right;line-height: 95px;}
+		.page_1 .--graph.n1 .--text.n3{top: 170px;left: 78px;}
+		.page_1 .--graph.n1 .--text.n4{top: 198px;left: -27px;}
+		.page_1 .--graph.n1 .--text.n5{top: 232px;left: 26px;}
+		.page_1 .--graph.n1 .--text.n6{top: 218px;left: 106px;}
+		.page_1 .--graph.n1 .--text.n7{top: 218px;left: 182px;}
+		.page_1 .--graph.n1 .--text.n8{top: 218px;left: 257px;}
+		.page_1 .--graph.n1 .--text.n9{top: 218px;left: 333px;}
+		.page_1 .--graph.n1 .--text.n10{top: 218px;left: 408px;}
+
+		.page_1 .--graph.n2 .--text.n1{top: 223px;left: 420px;}
+		.page_1 .--graph.n2 .--text.n2{top: 182px;left: 110px;text-align: right;line-height: 95px;}
+		.page_1 .--graph.n2 .--text.n3{top: 208px;left: 240px;}
+		.page_1 .--graph.n2 .--text.n4{top: 208px;left: 374px;}
+		.page_1 .--graph.n2 .--text.n5{top: 235px;left: 10px;}
+		.page_1 .--graph.n2 .--text.n6{top: 200px;left: 6px;}
+		.page_1 .--graph.n2 .--text.n7{top: -1px;left: 21px;}
+		.page_1 .--graph.n2 .--text.n8{top: 218px;left: 257px;}
+		.page_1 .--graph.n2 .--text.n9{top: 218px;left: 333px;}
+		.page_1 .--graph.n2 .--text.n10{top: 218px;left: 408px;}
+
+		.pop_page_1 .--graph.n1{position: relative;width: 100%;height: 225px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_3.png) no-repeat 50% 50% / 100% 100%;}
+		.pop_page_1 .--graph.n2{position: relative;width: 100%;height: 225px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_4.png) no-repeat 50% 50% / 100% 100%;}
+		.pop_page_1 .--graph.n1 .--text.n1{top: 0px;left: 1px;}
+		.pop_page_1 .--graph.n1 .--text.n2{top: -25px;left: 83px;text-align: right;line-height: 80px;}
+		.pop_page_1 .--graph.n1 .--text.n3{top: 136px;left: 103px;}
+		.pop_page_1 .--graph.n1 .--text.n4{top: 160px;left: -27px;}
+		.pop_page_1 .--graph.n1 .--text.n5{top: 192px;left: 30px;}
+		.pop_page_1 .--graph.n1 .--text.n6{top: 178px;left: 144px;}
+		.pop_page_1 .--graph.n1 .--text.n7{top: 178px;left: 240px;}
+		.pop_page_1 .--graph.n1 .--text.n8{top: 178px;left: 336px;}
+		.pop_page_1 .--graph.n1 .--text.n9{top: 178px;left: 431px;}
+
+		.pop_page_1 .--graph.n2 .--text.n1{top: 180px;left: 455px;}
+		.pop_page_1 .--graph.n2 .--text.n2{top: 170px;left: 120px;}
+		.pop_page_1 .--graph.n2 .--text.n3{top: 170px;left: 258px;}
+		.pop_page_1 .--graph.n2 .--text.n4{top: 170px;left: 400px;}
+		.pop_page_1 .--graph.n2 .--text.n5{top: 190px;left: 10px;}
+		.pop_page_1 .--graph.n2 .--text.n6{top: 157px;left: -30px;}
+		.pop_page_1 .--graph.n2 .--text.n7{top: 0px;left: 30px;line-height: 43px;}
+		.pop_page_1 .--graph.n2 .--text.n8{top: 218px;left: 257px;}
+		.pop_page_1 .--graph.n2 .--text.n9{top: 218px;left: 333px;}
+
+		.pop_page_2 .--graph.n1{position: relative;width: 100%;height: 225px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_5.png) no-repeat 50% 50% / 100% 100%;}
+		.pop_page_2 .--graph.n2{position: relative;width: 100%;height: 225px;margin: 5px auto;background: url(./images/suh_p_0401_05_0007_204_1/suh_p_0401_05_0007_204_1_6.png) no-repeat 50% 50% / 100% 100%;}
+		.pop_page_2 .--graph.n1 .--text.n1{top: 0px;left: 1px;}
+		.pop_page_2 .--graph.n1 .--text.n2{top: -25px;left: 83px;text-align: right;line-height: 80px;}
+		.pop_page_2 .--graph.n1 .--text.n3{top: 136px;left: 103px;}
+		.pop_page_2 .--graph.n1 .--text.n4{top: 160px;left: -27px;}
+		.pop_page_2 .--graph.n1 .--text.n5{top: 192px;left: 30px;}
+		.pop_page_2 .--graph.n1 .--text.n6{top: 178px;left: 144px;}
+		.pop_page_2 .--graph.n1 .--text.n7{top: 178px;left: 240px;}
+		.pop_page_2 .--graph.n1 .--text.n8{top: 178px;left: 336px;}
+		.pop_page_2 .--graph.n1 .--text.n9{top: 178px;left: 415px;}
+
+		.pop_page_2 .--graph.n2 .--text.n1{top: 180px;left: 455px;}
+		.pop_page_2 .--graph.n2 .--text.n2{top: 170px;left: 120px;}
+		.pop_page_2 .--graph.n2 .--text.n3{top: 170px;left: 258px;}
+		.pop_page_2 .--graph.n2 .--text.n4{top: 170px;left: 400px;}
+		.pop_page_2 .--graph.n2 .--text.n5{top: 200px;left: 6px;}
+		.pop_page_2 .--graph.n2 .--text.n6{top: 163px;left: -28px;}
+		.pop_page_2 .--graph.n2 .--text.n7{top: 0px;left: 11px;line-height: 43px;text-align: center;}
+		.pop_page_2 .--graph.n2 .--text.n8{top: 218px;left: 257px;}
+		.pop_page_2 .--graph.n2 .--text.n9{top: 218px;left: 333px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 스프라이트 있을 시에 무조건 추가 -->
+		<header>
+			<div class="title active">
+				<div class="flexListContainer start">
+					<div class="bullet number orange inline mr_10 mt_5">6</div>
+					두 막대그래프는 어떤 점이 다른지 써 보세요.
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<section>
+							<div class="flexListContainer --flex">
+								<div class="--box">
+									<div class="lineBox sky --lineBox textAlignC">민주네 반 학생들이<br>좋아하는 색깔</div>
+									<div class="--graph n1">
+										<div class="--text n1">(명)</div>
+										<div class="--text n2">10<br>5</div>
+										<div class="--text n3">0</div>
+										<div class="--text n4">학생 수</div>
+										<div class="--text n5">색깔</div>
+										<div class="--text n6">초록</div>
+										<div class="--text n7">노랑</div>
+										<div class="--text n8">파랑</div>
+										<div class="--text n9">보라</div>
+										<div class="--text n10">빨강</div>
+									</div>
+								</div>
+								<div class="--box">
+									<div class="lineBox sky --lineBox textAlignC">현서네 반 학생들이<br>좋아하는 색깔</div>
+									<div class="--graph n2">
+										<div class="--text n1">(명)</div>
+										<div class="--text n2">0</div>
+										<div class="--text n3">5</div>
+										<div class="--text n4">10</div>
+										<div class="--text n5">학생 수</div>
+										<div class="--text n6">색깔</div>
+										<div class="--text n7">초록<br>노랑<br>파랑<br>보라<br>빨강</div>
+									</div>
+								</div>
+							</div>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div style="letter-spacing: 1px;">
+													학생 수를 나타내는 막대의 길이를 민주네 반은 세로로, 현서네 반은 가로로 나타내었습니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="1" data-hover="">
+									<span>한 번 더 <b>1</b></span>
+								</button>
+								<button class="characterBtn" data-popup-btn="2" data-hover="">
+									<span>한 번 더 <b>2</b></span>
+								</button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<button class="popBtn textBookBtn" data-hover="" data-popup-btn="0">
+			<span class="btnInner"></span>
+		</button>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="textBookPopup" data-popup-page="0">
+					<div class="popupInner" data-popup-inner="">
+						<div class="study_guide">이 알림창은 잠시 후 닫힙니다.</div>
+						<div class="textTitle">
+							<ul class="contentsList">
+								<li>
+									[<ins class="bullet number orange inline">4</ins> ~ <ins class="bullet number orange inline">6</ins>]
+									<div class="ml_10 ls2">
+										민주네 반과 현서네 반 학생들이 좋아하는 색깔을 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="whole pop_page_1 " data-popup-page="1">
+					<h2 class="box"><span>한 번 더 <b class="yellowT">1</b></span></h2>
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">
+										민호네 반과 세아네 반 학생들이 좋아하는 색깔을 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.
+									</p>
+									<div>
+										<ul class="contentsList">
+											<li>
+												<ins class="dot orange"></ins>
+												<div>두 막대그래프는 어떤 점이 다른지 써 보세요.</div>
+											</li>
+										</ul>
+										<div class="page_1 mt_10" data-slide-container="popup">
+											<div class="moveButtonContainer" data-slide-btn-container="">
+												<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+												<ul class="basicSlider_circle_tabs" data-tabs="">
+													<li data-hover=""></li>
+													<li data-hover=""></li>
+												</ul>
+												<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+											</div>
+											<ul class="basicSlider_slides" data-slides="">
+												<li class="innerTab_1">
+													<div class="flexListContainer --flex">
+														<div class="--box">
+															<div class="lineBox sky --lineBox textAlignC">민호네 반 학생들이<br>좋아하는 색깔</div>
+															<div class="--graph n1">
+																<div class="--text n1">(명)</div>
+																<div class="--text n2">10<br>5</div>
+																<div class="--text n3">0</div>
+																<div class="--text n4">학생 수</div>
+																<div class="--text n5">색깔</div>
+																<div class="--text n6">초록</div>
+																<div class="--text n7">파랑</div>
+																<div class="--text n8">분홍</div>
+																<div class="--text n9">노랑</div>
+															</div>
+														</div>
+														<div class="--box">
+															<div class="lineBox sky --lineBox textAlignC">세아네 반 학생들이<br>좋아하는 색깔</div>
+															<div class="--graph n2">
+																<div class="--text n1">(명)</div>
+																<div class="--text n2">0</div>
+																<div class="--text n3">5</div>
+																<div class="--text n4">10</div>
+																<div class="--text n5">학생 수</div>
+																<div class="--text n6">색깔</div>
+																<div class="--text n7">초록<br>파랑<br>분홍<br>노랑</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="innerTab_2" data-quiz="toggle">
+													<section>
+														<div class="toggle" data-toggle-obj="1" style="width:100%;">
+															<div class="answer" data-toggle-target="1">
+																<ul class="contentsList">
+																	<li>
+																		<ins class="bullet exam">예</ins>
+																		<div>
+																			가로와 세로가 바뀌어 있습니다.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="toggle mt_10" data-toggle-obj="2" style="width:100%;">
+															<div class="answer" data-toggle-target="2">
+																<ul class="contentsList">
+																	<li>
+																		<ins class="bullet exam">예</ins>
+																		<div style="letter-spacing: 1px;">
+																			왼쪽의 그래프는 가로가 색깔, 세로가 학생 수인데, 오른쪽 그래프는 가로가 학생 수, 세로가 색깔입니다.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="buttonContainer">
+															<button class="dapCheckBtn" data-answer-btn=""></button>
+														</div>
+													</section>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<a href="./data/(4-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="whole pop_page_2 " data-popup-page="2">
+					<h2 class="box"><span>한 번 더 <b class="yellowT">2</b></span></h2>
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li data-quiz="toggle">
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">
+										호경이네 반과 진희네 반 학생들이 좋아하는 운동을 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.
+									</p>
+									<div>
+										<ul class="contentsList">
+											<li>
+												<ins class="dot orange"></ins>
+												<div>두 그래프는 어떤 점이 다른지 써 보세요.</div>
+											</li>
+										</ul>
+										<div class="page_1 mt_10" data-slide-container="popup">
+											<div class="moveButtonContainer" data-slide-btn-container="">
+												<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+												<ul class="basicSlider_circle_tabs" data-tabs="">
+													<li data-hover=""></li>
+													<li data-hover=""></li>
+												</ul>
+												<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+											</div>
+											<ul class="basicSlider_slides" data-slides="">
+												<li class="innerTab_1">
+													<div class="flexListContainer --flex">
+														<div class="--box">
+															<div class="lineBox sky --lineBox textAlignC">호경이네 반 학생들이<br>좋아하는 운동</div>
+															<div class="--graph n1">
+																<div class="--text n1">(명)</div>
+																<div class="--text n2">10<br>5</div>
+																<div class="--text n3">0</div>
+																<div class="--text n4">학생 수</div>
+																<div class="--text n5">운동</div>
+																<div class="--text n6">축구</div>
+																<div class="--text n7">피구</div>
+																<div class="--text n8">야구</div>
+																<div class="--text n9">줄넘기</div>
+															</div>
+														</div>
+														<div class="--box">
+															<div class="lineBox sky --lineBox textAlignC">진희네 반 학생들이<br>좋아하는 운동</div>
+															<div class="--graph n2">
+																<div class="--text n1">(명)</div>
+																<div class="--text n2">0</div>
+																<div class="--text n3">5</div>
+																<div class="--text n4">10</div>
+																<div class="--text n5">학생 수</div>
+																<div class="--text n6">운동</div>
+																<div class="--text n7">축구<br>피구<br>야구<br>줄넘기</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="innerTab_2">
+													<section>
+														<div class="toggle" data-toggle-obj="1" style="width:100%;">
+															<div class="answer" data-toggle-target="1">
+																<ul class="contentsList">
+																	<li>
+																		<ins class="bullet exam">예</ins>
+																		<div>
+																			가로와 세로가 바뀌어 있습니다.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="toggle mt_10" data-toggle-obj="2" style="width:100%;">
+															<div class="answer" data-toggle-target="2">
+																<ul class="contentsList">
+																	<li>
+																		<ins class="bullet exam">예</ins>
+																		<div style="letter-spacing: 1px;">
+																			왼쪽의 그래프는 가로가 운동, 세로가 학생 수인데, 오른쪽 그래프는 가로가 학생 수, 세로가 운동입니다.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="buttonContainer">
+															<button class="dapCheckBtn" data-answer-btn=""></button>
+														</div>
+													</section>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<a href="./data/(4-1-5)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="3">
+					<div class="popup_contents">
+						<p>두 그래프에서 막대의 길이가 가장 긴 색깔을 각각 찾습니다.</p>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+		}, false);
+
+	</script>
+
+</body>
+
+</html>

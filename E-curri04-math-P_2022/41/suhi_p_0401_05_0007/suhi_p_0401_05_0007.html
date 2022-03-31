@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="./css/template.css" />
+<style type="text/css">
+	.contentsBox{bottom:auto; min-height:100%; height:100%;}
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* 개별 */
+	.page_2 .innerBox {padding:0px 0 0 33px !important;}
+	.noteText {height: 360px;}
+	.textLine.afterDisplay.answerMode{text-align:left;}
+	.contentsBox h2{font-size:40px;}
+	.suhi textarea.answerMode,
+	.suhi input.answerMode{font-size:38px; font-weight:bold; color:#00a0ff;}
+
+	iframe{ position: absolute; top: 50px; left: 0; width:1278px; height:550px; border:0; transform: scale(0.9) translate(-130px, -20px);}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">정리해 보아요</span>
+		<span class="sub-page">80쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">정리하기</li>
+			<li data-hover="">수학 일기</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_1">
+				<h2><ins class="bullet circleDot"></ins><span>
+					알맞은 것을 찾아 길을 따라가며 배운 내용을 정리해 봅시다.
+				</span></h2>
+				<iframe src="../../../dvd_4_1_p/lesson05/ops/ms_lesson05/ms_41_5_06_01_01.html" scrolling="no"></iframe>
+			</li>
+
+			<li class="page_2" data-quiz="input">
+				<h2><ins class="bullet circleDot"></ins><span>
+					배운 것을 되돌아보고 기억해야 할 내용을 써 봅시다.
+				</span></h2>
+				<div class="innerBox">
+					<ul class="tabContainer common"></ul>
+					<ul class="pageContainer">
+						<li class="page_1 textAlignC view">
+							<div class="noteText">
+								<textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj="" data-answer="여러 가지 자료를 수집, 분류, 정리하여 자료의 특성에 맞는 그래프로 나타내고 그래프를 해석할 수 있습니다.
+실생활 자료를 수집하여 막대그래프로 나타낼 수 있습니다." onfocus="placeholder=''" onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="buttonContainer">
+					<button class="writeBtn" data-answer-btn=""></button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</main>
+
+
+
+
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+		// var arrow = $ts.getEl('.page_1 .clickObj');
+		// var arrowWrong = $ts.getEl('.page_1 .clickWrong');
+		// var pages = $ts.getEl('.page_1 .basicSlider_slides > li');
+		// var _scrollrContent = $ts.getEl('.scroll_content');
+		// var _scrollrHandle = $ts.getEl('.scroll_handler');
+
+		// arrow.forEach(function (objs, index) {
+		// 	objs.addEventListener('click', function () {
+		// 		for(var i = 0; i < pages.length - 1; i++){
+		// 			pages[i].classList.remove('on');
+		// 		}
+		// 		pages[index+1].classList.add('on');
+		// 		_scrollrContent[index+1].setAttribute('style','top:'+ pages[index+1].dataset.y1 +'px;transition:top .2s;');
+		// 		_scrollrHandle[index+1].setAttribute('style', 'top:'+ pages[index+1].dataset.y2 +'px;transition:top .2s;');
+		// 		window.$efSound.correct();
+		// 	});
+		// });
+
+		// arrowWrong.forEach(function(objs, index){
+		// 	objs.addEventListener('click', function(){
+		// 		window.$efSound.incorrect();
+		// 	});
+		// });
+	}, false);
+</script>
+
+</body>
+</html>

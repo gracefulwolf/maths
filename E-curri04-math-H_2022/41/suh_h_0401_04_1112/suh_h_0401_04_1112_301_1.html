@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<style>
+		.self section{display:flex; flex-direction:row;}
+		.self section > .starContainer{flex:1 1 auto; display:flex; justify-content:center; position:relative; top:150px; height:300px; margin:0 10px; background-size:auto 211px; background-position:0 bottom; background-repeat:no-repeat; background-image:url(./images/finish_self_starContainer.svg); /* outline:1px solid tomato;  */}
+		.self section > .starContainer.yellow{background-position-x:-321px;}
+		.self section > .starContainer.green{top:0;}
+		.self section > .starContainer.purple{background-position-x:calc(-321px * 2);}
+		.self section > .starContainer > .star{position:relative; width:70px; height:70px; background-size:auto 70px; background-position:70px 0; background-repeat:no-repeat; cursor:pointer;}
+		.self section > .starContainer > .star:nth-of-type(1),
+		.self section > .starContainer > .star:nth-of-type(5){top:94px; margin:0 -25px; transform:rotate(2deg);}
+		.self section > .starContainer > .star:nth-of-type(2),
+		.self section > .starContainer > .star:nth-of-type(4){top:26px; margin:0 12px; transform:rotate(38deg);}
+		.self section > .yellow .star{background-position:-70px 0; background-image:url(./images/finish_self_star_yellow.svg);}
+		.self section > .green .star{background-position:-70px 0; background-image:url(./images/finish_self_star_green.svg);}
+		.self section > .purple .star{background-position:-70px 0; background-image:url(./images/finish_self_star_purple.svg);}
+		.self section > .yellow .star.fill{background-position:0 0;}
+		.self section > .green .star.fill{background-position:0 0;}
+		.self section > .purple .star.fill{background-position:0 0;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap"  class="partnerContainer life">
+	<header>
+		<h1><ins class="icon"></ins>스스로 평가해 볼까요</h1>
+		<div class="title">오늘 학습한 내용을 떠올려 보고, 스스로 평가해 봅시다.</div>
+	</header>
+	<main class="self">
+		<div class="contentsBox">
+			<section>
+				<!-- <div class="study_guide"><em>클릭</em>하세요.</div> -->
+				<div class="js-starContainer starContainer yellow" data-length="5"></div>
+				<div class="js-starContainer starContainer green" data-length="5"></div>
+				<div class="js-starContainer starContainer purple" data-length="5"></div>
+			</section>
+		</div>
+	</main>
+</div>
+<div id="loadingContainer">
+  	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+	(function() {
+  // page10(self)
+  function setStars() {
+    var ATTR_INDEX = 'index';
+    var ATTR_LENGTH = 'data-length';
+    var container = document.querySelector('.self');
+    var starContainers = $ts.getEl('.js-starContainer', container);
+
+    function setStar(container) {
+      var length = container.getAttribute(ATTR_LENGTH);
+
+      function clickedStar() {
+        var index = this.getAttribute(ATTR_INDEX);
+
+        if (this.classList.contains('fill')) {
+          var isFirstStar = index == 0;
+          var isLastFill = container.querySelectorAll('.fill').length === 1;
+          if (isLastFill && isFirstStar) this.classList.remove('fill');
+          for (var i = (index-0); i < length; i++) {
+            var removeStar = container.querySelector('.star[index="'+(i+1)+'"]');
+            removeStar && removeStar.classList.remove('fill');
+          }
+
+        } else {
+          for (var i = 0; i <= index; i++) {
+            container.querySelector('.star[index="'+i+'"]').classList.add('fill');
+          }
+        }
+        window.$efSound.click();
+      }
+
+      for (var i = 0; i < length; i++) {
+        var star = document.createElement('div');
+        star.classList.add('star');
+        star.setAttribute(ATTR_INDEX, i);
+        star.addEventListener('click', clickedStar);
+        container.appendChild(star);
+      }
+    }
+
+    function reset() {
+      var filledStars = $ts.getEl('.fill', container);
+
+      if (filledStars.length > 0) filledStars.forEach(function(star) {
+        star.classList.remove('fill');
+      })
+    }
+
+    starContainers.forEach(setStar);
+
+    return {
+      reset: reset
+    }
+  }
+
+  window.addEventListener('load', function() {
+    window.stars = setStars();
+  });
+})();
+  }, false);
+</script>
+
+</body>
+</html>

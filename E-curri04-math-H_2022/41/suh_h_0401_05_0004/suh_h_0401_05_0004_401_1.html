@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+
+		.flex-box .left{width: 550px;margin-left: 90px;}
+		.flex-box .left img{width: 550px;/* text-align: center; */}
+		.page_4 .flex-box .left img,
+		.page_5 .flex-box .left img{width: 560px;margin-left: 0px;}
+		.flex-box .lineBox{width: 550px;margin-bottom: 10px;padding: 4px 0;}
+		.flex-box .toggle{height: 60px;vertical-align: middle;margin-top: 150px;margin-left: 100px;}
+		.page_3 .flex-box .toggle{
+			height: 199px;
+			margin-left: 100px;
+			margin-top: 80px;
+		}
+		.checkContainer .contentsBox h2{margin-bottom:4px}
+		.page_1 h2,
+		.page_2 h2,
+		.page_3 h2{height: 156px;}
+
+
+		.zoomBtn:after{right:-30px;bottom:-10px}
+		.page_4 .zoomBtn:after,
+		.page_5 .zoomBtn:after{right:-40px;bottom:-5px;}
+		.popup_contents .box{position: absolute;top:50%;left:50%;transform: translate(-50%, -50%);}
+		.popup_contents .lineBox{width:700px;margin:0 auto;}
+		.popup_contents .conImg{margin-top:20px;text-align:center;position: relative;}
+		.popup_contents .conImg img{width:900px;height:auto;}
+		.pop_page_1 .popup_contents .txt{display:none;}
+		.popup_contents .txt{position: absolute;font-size: 32px;}
+		.popup_contents .txt1{top: 112px;left: 163px;width: 50px;text-align:right;}
+		.popup_contents .txt2{top: 278px;left: 163px;width: 50px;text-align:right;}
+		.popup_contents .txt3{top: 425px;left: 163px;width: 50px;text-align:right;}
+		.popup_contents .txt4{top: 461px;left: 2px;letter-spacing: -5px;}
+		.popup_contents .txt5{top: 482px;left: 150px;}
+		.popup_contents .txt6{top: 475px;left: 238px;}
+		.popup_contents .txt7{top: 475px;left: 374px;}
+		.popup_contents .txt8{top: 475px;left: 493px;letter-spacing: -5px;}
+		.popup_contents .txt9{top: 475px;left: 661px;}
+		.popup_contents .txt10{top: 475px;left: 800px;}
+
+	.page_10 .--lineBoxTitle{display: inline-block; padding: 2px 10px; line-height: 1.15; text-align: center;}
+	.page_10 .--graph{display: block; position: relative; width: 850px; height: 320px; margin: 0 auto; background: url(./images/suh_h_0401_05_0004_401_1/suh_h_0401_05_0004_401_1_1.png) no-repeat 50% 50% / 850px 100%;}
+	.--text{position: absolute; font-size: 35px;}
+	.page_10 .--text.n1{top: 7px;left: 1px;}
+	.page_10 .--text.n2{top: 18px;left: 147px;}
+	.page_10 .--text.n3{top: 134px;left: 169px;}
+	.page_10 .--text.n4{top: 225px;left: 210px;}
+	.page_10 .--text.n5{top: 261px;left: 9px;}
+	.page_10 .--text.n6{top: 278px;left: 168px;}
+	.page_10 .--text.n7{top: 270px;left: 288px;}
+	.page_10 .--text.n8{top: 269px;left: 437px;}
+	.page_10 .--text.n9{top: 270px;left: 581px;}
+	.page_10 .--text.n10{top: 269px;left: 729px;}
+	.page_10 .--text.n11{top: 246px;left: 630px;}
+	.page_10 .--text.n12{top: 246px;left: 740px;}
+	.page_10 .--stick{display: block;position: absolute;bottom: 50px;left: 8px;width: 56px;height: 200px; border: solid #00a0ff; border-width: 3px 3px 0;  background: #00a0ff88;}
+	.page_10 .--text.n7 .--stick{height: 152px;}
+	.page_10 .--text.n8 .--stick{height: 174px;}
+	.page_10 .--text.n9 .--stick{height: 130px;}
+	.page_10 .--text.n10 .--stick{height: 152px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+				<a href="./data/5단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+
+					<li class="page_10" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<h2><ins class="dot orange"></ins><span>
+									막대그래프를 하나 골라서 그리고, 이야기를 만들어 보시오.
+								</span></h2>
+								<section>
+									<div class="textAlignC">
+										<div class="lineBox sky --lineBoxTitle">
+											<div class="toggle noBg" data-toggle-obj="0">
+												<div class="answer" data-toggle-target="0">
+													<ins class="bullet exam">예</ins>
+													슬기네 학교 4학년 학생들이 좋아하는 과목
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="--graph mt_10">
+										<div class="--text n1">
+											(<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													명
+												</div>
+											</div>)
+										</div>
+										<div class="--text n2">
+											<div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													100
+												</div>
+											</div>
+										</div>
+										<div class="--text n3">
+											<div class="toggle" data-toggle-obj="3">
+												<div class="answer" data-toggle-target="3">
+													50
+												</div>
+											</div>
+										</div>
+										<div class="--text n4">
+											0
+										</div>
+										<div class="--text n5">
+											<div class="toggle noBg" data-toggle-obj="5">
+												<div class="answer" data-toggle-target="5">
+													학생 수
+												</div>
+											</div>
+										</div>
+										<div class="--text n6">
+											<div class="toggle noBg" data-toggle-obj="6">
+												<div class="answer" data-toggle-target="6">
+													과목
+												</div>
+											</div>
+										</div>
+										<div class="--text n7">
+											<div class="toggle noBg" data-toggle-obj="7">
+												<div class="answer" data-toggle-target="7">
+													국어
+													<span class="--stick"></span>
+												</div>
+											</div>
+										</div>
+										<div class="--text n8">
+											<div class="toggle noBg" data-toggle-obj="8">
+												<div class="answer" data-toggle-target="8">
+													수학
+													<span class="--stick"></span>
+												</div>
+											</div>
+										</div>
+										<div class="--text n9">
+											<div class="toggle noBg" data-toggle-obj="9">
+												<div class="answer" data-toggle-target="9">
+													과학
+													<span class="--stick"></span>
+												</div>
+											</div>
+										</div>
+										<div class="--text n10">
+											<div class="toggle noBg" data-toggle-obj="10">
+												<div class="answer" data-toggle-target="10">
+													사회
+													<span class="--stick"></span>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+									<a href="./data/5단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2><ins class="dot orange"></ins><span class="ls1_5">
+									막대그래프를 하나 골라서 그리고, 이야기를 만들어 보시오.
+								</span></h2>
+								<section>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer textAlignJ" data-toggle-target="1">
+												<ins class="bullet exam">예</ins>
+												<div>
+													우리 학교에서 좋아하는 과목이라는 주제로 이야기를 하였다.<br>
+													나는 수학을 가장 좋아한다.<br>
+													우리 학교 학생들은 국어, 수학, 사회, 과학을 골고루 좋아한다.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+									<a href="./data/5단원_4차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+								</section>
+							</li>
+
+						</ul>
+					</li>
+
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>행복 마을에서 일주일 동안 배출된 쓰레기의 양을 조사하여 나타낸 막대그래프입니다. 가장 많이 배출된 쓰레기는 무엇인지 쓰시오.</span></h2>
+						<section>
+							<div class="flex-box">
+								<div class="left">
+									<div class="lineBox sky textAlignC">일주일 동안 배출된 쓰레기 양</div>
+									<div class="imgContainer popBtn zoomBtn" data-popup-btn="1">
+										<img src="images/suh_0401_05_0003_401_1/suh_0401_05_0003_401_1_1.png" alt="">
+									</div>
+								</div>
+								<div class="toggle right" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">플라스틱류</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span style="letter-spacing:-1px;">행복 마을에서 일주일 동안 배출된 쓰레기의 양을 조사하여 나타낸 막대그래프입니다. 음식물 쓰레기는 몇 kg인지 쓰시오.</span></h2>
+						<section>
+							<div class="flex-box">
+								<div class="left">
+									<div class="lineBox sky textAlignC">일주일 동안 배출된 쓰레기 양</div>
+									<div class="imgContainer popBtn zoomBtn" data-popup-btn="1">
+										<img src="images/suh_0401_05_0003_401_1/suh_0401_05_0003_401_1_1.png" alt="">
+									</div>
+								</div>
+								<div class="toggle right" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">8 kg</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>행복 마을에서 일주일 동안 배출된 쓰레기의 양을 조사하여 나타낸 막대그래프입니다. 많이 배출된 쓰레기부터 차례로 말해 보시오.</span></h2>
+						<section>
+							<div class="flex-box">
+								<div class="left">
+									<div class="lineBox sky textAlignC">일주일 동안 배출된 쓰레기 양</div>
+									<div class="imgContainer popBtn zoomBtn" data-popup-btn="1">
+										<img src="images/suh_0401_05_0003_401_1/suh_0401_05_0003_401_1_1.png" alt="">
+									</div>
+								</div>
+								<div class="toggle right" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">플라스틱류, 종이류,<br> 음식물, 기타, 병류</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>지윤이네 반 학생들이 여름 방학에 배우고 싶은 악기를 조사하여 나타낸 막대그래프입니다. 학생들이 두 번째로 많이 배우고 싶어 하는 악기는 무엇인지 쓰시오.</span></h2>
+						<section>
+							<div class="flex-box">
+								<div class="left">
+									<div class="lineBox sky textAlignC">배우고 싶은 악기별 학생 수</div>
+									<div class="imgContainer popBtn zoomBtn" data-popup-btn="2">
+										<img src="images/suh_0401_05_0003_401_1//suh_0401_05_0003_401_1_2.png" alt="">
+									</div>
+								</div>
+								<div class="toggle right" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">바이올린</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>지윤이네 반 학생들이 여름 방학에 배우고 싶은 악기를 조사하여 나타낸 막대그래프입니다. 플룻을 배우고 싶은 학생 수의 3배인 악기는 무엇인지 구하시오.</span></h2>
+						<section>
+							<div class="flex-box">
+								<div class="left">
+									<div class="lineBox sky textAlignC">배우고 싶은 악기별 학생 수</div>
+									<div class="imgContainer popBtn zoomBtn" data-popup-btn="2">
+										<img src="images/suh_0401_05_0003_401_1//suh_0401_05_0003_401_1_2.png" alt="">
+									</div>
+								</div>
+								<div class="toggle right" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">피아노</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="box">
+							<div class="lineBox sky textAlignC">일주일 동안 배출된 쓰레기 양</div>
+							<div class="conImg">
+								<img src="./images/suh_0401_05_0003_401_1/suh_0401_05_0003_401_1_1.png">
+								<span class="txt txt1">10</span>
+								<span class="txt txt2">5</span>
+								<span class="txt txt3">0</span>
+								<span class="txt txt4">쓰레기 양</span>
+								<span class="txt txt5">종류</span>
+								<span class="txt txt6">음식물</span>
+								<span class="txt txt7">종의류</span>
+								<span class="txt txt8">플라스틱류</span>
+								<span class="txt txt9">병류</span>
+								<span class="txt txt10">기타</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="whole pop_page_1" data-popup-page="2">
+					<div class="popup_contents">
+						<div class="box">
+							<div class="lineBox sky textAlignC">배우고 싶은 악기별 학생 수</div>
+							<div class="conImg">
+								<img src="./images/suh_0401_05_0003_401_1/suh_0401_05_0003_401_1_2.png">
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="solve pop_page_3" data-popup-page="3">
+					<div class="popup_contents">
+						<p>가로와 세로에 각각 무엇을 나타낼지 정합니다.</p>
+					</div>
+				</li>
+
+				<li class="solve pop_page_5" data-popup-page="5">
+					<div class="popup_contents">
+						<p>O형인 학생은 7명이므로 7칸으로 나타내야 합니다.</p>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj){
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj){
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function (){
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

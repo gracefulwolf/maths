@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+
+		.--titleBox{display: inline-block; width: 480px; padding-top: 2px; padding-bottom: 2px; text-align: center;}
+		.page_1 .charSpriteImg{position: absolute;top: 50px;left: 210px;}
+		.page_1 .balloon{top: 280px;left: 490px;}
+		.examViewBtn.reset:before{content:"다시하기";}
+		.page_1 .tableContainer.brown table tr th.--border,
+		.page_1 .tableContainer.brown table tr td.--border{border-right: 0;}
+		.page_1 .tableContainer.brown.on table tr th.--border,
+		.page_1 .tableContainer.brown.on table tr td.--border{border-right: 2px solid #00a0ff;}
+
+		.page_2 .eye{display: inline-block; margin: 5px 0 0 10px;}
+		.page_2 .--graph{position: relative; width: 800px; height: 340px; margin: 0 auto; background: url(./images/suh_h_0401_05_0506_203_1/suh_h_0401_05_0506_203_1_1.png) no-repeat 50% 50% / 800px 100%;}
+		.page_2 .--text{position: absolute;font-size: 35px;}
+		.page_2 .--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_h_0401_05_0506_203_1/suh_h_0401_05_0506_203_1_2.png) no-repeat 50% 50% / 800px 100%;}
+		.page_2 .--text.n1{top: 0;left: 10px; z-index: 1;}
+		.page_2 .--text.n2{top: 248px;left: 145px; z-index: 1;}
+		.page_2 .--text.n3{top: -6px;left: 125px;text-align: right;line-height: 85px;}
+		.page_2 .--text.n4{top: 280px;left: 0px;}
+		.page_2 .--text.n5{top: 300px;left: 110px;}
+		.page_2 .--text.n6{top: 295px;left: 177px;display: flex;width: 620px;align-items: center;justify-content: space-around;}
+		.page_2 .--text.n6 > div{flex:1; text-align: center;}
+		.page_2 .--text.n7{top: 2px; left: 22px;}
+		.page_2 .--border{position: absolute; top: 0; height: 100%; border-left: 2px solid #00a0ff;}
+		.page_2 .--border.n1{left: 330px;}
+		.page_2 .--border.n2{left: 485px;}
+		.page_2 .--border.n3{left: 640px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title">
+			내 조사 질문에 대한 자료를 표와 막대그래프로 나타내 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							수집한 자료를 표로 나타내 보세요.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="lineBox sky --titleBox">
+									<div class="answer" data-toggle-obj="1" data-toggle-target="1">좋아하는 계절</div>
+								</div>
+							</div>
+							<div class="tableContainer brown fix mt_20" data-toggle-target="1">
+								<table>
+									<tr>
+										<th class="lightBrown"><div class="answer" data-toggle-target="1">계절</div></th>
+										<th class="lightBrown --border"><div class="answer" data-toggle-target="1">봄</div></th>
+										<th class="lightBrown --border"><div class="answer" data-toggle-target="1">여름</div></th>
+										<th class="lightBrown --border"><div class="answer" data-toggle-target="1">가을</div></th>
+										<th class="lightBrown --border"><div class="answer" data-toggle-target="1">겨울</div></th>
+										<th class="lightBrown"><div class="answer" data-toggle-target="1">합계</div></th>
+									</tr>
+									<tr>
+										<th class="lightBrown"><div class="answer" data-toggle-target="1">학생 수 (명)</div></th>
+										<td class="--border"><div class="answer" data-toggle-target="1">5</div></td>
+										<td class="--border"><div class="answer" data-toggle-target="1">8</div></td>
+										<td class="--border"><div class="answer" data-toggle-target="1">2</div></td>
+										<td class="--border"><div class="answer" data-toggle-target="1">13</div></td>
+										<td><div class="answer" data-toggle-target="1">28</div></td>
+									</tr>
+								</table>
+							</div>
+							<div class="single charSpriteImg girl_4"></div>
+							<div class="balloon left ctTail textAlignC deeppink">
+								표와 막대그래프를<br> 칸을 나누어<br> 사용해 보세요.
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							표를 막대그래프로 나타내 보세요. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">표 보기</div>
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="lineBox sky --titleBox">
+									<div class="answer" data-toggle-obj="1" data-toggle-target="1">좋아하는 계절</div>
+								</div>
+							</div>
+							<div class="--graph mt_10">
+								<div class="--text n1">(&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+								<div class="--text n2">0</div>
+								<div class="answer" data-toggle-target="1">
+									<div class="--text --answerImg"></div>
+									<div class="--text n3">15<br>10<br>5</div>
+									<div class="--text n4">학생 수</div>
+									<div class="--text n5">계절</div>
+									<div class="--text n6">
+										<div>봄</div>
+										<div>여름</div>
+										<div>가을</div>
+										<div>겨울</div>
+									</div>
+									<div class="--text n7">명</div>
+									<div class="--border n1"></div>
+									<div class="--border n2"></div>
+									<div class="--border n3"></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+			<li class="whole " data-popup-page="1">
+				<div class="popup_contents">
+					<div>
+						<div class="flexListContainer jcenter center" style="margin-top: 240px;">
+							<div class="mr_10">
+								<ins class="bullet exam">예</ins>
+							</div>
+							<div class="lineBox sky --titleBox">
+								좋아하는 계절
+							</div>
+						</div>
+						<div class="tableContainer brown fix mt_20">
+							<table>
+								<tr>
+									<th class="lightBrown">계절</th>
+									<th class="lightBrown">봄</th>
+									<th class="lightBrown">여름</th>
+									<th class="lightBrown">가을</th>
+									<th class="lightBrown">겨울</th>
+									<th class="lightBrown">합계</th>
+								</tr>
+								<tr>
+									<th class="lightBrown">학생 수 (명)</th>
+									<td>5</td>
+									<td>8</td>
+									<td>2</td>
+									<td>13</td>
+									<td>28</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</section>
+
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>

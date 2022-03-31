@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.popup_contents .vMid{height:500px;}
+	.page-iframe{position:fixed; z-index:1; top:160px; left:55px; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+	.page-iframe + .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.page-iframe{top: 156px; width:1280px; height: 580px; border:0; transform: scale(0.828125) translate(-130px, -20px);}
+
+
+	/* 개별 */
+	.--lineBox{display: inline-block; padding-top: 0; padding-bottom: 0; font-size: 40px; text-align: center;}
+
+	.page_1 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+	.page_1 .bullet.exam{position: absolute; top: -50px; left: 0; opacity: 0;}
+	.page_1 .bullet.exam.on{opacity: 1;}
+	.pop_page_100 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+
+
+	/*  아래는 그래프 크기를 크게 작업했으나, 뒷 문제의 그래프 크기를 맞추기 위해 주석처리함.
+	.page_2 .--graph{position: relative; width: 660px; height: 360px; margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0005_3.png) no-repeat 50% 50% / contain;}
+	.page_2 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_4.png) no-repeat 50% 50% / contain;}
+	.page_2 .--text{position: absolute;}
+	.page_2 .--text.n1{top: 5px;left: 5px;}
+	.page_2 .--text.n2{top: 32px;left: 96px;text-align: right;line-height: 102px;}
+	.page_2 .--text.n3{top: 244px;left: 120px;}
+	.page_2 .--text.n4{top: 273px;left: -8px;}
+	.page_2 .--text.n5{top: 310px;left: 75px;}
+	.page_2 .--text.n6{top: 296px;left: 192px;}
+	.page_2 .--text.n7{top: 296px;left: 302px;}
+	.page_2 .--text.n8{top: 296px;left: 430px;}
+	.page_2 .--text.n9{top: 296px;left: 556px;}
+	.pop_page_200 .--graph{position: relative; width: 690px; height: 330px; margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0005_6.png) no-repeat 50% 50% / contain;}
+	.pop_page_200 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_7.png) no-repeat 50% 50% / contain;}
+	.pop_page_200 .--text{position: absolute;}
+	.pop_page_200 .--text.n1{top: 5px;left: 5px;}
+	.pop_page_200 .--text.n2{top: -8px;left: 105px;text-align: right;line-height: 102px;}
+	.pop_page_200 .--text.n3{top: 210px;left: 128px;}
+	.pop_page_200 .--text.n4{top: 240px;left: -10px;}
+	.pop_page_200 .--text.n5{top: 280px;left: 83px;}
+	.pop_page_200 .--text.n6{top: 268px;left: 188px;}
+	.pop_page_200 .--text.n7{top: 268px;left: 318px;}
+	.pop_page_200 .--text.n8{top: 268px;left: 435px;}
+	.pop_page_200 .--text.n9{top: 268px;left: 582px;}
+	.pop_page_200 .page-iframe{top: 240px;} */
+	.page_2 .eye{display: inline-block; position: static; margin: 0 0 0 8px; vertical-align: 9px;}
+	.page_2 .--graph{position: relative;width: 600px;height: 250px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_3.png) no-repeat 50% 50% / 600px 100%;}
+	.page_2 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_4.png) no-repeat 50% 50% / 600px 100%;}
+	.page_2 .--text{position: absolute;font-size: 35px;}
+	.page_2 .--text.n1{top: 5px;left: 5px;}
+	.page_2 .--text.n2{top: 21px;left: 90px;text-align: right;line-height: 70px;}
+	.page_2 .--text.n3{top: 160px;left: 110px;}
+	.page_2 .--text.n4{top: 183px;left: -8px;}
+	.page_2 .--text.n5{top: 212px;left: 70px;}
+	.page_2 .--text.n6{top: 202px;left: 178px;}
+	.page_2 .--text.n7{top: 202px;left: 275px;}
+	.page_2 .--text.n8{top: 202px;left: 393px;}
+	.page_2 .--text.n9{top: 202px;left: 508px;}
+
+	.pop_page_200 .--graph{position: relative;width: 580px;height: 260px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_6.png) no-repeat 50% 50% / 580px 100%;}
+	.pop_page_200 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_7.png) no-repeat 50% 50% / 580px 100%;}
+	.pop_page_200 .--text{position: absolute;font-size: 35px;}
+	.pop_page_200 .--text.n1{top: 5px;left: 5px;}
+	.pop_page_200 .--text.n2{top: -7px;left: 87px;text-align: right;line-height: 82px;}
+	.pop_page_200 .--text.n3{top: 158px;left: 108px;}
+	.pop_page_200 .--text.n4{top: 188px;left: -10px;}
+	.pop_page_200 .--text.n5{top: 223px;left: 63px;}
+	.pop_page_200 .--text.n6{top: 208px;left: 156px;}
+	.pop_page_200 .--text.n7{top: 208px;left: 266px;}
+	.pop_page_200 .--text.n8{top: 208px;left: 364px;}
+	.pop_page_200 .--text.n9{top: 208px;left: 492px;}
+	.pop_page_200 .page-iframe{top: 240px;}
+
+
+	.page_3 .--graph{position: relative;width: 600px;height: 250px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_4.png) no-repeat 50% 50% / 600px 100%;}
+	.page_3 .--text{position: absolute;font-size: 35px;}
+	.page_3 .--text.n1{top: 5px;left: 5px;}
+	.page_3 .--text.n2{top: 21px;left: 90px;text-align: right;line-height: 70px;}
+	.page_3 .--text.n3{top: 160px;left: 110px;}
+	.page_3 .--text.n4{top: 183px;left: -8px;}
+	.page_3 .--text.n5{top: 212px;left: 70px;}
+	.page_3 .--text.n6{top: 202px;left: 178px;}
+	.page_3 .--text.n7{top: 202px;left: 275px;}
+	.page_3 .--text.n8{top: 202px;left: 393px;}
+	.page_3 .--text.n9{top: 202px;left: 508px;}
+	.pop_page_300 .--graph{position: relative;width: 580px;height: 260px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_7.png) no-repeat 50% 50% / 580px 100%;}
+	.pop_page_300 .--text{position: absolute;font-size: 35px;}
+	.pop_page_300 .--text.n1{top: 5px;left: 5px;}
+	.pop_page_300 .--text.n2{top: -7px;left: 87px;text-align: right;line-height: 82px;}
+	.pop_page_300 .--text.n3{top: 158px;left: 108px;}
+	.pop_page_300 .--text.n4{top: 188px;left: -10px;}
+	.pop_page_300 .--text.n5{top: 223px;left: 63px;}
+	.pop_page_300 .--text.n6{top: 208px;left: 156px;}
+	.pop_page_300 .--text.n7{top: 208px;left: 266px;}
+	.pop_page_300 .--text.n8{top: 208px;left: 364px;}
+	.pop_page_300 .--text.n9{top: 208px;left: 492px;}
+
+	.pop_page_460 .--lineBox{margin-top: 200px; font-size: 40px;}
+	.page_4 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+	.page_4 .bullet.exam{position: absolute; top: -50px; left: 0; opacity: 0;}
+	.page_4 .bullet.exam.on{opacity: 1;}
+	.pop_page_100 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+	.pop_page_400 td .toggle{width: 100%;}
+	.pop_page_400 .bullet.exam{position: absolute; top: -50px; left: 0; opacity: 0;}
+	.pop_page_400 .bullet.exam.on{opacity: 1;}
+
+
+	.page_6 .lineBox{display: inline-block; line-height: 1.2;}
+	.page_6 .lineBox .toggle{display: block;}
+	.page_6 .--graph{position: relative;width: 580px;height: 250px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_12.png) no-repeat 50% 50% / 580px 100%;}
+	.page_6 .--text{position: absolute;}
+	.page_6 .--text.n1{top: -1px;left: 22px;text-align: center;line-height: 50px;}
+	.page_6 .--text.n2{top: 165px;left: -6px;text-align: right;line-height: 108px;}
+	.page_6 .--text.n3{top: 219px;left: 70px;}
+	.page_6 .--text.n4{top: 194px;left: 325px;}
+	.page_6 .--text.n5{top: 195px;left: 465px;}
+	.page_6 .--text.n6{top: 201px;left: 531px;}
+	.page_6 .--text.n7{top: 198px;left: 516px;}
+	.page_6 .--text.n8{top: 194px;left: 187px;}
+	.page_6 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_13.png) no-repeat 50% 50% / 580px 100%;}
+	.page_6 .eye{top: 105px; left: 740px; z-index: 2;}
+	.page_6 .page-iframe{top: 175px; height: 560px;}
+
+
+	.pop_page_600 .lineBox{display: inline-block; line-height: 1.2;}
+	.pop_page_600 .lineBox .toggle{display: block;}
+	.pop_page_600 .--graph{position: relative;width: 620px;height: 280px;margin: 10px auto 0;background: url(./images/suhi_p_0401_05_0005_14.png) no-repeat 50% 50% / contain;}
+	.pop_page_600 .--text{position: absolute;}
+	.pop_page_600 .--text.n1{top: -2px;left: 50px;text-align: center;line-height: 56px;}
+	.pop_page_600 .--text.n2{top: 190px;left: 3px;text-align: right;line-height: 108px;}
+	.pop_page_600 .--text.n3{top: 238px;left: 93px;}
+	.pop_page_600 .--text.n4{top: 225px;left: 348px;}
+	.pop_page_600 .--text.n5{top: 224px;left: 500px;}
+	.pop_page_600 .--text.n6{top: 232px;left: 569px;}
+	.pop_page_600 .--text.n7{top: 228px;left: 553px;}
+	.pop_page_600 .--text.n8{top: 220px;left: 200px;}
+	.pop_page_600 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0005_15.png) no-repeat 50% 50% / contain;}
+	.pop_page_600 .page-iframe{top: 250px;}
+
+
+	.pop_page_601 .--lineBox{margin-top: 230px;}
+
+
+	.page_6 h2 .bullet.number{width: 40px; height: 40px; line-height: 38px; vertical-align: 5px;}
+
+	.bullet.number.green{width: 40px; height: 40px; border: 2px solid #6dbc4b; color:#6dbc4b; line-height: 38px;}
+	[data-ox-obj] {display: inline-block;}
+	.icon[data-ox-target]{position: absolute; top: -5px; left: 50%; width: 60px; height: 60px; margin-left: -30px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">자료를 조사하여 막대그래프로 나타내 볼까요</span>
+		<span class="sub-page">76~77쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4~6</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					계절별로 태어난 사람 수를 조사하여 표로 나타내 보세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							태어난 계절별 사람 수
+						</div>
+					</div>
+					<div class="tableContainer green fix mt_10">
+						<div class="bullet exam" data-toggle-target="1">예</div>
+						<div class="bullet exam" data-toggle-target="2">예</div>
+						<div class="bullet exam" data-toggle-target="3">예</div>
+						<div class="bullet exam" data-toggle-target="4">예</div>
+						<div class="bullet exam" data-toggle-target="5">예</div>
+						<table>
+							<tr>
+								<th>계절</th>
+								<th>봄</th>
+								<th>여름</th>
+								<th>가을</th>
+								<th>겨울</th>
+								<th>합계</th>
+							</tr>
+							<tr>
+								<th>사람 수<br>(명)</th>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											13
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											4
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											3
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">
+											6
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="5">
+										<div class="answer" data-toggle-target="5">
+											26
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="100" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+				<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="111" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					표를 보고 막대그래프로 나타내 보세요. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="130" data-popup-parent="hidden">표 보기</div>
+				</span></h2>
+
+				<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							태어난 계절별 사람 수
+						</div>
+					</div>
+					<div class="--graph" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1"></div>
+						<div class="--text n1">(명)</div>
+						<div class="--text n2">10<br>5</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">사람 수</div>
+						<div class="--text n5">계절</div>
+						<div class="--text n6">봄</div>
+						<div class="--text n7">여름</div>
+						<div class="--text n8">가을</div>
+						<div class="--text n9">겨울</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="200" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+				<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="112" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					막대그래프를 보고 알 수 있는 내용을 써 보세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							태어난 계절별 사람 수
+						</div>
+					</div>
+					<div class="--graph">
+						<div class="--text n1">(명)</div>
+						<div class="--text n2">10<br>5</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">사람 수</div>
+						<div class="--text n5">계절</div>
+						<div class="--text n6">봄</div>
+						<div class="--text n7">여름</div>
+						<div class="--text n8">가을</div>
+						<div class="--text n9">겨울</div>
+					</div>
+					<div class="toggle mt_10" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet exam">예</ins>
+									<div>
+										가족이나 친척 그리고 친구들이 가장 많이 태어난 계절은 봄입니다.
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="300" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+				<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="113" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+			<li class="page_4to6">
+				<h2>[<ins class="number mr_0">4</ins>~<ins class="number mr_0">6</ins>]<span class="ml_10" style="letter-spacing: 1px;">
+					연경이네 반 학생들이 배우고 싶어 하는 악기를 조사한 자료입니다. 물음에 답하세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							배우고 싶어 하는 악기
+						</div>
+					</div>
+					<div class="tableContainer green fix mt_10">
+						<table>
+							<tr>
+								<td>피아노</td>
+								<td>바이올린</td>
+								<td>플루트</td>
+								<td>바이올린</td>
+								<td>피아노</td>
+								<td>가야금</td>
+							</tr>
+							<tr>
+								<td>바이올린</td>
+								<td>피아노</td>
+								<td>피아노</td>
+								<td>가야금</td>
+								<td>가야금</td>
+								<td>피아노</td>
+							</tr>
+							<tr>
+								<td>피아노</td>
+								<td>플루트</td>
+								<td>가야금</td>
+								<td>피아노</td>
+								<td>바이올린</td>
+								<td>바이올린</td>
+							</tr>
+							<tr>
+								<td>가야금</td>
+								<td>피아노</td>
+								<td>바이올린</td>
+								<td>바이올린</td>
+								<td>피아노</td>
+								<td>피아노</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span>
+					조사한 결과를 표로 나타내 보세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							배우고 싶어 하는 악기별 학생 수
+						</div>
+					</div>
+					<div class="tableContainer green fix mt_10">
+						<div class="bullet exam" data-toggle-target="1">예</div>
+						<div class="bullet exam" data-toggle-target="2">예</div>
+						<div class="bullet exam" data-toggle-target="3">예</div>
+						<div class="bullet exam" data-toggle-target="4">예</div>
+						<div class="bullet exam" data-toggle-target="5">예</div>
+						<div class="bullet exam" data-toggle-target="6">예</div>
+						<div class="bullet exam" data-toggle-target="7">예</div>
+						<div class="bullet exam" data-toggle-target="8">예</div>
+						<div class="bullet exam" data-toggle-target="9">예</div>
+						<table>
+							<tr>
+								<th>악기</th>
+								<th>
+									<div class="toggle noBg" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											피아노
+										</div>
+									</div>
+								</th>
+								<th>
+									<div class="toggle noBg" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											바이올린
+										</div>
+									</div>
+								</th>
+								<th>
+									<div class="toggle noBg" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											플루트
+										</div>
+									</div>
+								</th>
+								<th>
+									<div class="toggle noBg" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">
+											가야금
+										</div>
+									</div>
+								</th>
+								<th>합계</th>
+							</tr>
+							<tr>
+								<th>학생 수<br>(명)</th>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="5">
+										<div class="answer" data-toggle-target="5">
+											10
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="6">
+										<div class="answer" data-toggle-target="6">
+											7
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="7">
+										<div class="answer" data-toggle-target="7">
+											2
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="8">
+										<div class="answer" data-toggle-target="8">
+											5
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="toggle noBg" data-toggle-obj="9">
+										<div class="answer" data-toggle-target="9">
+											24
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="400" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_5" data-quiz="toggle">
+				<h2><ins class="number star">5</ins><span>
+					눈금 한 칸은 몇 명을 나타내야 하나요?
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								1명
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="500" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_6" data-quiz="toggle">
+				<h2><ins class="number star">6</ins><span style="letter-spacing: 0.5px;">
+					배우고 싶어 하는 학생 수가 많은 악기부터 위에서 차례대로 나타나도록 막대가 가로인 막대그래프로 나타내 보세요. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="601" data-popup-parent="hidden">표 보기</div>
+				</span></h2>
+				<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+				<section>
+					<div class="textAlignC mt_40">
+						<div class="lineBox sky">
+							<div class="toggle noBg" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ins class="bullet exam">예</ins>배우고 싶어 하는 악기별 학생 수
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="--graph">
+						<div class="answer" data-toggle-obj="2" data-toggle-target="2">
+							<div class="--text n1">
+								피아노<br>
+								바이올린<br>
+								가야금<br>
+								플루트
+							</div>
+							<div class="--text n2">악기</div>
+							<div class="--text n3">학생 수</div>
+							<div class="--text n4">5</div>
+							<div class="--text n5">10</div>
+							<div class="--text n6">명</div>
+						</div>
+						<div class="--text n7">(&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+						<div class="--text n8">0</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="600" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+
+
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="whole pop_page_601" data-popup-page="601">
+			<div class="popup_contents">
+				<div class="textAlignC">
+					<div class="lineBox sky --lineBox">
+						배우고 싶어 하는 악기별 학생 수
+					</div>
+				</div>
+				<div class="tableContainer green fix mt_10">
+					<table>
+						<tr>
+							<th>악기</th>
+							<th>피아노</th>
+							<th>바이올린</th>
+							<th>플루트</th>
+							<th>가야금</th>
+							<th>합계</th>
+						</tr>
+						<tr>
+							<th>학생 수<br>(명)</th>
+							<td>10</td>
+							<td>7</td>
+							<td>2</td>
+							<td>5</td>
+							<td>24</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</li>
+
+		<li class="whole pop_page_600" data-popup-page="600">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-slide-container="popup">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									<h3 class="mb_10 ls1_5">문수네 반 학생들이 생일에 받고 싶어 하는 선물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet dot deepGreen"></ins>
+											<div>
+												<p class="mb_10">받고 싶어 하는 학생 수가 많은 선물부터 위에서 차례대로 나타나도록 막대가 가로인 막대그래프로 나타내 보세요.</p>
+												<div>
+													<div class="textAlignC">
+														<div class="lineBox sky --lineBox">
+															받고 싶어 하는 선물별 학생 수
+														</div>
+													</div>
+													<div class="tableContainer green fix mt_10">
+														<table>
+															<tr>
+																<th>선물</th>
+																<th>동화책</th>
+																<th>운동화</th>
+																<th>자전거</th>
+																<th>인형</th>
+																<th>합계</th>
+															</tr>
+															<tr>
+																<th>학생 수<br>(명)</th>
+																<td>6</td>
+																<td>12</td>
+																<td>4</td>
+																<td>2</td>
+																<td>24</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot deepGreen"></ins>
+									<div>
+										<h3 class="mb_10 ls1_5">문수네 반 학생들이 생일에 받고 싶어 하는 선물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet dot deepGreen"></ins>
+												<div>
+													<p class="mb_10">받고 싶어 하는 학생 수가 많은 선물부터 위에서 차례대로 나타나도록 막대가 가로인 막대그래프로 나타내 보세요.</p>
+													<div>
+														<div class="textAlignC mt_10">
+															<div class="lineBox sky">
+																<div class="toggle noBg" data-toggle-obj="1">
+																	<div class="answer" data-toggle-target="1">
+																		<ins class="bullet exam">예</ins>받고 싶어 하는 선물별 학생 수
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="--graph">
+															<div class="answer" data-toggle-obj="2" data-toggle-target="2">
+																<div class="--text n1">
+																	운동화<br>
+																	동화책<br>
+																	자전거<br>
+																	인형
+																</div>
+																<div class="--text n2">선물</div>
+																<div class="--text n3">학생수</div>
+																<div class="--text n4">5</div>
+																<div class="--text n5">10</div>
+																<div class="--text n6">명</div>
+															</div>
+															<div class="--text n7">(&nbsp;&nbsp;&nbsp;)</div>
+															<div class="--text n8">0</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="6">
+			<div class="popup_contents">
+				<p style="letter-spacing: 1px;">그래프의 가로에는 학생 수, 세로에는 악기의 종류를 쓰고, 악기별 학생 수만큼 막대를 가로로 나타내고 알맞은 제목을 붙입니다.</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_500" data-popup-page="500">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10" style="letter-spacing: 1px;">문수네 반 학생들이 생일에 받고 싶어 하는 선물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">눈금 한 칸은 몇 명을 나타내야 하나요?</p>
+										<div>
+											<div class="textAlignC">
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														1
+													</div>
+												</div>명
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="5">
+			<div class="popup_contents">
+				<p>가장 큰 수가 10이므로 세로 눈금 한 칸은 1명으로 나타내면 됩니다.</p>
+			</div>
+		</li>
+
+
+		<li class="whole pop_page_400" data-popup-page="400">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList" style="margin-top: -50px;">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10" style="letter-spacing: 1px;">문수네 반 학생들이 생일에 받고 싶어 하는 선물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">조사한 결과를 표로 나타내 보세요.</p>
+										<div>
+											<div class="tableContainer green fix">
+												<table>
+													<tr>
+														<td>동화책</td>
+														<td>운동화</td>
+														<td>동화책</td>
+														<td>자전거</td>
+														<td>인형</td>
+														<td>운동화</td>
+													</tr>
+													<tr>
+														<td>운동화</td>
+														<td>자전거</td>
+														<td>동화책</td>
+														<td>운동화</td>
+														<td>운동화</td>
+														<td>운동화</td>
+													</tr>
+													<tr>
+														<td>운동화</td>
+														<td>운동화</td>
+														<td>운동화</td>
+														<td>인형</td>
+														<td>자전거</td>
+														<td>동화책</td>
+													</tr>
+													<tr>
+														<td>운동화</td>
+														<td>동화책</td>
+														<td>운동화</td>
+														<td>동화책</td>
+														<td>자전거</td>
+														<td>운동화</td>
+													</tr>
+												</table>
+											</div>
+											<div class="textAlignC mt_20">
+												<div class="lineBox sky --lineBox">
+													받고 싶어 하는 선물별 학생 수
+												</div>
+											</div>
+											<div class="tableContainer green fix mt_10">
+												<div class="bullet exam" data-toggle-target="1">예</div>
+												<div class="bullet exam" data-toggle-target="2">예</div>
+												<div class="bullet exam" data-toggle-target="3">예</div>
+												<div class="bullet exam" data-toggle-target="4">예</div>
+												<div class="bullet exam" data-toggle-target="5">예</div>
+												<div class="bullet exam" data-toggle-target="6">예</div>
+												<div class="bullet exam" data-toggle-target="7">예</div>
+												<div class="bullet exam" data-toggle-target="8">예</div>
+												<div class="bullet exam" data-toggle-target="9">예</div>
+												<table>
+													<colgroup>
+														<col style="width: 230px">
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+													</colgroup>
+													<tr>
+														<th>선물</th>
+														<th>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	동화책
+																</div>
+															</div>
+														</th>
+														<th>
+															<div class="toggle noBg" data-toggle-obj="2">
+																<div class="answer" data-toggle-target="2">
+																	운동화
+																</div>
+															</div>
+														</th>
+														<th>
+															<div class="toggle noBg" data-toggle-obj="3">
+																<div class="answer" data-toggle-target="3">
+																	자전거
+																</div>
+															</div>
+														</th>
+														<th>
+															<div class="toggle noBg" data-toggle-obj="4">
+																<div class="answer" data-toggle-target="4">
+																	인형
+																</div>
+															</div>
+														</th>
+														<th>합계</th>
+													</tr>
+													<tr>
+														<th>학생 수(명)</th>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="5">
+																<div class="answer" data-toggle-target="5">
+																	6
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="6">
+																<div class="answer" data-toggle-target="6">
+																	12
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="7">
+																<div class="answer" data-toggle-target="7">
+																	4
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="8">
+																<div class="answer" data-toggle-target="8">
+																	2
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="9">
+																<div class="answer" data-toggle-target="9">
+																	24
+																</div>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+										</div>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="4">
+			<div class="popup_contents">
+				<p>
+					/ 표시를 하면서 빠뜨리지 않도록 세어 표를 완성합니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_301" data-popup-page="301">
+			<div class="popup_contents">
+				<div class="textAlignC" style="margin-top: 220px;">
+					<div class="lineBox sky --lineBox">
+						좋아하는 채소별 학생 수
+					</div>
+				</div>
+				<div class="tableContainer green fix mt_10">
+					<table>
+						<tr>
+							<th>채소</th>
+							<th>오이</th>
+							<th>당근</th>
+							<th>가지</th>
+							<th>시금치</th>
+							<th>상추</th>
+							<th>합계</th>
+						</tr>
+						<tr>
+							<th>학생 수<br>(명)</th>
+							<td>4</td>
+							<td>6</td>
+							<td>2</td>
+							<td>4</td>
+							<td>9</td>
+							<td>25</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</li>
+		<li class="whole pop_page_300" data-popup-page="300">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10 ls1">윤희네 반 학생들이 좋아하는 동물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">막대그래프를 보고 알 수 있는 내용을 써 보세요.</p>
+										<div>
+											<div class="textAlignC">
+												<div class="lineBox sky --lineBox">
+													좋아하는 동물별 학생 수
+												</div>
+											</div>
+											<div class="--graph">
+												<div class="--text n1">(명)</div>
+												<div class="--text n2">10<br>5</div>
+												<div class="--text n3">0</div>
+												<div class="--text n4">학생 수</div>
+												<div class="--text n5">동물</div>
+												<div class="--text n6">기린</div>
+												<div class="--text n7">사자</div>
+												<div class="--text n8">코끼리</div>
+												<div class="--text n9">펭귄</div>
+											</div>
+											<div class="textAlignC">
+												<div class="toggle mt_10" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														<ul class="contentsList">
+															<li>
+																<ins class="bullet exam">예</ins>
+																<div>
+																	가장 많은 학생들이 좋아하는 동물은 펭귄입니다.
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="3">
+			<div class="popup_contents">
+				<p style="letter-spacing: 1px;">
+					“가족이나 친척 그리고 친구들이 태어난 계절이 가장 적은 계절은 가을입니다.” 등 알 수 있는 내용을 써 봅니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_200" data-popup-page="200">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-slide-container="popup">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									<h3 class="mb_10 ls1">윤희네 반 학생들이 좋아하는 동물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet dot deepGreen"></ins>
+											<div>
+												<p class="mb_10">표를 보고 막대그래프로 나타내 보세요.</p>
+												<div>
+													<div class="textAlignC">
+														<div class="lineBox sky --lineBox">
+															좋아하는 동물별 학생 수
+														</div>
+													</div>
+													<div class="tableContainer green fix mt_10">
+														<table>
+															<tr>
+																<th>동물</th>
+																<th>기린</th>
+																<th>사자</th>
+																<th>코끼리</th>
+																<th>펭귄</th>
+																<th>합계</th>
+															</tr>
+															<tr>
+																<th>학생 수<br>(명)</th>
+																<td>3</td>
+																<td>7</td>
+																<td>5</td>
+																<td>9</td>
+																<td>24</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						<section>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot deepGreen"></ins>
+									<div>
+										<h3 class="mb_10">윤희네 반 학생들이 좋아하는 동물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet dot deepGreen"></ins>
+												<div>
+													<p class="mb_10">표를 보고 막대그래프로 나타내 보세요.</p>
+													<div>
+														<div class="textAlignC">
+															<div class="lineBox sky --lineBox">
+																좋아하는 동물별 학생 수
+															</div>
+														</div>
+														<div class="--graph" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1"></div>
+															<div class="--text n1">(명)</div>
+															<div class="--text n2">10<br>5</div>
+															<div class="--text n3">0</div>
+															<div class="--text n4">학생 수</div>
+															<div class="--text n5">동물</div>
+															<div class="--text n6">기린</div>
+															<div class="--text n7">사자</div>
+															<div class="--text n8">코끼리</div>
+															<div class="--text n9">펭귄</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="2">
+			<div class="popup_contents">
+				<p class="ls0">
+					태어난 계절별로 사람 수를 막대로 나타냅니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_100" data-popup-page="100">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList" style="margin-top: -50px;">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10 ls1">윤희네 반 학생들이 좋아하는 동물을 조사하여 나타낸 자료입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">좋아하는 동물별 학생 수를 조사하여 표로 나타내 보세요.</p>
+										<div>
+											<div class="tableContainer green fix">
+												<table>
+													<tr>
+														<td>기린</td>
+														<td>사자</td>
+														<td>코끼리</td>
+														<td>펭귄</td>
+														<td>사자</td>
+														<td>펭귄</td>
+													</tr>
+													<tr>
+														<td>펭귄</td>
+														<td>펭귄</td>
+														<td>펭귄</td>
+														<td>펭귄</td>
+														<td>기린</td>
+														<td>사자</td>
+													</tr>
+													<tr>
+														<td>사자</td>
+														<td>코끼리</td>
+														<td>펭귄</td>
+														<td>사자</td>
+														<td>코끼리</td>
+														<td>코끼리</td>
+													</tr>
+													<tr>
+														<td>펭귄</td>
+														<td>기린</td>
+														<td>사자</td>
+														<td>코끼리</td>
+														<td>사자</td>
+														<td>펭귄</td>
+													</tr>
+												</table>
+											</div>
+											<div class="textAlignC mt_10">
+												<div class="lineBox sky --lineBox">
+													좋아하는 동물별 학생 수
+												</div>
+											</div>
+											<div class="tableContainer green fix mt_5">
+												<table>
+													<tr>
+														<th>동물</th>
+														<th>기린</th>
+														<th>사자</th>
+														<th>코끼리</th>
+														<th>펭귄</th>
+														<th>합계</th>
+													</tr>
+													<tr>
+														<th>학생 수<br>(명)</th>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	3
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	7
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	5
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	9
+																</div>
+															</div>
+														</td>
+														<td>
+															<div class="toggle noBg" data-toggle-obj="1">
+																<div class="answer" data-toggle-target="1">
+																	24
+																</div>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="1">
+			<div class="popup_contents">
+				<p>가족이나 친척 그리고 친구들이 태어난 계절을 조사하여 표로 나타냅니다.</p>
+			</div>
+		</li>
+		<li class="whole pop_page_130" data-popup-page="130">
+			<div class="popup_contents">
+				<div class="textAlignC" style="margin-top: 200px;">
+					<div class="lineBox sky --lineBox">
+						태어난 계절별 사람 수
+					</div>
+				</div>
+				<div class="tableContainer green fix mt_10">
+					<table>
+						<tr>
+							<th>계절</th>
+							<th>봄</th>
+							<th>여름</th>
+							<th>가을</th>
+							<th>겨울</th>
+							<th>합계</th>
+						</tr>
+						<tr>
+							<th>사람 수<br>(명)</th>
+							<td>
+								13
+							</td>
+							<td>
+								4
+							</td>
+							<td>
+								3
+							</td>
+							<td>
+								6
+							</td>
+							<td>
+								26
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</li>
+		<li class="textBookPopup popup_111" data-popup-page="111">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">1</ins>~<ins class="number mr_0">3</ins>]
+					<span class="ml_10 ls1">우리 가족이나 친척 그리고 친구들이 태어난 계절을 조사하여 막대그래프로 나타내려고 합니다. 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+		<li class="textBookPopup popup_111" data-popup-page="112">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">1</ins>~<ins class="number mr_0">3</ins>]
+					<span class="ml_10 ls1">우리 가족이나 친척 그리고 친구들이 태어난 계절을 조사하여 막대그래프로 나타내려고 합니다. 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+		<li class="textBookPopup popup_111" data-popup-page="113">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">1</ins>~<ins class="number mr_0">3</ins>]
+					<span class="ml_10 ls1">우리 가족이나 친척 그리고 친구들이 태어난 계절을 조사하여 막대그래프로 나타내려고 합니다. 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+		$ts.getEl('.page_1 .textBookBtn')[0].click()
+		setTimeout(function () {
+			$ts.getEl('.popup_111 .popup_closeBtn')[0].click();
+		}, 4000);
+
+
+		const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+		_dapChkBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				let _closestTg = obj.closest(".on");
+				if( _closestTg.querySelector(".page-iframe") ){
+					_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+				}
+			});
+		});
+
+
+		const _page2_textBookBtn = $ts.getEl('.page_2 .textBookBtn')[0]
+		_page2_textBookBtn.addEventListener("click", function(){
+			let _tg = $ts.getEl('.page_2')[0]
+			_tg.removeAttribute("style")
+		})
+
+
+	}, false);
+
+</script>
+
+</body>
+
+</html>

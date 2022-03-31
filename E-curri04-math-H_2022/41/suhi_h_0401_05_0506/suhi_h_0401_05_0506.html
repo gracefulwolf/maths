@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css" />
+    <style type="text/css">
+        .page-iframe { position: absolute; z-index: 1; top: 0; left: 0; overflow: hidden; width: 1060px; height: 465px; border: 0; background: transparent; }        
+        .popup_pages .page-iframe { top: 0; left: 70px; height: 510px; }        
+        .popup_pages .page-iframe.x2 { top: 80px; left: 70px; height: 430px; }        
+        .page-iframe .popup_contents .toggle,
+        .page-iframe+section .toggle { z-index: 1; }        
+        .popup_pages>li.whole.on { z-index: 10000; }        
+        .popup_pages>li.whole h2.pop-tit { background-color: transparent !important; align-self: flex-start; padding: 20px; }       
+        .popup_pages .buttonContainer { right: 40px; bottom: 20px; }        
+        .popup_contents .blankBox { width: 40px; height: 40px; margin-top: 6px; }        
+        .popup_contents .icon_o_title { vertical-align: -2px; }        
+        .vMid { display: flex; align-items: center; justify-content: center; height: 420px; }        
+        .vMid>div { width: 100%; }        
+        .zoomBtn:after,
+        .popBtn.zoom { border-color: #ff8636; background-color: #f60; } 
+       
+        /* 개별 */
+        .--img { position: relative; }        
+        .--img .--text { position: absolute; }        
+        .textAlignC .colorBox { display: inline-block; }
+
+        .page_1 .--examList ul { flex-wrap: wrap; padding: 10px 0px 10px 40px; }
+        .--examList ul>li { width: 40%; text-align: left; padding: 20px 0px; }
+        .--examList ul>li:nth-child(even) { width: 60%; }
+        .--answer_box { margin: 20px auto; width: 60%; text-align: center; }
+        .page_1 .bullet.orange { vertical-align: 6px; }
+        .page_1 .bullet.number.orange { display: inline-block; }
+        .suhi .textBookBtn { top: 32%}
+       
+        .popup_pages .textBookPopup .popupInner span { letter-spacing: -2px; }
+        .--img.n1 { height: 400px; width: 100%; overflow: hidden; margin: 0 auto; background: url(./images/suhi_h_0401_05_0506_1.png) no-repeat 50% 50% / 102% 108%; }
+        .--img.n2 { height: 350px; width: 100%; overflow: hidden; margin: 0 auto; background: url(./images/5_4_4_0.svg) no-repeat 50% 50% / 102% 108%; }
+        .page_3 .lineBox { width: 870px; margin: 0 auto; }
+        .page_3 .--text { display: inline-block; background-color: #fff; white-space: nowrap; }
+        .page_3 .--text.x1 { left: 350px; top: 0px; }
+        .page_3 .--text.x2 {left: 50px;top: 78px;}
+        .page_3 .--text.x22 {left: 288px;top: 75px;}
+        .page_3 .--text.x3 {left: 45px;top: 177px;}
+        .page_3 .--text.x4 {left: 33px;top: 238px;min-width: 140px;text-align: center;}
+        .page_3 .--text.x5 {left: 239px;top: 238px;min-width: 140px;text-align: center;}
+        .page_3 .--text.x6 {left: 445px;top: 238px;min-width: 140px;text-align: center;}
+        .page_3 .--text.x7 {left: 649px;top: 238px;min-width: 140px;text-align: center;}
+        .page_3 .writeBtn.reset:before {content:'다시 하기' !important}
+
+        .page_4 .lineBox { width: 870px; margin: 0 auto; }
+        .page_4 .--text { display: inline-block; background-color: #fff; white-space: nowrap; }
+        .page_4 .--text.x1 { left: 350px; top: 0px; }
+        .page_4 .--text.x2 { left: 50px; top: 60px; }
+        .page_4 .--text.x22 { left: 308px; top: 60px; }
+        .page_4 .--text.x3 { left: 35px; top: 139px; }
+        .page_4 .--text.x4 { left: 33px; top: 197px; min-width: 140px; text-align: center; }
+        .page_4 .--text.x5 { left: 239px; top: 197px; min-width: 140px; text-align: center; }
+        .page_4 .--text.x6 { left: 445px; top: 197px; min-width: 140px; text-align: center; }
+        .page_4 .--text.x7 { left: 649px; top: 197px; min-width: 140px; text-align: center; }
+
+        .page_6 .--img { height: 370px; width: 620px; margin: 10px auto 0 auto; overflow:hidden; background: url(./images/5_4_5.svg) no-repeat 0% bottom / 100% 110%; }
+        .page_6 .--img .--text .answer { font-size:30px; } 
+        .page_6 .--text{display:inline-block;text-align: center; white-space:nowrap}
+        .page_6 .--text.x1 {left: 32px;top: 0px;} 
+        .page_6 .--text.x2 {left: 10px;top: 291px;} 
+        .page_6 .--text.x3 {left: 79px;top: 323px;} 
+        .page_6 .--text.x4 { left: 115px; top: 25px; } 
+        .page_6 .--text.x5 { left: 115px; top: 155px; } 
+        .page_6 .--text.x6 { left: 200px; bottom: 17px; } 
+        .page_6 .--text.x7 {left: 310px;bottom:17px} 
+        .page_6 .--text.x8 {left: 418px;bottom:17px} 
+        .page_6 .--text.x9 {left: 521px;bottom:17px} 
+        .page_6 .--bar {position:absolute;bottom: 48px;left: 50%;width: 45px;border:1px solid red;background-color:pink;box-sizing: border-box;transform: translateX(-50%);} 
+        .page_6 .--bar.n1 {height: 196px;} 
+        .page_6 .--bar.n2 {height: 147px;} 
+        .page_6 .--bar.n3 {height: 245px;} 
+        .page_6 .--bar.n4 {height: 73px;} 
+
+        .page_7 .toggle{min-width:900px; text-align:left;}
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math suhi">
+        <div id="bgContainer"></div>
+        <header>
+            <h1>
+                <ins class="suhi_title"></ins>
+                <span class="subInfo">
+                    <span class="sub-text">자료를 수집하여 분석해 볼까요</span>
+                    <span class="sub-page">82~83쪽</span>
+                </span>
+            </h1>
+        </header>
+        <main>
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="">1</li>
+                    <li data-hover="">2</li>
+                    <li data-hover="">3</li>
+                    <li data-hover="">4~6</li>
+                    <li data-hover="">4</li>
+                    <li data-hover="">5</li>
+                    <li data-hover="">6</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <h2> <ins class="number">1</ins><span>
+                                자료를 수집하여 분석하는 과정을 차례대로 기호를 써보세요.
+                            </span>
+                        </h2>
+                        <section>
+                            <div class="lineBox sky mt_30 --examList">
+                                <ul class="flexListContainer around center">
+                                    <li>
+                                        <span class="bullet number orange">ㄱ</span> 자료 수집하기
+                                    </li>
+                                    <li>
+                                        <span class="bullet number orange">ㄴ</span> 막대그래프로 나타내기
+                                    </li>
+                                    <li>
+                                        <span class="bullet number orange">ㄷ</span> 주제 정하기
+                                    </li>
+                                    <li>
+                                        <span class="bullet number orange">ㄹ</span> 막대그래프로 자료 해석하기
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="--answer_box flexListContainer around center">
+                                <div class="toggle" data-toggle-obj="11">
+                                    <div class="answer" data-toggle-target="11">
+                                        <span class="bullet number orange">ㄷ</span>
+                                    </div>
+                                </div>
+                                <div class="icon_arrow"></div>
+                                <div class="toggle" data-toggle-obj="12">
+                                    <div class="answer" data-toggle-target="12">
+                                        <span class="bullet number orange">ㄱ</span>
+                                    </div>
+                                </div>
+                                <div class="icon_arrow"></div>
+                                <div class="toggle" data-toggle-obj="13">
+                                    <div class="answer" data-toggle-target="13">
+                                        <span class="bullet number orange">ㄴ</span>
+                                    </div>
+                                </div>
+                                <div class="icon_arrow"></div>
+                                <div class="toggle" data-toggle-obj="14">
+                                    <div class="answer" data-toggle-target="14">
+                                        <span class="bullet number orange">ㄹ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+                    </li>
+
+                    <li class="page_2" data-quiz="toggle">
+                        <h2><ins class="number">2</ins><span>다음 주제를 바탕으로 하여 조사하고 싶은 내용을 써 보세요.
+                            </span>
+                        </h2>
+                        <section>
+                            <div class="tableContainer green mt_60">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>주제</th>
+                                            <th>조사하고 싶은 내용</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="">색깔</td>
+                                            <td class="">
+                                                <div class="toggle noBg" data-toggle-obj="21">
+                                                    <div class="answer" data-toggle-target="21">
+                                                        <div class="bullet exam">예</div> 좋아하는 색깔
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                            <button class="popBtn textBookBtn info" data-hover="" data-popup-btn="22"
+                                data-close-inner="">
+                                <span class="btnInner"></span>
+                            </button>
+                        </section>
+                    </li>
+
+                    <li class="page_3" data-quiz="toggle">
+                        <h2>
+                            <ins class="number">3</ins><span>조사 질문을 만들어 설문지를 완성해 보세요.</span>
+                        </h2>
+                        <section>
+                            <div class="lineBox green">
+                                <div class="--img n1">
+                                    <div class="--text x1">
+                                        <div class="colorBox orange">
+                                            <div class="toggle noBg" data-toggle-obj="31">
+                                                <div class="answer" data-toggle-target="31">설문지</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x2">
+                                        <div class="toggle noBg" data-toggle-obj="32">
+                                            <div class="answer" data-toggle-target="32">제목:</div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x22">                                        
+                                        <div class="toggle noBg" data-toggle-obj="33">
+                                            <div class="answer" data-toggle-target="33">좋아하는 색깔</div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x3">
+                                        <div class="toggle noBg" data-toggle-obj="34">
+                                            <div class="answer" data-toggle-target="34">강우주: 좋아하는 색깔은 무엇인가요?</div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x4">                                        
+                                        <div class="toggle noBg" data-toggle-obj="35">
+                                            <div class="answer" data-toggle-target="35"> ① 빨강 </div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x5">
+                                        <div class="toggle noBg" data-toggle-obj="36">
+                                            <div class="answer" data-toggle-target="36"> ② 파랑 </div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x6"> 
+                                        <div class="toggle noBg" data-toggle-obj="37">
+                                            <div class="answer" data-toggle-target="37"> ③ 노랑 </div>
+                                        </div>
+                                    </div>
+                                    <div class="--text x7"> 
+                                        <div class="toggle noBg" data-toggle-obj="38">
+                                            <div class="answer" data-toggle-target="38"> ④ 검정  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+                                <button class="writeBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+                    </li>
+
+                    <li class="page_4">
+                        <h2>
+                            [<ins class="number mr_0">4</ins>~<ins class="number mr_0">6</ins>]<span class="ml_10">
+                                샛별이가 혈액형을 주제로 반 학생들을 대상으로 하여 설문지를 이용해서 자료를 수집했습니다. 수집한 자료를 보고 물음에 답해 보세요.
+                            </span>
+                        </h2>
+                        <section>
+                            <div class="lineBox green">
+                                <div class="--img n2">
+                                    <div class="--text x1">
+                                        <div class="colorBox orange">설문지</div> 
+                                    </div>
+                                    <div class="--text x2">제목:</div>
+                                    <div class="--text x22">학생들의 혈액형</div>
+                                    <div class="--text x3">
+                                        김샛별: 혈액형은 무엇인가요?
+                                    </div>
+                                    <div class="--text x4"> ① A형 </div>
+                                    <div class="--text x5"> ② B형 </div>
+                                    <div class="--text x6"> ③ O형 </div>
+                                    <div class="--text x7"> ④ AB형 </div>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+
+                    <li class="page_5" data-quiz="toggle">
+                        <h2>
+                            <ins class="number">4</ins><span> 수집한 자료를 표로 나타내 보세요.</span>
+                        </h2>
+                        <section>
+                            <div class="textAlignC mt_30 mb_10">
+                                <div class="colorBox sky textAlignC">학생들의 혈액형</div>
+                            </div>
+                            <div class="tableContainer brown fix">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>혈액형</th>
+                                            <th>A형</th>
+                                            <th>B형</th>
+                                            <th>O형</th>
+                                            <th>AB형</th>
+                                            <th>합계</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="lightBrown">학생수 (명)</th>
+                                            <td>
+                                                <div class="toggle noBg" data-toggle-obj="51">
+                                                    <div class="answer" data-toggle-target="51">8</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="toggle noBg" data-toggle-obj="52">
+                                                    <div class="answer" data-toggle-target="52">6</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="toggle noBg" data-toggle-obj="53">
+                                                    <div class="answer" data-toggle-target="53">10</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="toggle noBg" data-toggle-obj="54">
+                                                    <div class="answer" data-toggle-target="54">3</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="toggle noBg" data-toggle-obj="55">
+                                                    <div class="answer" data-toggle-target="55">27</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+                    </li>
+
+                    <li class="page_6" data-quiz="toggle">
+                        <h2>
+                            <ins class="number">5</ins><span>
+                                표를 막대그래프로 나타내 보세요.
+                            </span>
+                        </h2>
+                        <section>
+                            <div class="--inner textAlignC">
+                                <div class="bullet exam answer" data-toggle-target="51">예</div>
+                                <div class="colorBox sky textAlignC">
+                                    <div class="toggle noBg" data-toggle-obj="51">
+                                        <div class="answer" data-toggle-target="51">								
+                                            학생들의 혈액형
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="--img">
+                                <div class="--text x1">
+                                    <div class="toggle noBg" data-toggle-obj="52">
+                                        <div class="answer" data-toggle-target="52">명</div>
+                                    </div>
+                                </div>
+                                <div class="--text x2">
+                                    <div class="toggle  noBg" data-toggle-obj="53">
+                                        <div class="answer" data-toggle-target="53">학생 수</div>
+                                    </div>
+                                </div>
+                                <div class="--text x3">
+                                    <div class="toggle  noBg" data-toggle-obj="54">
+                                        <div class="answer" data-toggle-target="54">혈액형</div>
+                                    </div>
+                                </div>
+                                <div class="--text x4">
+                                    <div class="toggle  noBg" data-toggle-obj="55">
+                                        <div class="answer" data-toggle-target="55">10</div>
+                                    </div>
+                                </div>
+                                <div class="--text x5">
+                                    <div class="toggle  noBg" data-toggle-obj="56">
+                                        <div class="answer" data-toggle-target="56">5</div>
+                                    </div>
+                                </div>
+                                <div class="--text x6">
+                                    <div class="toggle noBg" data-toggle-obj="57">
+                                        <div class="--bar n1 answer" data-toggle-target="57"></div>
+                                        <div class="answer" data-toggle-target="57">								
+                                            <div class="">A형</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="--text x7">
+                                    <div class="toggle noBg" data-toggle-obj="58">
+                                        <div class="--bar n2 answer" data-toggle-target="58"></div>
+                                        <div class="answer" data-toggle-target="58">								
+                                            <div class="">B형</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="--text x8">
+                                    <div class="toggle noBg" data-toggle-obj="59">
+                                        <div class="--bar n3 answer" data-toggle-target="59"></div>
+                                        <div class="answer" data-toggle-target="59">								
+                                            <div class="">O형</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="--text x9">
+                                    <div class="toggle noBg" data-toggle-obj="591">
+                                        <div class="--bar n4 answer" data-toggle-target="591"></div>
+                                        <div class="answer" data-toggle-target="591">								
+                                            <div class="">AB형</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="page_7" data-quiz="toggle">
+                        <h2>
+                            <ins class="number">6</ins>
+                            <span>
+                                위 막대그래프를 보고 알 수 있는 내용을 써 보세요.
+                            </span>
+                        </h2>
+                        <section>
+                            <div class="flexListContainer center mt_30">
+                                <div class="toggle" data-toggle-obj="71">
+                                    <div class="answer" data-toggle-target="71">
+                                        <div class="bullet exam answer">예</div> 
+                                        가장 많은 학생의 혈액형은 O형입니다.   
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="flexListContainer center mt_20">
+                                <div class="toggle" data-toggle-obj="72">
+                                    <div class="answer" data-toggle-target="72">
+                                        <div class="bullet exam answer">예</div> 
+                                        A형인 학생은 B형인 학생보다 2명 더 많습니다.  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <!--	* 팝업 -->
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages basicSlider_slides">
+                <li class="textBookPopup popup_2" data-popup-page="22">
+                    <div class="popupInner" data-popup-inner="">
+                        <h2>
+                            [<ins class="number mr_0">2</ins>~<ins class="number mr_0">3</ins>]
+                        </h2>
+                        <span>색깔을 주제로 설문지를 만들려고 합니다. 물음에 답해 보세요.</span>
+                    </div>
+                </li>
+                <li class="solve pop_page_2" data-popup-page="2">
+                    <div class="popup_contents">
+                        <p>
+                            정한 주제를 바탕으로 하여 조사하고 싶은 내용을 정합니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="solve pop_page_3" data-popup-page="3">
+                    <div class="popup_contents">
+                        <p>
+                            조사하고 싶은 내용으로 조사 질문을 만들어 설문지를 완성합니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="solve pop_page_5" data-popup-page="5">
+                    <div class="popup_contents">
+                       <p>자료를 세어 표로 나타냅니다.</p>
+                    </div>
+                </li>
+                <li class="solve pop_page_6" data-popup-page="6">
+                    <div class="popup_contents">
+                       <p>세로 눈금 한 칸의 크기를 정한 후 자료의 수에 맞게 막대를 그려 막대그래프로 나타냅니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div id="loadingContainer">
+        <div class="loadingIconAnimation"></div>
+    </div>
+    <script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../common/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../common/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../common/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../common/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../common/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../common/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="./js/contents.js"></script>
+    <script type="text/javascript">
+        window.$callBack.sliderReset = function (slide) {
+            console.log(slide.idx);
+
+            if (slide.idx === 1) {
+                setTimeout(function () {
+
+                    $ts.getEl('.page_2 .textBookBtn')[0].click();
+                    
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

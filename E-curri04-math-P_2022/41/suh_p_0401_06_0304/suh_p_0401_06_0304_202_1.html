@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:170px; left:55px; overflow:hidden; width:1280px; height:565px; border:0; background:transparent; transform: scale(0.828125) translate(-130px, -20px);}
+		.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+
+		.tableContainer .toggle{width: 100%;}
+
+		.--imgComm{position: relative; height: 240px; background: url(./images/suh_p_0401_06_0304_202_1/suh_p_0401_06_0304_202_1_1.png) no-repeat 50% 50% / contain;}
+		.--imgComm .colorBox{position: absolute;}
+		.--imgComm .colorBox.n1{top: 0; left: 20px;}
+		.--imgComm .colorBox.n2{top: 0;left: 170px;}
+		.--imgComm .colorBox.n3{top: 0;left: 375px;}
+		.--imgComm .colorBox.n4{top: 0;left: 625px;}
+		.page_1 .tableContainer{width: 540px; margin: 0 auto;}
+		.page_1 .--aniBox{position: absolute; top: -100px; left: 450px;}
+
+		.page_3 .lineBox{display: inline-block;position: relative;padding: 45px 30px 20px;margin-top: 50px;}
+		.page_3 .--title{position: absolute; top: -40px; left: 50%; transform: translateX(-50%);}
+		.page_3 .--img{position: relative;width: 320px;height: 320px;background: url(./images/suh_p_0401_06_0304_202_1/suh_p_0401_06_0304_202_1_2.png) no-repeat 50% 50% / contain; contain;}
+		.page_3 .--img .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suh_p_0401_06_0304_202_1/suh_p_0401_06_0304_202_1_3.png) no-repeat 50% 50% / contain;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">검은 바둑돌 모양의 배열에서 규칙을 찾아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						바둑돌의 수를 세어 보고, 규칙을 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="--imgComm">
+							<div class="colorBox yellow n1">첫째</div>
+							<div class="colorBox yellow n2">둘째</div>
+							<div class="colorBox yellow n3">셋째</div>
+							<div class="colorBox yellow n4">넷째</div>
+						</div>
+						<div class="tableContainer brown fix mt_10">
+							<table>
+								<tr>
+									<th>첫째</th>
+									<th>둘째</th>
+									<th>셋째</th>
+									<th>넷째</th>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												8
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												12
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												16
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="textAlignC mt_10">
+							<div class="toggle" data-toggle-obj="4">
+								<div class="answer" data-toggle-target="4">
+									바둑돌의 수가 4부터 시작하여 4씩 늘어납니다.
+								</div>
+							</div>
+						</div>
+						<div class="textAlignC --aniBox">
+							<div id="aniBox_1"></div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						바둑돌 모양의 배열에서 규칙을 찾아 말해 보세요.
+					</span></h2>
+					<section>
+						<div class="--imgComm">
+							<div class="colorBox yellow n1">첫째</div>
+							<div class="colorBox yellow n2">둘째</div>
+							<div class="colorBox yellow n3">셋째</div>
+							<div class="colorBox yellow n4">넷째</div>
+						</div>
+						<div class="textAlignC mt_40">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									위, 아래, 왼쪽, 오른쪽으로 1개씩 많아집니다.
+								</div>
+							</div>
+						</div>
+						<div class="textAlignC --aniBox">
+							<div id="aniBox_1"></div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_3" data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1">
+							<h2><ins class="dot"></ins><span>
+								다섯째에 알맞은 모양을 그려 보세요.
+							</span></h2>
+							<section>
+								<div class="--imgComm">
+									<div class="colorBox yellow n1">첫째</div>
+									<div class="colorBox yellow n2">둘째</div>
+									<div class="colorBox yellow n3">셋째</div>
+									<div class="colorBox yellow n4">넷째</div>
+								</div>
+							</section>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<h2><ins class="dot"></ins><span>
+								다섯째에 알맞은 모양을 그려 보세요.
+							</span></h2>
+							<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+							<section>
+								<div class="textAlignC">
+									<div class="lineBox purple">
+										<div class="colorBox purple black --title">다섯째</div>
+										<div class="--img">
+											<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
+										</div>
+									</div>
+								</div>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</section>
+						</li>
+					</ul>
+				</li>
+
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						여섯째 모양을 만들기 위해 필요한 바둑돌의 수를 구해 보세요.
+					</span></h2>
+					<section>
+						<div class="--imgComm">
+							<div class="colorBox yellow n1">첫째</div>
+							<div class="colorBox yellow n2">둘째</div>
+							<div class="colorBox yellow n3">셋째</div>
+							<div class="colorBox yellow n4">넷째</div>
+						</div>
+						<div class="textAlignC mt_40">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									24개
+								</div>
+							</div>
+						</div>
+						<div class="textAlignC --aniBox">
+							<div id="aniBox_1"></div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+		$prite.add({
+			target: $ts.getEl('#aniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'boy_2',
+					circle: 'green',
+					speech:'right',
+					top: 310,
+					left: 420,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_2.png',
+					spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
+					sound: './media/audios/suh_p_0401_06_0304_202_1.mp3',
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					//endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '바둑돌의 <br>수 규칙을 식으로 <br>나타낼 수 있을까?',
+						class: 'balloon green ctTail bottom',
+						top: 115,
+						left: 345,
+						width: 310,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					callbacks: {
+						// start: function () {
+						// 	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '-160px';
+						// }, // 시작시 콜백
+						// end: function () {
+						// 	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '0px';
+						// } // 끝날시 콜백
+					}
+				}
+			]
+		});
+
+		const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+		_dapChkBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				let _closestTg = obj.closest(".on");
+				if( _closestTg.querySelector(".page-iframe") ){
+					_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+				}
+			});
+		});
+
+}, false);
+</script>
+
+</body>
+</html>

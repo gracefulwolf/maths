@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math_wordQuiz.css">
+    <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+    <link rel="stylesheet" type="text/css" href="./css/math.css">
+    <style type="text/css">
+        .popup_pages>li.explain .explainContainer {
+			padding:35px 55px 100px;
+		}
+		.popup_pages>li.explain .explainContainer .img {
+			text-align: center;
+			width: 440px;
+			margin: 30px auto 30px;
+		}
+
+		.popup_pages>li.explain .explainContainer .img img {
+			width: 100%;
+		}
+
+		.inner {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.inner li {
+			float: left;
+			margin-right: 30px;
+		}
+
+		.inner li .ans {
+			height: 51px;
+			position: relative;
+			top: 4px;
+		}
+
+		.inner li div {
+			display: inline-block;
+			width: auto;
+		}
+
+		.tableContainer td,
+		.tableContainer th {
+			width: 40px;
+		}
+
+		.tableContainer table td>img {
+			vertical-align: bottom;
+		}
+
+		.con_1 {
+			text-align: left;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+
+		.imgCon {
+			margin-top: 10px;
+		}
+
+		.imgCon>div {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.img_1 {
+			width: 40px;
+			text-align: center;
+			line-height: 0;
+		}
+
+
+		section {
+			font-size: 40px;
+		}
+
+		.math_calc_table {
+			width: 190px;
+			margin: 0 auto 40px;
+		}
+
+		.math_calc_table tr td {
+			height: 50px;
+			box-sizing: border-box;
+		}
+
+		.math_calc_table .rowLine {
+			top: 50px;
+			left: 0;
+			width: 200px;
+		}
+
+		.pointContainer .contentsList>li:not(:last-of-type) {
+			margin-bottom: 10px;
+		}
+
+
+		.tableContainer {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		.tableContainer td,
+		.tableContainer th {
+			width: 50px;
+			height: 50px;
+		}
+
+		.tableContainer {
+			width: 825px;
+		}
+
+		.tableContainer table {
+			border-collapse: collapse;
+		}
+
+		.tableContainer table td {
+			border: 1px solid gray;
+			border-radius: 0 !important;
+		}
+
+		.tableContainer table .bg_pink {
+			background: #fcd5b5 !important;
+		}
+
+		.tableContainer table .bg_blue {
+			background: #c6d9f1 !important;
+		}
+
+		.tableContainer .zoomBtn {
+			position: absolute;
+			right: -30px;
+			bottom: -30px;
+		}
+
+		.arrowLine {
+			opacity: 0.6;
+		}
+
+		.arrowLine.orange {
+			position: absolute;
+			top: 145px;
+			left: 123px;
+			width: 375px;
+			z-index: 1;
+		}
+
+		.arrowLine.blue {
+			position: absolute;
+			top: 57px;
+			left: 437px;
+			width: 171px;
+			z-index: 1;
+		}
+
+		.arrowLine.arrow2.blue {
+			position: absolute;
+			top: 114px;
+			left: 528px;
+			width: 55px;
+			z-index: 1;
+		}
+
+		.arrowLine.arrow2.orange {
+			position: absolute;
+			top: 258px;
+			left: 117px;
+			width: 116px;
+			z-index: 1;
+		}
+		.explainContainer{
+			display:flex;
+			justify-content: center;
+		}
+
+		.explainContainer .txtCont {
+			margin-top:24px;
+			font-size:40px;
+		}
+
+		.flexWrap p {
+			width:100%;
+			position: absolute;
+		}
+
+		.explainContainer .tableContainer{
+			width:500px;
+			margin-right:20px;
+		}
+
+		.popup_pages>li.explain .explainContainer .desc{
+			padding-top:20px;
+		}
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math word" data-puzzle-container="">
+        <div class="prev-img">
+            <img src="common/contents/images/quiz/bg_timer_img_on.png" alt="이미지">
+            <img src="common/contents/images/quiz/icon_clock_on.svg" alt="이미지">
+        </div>
+        <header>
+            <h1><ins class="icon"></ins>숨은 단어 찾기 퀴즈</h1>
+            <div class="title">알고 있는 수학 단어를 찾아볼까요?</div>
+        </header>
+        <main>
+            <div class="contentsBox">
+				<section>
+					<ul class="wordBox cell5" data-puzzle="">
+						<li>피</li>
+						<li>완</li>
+						<li>송</li>
+						<li>트</li>
+						<li>화</li>
+
+						<li>후</li>
+						<li>콘</li>
+						<li>발</li>
+						<li>멀</li>
+						<li>알</li>
+
+						<li>모</li>
+						<li>탄</li>
+						<li>쿠</li>
+						<li>몽</li>
+						<li>본</li>
+
+						<li>갑</li>
+						<li data-answer="">덧</li>
+						<li data-answer="">셈</li>
+						<li data-answer="">표</li>
+						<li>랑</li>
+
+						<li>큐</li>
+						<li>휴</li>
+						<li>말</li>
+						<li>튼</li>
+						<li>르</li>
+					</ul>
+					<div class="timerContainer" data-timer-container=""></div>
+					<div class="btnContainer">
+						<button type="button" class="hintBtn" data-hint-btn="" data-hover=""></button>
+						<button type="button" class="ansCheckBtn" data-answer-btn="" data-hover=""></button>
+					</div>
+					<div class="displayN" data-popup-btn="1"></div>
+				</section>
+			</div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+            <li class="explain" data-popup-page="1">
+                <h2>덧셈표</h2>
+                <div class="explainContainer">
+                    <div class="bullet exam">예</div>
+                    <div class="flexWrap">
+                        <div class="tableContainer brown">
+                            <div class="arrowLine arrow bottom blue"></div>
+                            <div class="arrowLine arrow orange"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div>+</div>
+                                        </th>
+                                        <th>
+                                            <div>1</div>
+                                        </th>
+                                        <th>
+                                            <div>3</div>
+                                        </th>
+                                        <th>
+                                            <div>5</div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightBrown">
+                                            <div>1</div>
+                                        </th>
+                                        <td>
+                                            <div>2</div>
+                                        </td>
+                                        <td>
+                                            <div>4</div>
+                                        </td>
+                                        <td>
+                                            <div>6</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightBrown">
+                                            <div>3</div>
+                                        </th>
+                                        <td>
+                                            <div>4</div>
+                                        </td>
+                                        <td>
+                                            <div>6</div>
+                                        </td>
+                                        <td>
+                                            <div>8</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightBrown">
+                                            <div>5</div>
+                                        </th>
+                                        <td>
+                                            <div>6</div>
+                                        </td>
+                                        <td>
+                                            <div>8</div>
+                                        </td>
+                                        <td>
+                                            <div>10</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="desc" style=" font-size: 35px;">※ 2학년 '규칙 찾기' 단원에서 학습한 내용입니다.</p>
+                    </div>
+                    <div>
+                        <p class="txtCont">오른쪽으로 갈수록 2씩 <br>커지고, 아래쪽으로 내려 <br>갈수록 2씩 커지는 규칙이 있습니다.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    </div>
+    <div id="loadingContainer">
+        <div class="loadingIconAnimation"></div>
+    </div>
+    <script type="text/javascript" src="../common/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../common/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../common/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../common/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../common/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../common/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="./js/contents.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

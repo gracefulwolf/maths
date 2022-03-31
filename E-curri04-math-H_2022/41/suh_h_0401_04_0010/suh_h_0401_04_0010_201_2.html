@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:50px; left:30px; height:510px;}
+		.page-iframe .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+
+		/* 페이지 개별 위치 */
+		.popup_pages .pop_page_1 .page-iframe{top:40px; left:70px; height:618px;}
+
+		.title .btn_1{top:5px; left:auto; right:0;}
+		.contentsBox .basicSlider_slides.inner{padding:0;}
+		.popup_pages .buttonContainer{right:40px; bottom:10px;}
+		.examViewBtn,
+		.examViewBtn.hover{background-color:#236cbb !important;}
+		.examViewBtn:before,
+		.examViewBtn.reset:before{padding-left:20px; content:"다시하기";}
+		.moveButtonContainer{left: 20%; width: 60%;}
+		.page_1 .toggleBlank{vertical-align: -6px;}
+		.innerTab_1.on{z-index:0 !important;}
+		.popBtn.textInBtn.eye{display: inline-block; position: static; vertical-align: 9px;}
+/*
+
+		.page_2 .--imgBox{display: flex; align-items:center; justify-content: center; position: relative; max-width: 330px; height: 240px; margin-right: 40px; padding: 40px 80px; background: url(./images/suh_h_0401_03_0008_201_2/suh_h_0401_03_0008_201_2_3.png) no-repeat 50% 50% / contain;}
+		.page_2 .--imgBox .--text{position: absolute; top:25px; left: 20px;}
+		.page_2 .--qa{flex: 1;}
+
+		.page_3 th{line-height: 1;}
+		.page_3 .colorBox + div{flex: 1;}
+		.page_3 .toggle{width: 100%;} */
+
+
+		.contentsBox .basicSlider_slides>li.page_3{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.page_3.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
+
+
+		.pop_page_1 .--img{position: absolute;top: 0;left: 0;width: 100%;height: 640px;}
+		.pop_page_1 .--img.n1{background: url(./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_1.png) no-repeat 50% 50% / cover;}
+		.pop_page_1 .--img.n1 .balloon.n1{top: 160px;left: 80px;}
+		.pop_page_1 .--img.n1 .balloon.n1:after{margin-left: 90px;}
+		.pop_page_1 .--img.n1 .balloon.n2{top: 80px;left: 410px;}
+		.pop_page_1 .--img.n1 .balloon.n3{top: 70px;left: 760px;}
+		.pop_page_1 .--img.n2{background: url(./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_1.png) no-repeat 50% 50% / cover;}
+		.pop_page_1 .--img.n3{background: url(./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_3.png) no-repeat 50% 50% / cover;}
+
+		.pop_page_1 .--text{position: absolute; font-size: 35px;letter-spacing: -1px;}
+		.pop_page_1 .--text img{vertical-align: -3px;}
+		.pop_page_1 .--text.n1{left: 130px;top: 120px;width: 930px;letter-spacing: -1.8px;}
+		.pop_page_1 .--text.n2{left: 130px;top: 308px;line-height: 63px;font-size: 32px;letter-spacing: -2px;}
+		.pop_page_1 .--text.n3{left: 878px;top: 307px;line-height: 63px;}
+		.pop_page_1 .--text.n4{left: 930px;top: 420px;font-size: 32px;letter-spacing: -2px;}
+
+		.pop_page_1 .--img.n3 .balloon.n4{top: 80px;left: 625px;}
+		.pop_page_1 .--img.n3 .balloon.n5{top: 70px;left: 900px;}
+		.pop_page_1 .--img.n3 .--text{width: 250px;font-size: 32px;text-align: justify;}
+		.pop_page_1 .--img.n3 .--text.n5{left: 55px;top: 205px;}
+		.pop_page_1 .--img.n3 .--text.n6{left: 350px;top: 205px;}
+		.pop_page_1 .--img.n3 .--text.n7{left: 55px;top: 355px;letter-spacing: 0.5px;}
+		.pop_page_1 .--img.n3 .--text.n8{left: 350px;top: 355px;letter-spacing: -1.5px;}
+		.pop_page_1 .--img.n3 .--line{position: absolute;}
+		.pop_page_1 .--img.n3 .--line.n1{top: 192px;left: 325px;height: 328px;border-left: 2px solid #c5e3d2;}
+		.pop_page_1 .--img.n3 .--line.n2{top: 337px;left: 40px;width: 575px;border-bottom: 2px solid #c5e3d2;}
+
+		.page_2 .flexListContainer{align-items: flex-start; margin-top: 40px;}
+		.page_2 .lineBox{display: flex;align-items: center;justify-content: center;position: relative;width: 470px; min-width: 470px; min-height: 190px;padding-left: 40px;padding-right: 30px;text-align: center;}
+		.page_2 .colorBox{position: absolute; top: 20px; left: -20px; color: #fff; text-align: center;}
+		.page_2 .colorBox.n1{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_1_1.png) no-repeat 50% 50% / contain;}
+		.page_2 .colorBox.n2{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_2_1.png) no-repeat 50% 50% / contain;}
+		.page_2 .colorBox.n3{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_3_1.png) no-repeat 50% 50% / contain;}
+		.page_2 .--box{position: relative; min-width: 420px; width: 420px;}
+		.page_2 .--text img{width: 40px !important; vertical-align: -5px;}
+		.page_2 .--img{display: block; width: 340px; margin: 0 auto;}
+		.page_2 .blankBox{display: inline-block; width: 40px; height: 40px; margin-top: 5px;}
+		.page_2 .--finger{top: 80px; left: 10px;}
+		.--finger{animation-iteration-count:infinite !important;}
+		.--finger.complete{display:none;}
+
+		.page_3 .study_guide{right: 0;}
+		.page_3 .innerTab_1 .page-iframe{height: 485px;}
+		.page_3 .innerTab_2 .--img{position:relative; height: 435px; background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_1.png) no-repeat 50% 50% / 100% 100%; font-size: 32px;}
+		.page_3 .innerTab_2 .--img input{width: 90px; border-bottom: 3px solid #000; text-align: center;}
+		.page_3 .innerTab_2 .--img .txt{position: absolute;top: 35px;left: 70px;width: 830px;}
+		.page_3 .innerTab_2 .--img .from{position: absolute;top: 125px;right: 0;}
+		.page_3 .innerTab_2 .--img .inputArea{position: absolute;top: 211px;left: 66px;}
+		.page_3 .inputArea > li textarea{width: 720px;height: 39px;}
+		.page_3 .inputArea > li textarea.answerMode{padding: 0 0 0 40px;}
+		.page_3 .inputArea > li textarea.answerMode[data-input-obj="11"]{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_4_n0.png) no-repeat 0% 0% / 40px 40px;}
+		.page_3 .inputArea > li textarea.answerMode[data-input-obj="12"]{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_4_n8.png) no-repeat 0% 0% / 40px 40px;}
+		.page_3 .inputArea > li textarea.answerMode[data-input-obj="13"]{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_4_n2.png) no-repeat 0% 0% / 40px 40px;}
+		.page_3 .inputArea > li textarea.answerMode[data-input-obj="14"]{background: url(./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_4_n3.png) no-repeat 0% 0% / 40px 40px;}
+		.page_3 .--colorbox{position: absolute;top: 207px;left: 754px;line-height: 45px;}
+		.page_3 .--txt2{position: absolute;top: 280px;left: 800px;letter-spacing: -2px;}
+
+
+		.page_4 .charSpriteImg{position: absolute; top: 40px; left: 120px;}
+		.page_4 .balloon{top: 210px; left: 420px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<div class="title"><span>
+				다음 대화를 보고 생일 초대장을 만들어 봅시다. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그림 보기</div>
+			</span></div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox right" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제</li>
+					<li data-hover="">계획</li>
+					<li data-hover="">실행</li>
+					<li data-hover="">반성</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">그림은 어떤 상황인가요?</p>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer textAlignJ" data-toggle-target="1">
+													생일 초대장에 적힌 단서를 보고 태양이의 생일을 알아내는 상황입니다.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="mt_40">
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">초대장의 단서에는 어떤 정보가 제시되어 있나요?</p>
+											<div class="toggle box" data-toggle-obj="2">
+												<div class="answer textAlignJ" data-toggle-target="2" style="letter-spacing: 1px;">
+													초대장의 단서를 통해 월과 일에 사용된 숫자가 색에 따라 정해져 있음을 알 수 있습니다.
+												</div>
+											</div>
+											<div class="toggle box mt_10" data-toggle-obj="3">
+												<div class="answer textAlignJ" data-toggle-target="3">
+													생일의 숫자를 어떻게 움직여야 하는지 방법과 순서를 알 수 있습니다.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">생일을 어떻게 알 수 있을지 생각해 보세요.</p>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer textAlignJ" data-toggle-target="1">
+													주어진 숫자를 단서에 적힌 방법대로 움직여 보며 구할 수 있을 것 같습니다.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="mt_40">
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">숫자 0, 9, 5, 8을 단서에 제시된 방법대로 실제로 움직여 보며 태양이의 생일을 맞혀 보세요.</p>
+											<div class="toggle box" data-toggle-obj="14">
+												<div class="answer textAlignJ" data-toggle-target="14">
+													태양이의 생일은 06월 28일입니다.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+
+					<li class="page_2">
+						<div class="basicSlider_slides" data-slide-container="">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+							<ul class="basicSlider_slides inner" data-slides="">
+								<li class="innerTab_1" data-quiz="toggle">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 초대장을 만들어 보세요.</p>
+												<div>
+													<div class="flexListContainer jcenter center">
+														<div class="lineBox deeppink textAlignC mr_40">
+															<div class="colorBox check n1">1</div>
+															나의 생일에 맞는<br>
+															숫자 카드를 4장<br>
+															고르기
+														</div>
+														<div class="--box">
+															<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+															<div class="answer" data-toggle-target="1">
+																<div class="--text textAlignC mb_20">
+																	<ins class="bullet exam">예</ins> 03월 18일
+																</div>
+																<div class="--img">
+																	<img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_1_2.png" alt="" width="320">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_2" data-quiz="toggle">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 초대장을 만들어 보세요.</p>
+												<div>
+													<div class="flexListContainer jcenter center">
+														<div class="lineBox green textAlignC mr_40">
+															<div class="colorBox check n2">2</div>
+															숫자카드를 돌리거나<br>
+															뒤집은 후 결과를<br>
+															살펴보기
+														</div>
+														<div class="--box">
+															<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+															<div class="answer" data-toggle-target="1">
+																<div class="--text mb_20">
+																	<ins class="bullet exam">예</ins><br>
+																	<img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_2_2.png" alt="" height="40">을 오른쪽으로 뒤집으면 <img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_2_2.png" alt="" height="40" style="transform:rotateY(180deg);">가 됩니다.
+																</div>
+																<div class="--img">
+																	<img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_2_3.png" alt="" width="320">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_3" data-quiz="toggle">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 초대장을 만들어 보세요.</p>
+												<div>
+													<div class="flexListContainer jcenter center">
+														<div class="lineBox purple textAlignC mr_40">
+															<div class="colorBox check n3">3</div>
+															단서 만들기
+														</div>
+														<div class="--box">
+															<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+															<div class="answer" data-toggle-target="1">
+																<div class="--text">
+																	<ins class="bullet exam">예</ins>
+																	<p>
+																		<img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_2_2.png" alt="" height="40">을 왼쪽으로 뒤집으면 <ins class="blankBox"></ins>이/가 됩니다.
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="page_3">
+						<div class="basicSlider_slides" data-slide-container="">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+							<ul class="basicSlider_slides" data-slides="">
+								<li class="innerTab_1" data-quiz="toggle">
+									<iframe src="../../../dvd_4_1_h/contents/lesson04/ops/4/ifr-suh_h_0401_04_0010_202_2.html" title="" class="page-iframe" scrolling="no"></iframe>
+									<section class="full">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet circleDot"></ins>
+												<div>
+													<p class="mb_10">돌리기, 뒤집기를 이용하여 초대장을 완성해 보세요.</p>
+													<div>
+														<div class="study_guide">
+															<em>숫자</em>를 <em>드래그</em>하여 옮기세요.
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</section>
+								</li>
+								<li class="innerTab_2" data-quiz="input" data-quiz-name="input_1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">돌리기, 뒤집기를 이용하여 초대장을 완성해 보세요.</p>
+												<div>
+													<div class="--img">
+														<div class="txt">
+															<input type="text" class="" data-input-obj="1" data-answer="우주"> 에게 <br>
+															안녕? 나는 <input type="text" class="" data-input-obj="2" data-answer="샛별"> (이)야. 내 생일잔치에 너를 초대하려고 해.<br>
+															내 생일은 <img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_2.png" alt="" height="32" style="vertical-align: -4px;"> <img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_3.png" alt="" height="32" style="vertical-align: -4px;">월 <img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_4.png" alt="" height="32" style="vertical-align: -4px;"> <img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_5.png" alt="" height="32" style="vertical-align: -4px;">일이야.  각 숫자는 아래의 단서를 보면 알 수 있을 거야. 네가 꼭 와 주었으면 좋겠어.
+															<div class="from">
+															  <input type="text" class="noBox" data-input-obj="1" data-answer="샛별">이가 <br>
+															</div>
+														  </div>
+														  <ul class="inputArea">
+															<li>
+															  <div class="dragCopy"></div>
+															  <textarea class="noBox maxWidth" data-input-obj="11" data-answer="을 위쪽으로 뒤집으면"></textarea>
+															</li>
+															<li>
+															  <div class="dragCopy"></div>
+															  <textarea class="noBox maxWidth" data-input-obj="12" data-answer="을 시계 반대 방향으로 180°만큼 돌리면"></textarea>
+															</li>
+															<li>
+															  <div class="dragCopy"></div>
+															  <textarea class="noBox maxWidth" data-input-obj="13" data-answer="를 시계 방향으로 180°만큼 돌리면"></textarea>
+															</li>
+															<li>
+															  <div class="dragCopy"></div>
+															  <textarea class="noBox maxWidth" data-input-obj="14" data-answer="을 아래쪽으로 뒤집으면"></textarea>
+															</li>
+														  </ul>
+														  <ul class="--colorbox">
+															  <li><img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_2.png" alt="" height="32" style="vertical-align: -4px;"></li>
+															  <li><img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_3.png" alt="" height="32" style="vertical-align: -4px;"></li>
+															  <li><img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_4.png" alt="" height="32" style="vertical-align: -4px;"></li>
+															  <li><img src="./images/suh_h_0401_04_0010_202_2/suh_h_0401_04_0010_202_2_5_5.png" alt="" height="32" style="vertical-align: -4px;"></li>
+														  </ul>
+														  <div class="--txt2">이/가 됩니다.</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="buttonContainer">
+										<button class="writeBtn" data-answer-btn=""></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="page_4">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">친구가 만든 초대장과 내가 만든 초대장을 공유하고, 친구의 생일을 알아맞혀 보세요.</p>
+									<div>
+										<div class="single charSpriteImg boy_1"></div>
+										<div class="balloon left ctTail textAlignC pink">
+											서로의 방법을 비교해 보고<br>
+											나와 다른 점이 있는지<br>
+											이야기해 보세요.
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents" data-slide-container="popup">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<section>
+									<div class="--img n1">
+										<div class="balloon ctTail bottom textAlignC deeppink n1">
+											내 생일 초대장이야.
+										</div>
+										<div class="balloon ctTail bottom textAlignC purple n2">
+											생일이 며칠인지 알아<br>맞혀야 하는 거네.
+										</div>
+										<div class="balloon ctTail bottom textAlignC yellow n3">
+											어떻게<br>알아내지?
+										</div>
+									</div>
+								</section>
+							</li>
+							<li class="innerTab_2">
+								<div class="--img n2">
+									<div class="--text n1">
+										은하에게<br>
+										안녕? 나는 태양이야.내 생일잔치에 너를 초대하려고 해. 내 생일은
+<img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_2.png" alt="" height="32"> <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_3.png" alt="" height="32">월 <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_4.png" alt="" height="32"> <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_5.png" alt="" height="32">일이야. 각 숫자는 아래의 단서를 보면 알 수 있을 거야.<br>
+										네가 꼭 와 주었으면 좋겠어. <span style="float: right; padding-right: 20px;">태양이가</span>
+									</div>
+									<ul class="--text n2">
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_6.png" alt="" height="32">을 오른쪽으로 뒤집으면</li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_7.png" alt="" height="32">를 시계 방향으로 180˚만큼 돌리면</li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_8.png" alt="" height="32">를 왼쪽으로 뒤집으면</li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_9.png" alt="" height="32">을 시계 반대 방향으로 180˚만큼 돌린 후 아래로 뒤집으면</li>
+									</ul>
+									<ul class="--text n3">
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_2.png" alt="" height="32"></li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_3.png" alt="" height="32"></li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_4.png" alt="" height="32"></li>
+										<li><img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_5.png" alt="" height="32"></li>
+									</ul>
+									<div class="--text n4">이/가 됩니다.</div>
+								</div>
+							</li>
+							<li class="innerTab_3">
+								<div class="--img n3">
+									<div class="--line n1"></div>
+									<div class="--line n2"></div>
+									<div class="--text n5">
+										<img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_2.png" alt="" height="32">은/는 <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_6.png" alt="" height="32">을 오른쪽으로 뒤집은 것입니다.
+									</div>
+									<div class="--text n6">
+										<img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_3.png" alt="" height="32">은/는 <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_7.png" alt="" height="32">를 시계 방향으로 180˚만큼 돌린 것입니다.
+									</div>
+									<div class="--text n7">
+										<img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_4.png" alt="" height="32">은/는 <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_8.png" alt="" height="32">를 왼쪽으로 뒤집은 것입니다.
+									</div>
+									<div class="--text n8">
+										<img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_5.png" alt="" height="32">은/는 <img src="./images/suh_h_0401_04_0010_201_2/suh_h_0401_04_0010_201_2_2_9.png" alt="" height="32">을 시계 반대 방향으로 180˚만큼 돌린 후 아래로 뒤집은 것입니다.
+									</div>
+									<div class="balloon bottom ctTail textAlignC purple n4">
+										태양이의 생일은<br> □□월 □□일<br>이네.
+									</div>
+									<div class="balloon bottom ctTail textAlignC yellow n5">
+										우리도 이런 <br>초대장을<br>만들어 볼까?
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+			document.querySelector( "#aniBox_1" ).addEventListener("click", function(){
+				$efSound.click();
+			});
+
+		}, false);
+	</script>
+
+</body>
+
+</html>
