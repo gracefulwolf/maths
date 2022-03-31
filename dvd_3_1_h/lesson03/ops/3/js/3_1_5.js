@@ -33,9 +33,8 @@
       }
 
       var isReset = this.className.indexOf("reset") === -1;
-      dragReset();
-      // if (isReset) dragReset();
-      //else dragAnswer();
+      if (isReset) dragReset();
+      else dragAnswer();
     }
 
     window.dragDropCallbacks = {
