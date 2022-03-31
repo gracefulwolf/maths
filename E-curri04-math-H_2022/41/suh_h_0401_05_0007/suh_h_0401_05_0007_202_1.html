@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:50px; left:30px; height:510px;}
+		.page-iframe .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+
+		/* 페이지 개별 위치 */
+		.popup_pages .pop_page_1 .page-iframe{top:40px; left:70px; height:618px;}
+
+		.title .btn_1{top:5px; left:auto; right:0;}
+		.contentsBox .basicSlider_slides.inner{padding:0;}
+		.popup_pages .buttonContainer{right:40px; bottom:10px;}
+		.examViewBtn.reset:before{padding-left:20px; content:"다시하기";}
+		.moveButtonContainer{left: 20%; width: 60%;}
+		.page_1 .toggleBlank{vertical-align: -6px;}
+		.innerTab_1.on{z-index:0 !important;}
+		.popBtn.textInBtn.eye{display: inline-block; position: static; vertical-align: 9px;}
+
+
+		.page_1 .innerTab_2 .toggle{min-width: 115px;}
+
+		.pop_page_1 .--img{position: relative; width: 1000px; height: 500px; margin: 120px auto 0; border-radius: 15px;background: url(./images/suh_h_0401_05_0007_201_1/suh_h_0401_05_0007_201_1_1.png) no-repeat 50% 50% / cover;}
+		.pop_page_1 .balloon.n1{top: 30px;left: 220px;}
+		.pop_page_1 .balloon.n2{top: 70px;right: -30px;}
+		.pop_page_1 .balloon.n3{top: 310px;right: -30px;}
+
+		.--titleBox{display: inline-block;  padding-top: 2px; padding-bottom: 2px; font-size: 40px;}
+		.pop_page_1 .--titleBox{margin-top: 100px;}
+		.--graph{position: relative; width: 850px; height: 430px; margin: 0 auto; background: url(./images/suh_h_0401_05_0007_201_1/suh_h_0401_05_0007_201_1_2.png) no-repeat 50% 50% / 850px 100%;}
+		.--text{position: absolute;font-size: 35px;}
+		.--text.x1{top: 10px;left: 12px;}
+		.--text.x2{top: -5px;left: 175px;text-align: right;line-height: 140px;}
+		.--text.x3{top: 304px;left: 194px;}
+		.--text.x4{top: 345px;left: 10px;}
+		.--text.x5{top: 375px;left: 170px;}
+		.--text.x6{display: flex;align-items: center;justify-content:space-around;top: 362px;left: 225px;width: 615px;}
+		.--text.x6 > li{flex:1; text-align: center;}
+
+		.page_2 .--img{position: relative;width: 400px;height: 400px;margin-right: 20px;/* padding: 40px 80px; */}
+		.page_2 .--img.n1{background: url(./images/suh_h_0401_05_0007_202_1/suh_h_0401_05_0007_202_1_2.png) no-repeat 50% 100% / 200px auto;}
+		.page_2 .--img.n2{background: url(./images/suh_h_0401_05_0007_202_1/suh_h_0401_05_0007_202_1_3.png) no-repeat 50% 100% / 200px auto;}
+		.page_2 .--img.n3{background: url(./images/suh_h_0401_05_0007_202_1/suh_h_0401_05_0007_202_1_4.png) no-repeat 50% 100% / 200px auto;}
+		.page_2 .balloon{top:5px; left: 20px;}
+		.page_2 .--graph2{position: relative; width: 590px;height: 400px; opacity: 0;}
+		.page_2 .--graph2.on{opacity: 1;}
+		.page_2 .--graph2 > div{position: absolute; top: 0; left: 0; transform: scale(.65);transform-origin: 0 0;}
+		.page_2 .--finger{top: 40px; left: 380px;}
+		.--finger{animation-iteration-count:infinite !important;}
+		.--finger.complete{display:none;}
+
+		.page_3 .--paper{height: 430px; background: url(./images/suh_h_0401_05_0007_202_2/suh_h_0401_05_0007_202_2_1.png) no-repeat 50% 0% / cover;}
+		.page_3 .--paper p{padding: 100px 40px 0 80px;}
+		.page_3 .--paper p,
+		.page_3 .--paper p .answer{font-size: 31px;letter-spacing: -1px;line-height: 1.95;}
+		.page_3 .--paper p .--colorBox{display: inline-block; padding: 0 4px; border-radius: 3px; background: #efefef;}
+
+		.page_4 .charSpriteImg{position: absolute;top: 0;left: 120px;}
+		.page_4 .balloon{top: 190px;left: 410px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<div class="title"><span>
+				자료를 분석해서 방송 대본을 써 봅시다.
+				<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그림 보기</div>
+			</span></div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox right" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제</li>
+					<li data-hover="">계획</li>
+					<li data-hover="">실행</li>
+					<li data-hover="">반성</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">그림은 어떤 상황인가요?</p>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer textAlignJ" data-toggle-target="1" style="letter-spacing: 1.5px;">
+													모둠원들이 지난주에 했던 반별 단체 줄넘기 결과에 대해 이야기하고 있습니다.
+												</div>
+											</div>
+											<div class="toggle box mt_10" data-toggle-obj="2">
+												<div class="answer textAlignJ" data-toggle-target="2" style="letter-spacing: 1px;">
+													단체 줄넘기 성공 개수를 나타낸 막대그래프를 보고 알 수 있는 내용으로 방송 대본을 쓰려고 합니다.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">막대그래프에서 반별 단체 줄넘기 성공 개수를 각각 알아보세요.</p>
+											<div>
+												<div class="flexListContainer jcenter mt_60">
+													<div class="mr_80">
+														<div class="flexListContainer start center">
+															<div class="colorBox skyBlue check">1반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="1">
+																	<div class="answer" data-toggle-target="1">
+																		12개
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="flexListContainer start center mt_20">
+															<div class="colorBox skyBlue check">3반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="3">
+																	<div class="answer" data-toggle-target="3">
+																		10개
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="flexListContainer start center mt_20">
+															<div class="colorBox skyBlue check">5반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="5">
+																	<div class="answer" data-toggle-target="5">
+																		6개
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div>
+														<div class="flexListContainer start center">
+															<div class="colorBox skyBlue check">2반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="2">
+																	<div class="answer" data-toggle-target="2">
+																		16개
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="flexListContainer start center mt_20">
+															<div class="colorBox skyBlue check">4반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="4">
+																	<div class="answer" data-toggle-target="4">
+																		18개
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="flexListContainer start center mt_20">
+															<div class="colorBox skyBlue check">6반</div>
+															<div>
+																<div class="toggle" data-toggle-obj="6">
+																	<div class="answer" data-toggle-target="6">
+																		20개
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+
+
+					<li class="page_2">
+						<div class="basicSlider_slides" data-slide-container="">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+							<ul class="basicSlider_slides inner" data-slides="">
+								<li class="innerTab_1" data-quiz="toggle">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 자료를 분석해서 방송 대본을 써 보세요.</p>
+												<div>
+													<ins class="bullet number orange inline --bullet">1</ins>
+													<div class="flexListContainer">
+														<div class="--img n1">
+															<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+															<div class="balloon bottom ctTail textAlignC sky">
+																막대그래프를 보고<br>
+																방송 대본에 쓸 내용을<br>
+																정해 보세요.
+															</div>
+														</div>
+														<div class="--graph2" data-toggle-target="1">
+															<div>
+															<div class="textAlignC">
+																<div class="colorBox sky --titleBox">
+																	단체 줄넘기 성공 개수
+																</div>
+															</div>
+															<div class="--graph mt_10">
+																<div class="--text x1">(개)</div>
+																<div class="--text x2">20<br>10</div>
+																<div class="--text x3">0</div>
+																<div class="--text x4">성공 개수</div>
+																<div class="--text x5">반</div>
+																<ul class="--text x6">
+																	<li>1반</li>
+																	<li>2반</li>
+																	<li>3반</li>
+																	<li>4반</li>
+																	<li>5반</li>
+																	<li>6반</li>
+																</ul>
+															</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_2">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 자료를 분석해서 방송 대본을 써 보세요.</p>
+												<div>
+													<ins class="bullet number orange inline --bullet">2</ins>
+													<div class="flexListContainer">
+														<div class="--img n2">
+															<div class="balloon bottom ctTail textAlignC yellow">
+																단체 줄넘기 성공<br>
+																개수가 가장 많은 반은<br>
+																몇 반인지 알아보세요.
+															</div>
+														</div>
+														<div class="--graph2 on">
+															<div>
+															<div class="textAlignC">
+																<div class="colorBox sky --titleBox">
+																	단체 줄넘기 성공 개수
+																</div>
+															</div>
+															<div class="--graph mt_10">
+																<div class="--text x1">(개)</div>
+																<div class="--text x2">20<br>10</div>
+																<div class="--text x3">0</div>
+																<div class="--text x4">성공 개수</div>
+																<div class="--text x5">반</div>
+																<ul class="--text x6">
+																	<li>1반</li>
+																	<li>2반</li>
+																	<li>3반</li>
+																	<li>4반</li>
+																	<li>5반</li>
+																	<li>6반</li>
+																</ul>
+															</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="innerTab_3">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet circleDot"></ins>
+											<div>
+												<p class="mb_10">다음 순서로 자료를 분석해서 방송 대본을 써 보세요.</p>
+												<div>
+													<ins class="bullet number orange inline --bullet">3</ins>
+													<div class="flexListContainer">
+														<div class="--img n3">
+															<div class="balloon bottom ctTail textAlignC pink">
+																막대그래프를 보고 <br>
+																더 알 수 있는 내용을<br>
+																살펴보세요.
+															</div>
+														</div>
+														<div class="--graph2 on">
+															<div>
+															<div class="textAlignC">
+																<div class="colorBox sky --titleBox">
+																	단체 줄넘기 성공 개수
+																</div>
+															</div>
+															<div class="--graph mt_10">
+																<div class="--text x1">(개)</div>
+																<div class="--text x2">20<br>10</div>
+																<div class="--text x3">0</div>
+																<div class="--text x4">성공 개수</div>
+																<div class="--text x5">반</div>
+																<ul class="--text x6">
+																	<li>1반</li>
+																	<li>2반</li>
+																	<li>3반</li>
+																	<li>4반</li>
+																	<li>5반</li>
+																	<li>6반</li>
+																</ul>
+															</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+
+					<li class="page_3" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">자료를 분석해서 방송 대본을 써 보세요.</p>
+									<div>
+										<div class="--paper">
+											<p>
+												<span class="--colorBox"><span class="answer" data-toggle-obj="1" data-toggle-target="1">사랑</span></span> 초등학교 학생 여러분, 안녕하세요?<br>
+												지난 주에 했던 반별 단체 줄넘기 소식을 전하겠습니다.<br>
+												<span class="answer" data-toggle-target="1">반별 단체 줄넘기 성공 개수를 각각 알아보면 1반은 12개, 2반은 16개,<br>
+												3반은 10개, 4반은 18개, 5반은 6개, 6반은 20개입니다. 단체 줄넘기<br>
+												성공 개수가 가장 많은 반은 6반이고 두 번째로 많은 반은 4반입니다.<br>
+												6반의 성공 개수는 4반의 성공 개수보다 2개 더 많습니다.</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="buttonContainer">
+							<button class="examViewBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+
+					<li class="page_4">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">방송 대본을 발표해 보세요.</p>
+									<div>
+										<div class="single charSpriteImg girl_1"></div>
+										<div class="balloon left ctTail textAlignC deeppink">
+											친구들이 쓴 방송 대본을 보고<br>
+											 칭찬할 점이나 느낀 점을<br>
+											말해 보세요.
+										</div>
+
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents" data-slide-container="popup">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<section>
+									<div class="--img">
+										<div class="balloon bottom ctTail textAlignC pink n1">
+											지난주에 했던 반별<br>
+											단체 줄넘기 결과는<br>
+											어떻게 됐지?
+										</div>
+										<div class="balloon left ctTail textAlignC yellow n2">
+											단체 줄넘기 성공 개수를<br>
+											막대그래프로<br>
+											나타냈어.
+										</div>
+										<div class="balloon left ctTail textAlignC sky n3">
+											막대그래프를 보고<br>
+											알 수 있는 내용으로<br>
+											방송 대본을 써 보자.
+										</div>
+									</div>
+								</section>
+							</li>
+							<li class="innerTab_2">
+								<div class="textAlignC">
+									<div class="colorBox sky --titleBox">
+										단체 줄넘기 성공 개수
+									</div>
+								</div>
+								<div class="--graph mt_10">
+									<div class="--text x1">(개)</div>
+									<div class="--text x2">20<br>10</div>
+									<div class="--text x3">0</div>
+									<div class="--text x4">성공 개수</div>
+									<div class="--text x5">반</div>
+									<ul class="--text x6">
+										<li>1반</li>
+										<li>2반</li>
+										<li>3반</li>
+										<li>4반</li>
+										<li>5반</li>
+										<li>6반</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+
+		}, false);
+	</script>
+
+</body>
+
+</html>

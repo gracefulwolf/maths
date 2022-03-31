@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		/* 개별 */
+		.title .--colorBullet{display: inline-block; width: 40px; height: 40px; margin: 0; padding: 0; line-height: 40px; text-align: center; vertical-align: 5px;}
+		.title .eye{display: inline-block; margin: 4px 0 0 8px;}
+		.page_1 h2 .toggle, .page_2 h2 .toggle{line-height: 45px;}
+
+
+		.--text{position: absolute; font-size: 35px; letter-spacing: -1px;}
+		.--graphWrap{position: relative;height: 346px;background: url(./images/suh_h_0401_05_0003_203_1/suh_h_0401_05_0003_203_1_1.png) no-repeat 50% 50% / 850px 100%;}
+		.--graphWrap .--lineBox{position: absolute; min-width: 120px; padding: 2px 4px; line-height: 1.15; text-align: center;}
+		.--graphWrap .--lineBox{min-width: auto;}
+		.--graphWrap .--lineBox.n1{top: 285px;left: 866px;}
+		.--graphWrap .--lineBox.n2{top: 296px;left: 230px;}
+		.--graphWrap .--lineBox.n3{top: 268px;left: 86px;}
+		.--graphWrap .--lineBox.n4{top: 274px;left: 800px;}
+		.--graphWrap .--lineBox.n5{top: 274px;left: 576px;}
+		.--graphWrap .--lineBox.n6{top: 76px;left: 165px;}
+		.--graphWrap .--lineBox.n7{top: 142px;left: 169px;}
+		.--graphWrap .--lineBox.n8{top: 209px;left: 144px;}
+		.--graphWrap .--lineBox.n9{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n10{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n11{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n12{top: 290px;left: 140px;}
+		.--lineBoxTitle{display: block; width: 480px; margin: 0 auto; padding: 2px 4px; line-height: 1.15; text-align: center;}
+
+		.--text.n1{top: 268px;left: 389px;}
+		.--text.n2{top: 16px;left: 170px;}
+
+		.page_4 .fillContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 4px 80px 0 384px;
+  height: 270px;
+}
+.page_4 .fillContainer .square {
+  display: flex;
+  height: 46px;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+.page_4 .square > .target {
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+}
+.page_4 .square > .target.fill[index] {
+  background-color: #00a0ff66;
+  border: 2px solid #00a0ff;
+  border-right: 0;
+  border-left: 0;
+  animation: none;
+}
+.page_4 .square > .target.fill.last { border-right: 2px solid #00a0ff; }
+.page_4 .square > .target[index="0"] {
+  animation: targetOpacity 1s ease-in-out infinite;
+}
+
+/* 활동 1 약물 */
+.icon.--acti{display: inline-flex; position: relative; top: -4px; margin-right: 2px; font-size: 26px; font-family: YGJAL;}
+.icon.--acti:before,
+.icon.--acti:after{text-shadow: #fff 3px 0 0,#fff 2.83487px .981584px 0,#fff 2.35766px 1.85511px 0,#fff 1.62091px 2.52441px 0,#fff .705713px 2.91581px 0,#fff -0.287171px 2.98622px 0,#fff -1.24844px 2.72789px 0,#fff -2.07227px 2.16926px 0,#fff -2.66798px 1.37182px 0,#fff -2.96998px .42336px 0,#fff -2.94502px -0.571704px 0,#fff -2.59586px -1.50383px 0,#fff -1.96093px -2.27041px 0,#fff -1.11013px -2.78704px 0,#fff -0.137119px -2.99686px 0,#fff .850987px -2.87677px 0,#fff 1.74541px -2.43999px 0,#fff 2.44769px -1.73459px 0,#fff 2.88051px -0.838247px 0;}
+.icon.--acti:before{content: '활동'; color: #ff6200; padding-right: 3px;}
+.icon.--acti.--num1:after{content: '1'; color: #ff9e01;}
+.icon.--acti.--num2:after{content: '2'; color: #ff9e01;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title">
+			<ins class="icon --acti --num1"></ins>의 그래프의 가로와 세로를 서로 바꾸어 막대를 가로로 나타내 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_4" data-quiz="toggle">
+						<section>
+							<div class="lineBox sky --lineBoxTitle">
+								<div class="toggle noBg" data-toggle-obj="0">
+									<div class="answer" data-toggle-target="0">
+										<ins class="bullet exam">예</ins>
+										로봇에게 바라는 기능
+									</div>
+								</div>
+							</div>
+							<div class="--graphWrap mt_10">
+								<div class="fillContainer">
+									<div class="js-fillContainer square square_1" data-length="12" data-answer="8"></div>
+									<div class="js-fillContainer square square_2" data-length="12" data-answer="10"></div>
+									<div class="js-fillContainer square square_3" data-length="12" data-answer="4"></div>
+									<div class="js-fillContainer square square_4" data-length="12" data-answer="6"></div>
+								  </div>
+								<div class="--lineBox lineBox sky n1">
+									<div class="toggle noBg" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											(명)
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n2">
+									<div class="toggle noBg" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											학생 수
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n3">
+									<div class="toggle noBg" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											기능
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n4">
+									<div class="toggle noBg" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">
+											10
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n5">
+									<div class="toggle noBg" data-toggle-obj="5">
+										<div class="answer" data-toggle-target="5">
+											5
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n6">
+									<div class="toggle noBg" data-toggle-obj="6">
+										<div class="answer" data-toggle-target="6">
+											짐 들기
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n7">
+									<div class="toggle noBg" data-toggle-obj="7">
+										<div class="answer" data-toggle-target="7">
+											춤추기
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n8">
+									<div class="toggle noBg" data-toggle-obj="8">
+										<div class="answer" data-toggle-target="8">
+											함께 놀기
+										</div>
+									</div>
+								</div>
+
+								<div class="--text n1">0</div>
+								<div class="--text n2">요리하기</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="colorBox orange textAlignC" style="width:480px; margin: 210px auto 0; font-size: 40px;">로봇에게 바라는 기능</div>
+						<div class="tableContainer brown fix mt_20">
+							<table class="tableBorder" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>기능</th>
+									<th>요리하기</th>
+									<th>짐 들기</th>
+									<th>춤추기</th>
+									<th>함께 놀기</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th>학생 수 (명)</th>
+									<td>8</td>
+									<td>10</td>
+									<td>4</td>
+									<td>6</td>
+									<td>28</td>
+								</tr>
+							</table>
+						</div> <!-- tableContainer -->
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+
+	<script type="text/javascript">
+
+(function(){function t(t){function e(){s.targets.forEach(function(t){t.classList.remove(u)})}function n(){for(var t=[],e=0;e<s.length;e++){var n=document.createElement("div");n.classList.add("target"),n.setAttribute(c,e),n.addEventListener("click",r),n.addEventListener("click",$efSound.click),s.container.appendChild(n),t.push(n)}return t}function a(t){for(var e=[],n=0;n<=t;n++)s.container.querySelector('.target[index="'+n+'"]').classList.add(d),e.push(s.container.querySelector('.target[index="'+n+'"]'));s.container.querySelector('.target[index="'+t+'"]').classList.add(u),window.$callBack&&window.$callBack.filledTarget&&window.$callBack.filledTarget(s,e)}function i(t,e){var n=[],a=0==e,i=1===s.container.querySelectorAll(".fill").length;s.container.querySelector('.target[index="'+e+'"]').classList.add(u),i&&a&&(t.classList.remove(d),t.classList.remove(u),n.push(t));for(var r=e-0;r<s.length;r++){var c=s.container.querySelector('.target[index="'+(r+1)+'"]');c&&c.classList.remove(d),n.push(c)}window.$callBack&&window.$callBack.toggleTarget&&window.$callBack.toggleTarget(s,n)}function r(){var t=this.getAttribute(c);e(),this.classList.contains(d)?i(this,t):a(t)}var s=this,c="index",l="data-length",o="data-answer",d="fill",u="last";this.container=t.container,this.answerButton=t.answerButton,this.length=this.container.getAttribute(l),this.answer=this.container.getAttribute(o),this.targets=n();var g=!1;this.fillReset=function(){g=!1,s.container.classList.remove("complete"),s.targets.forEach(function(t){t.classList.remove(d),t.classList.remove(u)})},this.fillAnswer=function(){s.fillReset(),g=!0,s.container.classList.add("complete");for(var t=0;t<s.answer;t++)s.container.querySelector('.target[index="'+t+'"]').classList.add(d);s.container.querySelector('.target[index="'+(s.answer-1)+'"]')&&s.container.querySelector('.target[index="'+(s.answer-1)+'"]').classList.add(u)},s.answerButton.addEventListener("click",function(){g?s.fillReset():s.fillAnswer()})}window.FillTarget=t})();
+
+
+
+window.addEventListener('load', function() {
+        $ts.getEl('.js-fillContainer').forEach(function(container) {
+          new FillTarget({
+            container: container,
+            answerButton: document.querySelector('.page_4 .dapCheckBtn')
+          });
+        });
+        window.$callBack.filledTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+          })
+          // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        }
+        window.$callBack.toggleTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+          })
+        }
+      });
+
+	</script>
+
+</html>
