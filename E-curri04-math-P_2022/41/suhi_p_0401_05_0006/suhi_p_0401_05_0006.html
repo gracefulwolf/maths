@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.popup_contents .vMid{height:500px;}
+	.page-iframe{position:fixed; z-index:1; top:160px; left:55px; overflow:hidden; width:1060px; height:460px; border:0; background:transparent;}
+	.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+	.page-iframe + .popup_contents .toggle,
+	.page-iframe + section .toggle{z-index:1;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.page-iframe{top: 156px; width:1280px; height: 580px; border:0; transform: scale(0.828125) translate(-130px, -20px);}
+
+	.--QnA{display:table; width:100%;}
+	.--QnA li{display:table-row;}
+	.--QnA li > div{display:table-cell; vertical-align:top;}
+	.--QnA li + li .--Q,
+	.--QnA li + li .--A{padding-top:15px;}
+	.--QnA .--Q{min-width:94px; text-align:right;}
+	.--QnA .--Q .colorBox{display:inline-block; float:right; line-height:36px !important; white-space:nowrap;}
+	.--QnA .--A .answer{text-align:justify;}
+
+	/* 개별 */
+	.--lineBox{display: inline-block; padding-top: 0; padding-bottom: 0; font-size: 40px; text-align: center;}
+
+	.page_1 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+	.page_1 .bullet.exam{position: absolute; top: -50px; left: 0; opacity: 0;}
+	.page_1 .bullet.exam.on{opacity: 1;}
+	.pop_page_100 td .toggle{width: 100%; padding-top: 20px; padding-bottom: 20px;}
+
+	.--graph-1to3{position: relative; height: 290px; margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0006_1.png) no-repeat 50% 50% / contain;}
+	.--graph-1to3 .--text{position: absolute;font-size: 38px;}
+	.--graph-1to3 .--text.n1{top: 0;left: 180px;}
+	.--graph-1to3 .--text.n2{top: -10px;left: 280px;line-height: 100px;}
+	.--graph-1to3 .--text.n3{top: 198px;left: 302px;}
+	.--graph-1to3 .--text.n4{top: 225px;left: 168px;}
+	.--graph-1to3 .--text.n5{top: 260px;left: 261px;}
+	.--graph-1to3 .--text.n6{top: 240px;left: 325px;}
+	.--graph-1to3 .--text.n7{top: 240px;left: 438px;}
+	.--graph-1to3 .--text.n8{top: 240px;left: 533px;}
+	.--graph-1to3 .--text.n9{top: 240px;left: 626px;}
+	.--graph-1to3 .--text.n10{top: 240px;left: 722px;}
+
+	.--graph-100to300{position: relative; height: 290px; margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0006_2.png) no-repeat 50% 50% / contain;}
+	.--graph-100to300 .--text{position: absolute;font-size: 35px;}
+	.--graph-100to300 .--text.n1{top: 2px;left: 225px;}
+	.--graph-100to300 .--text.n2{top: -12px;left: 300px;line-height: 100px;}
+	.--graph-100to300 .--text.n3{top: 198px;left: 320px;}
+	.--graph-100to300 .--text.n4{top: 225px;left: 168px;}
+	.--graph-100to300 .--text.n5{top: 260px;left: 280px;}
+	.--graph-100to300 .--text.n6{top: 242px;left: 348px;}
+	.--graph-100to300 .--text.n7{top: 242px;left: 442px;}
+	.--graph-100to300 .--text.n8{top: 242px;left: 538px;}
+	.--graph-100to300 .--text.n9{top: 242px;left: 648px;}
+	.--graph-100to300 .--text.n10{top: 242px;left: 743px;}
+
+	.--graph-4to6{position: relative;width: 534px;height: 290px;margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0006_3.png) no-repeat 50% 50% / contain;}
+	.--graph-4to6 .--text{position: absolute; z-index: 1; font-size: 38px;}
+	.--graph-4to6 .--text.n1{top: 0;left: -20px;}
+	.--graph-4to6 .--text.n2{top: 10px;left: 50px;line-height: 90px;text-align: right;}
+	.--graph-4to6 .--text.n3{top: 200px;left: 93px;}
+	.--graph-4to6 .--text.n4{top: 225px;left: -70px;}
+	.--graph-4to6 .--text.n5{top: 260px;left: 50px;}
+	.--graph-4to6 .--text.n6{top: 240px;left: 139px;line-height: 1;}
+	.--graph-4to6 .--text.n7{top: 240px;left: 241px;line-height: 1;}
+	.--graph-4to6 .--text.n8{top: 240px;left: 344px;line-height: 1;}
+	.--graph-4to6 .--text.n9{top: 242px;left: 428px;}
+	.--graph-4to6 .--text.n10{top: 240px;left: 722px;}
+	.--graph-4to6 .--answerImg{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0006_4.png) no-repeat 50% 50% / contain;}
+	.page_5 .--graph-4to6,
+	.page_6 .--graph-4to6{background: url(./images/suhi_p_0401_05_0006_4.png) no-repeat 50% 50% / contain;}
+
+	.--graph-400to600{position: relative;width: 680px;height: 290px;margin: 10px auto 0; background: url(./images/suhi_p_0401_05_0006_5.png) no-repeat 50% 50% / 100% 100%;}
+	.--graph-400to600 .--text{position: absolute;z-index: 1;font-size: 35px;text-align: center;}
+	.--graph-400to600 .--text.n1{top: 5px;left: 5px;}
+	.--graph-400to600 .--text.n2{top: 10px;left: 88px;line-height: 90px;text-align: right;}
+	.--graph-400to600 .--text.n3{top: 200px;left: 129px;}
+	.--graph-400to600 .--text.n4{top: 225px;left: 10px;}
+	.--graph-400to600 .--text.n5{top: 260px;left: 50px;}
+	.--graph-400to600 .--text.n6{top: 240px;left: 160px;line-height: 1;letter-spacing: -2px;}
+	.--graph-400to600 .--text.n7{top: 240px;left: 304px;line-height: 1;}
+	.--graph-400to600 .--text.n8{top: 240px;left: 418px;line-height: 1;letter-spacing: -2px;}
+	.--graph-400to600 .--text.n9{top: 240px;left: 554px;font-size: 35px;line-height: 1;letter-spacing: -2px;}
+	.--graph-400to600 .--text.n10{top: 240px;left: 722px;}
+	.--graph-400to600 .--answerImg{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suhi_p_0401_05_0006_6.png) no-repeat 50% 50% / 100% 100%;}
+	.pop_page_500 .--graph-400to600,
+	.pop_page_600 .--graph-400to600{background: url(./images/suhi_p_0401_05_0006_4.png) no-repeat 50% 50% / 100% 100%;}
+
+	.bullet.number.green{width: 40px; height: 40px; border: 2px solid #6dbc4b; color:#6dbc4b; line-height: 38px;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">막대그래프로 나의 생각을 전해 볼까요</span>
+		<span class="sub-page">78~79쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">1~3</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4~6</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+
+			<li class="page_1to3">
+				<h2>[<ins class="number mr_0">1</ins>~<ins class="number mr_0">3</ins>]<span class="ml_10">
+					어느 생선 가게에서 하루 동안 팔린 생선 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							하루 동안 팔린 생선 수
+						</div>
+					</div>
+					<div class="--graph-1to3">
+						<div class="--text n1">(마리)</div>
+						<div class="--text n2">20<br>10</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">생선 수</div>
+						<div class="--text n5">종류</div>
+						<div class="--text n6">고등어</div>
+						<div class="--text n7">갈치</div>
+						<div class="--text n8">꽁치</div>
+						<div class="--text n9">삼치</div>
+						<div class="--text n10">굴비</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					생선 가게에서 팔린 갈치는 삼치보다 몇 마리 더 많은가요?
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							하루 동안 팔린 생선 수
+						</div>
+					</div>
+					<div class="--graph-1to3">
+						<div class="--text n1">(마리)</div>
+						<div class="--text n2">20<br>10</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">생선 수</div>
+						<div class="--text n5">종류</div>
+						<div class="--text n6">고등어</div>
+						<div class="--text n7">갈치</div>
+						<div class="--text n8">꽁치</div>
+						<div class="--text n9">삼치</div>
+						<div class="--text n10">굴비</div>
+					</div>
+					<div class="textAlignC mt_20">
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								6마리
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="100" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					생선 가게에서 굴비의 2배만큼 팔린 생선은 무엇인가요?
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							하루 동안 팔린 생선 수
+						</div>
+					</div>
+					<div class="--graph-1to3">
+						<div class="--text n1">(마리)</div>
+						<div class="--text n2">20<br>10</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">생선 수</div>
+						<div class="--text n5">종류</div>
+						<div class="--text n6">고등어</div>
+						<div class="--text n7">갈치</div>
+						<div class="--text n8">꽁치</div>
+						<div class="--text n9">삼치</div>
+						<div class="--text n10">굴비</div>
+					</div>
+					<div class="textAlignC mt_20">
+						<div class="toggle" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								고등어
+							</div>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="200" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span class="ls1">
+					내가 생선 가게 주인이라면 어느 생선을 더 많이 갖다 놓는 것이 좋을지 생각해 보고, 그 까닭을 써 보세요.
+				</span></h2>
+				<section>
+					<div class="toggle" data-toggle-obj="1">
+						<div class="answer" data-toggle-target="1">
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet exam">예</ins>
+									<div style="letter-spacing: 1px;">
+										고등어를 더 많이 갖다 놓는 것이 좋을 것 같습니다. 조사 결과를 살펴보았을 때 가장 많이 팔린 생선이 고등어이기 때문입니다.
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="300" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4to6">
+				<h2>[<ins class="number mr_0">4</ins>~<ins class="number mr_0">6</ins>]<span class="ml_10">
+					준석이네 동네에서 일주일 동안 나온 음식물 쓰레기 양을 조사하여 나타낸 막대그래프입니다. 전체 음식물 쓰레기 양이 240 kg일 때, 물음에 답하세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							종류별 음식물 쓰레기 양
+						</div>
+					</div>
+					<div class="--graph-4to6">
+						<div class="--text n1">(kg)</div>
+						<div class="--text n2">100<br>50</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">쓰레기 양</div>
+						<div class="--text n5">종류</div>
+						<div class="--text n6">남은<br>음식</div>
+						<div class="--text n7">상한<br>음식</div>
+						<div class="--text n8">과일<br>껍질</div>
+						<div class="--text n9">식재료</div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">4</ins><span class="ls1_5">
+					상한 음식의 쓰레기 양과 과일 껍질의 쓰레기 양이 같다고 합니다. 아래 막대그래프를 완성해 보세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC">
+						<div class="lineBox sky --lineBox">
+							종류별 음식물 쓰레기 양
+						</div>
+					</div>
+					<div class="--graph-4to6" data-toggle-obj="1">
+						<div class="--text n1">(kg)</div>
+						<div class="--text n2">100<br>50</div>
+						<div class="--text n3">0</div>
+						<div class="--text n4">쓰레기 양</div>
+						<div class="--text n5">종류</div>
+						<div class="--text n6">남은<br>음식</div>
+						<div class="--text n7">상한<br>음식</div>
+						<div class="--text n8">과일<br>껍질</div>
+						<div class="--text n9">식재료</div>
+						<div class="answer --answerImg" data-toggle-target="1"></div>
+					</div>
+
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="400" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+
+			<li class="page_5" data-slide-container="">
+				<h2><ins class="number star">5</ins><span>
+					가장 많이 나오는 음식물 쓰레기의 종류는 무엇인지 쓰고, 그 까닭을 써 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<section>
+							<div class="textAlignC">
+								<div class="lineBox sky --lineBox">
+									종류별 음식물 쓰레기 양
+								</div>
+							</div>
+							<div class="--graph-4to6" data-toggle-obj="1">
+								<div class="--text n1">(kg)</div>
+								<div class="--text n2">100<br>50</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">쓰레기 양</div>
+								<div class="--text n5">종류</div>
+								<div class="--text n6">남은<br>음식</div>
+								<div class="--text n7">상한<br>음식</div>
+								<div class="--text n8">과일<br>껍질</div>
+								<div class="--text n9">식재료</div>
+								<div class="answer --answerImg" data-toggle-target="1"></div>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<section>
+							<ul class="--QnA">
+								<li>
+									<div class="--Q">
+										<div class="colorBox check deepPurple">답</div>
+									</div>
+									<div class="--A">
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												남은 음식
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="--Q">
+										<div class="colorBox check skyBlue">까닭</div>
+									</div>
+									<div class="--A">
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div>
+															음식의 양을 먹을 만큼 준비하지 않고 많이 준비하여 다 먹지 못하고 버리기 때문입니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="500" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+
+			<li class="page_6" data-slide-container="">
+				<h2><ins class="number star">6</ins><span style="letter-spacing: 1px;">
+					막대그래프를 보고 준석이네 동네에서 음식물 쓰레기 양을 줄일 수 있는 방법을 써 보세요.
+				</span></h2>
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<section>
+							<div class="textAlignC">
+								<div class="lineBox sky --lineBox">
+									종류별 음식물 쓰레기 양
+								</div>
+							</div>
+							<div class="--graph-4to6" data-toggle-obj="1">
+								<div class="--text n1">(kg)</div>
+								<div class="--text n2">100<br>50</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">쓰레기 양</div>
+								<div class="--text n5">종류</div>
+								<div class="--text n6">남은<br>음식</div>
+								<div class="--text n7">상한<br>음식</div>
+								<div class="--text n8">과일<br>껍질</div>
+								<div class="--text n9">식재료</div>
+								<div class="answer --answerImg" data-toggle-target="1"></div>
+							</div>
+						</section>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													음식을 남기지 않도록 적당한 음식의 양을 준비합니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="600" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+
+
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="whole pop_page_600" data-popup-page="600">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList" style="margin-top: -40px;">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">희석이네 학교 학생 330명이 실천한 환경 보호 활동별 학생 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10 ls2_5">막대그래프를 보고 내가 실천할 수 있는 환경 보호 활동을 써 보세요.</p>
+										<div>
+											<div class="textAlignC">
+												<div class="lineBox sky --lineBox">
+													환경 보호 활동별 학생 수
+												</div>
+											</div>
+											<div class="--graph-400to600" data-toggle-obj="1">
+												<div class="answer --answerImg" data-toggle-target="1"></div>
+												<div class="--text n1">(명)</div>
+												<div class="--text n2">100<br>50</div>
+												<div class="--text n3">0</div>
+												<div class="--text n4">학생 수</div>
+												<div class="--text n5">활동</div>
+												<div class="--text n6">개인 컵<br>사용하기</div>
+												<div class="--text n7">쓰레기<br>줍기</div>
+												<div class="--text n8">전기<br>아껴 쓰기</div>
+												<div class="--text n9">손수건<br>사용하기</div>
+											</div>
+											<div class="toggle mt_30" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<ul class="contentsList">
+														<li>
+															<ins class="bullet exam">예</ins>
+															<div class="ls1">
+																비닐봉지나 종이 가방을 사용하지 않고 천 가방을 사용합니다.
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="6">
+			<div class="popup_contents">
+				<p class="ls1">준비한 음식은 남기지 않도록 합니다. 등 여러 가지로 써 봅니다.</p>
+			</div>
+		</li>
+
+
+		<li class="whole pop_page_500" data-popup-page="500">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-slide-container="popup">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									<h3 class="mb_10">희석이네 학교 학생 330명이 실천한 환경 보호 활동별 학생 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet dot deepGreen"></ins>
+											<div>
+												<p class="mb_10">가장 많은 학생이 실천한 활동은 무엇인지 쓰고, 그 까닭을 써 보세요.</p>
+												<div>
+													<div class="textAlignC">
+														<div class="lineBox sky --lineBox">
+															환경 보호 활동별 학생 수
+														</div>
+													</div>
+													<div class="--graph-400to600" data-toggle-obj="1">
+														<div class="answer --answerImg" data-toggle-target="1"></div>
+														<div class="--text n1">(명)</div>
+														<div class="--text n2">100<br>50</div>
+														<div class="--text n3">0</div>
+														<div class="--text n4">학생 수</div>
+														<div class="--text n5">활동</div>
+														<div class="--text n6">개인 컵<br>사용하기</div>
+														<div class="--text n7">쓰레기<br>줍기</div>
+														<div class="--text n8">전기<br>아껴 쓰기</div>
+														<div class="--text n9">손수건<br>사용하기</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<section>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot deepGreen"></ins>
+									<div>
+										<h3 class="mb_10">희석이네 학교 학생 330명이 실천한 환경 보호 활동별 학생 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet dot deepGreen"></ins>
+												<div>
+													<p class="mb_10">가장 많은 학생이 실천한 활동은 무엇인지 쓰고, 그 까닭을 써 보세요.</p>
+													<div>
+														<ul class="--QnA">
+															<li>
+																<div class="--Q">
+																	<div class="colorBox check deepPurple">답</div>
+																</div>
+																<div class="--A">
+																	<div class="toggle" data-toggle-obj="1">
+																		<div class="answer" data-toggle-target="1">
+																			개인 컵 사용하기
+																		</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="--Q">
+																	<div class="colorBox check skyBlue">까닭</div>
+																</div>
+																<div class="--A">
+																	<div class="toggle" data-toggle-obj="2">
+																		<div class="answer" data-toggle-target="2">
+																			<ul class="contentsList">
+																				<li>
+																					<ins class="bullet exam">예</ins>
+																					<div>
+																						플라스틱 컵의 사용을 줄이기 위한 것입니다.
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="5">
+			<div class="popup_contents">
+				<p>그래프에서 막대의 길이가 가장 긴 것은 남은 음식입니다.</p>
+			</div>
+		</li>
+
+
+		<li class="whole pop_page_400" data-popup-page="400">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">희석이네 학교 학생 330명이 실천한 환경 보호 활동별 학생 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">쓰레기 줍기와 손수건 사용하기를 실천한 학생 수가 같다고 할 때, 막대그래프를 완성해 보세요.</p>
+										<div>
+											<div class="textAlignC">
+												<div class="lineBox sky --lineBox">
+													환경 보호 활동별 학생 수
+												</div>
+											</div>
+											<div class="--graph-400to600" data-toggle-obj="1">
+												<div class="answer --answerImg" data-toggle-target="1"></div>
+												<div class="--text n1">(명)</div>
+												<div class="--text n2">100<br>50</div>
+												<div class="--text n3">0</div>
+												<div class="--text n4">학생 수</div>
+												<div class="--text n5">활동</div>
+												<div class="--text n6">개인 컵<br>사용하기</div>
+												<div class="--text n7">쓰레기<br>줍기</div>
+												<div class="--text n8">전기<br>아껴 쓰기</div>
+												<div class="--text n9">손수건<br>사용하기</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="4">
+			<div class="popup_contents">
+				<p>
+					남은 음식 : 90 kg, 식재료 : 70 kg<br>
+					상한 음식과 과일 껍질의 쓰레기 양은 240－90－70＝80 (kg)입니다. <br>
+					상한 음식의 쓰레기 양과 과일 껍질의 쓰레기 양이 같으므로 두 쓰레기의 양은 각각 80÷2＝40 (kg)입니다.
+				</p>
+			</div>
+		</li>
+
+
+		<li class="whole pop_page_300" data-popup-page="300">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">어느 주스 가게에서 하루 동안 팔린 주스 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">내가 주스 가게 주인이라면 어느 과일을 더 많이 갖다 놓는 것이 좋을지 생각해 보고, 그 까닭을 써 보세요.</p>
+										<div>
+											<div class="textAlignC mt_20">
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														<ul class="contentsList">
+															<li>
+																<ins class="bullet exam">예</ins>
+																<div>
+																	바나나를 더 많이 갖다 놓는 것이 좋을 것 같습니다. 조사 결과를 살펴 보았을 때 가장 많이 팔린 주스가 바나나 주스이기 때문입니다.
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="3">
+			<div class="popup_contents">
+				<p>
+					생선 가게에서 가장 많이 팔린 것이 고등어이므로 고등어를 더 많이 갖다 놓는 것이 더 좋을 것 같습니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_200" data-popup-page="200">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">어느 주스 가게에서 하루 동안 팔린 주스 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10 ls1">주스 가게에서 토마토 주스의 2배만큼 팔린 주스는 무엇인가요?</p>
+										<div>
+											<div class="textAlignC">
+												<div class="lineBox sky --lineBox">
+													하루 동안 팔린 주스의 수
+												</div>
+											</div>
+											<div class="--graph-100to300">
+												<div class="--text n1">(잔)</div>
+												<div class="--text n2">20<br>10</div>
+												<div class="--text n3">0</div>
+												<div class="--text n4">주스의 수</div>
+												<div class="--text n5">종류</div>
+												<div class="--text n6">오렌지</div>
+												<div class="--text n7">바나나</div>
+												<div class="--text n8">토마토</div>
+												<div class="--text n9">포도</div>
+												<div class="--text n10">딸기</div>
+											</div>
+											<div class="textAlignC mt_20">
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														오렌지 주스
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="2">
+			<div class="popup_contents">
+				<p class="ls0">
+					굴비는 10마리이고, 10마리는 2배는 20마리이므로 생선 가게에서 20마리 팔린 생선은 고등어입니다.
+				</p>
+			</div>
+		</li>
+
+		<li class="whole pop_page_100" data-popup-page="100">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">어느 주스 가게에서 하루 동안 팔린 주스 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">딸기 주스는 토마토 주스보다 몇 잔 더 많이 팔렸나요?</p>
+										<div>
+											<div class="textAlignC">
+												<div class="lineBox sky --lineBox">
+													하루 동안 팔린 주스의 수
+												</div>
+											</div>
+											<div class="--graph-100to300">
+												<div class="--text n1">(잔)</div>
+												<div class="--text n2">20<br>10</div>
+												<div class="--text n3">0</div>
+												<div class="--text n4">주스의 수</div>
+												<div class="--text n5">종류</div>
+												<div class="--text n6">오렌지</div>
+												<div class="--text n7">바나나</div>
+												<div class="--text n8">토마토</div>
+												<div class="--text n9">포도</div>
+												<div class="--text n10">딸기</div>
+											</div>
+											<div class="textAlignC mt_20">
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														8
+													</div>
+												</div>잔
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-5)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="1">
+			<div class="popup_contents">
+				<p>갈치 : 12마리, 삼치 : 6마리</p>
+				<ul class="contentsList mt_5">
+					<li>
+						<ins class="icon_arrow mr_10"></ins>
+						<div style="letter-spacing: 1px;">생선 가게에서 팔린 갈치는 삼치보다 12－6＝6(마리) 더 많습니다.</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+		const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+		_dapChkBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				let _closestTg = obj.closest(".on");
+				if( _closestTg.querySelector(".page-iframe") ){
+					_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+				}
+			});
+		});
+
+	}, false);
+
+</script>
+
+</body>
+
+</html>

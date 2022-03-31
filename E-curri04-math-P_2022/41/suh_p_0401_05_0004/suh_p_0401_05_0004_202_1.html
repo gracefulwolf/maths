@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		/* 개별 */
+		.title .--colorBullet{display: inline-block; width: 40px; height: 40px; margin: 0; padding: 0; line-height: 40px; text-align: center; vertical-align: 5px;}
+		.title .eye{position: absolute; top: 48px; left: 790px;}
+		.page_1 h2 .toggle, .page_2 h2 .toggle{line-height: 45px;}
+		.--lineBox{width: 480px; margin: 0 auto;}
+		.--lineBox .answer{line-height: 1.2}
+
+		.page_1 .--graphWrap{position: relative; height: 320px; margin: 10px auto 0; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_1.png) no-repeat 50% 50% / contain;}
+		.page_1 .--graph{width: 100%; height: 100%;}
+		.page_1 .--text{position: absolute; z-index: 1; font-size:35px;letter-spacing: -2px;}
+		.page_1 .--graphWrap .--text.n1{top: 8px;left: 114px;}
+		.page_1 .--graphWrap .--text.n2{top: -10px;left: 212px;text-align: right;line-height: 106px;}
+		.page_1 .--graphWrap .--text.n3{top: 254px;left: 108px;}
+		.page_1 .--graphWrap .--text.n4{top: 274px;left: 190px;}
+		.page_1 .--graphWrap .--text.n5{top: 265px;left: 278px;}
+		.page_1 .--graphWrap .--text.n6{top: 265px;left: 420px;}
+		.page_1 .--graphWrap .--text.n7{top: 265px;left: 549px;}
+		.page_1 .--graphWrap .--text.n8{top: 265px;left: 694px;}
+		.page_1 .--graphWrap .--text.n9{top: 265px;left: 807px;}
+		.page_1 .--graphWrap .--text.n10{top: 6px;left: 105px;}
+		.page_1 .--graphWrap .--text.n11{top: 216px;left: 230px;}
+		.page_1 .--graphWrap .--text.n12{top: 186px;left: 720px;}
+		.page_1 .--graphWrap .--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_2.png) no-repeat 50% 50% / contain;}
+
+		.page_2 .--graphWrap{position: relative; height: 320px; margin: 10px auto 0; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_3.png) no-repeat 50% 50% / contain;}
+		.page_2 .--graph{width: 100%; height: 100%;}
+		.page_2 .--text{position: absolute; z-index: 1; font-size:35px;letter-spacing: -2px;}
+		.page_2 .--graphWrap .--text.n1{top: 272px;left: 790px;}
+		.page_2 .--graphWrap .--text.n2{top: 234px;left: 534px;text-align: right;line-height: 106px;}
+		.page_2 .--graphWrap .--text.n3{top: 266px;left: 734px;}
+		.page_2 .--graphWrap .--text.n4{top: 264px;left: 170px;}
+		.page_2 .--graphWrap .--text.n5{top: 275px;left: 287px;}
+		.page_2 .--graphWrap .--text.n6{top: 2px;left: 214px;text-align: center;line-height: 53px;}
+		.page_2 .--graphWrap .--text.n7{top: 265px;left: 549px;}
+		.page_2 .--graphWrap .--text.n8{top: 265px;left: 694px;}
+		.page_2 .--graphWrap .--text.n9{top: 265px;left: 807px;}
+		.page_2 .--graphWrap .--text.n10{top: 270px;left: 780px;}
+		.page_2 .--graphWrap .--text.n11{top: 265px;left: 360px;}
+		.page_2 .--graphWrap .--text.n12{top: 186px;left: 720px;}
+		.page_2 .--graphWrap .--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_4.png) no-repeat 50% 50% / contain;}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title mb_40">
+			<ins class="colorBox green check --colorBullet">1</ins>의 표를 보고 막대그래프를 여러 가지 방법으로 나타내 봅시다.
+			<div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">표 보기</div>
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							그래프의 세로 눈금 한 칸을 <span class="toggle center" data-toggle-obj="1">
+								<span class="answer" data-toggle-target="1">
+									<ins class="bullet exam">예</ins>2
+								</span>
+							</span>번으로 하여 나타내 보세요.</span>
+						</h2>
+						<section>
+							<div class="lineBox sky --lineBox flexListContainer center jcenter">
+								<div class="toggle noBg" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>과일의 종류별 급식 횟수</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="--graphWrap">
+								<div class="--graph answer" data-toggle-obj="3" data-toggle-target="3">
+									<div class="--text n1">번</div>
+									<div class="--text n2">20<br>10</div>
+									<div class="--text n3">횟수</div>
+									<div class="--text n4">과일</div>
+									<div class="--text n5">바나나</div>
+									<div class="--text n6">사과</div>
+									<div class="--text n7">키위</div>
+									<div class="--text n8">귤</div>
+									<div class="--text n9">포도</div>
+									<div class="--answerImg"></div>
+								</div>
+								<div class="--text n10">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+								<div class="--text n11">0</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							그래프의 가로와 세로를 바꾸어 막대를 가로로 나타내 보세요.
+						</span></h2>
+						<section>
+							<div class="lineBox sky --lineBox flexListContainer center jcenter">
+								<div class="toggle noBg" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>과일의 종류별 급식 횟수</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="--graphWrap">
+								<div class="--graph answer" data-toggle-obj="3" data-toggle-target="3">
+									<div class="--text n1">번</div>
+									<div class="--text n2">10</div>
+									<div class="--text n3">20</div>
+									<div class="--text n4">과일</div>
+									<div class="--text n5">횟수</div>
+									<div class="--text n6">바나나<br>사과<br>키위<br>귤<br>포도</div>
+									<div class="--answerImg"></div>
+								</div>
+								<div class="--text n10">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+								<div class="--text n11">0</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="lineBox sky textAlignC" style="width:480px; margin: 210px auto 0; font-size: 40px;">과일의 종류별 급식 횟수</div>
+						<div class="tableContainer brown fix mt_20">
+							<table class="tableBorder" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>과일</th>
+									<th>바나나</th>
+									<th>사과</th>
+									<th>키위</th>
+									<th>귤</th>
+									<th>포도</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th>학생 수(명)</th>
+									<td>16</td>
+									<td>14</td>
+									<td>16</td>
+									<td>18</td>
+									<td>8</td>
+									<td>72</td>
+								</tr>
+							</table>
+						</div> <!-- tableContainer -->
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+		}, false);
+
+	</script>
+
+</html>

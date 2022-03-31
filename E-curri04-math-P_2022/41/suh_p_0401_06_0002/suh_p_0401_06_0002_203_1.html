@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+
+	<style>
+		/* 기존 줄줄이네모박스 수정 */
+		.nemoBoxJool{position:relative; text-align:center; width:100%; margin:0 auto;}
+		.nemoBoxJool ul{display:flex; align-items:center; justify-content:space-between; position:relative; width:100%;}
+		.nemoBoxJool ul + ul{margin-top:20px;}
+		.nemoBoxJool ul + ul:before{right:0; width:calc(100% + 30px);}
+		.nemoBoxJool ul li{display:inline-block; position:relative;}
+		.nemoBoxJool li:before{content:""; display:block; position:absolute; top:50%; width:60px; margin-top:-2px; border-top:5px solid #fff;}
+		.nemoBoxJool li + li:before,
+		.nemoBoxJool ul + ul li:before{right:100%; margin-right:-5px;}
+		.nemoBoxJool ul li > div{display:block; position:relative; min-width:135px; height:70px; padding:0; line-height:70px; background-color:#fff; border:5px solid #c1e8ec; border-radius:10px; z-index:1;}
+		.nemoBoxJool.it-pink li > div,
+		.nemoBoxJool.it-pink li:before{border-color:#ffece2;}
+		.nemoBoxJool.it-deeppink li > div,
+		.nemoBoxJool.it-deeppink li:before{border-color:#f7c1c9;}
+		.nemoBoxJool.it-beige li > div,
+		.nemoBoxJool.it-beige li:before{border-color:#efcfa6;}
+		.nemoBoxJool.it-yellow li > div,
+		.nemoBoxJool.it-yellow li:before{border-color:#f4e8bd;}
+		.nemoBoxJool.it-sky li > div,
+		.nemoBoxJool.it-sky li:before{border-color:#c1e8ec;}
+		.nemoBoxJool.it-orange li > div,
+		.nemoBoxJool.it-orange li:before{border-color:#fccd89;}
+		.nemoBoxJool.it-purple li > div,
+		.nemoBoxJool.it-purple li:before{border-color:#cabfe0;}
+		.nemoBoxJool.it-brown li > div,
+		.nemoBoxJool.it-brown li:before{border-color:#ae7c65;}
+		.nemoBoxJool.it-green li > div,
+		.nemoBoxJool.it-green li:before{border-color:#cee492;}
+		.nemoBoxJool.it-center ul{justify-content:center;}
+		.nemoBoxJool.it-center li{margin:0 15px;}
+		.nemoBoxJool .toggle{width: 100%;line-height: 60px;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">수의 배열에서 규칙을 찾아, 빈칸에 알맞은 수를 써넣어 봅시다. <img src="./images/mm_41_3_09_01_03.png" alt="" height="44" style="vertical-align: -6px;"></div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<section>
+						<div class="nemoBoxJool it-green mt_120">
+							<ul>
+								<li>
+									<div>8</div>
+								</li>
+								<li>
+									<div>24</div>
+								</li>
+								<li>
+									<div>72</div>
+								</li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												216
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div>648</div>
+								</li>
+								<li>
+									<div>1944</div>
+								</li>
+							</ul>
+						</div>
+						<div class="nemoBoxJool it-purple mt_40">
+							<ul>
+								<li>
+									<div>4096</div>
+								</li>
+								<li>
+									<div>1024</div>
+								</li>
+								<li>
+									<div>
+										<div class="toggle noBg" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												256
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div>64</div>
+								</li>
+								<li>
+									<div>16</div>
+								</li>
+								<li>
+									<div>4</div>
+								</li>
+							</ul>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:6px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.vMid{display:flex; align-items:center; justify-content:center; height:420px;}
+	.vMid > div{width:100%;}
+	.zoomBtn:after,
+	.popBtn.zoom{border-color:#ff8636; background-color:#f60;}
+	.popup_pages>li.whole.on{z-index:10000;}
+	.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+	.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+
+
+
+	/* 개별 */
+		.page_0 .--infoText{position:absolute; top:-104px; left: 142px; min-width:300px; background:#f0f6d4;}
+	.page_0 .--infoText .sub-text{color:#333; font-size:17px; margin:0 0 0 5px;}
+	.page_0 .--infoText .sub-page{position:relative; align-self:flex-end; margin:0 0 0 8px; padding:0 0 0 10px; color:#6dbc4b; font-size:15px;}
+	.page_0 .--infoText .sub-page:before{ content:''; position:absolute; top:50%; left:0; transform:translateY(-50%); width:2px; height:18px; background-color:#6dbc4b;}
+	.page_0 .--img{position:relative; min-width:100%; height:520px;}
+	.page_0 .--text{text-align:center;position:absolute;font-size: 33px;}
+	.page_0 .innerTab_1 .--img{background:url(./images/5_intro_1.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_2 .--img{background:url(./images/5_intro_2.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_3 .--img{background:url(./images/5_intro_3.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_4 .--img{background:url(./images/5_intro_4.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_5 .--img{background:url(./images/5_intro_5.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_6 .--img{background:url(./images/5_intro_6.png) no-repeat 50% 50% / contain;}
+	.page_0 .innerTab_1 .--text.x1{top: 77px;left: 255px;}
+	.page_0 .innerTab_1 .--text.x2{top: 60px;left: 575px;}
+
+	.page_0 .innerTab_2 .--text.x1{top:100px; left:215px;}
+	.page_0 .innerTab_2 .--text.x2{top: 90px;left: 517px;font-size: 32px;}
+	.page_0 .innerTab_3 .--text.x1{top: 70px;left: 390px;}
+	.page_0 .innerTab_3 .--text.x2{top:75px; left:485px;}
+
+	.page_0 .innerTab_4 .--text.x1{top: 68px;left: 37px;font-size: 23px;}
+	.page_0 .innerTab_4 .--text.x2{top: 81px;left: 828px;font-size: 25px;}
+
+	.page_0 .innerTab_5 .--text.x1{top: 70px;left: 150px;font-size: 31px;}
+	.page_0 .innerTab_5 .--text.x2{top: 20px;left: 521px;font-size: 31px;}
+
+	.page_0 .innerTab_6 .--text.x1{top: 45px;left: 225px;}
+	.page_0 .innerTab_6 .--text.x2{top: 30px;left: 650px;}
+	.suhi .textBookBtn {top: 32%}
+
+	.page_3 .bogiContainer{width: 400px; margin: 0 auto 30px auto;}
+	.page_3 .--box .--blank{display: inline-block; width:20px;}
+	.page_3 .--box .icon_arrow {margin:0 10px}
+
+	.page_2 table td{padding:20px 20px 20px 50px; text-align:left; background-color:#fff !important;}
+	.page_2 table td .answer{min-width:500px;text-align:left;}
+	.page_2 table th{padding:10px 20px;}
+	.page_2 .tableContainer{width:760px; margin:0 !important;}
+	.page_2 .--face{display:inline-block;background: url(./images/5_0_3_drag.svg) 50% 50% / contain;}
+	.page_2 .--face.big{width:50px;height: 50px; margin-right:5px; }
+	.page_2 .--face.small{width: 25px;height: 25px;margin-right:5px;}
+	.page_2 .--box{position:absolute;right:0;bottom: 100px;width: 200px;}
+	.page_2 .--box > div{margin-bottom:8px;}
+	.page_2 .--box .small{margin-right: 21px;margin-left: 10px;}
+	.page_2 .--box .big{}
+
+
+	.pop_page_2 .--face{display:inline-block;background: url(./images/5_0_3_drag.svg) 50% 50% / contain;}
+	.pop_page_2 .--face.big{width:50px;height:50px; margin-right:5px; }
+	.pop_page_2 .--face.small{width:25px;height:25px;margin-right:5px;}
+
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">단원도입</span>
+		<span class="sub-page">74~75쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">그림</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_0" data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides inner" data-slides="">
+					<li class="innerTab_1">
+						<div class="--img">
+							<div class="--text x1">앗! 따가워.</div>
+							<div class="--text x2">모기다. 잡아!</div>
+						</div>
+					</li>
+					<li class="innerTab_2">
+						<div class="--img">
+							<div class="--text x1">어제도 <br>모기에 물렸어.</div>
+							<div class="--text x2">요즘 모기가 많네.<br>모기가 많을 때인가?</div>
+						</div>
+					</li>
+					<li class="innerTab_3">
+						<div class="--img">
+							<div class="--text x1">모기가 언제<br>많은지 살펴보자.</div>
+						</div>
+					</li>
+					<li class="innerTab_4">
+						<div class="--img">
+							<div class="--text x1">어느 지역의 <br>모기 채집 수를<br>조사하여<br>나타낸 그래프야.</div>
+							<div class="--text x2">모기 채집 수를<br>막대의 길이로<br>나타냈네.</div>
+						</div>
+					</li>
+					<li class="innerTab_5">
+						<div class="--img">
+							<div class="--text x1">모기가 언제 많은지<br>한눈에 알아보기 쉬워.</div>
+							<div class="--text x2">10월이 되면<br>모기가 많이 줄어드니까<br>조금만 참자.</div>
+						</div>
+					</li>
+					<li class="innerTab_6">
+						<div class="--img">
+							<div class="--text x1">모기 잡았다!</div>
+							<div class="--text x2">갑자기 나타났다<br>사라지는 모기의<br>삶이란······.</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					표의 빈칸에 알맞은 수를 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="textAlignC mb_20">
+						<div class="colorBox orange textAlignC" style="display: inline-block;">좋아하는 책의 종류</div>
+					</div>
+					<div class="tableContainer brown">
+						<table>
+							<tbody>
+								<tr>
+									<th>종류</th>
+									<th>역사책</th>
+									<th>동화책</th>
+									<th>소설책</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th class="lightBrown">학생 수<br> (명)</th>
+									<td>30</td>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												51
+											</div>
+										</div>
+									</td>
+									<td>14</td>
+									<td>100</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="1" data-close-inner="">
+						<span class="btnInner"></span>
+					</button>
+				</section>
+			</li>
+
+			<li class="page_2" data-quiz="toggle">
+				<h2><ins class="number">2</ins><span>
+					표를 보고 그림그래프를 완성해 보세요.
+					<ins class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="22">표 보기</ins>
+					</span>
+				</h2>
+				<section>
+					<div class="textAlignC mb_20">
+						<div class="colorBox orange textAlignC" style="display: inline-block;">좋아하는 책의 종류</div>
+						
+					</div>
+					<div class="tableContainer brown">
+						<table>
+							<tbody>
+								<tr>
+									<th>종류</th>
+									<th>학생수</th>
+								</tr>
+								<tr>
+									<th class="lightBrown">역사책</th>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="21">
+											<div class="answer" data-toggle-target="21">
+												<ins class="--face big"></ins>
+												<ins class="--face big"></ins>
+												<ins class="--face big"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="lightBrown">동화책</th>
+									<td>
+										<ins class="--face big"></ins>
+										<ins class="--face big"></ins>
+										<ins class="--face big"></ins>
+										<ins class="--face big"></ins>
+										<ins class="--face big"></ins>
+										<ins class="--face small"></ins>
+									</td>
+								</tr>
+								<tr>
+									<th class="lightBrown">소설책</th>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="22">
+											<div class="answer" data-toggle-target="22">
+												<ins class="--face big"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+												<ins class="--face small"></ins>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="--box">
+						<div><ins class="--face big"></ins> 10명 </div>
+						<div><ins class="--face small"></ins> 1명 </div>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span>
+					자료를 수집하여 분석하는 과정입니다.<ins class="icon_bogi"></ins>에서 알맞은 말을 찾아 <span class="blankBox"></span> 안에 써넣으세요.
+				</span></h2>
+				<section>
+					<div class="bogiContainer  textAlignC">
+						<div class="icon_bogi"></div>
+						<div class="inner">
+							<div class="textAlignC">
+								<span class="ml_20">해석</span>
+								<span class="ml_20">수집</span>
+							</div>
+						</div>
+					</div>
+						<div class="textAlignC flexListContainer jcenter center mb_20 --box">
+							<span class="--blank"></span>
+							주제 정하기
+							<div class="icon_arrow big"></div>
+							자료 
+							<div class="toggle" data-toggle-obj="31">
+								<div class="answer" data-toggle-target="31">
+									수집
+								</div>
+							</div>하기 
+						</div>
+						<div class="flexListContainer jcenter center textAlignC --box">
+							<div class="icon_arrow big"></div>
+							그래프로 나타내기
+							<div class="icon_arrow big"></div>
+							그래프로 자료
+							<div class="toggle" data-toggle-obj="32">
+								<div class="answer" data-toggle-target="32">
+									해석
+								</div>
+							</div>하기 
+						</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</section>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages">
+
+		<li class="textBookPopup popup_1" data-popup-page="1">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">1</ins>~<ins class="number mr_0">2</ins>]
+				</h2>
+				<div>우주네 학교 4학년 학생들이 좋아하는 책의 종류를 조사하여 나타낸 표입니다. 물음에 답해 보세요.</div>
+			</div>
+		</li>
+		<li class="solve pop_page_1" data-popup-page="1">
+			<div class="popup_contents">
+				(동화책을 좋아하는 학생 수) <br>＝100－35－14＝51(명)
+			</div>
+		</li>
+		<li class="solve pop_page_2" data-popup-page="2">
+			<div class="popup_contents">
+				<ins class="--face big"></ins> 10명, <ins class="--face small"></ins> 1명으로 하여 그림그래프로 나타냅니다.
+			</div>
+		</li>
+		<li class="whole pop_page_22" data-popup-page="22">
+            <div class="popup_contents">
+            	<div class="textAlignC mt_100">
+					<div class="colorBox orange textAlignC" style="display: inline-block;">좋아하는 책의 종류</div>
+				</div>
+                <div class="tableContainer brown mt_20">
+					<table>
+						<colgroup>
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>종류</th>
+								<th>역사책</th>
+								<th>동화책</th>
+								<th>소설책</th>
+								<th>합계</th>
+							</tr>
+							<tr>
+								<th class="lightBrown">학생 수<br> (명)</th>
+								<td>35</td>
+								<td>51</td>
+								<td>14</td>
+								<td>100</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+            </div>
+        </li>
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	window.$callBack.sliderReset = function (slide) {
+		console.log(slide.idx);
+
+		if (slide.idx === 1) {
+			setTimeout(function () {
+
+				$ts.getEl('.page_1 .textBookBtn')[0].click();
+				/*setTimeout(function () {
+					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				}, 3000);*/
+			});
+		}
+	}
+</script>
+
+</body>
+
+</html>
