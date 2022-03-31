@@ -16,12 +16,25 @@ header .title .icon_o_title {margin-top: 8px;}
 
 .flex-wrap {align-items:center;height:480px}
 .flex-item.n1 {flex: 2;text-align: center;}
-.flex-item.n1 .toggle-wrap {display: flex;align-items: center;justify-content: center;}
-.flex-item.n1 .toggle-wrap div {margin: 0 5px;}
-.flex-item.n1 .img-wrap > img {width:540px}
-.flex-item.n1 .icon_o_title {margin-top: 10px;}
+.flex-item.n1 .toggle-wrap {display: flex;align-items: center;justify-content: center;margin-top: 20px;}
+.flex-item.n1 .toggle-wrap .toggle {margin: 0 10px;}
+.flex-item.n1 .img-wrap > img {width: 100%;height: auto;}
+.flex-item.n1 .icon_o_title {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 10px;}
+.flex-item.n1 .toggle.noBg {height: 100%;}
+.flex-item.n1 .toggle.noBg .answer >img {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
 .flex-item.n2 {margin-left:60px}
 .aniWrap {position: relative;}
+.innerTab_1 .flex-item.n1 .img-wrap {width: 600px;height: 290px;margin: 0 auto;}
+.innerTab_2 .flex-item.n1 .flex-item.n1 {height: 100%;}
+.innerTab_2 .flex-item.n1 .img-wrap {position: relative;width: 600px;height: 290px;margin: 0 auto;}
+.innerTab_2 .flex-item.n1 .img-wrap .flexListContainer {justify-content: space-between;height: auto;}
+.innerTab_2 .flex-item.n1 .img-wrap .flexListContainer img {width: 47.5%;height: auto;}
+.innerTab_2 .flex-item.n1 .img-wrap .answer {position: absolute;top: 0;}
+.innerTab_2 .flex-item.n1 .img-wrap .answer.on img {opacity: 0;}
+.innerTab_2 .flex-item.n1 .img-wrap .answer img.on {opacity: 1;}
+.click-finger-Btn{z-index: 4;}
+.click-finger-Btn.n1 {top: 145px;left: 138px;}
+.click-finger-Btn.n2 {top: 145px;left: 455px;}
 </style>
 </head>
 
@@ -67,7 +80,7 @@ header .title .icon_o_title {margin-top: 8px;}
 										<div class="toggle noBg" data-toggle-obj="2">
 											<span class="icon_o_title" data-toggle-target="2"></span>
 											<div class="answer" data-toggle-target="2">
-												<img src="../common/contents/images/math/equalIcon_blue.png" height="20">
+												<img src="../common/contents/images/math/equalIcon_blue.png" height="15">
 											</div>
 										</div>
 										<div class="toggle" data-toggle-obj="3">
@@ -95,30 +108,54 @@ header .title .icon_o_title {margin-top: 8px;}
 						<section>
 							<div class="flex-wrap">
 								<div class="flex-item n1">
-									<img src="./images/suh_p_0301_06_0004_201_1_2.png" alt="">
+									<div class="img-wrap">
+										<div class="toggle noBg">
+											<span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
+											<span class="click-finger-Btn blinkOn blinkOpacity n2" data-toggle-obj="2"></span>
+											<div class="flexListContainer">
+												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
+												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
+											</div>
+											<div class="answer" data-toggle-target="1">
+												<div class="flexListContainer">
+													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_3.png" alt="" data-toggle-target="1">
+													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_4.png" alt="" data-toggle-target="2">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="toggle-wrap">
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												<div class="bunsuWrap">
+													<ul>
+														<li>1</li>
+														<li>5</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="toggle noBg" data-toggle-obj="4">
+											<span class="icon_o_title" data-toggle-target="4"></span>
+											<div class="answer" data-toggle-target="4">
+												<img src="../common/contents/images/math/inequalIcon_blue.png" height="30">
+											</div>
+										</div>
+										<div class="toggle" data-toggle-obj="5">
+											<div class="answer" data-toggle-target="5">
+												<div class="bunsuWrap">
+													<ul>
+														<li>4</li>
+														<li>5</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="flex-item n2">
-									색칠한 부분은 전체의
-									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<div class="bunsuWrap">
-												<ul>
-													<li>3</li>
-													<li>4</li>
-												</ul>
-											</div>
-										</div>
-									</div><br>
-									색칠하지 않은 부분은 전체의
-									<div class="toggle" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">
-											<div class="bunsuWrap">
-												<ul>
-													<li>1</li>
-													<li>4</li>
-												</ul>
-											</div>
-										</div>
+									<div class="aniWrap">
+										<div id="aniBox_2" class="flexListContainer center jcenter"></div>
 									</div>
 								</div>
 							</div>
@@ -190,7 +227,7 @@ header .title .icon_o_title {margin-top: 8px;}
 					name: 'boy_1',
 					speech: 'right',
 					circle: 'sky',
-					top: 0,
+					top: 20,
 					left: 0,
 					width: 340,
 					height: 421,
@@ -204,7 +241,45 @@ header .title .icon_o_title {margin-top: 8px;}
 					textBubble: {
 						text: '색칠한 부분을<br>분수로 나타내<br>보자.',
 						class: 'balloon bottom sky ctTail',
-						top: -200,
+						top: -180,
+						left: 40,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					callbacks: {
+						// start: function () {
+						// 	$ts.getEl('.characterImg')[0].style.left = '-200px';
+						// }, // 시작시 콜백
+						// end: function () {
+						// 	$ts.getEl('.characterImg')[0].style.left = 0;
+						// } // 끝날시 콜백
+					}
+				}
+			]
+		});
+		$prite.add({
+			target: $ts.getEl('#aniBox_2'),
+			spriteId: 'sprite2',
+			spriteList: [
+				{
+					name: 'girl_1',
+					speech: 'right',
+					circle: 'sky',
+					top: 20,
+					left: 0,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					sound: './media/audios/suh_p_0301_06_0005_203_1_2.mp3',
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					//endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '주어진 분수만큼<br>색칠해 보자.',
+						class: 'balloon bottom sky ctTail',
+						top: -180,
 						left: 40,
 						textAlign: 'center',
 						wordBreak: 'keep-all'
