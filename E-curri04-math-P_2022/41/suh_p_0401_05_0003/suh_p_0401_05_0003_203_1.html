@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		.--lineBox{width: 480px; margin: 0 auto;}
+
+		.--graph{position: relative;height: 240px;background: url(./images/suh_p_0401_05_0003_203_1/suh_p_0401_05_0003_203_1_1.png) no-repeat 50% 50% / 750px 100%;}
+		.--text{position: absolute;font-size: 35px;letter-spacing: -2px;}
+		.--graph .--text.n1{top: 5px;left: 130px;}
+		.--graph .--text.n2{top: 25px;left: 230px;text-align: right;line-height: 70px;}
+		.--graph .--text.n3{top: 162px;left: 248px;}
+		.--graph .--text.n4{top: 193px;left: 85px;}
+		.--graph .--text.n5{top: 204px;left: 210px;}
+		.--graph .--text.n6{top: 197px;left: 288px;}
+		.--graph .--text.n7{top: 197px;left: 422px;}
+		.--graph .--text.n8{top: 197px;left: 512px;}
+		.--graph .--text.n9{top: 197px;left: 667px;}
+		.--graph .--text.n10{top: 197px;left: 784px;}
+
+		.--aniBox{position: absolute; bottom:490px; right: 610px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title ls1">
+			막대그래프에서 알 수 있는 내용으로 여러 가지 질문을 만들어 친구들과 이야기해 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1">
+						<section>
+							<div>
+								<div class="lineBox sky textAlignC --lineBox">
+									좋아하는 간식별 학생 수
+								</div>
+								<div class="--graph mt_10">
+									<div class="--text n1">(번)</div>
+									<div class="--text n2">10<br>5</div>
+									<div class="--text n3">0</div>
+									<div class="--text n4">학생 수</div>
+									<div class="--text n5">간식</div>
+									<div class="--text n6">떡볶이</div>
+									<div class="--text n7">김밥</div>
+									<div class="--text n8">샌드위치</div>
+									<div class="--text n9">피자</div>
+									<div class="--text n10">치킨</div>
+								</div>
+								<div class="textAlignC --aniBox">
+									<div id="aniBox_1"></div>
+								</div>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+			target: $ts.getEl('#aniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'boy_2',
+					circle: 'green',
+					speech:'right',
+					top: 310,
+					left: 420,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_2.png',
+					spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
+					sound: './media/audios/suh_p_0401_05_0003_203_1.mp3',
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					//endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '피자와 치킨 중 어떤 간식을 더 좋아할까?',
+						class: 'balloon green ctTail right',
+						top: 330,
+						left:20,
+						width: 360,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					callbacks: {
+						//start: function () {
+						//               	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '-160px';
+						//               }, // 시작시 콜백
+						//               end: function () {
+						//               	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '0px';
+						//               } // 끝날시 콜백
+					}
+				}
+			]
+		});
+		}, false);
+
+	</script>
+
+</html>

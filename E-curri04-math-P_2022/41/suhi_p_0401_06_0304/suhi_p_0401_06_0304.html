@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit {background-color:transparent !important; align-self:flex-start; padding:20px;}
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+	.popup_contents .blankBox{width:40px; height:40px; margin-top:4px;}
+	.popup_contents .icon_o_title{vertical-align:-2px;}
+	.popup_contents .vMid{height:500px;}
+
+	/* 개별 */
+    .page-iframe{position:fixed; z-index:1; top:160px; left:55px; overflow:hidden; width:1060px; height:460px; border:0; background:transparent; border:1px solid red}
+    .popup_pages .page-iframe{top:110px; left:70px; height:650px;}
+    .page-iframe + .popup_contents .toggle,
+    .page-iframe + section .toggle{z-index:1;}.popup_pages>li.whole.on{z-index:10000;}
+    .page-iframe{top: 140px; width:1280px; height: 580px; border:0; transform: scale(0.828125) translate(-130px, -20px);}
+
+    .suhi .textBookBtn {top: 42%;}
+
+    .page_0 .--img{position: relative; height:500px; margin: 10px auto 0; background: url(./images/suhi_p_0401_06_0304_1.png) no-repeat 50% 50% / 70% auto;}
+	.page_0 .--text{position: absolute; white-space: nowrap;}
+	.page_0 .--text.n1{top:0px;left: 0px;}
+	.page_0 .--text.n2{top:-10px;left:660px;line-height: 100px;}
+
+    .page_1 .--img {text-align:center;padding-top:90px;position: relative; margin:0 5%}
+    .page_1 .--img.n1{background: url(./images/suhi_p_0401_06_0304_5.png) no-repeat 50% bottom / contain} 
+    .page_1 .--img img{width:100%;}
+    .page_1 .--img .--text.x1{top:0px;left:50%; transform: translateX(-50%); white-space: nowrap; position:absolute}
+
+    .pop_page_100 .--img {text-align:center;padding-top:90px; position: relative; margin:0 5%}
+    .pop_page_100 .--img.n1{background: url(./images/suhi_p_0401_06_0304_10.png) no-repeat 50% bottom / contain} 
+    .pop_page_100 .--img img{width:100%;}
+    .pop_page_100 .--img .--text.x1{top:0px;left:50%; transform: translateX(-50%); white-space: nowrap; position:absolute}
+
+    .page_2 .--img {text-align:center;width:350px; padding-top:40px; position: relative; margin:50px auto 0 auto} 
+    .page_2 .--img img{width:100%; vertical-align: bottom;}
+    .page_2 .--img .--text.x1{top:-40px;left:50%; transform: translateX(-50%); white-space: nowrap; position:absolute}
+
+    .--imgComm.n1{position: relative;height: 240px;background: url(./images/suhi_p_0401_06_0304_17.png) no-repeat 50% 100% / 750px auto;}
+    .--imgComm.n2{position: relative;height: 260px;background: url(./images/suhi_p_0401_06_0304_23.png) no-repeat 50% 100% / 860px auto;}
+    .--imgComm.n3{position: relative;height: 260px;background: url(./images/suhi_p_0401_06_0304_35.png) no-repeat 50% 100% / 860px auto;}
+    .--imgComm.n4{position: relative;height: 260px;background: url(./images/suhi_p_0401_06_0304_40.png) no-repeat 50% 100% / 750px auto;}
+    .--imgComm.n5{position: relative;height: 240px;background: url(./images/suhi_p_0401_06_0304_45.png) no-repeat 50% 100% / 900px auto;}
+
+    .--imgComm.n6{position: relative;height: 250px;background: url(./images/suhi_p_0401_06_0304_50.png) no-repeat 50% 100% / 820px auto;}
+
+    .--imgComm .colorBox{position: absolute;}
+    .--imgComm.n1 .colorBox.n1{top: 0;left: 96px;}
+    .--imgComm.n1 .colorBox.n2{top: 0;left: 275px;}
+    .--imgComm.n1 .colorBox.n3{top: 0;left: 492px;}
+    .--imgComm.n1 .colorBox.n4{top: 0;left: 749px;}
+
+    .--imgComm.n2 .colorBox.n1{top: 0;left: 50px;}
+    .--imgComm.n2 .colorBox.n2{top: 0;left: 190px;}
+    .--imgComm.n2 .colorBox.n3{top: 0;left: 422px;}
+    .--imgComm.n2 .colorBox.n4{top: 0;left: 749px;}
+
+    .--imgComm.n3 .colorBox.n1{top: 0;left: 96px;}
+    .--imgComm.n3 .colorBox.n2{top: 0;left: 275px;}
+    .--imgComm.n3 .colorBox.n3{top: 0;left: 492px;}
+    .--imgComm.n3 .colorBox.n4{top: 0;left: 749px;}
+    
+    .--imgComm.n4 .colorBox.n1{top: 0;left: 117px;}
+    .--imgComm.n4 .colorBox.n2{top: 0;left: 295px;}
+    .--imgComm.n4 .colorBox.n3{top: 0;left: 512px;}
+    .--imgComm.n4 .colorBox.n4{top: 0;left: 769px;}
+
+    .--imgComm.n5 .colorBox.n1{top: 0;left: 87px;}
+    .--imgComm.n5 .colorBox.n2{top: 0;left: 332px;}
+    .--imgComm.n5 .colorBox.n3{top: 0;left: 577px;}
+    .--imgComm.n5 .colorBox.n4{top: 0;left: 819px;}
+
+    .--imgComm.n6 .colorBox.n1{top: 0;left: 142px;}
+    .--imgComm.n6 .colorBox.n2{top: 0;left: 365px;}
+    .--imgComm.n6 .colorBox.n3{top: 0;left: 582px;}
+    .--imgComm.n6 .colorBox.n4{top: 0;left: 799px;}
+
+    .pop_page_200 .--img {text-align:center;width:450px; padding-top:40px; position: relative; margin:90px auto 0 auto} 
+    .pop_page_200 .--img img{width:100%; vertical-align: bottom;}
+    .pop_page_200 .--img .--text.x1{top:-40px;left:50%; transform: translateX(-50%); white-space: nowrap; position:absolute}
+
+    .--A .answer{display:flex;justify-content: start;}
+
+
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">도형의 배열에서 규칙을 찾아볼까요</span>
+		<span class="sub-page">84~85쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">개념 정리</li>
+			<li data-hover="">1</li>
+			<li data-hover="">2</li>
+			<li data-hover="">3</li>
+			<li data-hover="">4</li>
+			<li data-hover="">5</li>
+			<li data-hover="">6</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+            <li class="page_0">
+				<h2><ins class="special type2"></ins><span>
+				</span></h2>
+				<section>
+					<div class="--img">
+						<div class="--text n1">
+                            <div class="balloon bottom ctTail textAlignC green">
+                                도형이 어떻게 <br> 달라지는지 살펴봐.
+                            </div>
+                        </div>
+						<div class="--text n2">
+                            <div class="balloon bottom  ctTail textAlignC green">
+                                조각의 수를 세어 보고<br> 규칙을 찾을 수 있어.
+                            </div>
+                        </div>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_1" data-quiz="toggle">
+				<h2><ins class="number">1</ins><span>
+					도형의 배열을 보고 넷째에 알맞은 도형을 그려 보세요.
+				</span></h2>
+				<section>
+					<div class="flexListContainer jcenter mt_100">
+                        <div class="--img">
+                            <div class="--text x1"> <div class="colorBox yellow">첫째</div></div>
+                            <img src="./images/suhi_p_0401_06_0304_2.png">
+                        </div>
+                        <div class="--img">
+                            <div class="--text x1"><div class="colorBox yellow">둘째</div></div>
+                            <img src="./images/suhi_p_0401_06_0304_3.png">
+                        </div>
+                        <div class="--img">
+                            <div class="--text x1"><div class="colorBox yellow">셋째</div></div>
+                            <img src="./images/suhi_p_0401_06_0304_4.png">
+                        </div>
+                        <div class="--img n1">
+                            <div class="--text x1"><div class="colorBox yellow">넷째</div></div>
+                            <div class="toggle  noBox" data-toggle-obj="01">
+                                <div class="answer" data-toggle-target="01"> 
+                                    <img src="./images/suhi_p_0401_06_0304_6.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="100" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+			<li class="page_2">
+				<h2><ins class="number">2</ins><span>
+					다섯째에 알맞은 모양을 그려 보세요.
+				</span></h2>
+                <section data-slide-container="">
+                    <div class="moveButtonContainer" data-slide-btn-container="">
+                        <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                        <ul class="basicSlider_circle_tabs" data-tabs="">
+                            <li data-hover=""></li>
+                            <li data-hover=""></li>
+                        </ul>
+                        <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                    </div>
+                    <ul class="basicSlider_slides" data-slides="">
+                        <li class="innerTab_1">
+                            <div class="--imgComm n1 mt_50">
+                                <div class="colorBox yellow n1">첫째</div>
+                                <div class="colorBox yellow n2">둘째</div>
+                                <div class="colorBox yellow n3">셋째</div>
+                                <div class="colorBox yellow n4">넷째</div>
+                            </div>
+                        </li>
+                        <li class="innerTab_2"  data-quiz="toggle">
+                            <iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+                            <div class="--img lineBox sky ">
+                                <div class="--text x1"><div class="colorBox sky">다섯째</div></div>
+                                <div class="toggle  noBox" data-toggle-obj="02">
+                                    <div class="answer" data-toggle-target="02"> 
+                                        <img src="./images/suhi_p_0401_06_0304_16.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                            <div class="buttonContainer left">
+                                <button class="characterBtn" data-popup-btn="200" data-hover="">
+                                    <span>쌍둥이 문제</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>										
+                </section>
+                <button class="popBtn textBookBtn info" data-hover="" data-popup-btn="222" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+			<li class="page_3" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span class="ls1">
+					모양의 배열에서 규칙을 찾아 빈칸에 알맞은 식을 써 보세요.
+				</span></h2>
+				<section>
+                    <div class="--imgComm n1 mt_30">
+                        <div class="colorBox yellow n1">첫째</div>
+                        <div class="colorBox yellow n2">둘째</div>
+                        <div class="colorBox yellow n3">셋째</div>
+                        <div class="colorBox yellow n4">넷째</div>
+                    </div>
+					<div class="tableContainer green mt_20">
+                        <table>
+                            <colgroup>
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>첫째</th>
+                                    <th>둘째</th>
+                                    <th>셋째</th>
+                                    <th>넷째</th>
+                                    <th>다섯째</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1＋2＝3</td>
+                                    <td>3＋3＝6</td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="31">
+                                            <div class="answer" data-toggle-target="31">
+                                                6＋4＝10
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="32">
+                                            <div class="answer" data-toggle-target="32">
+                                                10＋5＝15
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="300" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+                <button class="popBtn textBookBtn info" data-hover="" data-popup-btn="333" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+			<li class="page_4" data-quiz="toggle">
+				<h2><ins class="number">3</ins><span class="ls1_5">
+					규칙에 따라 다섯째에 알맞은 모양을 만들 때 필요한 모든 바둑돌의 수를 구해 보세요.
+				</span></h2>
+				<section>
+					<div class="--imgComm n3 mt_10">
+                        <div class="colorBox yellow n1">첫째</div>
+                        <div class="colorBox yellow n2">둘째</div>
+                        <div class="colorBox yellow n3">셋째</div>
+                        <div class="colorBox yellow n4">넷째</div>
+                    </div>
+                    <div class="textAlignC  mt_20">
+                        <div class="toggle" data-toggle-obj="4">
+                            <div class="answer" data-toggle-target="4">
+                            30
+                            </div>
+                        </div>개
+                    </div>
+                    
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="400" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+			</li>
+
+            <li class="page_5" data-quiz="toggle">
+				<h2><ins class="number  star">5</ins><span class="ls1">
+					파란색으로 채워진 삼각형의 수를 구해 보세요.
+				</span></h2>
+				<section>
+                    <div class="--imgComm n5 mt_10">
+                        <div class="colorBox yellow n1">첫째</div>
+                        <div class="colorBox yellow n2">둘째</div>
+                        <div class="colorBox yellow n3">셋째</div>
+                        <div class="colorBox yellow n4">넷째</div>
+                    </div>
+					<div class="tableContainer green mt_20">
+                        <table>
+                            <colgroup>
+                                <col width="30%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="15%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>순서</th>
+                                    <th>첫째</th>
+                                    <th>둘째</th>
+                                    <th>셋째</th>
+                                    <th>넷째</th>
+                                </tr>
+                                <tr>
+                                    <td>삼각형의 수(개)</td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="51">
+                                            <div class="answer" data-toggle-target="51">
+                                            1
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="52">
+                                            <div class="answer" data-toggle-target="52">
+                                            3
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="53">
+                                            <div class="answer" data-toggle-target="53">
+                                            9
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="toggle noBg" data-toggle-obj="54">
+                                            <div class="answer" data-toggle-target="54">
+                                            27
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="500" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+                <button class="popBtn textBookBtn info" data-hover="" data-popup-btn="555" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+
+			<li class="page_6"  data-quiz="toggle">
+				<h2><ins class="number star">6</ins><span>
+					도형의 배열에서 규칙을 찾아보세요.
+				</span></h2>
+				<section>
+                    <div class="--imgComm n5 mt_10">
+                        <div class="colorBox yellow n1">첫째</div>
+                        <div class="colorBox yellow n2">둘째</div>
+                        <div class="colorBox yellow n3">셋째</div>
+                        <div class="colorBox yellow n4">넷째</div>
+                    </div>
+                    <div class="flexListContainer jcenter center  mt_20">
+                        <div class="--Q">
+                            <div class="colorBox check skyBlue">규칙</div>
+                        </div>
+                        <div class="--A">
+                            <div class="toggle" data-toggle-obj="6">
+                                <div class="answer" data-toggle-target="6">
+                                    <div class="bullet exam">예</div>
+                                    <div>
+                                    3배로 늘어나는 규칙입니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="600" data-hover="">
+							<span>쌍둥이 문제</span>
+						</button>
+					</div>
+				</section>
+                <button class="popBtn textBookBtn info" data-hover="" data-popup-btn="666" data-close-inner="">
+					<span class="btnInner"></span>
+				</button>
+			</li>
+
+		</ul>
+	</div>
+</main>
+
+
+
+
+<!--
+	* 팝업
+ -->
+<section class="popup_container" data-popup-container="">
+	<ul class="popup_pages basicSlider_slides">
+
+		<li class="whole pop_page_100" data-popup-page="100">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">도형의 배열을 보고 넷째에 알맞은 모양을 그려 보세요.</h3>
+                            <div class="flexListContainer jcenter mt_100">
+                                <div class="--img">
+                                    <div class="--text x1"> <div class="colorBox yellow">첫째</div></div>
+                                    <img src="./images/suhi_p_0401_06_0304_7.png">
+                                </div>
+                                <div class="--img">
+                                    <div class="--text x1"><div class="colorBox yellow">둘째</div></div>
+                                    <img src="./images/suhi_p_0401_06_0304_8.png">
+                                </div>
+                                <div class="--img">
+                                    <div class="--text x1"><div class="colorBox yellow">셋째</div></div>
+                                    <img src="./images/suhi_p_0401_06_0304_9.png">
+                                </div>
+                                <div class="--img n1 noClick">
+                                    <div class="--text x1"><div class="colorBox yellow">넷째</div></div>
+                                    <div class="toggle  noBox" data-toggle-obj="01">
+                                        <div class="answer" data-toggle-target="01"> 
+                                            <img src="./images/suhi_p_0401_06_0304_11.png"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+                            
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="1">
+			<div class="popup_contents">
+				<p>이전 단계의 도형에서 왼쪽, 오른쪽, 아래로 작은 정사각형 <br>조각이 1개씩 늘어나는 규칙입니다.</p>
+			</div>
+		</li>
+		<li class="whole pop_page_200" data-popup-page="200">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-slide-container="popup">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot deepGreen"></ins>
+								<div>
+									<h3 class="mb_10">모양의 배열을 보고 물음에 답하세요.</h3>
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet dot deepGreen"></ins>
+											<div>
+												<p class="mb_10">다섯째에 알맞은 모양을 그려 보세요.</p>
+												<div>
+													<div class="--imgComm n2 mt_50">
+                                                        <div class="colorBox yellow n1">첫째</div>
+                                                        <div class="colorBox yellow n2">둘째</div>
+                                                        <div class="colorBox yellow n3">셋째</div>
+                                                        <div class="colorBox yellow n4">넷째</div>
+                                                    </div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+					</li>
+					<li class="innerTab_2" data-quiz="toggle">
+						<section>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet circleDot deepGreen"></ins>
+									<div>
+										<h3 class="mb_10">모양의 배열을 보고 물음에 답하세요.</h3>
+                                        <ul class="contentsList">
+											<li>
+												<ins class="bullet dot deepGreen"></ins>
+												<div>
+                                                    <p class="mb_10">다섯째에 알맞은 모양을 그려 보세요.</p>
+													<div>
+														<iframe src="../../../dvd_4_1_p/lesson04/ops/lesson04/app-drawing-tool2.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+                                                        <div class="--img lineBox sky ">
+                                                            <div class="--text x1"><div class="colorBox sky">다섯째</div></div>
+                                                            <div class="toggle noBox" data-toggle-obj="22">
+                                                                <div class="answer" data-toggle-target="22"> 
+                                                                    <img src="./images/suhi_p_0401_06_0304_22.png">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</li>        
+		<li class="solve" data-popup-page="2">
+			<div class="popup_contents">
+				<p class="ls0">
+					다섯째 모양은 넷째 모양 아래에 <span class="greenT">●</span>가 5개 있는 모양입니다. 
+				</p>
+			</div>
+		</li>
+        <li class="textBookPopup popup_222" data-popup-page="222">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">2</ins>~<ins class="number mr_0">3</ins>]
+					<span class="ml_10 ls1">모양의 배열을 보고 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+        <li class="whole pop_page_300" data-popup-page="300">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">모양의 배열을 보고 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">모양의 배열에서 규칙을 찾아 빈칸에 알맞은 식을 써 보세요.</p>
+										<div>
+                                            <div class="--imgComm n2 mt_30">
+                                                <div class="colorBox yellow n1">첫째</div>
+                                                <div class="colorBox yellow n2">둘째</div>
+                                                <div class="colorBox yellow n3">셋째</div>
+                                                <div class="colorBox yellow n4">넷째</div>
+                                            </div>
+											<div class="tableContainer green mt_20">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="20%">
+                                                        <col width="20%">
+                                                        <col width="20%">
+                                                        <col width="20%">
+                                                        <col width="20%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>첫째</th>
+                                                            <th>둘째</th>
+                                                            <th>셋째</th>
+                                                            <th>넷째</th>
+                                                            <th>다섯째</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1＋3＝4</td>
+                                                            <td>4＋5＝9</td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="31">
+                                                                    <div class="answer" data-toggle-target="31">
+                                                                        9＋7＝16
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="32">
+                                                                    <div class="answer" data-toggle-target="32">
+                                                                        16＋9＝25
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="3">
+			<div class="popup_contents">
+				<p>
+					첫째 <span class="greenT">●</span>의 수는 1개, 둘째 <span class="greenT">●</span>의 수는 3개, 셋째 <span class="greenT">●</span>의 수는 6개, 넷째 <span class="greenT">●</span>의 수는 10개이므로 
+                    그 단계 <span class="greenT">●</span>의 수는 그 전 단계 <span class="greenT">●</span>의 수에 그 단계의 수만큼 늘어나는 규칙이 있습니다.
+                </p>
+			</div>
+		</li>
+        <li class="textBookPopup popup_333" data-popup-page="333">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">2</ins>~<ins class="number mr_0">3</ins>]
+					<span class="ml_10 ls1">모양의 배열을 보고 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+		<li class="whole pop_page_400" data-popup-page="400">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">규칙에 따라 다섯째에 알맞은 모양을 만들 때 필요한 모든 정사각형 조각의 수를 구해 보세요.</h3>
+                            <div>
+                                <div class="--imgComm n4 mt_30">
+                                    <div class="colorBox yellow n1">첫째</div>
+                                    <div class="colorBox yellow n2">둘째</div>
+                                    <div class="colorBox yellow n3">셋째</div>
+                                    <div class="colorBox yellow n4">넷째</div>
+                                </div>
+                                <div class="textAlignC  mt_30">
+                                    <div class="toggle" data-toggle-obj="441">
+                                        <div class="answer" data-toggle-target="441">
+                                        81
+                                        </div>
+                                    </div>개
+                                </div>
+                            </div>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="4">
+			<div class="popup_contents">
+				<p>
+                    첫째 모양의 바둑돌 수는 2개, 둘째 모양의 바둑돌 수는 6개, 
+                    셋째 모양의 바둑돌 수는 12개, 넷째 모양의 바둑돌 수는 20개입니다. 
+                    이를 곱셈식으로 나타내면 첫째: 1×2＝2, 둘째: 2×3＝6, 셋째: 3×4＝12, 넷째: 4×5＝20이므로 
+                    다섯째 모양의 바둑돌 수는 5×6＝30(개)입니다.
+                </p>
+			</div>
+		</li>
+		<li class="whole pop_page_500" data-popup-page="500">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">도형의 배열을 보고 물음에 답하세요.</h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">색칠이 되어 있는 사각형의 수를 구해 보세요.</p>
+										<div>
+                                            <div class="--imgComm n6 mt_30">
+                                                <div class="colorBox yellow n1">첫째</div>
+                                                <div class="colorBox yellow n2">둘째</div>
+                                                <div class="colorBox yellow n3">셋째</div>
+                                                <div class="colorBox yellow n4">넷째</div>
+                                            </div>
+											<div class="tableContainer green mt_20">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="30%">
+                                                        <col width="15%">
+                                                        <col width="15%">
+                                                        <col width="15%">
+                                                        <col width="15%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>순서</th>
+                                                            <th>첫째</th>
+                                                            <th>둘째</th>
+                                                            <th>셋째</th>
+                                                            <th>넷째</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>삼각형의 수(개)</td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="501">
+                                                                    <div class="answer" data-toggle-target="501">
+                                                                    1
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="502">
+                                                                    <div class="answer" data-toggle-target="502">
+                                                                    4
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="503">
+                                                                    <div class="answer" data-toggle-target="503">
+                                                                    16
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="toggle noBg" data-toggle-obj="504">
+                                                                    <div class="answer" data-toggle-target="504">
+                                                                    64
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="5">
+			<div class="popup_contents">
+				<p>첫째 도형의 삼각형 수는 1개, 둘째 도형의 삼각형 수는 3개, 셋째 도형의 삼각형 수는 9개, 넷째 도형의 삼각형 수는 27개입니다.
+                </p>
+			</div>
+		</li>
+        <li class="textBookPopup popup_555" data-popup-page="555">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">5</ins>~<ins class="number mr_0">6</ins>]
+					<span class="ml_10 ls1">도형의 배열을 보고 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>
+        <li class="whole pop_page_600" data-popup-page="600">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot deepGreen"></ins>
+						<div>
+							<h3 class="mb_10">도형의 배열을 보고 물음에 답하세요. </h3>
+							<ul class="contentsList">
+								<li>
+									<ins class="bullet dot deepGreen"></ins>
+									<div>
+										<p class="mb_10">도형의 배열에서 규칙을 찾아보세요.</p>
+										<div>
+                                            <div class="--imgComm n6 mt_30">
+                                                <div class="colorBox yellow n1">첫째</div>
+                                                <div class="colorBox yellow n2">둘째</div>
+                                                <div class="colorBox yellow n3">셋째</div>
+                                                <div class="colorBox yellow n4">넷째</div>
+                                            </div>
+                                            <div class="flexListContainer jcenter center mt_20">
+                                                <div class="--Q">
+                                                    <div class="colorBox check skyBlue">규칙</div>
+                                                </div>
+                                                <div class="--A">
+                                                    <div class="toggle" data-toggle-obj="661">
+                                                        <div class="answer" data-toggle-target="661">
+                                                            <div class="bullet exam">예</div>
+                                                            <div>
+                                                            4배로 늘어나는 규칙입니다.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-6)수학익힘쌍둥이_03차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<div class="buttonContainer">
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</div>
+		</li>
+		<li class="solve" data-popup-page="6">
+			<div class="popup_contents">
+				<p>파란색으로 채워진 삼각형의 수는 이전 단계의 삼각형의 수의 3배로 늘어납니다.</p>
+			</div>
+		</li>
+        <li class="textBookPopup popup_666" data-popup-page="666">
+			<div class="popupInner" data-popup-inner="">
+				<h2>
+					[<ins class="number mr_0">5</ins>~<ins class="number mr_0">6</ins>]
+					<span class="ml_10 ls1">도형의 배열을 보고 물음에 답하세요.</span>
+				</h2>
+			</div>
+		</li>   
+	</ul>
+</section>
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+
+        window.$callBack.sliderReset = function (slide) {
+
+            if (slide.idx === 2 && slide.container.dataset.slideContainer === 'main') {
+                setTimeout(function () {
+                    $ts.getEl('.page_2 .textBookBtn')[0].click();
+                    setTimeout(function () {
+                        $ts.getEl('.popup_222 .popup_closeBtn')[0].click();
+                    }, 3000);
+                });
+            }
+
+            if (slide.idx === 5 && slide.container.dataset.slideContainer === 'main') {
+                setTimeout(function () {
+                    $ts.getEl('.page_5 .textBookBtn')[0].click();
+                    setTimeout(function () {
+                        $ts.getEl('.popup_555 .popup_closeBtn')[0].click();
+                    }, 3000);
+                });
+            }
+        }
+
+		const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+		_dapChkBtn.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				let _closestTg = obj.closest(".on");
+				if( _closestTg.querySelector(".page-iframe") ){
+					_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+				}
+			});
+		});
+
+	}, false);
+
+</script>
+
+</body>
+
+</html>

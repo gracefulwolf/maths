@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+
+		/* 개별 */
+		.page_10 .lineBox{margin-top: -10px;}
+		.page_10 .lineBox .toggle{line-height: 1.2;}
+		.page_10 .dotList>li:not(:last-of-type){margin-bottom: 5px;}
+
+		.page_20 .lineBox{width: 270px; margin: 0 auto; padding: 0;}
+		.page_20 .--graph{position: absolute;top: 264px;left: 240px;width: 540px;height: 190px;background: url(./images/suh_p_0401_05_0004_401_1/suh_p_0401_05_0004_401_1_2.png) no-repeat 50% 50% / 540px 100%;}
+		.page_20 .--graph .--text{position: absolute; z-index: 1; font-size: 35px;}
+		.page_20 .--graph .--text.n1{top: 4px;left: 4px;}
+		.page_20 .--graph .--text.n2{top: -20px;left: 82px;text-align: right;line-height: 68px;}
+		.page_20 .--graph .--text.n3{top: 114px;left: 102px;}
+		.page_20 .--graph .--text.n4{top: 138px;left: -10px;}
+		.page_20 .--graph .--text.n5{top: 152px;left: 65px;}
+		.page_20 .--graph .--text.n6{top: 147px;left: 149px;}
+		.page_20 .--graph .--text.n7{top: 148px;left: 250px;}
+		.page_20 .--graph .--text.n8{top: 148px;left: 352px;}
+		.page_20 .--graph .--text.n9{top: 148px;left: 454px;}
+		.page_20 .--graph .--text.n10{top: 410px;left: 790px;}
+		.page_20 .--graph .toggle{position: absolute; top: 0;left: 0; width:100%; height: 100%;}
+		.page_20 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_401_1/suh_p_0401_05_0004_401_1_3.png) no-repeat 50% 50% / 540px 100%;}
+
+		.page_url h2 .tab{
+        display: inline-block;
+        font-size: 15px !important;
+        margin:11px 5px 0 0;
+        text-align: center;
+        border-radius: 30px;
+        padding: 8px 10px;
+        color: #ad7c65;
+        background-color: #fff;
+        font-family: YGJAL;
+        border:1px solid #ad7c65;
+        line-height:1.2;
+        height:16px;
+    }
+	.page_url .lineBox.sky{display: inline-block;padding:5px 10px;margin-bottom:20px;font-size:40px;}
+    .page_url .conImg{text-align:center;}
+    .page_url .conImg img{width:auto;height:100%;}
+    .page_url .popBtn.textInBtn.inline{margin:6px 0 0 5px;}
+    .page_1, .page_4{text-align:center;}
+    .page_1 .tableContainer {width:850px;margin:0 auto;}
+    .page_1 .flexListContainer{position: relative;justify-content:center}
+    .page_1 .flexListContainer li{
+        display: flex;
+        padding:0 50px;
+    }
+    .page_url .flexListContainer .exam{position:absolute;top: 5px;left: -10px;opacity: 0;transition: all .3s;}
+    .page_url .flexListContainer .on.exam{opacity: 1;transition: all .3s;}
+    .page_2 section,
+    .page_3 section,
+    .page_5 section{text-align:center;}
+    .page_2 .conImg{position:relative;height:320px;}
+    .page_3 .conImg{position:relative;height:320px;}
+    .page_5 .conImg{position:relative;height:320px;margin-top:0px;}
+    .page_2 .obj,
+    .page_5 .obj{position: absolute;bottom:0;left:50%;opacity: 0;transform: translate(-50%, 0);transition: all .3s;}
+    .page_2.complete .obj,
+    .page_5.complete .obj{opacity: 1;transition: all .3s;}
+
+    .page_3 .conImg{height:320px;}
+    .page_3 .toggle{position:absolute;top:50%;left:840px;}
+
+    .page_4 .tableContainer {width:800px;margin:0 auto;}
+
+
+    .popup_contents .box{position:absolute;top:50%;left:50%;width:850px;transform: translate(-50%, -50%);text-align: center;}
+    .tableContainer .page_url table{table-layout: fixed;}
+
+	.--text{position: absolute; font-size: 35px;}
+	.page_2 .--text.n1{top: 10px; left: 172px;}
+	.page_2 .--text.n2{top: -3px;left: 266px;text-align: right;line-height: 73px;}
+	.page_2 .--text.n3{top: 208px;left: 286px;}
+	.page_2 .--text.n4{top: 245px;left: 172px;}
+	.page_2 .--text.n5{top: 270px;left: 242px;}
+	.page_2 .--text.n6{top: 260px;left: 330px;}
+	.page_2 .--text.n7{top: 260px;left: 525px;}
+	.page_2 .--text.n8{top: 260px;left: 710px;}
+
+	.page_3 .--text.n1{top: 10px; left: 172px;}
+	.page_3 .--text.n2{top: -3px;left: 266px;text-align: right;line-height: 73px;}
+	.page_3 .--text.n3{top: 208px;left: 286px;}
+	.page_3 .--text.n4{top: 245px;left: 172px;}
+	.page_3 .--text.n5{top: 270px;left: 242px;}
+	.page_3 .--text.n6{top: 260px;left: 330px;}
+	.page_3 .--text.n7{top: 260px;left: 525px;}
+	.page_3 .--text.n8{top: 260px;left: 710px;}
+
+	.page_5 .--text.n1{top: 10px;left: 178px;}
+	.page_5 .--text.n2{top: -3px;left: 266px;text-align: right;line-height: 98px;}
+	.page_5 .--text.n3{top: 206px;left: 286px;}
+	.page_5 .--text.n4{top: 238px;left: 157px;}
+	.page_5 .--text.n5{top: 270px;left: 218px;}
+	.page_5 .--text.n6{top: 256px;left: 355px;}
+	.page_5 .--text.n7{top: 256px;left: 484px;}
+	.page_5 .--text.n8{top: 256px;left: 612px;}
+	.page_5 .--text.n9{top: 256px;left: 730px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+				<a href="./data/(4-1-5)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span class="ls2_5">
+							막대그래프를 그리려고 합니다. <ins class="blankBox"></ins> 안에 알맞은 말을 써넣으시오.
+						</span></h2>
+						<section>
+							<div class="lineBox green">
+								<ul class="dotList orange">
+									<li>
+										<div>
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													책의 종류
+												</div>
+											</div>와/과 세로 중 어느 쪽에 조사한 수를 나타낼 것인가를 정합니다.
+										</div>
+									</li>
+									<li>
+										<div>
+											눈금 한 칸의 크기를 정하고, 조사한 수 중에서 가장 <div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													큰
+												</div>
+											</div> 수를 나타낼 수 있도록 눈금의 수를 정합니다.
+										</div>
+									</li>
+									<li>
+										<div>
+											조사한 수에 맞도록 <div class="toggle" data-toggle-obj="3">
+												<div class="answer" data-toggle-target="3">
+													막대
+												</div>
+											</div>을/를 그립니다.
+										</div>
+									</li>
+									<li>
+										<div>
+											막대그래프에 알맞은 <div class="toggle" data-toggle-obj="4">
+												<div class="answer" data-toggle-target="4">
+													제목
+												</div>
+											</div>을/를 붙입니다.
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-5)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							표를 보고 막대그래프로 나타내 보시오.
+						</span></h2>
+						<section>
+							<div class="lineBox sky textAlignC --lineBox">읽은 책 수</div>
+							<div class="tableContainer brown fix  mt_10">
+								<table>
+									<tr>
+										<th>이름</th>
+										<th>수빈</th>
+										<th>가람</th>
+										<th>정호</th>
+										<th>소라</th>
+									</tr>
+									<tr>
+										<th>책 수(권)</th>
+										<td>5</td>
+										<td>4</td>
+										<td>8</td>
+										<td>7</td>
+									</tr>
+								</table>
+							</div>
+							<div class="lineBox sky textAlignC --lineBox mt_10">읽은 책 수</div>
+							<div class="--graph">
+								<div class="--text n1">(권)</div>
+								<div class="--text n2">10<br>5</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">책 수</div>
+								<div class="--text n5">이름</div>
+								<div class="--text n6">수빈</div>
+								<div class="toggle noBg" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="--text n7">가람</div>
+										<div class="--text n8">정호</div>
+										<div class="--text n9">소라</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-5)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_1 page_url" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>표를 보고 막대그래프로 나타낼 때 가로와 세로에는 각각 무엇을 나타내어야 하는지 쓰시오.</span></h2>
+						<section>
+							<div class="lineBox sky">종류별 나무 수</div>
+							<div class="tableContainer brown fix">
+								<table>
+									<tbody><tr>
+										<th>종류</th>
+										<th>느티나무</th>
+										<th>향나무</th>
+										<th>목련</th>
+										<th>합계</th>
+									</tr>
+									<tr>
+										<th>나무 수(그루)</th>
+										<td>9</td>
+										<td>15</td>
+										<td>6</td>
+										<td>30</td>
+									</tr>
+								</tbody></table>
+							</div>
+							<ul class="flexListContainer mt_50">
+								<li class="flexListContainer center">
+								  <div class="colorBox check skyBlue">가로</div>
+								  <div>
+									<div class="toggle center" data-toggle-obj="1">
+									  <div class="answer" data-toggle-target="1">종류</div>
+									</div>
+								  </div>
+								  <span class="bullet exam" data-toggle-target="1">예</span>
+								</li>
+								<li class="flexListContainer center">
+									<div class="colorBox check skyBlue">세로</div>
+									<div>
+									  <div class="toggle center" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">나무 수</div>
+									  </div>
+									</div>
+									<span class="bullet exam" data-toggle-target="2">예</span>
+								</li>
+							</ul>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+					  <li class="page_2 page_url" data-quiz="toggle">
+						<h2><ins class="dot"></ins><div class="tab">문제 1</div><span>의 표를 막대그래프로 나타내어 보시오. </span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="1"  data-popup-parent="hidden">표 보기</div></h2>
+						<section>
+							<div class="lineBox sky">종류별 나무 수</div>
+							<div class="conImg">
+								<img src="./images/suh_0401_05_0004_401_1_2_1.png">
+								<img src="./images/suh_0401_05_0004_401_1_2_2.png" class="obj">
+								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<div class="--text n1">(그루)</div>
+								<div class="--text n2">15<br>10<br>5</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">나무</div>
+								<div class="--text n5">종류</div>
+								<div class="--text n6">느티나무</div>
+								<div class="--text n7">향나무</div>
+								<div class="--text n8">목련</div>
+							</div>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+					  <li class="page_3 page_url" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>향나무는 몇 그루인지 쓰시오.</span></h2>
+						<section>
+								  <div class="lineBox sky">종류별 나무 수</div>
+							<div class="conImg">
+								<img src="./images/suh_0401_05_0004_401_1_3_1.png">
+								<div class="--text n1">(그루)</div>
+								<div class="--text n2">15<br>10<br>5</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">나무</div>
+								<div class="--text n5">종류</div>
+								<div class="--text n6">느티나무</div>
+								<div class="--text n7">향나무</div>
+								<div class="--text n8">목련</div>
+							</div>
+							<div class="toggle" data-toggle-obj="1">
+							  <div class="answer" data-toggle-target="1">15그루</div>
+						  </div>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+					  <li class="page_4 page_url" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>민정이네 반 학생들의 혈액형을 조사하여 나타낸 표입니다. 세로 눈금 한 칸이 1명을 나타낸다면 O형인 학생 수는 몇 칸으로 나타내어야 하는지 구하시오.</span></h2>
+						<section>
+							<div class="lineBox sky">혈액형별 학생 수</div>
+							<div class="tableContainer brown fix">
+								<table>
+									<tbody><tr>
+										<th>혈액형</th>
+										<th>A형</th>
+										<th>B형</th>
+										<th>O형</th>
+										<th>AB형</th>
+										<th>합계</th>
+									</tr>
+									<tr>
+										<th>학생 수(명)</th>
+										<td>9</td>
+										<td>5</td>
+										<td>7</td>
+										<td>8</td>
+										<td>29</td>
+									</tr>
+								</tbody></table>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">7칸</div>
+								</div>
+							</div>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+					  <li class="page_5 page_url" data-quiz="toggle">
+						<h2><ins class="dot"></ins><div class="tab">문제 4</div><span>의 표를 막대그래프로 나타내어 보시오.</span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="2" data-popup-parent="hidden">표 보기</div></h2>
+						<section>
+							<div class="lineBox sky">혈액형별 학생 수</div>
+							<div class="conImg">
+								<img src="./images/suh_0401_05_0004_401_1_4_1.png">
+								<img src="./images/suh_0401_05_0004_401_1_4_2.png" class="obj">
+								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<div class="--text n1">(명)</div>
+								<div class="--text n2">10<br>5</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">학생 수</div>
+								<div class="--text n5">혈액형</div>
+								<div class="--text n6">A형</div>
+								<div class="--text n7">B형</div>
+								<div class="--text n8">O형</div>
+								<div class="--text n9">AB형</div>
+							</div>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+			  <li class="whole pop_page_1 page_url" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="box">
+						<div class="lineBox sky">종류별 나무 수</div>
+						<div class="tableContainer brown fix">
+							<table>
+								<tbody><tr>
+									<th>종류</th>
+									<th>느티나무</th>
+									<th>향나무</th>
+									<th>목련</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th>나무 수(그루)</th>
+									<td>9</td>
+									<td>15</td>
+									<td>6</td>
+									<td>30</td>
+								</tr>
+							</tbody></table>
+						</div>
+					</div>
+				</div>
+			  </li>
+			  <li class="whole pop_page_1 page_url" data-popup-page="2">
+				<div class="popup_contents">
+					<div class="box">
+						<div class="lineBox sky">혈액형별 학생 수</div>
+						<div class="tableContainer brown fix">
+							<table>
+								<tbody><tr>
+									<th>혈액형</th>
+									<th>A형</th>
+									<th>B형</th>
+									<th>O형</th>
+									<th>AB형</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th>학생 수(명)</th>
+									<td>9</td>
+									<td>5</td>
+									<td>7</td>
+									<td>8</td>
+									<td>29</td>
+								</tr>
+							</tbody></table>
+						</div>
+					</div>
+				</div>
+			  </li>
+			</ul>
+		</section>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj){
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj){
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function (){
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

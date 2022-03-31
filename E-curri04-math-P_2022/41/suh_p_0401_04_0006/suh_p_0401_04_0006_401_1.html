@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+		.shape_wall{
+            display:inline-block;
+            background:url('images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1.png') no-repeat;
+            width:30px;
+            height:30px;
+            background-size: 100%;
+            vertical-align: top;
+            margin:10px 0 0 0
+        }
+
+        /* page_1 */
+        .page_1 .textAlignC {width:920px;margin: 20px auto;position:relative;}
+        .page_1 .textAlignC img{width:100%;}
+        .page_1 .textAlignC .toggle{position: absolute;left: 0;top: 0;width: 100%;}
+
+         /* page_2 */
+        .page_2 .textAlignC {width:920px;margin: 20px auto;position:relative;}
+        .page_2 .textAlignC img{width:100%;}
+        .page_2 .textAlignC .toggle{position: absolute;left: 0;top: 0;width: 100%;}
+
+        /* page_2 */
+        .page_3 .textAlignC {width:920px;margin: 20px auto;position:relative;}
+        .page_3 .textAlignC img{width:100%;}
+        .page_3 .textAlignC .toggle{position: absolute;left: 0;top: 0;width: 100%;}
+
+        .page_4 .textAlignC {width:666px;margin: 20px auto;position:relative;}
+        .page_4 .textAlignC .text{
+            position: absolute;
+            right: 39px;
+            bottom: 37px;
+            font-size: 40px;
+        }
+
+
+        .page_5 .titleImgIcon{width:35px;margin-right:5px;}
+        .page_5 .quizContents .lineBox{padding:0;margin-top:-20px;}
+        .page_5 .quizContents .lineBox img{height:160px;vertical-align:top;}
+		.page_5 .img{position: relative; cursor: pointer;}
+        .page_5 .quizContents .oxObjContainer{margin-top:30px;}
+        .page_5 .quizContents .oxObjContainer li{display:inline-block;line-height:1;text-align:center;}
+        .page_5 .quizContents .oxObjContainer li .exampleBox{display:inline-flex;display:-ms-inline-flexbox;line-height:1;text-align:center;margin-top:10px;}
+        .page_5 .quizContents .oxObjContainer li .exampleBox .icon{margin:0 10px}
+        .page_5 .quizContents .oxObjContainer li ~ li{margin-left:50px;}
+        .page_5 .quizContents .oxObjContainer img{width:200px;}
+		.page_5 .icon.icon_o,
+		.page_5 .icon.icon_tri,
+		.page_5 .icon.icon_x{position: absolute; top: 50%; left: 50%; width: 90px; height: 90px; margin: -45px 0 0 -45px;}
+
+
+		.page-iframe{position:fixed; z-index:1; top:170px; left:55px; overflow:hidden; width:1280px; height:565px; border:0; background:transparent; transform: scale(0.828125) translate(-130px, -20px);}
+		.popup_pages .page-iframe{top:180px; left:70px; height:510px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.study_guide{right: 0;}
+
+		.page_10 .--img{position: relative; width: 720px; height: 250px; margin:0 auto; background: url(./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_2.png) no-repeat 50% 50% / contain;}
+		.page_10 .--img .answer{position: absolute; top:0; left: 0;width: 100%;height: 100%;background: url(./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_3.png) no-repeat 50% 50% / contain;}
+
+		.page_20 .--img{position: relative; width: 720px; height: 250px; margin:0 auto; background: url(./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_6.png) no-repeat 50% 50% / contain;}
+		.page_20 .--img .answer{position: absolute; top:0; left: 0;width: 100%;height: 100%;background: url(./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_7.png) no-repeat 50% 50% / contain;}
+
+		.page_30 .--img{position: relative; width: 720px; height: 200px; margin:0 auto; background: url(./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_10.png) no-repeat 50% 50% / contain;}
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/(4-1-4)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<img src="./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_1.png" alt="" height="40" style="vertical-align: -5px;"> 모양으로 밀기를 이용하여 만든 무늬입니다. 빈칸을 채워 무늬를 완성해 보시오.
+						</span></h2>
+						<section>
+							<div class="--img" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span style="letter-spacing: 1px;">
+							<img src="./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_5.png" alt="" height="40" style="vertical-align: -5px;"> 모양으로 돌리기를 이용하여 규칙적인 무늬를 만들어 보시오.
+						</span></h2>
+						<section class="full">
+							<div class="--img" data-toggle-obj="1" >
+								<div class="answer" data-toggle-target="1"></div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_30" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span style="letter-spacing: 1px;">
+							<img src="./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_9.png" alt="" height="40" style="vertical-align: -5px;"> 모양으로 규칙적인 무늬를 만들었습니다. 만든 방법을 설명해 보시오.
+						</span></h2>
+						<section class="full">
+							<div class="--img">
+							</div>
+							<div class="flexListContainer start mt_10">
+								<div class="mr_10" style="white-space: nowrap;">
+									<img src="./images/suh_p_0401_04_0006_401_1/suh_p_0401_04_0006_401_1_9.png" alt="" height="40" style="vertical-align: -5px;"> 모양을
+								</div>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div class="ls1">
+													오른쪽으로 뒤집어 모양을 만들고, 그 모양을 오른쪽과 아래쪽으로 밀어서 무늬를 만들었습니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/(4-1-4)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><div class="shape_wall"></div> 도형을 사용하여 무늬를 만들려고 합니다. 밀기를 이용하여 무늬를 만들어 보시오.</span></h2>
+						<section>
+							<div class="textAlignC noClick">
+								<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_1_1.png" class="img_1" />
+								<div class="toggle noBox" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_1_2.png" class="img_2" />
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><div class="shape_wall"></div> 도형을 사용하여 무늬를 만들려고 합니다. 뒤집기를 이용하여 무늬를 만들어 보시오.</span></h2>
+						<section>
+							<div class="textAlignC noClick">
+								<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_2_1.png" class="img_1" />
+								<div class="toggle noBox" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_2_2.png" class="img_2" />
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span><div class="shape_wall"></div> 도형을 사용하여 무늬를 만들려고 합니다. 돌리기를 이용하여 무늬를 만들어 보시오.</span></h2>
+						<section>
+							<div class="textAlignC noClick">
+								<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_3_1.png" class="img_1" />
+								<div class="toggle noBox" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_3_2.png" class="img_2" />
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>가에 들어갈 알맞은 모양을 그리시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<img src="images/suh_0401_04_0006_401_1/suh_0401_02_0006_501_1_00.png" class="img_1" />
+								<dib class="text">가</dib>
+							</div>
+							<div class="textAlignC">
+								<div class="toggle " data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="images/suh_0401_04_0006_401_1/suh_0401_02_0006_501_1_01.png" class="img_2" />
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="ox" data-option="answerSound, hide" data-quiz-name="character">
+						<h2><ins class="dot orange"></ins><span style="letter-spacing: -1px;">다음 중 <img src="./images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_04.png" class="titleImgIcon" alt=""> 모양으로 뒤집기를 이용하여 만든 무늬를 찾아 <div class="icon_o_title"></div>표 하시오. </span></h2>
+						<section class="quizContents textAlignC">
+							<ul class="oxObjContainer">
+								<li>
+									<div class="img" data-ox-obj="1" data-answer="">
+										<img src="./images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_01.png" alt="">
+										<div class="icon icon_o displayIB" data-ox-target="1"></div>
+									</div>
+								</li>
+								<li>
+									<div class="img" data-ox-obj="2">
+										<img src="./images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_02.png" alt="">
+										<div class="icon icon_x displayIB" data-ox-target="2"></div>
+									</div>
+								</li>
+								<li>
+									<div class="img" data-ox-obj="3">
+										<img src="./images/suh_0401_04_0006_401_1/suh_0401_04_0006_401_1_03.png" alt="">
+										<div class="icon icon_x displayIB" data-ox-target="3"></div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn page2Btn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_10" data-popup-page="10">
+					<div class="popup_contents">
+						도형을 오른쪽으로 밀었을 때의 모양은 처음 도형과 같습니다.
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+			const _dapChkBtn = document.querySelectorAll(".dapCheckBtn");
+			_dapChkBtn.forEach(function(obj, index){
+				obj.addEventListener( "click", function(e) {
+					let _closestTg = obj.closest(".on");
+					if( _closestTg.querySelector(".page-iframe") ){
+						_closestTg.querySelector(".page-iframe").contentWindow.document.querySelector(".app--tool").classList.remove('open');
+					}
+				});
+			});
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>
