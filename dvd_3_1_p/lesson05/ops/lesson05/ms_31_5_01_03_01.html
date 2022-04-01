@@ -5,24 +5,14 @@
 		<meta name="viewport" content="width=1280, height=720">
 
 		<title></title>
-
-		<link rel="stylesheet" href="../../../common/css/materialize.min.css" />
-		<link rel="stylesheet" href="../../../common/css/fontawesome.min.css" />
-		<link rel="stylesheet" href="../../../common/css/fonts.css" />
-		<link rel="stylesheet" href="../../../common/css/OverlayScrollbars.min.css" />
-		<link rel="stylesheet" href="../../../common/ui/css/ui.css" />
-		<link rel="stylesheet" href="../../../common/ui/css/theme04.css" />
-		<link rel="stylesheet" href="../../../common/css/common.css" />
 		<link rel="stylesheet" href="../../../common/css/content.css" />
 		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
 
-		<!-- restyle -->
 		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
 		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
 		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
 		<link rel="stylesheet" href="../../../../default/css/custom.css">
-		<link rel="stylesheet" href="../../../include/math/style/master.css">
-		<link rel="stylesheet" href="../../../include/math_3-1/style/math_3-1.css">
+
 		<link rel="stylesheet" href="./css/ms_31_5_01_03_01.css" />
 		<style>
 			.iframe-re {
@@ -62,94 +52,20 @@
 			}
 			.iframe-re .app-angle-tool .not-obj {
 				width: 1058px;
-				/* height: 503px; */
 				height: 453px;
 			}
-			/* .iframe-re .btn-ex>span,
-			.iframe-re .btn-retry>span {
-				margin: 0 -1px 0 0;
+			.quiz-draggable .drag-area {
+				background-color: #fff0a3;
+				border-radius: 10px;
+				padding: 10px;
 			}
-			.iframe-re .btns-bottom-right>.button::after,
-			.iframe-re .btns-bottom-right>.button::before {
-				display: none;
-			}
-			.iframe-re .btns-bottom-right .btn-ex>span::before {
-				content: "정답 확인";
-				padding-left: 14px;
-				position: static;
-				width: auto;
-				height: auto;
-				background: none;
-				display: flex;
-				height: 100%;
-				align-items: center;
-				pointer-events: none;
-				letter-spacing: -.1px;
-			}
-			.iframe-re .btns-bottom-right>.btn-retry>span::before {
-				content: "정답 가리기";
-				padding-left: 8px;
-				position: static;
-				width: auto;
-				height: auto;
-				background: none;
-				display: flex;
-				height: 100%;
-				align-items: center;
-				pointer-events: none;
-			}
-			.iframe-re .btns-bottom-right>.btn-retry,
-			.iframe-re .btns-bottom-right>.btn-ex {
-				opacity: 1;
-				visibility: visible;
-				background: url(../../../../E-curri03-math-P_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
-				width: 160px;
-				height: 50px;
-				color: #fff;
-				font-size: 20px;
-				font-family: YGJAL;
-				text-align: left;
-				padding-left: 32px;
-				border-radius: 8px;
-				cursor: pointer;
-				box-sizing: border-box;
-				z-index: 1;
-				letter-spacing: -.1px;
-				transition: none;
-				transform: none;
-			}
-			.iframe-re .btns-bottom-right>.btn-retry,
-			.iframe-re .btns-bottom-right>.button:hover {
-				background-color: #9d00c4;
-			}
-			.iframe-re .btns-bottom-right>.btn-ex {
-				background-color: #5e3e18;
-			} */
-			/* .drag-ruler.st1 .drag-area {
-				left: 236px;
-				top: 358px;
-				width: 585px;
-				height: 100px;
-			}
-			.drag-ruler.st1 .drag-item {
-				left: 246px;
-				top: 368px;
-				width: 565px;
-				height: 80px;
-			}
-			.drag-ruler.st1 .drag-item img {
-				width: 565px;
-				height: 80px;
-			} */
-			.icon_arrow{position: absolute; background-color: #fff;}
-			.icon_arrow.n1{top: 256px; left: 370px;}
-			.icon_arrow.n2{top: 128px; left: 370px;}
 		</style>
 	</head>
 	<body class="iframe-re">
         <div class="content-container">
 			<div class="content" data-ui="cornerBase">
-				<div class="bg"></div>
+				<div class="bg">
+				</div>
 
 				<div class="title-h1">
 					<div class="left-inner">
@@ -163,11 +79,20 @@
 				</div>
 
 				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
-					<div class="icon_arrow big n1"></div>
+					<div class="colorBox green n1">
+						2 cm 5 mm
+						<div class="icon_arrow big n1"></div>
+					</div>
+					<div class="colorBox green n2">
+					 	42 mm
+						<div class="icon_arrow big n1"></div>
+					</div>
+					
 					<div class="icon_arrow big n2"></div>
 					<div class="quiz-01-answer">
-						
-						<img src="./images/ms_31_5_01_03_01/answer_01.svg" alt="" width="1280" height="720">
+						<div class="line n1"></div>
+						<div class="line n2"></div>
+						<!-- <img src="./images/ms_31_5_01_03_01/answer_01.svg" alt="" width="1280" height="720"> -->
 					</div>
 
 					<!-- quiz -->
@@ -206,10 +131,10 @@
 				<!-- 드래그 요소 :: 자 -->
 				<div id="drag-ruler-01" class="drag-ruler quiz-draggable st1" data-ui="quiz-draggable" data-option='{"lockCenter":false, "onlyDrag":true}'>
 					<div class="area-con">
-						<div class="drag-area" style="left:236px; top:358px; width:585px; height:100px;"><span class="area"></span></div>
+						<div class="drag-area" style="left:236px; top:348px; width:585px; height:100px;"><span class="area"></span></div>
 					</div>
 					<div class="drag-con">
-						<div class="drag-item" x="246" y="368" scale="1" scale="1" drag-scale="1" style="width:565px; height:80px">
+						<div class="drag-item" x="256" y="368" scale="1" scale="1" drag-scale="1" style="width:565px; height:80px">
 							<img class="img" src="../../../common/images/ruler.svg" alt="" width="565" height="80">
 							<span class="area btn-"></span>
 						</div>
@@ -288,7 +213,7 @@
 				<!-- 드래그 요소 :: 자 -->
 				<div id="drag-ruler-02" class="drag-ruler quiz-draggable" data-ui="quiz-draggable" data-option='{"lockCenter":false, "onlyDrag":true}'>
 					<div class="area-con">
-						<div class="drag-area" style="left:309px; top:530px; width:666px; height:90px;"><span class="area"></span></div>
+						<div class="drag-area" style="left:309px; top:520px; width:666px; height:90px;"><span class="area"></span></div>
 					</div>
 					<div class="drag-con">
 						<div class="drag-item" x="309" y="530" scale="1" drag-scale="1" style="width:666px; height:90px">

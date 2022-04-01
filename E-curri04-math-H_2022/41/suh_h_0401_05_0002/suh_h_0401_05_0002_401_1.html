@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<link rel="stylesheet" type="text/css" href="../../../default/css/custom.css">
+	<style>
+		.checkContainer h2 .blankBox{width:40px; min-width:40px;}
+
+		.addLineController{top:8px;}
+		.checkContainer .contentsBox h2 {
+			font-size: 40px !important;
+			line-height: 1.3em !important;
+			margin-bottom: 30px;
+		}
+		.checkContainer h2 .blankBox,
+		.checkContainer h2 .toggleBlank.circle,
+		.checkContainer h2 .icon_o_title{margin-top:6px}
+		h2 .icon_bogi {margin: 8px 4px 0 4px!important;}
+
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+
+
+	li > section{margin-top:-20px;}
+	.checkContainer .lineBox{display: inline-block;padding:10px;margin-bottom:10px}
+	.conImg{margin:0 auto;}
+    .conImg img{width:100%;height:auto;}
+    section > .flexListContainer{margin-top:12px;align-items: center;justify-content:center;}
+    section > .flexListContainer > li{position:relative;text-align:center;padding:0 100px;}
+    section > .flexListContainer > li:nth-child(1){width:40%;}
+    section > .flexListContainer > li:nth-child(2){width:24%;padding-left:30px;}
+    .flexListContainer.column > li {
+        display: flex;
+        align-items: center;
+        margin:5px 0;
+    }
+    .page_2 .flexListContainer.column{margin-top:-20px;}
+	.zoomBtn:after{right:-40px;bottom:-5px;}
+    .colorBox.check {
+        width: 84px;
+        text-align: center;
+    }
+    .flexListContainer .colorBox + * {
+        width: 100%;
+        text-align: center;
+    }
+    .flexListContainer .colorBox + div .toggle {width:100%;}
+    .tableContainer{width:100%;margin:0 auto;}
+    .page_1 .lineBox{display: block;width:750px;margin:30px auto 20px;}
+    .page_1 .lineBox li{position: relative;padding-left:50px;}
+    .page_1 .lineBox .bullet.number{position:absolute;top:8px;left:0px;}
+
+    /* 팝업 */
+    .popup_contents .flexListContainer{height:100%;align-items:center;justify-content:center;}
+    .popup_contents .flexListContainer li{text-align:center;}
+    .popup_contents .conImg img{width:100%;height:auto;}
+    .popup_contents .lineBox{display: inline-block;margin-bottom:20px;font-size:40px;}
+    img {    image-rendering: auto;}
+
+	.popup_contents .--graph2{position: relative; font-size:40px;}
+	.popup_contents .--graph2 .--text{position: absolute;}
+	.popup_contents .--graph2 .--text.n1{top: 10px;left: 20px;}
+	.popup_contents .--graph2 .--text.n2{top: 44px;left: 188px;line-height: 134px;}
+	.popup_contents .--graph2 .--text.n3{top: 400px;left: 10px;}
+	.popup_contents .--graph2 .--text.n4{top: 450px;left: 150px;}
+	.popup_contents .--graph2 .--text.n5{top: 428px;left: 285px;}
+	.popup_contents .--graph2 .--text.n6{top: 428px;left: 455px;}
+	.popup_contents .--graph2 .--text.n7{top: 428px;left: 622px;}
+	.popup_contents .--graph2 .--text.n8{top: 428px;left: 795px;}
+	.popup_contents .--graph2 .--text.n9{top: 428px;left: 968px;}
+
+
+
+	/* 개별 */
+	.page_10 .--colorBox{display: inline-block; padding-top: 2px; padding-bottom: 2px;}
+		.page_10 .--graph{position: relative;width: 880px;height: 210px;margin: 0 auto;background: url(./images/suh_h_0401_05_0002_401_1/suh_h_0401_05_0002_401_1_1.png) no-repeat 50% 50% / 100% 100%;}
+		.page_10 .--text{position: absolute; font-size: 35px;}
+		.page_10 .--graph .--text.n1{top: 4px;left: 6px;}
+		.page_10 .--graph .--text.n2{top: 26px;left: 161px;}
+		.page_10 .--graph .--text.n3{top: 120px;left: 200px;}
+		.page_10 .--graph .--text.n4{top: 161px;left: 8px;font-size: 26px;}
+		.page_10 .--graph .--text.n5{top: 178px;left: 96px;font-size: 26px;}
+		.page_10 .--graph .--text.n6{top: 163px;left: 240px;}
+		.page_10 .--graph .--text.n7{top: 163px;left: 422px;}
+		.page_10 .--graph .--text.n8{top: 163px;left: 562px;}
+		.page_10 .--graph .--text.n9{top: 163px;left: 748px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+				<a href="./data/5단원_2차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span style="letter-spacing: 1px;">
+							다음 그래프와 같이 조사한 자료의 수량을 막대 모양으로 나타낸 그래프를 무엇이라고 합니까?
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="colorBox sky textAlignC --colorBox">친구에게 듣고 싶은 말</div>
+							</div>
+							<div class="--graph mt_10">
+								<div class="--text n1">(명)</div>
+								<div class="--text n2">100</div>
+								<div class="--text n3">0</div>
+								<div class="--text n4">학생 수</div>
+								<div class="--text n5">듣고 싶은 말</div>
+								<div class="--text n6">넌 최고야</div>
+								<div class="--text n7">고마워</div>
+								<div class="--text n8">네가 좋아</div>
+								<div class="--text n9">잘했어</div>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										막대그래프
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/5단원_2차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							막대그래프로 나타냈을 때의 좋은 점을 써 보시오.
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													수의 크고 작음을 한눈에 알아보기 쉽습니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/5단원_2차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_30" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span class="ls1">
+							세로로 나타낸 막대그래프를 가로로 바꾸면 무엇이 바뀝니까?
+						</span></h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													그래프의 가로에 쓰는 것과 세로에 쓰는 것이 바뀝니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/5단원_2차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>막대그래프에 대해 바르게 설명한 것을 고르시오.</span></h2>
+						<section>
+							<ul class="lineBox sky textAlignL">
+								<li>
+									<div class="bullet number orange">ㄱ</div>막대그래프는 조사한 수를 막대 모양으로 나타낸 그래프입니다.
+								</li>
+								<li>
+									<div class="bullet number orange">ㄴ</div>막대그래프는 전체 조사한 수의 합계를 한눈에 알아볼 수 있습니다.
+								</li>
+							</ul>
+							<div class="textAlignC mt_10">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1"><div class="bullet number orange">ㄱ</div></div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					  </li>
+					  <li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span style="letter-spacing:-3px;">학생들이 좋아하는 과목을 조사하여 나타낸 표와 막대그래프입니다. 막대그래프에서 가로와 세로는 각각 무엇을 나타내는지 쓰시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<span class="lineBox sky">좋아하는 과목별 학생 수</span>
+								<div class="tableContainer brown">
+									<table>
+										<tbody>
+											<tr>
+												<th>과목</th>
+												<th>국어</th>
+												<th>사회</th>
+												<th>수학</th>
+												<th>과학</th>
+												<th>체육</th>
+												<th>합계</th>
+											</tr>
+											<tr>
+												<td>학생 수(명)</td>
+												<td>7</td>
+												<td>4</td>
+												<td>5</td>
+												<td>6</td>
+												<td>10</td>
+												<td>32</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="conImg popBtn zoomBtn" data-popup-btn="2"><img src="./images/suh_0401_05_0002_401_1_2_2.png"></div>
+								</li>
+								<li>
+									<ul class="flexListContainer column">
+										<li>
+										  <div class="colorBox check skyBlue">가로</div>
+										  <div>
+											<div class="toggle center" data-toggle-obj="1">
+											  <div class="answer" data-toggle-target="1">과목</div>
+											</div>
+										  </div>
+										</li>
+										<li>
+											<div class="colorBox check skyBlue">세로</div>
+											<div>
+											  <div class="toggle center" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">학생 수</div>
+											  </div>
+											</div>
+										  </li>
+									</ul>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					  </li>
+					  <li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>학생들이 좋아하는 과목을 조사하여 나타낸 표와 막대그래프입니다. 막대의 세로 눈금 한 칸은 몇 명인지 쓰시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<span class="lineBox sky">좋아하는 과목별 학생 수</span>
+								<div class="tableContainer brown">
+									<table>
+										<tbody>
+											<tr>
+												<th>과목</th>
+												<th>국어</th>
+												<th>사회</th>
+												<th>수학</th>
+												<th>과학</th>
+												<th>체육</th>
+												<th>합계</th>
+											</tr>
+											<tr>
+												<td>학생 수(명)</td>
+												<td>7</td>
+												<td>4</td>
+												<td>5</td>
+												<td>6</td>
+												<td>10</td>
+												<td>32</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="conImg popBtn zoomBtn" data-popup-btn="2"><img src="./images/suh_0401_05_0002_401_1_2_2.png"></div>
+								</li>
+								<li>
+									<div class="toggle center" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">1</div>
+									</div>명
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					  </li>
+					  <li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>표와 막대그래프 중 전체 학생 수를 알아보기에 어느 것이 더 편리한지 쓰시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<span class="lineBox sky">좋아하는 과목별 학생 수</span>
+								<div class="tableContainer brown">
+									<table>
+										<tbody>
+											<tr>
+												<th>과목</th>
+												<th>국어</th>
+												<th>사회</th>
+												<th>수학</th>
+												<th>과학</th>
+												<th>체육</th>
+												<th>합계</th>
+											</tr>
+											<tr>
+												<td>학생 수(명)</td>
+												<td>7</td>
+												<td>4</td>
+												<td>5</td>
+												<td>6</td>
+												<td>10</td>
+												<td>32</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="conImg popBtn zoomBtn" data-popup-btn="2"><img src="./images/suh_0401_05_0002_401_1_2_2.png"></div>
+								</li>
+								<li>
+									<div class="toggle center" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">표</div>
+									  </div>
+								</li>
+							</ul>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					  </li>
+					  <li class="page_5" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>표와 막대그래프 중 학생들이 가장 좋아하는 과목을 한눈에 알아보기에 어느 것이 더 편리한지 쓰시오.</span></h2>
+						<section>
+							<div class="textAlignC">
+								<span class="lineBox sky">좋아하는 과목별 학생 수</span>
+								<div class="tableContainer brown">
+									<table>
+										<tbody>
+											<tr>
+												<th>과목</th>
+												<th>국어</th>
+												<th>사회</th>
+												<th>수학</th>
+												<th>과학</th>
+												<th>체육</th>
+												<th>합계</th>
+											</tr>
+											<tr>
+												<td>학생 수(명)</td>
+												<td>7</td>
+												<td>4</td>
+												<td>5</td>
+												<td>6</td>
+												<td>10</td>
+												<td>32</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="conImg popBtn zoomBtn" data-popup-btn="2"><img src="./images/suh_0401_05_0002_401_1_2_2.png"></div>
+								</li>
+								<li>
+									<div class="toggle center" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">막대그래프</div>
+									  </div>
+								</li>
+							</ul>
+						  <button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="whole pop_page_1" data-popup-page="1">
+					<!-- <img src="./images/suh_p_0401_05_0002_102_1/suh_p_0401_05_0002_102_1_2.png" alt=""> -->
+					<div class="--graph">
+						<div class="--text n1">(명)</div>
+						<div class="--text n2">10</div>
+						<div class="--text n3">5</div>
+						<div class="--text n4">0</div>
+						<div class="--text n5">학생 수</div>
+						<div class="--text n6">과목</div>
+						<div class="--text n7">체육</div>
+						<div class="--text n8">음악</div>
+						<div class="--text n9">미술</div>
+						<div class="--text n10">수학</div>
+						<div class="--text n11">국어</div>
+					</div>
+				</li>
+
+				<li class="whole pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<ul class="flexListContainer">
+							<li>
+								<span class="lineBox sky">좋아하는 과목별 학생 수</span>
+								<div class="conImg --graph2"><img src="./images/suh_0401_05_0002_401_1_2_2-2.png">
+									<div class="--text n1">(명)</div>
+									<div class="--text n2">10<br>5<br>0</div>
+									<div class="--text n3">학생 수</div>
+									<div class="--text n4">과목</div>
+									<div class="--text n5">국어</div>
+									<div class="--text n6">사회</div>
+									<div class="--text n7">수학</div>
+									<div class="--text n8">과학</div>
+									<div class="--text n9">체육</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="4">
+					<div class="popup_contents">
+						<p class="ls1">전체 조사한 수의 합계를 한눈에 알아볼 수 있는 것은 ‘표’ 입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="5">
+					<div class="popup_contents">
+						<p style="letter-spacing: 1px;">막대를 세로로 나타낸 막대그래프에서 가로는 조사 항목을 나타내고 세로는 조사한 수를 나타냅니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="6">
+					<div class="popup_contents">
+						세로 눈금 5칸은 5명을 나타내므로 세로 눈금 한 칸은 1명을 나타냅니다.
+					</div>
+				</li>
+
+			</ul>
+		</section>
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj){
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj){
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj){
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function (){
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

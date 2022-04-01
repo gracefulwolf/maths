@@ -1,0 +1,555 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* indexPopup.css *
+***********************/
+
+.INDEX, 
+.INDEX > .lessonContainer,
+.INDEX > .lessonContainer div,
+.INDEX > .lessonContainer ul,
+.INDEX > .lessonContainer li,
+.INDEX > .lessonContainer p,
+.INDEX > .lessonContainer span {
+  backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+
+.INDEX {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: 0;
+  color: #333;
+  font-size: 20px;
+  font-family: NotoM;
+  letter-spacing: -0.08em;
+  word-spacing: 0.2em;
+  background-color: #C3CEEA;
+  animation: indexPopup_setBackgroundColor .3s ease-in-out;
+  overflow: hidden;
+  z-index: 101;
+}
+.INDEX.on {
+  display: block;
+  height: 100%;
+}
+
+/* .lesson_1 .INDEX { background-color: #AFE0EF; }
+.lesson_2 .INDEX { background-color: #C3CEEA; }
+.lesson_3 .INDEX { background-color: #ACE2DD; }
+.lesson_4 .INDEX { background-color: #E6D3EF; }
+.lesson_5 .INDEX { background-color: #CAE2BC; }
+.lesson_6 .INDEX { background-color: #F7CAB2; }
+.creative .INDEX { background-color: #F8EBBF; } */
+
+.INDEX > .lessonContainer .noTitle,
+.INDEX > .lessonContainer .hidden,
+.INDEX > .cornerContainer .noTitle,
+.INDEX > .cornerContainer .hidden,
+.INDEX > .stepContainer .noTitle,
+.INDEX > .stepContainer .hidden {
+  display: none !important;
+}
+
+.INDEX .on > span {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.INDEX .off,
+.INDEX .off.lesson *,
+.INDEX .off.chapter *,
+.INDEX .off.corner *,
+.INDEX .off.step *,
+.INDEX .off.html * {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/************************* lesson *************************/
+.INDEX > .lessonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(720px - 580px);
+}
+.INDEX > .lessonContainer > div.lesson {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 30px;
+  margin-top: -20px;
+  font-size: 18px;
+  /* font-family: NSquareREB; */
+  /* font-family: NotoB; */
+  font-family: NSquareEB;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+.INDEX > .lessonContainer > div.lesson:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 54px;
+  height: 54px;
+  background-size: auto 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.INDEX > .lessonContainer > div.lesson.active { background-color: #7F9DD0; }
+.INDEX > .lessonContainer > div.lesson > span {
+  display: block;
+  top: 72px;
+  left: calc((64px - 110px) / 2);
+  width: 110px;
+  margin-top: 0;
+  text-align: center;
+}
+/*********************** lesson END ***********************/
+
+
+
+
+/************************* corner *************************/
+.INDEX > .cornerContainer {
+  position: absolute;
+  top: calc(720px - 580px);
+  left: 0;
+  /* right: 0; */
+  bottom: 0;
+  width: 0;
+  height: 580px;
+  /* font-family: NSquareREB; */
+  font-family: NotoB;
+  box-sizing: border-box;
+  background: url(../../math/images/indexPopup/indexPopup_corner_bg.svg) no-repeat;
+  animation: indexPopup_setCornerBackground .6s ease-out;
+  overflow: hidden;
+}
+.INDEX.on > .cornerContainer {
+  width: 100%;
+}
+
+.INDEX > .cornerContainer:before {
+  position: absolute;
+  top: 42px;
+  left: 104px;
+  font-size: 32px;
+  /* font-family: NSquareREB; */
+  font-family: NotoB;
+  pointer-events: none;
+}
+
+.INDEX > .cornerContainer:after {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 36px;
+  left: 50px;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  font-size: 30px;
+  font-family: NSquareR;
+  padding-top: 4px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  pointer-events: none;
+  background-color: #7F9DD0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 44px;
+  left: 50px;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  font-size: 30px;
+  /* font-family: NSquareR; */
+  /* font-family: NotoM; */
+  /* padding-top: 4px; */
+  /* padding-bottom: 4px; */
+  font-family: NSquareEB;
+  padding-top: 2px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  pointer-events: none;
+  background-color: #7F9DD0;
+}
+.INDEX > .lessonContainer[lesson="1"] + .cornerContainer:after {
+  content: '1';
+  /* background-color: #7F9DD0; */
+}
+.INDEX > .lessonContainer[lesson="2"] + .cornerContainer:after {
+  content: '2';
+  /* background-color: #7F9DD0; */
+}
+.INDEX > .lessonContainer[lesson="3"] + .cornerContainer:after {
+  content: '3';
+  /* background-color: #ad4265; */
+}
+.INDEX > .lessonContainer[lesson="4"] + .cornerContainer:after {
+  content: '4';
+  /* background-color: #ad4265; */
+}
+.INDEX > .lessonContainer[lesson="5"] + .cornerContainer:after {
+  content: '5';
+  /* background-color: #ad4265; */
+}
+.INDEX > .lessonContainer[lesson="6"] + .cornerContainer:after {
+  content: '6';
+  /* background-color: #ad4265; */
+}
+.INDEX > .lessonContainer[lesson="7"] + .cornerContainer:after {
+  content: '7';
+  display: none;
+  /* background-color: #ad4265; */
+}
+.INDEX > .cornerContainer > div.cornerChar {
+  position: absolute;
+  top: 280px;
+  left: 270px;
+  width: 300px;
+  height: 330px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: indexPopup_lessonCharacterBounce 1.4s ease-in-out infinite;
+}
+
+.INDEX > .cornerContainer > div.corner {
+  display: none;
+  position: relative;
+  top: 96px;
+  left: 50px;
+  width: 360px;
+  font-family: NotoM;
+  /* padding: 5px 0 3px; */
+  padding: 2px 0 4px;
+  padding-left: 56px;
+  /* margin-bottom: 5px; */
+  border-radius: 50px;
+  margin-bottom: 1px;
+}
+.INDEX > .cornerContainer > div.corner.on {
+  display: block;
+}
+.INDEX > .cornerContainer > div.corner.hover {
+  background-color: rgba(255, 255, 255, .8);
+}
+.INDEX > .cornerContainer > div.corner.active {
+  background-color: rgba(255, 255, 255, .9);
+}
+.INDEX > .cornerContainer > div.corner.active:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  background: url(../../math/images/indexPopup/indexPopup_icon_magicBar.svg) center / contain no-repeat;
+}
+/*********************** corner END ***********************/
+
+
+
+
+/************************* step *************************/
+.INDEX > .stepContainer {
+  position: absolute;
+  top: calc(720px - 580px);
+  right: -1px;
+  width: 832px;
+  height: 0px;
+  color: #111;
+  font-size: 18px;
+  padding-left: 104px;
+  box-sizing: border-box;
+  background: url(../../math/images/indexPopup/indexPopup_step_bg.svg) right top / auto no-repeat;
+  animation: indexPopup_setStepBackground 1.0s ease-out;
+  overflow: hidden;
+}
+.INDEX.on > .stepContainer {
+  height: 580px;
+}
+
+.INDEX > .stepContainer > div {
+  display: none;
+  cursor: pointer;
+}
+.INDEX > .stepContainer > div.on {
+  display: block;
+}
+.INDEX > .stepContainer > div.step {
+  position: relative;
+  width: 50px;
+  height: 35px;
+  font-size: 0;
+  margin-top: 28px;
+  margin-bottom: 4px;
+  background-size: auto 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/indexPopup/indexPopup_icon_step.svg);
+}
+.INDEX > .stepContainer > div.step[index="1"] {
+  margin-top: 32px;
+  background-position-x: calc(-50px * (1 - 1));
+}
+.INDEX > .stepContainer > div.step[index="2"] {
+  background-position-x: calc(-50px * (2 - 1));
+}
+.INDEX > .stepContainer > div.step[index="3"] {
+  background-position-x: calc(-50px * (3 - 1));
+}
+.INDEX > .stepContainer > div.step[index="4"] {
+  background-position-x: calc(-50px * (4 - 1));
+}
+.INDEX > .stepContainer > div.step[index="2"]:after,
+.INDEX > .stepContainer > div.step[index="3"]:after,
+.INDEX > .stepContainer > div.step[index="4"]:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -17px;
+  left: -2px;
+  width: 680px;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+.INDEX > .stepContainer > div.html {
+  position: relative;
+  width: 660px;
+  padding-left: 14px;
+  padding-bottom: 2px;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.INDEX > .stepContainer > div.html.on {
+  display: flex;
+}
+.INDEX > .stepContainer > div.html.hover,
+.INDEX > .stepContainer > div.html.active {
+  background-color: #F5F5F5;
+}
+.INDEX > .stepContainer > div.html[type="act"] > * {
+  display: flex;
+  align-items: center;
+}
+.INDEX > .stepContainer > div.html[type="act"] ins {
+  display: block;
+  position: relative;
+  top: 1px;
+  padding: 0px 6px;
+  margin-right: 6px;
+  margin-left: -4px;
+  height: 20px;
+  color: #999;
+  font-size: 0.7em;
+  /* font-family: NSquareREB; */
+  border-radius: 50px;
+  border: 1px solid #999;
+}
+.INDEX > .stepContainer > div.html[type="intro"],
+.INDEX > .stepContainer > div.html[type="ready"],
+.INDEX > .stepContainer > div.html[type="introMovie"],
+.INDEX > .stepContainer > div.html[type="preCheck"],
+.INDEX > .stepContainer > div.html[type="powerup"],
+.INDEX > .stepContainer > div.html[type="finish_arrange"],
+.INDEX > .stepContainer > div.html[type="finish_quiz"],
+.INDEX > .stepContainer > div.html[type="game"] {
+  top: 71px;
+}
+
+
+.INDEX bunsu {
+  margin: 0 3px;
+  font-size: 14px;
+}
+.INDEX bunsu > span.bar {
+  width: calc(100% + 4px);
+  height: 2px;
+  margin: -2px 0 -4px;
+}
+.INDEX symbol, .INDEX ins.mathSymbols {
+  top: 2px;
+  margin: 0px -8px;
+  transform: scale(0.4);
+}
+.INDEX bunsu + symbol, .INDEX bunsu + ins.mathSymbols {
+  top: 0;
+}
+
+/*********************** step END ***********************/
+
+
+
+
+/************************* close *************************/
+.INDEX .indexCloseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* top: 28px; */
+  /* right: 28px; */
+  top: 4px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i66CI7J207Ja0XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCINCgkgeT0iMHB4IiB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwIDMwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkZGRkZGOyIgZD0iTTE3LjMsMTVMMjMsOS4zYzAuNi0wLjYsMC42LTEuNiwwLTIuM2MtMC42LTAuNi0xLjYtMC42LTIuMywwTDE1LDEyLjdMOS4zLDdDOC43LDYuNCw3LjYsNi40LDcsNw0KCUM2LjQsNy42LDYuNCw4LjcsNyw5LjNsNS43LDUuN0w3LDIwLjdjLTAuNiwwLjYtMC42LDEuNiwwLDIuM2MwLjMsMC4zLDAuNywwLjUsMS4xLDAuNVM5LDIzLjMsOS4zLDIzbDUuNy01LjdsNS43LDUuNw0KCWMwLjMsMC4zLDAuNywwLjUsMS4xLDAuNWMwLjQsMCwwLjgtMC4yLDEuMS0wLjVjMC42LTAuNiwwLjYtMS42LDAtMi4zTDE3LjMsMTV6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==') center bottom / auto 30px no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+}
+.INDEX .indexCloseButton:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  height: 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center bottom 2px;
+  background-size: auto 30px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i66CI7J207Ja0XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCINCgkgeT0iMHB4IiB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwIDMwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojNjU3OUFCOyIgZD0iTTE3LjMsMTVMMjMsOS4zYzAuNi0wLjYsMC42LTEuNiwwLTIuM2MtMC42LTAuNi0xLjYtMC42LTIuMywwTDE1LDEyLjdMOS4zLDdDOC43LDYuNCw3LjYsNi40LDcsNw0KCVM2LjQsOC43LDcsOS4zbDUuNyw1LjdMNywyMC43Yy0wLjYsMC42LTAuNiwxLjYsMCwyLjNjMC4zLDAuMywwLjcsMC41LDEuMSwwLjVTOSwyMy4zLDkuMywyM2w1LjctNS43bDUuNyw1LjcNCgljMC4zLDAuMywwLjcsMC41LDEuMSwwLjVzMC44LTAuMiwxLjEtMC41YzAuNi0wLjYsMC42LTEuNiwwLTIuM0wxNy4zLDE1eiIvPg0KPC9zdmc+DQo=');
+}
+
+.INDEX .indexCloseButton.hover {
+  background-color: #FFF;
+  animation: indexPopup_fillCloseButton .3s ease-in-out;
+}
+.INDEX .indexCloseButton.hover:after {
+  height: calc(100% + 2px);
+  animation: indexPopup_fillButton .3s ease-in-out;
+}
+/*********************** close END ***********************/
+
+
+
+
+/************************* animations *************************/
+/* animations */
+@keyframes indexPopup_fillCloseButton {
+  0%, 99% { background-color: transparent; }
+  100% { background-color: #FFF; }
+}
+@-o-keyframes indexPopup_fillCloseButton {
+  0%, 99% { background-color: transparent; }
+  100% { background-color: #FFF; }
+}
+@-moz-keyframes indexPopup_fillCloseButton {
+  0% { background-color: transparent; }
+  100% { background-color: #FFF; }
+}
+@-webkit-keyframes indexPopup_fillCloseButton {
+  0%, 99% { background-color: transparent; }
+  100% { background-color: #FFF; }
+}
+
+@keyframes indexPopup_fillButton {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-o-keyframes indexPopup_fillButton {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-moz-keyframes indexPopup_fillButton {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+@-webkit-keyframes indexPopup_fillButton {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+
+@keyframes indexPopup_setBackgroundColor {
+  from { height: 0; } to { height: 100%; }
+}
+@-o-keyframes indexPopup_setBackgroundColor {
+  from { height: 0; } to { height: 100%; }
+}
+@-moz-keyframes indexPopup_setBackgroundColor {
+  from { height: 0; } to { height: 100%; }
+}
+@-webkit-keyframes indexPopup_setBackgroundColor {
+  from { height: 0; } to { height: 100%; }
+}
+
+@keyframes indexPopup_setCornerBackground {
+  0% { width: 0; } 
+  50% { width: 0; } 
+  100% { width: 100%; }
+}
+@-o-keyframes indexPopup_setCornerBackground {
+  0% { width: 0; } 
+  50% { width: 0; } 
+  100% { width: 100%; }
+}
+@-moz-keyframes indexPopup_setCornerBackground {
+  0% { width: 0; } 
+  50% { width: 0; } 
+  100% { width: 100%; }
+}
+@-webkit-keyframes indexPopup_setCornerBackground {
+  0% { width: 0; } 
+  50% { width: 0; } 
+  100% { width: 100%; }
+}
+
+@keyframes indexPopup_setStepBackground {
+  0% { height: 0; } 
+  70% { height: 0; } 
+  100% { height: 580px; }
+}
+@-o-keyframes indexPopup_setStepBackground {
+  0% { height: 0; } 
+  70% { height: 0; } 
+  100% { height: 580px; }
+}
+@-moz-keyframes indexPopup_setStepBackground {
+  0% { height: 0; } 
+  70% { height: 0; } 
+  100% { height: 580px; }
+}
+@-webkit-keyframes indexPopup_setStepBackground {
+  0% { height: 0; } 
+  70% { height: 0; } 
+  100% { height: 580px; }
+}
+
+@keyframes indexPopup_lessonCharacterBounce {
+  50% { transform: translateY(5px); }
+}
+@-o-keyframes indexPopup_lessonCharacterBounce {
+  50% { transform: translateY(5px); }
+}
+@-moz-keyframes indexPopup_lessonCharacterBounce {
+  50% { transform: translateY(5px); }
+}
+@-webkit-keyframes indexPopup_lessonCharacterBounce {
+  50% { transform: translateY(5px); }
+}

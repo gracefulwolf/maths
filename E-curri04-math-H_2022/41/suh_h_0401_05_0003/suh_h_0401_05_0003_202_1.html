@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		/* 개별 */
+		.title .--colorBullet{display: inline-block; width: 40px; height: 40px; margin: 0; padding: 0; line-height: 40px; text-align: center; vertical-align: 5px;}
+		.title .eye{display: inline-block; margin: 4px 0 0 8px;}
+		.page_1 h2 .toggle, .page_2 h2 .toggle{line-height: 45px;}
+		/* .--lineBox{width: 480px; margin: 0 auto;}
+		.--lineBox .answer{line-height: 1.2} */
+
+
+
+		/* .page_1 .--graphWrap{position: relative; height: 320px; margin: 10px auto 0; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_1.png) no-repeat 50% 50% / contain;}
+		.page_1 .--graph{width: 100%; height: 100%;}
+		.page_1 .--text{position: absolute; z-index: 1; font-size:35px;letter-spacing: -2px;}
+		.page_1 .--graphWrap .--text.n1{top: 8px;left: 114px;}
+		.page_1 .--graphWrap .--text.n2{top: -10px;left: 212px;text-align: right;line-height: 106px;}
+		.page_1 .--graphWrap .--text.n3{top: 254px;left: 108px;}
+		.page_1 .--graphWrap .--text.n4{top: 274px;left: 190px;}
+		.page_1 .--graphWrap .--text.n5{top: 265px;left: 278px;}
+		.page_1 .--graphWrap .--text.n6{top: 265px;left: 420px;}
+		.page_1 .--graphWrap .--text.n7{top: 265px;left: 549px;}
+		.page_1 .--graphWrap .--text.n8{top: 265px;left: 694px;}
+		.page_1 .--graphWrap .--text.n9{top: 265px;left: 807px;}
+		.page_1 .--graphWrap .--text.n10{top: 6px;left: 105px;}
+		.page_1 .--graphWrap .--text.n11{top: 216px;left: 230px;}
+		.page_1 .--graphWrap .--text.n12{top: 186px;left: 720px;}
+		.page_1 .--graphWrap .--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_2.png) no-repeat 50% 50% / contain;}
+
+		.page_2 .--graphWrap{position: relative; height: 320px; margin: 10px auto 0; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_3.png) no-repeat 50% 50% / contain;}
+		.page_2 .--graph{width: 100%; height: 100%;}
+		.page_2 .--text{position: absolute; z-index: 1; font-size:35px;letter-spacing: -2px;}
+		.page_2 .--graphWrap .--text.n1{top: 272px;left: 790px;}
+		.page_2 .--graphWrap .--text.n2{top: 234px;left: 534px;text-align: right;line-height: 106px;}
+		.page_2 .--graphWrap .--text.n3{top: 266px;left: 734px;}
+		.page_2 .--graphWrap .--text.n4{top: 264px;left: 170px;}
+		.page_2 .--graphWrap .--text.n5{top: 275px;left: 287px;}
+		.page_2 .--graphWrap .--text.n6{top: 2px;left: 214px;text-align: center;line-height: 53px;}
+		.page_2 .--graphWrap .--text.n7{top: 265px;left: 549px;}
+		.page_2 .--graphWrap .--text.n8{top: 265px;left: 694px;}
+		.page_2 .--graphWrap .--text.n9{top: 265px;left: 807px;}
+		.page_2 .--graphWrap .--text.n10{top: 270px;left: 780px;}
+		.page_2 .--graphWrap .--text.n11{top: 265px;left: 360px;}
+		.page_2 .--graphWrap .--text.n12{top: 186px;left: 720px;}
+		.page_2 .--graphWrap .--answerImg{position: absolute; top:0; left:0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_202_1/suh_p_0401_05_0004_202_1_4.png) no-repeat 50% 50% / contain;} */
+
+		.--text{position: absolute; font-size: 35px; letter-spacing: -1px;}
+		.--graphWrap{position: relative;height: 280px;background: url(./images/suh_h_0401_05_0003_202_1_1.png) no-repeat 50% 50% / 700px 100%;}
+		.--graphWrap .--lineBox{position: absolute; min-width: 120px; padding: 2px 4px; line-height: 1.15; text-align: center;}
+		.--graphWrap .--lineBox{min-width: auto;}
+		.--graphWrap .--lineBox.n1{top: 5px;left: 78px;}
+		.--graphWrap .--lineBox.n2{top: 226px;left: 100px;}
+		.--graphWrap .--lineBox.n3{top: 290px;left: 160px;}
+		.--graphWrap .--lineBox.n4{top: 12px;left: 222px;}
+		.--graphWrap .--lineBox.n5{top: 110px;left: 222px;}
+		.--graphWrap .--lineBox.n6{top: 259px;left: 460px;}
+		.--graphWrap .--lineBox.n7{top: 260px;left: 620px;}
+		.--graphWrap .--lineBox.n8{top: 260px;left: 758px;}
+		.--graphWrap .--lineBox.n9{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n10{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n11{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n12{top: 290px;left: 140px;}
+		.--lineBoxTitle{display: block; width: 480px; margin: 0 auto; padding: 2px 4px; line-height: 1.15; text-align: center;}
+		.--text.n1{top: 155px;left: 305px;}
+		.--text.n2{top: 216px;left: 332px;}
+
+		.page_4 .--graphWrap{height: 346px; background-size: 850px 100%;}
+		.page_4 .--text.n1{top: 195px;left: 265px;}
+		.page_4 .--text.n2{top: 266px;left: 310px;}
+
+.page_4 .fillContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1px 80px 0 295px;
+  height: 242px;
+}
+.page_4 .fillContainer .square {
+  display: flex;
+  width: 46px;
+  flex-direction: column-reverse;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+.page_4 .square > .target {
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+}
+.page_4 .square > .target.fill[index] {
+  background-color: #00a0ff66;
+  border: 2px solid #00a0ff;
+  border-bottom: 0;
+  border-top: 0;
+  animation: none;
+}
+.page_4 .square > .target.fill.last { border-top: 2px solid #00a0ff; }
+.page_4 .square > .target[index="0"] {
+  animation: targetOpacity 1s ease-in-out infinite;
+}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title mb_40" style="letter-spacing: 1px;">
+			다음 표를 세로 눈금 한 칸을 2명으로 하여 막대그래프로 나타내 봅시다. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">표 보기</div>
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_4" data-quiz="toggle">
+						<section>
+							<div class="lineBox sky --lineBoxTitle">
+								<div class="toggle noBg" data-toggle-obj="0">
+									<div class="answer" data-toggle-target="0">
+										<ins class="bullet exam">예</ins>
+										로봇에게 바라는 기능
+									</div>
+								</div>
+							</div>
+							<div class="--graphWrap mt_10">
+								<div class="fillContainer">
+									<div class="js-fillContainer square square_1" data-length="6" data-answer="4"></div>
+									<div class="js-fillContainer square square_2" data-length="6" data-answer="5"></div>
+									<div class="js-fillContainer square square_3" data-length="6" data-answer="2"></div>
+									<div class="js-fillContainer square square_4" data-length="6" data-answer="3"></div>
+								  </div>
+								<div class="--lineBox lineBox sky n1">
+									<div class="toggle noBg" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											(명)
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n2">
+									<div class="toggle noBg" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											학생 수
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n3">
+									<div class="toggle noBg" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											기능
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n4">
+									<div class="toggle noBg" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">
+											10
+										</div>
+									</div>
+								</div>
+								<!-- <div class="--lineBox lineBox sky n5">
+									<div class="toggle noBg" data-toggle-obj="5">
+										<div class="answer" data-toggle-target="5">
+											5
+										</div>
+									</div>
+								</div> -->
+								<div class="--lineBox lineBox sky n6">
+									<div class="toggle noBg" data-toggle-obj="6">
+										<div class="answer" data-toggle-target="6">
+											짐 들기
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n7">
+									<div class="toggle noBg" data-toggle-obj="7">
+										<div class="answer" data-toggle-target="7">
+											춤 추기
+										</div>
+									</div>
+								</div>
+								<div class="--lineBox lineBox sky n8">
+									<div class="toggle noBg" data-toggle-obj="8">
+										<div class="answer" data-toggle-target="8">
+											함께 놀기
+										</div>
+									</div>
+								</div>
+
+								<div class="--text n1">0</div>
+								<div class="--text n2">요리하기</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="colorBox orange textAlignC" style="width:480px; margin: 210px auto 0; font-size: 40px;">로봇에게 바라는 기능</div>
+						<div class="tableContainer brown fix mt_20">
+							<table class="tableBorder" cellpadding="0" cellspacing="0">
+								<tr>
+									<th>기능</th>
+									<th>요리하기</th>
+									<th>짐 들기</th>
+									<th>춤 추기</th>
+									<th>함께 놀기</th>
+									<th>합계</th>
+								</tr>
+								<tr>
+									<th>학생 수 (명)</th>
+									<td>8</td>
+									<td>10</td>
+									<td>4</td>
+									<td>6</td>
+									<td>28</td>
+								</tr>
+							</table>
+						</div> <!-- tableContainer -->
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+
+	<script type="text/javascript">
+
+(function(){function t(t){function e(){s.targets.forEach(function(t){t.classList.remove(u)})}function n(){for(var t=[],e=0;e<s.length;e++){var n=document.createElement("div");n.classList.add("target"),n.setAttribute(c,e),n.addEventListener("click",r),n.addEventListener("click",$efSound.click),s.container.appendChild(n),t.push(n)}return t}function a(t){for(var e=[],n=0;n<=t;n++)s.container.querySelector('.target[index="'+n+'"]').classList.add(d),e.push(s.container.querySelector('.target[index="'+n+'"]'));s.container.querySelector('.target[index="'+t+'"]').classList.add(u),window.$callBack&&window.$callBack.filledTarget&&window.$callBack.filledTarget(s,e)}function i(t,e){var n=[],a=0==e,i=1===s.container.querySelectorAll(".fill").length;s.container.querySelector('.target[index="'+e+'"]').classList.add(u),i&&a&&(t.classList.remove(d),t.classList.remove(u),n.push(t));for(var r=e-0;r<s.length;r++){var c=s.container.querySelector('.target[index="'+(r+1)+'"]');c&&c.classList.remove(d),n.push(c)}window.$callBack&&window.$callBack.toggleTarget&&window.$callBack.toggleTarget(s,n)}function r(){var t=this.getAttribute(c);e(),this.classList.contains(d)?i(this,t):a(t)}var s=this,c="index",l="data-length",o="data-answer",d="fill",u="last";this.container=t.container,this.answerButton=t.answerButton,this.length=this.container.getAttribute(l),this.answer=this.container.getAttribute(o),this.targets=n();var g=!1;this.fillReset=function(){g=!1,s.container.classList.remove("complete"),s.targets.forEach(function(t){t.classList.remove(d),t.classList.remove(u)})},this.fillAnswer=function(){s.fillReset(),g=!0,s.container.classList.add("complete");for(var t=0;t<s.answer;t++)s.container.querySelector('.target[index="'+t+'"]').classList.add(d);s.container.querySelector('.target[index="'+(s.answer-1)+'"]')&&s.container.querySelector('.target[index="'+(s.answer-1)+'"]').classList.add(u)},s.answerButton.addEventListener("click",function(){g?s.fillReset():s.fillAnswer()})}window.FillTarget=t})();
+
+
+
+window.addEventListener('load', function() {
+        $ts.getEl('.js-fillContainer').forEach(function(container) {
+          new FillTarget({
+            container: container,
+            answerButton: document.querySelector('.page_4 .dapCheckBtn')
+          });
+        });
+        window.$callBack.filledTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+          })
+          // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        }
+        window.$callBack.toggleTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+          })
+        }
+      });
+
+	</script>
+
+</html>
