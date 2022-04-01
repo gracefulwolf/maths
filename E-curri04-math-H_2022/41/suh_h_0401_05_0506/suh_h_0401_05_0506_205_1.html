@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:0; left:70px; height:580px;}
+		.popup_pages .page-iframe.x2{top:80px; left:70px; height:580px;}
+		.page-iframe .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.popup_pages>li.whole.on{z-index:10000;}
+
+		#wrap header .title-selfi{position:relative; padding-left:85px;}
+		#wrap header .title-selfi:before{top:-5px; left:0; width:76px; height:58px; background-position:-309px 0; background-size:auto 100%; background-repeat:no-repeat; background-image:url(./images/act_quiz_icon.svg);}
+		#wrap header .title-selfi-num{position:absolute; top:12px; left:6px; width:70px; font-weight:400; font-size:24px; font-family: YGJAL; color:#fff; text-align:center;}
+
+		.study_guide{right: 0; top: 0;}
+
+		figure {
+  position: relative;
+  margin: 0;
+}
+figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  vertical-align: top;
+  pointer-events: none;
+}
+.flexUL {
+  position: relative;
+  padding: 99px 0 0 0;
+  box-sizing: border-box;
+}
+.flexUL > li {
+  display: flex;
+  align-items: center;
+  height: 79px;
+  font-size: 32px;
+}
+.flexUL > li > span {
+  flex-shrink: 0;
+  width: 560px;
+  margin-right: 25px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  letter-spacing: -2px;
+}
+.flexUL > li:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.starContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.starContainer > .star {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-size: auto 70px;
+  background-position: 70px 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.starContainer > .star.fill {
+  background-position: 0 0;
+}
+
+.green .star {
+  background-position: -70px 0;
+  background-image: url(./images/finish_self_star_green.svg);
+}
+
+.purple .star {
+  background-position: -70px 0;
+  background-image: url(./images/finish_self_star_purple.svg);
+}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header>
+			<div class="title title-selfi">
+				<ins class="title-selfi-num">1</ins> 자료를 수집하여 분석한 활동을 스스로 평가해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1">
+						<div class="self">
+						<figure>
+							<img src="images/5_4_8.png" alt="이미지">
+							<img src="images/5_4_8.svg" alt="이미지">
+							<ul class="flexUL">
+							  <li>
+								<span>흥미로운 주제를 정했나요?</span>
+								<div class="js-starContainer starContainer purple" data-length="5"></div>
+							  </li>
+							  <li>
+								<span>주제에 적합한 자료를 수집했나요?</span>
+								<div class="js-starContainer starContainer green" data-length="5"></div>
+							  </li>
+							  <li>
+								<span>표와 막대그래프로 바르게 나타냈나요?</span>
+								<div class="js-starContainer starContainer purple" data-length="5"></div>
+							  </li>
+							  <li>
+								<span>막대그래프로 자료를 적절하게 해석했나요?</span>
+								<div class="js-starContainer starContainer green" data-length="5"></div>
+							  </li>
+							</ul>
+						  </figure>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+(function() {
+  // page10(self)
+  function setStars() {
+    var ATTR_INDEX = 'index';
+    var ATTR_LENGTH = 'data-length';
+    var container = document.querySelector('.self');
+    var starContainers = $ts.getEl('.js-starContainer', container);
+
+    function setStar(container) {
+      var length = container.getAttribute(ATTR_LENGTH);
+
+      function clickedStar() {
+        var index = this.getAttribute(ATTR_INDEX);
+
+        if (this.classList.contains('fill')) {
+          var isFirstStar = index == 0;
+          var isLastFill = container.querySelectorAll('.fill').length === 1;
+          if (isLastFill && isFirstStar) this.classList.remove('fill');
+          for (var i = (index-0); i < length; i++) {
+            var removeStar = container.querySelector('.star[index="'+(i+1)+'"]');
+            removeStar && removeStar.classList.remove('fill');
+          }
+
+        } else {
+          for (var i = 0; i <= index; i++) {
+            container.querySelector('.star[index="'+i+'"]').classList.add('fill');
+          }
+        }
+		$efSound.click();
+      }
+
+      for (var i = 0; i < length; i++) {
+        var star = document.createElement('div');
+        star.classList.add('star');
+        star.setAttribute(ATTR_INDEX, i);
+        star.addEventListener('click', clickedStar);
+        container.appendChild(star);
+      }
+    }
+
+    function reset() {
+      var filledStars = $ts.getEl('.fill', container);
+
+      if (filledStars.length > 0) filledStars.forEach(function(star) {
+        star.classList.remove('fill');
+      })
+    }
+
+    starContainers.forEach(setStar);
+
+    return {
+      reset: reset
+    }
+  }
+
+  window.addEventListener('load', function() {
+    window.stars = setStars();
+  });
+})();
+	</script>
+
+</html>

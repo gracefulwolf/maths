@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+
+		.--titleBox{display: inline-block; width: 480px; padding-top: 2px; padding-bottom: 2px; font-size: 40px; text-align: center;}
+		.page_1 .charSpriteImg{position: absolute;top: 50px;left: 210px;}
+		.page_1 .balloon{top: 280px;left: 490px;}
+		.examViewBtn.reset:before{content:"다시하기";}
+		.page_1 .tableContainer.brown table tr th.--border,
+		.page_1 .tableContainer.brown table tr td.--border{border-right: 0;}
+		.page_1 .tableContainer.brown.on table tr th.--border,
+		.page_1 .tableContainer.brown.on table tr td.--border{border-right: 2px solid #00a0ff;}
+
+		.page_1 .--graphWrap{padding-left: 220px;}
+		.page_1 .--graph{position: relative; width: 800px; height: 340px; margin: 0 auto; background: url(./images/suh_h_0401_05_0809_101_1/suh_h_0401_05_0809_101_1_1.png) no-repeat 50% 50% / 800px 100%;}
+		.page_1 .--text{position: absolute;font-size: 35px;}
+		.page_1 .--text.n1{top: 0;left: 10px; z-index: 1;}
+		.page_1 .--text.n2{top: 248px;left: 145px; z-index: 1;}
+		.page_1 .--text.n3{top: -6px;left: 125px;text-align: right;line-height: 85px;}
+		.page_1 .--text.n4{top: 280px;left: 0px;}
+		.page_1 .--text.n5{top: 300px;left: 110px;}
+		.page_1 .--text.n6{top: 295px;left: 177px;display: flex;width: 620px;align-items: center;justify-content: space-around;}
+		.page_1 .--text.n6 > div{flex:1; text-align: center;}
+		.page_1 .--text.n7{top: 2px; left: 22px;}
+		.page_1 .--border{position: absolute; top: 0; height: 100%; border-left: 2px solid #00a0ff;}
+		.page_1 .--border.n1{left: 330px;}
+		.page_1 .--border.n2{left: 485px;}
+		.page_1 .--border.n3{left: 640px;}
+		.page_1 .--stick{position: absolute;bottom: 46px;width: 60px;border:2px solid #e94d40;background: #e94d4088;}
+		.page_1 .--stick.n1{left: 222px;height: 172px;}
+		.page_1 .--stick.n2{left: 377px;height: 138px;}
+		.page_1 .--stick.n3{left: 531px;height: 258px;}
+		.page_1 .--stick.n4{left: 687px;height: 206px;}
+		.page_1 .girl_1{position: absolute;top: 50px;left: -70px;}
+		.page_1 .balloon{top: 10px;left: -25px;}
+
+		.pop_page_1 .--graphWrap{padding-top: 80px;}
+		.pop_page_1 .--graph{position: relative; width: 1000px; height: 480px; margin: 0 auto; background: url(./images/suh_h_0401_05_0809_101_1/suh_h_0401_05_0809_101_1_1.png) no-repeat 50% 50% / 1000px 100%;}
+		.pop_page_1 .--text{position: absolute;font-size: 40px;}
+		.pop_page_1 .--text.n1{top: 0;left: 3px;z-index: 1;}
+		.pop_page_1 .--text.n2{top: 368px;left: 188px;z-index: 1;}
+		.pop_page_1 .--text.n3{top: -6px;left: 165px;text-align: right;line-height: 120px;}
+		.pop_page_1 .--text.n4{top: 410px;left: 5px;}
+		.pop_page_1 .--text.n5{top: 433px;left: 140px;}
+		.pop_page_1 .--text.n6{top: 421px;left: 220px;display: flex;width: 780px;align-items: center;justify-content: space-around;}
+		.pop_page_1 .--text.n6 > div{flex:1;text-align: center;}
+		.pop_page_1 .--text.n7{top: 2px; left: 22px;}
+		.pop_page_1 .--border{position: absolute; top: 0; height: 100%; border-left: 2px solid #00a0ff;}
+		.pop_page_1 .--border.n1{left: 414px;}
+		.pop_page_1 .--border.n2{left: 608px;}
+		.pop_page_1 .--border.n3{left: 804px;}
+		.pop_page_1 .--stick{position: absolute;bottom: 65px;width: 60px;border:2px solid #e94d40;background: #e94d4088;}
+		.pop_page_1 .--stick.n1{left: 288px;height: 240px;}
+		.pop_page_1 .--stick.n2{left: 481px;height: 191px;}
+		.pop_page_1 .--stick.n3{left: 676px;height: 361px;}
+		.pop_page_1 .--stick.n4{left: 870px;height: 289px;}
+		.pop_page_1 .girl_1{position: absolute;top: 50px;left: -70px;}
+		.pop_page_1 .balloon{top: 10px;left: -25px;}
+
+		.page_2 .eye,
+		.page_3 .eye,
+		.page_4 .eye{display: inline-block; margin: 5px 0 0 10px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title">
+			인터넷이나 책에서 막대그래프 하나를 골라 다음 활동을 해 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+					<li data-hover="">물음 4</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							내가 고른 막대그래프를 그려 보세요.
+						</span></h2>
+						<section>
+							<div class="single charSpriteImg girl_1"></div>
+							<div class="balloon bottom ctTail textAlignC pink">
+								막대그래프를<br> 칸을 나누어<br> 사용해 보세요.
+							</div>
+							<div class="--graphWrap">
+								<div class="textAlignC">
+									<div class="lineBox sky --titleBox">
+										<div class="answer" data-toggle-obj="1" data-toggle-target="1">여행 가고 싶은 장소</div>
+									</div>
+								</div>
+								<div class="--graph mt_10">
+									<div class="--text n1">(&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+									<div class="--text n2">0</div>
+									<div class="answer" data-toggle-target="1">
+										<div class="--text --answerImg"></div>
+										<div class="--text n3">30<br>20<br>10</div>
+										<div class="--text n4">학생 수</div>
+										<div class="--text n5">장소</div>
+										<div class="--text n6">
+											<div>수목원</div>
+											<div>박물관</div>
+											<div>바다</div>
+											<div>산</div>
+										</div>
+										<div class="--text n7">명</div>
+										<div class="--border n1"></div>
+										<div class="--border n2"></div>
+										<div class="--border n3"></div>
+										<div class="--stick n1"></div>
+										<div class="--stick n2"></div>
+										<div class="--stick n3"></div>
+										<div class="--stick n4"></div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="examViewBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							막대그래프의 가로와 세로는 각각 무엇을 나타내나요?  <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그래프 보기</div>
+						</span></h2>
+						<section>
+							<div class="flexListContainer jcenter center mt_40">
+								<div class="colorBox skyBlue check">가로</div>
+								<div class="toggle mr_80" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										장소
+									</div>
+								</div>
+								<div class="colorBox skyBlue check">세로</div>
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										학생 수
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							세로 눈금 한 칸은 얼마를 나타내나요? <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그래프 보기</div>
+						</span></h2>
+						<section>
+							<div class="flexListContainer jcenter center mt_40">
+								<div class="toggle mr_80" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										2칸
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							막대그래프를 보고 알게 된 점을 써 보세요. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그래프 보기</div>
+						</span></h2>
+						<section>
+							<div class="flexListContainer jcenter center mt_40">
+								<div class="toggle mr_80" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													가장 많은 학생이 여행 가고 싶은 장소는 바다입니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+			<li class="whole pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="--graphWrap">
+						<div class="textAlignC">
+							<ins class="bullet exam mt_15">예</ins>
+							<div class="lineBox sky --titleBox">
+								여행 가고 싶은 장소
+							</div>
+						</div>
+						<div class="--graph mt_10">
+							<div class="--text n1">(&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+							<div class="--text n2">0</div>
+							<div class="--text --answerImg"></div>
+							<div class="--text n3">30<br>20<br>10</div>
+							<div class="--text n4">학생 수</div>
+							<div class="--text n5">장소</div>
+							<div class="--text n6">
+								<div>수목원</div>
+								<div>박물관</div>
+								<div>바다</div>
+								<div>산</div>
+							</div>
+							<div class="--text n7">명</div>
+							<div class="--border n1"></div>
+							<div class="--border n2"></div>
+							<div class="--border n3"></div>
+							<div class="--stick n1"></div>
+							<div class="--stick n2"></div>
+							<div class="--stick n3"></div>
+							<div class="--stick n4"></div>
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</section>
+
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>
