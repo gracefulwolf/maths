@@ -1,487 +1,382 @@
-
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
-<title></title>
-<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
-<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
-<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
-<link rel="stylesheet" href="./css/suhi_0501_06_0004.css">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+	<style>
+		.page_1 .flexContainer{margin-top:30px;}
+		.page_1 .flexContainer > li{display:flex;width:100%;align-items:center;}
+		.page_1 .flexContainer > li + li{margin-top:30px;}
+		.page_1 .flexContainer > li .lineBox{display:inline-block;margin:0 30px 0 15px;}
+		.page_1 .flexContainer > li ul{width:100%;}
+		.page_1 .flexContainer > li li{display:flex;width:100%;align-items:center;}
+		.page_1 .flexContainer > li li + li{margin-top:15px;}
+		.page_1 .flexContainer > li .write{display:flex;margin-top:-15px;padding:0 65px;width:600px;font-size:100px;line-height:1;background:transparent url(./images/suhi_0501_06_0004_01.png) no-repeat 0 22px / 100% 79px;align-items:center;justify-content:space-between;}
+		.page_1 .flexContainer > li .write .toggle{background:transparent;}
+		.page_1 .flexContainer > li .write .toggle .answer{font-size:100px;line-height:1;}
+
+		.page_2 .oxContainer{position:relative;margin:15px auto 0;width:800px;height:400px;background:url(./images/suhi_0501_06_0004_02.png) no-repeat center / 100% 100%;}
+		.page_2 .oxContainer li{position:absolute;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+		.page_2 .oxContainer li:nth-child(1){top:40px;left:50px;width:151px;height:121px;}
+		.page_2 .oxContainer li:nth-child(2){top:200px;left:50px;width:199px;height:79px;}
+		.page_2 .oxContainer li:nth-child(3){top:318px;left:50px;width:300px;height:42px;}
+		.page_2 .oxContainer li:nth-child(4){top:80px;left:299px;width:101px;height:199px;}
+		.page_2 .oxContainer li:nth-child(5){top:239px;left:450px;width:151px;height:121px;}
+		.page_2 .oxContainer li:nth-child(6){top:40px;left:498px;width:151px;height:121px;}
+		.page_2 .oxContainer li:nth-child(7){top:40px;left:699px;width:51px;height:320px;}
+		.page_2 .oxContainer li:nth-child(8){top:2px;left:2px;font-size:0.75em;letter-spacing:-1.5px;cursor:unset;}
+		
+		.page_3 .flexContainer{display:flex;flex-direction:column;align-items:center;text-align:center;}
+		.page_3 .flexContainer figure{position:relative;}
+		.page_3 .flexContainer figure img{display:block;margin:30px auto 15px;width:800px;}
+		.page_3 .flexContainer figure span{position:absolute;top:36px;left:2px;font-size:0.75em;letter-spacing:-1.5px;}
+
+		.basicSlider_slides .page_4  h2 > span{margin-left:10px;}
+		.page_4 h2>ins.number{margin-right:0;}
+		.page_4 figure{position:relative;}
+		.page_4 figure img{width:100%;}
+		.page_4 figure span{position:absolute;top:38px;left:99px;letter-spacing:-1.5px;}
+
+		.page_5 h2 img{margin-top:-6px;width:180px;vertical-align:middle;}
+		.page_5 .textAlignC{margin-top:150px;}
+
+		.page_7 .graph{position:relative;margin:15px 0;width:100%;height:300px;background:url(./images/suhi_0501_06_0004_07_1.png) no-repeat center / 100% 100%;}
+		.page_7 .graph .cm{position:absolute;top:4px;left:2px;font-size:0.85em;letter-spacing:-1.5px;}
+		.page_7 .graph .exam{position:absolute;top:52px;left:-58px;display:none;}
+		.page_7 .graph.on .exam{display:block;}
+		.page_7 .graph .toggle{position:absolute;top:20px;left:549px;display:flex;align-items:center;justify-content:center;width:163px;height:259px;background:transparent;}
+		.page_7 .graph .toggle img{width:125px;height:201px;}
+		.page_7 .flex-box{margin:0 auto;width:855px;justify-content:space-between;}
+
+		.pop_page_2 .dotList img{display:inline-block;width:150px;vertical-align:middle;}
+
+		.pop_page_3 .colorBox{display:inline-block;background:#C7EAFC;}
+
+		.pop_page_4 .dotList span{display:inline-block;vertical-align:top;}
+		.pop_page_4 .dotList span img{display:block;margin-top:-25px;width:70px;}
+	</style>
 </head>
 
 <body>
-<div id="wrap" class="math suhi">
-	<header>
-		<h1><ins class="suhi_title"></ins>
-		<span class="subInfo">
-			<span class="sub-text">1 ㎠를 알아볼까요</span>
-			<span class="sub-page">74~75쪽</span>
-		</span>
-		</h1>
-	</header>
-	<main>
-		<div class="basicSlider contentsBox" data-slide-container="main">
-			<ul class="basicSlider_tabs" data-tabs="">
-				<li data-hover="">1</li>
-				<li data-hover="">2</li>
-				<li data-hover="">3</li>
-				<li data-hover="">4~5</li>
-				<li data-hover="">4</li>
-				<li data-hover="">5</li>
-				<li data-hover="">6</li>
-			</ul>
-			<ul class="basicSlider_slides" data-slides="">
-				<li class="page_1" data-quiz="toggle">
-					<h2>
-						<ins class="number">1</ins>
-						<span><div class="blankBox"></div>안에 알맞은 수를 써넣으세요.</span>
-					</h2>
-					<section>
-						<ul class="formula_box line1" style="margin-top: 100px;">
-                            <li>
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>2</li><li>7</li></ul>
-                                </div>＋
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>3</li><li>7</li></ul>
-                                </div>＝
-								<div class="bunsuWrap inline-flex-box a-center">
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">1 ㎠를 알아볼까요</span>
+					<span class="sub-page">74~75쪽</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4~5</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="number">1</ins>
+							<span>
+								주어진 넓이를 쓰고 읽어 보세요.
+							</span>
+						</h2>
+						<section>
+							<ul class="flexContainer">
+								<li>
+									<div class="colorBox check skyBlue">1 ㎠</div>
 									<ul>
-										<li style="width: 160px;">
-											<div class="toggle" data-toggle-obj="1" style="margin-bottom: 5px;">
-												<div class="answer" data-toggle-target="1">
-													2
-												</div>
-											</div>＋
-											<div class="toggle" data-toggle-obj="2" style="margin-bottom: 5px;">
-												<div class="answer" data-toggle-target="2">
-													3
+										<li>
+											<div class="lineBox orange">쓰기</div>
+											<div class="write">
+												1 ㎠
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														1 ㎠
 												</div>
 											</div>
 										</li>
 										<li>
-											7
-										</li>
-									</ul>
-								</div>＝
-								<div class="bunsuWrap separation">
-									<ul>
-										<li>
-											<div class="toggle" data-toggle-obj="3">
-												<div class="answer" data-toggle-target="3">
-													5
-												</div>
-											</div>
-										</li>
-										<li>
-											7
-										</li>
-									</ul>
-								</div>
-                            </li>
-						</ul>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
-					</section>
-				</li>
-				<li class="page_2" data-quiz="toggle">
-					<h2>
-						<ins class="number">2</ins>
-						<span>계산해 보세요.</span>
-					</h2>
-					<section>
-						<ul class="formula_box" style="margin-top: 100px;">
-                            <li>
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>3</li><li>8</li></ul>
-                                </div>＋
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>2</li><li>8</li></ul>
-                                </div>
-								＝
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										<div class="bunsuWrap inline-flex-box a-center">
-											<ul><li>5</li><li>8</li></ul>
-										</div>
-									</div>
-								</div>
-                            </li>
-
-							<li>
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    1<ul><li>5</li><li>9</li></ul>
-                                </div>＋
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    2<ul><li>8</li><li>9</li></ul>
-                                </div>
-								＝
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										<div class="bunsuWrap inline-flex-box a-center">
-											4<ul><li>4</li><li>9</li></ul>
-										</div>
-									</div>
-								</div>
-                            </li>
-						</ul>
-						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="1" data-hover></button>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</section>
-				</li>
-				<li class="page_3" data-quiz="toggle">
-					<h2>
-						<ins class="number">3</ins>
-						<span>계산해 보세요.</span>
-					</h2>
-					<section>
-						<ul class="formula_box">
-                            <li>
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>5</li><li>9</li></ul>
-                                </div>－
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>2</li><li>9</li></ul>
-                                </div>
-								＝
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										<div class="bunsuWrap inline-flex-box a-center">
-											<ul><li>3</li><li>9</li></ul>
-										</div>＝
-										<div class="bunsuWrap inline-flex-box a-center">
-											<ul><li>1</li><li>3</li></ul>
-										</div>
-									</div>
-								</div>
-                            </li>
-							<li>
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    4<ul><li>9</li><li>11</li></ul>
-                                </div>－
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    2<ul><li>3</li><li>11</li></ul>
-                                </div>
-								＝
-								<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										<div class="bunsuWrap inline-flex-box a-center">
-											2<ul><li>6</li><li>11</li></ul>
-										</div>
-									</div>
-								</div>
-                            </li>
-							<li>
-                                <div class="bunsuWrap inline-flex-box a-center">
-                                    5<ul><li>2</li><li>7</li></ul>
-                                </div>－
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    3<ul><li>5</li><li>7</li></ul>
-                                </div>
-								＝
-								<div class="toggle" data-toggle-obj="3">
-									<div class="answer" data-toggle-target="3">
-										<div class="bunsuWrap inline-flex-box a-center">
-											1<ul><li>4</li><li>7</li></ul>
-										</div>
-									</div>
-								</div>
-                            </li>
-						</ul>
-						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="2" data-hover></button>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</section>
-				</li>
-				<li class="page_4" data-quiz="toggle">
-					<h2>
-						[<ins class="number">4</ins>~<ins class="number">5</ins>]
-						<span>분수를 통분하여 <div class="blankBox"></div> 안에 알맞은 수를 써넣으세요.</span>
-					</h2>
-					<section>
-						<ul class="formula_box">
-                            <li>
-                                (<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>1</li><li>2</li></ul>
-                                </div>,
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>1</li><li>4</li></ul>
-                                </div>)
-								<div class="icon_arrow big"></div>
-								(<div class="bunsuWrap separation">
-									<ul>
-										<li>
-											<div class="toggle" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													2
-												</div>
-											</div>
-										</li>
-										<li>
-											4
-										</li>
-									</ul>
-								</div>,
-								<div class="bunsuWrap separation">
-									<ul>
-										<li>
+											<div class="lineBox orange">읽기</div>
 											<div class="toggle" data-toggle-obj="2">
 												<div class="answer" data-toggle-target="2">
-													1
+													1 제곱센티미터
 												</div>
-											</div>
-										</li>
-										<li>
-											4
 										</li>
 									</ul>
-								</div>)
-                            </li>
-
-							<li>
-                                (<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>2</li><li>3</li></ul>
-                                </div>,
-								<div class="bunsuWrap inline-flex-box a-center">
-                                    <ul><li>1</li><li>4</li></ul>
-                                </div>)
-								<div class="icon_arrow big"></div>
-								(<div class="bunsuWrap separation">
+								</li>
+								<li>
+									<div class="colorBox check skyBlue">5 ㎠</div>
 									<ul>
 										<li>
-											<div class="toggle" data-toggle-obj="3">
-												<div class="answer" data-toggle-target="3">
-													8
+											<div class="lineBox orange">쓰기</div>
+											<div class="write">
+												5 ㎠
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">
+														5 ㎠
+													</div>
 												</div>
-											</div>
 										</li>
 										<li>
-											12
-										</li>
-									</ul>
-								</div>,
-								<div class="bunsuWrap separation">
-									<ul>
-										<li>
+											<div class="lineBox orange">읽기</div>
 											<div class="toggle" data-toggle-obj="4">
 												<div class="answer" data-toggle-target="4">
-													3
+													5 제곱센티미터
 												</div>
-											</div>
-										</li>
-										<li>
-											12
 										</li>
 									</ul>
-								</div>)
-                            </li>
+								</li>
+							</ul>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="ox" data-quiz-name="ox_1" data-option="hide, answerSound">
+						<h2>
+							<ins class="number">2</ins>
+							<span>넓이가 8 ㎠인 것을 모두 찾아 <span class="icon_o_title"></span>표 하세요.</span>
+						</h2>
+						<section>
+							<div class="study_guide"><em>그림</em>을 <em>클릭</em>하세요.</div>
+							<ul class="oxContainer">
+								<li data-ox-obj="1" data-answer>
+									<div class="icon icon_o" data-ox-target="1"></div>
+								</li>
+								<li data-ox-obj="2" data-answer>
+									<div class="icon icon_o" data-ox-target="2"></div>
+								</li>
+								<li data-ox-obj="3">
+									<div class="icon icon_x" data-ox-target="3"></div>
+								</li>
+								<li data-ox-obj="4">
+									<div class="icon icon_x" data-ox-target="4"></div>
+								</li>
+								<li data-ox-obj="5" data-answer>
+									<div class="icon icon_o" data-ox-target="5"></div>
+								</li>
+								<li data-ox-obj="6">
+									<div class="icon icon_x" data-ox-target="6"></div>
+								</li>
+								<li data-ox-obj="7" data-answer>
+									<div class="icon icon_o" data-ox-target="7"></div>
+								</li>
+								<li>1 ㎠</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="number">3</ins>
+							<span><div class="blankBox"></div>안에 알맞은 수를 써넣으세요.</span>
+						</h2>
+						<section>
+							<div class="flexContainer">
+								<figure>
+									<img src="./images/suhi_0501_06_0004_03.png" alt="">
+									<span>1 ㎠</span>
+								</figure>
+								<div>
+									도형 <strong>가</strong>는 도형 <strong>나</strong>보다 넓이가<br>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											1
+										</div>
+									</div> ㎠ 더 넓습니다.
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4">
+						<h2>
+							[<ins class="number">4</ins>~<ins class="number">5</ins>]
+							<span>조각 맞추기 놀이를 하고 있습니다. 물음에 답하세요.</span>
+						</h2>
+						<section>
+							<figure>
+								<img src="./images/suhi_0501_06_0004_04.png" alt="">
+								<span>1 ㎠</span>
+							</figure>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number star">4</ins>
+							<span style="letter-spacing: -1.5px;">
+								<img src="./images/suhi_0501_06_0004_05.png" alt="">
+								으로 채워진 부분의 넓이는 모두 얼마인가요?
+							</span>
+						</h2>
+						<section>
+							<div class="textAlignC">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										8
+									</div>
+								</div> ㎠
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="number star">5</ins>
+							<span style="letter-spacing: -1.5px;">
+								모양 조각이 차지하는 부분의 넓이는 얼마인가요?
+							</span>
+						</h2>
+						<section>
+							<div class="textAlignC" style="margin-top: 150px;">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										36
+									</div>
+								</div>㎠
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_7" data-quiz="toggle">
+						<h2>
+							<ins class="number star">6</ins>
+							<span style="letter-spacing: -1.5px;">
+								도형의 넓이를 1㎠씩 늘리며 규칙에 따라 그리려고 합니다. 빈칸에 알맞은 도형을 그려 보세요.
+							</span>
+						</h2>
+						<section>
+							<div class="graph" data-toggle-target="1">
+								<span class="cm">1 ㎠</span>
+								<span class="exam bullet">예</span>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<img src="./images/suhi_0501_06_0004_07_2.png" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="flex-box">
+								<div class="colorBox yellow">3 ㎠</div>
+								<div class="colorBox yellow">4 ㎠</div>
+								<div class="colorBox yellow">5 ㎠</div>
+								<div class="colorBox yellow">6 ㎠</div>
+							</div>
 
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li class="dotList deepGreen">
+								<div>
+									도형 <strong>가</strong>의 넓이: 1㎠가 10개 있으므로 <strong>10 ㎠</strong><br>도형 <strong>나</strong>의 넓이: 1㎠가 9개 있으므로 <strong>9
+										㎠</strong><br>따라서 도형 가는 도형 나보다 <strong>1 ㎠</strong> 더 넓습니다.
+								</div>
+									
+							</li>
 						</ul>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
-					</section>
+					</div>
 				</li>
-				<li class="page_5" data-quiz="toggle">
-					<h2>
-						<ins class="number">4</ins>
-						<span style="letter-spacing: -1.5px;">
-                            분수의 크기를 비교하여
-                            <span class="toggleBlank circle"></span> 안에
-							<img src="../common/contents/images/math/inequalIcon_2.png">,
-							<img src="../common/contents/images/math/equalIcon.png">,
-							<img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으세요.
-						</span>
-					</h2>
-					<section>
-						<ul class="formula_box">
+
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<ul class="dotList deepGreen">
 							<li>
-								<div class="bunsuWrap inline-flex-box a-center">
-									<ul><li>12</li><li>13</li></ul>
-								</div>
-                                <div class="toggle circle" data-toggle-obj="1" style="margin: 0 30px;">
-									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_blue.png"></div>
-								</div>
-                                <div class="bunsuWrap inline-flex-box a-center">
-									1<ul><li>1</li><li>13</li></ul>
-								</div>
-                            </li>
-                            <li>
-                                <div class="bunsuWrap inline-flex-box a-center" style="margin-left: 10px;">
-                                    <ul><li>7</li><li>8</li></ul>
-                                </div>
-								<div class="toggle circle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2"><img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-								</div>
-								<div class="bunsuWrap inline-flex-box a-center">
-									<ul><li>5</li><li>6</li></ul>
+								<div>
+									<img src="./images/suhi_0501_06_0004_05.png" alt="">는 1 ㎠가 4개 있으므로 4 ㎠입니다.<br>
+									<img src="./images/suhi_0501_06_0004_05.png" alt="">가 2개 있으므로 4×2＝8(㎠)입니다.
 								</div>
 							</li>
-						</ul>    
-
-						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="3" data-hover></button>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</section>
+						</ul>
+					</div>
 				</li>
-                <li class="page_6" data-quiz="toggle">
-					<h2>
-						<ins class="number star">5</ins>
-						<span style="letter-spacing: -1.5px;">
-                            모양 조각이 차지하는 부분의 넓이는 얼마인가요?
-						</span>
-					</h2>
-					<section>
-                        <div class="textAlignC" style="margin-top: 150px;">
-                            <div class="toggle" data-toggle-obj="1">
-                                <div class="answer" data-toggle-target="1">
-                                    36
-                                </div>
-                            </div>㎠
-                        </div>
 
-						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="3" data-hover></button>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</section>
-				</li>
-				<li class="page_7" data-quiz="toggle">
-					<h2>
-						<ins class="number">6</ins>
-						<span style="letter-spacing: -1.5px;">
-                            분수의 크기를 비교하여
-                            <span class="toggleBlank circle"></span> 안에
-							<img src="../common/contents/images/math/inequalIcon_2.png">,
-							<img src="../common/contents/images/math/equalIcon.png">,
-							<img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으세요.
-						</span>
-					</h2>
-					<section>
-						<ul class="formula_box">
+				<li class="solve pop_page_3" data-popup-page="3">
+					<div class="popup_contents">
+						<ul class="dotList deepGreen">
 							<li>
-								<div class="bunsuWrap inline-flex-box a-center">
-									<ul><li>12</li><li>13</li></ul>
-								</div>
-                                <div class="toggle circle" data-toggle-obj="1" style="margin: 0 30px;">
-									<div class="answer" data-toggle-target="1"><img src="../common/contents/images/math/inequalIcon_blue.png"></div>
-								</div>
-                                <div class="bunsuWrap inline-flex-box a-center">
-									1<ul><li>1</li><li>13</li></ul>
-								</div>
-                            </li>
-                            <li>
-                                <div class="bunsuWrap inline-flex-box a-center" style="margin-left: 10px;">
-                                    <ul><li>7</li><li>8</li></ul>
-                                </div>
-								<div class="toggle circle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2"><img src="../common/contents/images/math/inequalIcon_2_blue.png"></div>
-								</div>
-								<div class="bunsuWrap inline-flex-box a-center">
-									<ul><li>5</li><li>6</li></ul>
+								<div>
+									그림에서 모양 조각이 차지하는 부분은 <span class="colorBox">1 ㎠</span>가 36개입니다.<br>따라서 <strong>36 ㎠</strong>입니다.<br>
+									<img style="display:block;margin:0 auto;width:800px;" src="./images/suhi_0501_06_0004_06.png" alt="">
 								</div>
 							</li>
-						</ul>    
+						</ul>
+					</div>
+				</li>
+				<li class="solve pop_page_4" data-popup-page="4">
+					<div class="popup_contents">
+						<ul class="dotList deepGreen">
+							<li>
+								<div style="letter-spacing:-1px;">
+									도형을 그리는 규칙은 왼쪽 아래 또는 오른쪽 아래 한 칸씩 늘어나는 것입니다. 빈칸에 알맞은 도형의 넓이는 5㎠이므로 왼쪽 아래가 한 칸 늘어난 <span><img
+											src="./images/suhi_0501_06_0004_07_2.png" alt=""></span> 모양이거나,<br>
+									오른쪽 아래가 한 칸 더 늘어난 <span style="transform:scaleX(-1)"><img src="./images/suhi_0501_06_0004_07_2.png" alt=""></span> 모양이어야 합니다.
+								</div>
+								
 
-						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="3" data-hover></button>
-							<button class="dapCheckBtn" data-answer-btn=""></button>
-						</div>
-					</section>
+							</li>
+						</ul>
+					</div>
 				</li>
 			</ul>
-		</div>
-	</main>
-	<section class="popup_container" data-popup-container="">
-        <ul class="popup_pages">
-            <!--      page에 solve 추가        -->
-			<li class="solve pop_page_1" data-popup-page="1">
-				<div class="popup_contents">
-					<ul class="contentsList">
-						<li>
-							<ins class="dot deepGreen"></ins>
-                            ddddd
-                        </li>
-					</ul>
-				</div>
-			</li>
-
-			<li class="solve pop_page_2" data-popup-page="2">
-				<div class="popup_contents">
-					<ul class="contentsList">
-						<li>
-							<ins class="dot deepGreen"></ins>
-                            ddddd
-                        </li>
-					</ul>
-				</div>
-			</li>
-
-            <li class="solve pop_page_3" data-popup-page="3">
-                <div class="popup_contents">
-					<ul class="contentsList">
-						<li>
-							<ins class="dot deepGreen"></ins>
-                            ddddd
-                        </li>
-					</ul>
-                </div>
-            </li>
-            <li class="solve pop_page_4" data-popup-page="4">
-                <div class="popup_contents">
-					<ul class="contentsList">
-						<li>
-							<ins class="dot deepGreen"></ins>
-                            ddddd
-                        </li>
-					</ul>
-                </div>
-            </li>
-        </ul>
-    </section>
+		</section>
 
 
-</div>
+	</div>
 
-<div id="loadingContainer">
-<div class="loadingIconAnimation"></div>
-</div>
-<script type="text/javascript" src="../common/libs/js/ts.js"></script>
-<script type="text/javascript" src="../common/libs/js/animate.js"></script>
-<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
-<script type="text/javascript" src="../common/libs/js/slider.js"></script>
-<script type="text/javascript" src="../common/libs/js/popup.js"></script>
-<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
-<script type="text/javascript" src="../common/libs/js/controller.js"></script>
-<script type="text/javascript" src="../common/libs/js/appear.js"></script>
-<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
-<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
-<script type="text/javascript" src="./js/contents.js"></script>
-<!-- horizon -->
-<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
-<script type="text/javascript">
-window.$callBack.sliderReset = function (slide) {
-	console.log(slide.idx);
-
-	if (slide.idx === 4) {
-		setTimeout(function () {
-				
-			$ts.getEl('.page_5 .textBookBtn')[0].click();
-			setTimeout(function () {
-				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
-			}, 3000);
-		});
-	}
-}
-</script>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
+	<script type="text/javascript">
+		
+	</script>
 
 </body>
 
