@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" href="./css/suh_0601_06_0008_201_2.css">
+</head>
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">입체도형의 부피를 구해 봅시다. <div class="popBtn textInBtn eye orange inline" data-hover="" data-popup-btn="1">그림보기</div></div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox right" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">문제</li>
+				<li data-hover="">계획</li>
+				<li data-hover="">실행</li>
+				<li data-hover="">반성</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>구하려는 것은 무엇인가요?</span></h2>
+					<setion class="textAlignC">
+						<div class="toggle mt_20" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">입체도형의 부피</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</setion>
+				</li>
+				<li class="page_2">
+					<h2><ins class="dot"></ins><span>어떤 방법으로 문제를 해결하면 좋을까요?</span></h2>
+					<section>
+						<div id="aniBox"></div>
+					</section>
+				</li>
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>생각한 방법으로 문제를 해결해 보세요.</span></h2>
+					<setion class="textAlignC">
+						<div class="toggle mt_20" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								<div class="ex-box">
+									<div class="bullet exam">예</div>
+									<div class="textAlignL">(8×13×2)－(3×8×2)＝160 (㎤)<br> 입체도형의 부피는 160 ㎤입니다.</div>
+								</div>
+							</div>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</setion>
+				</li>
+				<li class="page_4">
+					<h2><ins class="dot"></ins><span>입체도형의 부피를 바르게 구했는지 확인해 보고, 문제를
+해결한 방법을  친구들에게 설명해 보세요.</span></h2>
+					<section>
+						<div id="aniBox2"></div>
+					</section>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole image pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="img-content">
+						<img src="./images/suh_0601_06_0008_201_1_1.png" alt="">
+						<div class="txt-item n1">5 cm</div>
+						<div class="txt-item n2">3 cm</div>
+						<div class="txt-item n3">8 cm</div>
+						<div class="txt-item n4">2 cm</div>
+						<div class="txt-item n5">13 cm</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#aniBox'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'girl_1',
+					speech:'right',
+					circle: 'deeppink',
+					top: 140,
+					left: 420,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					sound: './media/audios/suh_0601_06_0008_201_2_1.mp3',
+					textBubble: {
+						text: '큰 직육면체의 부피에서 작은 직육면체의 부피를 빼서 입체도형의 부피를 구합니다.',
+						class: 'balloon left deeppink',
+						top: 120,
+						left: 420,
+						width: 400,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					/* endSheet: 0, */
+					delay: 40,
+					callbacks: {
+						start: function () {
+							$ts.getEl('.page_2 .characterImg')[0].style.left='-200px';
+						}, // 시작시 콜백
+						end: function () {
+							$ts.getEl('.page_2 .characterImg')[0].style.left=0;
+						} // 끝날시 콜백
+					}
+				}
+			]
+		});
+		$prite.add({
+			target: $ts.getEl('#aniBox2'),
+			spriteId: 'sprite2',
+			spriteList: [
+				{
+					name: 'girl_2',
+					speech:'right',
+					circle: 'purple',
+					top: 120,
+					left: 420,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_2.png',
+					spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+					sound: './media/audios/suh_0601_06_0008_201_2_2.mp3',
+					textBubble: {
+						text: '문제 해결에 도움이 되는 조건을 먼저 확인하여 바르게 구했습니다.',
+						class: 'balloon left purple',
+						top: 120,
+						left: 420,
+						width: 400,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					/* endSheet: 0, */
+					delay: 40,
+					callbacks: {
+						start: function () {
+							$ts.getEl('.page_4 .characterImg')[0].style.left='-200px';
+						}, // 시작시 콜백
+						end: function () {
+							$ts.getEl('.page_4 .characterImg')[0].style.left=0;
+						} // 끝날시 콜백
+					}
+				}
+			]
+		});
+	}, false);
+</script>
+</body>
+</html>
