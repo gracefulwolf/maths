@@ -11,6 +11,8 @@
 <style>
 	.toggle.yellow {margin:8px 0}
 
+	.textAlignC .popBtn {position:absolute;right:400px;bottom:30px}
+
 	.graph-box {position:relative;width:220px;margin:30px auto 0}
 	.graph-box img {display:block;width:100%}
 	.graph-box .txt-item {position:absolute;color:#000;font-size:20px}
@@ -24,6 +26,20 @@
 	.graph-box .txt-item.n7 {top:120px;left:29px}
 	.graph-box .txt-item.n8 {top:57px;left:16px}
 	.graph-box .txt-item.n9 {top:10px;left:60px;font-size:19px}
+
+	.popup_container .graph-box {position:relative;width:480px;margin:50px auto 0}
+	.popup_container .graph-box img {display:block;width:100%}
+	.popup_container .graph-box .txt-item {position:absolute;color:#000;font-size:40px;letter-spacing:-2px}
+	.popup_container .graph-box .txt-item.num {color:#000}
+	.popup_container .graph-box .txt-item.n1 {top:-45px;left:229px}
+	.popup_container .graph-box .txt-item.n2 {top:215px;left:485px}
+	.popup_container .graph-box .txt-item.n3 {bottom:-45px;left:220px}
+	.popup_container .graph-box .txt-item.n4 {top:215px;left:-45px}
+	.popup_container .graph-box .txt-item.n5 {top: 115px;left: 275px;}
+	.popup_container .graph-box .txt-item.n6 {top: 310px;left: 230px;}
+	.popup_container .graph-box .txt-item.n7 {top: 270px;left: 69px;}
+	.popup_container .graph-box .txt-item.n8 {top: 127px;left: 41px;}
+	.popup_container .graph-box .txt-item.n9 {top:30px;left:140px;}
 </style>
 </head>
 
@@ -52,9 +68,31 @@
 					<div class="txt-item n8">석굴암<br>(15 %)</div>
 					<div class="txt-item n9">기타<br>(10 %)</div>
 				</div>
+				<button class="popBtn zoomBtn trans" data-hover="" data-popup-btn="2"></button>
 			</div>
 		</div>
 	</main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole pop_page_1" data-popup-page="2">
+				<section class="textAlignC">
+					<div class="lineBox orange mt_50" style="display:inline-block;font-size:40px">조사하고 싶은 문화재별 학생 수</div>
+					<div class="graph-box">
+						<img src="./images/suh_0601_05_0005_202_2-01.png" alt="">
+						<div class="txt-item num n1">0</div>
+						<div class="txt-item num n2">25</div>
+						<div class="txt-item num n3">50</div>
+						<div class="txt-item num n4">75</div>
+						<div class="txt-item n5">첨성대<br>(30 %)</div>
+						<div class="txt-item n6">경복궁<br>(25 %)</div>
+						<div class="txt-item n7">화성<br>(20 %)</div>
+						<div class="txt-item n8">석굴암<br>(15 %)</div>
+						<div class="txt-item n9">기타<br>(10 %)</div>
+					</div>
+				</section>
+			</li>
+		</ul>
+	</section>
 </div>
 <div id="loadingContainer">
   <div class="loadingIconAnimation"></div>
