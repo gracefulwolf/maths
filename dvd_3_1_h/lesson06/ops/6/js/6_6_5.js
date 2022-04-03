@@ -4,8 +4,8 @@
   var drawLines = [];
   var answers = [
     [{
-      end: {x: 642, y: 23},
-      start: {x: 32, y: 23}
+      end: {x: -10, y: -10},
+      start: {x: -10, y: -10}
     }]
   ];
 
@@ -31,7 +31,7 @@
       resetButton: container.querySelector('.js-resetButton'),
       answerButton: document.querySelector('.js-buttons'),
       answer: answers[index],
-      lineColor: '#eec27a',
+      lineColor: '#00a0ff',
       callback: {
         start: function(DrawLine) {
           lightOff();
