@@ -489,11 +489,16 @@
 	<script type="text/javascript">
 		// ox quiz 정답 콜백
 		window.$callBack.oxCorrect = function (obj) {
-
+			setTimeout(function(){
+				$efSound.correct();
+			},0)
+			
 		}
 		// ox quiz 오답 콜백
 		window.$callBack.oxIncorrect = function (obj) {
-
+			setTimeout(function(){
+				$efSound.incorrect();
+			},0)
 		}
 		// ox quiz 정답 확인 클릭시 콜백
 		window.$callBack.viewAnswer = function (obj) {
@@ -509,9 +514,9 @@
 		}
 
 		document.addEventListener("DOMContentLoaded", function () {
-			$(".controlBtn").click(function () {
-				$efSound.click();
-			})
+			// $(".controlBtn").click(function () {
+			// 	$efSound.click();
+			// })
 
 
 		}, false);
