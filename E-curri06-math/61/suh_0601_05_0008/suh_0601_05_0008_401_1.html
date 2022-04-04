@@ -23,37 +23,37 @@
 	.graph-1 {position:relative;width:800px;height:164px;margin:30px auto 0}
 	.graph-1 img {display:block;width:100%}
 	.graph-1 .txt-item {position:absolute;z-index:1}
-	.graph-1 .txt-item.num {top:30px;font-size:20px;font-weight:normal}
+	.graph-1 .txt-item.num {top:15px;font-size:35px;font-weight:normal;letter-spacing:-2px}
 	.graph-1 .txt-item.num.n5 {left:-5px}
-	.graph-1 .txt-item.num.n6 {left:60px}
-	.graph-1 .txt-item.num.n7 {left:130px}
-	.graph-1 .txt-item.num.n8 {left:200px}
-	.graph-1 .txt-item.num.n9 {left:270px}
-	.graph-1 .txt-item.num.n10 {left:340px}
-	.graph-1 .txt-item.num.n11 {left:410px}
-	.graph-1 .txt-item.num.n12 {left:480px}
-	.graph-1 .txt-item.num.n13 {left:550px}
-	.graph-1 .txt-item.num.n14 {left:620px}
-	.graph-1 .txt-item.num.n15 {left:690px}
+	.graph-1 .txt-item.num.n6 {left:53px}
+	.graph-1 .txt-item.num.n7 {left:124px}
+	.graph-1 .txt-item.num.n8 {left:194px}
+	.graph-1 .txt-item.num.n9 {left:264px}
+	.graph-1 .txt-item.num.n10 {left:334px}
+	.graph-1 .txt-item.num.n11 {left:404px}
+	.graph-1 .txt-item.num.n12 {left:474px}
+	.graph-1 .txt-item.num.n13 {left:544px}
+	.graph-1 .txt-item.num.n14 {left:614px}
+	.graph-1 .txt-item.num.n15 {left:680px}
 	.graph-1 .toggle {position:absolute;left:0;bottom:0;width:800px;height:164px;padding:0;background-color:transparent}
-	.graph-1 .toggle::after {top:77%;left:44%}
+	.graph-1 .toggle::after {display:none}
 	.graph-1 .toggle .answer {position:relative;background-color:#fff}
 	.graph-1 .toggle .answer .txt-item {font-size:32px}
 	.graph-1 .toggle .answer .txt-item.n1 {top:108px;left:50px}
 	.graph-1 .toggle .answer .txt-item.n2 {top:108px;left:310px}
 	.graph-1 .toggle .answer .txt-item.n3 {top:-40px;left:730px;white-space:nowrap}
-	.graph-1 .toggle .answer .txt-item.n4 {top:45px;left:760px;white-space:nowrap}
+	.graph-1 .toggle .answer .txt-item.n4 {top:50px;left:760px;white-space:nowrap}
 
 	.graph-2 {position:relative;width:400px;height:338px;margin:0 auto}
 	.graph-2 img {display:block;width:100%}
 	.graph-2 .txt-item {position:absolute;z-index:1}
-	.graph-2 .txt-item.num {font-size:20px;font-weight:normal}
-	.graph-2 .txt-item.num.n5 {top:10px;left:196px}
-	.graph-2 .txt-item.num.n6 {top:155px;left:340px}
-	.graph-2 .txt-item.num.n7 {top:302px;left:192px}
-	.graph-2 .txt-item.num.n8 {top:155px;left:40px}
+	.graph-2 .txt-item.num {font-size:35px;font-weight:normal}
+	.graph-2 .txt-item.num.n5 {top:-5px;left:193px}
+	.graph-2 .txt-item.num.n6 {top:145px;left:340px}
+	.graph-2 .txt-item.num.n7 {top:300px;left:182px}
+	.graph-2 .txt-item.num.n8 {top:145px;left:25px}
 	.graph-2 .toggle {position:absolute;left:0;bottom:0;width:400px;height:338px;padding:0;background-color:transparent}
-	.graph-2 .toggle::after {left:51%}
+	.graph-2 .toggle::after {display:none}
 	.graph-2 .toggle .answer {position:relative;background-color:#fff}
 	.graph-2 .toggle .answer .txt-item {font-size:30px;text-align:center}
 	.graph-2 .toggle .answer .txt-item.n1 {top:115px;left:215px}
@@ -68,8 +68,8 @@
 
 	.quiz-content dl {display:flex}
 	.quiz-content dl + dl {margin-top:20px}
-	.quiz-content dt {width:240px;min-width:240px;max-width:240px;display:flex;justify-content:flex-end;align-items:flex-start}
-	.quiz-content dd {flex:1 auto;margin-left:20px}
+	.quiz-content dt {width:190px;min-width:190px;display:flex;justify-content:flex-end;align-items:flex-start}
+	.quiz-content dd {flex:1 auto}
 	.quiz-content .colorBox {text-align:center}
 	.quiz-content .toggle {vertical-align:top}
 
@@ -119,12 +119,12 @@
 								</colgroup>
 								<tbody>
 								<tr>
-									<th scope="col">색깔</th>
-									<th scope="col" class="lightBrown">검은색</th>
-									<th scope="col" class="lightBrown">흰색</th>
-									<th scope="col" class="lightBrown">노란색</th>
-									<th scope="col" class="lightBrown">기타</th>
-									<th scope="col" class="lightBrown">합계</th>
+									<th scope="row">색깔</th>
+									<td>검은색</td>
+									<td>흰색</td>
+									<td>노란색</td>
+									<td>기타</td>
+									<td>합계</td>
 								</tr>
 								<tr>
 									<th scope="row">우산 수(개)</th>
@@ -287,11 +287,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="toggle box" data-toggle-obj="1">
-							<div class="answer" data-toggle-target="1">
-								<div class="ex-box">
-									<div class="bullet exam">예</div>
-									<p>전체에 대한 각 부분의 비율을 한눈에 알 수 있습니다.</p>
+						<div class="textAlignC">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<div class="ex-box">
+										<div class="bullet exam">예</div>
+										<p>전체에 대한 각 부분의 비율을 한눈에 알 수 있습니다.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -304,7 +306,7 @@
 						<div class="quiz-content">
 							<dl>
 								<dt>
-									<div class="colorBox skyBlue">그래프 종류</div>
+									<div class="colorBox skyBlue check">그래프 종류</div>
 								</dt>
 								<dd>
 									<div class="toggle" data-toggle-obj="1">
@@ -327,14 +329,14 @@
 							</dl>
 							<dl>
 								<dt>
-									<div class="colorBox skyBlue">이유</div>
+									<div class="colorBox skyBlue check">이유</div>
 								</dt>
 								<dd>
 									<div class="toggle" data-toggle-obj="3">
 										<div class="answer" data-toggle-target="3">
 											<div class="ex-box">
 												<div class="bullet exam">예</div>
-												<p class="textAlignL">전체 팔린 우산에 대한 색깔별 팔린 우산의 비율을 비교하기 쉽기 때문입니다.</p>
+												<p class="textAlignJ" style="letter-spacing:-2px">전체 팔린 우산에 대한 색깔별 팔린 우산의 비율을 비교하기 쉽기 때문입니다.</p>
 											</div>
 										</div>
 									</div>
@@ -350,7 +352,7 @@
 						<div class="quiz-content">
 							<dl>
 								<dt>
-									<div class="colorBox skyBlue">그래프 종류</div>
+									<div class="colorBox skyBlue check">그래프 종류</div>
 								</dt>
 								<dd>
 									<div class="toggle" data-toggle-obj="1">
@@ -365,7 +367,7 @@
 							</dl>
 							<dl>
 								<dt>
-									<div class="colorBox skyBlue">이유</div>
+									<div class="colorBox skyBlue check">이유</div>
 								</dt>
 								<dd>
 									<div class="toggle box" data-toggle-obj="2">
@@ -380,7 +382,7 @@
 										<div class="answer" data-toggle-target="3">
 											<div class="ex-box">
 												<div class="bullet exam">예</div>
-												<p class="textAlignJ">꺾은선 그래프는 시간에 따라 연속적으로 변하는 양을 나타내는 데 편리하기 때문입니다.</p>
+												<p class="textAlignJ" style="letter-spacing:-1px">꺾은선 그래프는 시간에 따라 연속적으로 변하는 양을 나타내는 데 편리하기 때문입니다.</p>
 											</div>
 										</div>
 									</div>
