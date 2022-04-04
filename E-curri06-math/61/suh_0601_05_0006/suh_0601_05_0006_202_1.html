@@ -11,21 +11,22 @@
 <style>
 	header .title .popBtn.textInBtn.inline {top:5px}
 
-	.graph-box {position:relative;width:280px;margin:30px auto 0}
-	.graph-box img {width:280px}
-	.graph-box .toggle {position:absolute;left:50%;margin-left:-140px;padding:0;background-color:transparent}
+	.graph-box {position:relative;width:340px;margin:30px auto 0}
+	.graph-box img {width:340px}
+	.graph-box .toggle {position:absolute;left:50%;margin-left:-170px;padding:0;background-color:transparent}
 	.graph-box .toggle::after {display:none}
 	.graph-box .toggle .answer {background-color:#fff}
-	.graph-box .txt-item {position:absolute;z-index:1;font-size:24px;white-space:nowrap}
-	.graph-box .txt-item.n1 {top:-20px;left:133px}
-	.graph-box .txt-item.n2 {top:135px;left:288px}
-	.graph-box .txt-item.n3 {top:290px;left:128px}
-	.graph-box .txt-item.n4 {top:135px;left:-35px}
-	.graph-box .txt-item.n5 {top:80px;left:160px}
-	.graph-box .txt-item.n6 {top:190px;left:105px}
-	.graph-box .txt-item.n7 {top:105px;left:20px}
-	.graph-box .txt-item.n8 {top:24px;left:-65px}
-	.graph-box .txt-item.n9 {top:-14px;left:-52px}
+	.graph-box .txt-item {position:absolute;z-index:1;font-size:35px;white-space:nowrap}
+	.graph-box .answer-graph .txt-item {font-size:38px}
+	.graph-box .txt-item.n1 {top:-30px;left:160px}
+	.graph-box .txt-item.n2 {top:160px;left:350px}
+	.graph-box .txt-item.n3 {top:350px;left:150px}
+	.graph-box .txt-item.n4 {top:160px;left:-45px}
+	.graph-box .txt-item.n5 {top:85px;left:182px}
+	.graph-box .txt-item.n6 {top:210px;left:115px}
+	.graph-box .txt-item.n7 {top:125px;left:19px;letter-spacing:-2px}
+	.graph-box .txt-item.n8 {top:24px;left:-105px}
+	.graph-box .txt-item.n9 {top:-24px;left:-102px}
 
 	.toggle .answer .num {position:relative;top:-3px}
 
@@ -39,7 +40,7 @@
 
 <div id="wrap" class="math">
 	<header>
-		<div class="title">전체 학생 수에 대한 전시관별 학생 수의 비율을 원그래프로 나타내어 봅시다. <div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">표 보기</div></div>
+		<div class="title" style="margin-bottom:10px">전체 학생 수에 대한 전시관별 학생 수의 비율을 원그래프로 나타내어 봅시다. <div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">표 보기</div></div>
 	</header>
 	<main>
 		<div class="basicSlider contentsBox" data-slide-container="main">
@@ -49,7 +50,6 @@
 			</ul>
 			<ul class="basicSlider_slides" data-slides="">
 				<li class="page_1" data-quiz="toggle">
-					<h2><ins class="dot"></ins><span>무엇을 나타낸 표인가요?</span></h2>
 					<section class="textAlignC" style="padding-right:0">
 						<div class="lineBox orange mt_10" style="display:inline-block">전시관별 학생 수</div>
 						<div class="graph-box">
@@ -116,16 +116,16 @@
 								<col style="width:13.5%">
 							</colgroup>
 							<tr>
-								<th scope="col">전시관</th>
-								<th scope="col">선사관</th>
-								<th scope="col">고대관</th>
-								<th scope="col">중세관</th>
-								<th scope="col">근대관</th>
-								<th scope="col">현대관</th>
-								<th scope="col">합계</th>
+								<th scope="row">전시관</th>
+								<td>선사관</td>
+								<td>고대관</td>
+								<td>중세관</td>
+								<td>근대관</td>
+								<td>현대관</td>
+								<td>합계</td>
 							</tr>
 							<tr>
-								<th scope="row" class="lightBrown">학생 수(명)</th>
+								<th scope="row">학생 수(명)</th>
 								<td>72</td>
 								<td>96</td>
 								<td>36</td>
@@ -134,7 +134,7 @@
 								<td>240</td>
 							</tr>
 							<tr>
-								<th scope="row" class="lightBrown">백분율(%)</th>
+								<th scope="row">백분율(%)</th>
 								<td>30</td>
 								<td>40</td>
 								<td>15</td>

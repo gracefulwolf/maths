@@ -15,7 +15,7 @@
 
         .lineBox.orange {width:400px;text-align:center;margin:0 auto;padding:0}
 
-        .tableContainer table th {font-size:30px;letter-spacing:-2px}
+        .tableContainer table th {font-size:35px;letter-spacing:-2px;line-height:1}
         .tableContainer table td {font-size:36px;letter-spacing:-2px}
         .tableContainer table td.pd-0 {padding:0}
         .tableContainer .toggle {width:100%;padding:0;background-color:transparent}
@@ -23,6 +23,8 @@
         .txt-a {text-align:right;font-size:30px}
 
         .img-box {position:relative;width:320px;height:360px;text-align:center;margin:10px auto 0}
+        .img-box .popBtn {width:100%;height:100%;position:absolute;top:0;left:0}
+        .img-box .popBtn:after {right:40px}
         .img-box img {height:100%;vertical-align:top}
         .img-box .txt-item {position:absolute;font-size:14px;pointer-events:none;z-index:3}
         .img-box .txt-item.n1 {top: 25px;left: 10px;}
@@ -47,6 +49,23 @@
 
         .page_4 .img-box .img-text.n1 {right: -140px}
         .page_4 .img-box .img-text.n2 {right: -130px}
+
+        .full-img {text-align:center}
+        .full-img .lineBox {font-size:40px;margin:50px auto 20px}
+        .full-img img {height:65%;vertical-align:top}
+        .full-img .txt-item {position:absolute;font-size:40px;pointer-events:none;z-index:3}
+        .full-img .txt-item.n1 {top: 155px;left: 220px;}
+        .full-img .txt-item.n2 {top: 163px;left: 510px;}
+        .full-img .txt-item.n3 {top: 272px;left: 240px;}
+        .full-img .txt-item.n4 {top: 245px;left: 515px;}
+        .full-img .txt-item.n5 {top: 385px;left: 330px;}
+        .full-img .txt-item.n6 {top: 570px;left: 380px;}
+        .full-img .exam {position:absolute;top:155px;left:160px}
+        .full-img .img-text {position:absolute;font-size:40px;display:flex;align-items:flex-end}
+        .full-img .img-text span {margin-left:10px;width:130px}
+        .full-img .img-text.n1 {right:60px;bottom: 120px;}
+        .full-img .img-text.n2 {right:70px;bottom: 60px;}
+
     </style>
 </head>
 
@@ -54,7 +73,7 @@
 
 <div id="wrap" class="math" >
 	<header>
-		<div class="title textAlignJ">우리나라 권역별 초등학교 수를 조사한 표입니다. 그림그래프로 나타내어 봅시다.</div>
+		<div class="title textAlignJ" style="margin-bottom:10px">우리나라 권역별 초등학교 수를 조사한 표입니다. 그림그래프로 나타내어 봅시다.</div>
     </header>
 	<main>
 		<div class="basicSlider contentsBox" data-slide-container="main">
@@ -117,7 +136,7 @@
                         </div>
                         <p class="txt-a">(출처: 초등학교 개황, 국가 통계 포털, 2018.)</p>
                         <div class="textAlignC">
-                            <div class="toggle mt_20" data-toggle-obj="1">
+                            <div class="toggle mt_10" data-toggle-obj="1">
                                 <div class="answer" data-toggle-target="1">
                                     <div class="ex-box">
                                         <div class="bullet exam">예</div>
@@ -224,6 +243,8 @@
                     <section style="padding-right:0">
                         <div class="lineBox orange">권역별 초등학교 수</div>
                         <div class="img-box">
+                            <button class="popBtn btn_4 zoomBtn trans" data-hover="" data-popup-btn="1">
+                            </button>
                             <img src="./images/suh_0601_05_0002_202_1_3_1.png" alt="">
                             <p class="txt-item n1">서울·인천·경기</p>
                             <p class="txt-item n2">강원</p>
@@ -256,6 +277,8 @@
                             <div class="l-col">
                                 <div class="lineBox orange">권역별 초등학교 수</div>
                                 <div class="img-box">
+                                    <button class="popBtn btn_4 zoomBtn trans" data-hover="" data-popup-btn="1">
+                                    </button>
                                     <img src="./images/suh_0601_05_0002_202_1_3_2.png" alt="">
                                     <p class="txt-item n1">서울·인천·경기</p>
                                     <p class="txt-item n2">강원</p>
@@ -287,7 +310,7 @@
                                     <div class="answer" data-toggle-target="2">
                                         <div class="ex-box">
                                             <div class="bullet exam">예</div>
-                                            <p class="textAlignJ">서울·인천 · 경기 권역의 초등학교가 가장 많습니다.</p>
+                                            <p class="textAlignJ">서울·인천·경기 권역의 초등학교가 가장 많습니다.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -304,8 +327,8 @@
         <ul class="popup_pages">
             <li class="whole pop_page_1" data-popup-page="1">
                 <div class="full-img">
-                    <img src="./images/suh_0601_05_0002_101_1_1.png" alt="">
-                    <div class="lineBox purple">권역별 초등학생 수</div>
+                    <div class="lineBox orange">권역별 초등학교 수</div>
+                    <img src="./images/suh_0601_05_0002_202_1_3_2.png" alt="">
                     <p class="txt-item n1">서울·인천·경기</p>
                     <p class="txt-item n2">강원</p>
                     <p class="txt-item n3">대전·세종·충청</p>
@@ -313,14 +336,14 @@
                     <p class="txt-item n5">광주·전라</p>
                     <p class="txt-item n6">제주</p>
                     <div class="img-text n1">
-                        <img src="images/suh_0601_05_0002_101_1_2.png" alt="">
-                        <span>10만 명</span>
+                        <img src="images/suh_0601_05_0002_202_1_3_3.png" alt="">
+                        <span>1000개</span>
                     </div>
                     <div class="img-text n2">
-                        <img src="images/suh_0601_05_0002_101_1_3.png" alt="">
-                        <span>1만 명</span>
+                        <img src="images/suh_0601_05_0002_202_1_3_4.png" alt="">
+                        <span>100개</span>
                     </div>
-                    <div class="txt-item n7">(출처: 초등학교 개황, 국가 통계 포털, 2018.)</div>
+                    <div class="bullet exam">예</div>
                 </div>
             </li>
         </ul>
