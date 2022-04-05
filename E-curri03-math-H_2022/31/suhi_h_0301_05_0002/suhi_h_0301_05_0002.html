@@ -43,7 +43,7 @@
 							<ins class="special type2"></ins>
 							<span></span>
 						</h2>
-						<div class="lineBox sky">
+						<div class="lineBox sky" style="letter-spacing: 1px;">
 							1 cm를 10칸으로 똑같이 나누었을 때 작은 눈금 한 칸의 길이(<img
 								src="./images/suhi_h_0301_05_0002/suhi_h_0301_05_0002_1.png" class="img1">)를 <div
 								class="toggle" data-toggle-obj="1">
@@ -60,8 +60,10 @@
 								<div class="lineBox orange">
 									1 cm＝10 mm
 								</div>
-								<div>
+								<div style="position:relative"> 
 									<img src="./images/suhi_h_0301_05_0002/suhi_h_0301_05_0002_2.png">
+									<div class="txt n1">0</div>
+									<div class="txt n2">1</div>
 								</div>
 							</div>
 						</div>
@@ -83,7 +85,7 @@
 								<div>
 									<div class="list-check">
 										<div class="list-check-item">
-											<div class="colorBox orange check">쓰기</div>
+											<div class="colorBox deepOrange check">쓰기</div>
 											<div class="n1">
 
 
@@ -117,7 +119,7 @@
 								<div>
 									<div class="list-check">
 										<div class="list-check-item">
-											<div class="colorBox orange check">쓰기</div>
+											<div class="colorBox deepOrange check">쓰기</div>
 											<div class="n1">
 
 												<img src="./images/suhi_h_0301_05_0002/suhi_h_0301_05_0002_3.png">
@@ -161,7 +163,7 @@
 						</h2>
 						<div class="iframe-wrap">
 							<iframe src="../../../dvd_3_1_h/lesson05/ops/5/5_1_2_sub.html" title="" class="page-iframe"
-								id="iframepage1" scrolling="no"></iframe>
+								id="ifm1" scrolling="no"></iframe>
 						</div>
 					</li>
 
@@ -169,7 +171,7 @@
 						<h2>
 							<ins class="number">3</ins>
 							<span>
-								<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요
+								<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 							</span>
 						</h2>
 						<section>
@@ -193,7 +195,7 @@
 								</div>
 								<div>
 									<div>
-										56mm＝<div class="toggle" data-toggle-obj="2">
+										56 mm＝<div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
 												5
 											</div>
@@ -204,7 +206,7 @@
 										</div> mm
 									</div>
 									<div>
-										100mm＝<div class="toggle" data-toggle-obj="26">
+										100 mm＝<div class="toggle" data-toggle-obj="26">
 											<div class="answer" data-toggle-target="26">
 												10
 											</div>
@@ -384,16 +386,16 @@
 					<div class="popup_contents">
 						<ul class="dotList deepGreen">
 							<li>
-								<div>2 c＝20 mm</div>
+								<div>2 cm＝20 mm</div>
 							</li>
 							<li>
-								<div>50 m＝5 cm이므로 56 m＝5 cm 6 mm</div>
+								<div>50 mm＝5 cm이므로 56 mm＝5 cm 6 mm</div>
 							</li>
 							<li>
-								<div>8 c＝80 mm이므로 8 cm 4 m＝84 mm</div>
+								<div>8 cm＝80 mm이므로 8 cm 4 mm＝84 mm</div>
 							</li>
 							<li>
-								<div>10 m＝1 cm이므로 100 m＝10 cm</div>
+								<div>10 mm＝1 cm이므로 100 mm＝10 cm</div>
 							</li>
 
 						</ul>
@@ -420,7 +422,7 @@
 				<li class="solve pop_page_6" data-popup-page="6">
 					<div class="popup_contents">
 						단위를 같게 한 후 길이를 비교합니다.<br>
-						<div class="bullet number orange inline">ㄱ</div> 72 mm  <div class="bullet number orange inline">ㄴ</div> 5 cm 9 mm＝59 mm <div class="bullet number orange inline">ㄷ</div> 6 cm＝60 mm <br>따라서 길이가 가장 긴 것의 기호는 <div class="bullet number orange inline">ㄱ</div>입니다.
+						<div class="bullet number orange inline">ㄱ</div> 72 mm  <div class="bullet number orange inline ml_20">ㄴ</div> 5 cm 9 mm＝59 mm <div class="bullet number orange inline ml_20">ㄷ</div> 6 cm＝60 mm <br>따라서 길이가 가장 긴 것의 기호는 <div class="bullet number orange inline">ㄱ</div>입니다.
 
 					</div>
 				</li>
@@ -446,8 +448,11 @@
 	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-
+			window.$callBack.sliderMove=function(SLIDER) {
+			document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
 		}, false);
+
 	</script>
 </body>
 
