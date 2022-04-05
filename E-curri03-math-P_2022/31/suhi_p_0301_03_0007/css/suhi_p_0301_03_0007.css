@@ -53,12 +53,25 @@
 .pop_page_4.solve .textAlignC {letter-spacing: -3px;}
 .pop_page_4.solve .img-wrap img {width: 300px;}
 
-.page_3 .flexListContainer,
-.pop_page_3.whole .flexListContainer {width: 290px;margin: 30px auto 0;}
-.page_3 .flexListContainer li,
+
+.page_3 .flexListContainer.column {width: 340px;margin: 30px auto 0;}
+.page_3 .flexListContainer.column li + li {margin: 15px 0 0;}
+.page_3 .flexListContainer.column li > div {display: flex;}
+.page_3 .flexListContainer.column li > div:first-child:not(.exam) {display: flex;justify-content: flex-end;min-width: 139px;}
+
+.pop_page_3.whole .flexListContainer {width: 340px;margin: 30px auto 0;}
 .pop_page_3.whole .flexListContainer li {display: flex;align-items: center;}
-.page_3 .flexListContainer li + li,
 .pop_page_3.whole li + li  {margin-top: 15px;}
+
+.pop_page_5.whole  .flexListContainer.column {width: 350px;margin: 0 auto;}
+.page_5 .flexListContainer.column li,
+.pop_page_5.whole .flexListContainer.column li {display: flex;align-items: center;justify-content: flex-end;}
+.page_5 .flexListContainer.column li + li,
+.pop_page_5.whole .flexListContainer.column li + li {margin-top: 15px;}
+.page_5 .flexListContainer.column li div,
+.pop_page_5.whole .flexListContainer.column li div {display: flex;flex-wrap: wrap;}
+.page_5 .flexListContainer.column li > div:first-child,
+.pop_page_5.whole .flexListContainer.column li > div:first-child {display: flex;justify-content: flex-end;min-width: 132px;}
 
 .page_4 .bg {position: relative;width: 620px;height: 350px;background: url(../images/suhi_p_0301_03_0007_3.png) 50% 50% /100% no-repeat;margin: -10px auto 10px;}
 .page_4 .bg .answer-wrap {position: relative;height: 100%;}
