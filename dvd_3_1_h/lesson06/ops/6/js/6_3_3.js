@@ -21,14 +21,31 @@
       DRAG._droppedArea.element.classList.add('hide');
 
       if(!DRAG.droppedArea){
-        window.$efSound.incorrect();
+        //window.$efSound.incorrect();
         return console.log('dropArea 없음.');
       }
     }
     window.$callBack.dragIncorrect = function(DRAG) {
       console.log('dragIncorrect:', DRAG);
-      window.$efSound.incorrect();
+     // window.$efSound.incorrect();
     }
+
+    window.dragDropCallbacks = {
+      "drag-obj": function (DRAGDROP) {
+        if (DRAGDROP.droppedArea) {
+          window.$efSound.correct();
+      
+          if (DRAGDROP.droppedArea.element.children.length === 6) {
+            DRAGDROP.droppedArea.DISABLED = true;
+          }
+        } else {
+          window.$efSound.incorrect();        }
+
+        // if ($ts.getEl(".imagebox .dragObjComplete").length === 3) {
+        //   dragAnswerButton.classList.add("reset");
+        // }
+      },
+    };
 
     var answerButton = document.querySelector('.js-buttons.quizButtons.answer');
     var answerArea = document.querySelectorAll('.page1 .js-dropArea.answerArea');
