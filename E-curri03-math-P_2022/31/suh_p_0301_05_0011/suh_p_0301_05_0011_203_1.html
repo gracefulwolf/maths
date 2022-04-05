@@ -22,7 +22,7 @@
         }
     
         .scroll_container.horizon .scroll_content {
-            width: 1191px;
+            width: 2030px;
         }
     
         .contentsList {
@@ -43,50 +43,74 @@
     
         .contentsList>li img {
             display: block;
-            width: auto;
+            width: 2000px;
             height: 100%;
         }
         .img-wrap img.on {display: none;}
         .contentsList>li .toggle-wrap {
             position: absolute;
             top: 13px;
-            left: 432px;
+            left: 740px;
             display: flex;
             align-items: center;
             font-size: 40px;
+            z-index: 1;
         }
     
         .contentsList>li .toggle-wrap .toggle {
-            width: 200px;
+            width: 317px;
             height: 57px;
-            margin-right: 10px;
+            margin-right: 20px;
+        }
+        .contentsList>li .toggle-wrap .toggle  .contentsList li {
+            width: 317px;
         }
     
         .flex-wrap.n2 {
             position: absolute;
             top: 120px;
-            left: 124px;
+            left: 219px;
             width: 100%;
             height: 50px;
-            font-size: 25px;
+            opacity: 0;
         }
     
         .flex-wrap.n2 .text {
-            margin-right: 7px;
+            position: absolute;
+            font-size: 35px;
         }
+        .flex-wrap.n2 .text.n1 {left: 0;}
+        .flex-wrap.n2 .text.n2 {left: 88px;}
+        .flex-wrap.n2 .text.n3 {left: 185px;}
+        .flex-wrap.n2 .text.n4 {left: 284px;}
+        .flex-wrap.n2 .text.n5 {left: 365px;}
+        .flex-wrap.n2 .text.n6 {left: 457px;}
+        .flex-wrap.n2 .text.n7 {left: 553px;}
+        .flex-wrap.n2 .text.n8 {left: 645px;}
+        .flex-wrap.n2 .text.n9 {left: 733px;}
+        .flex-wrap.n2 .text.n10 {left: 829px;}
+        .flex-wrap.n2 .text.n11 {left: 926px;}
+        .flex-wrap.n2 .text.n12 {left: 1021px;}
+        .flex-wrap.n2 .text.n13 {left: 1115px;}
+        .flex-wrap.n2 .text.n14 {left: 1207px;}
+        .flex-wrap.n2 .text.n15 {left: 1299px;}
+        .flex-wrap.n2 .text.n16 {left: 1399px;}
+        .flex-wrap.n2 .text.n17 {left: 1488px;}
+        .flex-wrap.n2 .text.n18 {left: 1578px;}
+        .flex-wrap.n2 .text.n19 {left: 1671px;}
     
         .text-wrap {
             height: 145px;
             text-align: center;
             letter-spacing: -1px;
-            font-size: 27px;
+            font-size: 35px;
         }
     
         .text-wrap.t1 {
             position: absolute;
             display: flex;
             top: 130px;
-            left: 11px;
+            left: 48px;
             flex-direction: column;
             height: 248px;
             color: #000;
@@ -103,51 +127,67 @@
     
         .text-wrap.t2 .text.t1 {
             position: absolute;
-            top: 196px;
-            left: 207px;
-            line-height: 1.4;
+            top: 192px;
+            left: 368px;
+            line-height: 1.1;
         }
     
         .text-wrap.t2 .text.t2 {
             position: absolute;
-            top: 220px;
-            left: 369px;
-            line-height: 2;
+            top: 218px;
+            left: 655px;
+            line-height: 1.5;
         }
     
         .text-wrap.t2 .text.t3 {
             position: absolute;
-            top: 220px;
-            left: 646px;
-            line-height: 2;
+            top: 218px;
+            left: 1133px;
+            line-height: 1.5;
         }
     
         .text-wrap.t2 .text.t4 {
             position: absolute;
-            top: 202px;
-            left: 805px;
-            line-height: 1.3;
+            top: 192px;
+            left: 1384px;
+            line-height: 1.1;
         }
     
         .text-wrap.t2 .text.t5 {
             position: absolute;
-            top: 220px;
-            left: 862px;
-            line-height: 2;
+            top: 218px;
+            left: 1491px;
+            line-height: 1.5;
         }
     
         .text-wrap.t2 .text.t6 {
             position: absolute;
-            top: 229px;
-            left: 971px;
-            line-height: 1.5;
+            top: 228px;
+            left: 1667px;
+            line-height: 1.1;
         }
     
         .text-wrap.t2 .text.t7 {
             position: absolute;
+            top: 218px;
+            left: 1795px;
+            line-height: 1.5;
+        }
+        .text-wrap.t2 {
+            opacity: 0;
+        }
+        .text-wrap.t2.on {
+            opacity: 1;
+        }
+        .click-finger-Btn {
             top: 220px;
-            left: 1042px;
-            line-height: 2;
+            left: 560px;
+            z-index: 1;
+            opacity: 1;
+        }
+        .click-finger-Btn.complete {
+            opacity: 0;
+            animation: none;
         }
     </style>
 </head>
@@ -171,14 +211,13 @@
                                     <ul class="contentsList">
                                         <li>
                                             <div class="img-wrap">
-                                                <span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="2"></span>
+                                                <span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
                                                 <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_1.png"
-                                                alt="" data-toggle-target="2">
-                                                <!-- <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_3.png" alt=""> -->
+                                                alt="" data-toggle-target="1">
                                             </div>
                                             <div class="toggle-wrap">
-                                                <div class="toggle" data-toggle-obj="1">
-                                                    <div class="answer" data-toggle-target="1">
+                                                <div class="toggle" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
                                                         <ul class="contentsList">
                                                             <li>
                                                                 <div class="bullet exam">예</div>
@@ -191,34 +230,34 @@
                                                 </div>
                                                 <div class="text"> 의 하루</div>
                                             </div>
-                                            <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_2.png" data-toggle-target="2">
+                                            <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_2.png" data-toggle-target="1">
                                             <div class="flex-wrap n2">
-                                                <div class="text">6시</div>
-                                                <div class="text">7시</div>
-                                                <div class="text">8시</div>
-                                                <div class="text">9시</div>
-                                                <div class="text">10시</div>
-                                                <div class="text">11시</div>
-                                                <div class="text">12시</div>
-                                                <div class="text">13시</div>
-                                                <div class="text">14시</div>
-                                                <div class="text">15시</div>
-                                                <div class="text">16시</div>
-                                                <div class="text">17시</div>
-                                                <div class="text">18시</div>
-                                                <div class="text">19시</div>
-                                                <div class="text">20시</div>
-                                                <div class="text">21시</div>
-                                                <div class="text">22시</div>
-                                                <div class="text">23시</div>
-                                                <div class="text">24시</div>
+                                                <div class="text n1">6시</div>
+                                                <div class="text n2">7시</div>
+                                                <div class="text n3">8시</div>
+                                                <div class="text n4">9시</div>
+                                                <div class="text n5">10시</div>
+                                                <div class="text n6">11시</div>
+                                                <div class="text n7">12시</div>
+                                                <div class="text n8">13시</div>
+                                                <div class="text n9">14시</div>
+                                                <div class="text n10">15시</div>
+                                                <div class="text n11">16시</div>
+                                                <div class="text n12">17시</div>
+                                                <div class="text n13">18시</div>
+                                                <div class="text n14">19시</div>
+                                                <div class="text n15">20시</div>
+                                                <div class="text n16">21시</div>
+                                                <div class="text n17">22시</div>
+                                                <div class="text n18">23시</div>
+                                                <div class="text n19">24시</div>
                                             </div>
                                             <div class="text-wrap t1">
                                                 <span>시각</span>
                                                 <span>하는 일</span>
                                                 <span>시간</span>
                                             </div>
-                                            <div class="text-wrap t2">
+                                            <div class="text-wrap t2" data-toggle-target="1">
                                                 <div class="text t1">
                                                     등교<br>
                                                     준비<br>

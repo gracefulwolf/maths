@@ -34,7 +34,7 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="innerTab_1" data-quiz="toggle">
 						<div class="lineBox purple">
-							<div class="bullet exam">예</div>
+							<div class="bullet exam sub-answer">예</div>
 							<div class="flex-wrap">
 								<div class="flex-item n1">
 									<div class="item-group">
@@ -94,7 +94,7 @@
 					</li>
 					<li class="innerTab_2" data-quiz="toggle">
 						<div class="lineBox purple">
-							<div class="bullet exam">예</div>
+							<div class="bullet exam sub-answer">예</div>
 							<div class="flex-wrap">
 								<div class="flex-item n1">
 									<div class="item-group">
@@ -160,7 +160,7 @@
 <div id="loadingContainer">
 	<div class="loadingIconAnimation"></div>
 </div>
-
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 <script type="text/javascript" src="../common/libs/js/ts.js"></script>
 <script type="text/javascript" src="../common/libs/js/animate.js"></script>
 <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -174,8 +174,17 @@
 <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () {
-	}, false);
+	$(document).ready(function(){
+		$('.lineBox .toggle').on('click',function(){
+			$(".sub-answer").css("opacity",1);
+		});
+		window.$callBack.hideAnswer = function (obj) {
+			$(".sub-answer").removeAttr("style");
+		}
+		window.$callBack.sliderReset = function (obj) {
+			$(".sub-answer").removeAttr("style");
+		}
+	});
 </script>
 
 </body>

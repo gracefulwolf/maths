@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+	<style>
+		.page_1 figure{position:relative;margin:15px auto;width:420px;}
+		.page_1 figure img{width:100%;}
+		.page_1 figure span{position:absolute;top:6px;left:0;font-size:0.7em;letter-spacing:-1.5px;}
+		.page_1 .dotList .colorBox{display:inline-block;background:#C7EAFB;}
+
+		.page_2 .flexContainer{display:flex;justify-content:space-between;}
+    .page_2 .flexContainer > li{display:flex;width:480px;flex-direction:column;align-items:center;}
+    .page_2 figure{display:flex;margin:30px 0;height:200px;align-items:center;justify-content:center;}
+    .page_2 figure img{width:unset;height:100%;}
+    .page_2 li:first-child figure img{width:240px;height:unset;}
+    .page_2 li:first-child figure span{position:absolute;top:-22px;left:-58px;white-space:nowrap;}
+    .page_2 li:first-child figure span:last-child{top:29px;left:143px;}
+    .page_2 li:last-child figure img{margin-top:-30px;width:unset;height:240px;}
+    .page_2 li:last-child figure span{position:absolute;top:-61px;left:71px;white-space:nowrap;}
+    .page_2 li:last-child figure span:last-child{top:70px;left:217px;}
+    .page_2 .flex-box{align-items:flex-start;}
+    .page_2 dl + dl{margin-top:15px;}
+		
+		.page_3 .flexContainer{display:flex;justify-content:center;}
+    .page_3 .flexContainer > li{display:flex;width:480px;flex-direction:column;align-items:center;}
+    .page_3 figure{display:flex;margin:30px 0;height:200px;align-items:center;justify-content:center;}
+    .page_3 figure img{width:unset;height:100%;}
+    .page_3 figure span{position:absolute;top:99px;left:-49px;}
+    .page_3 figure span:last-child{top:-3px;left:192px;}
+    .page_3 .flex-box{align-items:flex-start;}
+    .page_3 dl + dl{margin-top:15px;}
+
+		.basicSlider_slides .page_4  h2 > span{margin-left:10px;}
+		.page_4 h2>ins.number{margin-right:0;}
+		.page_4 figure{position:relative;margin-top:30px;}
+		.page_4 figure img{width:100%;}
+		.page_4 figure span{position:absolute;top:8px;left:0;font-size:0.8em;letter-spacing:-1.5px;}
+		.page_4 figure div:nth-child(3){position:absolute;top:117px;left:188px;}
+		.page_4 figure div:nth-child(4){position:absolute;top:60px;left:468px;}
+		.page_4 figure div:nth-child(5){position:absolute;top:6px;left:747px;}
+
+		.page_5 .tableContainer{margin-top:30px;}
+		.page_5 .toggle{background:transparent;}
+
+    .page_6 .icon{opacity:1;}
+    .page_6 .contentsList > li{align-items:center;justify-content:space-between;}
+    .page_6 .contentsList > li .dot{margin-top:26px;}
+
+		.page_7 .hide{display:none;}
+		.page_7 .flexContainer{display:flex;margin-top:30px;align-items:center;justify-content:space-between;}
+		.page_7 .flexContainer figure{position:relative;}
+		.page_7 .flexContainer figure img{display:block;width:300px;}
+		.page_7 .flexContainer figure span{position:absolute;top:-30px;left:126px;}
+		.page_7 .flexContainer figure span:last-child{position:absolute;top:76px;left:-42px;}
+		.page_7 .flexContainer .charArea{display:flex;height:330px;flex-direction:column;align-items:center;justify-content:space-between;}
+		.page_7 .flexContainer .charArea .balloon{position:relative;}
+		.page_7 .flexContainer .charArea .colorBox{display:inline-block;}
+		.page_7 .flexContainer .charArea img{display:block;width:100px;}
+		.page_7 .flexContainer .show{position:absolute;top:97px;left:18px;display:none;width:188px;height:100px;color:#00a0ff;border-top:3px solid #00a0ff;z-index:1;}
+		.page_7 .flexContainer .show:before{position:absolute;top:0;left:15px;content:"";width:3px;height:100%;background:#00a0ff;}
+		.page_7 .flexContainer .show:after{position:absolute;bottom:0;left:7px;content:"";width:16px;height:16px;border-left:3px solid #00a0ff;border-bottom:3px solid #00a0ff;transform:rotate(-45deg);}
+		.page_7 .flexContainer .show span{position:absolute;left:-20px;bottom:-47px;}
+		.page_7 .flexContainer .show.on{display:block;}
+
+
+		.pop_page_2 .dotList img{display:inline-block;width:150px;vertical-align:middle;}
+
+		.pop_page_3 .colorBox{display:inline-block;background:#C7EAFC;}
+
+		.pop_page_4 .dotList span{display:inline-block;vertical-align:top;}
+		.pop_page_4 .dotList span img{display:block;margin-top:-25px;width:70px;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">직사각형의 넓이를 구해 볼까요</span>
+					<span class="sub-page">76~77쪽</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4~5</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="number">1</ins>
+							<span>
+								그림을 보고 <div class="blankBox"></div>안에 알맞은 수를 써넣으세요.
+							</span>
+						</h2>
+						<section>
+							<figure>
+								<img src="./images/suhi_0501_06_0005_01.png" alt="">
+								<span>1 ㎠</span>
+							</figure>
+							<ul class="dotList deepGreen">
+								<li>
+									<div>
+										<span class="colorBox">1 ㎠</span>가 직사각형의 가로에
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">6</div>
+										</div>개, 세로에
+										<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">4</div>
+										</div>개 있습니다.
+									</div>
+								</li>
+								<li>
+									<div>
+										직사각형의 넓이는
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">6</div>
+										</div>×<div class="toggle" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">4</div>
+										</div>＝<div class="toggle" data-toggle-obj="5">
+											<div class="answer" data-toggle-target="5">24</div>
+										</div> (㎠)입니다.
+									</div>
+								</li>
+							</ul>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="number">2</ins>
+							<span>직사각형의 넓이를 구해 보세요.</span>
+						</h2>
+						<section>
+							<ul class="flexContainer">
+								<li>
+									<figure>
+										<img src="./images/suhi_0501_06_0005_02_1.png" alt="">
+										<span>4 ㎝</span>
+										<span>17 ㎝</span>
+									</figure>
+									<div>
+										<dl class="flex-box">
+											<dt class="colorBox check skyBlue">식</dt>
+											<dd>
+												<div class="toggle box" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">17×4＝68</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="flex-box">
+											<dt class="colorBox check deepPurple">답</dt>
+											<dd>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">68</div>
+												</div> ㎠
+											</dd>
+										</dl>
+									</div>
+								</li>
+								<li>
+									<figure>
+										<img src="./images/suhi_0501_06_0005_02_2.png" alt="">
+										<span>10 ㎝</span>
+										<span>10 ㎝</span>
+									</figure>
+									<div>
+										<dl class="flex-box">
+											<dt class="colorBox check skyBlue">식</dt>
+											<dd>
+												<div class="toggle box" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">10×10＝100</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="flex-box">
+											<dt class="colorBox check deepPurple">답</dt>
+											<dd>
+												<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">100</div>
+												</div> ㎠
+											</dd>
+										</dl>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="number">3</ins>
+							<span>슬기가 새로 산 필통 윗면은 가로가 20 ㎝, 세로가 7 ㎝인 직사각형 모양입니다. 이 필통은 윗면의 넓이가 몇 ㎠인가요?</span>
+						</h2>
+						<section>
+							<ul class="flexContainer">
+								<li>
+									<figure>
+										<img src="./images/suhi_0501_06_0005_03.png" alt="">
+										<span>7 ㎝</span>
+										<span>20 ㎝</span>
+									</figure>
+									<div>
+										<dl class="flex-box">
+											<dt class="colorBox check skyBlue">식</dt>
+											<dd>
+												<div class="toggle box" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">20×7＝140</div>
+												</div>
+											</dd>
+										</dl>
+										<dl class="flex-box">
+											<dt class="colorBox check deepPurple">답</dt>
+											<dd>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">140</div>
+												</div> ㎠
+											</dd>
+										</dl>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_4">
+						<h2>
+							[<ins class="number">4</ins>~<ins class="number">5</ins>]
+							<span>직사각형을 보고 물음에 답하세요.</span>
+						</h2>
+						<section>
+							<figure>
+								<img src="./images/suhi_0501_06_0005_04.png" alt="">
+								<span>1 ㎠</span>
+								<div>첫째</div>
+								<div>둘째</div>
+								<div>셋째</div>
+							</figure>
+						</section>
+					</li>
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number">4</ins>
+							<span>
+								아래의 표를 완성해 보세요.
+							</span>
+						</h2>
+						<section>
+							<div class="tableContainer brown">
+								<table>
+									<colgroup>
+										<col width="30%;">
+										<col width="calc(70% / 3);">
+										<col width="calc(70% / 3);">
+										<col width="calc(70% / 3);">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">직사각형</th>
+											<th scope="col">첫째</th>
+											<th scope="col">둘째</th>
+											<th scope="col">셋째</th>
+										</tr>
+										<tr>
+											<th scope="row" class="lightBrown">가로(㎝)</th>
+											<td>2</td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">
+														2
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">
+														2
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th class="lightBrown" scope="row">세로(㎝)</th>
+											<td>2</td>
+											<td>
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">
+														3
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">
+														4
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th class="lightBrown" scope="row">넓이(㎠)</th>
+											<td>
+												<div class="toggle" data-toggle-obj="5">
+													<div class="answer" data-toggle-target="5">
+														4
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="6">
+													<div class="answer" data-toggle-target="6">
+														6
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="7">
+													<div class="answer" data-toggle-target="7">
+														8
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="number star">5</ins>
+							<span>위와 같은 규칙에 따라 직사각형을 계속 그렸을 때 옳은 문장에 <span class="icon_o_title"></span>표 하세요.</span>
+						</h2>
+						<section>
+							<ul class="contentsList">
+								<li>
+									<ins class="dot deepGreen"></ins>
+									<div>가로가 계속 같은 직사각형을 그리게 됩니다.</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="icon icon_o"></div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<ins class="dot deepGreen"></ins>
+									<div>세로가 1 ㎝만큼 커지면 넓이도 1 ㎠만큼 커집니다.</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<div class="icon icon_x"></div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<ins class="dot deepGreen"></ins>
+									<div>다섯째 직사각형의 넓이는 12 ㎠입니다.</div>
+									<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											<div class="icon icon_o"></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+					<li class="page_7" data-quiz="toggle">
+						<h2>
+							<ins class="number star">6</ins>
+							<span style="letter-spacing: -1.5px;">
+								도형의 넓이를 1㎠씩 늘리며 규칙에 따라 그리려고 합니다. 빈칸에 알맞은 도형을 그려 보세요.
+							</span>
+						</h2>
+						<section>
+							<div class="hide" data-toggle-obj="1"></div>
+							<div class="flexContainer">
+								<div class="charArea">
+									<div class="balloon orange center bottom ctTail">직사각형의 넓이는<br><span class="colorBox beige">가로</span>×<span class="colorBox beige">세로</span>를<br>계산하면 돼</div>
+									<img src="./images/suhi_0501_06_0005_07_1.png" alt="">
+								</div>
+								<figure>
+									<img src="./images/suhi_0501_06_0005_07_3.png" alt="">
+									<span>5 ㎝</span>
+									<span>3 ㎝</span>
+								</figure>
+								<div class="charArea">
+									<div class="balloon orange center bottom ctTail">
+										직사각형의 넓이는<br>5＋3＋5＋3으로<br>구하면 돼
+										<div class="show" data-toggle-target="1">
+											<span>5×3</span>
+										</div>
+									</div>
+									<img src="./images/suhi_0501_06_0005_07_2.png" alt="">
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="dotList deepGreen">
+							<li>세 직사각형 모두 가로가 2 ㎝로 같습니다.</li>
+							<li>세로가 1 ㎝ 커지면 넓이는 1 ㎠가 아닌 2 ㎠가 커집니다.</li>
+							<li>다섯째 직사각형은 가로가 2 ㎝, 세로가 6 ㎝로 넓이는 2×6＝12 ㎠입니다.</li>
+						</ul>
+					</div>
+				</li>
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<ul class="dotList deepGreen">
+							<li>직사각형의 넓이는 (가로)×(세로)이므로 넓이를 구하는 식은
+							(가로)＋(세로)＋(가로)＋(세로)가 아닌 (가로)×(세로)인 5×3입니다.</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+
+</body>
+
+</html>

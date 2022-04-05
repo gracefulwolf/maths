@@ -34,6 +34,7 @@
 .page_4 .flex-item img {height:260px}
 .page_4 .flex-item .toggle {position:absolute;top:0;left:0;padding:0;background-color:transparent}
 .page_4 .flex-item .toggle::after {content:'';width:51px;height:70px;background: url(../common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;-webkit-animation: opacity 1.5s ease-in 3;-o-animation: opacity 1.5s ease-in 3;animation: opacity 1.5s ease-in 3;border:0 none}
+.page_4 .flex-item .toggle.complete:after {display:none}
 .page_4 .flex-item .toggle .answer {background-color:#fff}
 .page_4 .flex-item.n2 {margin-left:60px}
 
@@ -83,6 +84,9 @@
 }
 .page_3 h2,
 .page_2 h2{position:relative; z-index: 3;}
+
+.page_4 h2,
+.page_5 h2 {top:-12px !important;}
 </style>
 </head>
 
@@ -123,7 +127,7 @@
 							<div class="quiz-content">
 								<div class="img-box n1"></div>
 								<dl>
-									<dt><div class="colorBox skyBlue">색칠한 부분</div></dt>
+									<dt><div class="colorBox skyBlue check">색칠한 부분</div></dt>
 									<dd>
 										<div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
@@ -138,7 +142,7 @@
 									</dd>
 								</dl>
 								<dl>
-									<dt><div class="colorBox skyBlue">색칠하지 않은 부분</div></dt>
+									<dt><div class="colorBox skyBlue check">색칠하지 않은 부분</div></dt>
 									<dd>
 										<div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
@@ -156,7 +160,7 @@
 							<div class="quiz-content">
 								<div class="img-box n2"></div>
 								<dl>
-									<dt><div class="colorBox skyBlue">색칠한 부분</div></dt>
+									<dt><div class="colorBox skyBlue check">색칠한 부분</div></dt>
 									<dd>
 										<div class="toggle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">
@@ -171,7 +175,7 @@
 									</dd>
 								</dl>
 								<dl>
-									<dt><div class="colorBox skyBlue">색칠하지 않은 부분</div></dt>
+									<dt><div class="colorBox skyBlue check">색칠하지 않은 부분</div></dt>
 									<dd>
 										<div class="toggle" data-toggle-obj="4">
 											<div class="answer" data-toggle-target="4">
@@ -202,7 +206,7 @@
 					<h2><ins class="dot"></ins><span>주어진 분수만큼 색칠하고, 색칠하지 않은 부분을 분수로 나타내 보시오.</span></h2>
 					
 					<div class="iframe-wrap">
-						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_07_04.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_07_04.html" title="" class="page-iframe" id="ifm2" scrolling="no"></iframe>
 					</div>
 				</li>
 				<li class="page_4" data-quiz="toggle">
@@ -263,7 +267,7 @@
 					<section class="textAlignC mt_40">
 						<div class="toggle" data-toggle-obj="1">
 							<div class="answer" data-toggle-target="1">2</div>
-						</div> 조각
+						</div>조각
 						<div class="buttonContainer">
 							<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -428,7 +432,7 @@
 						<li>
 							<div class="dot orange" style="margin-top:30px"></div>
 							<div>
-								초콜릿은 전체 6 조각 중 5 조각이 남아 있습니다.
+								초콜릿은 전체 6조각 중 5조각이 남아 있습니다.
 								<div class="icon_arrow orange"></div>
 								<div class="bunsuWrap inline">
 									<ul>
@@ -441,7 +445,7 @@
 						<li>
 							<div class="dot orange" style="margin-top:30px"></div>
 							<div>
-								피자는 전체 8조각 중 3 조각이 남아 있습니다.
+								피자는 전체 8조각 중 3조각이 남아 있습니다.
 								<div class="icon_arrow orange"></div>
 								<div class="bunsuWrap inline">
 									<ul>
@@ -522,6 +526,12 @@
 		document.getElementById('ifm1').contentDocument.location.reload(true);
 		document.getElementById('ifm2').contentDocument.location.reload(true);
 		}
+	}, false);
+	document.addEventListener("DOMContentLoaded", function () {
+		$(".controlBtn").click(function(){
+			$efSound.click();
+		})
+
 	}, false);
 </script>
 </body>
