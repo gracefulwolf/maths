@@ -35,6 +35,15 @@
 		#quiz-01 .exam-wrap{top:210px; left:80px}
 		#quiz-02 .exam-wrap{top:210px; left:455px}
 		#quiz-03 .exam-wrap{top:210px; left:834px}
+		#quiz-01 .check-item{background:none;opacity:1; visibility: visible; top:530px; left:220px;width: 80px;height: 80px;}
+		#quiz-02 .check-item{background:none;opacity:1; visibility: visible; top:530px; left:600px;width: 80px;height: 80px;}
+		#quiz-03 .check-item{background:none;opacity: 1;
+			visibility: visible;
+			top: 530px;
+			left: 980px;
+			width: 80px;
+			height: 80px;
+		}
 		</style>
 	</head>
 	<body>
@@ -148,7 +157,23 @@
 		<script src="../../../../../js/binder_web.min.js"></script>
 		<script src="../../../common/js/content.js"></script>
 
+		<script>
+			var checkitemBtn = document.querySelectorAll('.check-item');
 
+			for (var i = 0; i < checkitemBtn.length; i++) {
+				checkitemBtn[i].addEventListener('click', checkFinish);
+			}
+			function checkFinish(){
+				var finish = document.querySelectorAll('.finish')
+				console.log('finish', finish.length );
+				if (finish.length === 2) {
+					if (!document.querySelector('#quiz-content-01.clear')) {
+						document.querySelector('.btn-ex').click();
+					}
+					
+				}
+			}
+		</script>
 	</body>
 
 </html>

@@ -7,7 +7,7 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 
 	<title></title>
-	<link rel="stylesheet" href="../../../common/css/fonts.css" />
+
 	<link rel="stylesheet" href="../../../common/css/content.css" />
 	<link rel="stylesheet" href="../../../common/re_style/css/style.css">
 
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
 	<link rel="stylesheet" href="../../../../__common__/css/custom.css">
 	<link rel="stylesheet" href="../../../../default/css/custom.css">
-	<link rel="stylesheet" href="./css/mm_31_6_03_07_04.css" />
+	<link rel="stylesheet" href="./css/mm_31_6_03_07_03.css" />
 	<style>
 		.btns-answer-part,
 		.title-h1 {
@@ -50,10 +50,9 @@
 		}
 
 		#quiz-02 .exam-wrap {
-			top: 243px;
-			left: 170px;
+			top: 323px;
+			left: 390px;
 			transform: scale(1.2);
-			z-index: 1;
 		}
 
 		.input-cont input {
@@ -79,10 +78,16 @@
 			right: -47px;
 		}
 
-		.button.btn-close.ico-close-01 {
-			display: none;
+		.hidebox {
+			position: absolute;
+			width: 190px;
+			height: 200px;
+			background-color: #fff;
+			top: 440px;
+    left: 1060px;
 		}
-		.answer{opacity: 1;visibility: visible;}
+
+		.tool-container .ico-info{pointer-events: none; opacity: .2;}
 	</style>
 </head>
 
@@ -90,44 +95,41 @@
 	<div class="content-container">
 		<div class="content formative" data-ui="cornerBase">
 			<div class="bg">
-				<!-- <img src="./images/mm_31_6_03_07_04/bg.png" alt=""> -->
+				<img src="./images/mm_31_6_03_07_03/bg.png" alt="">
+				<img src="./images/mm_31_6_03_07_03/bg.svg" alt="">
 			</div>
 
 			<div class="title-h1">
 				<div class="left-inner">
-					<span class="ico-title-h1 ico-01"><em class="text">문제 <em>3</em></em></span>
+					<span class="ico-title-h1 ico-01"><em class="text">문제 <em>2</em></em></span>
 				</div>
 				<div class="right-inner">
-					주어진 분수만큼 색칠하고, 색칠하지 않은 부분을 분수로 나타내 보세요.
+					부분을 보고 전체를 완성하고, 그린 부분을 분수로 나타내 보세요.
 				</div>
 			</div>
 
 			<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
 
-				<!-- quiz -->
-				<div id="quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
+				<!-- quiz --><div class="hidebox n1"></div>
+				<div id="quiz-02" class="quiz quiz-check image-answer abs active" data-ui="quiz-check"
 					data-option='{"answer":[]}'>
+					<div class="base">
+						<img src="./images/mm_31_6_03_07_03/base_01.svg" alt="" width="1280" height="720">
+					</div>
 					<div class="answer">
-						<img src="./images/mm_31_6_03_07_04/answer_01.svg" alt="" width="1280" height="720">
+						<img src="./images/mm_31_6_03_07_03/answer_01.svg" alt="" width="1280" height="720">
 						<div class="exam-wrap">
 							<div class="bullet exam">예</div>
 						</div>
-					</div>
-					<div class="base">
-						<img src="./images/mm_31_6_03_07_04/base_01.svg" alt="" width="1280" height="720">
-
 					</div>
 
 					<div class="check-list">
 						<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
 					</div>
-					<div class="quiz-02-answer">
-						<span class="ico-box-text-02 bb-01"></span>
-					</div>
 				</div>
 
-				<div id="quiz-01" class="quiz quiz-input-text hide-btn-check" data-ui="quiz-input-text"
-					data-option='{"answer":["2", "7"]}'>
+				<!-- <div id="quiz-01" class="quiz quiz-input-text hide-btn-check" data-ui="quiz-input-text"
+					data-option='{"answer":["5", "8"]}'>
 					<ul>
 						<li class="input-cont">
 							<input type="text" class="input"></input>
@@ -140,7 +142,7 @@
 							<div class="btn-check"></div>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 				<!-- //quiz -->
 
 				<!-- 부분 정답 :: absolute -->
@@ -157,12 +159,6 @@
 				</div>
 			</div>
 
-			<!-- 좌측 하단 선택 활동 버튼 -->
-			<div class="btns-bottom-left">
-				<div class="button btn-mission-select btn-mission-select-01"><span>선택 활동</span></div>
-			</div>
-
-
 			<!-- 색칠하세요 :: 드로잉 툴 -->
 			<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
 
@@ -171,51 +167,11 @@
 
 		</div>
 
-
-		<!-- 팝업 :: 선택 활동 퀴즈 -->
-		<div class="popup popup-mission type-quiz active" data-ui="popup"
-			data-option='{"btn":".btn-mission-select-01"}'>
-			<div class="bg"></div>
-
-			<div class="app-select-quiz" data-ui="app-select-quiz" data-option='{}'>
-
-				<div class="intro-cont">
-					<div class="title">
-						사라진 부분은 얼마일까요?
-					</div>
-					<div class="btn-start"></div>
-				</div>
-
-				<div class="quiz-cont">
-					<div class="app-ccAnimation" data-ui="app-ccAnimation"
-						data-option='{"width":1280, "height":720, "left": "0px", "top": "0px", "buttons":[]}'>
-						<canvas></canvas>
-					</div>
-
-					<div class="chra-right"></div>
-					<div class="chra-left">
-						<div class="text-ball"></div>
-					</div>
-
-					<div class="btn-hat"></div>
-					<div class="btn-ok"></div>
-				</div>
-
-				<div class="ending-cont">
-					<div class="ending-ani"></div>
-				</div>
-
-			</div>
-
-			<!-- 닫기 버튼 -->
-			<div class="button btn-close ico-close-01"></div>
-		</div>
-
 	</div>
 
 	<script src="../../../common/ui/js/uiData.js"></script>
 	<script src="../../../common/ui/js/uiDataMs.js"></script>
-	<script src="./js/mm_31_6_03_07_04.js"></script>
+	<script src="./js/mm_31_6_03_07_03.js"></script>
 
 	<script src="../../../common/js/libs/polyfill.min.js"></script>
 	<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
@@ -236,12 +192,6 @@
 	<script src="../../../common/js/quiz/quizDraggable.js"></script>
 	<script src="../../../common/js/quiz/quizPopSelect.js"></script>
 	<script src="../../../common/js/quiz/quizDrawLine.js"></script>
-
-	<!-- cc 애니메이션 -->
-	<script src="../../../common/js/libs/createjs-2015.11.26.min.js"></script>
-	<script src="./animation/mm_31_6_03_07_04/animation.js"></script>
-	<script src="../../../common/js/app/animation.js"></script>
-	<!-- cc 애니메이션 -->
 
 	<script src="../../../../../js/binder_web.min.js"></script>
 	<script src="../../../common/js/content.js"></script>
