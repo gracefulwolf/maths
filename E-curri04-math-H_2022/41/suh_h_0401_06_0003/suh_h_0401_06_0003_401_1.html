@@ -181,8 +181,8 @@
 		}
 
 		h2 .nemoBlue,
-		h2 .circlePick {
-			margin: 0 10px;
+		h2 .circlePink {
+			margin: 0 0 0 10px;
 			width: 50px !important;
 		}
 
@@ -228,7 +228,6 @@
 		.page_10 .--text.n16{top: 192px;left: 920px;}
 
 		.textTitle .colorBox{margin: 0; padding: 8px 10px; border-radius: 40px; font-size: 18px; vertical-align: middle;}
-		.textBookBtn{top:260px;}
 		.textBookBtn.invisible{opacity:0; visibility: hidden;}
 	</style>
 </head>
@@ -251,9 +250,6 @@
 			</div>
 		</header>
 		<main>
-			<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-close-inner="">
-				<span class="btnInner"></span>
-			</button>
 			<div class="basicSlider contentsBox" data-slide-container="main">
 				<ul class="basicSlider_tabs" data-tabs="">
 					<li data-hover="">문제 1</li>
@@ -293,7 +289,7 @@
 							</div>
 						</div>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
+							<!-- <button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button> -->
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 						<a href="./data/6단원_3차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
@@ -396,7 +392,7 @@
 									<tr>
 										<th class="lightBrown">23</th>
 										<td>3</td>
-										<td><span class="nemoBlue"></span></td>
+										<td><span class="nemoBlue" style="margin-top:3px;"></span></td>
 										<td>9</td>
 										<td>2</td>
 									</tr>
@@ -405,7 +401,7 @@
 										<td>4</td>
 										<td>8</td>
 										<td>2</td>
-										<td><span class="circlePink"></span></td>
+										<td><span class="circlePink" style="margin-top:3px;"></span></td>
 									</tr>
 								</table>
 							</div> <!-- tableContainer -->
@@ -451,7 +447,7 @@
 									<tr>
 										<th class="lightBrown">23</th>
 										<td>3</td>
-										<td><span class="nemoBlue"></span></td>
+										<td><span class="nemoBlue" style="margin-top:3px;"></span></td>
 										<td>9</td>
 										<td>2</td>
 									</tr>
@@ -460,7 +456,7 @@
 										<td>4</td>
 										<td>8</td>
 										<td>2</td>
-										<td><span class="circlePink"></span></td>
+										<td><span class="circlePink" style="margin-top:3px;"></span></td>
 									</tr>
 								</table>
 							</div> <!-- tableContainer -->
@@ -612,6 +608,9 @@
 				</ul>
 			</div>
 		</main>
+		<button class="popBtn textBookBtn invisible" data-hover="" data-popup-btn="1" data-close-inner="">
+			<span class="btnInner"></span>
+		</button>
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<!--      page에 solve 추가        -->
@@ -637,14 +636,7 @@
 
 				<li class="solve pop_page_5" data-popup-page="5">
 					<div class="popup_contents">
-						<ul class="dotList orange">
-							<li>
-								12×23＝276 이므로, <span class="nemoBlue" style="margin-top: -5px; margin-left: 7px;"></span>에 알맞은 수는 6입니다.
-							</li>
-							<li>
-								14×24＝336 이므로, <span class="circlePink" style="margin-top: -5px; margin-left: 7px;"></span>에 알맞은 수는 6입니다.
-							</li>
-						</ul>
+						<p>가로(→) 방향으로 2씩 커지므로, 빈칸에 들어갈 알맞은 수는 145 입니다.</p>
 					</div>
 				</li>
 
@@ -731,6 +723,7 @@
 		}
 
 		document.querySelector( ".gate_btn" ).addEventListener("click", function(){
+			$ts.getEl('.textBookBtn')[0].classList.remove( "invisible" );
 			$ts.getEl('.textBookBtn')[0].click();
 			setTimeout(function () {
 				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();

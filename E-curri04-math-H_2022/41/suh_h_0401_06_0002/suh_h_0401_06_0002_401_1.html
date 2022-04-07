@@ -87,7 +87,7 @@
 		.page_3 .contentsList li .nemoBlue,
 		.page_3 .contentsList li .circlePink {
 			margin-top:3px;
-			margin-right: 10px;
+			margin-right: 5px;
 		}
 
 		.page_3 .toggle {
@@ -212,7 +212,7 @@
 
 		h2 .nemoBlue,
 		h2 .circlePick {
-			margin: 0 10px;
+			margin: 0 0 0 10px;
 			width: 50px !important;
 		}
 
@@ -224,7 +224,6 @@
 		.page_10 .tableContainer table td .toggle{width: 100%;}
 
 		.textTitle .colorBox{margin: 0; padding: 8px 10px; border-radius: 40px; font-size: 18px; vertical-align: middle;}
-		.textBookBtn{top:260px;}
 		.textBookBtn.invisible{opacity:0; visibility: hidden;}
 	</style>
 </head>
@@ -247,9 +246,7 @@
 			</div>
 		</header>
 		<main>
-			<button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-close-inner="">
-				<span class="btnInner"></span>
-			</button>
+
 			<div class="basicSlider contentsBox" data-slide-container="main">
 				<ul class="basicSlider_tabs" data-tabs="">
 					<li data-hover="">문제 1</li>
@@ -525,7 +522,7 @@
 									<tr>
 										<td>3200</td>
 										<td>1600</td>
-										<td><span class="nemoBlue"></span></td>
+										<td><span class="nemoBlue" style="margin-top:4px;"></span></td>
 										<td>400</td>
 										<td class="borderN01"></td>
 										<td class="borderN01"></td>
@@ -535,7 +532,7 @@
 										<td class="borderN02"></td>
 										<td>24000</td>
 										<td>12000</td>
-										<td><span class="circlePink"></span></td>
+										<td><span class="circlePink" style="margin-top:4px;"></span></td>
 										<td class="borderR">3000</td>
 									</tr>
 								</table>
@@ -750,6 +747,9 @@
 				</ul>
 			</div>
 		</main>
+		<button class="popBtn textBookBtn invisible" data-hover="" data-popup-btn="1" data-close-inner="">
+			<span class="btnInner"></span>
+		</button>
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<!--      page에 solve 추가        -->
@@ -856,6 +856,8 @@
 			})
 
 
+
+
 		}, false);
 
 
@@ -872,6 +874,14 @@
 				});
 			}
 		}
+
+		document.querySelector( ".gate_btn" ).addEventListener("click", function(){
+			$ts.getEl('.textBookBtn')[0].classList.remove( "invisible" );
+			$ts.getEl('.textBookBtn')[0].click();
+			setTimeout(function () {
+				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+			}, 3000);
+		});
 
 		// document.querySelector( ".gate_btn" ).addEventListener("click", function(){
 		// 	$ts.getEl('.textBookBtn')[0].click();
