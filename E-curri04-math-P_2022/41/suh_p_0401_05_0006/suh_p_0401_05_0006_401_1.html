@@ -89,9 +89,22 @@
 		.--title2 .colorBox.check{width: auto; margin: 0; padding: 8px 10px; border-radius:40px; font-size: 18px; vertical-align: 8px;}
 		.--flex-Q{display: flex; align-items: center; align-self: flex-start; min-width: 190px; margin-right: 10px;}
 		.page_1to3 section{margin-top: -20px;}
-		.page_1to3 .popBtn.line{display: block; width: 150px; height: 75px; margin: 10px auto; background: url(./images/suh_p_0401_05_0006_401_1/suh_p_0401_05_0006_401_1_1.png) no-repeat 50% 50% / contain;}
-		.page_1to3 .popBtn.line .--text{display: none; font-size: 9px;}
+		.page_1to3 .popBtn.line{display: block; width: 325px; height: 150px; margin: 5px auto; background: url(./images/suh_p_0401_05_0006_401_1/suh_p_0401_05_0006_401_1_1.png) no-repeat 50% 50% / contain;}
+		.page_1to3 .popBtn.line .--text{font-size: 18px;}
 		.page_1to3 .--lineBox{display: block; width: 420px; margin: 0 auto 0; padding: 5px 0;}
+		.page_1to3 .--text{position: absolute;}
+		.page_1to3 .--text.n1{top: 0px; left: 10px;}
+		.page_1to3 .--text.n2{top: -14px; left: 46px;line-height: 52px;}
+		.page_1to3 .--text.n3{top: 97px; left: 67px;}
+		.page_1to3 .--text.n4{top: 111px; left: 7px;}
+		.page_1to3 .--text.n5{top: 124px; left: 45px;}
+		.page_1to3 .--text.n6{top: 118px; left: 84px;}
+		.page_1to3 .--text.n7{top: 118px; left: 142px;}
+		.page_1to3 .--text.n8{top: 118px; left: 200px;}
+		.page_1to3 .--text.n9{top: 118px; left: 259px;}
+		.page_1to3 .--text.n10{top: 0; left: 0;}
+		.page_1to3 .--text.n11{top: 0; left: 0;}
+
 		.pop_page_10 .--lineBox{display: block; width: 420px; margin: 60px auto 0; padding: 5px 0;}
 		.pop_page_10 .--graph{position: relative;width: 100%;height: 450px;margin: 20px auto 0; background: url(./images/suh_p_0401_05_0006_401_1/suh_p_0401_05_0006_401_1_1.png) no-repeat 50% 50% / contain;}
 		.pop_page_10 .--graph .--text{position: absolute; font-size: 40px;}
@@ -132,6 +145,8 @@
 		.pop_page_2 .--text.n7{top: 420px;left: 305px;}
 		.pop_page_2 .--text.n8{top: 420px;left: 398px;}
 		.pop_page_2 .--text.n9{top: 420px;left: 485px;}
+
+		.page_1to3 .eye{display: inline-block; margin: 6px 0 0 8px;}
 	</style>
 </head>
 
@@ -164,48 +179,107 @@
 					<li data-hover="">문제 8</li>
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
-					<li class="page_10 page_1to3" data-quiz="toggle">
-						<div class="--title">
-							<div class="flexListContainer start --flex">
-								<div class="--flex-Q">
-									<span>[</span><span class="colorBox brown check">문제 1</span><span>~</span><span class="colorBox brown check">문제 3</span><span>]</span>
-								</div>
-								<div class="textAlignJ">도서관에 있는 책 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하시오.</div>
-							</div>
+					<li class="page_10 page_1to3" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 						</div>
-						<h2><ins class="dot orange"></ins><span>
-							그래프를 보고 알 수 있는 내용을 2가지 써 보세요.
-						</span></h2>
-						<section>
-							<div class="lineBox sky textAlignC --lineBox">도서관에 있는 책 수</div>
-							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="10">
-								<div class="--text n1">(권)</div>
-								<div class="--text n2">200<br>100</div>
-								<div class="--text n3">0</div>
-								<div class="--text n4">책 수</div>
-								<div class="--text n5">종류</div>
-								<div class="--text n6">위인전</div>
-								<div class="--text n7">동화책</div>
-								<div class="--text n8">만화책</div>
-								<div class="--text n9">과학책</div>
-							</button>
-							<div>
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer textAlignJ" data-toggle-target="1">
-										도서관에 있는 위인전은 100권, 동화책은 180권, 만화책은 140권, 과학책은 160권입니다.
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<div class="--title">
+									<div class="flexListContainer start --flex">
+										<div class="--flex-Q">
+											<span>[</span><span class="colorBox brown check">문제 1</span><span>~</span><span class="colorBox brown check">문제 3</span><span>]</span>
+										</div>
+										<div class="textAlignJ">도서관에 있는 책 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하시오.</div>
 									</div>
 								</div>
-								<div class="toggle mt_10" data-toggle-obj="2">
-									<div class="answer textAlignJ" data-toggle-target="2">
-										가장 많은 책의 종류는 동화책입니다.
+								<h2><ins class="dot orange"></ins><span>
+									그래프를 보고 알 수 있는 내용을 2가지 써 보시오.
+								</span></h2>
+								<section>
+									<div class="lineBox sky textAlignC --lineBox">도서관에 있는 책 수</div>
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="10">
+										<div class="--text n1">(권)</div>
+										<div class="--text n2">200<br>100</div>
+										<div class="--text n3">0</div>
+										<div class="--text n4">책 수</div>
+										<div class="--text n5">종류</div>
+										<div class="--text n6">위인전</div>
+										<div class="--text n7">동화책</div>
+										<div class="--text n8">만화책</div>
+										<div class="--text n9">과학책</div>
+									</button>
+									<div>
+										<div class="toggle" data-toggle-obj="1">
+											<div class="answer textAlignJ" data-toggle-target="1">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div>
+															도서관에 있는 위인전은 100권, 동화책은 180권, 만화책은 140권, 과학책은 160권입니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+									<a href="./data/(4-1-5)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="--title">
+									<div class="flexListContainer start --flex">
+										<div class="--flex-Q">
+											<span>[</span><span class="colorBox brown check">문제 1</span><span>~</span><span class="colorBox brown check">문제 3</span><span>]</span>
+										</div>
+										<div class="textAlignJ">도서관에 있는 책 수를 조사하여 나타낸 막대그래프입니다. 물음에 답하시오.</div>
 									</div>
 								</div>
-							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-							<a href="./data/(4-1-5)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						</section>
+								<h2><ins class="dot orange"></ins><span>
+									그래프를 보고 알 수 있는 내용을 2가지 써 보시오.
+								</span></h2>
+								<section>
+									<div class="lineBox sky textAlignC --lineBox">도서관에 있는 책 수</div>
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="10">
+										<div class="--text n1">(권)</div>
+										<div class="--text n2">200<br>100</div>
+										<div class="--text n3">0</div>
+										<div class="--text n4">책 수</div>
+										<div class="--text n5">종류</div>
+										<div class="--text n6">위인전</div>
+										<div class="--text n7">동화책</div>
+										<div class="--text n8">만화책</div>
+										<div class="--text n9">과학책</div>
+									</button>
+									<div class="textAlignC">
+										<div class="toggle mt_10" data-toggle-obj="2">
+											<div class="answer textAlignJ" data-toggle-target="2">
+												<ul class="contentsList">
+													<li>
+														<ins class="bullet exam">예</ins>
+														<div>
+															가장 많은 책의 종류는 동화책입니다.
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+									<a href="./data/(4-1-5)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+								</section>
+							</li>
+						</ul>
 					</li>
 
 					<li class="page_20 page_1to3" data-quiz="toggle">
@@ -218,7 +292,7 @@
 							</div>
 						</div>
 						<h2><ins class="dot orange"></ins><span>
-							그래프를 보고, 학교에 건의하고 싶은 내용을 써 보세요.
+							그래프를 보고, 학교에 건의하고 싶은 내용을 써 보시오.
 						</span></h2>
 						<section>
 							<div class="lineBox sky textAlignC --lineBox">도서관에 있는 책 수</div>
@@ -264,21 +338,9 @@
 							</div>
 						</div>
 						<h2><ins class="dot orange"></ins><span class="--title2">
-							<span class="colorBox brown check">문제 1</span>과 <span class="colorBox brown check">문제 2</span>를 연결하여 주장하는 글을 써 보세요.
+							<span class="colorBox brown check">문제 1</span>과 <span class="colorBox brown check">문제 2</span><span class="ls1">를 연결하여 주장하는 글을 써 보시오.</span> <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="10" data-popup-parent="hidden">막대그래프 보기</div>
 						</span></h2>
 						<section>
-							<div class="lineBox sky textAlignC --lineBox">도서관에 있는 책 수</div>
-							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="10">
-								<div class="--text n1">(권)</div>
-								<div class="--text n2">200<br>100</div>
-								<div class="--text n3">0</div>
-								<div class="--text n4">책 수</div>
-								<div class="--text n5">종류</div>
-								<div class="--text n6">위인전</div>
-								<div class="--text n7">동화책</div>
-								<div class="--text n8">만화책</div>
-								<div class="--text n9">과학책</div>
-							</button>
 							<div>
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer textAlignJ" data-toggle-target="1">
@@ -359,8 +421,8 @@
 								</li>
 								<li>
 									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<span class="bullet exam">예</span>민영이네 반 학생들의 장래 희망은 6가지보다 많을 것입니다.
+										<div class="answer textAlignJ" data-toggle-target="1">
+											<span class="bullet exam">예</span><span class="ls2_5">민영이네 반 학생들의 장래 희망은 6가지보다 많을 것입니다.</span>
 										</div>
 									</div>
 								</li>
@@ -382,8 +444,8 @@
 							  <div class="lineBox sky">좋아하는 간식별 학생 수</div>
 							  <div class="conImg">
 								<img src="./images/suh_0401_05_0006_401_2_1.png">
-								<img src="./images/suh_0401_05_0006_401_2_2.png" class="obj">
-								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<img src="./images/suh_0401_05_0006_401_2_2.png" class="obj" data-toggle-obj="1">
+								<span data-toggle-target="1"></span>
 							  </div>
 							</li>
 						  </ul>

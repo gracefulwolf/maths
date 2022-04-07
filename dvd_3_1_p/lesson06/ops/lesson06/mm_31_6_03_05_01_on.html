@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+
+	<title></title>
+
+	<link rel="stylesheet" href="../../../common/css/content.css" />
+	<link rel="stylesheet" href="../../../common/re_style/css/style.css">
+
+	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+	<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+	<link rel="stylesheet" href="../../../../default/css/custom.css">
+	<link rel="stylesheet" href="./css/mm_31_6_03_05_01.css" />
+	<style>
+		.btns-answer-part,
+		.title-h1 {
+			display: none;
+		}
+
+		#quiz-01 .answer {
+			opacity: 1;
+		}
+
+		#quiz-02 .answer {
+			opacity: 1;
+		}
+
+
+		.btns-bottom-right {
+			right: 93px;
+			bottom: 15px;
+		}
+
+		.exam-wrap {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #fff;
+			padding: 5px;
+		}
+
+		#quiz-01 .exam-wrap {
+			top: 270px;
+			left: 150px
+		}
+
+		#quiz-02 .exam-wrap {
+			top: 323px;
+			left: 390px;
+		}
+
+		.input-cont input {
+			border: 1px solid red
+		}
+
+
+
+		.app-drawing-tool {
+			left: -66px;
+			top: -20px;
+		}
+
+
+		.btns-bottom-right {
+			bottom: 45px;
+			right: 65px;
+		}
+
+		.content-container>.content>.bg {
+			left: 0;
+		}
+
+		#quiz-01 {
+			z-index: 2;
+			position: relative;
+		}
+
+		#quiz-01.active {
+			z-index: 0;
+		}
+
+		.btns-bottom-right>.button::after {
+			display: none;
+		}
+
+		.btn-answer-all>span {
+			display: none;
+		}
+
+		.btns-bottom-right>.btn-answer-all.active::before {
+			content: "정답 가리기";
+			transition: none
+		}
+
+		.btns-bottom-right>.btn-answer-all.active {
+			padding-left: 24px;
+			background-color: #9d00c4;
+			transition: none
+		}
+
+		.hidebox {
+			position: absolute;
+			width: 190px;
+			height: 200px;
+			background-color: #fff;
+			top: 470px;
+			left: 250px;
+		}
+
+		.hidebox.n2 {
+			top: 460px;
+			left: 850px;
+		}
+
+		#quiz-03 .exam-wrap{top: 230px;
+    left: 180px;z-index: 3;}
+		#quiz-02 .exam-wrap{top: 230px;
+    left: 660px;z-index: 3;}
+
+	.tool-container .ico-info{pointer-events: none; opacity: .2;}
+	</style>
+</head>
+
+<body>
+	<div class="content-container">
+		<div class="content" data-ui="cornerBase">
+			<div class="bg"></div>
+
+			<div class="title-h1">
+				<div class="left-inner">
+					<span class="ico-title-h1 num-01"><em class="text">3</em></span>
+				</div>
+				<div class="right-inner">
+					<span style="letter-spacing: 1px;">주어진 분수만큼 색칠하고, 색칠하지 않은 부분을 분수로 나타내 봅시다.</span>
+				</div>
+			</div>
+
+			<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+				<!-- quiz -->
+				<div id="quiz-01" class="quiz quiz-input-text hide-btn-check" data-ui="quiz-input-text"
+					data-option='{"answer":["1", "4", "2", "8"]}'>
+					<ul>
+						<li class="input-cont">
+							<input type="text" class="input"></input>
+							<div class="answer answer-part-00 inner-text"></div>
+							<div class="btn-check"></div>
+						</li>
+						<li class="input-cont">
+							<input type="text" class="input"></input>
+							<div class="answer answer-part-00 inner-text"></div>
+							<div class="btn-check"></div>
+						</li>
+						<li class="input-cont">
+							<input type="text" class="input"></input>
+							<div class="answer answer-part-01 inner-text"></div>
+							<div class="btn-check"></div>
+						</li>
+						<li class="input-cont">
+							<input type="text" class="input"></input>
+							<div class="answer answer-part-01 inner-text"></div>
+							<div class="btn-check"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="hidebox n1"></div>
+				<div class="hidebox n2"></div>
+				<!-- //quiz -->
+
+				<div id="quiz-02" class="quiz quiz-check" data-ui="quiz-check" data-option='{"answer":[]}'>
+					<div class="check-list">
+						<!-- <div class="check-item btn- content-con" data-answer-part-idx="2"></div> -->
+					</div>
+					<div class="answer quiz-02-answer show">
+						<img src="./images/mm_31_6_03_05_01/answer_01.svg" alt="">
+						<span class="ico-box-text-02 bb-01"></span>
+						<div class="exam-wrap">
+							<div class="bullet exam">예</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="quiz-03" class="quiz quiz-check" data-ui="quiz-check" data-option='{"answer":[]}'>
+					<div class="check-list">
+						<!-- <div class="check-item btn- content-con" data-answer-part-idx="2"></div> -->
+					</div>
+					<div class="answer quiz-03-answer show">
+						<img src="./images/mm_31_6_03_05_01/answer_02.svg" alt="">
+						<span class="ico-box-text-02 bb-01"></span>
+						<div class="exam-wrap">
+							<div class="bullet exam">예</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 부분 정답 :: absolute -->
+				<div class="btns-answer-part">
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0,1"]}'></div>
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["2,3"]}'></div>
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-02"]}'></div>
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-03"]}'></div>
+				</div>
+
+				<!-- 우측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-right check-btns">
+					<!-- <div class="button btn-retry toggle remove"><span></span></div> -->
+					<div class="button btn-answer-all toggle"><span></span></div>
+				</div>
+
+				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="../../../common/ui/js/uiData.js"></script>
+	<script src="../../../common/ui/js/uiDataMs.js"></script>
+	<script src="./js/mm_31_6_03_05_01.js"></script>
+
+	<script src="../../../common/js/libs/polyfill.min.js"></script>
+	<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
+	<script src="../../../common/js/libs/materialize.js"></script>
+	<script src="../../../common/js/libs/TweenMax.min.js"></script>
+	<script src="../../../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+	<script src="../../../common/js/libs/class.js"></script>
+	<script src="../../../common/js/common.js"></script>
+	<script src="../../../common/js/app/mindmap.js"></script>
+	<script src="../../../common/js/app/drawing.js"></script>
+	<script src="../../../common/js/app/angle.js"></script>
+	<script src="../../../common/js/cornerbase.js"></script>
+	<script src="../../../common/js/videoplayer.js"></script>
+	<script src="../../../common/js/quiz/quizMain.js"></script>
+	<script src="../../../common/js/quiz/quizCheck.js"></script>
+	<script src="../../../common/js/quiz/quizCheckMulti.js"></script>
+	<script src="../../../common/js/quiz/quizInput.js"></script>
+	<script src="../../../common/js/quiz/quizDraggable.js"></script>
+	<script src="../../../common/js/quiz/quizPopSelect.js"></script>
+	<script src="../../../common/js/quiz/quizDrawLine.js"></script>
+
+	<script src="../../../../../js/binder_web.min.js"></script>
+	<script src="../../../common/js/content.js"></script>
+
+
+</body>
+
+</html>

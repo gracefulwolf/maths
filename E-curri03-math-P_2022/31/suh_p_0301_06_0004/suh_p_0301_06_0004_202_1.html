@@ -13,11 +13,11 @@
 
 .iframe-wrap{
 	width: 1170px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 584px;
-	overflow: hidden;
+    position: absolute;
+    top: -30px;
+    left: -56px;
+    height: 584px;
+    overflow: hidden;
 }
 .page-iframe {
     width: 1280px;
@@ -30,6 +30,9 @@
     left: -12px;
 
 }
+.moveButtonContainer{z-index: 2; width: auto; left:50%; transform: translate(-50%, 0);}
+.txt{position: absolute; top: 340px; left: 460px; z-index: 2;}
+.txt.n2{top: 340px; left: 980px;}
 </style>
 </head>
 
@@ -39,12 +42,70 @@
 		<div class="title">부분을 보고 전체를 완성하고, 그린 부분을 분수로 나타내 봅시다.</div>
 	</header>
 	<main>
-		<div class="contentsBox">
-			<div class="iframe-wrap">
-				<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_04_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+		<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+			<div class="moveButtonContainer" data-slide-btn-container="">
+				<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+				<ul class="basicSlider_circle_tabs" data-tabs="">
+					<li data-hover=""></li>
+					<li data-hover=""></li>
+				</ul>
+				<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 			</div>
-
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="innerTab_1">
+					<div class="iframe-wrap">
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_04_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+					</div>
+				</li>
+				<li class="innerTab_1" data-quiz="toggle">
+					<div class="iframe-wrap">
+						<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_03_04_01_on.html" title="" class="page-iframe" id="ifm2" scrolling="no"></iframe>
+					</div>
+					<div class="txt n1">
+						<div class="bunsuWrap">
+							<ul>
+								<li>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											1
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											2
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="txt n2">
+						<div class="bunsuWrap">
+							<ul>
+								<li>
+									<div class="toggle" data-toggle-obj="21">
+										<div class="answer" data-toggle-target="21">
+											3
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="toggle" data-toggle-obj="22">
+										<div class="answer" data-toggle-target="22">
+											8
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</li>
+			</ul>
 		</div>
+
 	</main>
 </div>
 <div id="loadingContainer">

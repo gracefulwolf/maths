@@ -159,12 +159,21 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
               }
 
               rotateArray.push(createRotate(DRAGDROP.droppedArea.element.children[0]));
+              window.$efSound.correct();
             }else{
                 // window.$efSound.incorrect();
                 return console.log('dropArea 없음.');
             }
           },
         };
+
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
+
       });
     </script>
   </body>
