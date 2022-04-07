@@ -9,10 +9,16 @@
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style type="text/css">
-	.textAlignC.bg .flex-wrap {justify-content: center;align-items: center;}
-	.textAlignC.bg .flex-wrap img {width: 250px;}
-	.textAlignC.bg .flex-wrap .flex-item.n2 img {width: 320px;}
-	.flex-item {text-align: center;}
+	.flex-wrap {position: relative;justify-content: space-between;align-items: center;width: 800px;margin: 0 auto 40px;}
+	.flex-wrap img:nth-child(1) {width: 240px;}
+	.flex-wrap img:nth-child(2) {width: 330px;}
+	.flexListContainer {padding: 0 100px;box-sizing: border-box;}
+	.flexListContainer > li {display: flex;}
+	.flexListContainer li .lineBox {position: relative;width: 160px;padding: 45px 45px;}
+	.flexListContainer li .lineBox + .lineBox {margin-left: 15px;}
+	.flexListContainer li .lineBox .toggle {margin-top: 10px;}
+	.flexListContainer li .lineBox:nth-child(2) .toggle {margin-top: 27px;}
+	.flexListContainer li .lineBox .nameBox {position: absolute;top: -20px;left: 50%;width: 80px;transform: translateX(-50%);}
 </style>
 </head>
 
@@ -23,48 +29,100 @@
 	</header>
 	<main>
 		<div class="contentsBox" data-quiz="toggle">
-			<div class="textAlignC bg">
-				<div class="flex-wrap">
-					<div class="flex-item n1">
-						<img src="./images/suh_p_0301_06_0007_203_1/suh_p_0301_06_0007_203_1_1.png" alt="">
-						<div class="flex-wrap">
-							<div class="lineBox inline purple">
-								<div class="nameBox purple">분수</div>
-								<div class="toggle noBg" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>6</li>
-												<li>10</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="lineBox inline purple">
-								<div class="nameBox">소수</div>
-								<div class="toggle noBg" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>6</li>
-												<li>10</li>
-											</ul>
-										</div>
-									</div>
+			<div class="flex-wrap">
+				<img src="./images/suh_p_0301_06_0007_203_1/suh_p_0301_06_0007_203_1_1.png" alt="">
+				<img src="./images/suh_p_0301_06_0007_203_1/suh_p_0301_06_0007_203_1_2.png" alt="">
+			</div>
+			<ul class="flexListContainer center">
+				<li>
+					<div class="lineBox inline purple">
+						<div class="nameBox purple">분수</div>
+						<div class="toggle noBg" data-toggle-obj="1">
+							<div class="answer" data-toggle-target="1">
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>6</li>
+										<li>10</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="flex-item n2">
-						<img src="./images/suh_p_0301_06_0007_203_1/suh_p_0301_06_0007_203_1_2.png" alt="">
+					<div class="lineBox inline purple">
+						<div class="nameBox purple">소수</div>
+						<div class="toggle noBg" data-toggle-obj="2">
+							<div class="answer" data-toggle-target="2">
+								0.6
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</li>
+				<li>
+					<div class="lineBox inline yellow">
+						<div class="nameBox yellow">분수</div>
+						<div class="toggle noBg" data-toggle-obj="3">
+							<div class="answer" data-toggle-target="3">
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>10</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="lineBox inline yellow">
+						<div class="nameBox yellow">소수</div>
+						<div class="toggle noBg" data-toggle-obj="4">
+							<div class="answer" data-toggle-target="4">
+								0.5
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
 
-			<button class="dapCheckBtn" data-answer-btn=""></button>
+			<div class="buttonContainer">
+				<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+				<button class="dapCheckBtn" data-answer-btn=""></button>
+			</div>
 		</div>
 	</main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="solve pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<ul class="contentsList">
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								전체를 똑같이 10으로 나눈 것 중의 6만큼 색칠했으므로 분수로 나타내면 
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>6</li>
+										<li>10</li>
+									</ul>
+								</div>이고 소수로 나타내면 0.6입니다.
+							</div>
+						</li>
+						<li>
+							<ins class="dot orange"></ins>
+							<div>
+								전체를 똑같이 10으로 나눈 것 중의 5만큼 색칠했으므로 분수로 나타내면      
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>10</li>
+									</ul>
+								</div>
+								이고 소수로 나타내면 0.5입니다.
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</section>
 </div>
 <div id="loadingContainer">
 	<div class="loadingIconAnimation"></div>
