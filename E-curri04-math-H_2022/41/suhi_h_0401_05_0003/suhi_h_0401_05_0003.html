@@ -40,9 +40,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.colorBox.check {display: inline-block;vertical-align: top;padding: 12px 18px;margin-right: 0;}
 	.contentsList li+li {margin-left: 30px;}
 	.contentsList .bunsuContainer {display: inline-block;margin: 0;}
-	
+
+	.page_2 .bullet.exam{margin-top:0; margin-right:20px; margin-left:-60px; align-self: center; opacity: 0;}
+	.page_2 .bullet.exam.on{opacity:1;}
+
 	.page_4 .--img{height: 385px;width: 640px;margin: 10px auto 0 auto;overflow:hidden;background: url(./images/5_2_3.svg) no-repeat 0% bottom / 100% 120%;}
-	.page_4 .--img .--text .answer{font-size:30px;}
+	.page_4 .--img .--text .answer{font-size:32px;}
 	.page_4 .--text.x1{left: 25px;top: 0px;}
 	.page_4 .--text.x2{left: 0px;top: 307px;}
 	.page_4 .--text.x3{left: 106px;top: 331px;}
@@ -57,6 +60,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_4 .--bar.n2 {height:284px;}
 	.page_4 .--bar.n3 {height:206px;}
 	.page_4 .--bar.n4 {height:180px;}
+	.page_4 .--text.n1{top: 270px; left: 135px; font-size: 35px;}
 
 	.page_6 .--img{height: 385px;width: 640px;margin: 10px auto 0 auto;overflow:hidden;background: url(./images/5_2_3.svg) no-repeat 0% bottom / 100% 120%;}
 	.page_6 .--img .--text .answer{font-size:30px; text-align: center;}
@@ -73,11 +77,11 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_6 .--bar.n1 {height: 258px;}
 	.page_6 .--bar.n2 {height: 129px;}
 	.page_6 .--bar.n3 {height: 283px;}
-	.page_6 .--bar.n4 {height: 232px;}	
+	.page_6 .--bar.n4 {height: 232px;}
 
 	.page_7 .--img{height: 380px;width: 640px;margin: 10px auto 0 auto;overflow:hidden;background: url(./images/5_2_5.svg) no-repeat 0% bottom / 100% 130%;}
 	.page_7 .--img .--text .answer{font-size:30px; text-align: center;}
-	.page_7 .--text.x1{left: 579px;top: 288px;}
+	.page_7 .--text.x1{left: 570px;top: 288px;}
 	.page_7 .--text.x2{left: 7px;top: 312px;font-size:28px;}
 	.page_7 .--text.x3{left: 106px;top: 340px;font-size:28px;}
 	.page_7 .--text.x4{left: 548px;top: 255px;}
@@ -85,14 +89,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_7 .--text.x6{left: 90px;top: 10px;}
 	.page_7 .--text.x7{left:90px;top: 75px;}
 	.page_7 .--text.x8{left:90px;top: 140px;}
-	.page_7 .--text.x9{left:90px;top: 205px;}
+	.page_7 .--text.x9{left:95px;top: 205px;}
+	.page_7 .--text.n1{top: 272px; left: 10px; font-size: 30px;}
+	.page_7 .--text.n2{top: 295px; left: 130px; font-size: 30px;}
+	.page_7 .--text.n3{top: 265px; left: 238px; font-size: 30px;}
 	.page_7 .--bar {position:absolute;top: 1px;left: 144px;height: 40px;border:1px solid red;background-color:pink;box-sizing: border-box;}
 	.page_7 .--bar.n1 {width: 336px;}
 	.page_7 .--bar.n2 {width: 167px;}
 	.page_7 .--bar.n3 {width: 368px;}
-	.page_7 .--bar.n4 {width: 302px;}			
+	.page_7 .--bar.n4 {width: 302px;}
 
-    .page_2 .toggle{min-width:150px} 
+    .page_2 .toggle{min-width:150px}
     .page_2 .contentsList li+li {margin-left:15px;}
 </style>
 </style>
@@ -186,30 +193,23 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							</tbody>
 						</table>
 					</div>
-					<div class="flex-box j-center mt_40">						
-						<ul class="contentsList">
-							<li><div class="bullet exam answer" data-toggle-target="21">예</div></li>
-							<li>
-								<div class="colorBox check skyBlue">가로</div>
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="21">
-										<div class="answer" data-toggle-target="21">
-											반
-										</div>
-									</div>
+					<div class="flexListContainer jcenter center mt_40">
+							<div class="bullet exam" data-toggle-target="21">예</div>
+
+							<div class="colorBox check skyBlue mr_10">가로</div>
+							<div class="toggle" data-toggle-obj="21">
+								<div class="answer" data-toggle-target="21">
+									반
 								</div>
-							</li>
-							<li>
-								<div class="colorBox check skyBlue">세로</div>
-								<div class="bunsuContainer">
-									<div class="toggle" data-toggle-obj="22">
-										<div class="answer" data-toggle-target="22">
-											학생 수
-										</div>
-									</div>
+							</div>
+
+							<div class="colorBox check skyBlue mr_10 ml_50">세로</div>
+							<div class="toggle" data-toggle-obj="22">
+								<div class="answer" data-toggle-target="22">
+									학생 수
 								</div>
-							</li>
-						</ul>
+							</div>
+
 					</div>
 					<div class="buttonContainer">
 						<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
@@ -268,12 +268,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="--inner textAlignC">
 						<div class="bullet exam answer" data-toggle-target="41">예</div>
 						<div class="toggle" data-toggle-obj="41">
-							<div class="answer" data-toggle-target="41">								
+							<div class="answer" data-toggle-target="41">
 								줄넘기 대회에 참가한 4학년 반별 학생 수
 							</div>
 						</div>
 					</div>
 					<div class="--img">
+						<div class="--text n1">0</div>
 						<div class="--text x1">
 							<div class="toggle noBg" data-toggle-obj="42">
 								<div class="answer" data-toggle-target="42">명</div>
@@ -302,7 +303,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x6">
 							<div class="toggle noBg" data-toggle-obj="47">
 								<div class="--bar n1 answer" data-toggle-target="47"></div>
-								<div class="answer" data-toggle-target="47">								
+								<div class="answer" data-toggle-target="47">
 									<div class="">1반</div>
 								</div>
 							</div>
@@ -310,7 +311,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x7">
 							<div class="toggle noBg" data-toggle-obj="48">
 								<div class="--bar n2 answer" data-toggle-target="48"></div>
-								<div class="answer" data-toggle-target="48">								
+								<div class="answer" data-toggle-target="48">
 									<div class="">2반</div>
 								</div>
 							</div>
@@ -318,7 +319,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x8">
 							<div class="toggle noBg" data-toggle-obj="49">
 								<div class="--bar n3 answer" data-toggle-target="49"></div>
-								<div class="answer" data-toggle-target="49">								
+								<div class="answer" data-toggle-target="49">
 									<div class="">3반</div>
 								</div>
 							</div>
@@ -326,13 +327,13 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x9">
 							<div class="toggle noBg" data-toggle-obj="491">
 								<div class="--bar n4 answer" data-toggle-target="491"></div>
-								<div class="answer" data-toggle-target="491">								
+								<div class="answer" data-toggle-target="491">
 									<div class="">4반</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="buttonContainer">						
+					<div class="buttonContainer">
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</section>
@@ -367,7 +368,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 							</tr>
 							</tbody>
 						</table>
-					</div>				
+					</div>
 				</section>
 			</li>
 			<li class="page_6" data-quiz="toggle">
@@ -408,7 +409,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x6">
 							<div class="toggle noBg" data-toggle-obj="67">
 								<div class="--bar n1 answer" data-toggle-target="67"></div>
-								<div class="answer" data-toggle-target="67">								
+								<div class="answer" data-toggle-target="67">
 									<div class="">가방</div>
 								</div>
 							</div>
@@ -416,7 +417,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x7">
 							<div class="toggle noBg" data-toggle-obj="68">
 								<div class="--bar n2 answer" data-toggle-target="68"></div>
-								<div class="answer" data-toggle-target="68">								
+								<div class="answer" data-toggle-target="68">
 									<div class="">인형</div>
 								</div>
 							</div>
@@ -424,7 +425,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x8">
 							<div class="toggle noBg" data-toggle-obj="69">
 								<div class="--bar n3 answer" data-toggle-target="69"></div>
-								<div class="answer" data-toggle-target="69">								
+								<div class="answer" data-toggle-target="69">
 									<div class="">모자</div>
 								</div>
 							</div>
@@ -432,21 +433,21 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x9">
 							<div class="toggle noBg" data-toggle-obj="691">
 								<div class="--bar n4 answer" data-toggle-target="691"></div>
-								<div class="answer" data-toggle-target="691">								
+								<div class="answer" data-toggle-target="691">
 									<div class="">공</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="buttonContainer">						
+					<div class="buttonContainer">
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</section>
 			</li>
 
-			
+
 			<li class="page_7" data-quiz="toggle">
-				<h2><ins class="number">6</ins><span>
+				<h2><ins class="number">5</ins><span>
 					위 그래프의 가로와 세로를 서로 바꾸어 막대를 가로로 나타내 보세요.
 				</span></h2>
 				<section>
@@ -464,7 +465,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 								<div class="answer" data-toggle-target="62">개</div>
 							</div>
 						</div>
-						
+
 						<div class="--text x4">
 							<div class="toggle  noBg" data-toggle-obj="65">
 								<div class="answer" data-toggle-target="65">10</div>
@@ -478,7 +479,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x6">
 							<div class="toggle noBg" data-toggle-obj="67">
 								<div class="--bar n1 answer" data-toggle-target="67"></div>
-								<div class="answer" data-toggle-target="67">								
+								<div class="answer" data-toggle-target="67">
 									<div class="">가방</div>
 								</div>
 							</div>
@@ -486,7 +487,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x7">
 							<div class="toggle noBg" data-toggle-obj="68">
 								<div class="--bar n2 answer" data-toggle-target="68"></div>
-								<div class="answer" data-toggle-target="68">								
+								<div class="answer" data-toggle-target="68">
 									<div class="">인형</div>
 								</div>
 							</div>
@@ -494,7 +495,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x8">
 							<div class="toggle noBg" data-toggle-obj="69">
 								<div class="--bar n3 answer" data-toggle-target="69"></div>
-								<div class="answer" data-toggle-target="69">								
+								<div class="answer" data-toggle-target="69">
 									<div class="">모자</div>
 								</div>
 							</div>
@@ -502,13 +503,16 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						<div class="--text x9">
 							<div class="toggle noBg" data-toggle-obj="691">
 								<div class="--bar n4 answer" data-toggle-target="691"></div>
-								<div class="answer" data-toggle-target="691">								
+								<div class="answer" data-toggle-target="691">
 									<div class="">공</div>
 								</div>
 							</div>
 						</div>
+						<div class="--text n1">물건</div>
+						<div class="--text n2">물건 수</div>
+						<div class="--text n3">0</div>
 					</div>
-					<div class="buttonContainer">						
+					<div class="buttonContainer">
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
 				</section>
