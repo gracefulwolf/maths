@@ -312,6 +312,7 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
             } else {
               dayValue = newDayValue;
               console.log('dayValue', dayValue)
+              window.$efSound.correct();
             }
 
           } else {
@@ -323,12 +324,14 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
             } else {
               monthValue = newMonthValue;
               console.log('monthValue', monthValue)
+              window.$efSound.correct();
             }
           }
 
           var index = parseInt(dropArea.classList[1].split('box')[1]) - 1;
           var clone = dragObj.cloneNode(true);
           $ts.getEl('.dragCopy')[index].appendChild(clone);
+
         }
         window.$callBack.dragIncorrect = function(DRAG) {
           console.log('dragIncorrect:', DRAG);
@@ -380,6 +383,14 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
             })
           }
         }
+
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
+
       });
     </script>
   </body>

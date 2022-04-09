@@ -39,15 +39,15 @@
 		/* .popBtn.textInBtn.eye{top: 96px; right: 274px;} */
 		.popBtn.textInBtn.eye{top: -70px; right: 274px;}
 		.--aniBox{transform: translateY(-200px);}
-		.--char{transform: translate(-200px, -140px);}
-		.--balloon{top: 90px; left: 440px;}
+		.--char{position: absolute; top: -30px; left: 150px;}
+		.--balloon{top: 200px; left: 440px;}
 	</style>
 </head>
 
 <body>
 
 	<div id="wrap" class="math">
-		<header><div class="title mb_40">
+		<header><div class="title mb_50">
 			<ins class="colorBox green check --colorBullet">1</ins>의 막대그래프에서 알아낸 내용으로 학교 급식 잔반 줄이기 홍보 활동을 하려고 합니다. 홍보 활동에 나의 생각을 전해 봅시다. <!-- div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">막대그래프 보기 </div -->
 		</div></header>
 		<main>
@@ -78,6 +78,9 @@
 									</div>
 								</div>
 							</div>
+							<div class="textAlignC --aniBox">
+								<div id="aniBox_1"></div>
+							</div>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -104,9 +107,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="textAlignC --aniBox">
-								<div id="aniBox_1"></div>
-							</div>
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -117,18 +117,10 @@
 						<h2><ins class="dot"></ins><span>
 							학교 급식 잔반 줄이기 위한 표어를 발표하고 느낀 점을 이야기해 보세요.
 						</span></h2>
-						<section>
-							<div class="textAlignC">
-								<div class="single charSpriteImg girl_4 --char">
-								</div>
-							</div>
+							<div class="single charSpriteImg girl_4 --char"></div>
 							<div class="balloon pink left ctTail textAlignC --balloon">
 								앞으로는 잔반을 줄이기 위해<br>음식을 먹을 만큼만<br>가지고 와야겠어.
 							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-						</section>
 					</li>
 
 				</ul>
@@ -215,6 +207,11 @@
 					}
 				]
 			});
+
+			window.$callBack.sliderReset = function(params) {
+				$ts.getEl('#aniBox_1 .characterImg')[0].style.left = 0;
+			};
+
 		}, false);
 
 	</script>

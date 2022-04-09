@@ -12,14 +12,14 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 
 	<style type="text/css">
-		.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
-		.popup_pages .page-iframe{top:70px; left:0; height:100%; transform-origin: 0 50%; transform: scale(1.03, 1.1);}
+		.page-iframe{position:absolute; z-index:1; top:75px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:70px; left:-40px; height:100%; transform-origin: 0 50%; transform: scale(1.105, 1.12);}
 		.page-iframe .popup_contents .toggle,
 		.page-iframe + section .toggle{z-index:1;}
 		.popup_pages>li.whole.on{z-index:10000;}
 
 		.ifr_wrap{position: relative; width: 1060px; height: 100%;}
-		.popup_closeBtn{z-index: 2;}
+		.popup_closeBtn{z-index: 1000;}
 
 		@keyframes css-ani-arrow-leftToRight{
 			0%,100%{transform:translateX(0);}
@@ -48,14 +48,19 @@
 		.--img.n1{background: url(./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_1_1.png) no-repeat 50% 50% / contain;}
 		.--img.n1 .balloon.pink{top: -40px;left: 240px;}
 		.--img.n1 .balloon.purple{top: -130px;left: 610px;}
+		.--img.n1 .--text.n99{position: absolute; top: 205px; left: 635px;}
 		.--img.n2{background: url(./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_1_2.png) no-repeat 50% 50% / contain;}
 		.--img.n2 .balloon.pink{top: -130px;left: 610px;}
 		.--img.n2 .balloon.purple{top: -40px;left: 230px;}
+		.--img.n2 .--text.n99{position: absolute; top: 80px; left: 635px;}
 
 		.page_2 .icon_arrow{animation: css-ani-arrow-leftToRight 1s linear 0s infinite forwards;}
 		.page_2 .icon_arrow.complete{animation: none;}
 		.page_2 .--answer{position: relative;}
 		.page_2 .--text{position: absolute;top: 264px;left: 60px;font-size: 32px; font-family: notoM; font-weight: normal; color: #000;}
+
+		.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative; z-index:0; top:0}
 
 	</style>
 </head>
@@ -93,17 +98,18 @@
 											<dd>
 												<div class="bullet number orange mt_60">1</div>
 												<div class="--img n1">
-													<div class="bullet number orange --bullet">ㄱ</div>
+													<div class="--bullet">㉠</div>
 													<div class="balloon bottom ctTail textAlignC pink">
-														<div class="bullet number orange inline">ㄱ</div>을 <span class="--exNum">①</span>로 교체 하려면<br>
+														㉠을 <span class="--exNum">①</span>로 교체 하려면<br>
 														어떻게 해야 할까요?
 													</div>
 													<div class="balloon bottom ctTail textAlignC purple">
 														<span class="--exNum">①</span> 수도관을 시계 반대<br>
 														방향으로 90°만큼 돌려서<br>
-														<div class="bullet number orange inline">ㄱ</div>위치에 교체하면<br>
+														㉠위치에 교체하면<br>
 														 됩니다.
 													</div>
+													<div class="--text n99">①</div>
 												</div>
 											</dd>
 										</dl>
@@ -118,17 +124,18 @@
 											<dd>
 												<div class="bullet number orange mt_60">2</div>
 												<div class="--img n2">
-													<div class="bullet number orange --bullet">ㄴ</div>
+													<div class="--bullet">㉡</div>
 													<div class="balloon bottom ctTail textAlignC purple">
-														<div class="bullet number orange inline">ㄴ</div>을 <span class="--exNum">②</span>로 교체 하려면<br>
+														㉡을 <span class="--exNum">②</span>로 교체 하려면<br>
 														어떻게 해야 할까요?
 													</div>
 													<div class="balloon bottom ctTail textAlignC pink">
 														<span class="--exNum">②</span> 수도관을 시계 방향으로<br>
 														90°만큼 돌리고 왼쪽<br>
-														왼쪽으로 뒤집어 <div class="bullet number orange inline">ㄴ</div><br>
+														왼쪽으로 뒤집어 ㉡<br>
 														위치에 교체하면 됩니다.
 													</div>
+													<div class="--text n99">②</div>
 												</div>
 											</dd>
 										</dl>
@@ -187,7 +194,7 @@
 									<div class="icon_arrow" data-toggle-obj="1"></div>
 								</div>
 								<div class="answer --answer" data-toggle-target="1">
-									<img src="./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_2_4.png" alt="" width="320">
+									<img src="./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_2_8.png" alt="" width="320">
 									<div class="--text">
 										시계 반대 방향으<br>로 180°만큼 돌려<br>서 교체합니다.
 									</div>
@@ -233,7 +240,7 @@
 									<div class="icon_arrow" data-toggle-obj="1"></div>
 								</div>
 								<div class="answer --answer" data-toggle-target="1">
-									<img src="./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_2_8.png" alt="" width="320">
+									<img src="./images/suh_h_0401_04_0013_201_1/suh_h_0401_04_0013_201_1_2_4.png" alt="" width="320">
 									<div class="--text">
 										시계 반대 방향으 <br>로 90°만큼 돌려<br>서 교체합니다.
 									</div>
@@ -400,7 +407,7 @@
 			_eyeButt.addEventListener( "click", function(){
 				setTimeout(function(){
 					document.querySelector( ".page-iframe" ).contentWindow.location.reload();
-				},0);
+				},50);
 			});
 
 			document.querySelector( ".resetBtn.reset" ).addEventListener("click", function(){

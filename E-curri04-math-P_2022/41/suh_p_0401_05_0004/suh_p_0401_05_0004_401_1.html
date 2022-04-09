@@ -30,17 +30,17 @@
 		.page_10 .dotList>li:not(:last-of-type){margin-bottom: 5px;}
 
 		.page_20 .lineBox{width: 270px; margin: 0 auto; padding: 0;}
-		.page_20 .--graph{position: absolute;top: 264px;left: 240px;width: 540px;height: 190px;background: url(./images/suh_p_0401_05_0004_401_1/suh_p_0401_05_0004_401_1_2.png) no-repeat 50% 50% / 540px 100%;}
+		.page_20 .--graph{position: relative;top: 10px;left: 240px;width: 540px;height: 310px;background: url(./images/suh_p_0401_05_0004_401_1/suh_p_0401_05_0004_401_1_2.png) no-repeat 50% 50% / 540px 100%;}
 		.page_20 .--graph .--text{position: absolute; z-index: 1; font-size: 35px;}
 		.page_20 .--graph .--text.n1{top: 4px;left: 4px;}
-		.page_20 .--graph .--text.n2{top: -20px;left: 82px;text-align: right;line-height: 68px;}
-		.page_20 .--graph .--text.n3{top: 114px;left: 102px;}
-		.page_20 .--graph .--text.n4{top: 138px;left: -10px;}
-		.page_20 .--graph .--text.n5{top: 152px;left: 65px;}
-		.page_20 .--graph .--text.n6{top: 147px;left: 149px;}
-		.page_20 .--graph .--text.n7{top: 148px;left: 250px;}
-		.page_20 .--graph .--text.n8{top: 148px;left: 352px;}
-		.page_20 .--graph .--text.n9{top: 148px;left: 454px;}
+		.page_20 .--graph .--text.n2{top: -30px;left: 82px;text-align: right;line-height: 108px;}
+		.page_20 .--graph .--text.n3{top: 206px;left: 102px;}
+		.page_20 .--graph .--text.n4{top: 243px;left: 0px;}
+		.page_20 .--graph .--text.n5{top: 268px;left: 64px;}
+		.page_20 .--graph .--text.n6{top: 254px;left: 148px;}
+		.page_20 .--graph .--text.n7{top: 254px;left: 250px;}
+		.page_20 .--graph .--text.n8{top: 254px;left: 352px;}
+		.page_20 .--graph .--text.n9{top: 254px;left: 454px;}
 		.page_20 .--graph .--text.n10{top: 410px;left: 790px;}
 		.page_20 .--graph .toggle{position: absolute; top: 0;left: 0; width:100%; height: 100%;}
 		.page_20 .--graph .answer{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suh_p_0401_05_0004_401_1/suh_p_0401_05_0004_401_1_3.png) no-repeat 50% 50% / 540px 100%;}
@@ -66,12 +66,14 @@
     .page_1, .page_4{text-align:center;}
     .page_1 .tableContainer {width:850px;margin:0 auto;}
     .page_1 .flexListContainer{position: relative;justify-content:center}
-    .page_1 .flexListContainer li{
+    /* .page_1 .flexListContainer li{
         display: flex;
         padding:0 50px;
-    }
-    .page_url .flexListContainer .exam{position:absolute;top: 5px;left: -10px;opacity: 0;transition: all .3s;}
-    .page_url .flexListContainer .on.exam{opacity: 1;transition: all .3s;}
+    } */
+    /* .page_url .flexListContainer .exam{position:absolute;top: 5px;left: -10px;opacity: 0;transition: all .3s;}
+    .page_url .flexListContainer .on.exam{opacity: 1;transition: all .3s;} */
+	.--title .colorBox.check{width: auto; height:40px; margin: 7px 0 0; padding: 9px 10px 8px; border-radius:40px; font-size: 18px; vertical-align: middle;}
+
     .page_2 section,
     .page_3 section,
     .page_5 section{text-align:center;}
@@ -162,7 +164,7 @@
 										<div>
 											<div class="toggle" data-toggle-obj="1">
 												<div class="answer" data-toggle-target="1">
-													책의 종류
+													가로
 												</div>
 											</div>와/과 세로 중 어느 쪽에 조사한 수를 나타낼 것인가를 정합니다.
 										</div>
@@ -203,51 +205,68 @@
 						</section>
 					</li>
 
-					<li class="page_20" data-quiz="toggle">
-						<h2><ins class="dot orange"></ins><span>
-							표를 보고 막대그래프로 나타내 보시오.
-						</span></h2>
-						<section>
-							<div class="lineBox sky textAlignC --lineBox">읽은 책 수</div>
-							<div class="tableContainer brown fix  mt_10">
-								<table>
-									<tr>
-										<th>이름</th>
-										<th>수빈</th>
-										<th>가람</th>
-										<th>정호</th>
-										<th>소라</th>
-									</tr>
-									<tr>
-										<th>책 수(권)</th>
-										<td>5</td>
-										<td>4</td>
-										<td>8</td>
-										<td>7</td>
-									</tr>
-								</table>
-							</div>
-							<div class="lineBox sky textAlignC --lineBox mt_10">읽은 책 수</div>
-							<div class="--graph">
-								<div class="--text n1">(권)</div>
-								<div class="--text n2">10<br>5</div>
-								<div class="--text n3">0</div>
-								<div class="--text n4">책 수</div>
-								<div class="--text n5">이름</div>
-								<div class="--text n6">수빈</div>
-								<div class="toggle noBg" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										<div class="--text n7">가람</div>
-										<div class="--text n8">정호</div>
-										<div class="--text n9">소라</div>
+					<li class="page_20" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1">
+								<h2><ins class="dot orange"></ins><span>
+									표를 보고 막대그래프로 나타내 보시오.
+								</span></h2>
+								<section>
+									<div class="lineBox sky textAlignC --lineBox">읽은 책 수</div>
+									<div class="tableContainer brown fix  mt_10">
+										<table>
+											<tr>
+												<th>이름</th>
+												<th>수빈</th>
+												<th>가람</th>
+												<th>정호</th>
+												<th>소라</th>
+											</tr>
+											<tr>
+												<th>책 수(권)</th>
+												<td>5</td>
+												<td>4</td>
+												<td>8</td>
+												<td>7</td>
+											</tr>
+										</table>
 									</div>
-								</div>
-							</div>
-							<div class="buttonContainer">
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
-							<a href="./data/(4-1-5)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-						</section>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2><ins class="dot orange"></ins><span>
+									표를 보고 막대그래프로 나타내 보시오.
+								</span></h2>
+								<section>
+									<div class="lineBox sky textAlignC --lineBox">읽은 책 수</div>
+									<div class="--graph" data-toggle-obj="1">
+										<div class="--text n1">(권)</div>
+										<div class="--text n2">10<br>5</div>
+										<div class="--text n3">0</div>
+										<div class="--text n4">책 수</div>
+										<div class="--text n5">이름</div>
+										<div class="--text n6">수빈</div>
+										<div class="answer" data-toggle-target="1">
+											<div class="--text n7">가람</div>
+											<div class="--text n8">정호</div>
+											<div class="--text n9">소라</div>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+									<a href="./data/(4-1-5)형성평가2_04차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+								</section>
+							</li>
+						</ul>
 					</li>
 
 					<li class="page_1 page_url" data-quiz="toggle">
@@ -274,35 +293,47 @@
 							</div>
 							<ul class="flexListContainer mt_50">
 								<li class="flexListContainer center">
-								  <div class="colorBox check skyBlue">가로</div>
-								  <div>
+									<div class="colorBox check skyBlue">가로</div>
 									<div class="toggle center" data-toggle-obj="1">
-									  <div class="answer" data-toggle-target="1">종류</div>
+										<div class="answer" data-toggle-target="1">
+											<ul class="contentsList">
+												<li>
+													<ins class="bullet exam">예</ins>
+													<div>
+														종류
+													</div>
+												</li>
+											</ul>
+										</div>
 									</div>
-								  </div>
-								  <span class="bullet exam" data-toggle-target="1">예</span>
 								</li>
-								<li class="flexListContainer center">
+								<li class="flexListContainer center ml_50">
 									<div class="colorBox check skyBlue">세로</div>
-									<div>
-									  <div class="toggle center" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">나무 수</div>
-									  </div>
+									<div class="toggle center" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													나무 수
+												</div>
+											</li>
+										</ul>
 									</div>
-									<span class="bullet exam" data-toggle-target="2">예</span>
+									</div>
 								</li>
 							</ul>
 						  <button class="dapCheckBtn" data-answer-btn=""></button>
 						</section>
 					  </li>
 					  <li class="page_2 page_url" data-quiz="toggle">
-						<h2><ins class="dot"></ins><div class="tab">문제 1</div><span>의 표를 막대그래프로 나타내어 보시오. </span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="1"  data-popup-parent="hidden">표 보기</div></h2>
+						<h2 class="--title"><ins class="dot"></ins><div class="colorBox brown check">문제 3</div><span>의 표를 막대그래프로 나타내어 보시오. </span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="1"  data-popup-parent="hidden">표 보기</div></h2>
 						<section>
 							<div class="lineBox sky">종류별 나무 수</div>
 							<div class="conImg">
 								<img src="./images/suh_0401_05_0004_401_1_2_1.png">
-								<img src="./images/suh_0401_05_0004_401_1_2_2.png" class="obj">
-								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<img src="./images/suh_0401_05_0004_401_1_2_2.png" class="obj" style="bottom: 3px;"  data-toggle-obj="1">
+								<span data-toggle-target="1"></span>
 								<div class="--text n1">(그루)</div>
 								<div class="--text n2">15<br>10<br>5</div>
 								<div class="--text n3">0</div>
@@ -362,20 +393,20 @@
 							</div>
 							<div class="textAlignC mt_20">
 								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">7칸</div>
-								</div>
+									<div class="answer" data-toggle-target="1">7</div>
+								</div>칸
 							</div>
 						  <button class="dapCheckBtn" data-answer-btn=""></button>
 						</section>
 					  </li>
 					  <li class="page_5 page_url" data-quiz="toggle">
-						<h2><ins class="dot"></ins><div class="tab">문제 4</div><span>의 표를 막대그래프로 나타내어 보시오.</span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="2" data-popup-parent="hidden">표 보기</div></h2>
+						<h2 class="--title"><ins class="dot"></ins><div class="colorBox brown check">문제 6</div><span>의 표를 막대그래프로 나타내어 보시오.</span><div class="popBtn inline textInBtn orange eye" data-hover="" data-popup-btn="2" data-popup-parent="hidden">표 보기</div></h2>
 						<section>
 							<div class="lineBox sky">혈액형별 학생 수</div>
 							<div class="conImg">
 								<img src="./images/suh_0401_05_0004_401_1_4_1.png">
-								<img src="./images/suh_0401_05_0004_401_1_4_2.png" class="obj">
-								<span data-toggle-obj="1" data-toggle-target="1"></span>
+								<img src="./images/suh_0401_05_0004_401_1_4_2.png" class="obj"  data-toggle-obj="1">
+								<span data-toggle-target="1"></span>
 								<div class="--text n1">(명)</div>
 								<div class="--text n2">10<br>5</div>
 								<div class="--text n3">0</div>

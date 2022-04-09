@@ -194,7 +194,16 @@ body, .content-container{width:100%; max-width:1060px; height:640px;}
             dropAreaElement.removeChild(children[0]);
           }
           rotateArray.push(createRotate(dropAreaElement.children[0]));
+          window.$efSound.correct();
         }
+
+        const _rotateBtn = document.querySelectorAll( ".rotateButton" );
+        _rotateBtn.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+              window.$efSound.click();
+            });
+        });
+
       });
     </script>
   </body>
