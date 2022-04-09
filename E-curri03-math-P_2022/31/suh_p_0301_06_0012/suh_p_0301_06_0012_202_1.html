@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/life.css">
+    <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+    <style>
+        .contentsBox {
+            padding: 30px 20px;
+        }
+    
+        .scroll_container.horizon {
+            margin-top: 10px;
+            width: 100%;
+        }
+    
+        .scroll_container.horizon .scroll_content {
+            width: 2230px;
+        }
+    
+        .contentsList {
+            position: relative;
+            display: flex;
+            flex-flow: row;
+            width: 100%;
+            height: 400px;
+            align-items: flex-start;
+            /* justify-content: space-around; */
+        }
+    
+        .contentsList>li {
+            position: relative;
+            width: auto;
+            height: 380px;
+        }
+    
+        .contentsList>li img {
+            display: block;
+            width: 2200px;
+            height: 100%;
+        }
+        .img-wrap img.on {display: none;}
+        .contentsList>li .toggle-wrap {
+            position: absolute;
+            top: 13px;
+            left: 740px;
+            display: flex;
+            align-items: center;
+            font-size: 40px;
+            z-index: 1;
+        }
+    
+        .contentsList>li .toggle-wrap .toggle {
+            width: auto;
+            height: 57px;
+            margin-right: 20px;
+        }
+        .contentsList>li .toggle-wrap .toggle  .contentsList li {
+            width: auto;
+        }
+    
+        .flex-wrap.n2 {
+            position: absolute;
+            top: 120px;
+            left: 219px;
+            width: 100%;
+            height: 50px;
+            opacity: 0;
+        }
+    
+        .flex-wrap.n2 .text {
+            position: absolute;
+            font-size: 35px;
+        }
+        .flex-wrap.n2 .text.n1 {left: 0;}
+        .flex-wrap.n2 .text.n2 {left: 88px;}
+        .flex-wrap.n2 .text.n3 {left: 185px;}
+        .flex-wrap.n2 .text.n4 {left: 284px;}
+        .flex-wrap.n2 .text.n5 {left: 365px;}
+        .flex-wrap.n2 .text.n6 {left: 457px;}
+        .flex-wrap.n2 .text.n7 {left: 553px;}
+        .flex-wrap.n2 .text.n8 {left: 645px;}
+        .flex-wrap.n2 .text.n9 {left: 733px;}
+        .flex-wrap.n2 .text.n10 {left: 829px;}
+        .flex-wrap.n2 .text.n11 {left: 926px;}
+        .flex-wrap.n2 .text.n12 {left: 1021px;}
+        .flex-wrap.n2 .text.n13 {left: 1115px;}
+        .flex-wrap.n2 .text.n14 {left: 1207px;}
+        .flex-wrap.n2 .text.n15 {left: 1299px;}
+        .flex-wrap.n2 .text.n16 {left: 1399px;}
+        .flex-wrap.n2 .text.n17 {left: 1488px;}
+        .flex-wrap.n2 .text.n18 {left: 1578px;}
+        .flex-wrap.n2 .text.n19 {left: 1671px;}
+    
+        .text-wrap {
+            height: 145px;
+            text-align: center;
+            letter-spacing: -1px;
+            font-size: 38px;
+        }
+    
+        .text-wrap.t1 {
+            position: absolute;
+            display: flex;
+            top: 130px;
+            left: 43px;
+            flex-direction: column;
+            height: 248px;
+            color: #000;
+        }
+    
+        .text-wrap.t1 span {
+            display: block;
+            height: 83px;
+            font-size: 40px;
+        }
+    
+        .text-wrap.t2 {
+            color: #00a0ff;
+        }
+    
+        .text-wrap.t2 .text.t1 {
+            position: absolute;
+            top: 192px;
+            left: 368px;
+            line-height: 1.1;
+        }
+    
+        .text-wrap.t2 .text.t2 {
+            position: absolute;
+            top: 218px;
+            left: 655px;
+            line-height: 1.5;
+        }
+    
+        .text-wrap.t2 .text.t3 {
+            position: absolute;
+            top: 218px;
+            left: 1133px;
+            line-height: 1.5;
+        }
+    
+        .text-wrap.t2 .text.t4 {
+            position: absolute;
+            top: 192px;
+            left: 1384px;
+            line-height: 1.1;
+        }
+    
+        .text-wrap.t2 .text.t5 {
+            position: absolute;
+            top: 218px;
+            left: 1491px;
+            line-height: 1.5;
+        }
+    
+        .text-wrap.t2 .text.t6 {
+            position: absolute;
+            top: 228px;
+            left: 1667px;
+            line-height: 1.1;
+        }
+    
+        .text-wrap.t2 .text.t7 {
+            position: absolute;
+            top: 218px;
+            left: 1795px;
+            line-height: 1.5;
+        }
+        .text-wrap.t2 {
+            opacity: 0;
+        }
+        .text-wrap.t2.on {
+            opacity: 1;
+        }
+        .click-finger-Btn {
+            top: 220px;
+            left: 560px;
+            z-index: 1;
+            opacity: 1;
+        }
+        .click-finger-Btn.complete {
+            opacity: 0;
+            animation: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap" class="math">
+        <header>
+            <div class="title">
+                코끼리와 다람쥐, 토끼가 빵을 각각 전체의
+                <div class="bunsuWrap inline">
+                    <ul>
+                        <li>1</li>
+                        <li>3</li>
+                    </ul>
+                </div>,
+                <div class="bunsuWrap inline">
+                    <ul>
+                        <li>1</li>
+                        <li>6</li>
+                    </ul>
+                </div>,
+                <div class="bunsuWrap inline">
+                    <ul>
+                        <li>2</li>
+                        <li>6</li>
+                    </ul>
+                </div>만큼 먹었다면 남은 빵은 전체의 얼마인지 구해 봅시다.
+            </div>
+        </header>
+        <main>
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="iframe-wrap">
+                            <iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_11_02_01.html" title=""
+                                class="page-iframe" id="ifm1" scrolling="no"></iframe>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn="1"></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+    </div>
+    <div id="loadingContainer">
+        <div class="loadingIconAnimation"></div>
+    </div>
+
+    <script type="text/javascript" src="../common/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../common/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../common/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../common/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../common/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../common/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="./js/contents.js"></script>
+    <script src="./js/common/base.js"></script>
+    <script src="./js/common/common.js"></script>
+    <script src="./js/common/contents.js"></script>
+    <script src="./js/common/sprite.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
