@@ -11,12 +11,12 @@
   function setDrawLine(container, index) {
     var answers = [
       [{
-        start: {x: 12, y: 76},
-        end: {x: 644, y: 76}
+        start: {x: -10, y: -10},
+        end: {x: -10, y: -10}
       }],
       [{
-        start: {x: 12, y: 76},
-        end: {x: 504, y: 76}
+        start: {x: -10, y: -10},
+        end: {x: -10, y: -10}
       }]
     ];
 

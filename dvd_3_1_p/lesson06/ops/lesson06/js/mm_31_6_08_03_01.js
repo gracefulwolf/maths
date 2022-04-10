@@ -57,4 +57,24 @@ function initPage() {
 		}
 		$(".frog02").addClass("a6");
 	});
+	$("#btn-play-ani-02").on("click", function(){
+		console.log("play ani");
+		$("#btn-play-ani-02").addClass("toggle");
+		$("#btn-play-ani-02").hide();
+
+		// $("#animation-01").data("instance").play("ani1", {onComplete: onComplete, endStop: true, startFrame: 1,});
+		// $("#quiz-01").find('.check-list .check-item').addClass('answered')
+		// $(".frog01").addClass("a3");
+		
+	});
+	$("#btn-play-ani").on("click", function(){
+		console.log("play ani");
+		$("#btn-play-ani").addClass("toggle");
+		$("#btn-play-ani").hide();
+
+		// $("#animation-01").data("instance").play("ani1", {onComplete: onComplete, endStop: true, startFrame: 1,});
+		// $("#quiz-02").find('.check-list .check-item').addClass('answered')
+		// $(".frog02").addClass("a6");
+		
+	});
 };
