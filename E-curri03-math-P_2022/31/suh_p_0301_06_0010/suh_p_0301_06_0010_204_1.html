@@ -17,7 +17,9 @@
 			justify-content: flex-start;
 			text-align: justify;
 		}
-
+		#wrap header .title .toggleBlank {
+			margin-top: 8px;
+		}
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 			margin-right: 10px;
@@ -34,65 +36,25 @@
 			min-height: 40px !important;
 			transform: translate(0, 4px);
 		}
-		.bg {
-			position: relative;
-			padding-top: 50px;
-		}
-		.bg img {
-			position: relative;
-			width: 100%;
-		}
-		.bg .flex-wrap {
-			justify-content: space-between;
-			padding-left: 30px;
-		}
-		.bg .flex-wrap .colorBox {
-			min-width: 140px;
-			font-size: 40px;
-			text-align: center;
-		}
-		.bg .balloon {
-			position: absolute;
-			top: 40px;
-			left: 325px;
-		}
-		.popup_pages>li.whole .popup_contents {height: 100%;}
+		.contentsBox section {padding-top: 180px;}
+		.textAlignC {position: relative;}
+		.textAlignC img {width: 100%;}
+		.flex-wrap {position: absolute;justify-content: space-between;width: 100%;}
+		.flex-wrap.n1 {top: -40px;left: -8px;}
+		.flex-wrap.n2 {top: 50px;left: -8px;}
+		.flex-wrap.n3 {top: -75px;left: 74px;width: calc(100% - 160px);}
+		.flex-wrap.n3 .toggle {padding: 2px 8px;}
+		.flex-wrap.n4 {top: 55px;left: 80px;width: calc(100% - 160px);}
+
+		.popup_pages>li.whole .popup_contents {height: 100%;font-size: 40px;}
+		.popup_pages>li.whole section {margin-top: 200px;padding: 0 30px;box-sizing: border-box;}
 		.popup_pages>li.whole .dapCheckBtn {right: 40px;bottom: 20px;}
-		.popup_contents .bg {
-			padding-top: 30px;
-		}
-		.popup_contents .text.n6 {
-			position: absolute;
-			bottom: 72px;
-			right: 353px;
-			letter-spacing: -1px;
-		}
-		.popup_contents .flex-wrap {
-			position: relative;
-			top: -143px;
-			padding-left: 0;
-		}
-		.popup_contents .colorBox {
-			padding: 6px 10px;
-		}
-		.popup_contents .textAlignC {font-size: 40px;}
-		.pop_page_3 .bg img {
-			width: 80%;
-		}
-		.pop_page_3 .flex-wrap {
-			position: absolute;
-			left: 120px;
-			top: auto;
-			bottom: 56px;
-		}
-		.pop_page_3 .colorBox {
-			min-width: 130px;
-		}
-		.pop_page_3 .flex-wrap .text.n2 {left: 85px;}
-		.pop_page_3 .flex-wrap .text.n3 {left: 90px;}
-		.pop_page_3 .flex-wrap .text.n4 {left: 95px;}
-		.pop_page_3 .flex-wrap .text.n5 {left: 165px;}
-		.pop_page_3 .text.n6 {bottom: -20px;right: auto;left: 232px;}
+		.popup_contents .toggleBlank {margin-top: 6px;}
+		.popup_contents .flex-wrap.n1 {top: -50px;left: -8px;}
+		.popup_contents .flex-wrap.n2 {top: 35px;left: -8px;}
+		.popup_contents .flex-wrap.n3 {top: -95px;left: 74px;width: calc(100% - 160px);}
+		.popup_contents .flex-wrap.n3 .toggle {padding: 2px 8px;}
+		.popup_contents .flex-wrap.n4 {top: 35px;left: 80px;width: calc(100% - 160px);}
 	</style>
 </head>
 
@@ -101,30 +63,109 @@
 		<header>
 			<div class="title active">
 				<div class="bullet number orange inline">4</div>
-				병원에서 은행까지의 거리는 약 얼마일까요?
+				<span class="toggleBlank"></span> 안에 알맞은 수를 써넣으세요.
 			</div>
 		</header>
 		<main>
 			<div class="contentsBox" data-quiz="toggle">
 				<section>
-					<div class="textAlignC bg">
-						<img src="./images/suh_p_0301_05_0009_204_1/suh_p_0301_05_0009_204_1_1.png" alt="">
-						<div class="flex-wrap">
-							<div class="colorBox sky text n1">학교</div>
-							<div class="colorBox sky text n2">병원</div>
-							<div class="colorBox sky text n3">슈퍼마켓</div>
-							<div class="colorBox sky text n4">도서관</div>
-							<div class="colorBox sky text n5">은행</div>
+					<div class="textAlignC">
+						<img src="./images/suh_p_0301_06_0010_204_1/suh_p_0301_06_0010_204_1_1.png" alt="">
+						<div class="flex-wrap n1">
+							<div class="text n1">0</div>
+							<div class="text n2">1</div>
 						</div>
-						<div class="balloon deeppink bottom ctTail">약 1 km</div>
-					</div>
-					<div class="textAlignC mt_50">
-						약 
-						<div class="toggle" data-toggle-obj="1">
-							<span class="answer" data-toggle-target="1">
-								3
-							</span>
-						</div> km
+						<div class="flex-wrap n2">
+							<div class="text n1">0</div>
+							<div class="text n2">1</div>
+						</div>
+						<div class="flex-wrap n3">
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>10</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>3</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>4</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>5</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>6</li>
+											<li>10</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>7</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>8</li>
+									<li>10</li>
+								</ul>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>9</li>
+									<li>10</li>
+								</ul>
+							</div>
+						</div>
+						<div class="flex-wrap n4">
+							<div>0.1</div>
+							<div>0.2</div>
+							<div>
+								<div class="toggle" data-toggle-obj="3">
+									<div class="answer" data-toggle-target="3">
+										0.3
+									</div>
+								</div>
+							</div>
+							<div>0.4</div>
+							<div>0.5</div>
+							<div>0.6</div>
+							<div>0.7</div>
+							<div>
+								<div class="toggle" data-toggle-obj="4">
+									<div class="answer" data-toggle-target="4">
+										0.8
+									</div>
+								</div>
+							</div>
+							<div>0.9</div>
+						</div>
 					</div>
 						
 					<div class="buttonContainer left">
@@ -147,7 +188,29 @@
 			<ul class="popup_pages">
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents" style="letter-spacing: -2.3px;">
-						병원에서 슈퍼마켓까지의 거리가 약 1 km이고, 병원에서 은행까지의 거리는 병원에서 슈퍼마켓까지 거리의 3배이므로 약 3 km입니다.
+						0.2＝<div class="bunsuWrap inline">
+							<ul>
+								<li>2</li>
+								<li>10</li>
+							</ul>
+						</div>,
+						<div class="bunsuWrap inline">
+							<ul>
+								<li>3</li>
+								<li>10</li>
+							</ul>
+						</div>＝0.3, 0.6＝<div class="bunsuWrap inline">
+							<ul>
+								<li>6</li>
+								<li>10</li>
+							</ul>
+						</div>,
+						<div class="bunsuWrap inline">
+							<ul>
+								<li>8</li>
+								<li>10</li>
+							</ul>
+						</div>＝0.8
 					</div>
 				</li>
 
@@ -158,33 +221,113 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									<p class="mb_10">꽃집에서 빵집까지의 거리는 약 얼마일까요?</p>
+									<p class="mb_10"><span class="toggleBlank"></span> 안에 알맞은 수를 써넣으세요.</p>
 								</div>
 							</li>
 						</ul>
-						<div class="textAlignC bg">
-							<img src="./images/suh_p_0301_05_0009_204_1/suh_p_0301_05_0009_204_1_2.png" alt="">
-							<div class="flex-wrap">
-								<div class="colorBox sky text n1">병원</div>
-								<div class="colorBox sky text n2">꽃집</div>
-								<div class="colorBox sky text n3">서점</div>
-								<div class="colorBox sky text n4">빵집</div>
-								<div class="colorBox sky text n5">편의점</div>
+						<section>
+							<div class="textAlignC">
+								<img src="./images/suh_p_0301_06_0010_204_1/suh_p_0301_06_0010_204_1_1.png" alt="">
+								<div class="flex-wrap n1">
+									<div class="text n1">0</div>
+									<div class="text n2">1</div>
+								</div>
+								<div class="flex-wrap n2">
+									<div class="text n1">0</div>
+									<div class="text n2">1</div>
+								</div>
+								<div class="flex-wrap n3">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>3</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>4</li>
+													<li>10</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>5</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>6</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>7</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>8</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>9</li>
+													<li>10</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flex-wrap n4">
+									<div>0.1</div>
+									<div>
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												0.2
+											</div>
+										</div>
+									</div>
+									<div>0.3</div>
+									<div>0.4</div>
+									<div>0.5</div>
+									<div>0.6</div>
+									<div>
+										<div class="toggle" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">
+												0.7
+											</div>
+										</div>
+									</div>
+									<div>0.8</div>
+									<div>0.9</div>
+								</div>
 							</div>
-							<div class="text n6">약 1 km</div>
-						</div>
-						<div class="textAlignC">
-							약 
-							<div class="toggle" data-toggle-obj="1">
-								<span class="answer" data-toggle-target="1">
-									2
-								</span>
-							</div> km
-						</div>
+						</section>
 
-						<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<a href="./data/(3-1-6)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
-						
 					</div>
 				</li>
 
@@ -195,33 +338,113 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									<p class="mb_10">놀이공원에서 식물원까지의 거리는 약 얼마일까요?</p>
+									<p class="mb_10"><span class="toggleBlank"></span> 안에 알맞은 수를 써넣으세요.</p>
 								</div>
 							</li>
 						</ul>
-						<div class="textAlignC bg">
-							<img src="./images/suh_p_0301_05_0009_204_1/suh_p_0301_05_0009_204_1_3.png" alt="">
-							<div class="flex-wrap">
-								<div class="colorBox sky text n1">놀이공원</div>
-								<div class="colorBox sky text n2">시계탑</div>
-								<div class="colorBox sky text n3">식물원</div>
-								<div class="colorBox sky text n4">동물원</div>
-								<div class="colorBox sky text n5">미술관</div>
+						<section>
+							<div class="textAlignC">
+								<img src="./images/suh_p_0301_06_0010_204_1/suh_p_0301_06_0010_204_1_1.png" alt="">
+								<div class="flex-wrap n1">
+									<div class="text n1">0</div>
+									<div class="text n2">1</div>
+								</div>
+								<div class="flex-wrap n2">
+									<div class="text n1">0</div>
+									<div class="text n2">1</div>
+								</div>
+								<div class="flex-wrap n3">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>3</li>
+													<li>10</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>4</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>5</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>6</li>
+													<li>10</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>7</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>8</li>
+											<li>10</li>
+										</ul>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>9</li>
+											<li>10</li>
+										</ul>
+									</div>
+								</div>
+								<div class="flex-wrap n4">
+									<div>0.1</div>
+									<div>0.2</div>
+									<div>0.3</div>
+									<div>0.4</div>
+									<div>
+										<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												0.5
+											</div>
+										</div>
+									</div>
+									<div>0.6</div>
+									<div>0.7</div>
+									<div>0.8</div>
+									<div>
+										<div class="toggle" data-toggle-obj="4">
+											<div class="answer" data-toggle-target="4">
+												0.9
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="text n6">약 1 km</div>
-						</div>
-						<div class="textAlignC mt_50">
-							약 
-							<div class="toggle" data-toggle-obj="1">
-								<span class="answer" data-toggle-target="1">
-									1500
-								</span>
-							</div> m
-						</div>
+						</section>
 
-						<a href="./data/(3-1-5)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<a href="./data/(3-1-6)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
-						
 					</div>
 				</li>
 			</ul>

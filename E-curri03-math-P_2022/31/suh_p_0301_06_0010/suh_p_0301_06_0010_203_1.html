@@ -12,27 +12,27 @@
 	<link rel="stylesheet" href="../../../default/css/custom.css">
 	<style>
 		.basicSlider_slides section {padding-right:0}
-		#wrap header .title {padding-left: 0;}
-		#wrap header .title:before {display: none;}
-		header .title .icon_o_title {margin-top: 8px;}
+		.blankBox.w40 {min-width: 40px;height: 40px;margin-top: 6px;}
+		#wrap header .title .bullet.number {margin-top: 5px;}
+		#wrap header .title .toggleBlank {vertical-align: -5px;margin-right: 5px;width: 38px;height: 38px;background: transparent;}
 		.flexListContainer {justify-content: space-around;height: calc(100% - 100px);}
 		.flexListContainer li .toggle {position: relative;margin: 0 20px;}
-		.flexListContainer li .toggle .icon_o_title {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);padding: 10px;}
-		.flexListContainer li .toggle .answer > img {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
-		.buttonContainer {right: 56px;}
-
-		.pop_page_2.whole .flexListContainer{margin-top: 120px;}
-		.pop_page_2.whole  .popup_contents > .contentsList li {display: flex;align-items: center;}
-		.pop_page_2.whole  .popup_contents > .contentsList li .icon_o_title {margin: 0 8px;}
+		.popup_contents .flexListContainer{margin-top: 150px;}
+		.popup_contents .flexListContainer .flex-wrap {align-items: center;}
+		.popup_contents > .contentsList li {display: flex;align-items: center;}
+		.popup_contents > .contentsList li p {display: flex;align-items: center;}
+		.popup_contents > .contentsList li p .toggleBlank {margin: 0 8px;}
+		.popup_contents .dapCheckBtn {right: 40px;bottom: 20px;}
+		.popup_contents .bunsuWrap {font-size: 40px;}
 	</style>
 </head>
 
 <body>
 	<div id="wrap">
 		<header>
-			<div class="title" style="letter-spacing:-1px">
-				<div class="bullet number orange inline">3</div> 두 분수의 크기를 비교하여 <span class="icon_o_title"></span> 안에 
-				<img src="../common/contents/images/math/inequalIcon_2.png" height="40">,<img src="../common/contents/images/math/equalIcon.png" height="40">,<img src="../common/contents/images/math/inequalIcon.png" height="40"> 를 알맞게 써넣으세요.
+			<div class="title active" style="letter-spacing:-1px">
+				<div class="bullet number orange inline">3</div> 두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 
+				<img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 			</div>
 		</header>
 		<main>
@@ -47,10 +47,9 @@
 										<li>6</li>
 									</ul>
 								</div>
-								<div class="toggle noBg" data-toggle-obj="1">
-									<div class="icon_o_title" data-toggle-target="1"></div>
+								<div class="toggle circle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+										<img src="../common/contents/images/math/inequalIcon_blue.png">
 									</div>
 								</div>
 								<div class="bunsuWrap inline">
@@ -69,10 +68,9 @@
 										<li>4</li>
 									</ul>
 								</div>
-								<div class="toggle noBg" data-toggle-obj="2">
-									<div class="icon_o_title" data-toggle-target="2"></div>
+								<div class="toggle circle" data-toggle-obj="2">
 									<div class="answer" data-toggle-target="2">
-										<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+										<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 									</div>
 								</div>
 								<div class="bunsuWrap inline">
@@ -91,10 +89,9 @@
 										<li>5</li>
 									</ul>
 								</div>
-								<div class="toggle noBg" data-toggle-obj="3">
-									<div class="icon_o_title" data-toggle-target="3"></div>
+								<div class="toggle circle" data-toggle-obj="3">
 									<div class="answer" data-toggle-target="3">
-										<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+										<img src="../common/contents/images/math/inequalIcon_blue.png">
 									</div>
 								</div>
 								<div class="bunsuWrap inline">
@@ -126,7 +123,20 @@
 			<ul class="popup_pages">
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
-						어울리는 단위를 써넣으면 색연필의 길이는 20 cm, 연필심의 길이는 2 mm, 연못의 둘레는 2 km입니다.
+						<ul class="contentsList">
+							<li>
+								<ins class="dot orange"></ins>
+								<div>
+									분모가 같은 분수는 분자가 클수록 큰 수입니다.
+								</div>
+							</li>
+							<li>
+								<ins class="dot orange"></ins>
+								<div>
+									단위분수는 분모가 작을수록 큰 수입니다.
+								</div>
+							</li>
+						</ul>
 					</div>
 				</li>
 
@@ -138,8 +148,8 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<p class="mb_10" style="letter-spacing: -1px;">
-										두 분수의 크기를 비교하여 <span class="icon_o_title"></span> 안에 
-										<img src="../common/contents/images/math/inequalIcon_2.png" height="40">,<img src="../common/contents/images/math/equalIcon.png" height="15">,<img src="../common/contents/images/math/inequalIcon.png" height="40"> 를 알맞게 써넣으세요.
+										두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 
+										<img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="12">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 									</p>
 								</div>
 							</li>
@@ -154,10 +164,9 @@
 												<li>7</li>
 											</ul>
 										</div>
-										<div class="toggle noBg" data-toggle-obj="1">
-											<div class="icon_o_title" data-toggle-target="1"></div>
+										<div class="toggle circle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
-												<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+												<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 											</div>
 										</div>
 										<div class="bunsuWrap inline">
@@ -176,10 +185,9 @@
 												<li>5</li>
 											</ul>
 										</div>
-										<div class="toggle noBg" data-toggle-obj="2">
-											<div class="icon_o_title" data-toggle-target="2"></div>
+										<div class="toggle circle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
-												<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+												<img src="../common/contents/images/math/inequalIcon_blue.png">
 											</div>
 										</div>
 										<div class="bunsuWrap inline">
@@ -198,10 +206,9 @@
 												<li>3</li>
 											</ul>
 										</div>
-										<div class="toggle noBg" data-toggle-obj="3">
-											<div class="icon_o_title" data-toggle-target="3"></div>
+										<div class="toggle circle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">
-												<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+												<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 											</div>
 										</div>
 										<div class="bunsuWrap inline">
@@ -213,11 +220,8 @@
 									</div>
 								</li>
 							</ul>
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
 						</section>
+
 						<a href="./data/(3-1-6)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
@@ -230,44 +234,80 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div>
-									<p class="mb_10"><span class="blankBox w40"></span> 안에 알맞은 단위를 써넣으세요.</p>
+									<p class="mb_10" style="letter-spacing: -1px;">
+										두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 
+										<img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="12">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
+									</p>
 								</div>
 							</li>
 						</ul>
-						<div class="flexListContainer column center">
-							<ul class="dotList orange">
+						<section>
+							<ul class="flexListContainer center">
 								<li>
-									<div>
-										줄넘기의 길이는 120      
-										<div class="toggle" data-toggle-obj="1">
+									<div class="flex-wrap">
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>3</li>
+												<li>4</li>
+											</ul>
+										</div>
+										<div class="toggle circle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
-												cm
-											</div> 
-										</div>입니다.
+												<img src="../common/contents/images/math/inequalIcon_2_blue.png">
+											</div>
+										</div>
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>1</li>
+												<li>4</li>
+											</ul>
+										</div>
 									</div>
 								</li>
 								<li>
-									<div>
-										완두콩의 길이는 12                    
-										<div class="toggle" data-toggle-obj="2">
+									<div class="flex-wrap">
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>2</li>
+												<li>6</li>
+											</ul>
+										</div>
+										<div class="toggle circle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
-												mm
-											</div> 
-										</div>입니다.
+												<img src="../common/contents/images/math/inequalIcon_blue.png">
+											</div>
+										</div>
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>4</li>
+												<li>6</li>
+											</ul>
+										</div>
 									</div>
 								</li>
 								<li>
-									<div>
-										강의 길이는 12       
-										<div class="toggle" data-toggle-obj="3">
+									<div class="flex-wrap">
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>1</li>
+												<li>8</li>
+											</ul>
+										</div>
+										<div class="toggle circle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">
-												km
-											</div> 
-										</div>입니다.
+												<img src="../common/contents/images/math/inequalIcon_blue.png">
+											</div>
+										</div>
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>1</li>
+												<li>5</li>
+											</ul>
+										</div>
 									</div>
 								</li>
 							</ul>
-						</div>
+						</section>
 
 						<a href="./data/(3-1-6)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
