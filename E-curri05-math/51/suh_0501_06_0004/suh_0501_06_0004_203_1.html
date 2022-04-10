@@ -12,7 +12,20 @@
   <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
   <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
   <style>
-    
+    .title figure{position:relative;display:inline-block;height:52px;vertical-align:top;}
+    .title figure img{display:block;height:100%;}
+    .title figure span{position:absolute;top:8px;left:3px;font-size:0.7em;letter-spacing:-1px;}
+    .title .supply_guide{margin:7px 0 0 5px !important;}
+    .flex-box{margin:0 auto;width:800px;align-items:center;justify-content:space-between;}
+    .flex-box > div{display:flex;flex-direction:column;align-items:center;}
+    .flex-box figure{margin:30px 0;height:300px;}
+    .flex-box figure img{display:block;height:100%;}
+    .flex-box figure table{position:absolute;opacity:0;}
+    .flex-box figure.on table{opacity:1;}
+    .flex-box div:nth-child(1) table{top:6px;left:4px;width:calc(100% - 10px);height:calc(100% - 10px);}
+    .flex-box div:nth-child(1) table td{width:calc(100% / 5);height:calc(100% / 4);background:url(./images/suh_0501_06_0004_203_1_1.png) no-repeat center / calc(100% + 6px) calc(100% + 6px);}
+    .flex-box div:nth-child(2) table{top:40px;left:6px;width:calc(100% - 13px);height:calc(100% - 81px);}
+    .flex-box div:nth-child(2) table td{width:calc(100% / 3);height:calc(100% / 3);background:url(./images/suh_0501_06_0004_203_1_1.png) no-repeat center / calc(100% + 6px) calc(100% + 6px);}
   </style>
 </head>
 
@@ -20,26 +33,91 @@
 
   <div id="wrap" class="math">
     <header>
-      <div class="title">여러 가지 모양을 단위로 하여 넓이를 구하고 넓이의 단위로 알맞은 모양을 알아봅시다.</div>
+      <div class="title">
+        <figure>
+          <img src="./images/suh_0501_06_0004_203_1_1.png" alt="">
+          <span>1 ㎠</span>
+        </figure>를 그림 위에 붙여 넓이를 구해 봅시다. <div class="supply_guide inline">준비물 12</div>
+      </div>
     </header>
     <main>
-      <div class="contentsBox board" data-quiz="toggle">
-        넓이를 나타낼 때 한 변의 길이가 1 ㎝인 정사각형의 넓이를 단위로 사용할 수 있습니다. 이 정사각형의 넓이를
-        <div class="toggle yellow" data-toggle-obj="1">
-          <div class="answer" data-toggle-target="1">1 ㎠</div>
-        </div>라 쓰고,
-        <div class="toggle yellow" data-toggle-obj="2">
-          <div class="answer" data-toggle-target="2">1 제곱센티미터</div>
-        </div>라고 읽습니다.
-        <div class="flex-box">
-          <figure>
-            <img src="./images/suh_0501_06_0004_203_1_1.png" alt="">
-          </figure>
-          <figure>
-            <img src="./images/suh_0501_06_0004_203_2.png" alt="">
-            <span>1 ㎠</span>
-          </figure>
-        </div>
+      <div class="contentsBox" data-quiz="toggle">
+        <section>
+          <div class="flex-box">
+            <div>
+              <figure data-toggle-target="1">
+                <img src="./images/suh_0501_06_0004_203_1_2.png" alt="">
+                <table>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                </table>
+              </figure>
+              <div>
+                <div class="toggle" data-toggle-obj="1">
+                  <div class="answer" data-toggle-target="1">
+                    20
+                  </div>
+                </div> ㎠
+              </div>
+            </div>
+            <div>
+              <figure data-toggle-target="2">
+                <img src="./images/suh_0501_06_0004_203_1_3.png" alt="">
+                <table>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                  <tr>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                    <td>1 ㎠</td>
+                  </tr>
+                </table>
+              </figure>
+              <div>
+                <div class="toggle" data-toggle-obj="2">
+                  <div class="answer" data-toggle-target="2">
+                    9
+                  </div>
+                </div> ㎠
+              </div>
+            </div>
+          </div>
+          <button class="dapCheckBtn" data-answer-btn=""></button>
+        </section>
       </div>
     </main>
   </div>
