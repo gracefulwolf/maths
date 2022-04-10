@@ -42,17 +42,19 @@
         }
     
         .contentsList>li img {
-            display: block;
             width: 2200px;
             height: 100%;
         }
-        .img-wrap img.on {display: none;}
+        .img-wrap {position: relative;}
+        .img-wrap > img {position: absolute;top: 0;left: 0;}
+        .img-wrap > img.on {opacity: 0;}
         .contentsList>li .toggle-wrap {
             position: absolute;
             top: 13px;
-            left: 740px;
+            left: 815px;
             display: flex;
             align-items: center;
+            width: 300px;
             font-size: 40px;
             z-index: 1;
         }
@@ -60,7 +62,6 @@
         .contentsList>li .toggle-wrap .toggle {
             width: auto;
             height: 57px;
-            margin-right: 20px;
         }
         .contentsList>li .toggle-wrap .toggle  .contentsList li {
             width: auto;
@@ -100,6 +101,7 @@
         .flex-wrap.n2 .text.n19 {left: 1671px;}
     
         .text-wrap {
+            min-width: 120px;
             height: 145px;
             text-align: center;
             letter-spacing: -1px;
@@ -213,8 +215,8 @@
                                         <li>
                                             <div class="img-wrap">
                                                 <span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
-                                                <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_1.png"
-                                                alt="" data-toggle-target="1">
+                                                <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_1.png" alt="" data-toggle-target="1" class="bg">
+                                                <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_2.png">
                                             </div>
                                             <div class="toggle-wrap">
                                                 <div class="toggle" data-toggle-obj="2">
@@ -228,10 +230,8 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                </div>
-                                                <div class="text">의 하루</div>
+                                                </div><div class="text">의 하루</div>
                                             </div>
-                                            <img src="./images/suh_p_0301_05_0011_203_1/suh_p_0301_05_0011_203_1_2.png" data-toggle-target="1">
                                             <div class="flex-wrap n2">
                                                 <div class="text n1">6시</div>
                                                 <div class="text n2">7시</div>

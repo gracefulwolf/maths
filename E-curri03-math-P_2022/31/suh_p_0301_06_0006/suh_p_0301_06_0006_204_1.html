@@ -10,12 +10,21 @@
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style type="text/css">
 	.basicSlider_slides section {padding-right:0}
-	header .title .icon_o_title {margin-top: 8px;}
+	header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background: transparent;}
 	.flexListContainer {justify-content: space-around;height: calc(100% - 60px);}
-	.flexListContainer li .toggle {position: relative;margin: 0 20px;}
-	.flexListContainer li .toggle .icon_o_title {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);padding: 10px;}
-	.flexListContainer li .toggle .answer > img {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+	.flexListContainer li .toggle.circle {position: relative;margin: 0 20px;}
+	.flexListContainer li .flex-wrap {align-items: center;}
 	.buttonContainer {right: 56px;}
+	.pop_page_1.solve .flexListContainer {width: 70%;margin: 0 auto;}
+	.pop_page_1.solve .flexListContainer li {display: flex;flex-direction: column;align-items: center;justify-content: space-around;}
+	.pop_page_1.solve .flexListContainer li > div:not(.arrow) {display: flex;align-items: center;justify-content: center;}
+	.pop_page_1.solve .flexListContainer li > div img {margin: 3px 10px 0;}
+	.pop_page_1.solve .arrow {position: relative;top: 16px;width: 65px;height: 2px;background: red;margin-bottom: 20px;transform: rotate(180deg);}
+	.pop_page_1.solve .arrow > span {position: absolute;top: 0;display: inline-block;width: 2px;height: 15px;background: red;}
+	.pop_page_1.solve .arrow > span:nth-child(1) {left: 0;}
+	.pop_page_1.solve .arrow > span:nth-child(1):before {position: absolute;top: 15px;left: -8px;content: '';display: inline-block;width: 20px;height: 2px;background: red;}
+	.pop_page_1.solve .arrow > span:nth-child(2) {right: 0;}
+	.pop_page_1.solve .arrow > span:nth-child(2):after {content: '';position: absolute;top: 15px;left: -8px;display: inline-block;width: 20px;height: 2px;background: red;}
 </style>
 </head>
 
@@ -23,9 +32,9 @@
 <div id="wrap" class="math">
 	<header>
 		<div class="title" style="letter-spacing:-1px">
-			두 분수의 크기를 비교하여 <span class="icon_o_title"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png"
-			height="40">,<img src="../common/contents/images/math/equalIcon.png" height="40">,<img
-			src="../common/contents/images/math/inequalIcon.png" height="40"> 를 알맞게 써넣으세요.
+			두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png"
+			height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img
+			src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 		</div>
 	</header>
 	<main>
@@ -39,10 +48,9 @@
 								<li>6</li>
 							</ul>
 						</div>
-						<div class="toggle noBg" data-toggle-obj="1">
-							<div class="icon_o_title" data-toggle-target="1"></div>
+						<div class="toggle circle" data-toggle-obj="1">
 							<div class="answer" data-toggle-target="1">
-								<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+								<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 							</div>
 						</div>
 						<div class="bunsuWrap inline">
@@ -61,10 +69,9 @@
 								<li>9</li>
 							</ul>
 						</div>
-						<div class="toggle noBg" data-toggle-obj="2">
-							<div class="icon_o_title" data-toggle-target="2"></div>
+						<div class="toggle circle" data-toggle-obj="2">
 							<div class="answer" data-toggle-target="2">
-								<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+								<img src="../common/contents/images/math/inequalIcon_blue.png">
 							</div>
 						</div>
 						<div class="bunsuWrap inline">
@@ -83,10 +90,9 @@
 								<li>8</li>
 							</ul>
 						</div>
-						<div class="toggle noBg" data-toggle-obj="3">
-							<div class="icon_o_title" data-toggle-target="3"></div>
+						<div class="toggle circle" data-toggle-obj="3">
 							<div class="answer" data-toggle-target="3">
-								<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+								<img src="../common/contents/images/math/inequalIcon_blue.png">
 							</div>
 						</div>
 						<div class="bunsuWrap inline">
@@ -108,32 +114,80 @@
 		<ul class="popup_pages">
 			<li class="solve pop_page_1" data-popup-page="1">
 				<div class="popup_contents">
-					<div>
-						<ul class="flexListContainer">
-							<li>
-								<div class="flex-wrap">
-									<div>
-										1 <img src="../common/contents/images/math/inequalIcon.png" height="15"> 2
-									</div>
-									<div>
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>1</li>
-												<li>3</li>
-											</ul>
-										</div>
-										<img src="../common/contents/images/math/inequalIcon_blue.png" height="20">
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>2</li>
-												<li>3</li>
-											</ul>
-										</div>
-									</div>
+					<ul class="flexListContainer">
+						<li>
+							<div>
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>6</li>
+									</ul>
 								</div>
-							</li>
-						</ul>
-					</div>
+								<img src="../common/contents/images/math/inequalIcon.png" height="30">
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>7</li>
+									</ul>
+								</div>
+							</div>
+							<div class="arrow">
+								<span></span>
+								<span></span>
+							</div>
+							<div>
+								6 <img src="../common/contents/images/math/inequalIcon.png" height="30"> 7
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>9</li>
+									</ul>
+								</div>
+								<img src="../common/contents/images/math/inequalIcon_2.png" height="30">
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>2</li>
+									</ul>
+								</div>
+							</div>
+							<div class="arrow">
+								<span></span>
+								<span></span>
+							</div>
+							<div>
+								9 <img src="../common/contents/images/math/inequalIcon_2.png" height="30"> 2
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>8</li>
+									</ul>
+								</div>
+								<img src="../common/contents/images/math/inequalIcon_2.png" height="30">
+								<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>3</li>
+									</ul>
+								</div>
+							</div>
+							<div class="arrow">
+								<span></span>
+								<span></span>
+							</div>
+							<div>
+								8 <img src="../common/contents/images/math/inequalIcon_2.png" height="30"> 3
+							</div>
+						</li>
+					</ul>
 				</div>
 			</li>
 		</ul>
