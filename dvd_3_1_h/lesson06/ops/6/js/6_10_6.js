@@ -4,12 +4,12 @@
   var drawLines = [];
   var answers = [
     [{
-      end: {x: 133, y: 13},
-      start: {x: -2, y: 13}
+      end: {x: -10, y: -10},
+      start: {x: -10, y: -10}
     }],
     [{
-      end: {x: 113, y: 13},
-      start: {x: -2, y: 13}
+      end: {x: -10, y: -10},
+      start: {x: -10, y: -10}
     }]
   ];
 
@@ -27,9 +27,9 @@
     drawLines.push(new DrawLine({
       container: container,
       resetButton: container.querySelector('.js-resetButton'),
-      answerButton: document.querySelector('.js-chainButtons'),
+      answerButton: document.querySelector('.js-buttons'),
       answer: answers[index],
-      lineColor: '#c07aac',
+      lineColor: '#00a0ff',
       lineWidth: 12,
       callback: {
         start: function(DrawLine) {
