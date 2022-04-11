@@ -145,45 +145,23 @@
               <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
             </div>
           </li>
-          <li class="page_3" data-quiz="toggle">
+
+          <li class="page_4" data-quiz="toggle">
             <ul class="contentsList">
-              <li>
-                <ins class="bullet circleDot"></ins>
-                <div>
-                  <p class="mb_10 ls2">문제를 해결한 여러 가지 방법에 대해 친구들과 이야기해 보세요.</p>
-                  <div class="toggle box" data-toggle-obj="1">
-                    <div class="answer" data-toggle-target="1">
-                      <div class="ex-box">
-                        <div class="bullet exam">예</div>
-                        <p>
-                          각각의 친구가 사용한 색종이의 양을 구해서 더 많은 색종이를 사용한 친구의 양에서 더 적은 색종이를 사용한 친구의 양을
-                          빼서 구했습니다.
-                        </p>
-                      </div>
+                <li>
+                    <ins class="bullet circleDot"></ins>
+                    <div>
+                        <p class="mb_10 ls2">해결한 방법을 되돌아 보세요.</p>
+                        <div id="aniBox_2"></div>
                     </div>
-                  </div>
-                </div>
-              </li>
+                </li>
             </ul>
-            <button class="dapCheckBtn" data-answer-btn="1"></button>
-          </li>
+        </li>
+
+
         </ul>
       </div>
     </main>
-    <section class="popup_container" data-popup-container="">
-      <ul class="popup_pages">
-        <li class="whole pop_page_1" data-popup-page="1">
-          <div class="popup_contents">
-            <div class="img-group">
-              <div class="img-item">
-                <img src="./images/suh_0501_05_0008_201_1.png" alt="">
-              </div>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-    </section>
   </div>
   <div id="loadingContainer">
     <div class="loadingIconAnimation"></div>
@@ -204,6 +182,57 @@
     document.addEventListener('DOMContentLoaded', function () {
     }, false);
   </script>
+
+<script type="text/javascript">
+  document.addeventlistener('domcontentloaded', function () {
+      $prite.add({
+          target: $ts.getel('#anibox_2'),
+          spriteid: 'sprite3',
+          spritelist: [
+              {
+                  name: 'girl_4',
+                  circle: 'purple',
+                  top: 150,
+                  left: 400,
+                  width: 340,
+                  height: 421,
+                  thumbnail: '../common/contents/images/character/girl_4.png',
+                  spritesheet: '../common/contents/images/character/girl_4_sprite.png',
+                  sound: './media/audios/suh_0501_06_0014_202_1.mp3',
+                  speech:'right',
+                  textbubble: {
+                      text: '똑같은 도형의 넓이를 구하는 데 여러 가지<br>해결 방법이 있다는<br>사실을 깨달았습니다.',
+                      class: 'balloon left purple',
+                      top: 150,
+                      left: 430,
+                      width: 450,
+                      textalign: 'center',
+                      wordbreak: 'keep-all'
+                  },
+                  sheetwidth: 102000,
+                  sheetheight: 421,
+                  // endsheet: 0,
+                  delay: 40,
+                  callbacks: {
+                      start: function () {
+                          $ts.getel('.page_4 .characterimg')[0].style.left = '-200px';
+                      }, // 시작시 콜백
+                      end: function () {
+                          $ts.getel('.page_4 .characterimg')[0].style.left = 0;
+                      } // 끝날시 콜백
+                  }
+              }
+
+          ]
+      });
+      window.$callback.sliderreset = function(params) {
+          $ts.getel('.page_4 .characterimg')[0].style.left = 0;
+      };
+  }, false);
+</script>
+
+
+
 </body>
 
 </html>
