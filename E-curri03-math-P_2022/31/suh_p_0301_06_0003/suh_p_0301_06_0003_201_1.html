@@ -23,7 +23,19 @@ header .title .supply_guide.inline {top:8px}
 .page_1 .innerTab_3 .flex-item.n1 {position:relative}
 .page_1 .innerTab_3 .flex-item.n1 .bullet.exam {position:absolute;top:-50px;left:0}
 .page_1 .innerTab_3 .flex-item.n1 .toggle {position:absolute;top:0;left:0;padding:0;background-color:transparent}
-.page_1 .innerTab_3 .flex-item.n1 .toggle::after {display:none}
+.page_1 .innerTab_3 .flex-item.n1 .toggle:after {
+	width: 51px;
+	height: 70px;
+	border-radius:0;
+	border:none;
+	content:'';
+	top:55%;
+	background: url("../common/contents/images/icon/icon_click_finger.png") center/contain no-repeat;
+	-webkit-animation: opacity 1.5s ease-in 3;
+	-o-animation: opacity 1.5s ease-in 3;
+	animation: opacity 1.5s ease-in 3
+}
+.page_1 .innerTab_3 .flex-item.n1 .toggle.complete:after {display:none}
 .page_1 .innerTab_3 .flex-item.n1 .toggle .answer {background-color:#fff}
 
 #aniBox_1 {position:absolute;top:-60px;left:420px}
