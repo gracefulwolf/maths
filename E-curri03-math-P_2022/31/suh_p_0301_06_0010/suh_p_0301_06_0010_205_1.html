@@ -17,7 +17,7 @@
 			justify-content: flex-start;
 			text-align: justify;
 		}
-
+		#wrap header .title .toggleBlank, .popup_contents .toggleBlank {margin-top: 6px;}
 		#wrap header .title .bullet.number {
 			margin-top: 5px;
 			margin-right: 10px;
@@ -26,38 +26,41 @@
 		#wrap.q5 header .title .bullet.number+.bullet.number {
 			margin-right: 2px
 		}
-
-		.contentsBox {
-			padding-top: 15px;
-		}
-
 		.textAlignC.bg {
 			position: relative;
-			margin: 0 auto;
+			width: 100%;
+			height: 300px;
+			padding-top: 70px;
+			background: url(./images/suh_p_0301_06_0010_205_1/suh_p_0301_06_0010_205_1_1.png) 50% 50% /100% no-repeat;
 		}
-
-		.textAlignC.bg img {
-			width: 80%;
-		}
-
 		.textAlignC.bg .flex-wrap {
+			position: absolute;
+			bottom: 75px;
 			width: 100%;
 			justify-content: space-between;
 		}
-
 		.textAlignC.bg .flex-wrap .flex-item {
 			text-align: center;
 		}
-
-		.textAlignC.bg .flex-wrap .flex-item .colorBox {
-			display: inline-block;
-		}
+		.textAlignC.bg .text, .textAlignC.bg .toggle-wrap {position: absolute;}
+		.textAlignC.bg .text.n1 {left: 100px;}
+		.textAlignC.bg .toggle-wrap.n1 {left: 437px;top: 80px;}
+		.textAlignC.bg .toggle-wrap.n2 {bottom: 20px;left: 591px;}
 		.popup_pages>li.whole .popup_contents {height: 100%;}
 		.popup_pages>li.whole .dapCheckBtn {right: 40px;bottom: 20px;}
-		.popup_pages>li.whole .popup_contents .textAlignC {font-size: 40px;}
-		.pop_page_3 .textAlignC.mt_50 {
-			margin-top: 55px !important;
-		}
+
+		.popup_contents .textAlignC.bg {width: calc(100% - 30px);margin: 0 auto;font-size: 40px;}
+		.popup_contents .textAlignC.bg .flex-wrap {bottom: 80px;}
+		.pop_page_2.whole .textAlignC.bg {background-image: url(./images/suh_p_0301_06_0010_205_1/suh_p_0301_06_0010_205_1_2.png);}
+		.pop_page_2.whole .textAlignC.bg .text.n1 {top: 68px;left: 341px;}
+		.pop_page_2.whole .textAlignC.bg .toggle-wrap.n1 {top: 87px;left: 771px;}
+		.pop_page_2.whole .textAlignC.bg .toggle-wrap.n2 {left: 875px;bottom: 30px;}
+
+		.pop_page_3.whole .textAlignC.bg {background-image: url(./images/suh_p_0301_06_0010_205_1/suh_p_0301_06_0010_205_1_3.png);}
+		.pop_page_3.whole .textAlignC.bg .text.n1 {top: 78px;left: 168px;}
+		.pop_page_3.whole .textAlignC.bg .flex-wrap {width: 368px;}
+		.pop_page_3.whole .textAlignC.bg .toggle-wrap.n1 {top: 90px;left: 365px;}
+		.pop_page_3.whole .textAlignC.bg .toggle-wrap.n2 {left: 414px;bottom: 25px;}
 	</style>
 </head>
 
@@ -66,35 +69,34 @@
 		<header>
 			<div class="title active" style="letter-spacing: -1px;">
 				<div class="bullet number orange inline">5</div>
-				준혁이가 학교에서 집까지 가는 데 11분 55초가 걸렸습니다. 준혁이가 학교에서 출발한 시각을 구해 보세요.
+				<span class="toggleBlank"></span> 알맞은 소수를 써넣으세요.
 			</div>
 		</header>
 		<main>
 			<div class="contentsBox" data-quiz="toggle">
 				<section>
 					<div class="textAlignC bg">
-						<img src="./images/suh_p_0301_05_0009_205_1/suh_p_0301_05_0009_205_1_1.png" alt="">
+						<div class="text n1">1</div>
 						<div class="flex-wrap">
-							<div class="flex-item">
-								<div class="colorBox green">학교에서 출발한 시각</div>
-							</div>
-							<div class="flex-item">
-								<div class="colorBox green">
-									집에 도착한 시각
+							<div class="n2">0</div>
+							<div class="n3">1</div>
+							<div class="n4">2</div>
+							<div class="n5">3</div>
+						</div>
+						<div class="toggle-wrap n1">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									0.9
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="textAlignC mt_20">
-						<div class="toggle" data-toggle-obj="1">
-							<div class="answer" data-toggle-target="1">2</div>
-						</div>시
-						<div class="toggle" data-toggle-obj="2">
-							<div class="answer" data-toggle-target="2">3</div>
-						</div>분
-						<div class="toggle" data-toggle-obj="3">
-							<div class="answer" data-toggle-target="3">50</div>
-						</div>초
+						<div class="toggle-wrap n2">
+							<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									1.9
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="buttonContainer left">
 						<button class="characterBtn" data-popup-btn="101" data-hover="">
@@ -115,9 +117,8 @@
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<li class="solve pop_page_1" data-popup-page="1">
-					<div class="popup_contents" style="letter-spacing: -2px;">
-						집에 도착한 시각: 2시 15분 45초<br>
-						학교에서 출발한 시각: 2시 15분 45초－11분 55초＝2시 3분 50초
+					<div class="popup_contents">
+						1과 0.9만큼을 1.9라고 합니다.
 					</div>
 				</li>
 
@@ -128,25 +129,34 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div style="letter-spacing: -1px;">
-									<p class="mb_10">유림이가 집에서 출발하여 운동장에 도착한 시각입니다. 집에서 운동장까지 가는 데 15분 25초가 걸렸다면 집에서 출발한 시각을 구해 보세요.</p>
+									<p class="mb_10"><span class="toggleBlank"></span> 알맞은 소수를 써넣으세요.</p>
 								</div>
 							</li>
 						</ul>
-						<div class="textAlignC mt_10">
-							<img src="./images/suh_p_0301_05_0009_205_1/suh_p_0301_05_0009_205_1_2.png" alt="" width="300">
+						<div class="textAlignC bg">
+							<div class="text n1">2</div>
+							<div class="flex-wrap">
+								<div class="n2">0</div>
+								<div class="n3">1</div>
+								<div class="n4">2</div>
+								<div class="n5">3</div>
+							</div>
+							<div class="toggle-wrap n1">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										0.6
+									</div>
+								</div>
+							</div>
+							<div class="toggle-wrap n2">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										2.6
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="textAlignC mt_30">
-							<div class="toggle" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">3</div>
-							</div>시
-							<div class="toggle" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">15</div>
-							</div>분
-							<div class="toggle" data-toggle-obj="3">
-								<div class="answer" data-toggle-target="3">20</div>
-							</div>초
-						</div>
-						<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn"
+						<a href="./data/(3-1-6)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn"
 							data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>
@@ -159,25 +169,32 @@
 							<li>
 								<ins class="bullet circleDot"></ins>
 								<div style="letter-spacing: -1px;">
-									<p class="mb_10">민혁이가 운동을 마친 시각입니다. 1시간 32분 20초 동안 운동을 했다면 운동을 시작한 시각을 구해 보세요.</p>
+									<p class="mb_10"><span class="toggleBlank"></span> 알맞은 소수를 써넣으세요.</p>
 								</div>
 							</li>
 						</ul>
-						<div class="textAlignC mt_50">
-							<img src="./images/suh_p_0301_05_0009_205_1/suh_p_0301_05_0009_205_1_3.png" alt="" width="300">
+						<div class="textAlignC bg">
+							<div class="text n1">1</div>
+							<div class="flex-wrap">
+								<div class="n2">0</div>
+								<div class="n3">1</div>
+							</div>
+							<div class="toggle-wrap n1">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										0.3
+									</div>
+								</div>
+							</div>
+							<div class="toggle-wrap n2">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										1.3
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="textAlignC mt_30">
-							<div class="toggle" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">3</div>
-							</div>시
-							<div class="toggle" data-toggle-obj="2">
-								<div class="answer" data-toggle-target="2">18</div>
-							</div>분
-							<div class="toggle" data-toggle-obj="3">
-								<div class="answer" data-toggle-target="3">5</div>
-							</div>초
-						</div>
-						<a href="./data/(3-1-5)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn"
+						<a href="./data/(3-1-6)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn"
 							data-name="활동지 다운로드"></a>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</div>

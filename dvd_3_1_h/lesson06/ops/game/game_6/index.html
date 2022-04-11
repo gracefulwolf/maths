@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 144쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>바다 속</span><br/><span>모습</span><br/><span>완성하기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">점을 선으로 이어 동물을 완성해 보세요.</div>
+        </div>
+    
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+        	<div class="selectPlay__image">
+            	<div class="imgStar"></div>
+            </div>
+            <div class="selectPlay__text">출발</div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay__border" data-play-border="1"></div>
+
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+        	<div class="selectPlay__image">
+            	<div class="imgStar"></div>
+            </div>
+            <div class="selectPlay__text">출발</div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay__border" data-play-border="2"></div>
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">전체에서 색칠한 부분을 분수로 나타내고 <div class="bunsuWrap"><div class="bunsu top">1</div><div class="bunsu bottom">7</div></div>부터 차례대로 점을 선으로 이어 보세요.</div>
+            </div>
+            
+            <div class="selectTarget js-selectTarget view" data-select-index="1">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">1</div><div class="bunsu bottom">4</div></div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">4</div><div class="bunsu bottom">6</div></div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">2</div><div class="bunsu bottom">5</div></div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="4">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">4</div><div class="bunsu bottom">7</div></div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="5">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">1</div><div class="bunsu bottom">3</div></div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="6">
+            	<div class="selectTarget__image"></div>
+                <div class="selectTarget__text">
+                	<div class="bunsuWrap"><div class="bunsu top">5</div><div class="bunsu bottom">6</div></div>
+                </div>
+            </div>
+            
+            <div class="selectPlay" data-play-index="1">
+            	<div class="selectPlay__image">
+                	<div class="imgStar"></div>
+                </div>
+                <div class="selectPlay__text">출발</div>
+                <div class="bunsuWrap bunsuWrap_1"><div class="bunsu top">2</div><div class="bunsu bottom">5</div></div>
+                <div class="bunsuWrap bunsuWrap_2"><div class="bunsu top">3</div><div class="bunsu bottom">8</div></div>
+                <div class="bunsuWrap bunsuWrap_3"><div class="bunsu top">3</div><div class="bunsu bottom">5</div></div>
+                <div class="bunsuWrap bunsuWrap_4"><div class="bunsu top">4</div><div class="bunsu bottom">7</div></div>
+                <div class="bunsuWrap bunsuWrap_5"><div class="bunsu top">4</div><div class="bunsu bottom">6</div></div>
+                <div class="bunsuWrap bunsuWrap_6"><div class="bunsu top">1</div><div class="bunsu bottom">2</div></div>
+                <div class="bunsuWrap bunsuWrap_7"><div class="bunsu top">3</div><div class="bunsu bottom">4</div></div>
+                <div class="bunsuWrap bunsuWrap_8"><div class="bunsu top">1</div><div class="bunsu bottom">3</div></div>
+                <div class="bunsuWrap bunsuWrap_9"><div class="bunsu top">1</div><div class="bunsu bottom">5</div></div>
+                <div class="bunsuWrap bunsuWrap_10"><div class="bunsu top">5</div><div class="bunsu bottom">6</div></div>
+                <div class="bunsuWrap bunsuWrap_11"><div class="bunsu top">1</div><div class="bunsu bottom">4</div></div>
+                <div class="bunsuWrap bunsuWrap_12"><div class="bunsu top">2</div><div class="bunsu bottom">7</div></div>
+                <div class="bunsuWrap bunsuWrap_13"><div class="bunsu top">1</div><div class="bunsu bottom">7</div></div>
+            </div>
+            
+            <div class="bunsuWrap bunsuWrap_14"><div class="bunsu top">1</div><div class="bunsu bottom">7</div></div>
+            <div class="bunsuWrap bunsuWrap_15"><div class="bunsu top">1</div><div class="bunsu bottom">2</div></div>
+            <div class="bunsuWrap bunsuWrap_16"><div class="bunsu top">3</div><div class="bunsu bottom">5</div></div>
+            <div class="bunsuWrap bunsuWrap_17"><div class="bunsu top">3</div><div class="bunsu bottom">8</div></div>
+            <div class="bunsuWrap bunsuWrap_18"><div class="bunsu top">3</div><div class="bunsu bottom">4</div></div>
+            <div class="bunsuWrap bunsuWrap_19"><div class="bunsu top">1</div><div class="bunsu bottom">5</div></div>
+            <div class="bunsuWrap bunsuWrap_20"><div class="bunsu top">2</div><div class="bunsu bottom">7</div></div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+				 <!-- <line x1="50" y1="100" x2="250" y2="100" /> -->
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+			</svg>
+            
+            <div class="dropArea" drag-ans="1" drop-idx="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="1"></div>
+            <div class="dropArea" drag-ans="3" drop-idx="2"></div>
+            <div class="dropArea" drag-ans="4" drop-idx="3"></div>
+            <div class="dropArea" drag-ans="5" drop-idx="4"></div>
+            <div class="dropArea" drag-ans="6" drop-idx="5"></div>
+            <div class="dropArea" drag-ans="7" drop-idx="6"></div>
+            <div class="dropArea" drag-ans="8" drop-idx="7"></div>
+            <div class="dropArea" drag-ans="9" drop-idx="8"></div>
+            <div class="dropArea" drag-ans="10" drop-idx="9"></div>
+            <div class="dropArea" drag-ans="11" drop-idx="10"></div>
+            <div class="dropArea" drag-ans="12" drop-idx="11"></div>
+            
+            <div class="dragObj dragAble" drag-ans="1" drag-idx="0"></div>
+            <div class="dragObj dragAble" drag-ans="2" drag-idx="1"></div>
+            <div class="dragObj dragAble" drag-ans="3" drag-idx="2"></div>
+            <div class="dragObj dragAble" drag-ans="4" drag-idx="3"></div>
+            <div class="dragObj dragAble" drag-ans="5" drag-idx="4"></div>
+            <div class="dragObj dragAble" drag-ans="6" drag-idx="5"></div>
+            <div class="dragObj dragAble" drag-ans="7" drag-idx="6"></div>
+            <div class="dragObj dragAble" drag-ans="8" drag-idx="7"></div>
+            <div class="dragObj dragAble" drag-ans="9" drag-idx="8"></div>
+            <div class="dragObj dragAble" drag-ans="10" drag-idx="9"></div>
+            <div class="dragObj dragAble" drag-ans="11" drag-idx="10"></div>
+            <div class="dragObj dragAble" drag-ans="12" drag-idx="11"></div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="1">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="1" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="4" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="2">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="4" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="6" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="3">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="2" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="5" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="4">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="4" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="7" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="5">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="1" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="3" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+            
+            <div class="answerBox js-answerBox" data-answer-index="6">
+                <div class="answerBox__text">분수를 입력해 주세요.</div>
+                <div class="bunsuWrap">
+                	<div class="bunsu top"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="5" /></div>
+                    <div class="bunsu bottom"><input class="answerBox__input js-answerBoxInput" type="text" data-answer="6" /></div>
+                </div>
+                <button class="defaultButton confirmButton js-confirmButton"></button>
+            </div>
+        </div>
+        
+        <div class="playPage js-playPage" data-play-page="2">
+            <div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">소수의 크기를 비교하여 가장 작은 것부터 차례대로 점을 선으로 이어 보세요.</div>
+            </div>
+            
+            <div class="selectPlay" data-play-index="2">
+            	<div class="selectPlay__image">
+                	<div class="imgStar"></div>
+                </div>
+                <div class="decimal decimal_1">0.1</div>
+                <div class="decimal decimal_2">0.2</div>
+                <div class="decimal decimal_3">0.3</div>
+                <div class="decimal decimal_4">0.4</div>
+                <div class="decimal decimal_5">0.5</div>
+                <div class="decimal decimal_6">0.6</div>
+                <div class="decimal decimal_7">0.7</div>
+                <div class="decimal decimal_8">0.8</div>
+                <div class="decimal decimal_9">0.9</div>
+                <div class="decimal decimal_10">1</div>
+                <div class="decimal decimal_11">1.1</div>
+                <div class="decimal decimal_12">1.2</div>
+                <div class="decimal decimal_13">1.3</div>
+                <div class="decimal decimal_14">1.4</div>
+                <div class="decimal decimal_15">1.5</div>
+                <div class="decimal decimal_16">1.6</div>
+                <div class="decimal decimal_17">1.7</div>
+                <div class="decimal decimal_18">1.8</div>
+                <div class="decimal decimal_19">1.9</div>
+                <div class="decimal decimal_20">2</div>
+                <div class="decimal decimal_21">2.1</div>
+                <div class="decimal decimal_22">2.2</div>
+                <div class="decimal decimal_23">2.3</div>
+                <div class="decimal decimal_24">2.4</div>
+                <div class="decimal decimal_25">2.5</div>
+                <div class="decimal decimal_26">2.6</div>
+                <div class="decimal decimal_27">2.7</div>
+                <div class="decimal decimal_28">2.8</div>
+                <div class="decimal decimal_29">2.9</div>
+                <div class="decimal decimal_30">3</div>
+                <div class="decimal decimal_31">3.1</div>
+                <div class="decimal decimal_32">3.2</div>
+                <div class="decimal decimal_33">3.3</div>
+                <div class="decimal decimal_34">3.4</div>
+                <div class="decimal decimal_35">3.5</div>
+            </div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+				 <!-- <line x1="50" y1="100" x2="250" y2="100" /> -->
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+				<line />
+			</svg>
+            
+            <div class="dropArea" drag-ans="1" drop-idx="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="1"></div>
+            <div class="dropArea" drag-ans="3" drop-idx="2"></div>
+            <div class="dropArea" drag-ans="4" drop-idx="3"></div>
+            <div class="dropArea" drag-ans="5" drop-idx="4"></div>
+            <div class="dropArea" drag-ans="6" drop-idx="5"></div>
+            <div class="dropArea" drag-ans="7" drop-idx="6"></div>
+            <div class="dropArea" drag-ans="8" drop-idx="7"></div>
+            <div class="dropArea" drag-ans="9" drop-idx="8"></div>
+            <div class="dropArea" drag-ans="10" drop-idx="9"></div>
+            <div class="dropArea" drag-ans="11" drop-idx="10"></div>
+            <div class="dropArea" drag-ans="12" drop-idx="11"></div>
+            <div class="dropArea" drag-ans="13" drop-idx="12"></div>
+            <div class="dropArea" drag-ans="14" drop-idx="13"></div>
+            <div class="dropArea" drag-ans="15" drop-idx="14"></div>
+            <div class="dropArea" drag-ans="16" drop-idx="15"></div>
+            <div class="dropArea" drag-ans="17" drop-idx="16"></div>
+            <div class="dropArea" drag-ans="18" drop-idx="17"></div>
+            <div class="dropArea" drag-ans="19" drop-idx="18"></div>
+            <div class="dropArea" drag-ans="20" drop-idx="19"></div>
+            <div class="dropArea" drag-ans="21" drop-idx="20"></div>
+            <div class="dropArea" drag-ans="22" drop-idx="21"></div>
+            <div class="dropArea" drag-ans="23" drop-idx="22"></div>
+            <div class="dropArea" drag-ans="24" drop-idx="23"></div>
+            <div class="dropArea" drag-ans="25" drop-idx="24"></div>
+            <div class="dropArea" drag-ans="26" drop-idx="25"></div>
+            <div class="dropArea" drag-ans="27" drop-idx="26"></div>
+            <div class="dropArea" drag-ans="28" drop-idx="27"></div>
+            <div class="dropArea" drag-ans="29" drop-idx="28"></div>
+            <div class="dropArea" drag-ans="30" drop-idx="29"></div>
+            <div class="dropArea" drag-ans="31" drop-idx="30"></div>
+            <div class="dropArea" drag-ans="32" drop-idx="31"></div>
+            <div class="dropArea" drag-ans="33" drop-idx="32"></div>
+            <div class="dropArea" drag-ans="34" drop-idx="33"></div>
+            
+            <div class="dragObj dragAble" drag-ans="1" drag-idx="0"></div>
+            <div class="dragObj dragAble" drag-ans="2" drag-idx="1"></div>
+            <div class="dragObj dragAble" drag-ans="3" drag-idx="2"></div>
+            <div class="dragObj dragAble" drag-ans="4" drag-idx="3"></div>
+            <div class="dragObj dragAble" drag-ans="5" drag-idx="4"></div>
+            <div class="dragObj dragAble" drag-ans="6" drag-idx="5"></div>
+            <div class="dragObj dragAble" drag-ans="7" drag-idx="6"></div>
+            <div class="dragObj dragAble" drag-ans="8" drag-idx="7"></div>
+            <div class="dragObj dragAble" drag-ans="9" drag-idx="8"></div>
+            <div class="dragObj dragAble" drag-ans="10" drag-idx="9"></div>
+            <div class="dragObj dragAble" drag-ans="11" drag-idx="10"></div>
+            <div class="dragObj dragAble" drag-ans="12" drag-idx="11"></div>
+            <div class="dragObj dragAble" drag-ans="13" drag-idx="12"></div>
+            <div class="dragObj dragAble" drag-ans="14" drag-idx="13"></div>
+            <div class="dragObj dragAble" drag-ans="15" drag-idx="14"></div>
+            <div class="dragObj dragAble" drag-ans="16" drag-idx="15"></div>
+            <div class="dragObj dragAble" drag-ans="17" drag-idx="16"></div>
+            <div class="dragObj dragAble" drag-ans="18" drag-idx="17"></div>
+            <div class="dragObj dragAble" drag-ans="19" drag-idx="18"></div>
+            <div class="dragObj dragAble" drag-ans="20" drag-idx="19"></div>
+            <div class="dragObj dragAble" drag-ans="21" drag-idx="20"></div>
+            <div class="dragObj dragAble" drag-ans="22" drag-idx="21"></div>
+            <div class="dragObj dragAble" drag-ans="23" drag-idx="22"></div>
+            <div class="dragObj dragAble" drag-ans="24" drag-idx="23"></div>
+            <div class="dragObj dragAble" drag-ans="25" drag-idx="24"></div>
+            <div class="dragObj dragAble" drag-ans="26" drag-idx="25"></div>
+            <div class="dragObj dragAble" drag-ans="27" drag-idx="26"></div>
+            <div class="dragObj dragAble" drag-ans="28" drag-idx="27"></div>
+            <div class="dragObj dragAble" drag-ans="29" drag-idx="28"></div>
+            <div class="dragObj dragAble" drag-ans="30" drag-idx="29"></div>
+            <div class="dragObj dragAble" drag-ans="31" drag-idx="30"></div>
+            <div class="dragObj dragAble" drag-ans="32" drag-idx="31"></div>
+            <div class="dragObj dragAble" drag-ans="33" drag-idx="32"></div>
+            <div class="dragObj dragAble" drag-ans="34" drag-idx="33"></div>
+        </div>
+    
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>동물을 선택하세요.</div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">점을 선으로 이어 동물을 완성해 보세요.</div>
+        </div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text">모든 <b>동물</b>을 완성했어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script src="./src/js/dragdropA.js" type="text/javascript"></script>
+<script src="./src/js/dragdropB.js" type="text/javascript"></script>
+<script>
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>

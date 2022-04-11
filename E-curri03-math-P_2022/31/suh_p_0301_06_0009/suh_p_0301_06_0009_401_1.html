@@ -13,7 +13,9 @@
 	.gate_container .downloadBtn {right:20px;left:auto}
 	.checkContainer .contentsBox h2+section {padding-left:30px}
 	.checkContainer .contentsBox h2+section .downloadBtn {left:0;bottom:10px}
-	.checkContainer h2 .icon_o_title {margin-top: 8px;}
+	.checkContainer h2 .icon_o_title,
+	.checkContainer h2 .toggleBlank {margin-top: 8px;}
+	.checkContainer h2 .toggleBlank {width: 38px;height: 38px;}
 	.iframe-wrap {
 		width: 1074px;
 		position: absolute;
@@ -44,20 +46,15 @@
 	.checkContainer .contentsBox .page_1 h2 {margin-bottom: 0;}
 	.page_1 .buttonContainer {right: 170px;}
 
-	.page_2 .oxList {padding: 30px 50px;margin: 60px auto 0;}
-	.page_2 .oxList li {width: 100%;}
-	.page_2 .oxList li > div {display: flex;align-items: center;}
-	.page_2 .exampleBox {position: relative;margin: 0 15px;}
-	.page_2 .exampleBox .icon {position: absolute;top: 3px;left: 27px;}
-	.page_2 .exampleBox:nth-child(2) .icon {left: 50px;}
+	.page_2 .lineBox {display: inline-block;margin: 30px auto 0;}
 
 	.page_3 .flexListContainer {justify-content: space-around;height: calc(100% - 100px);}
-	.page_3 .flexListContainer li .toggle,
-	.page_4 .flexListContainer li .toggle {position: relative;margin: 0 20px;}
-	.page_3 .flexListContainer li .toggle .icon_o_title,
-	.page_4 .flexListContainer li .toggle .icon_o_title {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);padding: 10px;}
-	.page_3 .flexListContainer li .toggle .answer > img,
-	.page_4 .flexListContainer li .toggle .answer > img {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+	.page_3 .flexListContainer li .toggle.circle,
+	.page_4 .flexListContainer li .toggle.circle {position: relative;margin: 0 20px;}
+	.page_3 .flexListContainer li .toggle.circle .answer,
+	.page_4 .flexListContainer li .toggle.circle .answer {text-align: center;}
+	.page_3 .flexListContainer li .flex-wrap,
+	.page_4 .flexListContainer li .flex-wrap {align-items: center;}
 
 	.page_4 .flexListContainer {margin:0 auto;width:600px;}
 	.page_4 .flexListContainer + .flexListContainer {margin-top:50px;}
@@ -129,13 +126,13 @@
 						</div>
                     </section>
                 </li>
-				<li class="page_2">
+				<li class="page_2" data-quiz="toggle" data-option="hide, answerSound" data-quiz-name="ox1">
 					<h2><ins class="dot"></ins>
 						<span><div class="blankBox w40"></div> 안에 알맞은 수를 써넣고, 알맞은 말에 <div class="icon icon_o_title"></div>표 하세요.</span>
 					</h2>
 					<section class="quizContents">
-                        <ul class="oxList lineBox green">
-							<li data-quiz="toggle">
+                        <div class="lineBox green">
+							<div class="flex-wrap">
 								<div>
 									4.5는 0.1이
 									<div class="toggle" data-toggle-obj="1">
@@ -150,32 +147,24 @@
 										</div>
 									</div>이 48개이므로 
 								</div>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</li>
-                            <li data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
-								<div>
-									4.5가 4.8보다 
-									(    
-									<div class="exampleBox" data-ox-obj="1">
-										큽니다
-										<div class="icon icon_x" data-ox-target="1"></div>
-									</div>,
-									<div class="exampleBox" data-ox-obj="2" data-answer="">
-										작습니다
-										<div class="icon icon_o" data-ox-target="2"></div>
-									</div>    
-									).
-								</div>
-								<div class="buttonContainer">
-									<button class="dapCheckBtn page2Btn" data-answer-btn=""></button>
-								</div>
-                            </li>
-                        </ul>
-                    </section>
+							</div>
+							<ul class="oxContainer inline">
+								4.5가 4.8보다 (
+								<li data-ox-obj="1" data-answer="" data-toggle-obj="10" class="">
+									<span data-ox-target="1" data-toggle-target="10" class="icon icon_o"></span>큽니다
+								</li>,
+								<li data-ox-obj="2">
+									<span data-ox-target="2" class="icon icon_x"></span>작습니다
+								</li>
+								).
+							</ul>
+						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
 				</li>
 				<li class="page_3" data-quiz="toggle">
 					<h2 style="letter-spacing: -1.5px;"><ins class="dot"></ins><span>
-						두 소수의 크기를 비교하여 <span class="icon_o_title"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="40">,<img src="../common/contents/images/math/equalIcon.png" height="40">,<img src="../common/contents/images/math/inequalIcon.png" height="40"> 를 알맞게 써넣으세요.
+						두 소수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 					</span></h2>
 					<section>
 						<ul class="flexListContainer center">
@@ -184,10 +173,9 @@
 									<div class="inline">
 										3.8
 									</div>
-									<div class="toggle noBg complete" data-toggle-obj="1">
-										<div class="icon_o_title on" data-toggle-target="1"></div>
-										<div class="answer on" data-toggle-target="1">
-											<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
 										</div>
 									</div>
 									<div class="inline">
@@ -200,10 +188,9 @@
 									<div class="inline">
 										5.7
 									</div>
-									<div class="toggle noBg complete" data-toggle-obj="2">
-										<div class="icon_o_title on" data-toggle-target="2"></div>
-										<div class="answer on" data-toggle-target="2">
-											<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 										</div>
 									</div>
 									<div class="inline">
@@ -216,10 +203,9 @@
 									<div class="inline">
 										9.2
 									</div>
-									<div class="toggle noBg complete" data-toggle-obj="3">
-										<div class="icon_o_title on" data-toggle-target="3"></div>
-										<div class="answer on" data-toggle-target="3">
-											<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 										</div>
 									</div>
 									<div class="inline">
@@ -231,34 +217,32 @@
 					
 						<a href="./data/(3-1-6)형성평가2_09차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="2"></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 					</section>
 				</li>
 				<li class="page_4" data-quiz="toggle" data-option="hide, answerSound">
 					<h2 style="letter-spacing: -1.5px;"><ins class="dot"></ins><span>
-						두 소수의 크기를 비교하여 <span class="icon_o_title"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="40">,<img src="../common/contents/images/math/equalIcon.png" height="40">,<img src="../common/contents/images/math/inequalIcon.png" height="40"> 를 알맞게 써넣으세요.
+						두 소수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 					</span></h2>
                     <section class="full">
                         <div class="mt_80">
                             <ul class="flexListContainer">
                                 <li>
                                     <div class="">0.7</div>
-									<div class="toggle noBg complete" data-toggle-obj="1">
-										<div class="icon_o_title on" data-toggle-target="1"></div>
-										<div class="answer on" data-toggle-target="1">
-											<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
 										</div>
 									</div>
                                     <div class="">0.5</div>
                                 </li>
                                 <li>
                                     <div class="">3.9</div>
-									<div class="toggle noBg complete" data-toggle-obj="1">
-										<div class="icon_o_title on" data-toggle-target="1"></div>
-										<div class="answer on" data-toggle-target="1">
-											<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
 										</div>
 									</div>
                                     <div class="">4.8</div>
@@ -267,20 +251,18 @@
                             <ul class="flexListContainer">
                                 <li>
                                     <div class="">0.2</div>
-									<div class="toggle noBg complete" data-toggle-obj="1">
-										<div class="icon_o_title on" data-toggle-target="1"></div>
-										<div class="answer on" data-toggle-target="1">
-											<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
 										</div>
 									</div>
                                     <div class="">1.1</div>
                                 </li>
                                 <li>
                                     <div class="">6.2</div>
-									<div class="toggle noBg complete" data-toggle-obj="1">
-										<div class="icon_o_title on" data-toggle-target="1"></div>
-										<div class="answer on" data-toggle-target="1">
-											<img src="../common/contents/images/math/inequalIcon_blue.png" height="40">
+									<div class="toggle circle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
 										</div>
 									</div>
                                     <div class="">5.9</div>
@@ -288,7 +270,7 @@
                             </ul>
                         </div>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="3"></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
                     </section>
@@ -600,11 +582,34 @@
 <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function () {
+    $(function(){
 		$(".controlBtn").click(function () {
-				$efSound.click();
-			})
-	}, false);
+			$efSound.click();
+		})
+        $(document).on('click' , '.page_2 li[data-ox-obj="1"]' , function(e){
+            e.preventDefault();
+
+            window.$efSound.correct();
+        });
+
+        $(document).on('click' , '.page_2 li[data-ox-obj="2"]' , function(e){
+            e.preventDefault();
+
+            var clearTime;
+
+            if($('.page_2 li[data-ox-obj="1"]').hasClass('complete')){
+                return;
+            }
+
+            $(this).find('.icon_x').addClass('on');
+            clearInterval(clearTime);
+            clearTime = setTimeout(function(){
+                $('.page_2 li[data-ox-obj="2"]').find('.icon_x').removeClass('on');
+
+                window.$efSound.incorrect();
+            }, 450);
+        });
+    });
 </script>
 </body>
 </html>
