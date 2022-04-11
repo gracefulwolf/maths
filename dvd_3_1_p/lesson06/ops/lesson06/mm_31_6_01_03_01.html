@@ -34,6 +34,8 @@
 				top: 398px;
 			}
 			.click-finger-Btn{position: absolute; z-index: 3; top:0; left:0;}
+			.bullet.exam.n2{position: absolute;display:none; top: 250px; left: 580px;}
+			.bullet.exam.n1{position: absolute;display:none; top: 250px; left: 80px;}
 		</style>
 	</head>
 	<body>
@@ -65,6 +67,8 @@
 					<!-- 애니 재생 버튼 -->
 					<!-- <div id="btn-play-ani" class="btn-play-ani ico-toggle-01"></div> -->
 					<!-- 애니 재생 버튼 -->
+					<div class="bullet exam n1">예</div>
+					<div class="bullet exam n2">예</div>
 					<span class="click-finger-Btn blinkOn blinkOpacity n1" id="btn-play-ani"></span>
 					<span class="click-finger-Btn blinkOn blinkOpacity n2" id="btn-play-ani-02"></span>
 
@@ -134,6 +138,21 @@
 		<!-- cc 애니메이션 -->
 
 		<script src="../../../common/js/content.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var btn1 = document.querySelector('#btn-play-ani-02');
+				var btn2 = document.querySelector('#btn-play-ani');
+
+				btn1.addEventListener('click',function(){
+					document.querySelector('.bullet.exam.n2').style.display = "inline-flex";
+				});
+				btn2.addEventListener('click',function(){
+					document.querySelector('.bullet.exam.n1').style.display = "inline-flex";
+				});
+			}, false);
+			 
+
+		</script>
 
 	</body>
 
