@@ -17,11 +17,11 @@
 		<style>
 			.btns-answer-part,
 			.title-h1{display: none;}
-			#quiz-01 .answer{opacity: 1;}
-			#quiz-02 .answer{opacity: 1;}
+			#quiz-01 .answer{opacity: 1; }
+			#quiz-02 .answer{opacity: 1; }
 			#quiz-02,
 			#quiz-01 {
-				transform: scale(.8) translate(-50px, -30px);
+				transform: scale(.8) translate(-50px, -30px);z-index: 2;
 			}
 			.app-drawing-tool{
 				right: 173px;
@@ -35,6 +35,19 @@
 		.exam-wrap{position: absolute; top:0; left:0; background-color: #fff; padding: 10px; transform: scale(1.2)}
 		#quiz-01 .exam-wrap{top: 200px;left: 220px;}
 		#quiz-02 .exam-wrap{top: 200px;left: 626px;}
+		.quiz-check.image-answer .check-item{background:none; width: 60px; height: 60px; }
+		#quiz-01 .check-item{top: 560px;left: 400px;}
+		#quiz-02 .check-item{top: 560px;left: 810px;}
+
+		.content-container .colorBox{    
+		position: absolute;
+		top: 490px;
+		z-index: 1;
+		left: 400px;
+		width: 60px;
+		text-align: center;font-size: 40px;height: 60px;line-height: 40px !important;}
+		.content-container .colorBox.n2{
+			left: 730px;}
 		</style>
 	</head>
 	<body>
@@ -54,7 +67,8 @@
 				</div>
 
 				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
-
+					
+					
 					<!-- quiz -->
 					<div id="quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
 						<div class="base">
@@ -68,7 +82,8 @@
 							</div>
 						</div>
 						<div class="check-list">
-							<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
+							<div class="check-item" data-answer-part-idx="0"></div>
+							<!-- <div class="colorBox beige n1">2</div> -->
 						</div>
 					</div>
 					<div id="quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
@@ -82,7 +97,8 @@
 							</div>
 						</div>
 						<div class="check-list">
-							<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
+							<div class="check-item" data-answer-part-idx="0"></div>
+							<!-- <div class="colorBox beige n2">3</div> -->
 						</div>
 					</div>
 
