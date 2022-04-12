@@ -19,6 +19,8 @@
 		.--box{position:relative; margin-top:40px; padding-top:40px;}
 		.--title{position:absolute; top:-40px; left:0; z-index:1;}
 
+		.--charWrap{position:relative; overflow: hidden; width: 100%; height: 280px; margin-top: 60px;}
+		.--charWrap .--char{transform: translateY(-150px);}
 	</style>
 </head>
 
@@ -151,56 +153,18 @@
 								어떤 규칙으로 무늬를 꾸몄는지 친구들에게 이야기해 보세요.
 							</span>
 						</h2>
-						<div class="textAlignC mt_10">
-							<img src="./images/suh_p_0401_04_0009_202_1/suh_p_0401_04_0009_202_1_1.png" alt="" height="200">
-						</div>
 						<section class="full pl_30">
-							<div class="textAlignC">
-								<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+							<div class="textAlignC --charWrap">
+								<div class="--char">
+									<div id="aniBox_1"></div>
+								</div>
 							</div>
 						</section>
 					</li>
 				</ul>
 			</div>
 		</main>
-		<section class="popup_container" data-popup-container="">
-			<ul class="popup_pages">
-				<li class="whole pop_page_1" data-popup-page="1">
-					<div class="popup_contents">
-						<div class="it-img">
-							<div class="it-txt n1">말발굽<br>모양</div>
-							<div class="it-txt n2">연꽃<br>모양</div>
-							<div class="it-txt n3">올챙이<br>모양</div>
-							<div class="it-txt n4">밧줄<br>모양</div>
-							<div class="it-txt n5">손가락<br>모양</div>
-							<div class="it-txt n6">양손을 올린<br>사람 모양</div>
-							<div class="it-txt n7 balloon bottom ctTail textAlignC beige">막대기<br>모양</div>
-						</div>
-					</div>
-				  </li>
-				<li class="min pop_page_2" data-popup-page="2" data-drag>
-					<h2>달란트</h2>
-					<div class="popup_contents">
-						<p>유대의 무게 단위로 1달란트는 약 34 kg입니다.</p>
-					</div>
-				</li>
-				<li class="min pop_page_3" data-popup-page="3" data-drag>
-					<h2>큐빗</h2>
-					<div class="popup_contents">
-						<p>고대 이집트, 바빌로니아에서 썼던 길이로 1큐빗은 약 46 cm입니다.</p>
-					</div>
-				</li>
-				<li class="solve pop_page_4" data-popup-page="4">
-					<div class="popup_contents">
-						<p>
-							2000＋500＝2500<br>
-							200만＋70만＝270만<br>
-							100＋40＋6＝146
-						</p>
-					</div>
-				  </li>
-			</ul>
-		</section>
+
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
@@ -230,8 +194,8 @@
 						rewind: false
 					},
 					speech:'right',
-					top:-180, // 캐릭터 top값, 없어도 상관 없음, css 제어
-					left: 0,
+					top:0, // 캐릭터 top값, 없어도 상관 없음, css 제어
+					left: 300,
 					width: 340,
 					height: 421,
 					thumbNail: '../common/contents/images/character/girl_2.png',
@@ -244,8 +208,8 @@
 						text: '주어진 모양을 돌리고 뒤집어서 <br>벽의 무늬를 꾸몄고, <br>주어진 모양을 밀어서 <br>바닥의 무늬를 꾸몄어.',
 						class: 'balloon left deeppink ctTail left-s',
 						width: 490,
-						top: 30,
-						left: 390,
+						top: 210,
+						left: 330,
 						textAlign: 'center', // 말풍선 정렬
 						wordBreak: 'keep-all' // 말풍선 wordBreak
 					},

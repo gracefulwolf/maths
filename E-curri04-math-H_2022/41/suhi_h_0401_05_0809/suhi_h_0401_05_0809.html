@@ -57,12 +57,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_8 .--text.x3 {left: 109px;top: 325px;}
 	.page_8 .--text.x4 {left: 130px;top: 5px;}
 	.page_8 .--text.x5 {left: 139px;top: 139px;}
-	.page_8 .--text.x6 { left: 200px; bottom: 17px; }
-	.page_8 .--text.x7 {left: 310px;bottom:17px}
-	.page_8 .--text.x8 {left: 405px;bottom:17px}
-	.page_8 .--text.x9 {left: 533px;bottom:17px}
+	.page_8 .--text.x6 { left: 181px; bottom: 0;}
+	.page_8 .--text.x7 {left: 289px;bottom: 0;}
+	.page_8 .--text.x8 {left: 397px;bottom:0;}
+	.page_8 .--text.x9 {left: 506px;bottom: 0;}
 	.page_8 .--text.n10 {left: 155px;top: 269px;font-size: 30px;}
-	.page_8 .--bar {position:absolute;bottom: 56px;left: 50%;width: 45px;border:1px solid red;background-color:pink;box-sizing: border-box;transform: translateX(-50%);}
+	.page_8 .--text.x6 .toggle,
+	.page_8 .--text.x7 .toggle,
+	.page_8 .--text.x8 .toggle,
+	.page_8 .--text.x9 .toggle{padding: 17px 24px;}
+	.page_8 .--text.x8 .toggle{padding: 17px 8px;}
+	.page_8 .--bar {position:absolute;bottom: 74px;left: 50%;width: 45px;border:1px solid red;background-color:pink;box-sizing: border-box;transform: translateX(-50%);}
 	.page_8 .--bar.n1 {height: 110px;}
 	.page_8 .--bar.n2 {height: 274px;}
 	.page_8 .--bar.n3 {height: 220px;}
@@ -72,6 +77,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_11 .--list li:first-child {position:relative;}
 	.page_11 .--list li .bullet {position:absolute;top: -50px;left: 97px;}
 	.page_11 .--list .colorBox.check {margin-right:10px;}
+	.page_11 .exam{opacity: 0;}
+	.page_11 .exam.on{opacity: 1; transition: opacity .3s ease;}
 
 	.page_13 .--img.n3, .page_14 .--img.n3{height:330px;}
 	.page_14 .toggle{min-width:1010px; text-align:left;}
@@ -113,6 +120,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.--text.n406{top: 275px;left: 418px; display: flex; align-items: center; width: 291px;}
 	.--text.n406 > div{width: 25%; text-align: center;}
 
+
+	#wrap.suhi header{height: 88px;}
+	.suhi header h1 .subInfo{transform: translateY(-3px);}
 </style>
 </head>
 
@@ -419,7 +429,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			</li>
 
 			<li class="page_7" data-quiz="toggle">
-			<h2><ins class="number">6</ins><span>
+			<h2><ins class="number">6</ins><span style="letter-spacing: 1px;">
 				세로 눈금 한 칸이 학생 1명을 나타낸다면 개미를 좋아하는 학생 수는 몇 칸으로 나타내야 하나요?
 			</span></h2>
 				<div class="textAlignC mb_10 mt_40">
@@ -598,12 +608,12 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			</li>
 			<li class="page_11" data-quiz="toggle">
 				<h2><ins class="number">9</ins><span>
-					<span style="letter-spacing: 1px;">윤호네 반 학생들이 점심시간에 함께 운동을 하려고 합니다.</span> <span style="letter-spacing: 1px;">함께 할 운동을 한 가지만 정한다면 어떤 것이 좋을까요?</span> 그 까닭은 무엇인지 써 보세요.
+					<span style="letter-spacing: 1px;">윤호네 반 학생들이 점심시간에 함께 운동을 하려고 합니다.</span> <span style="letter-spacing: 2px;">함께 할 운동을 한 가지만 정한다면 어떤 것이 좋을까요?</span> 그 까닭은 무엇인지 써 보세요.
 				</span></h2>
 				<section>
 					<ul class="--list mt_90">
 						<li class="flexListContainer start">
-							<div class="bullet exam answer" data-toggle-target="111">예</div>
+							<div class="bullet exam" data-toggle-target="111">예</div>
 							<div class="colorBox check skyBlue">운동</div>
 							<div class="bunsuContainer">
 								<div class="toggle" data-toggle-obj="111">
@@ -692,7 +702,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="flexListContainer center mt_30">
 						<div class="toggle" data-toggle-obj="140">
 							<div class="answer" data-toggle-target="140">
-								<div class="bullet exam answer">예</div>
+								<div class="bullet exam">예</div>
 								가장 많은 학생이 좋아하는 과일은 사과입니다.
 							</div>
 						</div>
@@ -700,7 +710,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 					<div class="flexListContainer center mt_10">
 						<div class="toggle" data-toggle-obj="141">
 							<div class="answer textAlignJ" data-toggle-target="141">
-								<div class="bullet exam answer">예</div>
+								<div class="bullet exam">예</div>
 								<div>
 									<span style="letter-spacing: 2.5px;">딸기를 좋아하는 학생은 감을 좋아하는 학생보다 5명</span> 더 많습니다.
 								</div>
