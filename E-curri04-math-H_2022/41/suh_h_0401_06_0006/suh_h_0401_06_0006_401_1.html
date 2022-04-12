@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  수학 -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		/* 활동지 다운로드 */
+		.gate_container .downloadBtn{right:20px; left:auto;}
+
+		/* .--line{position:absolute;top: 28px;left: 681px;width: 30px;height: 64px;border: solid #e94d40;border-width: 3px 3px 3px 0;}
+		.--line.n2{position:absolute;top: 64px;left: 713px;width: 30px;height: 98px;border: solid #e94d40;border-width: 3px 3px 0 0;}
+		.--lineArrow{position:absolute;top: 162px;left: 683px;width: 60px;height: 98px;border: solid #e94d40;border-width: 3px 0 0 0;}
+		.--lineArrow.n2{left: 110px; width: 295px;}
+		.--lineArrow:before{content: "";position: absolute;top: -10px;left: -4px;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-right: 14px solid #e94d40;} */
+
+		.page_1 .contentsList {display:flex;}
+        .page_1 .contentsList>li {flex-direction:column;margin-right:30px;position:relative;display:block;}
+        .page_1 .contentsList>li:last-child {margin-right:0;}
+        .page_1 .contentsList>li .bullet  {position:absolute;left:0;top:0px;}
+        .page_1 .contentsList>li .contBox  {font-size:40px;text-align:center;padding-left:33px;}
+        .page_2 .contentsList {display:flex;}
+        .page_2 .contentsList>li {flex-direction:column;margin-right:30px;position:relative;display:block;}
+        .page_2 .contentsList>li:last-child {margin-right:0;}
+        .page_2 .contentsList>li .bullet  {position:absolute;left:0;top:0;}
+        .page_2 .contentsList>li .contBox  {font-size:40px;text-align:center;padding-left:33px;}
+
+        .page_3 .tableContainer {width:50%; margin: 0 0 0 160px;}
+        .page_3 .tableContainer table tr:first-of-type>:last-child {border-radius:10px 10px 0 0;}
+        .page_3 .tableContainer th, .page_1 .tableContainer td {padding-top:7px;padding-bottom:7px;font-size:40px;}
+        .page_3 .tableContainer img {position: relative;top: 4px;height: 40px;}
+        .page_3 .tableContainer td .toggle {width:100%;height:100%;}
+        .tableContainer table td, .tableContainer table th{font-size:40px;}
+        .page_3 .exam {
+            position: absolute;
+            left: 110px;
+            top: 6px;
+            opacity:0;
+        }
+        .page_3.complete .exam,
+        .page_3 .exam.complete {
+            opacity:1;
+        }
+
+        .page_5 .flexListContainer.column > li {    display: flex;align-items: center;margin: 5px 0;justify-content:center}
+
+		.textTitle .colorBox{margin: 0; padding: 8px 10px; border-radius: 40px; font-size: 18px; vertical-align: middle;}
+		.textBookBtn.invisible{opacity:0; visibility: hidden;}
+
+		/* 개별 */
+		.--QnA{display:table; width:100%;}
+		.--QnA li{display:table-row;}
+		.--QnA li > div{display:table-cell; vertical-align:top;}
+		.--QnA li + li .--Q,
+		.--QnA li + li .--A{padding-top:15px;}
+		.--QnA .--Q{min-width:94px; text-align:right;}
+		.--QnA .--Q .colorBox{display:inline-block; float:right; line-height:36px !important; white-space:nowrap;}
+		.--QnA .--A .answer{text-align:justify;}
+
+		.lineBox.--lineBox{min-width: 360px; padding-top: 0; padding-bottom: 0;}
+		.--rule .colorBox{display: inline-block;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img"><img src="../common/contents/images/quiz/alert_correct.png" alt=""><img
+				src="../common/contents/images/quiz/alert_incorrect.png" alt=""></div>
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/6단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+		</div>
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">문제 1</li>
+					<li data-hover="">문제 2</li>
+					<li data-hover="">문제 3</li>
+					<li data-hover="">문제 4</li>
+					<li data-hover="">문제 5</li>
+					<li data-hover="">문제 6</li>
+					<li data-hover="">문제 7</li>
+					<li data-hover="">문제 8</li>
+					<li data-hover="">문제 9</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_10" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							덧셈식에는 어떤 규칙이 있는지 말해 보시오.
+						</span></h2>
+						<section>
+							<div class="flexListContainer center jcenter">
+								<div class="--lineBox lineBox sky textAlignC">
+									<div>10＋11＝21</div>
+									<div>110＋12＝122</div>
+									<div>210＋13＝223</div>
+									<div>310＋14＝324</div>
+								</div>
+								<div class="--lineBox lineBox sky textAlignC ml_20">
+									<div style="padding-right:23px;">25×2＝50</div>
+									<div>35×4＝140</div>
+									<div>45×6＝270</div>
+									<div>55×8＝440</div>
+								</div>
+							</div>
+							<div class="--rule">
+								<div class="colorBox skyBlue check">규칙</div><br>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div style="letter-spacing: 1px;">
+													더해지는 수가 100씩, 더하는 수가 1씩 커집니다. 계산 결과가 101씩 커집니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/6단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_20" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							곱셈식에서는 어떤 규칙이 있는지 말해 보시오.
+						</span></h2>
+						<section>
+							<div class="flexListContainer center jcenter">
+								<div class="--lineBox lineBox sky textAlignC">
+									<div>10＋11＝21</div>
+									<div>110＋12＝122</div>
+									<div>210＋13＝223</div>
+									<div>310＋14＝324</div>
+								</div>
+								<div class="--lineBox lineBox sky textAlignC ml_20">
+									<div style="padding-right:23px;">25×2＝50</div>
+									<div>35×4＝140</div>
+									<div>45×6＝270</div>
+									<div>55×8＝440</div>
+								</div>
+							</div>
+							<div class="--rule">
+								<div class="colorBox skyBlue check">규칙</div><br>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ul class="contentsList">
+											<li>
+												<ins class="bullet exam">예</ins>
+												<div>
+													곱해지는 수가 10씩, 곱하는 수가 2씩 커집니다.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/6단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_30" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							규칙에 따라 계산 결과가 627이 되는 덧셈식을 찾아보시오.
+						</span></h2>
+						<section>
+							<div class="flexListContainer center jcenter">
+								<div class="--lineBox lineBox sky textAlignC">
+									<div>10＋11＝21</div>
+									<div>110＋12＝122</div>
+									<div>210＋13＝223</div>
+									<div>310＋14＝324</div>
+								</div>
+								<div class="--lineBox lineBox sky textAlignC ml_20">
+									<div style="padding-right:23px;">25×2＝50</div>
+									<div>35×4＝140</div>
+									<div>45×6＝270</div>
+									<div>55×8＝440</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_60">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										610＋17＝627
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/6단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+					<li class="page_40" data-quiz="toggle">
+						<h2><ins class="dot orange"></ins><span>
+							규칙에 따라 계산 결과가 900이 되는 곱셈식을 찾아보시오.
+						</span></h2>
+						<section>
+							<div class="flexListContainer center jcenter">
+								<div class="--lineBox lineBox sky textAlignC">
+									<div>10＋11＝21</div>
+									<div>110＋12＝122</div>
+									<div>210＋13＝223</div>
+									<div>310＋14＝324</div>
+								</div>
+								<div class="--lineBox lineBox sky textAlignC ml_20">
+									<div style="padding-right:23px;">25×2＝50</div>
+									<div>35×4＝140</div>
+									<div>45×6＝270</div>
+									<div>55×8＝440</div>
+								</div>
+							</div>
+							<div class="textAlignC mt_60">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										75×12＝900
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<a href="./data/6단원_6차시 형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						</section>
+					</li>
+
+
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span><span class="icon_bogi"></span>를 보고 설명에 맞는 계산식을 찾아 기호를 써 보시오.</span>
+						</h2>
+						<section>
+							<div class="textAlignC" style="width:100%">
+								<div class="bogiContainer">
+									<div class="icon_bogi"></div>
+									<div class="inner" style="padding: 40px 0 10px 10px;letter-spacing: -2px;">
+										<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">ㄱ</div>
+												<div class="contBox">
+													<p>345＋102＝447</p>
+													<p>355＋112＝467</p>
+													<p>365＋122＝487</p>
+													<p>375＋132＝507</p>
+												</div>
+											</li>
+											<li>
+												<div class="bullet number orange">ㄴ</div>
+												<div class="contBox">
+													<p>513＋234＝747</p>
+													<p>513＋244＝757</p>
+													<p>513＋254＝767</p>
+													<p>513＋264＝777</p>
+												</div>
+											</li>
+											<li>
+												<div class="bullet number orange">ㄷ</div>
+												<div class="contBox">
+													<p>476－123＝353</p>
+													<p>576－223＝353</p>
+													<p>676－323＝353</p>
+													<p>776－423＝353</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="lineBox orange mt_10" style="font-size:40px;letter-spacing:-1px;">십의 자리 수가 각각 1씩 커지는 두 수의 합은 20씩 커집니다.</div>
+							<div class="textAlignC mt_10">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="bullet number orange">ㄱ</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="50" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span><span class="icon_bogi"></span>를 보고 설명에 맞는 계산식을 찾아 기호를 써 보시오.</span>
+						</h2>
+						<section>
+							<div class="textAlignC" style="width:100%">
+								<div class="bogiContainer">
+									<div class="icon_bogi"></div>
+									<div class="inner" style="padding: 40px 0 10px 10px;letter-spacing: -2px;">
+										<ul class="contentsList">
+											<li>
+												<div class="bullet number orange">ㄱ</div>
+												<div class="contBox">
+													<p>345＋102＝447</p>
+													<p>355＋112＝467</p>
+													<p>365＋122＝487</p>
+													<p>375＋132＝507</p>
+												</div>
+											</li>
+											<li>
+												<div class="bullet number orange">ㄴ</div>
+												<div class="contBox">
+													<p>513＋234＝747</p>
+													<p>513＋244＝757</p>
+													<p>513＋254＝767</p>
+													<p>513＋264＝777</p>
+												</div>
+											</li>
+											<li>
+												<div class="bullet number orange">ㄷ</div>
+												<div class="contBox">
+													<p>476－123＝353</p>
+													<p>576－223＝353</p>
+													<p>676－323＝353</p>
+													<p>776－423＝353</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="lineBox orange mt_10 textAlignC" style="font-size:40px;letter-spacing:-3px;">같은 자리의 수가 똑같이 커지는 두 수의 차는 항상 일정합니다.
+							</div>
+							<div class="textAlignC mt_10">
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="bullet number orange">ㄷ</div>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="60" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span>주사위 1개를 굴려 나온 수가 5일 때 5가 계산 결과가 되는 뺄셈식을 만들어 보시오.</span>
+						</h2>
+						<section>
+							<div class="bullet exam">예</div>
+							<div class="tableContainer brown">
+								<table>
+									<tbody>
+									<tr>
+										<th>
+											뺄셈식( <img src="./images/suh_0401_06_0005_201_1_1_2.png">－<img src="./images/suh_0401_06_0005_201_1_1_3.png">＝<img src="./images/suh_0401_06_0005_201_1_1_4.png"> )
+										</th>
+									</tr>
+									<tr>
+										<td>11－6＝5</td>
+									</tr>
+									<tr>
+										<td>10－5＝5</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">9－4＝5</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">8－3＝5</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="3">
+												<div class="answer" data-toggle-target="3">7－2＝5</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="4">
+												<div class="answer" data-toggle-target="4">6－1＝5</div>
+											</div>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="70" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_4" data-quiz="toggle">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span>계산식의 규칙에 따라 빈칸에 알맞은 식을 써 보시오.</span>
+						</h2>
+						<section>
+							<div class="textAlignC">
+								<div class="mt_50">4500＋1300＝5800</div>
+								<div class="mt_10">4500＋2300＝6800</div>
+								<div class="mt_10">4500＋3300＝7800</div>
+								<div class="toggle mt_10" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">4500＋4300＝8800</div>
+								</div>
+								<div class="mt_10">4500＋5300＝9800</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="80" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="dot orange"></ins>
+							<span>규칙에 따라 계산 결과가 901이 되는 계산식을 써 보시오.</span>
+						</h2>
+						<section>
+							<div class="textAlignC">
+								<div class="mt_50">347＋154＝501</div>
+								<div class="mt_10">447＋154＝601</div>
+								<div class="mt_10">547＋154＝701</div>
+								<div class="mt_10">647＋154＝801</div>
+								<ul class="flexListContainer column mt_20">
+									<li>
+										<div class="colorBox check skyBlue">계산식</div>
+										<div>
+											<div class="toggle center" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">747＋154＝901</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="90" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<button class="popBtn textBookBtn --textBookBtn1 invisible" data-hover="" data-popup-btn="1" data-close-inner="">
+			<span class="btnInner"></span>
+		</button>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+
+				<li class="textBookPopup popup_1" data-popup-page="1">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle">
+							<div>
+								[<span class="colorBox brown check">문제 1</span>~<span class="colorBox brown check">문제 4</span>]
+							</div>
+							계산식을 보고 물음에 답해 보시오.
+						</div>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="50">
+					<div class="popup_contents">
+						<p>더해지는 수와 더하는 수의 십의 자리 수가 345와 102, 355와 112, 365와 122, 375와 132로 10씩 커지고, 두 수의 합은 447, 467, 487, 507로 20씩 커지는 계산식은 <ins class="bullet orange number inline" style="vertical-align: 4px;">ㄱ</ins>입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="60">
+					<div class="popup_contents">
+						<p class="ls0_5">빼지는 수의 백의 자리의 수와 빼는 수의 백의 자리의 수가 각각 1씩 커지며 두 수의 차가 항상 일정한 계산식은 <ins class="bullet orange number inline" style="vertical-align: 4px;">ㄷ</ins>입니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="70">
+					<div class="popup_contents">
+						<p>규칙에 따라 계산식을 만들어 봅니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="80">
+					<div class="popup_contents">
+						<p>덧셈식에서 더하는 수가 1000만큼 커지고, 계산 결과도 1000만큼 커지는 규칙이 있습니다.</p>
+					</div>
+				</li>
+
+				<li class="solve" data-popup-page="90">
+					<div class="popup_contents">
+						<p class="ls1">덧셈식의 앞에 있는 수가 100만큼 커지고 계산 결과도 100만큼 커지는 규칙이 있습니다. 따라서 규칙에 따라 계산식을 만들면 747＋154＝901입니다.</p>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect = function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect = function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer = function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+
+
+		window.$callBack.sliderReset = function (slide) {
+			if (slide.idx === 0 || slide.idx === 1 || slide.idx === 2 || slide.idx === 3) {
+				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
+			} else {
+				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
+			}
+		}
+
+		document.querySelector( ".gate_btn" ).addEventListener("click", function(){
+			$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
+			$ts.getEl('.--textBookBtn1')[0].click();
+			setTimeout(function () {
+				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+			}, 3000);
+		});
+
+	</script>
+</body>
+
+</html>

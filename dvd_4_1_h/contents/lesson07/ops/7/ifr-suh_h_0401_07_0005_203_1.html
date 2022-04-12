@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="css/7_4_5.css">
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+<style>
+html,body,#wrap{background: transparent !important;}
+#wrap{width:1058px;height:500px; padding:0; box-shadow:none;}
+header,header:before{display:none !important;}
+main .contentsArea{top:0; left:0; right:0; bottom: 0;}
+main{top: 0;}
+body, .content-container{width:100%; max-width:1000px; height:640px;}
+.bullet.exam{font-family: YGJAL;}
+.dapCheckBtn{letter-spacing: 0; box-shadow: none;}
+</style>
+  </head>
+	<body class="lesson_7 grade_4">
+    <div id="wrap">
+      <header>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1 noUserSelect" data-quiz="dragDrop" data-option="answer, copy">
+                  <div class="dragContainer">
+                    <div class="induceLight light_1"></div>
+                    <div class="induceLight light_2"></div>
+                    <div class="induceLight light_3"></div>
+                    <div class="js-dragObj dragObj can" data-drag-obj-answer="1" data-name="drag-obj"></div>
+                    <div class="js-dragObj dragObj bread" data-drag-obj-answer="2" data-name="drag-obj"></div>
+                    <div class="js-dragObj dragObj water" data-drag-obj-answer="3" data-name="drag-obj"></div>
+
+                    <div class="js-dropArea dropArea dropArea_1" data-drop-area-answer="1"></div>
+                    <div class="js-dropArea dropArea dropArea_2" data-drop-area-answer="2"></div>
+                    <div class="js-dropArea dropArea dropArea_3" data-drop-area-answer="3"></div>
+                  </div>
+                  <div class="dapCheckBtn" data-answer-btn=""></div>
+                  <!-- <div class="dragResetButton" data-hover=""></div> -->
+                </li>
+                <li class="page2" data-quiz="input">
+                  <div class="js-supplies supplies">
+                    <div class="js-suppliesContent suppliesContent"><p>일지<ins class="downButton" data-download-file="4학년_1학기_197.pdf"></ins></p></div>
+                    <div class="js-suppliesButton suppliesButton"></div>
+                  </div>
+                  <div class="noteContainer">
+                    <h2>&lt;일지&gt;</h2>
+                    <p class="right">
+                      <input type="text" class="underLine" data-input-obj="" data-answer=" ">월 <input type="text" class="underLine" data-input-obj="" data-answer=" ">일 <input type="text" class="underLine" data-input-obj="" data-answer=" ">요일
+                    </p>
+                    <p class="indent">우리는 지도에 도착할 때까지 음식이 부족하지 않게 계획적으로 먹기로 했다. 그래서 매일 같은 양으로 한 사람이 하루에 먹을 수 있는 음식의 양을 계산해 봤다. 지구에 도착하기까지 984시간이 남았다.</p>
+                    <textarea class="noBox" data-input-obj="" data-answer=" "></textarea>
+                  </div>
+                  <div class="quizButtons reset" data-answer-btn="" data-type="reset"></div>
+                  <div class="quizButtons answer" data-popup-btn="1" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <div class="flexContainer">
+              <ins class="exam circle brown2">예</ins>
+              <div>
+                <p>우리는 지도에 도착할 때까지 음식이 부족하지 않게 계획적으로 먹기로 했다. 그래서 매일 같은 양으로 한 사람이 하루에 먹을 수 있는 음식의 양을 계산해 봤다. 지구에 도착하기까지 984시간이 남았다.</p>
+                <p class="textColor answer">하루는 24시간이므로 41일이 남은 것이다.
+                  한 사람에게 주어진 음식은 진공 포장 음식 123개, 물 164병, 통조림 205캔으로 계획적으로 매일 같은 양을 먹기로 하였다. 계산을 해보니 하루에 먹을 수 있는 음식은 진공 포장 음식 3개, 물 4병, 통조림 5캔이었다. 앞으로 남은 기간 동안 잘 나누어 먹어야겠다.</p></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script>
+(function() {
+  // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+  window.$efSound.muted(true);
+  window.$efSound.incorrect(); // 오답 사운드
+
+  function setSound() {
+    if (isMuted) {
+      window.$efSound.muted(false);
+      isMuted = false;
+    }
+  }
+  var isMuted = true;
+  document.body.addEventListener('mousedown', setSound);
+  document.body.addEventListener('touchstart', setSound);
+  // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+  window.addEventListener('load', function() {
+
+    window.dragDropCallbacks = {
+      "drag-obj": dragCallback
+    };
+    window.$callBack.dragCorrect = function(DRAG) {
+      console.log('dragCorrect:', DRAG);
+    }
+    window.$callBack.dragIncorrect = function(DRAG) {
+      console.log('dragIncorrect:', DRAG);
+    }
+
+    function dragCallback(dragDrop) {
+      // console.log('DRAG: ', DRAG);
+      var dropArea, dropAreaElement, children;
+      dropArea = dragDrop.droppedArea;
+      if (!dropArea) {
+        window.$efSound.incorrect();
+        return console.log('dropArea 없음.');
+      }
+      dropAreaElement = dragDrop.droppedArea.element;
+      children = dropAreaElement.children;
+      var page = dropArea.dragDrop.elements.container;
+      if(dropArea.element.classList.contains('dropArea_1')) {
+        if (dropArea.element.children.length === 9) dropArea.DISABLED = true;
+      }else if(dropArea.element.classList.contains('dropArea_2')) {
+        if (dropArea.element.children.length === 6) dropArea.DISABLED = true;
+      }else{
+        if (dropArea.element.children.length === 6) dropArea.DISABLED = true;
+      }
+      window.$efSound.correct();
+    }
+
+    var button = $ts.getEl('.page1 .dapCheckBtn')[0];
+    var dropArea = $ts.getEl('.page1 .dropArea');
+    var dropObj = $ts.getEl('.page1 .dropObj');
+    button.addEventListener('click', function () {
+      if(this.className.indexOf('reset') === -1) {
+        dropArea.forEach(function (area) {
+          area.innerHTML = '';
+        })
+      }
+      else {
+        dropArea.forEach(function (area) {
+          area.innerHTML = '';
+        })
+        showAnswer();
+      }
+    })
+
+    function showAnswer() {
+      dropArea.forEach(function (area) {
+        if(area.classList.contains('dropArea_1')){
+          for(var i = 0; i < 5; i++){
+            var div = document.createElement('div');
+            div.setAttribute('class', 'dragObj can');
+            area.appendChild(div);
+          }
+        }else if(area.classList.contains('dropArea_2')){
+          for(var i = 0; i < 3; i++){
+            var div = document.createElement('div');
+            div.setAttribute('class', 'dragObj bread');
+            area.appendChild(div);
+          }
+        }else{
+          for(var i = 0; i < 4; i++){
+            var div = document.createElement('div');
+            div.setAttribute('class', 'dragObj water');
+            area.appendChild(div);
+          }
+        }
+      })
+    }
+    // var resetButtons = $ts.getEl('.dragResetButton');
+    // resetButtons.forEach(function (btn) {
+    //   btn.addEventListener('click', function () {
+    //     $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+    //   })
+    // })
+  });
+
+})();
+    </script>
+  </body>
+</html>
