@@ -47,16 +47,22 @@
 			transform: scale(1.2);
 			z-index: 1;
 		}
+
 		.content-container>.content>.bg {
 			transform: scale(.8) translate(-120px, -61px);
 		}
 
 		#quiz-content-01 {
 			transform: scale(.8) translate(-120px, 30px);
-		} 
+		}
 
 		.app-drawing-tool {
-			left: -173px
+			left: -35px;
+			height: 550px;
+		}
+		.app-drawing-tool .tool-container {
+			top: 160px;
+			right: 136px;
 		}
 
 
@@ -75,9 +81,67 @@
 			left: 550px;
 			z-index: 1;
 		}
-		/* .content-container>.content>.bg {width: 1280px;height: 720px;}
-		.bg .flex-wrap {width: 800px;justify-content: space-between;}
-		.bg .flex-wrap img {width: 300px;} */
+
+		#quiz-01 {
+			left: 640px;
+			top: 360px;
+		}
+
+		.quiz-check.image-answer .base {
+			position: relative;
+			width: 900px;
+			top: 255px;
+			left: 275px;
+		}
+
+		#quiz-02 .answer {
+			position: absolute;
+			width: 900px;
+			top: 255px;
+			left: 275px;
+		}
+
+		#quiz-03 .answer {
+			position: absolute;
+			left: 30px;
+			top: 60px;
+		}
+
+		.toggle-wrap {
+			width: 300px;
+			height: 165px;
+			background: #fff;
+		}
+		.toggle-wrap .flex-wrap {
+			align-items: center;
+		}
+
+		.toggle-wrap .toggle.circle {
+			margin: 0 20px;
+		}
+
+		.toggle-wrap .inline {
+			font-family: 'NotoM';
+			color: #000;
+			font-size: 40px;
+		}
+
+		#quiz-01 .quiz-cont {
+			position: absolute;
+			top: 555px;
+			left: 500px;
+		}
+
+		.image-answer .flex-wrap.circle-img {
+			justify-content: space-between;
+			width: 900px;
+			text-align: center;
+		}
+
+		.image-answer .flex-wrap.circle-img>img {
+			width: 300px;
+			height: 300px;
+		}
 	</style>
 </head>
 
@@ -85,11 +149,7 @@
 	<div class="content-container">
 		<div class="content formative" data-ui="cornerBase">
 			<div class="bg">
-				<img src="./images/mm_31_6_05_07_03/bg.svg" alt="">
-				<!-- <div class="flex-wrap">
-					<img src="../../../../E-curri03-math-P_2022/31/suh_p_0301_06_0006/images/suh_p_0301_06_0006_401_1/suh_p_0301_06_0006_401_1_5.png" alt="">
-					<img src="../../../../E-curri03-math-P_2022/31/suh_p_0301_06_0006/images/suh_p_0301_06_0006_401_1/suh_p_0301_06_0006_401_1_5.png" alt="">
-				</div> -->
+				<!-- <img src="./images/mm_31_6_05_07_03/bg.svg" alt=""> -->
 			</div>
 
 			<div class="title-h1">
@@ -105,39 +165,69 @@
 
 			<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
 
-				<!-- <div id="quiz-01" class="quiz-pop-select type-01" data-ui="quiz-pop-select"
+				<div id="quiz-01" class="quiz-pop-select type-01" data-ui="quiz-pop-select"
 					data-option='{"answer":[0]}'>
 					<div class="quiz-cont">
-						<ul class="pop-self quiz-pop">
+						<!-- <ul class="pop-self quiz-pop">
 							<li class="btn-pop-select quiz-bt"></li>
 							<li class="btn-pop-select quiz-bt"></li>
 							<li class="btn-pop-select quiz-bt"></li>
-						</ul>
+						</ul> -->
 						<div class="btn-self quiz-bt-open">
 							<div class="pop"></div>
 						</div>
 					</div>
-				</div> -->
-
-				<div id="quiz-02" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
-					<div class="base"></div>
-					<div class="answer">
-						<img src="./images/mm_31_6_05_07_03/answer_01.svg" alt="" width="1280" height="720">
-					</div>
-					<div class="check-list">
-						<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
+					<div class="toggle-wrap" data-quiz="toggle">
+						<div class="flex-wrap">
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>3</li>
+								</ul>
+							</div>
+							<div class="toggle circle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<img src="./images/mm_31_6_05_07_03/inequalIcon_2_blue.png">
+								</div>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>6</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div id="quiz-03" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
+				<div id="quiz-02" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
+					<div class="base">
+						<div class="flex-wrap circle-img">
+							<img src="./images/mm_31_6_05_07_03/suh_p_0301_06_0006_401_1_5.png" alt="">
+							<img src="./images/mm_31_6_05_07_03/suh_p_0301_06_0006_401_1_5.png" alt="">
+						</div>
+					</div>
+					<div class="answer">
+						<!-- <img src="./images/mm_31_6_05_07_03/answer_01.svg" alt="" width="1280" height="720"> -->
+						<div class="flex-wrap circle-img">
+							<img src="./images/mm_31_6_05_07_03/suh_p_0301_06_0006_401_1_6.png" alt="">
+							<img src="./images/mm_31_6_05_07_03/suh_p_0301_06_0006_401_1_7.png" alt="">
+						</div>
+					</div>
+					<!-- <div class="check-list">
+						<div class="check-item" data-answer-part-idx="0"></div>
+					</div> -->
+				</div>
+
+				<!-- <div id="quiz-03" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 					<div class="base"></div>
 					<div class="answer">
 						<img src="./images/mm_31_6_05_07_03/answer_02.svg" alt="" width="1280" height="720">
 					</div>
 					<div class="check-list">
-						<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
+						<div class="check-item" data-answer-part-idx="0"></div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- 부분 정답 :: absolute -->
 				<div class="btns-answer-part">
@@ -190,8 +280,14 @@
 
 	<script src="../../../../../js/binder_web.min.js"></script>
 	<script src="../../../common/js/content.js"></script>
-
-
+	<script>
+		$('.check-btns .toggle').on("click", function () {
+			$('.toggle.circle').toggleClass('complete');
+		})
+		$('.toggle.circle').on("click", function () {
+			$(this).toggleClass('complete');
+		})
+	</script>
 </body>
 
 </html>
