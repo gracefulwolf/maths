@@ -1,235 +1,208 @@
-
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style>
-		#wrap header .title.type-number:before {display:none}
-		#wrap header .title.type-number {padding-left:50px}
-		.title.type-number .number {position:absolute;left:0;top:2px}
+		#wrap header .title.type-number:before {
+			display: none
+		}
 
-		.lineBox {width: 600px;margin: 10px auto 0;}
-		.max-size {width:800px;margin:0 auto}
+		#wrap header .title.type-number {
+			padding-left: 50px
+		}
 
-        .formula_box > li{display: flex; align-items: center;justify-content: inherit;}
-        .formula_box .bunsuWrap > ul{display:inline-flex;min-width:50px;flex-direction:column;align-items:center;justify-content:center;}
-        .formula_box{display: flex;justify-content: space-evenly;}
+		.title.type-number .number {
+			position: absolute;
+			left: 0;
+			top: 2px
+		}
 
-        .bunsuWrap.separation > ul{min-width: 70px;}
-        .bunsuWrap.separation li{width:100%;}
-        .bunsuWrap.separation li:first-of-type{margin-bottom: 5px;padding-bottom: 5px;}
-        .bunsuWrap.separation .toggle{width:100%;}
+		/* .page_2 .tableContainer{margin-top:80px;} */
+		.page_2 .tableContainer .toggle {
+			background: transparent;
+			width: 100%;
+			height: 100%;
+		}
 
-        /* .page_2 .tableContainer{margin-top:80px;} */
-        .page_2 .tableContainer .toggle{background:transparent;width:100%;height:100%;}
-
+		.hide{display:none;}
+		.answerBox{position:relative;margin:15px auto 0;width:731px;height:300px;background:url(./images/suh_0501_06_0015_207_1_1.png) no-repeat center / contain;}
+		.answerBox .bullet{position:absolute;top:42px;left:-60px;display:none;}
+		.answerBox span{position:absolute;top:4px;left:0;font-size:0.5em;letter-spacing:-1.5px;}
+		.answerBox.on{background:url(./images/suh_0501_06_0015_207_1_2.png) no-repeat center / contain;}
+		.answerBox.on .bullet{display:block;}
 	</style>
 </head>
 
 <body>
-<div id="wrap" class="math" >
-	<header>
-		<div class="title type-number">
-			<ins class="bullet number orange">7</ins>
-			<p class="textAlignJ" style="letter-spacing:-1.5px">
-                슬기는 둘레가 12 ｍ인 가장 넓은 직사각형 모양의 울타리를 만들려고 합니다. 슬기가 만든 울타리의 넓이를 구해 보세요.
-            </p>
-		</div>
-	</header>
-	<main>
-		<div class="contentsBox basicSlider" data-slide-container="main">
-            <ul class="basicSlider_tabs" data-tabs="">
-				<li data-hover="">물음 1</li>
-				<li data-hover="">물음 2</li>
-				<li data-hover="">물음 3</li>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title type-number">
+				<ins class="bullet number orange">7</ins>
+				<p class="textAlignJ" style="letter-spacing:-1.5px">
+					슬기는 둘레가 12 ｍ인 가장 넓은 직사각형 모양의 울타리를 만들려고 합니다. 슬기가 만든 울타리의 넓이를 구해 보세요.
+				</p>
+			</div>
+		</header>
+		<main>
+			<div class="contentsBox basicSlider" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+					<li data-hover="">물음 3</li>
+				</ul>
+
+				<ul class="basicSlider_slides" data-slides>
+					<li class="page_1" data-quiz="toggle">
+						<div class="hide" data-toggle-obj="1"></div>
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot"></ins>
+								<div>
+									<p class="mb_10">둘레가 12 m인 울타리를 서로 다른 모양으로 3개 그리고, 그중에서 넓이가 가장 큰 직사각형을 찾아보세요.</p>
+								</div>
+							</li>
+						</ul>
+						<div class="answerBox" data-toggle-target="1">
+							<div class="bullet exam">예</div>
+							<span>1 ㎡</span>
+						</div>
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<section>
+							<div class="tableContainer brown">
+								<table>
+									<colgroup>
+										<col width="30%">
+										<col width="14%;">
+										<col width="14%;">
+										<col width="14%;">
+										<col width="14%;">
+										<col width="14%;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="col">가로(m)</th>
+											<td>1</td>
+											<td>2</td>
+											<td>3</td>
+											<td>
+												<div class="toggle" data-toggle-obj="1">
+													<div class="answer" data-toggle-target="1">4</div>
+												</div>
+											</td>
+											<td>5</td>
+										</tr>
+										<tr>
+											<th scope="col">세로(m)</th>
+											<td>5</td>
+											<td>4</td>
+											<td>3</td>
+											<td>2</td>
+											<td>
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">1</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="col">넓이(㎡)</th>
+											<td>5</td>
+											<td>
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">8</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">9</div>
+												</div>
+											</td>
+											<td>
+												<div class="toggle" data-toggle-obj="5">
+													<div class="answer" data-toggle-target="5">8</div>
+												</div>
+											</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</section>
+					</li>
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="dot"></ins>
+							<span class="ls1">
+								둘레가 12 ｍ일 때 넓이가 가장 큰 직사각형의 넓이를 구해 보세요.
+							</span>
+						</h2>
+						<ul class="textAlignC" style="margin-top: 120px;">
+							<li>
+								<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										9
+									</div>
+								</div> ㎡
+							</li>
+						</ul>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!--      page에 solve 추가        -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<ul class="dotList orange">
+							<li>
+								<div>(직사각형의 둘레)＝(가로＋세로)×2이므로 둘레가 12 m인 직사각형을 그리려면 (가로＋세로)＝6인 직사각형을 그리면 됩니다.</div>
+							</li>
+						</ul>
+					</div>
+					<div class="popup_closeBtn"></div>
+				</li>
 			</ul>
+		</section>
+	</div>
 
-			<ul class="basicSlider_slides" data-slides>
-				<li class="page_1" data-quiz="toggle">
-                    dd
-                    <button class="dapCheckBtn" data-answer-btn=""></button>
-                </li>
-                <li class="page_2" data-quiz="toggle">
-                    <section>
-                        <div class="tableContainer brown">
-                            <table>
-                                <colgroup>
-                                    <col width="30%">
-                                    <col width="14%;">
-                                    <col width="14%;">
-                                    <col width="14%;">
-                                    <col width="14%;">
-                                    <col width="14%;">
-                                </colgroup>
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">가로(m)</th>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>
-                                            <div class="toggle" data-toggle-obj="1">
-                                                <div class="answer" data-toggle-target="1">4</div>
-                                            </div>
-                                        </td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">세로(m)</th>
-                                        <td>5</td>
-                                        <td>4</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>
-                                            <div class="toggle" data-toggle-obj="2">
-                                                <div class="answer" data-toggle-target="2">1</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">넓이(㎡)</th>
-                                        <td>5</td>
-                                        <td>
-                                            <div class="toggle" data-toggle-obj="3">
-                                                <div class="answer" data-toggle-target="3">8</div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="toggle" data-toggle-obj="4">
-                                                <div class="answer" data-toggle-target="4">9</div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="toggle" data-toggle-obj="5">
-                                                <div class="answer" data-toggle-target="5">8</div>
-                                            </div>
-                                        </td>
-                                        <td>5</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <button class="dapCheckBtn" data-answer-btn=""></button>
-                    </section>
-                </li>
-				<li class="page_3" data-quiz="toggle">
-                    <h2>
-                        <ins class="dot"></ins>
-                        <span class="ls1">
-                            둘레가 12 ｍ일 때 넓이가 가장 큰 직사각형의 넓이를 구해 보세요.
-                        </span>
-                    </h2>
-                    <ul class="textAlignC" style="margin-top: 120px;">
-                        <li>
-                            <div class="toggle" data-toggle-obj="1">
-                                <div class="answer" data-toggle-target="1">
-                                    9
-                                </div>
-                            </div> ㎡
-                        </li>
-                    </ul>
-                    <button class="dapCheckBtn" data-answer-btn=""></button>
-                </li>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
 
-			</ul>
-		</div>
-	</main>
-
-    <section class="popup_container" data-popup-container="">
-        <ul class="popup_pages">
-            <!--      page에 solve 추가        -->
-            <li class="solve pop_page_1" data-popup-page="1">
-                <div class="popup_contents">
-                    <ul class="contentsList">
-                        <li>
-                            <ins class="dot orange" style="margin-top: 30px;"></ins>
-                            <div>
-                                <div class="bunsuWrap inline">
-                                    1<ul><li>5</li><li>6</li></ul>
-                                </div>＋<div class="bunsuWrap inline">
-                                    1<ul><li>1</li><li>2</li></ul>
-                                </div>＝(1＋1)＋<div class="bunsuWrap inline">
-                                    <ul><li>5</li><li>6</li></ul>
-                                </div>＋<div class="bunsuWrap inline">
-                                    <ul><li>3</li><li>6</li></ul>
-                                </div>＝2＋<div class="bunsuWrap inline">
-                                    <ul><li>8</li><li>6</li></ul>
-                                </div>＝2＋<div class="bunsuWrap inline">
-                                    1<ul><li>2</li><li>6</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    3<ul><li>2</li><li>6</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    3<ul><li>1</li><li>3</li></ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <ins class="dot orange" style="margin-top: 30px;"></ins>
-                            <div>
-                                <div class="bunsuWrap inline">
-                                    5<ul><li>1</li><li>2</li></ul>
-                                </div>－<div class="bunsuWrap inline">
-                                    1<ul><li>3</li><li>4</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    <ul><li>11</li><li>2</li></ul>
-                                </div>－<div class="bunsuWrap inline">
-                                    <ul><li>7</li><li>4</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    <ul><li>22</li><li>4</li></ul>
-                                </div>－<div class="bunsuWrap inline">
-                                    <ul><li>7</li><li>4</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    <ul><li>15</li><li>4</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    3<ul><li>3</li><li>4</li></ul>
-                                </div><br><div class="bunsuWrap inline">
-                                    3<ul><li>1</li><li>3</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    3<ul><li>4</li><li>12</li></ul>
-                                </div>
-                                <div class="toggleBlank circle" style="vertical-align: middle;margin: 0 5px;"><img src="../common/contents/images/math/inequalIcon_blue.png"></div>
-                                <div class="bunsuWrap inline">
-                                    3<ul><li>3</li><li>4</li></ul>
-                                </div>＝<div class="bunsuWrap inline">
-                                    3<ul><li>9</li><li>12</li></ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            <div class="popup_closeBtn"></div></li>
-        </ul>
-    </section>
-
-    
-</div>
-
-<div id="loadingContainer">
-	<div class="loadingIconAnimation"></div>
-</div>
-
-<script type="text/javascript" src="../common/libs/js/ts.js"></script>
-<script type="text/javascript" src="../common/libs/js/animate.js"></script>
-<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
-<script type="text/javascript" src="../common/libs/js/slider.js"></script>
-<script type="text/javascript" src="../common/libs/js/popup.js"></script>
-<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
-<script type="text/javascript" src="../common/libs/js/controller.js"></script>
-<script type="text/javascript" src="../common/libs/js/appear.js"></script>
-<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
-<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
-<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
-<script type="text/javascript" src="./js/contents.js"></script>
-<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () {
-	}, false);
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
 
 	</script>
 </body>
+
 </html>
