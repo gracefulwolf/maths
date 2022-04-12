@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'HUGoth350';
+    src: url('../font/HUGoth350A.woff') format('woff');
+}
+@font-face {
+    font-family: 'HUGoth360';
+    src: url('../font/HUGoth360A.woff') format('woff');
+}
+@font-face {
+    font-family: 'HUGoth370';
+    src: url('../font/HUGoth370A.woff') format('woff');
+}
+
+body::before {
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1;
+    position: absolute;
+    content: url(../images/dice1_0002.png)
+    url(../images/dice1_0003.png)
+    url(../images/dice1_0004.png)
+    url(../images/dice1_0005.png)
+    url(../images/dice1_0006.png)
+    url(../images/dice2_0002.png)
+    url(../images/dice2_0003.png)
+    url(../images/dice2_0004.png)
+    url(../images/dice2_0005.png)
+    url(../images/dice2_0006.png)
+    url(../images/dice2_0007.png)
+    url(../images/dice2_0008.png)
+    url(../images/dice2_0009.png)
+    url(../images/dice2_0010.png)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: fixed;
+    margin: 0;
+
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    font-family: HUGoth370;
+}
+
+#wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 800px;
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    overflow: hidden;
+}
+
+.page:not(:first-child) {
+    display: none;
+}
+
+.diceDsp {
+    position: absolute;
+}
+
+.diceDsp.dice1 {
+    width: 356px;
+    height: 446px;
+}
+.diceDsp.dice2 {
+    width: 454px;
+    height: 474px;
+}
+
+.diceDsp .diceAni, 
+.diceDsp .diceImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.diceDsp .diceAni {
+    display: none;
+}
+
+.dice1 .diceImg {
+    background: url(../images/dice1_0001.png) no-repeat;
+}
+.dice1 .diceImg[idx="1"] {
+    background: url(../images/dice1_0002.png) no-repeat;
+}
+.dice1 .diceImg[idx="2"] {
+    background: url(../images/dice1_0003.png) no-repeat;
+}
+.dice1 .diceImg[idx="3"] {
+    background: url(../images/dice1_0004.png) no-repeat;
+}
+.dice1 .diceImg[idx="4"] {
+    background: url(../images/dice1_0005.png) no-repeat;
+}
+.dice1 .diceImg[idx="5"] {
+    background: url(../images/dice1_0006.png) no-repeat;
+}
+
+.dice2 .diceImg {
+    background: url(../images/dice2_0001.png) no-repeat;
+}
+.dice2 .diceImg[idx="1"] {
+    background: url(../images/dice2_0002.png) no-repeat;
+}
+.dice2 .diceImg[idx="2"] {
+    background: url(../images/dice2_0003.png) no-repeat;
+}
+.dice2 .diceImg[idx="3"] {
+    background: url(../images/dice2_0004.png) no-repeat;
+}
+.dice2 .diceImg[idx="4"] {
+    background: url(../images/dice2_0005.png) no-repeat;
+}
+.dice2 .diceImg[idx="5"] {
+    background: url(../images/dice2_0006.png) no-repeat;
+}
+.dice2 .diceImg[idx="6"] {
+    background: url(../images/dice2_0007.png) no-repeat;
+}
+.dice2 .diceImg[idx="7"] {
+    background: url(../images/dice2_0008.png) no-repeat;
+}
+.dice2 .diceImg[idx="8"] {
+    background: url(../images/dice2_0009.png) no-repeat;
+}
+.dice2 .diceImg[idx="9"] {
+    background: url(../images/dice2_0010.png) no-repeat;
+}
+
+#page1 .diceDsp.zero {
+    left: 467px;
+    top: 148px;
+}
+
+#page2 .diceDsp.one {
+    left: 276px;
+    top: 116px;
+}
+#page2 .diceDsp.two {
+    left: 631px;
+    top: 186px;
+}
+
+#page3 .diceDsp.zero {
+    left: 431px;
+    top: 139px;
+}
+
+
+.btn-run {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 455px;
+    top: 652px;
+    width: 380px;
+    height: 114px;
+
+    font-size: 47px;
+    line-height: 90px;
+    color: #FFF;
+    text-shadow: #000 0px 0 3px;
+
+    background-repeat: no-repeat;
+    background-size: 380px 342px;
+    background-position: 0 0;
+    background-image: url(../images/btn_run.png);
+
+}
+.btn-run > span {
+    margin-top: -8px;
+}
+.btn-run:hover {
+    font-size: 48px;
+    background-position: 0 -114px;
+}
+
+.btn-run:active {
+    background-position: 0 -228px;
+}
+
+.diceCntSelectBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.diceCntSelectBox_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 57px;
+    top: 25px;
+    width: 178px;
+    height: 65px;
+    color: #6D0101;
+    font-size: 30px;
+    letter-spacing: -2px;
+}
+.diceCntSelectBox_title > span {
+    padding: 0 0 0 4px;
+}
+
+.diceCtnSelectBtn {
+    position: absolute;
+    top: 24px;
+    width: 69px;
+    height: 69px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    cursor: pointer;
+}
+.diceCtnSelectBtn.active {
+    pointer-events: none;
+}
+.diceCtnSelectBtn:hover {
+    transform: scale(1.1);
+}
+
+.diceCntSelectBox .diceCtnSelectBtn.one {
+    left: 257px;
+    background-image: url(../images/btn_dice_1_0001.png);
+}
+.diceCntSelectBox .diceCtnSelectBtn.two {
+    left: 335px;
+    background-image: url(../images/btn_dice_2_0001.png);
+}
+.diceCntSelectBox .diceCtnSelectBtn.ten {
+    left: 413px;
+    background-image: url(../images/btn_dice_3_0001.png);
+}
+.diceCntSelectBox .diceCtnSelectBtn.one.active {
+    background-image: url(../images/btn_dice_1_0002.png);
+}
+.diceCntSelectBox .diceCtnSelectBtn.two.active {
+    background-image: url(../images/btn_dice_2_0002.png);
+}
+.diceCntSelectBox .diceCtnSelectBtn.ten.active {
+    background-image: url(../images/btn_dice_3_0002.png);
+}
+
+.totalNoBox {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    left: 1001px;
+    top: 58px;
+    width: 194px;
+    
+}
+.totalNo {
+    font-size: 120px;
+
+    color: white;
+    text-align: center;
+    text-shadow: #000 0px 0 3px;
+}
+
+.bg{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1280px;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/bg.png);
+    /* background-image: url(../images/guide03.png); */
+    z-index: -1;
+}

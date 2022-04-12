@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:180px; left:55px; overflow:hidden; width:1060px; height:670px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:130px; left:70px; height:640px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.page-iframe{width:1280px; border:0; transform: scale(0.8265625); transform-origin: 0 0;}
+		.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
+
+		#wrap header .title-selfi{position:relative; padding-left:85px;}
+		#wrap header .title-selfi:before{top:-5px; left:0; width:76px; height:58px; background-position:-387px 0; background-size:auto 100%; background-repeat:no-repeat; background-image:url(./images/act_quiz_icon.svg);}
+		#wrap header .title-selfi-num{position:absolute; top:12px; left:6px; width:70px; font-weight:400; font-size:24px; font-family: YGJAL; color:#fff; text-align:center;}
+
+
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.tableContainer{width: 660px; margin: 0 auto;}
+		.tableContainer table tr:first-of-type>:last-child{border-radius: 10px 10px 0 0;}
+		.tableContainer table tr:last-of-type>:last-child{border-radius: 0 0 10px 10px;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title title-selfi">
+			<ins class="title-selfi-num">1</ins> 계산식에서 규칙을 찾아봅시다.
+		</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						계산식에는 어떤 규칙이 있는지 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown fix mt_40">
+							<table>
+								<tr>
+									<td class="textAlignR" style="padding-right: 46px;">
+										1＋2＋1＝4
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 46px;">
+										1＋2＋3＋2＋1＝9
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 20px;">
+										1＋2＋3＋4＋3＋2＋1＝16
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 20px;">
+										1＋2＋3＋4＋5＋4＋3＋2＋1＝25
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="--answer textAlignC mt_40">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div class="ls1">
+												덧셈식에서 가운데 수가 1씩 커지고 있습니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						규칙에 따라 계산 결과가 49가 되는 계산식을 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown fix mt_40">
+							<table>
+								<tr>
+									<td class="textAlignR" style="padding-right: 46px;">
+										1＋2＋1＝4
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 46px;">
+										1＋2＋3＋2＋1＝9
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 20px;">
+										1＋2＋3＋4＋3＋2＋1＝16
+									</td>
+								</tr>
+								<tr>
+									<td class="textAlignR" style="padding-right: 20px;">
+										1＋2＋3＋4＋5＋4＋3＋2＋1＝25
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="--answer textAlignC mt_40">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									1＋2＋3＋4＋5＋6＋7＋6＋5＋4＋3＋2＋1＝49
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

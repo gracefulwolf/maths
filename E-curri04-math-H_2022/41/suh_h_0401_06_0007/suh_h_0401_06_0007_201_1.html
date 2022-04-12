@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:180px; left:55px; overflow:hidden; width:1060px; height:670px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:130px; left:70px; height:640px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.page-iframe{width:1280px; border:0; transform: scale(0.8265625); transform-origin: 0 0;}
+		.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
+
+		#wrap header .title-selfi{position:relative; padding-left:85px;}
+		#wrap header .title-selfi:before{top:-5px; left:0; width:76px; height:58px; background-position:-387px 0; background-size:auto 100%; background-repeat:no-repeat; background-image:url(./images/act_quiz_icon.svg);}
+		#wrap header .title-selfi-num{position:absolute; top:12px; left:6px; width:70px; font-weight:400; font-size:24px; font-family: YGJAL; color:#fff; text-align:center;}
+
+
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.tableContainer{width: 900px; margin: 0 auto;}
+
+		.--bt1{display: inline-block; min-width: 40px; margin: 0 2px; padding: 0 2px; border: 4px solid #b4b4b4; border-radius: 5px; background: #ede7e0; text-align: center;}
+		.--bt2{display: inline-block; min-width: 40px; margin: 0 2px; padding: 0 2px; border: 4px solid #f7c1c9; border-radius: 5px; background: #ffece2; text-align: center;}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">곱셈식에서 규칙을 찾아봅시다. <img src="./images/mm_41_3_09_01_03.png" alt="" height="44" style="vertical-align: -6px;"></span></div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+				<li data-hover="">물음 4</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+
+				<li class="page_1" data-slide-container="">
+					<div class="moveButtonContainer" data-slide-btn-container="">
+						<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+						<ul class="basicSlider_circle_tabs" data-tabs="">
+							<li data-hover=""></li>
+							<li data-hover=""></li>
+						</ul>
+						<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+					</div>
+					<ul class="basicSlider_slides" data-slides="">
+						<li class="innerTab_1">
+							<h2><ins class="dot"></ins><span>
+								곱하는 수에 어떤 규칙이 있는지 말해 보세요.
+							</span></h2>
+							<section>
+								<div class="tableContainer brown fix">
+									<table>
+										<colgroup>
+											<col style="width: 180px;">
+											<col>
+										</colgroup>
+										<tr>
+											<th>순서</th>
+											<th>곱셈식</th>
+										</tr>
+										<tr>
+											<th>첫째</th>
+											<td>
+												33×1＝33
+											</td>
+										</tr>
+										<tr>
+											<th>둘째</th>
+											<td>
+												33×101＝3333
+											</td>
+										</tr>
+										<tr>
+											<th>셋째</th>
+											<td>
+												33×10101＝333333
+											</td>
+										</tr>
+										<tr>
+											<th>넷째</th>
+											<td>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="textAlignC --aniBox">
+									<div id="aniBox_1"></div>
+								</div>
+
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</section>
+						</li>
+						<li class="innerTab_2" data-quiz="toggle">
+							<h2><ins class="dot"></ins><span>
+								곱하는 수에 어떤 규칙이 있는지 말해 보세요.
+							</span></h2>
+							<section>
+								<div class="tableContainer brown fix">
+									<table>
+										<colgroup>
+											<col style="width: 180px;">
+											<col>
+										</colgroup>
+										<tr>
+											<th>순서</th>
+											<th>곱셈식</th>
+										</tr>
+										<tr>
+											<th>첫째</th>
+											<td>
+												33×1＝33
+											</td>
+										</tr>
+										<tr>
+											<th>둘째</th>
+											<td>
+												33×101＝3333
+											</td>
+										</tr>
+										<tr>
+											<th>셋째</th>
+											<td>
+												33×10101＝333333
+											</td>
+										</tr>
+										<tr>
+											<th>넷째</th>
+											<td>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="textAlignC mt_20">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<ul class="contentsList">
+												<li>
+													<ins class="bullet exam">예</ins>
+													<div>
+														곱하는 수이 마지막 자리에 0, 1이 1개씩 늘어납니다.
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</section>
+						</li>
+					</ul>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						계산 결과에 어떤 규칙이 있는지 말해 보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown fix">
+							<table>
+								<colgroup>
+									<col style="width: 180px;">
+									<col>
+								</colgroup>
+								<tr>
+									<th>순서</th>
+									<th>곱셈식</th>
+								</tr>
+								<tr>
+									<th>첫째</th>
+									<td>
+										33×1＝33
+									</td>
+								</tr>
+								<tr>
+									<th>둘째</th>
+									<td>
+										33×101＝3333
+									</td>
+								</tr>
+								<tr>
+									<th>셋째</th>
+									<td>
+										33×10101＝333333
+									</td>
+								</tr>
+								<tr>
+									<th>넷째</th>
+									<td>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												계산 결과의 마지막 자리에 3이 2개씩 늘어납니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						규칙에 따라 넷째 빈칸에 알맞은 곱셈식을 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown fix">
+							<table>
+								<colgroup>
+									<col style="width: 180px;">
+									<col>
+								</colgroup>
+								<tr>
+									<th>순서</th>
+									<th>곱셈식</th>
+								</tr>
+								<tr>
+									<th>첫째</th>
+									<td>
+										33×1＝33
+									</td>
+								</tr>
+								<tr>
+									<th>둘째</th>
+									<td>
+										33×101＝3333
+									</td>
+								</tr>
+								<tr>
+									<th>셋째</th>
+									<td>
+										33×10101＝333333
+									</td>
+								</tr>
+								<tr>
+									<th>넷째</th>
+									<td>
+										<div class="toggle noBg" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												33×1010101＝33333333
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_4" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						규칙에 따라 계산 결과가 3333333333이 되는 곱셈식을 찾아보세요.
+					</span></h2>
+					<section>
+						<div class="tableContainer brown fix">
+							<table>
+								<colgroup>
+									<col style="width: 180px;">
+									<col>
+								</colgroup>
+								<tr>
+									<th>순서</th>
+									<th>곱셈식</th>
+								</tr>
+								<tr>
+									<th>첫째</th>
+									<td>
+										33×1＝33
+									</td>
+								</tr>
+								<tr>
+									<th>둘째</th>
+									<td>
+										33×101＝3333
+									</td>
+								</tr>
+								<tr>
+									<th>셋째</th>
+									<td>
+										33×10101＝333333
+									</td>
+								</tr>
+								<tr>
+									<th>넷째</th>
+									<td>
+										33×1010101＝33333333
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									33×101010101＝3333333333
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+		$prite.add({
+			target: $ts.getEl('#aniBox_1'),
+			spriteId: 'sprite1',
+			spriteList: [
+				{
+					name: 'boy_2',
+					circle: 'green',
+					speech:'right',
+					top: 260,
+					left: 890,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_2.png',
+					spriteSheet: '../common/contents/images/character/boy_2_sprite.png',
+					sound: './media/audios/suh_h_0401_06_0007_201_1.mp3',
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					//endSheet: 0,
+					delay: 40,
+					textBubble: {
+						text: '첫째 식은 계산 도구에서 <span class="--bt1">3</span><span class="--bt1">3</span><span class="--bt2">×</span><span class="--bt1">1</span><span class="--bt1">＝</span>를<br> 차례대로 눌러 확인할 수 있어.',
+						class: 'balloon green ctTail right',
+						top: 280,
+						left: 150,
+						width: 710,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					callbacks: {
+						//start: function () {
+						//	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '-160px';
+						//}, // 시작시 콜백
+						//end: function () {
+						//	$ts.getEl('#aniBox_1 .characterImg')[0].style.left = '0px';
+						//} // 끝날시 콜백
+					}
+				}
+			]
+		});
+
+	}, false);
+</script>
+
+</body>
+</html>

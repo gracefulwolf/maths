@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		.--titleBox{width: 480px; margin: 0 auto; padding-top: 2px; padding-bottom: 2px;}
+
+
+		.page_1 .--img{position: relative; height: 480px; background: url(./images/step1.svg) no-repeat 50% 50% / contain;}
+		.page_1 .--text{position: absolute;}
+		.page_1 .--text.n1{top: -8px; left: 30px;padding-top: 4px;padding-bottom: 4px;}
+		.page_1 .--text.n2{top: 200px; left: 110px;}
+		.page_1 .--text.n3{top: 197px; left: 260px;font-size: 38px;}
+		.page_1 .--text.n4{top: 85px; left: 580px;font-size: 30px;letter-spacing: -2px; word-spacing: 2px;}
+		.page_1 .--text.n5{top: 314px; left: 580px;font-size: 30px;letter-spacing: -2px; word-spacing: 2px;}
+		.page_1 .toggle{min-width: 80px;}
+		.page_1 .bullet.exam{position: absolute; top: -45px; left: 0;}
+
+		.page_2 .bullet.exam{position: absolute; top: 5px; left: -55px; opacity: 0;}
+		.page_2 .bullet.exam.on{opacity: 1;}
+		.page_2 .tableContainer{width: 900px; margin: 0 auto;}
+		.page_2 .tableContainer td{line-height: 1;}
+		.page_2 .--char{top: 0; left: 30px;}
+		.page_2 .balloon{top: 40px; left: 230px;}
+
+		.--answer{opacity: 0;}
+		.--answer.on{opacity: 1; transition: all .3s ease;}
+	</style>
+</head>
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title">
+			수와 규칙을 정하여 수 배열표를 만들어 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">물음 1</li>
+					<li data-hover="">물음 2</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+
+					<li class="page_1" data-quiz="toggle">
+						<section>
+							<div class="--img">
+								<div class="lineBox sky --text n1">
+									내가 정한 수
+								</div>
+								<div class="toggle --text n2" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<ins class="bullet exam">예</ins>
+										2
+									</div>
+								</div>
+								<div class="--text n3">
+									내가 정한 규칙
+								</div>
+								<div class="--text n4">
+									가로(→)로 <div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<ins class="bullet exam">예</ins>
+											3
+										</div>
+									</div>씩 커진다.
+								</div>
+								<div class="--text n5">
+									세로(↓)로 <div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											<ins class="bullet exam">예</ins>
+											4
+										</div>
+									</div>씩 커진다.
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<li class="page_2" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							수 배열표를 만들어 보세요.
+						</span></h2>
+						<section>
+							<div class="flexListContainer">
+								<div class="">
+									<div class="characterImg girl_3-wrap circle sky --char">
+										<div class="charSpriteImg girl_3"></div>
+									</div>
+									<div class="balloon orange textAlignC ctTail left">내가 정한 수</div>
+								</div>
+								<div class="lineBox sky textAlignC">
+									가로(→)로 3씩 커진다.<br>
+									세로(↓)로 4씩 커진다.
+								</div>
+							</div>
+							<span data-toggle-obj="1"></span>
+							<div class="tableContainer brown fix mt_50">
+								<ins class="bullet exam" data-toggle-target="1">예</ins>
+								<table>
+									<tr>
+										<td><div class="answer --answer" data-toggle-target="1">2</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">5</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">8</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">11</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">14</div></td>
+									</tr>
+									<tr>
+										<td><div class="answer --answer" data-toggle-target="1">6</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">9</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">12</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">15</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">18</div></td>
+									</tr>
+									<tr>
+										<td><div class="answer --answer" data-toggle-target="1">10</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">13</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">16</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">19</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">21</div></td>
+									</tr>
+									<tr>
+										<td><div class="answer --answer" data-toggle-target="1">14</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">17</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">20</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">23</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">26</div></td>
+									</tr>
+									<tr>
+										<td><div class="answer --answer" data-toggle-target="1">18</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">21</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">24</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">27</div></td>
+										<td><div class="answer --answer" data-toggle-target="1">30</div></td>
+									</tr>
+								</table>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</html>
