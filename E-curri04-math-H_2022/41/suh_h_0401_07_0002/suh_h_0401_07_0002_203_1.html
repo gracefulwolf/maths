@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:180px; left:55px; overflow:hidden; width:1060px; height:670px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:130px; left:70px; height:640px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.page-iframe{width:1280px; border:0; transform: scale(0.8265625); transform-origin: 0 0;}
+		/* .contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:1; top:0} */
+
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+		.pop_page_1 .--img{position: relative; width: 100%; height: 100%;margin: 0 auto; /* border-radius: 30px;background: url(./images/suh_h_0401_07_0002_201_1/suh_h_0401_07_0002_201_1_1.png) no-repeat 50% 100% / 100% auto; */}
+		.pop_page_1 .--img img{width: 100%; border-radius: 15px;}
+		.pop_page_1 .--text{font-size: 38px; padding: 0 10px; border-radius:10px; background: #002153;}
+		.pop_page_1 .--text.n1{top: 90px; left: 210px; color: #fff;}
+		.pop_page_1 .--text.n2{top: 90px; left: 710px; color: #fff;}
+		.pop_page_1 .--text.n3{top: 540px; left: 510px; color: #fff;}
+		.pop_page_1 .--text.n4{top: 406px; left: 840px; color: #fff;}
+		.pop_page_1 .--text.n5{top: 193px; left: 72px; color: yellow;}
+		.pop_page_1 .--text.n6{top: 32px; left: 426px; color: yellow;}
+		.pop_page_1 .--text.n7{top: 304px; left: 430px; color: yellow;}
+		.pop_page_1 .--text.n8{top: 482px; left: 73px; color: yellow;}
+		.pop_page_1 .--text.n9{top: 286px; left: 40px; color: #fff;}
+
+
+		.--lineBox{align-self: flex-start; margin: 4px 30px 0 0; padding-top: 0; padding-bottom: 0;}
+
+		.--titleColorBox{padding-top: 0; padding-bottom: 0; font-size: 35px;}
+		.popBtn.eye{top: 54px; left: 452px;}
+
+		.--char{position: relative; padding-left: 240px;}
+		.--char .balloon{top: 0px; left: 150px;}
+
+		.--box + .--box{margin-left: 40px;}
+		.--box .--img img{width: 100%;}
+		.--box .--lineBox{display: flex; align-items: center; justify-content: center; width: 100%; height: 180px; text-align: center;}
+
+		.pop_page_2 .popup_contents{font-size: 40px;}
+		.pop_page_2 .popup_contents .--txtBox{line-height: 1.5;}
+		.pop_page_2 .popup_contents .blankBox{width: 40px; height: 40px; vertical-align: -5px;}
+		.pop_page_2 .popup_contents .toggle{line-height: 1.2;}
+		.pop_page_2 .--icon{position: absolute; top: 130px; left: 40px;}
+		.pop_page_2 .bullet.exam{position: absolute; top: 70px; left: 40px;}
+		.pop_page_2 .buttonContainer{position: absolute; bottom: 20px; right: 40px;}
+
+		.induceLight {
+			position: absolute;
+			top: 330px;
+			left: 247px;
+			width: 74px;
+			height: 74px;
+			cursor: pointer;
+		}
+		.induceLight.hide {
+			display: none;
+		}
+
+		.induceLight:before,
+		.induceLight:after {
+			content: '';
+			opacity: 0;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background-color: yellow;
+			transform: translate(-50%, -50%);
+		}
+		.induceLight:before {
+			animation: setOpacity .8s ease-in-out infinite;
+		}
+		.induceLight:after {
+			animation: setOpacity .8s .3s ease-in-out infinite;
+		}
+		.pop_page_1 .induceLight.lightOff {
+			pointer-events: none;
+		}
+		.pop_page_1 .induceLight.lightOff:before,
+		.pop_page_1 .induceLight.lightOff:after {
+			animation: none;
+		}
+		@keyframes setOpacity {
+  from { opacity: .8; }
+  80% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@-o-keyframes setOpacity {
+  from { opacity: .8; }
+  80% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@-ms-keyframes setOpacity {
+  from { opacity: .8; }
+  80% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@-webkit-keyframes setOpacity {
+  from { opacity: .8; }
+  80% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title textAlignJ"><div>
+			<img src="./images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_3.png" alt="" height="40" style="vertical-align: -5px;">에 대한민국 1호기가 뵤뵤 행성까지 이동한 길을 표시하고 일지를 써 봅시다. <div class="supply_guide inline" style="vertical-align: 6px;">준비물 195쪽</div>
+		</div></div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_slides" data-slides="">
+				<li class="page_1">
+					<section>
+						<div class="flexListContainer jcenter">
+							<div class="--box">
+								<div class="--img">
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+										<img src="./images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_1_1.png" alt="">
+									</button>
+								</div>
+								<div class="lineBox sky --lineBox">
+									대한민국 1호기가<br>
+									뵤뵤 행성까지<br>
+									이동한 길 표시하기
+								</div>
+							</div>
+							<div class="--box">
+								<div class="--img">
+									<button class="popBtn btn_2 zoomBtn line" data-hover="" data-popup-btn="2">
+										<img src="./images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_1_2.png" alt="">
+									</button>
+								</div>
+								<div class="lineBox sky --lineBox">
+									일지 쓰기
+								</div>
+							</div>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole image pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="--img">
+						<img src="./images/suh_h_0401_07_0002_203_1/7_1_5_bg.png" alt="">
+						<div class="--text n1">우주 정거장 1</div>
+						<div class="--text n2">우주 정거장 2</div>
+						<div class="--text n3">우주 정거장 3</div>
+						<div class="--text n4">뵤뵤행성</div>
+						<div class="--text n5">559000000 km</div>
+						<div class="--text n6">838500000 km</div>
+						<div class="--text n7">1197800000 km</div>
+						<div class="--text n8">359320000 km</div>
+						<div class="--text n9">대한민국 1호기</div>
+						<div class="induceLight"></div>
+					</div>
+				</div>
+			</li>
+
+			<li class="whole image pop_page_2" data-popup-page="2">
+				<div class="popup_contents" data-quiz="toggle">
+					<div class="--wrap mt_100">
+						<div class="bullet exam">예</div>
+						<div class="--icon">
+							<img src="./images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_3.png" alt="" height="40">
+						</div>
+						<div class="--txtBox textAlignC">
+							&lt;일지&gt;
+						</div>
+						<div class="--txtBox textAlignR">
+							<ins class="blankBox"></ins>월 <ins class="blankBox"></ins>일 <ins class="blankBox"></ins>요일
+						</div>
+						<div class="--txtBox ls1_5">
+							우리는 뵤뵤 행성을 가는 도중 연료가 얼마 남지 않은 것을 발견했다. 뵤뵤 행성까지의 거리는 <div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">1197800000</div>
+							</div> km였다.<br>
+							남은 연료로는 약 <div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">500000000</div>
+							</div> km밖에 갈 수 없어서 뵤뵤 행성까지 갈 수가 없었다. 그래서 우리는 우주 정거장 <div class="toggle" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">3</div>
+							</div>(으)로 가서 부족한 연료를 채웠고 뵤뵤 행성에 무사히 도착할 수 있었다. 우리의 항해가 잘 끝날지 긴장되면서도 동료들과 함께라서 즐거웠다.
+						</div>
+					</div>
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	window.addEventListener('load', function() {
+        var lightBtn = $ts.getEl('.induceLight')[0];
+        var image = $ts.getEl('.pop_page_1 img')[0];
+        var Interval = null;
+        lightBtn.addEventListener('click', function () {
+          this.classList.add('lightOff');
+          image.src = './images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_2'+'.gif?' + Math.random();
+
+          var that = this;
+          Interval = setInterval(function () {
+            that.classList.remove('lightOff');
+            image.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
+            clearInterval(Interval);
+          },5000);
+        })
+        lightBtn.addEventListener('click', $efSound.click);
+
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          clearInterval(Interval);
+          lightBtn.classList.remove('lightOff');
+          image.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
+        }
+
+
+      });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<style>
+		.page-iframe{position:fixed; z-index:1; top:180px; left:55px; overflow:hidden; width:1060px; height:670px; border:0; background:transparent;}
+		.popup_pages .page-iframe{top:130px; left:70px; height:640px;}
+		.page-iframe + .popup_contents .toggle,
+		.page-iframe + section .toggle{z-index:1;}
+		.toggle.z2{z-index:2;}
+		.popup_pages>li.whole.on{z-index:10000;}
+		.popup_pages .icon_bogi.--title{height:36px; margin:6px 0 0 0; border-radius:10px; vertical-align:top;}
+		.popup_pages .icon_bogi.--title:after{font-size:21px; line-height:37px;}
+		.page-iframe{width:1280px; border:0; transform: scale(0.8265625); transform-origin: 0 0;}
+		.contentsBox .basicSlider_slides>li{display: flex; opacity: 0; visibility: hidden; position:absolute; z-index:-1; top:0}
+		.contentsBox .basicSlider_slides>li.on{display: flex; opacity: 1; visibility: visible; position:relative !important; z-index:0; top:0}
+
+		@keyframes css_ani_upToDown{
+			0%, 100%{transform: translateY(0) rotate(90deg);}
+			50%{transform: translateY(-10px) rotate(90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+		.study_guide{right: 0; top: -10px;}
+
+		.--text{position: absolute;}
+
+		.page_1 .--img{position: relative;}
+		.page_1 .--img .btn_1{position: relative; width: 100%; height: 340px; margin-top: 20px;background: url(./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_1.png) no-repeat 50% 100% / 540px auto;}
+		.page_1 .balloon.n1{top: 0px; left: 0;}
+		.page_1 .balloon.n1:after{margin-left: 40px;}
+		.page_1 .balloon.n2{top: 45px; left: 490px;}
+		.page_1 .balloon.n3{top: 112px; right: -30px;}
+
+		.pop_page_1 .--img{position: relative; width: 100%; height: 100%; background: url(./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_1.png) no-repeat 50% 100% / contain;}
+		.pop_page_1 .--img .balloon.n1{top: 170px;left: 0;}
+		.pop_page_1 .--img .balloon.n1:after{margin-left: -100px;}
+		.pop_page_1 .--img .balloon.n2{top: 210px;left: 570px;}
+		.pop_page_1 .--img .balloon.n2:after{margin-left: 40px;}
+		.pop_page_1 .--img .balloon.n3{top: 210px;right: 0;}
+
+
+	</style>
+</head>
+
+<body>
+
+<div id="wrap" class="math">
+	<header>
+		<div class="title">모형으로 만든 모양의 배열에서 규칙을 찾아봅시다.</div>
+	</header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_tabs" data-tabs="">
+				<li data-hover="">물음 1</li>
+				<li data-hover="">물음 2</li>
+				<li data-hover="">물음 3</li>
+			</ul>
+			<ul class="basicSlider_slides" data-slides="">
+
+				<li class="page_1" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						그림은 어떤 상황인가요?
+					</span></h2>
+					<section>
+						<div class="--img">
+							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+							</button>
+							<div class="balloon bottom ctTail textAlignC pink n1">
+								10에 10, 20, 30, 40과 같이<br>
+								10씩 커지는 수를 더하면<br>
+								계산 결과가 10씩 커지네.
+							</div>
+							<div class="balloon bottom ctTail textAlignC pink n2">
+								뺄셈식에도<br>
+								규칙이 있어.
+							</div>
+							<div class="balloon left textAlignC pink n3">
+								곱셈식과<br>
+								나눗셈식에서도<br>
+								규칙을 찾아 볼까?
+							</div>
+						</div>
+						<div class="textAlignC mt_5">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												세 학생이 덧셈식과 뺄셈식에서 규칙을 찾고 있습니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_2" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						덧셈식에서 규칙을 찾아 이야기해 보세요.
+					</span></h2>
+					<section>
+						<div class="--img textAlignC">
+							<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_2.png" alt="" width="170">
+						</div>
+						<div class="--answer">
+							<div class="toggle" data-toggle-obj="1" style="width:100%;">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												더하는 수가 10, 20, 30, 40과 같이 10씩 커집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle mt_10" data-toggle-obj="2" style="width:100%;">
+								<div class="answer" data-toggle-target="2">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												계산 결과가 20, 30, 40, 50과 같이 10씩 커집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle mt_10" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div style="letter-spacing: 1px;">
+												10에 더하는 수가 10, 20, 30, 40과 같이 10씩 커지면 계산 결과가 20, 30, 40, 50과 같이 10씩 커집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+				<li class="page_3" data-quiz="toggle">
+					<h2><ins class="dot"></ins><span>
+						뺄셈식에서 규칙을 찾아 이야기해 보세요.
+					</span></h2>
+					<section>
+						<div class="--img textAlignC">
+							<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_3.png" alt="" width="170">
+						</div>
+						<div class="--answer">
+							<div class="toggle" data-toggle-obj="1" style="width:100%;">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												빼는 수가 50, 40, 30, 20과 같이 10씩 작아집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle mt_10" data-toggle-obj="2" style="width:100%;">
+								<div class="answer" data-toggle-target="2">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												계산 결과가 10, 20, 30, 40과 같이 10씩 커집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle mt_10" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									<ul class="contentsList">
+										<li>
+											<ins class="bullet exam">예</ins>
+											<div>
+												60에서 빼는 수가 50, 40, 30, 20과 같이 10씩 작아지면 계산결과가 10, 20, 30, 40과 같이 10씩 커집니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</div>
+	</main>
+
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole image pop_page_1" data-popup-page="1">
+				<div class="popup_contents">
+					<div class="--img">
+						<div class="balloon bottom ctTail textAlignC pink n1">
+							10에 10, 20, 30, 40과 같이<br>
+							10씩 커지는 수를 더하면<br>
+							계산 결과가 10씩 커지네.
+						</div>
+						<div class="balloon bottom ctTail textAlignC pink n2">
+							뺄셈식에도<br>
+							규칙이 있어.
+						</div>
+						<div class="balloon bottom ctTail textAlignC pink n3">
+							곱셈식과<br>
+							나눗셈식에서도<br>
+							규칙을 찾아 볼까?
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+
+	}, false);
+</script>
+
+</body>
+</html>

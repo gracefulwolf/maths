@@ -11,14 +11,32 @@
   <link rel="stylesheet" href="../../../__common__/css/custom.css">
   <link rel="stylesheet" type="text/css" href="../../../__common__/css/character.css">
   <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
-  <link rel="stylesheet" type="text/css" href="./css/suh_0501_06_0014_202_1.css">
+  <style>
+    .flexList{display:flex;margin:0 auto;width:930px;text-align:center;flex-direction:column;}
+    .flexList .hide{display:none;}
+    .flexList .bullet{position:absolute;top:7px;left:-40px;display:none;}
+    .flexList .on ~ .bullet{display:block;}
+    .flexList > li{position:relative;display:flex;}
+    .flexList > li + li{margin-top:15px;}
+    .flexList .th{width:150px;}
+    .flexList .td{width:calc(100% - 150px);}
+    .flexList .colorBox{display:inline-block;margin:0;}
+    .flexList .answer .flex-box{align-items:flex-start;justify-content:space-between;}
+    .flexList .answer img{display:block;width:150px;}
+    .flexList > li:last-child .answer img{width:170px;}
 
+    .ex-box{display:flex;align-items:flex-start;}
+
+    .contentsList>li:not(:last-of-type){margin-bottom:5px;}
+
+    .page_4 .characterWrap{top:-60px;left:350px;}
+  </style>
 </head>
 
 <body>
   <div id="wrap">
-    <header style="padding-top:20px">
-        <div class="title" style="letter-spacing: -1px;">다각형의 넓이를 구하는 방법을 친구와 비교해 봅시다.</div>
+    <header>
+      <div class="title">다각형의 넓이를 구하는 방법을 친구와 비교해 봅시다.</div>
 
       <!-- <div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div> -->
     </header>
@@ -40,9 +58,9 @@
                   <p class="mb_10">구하려고 하는 것은 무엇인가요?</p>
                   <div class="toggle box" data-toggle-obj="1">
                     <div class="answer" data-toggle-target="1">
-                        <div class="ls1">
-                            다각형의 넓이를 구하는 여러 가지 방법을 알아보려고 합니다.
-                        </div>
+                      <div class="ls1">
+                        다각형의 넓이를 구하는 여러 가지 방법을 알아보려고 합니다.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -52,111 +70,122 @@
           </li>
 
           <li class="page_2" data-quiz="toggle">
-            <ul class="contentsList">
+            <ul class="flexList">
               <li>
-                <ins class="bullet circleDot"></ins>
-                <div>
-                  <p class="mb_10">어떤 방법으로 문제를 해결하면 좋을지 생각해 보세요.</span></p>
-                  <div class="tableContainer brown">
-                    <div class="exam bullet">예</div>
-
-
+                <div class="th">
+                  <div class="colorBox deepPurple check">이름</div>
                 </div>
+                <div class="td">
+                  <div class="colorBox deepPurple check">구한 방법</div>
+                </div>
+              </li>
+              <li>
+                <div class="hide" data-toggle-target="1"></div>
+                <div class="hide" data-toggle-target="2"></div>
+                <div class="bullet exam">예</div>
+                <div class="th">
+                  <div class="toggle" data-toggle-obj="1">
+                    <div class="answer" data-toggle-target="1">
+                      슬기
+                    </div>
+                  </div>
+                </div>
+                <div class="td">
+                  <div class="toggle box" data-toggle-obj="2">
+                    <div class="answer" data-toggle-target="2">
+                      <div class="flex-box">
+                        <div>오각형을 직사각형으로 바꾸어<br>넓이를 구합니다.<br>60×30＝1800 (㎠)</div>
+                        <img src="./images/suh_0501_06_0014_202_1_1.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="hide" data-toggle-target="3"></div>
+                <div class="hide" data-toggle-target="4"></div>
+                <div class="bullet exam">예</div>
+                <div class="th">
+                  <div class="toggle" data-toggle-obj="3">
+                    <div class="answer" data-toggle-target="3">
+                      연수
+                    </div>
+                  </div>
+                </div>
+                <div class="td">
+                  <div class="toggle box" data-toggle-obj="4">
+                    <div class="answer" data-toggle-target="4">
+                      <div class="flex-box" style="letter-spacing:-1.5px;">
+                        <div>오각형을 둘러싼 직사각형을 그려 넓이를 구한 후 삼각형 2개의 넓이를 뺍니다.<br>(60×40)－(40×20×2＋<br>20×20×2)＝1800 (㎠)</div>
+                        <img src="./images/suh_0501_06_0014_202_1_2.png" alt="">
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
             </ul>
             <button class="dapCheckBtn" data-answer-btn="1"></button>
           </li>
 
-          <li class="page_3" data-slide-container="">
-            <ul class="basicSlider_slides" data-slides="">
-              <li class="innerTab_1" data-quiz="toggle">
-                <ul class="contentsList">
-                  <li>
-                    <ins class="bullet circleDot"></ins>
-                    <div>
-                      <p class="mb_10" style="letter-spacing:-1.5px">식으로 나타내어 문제를 해결해 보세요.</p>
-                      <div class="toggle" data-toggle-obj="1">
-                        <div class="answer" data-toggle-target="1">
-                          <div class="ex-box">
-                            <div class="bullet exam">예</div>
-                            <div>
-                                sss
-
-                            </div>
-                          </div>
-                        </div>
+          <li class="page_3" data-quiz="toggle">
+            <ul class="contentsList">
+              <li>
+                <ins class="bullet circleDot"></ins>
+                <div>
+                  <p>내가 구한 방법과 친구들이 구한 방법을 비교하여 이야기해 보세요.</p>
+                  <div class="toggle box" data-toggle-obj="1">
+                    <div class="answer" data-toggle-target="1">
+                      <div class="ex-box">
+                        <div class="bullet exam">예</div>
+                        서로 땅의 넓이를 구한 방법이 달랐지만 넓이는 모두 같았습니다.
                       </div>
                     </div>
-                  </li>
-                </ul>
-                <button class="dapCheckBtn" data-answer-btn="1"></button>
+                  </div>
+                </div>
               </li>
-              <li class="innerTab_2" data-quiz="toggle">
-                <ul class="contentsList">
-                  <li>
-                    <ins class="bullet circleDot"></ins>
-                    <div>
-                      <p class="mb_10" style="letter-spacing:-1px">다른 방법으로 문제를 해결해 보세요.</p>
-                      <div class="toggle" data-toggle-obj="1">
-                        <div class="answer" data-toggle-target="1">
-                          <div class="ex-box">
-                            <div class="bullet exam">예</div>
-                            <div class="ls1">
-                                dddd
-
-
-                            </div>
-                          </div>
-                        </div>
+              <li>
+                <ins class="bullet circleDot"></ins>
+                <div>
+                  <p>넓이를 구하기 가장 편리한 방법은 무엇인가요?</p>
+                  <div class="toggle box" data-toggle-obj="2">
+                    <div class="answer" data-toggle-target="2">
+                      <div class="ex-box">
+                        <div class="bullet exam">예</div>
+                        오각형을 잘라서 구하는 방법입니다.
                       </div>
                     </div>
-                  </li>
-                </ul>
-                <button class="dapCheckBtn" data-answer-btn="1"></button>
+                  </div>
+                </div>
               </li>
-              <li class="innerTab_3" data-quiz="toggle">
-                <ul class="contentsList">
-                  <li>
-                    <ins class="bullet circleDot"></ins>
-                    <div>
-                      <p class="mb_10" style="letter-spacing:-1px">다른 방법으로 문제를 해결해 보세요.</p>
-                      <div class="toggle" data-toggle-obj="1">
-                        <div class="answer" data-toggle-target="1">
-                          <div class="ex-box">
-                            <div class="bullet exam">예</div>
-
-                        </div>
-                        </div>
+              <li>
+                <ins class="bullet circleDot"></ins>
+                <div>
+                  <p>가장 새로운 방법은 무엇인가요?</p>
+                  <div class="toggle box" data-toggle-obj="3">
+                    <div class="answer" data-toggle-target="3">
+                      <div class="ex-box">
+                        <div class="bullet exam">예</div>
+                        도형을 오각형보다 크게 만들어 넓이를 구한 다음 불필요한 부분의 넓이를 빼는 방법입니다.
                       </div>
                     </div>
-                  </li>
-                </ul>
-                <button class="dapCheckBtn" data-answer-btn="1"></button>
+                  </div>
+                </div>
               </li>
             </ul>
-            <div class="moveButtonContainer" data-slide-btn-container="">
-              <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-              <ul class="basicSlider_circle_tabs" data-tabs="">
-                <li data-hover=""></li>
-                <li data-hover=""></li>
-                <li data-hover=""></li>
-              </ul>
-              <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
-            </div>
+            <button class="dapCheckBtn" data-answer-btn="1"></button>
           </li>
 
           <li class="page_4" data-quiz="toggle">
             <ul class="contentsList">
-                <li>
-                    <ins class="bullet circleDot"></ins>
-                    <div>
-                        <p class="mb_10 ls2">해결한 방법을 되돌아 보세요.</p>
-                        <div id="aniBox_2"></div>
-                    </div>
-                </li>
+              <li>
+                <ins class="bullet circleDot"></ins>
+                <div>
+                  <p class="mb_10 ls2">느낀 점은 무엇인가요?</p>
+                  <div id="aniBox_1"></div>
+                </div>
+              </li>
             </ul>
-        </li>
+          </li>
 
 
         </ul>
@@ -179,57 +208,50 @@
   <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
   <script type="text/javascript" src="./js/contents.js"></script>
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-    }, false);
+    document.addEventListener("DOMContentLoaded", function () {
+        // $prite.changeSpritePos = function(){}; // backgroundPosition 무한루프 방지
+        $prite.add({
+          target: $ts.getEl('#aniBox_1'), // 스프라이트가 생성될 영역
+          spriteId: 'sprite1',
+          spriteList: [{
+            name: 'girl_4',
+            // circle: 'new-character', // 동그란부분 필요할때 주석 해제
+            playMode: {
+              rewind: false
+            },
+            speech: 'right',
+            top: 0, // 캐릭터 top값, 없어도 상관 없음, css 제어
+            left: 0,
+            width: 340,
+            height: 421,
+            thumbNail: '../common/contents/images/character/girl_4.png',
+            spriteSheet: '../common/contents/images/character/girl_4_sprite.png',
+            sound: './media/audios/suh_0501_06_0014_202_1.mp3',
+            textBubble: {
+              text: '똑같은 도형의 넓이를<br>구하는 데 여러 가지<br>해결 방법이 있다는<br>사실을 깨달았습니다.',
+              class: 'balloon left purple ctTail left-s',
+              top: 100,
+              left: 450,
+              textAlign: 'center', // 말풍선 정렬
+              wordBreak: 'keep-all' // 말풍선 wordBreak
+            },
+            sheetWidth: 102000,
+            sheetHeight: 421,
+            //endSheet: 0,
+            delay: 40,
+            callbacks: {
+              start: function () {
+                $ts.getEl('.page_4 .characterImg')[0].style.left = '-200px';
+              }, // 시작시 콜백
+              end: function () {
+                $ts.getEl('.page_4 .characterImg')[0].style.left = 0;
+              } // 끝날시 콜백
+            }
+
+          }]
+        });
+      }, false);
   </script>
-
-<script type="text/javascript">
-  document.addeventlistener('domcontentloaded', function () {
-      $prite.add({
-          target: $ts.getel('#anibox_2'),
-          spriteid: 'sprite3',
-          spritelist: [
-              {
-                  name: 'girl_4',
-                  circle: 'purple',
-                  top: 150,
-                  left: 400,
-                  width: 340,
-                  height: 421,
-                  thumbnail: '../common/contents/images/character/girl_4.png',
-                  spritesheet: '../common/contents/images/character/girl_4_sprite.png',
-                  sound: './media/audios/suh_0501_06_0014_202_1.mp3',
-                  speech:'right',
-                  textbubble: {
-                      text: '똑같은 도형의 넓이를 구하는 데 여러 가지<br>해결 방법이 있다는<br>사실을 깨달았습니다.',
-                      class: 'balloon left purple',
-                      top: 150,
-                      left: 430,
-                      width: 450,
-                      textalign: 'center',
-                      wordbreak: 'keep-all'
-                  },
-                  sheetwidth: 102000,
-                  sheetheight: 421,
-                  // endsheet: 0,
-                  delay: 40,
-                  callbacks: {
-                      start: function () {
-                          $ts.getel('.page_4 .characterimg')[0].style.left = '-200px';
-                      }, // 시작시 콜백
-                      end: function () {
-                          $ts.getel('.page_4 .characterimg')[0].style.left = 0;
-                      } // 끝날시 콜백
-                  }
-              }
-
-          ]
-      });
-      window.$callback.sliderreset = function(params) {
-          $ts.getel('.page_4 .characterimg')[0].style.left = 0;
-      };
-  }, false);
-</script>
 
 
 
