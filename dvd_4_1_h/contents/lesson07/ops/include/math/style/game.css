@@ -1,0 +1,357 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* game.css *
+***********************/
+
+/************************* intro *************************/
+.game > header {
+  /* display: none; */
+  pointer-events: none;
+}
+.game > header:before {
+  content: none;
+}
+.game > header .indexButton {
+  display: none;
+}
+.game > header .pageBox {
+  pointer-events: auto;
+  right: 80px;
+}
+.game .pageBox > .prev {
+  background-image: url(../../math/images/game/playGame_header_buttons_page_prev.svg);
+}
+.game .pageBox > .next {
+  background-image: url(../../math/images/game/playGame_header_buttons_page_next.svg);
+}
+.game .pageBox > .page {
+  color: #333;
+}
+
+.game > header .mainBookButton {
+  height: 28px;
+  top: 6px;
+  padding: 0 18px;
+  border-radius: 20px;
+  background-color: rgba(244, 83, 164, 1);
+  pointer-events: auto;
+}
+.game header .mainBookButton:after {
+  top: 7px;
+  left: 34px;
+}
+
+
+
+.game > main {
+  top: 0;
+  height: 100%;
+}
+
+.game > main > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.game > section.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d2145;
+  z-index: 10;
+}
+.game > section.intro.hide {
+  /* opacity: 0; */
+  animation: game_hideGameIntro 1s ease-in-out;
+  pointer-events: none;
+}
+
+.game > section.intro.hide .startButton,
+.game > section.intro.hide .bg,
+.game > section.intro.hide .title,
+.game > section.intro.hide .ebook,
+.game > section.intro.hide h1 {
+  display: none;
+}
+.game > section.intro.hide .char {
+  opacity: 0;
+  left: 500px;
+  transform: scale(2);
+  animation: game_charScreenOut 1s ease-in-out;
+}
+.game > section.intro.hide .char:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: -460px;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: #6a72af;
+}
+
+.game > section.intro .startButton {
+  position: absolute;
+  top: 400px;
+  right: 160px;
+  width: 260px;
+  height: 90px;
+  background: #e77d9d url(../../math/images/btn_start_text_and_arrow.svg) center / contain no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  animation: game_showButton 2.5s linear;
+  cursor: pointer;
+  /* z-index: 1; */
+}
+.game > section.intro .startButton.hover {
+  transform: scale(1.05);
+}
+
+.game > section.intro > .char {
+  position: absolute;
+  left: -20px;
+  animation: game_characterIn 1.5s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.game > section.intro > .bg .star {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../../math/images/game/playGame_star.svg) center / contain no-repeat;
+  animation: game_twinkle 3s ease-in-out infinite;
+}
+.game > section.intro > .bg .star.white {
+  background-image: url(../../math/images/game/playGame_star_white.svg);
+}
+
+.game > section.intro > .bg .plant {
+  position: absolute;
+  right: -278px;
+  bottom: -165px;
+  width: 282px;
+  height: 380px;
+  background-position: 0 0;
+  background-size: auto 380px;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/game/playGame_plant.svg);
+  animation: game_plantRotate 10s linear infinite;
+  transform-origin: 100px 100px;
+}
+.lesson_1 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (1 - 1));
+}
+.lesson_2 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (2 - 1));
+}
+.lesson_3 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (3 - 1));
+}
+.lesson_4 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (4 - 1));
+}
+.lesson_5 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (5 - 1));
+}
+.lesson_6 .game > section.intro > .bg .plant {
+  background-position-x: calc(-282px * (6 - 1));
+}
+
+/* title */
+.game > section.intro > .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 820px;
+  height: 720px;
+  z-index: 10;
+}
+.game > section.intro > .title > * {
+  position: absolute;
+}
+.game > section.intro > .title .funny {
+  left: 110px;
+  top: 108px;
+  width: 180px;
+  height: 130px;
+  background: url(../../math/images/game/playGame_funny.svg) center / contain no-repeat;
+  animation: game_zoomInMath 1.3s ease-in-out;
+}
+
+.game > section.intro > .title .text {
+  top: 226px;
+  left: 182px;
+  width: 470px;
+  height: 100px;
+  background: url(../../math/images/game/playGame_title.svg) center / contain no-repeat;
+  animation: game_showPowerText 2s ease-out;
+}
+
+.game > section.intro .ebook {
+  position: absolute;
+  top: 350px;
+  left: 188px;
+  padding: 4px 14px 4px 44px;
+  color: #fff;
+  border-radius: 50px;
+  background: url(../../math/images/game/playGame_icon_book.svg) 10px center / contain no-repeat;
+  background-color: #EE8592;
+  animation: game_showButton 2.5s linear;
+  z-index: 10;
+}
+.game > section.intro h1 {
+  position: absolute;
+  top: 386px;
+  left: 188px;
+  color: #fff;
+  font-size: 62px;
+  font-family: NSquareREB;
+  animation: game_showButton 2.5s linear;
+  z-index: 10;
+}
+.game > section.intro h1 > span {
+  display: inline-block;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #fff;
+}
+/*********************** intro End ***********************/
+
+
+
+
+/************************* animation *************************/
+@keyframes game_hideGameIntro {
+  0%, 50% { opacity: 1; }
+}
+@-o-keyframes game_hideGameIntro {
+  0%, 50% { opacity: 1; }
+}
+@-moz-keyframes game_hideGameIntro {
+  0%, 50% { opacity: 1; }
+}
+@-webkit-keyframes game_hideGameIntro {
+  0%, 50% { opacity: 1; }
+}
+
+@keyframes game_charScreenOut {
+  0% { transform: scale(1); opacity: 1; left: 0; }
+  /* 100% { transform: scale(2); } */
+}
+@-o-keyframes game_charScreenOut {
+  0% { transform: scale(1); opacity: 1; left: 0; }
+  /* 100% { transform: scale(2); } */
+}
+@-moz-keyframes game_charScreenOut {
+  0% { transform: scale(1); opacity: 1; left: 0; }
+  /* 100% { transform: scale(2); } */
+}
+@-webkit-keyframes game_charScreenOut {
+  0% { transform: scale(1); opacity: 1; left: 0; }
+  /* 100% { transform: scale(2); } */
+}
+
+@keyframes game_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-o-keyframes game_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-moz-keyframes game_showButton {
+  0%, 90% { opacity: 0; }
+}
+@-webkit-keyframes game_showButton {
+  0%, 90% { opacity: 0; }
+}
+
+@keyframes game_characterIn {
+  0% { left: -1280px; }
+  80% { left: 0px; }
+}
+@-o-keyframes game_characterIn {
+  0% { left: -1280px; }
+  80% { left: 0px; }
+}
+@-moz-keyframes game_characterIn {
+  0% { left: -1280px; }
+  80% { left: 0px; }
+}
+@-webkit-keyframes game_characterIn {
+  0% { left: -1280px; }
+  80% { left: 0px; }
+}
+
+@keyframes game_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-o-keyframes game_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-moz-keyframes game_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-webkit-keyframes game_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+
+@keyframes game_plantRotate {
+  80%, 100% { right: 800px; bottom: -250px; opacity: 0; }
+}
+@-o-keyframes game_plantRotate {
+  80%, 100% { right: 800px; bottom: -250px; opacity: 0; }
+}
+@-moz-keyframes game_plantRotate {
+  80%, 100% { right: 800px; bottom: -250px; opacity: 0; }
+}
+@-webkit-keyframes game_plantRotate {
+  80%, 100% { right: 800px; bottom: -250px; opacity: 0; }
+}
+
+@keyframes game_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-o-keyframes game_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-moz-keyframes game_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-webkit-keyframes game_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+
+@keyframes game_showPowerText {
+  0%, 70% { background-position-x: -470px; }
+}
+@-o-keyframes game_showPowerText {
+  0%, 70% { background-position-x: -470px; }
+}
+@-moz-keyframes game_showPowerText {
+  0%, 70% { background-position-x: -470px; }
+}
+@-webkit-keyframes game_showPowerText {
+  0%, 70% { background-position-x: -470px; }
+}
+/*********************** animation End ***********************/

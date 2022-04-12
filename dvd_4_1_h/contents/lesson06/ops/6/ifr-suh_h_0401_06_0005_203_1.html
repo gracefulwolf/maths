@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-1/style/math_4-1.css">
+    <link rel="stylesheet" href="./css/6_4_5.css">
+    <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/libs/css/master.css" />
+	  <link rel="stylesheet" href="../../../../../E-curri04-math-H_2022/41/common/contents/css/math.css" />
+    <style>
+html,body,#wrap{background: transparent !important;}
+main{top: 0;}
+header,header:before{display:none !important;}
+main .contentsArea{top:0; left:0; right:0;bottom: 0;}
+#wrap{width:1280px;height:665px;padding:0;box-shadow:none;}
+header,header:before{display:none !important;}
+main .contentsArea{top:0; left:0; right:0; bottom: 0;}
+body, .content-container{width:100%; max-width:1280px; height:665px;}
+.bullet.exam{font-family: YGJAL;}
+.dapCheckBtn{letter-spacing: 0;}
+.canvas_1{top: 30px; left: 600px; }
+.drawBtn{top:0; right:0;}
+.pen_tool{top:3px; right:60px;}
+.imageBox{height: 360px; margin-top: 40px;}
+.blankBox{top: 210px; left: 750px; height: 80px;}
+.answerImage{top: 213px; left: 753px; border-radius: 10px;}
+
+.page1 .dragBox{top:120px;}
+.dragBox:before,
+.dragBox:after{display: none;}
+.page1 .answerImage{top: 260px; right: auto;left: 828px;}
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <div class="tAlign_center imgContainer" style="transform: translateY(150px);">
+                    <img src="images/6_4/6_4_05_01.svg" alt="" class="img_01" style="width:1050px;">
+                  </div>
+
+                  <div class="dragBox top" style="border: 5px solid #c1e8ec">
+                    <div class="js-rotate rotateContainer">
+                      <div class="js-rotateTarget rotateTarget dragObj"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                    </div>
+                  </div>
+                  <div class="answerImage" data-click-target="1"></div>
+
+                  <div class="js-buttons dapCheckBtn" data-click-obj="1" data-quiz-chain="" data-hover=""></div>
+                </li>
+                <li class="page2">
+                  <div class="tAlign_center">
+                    <img src="images/6_4/6_4_05_01.svg" alt="" class="img_01">
+                  </div>
+                  <ul class="list dot titleIndent">
+                    <li>다섯째 배열에 사용될 원은 모두 몇 개인가요?</li>
+                  </ul>
+
+                  <div class="inputQuizContainer" data-quiz="input" data-quiz-name="input_1">
+                    <input type="text" class="maxWidth" data-input-obj="2" data-answer="20">개
+                  </div>
+
+                  <div class="js-chainButtons dapCheckBtn" data-quiz-chain="input_1" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        // $pm.array.mainSlider.reset({idx: 1});
+
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 30,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: false,
+            resetButton: document.querySelector('.page1 .js-buttons'),
+            copy: true,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          // 페이지 이동 시 초기화
+          rotateArray.forEach(function(rotate) { rotate.reset(); });
+        }
+
+      });
+    </script>
+  </body>
+</html>

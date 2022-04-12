@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
+	<style type="text/css">
+
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+		@keyframes css-ani-arrow-topToBottom{
+			0%,100%{transform:translateY(0) rotate(-90deg);}
+			50%{transform:translateY(-10px) rotate(-90deg);}
+		}
+		@keyframes css_ani_blink {
+			0%, 100%{opacity: .1;}
+			50%{opacity: 1;}
+		}
+
+		.popup_pages .buttonContainer{bottom:20px; right:40px; z-index:2;}
+
+		.supply_guide{vertical-align: 6px;}
+		.study_guide{right: 0;}
+
+		.lineBox.sky{width: 540px; margin: 0 auto;}
+
+		.tableContainer{width: 100%; margin: 0;}
+		.tableContainer table td{height: 39px; padding: 0; line-height: 1.08;}
+		.tableContainer table td .toggle{width: 100%;}
+		.tableContainer table tr:first-of-type>:last-child{border-radius:10px 10px 0 0;}
+		.tableContainer table tr:last-of-type>:last-child{border-radius:0 0 10px 10px;}
+		.tableContainer th textarea,
+		.tableContainer th input{width: 60px;}
+
+		.--char{position: absolute;}
+		.--char.n1{top: 300px; left: 170px;}
+		.--char.n2{top: 300px; left: 650px;}
+		.balloon.n1{top: 0px; left: 30px; width: 440px;}
+		.balloon.n2{top: 0px; left: 510px; width: 440px;}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap" class="math">
+		<header><div class="title">
+			두 자리 수 중에서 하나를 정하고, 그 수가 계산 결과가 되는 여러 가지 덧셈식과 뺄셈식을 규칙적으로 써넣어 봅시다.
+		</div></header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-slide-container="">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1" data-quiz="input">
+								<section>
+									<div class="flexListContainer jcenter">
+										<div class="tableContainer brown fix mr_10">
+											<table>
+												<tbody>
+													<tr>
+														<th>계산 결과가 <input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="8" data-answer="2" onfocus="placeholder=''" onblur="placeholder=''" autocomplete="off">이/가 되는 덧셈식</th>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="3＋12＝15"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="5＋10＝15"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="7＋8＝15"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="9＋6＝15"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="11＋4＝15"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="13＋2＝15"/>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tableContainer brown fix">
+											<table>
+												<tbody>
+													<tr>
+														<th>계산 결과가 <input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="8" data-answer="2" onfocus="placeholder=''" onblur="placeholder=''" autocomplete="off">이/가 되는 뺄셈식</th>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="15－5＝10"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="18－8＝10"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="21－11＝10"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="24－14＝10"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="27－17＝10"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<input type="text" class="center afterDisplay" placeholder="" data-input-obj="" maxlength="16" data-answer="30－20＝10"/>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="writeBtn" data-answer-btn=""></button>
+									</div>
+								</section>
+							</li>
+							<li class="innerTab_2" data-quiz="toggle">
+								<div class="characterImg boy_2-wrap circle sky --char n1">
+									<div class="charSpriteImg boy_2"></div>
+								</div>
+								<div class="balloon bottom ctTail textAlignC green n1">
+									더해지는 수가 2만큼 커질<br> 때 더하는 수를 어떻게 해야<br> 계산 결과가 같을까?<br>
+									5＋10＝15<br>
+									7＋<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">8</div>
+									</div>＝15
+								</div>
+
+								<div class="characterImg girl_3-wrap circle sky --char n2">
+									<div class="charSpriteImg girl_3"></div>
+								</div>
+								<div class="balloon bottom ctTail textAlignC orange n2">
+									빼지는 수가 3만큼 커질 때<br> 빼는 수를 어떻게 해야 계산<br> 결과가 같을까?<br>
+									15－5＝10<br>
+									18－<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">8</div>
+									</div>＝10
+								</div>
+								<div class="buttonContainer">
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+		}, false);
+
+	</script>
+
+</html>
