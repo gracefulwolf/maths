@@ -45,23 +45,27 @@
 		.--graphWrap .--lineBox.n3{top: 272px;left: 86px;}
 		.--graphWrap .--lineBox.n4{top: 268px;left: 803px;}
 		.--graphWrap .--lineBox.n5{top: 268px;left: 580px;}
-		.--graphWrap .--lineBox.n6{top: 79px;left: 170px;}
-		.--graphWrap .--lineBox.n7{top: 146px;left: 173px;}
-		.--graphWrap .--lineBox.n8{top: 213px;left: 150px;}
+		.--graphWrap .--lineBox.n6{top: 69px;left: 75px;}
+		.--graphWrap .--lineBox.n7{top: 137px;left: 75px;}
+		.--graphWrap .--lineBox.n8{top: 205px;left: 75px;}
 		.--graphWrap .--lineBox.n9{top: 290px;left: 140px;}
 		.--graphWrap .--lineBox.n10{top: 290px;left: 140px;}
 		.--graphWrap .--lineBox.n11{top: 290px;left: 140px;}
 		.--graphWrap .--lineBox.n12{top: 290px;left: 140px;}
+		.--graphWrap .--lineBox.n6 .toggle,
+		.--graphWrap .--lineBox.n7 .toggle,
+		.--graphWrap .--lineBox.n8 .toggle{padding: 12px 0;min-width: 305px;}
 		.--lineBoxTitle{display: block; width: 480px; margin: 0 auto; padding: 2px 4px; line-height: 1.15; text-align: center;}
 
 		.--text.n1{top: 268px;left: 389px;}
-		.--text.n2{top: 16px;left: 170px;}
+		.--text.n2{top: 16px;left: 164px;}
 
-		.--text.stick{left: 830px; width: 46px; height: 446px;transform: rotate(90deg);transform-origin: 0 0;}
-		.--text.n91{top: 15px; left: 832px; height: 448px; background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_1.png) no-repeat 50% 100% / 100% 100%;}
-		.--text.n92{top: 82px; left: 832px; height: 448px; background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_2.png) no-repeat 50% 100% / 100% 100%;}
-		.--text.n93{top: 150px; background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_3.png) no-repeat 50% 100% / 100% 100%;}
-		.--text.n94{top: 217px; background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_4.png) no-repeat 50% 100% / 100% 100%;}
+		.--text.stick{left: 830px; height: 40px; left: 384px;height: 38px;/* transform: rotate(90deg); *//* transform-origin: 0 0; */background: #e9bdc2;border: 2px solid #d87492;border-width: 2px 2px 2px 0px;}
+
+		.--text.n91{top: 17px; /* left: 384px; */ width: 356px; /* background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_1.png) no-repeat 50% 100% / 100% 100%; */}
+		.--text.n92{top: 84px; left: 384px; width: 445px; /* background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_2.png) no-repeat 50% 100% / 100% 100%; */}
+		.--text.n93{top: 151px; width: 177px;/* background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_3.png) no-repeat 50% 100% / 100% 100%; */}
+		.--text.n94{top: 218px; width: 266px;/* background: url(./images/suh_h_0401_05_0003_201_1/suh_h_0401_05_0003_201_1_1_4.png) no-repeat 50% 100% / 100% 100%; */}
 		.--finger{animation-iteration-count:infinite !important;}
 		.--finger.complete{display:none;}
 		.--finger.n1{top: 15px; left: 590px;}
@@ -270,27 +274,27 @@
 
 
 window.addEventListener('load', function() {
-        $ts.getEl('.js-fillContainer').forEach(function(container) {
-          new FillTarget({
-            container: container,
-            answerButton: document.querySelector('.page_4 .dapCheckBtn')
-          });
-        });
-        window.$callBack.filledTarget = function (el) {
-          var fillArray = el.container.querySelectorAll('.fill');
-          fillArray.forEach(function (obj) {
-            obj.classList.remove('last');
-            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-          })
-          // console.log(el.targets.querySelectorAll('.fill').lastChild)
-        }
-        window.$callBack.toggleTarget = function (el) {
-          var fillArray = el.container.querySelectorAll('.fill');
-          fillArray.forEach(function (obj) {
-            obj.classList.remove('last');
-            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-          })
-        }
+        // $ts.getEl('.js-fillContainer').forEach(function(container) {
+        //   new FillTarget({
+        //     container: container,
+        //     answerButton: document.querySelector('.page_4 .dapCheckBtn')
+        //   });
+        // });
+        // window.$callBack.filledTarget = function (el) {
+        //   var fillArray = el.container.querySelectorAll('.fill');
+        //   fillArray.forEach(function (obj) {
+        //     obj.classList.remove('last');
+        //     if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        //   })
+        //   // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        // }
+        // window.$callBack.toggleTarget = function (el) {
+        //   var fillArray = el.container.querySelectorAll('.fill');
+        //   fillArray.forEach(function (obj) {
+        //     obj.classList.remove('last');
+        //     if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        //   })
+        // }
       });
 
 	</script>

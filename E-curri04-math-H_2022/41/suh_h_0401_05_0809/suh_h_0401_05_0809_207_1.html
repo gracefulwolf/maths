@@ -46,12 +46,10 @@
 		.--border.n2{left: 427px;}
 		.--border.n3{left: 550px;}
 		.--border.n4{left: 673px;}
-		.--stick{position: absolute;width: 60px;border: 2px solid #e94d40;background: #e94d4088;bottom: 83px;}
-		.--stick.n1{left: 212px;height: 65px;}
-		.--stick.n2{left: 334px;height: 87px;}
-		.--stick.n3{left: 457px;height: 178px;}
-		.--stick.n4{left: 582px;height: 20px;}
-		.--stick.n5{left: 705px;height: 43px;}
+		.--stick{position: absolute;height: 30px;border: 2px solid #ca2c60;border-left: 0;background: #edc6c9cc;left: 212px; opacity: 0;}
+		.--stick.on{opacity:1; transition: opacity .3s ease;}
+		.--stick.n1{top: 116px;width: 202px;}
+		.--stick.n2{top: 286px;width: 302px;}
 
 
 		.--paper{position: relative; height: 490px; background: url(./images/suh_h_0401_05_0809_207_1/suh_h_0401_05_0809_207_1_1.png) no-repeat 50% 0% / contain;}
@@ -279,14 +277,16 @@
 									<div class="--text n5">5</div>
 									<div class="--text n6">10</div>
 									<div class="--text n7">(명)</div>
-									<div class="fillContainer">
+									<div class="--stick n1" data-toggle-target="2"></div>
+									<div class="--stick n2" data-toggle-target="3"></div>
+									<!-- <div class="fillContainer">
 										<div class="square square_1" data-length="12" data-answer="12"></div>
 										<div class="js-fillContainer square square_1" data-length="12" data-answer="4"></div>
 										<div class="square square_1" data-length="12" data-answer="12"></div>
 										<div class="js-fillContainer square square_2" data-length="12" data-answer="6"></div>
-									</div>
-									<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="2" data-toggle-target="2" data-hover=""></span>
-									<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n2" data-toggle-obj="3" data-toggle-target="3" data-hover=""></span>
+									</div> -->
+									<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="2" data-hover=""></span>
+									<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n2" data-toggle-obj="3" data-hover=""></span>
 								</div>
 								<div class="buttonContainer">
 									<button class="js-chainButtons dapCheckBtn" data-answer-btn=""></button>
@@ -322,37 +322,37 @@
 	</script>
 	<script type="text/javascript">
 		window.addEventListener('load', function() {
-			$ts.getEl('.js-fillContainer').forEach(function(container) {
-			new FillTarget({
-				container: container,
-				answerButton: document.querySelector('.js-chainButtons'),
-				resetButton: document.querySelector('.js-resetfill')
-			});
-			});
-			window.$callBack.filledTarget = function (el) {
-			var fillArray = el.container.querySelectorAll('.fill');
-			fillArray.forEach(function (obj) {
-				obj.classList.remove('last');
-				if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-			})
-			// console.log(el.targets.querySelectorAll('.fill').lastChild)
-			}
-			window.$callBack.toggleTarget = function (el) {
-			var fillArray = el.container.querySelectorAll('.fill');
-			fillArray.forEach(function (obj) {
-				obj.classList.remove('last');
-				if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-			})
-			}
+			// $ts.getEl('.js-fillContainer').forEach(function(container) {
+			// new FillTarget({
+			// 	container: container,
+			// 	answerButton: document.querySelector('.js-chainButtons'),
+			// 	resetButton: document.querySelector('.js-resetfill')
+			// });
+			// });
+			// window.$callBack.filledTarget = function (el) {
+			// var fillArray = el.container.querySelectorAll('.fill');
+			// fillArray.forEach(function (obj) {
+			// 	obj.classList.remove('last');
+			// 	if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+			// })
+			// // console.log(el.targets.querySelectorAll('.fill').lastChild)
+			// }
+			// window.$callBack.toggleTarget = function (el) {
+			// var fillArray = el.container.querySelectorAll('.fill');
+			// fillArray.forEach(function (obj) {
+			// 	obj.classList.remove('last');
+			// 	if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+			// })
+			// }
 		});
 
-		document.querySelector( ".--finger.n1" ).addEventListener("click", function(){
-			document.querySelectorAll( ".square_1 .target" )[3].click();
-		});
+		// document.querySelector( ".--finger.n1" ).addEventListener("click", function(){
+		// 	document.querySelectorAll( ".square_1 .target" )[3].click();
+		// });
 
-		document.querySelector( ".--finger.n2" ).addEventListener("click", function(){
-			document.querySelectorAll( ".square_2 .target" )[5].click();
-		});
+		// document.querySelector( ".--finger.n2" ).addEventListener("click", function(){
+		// 	document.querySelectorAll( ".square_2 .target" )[5].click();
+		// });
 	</script>
 
 </body>

@@ -1,5 +1,5 @@
 (function() {
-  
+
   // 정리는꼼꼼 공통 요소
   var ATTR_INDEX = 'data-index';
   var pageLength = $ts.getEl('.basicSlider_slides > li').length;
@@ -7,7 +7,7 @@
   var SETPAGE = {};
   var TITLE = document.querySelector('h1');
 
-  
+
   var clickObjs = $ts.getEl('.js-click');
   var targets = $ts.getEl('.js-shape');
   var buttons = $ts.getEl('.js-button');
@@ -24,7 +24,6 @@
   clickObjs.forEach(function(obj) {
     obj.addEventListener('click', function() {
       var type = obj.getAttribute('data-type');
-
       clearTarget();
       $efSound.click();
 
@@ -67,9 +66,10 @@
         end: function(Rotate) {},
         reset: function(Rotate) {}
       }
+
     });
   }
-  
+
   // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
   window.$efSound.muted(true);
   window.$efSound.incorrect(); // 오답 사운드
@@ -90,7 +90,7 @@
       x: dragObj.querySelector('.js-reflectXBox').getAttribute('reflect') || 0,
       y: dragObj.querySelector('.js-reflectYBox').getAttribute('reflect') || 0,
     }
-  } 
+  }
 
   function getRotateData(dragObj) {
     var value = dragObj.querySelector('.js-rotateTarget').getAttribute('rotate')-0 || 0;
@@ -116,8 +116,9 @@
       dropArea.removeChild(children[0]);
       return;
     }
-
+    window.$efSound.correct();
     if (isReflect) {
+
       // if (dropArea.getAttribute('data-reflect') === "true") {
       //   if (getReflectData(dragObj).x == '180'
       //     && getReflectData(dragObj).y == '0') $efSound.correct();
@@ -156,10 +157,10 @@
     clickObjs.forEach(function(obj) { obj.classList.remove('complete'); });
     clickTargets.forEach(function(target) { target.classList.remove('on'); });
   }
-  
+
   var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
-  
-    
+
+
   window.$callBack.sliderMove = function(SLIDER) {
     hideTitle(SLIDER.idx);
     rotateArray.forEach(function(rotate) { rotate.reset(); });
@@ -211,7 +212,7 @@
     hideTitle(index === 0 ? false : true);
     rotateArray.forEach(function(rotate) { rotate.reset(); });
   }
-  
+
   function setNextButton(index) {
     hideNextButton();
     if (index === 0) nextButton.classList.remove('home');
@@ -224,7 +225,7 @@
     $pm.array.mainSlider.reset({idx: index});
     setPage(index);
     $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
-    
+
     nextButton.setAttribute(ATTR_INDEX, (index+1) % pageLength);
   }
 
@@ -241,4 +242,11 @@
     if (boolean) TITLE.style.display = 'none';
     else TITLE.style.display = '';
   }
+
+
+  document.querySelector( "main" ).addEventListener("click", function(obj){
+    console.log("ddddd")
+    if( obj.path[0].classList.contains( "reflectIcon" ) || obj.path[0].classList.contains( "rotateButton" ) ){ window.$efSound.click(); }
+  });
+
 })();

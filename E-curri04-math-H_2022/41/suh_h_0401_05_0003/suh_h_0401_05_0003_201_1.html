@@ -94,6 +94,8 @@
 		.--text.n1{top: 155px;left: 305px;}
 		.--text.n2{top: 216px;left: 332px;}
 
+		.page_3 .colorBox.sky{padding-top: 2px; padding-bottom: 3px;}
+
 		.page_4 .--graphWrap{height: 346px; background-size: 850px 100%;}
 		.page_4 .--text.n1{top: 195px;left: 265px; font-size: 38px;}
 		.page_4 .--text.n2{top: 270px;left: 305px; font-size: 38px;}
@@ -175,10 +177,10 @@
 						</h2>
 						<section>
 							<div class="lineBox sky --lineBoxTitle">
-								<div class="answer" data-toggle-obj="99" data-toggle-target="99">로봇에게 바라는 기능</div>
+								<div class="answer">로봇에게 바라는 기능</div>
 							</div>
 							<div class="--graphWrap mt_10">
-								<div class="--graph" data-toggle-obj="3" data-toggle-target="3">
+								<div class="--graph">
 									<div class="--lineBox lineBox sky textAlignL n1">㉠</div>
 									<div class="--lineBox lineBox sky textAlignL n2">㉡</div>
 									<div class="--lineBox lineBox sky textAlignL n3">㉢</div>
@@ -187,13 +189,13 @@
 								<div class="--text n2">요리하기</div>
 							</div>
 							<div class="flexListContainer jcenter center mt_30">
-								<div class="colorBox sky check">가로</div>
+								<div class="colorBox skyBlue check">가로</div>
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer textAlignJ" data-toggle-target="1">
 										기능
 									</div>
 								</div>
-								<div class="colorBox sky check ml_80">세로</div>
+								<div class="colorBox skyBlue check ml_80">세로</div>
 								<div class="toggle" data-toggle-obj="2">
 									<div class="answer textAlignJ" data-toggle-target="2">
 										학생 수
@@ -211,10 +213,10 @@
 						</span></h2>
 						<section>
 							<div class="lineBox sky --lineBoxTitle">
-								<div class="answer" data-toggle-obj="99" data-toggle-target="99">로봇에게 바라는 기능</div>
+								<div class="answer">로봇에게 바라는 기능</div>
 							</div>
 							<div class="--graphWrap mt_10">
-								<div class="--graph" data-toggle-obj="3" data-toggle-target="3">
+								<div class="--graph">
 									<div class="--lineBox lineBox sky textAlignL n1">㉠</div>
 									<div class="--lineBox lineBox sky textAlignL n2">㉡</div>
 									<div class="--lineBox lineBox sky textAlignL n3">㉢</div>
@@ -241,10 +243,10 @@
 						</h2>
 						<section>
 							<div class="lineBox sky --lineBoxTitle">
-								<div class="answer" data-toggle-obj="99" data-toggle-target="99">로봇에게 바라는 기능</div>
+								<div class="answer">로봇에게 바라는 기능</div>
 							</div>
 							<div class="--graphWrap mt_10">
-								<div class="--graph" data-toggle-obj="3" data-toggle-target="3">
+								<div class="--graph">
 									<div class="--lineBox lineBox sky textAlignL n1">㉠</div>
 									<div class="--lineBox lineBox sky textAlignL n2">㉡</div>
 									<div class="--lineBox lineBox sky textAlignL n3">㉢</div>
@@ -430,27 +432,27 @@
 
 
 window.addEventListener('load', function() {
-        $ts.getEl('.js-fillContainer').forEach(function(container) {
-          new FillTarget({
-            container: container,
-            answerButton: document.querySelector('.page_4 .dapCheckBtn')
-          });
-        });
-        window.$callBack.filledTarget = function (el) {
-          var fillArray = el.container.querySelectorAll('.fill');
-          fillArray.forEach(function (obj) {
-            obj.classList.remove('last');
-            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-          })
-          // console.log(el.targets.querySelectorAll('.fill').lastChild)
-        }
-        window.$callBack.toggleTarget = function (el) {
-          var fillArray = el.container.querySelectorAll('.fill');
-          fillArray.forEach(function (obj) {
-            obj.classList.remove('last');
-            if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
-          })
-        }
+        // $ts.getEl('.js-fillContainer').forEach(function(container) {
+        //   new FillTarget({
+        //     container: container,
+        //     answerButton: document.querySelector('.page_4 .dapCheckBtn')
+        //   });
+        // });
+        // window.$callBack.filledTarget = function (el) {
+        //   var fillArray = el.container.querySelectorAll('.fill');
+        //   fillArray.forEach(function (obj) {
+        //     obj.classList.remove('last');
+        //     if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        //   })
+        //   // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        // }
+        // window.$callBack.toggleTarget = function (el) {
+        //   var fillArray = el.container.querySelectorAll('.fill');
+        //   fillArray.forEach(function (obj) {
+        //     obj.classList.remove('last');
+        //     if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        //   })
+        // }
       });
 
 	</script>
