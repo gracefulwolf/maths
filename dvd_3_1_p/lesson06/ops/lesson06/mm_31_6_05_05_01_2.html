@@ -75,13 +75,16 @@
 				background-position: 30px 60px;
 			}
 			.app-drawing-tool {
-				left: -173px
+				left: 0;
+			}
+			.app-drawing-tool .tool-container {
+				top: 183px;
+				right: 110px;
 			}
 	
-	
 			.btns-bottom-right {
-				right: 154px;
-				bottom: 51px;
+				right: 110px;
+				bottom: 89px;
 			}
 			.hidebox {
 				position: absolute;
@@ -114,13 +117,17 @@
 				top: 60px;
 			}
 			.toggle-wrap {
-				width: 300px;
+				width: 600px;
 				height: 165px;
 				background: #fff;
 			}
 
-			.toggle-wrap .toggle.circle {
+			.toggle-wrap .toggle:nth-child(2) {
 				margin: 0 20px;
+			}
+			.toggle-wrap .flex-wrap {
+				align-items: flex-end;
+				font-size: 40px;
 			}
 
 			.toggle-wrap .inline {
@@ -130,11 +137,11 @@
 			}
 			#quiz-01 .quiz-cont {
 				position: absolute;
-				top: 555px;
-				left: 500px;
+				top: 480px;
+				left: 470px;
 			}
 			.image-answer .flex-wrap.circle-img {justify-content: space-between;width: 800px;text-align: center;}
-			.image-answer .flex-wrap.circle-img > img {width: 300px;height: 300px;}
+			.image-answer .flex-wrap.circle-img > img {width: 200px;height: 200px;}
 		</style>
 	</head>
 	<body>
@@ -167,13 +174,15 @@
 							<div class="flex-wrap circle-img">
 								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_30.png" alt="">
 								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_31.png" alt="">
+								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_32.png" alt="">
 							</div>
 						</div>
 						<div class="answer">
 							<!-- <img src="./images/mm_31_6_05_05_01/answer_01.svg" alt="" width="1280" height="720"> -->
 							<div class="flex-wrap circle-img">
-								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_32.png" alt="">
 								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_33.png" alt="">
+								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_34.png" alt="">
+								<img src="./images/mm_31_6_05_05_01/suhi_p_0301_06_0005_35.png" alt="">
 							</div>
 						</div>
 						<div class="check-list">
@@ -202,14 +211,14 @@
 										<div class="answer" data-toggle-target="1">
 											세희
 										</div>
-									</div>, 
-                                    <div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
+									</div>,
+                                    <div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
 											지호
 										</div>
-									</div>, 
-                                    <div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
+									</div>,
+                                    <div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
 											준호
 										</div>
 									</div>
@@ -274,9 +283,9 @@
 
 		<script>
 			$('.check-btns .toggle').on("click", function () {
-				$('.toggle.circle').toggleClass('complete');
+				$('.flex-wrap .toggle').toggleClass('complete');
 			})
-			$('.toggle.circle').on("click", function () {
+			$('.flex-wrap .toggle').on("click", function () {
 				$(this).toggleClass('complete');
 			})
 		</script>
