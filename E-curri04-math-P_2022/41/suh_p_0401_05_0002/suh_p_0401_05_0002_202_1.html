@@ -46,6 +46,32 @@
 		.--graph .--text.n9{top: 250px;left: 666px;}
 		.--graph .--text.n10{top: 250px;left: 738px;}
 		.--graph .--text.n11{top: 250px;left: 812px;}
+
+		.icon.active{
+			display: inline-flex;
+			margin-right: 4px;
+			padding-left: 10px;
+			padding-right: 5px;
+			font-size: 26px;
+			font-family: YGJAL;
+			transform: translate(4px, -4px);
+			border-radius: 8px;
+			background: #f6e7d4;
+		}
+		.icon.active::after{
+			content: attr(data-number);
+			color: #ff9e01;
+			padding-right: 3px;
+		}
+		.icon.active::before{
+			content: '다지기 ';
+			color: #ff6200;
+			padding-right: 10px;
+		}
+		.icon.active::before,
+		.icon.active::after{
+			text-shadow: #fff 3px 0 0, #fff 2.83487px 0.981584px 0, #fff 2.35766px 1.85511px 0, #fff 1.62091px 2.52441px 0, #fff 0.705713px 2.91581px 0, #fff -0.287171px 2.98622px 0, #fff -1.24844px 2.72789px 0, #fff -2.07227px 2.16926px 0, #fff -2.66798px 1.37182px 0, #fff -2.96998px 0.42336px 0, #fff -2.94502px -0.571704px 0, #fff -2.59586px -1.50383px 0, #fff -1.96093px -2.27041px 0, #fff -1.11013px -2.78704px 0, #fff -0.137119px -2.99686px 0, #fff 0.850987px -2.87677px 0, #fff 1.74541px -2.43999px 0, #fff 2.44769px -1.73459px 0, #fff 2.88051px -0.838247px 0;
+		}
 	</style>
 </head>
 
@@ -65,7 +91,7 @@
 
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>
-							<span class="colorBox green">1</span>의 막대그래프와 다른 점은 무엇인지 이야기해 보세요.
+							<ins class="icon active" data-number="1"></ins>의 막대그래프와 다른 점은 무엇인지 이야기해 보세요.
 						</span></h2>
 						<section>
 							<div class="lineBox sky textAlignC">
