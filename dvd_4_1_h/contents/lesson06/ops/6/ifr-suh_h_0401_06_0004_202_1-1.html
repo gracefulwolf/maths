@@ -290,6 +290,16 @@ body, .content-container{width:100%; max-width:1280px; height:665px;}
         window.$callBack.sliderMove = function(SLIDER) {
           canvasReset();
         }
+
+        window.dragDropCallbacks = {
+          "drag-obj": function(DRAGDROP) {
+            if (DRAGDROP.droppedArea) {
+              window.$efSound.correct();
+            }else{
+              window.$efSound.incorrect();
+            }
+          },
+        };
       </script>
     </body>
     </html>

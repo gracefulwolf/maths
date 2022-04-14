@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../../../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fonts.css" />
+		<link rel="stylesheet" href="../../../common/css/OverlayScrollbars.min.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/theme04.css" />
+
+		<link rel="stylesheet" href="../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+		<link rel="stylesheet" href="./css/mm_31_6_05_05_01.css" />
+		<style>
+            body {
+                width: 1280px;
+                height: 746px;
+            }
+			.bg img {
+				width: 1170px;
+				height: auto;
+			}
+	
+			.answer img {
+				width: 1170px;
+				height: auto;
+			}
+	
+			.btns-answer-part,
+			.title-h1 {
+				display: none;
+			}
+	
+			#quiz-01 .answer {
+				opacity: 1;
+			}
+	
+			#quiz-02 .answer {
+				opacity: 1;
+			}
+	
+			.quiz-input-text .answer {
+				color: #00a0ff;
+			}
+	
+			.exam-wrap {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #fff;
+				padding: 5px;
+			}
+	
+			#quiz-01 .exam-wrap {
+				top: 270px;
+				left: 150px
+			}
+	
+			#quiz-02 .exam-wrap {
+				top: 323px;
+				left: 390px;
+				transform: scale(1.2);
+			}
+	
+			.content-container>.content>.bg {
+				background-size: 1170px;
+				background-position: 30px 60px;
+			}
+			.app-drawing-tool {
+				left: 0;
+			}
+	
+            .app-drawing-tool .tool-container {
+                top: 180px;
+                right: 110px;
+            }
+	
+			.btns-bottom-right {
+				right: 110px;
+				bottom: 75px;
+			}
+			.hidebox {
+				position: absolute;
+				width: 100px;
+				height: 200px;
+				background-color: #fff;
+				top: 420px;
+				left: 520px;
+			}
+	
+			.hidebox.n2 {
+				top: 420px;
+				left: 1040px;
+			}
+			.quiz-check.image-answer .base {
+				position: relative;
+				width: 900px;
+				top: 230px;
+				left: 196px;
+			}
+			#quiz-02 .answer {
+				position: absolute;
+				width: 800px;
+				top: 230px;
+				left: 196px;
+			}
+			#quiz-03 .answer {
+				position: absolute;
+				left: 30px;
+				top: 60px;
+			}
+
+			.toggle-wrap .toggle.circle {
+				margin: 0 20px;
+			}
+            .toggle-wrap .flex-wrap {
+                align-items: center;
+            }
+
+			.toggle-wrap .inline {
+				font-family: 'NotoM';
+				color: #000;
+				font-size: 40px;
+			}
+			#quiz-01 .quiz-cont {
+				position: absolute;
+				top: 340px;
+				left: 558px;
+			}
+            .quiz-check.image-answer .check-item {display: none;}
+			.image-answer .flex-wrap.circle-img {position: relative;justify-content: space-between;width: 900px;text-align: center;}
+			.image-answer .flex-wrap.circle-img > img {width: 300px;height: 300px;}
+            .image-answer .flex-wrap.circle-img .bullet.exam {position: absolute;top: 0;left: -10px;}
+            .image-answer .flex-wrap.circle-img .bullet.exam.n2 {left: 600px;}
+            .image-answer.active .click-finger-Btn {opacity: 0;animation: none;} 
+            .click-finger-Btn.n1 {position: absolute;top: 265px;left: 200px;z-index: 1;}
+            .click-finger-Btn.n2 {position: absolute;top: 265px;left: 798px;z-index: 1;}
+		</style>
+	</head>
+	<body>
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<!-- <img src="./images/mm_31_6_05_05_01/bg.png" alt=""> -->
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<span class="ico-title-h1 num-01"><em class="text">3</em></span>
+					</div>
+					<div class="right-inner has-fraction">
+						<span>
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>3</span>과
+								<span class="sign-fraction">1<em>/</em>6</span>을 
+								그림에 나타내고, 크기를 비교해 봅시다.
+							</span>
+						</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div id="quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="base">
+							<!-- <img src="./images/mm_31_6_05_05_01/bg.svg" alt="" width="1280" height="720"> -->
+                            <span class="click-finger-Btn blinkOn blinkOpacity n1"></span>
+                            <span class="click-finger-Btn blinkOn blinkOpacity n2"></span>
+							<div class="flex-wrap circle-img">
+								<img src="./images/ms_31_6_05_03_01/suhi_p_0301_06_0006_22.png" alt="">
+								<img src="./images/ms_31_6_05_03_01/suhi_p_0301_06_0006_24.png" alt="">
+							</div>
+						</div>
+						<div class="answer">
+							<!-- <img src="./images/mm_31_6_05_05_01/answer_01.svg" alt="" width="1280" height="720"> -->
+							<div class="flex-wrap circle-img">
+                                <div class="bullet exam n1">예</div>
+                                <div class="bullet exam n2">예</div>
+								<img src="./images/ms_31_6_05_03_01/suhi_p_0301_06_0006_23.png" alt="">
+								<img src="./images/ms_31_6_05_03_01/suhi_p_0301_06_0006_25.png" alt="">
+							</div>
+						</div>
+						<div class="check-list">
+							<div class="check-item" data-answer-part-idx="0"></div>
+						</div>
+					</div>
+<!-- 
+					<div id="quiz-03" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="base">
+							<img src="./images/mm_31_6_05_05_01/base_01.svg" alt="" width="1280" height="720">
+						</div>
+						<div class="answer">
+							<img src="./images/mm_31_6_05_05_01/answer_02.svg" alt="" width="1280" height="720">
+							<img src="./images/mm_31_6_05_05_01/suh_p_0301_06_0006_203_1_3.png" alt="">
+						</div>
+						<div class="check-list">
+							<div class="check-item" data-answer-part-idx="0"></div>
+						</div>
+					</div> -->
+					
+					<div id="quiz-01" class="quiz-pop-select type-01" data-ui="quiz-pop-select" data-option='{"answer":[0]}'>
+						<div class="quiz-cont">
+							<div class="toggle-wrap" data-quiz="toggle">
+								<div class="flex-wrap">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+									</div>
+									<div class="toggle circle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<img src="./images/mm_31_6_05_05_01/inequalIcon_2_blue.png">
+										</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>8</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- <ul class="pop-self quiz-pop dir-top">
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+							</ul>
+							<div class="btn-self quiz-bt-open">
+								<div class="pop"></div>
+							</div> -->
+						</div>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-02"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-03"]}'></div>
+					</div>
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+					</div>
+
+					<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="../../../common/ui/js/uiData.js"></script>
+		<script src="../../../common/ui/js/uiDataMs.js"></script>
+		<script src="./js/mm_31_6_05_05_01.js"></script>
+
+		<script src="../../../common/js/libs/polyfill.min.js"></script>
+		<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../../../common/js/libs/materialize.js"></script>
+		<script src="../../../common/js/libs/TweenMax.min.js"></script>
+		<script src="../../../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../../../common/js/libs/class.js"></script>
+		<script src="../../../common/js/common.js"></script>
+		<script src="../../../common/js/app/mindmap.js"></script>
+		<script src="../../../common/js/app/drawing.js"></script>
+		<script src="../../../common/js/app/angle.js"></script>		
+		<script src="../../../common/js/cornerbase.js"></script>
+		<script src="../../../common/js/videoplayer.js"></script>
+		<script src="../../../common/js/quiz/quizMain.js"></script>
+		<script src="../../../common/js/quiz/quizCheck.js"></script>
+		<script src="../../../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../../../common/js/quiz/quizInput.js"></script>
+		<script src="../../../common/js/quiz/quizDraggable.js"></script>
+		<script src="../../../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../../../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../../../common/js/content.js"></script>
+	</body>
+
+</html>
