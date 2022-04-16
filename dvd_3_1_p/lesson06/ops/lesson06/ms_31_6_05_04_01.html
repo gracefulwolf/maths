@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720" />
+
+		<title></title>
+
+		<link rel="stylesheet" href="../../../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../../../common/css/fonts.css" />
+		<link rel="stylesheet" href="../../../common/css/OverlayScrollbars.min.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../../../common/ui/css/theme04.css" />
+
+		<link rel="stylesheet" href="../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../common/re_style/css/style.css">
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/libs/css/master.css" />
+		<link rel="stylesheet" href="../../../../E-curri03-math-P_2022/31/common/contents/css/math.css" />
+		<link rel="stylesheet" href="../../../../__common__/css/custom.css">
+		<link rel="stylesheet" href="../../../../default/css/custom.css">
+		<link rel="stylesheet" href="./css/ms_31_6_05_04_01.css" />
+		<style>
+			#quiz-content-01 .tool-container {
+				top: 240px;
+				right: 30px;
+			}
+			.hid{position:absolute; top: 500px; left: 530px; background-color: #fff; width: 230px; height:100px; z-index: 2;}
+			.btns-bottom-right {
+				right: 20px;
+    			bottom: 67px;
+			}
+			.answer{opacity: 1; visibility: visible;}
+			.exam-wrap {position: absolute;top: 240px;left: 329px; padding: 3px; background-color: #fff;z-index: 2;}
+            .exam-wrap.n2 {top: 382px;}
+		</style>
+	</head>
+	<body>
+		<div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<!-- <img src="./images/ms_31_6_05_04_01/bg.png" alt="" /> -->
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<span class="ico-title-h1 num-03"><em class="text">3</em></span>
+					</div>
+					<div class="right-inner has-fraction">
+						<span>
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>9</span>과
+							</span>
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>5</span>을
+							</span>
+							그림에
+							<span class="checkpen"></span>로 나타내고,
+							<span class="ico-circle-01" style="margin-top: 15px;"></span> 안에 &gt;, =, &lt;를 알맞게 써넣으세요.
+						</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option="{}">
+					<!-- content -->
+					<div class="hid n1"></div>
+					<div id="image-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="answer">
+							<div class="exam-wrap n1">
+								<div class="bullet exam">예</div>
+							</div>
+							<div class="exam-wrap n2">
+								<div class="bullet exam">예</div>
+							</div>
+							
+							<img src="./images/ms_31_6_05_04_01/answer_01.svg" alt="" width="1280" height="720">
+						</div>
+						<div class="quiz-00-answer answer-part-00">
+							<span class="ico-box-text-02 bb-01"></span>
+						</div>
+					</div>
+					<div id="image-quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="answer">
+							<img src="./images/ms_31_6_05_04_01/answer_02.svg" alt="" width="1280" height="720">
+						</div>
+						<div class="quiz-00-answer answer-part-00">
+							<span class="ico-box-text-02 bb-01"></span>
+						</div>
+					</div>
+
+					<div id="quiz-02" class="quiz-pop-select type-01" data-ui="quiz-pop-select" data-option='{"answer":[2]}'>
+						<div class="quiz-cont">
+							<ul class="pop-self quiz-pop dir-top">
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+							</ul>
+							<div class="btn-self quiz-bt-open">
+								<div class="pop"></div>
+							</div>
+						</div>
+					</div>
+
+					
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-02"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#image-quiz-01"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#image-quiz-02"]}'></div>
+					</div>
+
+					<!-- content -->
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+						<div class="button btn-explan"><span></span></div>
+					</div>
+
+					<!-- 색칠하세요 :: 드로잉 툴 -->
+					<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option="{}"></div>
+				</div>
+
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button box-type btn-more-one more-01"><span>쌍둥이 문제</span></div>
+					<!-- <div class="button box-type btn-more-one more-02"><span>한 번 더!</span></div> -->
+				</div>
+			</div>
+
+			<!-- 팝업 :: 풀이 -->
+			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<div class="bg"></div>
+				<div class="text-content h-max">
+					<div>
+						<span style="letter-spacing: -1px;">
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>9</span>은
+							</span>
+							0부터‌ 1까지를‌ 똑같이‌ 9로‌ 나눈‌ 것 ‌중의 ‌1만큼,
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>5</span>은
+							</span>
+							0부터‌ 1까지를‌ 똑같이 ‌5로 ‌나눈‌ 것‌ 중의 ‌1만큼‌ &nbsp;<span class="checkpen"></span>로‌ 나타냅니다.
+						</span>
+					</div>
+				</div>
+				<div class="button btn-close ico-close-02"></div>
+			</div>
+
+			<!-- 팝업 :: 쌍둥이 문제 -->
+			<div class="popup popup-more-one" data-ui="popup" data-option='{"btn":".btn-more-one.more-01"}'>
+				<div class="bg"></div>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-one"><span>쌍둥이 문제</span></div>
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<!-- <span class="ico-title-h1 num-03"><em class="text">3</em></span> -->
+					</div>
+					<div class="right-inner has-fraction">
+						<span style="letter-spacing: 1px;">
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>4</span>과
+							</span>
+							<span class="line-fraction">
+								<span class="sign-fraction">1<em>/</em>7</span>을 그림에
+							</span>
+							<span class="checkpen"></span>로 나타내고,
+							<span class="ico-circle-01" style="margin-top: 15px;"></span> 안에 &gt;, =, &lt;를 알맞게 써넣으세요.
+						</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-02" class="quiz-content" data-ui="quizMain" data-option="{}">
+					<!-- content -->
+
+					<div id="pop-image-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="answer">
+							<img src="./images/ms_31_6_05_04_01/pop_answer_01.svg" alt="" width="1280" height="720">
+						</div>
+						<div class="quiz-00-answer answer-part-00">
+							<span class="ico-box-text-02 bb-01"></span>
+						</div>
+					</div>
+					<div id="pop-image-quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="answer">
+							<img src="./images/ms_31_6_05_04_01/pop_answer_02.svg" alt="" width="1280" height="720">
+						</div>
+						<div class="quiz-00-answer answer-part-00">
+							<span class="ico-box-text-02 bb-01"></span>
+						</div>
+					</div>
+
+					<div id="quiz-04" class="quiz-pop-select type-01" data-ui="quiz-pop-select" data-option='{"answer":[0]}'>
+						<div class="quiz-cont">
+							<ul class="pop-self quiz-pop dir-top">
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+								<li class="btn-pop-select quiz-bt"></li>
+							</ul>
+							<div class="btn-self quiz-bt-open">
+								<div class="pop"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-04"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#pop-image-quiz-01"]}'></div>
+						<div class="btn-answer-part" data-option='{"quiz":["#pop-image-quiz-02"]}'></div>
+					</div>
+
+					<!-- content -->
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-ex toggle"><span></span></div>
+					</div>
+
+					<!-- 색칠하세요 :: 드로잉 툴 -->
+					<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option="{}"></div>
+				</div>
+
+				<!-- pop area -->
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>
+		</div>
+
+		<script src="../../../common/ui/js/uiData.js"></script>
+		<script src="../../../common/ui/js/uiDataMs.js"></script>
+		<script src="./js/ms_31_6_05_04_01.js"></script>
+
+		<script src="../../../common/js/libs/polyfill.min.js"></script>
+		<script src="../../../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../../../common/js/libs/materialize.js"></script>
+		<script src="../../../common/js/libs/TweenMax.min.js"></script>
+		<script src="../../../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../../../common/js/libs/class.js"></script>
+		<script src="../../../common/js/common.js"></script>
+		<script src="../../../common/js/app/mindmap.js"></script>
+		<script src="../../../common/js/app/drawing.js"></script>
+		<script src="../../../common/js/app/angle.js"></script>
+		<script src="../../../common/js/cornerbase.js"></script>
+		<script src="../../../common/js/videoplayer.js"></script>
+		<script src="../../../common/js/quiz/quizMain.js"></script>
+		<script src="../../../common/js/quiz/quizCheck.js"></script>
+		<script src="../../../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../../../common/js/quiz/quizInput.js"></script>
+		<script src="../../../common/js/quiz/quizDraggable.js"></script>
+		<script src="../../../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../../../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../../../common/js/content.js"></script>
+	</body>
+</html>
