@@ -12,12 +12,19 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
 		.page_1 {position: relative;}
-		.page_1 .colorBox {display: inline-block;padding: 6px;}
+		.page_1 .colorBox {display: inline-block;padding: 6px;text-align: center;}
 		.page_1 .contentsList {margin-top: 30px;}
-		.textBookBtn.popupOn {margin-top: -60px;}
+		.page_2 section {position: relative;}
+		.page_2 .study_guide {position: absolute;right: 0;}
+		.page_2 .flex-wrap{height: 280px;margin-top: 100px;}
+		.page_2 .flex-wrap .flex-item {padding: 0 10px;}
+		.page_2 .flex-wrap .lineBox {position: relative;height: 100%;}
+		.page_2 .flex-wrap .lineBox input[type=text] {height: 100%;}
+		.page_2 .flex-wrap .lineBox .colorBox {position: absolute;top: -60px;left: 50%;transform: translateX(-50%);width: 90%;text-align: center;}
 		.pop_page_1.whole .img-wrap {padding-top: 50px;text-align: center;}
 		.pop_page_1.whole img {width: 90%;}
 		.basicSlider_slides li h2 > span {position: relative;}
+		.textBookBtn.popupOn {margin-top: -60px;}
 		.popBtn.textInBtn {position: absolute;bottom: 5px;left: 180px;}
 	</style>
 </head>
@@ -65,7 +72,28 @@
 							<div class="popBtn textInBtn eye orange btn_1" data-popup-btn="3">그림 보기</div>
 						</span></h2>
 						<section>
-
+							<div class="study_guide">직접 쓸 수 있습니다.</div>
+							<div class="flex-wrap" data-quiz="input" data-quiz-name="input">
+								<div class="flex-item n1">
+									<div class="lineBox green">
+										<div class="colorBox green inline">
+											내가 좋아하는 수학 놀이
+										</div>
+										<input type="text" class="center" placeholder="" data-input-obj="" data-answer="개구리 멀리뛰기" onfocus="placeholder=''" onblur="placeholder=''" autocomplete="off">
+									</div>
+								</div>
+								<div class="flex-item n2">
+									<div class="lineBox sky">
+										<div class="colorBox sky inline">
+											가장 많은 친구들이<br>좋아하는 수학 놀이
+										</div>
+										<input type="text" class="center" placeholder="" data-input-obj="" data-answer="찍찍이 양궁" onfocus="placeholder=''" onblur="placeholder=''" autocomplete="off">
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="writeBtn" data-answer-btn="" data-quiz-chain="input, toggle1"></button>
+							</div>
 						</section>
 						<button class="popBtn textBookBtn info" data-hover="" data-popup-btn="2" data-close-inner="">
 							<span class="btnInner"></span>
