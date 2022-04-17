@@ -11,14 +11,88 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom.css"> -->
 	<style>
-		.contentsList>li div p.mb_10 {position: relative;}
-		.page_1 .text .n1 .contentsList p {position: relative;}
-		.popBtn.textInBtn {position: absolute;top: 5px;right: 350px;}
-		.page_2 .popBtn.textInBtn, .page_3 .popBtn.textInBtn {right: 170px;}
-		.page_3 .toggle.box p:last-child {padding-left: 50px;}
-		.popup_pages > li.whole.pop_page_1 .popup_contents {display: flex;align-items: center;justify-content: center;padding: 20px;}
-		.pop_page_1 .img-wrap {position: relative;text-align: center;}
-		.pop_page_1 .img-wrap img {width: 100%;text-align: center;}
+		.basicSlider .basicSlider {
+			padding: 0;
+		}
+
+		.contentsList>li div p.mb_10 {
+			position: relative;
+		}
+
+		.page_1 .text .n1 .contentsList p {
+			position: relative;
+		}
+
+		.popBtn.textInBtn {
+			position: absolute;
+			top: 5px;
+			right: 350px;
+		}
+
+		.page_2 .popBtn.textInBtn,
+		.page_3 .popBtn.textInBtn {
+			right: 170px;
+		}
+
+		.page_3 .innerTab_1 .contentsList {
+			width: calc(100% - 220px);
+		}
+
+		.page_3 .innerTab_1 .contentsList li .bullet,
+		.page_3 .innerTab_1 .contentsList li div {
+			z-index: 2;
+		}
+		
+		.page_3 .toggle.box p:last-child {
+			padding-left: 50px;
+		}
+
+		.popup_pages>li.whole.pop_page_1 .popup_contents {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.pop_page_1 .img-wrap {
+			position: relative;
+			text-align: center;
+		}
+
+		.pop_page_1 .img-wrap img {
+			width: 100%;
+			text-align: center;
+		}
+
+		.iframe-wrap {
+			width: 1058px;
+			position: absolute !important;
+			top: 0px;
+			left: -35px;
+			height: 553px;
+			overflow: hidden;
+		}
+
+		.page-iframe {
+			width: 1058px;
+			height: 714px;
+			overflow: hidden;
+			border: 0;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+
+		.moveButtonContainer {
+			width: auto;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+		.popup_pages>li.whole.on {
+			z-index: 4;
+		}
 	</style>
 </head>
 
@@ -102,7 +176,7 @@
 					</li>
 
 					<li class="page_3" data-quiz="toggle">
-						<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+						<div class="basicSlider contentsBox doItContent" data-slide-container="">
 							<div class="moveButtonContainer" data-slide-btn-container="">
 								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
 								<ul class="basicSlider_circle_tabs" data-tabs="">
@@ -120,15 +194,16 @@
 												<p class="mb_10">
 													생각한 방법으로 문제를 해결해 보세요.
 												</p>
-												<div class="lineBox sky">
-													
-												</div>
+											</div>
+										</li>
+										<li>
+											<div class="iframe-wrap">
+												<iframe
+													src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_11_01_03.html"
+													title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
 											</div>
 										</li>
 									</ul>
-									<div class="buttonContainer">
-										<button class="dapCheckBtn" data-answer-btn=""></button>
-									</div>
 								</li>
 								<li class="innerTab_2">
 									<ul class="contentsList">
@@ -205,45 +280,41 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 
 	<script type="text/javascript">
-
 		window.addEventListener('load', function () {
-	
-		  $prite.add({
-			target: $ts.getEl('#aniBox'),
-			spriteId: 'sprite1',
-			spriteList: [
-			  {
-				name: 'gile_1',
-				speech: 'right',
-				top: 100,
-				left: 230,
-				width: 340,
-				height: 421,
-				thumbNail: '../common/contents/images/character/boy1_1.png',
-				spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
-				sound: './media/audios/suh_p_0301_06_0012_202_1.mp3',
-				textBubble: {
-				  text: '원에 소가 원하는 2/1을  나타낸 다음 말이 원하는 과 돼지가 원하는 을 나타냈더니 이 남았어.닭이 먹을 수 있는 케이크 전체의 양은 이야.',
-				  class: 'balloon bottom deepPink',
-				  top: 85,
-				  left: 180,
-				  width: 450,
-				  textAlign: 'center',
-				  wordBreak: 'keep-all'
-				},
-				sheetWidth: 102000,
-				sheetHeight: 421,
-				// //endSheet: 0,
-				delay: 40
-	
-			  }
-			]
-		  });
-	
-	
+
+			$prite.add({
+				target: $ts.getEl('#aniBox'),
+				spriteId: 'sprite1',
+				spriteList: [{
+					name: 'girl_3',
+					speech: 'right',
+					top: 60,
+					left: 10,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_3.png',
+					spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+					sound: './media/audios/suh_p_0301_06_0012_202_1.mp3',
+					textBubble: {
+						text: '원에 소가 원하는 <div class="bunsuWrap inline"><ul><li>1</li><li>2</li></ul></div>을 나타낸 다음<br>말이 원하는 <div class="bunsuWrap inline"><ul><li>1</li><li>4</li></ul></div>과 돼지가 원하는<br><div class="bunsuWrap inline"><ul><li>1</li><li>8</li></ul></div>을 나타냈더니 <div class="bunsuWrap inline"><ul><li>1</li><li>8</li></ul></div>이 남았어.<br>닭이 먹을 수 있는 케이크 전체의 양은 <div class="bunsuWrap inline"><ul><li>1</li><li>8</li></ul></div>이야.',
+						class: 'balloon pink left ctTail pink',
+						top: 130,
+						left: 355,
+						width: 550,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					// //endSheet: 0,
+					delay: 40
+
+				}]
+			});
+
+
 		}, false);
-	
-	  </script>
+	</script>
 </body>
 
 </html>
