@@ -37,7 +37,7 @@
 		.pop_page_1 .--text.n1{top: 140px; left: 170px; color: #fff;}
 		.pop_page_1 .--text.n2{top: 135px; left: 730px; color: #fff;}
 		.pop_page_1 .--text.n3{top: 630px; left: 500px; color: #fff;}
-		.pop_page_1 .--text.n4{top: 480px; left: 875px; color: #fff;}
+		.pop_page_1 .--text.n4{top: 480px; left: 870px; color: #fff;}
 		.pop_page_1 .--text.n5{top: 248px; left: 45px; color: yellow;}
 		.pop_page_1 .--text.n6{top: 269px; left: 656px; color: yellow;}
 		.pop_page_1 .--text.n7{top: 374px; left: 480px; color: yellow;}
@@ -50,6 +50,31 @@
 
 		.--char{position: relative; padding-left: 240px;}
 		.--char .balloon{top: 0px; left: 150px;}
+
+		.icon.active{
+			display: inline-flex;
+			padding-left: 10px;
+			padding-right: 5px;
+			font-size: 26px;
+			font-family: YGJAL;
+			transform: translate(4px, -4px);
+			border-radius: 8px;
+			background: #f6e7d4;
+		}
+		.icon.active::after{
+			content: attr(data-number);
+			color: #ff9e01;
+			padding-right: 3px;
+		}
+		.icon.active::before{
+			content: '활동 ';
+			color: #ff6200;
+			padding-right: 10px;
+		}
+		.icon.active::before,
+		.icon.active::after{
+			text-shadow: #fff 3px 0 0, #fff 2.83487px 0.981584px 0, #fff 2.35766px 1.85511px 0, #fff 1.62091px 2.52441px 0, #fff 0.705713px 2.91581px 0, #fff -0.287171px 2.98622px 0, #fff -1.24844px 2.72789px 0, #fff -2.07227px 2.16926px 0, #fff -2.66798px 1.37182px 0, #fff -2.96998px 0.42336px 0, #fff -2.94502px -0.571704px 0, #fff -2.59586px -1.50383px 0, #fff -1.96093px -2.27041px 0, #fff -1.11013px -2.78704px 0, #fff -0.137119px -2.99686px 0, #fff 0.850987px -2.87677px 0, #fff 1.74541px -2.43999px 0, #fff 2.44769px -1.73459px 0, #fff 2.88051px -0.838247px 0;
+		}
 	</style>
 </head>
 
@@ -58,7 +83,7 @@
 <div id="wrap" class="math">
 	<header>
 		<div class="title textAlignJ"><div>
-			<span class="colorBox skyBlue --titleColorBox">활동 1</span>의 그림을 보고 대한민국 1호기가 연료를 채우기 위해 가야 할 우주 정거장을 찾아봅시다. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그림 보기</div>
+			<ins class="icon active" data-number="1"></ins>의 그림을 보고 대한민국 1호기가 연료를 채우기 위해 가야 할 우주 정거장을 찾아봅시다. <div class="popBtn textInBtn eye orange btn_1" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그림 보기</div>
 		</div></div>
 	</header>
 	<main>
@@ -173,7 +198,7 @@
 				</li>
 
 				<li class="page_1" data-quiz="toggle">
-					<h2><ins class="dot"></ins><span>
+					<h2><ins class="dot"></ins><span style="letter-spacing: 1px;">
 						대한민국 1호기가 연료를 채우기 위해 가야 할 우주 정거장을 찾아보세요.
 					</span></h2>
 					<section>
@@ -216,7 +241,7 @@
 									<div class="--text n1">우주 정거장 1</div>
 									<div class="--text n2">우주 정거장 2</div>
 									<div class="--text n3">우주 정거장 3</div>
-									<div class="--text n4">뵤뵤행성</div>
+									<div class="--text n4">뵤뵤 행성</div>
 									<div class="--text n5">559000000 km</div>
 									<div class="--text n6">838500000 km</div>
 									<div class="--text n7">1197800000 km</div>

@@ -47,7 +47,10 @@
 		.pop_page_1 .--img .balloon.n2:after{margin-left: 40px;}
 		.pop_page_1 .--img .balloon.n3{top: 210px;right: 0;}
 
-
+		.page_2 .popBtn.zoomBtn{width: 190px; height: 170px; background: url(./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_2.png) no-repeat 50% 50% / auto 190px;}
+		.page_3 .popBtn.zoomBtn{width: 190px; height: 170px; background: url(./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_3.png) no-repeat 50% 50% / auto 190px;}
+		.page_2 .popBtn.zoomBtn:after,
+		.page_3 .popBtn.zoomBtn:after{transform: translateX(60px);}
 	</style>
 </head>
 
@@ -55,7 +58,7 @@
 
 <div id="wrap" class="math">
 	<header>
-		<div class="title">모형으로 만든 모양의 배열에서 규칙을 찾아봅시다.</div>
+		<div class="title">다음 그림의 상황에 대하여 이야기해 봅시다.</div>
 	</header>
 	<main>
 		<div class="basicSlider contentsBox" data-slide-container="main">
@@ -73,21 +76,21 @@
 					<section>
 						<div class="--img">
 							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+								<div class="balloon bottom ctTail textAlignC pink n1">
+									10에 10, 20, 30, 40과 같이<br>
+									10씩 커지는 수를 더하면<br>
+									계산 결과가 10씩 커지네.
+								</div>
+								<div class="balloon bottom ctTail textAlignC pink n2">
+									뺄셈식에도<br>
+									규칙이 있어.
+								</div>
+								<div class="balloon left textAlignC pink n3">
+									곱셈식과<br>
+									나눗셈식에서도<br>
+									규칙을 찾아 볼까?
+								</div>
 							</button>
-							<div class="balloon bottom ctTail textAlignC pink n1">
-								10에 10, 20, 30, 40과 같이<br>
-								10씩 커지는 수를 더하면<br>
-								계산 결과가 10씩 커지네.
-							</div>
-							<div class="balloon bottom ctTail textAlignC pink n2">
-								뺄셈식에도<br>
-								규칙이 있어.
-							</div>
-							<div class="balloon left textAlignC pink n3">
-								곱셈식과<br>
-								나눗셈식에서도<br>
-								규칙을 찾아 볼까?
-							</div>
 						</div>
 						<div class="textAlignC mt_5">
 							<div class="toggle" data-toggle-obj="1">
@@ -115,7 +118,9 @@
 					</span></h2>
 					<section>
 						<div class="--img textAlignC">
-							<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_2.png" alt="" width="170">
+							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+								<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_2.png" alt="" width="170">
+							</button>
 						</div>
 						<div class="--answer">
 							<div class="toggle" data-toggle-obj="1" style="width:100%;">
@@ -167,7 +172,9 @@
 					</span></h2>
 					<section>
 						<div class="--img textAlignC">
-							<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_3.png" alt="" width="170">
+							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+								<img src="./images/suh_h_0401_06_0006_102_1/suh_h_0401_06_0006_102_1_3.png" alt="" width="170">
+							</button>
 						</div>
 						<div class="--answer">
 							<div class="toggle" data-toggle-obj="1" style="width:100%;">
@@ -200,7 +207,7 @@
 										<li>
 											<ins class="bullet exam">예</ins>
 											<div>
-												60에서 빼는 수가 50, 40, 30, 20과 같이 10씩 작아지면 계산결과가 10, 20, 30, 40과 같이 10씩 커집니다.
+												60에서 빼는 수가 50, 40, 30, 20과 같이 10씩 작아지면 계산 결과가 10, 20, 30, 40과 같이 10씩 커집니다.
 											</div>
 										</li>
 									</ul>
@@ -221,20 +228,28 @@
 		<ul class="popup_pages">
 			<li class="whole image pop_page_1" data-popup-page="1">
 				<div class="popup_contents">
-					<div class="--img">
-						<div class="balloon bottom ctTail textAlignC pink n1">
-							10에 10, 20, 30, 40과 같이<br>
-							10씩 커지는 수를 더하면<br>
-							계산 결과가 10씩 커지네.
-						</div>
-						<div class="balloon bottom ctTail textAlignC pink n2">
-							뺄셈식에도<br>
-							규칙이 있어.
-						</div>
-						<div class="balloon bottom ctTail textAlignC pink n3">
-							곱셈식과<br>
-							나눗셈식에서도<br>
-							규칙을 찾아 볼까?
+					<div class="zoomContainer horizon container_1" data-zoom-container="">
+						<!--  zoom 영역  -->
+						<div class="zoomArea">
+							<!--  이미지 영역  -->
+							<div class="zoomImgContainer">
+								<div class="--img">
+									<div class="balloon bottom ctTail textAlignC pink n1">
+										10에 10, 20, 30, 40과 같이<br>
+										10씩 커지는 수를 더하면<br>
+										계산 결과가 10씩 커지네.
+									</div>
+									<div class="balloon bottom ctTail textAlignC pink n2">
+										뺄셈식에도<br>
+										규칙이 있어.
+									</div>
+									<div class="balloon bottom ctTail textAlignC pink n3">
+										곱셈식과<br>
+										나눗셈식에서도<br>
+										규칙을 찾아 볼까?
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

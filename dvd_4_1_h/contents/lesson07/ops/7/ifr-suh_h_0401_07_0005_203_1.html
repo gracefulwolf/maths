@@ -17,6 +17,8 @@ main{top: 0;}
 body, .content-container{width:100%; max-width:1000px; height:640px;}
 .bullet.exam{font-family: YGJAL;}
 .dapCheckBtn{letter-spacing: 0; box-shadow: none;}
+
+.induceLight.invisible{display: none;}
 </style>
   </head>
 	<body class="lesson_7 grade_4">
@@ -183,6 +185,22 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
   });
 
 })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const _induceLights = document.querySelectorAll(".induceLight")
+  document.querySelector( ".dapCheckBtn" ).addEventListener("click", function(){
+    if( this.classList.contains( "reset" ) ){
+      _induceLights.forEach(function(obj, index){
+          obj.classList.remove( "invisible" );
+      });
+    } else {
+      _induceLights.forEach(function(obj, index){
+          obj.classList.add( "invisible" );
+      });
+    }
+  });
+}, false);
     </script>
   </body>
 </html>

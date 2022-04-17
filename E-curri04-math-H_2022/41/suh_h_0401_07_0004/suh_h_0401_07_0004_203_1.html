@@ -154,6 +154,13 @@
 		});
 
 	}, false);
+
+	window.$callBack.sliderMove = function(SLIDER) {
+		const _iframe = document.querySelectorAll(".page-iframe");
+		if( ( SLIDER.container.classList.contains("page_1") && SLIDER.idx == "0") ){
+				_iframe[0].contentWindow.location.reload();
+			}
+	};
 </script>
 
 </body>

@@ -66,7 +66,7 @@
 					<ul class="basicSlider_slides" data-slides="">
 						<li class="innerTab_1" data-quiz="toggle">
 							<div class="--img">
-								<div class="videoSubPlayBtn" data-hover="" data-video-link="M202202509_800K.mp4">활동영상 보기</div>
+								<div class="videoSubPlayBtn" data-hover="" data-video-link="M202202509_800K.mp4">활동 영상 보기</div>
 								<div class="--text n1 textAlignC">훈련<br>방법</div>
 								<ul class="contentsList --contentsList">
 									<li>
@@ -252,6 +252,14 @@
 	document.addEventListener("DOMContentLoaded", function () {
 
 	}, false);
+
+	window.$callBack.sliderMove = function(SLIDER) {
+		const _iframe = document.querySelectorAll(".page-iframe");
+		if( ( SLIDER.container.classList.contains("page_1") && SLIDER.idx == "1") ){
+				_iframe[0].contentWindow.location.reload();
+			}
+	};
+
 </script>
 
 </body>

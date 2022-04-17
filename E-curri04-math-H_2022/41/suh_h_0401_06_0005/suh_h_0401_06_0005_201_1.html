@@ -148,7 +148,7 @@
 							<div class="colorBox skyBlue check">규칙</div>
 							<div class="toggle" data-toggle-obj="5">
 								<div class="answer" data-toggle-target="5">
-									순서에 3을 곱한 수 만큼 사각형이 필요합니다.
+									순서에 3을 곱한 수만큼 사각형이 필요합니다.
 								</div>
 							</div>
 						</div>
@@ -240,6 +240,14 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
+
+		const _iframe = document.querySelector(".page-iframe");
+		window.$callBack.sliderMove = function(SLIDER) {
+			// console.log(SLIDER.container)
+			if( SLIDER.container.classList.contains("contentsBox") ){
+				_iframe.contentWindow.location.reload();
+			}
+		}
 
 	}, false);
 </script>

@@ -149,6 +149,14 @@
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
 
+		const _iframe = document.querySelector(".page-iframe");
+		window.$callBack.sliderMove = function(SLIDER) {
+			// console.log(SLIDER.container)
+			if( SLIDER.container.classList.contains("contentsBox") ){
+				_iframe.contentWindow.location.reload();
+			}
+		}
+
 	}, false);
 </script>
 

@@ -34,6 +34,33 @@
 		h2 .colorBox.gray{display: inline-block; width: 40px; height: 40px; margin:0; padding:0; border-radius:50%; background:#b4b4b4; line-height: 40px; text-align: center; vertical-align: 6px;}
 
 		.innerTab_2 .flexListContainer img{display: block;}
+
+
+		.icon.active{
+			display: inline-flex;
+			margin-right: 5px;
+			padding-left: 10px;
+			padding-right: 5px;
+			font-size: 26px;
+			font-family: YGJAL;
+			transform: translate(4px, -5px);
+			border-radius: 8px;
+			background: #f6e7d4;
+		}
+		.icon.active::after{
+			content: attr(data-number);
+			color: #ff9e01;
+			padding-right: 3px;
+		}
+		.icon.active::before{
+			content: '다지기 ';
+			color: #ff6200;
+			padding-right: 10px;
+		}
+		.icon.active::before,
+		.icon.active::after{
+			text-shadow: #fff 3px 0 0, #fff 2.83487px 0.981584px 0, #fff 2.35766px 1.85511px 0, #fff 1.62091px 2.52441px 0, #fff 0.705713px 2.91581px 0, #fff -0.287171px 2.98622px 0, #fff -1.24844px 2.72789px 0, #fff -2.07227px 2.16926px 0, #fff -2.66798px 1.37182px 0, #fff -2.96998px 0.42336px 0, #fff -2.94502px -0.571704px 0, #fff -2.59586px -1.50383px 0, #fff -1.96093px -2.27041px 0, #fff -1.11013px -2.78704px 0, #fff -0.137119px -2.99686px 0, #fff 0.850987px -2.87677px 0, #fff 1.74541px -2.43999px 0, #fff 2.44769px -1.73459px 0, #fff 2.88051px -0.838247px 0;
+		}
 	</style>
 </head>
 
@@ -57,8 +84,8 @@
 						</div>
 						<ul class="basicSlider_slides" data-slides="">
 							<li class="innerTab_1">
-								<h2><ins class="dot"></ins><span class="ls1">
-									<span class="colorBox gray check">1</span>의 달력에 <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_2.png" alt="" height="40">과 <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_3.png" alt="" height="40">, <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_4.png" alt="" height="40">을 각각 올려놓고 규칙적인 계산식을 찾아 보세요.
+								<h2><ins class="dot"></ins><span class="ls1_5">
+									<ins class="icon active" data-number="1"></ins>의 달력에 <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_2.png" alt="" height="40">과 <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_3.png" alt="" height="40">, <img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_4.png" alt="" height="40">을 각각 올려놓고 규칙적인 계산식을 찾아 보세요.
 								</span></h2>
 								<section>
 									<div class="flexListContainer start center">
@@ -167,22 +194,22 @@
 				spriteId: 'sprite1',
 				spriteList: [
 					{
-						name: 'girl_1',
+						name: 'boy_1',
 						circle: 'green',
 						speech:'right',
 						top: 200,
 						left: 800,
 						width: 340,
 						height: 421,
-						thumbNail: '../common/contents/images/character/girl_1.png',
-						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
 						sound: './media/audios/suh_p_0401_06_0007_202_1.mp3',
 						sheetWidth: 102000,
 						sheetHeight: 421,
 						//endSheet: 0,
 						delay: 40,
 						textBubble: {
-							text: '<img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_2.png" alt="" height="40" style="vertical-align:-6px;">을 달려 어디에<br>놓든지 규칙적인<br>계산식을 찾을 수<br>있어.',
+							text: '<img src="./images/suh_p_0401_06_0007_202_1/suh_p_0401_06_0007_202_1_2.png" alt="" height="40" style="vertical-align:-6px;">을 달력 어디에<br>놓든지 규칙적인<br>계산식을 찾을 수<br>있어.',
 							class: 'balloon deeppink ctTail bottom',
 							top: -40,
 							left: 730,

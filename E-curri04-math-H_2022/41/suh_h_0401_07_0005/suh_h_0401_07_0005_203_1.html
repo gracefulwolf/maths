@@ -29,7 +29,7 @@
 			0%, 100%{opacity: .1;}
 			50%{opacity: 1;}
 		}
-		.study_guide{right: 0; top: -10px;}
+		.study_guide{right: -15px; top: 0px;}
 
 		.--text{position: absolute; font-size: 35px;}
 
@@ -78,6 +78,7 @@
 						<li class="innerTab_1">
 							<iframe src="../../../dvd_4_1_h/contents/lesson07/ops/7/ifr-suh_h_0401_07_0005_203_1.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
 							<section>
+								<div class="study_guide ls0_5"><em>음식</em>을 <em>드래그</em>하여 옮기세요.</div>
 							</section>
 						</li>
 						<li class="innerTab_2">
@@ -109,7 +110,7 @@
 					<div class="--wrap">
 						<ins class="bullet exam">예</ins>
 						<p>
-							우리는 지도에 도착할 때까지 음식이 부족하지 않게 계획적으로 먹기로 했다. 그래서 매일 같은 양으로 하루에 먹을 수 있는 음식의 양을 계산해 봤다. 지구에 도착하기까지 984시간이 남았다. <br><span class="blueT">하루는 24시간이므로 41일이 남은 것이다. 한 사람에게 주어진 음식은 진공 포장 음식 123개, 물 164병, 통조림 205캔으로 계획적으로 매일 같은 양을 먹기로 하였다. 계산을 해보니 하루에 먹을 수 있는 음식은 진공 포장 음식 3개, 물 4병, 통조림 5캔이었다. 앞으로 남은 기간 동안 잘 나누어 먹어야겠다.</span>
+							우리는 지도에 도착할 때까지 음식이 부족하지 않게 계획적으로 먹기로 했다. 그래서 매일 같은 양으로 하루에 먹을 수 있는 음식의 양을 계산해 봤다. 지구에 도착하기까지 984시간이 남았다. <br><span class="blueT" style="letter-spacing: 0.2px;">하루는 24시간이므로 41일이 남은 것이다. 한 사람에게 주어진 음식은 진공 포장 음식 123개, 물 164병, 통조림 205캔으로 계획적으로 매일 같은 양을 먹기로 하였다. 계산을 해보니 하루에 먹을 수 있는 음식은 진공 포장 음식 3개, 물 4병, 통조림 5캔이었다. 앞으로 남은 기간 동안 잘 나누어 먹어야겠다.</span>
 						</p>
 					</div>
 				</div>
@@ -139,6 +140,13 @@
 	document.addEventListener("DOMContentLoaded", function () {
 
 	}, false);
+
+	window.$callBack.sliderMove = function(SLIDER) {
+		const _iframe = document.querySelectorAll(".page-iframe");
+		if( ( SLIDER.container.classList.contains("page_1") && SLIDER.idx == "0") ){
+				_iframe[0].contentWindow.location.reload();
+			}
+	};
 </script>
 
 </body>
