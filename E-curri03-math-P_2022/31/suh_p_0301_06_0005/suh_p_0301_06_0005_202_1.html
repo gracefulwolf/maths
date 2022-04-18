@@ -9,42 +9,26 @@
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style type="text/css">
-	.basicSlider_slides section {padding-right:0}
-	.iframe-wrap{
-		position: relative;
-		top: 0px;
-		left: 0px;
-		width: 1058px;
-		height: 454px;
-		overflow: hidden;
-	}
-	.page-iframe {
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		right: 0;
-		width: 1058px;
-		height: 454px;
-		overflow: hidden;
-		border: 0;
-	}
-	.toggle-wrap {
-		position: absolute;
-		top: 150px;
-		right: -11px;
-		width: 220px;
-		height: 120px;
-		background: #fff;
-		z-index: 2;
-	}
-	.toggle-wrap .flex-wrap {
-		align-items: center;
-	}
-	.toggle.noBg {
-		position: relative;
-		height: 100%;
-	}
+	.flex-wrap {align-items: center;height: calc(100% - 100px);}
+	.flex-wrap img {width: 500px;}
+	.flex-item .toggle.noBg {position: relative;display: flex;align-items: center;}
+	.flex-item .toggle.noBg:after {display: none;}
+	.flex-item .answer {position: absolute;top: 0;}
+	.flex-wrap .flex-item.n1 {flex: 2;padding-left: 150px;}
+	.flex-wrap .colorBox {position: absolute;left: -100px;display: inline-block;padding: 10px 15px;margin-right: 20px;}
+	.flex-wrap .img-wrap {display: flex;align-items: center;justify-content: space-between;}
+	.flex-wrap .img-wrap .img {position: relative;}
+	.flex-wrap .img-wrap .img .text {position: absolute;bottom: -35px;}
+	.flex-wrap .img-wrap .img .text.n1 {left: -6px;}
+	.flex-wrap .img-wrap .img .text.n2 {right: -6px;}
+	.flex-wrap .img-wrap + .img-wrap {margin-top: 80px;}
+	.flex-item.n2 .toggle-wrap {display: flex;align-items: center;justify-content: center;}
+	.flex-item.n2 .toggle-wrap .toggle.circle {margin: 0 20px;}
+	.flex-item.n2 .toggle-wrap .toggle.circle img {position: relative;top: 5px;}
+	.bullet.exam {position: absolute;top: -5px;left: -160px;}
+	.click-finger-Btn {position: absolute;top: 21px;left: 259px;z-index: 1;}
+	.click-finger-Btn.complete {opacity: 0;animation: none;}
+	.page_2 .textAlignC {margin-top: 30px;}
 </style>
 </head>
 
@@ -79,30 +63,76 @@
 						</span>
 					</h2>
 					<section>
-						<div class="iframe-wrap">
-							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_04_04_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
-						</div>
-						<div class="toggle-wrap" data-quiz="toggle">
-							<div class="flex-wrap">
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>4</li>
-										<li>7</li>
-									</ul>
-								</div>
-								<div class="toggle circle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										<img src="../common/contents/images/math/inequalIcon_blue.png">
+						<div class="flex-wrap">
+							<div class="flex-item n1">
+								<div class="img-wrap">
+									<div class="toggle noBg">
+										<span class="click-finger-Btn blinkOn blinkOpacity" data-toggle-obj="1"></span>
+										<div class="colorBox green inline">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>4</li>
+													<li>7</li>
+												</ul>
+											</div>
+										</div>
+										<div class="img">
+											<img src="./images/suh_p_0301_06_0005_202_1/suh_p_0301_06_0005_202_1_1.png" alt="">
+											<div class="text n1">0</div>
+											<div class="text n2">1</div>
+										</div>
+										<div class="answer" data-toggle-target="1">
+											<div class="bullet exam">예</div>
+											<img src="./images/suh_p_0301_06_0005_202_1/suh_p_0301_06_0005_202_1_2.png" alt="" data-toggle-target="1">
+										</div>
 									</div>
 								</div>
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
+								<div class="img-wrap">
+									<div class="toggle noBg">
+										<span class="click-finger-Btn blinkOn blinkOpacity" data-toggle-obj="2"></span>
+										<div class="colorBox green inline">
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>5</li>
+													<li>7</li>
+												</ul>
+											</div>
+										</div>
+										<div class="img">
+											<img src="./images/suh_p_0301_06_0005_202_1/suh_p_0301_06_0005_202_1_1.png" alt="">
+											<div class="text n1">0</div>
+											<div class="text n2">1</div>
+										</div>
+										<div class="answer" data-toggle-target="2">
+											<div class="bullet exam">예</div>
+											<img src="./images/suh_p_0301_06_0005_202_1/suh_p_0301_06_0005_202_1_3.png" alt="" data-toggle-target="2">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flex-item n2">
+								<div class="toggle-wrap">
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>4</li>
+											<li>7</li>
+										</ul>
+									</div>
+									<div class="toggle circle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											<img src="../common/contents/images/math/inequalIcon_blue.png">
+										</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>5</li>
+											<li>7</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</section>
 				</li>
 				<li class="page_2" data-quiz="toggle">
@@ -112,38 +142,40 @@
 							분모가 같은 분수의 크기를 비교하는 방법을 이야기해 보세요.
 						</span>
 					</h2>
-					<div class="textAlignC">
-						<div class="toggle box" data-toggle-obj="1">
-							<div class="answer" data-toggle-target="1">
-								<ul class="contentsList">
-									<li>
-										<div class="bullet exam">예</div>
-										<div>
-											분모가 같은 분수는 분자가 클수록 큰 분수입니다.
-										</div>
-									</li>
-								</ul>
+					<section>
+						<div class="textAlignC">
+							<div class="toggle box" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>
+												분모가 같은 분수는 분자가 클수록 큰 분수입니다.
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="toggle box mt_10" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									<ul class="contentsList">
+										<li>
+											<div class="bullet exam">예</div>
+											<div>
+												<div class="bunsuWrap inline">
+													<ul>
+														<li>1</li>
+														<li>□</li>
+													</ul>
+												</div>이 몇 개인지를 비교하면 되므로 분모가 같은 분수는 분자의 크기를 비교하면 됩니다.
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-						<div class="toggle box mt_10" data-toggle-obj="2">
-							<div class="answer" data-toggle-target="2">
-								<ul class="contentsList">
-									<li>
-										<div class="bullet exam">예</div>
-										<div>
-											<div class="bunsuWrap inline">
-												<ul>
-													<li>1</li>
-													<li>□</li>
-												</ul>
-											</div>이 몇 개인지를 비교하면 되므로 분모가 같은 분수는 분자의 크기를 비교하면 됩니다.
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<button class="dapCheckBtn" data-answer-btn=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</section>
 				</li>
 			</ul>
 		</div>

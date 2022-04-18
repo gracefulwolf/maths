@@ -115,6 +115,9 @@
 				height: 165px;
 				background: #fff;
 			}
+			.toggle-wrap .flex-wrap {
+				align-items: center;
+			}
 
 			.toggle-wrap .toggle.circle {
 				margin: 0 20px;
@@ -193,7 +196,7 @@
 					
 					<div id="quiz-01" class="quiz-pop-select type-01" data-ui="quiz-pop-select" data-option='{"answer":[0]}'>
 						<div class="quiz-cont">
-							<div class="toggle-wrap" data-quiz="toggle">
+							<div class="toggle-wrap">
 								<div class="flex-wrap">
 									<div class="bunsuWrap inline">
 										<ul>
@@ -201,8 +204,8 @@
 											<li>3</li>
 										</ul>
 									</div>
-									<div class="toggle circle" data-toggle-obj="2">
-										<div class="answer" data-toggle-target="2">
+									<div class="toggle circle">
+										<div class="answer">
 											<img src="./images/mm_31_6_05_05_01/inequalIcon_2_blue.png">
 										</div>
 									</div>
@@ -272,13 +275,10 @@
 		<script src="../../../common/js/content.js"></script>
 
 		<script>
-			$('.check-btns .toggle').on("click", function () {
+			$('.quiz-content').on("click", function () {
 				$('.toggle.circle').toggleClass('complete');
-			})
-			$('.toggle.circle').on("click", function () {
-				$(this).toggleClass('complete');
 			})
 		</script>
 	</body>
-
 </html>
+
