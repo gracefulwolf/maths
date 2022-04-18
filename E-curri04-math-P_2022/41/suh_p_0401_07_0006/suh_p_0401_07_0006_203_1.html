@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 
 	<style>
+		.supply_guide.inline{vertical-align: 6px;}
 		.dropArea{display:flex; align-items:center; justify-content:center; position:relative; width:100%; height:120px;}
 		.--flex .lineBox{flex:1; position: relative; min-height: 180px;}
 		.--flex .lineBox:not(:last-of-type){margin-right:20px;}
@@ -36,8 +37,8 @@
 
 <div id="wrap" class="math">
 	<header>
-		<div class="title">
-			전시된 홍보 자료를 보고 칭찬 쪽지를 적어 붙여 보세요. 쓰레기 줄이기 홍보 활동을 하면서 느낀 점을 서로 이야기해 보세요.
+		<div class="title ls0_5">
+			지구를 살려 주세요 프로젝트에 참여한 나의 모습을 되돌아보고 스스로 평가를 해 보세요. <ins class="supply_guide inline">꾸러미 14</ins>
 		</div>
 	</header>
 	<main>
@@ -68,25 +69,25 @@
 						<div class="lineBox sky">
 							<div class="colorBox sky --title">뿌듯했어!</div>
 							<div class="flexListContainer around center">
-								<div class="js-dragObj dragObj dragObj_1 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_2 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_3 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="0" id="dregObj0" class="js-dragObj dragObj dragObj_1 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="1" id="dregObj1" class="js-dragObj dragObj dragObj_2 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="2" id="dregObj2" class="js-dragObj dragObj dragObj_3 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
 							</div>
 						</div>
 						<div class="lineBox green">
 							<div class="colorBox green --title">만족했어!</div>
 							<div class="flexListContainer around center">
-								<div class="js-dragObj dragObj dragObj_4 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_5 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_6 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="3" id="dragObj3" class="js-dragObj dragObj dragObj_4 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="4" id="dragObj4" class="js-dragObj dragObj dragObj_5 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="5" id="dragObj5" class="js-dragObj dragObj dragObj_6 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
 							</div>
 						</div>
 						<div class="lineBox purple">
 							<div class="colorBox purple black --title">성장했어!</div>
 							<div class="flexListContainer around center">
-								<div class="js-dragObj dragObj dragObj_7 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_8 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
-								<div class="js-dragObj dragObj dragObj_9 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="6" id="dragObj6" class="js-dragObj dragObj dragObj_7 dragObj_a" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="7" id="dragObj7" class="js-dragObj dragObj dragObj_8 dragObj_b" data-name="drag-obj" data-drag-obj-answer="0"></div>
+								<div data-num="8" id="dragObj8" class="js-dragObj dragObj dragObj_9 dragObj_c" data-name="drag-obj" data-drag-obj-answer="0"></div>
 							</div>
 						</div>
 					</div>
@@ -121,7 +122,13 @@
 	window.dragDropCallbacks = {
 		"drag-obj": function(DRAGDROP) {
 			if (DRAGDROP.droppedArea) {
-				if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+				let dropAreaElement = DRAGDROP.droppedArea.element;
+				let _rmElement = DRAGDROP.droppedArea.element.children[0];
+				if (DRAGDROP.droppedArea.element.children.length > 1){
+					_rmElement.remove();
+					document.querySelector( "#" + _rmElement.id ).classList.remove( "dragObjComplete" );
+					DRAGDROP.dragObjs[_rmElement.dataset.num].DISABLED = false;
+				}
 			}
 
 			if(DRAGDROP.quiz.TOTAL_COUNT == "3"){
