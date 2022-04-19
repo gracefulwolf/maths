@@ -10,10 +10,9 @@
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style type="text/css">
 header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background: transparent;}
-.basicSlider_slides section {padding-right:0}
-.basicSlider_slides .answer {width:100%;text-align:justify}
-.basicSlider.contentsBox {padding:0}
-
+h2 img {vertical-align: middle;margin: -7px 0 0 0;}
+.basicSlider_slides section {padding: 0;}
+.contentsBox .contentsBox {padding: 0;}
 .flex-wrap {align-items:center;height:480px}
 .flex-item.n1 {flex: 2;text-align: center;}
 .flex-item.n1 .toggle-wrap {display: flex;align-items: center;justify-content: center;margin-top: 20px;}
@@ -31,9 +30,14 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 .innerTab_2 .flex-item.n1 .img-wrap .answer.on img {opacity: 0;}
 .innerTab_2 .flex-item.n1 .img-wrap .answer img.on {opacity: 1;}
 .innerTab_2 .toggle.noBg.n1::after {display: none;}
-.click-finger-Btn{z-index: 4;}
-.click-finger-Btn.n1 {top: 145px;left: 138px;}
-.click-finger-Btn.n2 {top: 145px;left: 455px;}
+.innerTab_2 .flexListContainer img {position: relative;}
+.innerTab_2 .flexListContainer .bullet.exam {opacity: 0;}
+.innerTab_2 .flexListContainer .bullet.exam.on {opacity: 1;}
+.innerTab_2 .flexListContainer .bullet.exam.n1 {position: absolute;top: 0;left: 0;}
+.innerTab_2 .flexListContainer .bullet.exam.n2 {position: absolute;top: 0;left: 310px;}
+.click-finger-Btn{z-index: 1;}
+.click-finger-Btn.n1 {top: 145px;left: 135px;}
+.click-finger-Btn.n2 {top: 145px;left: 452px;}
 .click-finger-Btn.complete {opacity: 0;animation: none;}
 </style>
 </head>
@@ -43,8 +47,8 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 	<header>
 		<div class="title">
 			두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png"
-				height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img
-				src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
+				height="11">, <img src="../common/contents/images/math/equalIcon.png" height="30">, <img
+				src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣어 봅시다.
 		</div>
 	</header>
 	<main>
@@ -112,11 +116,13 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 											<span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
 											<span class="click-finger-Btn blinkOn blinkOpacity n2" data-toggle-obj="2"></span>
 											<div class="flexListContainer">
+												<div class="bullet exam n1" data-toggle-target="1">예</div>
 												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
 												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
 											</div>
-											<div class="answer" data-toggle-target="1">
+											<div class="answer" data-toggle-target="2">
 												<div class="flexListContainer">
+													<div class="bullet exam n2" data-toggle-target="1">예</div>
 													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_3.png" alt="" data-toggle-target="1">
 													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_4.png" alt="" data-toggle-target="2">
 												</div>
@@ -191,7 +197,7 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 					name: 'boy_1',
 					speech: 'right',
 					circle: 'sky',
-					top: 20,
+					top: 40,
 					left: 0,
 					width: 340,
 					height: 421,
@@ -205,8 +211,8 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 					textBubble: {
 						text: '색칠한 부분을<br>분수로 나타내<br>보자.',
 						class: 'balloon bottom sky ctTail',
-						top: -180,
-						left: 40,
+						top: -158,
+						left: 50,
 						textAlign: 'center',
 						wordBreak: 'keep-all'
 					},
@@ -229,7 +235,7 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 					name: 'girl_1',
 					speech: 'right',
 					circle: 'pink',
-					top: 20,
+					top: 40,
 					left: 0,
 					width: 340,
 					height: 421,
@@ -243,8 +249,8 @@ header .title .toggleBlank {width: 38px;height: 38px;margin-top: 8px;background:
 					textBubble: {
 						text: '주어진 분수만큼<br>색칠해 보자.',
 						class: 'balloon bottom pink ctTail',
-						top: -140,
-						left: 25,
+						top: -115,
+						left: 30,
 						textAlign: 'center',
 						wordBreak: 'keep-all'
 					},
