@@ -10,93 +10,97 @@
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style>
-.gate_container .downloadBtn {right:20px;left:auto}
-.checkContainer .contentsBox h2+section {padding-left:30px}
-.checkContainer .contentsBox h2+section .downloadBtn {left:0;bottom:10px}
+	.gate_container .downloadBtn {right:20px;left:auto}
+	.checkContainer .contentsBox h2+section {padding-left:30px}
+	.checkContainer .contentsBox h2+section .downloadBtn {left:0;bottom:10px}
+	
+	.study_guide {top: -50px;}
+	.dragLineContainer {height: 400px;}
+	.dragLineContainer > ul {display: flex;flex-direction: column;justify-content: space-around;}
+	.dragLineContainer .left, .dragLineContainer .center, .dragLineContainer .right {height: 380px;}
+	.dragLineContainer .left > li, .dragLineContainer .center > li, .dragLineContainer .right > li {min-height: 90px;min-width: 90px;border-radius: 8px;display:flex;align-items:center;justify-content:center;padding:10px 15px;}
+	.page_1 .dragLineContainer .left > li {background-color: #fccd89;}
+	.page_1 .dragLineContainer .center > li {background-color: #cabfe0;}
+	.page_1 .dragLineContainer .right > li {background-color: #d4f3f6;}
+	.page_4 .dragLineContainer .left > li {background-color: #ffece2;}
+	.page_4 .dragLineContainer .center > li {background-color: #D4F3F6;}
+	.page_4 .dragLineContainer .right > li {background-color: #f6f1d4;}
+	.dragLineContainer > ul > li img {width: 100%;vertical-align: top;}
+	.top_1 {top: 63px;}
+	.top_2 {top: 192px;}
+	.top_3 {top: 319px;}
+	.left_1 {left: 155px;}
+	.left_2 {left: 399px;}
+	.left_3 {left: 559px;}
+	.left_4 {left: 805px;}
+	
+	header .title .supply_guide.inline {top:8px}
+	.ex-box {display:flex}
+	.ex-box .bullet.exam {flex-shrink:0}
+	.basicSlider_slides  section {padding-right:0}
+	.basicSlider_slides .answer {width:100%;text-align:justify}
+	.basicSlider.contentsBox.doItContent {padding:0 0 0 30px}
+	
+	.page_2 .textAlignC {position: relative;margin-top: 120px;}
+	.page_2 .textAlignC img {width: 100%;}
+	.page_2 .flex-wrap {position: absolute;justify-content: space-between;width: 100%;}
+	.page_2 .flex-wrap.n1 {top: -40px;left: -8px;}
+	.page_2 .flex-wrap.n2 {top: 50px;left: -8px;}
+	.page_2 .flex-wrap.n3 {top: -75px;left: 74px;width: calc(100% - 160px);}
+	.page_2 .flex-wrap.n3 .toggle {padding: 2px 8px;}
+	.page_2 .flex-wrap.n4 {top: 55px;left: 80px;width: calc(100% - 160px);}
+	
+	.page_3	section {padding: 0 !important;}
+	.page_3 h2 {margin-bottom: 10px !important;}
+	.page_3	.flex-wrap {position: relative;justify-content: space-between;align-items: center;width: 730px;margin: 0 auto 20px;}
+	.page_3	.flex-wrap img:nth-child(1) {width: 200px;}
+	.page_3	.flex-wrap img:nth-child(2) {width: 300px;}
+	.page_3	.flexListContainer {padding: 0 115px 0 65px;box-sizing: border-box;}
+	.page_3	.flexListContainer > li {display: flex;}
+	.page_3	.flexListContainer li .lineBox {position: relative;width: 160px;height: 180px;}
+	.page_3	.flexListContainer li .lineBox .toggle {width: 100%;height: 100%;}
+	.page_3	.flexListContainer li .lineBox .toggle .answer {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);text-align: center;}
+	.page_3	.flexListContainer li .lineBox + .lineBox {margin-left: 15px;}
+	.page_3	.flexListContainer li .lineBox .nameBox {position: absolute;top: -20px;left: 50%;width: 80px;padding: 6px;transform: translateX(-50%);}
+	
+	.page_4 .lineBox.green img {vertical-align:middle}
+	.page_4 .bunsuWrap .toggle {margin:4px 0}
+	
+	.page_5 .flex-box .colorBox {padding: 30px;margin: 0 20px;font-size: 40px;line-height: 40px;}
+	.page_5 .flex-box .toggle .answer {text-align: center;}
 
-.study_guide {top: -50px;}
-.dragLineContainer {height: 400px;}
-.dragLineContainer > ul {display: flex;flex-direction: column;justify-content: space-between;}
-.dragLineContainer .left, .dragLineContainer .center, .dragLineContainer .right {height: 365px;}
-.dragLineContainer .left > li, .dragLineContainer .center > li, .dragLineContainer .right > li {min-height: 86px;min-width: 90px;border-radius: 8px;display:flex;align-items:center;justify-content:center;padding:10px 15px;}
-.page_1 .dragLineContainer .left > li {background-color: #fccd89;}
-.page_1 .dragLineContainer .center > li {background-color: #cabfe0;}
-.page_1 .dragLineContainer .right > li {background-color: #d4f3f6;}
-.page_4 .dragLineContainer .left > li {background-color: #ffece2;}
-.page_4 .dragLineContainer .center > li {background-color: #D4F3F6;}
-.page_4 .dragLineContainer .right > li {background-color: #f6f1d4;}
-.dragLineContainer .left  {height:384px;}
-.dragLineContainer > ul > li img {width: 100%;vertical-align: top;}
-.top_1 {top: 45px;}
-.top_2 {top: 183px;}
-.top_3 {top: 322px;}
-.left_1 {left: 134px;}
-.left_2 {left: 388px;}
-.left_3 {left: 549px;}
-.left_4 {left: 806px;}
+	.page_6 .addLineContainer {top: 215px;}
+	.page_6 .con {position: relative;text-align: center;margin: 100px 0 40px 0;}
+	.page_6 .boxCon {position: relative;display: inline-block;vertical-align: middle;text-align: left;}
+	.page_6 .boxCon_1 {margin-bottom: 5px;}
+	.page_6 .nemoBox {position: relative;box-sizing: border-box;}
+	.page_6 .boxCon .nemoBox_3_1 {width: 1000px;height: 80px;border: 3px solid #000000;background-color: #D7E4BD;}
+	.page_6 .boxCon .nemoBox_3_1 .nemoBoxInner {position: relative;display: inline-block;width: 100px;height: 74px;border-right: 3px dotted #000000;background-color: transparent;}
+	.page_6 .boxCon .line_1 {position: absolute;top: -70px;left: 0px;}
+	.page_6 .boxCon .line_1 .imgText {position: absolute;top: -25px;left: 456px;}
+	.page_6 .qCon {text-align: center;}
+	.page_6 .qCon .calCon:first-child {margin-right: 50px;}
+	.page_6 .calCon {display: inline-block;vertical-align: middle;}
+	.page_6 .calCon > div {display: inline-block;vertical-align: middle;}
+	.page_6 .calCon .toggle {width: auto;}
+	.page_6 .addLineController {top:10px;}
+	
+	.page_7 .textAlignC {position: relative;margin-top: 120px;}
+	.page_7 .textAlignC img {width: 100%;}
+	.page_7 .flex-wrap {position: absolute;justify-content: space-between;width: 100%;}
+	.page_7 .flex-wrap.n1 {top: -32px;left: -8px;}
+	.page_7 .flex-wrap.n2 {top: 50px;left: -8px;}
+	.page_7 .flex-wrap.n3 {top: -75px;left: 74px;width: calc(100% - 160px);}
+	.page_7 .flex-wrap.n3 .toggle {padding: 2px 8px;}
+	.page_7 .flex-wrap.n4 {top: 55px;left: 65px;width: calc(100% - 142px);}
+	
+	.characterList>li .balloon{font-size: 35px;padding:5px;}
+	.characterImg.new-character.circle{width:120px;height:120px;}
 
-header .title .supply_guide.inline {top:8px}
-.ex-box {display:flex}
-.ex-box .bullet.exam {flex-shrink:0}
-.basicSlider_slides  section {padding-right:0}
-.basicSlider_slides .answer {width:100%;text-align:justify}
-.basicSlider.contentsBox.doItContent {padding:0 0 0 30px}
-
-.page_2 .textAlignC {position: relative;margin-top: 120px;}
-.page_2 .textAlignC img {width: 100%;}
-.page_2 .flex-wrap {position: absolute;justify-content: space-between;width: 100%;}
-.page_2 .flex-wrap.n1 {top: -40px;left: -8px;}
-.page_2 .flex-wrap.n2 {top: 50px;left: -8px;}
-.page_2 .flex-wrap.n3 {top: -75px;left: 74px;width: calc(100% - 160px);}
-.page_2 .flex-wrap.n3 .toggle {padding: 2px 8px;}
-.page_2 .flex-wrap.n4 {top: 55px;left: 80px;width: calc(100% - 160px);}
-
-.page_3	section {padding: 0 !important;}
-.page_3 h2 {margin-bottom: 10px !important;}
-.page_3	.flex-wrap {position: relative;justify-content: space-between;align-items: center;width: 730px;margin: 0 auto 20px;}
-.page_3	.flex-wrap img:nth-child(1) {width: 200px;}
-.page_3	.flex-wrap img:nth-child(2) {width: 300px;}
-.page_3	.flexListContainer {padding: 0 115px 0 65px;box-sizing: border-box;}
-.page_3	.flexListContainer > li {display: flex;}
-.page_3	.flexListContainer li .lineBox {position: relative;width: 160px;padding: 45px 45px;}
-.page_3	.flexListContainer li .lineBox + .lineBox {margin-left: 15px;}
-.page_3	.flexListContainer li .lineBox .toggle {margin-top: 10px;}
-.page_3	.flexListContainer li .lineBox:nth-child(2) .toggle {margin-top: 27px;}
-.page_3	.flexListContainer li .lineBox .nameBox {position: absolute;top: -20px;left: 50%;width: 80px;padding: 6px;transform: translateX(-50%);}
-
-.page_4 .lineBox.green img {vertical-align:middle}
-.page_4 .bunsuWrap .toggle {margin:4px 0}
-
-.page_5 .flex-box .colorBox {padding: 30px;margin: 0 20px;font-size: 40px;line-height: 40px;}
-
-.page_6 .addLineContainer {top: 215px;}
-.page_6 .con {position: relative;text-align: center;margin: 100px 0 40px 0;}
-.page_6 .boxCon {position: relative;display: inline-block;vertical-align: middle;text-align: left;}
-.page_6 .boxCon_1 {margin-bottom: 5px;}
-.page_6 .nemoBox {position: relative;box-sizing: border-box;}
-.page_6 .boxCon .nemoBox_3_1 {width: 1000px;height: 80px;border: 3px solid #000000;background-color: #D7E4BD;}
-.page_6 .boxCon .nemoBox_3_1 .nemoBoxInner {position: relative;display: inline-block;width: 100px;height: 74px;border-right: 3px dotted #000000;background-color: transparent;}
-.page_6 .boxCon .line_1 {position: absolute;top: -70px;left: 0px;}
-.page_6 .boxCon .line_1 .imgText {position: absolute;top: -25px;left: 456px;}
-.page_6 .qCon {text-align: center;}
-.page_6 .qCon .calCon:first-child {margin-right: 50px;}
-.page_6 .calCon {display: inline-block;vertical-align: middle;}
-.page_6 .calCon > div {display: inline-block;vertical-align: middle;}
-.page_6 .calCon .toggle {width: 170px;}
-.page_6 .addLineController {top:10px;}
-
-.page_7 .textAlignC {position: relative;margin-top: 120px;}
-.page_7 .textAlignC img {width: 100%;}
-.page_7 .flex-wrap {position: absolute;justify-content: space-between;width: 100%;}
-.page_7 .flex-wrap.n1 {top: -40px;left: -8px;}
-.page_7 .flex-wrap.n2 {top: 50px;left: -8px;}
-.page_7 .flex-wrap.n3 {top: -75px;left: 74px;width: calc(100% - 160px);}
-.page_7 .flex-wrap.n3 .toggle {padding: 2px 8px;}
-.page_7 .flex-wrap.n4 {top: 55px;left: 80px;width: calc(100% - 160px);}
-
-.characterList>li .balloon{font-size: 35px;padding:5px;}
-.characterImg.new-character.circle{width:120px;height:120px;}
-</style>
+	.solve.pop_page_1 .contentsList .dot,
+	.solve.pop_page_2 .contentsList .dot,
+	.solve.pop_page_3 .contentsList .dot {margin: .95em 10px 0 0;}
+	</style>
 </head>
 
 <body>
@@ -201,12 +205,12 @@ header .title .supply_guide.inline {top:8px}
                             <div class="js-dragLineArea dragLineArea left_3 top_3" data-group="3" data-name="dragLine9" data-answer="6"></div>
                             <div class="js-dragLineObj dragLineObj left_3 top_3" data-group="3" data-name="dragLine9" data-answer="6" data-complete-count="1"></div>
 
-                            <div class="js-dragLineArea dragLineArea left_4 top_1" data-group="4" data-name="dragLine10" data-answer="4"></div>
-                            <div class="js-dragLineObj dragLineObj left_4 top_1" data-group="4" data-name="dragLine10" data-answer="4" data-complete-count="1"></div>
+                            <div class="js-dragLineArea dragLineArea left_4 top_1" data-group="4" data-name="dragLine10" data-answer="5"></div>
+                            <div class="js-dragLineObj dragLineObj left_4 top_1" data-group="4" data-name="dragLine10" data-answer="5" data-complete-count="1"></div>
                             <div class="js-dragLineArea dragLineArea left_4 top_2" data-group="4" data-name="dragLine11" data-answer="6"></div>
                             <div class="js-dragLineObj dragLineObj left_4 top_2" data-group="4" data-name="dragLine11" data-answer="6" data-complete-count="1"></div>
-                            <div class="js-dragLineArea dragLineArea left_4 top_3" data-group="4" data-name="dragLine12" data-answer="5"></div>
-                            <div class="js-dragLineObj dragLineObj left_4 top_3" data-group="4" data-name="dragLine12" data-answer="5" data-complete-count="1"></div>
+                            <div class="js-dragLineArea dragLineArea left_4 top_3" data-group="4" data-name="dragLine12" data-answer="4"></div>
+                            <div class="js-dragLineObj dragLineObj left_4 top_3" data-group="4" data-name="dragLine12" data-answer="4" data-complete-count="1"></div>
                         </div>
 						<a href="./data/(3-1-6)형성평가2_07차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
                         <div class="buttonContainer">
@@ -323,7 +327,7 @@ header .title .supply_guide.inline {top:8px}
 					</section>
 				</li>
 				<li class="page_3" data-quiz="toggle">
-					<h2><ins class="dot"></ins><span>색칠한 부분을 보고 <span class="blankBox"></span> 안에 알맞은 수나 말을 써넣으시오.</span></h2>
+					<h2><ins class="dot"></ins><span>색칠한 부분을 분수와 소수로 나타내 보시오.</span></h2>
 					<section>
 						<div class="flex-wrap">
 							<img src="./images/suh_p_0301_06_0007_401_1/suh_p_0301_06_0007_401_1_2.png" alt="">
@@ -420,11 +424,11 @@ header .title .supply_guide.inline {top:8px}
                                 <ul class="center">
                                     <li>0.5</li>
                                     <li>0.3</li>
-                                    <li>0.9</li>
+                                    <li>0.8</li>
                                 </ul>
                                 <ul class="right">
                                     <li>영 점 오</li>
-                                    <li>영 점 구</li>
+                                    <li>영 점 팔</li>
                                     <li>영 점 삼</li>
                                 </ul>
                             </div>
@@ -628,8 +632,8 @@ header .title .supply_guide.inline {top:8px}
 										</div>
 									</div>
 								</div>
-								<div>0.4</div>
 								<div>0.3</div>
+								<div>0.4</div>
 								<div>0.5</div>
 								<div>0.6</div>
 								<div>0.7</div>
@@ -678,7 +682,7 @@ header .title .supply_guide.inline {top:8px}
                                         <div class="answer" data-toggle-target="1">
 											<div class="bunsuWrap inline">
 												<ul>
-													<li>1</li>
+													<li>7</li>
 													<li>10</li>
 												</ul>
 											</div>＝0.7
@@ -721,7 +725,7 @@ header .title .supply_guide.inline {top:8px}
 										<li>4</li>
 										<li>10</li>
 									</ul>
-								</div>은 소수로 0.7이고 영 점 사이라고 읽습니다.
+								</div>은 소수로 0.4이고 영 점 사라고 읽습니다.
 							</div>
 						</li>
 						<li>
@@ -732,7 +736,7 @@ header .title .supply_guide.inline {top:8px}
 										<li>9</li>
 										<li>10</li>
 									</ul>
-								</div>은 소수로 0.7이고 영 점 구이라고 읽습니다.
+								</div>은 소수로 0.9이고 영 점 구라고 읽습니다.
 							</div>
 						</li>
 					</ul>
@@ -750,8 +754,7 @@ header .title .supply_guide.inline {top:8px}
 										<li>3</li>
 										<li>10</li>
 									</ul>
-								</div>
-								이고 소수로 나타내면 0.3입니다.
+								</div>이고 소수로 나타내면 0.3입니다.
 							</div>
 						</li>
 						<li>
@@ -763,8 +766,7 @@ header .title .supply_guide.inline {top:8px}
 										<li>8</li>
 										<li>10</li>
 									</ul>
-								</div>
-								이고 소수로 나타내면 0.8입니다.
+								</div>이고 소수로 나타내면 0.8입니다.
 							</div>
 						</li>
 					</ul>
@@ -792,7 +794,7 @@ header .title .supply_guide.inline {top:8px}
 										<li>5</li>
 										<li>10</li>
 									</ul>
-								</div>는 소수로 0.7이고 영 점 사이라고 읽습니다.
+								</div>는 소수로 0.5이고 영 점 오라고 읽습니다.
 							</div>
 						</li>
 						<li>
@@ -835,8 +837,7 @@ header .title .supply_guide.inline {top:8px}
 							<li>7</li>
 							<li>10</li>
 						</ul>
-					</div>
-					이고 소수로 나타내면 0.7입니다.
+					</div>이고 소수로 나타내면 0.7입니다.
 				</div>
 			</li>
 		</ul>
@@ -864,6 +865,9 @@ header .title .supply_guide.inline {top:8px}
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
+		$(".controlBtn").click(function () {
+				$efSound.click();
+			})
 	}, false);
 </script>
 </body>

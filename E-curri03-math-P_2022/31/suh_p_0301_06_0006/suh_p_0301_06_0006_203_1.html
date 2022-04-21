@@ -10,28 +10,27 @@
 <link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 <style type="text/css">
 .basicSlider_slides section {padding-right:0}
-
-.iframe-wrap{
-	width: 1170px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 548px;
-	overflow: hidden;
-}
-.page-iframe {
-    width: 1280px;
-    height: 714px;
-    overflow: hidden;
-    border: 0;
-    position: absolute;
-    z-index: 1;
-    top: -130px;
-    left: -12px;
-}
-.buttonContainer {
-	right: 226px;
-}
+.flex-wrap.bg {justify-content: space-between;align-items: center;height: calc(100% - 150px);padding: 0 30px;}
+.flex-wrap.bg .img-wrap {position: relative;}
+.flex-wrap.bg .img-wrap .bullet.exam {position: absolute;top: -45px;left: 0;}
+.flex-wrap.bg .img-wrap .click-finger-Btn {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.flex-wrap.bg .img-wrap .click-finger-Btn.complete {opacity: 0;animation: none;}
+.flex-wrap.bg .flex-item {text-align: center;}
+.flex-wrap.bg .flex-item .toggle.noBg:after {display: none;}
+.flex-wrap.bg .flex-item.n3 .toggle.noBg.complete .answer > img {height: 286px;}
+.flex-wrap.bg .flex-item.n1 .toggle.noBg,
+.flex-wrap.bg .flex-item.n3 .toggle.noBg {position: relative;}
+.flex-wrap.bg .flex-item.n1 .toggle.noBg img,
+.flex-wrap.bg .flex-item.n3 .toggle.noBg img {position: relative;width: 280px;}
+.flex-wrap.bg .flex-item.n1 .toggle.noBg .answer img,
+.flex-wrap.bg .flex-item.n3 .toggle.noBg .answer img {position: absolute;top: 0;left: 0;opacity: 0;}
+.flex-wrap.bg .flex-item.n1 .toggle.noBg .answer.on img,
+.flex-wrap.bg .flex-item.n3 .toggle.noBg .answer.on img  {opacity: 1;}
+.flex-wrap.bg .flex-item.n2 {position: relative;top: 200px;display: flex;justify-content: center;}
+.flex-wrap.bg .flex-item.n2 .flex-wrap {align-items: center;}
+.flex-wrap.bg .flex-item.n2 .flex-wrap .toggle {margin: 0 10px;}
+.flex-wrap.bg .toggle.noBg {position: relative;}
+.flex-wrap.bg .toggle.noBg .bullet.exam {position: absolute;top: 0;left: -30px;}
 </style>
 </head>
 
@@ -53,14 +52,65 @@
 			</div>을 그림에 나타내고, 크기를 비교해 봅시다.</div>
 	</header>
 	<main>
-		<div class="contentsBox">
-			<div class="iframe-wrap">
+		<div class="contentsBox" data-quiz="toggle">
+			<!-- <div class="iframe-wrap">
 				<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_05_01.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
-			</div>
-			<div class="buttonContainer">
-				<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
-				<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
-			</div>
+			</div> -->
+			<section>
+				<div class="flex-wrap bg">
+					<div class="flex-item n1">
+						<div class="toggle noBg" data-toggle-obj="1">
+							<div class="img-wrap">
+								<img src="./images/suh_p_0301_06_0006_203_1/suh_p_0301_06_0006_203_1_1.png" alt="">
+								<span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
+							</div>
+							<div class="answer" data-toggle-target="1">
+								<div class="bullet exam n1">예</div>
+								<img src="./images/suh_p_0301_06_0006_203_1/suh_p_0301_06_0006_203_1_2.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="flex-item n2">
+						<div class="flex-wrap">
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>3</li>
+								</ul>
+							</div>
+							<div class="toggle circle" data-toggle-obj="3">
+								<div class="answer" data-toggle-target="3">
+									<img src="../common/contents/images/math//inequalIcon_blue.png">
+								</div>
+							</div>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>6</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item n3">
+						<div>
+							<div class="toggle noBg" data-toggle-obj="2">
+								<div class="img-wrap">
+									<img src="./images/suh_p_0301_06_0006_203_1/suh_p_0301_06_0006_203_1_1.png" alt="">
+									<span class="click-finger-Btn blinkOn blinkOpacity n2" data-toggle-obj="2"></span>
+								</div>
+								<div class="answer" data-toggle-target="2">
+									<div class="bullet exam n2">예</div>
+									<img src="./images/suh_p_0301_06_0006_203_1/suh_p_0301_06_0006_203_1_3.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buttonContainer">
+					<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+					<button class="dapCheckBtn" data-answer-btn=""></button>
+				</div>
+			</section>
 		</div>
 	</main>
 	<section class="popup_container" data-popup-container="">

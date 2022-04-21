@@ -34,7 +34,7 @@
 
 		.bgContainer {
 			width: 100%;
-			margin-top: 50px;
+			margin-top: 10px;
 		}
 
 		.bgContainer .colorBox {
@@ -132,10 +132,6 @@
 					<li class="page_1" data-quiz="toggle">
 						<h2><ins class="dot"></ins><span>종이 개구리가 뛴 거리를 나타내 보세요.</span></h2>
 						<section>
-							<!-- <div class="iframe-wrap">
-								<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_08_03_01.html" title=""
-									class="page-iframe" id="ifm1" scrolling="no"></iframe>
-							</div> -->
 							<div class="bgContainer">
 								<div class="flex-wrap">
 									<div class="colorBox green inline">0.4 m</div>
@@ -170,6 +166,9 @@
 										</div>
 									</div>
 								</div>
+							</div>
+							<div class="textAlignC">
+								<div id="aniBox_1" class="flexListContainer center jcenter"></div>
 							</div>
 						</section>
 						<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -221,8 +220,8 @@
 						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
 					<li class="page_3" data-quiz="toggle">
-						<h2><ins class="dot"></ins><span>
-							두 소수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">,<img src="../common/contents/images/math/equalIcon.png" height="30">,<img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
+						<h2 style="letter-spacing: -1.5px;"><ins class="dot"></ins><span>
+							두 소수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img src="../common/contents/images/math/equalIcon.png" height="11">, <img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으세요.
 						</span></h2>
 						<section>
 							<div class="bgContainer">
@@ -283,9 +282,48 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			// 	window.$callBack.sliderMove=function(SLIDER) {
-			// 	document.getElementById('ifm1').contentDocument.location.reload(true);
-			// }
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_3',
+						speech: 'right',
+						circle: 'deeppink',
+						top: 290,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/girl_3.png',
+						spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+						sound: './media/audios/suh_p_0301_06_0009_201_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '1 m는 0.1 m가 10개야.',
+							class: 'balloon left orange ctTail',
+							top: 336,
+							left: 447,
+							textAlign: 'center',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							start: function () {
+								$ts.getEl('.characterImg')[0].style.left = '-200px';
+							}, // 시작시 콜백
+							end: function () {
+								$ts.getEl('.characterImg')[0].style.left = 0;
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+			window.$callBack.sliderReset = function (params) {
+				$ts.getEl('.characterImg')[0].style.left = 0;
+			};
 		}, false);
 	</script>
 </body>

@@ -13,6 +13,10 @@
 	.flexListContainer {height: calc(100% - 100px);padding-left: 40px;}
 	.flexListContainer .contentsList > li {position: relative;padding-left: 25px;}
 	.flexListContainer .contentsList > li .bullet {position: absolute;top: 50%;left: 0;transform: translateY(-50%);margin: 0;}
+	.flexListContainer .flex-wrap {align-items: center;}
+	.flexListContainer .bunsuWrap.double {width: 90px;}
+	.flexListContainer .bunsuWrap.double .line {width: 80px;height: 2px;background: #000;margin: 6px 0;}
+	.flexListContainer .bunsuWrap.double .toggle {min-width: 80px;}
 	.bunsuToggle {padding: 6px;}
 	.dapCheckBtn {right:56px}
 </style>
@@ -37,8 +41,7 @@
 									<li>9</li>
 									<li>10</li>
 								</ul>
-							</div>
-							는 소수로              
+							</div>는 소수로              
 							<div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">
 									0.9
@@ -59,25 +62,30 @@
 					</li>
 					<li>
 						<ins class="bullet circleDot"></ins>
-						<div>           
-							<div class="toggle bunsuToggle" data-toggle-obj="3">
-								<div class="answer" data-toggle-target="3">
-									<div class="bunsuWrap inline">
-										<ul>
-											<li>3</li>
-											<li>10</li>
-										</ul>
+						<div> 
+							<div class="flex-wrap">
+								<div class="bunsuWrap double">
+									<div class="toggle bunsuToggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">
+											3
+										</div> 
 									</div>
-								</div> 
-							</div>은/는 소수로 0.3입니다.
+									<div class="line"></div>
+									<div class="toggle bunsuToggle" data-toggle-obj="4">
+										<div class="answer" data-toggle-target="4">
+											10
+										</div> 
+									</div>
+								</div>은/는 소수로 0.3입니다.
+							</div>
 						</div>
 					</li>
 					<li>
 						<ins class="bullet circleDot"></ins>
 						<div>
 							0.4는 0.1이           
-							<div class="toggle" data-toggle-obj="3">
-								<div class="answer" data-toggle-target="3">
+							<div class="toggle" data-toggle-obj="5">
+								<div class="answer" data-toggle-target="5">
 									4
 								</div> 
 							</div>개입니다.

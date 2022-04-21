@@ -121,6 +121,16 @@
 			border-radius: 0 0 10px 10px;
 		}
 
+		.flex-wrap .flex-item.n2 .flex-wrap {
+			position: relative;
+		}
+		.flex-wrap .flex-item.n2 .flex-wrap input{
+			position: absolute;
+			left: 5px;
+			width: 42px;
+			z-index: 1;
+		}
+		
 		.flex-wrap .table-wrap {
 			display: flex;
 			flex-wrap: wrap;
@@ -132,11 +142,11 @@
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title">주변에 있는 물건의 길이를 재고 짝과 함께 표를 완성해 봅시다.</div>
+			<div class="title">짝과 함께 학용품의 길이를 재어 길이를 비교해 봅시다.</div>
 		</header>
 		<main>
 			<div class="contentsBox">
-				<div class="study_guide">직접 쓸 수 있습니다.</div>
+				<div class="study_guide">직접 <em>쓸 수</em> 있습니다.</div>
 				<section>
 					<div class="flex-wrap">
 						<div class="flex-item n1">
@@ -204,12 +214,22 @@
 									<img src="../common/contents/images/math/inequalIcon.png">
 								</li>
 								<li>
-									<span class="toggleBlank circle"></span>
-									<img src="../common/contents/images/math/inequalIcon_2_blue.png" data-input-obj="1" data-answer="&nbsp;">
+									<div class="flex-wrap">
+										<span class="toggleBlank circle"></span>
+										<img src="../common/contents/images/math/inequalIcon_2_blue.png">
+										<input type="text" class="center" placeholder="" data-input-obj=""
+										data-answer="&nbsp;" onfocus="placeholder=''"
+										onblur="placeholder=''" autocomplete="off">
+									</div>
 								</li>
 								<li>
-									<span class="toggleBlank circle"></span>
-									<img src="../common/contents/images/math/equalIcon_blue.png" data-input-obj="1" data-answer="&nbsp;">
+									<div class="flex-wrap">
+										<span class="toggleBlank circle"></span>
+										<img src="../common/contents/images/math/equalIcon_blue.png">
+										<input type="text" class="center" placeholder="" data-input-obj=""
+										data-answer="&nbsp;" onfocus="placeholder=''"
+										onblur="placeholder=''" autocomplete="off">
+									</div>
 								</li>
 							</ul>
 						</div>
