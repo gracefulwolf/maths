@@ -116,58 +116,15 @@
 					</div>
 				</div>
 
-				<!-- 좌측 하단 선택 활동 버튼 -->
-				<div class="btns-bottom-left">
-					<div class="button btn-mission-select btn-mission-select-01"><span>선택 활동</span></div>
-				</div>
-
+	
 
 				<!-- 색칠하세요 :: 드로잉 툴 -->
 				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
 
-				<!-- 하단 탭 -->
-				<ul class="bottom-tabs" data-ui="tabs" data-option='{"list":["video",1,2,3]}'></ul>
+			
 
 			</div>
 
-			<!-- 팝업 :: 선택 활동 퀴즈 -->
-			<div class="popup popup-mission type-quiz" data-ui="popup" data-option='{"btn":".btn-mission-select-01"}'>
-				<div class="bg"></div>
-
-				<div class="app-select-quiz" data-ui="app-select-quiz" data-option='{}'>
-
-					<div class="intro-cont">
-						<div class="title">
-							똑같이 나누어 볼까요?
-						</div>
-						<div class="btn-start"></div>
-					</div>
-	
-					<div class="quiz-cont">
-						<div class="app-ccAnimation" 
-							data-ui="app-ccAnimation" data-option='{"width":1280, "height":720, "left": "0px", "top": "0px", "buttons":[]}'>
-							<canvas></canvas>
-						</div>
-
-						<div class="chra-right"></div>
-						<div class="chra-left">
-							<div class="text-ball"></div>
-						</div>
-
-						<div class="btn-hat"></div>
-						<div class="btn-ok"></div>
-					</div>
-
-					<div class="ending-cont">
-						<div class="ending-ani"></div>
-					</div>
-
-				</div>
-
-				<!-- 닫기 버튼 -->
-				<div class="button btn-close ico-close-01"></div>
-
-			</div>
 
 
 		</div>
@@ -205,7 +162,34 @@
 		<script src="../../../../../js/binder_web.min.js"></script>
 		<script src="../../../common/js/content.js"></script>
 
+		<script>
+			(function(){
 
+				var n = 0;
+				var btn = document.querySelector('.btn-ex');
+				btn.addEventListener('click', function(){
+					n= 0;
+				});
+				document.querySelector('#quiz-01 .check-item').addEventListener('click', function(){
+					n = n + 1;
+					if (n === 2) {
+						btn.click();
+						n = 0;
+					}
+				});
+				document.querySelector('#quiz-02 .check-item').addEventListener('click', function(){
+					n = n + 1;
+					if (n === 2) {
+						btn.click();
+						n = 0;
+					}
+				});
+
+
+			})();
+
+
+		</script>
 	</body>
 
 </html>
