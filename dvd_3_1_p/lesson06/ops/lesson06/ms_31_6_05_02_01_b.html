@@ -95,10 +95,16 @@
 			top: 90px;
     		left: 639px;
 		}
-		.app-drawing-tool .ico-info{ 
-			pointer-events: none;
-			opacity: .5;
-		}
+		.btns-bottom-right {
+    right: 48px;
+    bottom: 0;
+}
+
+.content-container{
+	
+    height: 748px;
+    
+}
 	</style>
 </head>
 
@@ -133,7 +139,7 @@
 							<div class="hide-bg n2"></div>
 							<img src="./images/ms_31_6_05_02_01/bg.svg" alt="" width="1280" height="790" />
 						</div>
-						<div id="image-quiz-01" class="quiz quiz-check image-answer abs active" data-ui="quiz-check"
+						<div id="image-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
 							data-option='{"answer":[]}'>
 							<div class="answer">
 								<div class="exam-wrap n1">
@@ -143,7 +149,7 @@
 								<img src="./images/ms_31_6_05_02_01/answer_01.svg" alt="" width="1280" height="720">
 							</div>
 						</div>
-						<div id="image-quiz-02" class="quiz quiz-check image-answer abs active" data-ui="quiz-check"
+						<div id="image-quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
 							data-option='{"answer":[]}'>
 							<div class="answer">
 								<div class="exam-wrap n2">
@@ -152,7 +158,7 @@
 								<img src="./images/ms_31_6_05_02_01/answer_02.svg" alt="" width="1280" height="720">
 							</div>
 						</div>
-						<div id="image-quiz-03" class="quiz quiz-check image-answer abs active" data-ui="quiz-check"
+						<div id="image-quiz-03" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
 							data-option='{"answer":[]}'>
 							<div class="answer">
 								<div class="exam-wrap n3">
@@ -161,7 +167,7 @@
 								<img src="./images/ms_31_6_05_02_01/answer_03.svg" alt="" width="1280" height="720">
 							</div>
 						</div>
-						<div id="image-quiz-04" class="quiz quiz-check image-answer abs active" data-ui="quiz-check"
+						<div id="image-quiz-04" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
 							data-option='{"answer":[]}'>
 							<div class="answer">
 								<div class="exam-wrap n4">
@@ -273,10 +279,11 @@
 				<!-- content -->
 
 				<!-- 우측 하단 영역 고정 버튼 -->
-				<!-- <div class="btns-bottom-right check-btns">
+				<div class="btns-bottom-right check-btns">
 					<div class="button btn-retry toggle remove"><span></span></div>
 					<div class="button btn-ex toggle"><span></span></div>
-				</div> -->
+					<!-- <div class="button btn-explan"><span></span></div> -->
+				</div>
 
 				<!-- 색칠하세요 :: 드로잉 툴 -->
 				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option="{}"></div>
@@ -289,7 +296,221 @@
 			</div>
 		</div>
 
+		<!-- 팝업 :: 풀이 -->
+		<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+			<div class="bg"></div>
+			<div class="text-content h-max">
+				<div class="bullet-text dot-green">
+					<span>
+						전체를‌ 똑같이 ‌분모로 ‌나눈‌ 것‌ 중의 1만큼‌ 색칠합니다. 전체를 똑같이‌ 3으로‌ 나눈 ‌것 ‌중의‌ 1은
+					</span>
+					<span class="line-fraction">
+						<span class="sign-fraction">1<em>/</em>3</span>,‌<span style="margin-left: -5px;"> </span>전체를‌
+						똑같이‌ 6으로‌ 나눈‌ 것 중의‌ 1은
+					</span>
+					<span class="line-fraction">
+						<span class="sign-fraction">1<em>/</em>6</span>입니다.
+					</span>
+				</div>
+				<div class="bullet-text dot-green">
+					<span>
+						분수가‌ 큰‌ 순서는‌ 분수만큼‌ 색칠한‌ 부분이‌ 넓은‌ 순서입니다.
+					</span>
+				</div>
+			</div>
+			<div class="button btn-close ico-close-02"></div>
+		</div>
 
+		<!-- 팝업 :: 쌍둥이 문제 -->
+		<div class="popup popup-more-one" data-ui="popup" data-option='{"btn":".btn-more-one.more-01"}'>
+			<div class="bg"></div>
+
+			<!-- 좌측 상단 영역 고정 말풍선 -->
+			<div class="box-top-left">
+				<div class="box top-more-one"><span>쌍둥이 문제</span></div>
+			</div>
+
+			<!-- pop area -->
+
+			<div class="title-h1">
+				<div class="left-inner">
+					<!-- <span class="ico-title-h1 num-03"><em class="text">5</em></span> -->
+				</div>
+				<div class="right-inner">
+					<span>
+						분자가 1인 분수의 크기를 비교해 보세요.
+					</span>
+				</div>
+			</div>
+
+			<div id="quiz-content-02" class="quiz-content" data-ui="quizMain" data-option="{}">
+				<!-- content -->
+
+				<!-- 스크롤 박스 -->
+				<div class="scroll-box w-max title-line-1">
+					<div class="scroll-inner">
+						<div class="scroll-bg"></div>
+
+						<div class="img-box">
+							<img src="./images/ms_31_6_05_02_01/pop_bg.svg" alt="" width="1280" height="700" />
+						</div>
+
+						<div id="pop-image-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
+							data-option='{"answer":[]}'>
+							<div class="answer">
+								<img src="./images/ms_31_6_05_02_01/pop_answer_01.svg" alt="" width="1280" height="700">
+							</div>
+							<div class="quiz-00-answer answer-part-00">
+								<span class="ico-box-text-02 bb-01"></span>
+							</div>
+						</div>
+						<div id="pop-image-quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check"
+							data-option='{"answer":[]}'>
+							<div class="answer">
+								<img src="./images/ms_31_6_05_02_01/pop_answer_02.svg" alt="" width="1280" height="700">
+							</div>
+							<div class="quiz-00-answer answer-part-00">
+								<span class="ico-box-text-02 bb-01"></span>
+							</div>
+						</div>
+
+						<div id="pop-quiz-02" class="quiz quiz-input-text hide-btn-check" data-ui="quiz-input-text"
+							data-option='{"answer":["1", "2", "1", "4", "1", "5", "1", "8", "1", "3", "1", "4", "1", "6", "1", "8"]}'>
+							<ul>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-00 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-00 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-01 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-01 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-02 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-02 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-03 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-03 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-04 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-04 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-05 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-05 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-06 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-06 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-07 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+								<li class="input-cont">
+									<input type="text" class="input t-a-center" />
+									<div class="answer answer-part-07 t-a-center inner-text"></div>
+									<div class="btn-check"></div>
+								</li>
+
+							</ul>
+						</div>
+
+						<!-- 부분 정답 :: absolute -->
+						<div class="btns-answer-part">
+							<div class="btn-answer-part" data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["0, 1"]}'>
+							</div>
+							<div class="btn-answer-part" data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["2 ,3"]}'>
+							</div>
+							<div class="btn-answer-part" data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["4, 5"]}'>
+							</div>
+							<div class="btn-answer-part" data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["6, 7"]}'>
+							</div>
+							<div class="btn-answer-part" data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["8, 9"]}'>
+							</div>
+							<div class="btn-answer-part"
+								data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["10, 11"]}'></div>
+							<div class="btn-answer-part"
+								data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["12, 13"]}'></div>
+							<div class="btn-answer-part"
+								data-option='{"quiz":["#pop-quiz-02"], "quizGroup": ["14, 15"]}'></div>
+							<div class="btn-answer-part"
+								data-option='{"quiz":["#pop-image-quiz-01"], "quizGroup": ["0"]}'></div>
+							<div class="btn-answer-part"
+								data-option='{"quiz":["#pop-image-quiz-02"], "quizGroup": ["0"]}'></div>
+						</div>
+					</div>
+				</div>
+				<!-- //스크롤 박스 -->
+
+				<!-- content -->
+
+				<!-- 우측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-right check-btns">
+					<div class="button btn-retry toggle remove"><span></span></div>
+					<div class="button btn-ex toggle"><span></span></div>
+				</div>
+
+				<!-- 색칠하세요 :: 드로잉 툴 -->
+				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option="{}"></div>
+			</div>
+
+			<!-- pop area -->
+
+			<div class="button btn-close ico-close-01"></div>
+		</div>
 	</div>
 
 	<script src="../../../common/ui/js/uiData.js"></script>
