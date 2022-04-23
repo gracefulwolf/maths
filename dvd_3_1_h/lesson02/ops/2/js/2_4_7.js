@@ -102,11 +102,13 @@
     }
     function showAnswer() {
       allResetPosition();
+      document.querySelector('.no-event').classList.add('on');
       imgs.forEach(function (img) {
         img.classList.add('on');
       })
     }
     function resetAnswer(){
+      document.querySelector('.no-event').classList.remove('on');
       imgs.forEach(function (img) {
         img.classList.remove('on');
       })
