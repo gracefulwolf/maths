@@ -57,6 +57,29 @@
 		.page_30 .--tableContainer{margin-top: -30px;}
 		.page_30 .--tableContainer table th,
 		.page_30 .--tableContainer table td{height:35px; font-size: 35px;}
+
+		.textBookBtn{animation: blinkType1 .6s both;}
+		.textBookBtn.--blink{animation: blinkType2 .6s both;}
+
+		@-webkit-keyframes blinkType2 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
+
+		@keyframes blinkType2 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
 	</style>
 </head>
 
@@ -293,8 +316,8 @@
 												<div class="contBox">
 													<p>10×20＝200</p>
 													<p>20×20＝400</p>
-													<p>30×30＝600</p>
-													<p>40×40＝800</p>
+													<p>30×20＝600</p>
+													<p>40×20＝800</p>
 												</div>
 											</li>
 											<li>
@@ -335,7 +358,7 @@
 					</li>
 					<li class="page_2" data-quiz="toggle">
 						<h2><ins class="dot orange"></ins><span>
-							<span class="icon_bogi"></span>를 보고 다음에 올 계산식이 13200÷11=1200인 것을 찾아 기호를 써 보시오. <img src="./images/mm_41_3_09_01_03.png" alt="" height="44" style="vertical-align: -6px;">
+							<span class="icon_bogi"></span>를 보고 다음에 올 계산식이 13200÷11＝1200인 것을 찾아 기호를 써 보시오. <img src="./images/mm_41_3_09_01_03.png" alt="" height="44" style="vertical-align: -6px;">
 						</span></h2>
 						<section>
 							<div class="textAlignC" style="width:100%">
@@ -572,8 +595,21 @@
 
 
 		window.$callBack.sliderReset = function (slide) {
-			if (slide.idx === 0 || slide.idx === 1 || slide.idx === 2) {
-				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
+			if (slide.idx === 0) {
+				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible", "--blink" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn1')[0].click();
+				}, 0);
+				setTimeout(function () {
+					if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					}
+				},3000);
+			} else if (slide.idx === 1 || slide.idx === 2) {
+				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible", "--blink" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn1')[0].classList.add( "--blink" );
+				}, 0);
 			} else {
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 			}
@@ -583,7 +619,9 @@
 			$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
 			$ts.getEl('.--textBookBtn1')[0].click();
 			setTimeout(function () {
-				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				}
 			}, 3000);
 		});
 

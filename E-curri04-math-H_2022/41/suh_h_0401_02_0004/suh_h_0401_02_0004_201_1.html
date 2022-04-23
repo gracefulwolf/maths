@@ -14,21 +14,27 @@
 		.basicSlider_slides .flex-item.n2{margin-left:40px}
 		.basicSlider_slides  section{padding-right:0;}
 		.basicSlider_slides .answer{width: 100%; text-align: left;}
-		.btn_1.zoomBtn{display:block; background: url(./images/suh_h_0401_02_0004_201_1/suh_h_0401_02_0004_201_1.png) no-repeat 50% 50% / contain; width:700px; height: 520px; margin: 0 auto;}
+		.btn_1.zoomBtn{display:block; position:relative; z-index: 1; width:700px; height: 520px; margin: 0 auto;}
 		.pop_page_1 .--img{width:100%; height:100%; background:url(./images/suh_h_0401_02_0004_201_1/suh_h_0401_02_0004_201_1.png) no-repeat 50% 50% / contain;}
-		.--img{position: relative;}
+		.--img{position: relative; background: url(./images/suh_h_0401_02_0004_201_1/suh_h_0401_02_0004_201_1.png) no-repeat 50% 50% / contain;}
 		.--text{position:absolute; z-index: 1;}
 		.page_1 .--text{font-size: 20px;}
 		.--text.x1{top: 80px;left: 375px;}
 		.--text.x2{top: 50px;left: 550px;}
 		.--text.x3{top: 280px;left: 220px;}
 		.--text.x4{top: 280px;left: 570px;}
-		.pop_page_1 .--text{font-size: 28px;}
-		.pop_page_1 .--text.x1{top: 120px;left: 370px;}
-		.pop_page_1 .--text.x2{top: 90px;left: 620px;}
-		.pop_page_1 .--text.x3{top: 400px;left: 140px;}
-		.pop_page_1 .--text.x4{top: 400px;left: 660px;}
+		.pop_page_1 .--text{font-size: 40px;}
+		.pop_page_1 .--text.x1{top: 180px;left: 340px;}
+		.pop_page_1 .--text.x2{top: 100px;left: 40px;}
+		.pop_page_1 .--text.x3{top: 30px;left: 90px;letter-spacing: -1.5px;}
+		.pop_page_1 .--text.x4{top: 20px;left: 80px;}
 		.page_1 .videoSubPlayBtn{z-index: 1;top:0; right: 0;}
+
+		.pop_page_1 .--img{width: 680px; height: 550px; margin: 70px auto; background-size: 1320px auto;}
+		.pop_page_1 .innerTab_1 .--img{background-position: 0px 0px;}
+		.pop_page_1 .innerTab_2 .--img{background-position: -670px 0px;}
+		.pop_page_1 .innerTab_3 .--img{background-position: 20px -550px;}
+		.pop_page_1 .innerTab_4 .--img{background-position: -670px -562px;}
 	</style>
 </head>
 
@@ -47,8 +53,6 @@
 					<li class="page_1">
 						<button class="videoSubPlayBtn right" data-video-link="M202201162_800K.mp4" data-hover="">활동 영상 보기</button>
 						<div class="--img">
-							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
-							</button>
 							<div class="--text x1 textAlignR">자를 사용하여<br>
 								각의 한 변인<br>
 								변 ㄴㄷ을 그리기
@@ -67,6 +71,8 @@
 								각 ㄱㄴㄷ을<br>
 								완성하기
 							</div>
+							<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+							</button>
 						</div>
 					</li>
 				</ul>
@@ -76,25 +82,53 @@
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<li class="whole image pop_page_1" data-popup-page="1">
-					<div class="--img">
-						<div class="--text x1 textAlignR">자를 사용하여<br>
-							각의 한 변인<br>
-							변 ㄴㄷ을 그리기
+					<div class="popup_contents" data-slide-container="popup">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 						</div>
-						<div class="--text x2 textAlignL">각도기의 중심과<br>
-							각의 꼭짓점 ㄴ을<br>
-							맞추고, 각도기의 밑금과<br>
-							각의 한 변인 변 ㄴㄷ을 맞추기
-						</div>
-						<div class="--text x3 textAlignR">각도기의 밑금에서 시작하여 각도가<br>
-							90°가 되는 눈금에 점 ㄱ을 표시하기
-						</div>
-						<div class="--text x4 textAlignR">각도기를 떼고, 자를 사용하여<br>
-							각의 한 변인 변 ㄴㄱ을<br>
-							그어 각도가 90°인<br>
-							각 ㄱㄴㄷ을<br>
-							완성하기
-						</div>
+						<ul class="basicSlider_slides inner" data-slides="">
+							<li class="innerTab_1">
+								<div class="--img">
+									<div class="--text x1 textAlignR">자를 사용하여<br>
+										각의 한 변인<br>
+										변 ㄴㄷ을 그리기
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_2">
+								<div class="--img">
+									<div class="--text x2 textAlignL">각도기의 중심과<br>
+										각의 꼭짓점 ㄴ을<br>
+										맞추고, 각도기의 밑금과<br>
+										각의 한 변인 변 ㄴㄷ을 맞추기
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_3">
+								<div class="--img">
+									<div class="--text x3 textAlignR">각도기의 밑금에서 시작하여 각도가<br>
+										90°가 되는 눈금에 점 ㄱ을 표시하기
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_4">
+								<div class="--img">
+									<div class="--text x4 textAlignR">각도기를 떼고, 자를 사용하여<br>
+										각의 한 변인 변 ㄴㄱ을<br>
+										그어 각도가 90°인<br>
+										각 ㄱㄴㄷ을<br>
+										완성하기
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</li>
 			</ul>

@@ -65,6 +65,29 @@
 
 		.lineBox.--lineBox{min-width: 360px; padding-top: 0; padding-bottom: 0;}
 		.--rule .colorBox{display: inline-block;}
+
+		.textBookBtn{animation: blinkType1 .6s both;}
+		.textBookBtn.--blink{animation: blinkType2 .6s both;}
+
+		@-webkit-keyframes blinkType2 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
+
+		@keyframes blinkType2 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
 	</style>
 </head>
 
@@ -585,8 +608,21 @@
 
 
 		window.$callBack.sliderReset = function (slide) {
-			if (slide.idx === 0 || slide.idx === 1 || slide.idx === 2 || slide.idx === 3) {
-				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
+			if (slide.idx === 0) {
+				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible", "--blink" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn1')[0].click();
+				}, 0);
+				setTimeout(function () {
+					if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					}
+				},3000);
+			} else if (slide.idx === 1 || slide.idx === 2 || slide.idx === 3) {
+				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible", "--blink" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn1')[0].classList.add( "--blink" );
+				}, 0);
 			} else {
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 			}
@@ -596,7 +632,9 @@
 			$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
 			$ts.getEl('.--textBookBtn1')[0].click();
 			setTimeout(function () {
-				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				}
 			}, 3000);
 		});
 
