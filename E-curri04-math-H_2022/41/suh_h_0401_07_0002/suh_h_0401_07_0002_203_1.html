@@ -279,27 +279,40 @@
 <script type="text/javascript">
 	window.addEventListener('load', function() {
         var lightBtn = $ts.getEl('.induceLight')[0];
-        var image = $ts.getEl('.pop_page_1 img')[0];
+        var imageGIF = $ts.getEl('.pop_page_1 img')[0];
         var Interval = null;
+
         lightBtn.addEventListener('click', function () {
-          this.classList.add('lightOff');
-          image.src = './images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_2'+'.gif?' + Math.random();
+			setTimeout(function(){
+				lightBtn.classList.add('lightOff');
+				imageGIF.src = './images/suh_h_0401_07_0002_203_1/suh_h_0401_07_0002_203_1_2.gif?q' + Math.floor(Math.random() * 100000 );
+			}, 0);
 
-          var that = this;
-          Interval = setInterval(function () {
-            that.classList.remove('lightOff');
-            image.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
-            clearInterval(Interval);
-          },5000);
-        })
-        lightBtn.addEventListener('click', $efSound.click);
+			var that = this;
+			Interval = setInterval(function () {
+				that.classList.remove('lightOff');
+				imageGIF.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
+				clearInterval(Interval);
+			},5000);
+
+			window.$efSound.click();
+		});
+        //lightBtn.addEventListener('click', $efSound.click);
 
 
-        window.$callBack.sliderMove = function(SLIDER) {
-          clearInterval(Interval);
-          lightBtn.classList.remove('lightOff');
-          image.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
-        }
+
+		document.querySelector( ".btn_1" ).addEventListener("click", function(){
+			clearInterval(Interval);
+			lightBtn.classList.remove('lightOff');
+			imageGIF.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
+		});
+
+        // window.$callBack.sliderMove = function(SLIDER) {
+		// 	console.log("2333333")
+        //   clearInterval(Interval);
+        //   lightBtn.classList.remove('lightOff');
+        //   image.src = './images/suh_h_0401_07_0002_203_1/7_1_5_bg.png';
+        // }
 
 
       });

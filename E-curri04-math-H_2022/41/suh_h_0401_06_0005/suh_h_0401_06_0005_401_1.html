@@ -31,7 +31,7 @@
 		.--QnA .--A .answer{text-align:justify;}
 
 		.textTitle .colorBox{margin: 0; padding: 8px 10px; border-radius: 40px; font-size: 18px; vertical-align: middle;}
-		.textBookBtn.invisible{opacity:0; visibility: hidden;}
+		.textBookBtn.invisible{opacity:0 !important; z-index: -1 !important;}
 
 		.page_10 .--img{position: relative; height: 140px; margin-top: -20px; background: url(./images/suh_h_0401_06_0005_401_1/suh_h_0401_06_0005_401_1_1_1.png) no-repeat 50% 100% / contain;}
 		.page_10 .colorBox{position: absolute; padding-top: 0; padding-bottom: 0;}
@@ -103,6 +103,29 @@
 		.page_70 .colorBox.sky.n3{top: -20px; left: 520px;}
 		.page_70 .colorBox.sky.n4{top: -20px; left: 794px;}
 		.page_70 .--answer{position: absolute; top: 58px; left: 730px; width: 230px;height: 134px; background: url(./images/suh_h_0401_06_0005_401_1/suh_h_0401_06_0005_401_1_3_2.png) no-repeat 50% 50% / contain;}
+
+		.textBookBtn{animation: blinkType1 .6s both;}
+		.textBookBtn.--blink{animation: blinkType22 .6s both;}
+
+		@-webkit-keyframes blinkType22 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
+
+		@keyframes blinkType22 {
+			0%,50%,100% {
+				opacity: 1
+			}
+
+			25%,75% {
+				opacity: 0
+			}
+		}
 	</style>
 </head>
 
@@ -521,6 +544,9 @@
 
 		window.$callBack.sliderReset = function (slide) {
 			console.log(slide.idx);
+			$ts.getEl('.--textBookBtn1')[0].classList.remove( "--blink" );
+			$ts.getEl('.--textBookBtn2')[0].classList.remove( "--blink" );
+			$ts.getEl('.--textBookBtn3')[0].classList.remove( "--blink" );
 
 			if (slide.idx === 0) {
 				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
@@ -530,12 +556,17 @@
 					$ts.getEl('.--textBookBtn1')[0].click();
 				}, 0);
 				setTimeout(function () {
-					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+					}
 				},3000);
 			} else if (slide.idx === 1) {
 				$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn3')[0].classList.add( "invisible" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn1')[0].classList.add( "--blink" );
+				}, 0);
 			} else if (slide.idx === 2){
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.remove( "invisible" );
@@ -545,12 +576,17 @@
 					$ts.getEl('.--textBookBtn2')[0].click();
 				}, 0);
 				setTimeout(function () {
-					$ts.getEl('.popup_2 .popup_closeBtn')[0].click();
+					if( $ts.getEl('.--textBookBtn2')[0].classList.contains( "popupOn" ) ){
+						$ts.getEl('.popup_2 .popup_closeBtn')[0].click();
+					}
 				},3000);
 			} else if (slide.idx === 3){
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.remove( "invisible" );
 				$ts.getEl('.--textBookBtn3')[0].classList.add( "invisible" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn2')[0].classList.add( "--blink" );
+				}, 0);
 			} else if (slide.idx === 4){
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.add( "invisible" );
@@ -559,16 +595,24 @@
 					$ts.getEl('.--textBookBtn3')[0].click();
 				}, 0);
 				setTimeout(function () {
-					$ts.getEl('.popup_3 .popup_closeBtn')[0].click();
+					if( $ts.getEl('.--textBookBtn3')[0].classList.contains( "popupOn" ) ){
+						$ts.getEl('.popup_3 .popup_closeBtn')[0].click();
+					}
 				},3000);
 			} else if (slide.idx === 5){
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn3')[0].classList.remove( "invisible" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn3')[0].classList.add( "--blink" );
+				}, 0);
 			} else if (slide.idx === 6){
 				$ts.getEl('.--textBookBtn1')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn2')[0].classList.add( "invisible" );
 				$ts.getEl('.--textBookBtn3')[0].classList.remove( "invisible" );
+				setTimeout(function () {
+					$ts.getEl('.--textBookBtn3')[0].classList.add( "--blink" );
+				}, 0);
 			}
 		}
 
@@ -576,7 +620,9 @@
 			$ts.getEl('.--textBookBtn1')[0].classList.remove( "invisible" );
 			$ts.getEl('.--textBookBtn1')[0].click();
 			setTimeout(function () {
-				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				if( $ts.getEl('.--textBookBtn1')[0].classList.contains( "popupOn" ) ){
+					$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+				}
 			}, 3000);
 		});
 
