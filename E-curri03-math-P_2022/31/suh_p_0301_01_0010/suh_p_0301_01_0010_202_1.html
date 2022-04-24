@@ -307,14 +307,14 @@
                 </ul>
             </div>
         </main>
-        <button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="5000">
+        <button class="popBtn textBookBtn" data-hover="" data-popup-btn="1" data-auto-close="">
             <span class="btnInner"></span>
         </button>
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
                 <li class="textBookPopup" data-popup-page="1">
                     <div class="popupInner" data-popup-inner="">
-                        <div class="study_guide">이 알림창은 잠시 후 닫힙니다.</div>
+                        <!-- <div class="study_guide">이 알림창은 잠시 후 닫힙니다.</div> -->
                         <div class="textTitle">
                             어떤 건축가가 세계에서 가장 높은 건물을 짓고 싶어서, 처음 계획한 564 m보다 388 m 더 높게 만들 계획을 세웠습니다. 이 건물이 완성되면 아랍 에미리트의
                             부르즈 할리파보다 몇 m 더 높은지 구해 봅시다.
@@ -384,6 +384,8 @@
     <script type="text/javascript" src="./js/contents.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
+            $ts.getEl(' .textBookBtn')[0].click();
+
             // $prite.changeSpritePos=function(){}; // backgroundPosition 무한루프 방지
             $prite.add({
                 target: $ts.getEl('#aniBox_1'), // 스프라이트가 생성될 영역
