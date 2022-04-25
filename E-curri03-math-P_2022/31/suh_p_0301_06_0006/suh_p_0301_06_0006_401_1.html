@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style>
+		.basicSlider .page_2 .basicSlider {padding: 0 !important;}
 		.contentsBox .basicSlider_slides>li {display: flex;opacity: 0;visibility: hidden;position: absolute;z-index: -1;top: 0;}
 		.contentsBox .basicSlider_slides>li.on {display: flex;opacity: 1;visibility: visible;position: relative;z-index: 0;top: 0;}
 		.gate_container .downloadBtn {right: 20px;left: auto;}
@@ -33,7 +34,7 @@
 		.page_1 .flex-wrap.center {justify-content: center;}
 		.page_1 .flex-wrap.center .bunsuWrap {padding: 0;}
 
-		.contentsBox .page_2 h2 {z-index: 3;}
+		.contentsBox .page_2 h2 {position: absolute;z-index: 3;}
 		.page_2 .toggle.circle {margin: 0 20px;}
 		.page_2 .flexListContainer {z-index: 1;}
 		.page_2 .flexListContainer .flex-item.n2 {position: absolute;top: 255px;left: 350px;width: 220px;height: 100px;background: #fff;}
@@ -78,8 +79,8 @@
 		.page_8 .flexListContainer li {display: flex;justify-content: center;align-items: center;width: 50%;}
 		.page_8 .colorBox.check {margin-right: 20px;}
 		
-		.iframe-wrap {width: 1094px;position: absolute;top: -10px;left: -50px;height: 554px;overflow: hidden;}
-		.page-iframe {width: 1280px;height: 714px;overflow: hidden;border: 0;position: absolute;z-index: 1;top: -60px;left: -62px;}
+		.iframe-wrap {width: 1094px;position: absolute;top: 0;left: -50px;height: 542px;overflow: hidden;}
+		.page-iframe {width: 1280px;height: 714px;overflow: hidden;border: 0;position: absolute;z-index: 1;top: -100px;left: -62px;}
 		.pop_page_3.solve .flexListContainer {width: 70%;margin: 0 auto;}
 		.pop_page_4.solve .flexListContainer {width: 85%;margin: 0 auto;}
 		.pop_page_3.solve .flexListContainer li,
@@ -206,13 +207,49 @@
 									src="../common/contents/images/math/equalIcon.png" height="11">, <img
 									src="../common/contents/images/math/inequalIcon.png" height="30">를 알맞게 써넣으시오.
 							</span></h2>
-						<div class="iframe-wrap">
-							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_07_03.html" title=""
+						<!-- <div class="iframe-wrap">
+							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_07_03_bk.html" title=""
 								class="page-iframe" id="ifm1" scrolling="no"></iframe>
+						</div> -->
+						<div class="basicSlider contentsBox" data-slide-container="">
+							<div class="moveButtonContainer" data-slide-btn-container="">
+								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+								<ul class="basicSlider_circle_tabs" data-tabs="">
+									<li data-hover=""></li>
+									<li data-hover=""></li>
+								</ul>
+								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+							</div>
+						
+							<ul class="basicSlider_slides" data-slides="">
+								<li class="innerTab_1" >
+									<div class="iframe-wrap">
+										<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_07_03.html" title="" class="page-iframe" id="ifm2_1" scrolling="no"></iframe>
+									</div>
+
+									<div class="buttonContainer">
+										<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+										<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
+									</div>
+								</li>
+								<li class="innerTab_2" >
+									<div class="iframe-wrap">
+										<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_07_03_on.html" title="" class="page-iframe" id="ifm2_1" scrolling="no"></iframe>
+									</div>
+									<div class="toggle circle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											<img src="../common/contents/images/math/inequalIcon_2_blue.png">
+										</div>
+									</div>
+									<div class="buttonContainer">
+										<button class="dapCheckBtn" data-answer-btn=""></button>
+									</div>
+								</li>
+							</ul>
 						</div>
 						<a href="./data/(3-1-6)형성평가2_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
 							<!-- <button class="dapCheckBtn" data-answer-btn=""></button> -->
 						</div>
 					</li>
