@@ -98,13 +98,11 @@
 			width: 50px;
 			height: 50px;
 		}
-		.flex-wrap .flex-item.n2 .flexListContainer .toggleBlank + img {
-			width: 24px;
-		}
 		.flex-wrap .flex-item.n2 .flexListContainer img {
 			position: absolute;
+			top: 50%;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translate(-50%,-50%);
 			opacity: 0;
 		}
 
@@ -130,12 +128,14 @@
 			width: 42px;
 			z-index: 1;
 		}
+		.flex-wrap .flex-item.n2 .answerMode + img {opacity: 1;}
 		
 		.flex-wrap .table-wrap {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 		}
+		.flex-wrap .tableContainer table th input::placeholder {color: #fff !important;}
 	</style>
 </head>
 
@@ -172,14 +172,14 @@
 											</tr>
 											<tr>
 												<th class="brown">
-													<input type="text" class="center" placeholder="" data-input-obj=""
-														data-answer="연필" onfocus="placeholder=''"
-														onblur="placeholder=''" autocomplete="off">
+													<input type="text" class="center afterDisplay" placeholder="직접 쓰기" data-input-obj=""
+														data-answer="연필" onfocus="placeholder='직접 쓰기'" maxlength="10"
+														onblur="placeholder='직접 쓰기'" autocomplete="off">
 												</th>
 												<td>
 													<div>
-														<input type="text" class="center" placeholder=""
-															data-input-obj="" data-answer="16.5"
+														<input type="text" class="center afterDisplay" placeholder=""
+															data-input-obj="" data-answer="16.5" maxlength="10"
 															onfocus="placeholder=''" onblur="placeholder=''"
 															autocomplete="off">
 														cm
@@ -188,14 +188,14 @@
 											</tr>
 											<tr>
 												<th class="brown">
-													<input type="text" class="center" placeholder="" data-input-obj=""
-														data-answer="형광펜" onfocus="placeholder=''"
-														onblur="placeholder=''" autocomplete="off">
+													<input type="text" class="center" placeholder="직접 쓰기" data-input-obj=""
+														data-answer="형광펜" onfocus="placeholder=''" maxlength="10"
+														onblur="placeholder='직접 쓰기'" autocomplete="off">
 												</th>
 												<td>
 													<div>
 														<input type="text" class="center" placeholder=""
-															data-input-obj="" data-answer="13.8"
+															data-input-obj="" data-answer="13.8" maxlength="10"
 															onfocus="placeholder=''" onblur="placeholder=''"
 															autocomplete="off">
 														cm
@@ -211,24 +211,24 @@
 							<ul class="flexListContainer center" data-quiz="input" data-quiz-name="input">
 								<li>
 									<span class="toggleBlank circle"></span>
-									<img src="../common/contents/images/math/inequalIcon.png">
+									<img src="../common/contents/images/math/inequalIcon.png" height="30">
 								</li>
 								<li>
 									<div class="flex-wrap">
 										<span class="toggleBlank circle"></span>
-										<img src="../common/contents/images/math/inequalIcon_2_blue.png">
 										<input type="text" class="center" placeholder="" data-input-obj=""
 										data-answer="&nbsp;" onfocus="placeholder=''"
 										onblur="placeholder=''" autocomplete="off">
+										<img src="../common/contents/images/math/inequalIcon_2_blue.png" height="30">
 									</div>
 								</li>
 								<li>
 									<div class="flex-wrap">
 										<span class="toggleBlank circle"></span>
-										<img src="../common/contents/images/math/equalIcon_blue.png">
 										<input type="text" class="center" placeholder="" data-input-obj=""
 										data-answer="&nbsp;" onfocus="placeholder=''"
 										onblur="placeholder=''" autocomplete="off">
+										<img src="../common/contents/images/math/equalIcon_blue.png" height="12">
 									</div>
 								</li>
 							</ul>
@@ -256,14 +256,14 @@
 											</tr>
 											<tr>
 												<th class="brown">
-													<input type="text" class="center" placeholder="" data-input-obj=""
-														data-answer="연필" onfocus="placeholder=''"
+													<input type="text" class="center" placeholder="직접 쓰기" data-input-obj=""
+														data-answer="연필" onfocus="placeholder='직접 쓰기'" maxlength="10"
 														onblur="placeholder=''" autocomplete="off">
 												</th>
 												<td>
 													<div>
 														<input type="text" class="center" placeholder=""
-															data-input-obj="" data-answer="14.2"
+															data-input-obj="" data-answer="14.2" maxlength="10"
 															onfocus="placeholder=''" onblur="placeholder=''"
 															autocomplete="off">
 														cm
@@ -272,14 +272,14 @@
 											</tr>
 											<tr>
 												<th class="brown">
-													<input type="text" class="center" placeholder="" data-input-obj=""
-														data-answer="형광펜" onfocus="placeholder=''"
+													<input type="text" class="center" placeholder="직접 쓰기" data-input-obj=""
+														data-answer="형광펜" onfocus="placeholder='직접 쓰기'" maxlength="10"
 														onblur="placeholder=''" autocomplete="off">
 												</th>
 												<td>
 													<div>
 														<input type="text" class="center" placeholder=""
-															data-input-obj="" data-answer="13.8"
+															data-input-obj="" data-answer="13.8" maxlength="10"
 															onfocus="placeholder=''" onblur="placeholder=''"
 															autocomplete="off">
 														cm
