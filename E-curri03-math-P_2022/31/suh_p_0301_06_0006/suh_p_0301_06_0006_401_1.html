@@ -8,326 +8,78 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
-	<!--  수학 -->
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
 	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
 	<style>
-		.contentsBox .basicSlider_slides>li {
-			display: flex;
-			opacity: 0;
-			visibility: hidden;
-			position: absolute;
-			z-index: -1;
-			top: 0
-		}
-
-		.contentsBox .basicSlider_slides>li.on {
-			display: flex;
-			opacity: 1;
-			visibility: visible;
-			position: relative;
-			z-index: 0;
-			top: 0
-		}
-
-		.gate_container .downloadBtn {
-			right: 20px;
-			left: auto
-		}
-
-		.checkContainer .contentsBox h2+section {
-			padding-left: 30px
-		}
-
-		.checkContainer .contentsBox h2+section .downloadBtn {
-			left: 0;
-			bottom: 10px
-		}
-
-		.checkContainer h2 .toggleBlank {
-			margin-top: 8px;
-		}
+		.contentsBox .basicSlider_slides>li {display: flex;opacity: 0;visibility: hidden;position: absolute;z-index: -1;top: 0;}
+		.contentsBox .basicSlider_slides>li.on {display: flex;opacity: 1;visibility: visible;position: relative;z-index: 0;top: 0;}
+		.gate_container .downloadBtn {right: 20px;left: auto;}
+		.checkContainer .contentsBox h2+section {padding-left: 30px;}
+		.checkContainer .contentsBox h2+section .downloadBtn {left: 0;bottom: 10px;;}
+		.checkContainer h2 .toggleBlank {margin-top: 8px;}
 		.flex-wrap .toggle.circle {margin: 0 10px;}
 		.page_1 .flex-wrap.wrap {justify-content: center;}
-		.page_1 .flex-wrap .bar {
-			background-color: transparent;
-			padding: 0;
-			position: relative;
-			display: block;
-			width: 570px;
-		}
-		.page_1 .flex-wrap .bullet.exam {
-			position: absolute;
-			top: -50px;
-			left: 0;
-		}
+		.page_1 .flex-wrap .bar {position: relative;display: block;width: 570px;background-color: transparent;padding: 0;}
+		.page_1 .flex-wrap .bullet.exam {position: absolute;top: -50px;left: 0;}
+		.page_1 .flex-wrap .bar::after {display: none;}
+		.page_1 .flex-wrap .bar.complete .click-finger-Btn {display: none;}
+		.page_1 .flex-wrap .bar .click-finger-Btn {top: 20%;left: 45%;z-index: 1;}
+		.page_1 .flex-wrap .bar .answer {position: absolute;top: 0;}
+		.page_1 .flex-wrap img {width: 100%;}
+		.page_1 .flex-wrap {align-items: center;}
+		.page_1 .flex-wrap .bunsuWrap {display: flex;align-items: center;padding: 10px 20px;}
+		.page_1 .flex-wrap .colorBox {padding: 10px 15px;margin-right: 10px;}
+		.page_1 .flex-wrap+.flex-wrap {margin-top: 30px}
+		.page_1 .flex-wrap.center {justify-content: center;}
+		.page_1 .flex-wrap.center .bunsuWrap {padding: 0;}
 
-		.page_1 .flex-wrap .bar::after {
-			display: none;
-		}
-
-		.page_1 .flex-wrap .bar.complete .click-finger-Btn {
-			display: none;
-		}
-
-		.page_1 .flex-wrap .bar .click-finger-Btn {
-			top: 20%;
-			left: 45%;
-			z-index: 1;
-		}
-
-		.page_1 .flex-wrap .bar .answer {
-			position: absolute;
-			top: 0;
-		}
-
-		.page_1 .flex-wrap img {
-			width: 100%;
-		}
-
-		.page_1 .flex-wrap {
-			align-items: center;
-		}
-
-		.page_1 .flex-wrap .bunsuWrap {
-			display: flex;
-			align-items: center;
-			padding: 10px 20px;
-		}
-
-		.page_1 .flex-wrap .colorBox {
-			padding: 10px 15px;
-			margin-right: 10px;
-		}
-
-		.page_1 .flex-wrap+.flex-wrap {
-			margin-top: 30px
-		}
-
-		.page_1 .flex-wrap.center {
-			justify-content: center;
-		}
-
-		.page_1 .flex-wrap.center .bunsuWrap {
-			padding: 0;
-		}
 		.contentsBox .page_2 h2 {z-index: 3;}
-		.page_2 .toggle.circle {
-			margin: 0 20px;
-		}
-
-		.page_2 .flexListContainer {
-			z-index: 1;
-		}
-
-		.page_2 .flexListContainer .flex-item.n2 {
-			position: absolute;
-			top: 255px;
-			left: 350px;
-			width: 220px;
-			height: 100px;
-			background: #fff;
-		}
-
-		.page_2 .flexListContainer .flex-wrap {
-			align-items: center;
-		}
-
-		.page_2 .bullet.exam {
-			position: absolute;
-			top: 170px;
-			opacity: 0;
-		}
-
-		.page_2 .bullet.exam.n1 {
-			left: 50px;
-		}
-
-		.page_2 .bullet.exam.n2 {
-			left: 550px;
-		}
-
-		.page_2 .bullet.exam.on {
-			opacity: 1;
-		}
-
-		.page_2 .buttonContainer {
-			right: 172px;
-		}
+		.page_2 .toggle.circle {margin: 0 20px;}
+		.page_2 .flexListContainer {z-index: 1;}
+		.page_2 .flexListContainer .flex-item.n2 {position: absolute;top: 255px;left: 350px;width: 220px;height: 100px;background: #fff;}
+		.page_2 .flexListContainer .flex-wrap {align-items: center;}
+		.page_2 .bullet.exam {position: absolute;top: 170px;opacity: 0;}
+		.page_2 .bullet.exam.n1 {left: 50px;}
+		.page_2 .bullet.exam.n2 {left: 550px;}
+		.page_2 .bullet.exam.on {opacity: 1;}
+		.page_2 .buttonContainer {right: 172px;}
 
 		.page_3 .flexListContainer {justify-content: space-around;align-items: center;height: calc(100% - 150px);}
 		.page_3 .flex-wrap {align-items: center;}
 		
 		.page_4 .flexListContainer.wrap {height: calc(100% - 180px);}
 		.page_4 .flexListContainer.wrap li {display: flex;align-items: center;justify-content: center;width: 50%;}
+		.page_4 .flexListContainer.wrap li > div {display: flex;align-items: center;}
+		.page_4 .flexListContainer.wrap li > div .toggle.circle {margin: 0 10px;}
 		.page_4 .flexListContainer.wrap .bunsuWrap ul {width: 40px;}
 		.page_4 .flexListContainer.wrap .bunsuWrap ul li {width: 100%;}
 
-		.page_5 .lineBox {
-			width: 650px;
-			margin: 0 auto;
-		}
-		.page_5 .lineBox .flex-wrap {
-			justify-content: space-around;
-			width: 100%;
-		}
-		.page_6 .addLineContainer {
-			top: 215px;
-		}
+		.page_5 h2 {margin-top: -14px;}
+		.page_5 h2 .dot {margin-top: 34px !important;}
+		.page_5 .lineBox {width: 650px;margin: 0 auto;}
+		.page_5 .lineBox .flex-wrap {justify-content: space-around;width: 100%;}
+		.page_6 .addLineContainer {top: 215px;}
+		.page_6 .characterList {display: flex;padding-top: 152px;justify-content: center;}
+		.page_6 .characterList>li {flex-direction: column;justify-content: center;margin: 0 60px;}
+		.page_6 .characterList>li .balloon {width: auto;position: absolute;top: -15px;}
+		.page_6 .characterList>li .balloon.n1 {top: 45px;margin-left: -10px;}
+		.page_6 .characterList>li .balloon.n2 {height: 135px;padding: 0 10px;}
+		.page_6 .characterList>li .balloon.n3 {height: 135px;margin-left: -20px;padding: 0 10px;}
+		.page_6 .balloon {text-align: center;}
 
-		.page_6 .characterList {
-			display: flex;
-			padding-top: 152px;
-			justify-content: center
-		}
+		.page_7 .lineBox {width: 600px;margin: 0 auto;}
+		.page_7 .lineBox .flex-wrap {justify-content: space-around;width: 100%;}
+		.page_7 .textAlignC .flex-wrap {align-items: center;justify-content: center;}
+		.page_7 .textAlignC .flex-wrap img {width: 20px;margin: 0 10px;}
 
-		.page_6 .characterList>li {
-			flex-direction: column;
-			justify-content: center;
-			margin: 0 60px;
-		}
-
-		.page_6 .characterList>li .balloon {
-			width: auto;
-			position: absolute;
-			top: -15px;
-		}
-
-		.page_6 .characterList>li .balloon.n1 {
-			top: 45px;
-			margin-left: -10px
-		}
-
-		.page_6 .characterList>li .balloon.n2 {
-			height: 135px;
-			padding: 0 10px;
-		}
-
-		.page_6 .characterList>li .balloon.n3 {
-			height: 135px;
-			margin-left: -20px;
-			padding: 0 10px;
-		}
-
-		.page_6 .balloon {
-			text-align: center;
-		}
-
-		.page_7 .lineBox {
-			width: 600px;
-			margin: 0 auto;
-		}
-
-		.page_7 .lineBox .flex-wrap {
-			justify-content: space-around;
-			width: 100%;
-		}
-
-		.page_7 .textAlignC .flex-wrap {
-			align-items: center;
-			justify-content: center;
-		}
-
-		.page_7 .textAlignC .flex-wrap img {
-			width: 20px;
-			margin: 0 10px;
-		}
-
-		.page_8 .boxCon {
-			position: relative;
-			display: inline-block;
-			vertical-align: middle;
-			text-align: left;
-		}
-
-		.page_8 .boxCon .nemoBox {
-			position: relative;
-			box-sizing: border-box;
-		}
-
-		.page_8 .boxCon .nemoBox_1 {
-			width: 206px;
-			height: 120px;
-			border: 3px solid #8dc63f;
-			font-size: 0;
-		}
-
-		.page_8 .boxCon .nemoBox_2 {
-			width: 286px;
-			height: 120px;
-			border: 3px solid #8dc63f;
-			font-size: 0;
-		}
-
-		.page_8 .boxCon .nemoBoxBg {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width: 810px;
-			height: 64px;
-			background-color: #e5f1d5;
-		}
-
-		.page_8 .boxCon .nemoBox .nemoBoxInner {
-			position: relative;
-			display: inline-block;
-			width: 40px;
-			height: 114px;
-			border-right: 3px dotted #8dc63f;
-			background-color: #e5f1d5;
-		}
-
-		.page_8 .boxCon .nemoBox div.nemoBoxInner:nth-child(10n) {
-			border-right: 3px solid #8dc63f;
-		}
-
-		.page_8 .boxCon .nemoBox div.nemoBoxInner:last-child {
-			border-right: none;
-		}
-
-		.page_8 .boxCon .nemoBox div.nemoBoxInner.bgNone {
-			background: none;
-		}
-
-		.page_8 .imgWrap {
-			display: flex;
-			justify-content: center;
-		}
-
-		.page_8 .imgWrap>div {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			margin: 0 50px;
-		}
-
-		.page_8 .imgWrap .boxCon {
-			margin-bottom: 20px;
-		}
-
-		.page_8 .colorBox.check {
-			margin-right: 20px;
-		}
-
-		.iframe-wrap {
-			width: 1094px;
-			position: absolute;
-			top: -10px;
-			left: -50px;
-			height: 554px;
-			overflow: hidden;
-		}
-		.page-iframe {
-			width: 1280px;
-			height: 714px;
-			overflow: hidden;
-			border: 0;
-			position: absolute;
-			z-index: 1;
-			top: -60px;
-			left: -62px;
-		}
+		.page_8 .flex-wrap {width: 700px;justify-content: space-between;margin: 0 auto;}
+		.page_8 .flex-wrap img {width: auto;height: 120px;}
+		.page_8 .flexListContainer {width: 800px;margin: 10px auto 0;justify-content: space-between;}
+		.page_8 .flexListContainer li {display: flex;justify-content: center;align-items: center;width: 50%;}
+		.page_8 .colorBox.check {margin-right: 20px;}
+		
+		.iframe-wrap {width: 1094px;position: absolute;top: -10px;left: -50px;height: 554px;overflow: hidden;}
+		.page-iframe {width: 1280px;height: 714px;overflow: hidden;border: 0;position: absolute;z-index: 1;top: -60px;left: -62px;}
 		.pop_page_3.solve .flexListContainer {width: 70%;margin: 0 auto;}
 		.pop_page_4.solve .flexListContainer {width: 85%;margin: 0 auto;}
 		.pop_page_3.solve .flexListContainer li,
@@ -452,7 +204,7 @@
 								주어진 분수를 그림에 나타내고, <span class="toggleBlank circle"></span> 안에 <img
 									src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img
 									src="../common/contents/images/math/equalIcon.png" height="11">, <img
-									src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으시오.
+									src="../common/contents/images/math/inequalIcon.png" height="30">를 알맞게 써넣으시오.
 							</span></h2>
 						<div class="iframe-wrap">
 							<iframe src="../../../dvd_3_1_p/lesson06/ops/lesson06/mm_31_6_05_07_03.html" title=""
@@ -467,7 +219,7 @@
 					<li class="page_3" data-quiz="toggle">
 						<h2 style="letter-spacing: -1.9px;"><ins class="dot"></ins>
 							<span>
-								두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img src="../common/contents/images/math/equalIcon.png" height="11">, <img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으시오.
+								두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img src="../common/contents/images/math/equalIcon.png" height="11">, <img src="../common/contents/images/math/inequalIcon.png" height="30">를 알맞게 써넣으시오.
 							</span>
 						</h2>
 						<ul class="flexListContainer center">
@@ -486,7 +238,7 @@
 									</div>
 									<div class="bunsuWrap inline">
 										<ul>
-											<li>2</li>
+											<li>1</li>
 											<li>4</li>
 										</ul>
 									</div>
@@ -544,7 +296,7 @@
 					<li class="page_4" data-quiz="toggle">
 						<h2 style="letter-spacing: -1.9px;"><ins class="dot"></ins>
 							<span>
-								두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img src="../common/contents/images/math/equalIcon.png" height="11">, <img src="../common/contents/images/math/inequalIcon.png" height="30"> 를 알맞게 써넣으시오.
+								두 분수의 크기를 비교하여 <span class="toggleBlank circle"></span> 안에 <img src="../common/contents/images/math/inequalIcon_2.png" height="30">, <img src="../common/contents/images/math/equalIcon.png" height="11">, <img src="../common/contents/images/math/inequalIcon.png" height="30">를 알맞게 써넣으시오.
 							</span>
 						</h2>
 						<ul class="flexListContainer wrap">
@@ -868,52 +620,30 @@
 							</span>
 						</h2>
 						<section>
-							<div class="addLineContainer"></div>
-
-							<div class="flex-box imgWrap">
-								<div class="textAlignC">
-									<div class="boxCon">
-										<div class="nemoBox nemoBox_1">
-											<div class="nemoBox nemoBoxInner"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-										</div>
-									</div>
-									<div class="flex-box a-center">
-										<div class="colorBox check skyBlue">준서</div>
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>1</li>
-												<li>5</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="textAlignC">
-									<div class="boxCon">
-										<div class="nemoBox nemoBox_2">
-											<div class="nemoBox nemoBoxInner"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-											<div class="nemoBox nemoBoxInner bgNone"></div>
-										</div>
-									</div>
-									<div class="flex-box a-center">
-										<div class="colorBox check skyBlue">예은</div>		
-										<div class="bunsuWrap inline">
-											<ul>
-												<li>1</li>
-												<li>7</li>
-											</ul>
-										</div>
-									</div>
-								</div>
+							<div class="flex-wrap">
+								<img src="./images/suh_p_0301_06_0006_401_1/suh_h_0301_06_0006_401_1_3_1.png" alt="">
+								<img src="./images/suh_p_0301_06_0006_401_1/suh_h_0301_06_0006_401_1_3_2.png" alt="">
 							</div>
+							<ul class="flexListContainer">
+								<li>
+									<div class="colorBox check skyBlue">준서</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="colorBox check skyBlue">예은</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>7</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
 							<div class="textAlignC mt_20">
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">준서</div>
@@ -953,7 +683,7 @@
 								<li>1</li>
 								<li>2</li>
 							</ul>
-						</div>은 전체를 똑같이 2로 나눈 것 중의 1만큼 색칠하고,
+						</div>은 전체를 똑같이 2로 나눈 것 중의 1만큼 색칠하고,<br>
 						<div class="bunsuWrap inline">
 							<ul>
 								<li>1</li>
