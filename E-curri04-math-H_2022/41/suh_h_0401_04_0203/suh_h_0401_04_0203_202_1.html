@@ -11,18 +11,24 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom_last.css">
 	<style type="text/css">
-		.--img{position: relative; width: 100%; height: 460px; margin-top: -20px; background: url(./images/suh_h_0401_04_0203_202_1/suh_h_0401_04_0203_202_1_1.png) no-repeat 50% 50% / contain;}
+		.--img{position: relative; width: 100%; height: 460px; margin-top: 0px; background: url(./images/suh_h_0401_04_0203_202_1/suh_h_0401_04_0203_202_1_1.png) no-repeat 50% 50% / contain;}
 		.--img .--ab{position: absolute;}
 		.--img .--ab.n1{top: -10px;left: 270px;}
 		.--img .--ab.n2{top: 25px;left: 190px;}
-		.--img .--ab.n3{top: 223px;left: 562px; animation: css-ani-arrow-leftToRight 1s linear 0s infinite forwards;}
-		.--img .--ab.n4{top: 161px;left: 488px; animation: css-ani-arrow-topToBottom 1s linear 0s infinite forwards;}
+		.--img .--ab.n3{top: 223px;left: 562px; animation: css-ani-arrow-leftToRight 1s linear 0s infinite forwards; pointer-events: auto;}
+		.--img .--ab.n4{top: 161px;left: 488px; animation: css-ani-arrow-topToBottom 1s linear 0s infinite forwards; pointer-events: auto;}
 		.--img .--ab.n3.complete,
 		.--img .--ab.n4.complete{animation: none;}
 		.--img .--ab.n5{top: 224px;left: 418px;}
 		.--img .--ab.n6{top: 296px;left: 488px;}
 		.--img .--ab.n7{top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suh_h_0401_04_0203_202_1/suh_h_0401_04_0203_202_1_2.png) no-repeat 50% 50% / contain;}
 		.--img .--ab.n8{top: 0; left: 0; width: 100%; height: 100%; background: url(./images/suh_h_0401_04_0203_202_1/suh_h_0401_04_0203_202_1_3.png) no-repeat 50% 50% / contain;}
+
+		.popBtn.btn_1:after{right: -50px;}
+		.page_2 .zoomContainer{margin-top: -10px;}
+		.page_2 .zoomArea{height: 450px;}
+		.page_2 .zoomContainer.horizon .zoomController{top: -30px; left: auto; right: 0;}
+
 		@keyframes css-ani-arrow-leftToRight{
 			0%,100%{transform:translateX(0);}
 			50%{transform:translateX(-10px);}
@@ -57,7 +63,9 @@
 						<section>
 							<div class="textAlignC">
 								<div class="mb_20">
-									<img src="./images/pic-1.png" alt="" width="300">
+									<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+										<img src="./images/pic-1.png" alt="" width="300">
+									</button>
 								</div>
 								<div class="toggle" data-toggle-obj="1">
 									<div class="answer textAlignJ" data-toggle-target="1">
@@ -76,15 +84,23 @@
 							삼각형 ㄱㄴㄷ을 위쪽과 오른쪽으로 5 cm 밀었을 때의 도형을 그려 보세요.
 						</span></h2>
 						<section>
-							<div class="--img textAlignC">
-								<div class="--ab n1">1 cm</div>
-								<div class="--ab n2">1 cm</div>
-								<div class="--ab n3 icon_arrow" data-toggle-obj="2"></div>
-								<div class="--ab n4 icon_arrow top" data-toggle-obj="1"></div>
-								<div class="--ab n5 icon_arrow left"></div>
-								<div class="--ab n6 icon_arrow bottom"></div>
-								<div class="answer --ab n7" data-toggle-target="1"></div>
-								<div class="answer --ab n8" data-toggle-target="2"></div>
+							<div class="zoomContainer horizon container_1" data-zoom-container="">
+								<!--  zoom 영역  -->
+								<div class="zoomArea">
+								  <!--  이미지 영역  -->
+									<div class="zoomImgContainer">
+										<div class="--img textAlignC">
+											<div class="--ab n1">1 cm</div>
+											<div class="--ab n2">1 cm</div>
+											<div class="--ab n3 icon_arrow" data-toggle-obj="2"></div>
+											<div class="--ab n4 icon_arrow top" data-toggle-obj="1"></div>
+											<div class="--ab n5 icon_arrow left"></div>
+											<div class="--ab n6 icon_arrow bottom"></div>
+											<div class="answer --ab n7" data-toggle-target="1"></div>
+											<div class="answer --ab n8" data-toggle-target="2"></div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<!-- <div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -141,6 +157,18 @@
 				</ul>
 			</div>
 		</main>
+
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole image pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="textAlignC pr_80" style="padding-top: 180px;">
+							<img src="./images/pic-1.png" alt="" width="">
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
 
 	</div>
 	<div id="loadingContainer">

@@ -319,14 +319,15 @@
 							</table>
 						</div>
 					</div>
-					<div class="flexListContainer jcenter center --char">
+					<div id="aniBox_3" style="position: relative; top: -20px; left: 0;"></div>
+					<!-- <div class="flexListContainer jcenter center --char">
 						<div class="characterImg girl_3-wrap circle orange">
 							<div class="charSpriteImg girl_3"></div>
 						</div>
 						<div class="balloon orange left ctTail textAlignC">
 							나머지가 30보다 크니까 더 나눌 수 있네.
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</li>
@@ -384,14 +385,15 @@
 							</table>
 						</div>
 					</div>
-					<div class="flexListContainer jcenter center --char">
+					<div id="aniBox_2" style="position: relative; top: -20px; left: 0;"></div>
+					<!-- <div class="flexListContainer jcenter center --char">
 						<div class="balloon purple right ctTail textAlignC">
 							210은 187보다 크네.
 						</div>
 						<div class="characterImg girl_2-wrap circle purple">
 							<div class="charSpriteImg girl_2"></div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 			</div>
@@ -419,6 +421,108 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
+
+
+		$prite.add({
+			target: $ts.getEl('#aniBox_3'),
+			spriteId: 'sprite3',
+			spriteList: [
+				{
+					name: 'girl_3',
+					circle: 'orange',
+					top: 60,
+					left: 450,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_3.png',
+					spriteSheet: '../common/contents/images/character/girl_3.png',
+					//sound: '',
+					speech:'right',
+					textBubble: {
+					text: '나머지가 30보다 크니까 더 나눌 수 있네.',
+					class: 'balloon left orange ctTail',
+					top: 105,
+					left: 325,
+					width: 640,
+					textAlign: 'center',
+					wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					// endSheet: 0,
+					delay: 40,
+					callbacks: {
+					start: function () {},
+					end: function () {}
+					},
+					callbacks: {
+						start: function () {
+							$ts.getEl('#aniBox_3 .characterImg')[0].style.left = '-330px';
+						}, // 시작시 콜백
+						end: function () {
+							$ts.getEl('#aniBox_3 .characterImg')[0].style.left = '0px';
+						} // 끝날시 콜백
+					}
+				}
+			]
+		});
+		$prite.add({
+			target: $ts.getEl('#aniBox_2'),
+			spriteId: 'sprite2',
+			spriteList: [
+				{
+					name: 'girl_2',
+					circle: 'purple',
+					top: 60,
+					left: 450,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_2.png',
+					spriteSheet: '../common/contents/images/character/girl_2.png',
+					//sound: '',
+					speech:'left',
+					textBubble: {
+					text: '210은 187보다 크네.',
+					class: 'balloon right purple ctTail',
+					top: 105,
+					left: 260,
+					width: 350,
+					textAlign: 'center',
+					wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					// endSheet: 0,
+					delay: 40,
+					callbacks: {
+					start: function () {},
+					end: function () {}
+					},
+					callbacks: {
+						start: function () {
+							$ts.getEl('#aniBox_2 .characterImg')[0].style.left = '200px';
+						}, // 시작시 콜백
+						end: function () {
+							$ts.getEl('#aniBox_2 .characterImg')[0].style.left = '0px';
+						} // 끝날시 콜백
+					}
+				}
+			]
+		});
+
+
+		const _closeButt = document.querySelectorAll( ".popup_closeBtn" );
+		_closeButt.forEach(function(obj, index){
+			obj.addEventListener( "click", function(e) {
+				if( !document.querySelector( ".girl_3-wrap" ).classList.contains( "speech" ) ){
+					document.querySelector('#aniBox_3 .charSpriteAni').click();
+				}
+				if( !document.querySelector( ".girl_2-wrap" ).classList.contains( "speech" ) ){
+					document.querySelector('#aniBox_2 .charSpriteAni').click();
+				}
+			});
+		});
+
 
 	}, false);
 </script>
