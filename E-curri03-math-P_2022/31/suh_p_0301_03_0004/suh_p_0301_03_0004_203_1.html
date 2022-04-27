@@ -9,11 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<style type="text/css">
-        .img-wrap {width: 80%;height: 300px;margin: 0 auto;background: url(./images/suh_p_0301_03_0004_203_1/suh_p_0301_03_0004_203_1_1.png) 50% 50% /100% no-repeat;}
+        .img-wrap {position: relative;width: 80%;height: 300px;margin: 0 auto;background: url(./images/suh_p_0301_03_0004_203_1/suh_p_0301_03_0004_203_1_1.png) 50% 50% /100% no-repeat;}
         .img-wrap .toggle {width: calc(100% + 14px);height: 100%;padding: 0;background: none;}
         .img-wrap .toggle:after {display: none;}
         .img-wrap .flex-wrap {position: relative;left: -7px;justify-content: space-between;}
         .img-wrap .flex-wrap .lineBox {width: 200px;height: 300px;background: transparent;}
+        .img-wrap .click-finger-Btn {position: absolute;top: 120px;left: 400px;z-index: 1;}
+        .img-wrap .click-finger-Btn.complete {opacity: 0;animation: none;}
         .flexListContainer.wrap {justify-content: flex-start;width: 648px;margin: 30px auto 0;}
         .flexListContainer.wrap li {display: flex;align-items: center;}
         .flexListContainer.wrap li + li {margin-top: 15px;}
@@ -35,6 +37,7 @@
                     <li data-quiz="toggle">
                         <div class="img-wrap">
                             <div class="toggle n1" data-toggle-obj="1">
+                                <span class="click-finger-Btn blinkOn blinkOpacity" data-toggle-obj="1"></span>
                                 <div class="answer" data-toggle-target="1">
                                     <div class="flex-wrap">
                                         <div class="lineBox sky"></div>
