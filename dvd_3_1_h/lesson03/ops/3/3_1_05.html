@@ -119,6 +119,7 @@
       background-color: #216cbe;
       padding-left: 38px;
     }
+    #bol2, #bol1{cursor: pointer;}
   </style>
 </head>
 
@@ -160,13 +161,13 @@
 
                 <div class="dropArea">
                   <div class="js-dropArea colorBox gray" data-drop-area-answer="1">
-                    <div class="char"></div>
+                    <div class="char" id="bol1"></div>
                   </div>
                   <div class="js-dropArea colorBox gray" data-drop-area-answer="1">
                     <div class="char"></div>
                   </div>
                   <div class="js-dropArea colorBox gray" data-drop-area-answer="1">
-                    <div class="char"></div>
+                    <div class="char" id="bol2"></div>
                   </div>
                 </div>
                 <div class="dragBox top">
@@ -188,10 +189,12 @@
                 </div>
                 <div class="clickContainer" data-quiz="toggle">
                   <div class="clickButton question reflect" data-toggle-obj="1"></div>
-                  <div class="clickButton question" data-toggle-obj="2"></div>
+                  
                   <div class="balloon ctTail bottom orange" data-toggle-target="1">
                     나는 카드가 남지 <br />않을 때까지 한 장씩 <br />나누어 볼래.
                   </div>
+
+                  <div class="clickButton question" data-toggle-obj="2"></div>
                   <div class="balloon ctTail bottom purple" data-toggle-target="2">
                     또 다른 방법은 <br />뭐가 있을까?
                   </div>
@@ -264,7 +267,30 @@
   <script src="../../../include/contents/js/pageManager.min.js"></script>
   <script src="./js/3_1_5.js"></script>
   <script type="text/javascript">
-    window.addEventListener('load', function () { });
+    window.addEventListener('load', function () {
+
+      var btn1 = document.querySelector('#bol1');
+      var btn2 = document.querySelector('#bol2');
+
+      btn1.addEventListener('click', function(){
+        var a = document.querySelector('[data-toggle-obj="1"]');
+        var b = document.querySelector('[data-toggle-target="1"]');
+
+        a.classList.remove('complete');
+        b.classList.remove('on');
+
+      });
+
+      btn2.addEventListener('click', function(){
+        var a = document.querySelector('[data-toggle-obj="2"]');
+        var b = document.querySelector('[data-toggle-target="2"]');
+
+        a.classList.remove('complete');
+        b.classList.remove('on');
+
+      });
+
+     });
   </script>
 </body>
 
