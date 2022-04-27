@@ -67,7 +67,7 @@
 
 <div id="wrap" class="math">
 	<header>
-		<div class="title">뮤지컬 공연 시간은 몇 시간 몇 분인지 알아봅시다.</div>
+		<div class="title mb_40">뮤지컬 공연 시간은 몇 시간 몇 분인지 알아봅시다.</div>
 	</header>
 	<main>
 		<div class="basicSlider contentsBox" data-slide-container="main">
@@ -245,6 +245,7 @@
 								</div>
 							</div>
 						</div>
+						<div id="aniBox_2" style="position: relative; top: -50px; left: 0;"></div>
 						<!-- <div class="buttonContainer">
 							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -350,6 +351,42 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
+
+		$prite.add({
+			target: $ts.getEl('#aniBox_2'),
+			spriteId: 'sprite2',
+			spriteList: [
+				{
+					name: 'boy_2',
+					circle: 'orange',
+					top: 60,
+					left: 450,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/boy_2.png',
+					spriteSheet: '../common/contents/images/character/boy_2.png',
+					//sound: '',
+					speech:'right',
+					textBubble: {
+					text: '1시간은 60분이에요.',
+					class: 'balloon left green ctTail',
+					top: 100,
+					left: 650,
+					width: 340,
+					textAlign: 'center',
+					wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					// endSheet: 0,
+					delay: 40,
+					callbacks: {
+					start: function () {},
+					end: function () {}
+					}
+				}
+			]
+		});
 
 	}, false);
 </script>

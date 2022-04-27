@@ -48,6 +48,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.page_2 .innerTab_1 .--img{width: 225px;height: 460px;margin: -45px auto 0;background: url(./images/4_1_2.svg) no-repeat 0% 50% / auto 100%;}
 	.page_2 .innerTab_2 .--img{width: 225px;height: 460px;margin: -45px auto 0;background: url(./images/4_1_2.svg) no-repeat -298px 50% / auto 100%;}
 	.page_2 .icon_arrow{position: absolute; top: 166px; left: calc(50% - 5px);}
+	.page_2 .innerTab_1 .icon_arrow{animation: css-ani-arrow-topToBtm1 1s linear 0s infinite forwards;}
+	.page_2 .icon_arrow.complete{animation: none !important;}
+	.page_2 .innerTab_2 .icon_arrow{animation: css-ani-arrow-topToBtm2 1s linear 0s infinite forwards;}
 	.page_2 .innerTab_1 .--img .answer{position: absolute;top: 256px;left: 427px;width: 225px;height: 120px;background: url(./images/4_1_2_01_answer.svg) no-repeat 50% 50% / contain;}
 	.page_2 .innerTab_2 .--img .answer{position: absolute;top: -8px;left: 428px;width: 220px;height: 122px;background: url(./images/4_1_2_02_answer.svg) no-repeat 50% 50% / contain;}
 
@@ -64,6 +67,17 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 
 	.page_5 .--img{position:relative; width:100%; height:360px; background: url(./images/4_1_5.svg) no-repeat 50% 50% / contain;}
 	.page_5 .--img .answer{position: absolute;top: 160px;left: 640px;width: 210px;height: 160px;background: url(./images/4_1_5_answer.svg) no-repeat 50% 50% / contain;}
+
+
+	@keyframes css-ani-arrow-topToBtm1{
+		0%,100%{transform:translateY(0) rotate(90deg);}
+		50%{transform:translateY(10px) rotate(90deg);}
+	}
+
+	@keyframes css-ani-arrow-topToBtm2{
+		0%,100%{transform:translateY(0) rotate(-90deg);}
+		50%{transform:translateY(10px) rotate(-90deg);}
+	}
 </style>
 </head>
 
@@ -144,8 +158,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</span></h2>
 						<section>
 							<div class="--img">
-								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
-								<div class="icon_arrow bottom"></div>
+								<div class="answer" data-toggle-target="1"></div>
+								<div class="icon_arrow bottom" data-toggle-obj="1"></div>
 							</div>
 							<div class="buttonContainer">
 								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
@@ -159,8 +173,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 						</span></h2>
 						<section>
 							<div class="--img">
-								<div class="answer" data-toggle-obj="1" data-toggle-target="1"></div>
-								<div class="icon_arrow top"></div>
+								<div class="answer" data-toggle-target="1"></div>
+								<div class="icon_arrow top" data-toggle-obj="1"></div>
 							</div>
 							<div class="buttonContainer">
 								<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
