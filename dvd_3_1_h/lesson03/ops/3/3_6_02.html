@@ -140,10 +140,14 @@
                 DRAGDROP.droppedArea.DISABLED = true;
               } 
               window.$efSound.correct();
-              console.log(window.$efSound);
             } else {
               window.$efSound.incorrect();
             }
+
+            if (DRAGDROP.quiz.TOTAL_COUNT === 10) {
+              document.querySelector('.page1 .js-buttons').click();
+            }
+            
           },
         };
 
