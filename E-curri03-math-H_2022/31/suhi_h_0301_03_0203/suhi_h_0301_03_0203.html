@@ -26,7 +26,7 @@
 			</h1>
 		</header>
 		<main>
-			<div class="basicSlider contentsBox" data-slide-container="main">
+			<div class="basicSlider contentsBox type-ifm" data-slide-container="main">
 				<!--   탭 버튼   -->
 				<ul class="basicSlider_tabs" data-tabs="">
 					<li data-hover="">개념 정리</li>
@@ -222,7 +222,7 @@
 					</li>
 					<li class="page_4">
 						
-						<div class="basicSlider contentsBox doItContent"  data-slide-container="">
+						<div class="basicSlider contentsBox type-ifm doItContent"  data-slide-container="">
 							<div class="moveButtonContainer" data-slide-btn-container="">
 								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
 								<ul class="basicSlider_circle_tabs" data-tabs="">
@@ -309,7 +309,7 @@
 								도토리를 다람쥐들이 똑같이 나누어 먹으려고 합니다.  <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
 							</span>
 						</h2>
-						<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding-right:0">
+						<div class="basicSlider contentsBox  type-ifm doItContent"  data-slide-container="" style="padding-right:0">
 							<div class="moveButtonContainer" data-slide-btn-container="">
 								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
 								<ul class="basicSlider_circle_tabs" data-tabs="">
@@ -603,6 +603,8 @@
 			if (slide.idx === 1 && slide.container.dataset.slideContainer === 'main') {
 				setTimeout(function () {
 
+					
+
 					$ts.getEl('.page_2 .textBookBtn')[0].click();
 					setTimeout(function () {
 						$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
@@ -613,7 +615,14 @@
 
 		document.addEventListener('DOMContentLoaded', function () {
 			window.$callBack.sliderMove=function(SLIDER) {
-			document.getElementById('ifm1').contentDocument.location.reload(true);
+				document.getElementById('ifm1').contentDocument.location.reload(true);
+			}
+
+			var cbs = document.querySelectorAll('.contentsBox');
+					
+			for (var i = 0; i < cbs.length; i++) {
+				console.log(cbs[i]);
+				cbs[i].classList.remove('type-ifm');
 			}
 
 			
