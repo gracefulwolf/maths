@@ -89,6 +89,17 @@
 		.page_10 .colorBox.orange.n2{top: -10px;left: 230px;}
 		.page_10 .colorBox.orange.n3{top: -10px;left: 470px;}
 		.page_10 .colorBox.orange.n4{top: -10px;left: 772px;}
+
+		.textTitle .colorBox{margin: 0; padding: 8px 10px; border-radius: 40px; font-size: 18px; vertical-align: middle;}
+		.textBookBtn.invisible{opacity:0; visibility: hidden;}
+
+		.--finger{animation-iteration-count:infinite !important;}
+		.--finger.complete{display:none;}
+
+		.page_1 .--finger{top: 110px; left: 110px;}
+
+		.page_5 .--finger{top: 62px; left: 60px;}
+
 	</style>
 </head>
 
@@ -245,9 +256,10 @@
 
 								<div class="imgCon imgCon_5">
 									<div class="text_1">다섯째</div>
-									<div class="img_3 noClick">
+									<div class="img_3">
 										<img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_5.png" height="320">
-										<div class="toggle noBg" data-toggle-obj="1">
+										<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+										<div class="toggle noBg" style="cursor: default;">
 											<div class="answer" data-toggle-target="1"><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_1_6.png" height="320"></div>
 										</div>
 									</div>
@@ -404,9 +416,10 @@
 
 								<div class="imgCon imgCon_2">
 									<div class="text_1">다섯째</div>
-									<div class="img_3 noClick">
+									<div class="img_3">
+										<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
 										<img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_5.png">
-										<div class="toggle noBg" data-toggle-obj="1">
+										<div class="toggle noBg" style="cursor: default;">
 											<div class="answer" data-toggle-target="1"><img src="./images/suh_0401_06_0004_401_1/suh_0401_06_0004_401_1_3_7.png"></div>
 										</div>
 									</div>
@@ -426,9 +439,25 @@
 				</ul>
 			</div>
 		</main>
+
+		<button class="popBtn textBookBtn invisible" data-hover="" data-popup-btn="1" data-close-inner="">
+			<span class="btnInner"></span>
+		</button>
+
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<!--      page에 solve 추가        -->
+
+				<li class="textBookPopup popup_1" data-popup-page="1">
+					<div class="popupInner" data-popup-inner="">
+						<div class="textTitle">
+							<div style="display: inline-block;">
+								[<span class="colorBox brown check">문제 1</span>~<span class="colorBox brown check">문제 2</span>]
+							</div>
+							모형으로 만든 배열을 보고 물음에 답하시오.
+						</div>
+					</div>
+				</li>
 
 				<li class="solve pop_page_10" data-popup-page="10">
 					<div class="popup_contents">
@@ -520,6 +549,28 @@
 			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
 			// }
 		}
+
+		window.$callBack.sliderReset = function (slide) {
+			console.log(slide.idx);
+
+			if (slide.idx === 0 || slide.idx === 1) {
+				setTimeout(function () {
+					$ts.getEl('.textBookBtn')[0].classList.remove( "invisible" );
+				});
+			} else {
+				setTimeout(function () {
+					$ts.getEl('.textBookBtn')[0].classList.add( "invisible" );
+				});
+			}
+		}
+
+		document.querySelector( ".gate_btn" ).addEventListener("click", function(){
+			$ts.getEl('.textBookBtn')[0].classList.remove( "invisible" );
+			$ts.getEl('.textBookBtn')[0].click();
+			setTimeout(function () {
+				$ts.getEl('.popup_1 .popup_closeBtn')[0].click();
+			}, 3000);
+		});
 
 		document.addEventListener("DOMContentLoaded", function () {
 			$(".controlBtn").click(function(){

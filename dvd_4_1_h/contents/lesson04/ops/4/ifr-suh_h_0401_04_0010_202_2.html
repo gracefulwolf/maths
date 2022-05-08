@@ -14,7 +14,8 @@
 html,body,#wrap{background: transparent !important;}
 main{top: 0;}
 #wrap{width:998px;height:495px; padding:0; box-shadow:none;}
-header,header:before{display:none !important;}
+#wrap:after{display: none !important;}
+header,header:before,main:before{display:none !important;}
 main .contentsArea{top:0; left:0; right:0; bottom: 0;}
 body, .content-container{width:100%; max-width:1000px; height:640px;}
 .bullet.exam{font-family: YGJAL;}
@@ -152,45 +153,6 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
                 </div>
 
                 <div class="js-chainButtons dapCheckBtn resetBtn" data-type="reset" data-quiz-chain="drag_1" data-hover=""></div>
-              </li>
-              <li class="page4" data-quiz="input" data-quiz-name="input_1">
-                <h2 class="self"></h2>
-                <h3 class="h2Side">초대장을 완성해 보세요.</h3>
-                <div class="contBox">
-                  <div class="txt">
-                    <input type="text" class="" data-input-obj="1" data-answer="우주"> 에게 <br>
-                    안녕? 나는 <input type="text" class="" data-input-obj="2" data-answer="샛별"> (이)야. 내 생일잔치에 너를 초대하려고 해.<br>
-                    내 생일은 <span class="color1"></span> <span class="color2"></span>월 <span class="color3"></span> <span class="color4"></span>일이야.  각 숫자는 아래의 단서를 보면 알 수 있을 거야.  네가 꼭 와 주었으면 좋겠어.
-                    <div class="from">
-                      <input type="text" class="noBox" data-input-obj="1" data-answer="샛별"> (이)가 <br>
-                    </div>
-                  </div>
-                  <ul class="inputArea">
-                    <li>
-                      <div class="dragCopy"></div>
-                      <textarea class="noBox maxWidth" data-input-obj="11" data-answer="을 위쪽으로 뒤집으면"></textarea>
-                    </li>
-                    <li>
-                      <div class="dragCopy"></div>
-                      <textarea class="noBox maxWidth" data-input-obj="12" data-answer="을 시계 반대 방향으로 180°만큼 돌리면"></textarea>
-                    </li>
-                    <li>
-                      <div class="dragCopy"></div>
-                      <textarea class="noBox maxWidth" data-input-obj="13" data-answer="를 시계 방향으로 180°만큼 돌리면"></textarea>
-                    </li>
-                    <li>
-                      <div class="dragCopy"></div>
-                      <textarea class="noBox maxWidth" data-input-obj="14" data-answer="을 아래쪽으로 뒤집으면"></textarea>
-                    </li>
-                  </ul>
-                  <div class="balloonText">친구가 만든<br> 초대장을 보고 생일을 알아맞혀 보세요.</div>
-                </div>
-                <div class="js-chainButtons quizButtons solve" data-hover=""  data-click-obj="2" data-quiz-chain="input_1"></div>
-                <div class="pwu_exCont"></div>
-                <div class="js-supplies supplies">
-                  <div class="js-suppliesContent suppliesContent"><p>여러 가지 모양<ins class="downButton" data-download-file="4학년_1학기_185.pdf"></ins></p></div>
-                  <div class="js-suppliesButton suppliesButton"></div>
-                </div>
               </li>
             </ul>
           </div>
@@ -392,6 +354,16 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
         });
 
       });
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const _reflectIcon = document.querySelectorAll(".reflectIcon");
+        _reflectIcon.forEach(function(obj, index){
+            obj.addEventListener( "click", function(e) {
+                window.$efSound.click();
+            });
+        });
+      }, false);
     </script>
   </body>
 </html>
