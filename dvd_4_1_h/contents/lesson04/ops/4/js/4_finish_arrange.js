@@ -239,14 +239,24 @@
   }
 
   function hideTitle(boolean) {
-    if (boolean) TITLE.style.display = 'none';
-    else TITLE.style.display = '';
+    //if (boolean) TITLE.style.display = 'none';
+    //else TITLE.style.display = '';
   }
 
+  var _dapBtn = document.querySelectorAll( ".dapCheckBtn" );
 
   document.querySelector( "main" ).addEventListener("click", function(obj){
-    console.log("ddddd")
     if( obj.path[0].classList.contains( "reflectIcon" ) || obj.path[0].classList.contains( "rotateButton" ) ){ window.$efSound.click(); }
+
+    // if( obj.path[0].classList.contains( "nextButton" ) ){
+    //   _dapBtn.forEach(function(obj, index){
+    //     if( obj.classList.contains( "reset" ) ){
+    //       console.log( "a" )
+    //       obj.classList.remove( "reset" );
+    //     }
+    //   });
+    // }
+
   });
 
 })();
