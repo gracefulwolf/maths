@@ -23,7 +23,8 @@
 		<style>
 			#quiz-content-01 .tool-container {
 				top: 240px;
-				right: 30px;
+				right: 0;
+				z-index: 10;
 			}
 			.hid{
 				position: absolute;
@@ -36,11 +37,12 @@
 			}
 			.btns-bottom-right {
 				right: 0;
-    			bottom: 7px!important;
+    			bottom: 17px!important;
 			}
 			.answer{opacity: 1; visibility: visible;}
-			.exam-wrap {position: absolute;top: 240px;left: 329px; padding: 53px 3px 3px; background-color: #fff;z-index: 2;}
-            .exam-wrap.n2 {top: 382px;}
+			.iframe-re .exam-wrap {position: absolute;top: 246px;left: 329px;padding: 20px 10px 0;background-color: #fff;z-index: 2;}
+			.iframe-re .exam-wrap.n1 {padding-top: 60px;}
+            .iframe-re .exam-wrap.n2 {top: 413px;}
 
 			#quiz-content-01 .tool-container {top:190px;}
 			.btns-bottom-left{display: none !important;}
@@ -54,17 +56,21 @@
 				background-position: 0px -61px;
 			}
 			.btns-bottom-right > .button.btn-explan {display: none;}
-
+			.quiz-check.image-answer .flex-wrap {position: absolute;top: 385px;left: 325px;display: flex;justify-content: space-between;width: 708px;height: 50px;font-size: 40px;z-index: 3;padding: 0 20px;}
+			.quiz-check.image-answer .flex-wrap.n2 {top: 513px;left: 325px;}
+			.quiz-check.image-answer .flex-wrap .text {background: #fff;font-family: 'NotoM';}
+			.quiz-check.image-answer .flex-wrap .text.n1 {position: relative;left: -19px;padding: 0 10px 0 18px;}
+			
 		</style>
 	</head>
-	<body>
+	<body class="iframe-re">
 		<div class="content-container">
 			<div class="content" data-ui="cornerBase">
 				<div class="bg">
 					<!-- <img src="./images/ms_31_6_05_04_01/bg.png" alt="" /> -->
 				</div>
 
-				<div class="title-h1">
+				<!-- <div class="title-h1">
 					<div class="left-inner">
 						<span class="ico-title-h1 num-03"><em class="text">3</em></span>
 					</div>
@@ -81,12 +87,20 @@
 							<span class="ico-circle-01" style="margin-top: 15px;"></span> 안에 &gt;, =, &lt;를 알맞게 써넣으세요.
 						</span>
 					</div>
-				</div>
+				</div> -->
 
 				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option="{}">
 					<!-- content -->
 					<div class="hid n1"></div>
 					<div id="image-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
+						<div class="flex-wrap n1">
+							<div class="text n1">0</div>
+							<div class="text n2">1</div>
+						</div>
+						<div class="flex-wrap n2">
+							<div class="text n1">0</div>
+							<div class="text n2">1</div>
+						</div>
 						<div class="answer">
 							<div class="exam-wrap n1">
 								<div class="bullet exam">예</div>
@@ -94,12 +108,11 @@
 							<div class="exam-wrap n2">
 								<div class="bullet exam">예</div>
 							</div>
-							
 							<img src="./images/ms_31_6_05_04_01/pop_answer_01.svg" alt="" width="1280" height="720">
 						</div>
-						<div class="quiz-00-answer answer-part-00">
+						<!-- <div class="quiz-00-answer answer-part-00">
 							<span class="ico-box-text-02 bb-01"></span>
-						</div>
+						</div> -->
 					</div>
 					<div id="image-quiz-02" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
 						<div class="answer">
@@ -111,7 +124,7 @@
 					</div>
 
 					<div id="quiz-02" class="quiz-pop-select type-01" data-ui="quiz-pop-select" data-option='{"answer":[2]}'>
-						<div class="quiz-cont">
+						<!-- <div class="quiz-cont">
 							<ul class="pop-self quiz-pop dir-top">
 								<li class="btn-pop-select quiz-bt"></li>
 								<li class="btn-pop-select quiz-bt"></li>
@@ -120,7 +133,7 @@
 							<div class="btn-self quiz-bt-open">
 								<div class="pop"></div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 					
