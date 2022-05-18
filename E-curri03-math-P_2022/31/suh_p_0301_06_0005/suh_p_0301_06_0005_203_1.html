@@ -23,22 +23,26 @@ h2 img {vertical-align: middle;margin: -7px 0 0 0;}
 .aniWrap {position: relative;}
 .innerTab_1 .flex-item.n1 .img-wrap {width: 600px;height: 290px;margin: 7px auto 0;}
 .innerTab_2 .flex-item.n1 .flex-item.n1 {height: 100%;}
-.innerTab_2 .flex-item.n1 .img-wrap {position: relative;width: 600px;height: 290px;margin: 0 auto;}
-.innerTab_2 .flex-item.n1 .img-wrap .flexListContainer {justify-content: space-between;height: auto;}
-.innerTab_2 .flex-item.n1 .img-wrap .flexListContainer img {width: 47.5%;height: auto;}
+.innerTab_2 .flex-item.n1 .img-wrap {position: relative;width: 600px;height: 290px;margin: 0 auto;display:flex;justify-content:space-between}
+.innerTab_2 .flex-item.n1 .img-wrap .toggle {background-color:transparent;width:47.5%;padding:0}
+.innerTab_2 .flex-item.n1 .img-wrap .toggle img {height: auto;width:100%}
 .innerTab_2 .flex-item.n1 .img-wrap .answer {position: absolute;top: 0;}
-.innerTab_2 .flex-item.n1 .img-wrap .answer.on img {opacity: 0;}
-.innerTab_2 .flex-item.n1 .img-wrap .answer img.on {opacity: 1;}
-.innerTab_2 .toggle.noBg.n1::after {display: none;}
-.innerTab_2 .flexListContainer img {position: relative;}
-.innerTab_2 .flexListContainer .bullet.exam {opacity: 0;}
-.innerTab_2 .flexListContainer .bullet.exam.on {opacity: 1;}
-.innerTab_2 .flexListContainer .bullet.exam.n1 {position: absolute;top: 0;left: 0;}
-.innerTab_2 .flexListContainer .bullet.exam.n2 {position: absolute;top: 0;left: 310px;}
-.click-finger-Btn{z-index: 1;}
-.click-finger-Btn.n1 {top: 145px;left: 135px;}
-.click-finger-Btn.n2 {top: 145px;left: 452px;}
-.click-finger-Btn.complete {opacity: 0;animation: none;}
+.innerTab_2 .toggle img {position: relative;}
+.innerTab_2 .img-wrap .toggle:after {
+	width: 51px;
+	height: 70px;
+	border-radius:0;
+	border:none;
+	content:'';
+	background: url("../common/contents/images/icon/icon_click_finger.png") center/contain no-repeat;
+	-webkit-animation: opacity 1.5s ease-in 3;
+	-o-animation: opacity 1.5s ease-in 3;
+	animation: opacity 1.5s ease-in 3
+}
+.innerTab_2 .img-wrap .toggle.complete:after {
+	display:none;
+}
+.innerTab_2 .toggle .bullet.exam {position: absolute;top: 0;left: 0;}
 </style>
 </head>
 
@@ -112,20 +116,18 @@ h2 img {vertical-align: middle;margin: -7px 0 0 0;}
 							<div class="flex-wrap">
 								<div class="flex-item n1">
 									<div class="img-wrap">
-										<div class="toggle noBg n1">
-											<span class="click-finger-Btn blinkOn blinkOpacity n1" data-toggle-obj="1"></span>
-											<span class="click-finger-Btn blinkOn blinkOpacity n2" data-toggle-obj="2"></span>
-											<div class="flexListContainer">
-												<div class="bullet exam n1" data-toggle-target="1">예</div>
-												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
-												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
-											</div>
+										<div class="toggle n1" data-toggle-obj="1">
+											<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
 											<div class="answer" data-toggle-target="1">
-												<div class="flexListContainer">
-													<div class="bullet exam n2" data-toggle-target="2">예</div>
-													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_3.png" alt="" data-toggle-target="1">
-													<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_4.png" alt="" data-toggle-target="2">
-												</div>
+												<div class="bullet exam n1">예</div>
+												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_3.png" alt="">
+											</div>
+										</div>
+										<div class="toggle n1" data-toggle-obj="2">
+											<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_2.png" alt="">
+											<div class="answer" data-toggle-target="2">
+												<div class="bullet exam n2">예</div>
+												<img src="./images/suh_p_0301_06_0005_203_1/suh_p_0301_06_0005_203_1_4.png" alt="">
 											</div>
 										</div>
 									</div>
