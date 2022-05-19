@@ -258,9 +258,16 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
           var dragValue = dragObj.getAttribute('data-index')-0;
 
           var isDay = dropArea.hasAttribute('data-day');
+          
+          
+          console.log(DRAG.droppedArea.element.children.length)
 
-          if (dropArea.length > 2) {
+          if (DRAG.droppedArea.element.children.length === 1) {
+            DRAG.droppedArea.DISABLED = true;
+          } else {
+            if (dropArea.length > 2) {
             window.$efSound.incorrect();
+            
             dropArea.removeChild(dropArea.children[1]);
             return;
           }
@@ -292,7 +299,10 @@ body, .content-container{width:100%; max-width:1000px; height:640px;}
 
           var index = parseInt(dropArea.classList[1].split('box')[1]) - 1;
           var clone = dragObj.cloneNode(true);
-          $ts.getEl('.dragCopy')[index].appendChild(clone);
+          // $ts.getEl('.dragCopy')[index].appendChild(clone);
+          }
+
+         
 
         }
         window.$callBack.dragIncorrect = function(DRAG) {

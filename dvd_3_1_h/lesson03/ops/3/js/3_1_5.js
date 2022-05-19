@@ -55,7 +55,7 @@
     };
 
     var dragAnswerButton = document.querySelector(".page2 .js-buttons");
-    // dragAnswerButton.addEventListener("click", toggleDragAnswer);
+     dragAnswerButton.addEventListener("click", toggleDragAnswer);
 
     var toggleTargets = $ts.getEl(".page2 [data-toggle-target]");
     toggleTargets.forEach(function (target) {
