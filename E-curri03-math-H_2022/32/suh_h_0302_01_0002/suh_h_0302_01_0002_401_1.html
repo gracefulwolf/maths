@@ -9,6 +9,14 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<link rel="stylesheet" href="./css/suh_h_0302_01_0002_401_1.css">
+	<style>
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+		.contentsList .icon_arrow{width:auto !important; margin:0 10px;}
+		.lineBox .bullet.number,
+		h2 .bullet.number{margin-top:7px;}
+	</style>
 </head>
 <body>
 
@@ -17,38 +25,82 @@
 			<img src="../common/contents/images/quiz/alert_correct.png" alt="">
 			<img src="../common/contents/images/quiz/alert_incorrect.png" alt="">
 		</div>
-		<div class="gate_container">
-			<div class="gate_title_container">
-				<div class="gate_title_title">확인 문제</div>
-				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/4단원_3차시_형성평가.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+		<div class="gate_container">
+			<div class="cl_mainContainer">
+				<div class="gate_title_title"><span class="orange">확인</span> 문제</div>
+				<div class="gate_sub_title">문제 수를 선택하세요.</div>
+
+				<ul class="quizList cl_absolute">
+					<li data-num="3">
+						<span class="count">3문제</span>
+						<span class="checked"> <span class="circle"></span>선택</span>
+					</li>
+					<li data-num="5">
+						<span class="count">5문제</span>
+						<span class="checked"> <span class="circle"></span>선택</span>
+					</li>
+					<li class="active" data-num="10">
+						<span class="count">10문제</span>
+						<span class="checked"> <span class="circle"></span>선택</span>
+					</li>
+				</ul>
+				<div class="gate_btn" data-open-btn="" data-hover=""><span>시작</span></div>
+
+				<div class="worksheet downloadBtn">
+					<a href="./data/3~4학년군_수학(박)3-1_확인문제_1_02차시.hwp" target="_blank" class=" search" data-name="활동지 미리보기"></a>
+					<a href="./data/3~4학년군_수학(박)3-1_확인문제_1_02차시.hwp" target="_blank" class=" down" data-name="활동지 다운로드"></a>
+				</div>
 			</div>
 		</div>
 
+		<!--칭찬하기 모달창-->
+		<div class="cl_modalBg">
+			<div class="modalInner">
+				<div class="modalTop">
+					<span class="closeBtn"></span>
+				</div>
+				<div class="modalBody">
+					<div class="mathBoardInner">
+						<div class="mathTxt">
+							<span data-math-txt="1" class="">네가 참 <br> 자랑스러워!</span>
+							<span data-math-txt="2" class="">정말 대단해!</span>
+							<span data-math-txt="3" class="">노력해줘서<br>고마워!</span>
+						</div>
+					</div>
+				</div>
+				<div class="praiseAni"></div>
+			</div>
+		</div>
 
 		<header>
 			<div class="checkTitle">
 				<span class="title"><span class="orange">확인</span> 문제</span>
 			</div>
+
+			<span class="cl_sticker">
+				<img class="on" src="../common/contents/images/icon/sticker.png" alt="기본 이미지">
+				<img class="last" src="../common/contents/images/icon/sticker_hover.png" alt="클릭시 이미지">
+			</span>
 		</header>
+
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
-				<ul class="basicSlider_tabs " data-tabs="">
-					<li data-hover="">문제 1</li>
-					<li data-hover="">문제 2</li>
-					<li data-hover="">문제 3</li>
-					<li data-hover="">문제 4</li>
-					<li data-hover="">문제 5</li>
-					<li data-hover="">문제 6</li>
-					<li data-hover="">문제 7</li>
-					<li data-hover="">문제 8</li>
-					<li data-hover="">문제 9</li>
-					<li data-hover="">문제 10</li>
+				<ul class="basicSlider_tabs main-tab" data-tabs="">
+					<li data-hover="" data-page-num="">문제 1</li>
+					<li data-hover="" data-page-num="">문제 2</li>
+					<li data-hover="" data-page-num="">문제 3</li>
+					<li data-hover="" data-page-num="">문제 4</li>
+					<li data-hover="" data-page-num="">문제 5</li>
+					<li data-hover="" data-page-num="">문제 6</li>
+					<li data-hover="" data-page-num="">문제 7</li>
+					<li data-hover="" data-page-num="">문제 8</li>
+					<li data-hover="" data-page-num="">문제 9</li>
+					<li data-hover="" data-page-num="">문제 10</li>
 				</ul>
 
-				<ul class="basicSlider_slides" data-slides="">
-					<li class="page_1" data-quiz="toggle">
+				<ul class="basicSlider_slides main-tab" data-slides="">
+					<li class="page_1" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -101,7 +153,7 @@
 						</div>
 					</li>
 
-					<li class="page_2" data-quiz="toggle">
+					<li class="page_2" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -246,7 +298,7 @@
 						</div>
 					</li>
 					
-					<li class="page_3" data-quiz="toggle">
+					<li class="page_3" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -273,7 +325,7 @@
 						</div>
 					</li>
 
-					<li class="page_2" data-quiz="toggle">
+					<li class="page_4" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -310,7 +362,7 @@
 						</div>
 					</li>
 					
-					<li class="page_5" data-quiz="toggle">
+					<li class="page_5" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -393,7 +445,7 @@
 						</div>
 					</li>
 
-					<li class="page_6" data-quiz="toggle">
+					<li class="page_6" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -476,7 +528,7 @@
 						</div>
 					</li>
 
-					<li class="page_7" data-quiz="toggle">
+					<li class="page_7" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -513,7 +565,7 @@
 						</div>
 					</li>
 
-					<li class="page_8" data-quiz="toggle">
+					<li class="page_8" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -555,7 +607,7 @@
 						</div>
 					</li>
 
-					<li class="page_9" data-quiz="toggle">
+					<li class="page_9" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2>
 							<ins class="dot"></ins>
@@ -591,7 +643,7 @@
 						</div>
 					</li>
 
-					<li class="page_10" data-quiz="toggle">
+					<li class="page_10" data-page-num="" data-quiz="toggle">
 						<div class="guide-area"></div>
 						<h2 data-addline-container="" style="margin-top: 0;">
 							<ins class="dot orange"></ins>
@@ -1129,43 +1181,175 @@
 	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
 	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
 	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
-
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script type="text/javascript">
 		// ox quiz 정답 콜백
-		window.$callBack.oxCorrect = function (obj) {
+		window.$callBack.oxCorrect=function (obj) {
 
 		}
 		// ox quiz 오답 콜백
-		window.$callBack.oxIncorrect = function (obj) {
+		window.$callBack.oxIncorrect=function (obj) {
 
 		}
 		// ox quiz 정답 확인 클릭시 콜백
-		window.$callBack.viewAnswer = function (obj) {
+		window.$callBack.viewAnswer=function (obj) {
 			// if(obj.QUIZ.name=="ox1"){
 			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
 			// }
 		};
 		// ox quiz 정답 가리기 클릭시 콜백
-		window.$callBack.hideAnswer = function (obj) {
+		window.$callBack.hideAnswer=function (obj) {
 			// if(obj.QUIZ.name=="ox1"){
 			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
 			// }
 		}
 
 		document.addEventListener("DOMContentLoaded", function () {
-			var cbtn = document.querySelectorAll('.controlBtn');
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
 
-			for (var i = 0; i < cbtn.length; i++) {
-				cbtn[i].click(function() {
-					$efSound.click();
-				});
-			}
 
 		}, false);
 
+
+		//0615 확인문제 jQuery 부분
+		$(document).ready(function(){
+			$('.cl_mainContainer .quizList li').on('click', function(){
+				$('.cl_mainContainer .quizList li').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			let solveArr = [1,2,3,4,5,6,7,8,9,10];
+			for(let i = 0; i < 500; i++) {
+				let randomNum1 = Math.floor(Math.random() * 10);
+				let randomNum2 = Math.floor(Math.random() * 10);
+
+				let temp = solveArr[randomNum1]
+				solveArr[randomNum1] = solveArr[randomNum2]
+				solveArr[randomNum2] = temp;
+
+			}
+
+			$('.basicSlider_tabs.main-tab > li').each(function(index){
+				$(this).attr('data-page-num', solveArr[index]);
+			})
+
+
+			function countNum ( num ) {
+				$('.basicSlider_tabs.main-tab > li').css('display', 'none');
+				for(let k = 0; k < num; k++) {
+					$('.basicSlider_tabs.main-tab > li').eq(k).css('display', 'block');
+				}
+			}
+			//초기 첫번째 3문제 클릭시 3개 sorting
+			//countNum ( 3 )
+
+			//디폴트로 10문제 선택
+			countNum ( 10 );
+
+			$('.cl_mainContainer .quizList li').on('click',function(){
+				var num = $(this).attr('data-num');
+				countNum ( num )
+			});
+
+			//각 랜덤에 부합하는 contents 내용
+			$('.basicSlider_tabs.main-tab > li').on('click', function(){
+				$('.basicSlider_slides.main-tab > li').css('display', 'none');
+				let pageNum = $(this).attr('data-page-num');
+
+				$('.basicSlider_slides.main-tab > .page_' + pageNum  ).css('display', 'block')
+			})
+
+			//시작버튼 클릭 시
+			$(".gate_btn").on("click", function(){
+				$('.basicSlider_slides.main-tab > li').css('display', 'none');
+				$('.basicSlider_slides.main-tab > .page_' + solveArr[0]  ).css('display', 'block')
+			});
+
+
+			//모달창 클릭시 텍스트 랜덤
+			function randomChangeTxt () {
+				let randomTxtNum = Math.floor(Math.random()* (3) ) + 1;
+
+				$('.cl_modalBg .mathTxt span').css('display', 'none');
+				$('.cl_modalBg .mathTxt span[data-math-txt="'+ randomTxtNum +'"]').css('display', 'block');
+			}
+
+
+			let clapSound = new Audio("../common/contents/media/clap.mp3");
+			$('.cl_sticker img').on('click', function(){
+				if($('.cl_sticker img').hasClass('on')) {
+					$('.cl_modalBg').addClass('show');
+					playPraiseAni(3);
+					randomChangeTxt ();
+
+					clapSound.play();
+					clapSound.currentTime = 0;
+				}
+			})
+
+			$('.cl_modalBg .modalTop .closeBtn').on('click', function(){
+
+				$('.cl_modalBg').removeClass('show');
+				clapSound.pause();
+			});
+
+
+
+
+			//곰돌이 애니메이션
+			var praiseAniInterval
+			function playPraiseAni(_repeat){
+				var totalCnt = 0;
+				var aniCnt = 0;
+				var nextPosX;
+				var nextPosY = 0;
+
+				var repeatCnt = 1;
+
+				clearInterval(praiseAniInterval);
+				praiseAniInterval = setInterval(function(){
+
+					if(totalCnt == 20){
+						nextPosY = 260;
+						nextPosX = 0;
+						aniCnt = 0;
+					}
+
+					nextPosX = aniCnt * 300;
+
+					$(".praiseAni").css("background-position-x", -nextPosX+"px");
+					$(".praiseAni").css("background-position-y", -nextPosY+"px");
+
+					aniCnt++;
+					totalCnt++;
+
+
+					if(totalCnt >= 29){
+						if(repeatCnt < _repeat) {
+							repeatCnt++;
+
+							totalCnt = 0;
+							aniCnt = 0;
+							nextPosY = 0;
+							nextPosX = 0;
+						}else {
+							clearInterval(praiseAniInterval);
+						}
+
+					}
+
+				}, 40);
+			}
+
+
+
+		});
 	</script>
 
 </script>
