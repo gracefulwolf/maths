@@ -846,8 +846,8 @@ section.flex-wrap {
     bottom:-60px;
     left:50%;
 }
-.sky.type-linebox-b::before{border-color: #c1e8ec;}
-.pink.type-linebox-b::before{border-color: #ffece2;}
+.sky .type-linebox-b::before{border-color: #c1e8ec;}
+.pink .type-linebox-b::before{border-color: #ffece2;}
 .type-linebox-b .lineBox{
     position: absolute;
     bottom:-120px;
@@ -863,6 +863,44 @@ section.flex-wrap {
 .toggle .type-linebox-b .lineBox{
     bottom:-96px
 }
+
+
+.type-linebox-t{
+    position: relative;
+    text-align: center;
+}
+.type-linebox-t::before{
+    content:"";
+    display: block;
+    width:1px;
+    height:60px;
+    border-left: 4px dashed #ccc;
+    position: absolute;
+    left:50%;
+    top:-60px;
+    bottom:auto;
+}
+.sky .type-linebox-t::before{border-color: #c1e8ec;}
+.pink .type-linebox-t::before{border-color: #ffece2;}
+.type-linebox-t .lineBox{
+    position: absolute;
+    bottom:-120px;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color:#000;
+    font-family: NotoM;
+    font-weight: 500;
+}
+.type-linebox-t .lineBox > *{display: block;}
+.toggle .type-linebox-t .lineBox{
+    top:-96px;
+    bottom:auto;
+}
+
+
+
 .dotList>li>div{width:100%; flex: 1; padding-right:10px}
 
 .math-calc-side{
@@ -888,10 +926,12 @@ section.flex-wrap {
 }
 .toggle-answer{opacity:0; }
 .toggle-answer.on{opacity:1; transition: opacity .2s ease-in}
+.math_calc_table .lineDotted.line_0{left:0;}
 .math_calc_table .lineDotted.line_1{left:50px;}
 .math_calc_table .lineDotted.line_2{left:100px;}
 .math_calc_table .lineDotted.line_3{left:150px;}
 .math_calc_table .lineDotted.line_4{left:200px;}
+.solve .math_calc_table .lineDotted.line_0{left:0;}
 .solve .math_calc_table .lineDotted.line_1{left:40px;}
 .solve .math_calc_table .lineDotted.line_2{left:80px;}
 .solve .math_calc_table .lineDotted.line_3{left:120px;}
