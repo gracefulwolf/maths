@@ -9,13 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
-	<link rel="stylesheet" href="./css/suh_p_0402_01_0002_201_1.css">
-	<style type="text/css">
-		.img-wrap {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-		}
+	<style>
+		.img-wrap {width: 100%;display: flex;justify-content: center;}
 		.btn_1 {
 			width: 450px;
 			height: 220px;
@@ -23,12 +18,27 @@
 			cursor: default;
 			margin: 0 auto 20px;
 		}
-		.pop_page_1 {top:240px; left:405px;}
-		.item-answer {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+		.pop_page_1 {top:240px; left:390px;}
+		.item-answer {display: flex;justify-content: center;align-items: center;}
+		.finger-box.toggle {background-color: transparent;}
+		.finger-box.toggle::after {display: none;}
+		.finger-box.toggle .click-finger-Btn {z-index: 10;top: 120px;}
+		.finger-box.toggle .n1 {
+			width: 300px;
+			height: 300px;
+			background: #fff url(./images/suh_p_0402_01_0002_201_1/suh_p_0402_01_0002_201_1_2.png) no-repeat 50% 0 / cover;
 		}
+		.finger-box.toggle .answer {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 300px;
+			top: 0;
+			padding: 0;
+		}
+		.contentsBox .title-01 {height: 80px;}
+		.popBtn.word {line-height: 48px;}
+		.basicSlider_slides li h2 > span {letter-spacing: -.9px}
 	</style>
 </head>
 
@@ -49,7 +59,7 @@
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
-						<h2>
+						<h2 class="title-01">
 							<ins class="dot"></ins>
 							<span>
 								사용한 두부의 양이 <span class="popBtn word btn_2" data-popup-btn="1" data-hover="">두부모</span> 1개보다 많은지 적은지 어림해 보세요.
@@ -83,7 +93,7 @@
 							</div>
 							<ul class="basicSlider_slides" data-slides="">
 								<li class="innerTab_1" data-quiz="toggle">
-									<h2>
+									<h2 class="title-01">
 										<ins class="dot"></ins>
 										<span>사용한 두부의 양은 각각 전체의 얼마인지 분수로 나타내 보세요.</span>
 									</h2>
@@ -170,7 +180,7 @@
 					<li class="page_3" data-quiz="toggle">
 
 
-						<h2><ins class="dot"></ins><span>
+						<h2 class="title-01"><ins class="dot"></ins><span>
 							사용한 두부의 양은 전체의 얼마인지 구하는 식을 써 보세요.
 						</span></h2>
 
@@ -210,15 +220,18 @@
 							사용한 두부의 양을 그림으로 나타내 알아보세요.
 						</span></h2>
 
-						<section class="textAlignC">
-							<div class="toggle" data-toggle-obj="2">
+						<section class="textAlignC mt_30" style="margin-left: -54px;">
+							<span class="exam bullet">예</span>
+							<div class="toggle finger-box" data-toggle-obj="1">
 								<span class="click-finger-Btn blinkOn blinkOpacity"></span>
-								<img src="./images/suh_p_0402_01_0002_201_1/suh_p_0402_01_0002_201_1_2.png" width="200" height="200" alt="">
+								<div class="n1"></div>
 								<div class="answer" data-toggle-target="1">
-									<img src="./images/suh_p_0402_01_0002_201_1/suh_p_0402_01_0002_201_1_3.png" width="200" height="200" alt="">
+									<img src="./images/suh_p_0402_01_0002_201_1/suh_p_0402_01_0002_201_1_3.png" width="300" height="300" alt="">
 								</div>
 							</div>
-							
+
+						</section>
+						<section class="textAlignC mt_30">
 							<div class="toggle" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2" style="text-align: left">
 									<div class="bunsuWrap inline">
