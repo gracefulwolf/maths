@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.1000 (cdbook01) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>수학4CD2</title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="./js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="./js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="./js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="./js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="./css/render.gen.min.css">
+    <script type="text/javascript" src="./js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="./js/render-page-63.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="./js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController"
+      ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>풀어 보고 확인하고
+
+1 안에 알맞은 수를 써넣으세요.
+● 0.05 은/는 영 점 영오라고 읽습니다.
+● 6.937에서 7이 나타내는 수는 0.007 입니다.
+● 0.01이 438개인 수는 4.38 입니다.
+
+2 빈칸에 알맞은 수를 써넣으세요.
+11 10 10
+
+1 10 10배
+
+0.001 0.01
+
+0.1
+
+1
+
+10
+
+0.345 3.45 34.5 345 3450
+
+풀이
+
+0.345
+
+1
+Û110
+
+3.45
+
+1
+Û110
+
+34.5
+
+1
+Û110
+
+345
+
+110배Ú
+
+3450
+
+3 두 소수의 크기를 비교하여 안에 >, <를 알맞게 써넣고, 그렇게 생각한 까닭을
+
+써 보세요.
+
+3.278 < 3.72
+
+까닭 예 소수 첫째 자리 수를 비교하면 2<7이므로 3.278이 3.72보다 작습니다.
+
+4 계산해 보세요.
+0.8+0.15=0.95
+
+1.46-1.02=0.44
+
+11
+1.6 1 +3.7 9
+5 . 4 0(=5.4)
+72
+
+6 1010
+7X . 1X -1.8 5
+5.25
+
+</xmp></div>
+</body>
+
+</html>
