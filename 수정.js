@@ -27,7 +27,7 @@ window.TOUN28UI.subBarNav = {
             el_lis[i].removeEventListener('click', act2);
             el_lis[i].addEventListener('click', act2);
         }
-
+   
         if (!!el_on) {
             act2(null, el_on);
         }
