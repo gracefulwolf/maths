@@ -1034,14 +1034,22 @@ section.flex-wrap.middle{padding-bottom:60px;}
 .ta-r{text-align: right !important;}
 
 .iframe-wrap{position: relative; width:100%; height:100%; }
-.iframe-wrap .iframe-item{width:1280px; height:720px; position: absolute; top:0; left:0;;
-transform: scale(0.914); transform-origin: 0 0;}
+.iframe-wrap .iframe-item{width:1280px; height:720px; position: absolute; top:50%; left:0;;
+transform: scale(0.914) translate(0, -50%); transform-origin: 0 0;}
 .pop_page_iframe .popup_contents{padding:0 !important;}
 .pop_page_iframe .popup_closeBtn{z-index: 10001;}
 
 .noevent{pointer-events: none;}
 
+.jc-start{justify-content: flex-start !important;}
+.jc-end{justify-content: flex-end !important;}
 
-
-
-
+.tableContainer table thead tr:first-of-type>:first-child{border-radius: 10px 0 0 0;}
+.tableContainer table thead tr:first-of-type>:last-child{border-radius:  0 10px 0 0 ;}
+.tableContainer table thead + tbody tr:first-of-type>:last-child,
+.tableContainer table thead + tbody tr:first-of-type>:first-child{border-radius: 0 0 0 0;}
+.tableContainer.brown table tr:first-of-type th {
+    border-top: 2px solid #efe8e0;
+}
+.tableContainer table thead + tbody th{background-color: #ddc9b1 !important}
+td .toggle{background-color: transparent;}

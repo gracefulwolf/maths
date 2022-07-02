@@ -1,0 +1,256 @@
+
+@charset "utf-8";
+
+
+
+/* 단원 캐릭터 */
+/* main > section .sectionChar {
+  position: absolute;
+  left: 14px;
+  top: 292px;
+  width: 186px;
+  height: 186px;
+  background: url(../images/lessonChar_3-2.svg) 0 0 / auto 186px no-repeat;
+  transition: all .3s ease-out;
+  pointer-events: none;
+} */
+
+/* 구름 1 */
+main > section .cloud {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  width: 100%;
+  height: 640px;
+  background: url(../images/section_bg_cloud_1.svg) center bottom -100px / cover no-repeat;
+  pointer-events: none;
+}
+/* 구름 2 */
+main > section .cloud:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  width: 100%;
+  height: 500px;
+  background: url(../images/section_bg_cloud_2.svg) center bottom -100px / cover no-repeat;
+}
+
+/* 동그라미 별 */
+main > section .starCircle {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #FFF;
+  transform: scale(0);
+  pointer-events: none;
+}
+.starCircle.star_1 {
+  opacity: .8;
+  top: 340px;
+  left: 50px;
+  width: 12px;
+  height: 12px;
+  animation: twinkleStar 1.5s linear infinite;
+}
+.starCircle.star_2 {
+  opacity: 1;
+  top: 280px;
+  left: 190px;
+  width: 6px;
+  height: 6px;
+  animation: twinkleStar 2.5s linear infinite;
+}
+.starCircle.star_3 {
+  opacity: .5;
+  top: 350px;
+  left: 280px;
+  width: 10px;
+  height: 10px;
+  animation: twinkleStar 2s linear infinite;
+}
+.starCircle.star_4 {
+  opacity: 1;
+  top: 500px;
+  left: 30px;
+  width: 6px;
+  height: 6px;
+  animation: twinkleStar 3.5s linear infinite;
+}
+.starCircle.star_5 {
+  opacity: .7;
+  top: 600px;
+  left: 140px;
+  width: 10px;
+  height: 10px;
+  animation: twinkleStar 3s linear infinite;
+}
+
+
+/* 별똥별 */
+main > section .shootingStar {
+  visibility: hidden;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url(../images/section_bg_shootingStar.svg) center / contain no-repeat;
+  pointer-events: none;
+}
+.shootingStar.star_1 {
+  top: 220px;
+  left: 20px;
+  animation: shootingStarMoving 2.5s ease-out infinite;
+}
+.shootingStar.star_2 {
+  top: 236px;
+  left: 193px;
+  width: 80px;
+  height: 80px;
+  animation: shootingStarMoving 1.3s ease-out infinite;
+}
+.shootingStar.star_3 {
+  top: 366px;
+  left: 233px;
+  width: 80px;
+  height: 80px;
+  animation: shootingStarMoving 2.6s ease-out infinite;
+}
+.shootingStar.star_4 {
+  opacity: .6;
+  top: 400px;
+  left: 0px;
+  width: 60px;
+  height: 60px;
+  animation: shootingStarMoving 4.7s ease-out infinite;
+}
+.shootingStar.star_5 {
+  top: 540px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  animation: shootingStarMoving 3.7s ease-out infinite;
+}
+.shootingStar.star_6 {
+  opacity: .8;
+  top: 560px;
+  left: 180px;
+  width: 70px;
+  height: 70px;
+  animation: shootingStarMoving 2.2s ease-out infinite;
+}
+.shootingStar.star_7 {
+  opacity: .4;
+  top: 530px;
+  left: 280px;
+  width: 44px;
+  height: 44px;
+  animation: shootingStarMoving 3.1s ease-out infinite;
+}
+
+
+/********************* hover *********************/
+main > section.hover .sectionChar {
+  opacity: 1;
+  left: 80px;
+  top: 360px;
+  transform: scale(1.5);
+  animation: characterMoving 1s ease-in-out infinite;
+}
+main > section.hover .cloud {
+  opacity: 1;
+  bottom: 0;
+  transition: all .3s ease-out;
+}
+main > section.hover .shootingStar,
+main > section.hover .starCircle {
+  visibility: visible;
+}
+/******************* hover END *******************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************* animation *********************/
+@keyframes characterMoving { 50% { top: 350px; } }
+@-o-keyframes characterMoving { 50% { top: 350px; } }
+@-moz-keyframes characterMoving { 50% { top: 350px; } }
+@-webkit-keyframes characterMoving { 50% { top: 350px; } }
+
+
+@keyframes twinkleStar {
+  30% { transform: scale(1); }
+  70% { transform: scale(0); }
+}
+@-o-keyframes twinkleStar {
+  30% { transform: scale(1); }
+  70% { transform: scale(0); }
+}
+@-moz-keyframes twinkleStar {
+  30% { transform: scale(1); }
+  70% { transform: scale(0); }
+}
+@-webkit-keyframes twinkleStar {
+  30% { transform: scale(1); }
+  70% { transform: scale(0); }
+}
+
+
+@keyframes shootingStarMoving {
+  0% { transform: translate(-100%, -100%); }
+  50% { transform: translate(100%, 100%); opacity: 0; }
+  100% { opacity: 0; }
+}
+@-o-keyframes shootingStarMoving {
+  0% { transform: translate(-100%, -100%); }
+  50% { transform: translate(100%, 100%); opacity: 0; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes shootingStarMoving {
+  0% { transform: translate(-100%, -100%); }
+  50% { transform: translate(100%, 100%); opacity: 0; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes shootingStarMoving {
+  0% { transform: translate(-100%, -100%); }
+  50% { transform: translate(100%, 100%); opacity: 0; }
+  100% { opacity: 0; }
+}
+/******************* animation END *******************/
+
+
+
+
+
+
+
+
+/********************* lesson *********************/
+/* section.lesson_1 .sectionChar {
+  background-position-x: calc(-186px * (1 - 1));
+}
+section.lesson_2 .sectionChar {
+  background-position-x: calc(-186px * (2 - 1));
+}
+section.lesson_3 .sectionChar {
+  background-position-x: calc(-186px * (3 - 1));
+}
+section.lesson_4 .sectionChar {
+  background-position-x: calc(-186px * (4 - 1));
+}
+section.lesson_5 .sectionChar {
+  background-position-x: calc(-186px * (5 - 1));
+}
+section.lesson_6 .sectionChar {
+  background-position-x: calc(-186px * (6 - 1));
+} */
+/******************* lesson END *******************/
