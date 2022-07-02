@@ -1,0 +1,225 @@
+
+@charset "utf-8";
+/* .target.on .grayBox{
+  animation: none;
+  opacity: 1;
+} */
+.imageFomula {
+  width: 100%;
+  height: 100%;
+  background: url(../images/1_3/1_3_04_01.svg) left 60px center / contain no-repeat;
+  pointer-events: none;
+}
+[data-toggle-obj="1"].complete ~ .imageFomula {
+  background: url(../images/1_3/1_3_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="2"].complete ~ .imageFomula {
+  background: url(../images/1_3/1_3_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="3"].complete ~ .imageFomula {
+  background: url(../images/1_3/1_3_04_01_03.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="4"].complete ~ .imageFomula {
+  background: url(../images/1_3/1_3_04_01_04.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_03.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/1_3/1_3_04_01.svg) left 60px center / contain no-repeat;
+}
+
+
+.hideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* .hideImage.one {
+  background: url(../images/1_2/1_2_04_01_1.svg) left 60px center / contain no-repeat;
+}
+.hideImage.ten {
+  background: url(../images/1_2/1_2_04_01_2.svg) left 60px center / contain no-repeat;
+}
+.hideImage.last {
+  background: url(../images/1_2/1_2_04_01_3.svg) left 60px center / contain no-repeat;
+}
+.hideImage.last {
+  background: url(../images/1_2/1_2_04_01_4.svg) left 60px center / contain no-repeat;
+} */
+
+.formula {
+  position: absolute;
+  top: 60px;
+  left: 732px;
+  width: 228px;
+  height: 320px;
+  background: url(../images/1_3/1_3_04_02.svg) 0 0 / auto 320px no-repeat;
+}
+.formula[data-step="1"] {
+  background-position-x: -227px;
+}
+.formula[data-step="2"] {
+  background-position-x: calc(-227px * 2);
+}
+.formula[data-step="3"] {
+  background-position-x: -680px;
+}
+.formula[data-step="4"] {
+  background-position-x: -906px;
+}
+
+
+/* connectLine */
+.connectLine {
+  left: 516px;
+}
+
+.connectLine.one {
+  top: 204px;
+}
+.connectLine.one:before {
+  width: 160px;
+  border-right: none;
+  border-bottom-right-radius: 0;
+}
+.connectLine.one:after {
+  bottom: 20px;
+  left: 160px;
+  width: 215px;
+  height: 17px;
+}
+.connectLine.one > p {
+  left: 34px;
+}
+
+.connectLine.ten {
+  top: 300px;
+}
+.connectLine.ten:before {
+  width: 146px;
+}
+.connectLine.ten:after {
+  bottom: 34px;
+  left: 145px;
+  width: 112px;
+  height: 53px;
+}
+.connectLine.ten > p {
+  left: 35px;
+}
+
+.connectLine.hundred {
+  top: 370px;
+}
+.connectLine.hundred:before {
+  width: 160px;
+}
+.connectLine.hundred:after {
+  bottom: 24px;
+  left: 160px;
+  width: 95px;
+  height: 90px;
+}
+
+/* grayBox */
+.target {
+  /* opacity: 1; */
+}
+.grayBox {
+  /* opacity: 1; */
+  top: 64px;
+  right: 270px;
+  width: 60px;
+  height: 60px;
+}
+.grayBox.vertical_2 {
+  height: calc(60px * 2);
+}
+.grayBox.horizon_2 {
+  width: calc(60px * 2);
+}
+.grayBox.horizon_3 {
+  width: calc(60px * 3);
+}
+.grayBox.horizon_4 {
+  width: calc(60px * 4);
+}
+
+.target_1 .grayBox.down {
+  top: 184px;
+}
+.target_2 .grayBox.vertical_2 {
+  right: calc(218px + 62px);
+}
+.target_2 .grayBox.one {
+  top: 126px;
+}
+.target_2 .grayBox.ten {
+  right: 329px;
+}
+.target_2 .grayBox.down {
+  top: 230px;
+  height: 52px;
+  width: 180px;
+}
+.target_3 .grayBox.one {
+  top: 124px;
+}
+.target_3 .grayBox.ten {
+  right: 388px;
+}
+.target_3 .grayBox.vertical_2 {
+  right: calc(218px + (62px * 2));
+}
+.target_3 .grayBox.down {
+  top: 276px;
+  height: 47px;
+}
+.target_4 .grayBox.vertical_2 {
+  right: calc(218px + (62px * 3));
+}
+.target_4 .grayBox.down {
+  top: calc(190px + (62px * 3));
+}
+
+
+/* clickButton */
+.clickButton[data-toggle-obj="1"] {
+  top: 170px;
+  left: 500px;
+}
+.clickButton[data-toggle-obj="2"] {
+  top: 290px;
+  left: 400px;
+}
+.clickButton[data-toggle-obj="3"] {
+  top: 390px;
+  left: 240px;
+}
+.clickButton[data-toggle-obj="4"] {
+  top: 440px;
+  left: 515px;
+}
+
+/* popupFomula */
+.lastFormula,
+.lastFormula.active.on {
+  top: 320px;
+  left: 992px;
+  width: 254px;
+  height: 255px;
+}
+.lastFormula.active.on:after,
+.lastFormula:after {
+  width: 254px;
+  height: 255px;
+  background: url(../images/1_3/1_3_04_03.svg) center / contain no-repeat;
+}
