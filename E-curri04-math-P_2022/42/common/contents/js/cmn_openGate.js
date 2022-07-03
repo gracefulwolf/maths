@@ -2,8 +2,7 @@
 
 function openGateInit() {
 
-    if(document.location.href.indexOf("401_2.html") != -1){
-
+    if(document.location.href.indexOf("401_1.html") != -1){
         $("head").append('<link rel="stylesheet" href="../common/contents/css/startGateNew.css">');
 
         var t, e, n, a, i = $ts.getEl(".gate_container [data-open-btn]")[0];
@@ -132,6 +131,7 @@ function openGateInit() {
 
                         //각 페이지에 순서대로 번호 부여
                         $('.basicSlider_slides').eq(0).children("li").each(function(index){
+                            console.log(index)
                             $(this).attr('data-page-num', index+1);
                         });
 
