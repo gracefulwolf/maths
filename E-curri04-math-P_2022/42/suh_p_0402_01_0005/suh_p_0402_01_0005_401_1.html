@@ -55,9 +55,6 @@
 		.page_6 .numbering li:nth-child(2) {left: 242px;}
 		.page_6 .numbering li:nth-child(3) {right: 242px;}
 		.page_6 .numbering li:nth-child(4) {right: 0;}
-		.page_7 figure {width: 750px;height: 145px;background: url(./images/suh_p_0402_01_0004_401_1/suh_p_0402_01_0004_401_1_6.png) center / contain no-repeat;}
-		.page_7 figure.on {background-image: url(./images/suh_p_0402_01_0004_401_1/suh_p_0402_01_0004_401_1_7.png);}
-		.page_7 figure.figure .click-finger-Btn {margin-left: 8px;}
 		.toggle.bs-answer .answer {padding: 2px 12px;}
 		.checkContainer h2 .toggleBlank {margin-top: 8px;}
 		.page_3 .toggle::after {width: 34px;height: 34px;font-size: 18px;line-height: 29px;}
@@ -76,6 +73,55 @@
 		.ox-content .ox-2 {right:128px;top: 36px;}
 		.ox-content .ox-3 {left:124px; bottom:35px;}
 		.ox-content .ox-4 {bottom:35px; right:128px;}
+
+		[data-quiz="dragLine"] .svgContainer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.page_7 section {}
+		.page_7 .dragLineContainer {
+			height: 390px;
+		}
+		.page_7 .dragLineContainer > ul {
+			display: flex;
+			flex-direction: column;
+		}
+		.page_7 .dragLineContainer > ul > li {
+			min-width: 245px;
+		}
+		.page_7 .dragLineContainer .yellow {
+			justify-content: space-between;
+		}
+		.page_7 .dragLineContainer .sky {
+			justify-content: space-around;
+		}
+		.page_7 .top_1 {
+			top: 29px;
+		}
+		.page_7 .left_2.top_1 {
+			top: 98px;
+		}
+		.page_7 .top_2 {
+			top: 140px;
+		}
+		.page_7 .left_2.top_2 {
+			top: 294px;
+		}
+		.page_7 .top_3 {
+			top: 250px;
+		}
+		.page_7 .top_4 {
+			top: 360px;
+		}
+		.page_7 .left_1 {
+			left: 265px;
+		}
+		.page_7 .left_2 {
+			left: 707px;
+		}
 
 	</style>
 </head>
@@ -606,62 +652,45 @@
 						</div>
 					</li>
 
-					<li class="page_7" data-page-num="" data-quiz="toggle">
+					<li class="page_7"  data-quiz="dragLine" data-total-complete-count="6">
 
-						<h2>
-							<ins class="dot"></ins>
-							<span style="margin-top: -15px;">
-								<div class="bunsuWrap inline">
-								    2<ul>
-								        <li>1</li>
-								        <li>6</li>
-								    </ul>
-								</div> +
-								<div class="bunsuWrap inline">
-								    1<ul>
-								        <li>3</li>
-								        <li>6</li>
-								    </ul>
-								</div> 를 그림으로 나타내 얼마인지 알아보시오.
-							</span>
-						</h2>
+						<h2><ins class="dot orange"></ins><span>관계있는 것끼리 이어 보시오.</span></h2>
 
-						<div class="textAlignC">
-							<figure class="figure" data-toggle-obj="4" data-toggle-target="4">
-								<span class="bullet exam">예</span>
-								<span class="click-finger-Btn blinkOn blinkOpacity"></span>
-							</figure>
-						</div>
+						<section>
+							<div class="study_guide">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
 
-						<div class="textAlignC mt_80">
-							<div class="bunsuContainer inToggle">
-								2<ul class="bunsu">
-								<li>1</li>
-								<li>6</li>
-							</ul>
-								<span class="symbol">+</span>
-								1<ul class="bunsu">
-								<li>3</li>
-								<li>6</li>
-							</ul>
-								<span class="symbol">=</span>
-								<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">3</div>
-								</div>
-								<ul class="bunsu withToggle">
-									<li>
-										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">4</div>
-										</div>
-									</li>
-									<li>
-										<div class="toggle" data-toggle-obj="3">
-											<div class="answer" data-toggle-target="3">6</div>
-										</div>
-									</li>
+							<div class="dragLineContainer">
+								<ul class="box yellow">
+									<li>할머니</li>
+									<li>선생님</li>
+									<li>어머니</li>
+									<li>동생</li>
+								</ul>
+								<ul class="box sky">
+									<li>높임말을 써야<br />하는 대상</li>
+									<li>높임말을 쓰지<br />않아도 되는 대상</li>
 								</ul>
 							</div>
-						</div>
+							<svg class="js-svgContainer svgContainer"></svg>
+							<div class="js-dragLineArea dragLineArea left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_1" data-group="1" data-name="dragLine1" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_1 top_2" data-group="1" data-name="dragLine2" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_2" data-group="1" data-name="dragLine2" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_1 top_3" data-group="1" data-name="dragLine3" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_3" data-group="1" data-name="dragLine3" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_1 top_4" data-group="1" data-name="dragLine4" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_1 top_4" data-group="1" data-name="dragLine4" data-answer="2" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_2 top_1" data-group="2" data-name="dragLine5" data-answer="1"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_1" data-group="2" data-name="dragLine5" data-answer="1" data-complete-count="1"></div>
+
+							<div class="js-dragLineArea dragLineArea left_2 top_2" data-group="2" data-name="dragLine6" data-answer="2"></div>
+							<div class="js-dragLineObj dragLineObj left_2 top_2" data-group="2" data-name="dragLine6" data-answer="2" data-complete-count="1"></div>
+
+						</section>
 
 						<div class="buttonContainer">
 							<button class="solveCheckBtn" data-popup-btn="7" data-hover=""></button>
@@ -1849,6 +1878,7 @@
 
 
 		});
+
 	</script>
 
 </body>
