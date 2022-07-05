@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>OX 퀴즈</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="css/common.css"></link>
+		<link type="text/css" rel="stylesheet" href="css/game.css"></link>
+
+		<script type="text/javascript" src="js/createjs.min.js"></script>
+		<script type="text/javascript" src="animatecc/animate.js"></script>
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="js/gsap.min.js"></script>
+
+		<script type="text/javascript" src="js/animate.init.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+
+	</head>
+	<body onselectstart="return false" ondragstart="return false">
+		<!-- wrap -->
+		<div id="wrap">
+			<!-- container -->
+			<div id="container">
+				<!-- game-content -->
+				<div id="game-content">
+                    
+                    <!-- intro -->
+                    <div id="intro" class="section">
+
+						<!-- lesson-con -->
+						<div class="lesson-con">
+							<div class="title">단원</div>
+							<div class="lesson-btns">
+								<div class="lesson-btn button active">1</div>
+								<div class="lesson-btn button">2</div>
+								<div class="lesson-btn button">3</div>
+								<div class="lesson-btn button">4</div>
+								<div class="lesson-btn button">5</div>
+								<div class="lesson-btn button">6</div>
+							</div>
+						</div>
+						<!-- //lesson-con -->
+
+						<!-- start-btn -->
+						<div class="start-btn button"><span>놀이 시작</span></div>
+						<!-- //start-btn -->
+
+						<!-- guide-btn -->
+						<div class="guide-btn button">놀이 방법</div>
+						<!-- //guide-btn -->
+
+						<!-- guide-pop -->
+						<div class="guide-pop hidden">
+							<div class="pop-wrap">
+								<div class="title">놀이 방법</div>
+								<ol>
+									<li>단원과 출제 문항 수를 정합니다.</li>
+									<li>15초의 제한 시간 동안 학생들은 문제의 O,X를 몸으로 나타냅니다.</li>
+									<li>모든 학생들이 답을 나타내면 선생님은 정답을 확인합니다.</li>
+									<li>문제를 틀린 학생은 탈락하고, 맞힌 학생은 다음 문제를 풉니다.</li>
+									<li>모든 학생이 문제를 다 풀지 못하고 탈락했을 경우, <img src="images/guide_img.png" />를 이용하여 퀴즈를 초기화 합니다.</li>
+									<li>끝까지 문제를 다 푼 학생의 이름을 입력합니다.</li>
+								</ol>
+								<div class="close-btn button"></div>
+							</div>
+						</div>
+						<!-- //guide-pop -->
+
+                    </div>
+					<!-- //intro -->
+					
+					<!-- game -->
+                    <div id="game" class="section hidden">
+
+						<!-- home-btn -->
+						<div class="home-btn button"></div>
+						<!-- //home-btn -->
+
+						<!-- progress-con -->
+						<div class="progress-con">
+							<div class="progress-wrap">
+								<div class="bar"></div>
+							</div>
+						</div>
+						<!-- //progress-con -->
+
+						<!-- time-con -->
+						<div class="time-con">
+							<span>15</span>
+						</div>
+						<!-- //time-con -->
+
+						<!-- quiz -->
+						<div class="quiz-con quiz3-1">
+
+							<!-- lesson1 -->
+							<div class="quiz-set lesson1">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">850보다 200 더 작은 수는 650입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">652<span class="hu">-</span>218=434입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">도형에 있는 두 수를 더하면 558입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_1_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">도형에 있는 두 수를 빼면 226입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_1_4.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">350보다 210 더 작은 수는 150입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title"><span class="box"></span> 안에 알맞은 수는 419입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_1_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">650+200과 325+525의<br />계산 결과는 850으로 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">552+324는 228입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">600보다 250 더 큰 수는 950입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">수 모형을 모두 더하면 465입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_1_10.png" /></div>
+								</div>
+							</div>
+							<!-- //lesson1 -->
+
+							<!-- lesson2 -->
+							<div class="quiz-set lesson2">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">두 점을 곧게 이은 선을 선분이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">점 ㅁ과 점 ㅂ을 지나는<br />직선을 직선 ㅁㅂ 또는<br />직선 ㅂㅁ이라고 합니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_2_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text" style="font-size: 46px">점 ㄱ에서 시작하여 점 ㄴ을<br />지나는 반직선을 반직선 ㄴㄱ<br />이라고 합니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_2_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">한 점에서 그은 두 반직선으로<br />이루어진 도형을 각이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">각의 꼭짓점은<br />점 ㄴ입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_2_5.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">각을 읽을 때는<br />각의 꼭짓점이 가운데에 오도록 읽습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">그림과 같이 종이를 반듯하게 두 번 접었을 때<br />생기는 각을 직각이라고 합니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_2_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">세 각이 모두 직각인 삼각형을<br />직각삼각형이라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">한 각이 직각인 사각형은 직사각형입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">네 각이 모두 직각이고 네 변의 길이가<br />모두 같은 사각형을 정사각형이라고 합니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson2 -->
+
+							<!-- lesson3 -->
+							<div class="quiz-set lesson3">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">나눗셈식 8÷2=4에서 나누는 수는 2입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">나눗셈식 15÷5=3에서 5는<br />15를 3으로 나눈 몫입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">초콜릿을 3개씩 나누면<br />똑같이 나눌 수 있습니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_3_3.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">18<span class="hu">-</span>6<span class="hu">-</span>6<span class="hu">-</span>6=0을 나눗셈식으로 나타내면<br />18÷6=3입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">‘색종이 27장을 한 명에게 3장씩 주면<br />9명에게 나누어 줄 수 있습니다’를<br />나눗셈식으로 나타내면 27÷3=9입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="title">사탕 14개를 2명이 똑같이 나누면<br />한 명이 7개씩 가질 수 있습니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_3_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">나눗셈식 24÷8=3을<br />곱셈식 8×3=24로 나타낼 수 있습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">장미 24송이를 한 명에게 4송이씩 주면<br /> 5명에게 나누어 줄 수 있습니다.
+										</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">48÷6의 몫은<br />7단 곱셈구구를 이용하여 구합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">72÷8=9입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson3 -->
+
+							<!-- lesson4 -->
+							<div class="quiz-set lesson4">
+								<div class="quiz" data-answer="o">
+									<div class="text">색연필이 한 상자에 12자루씩 2개가 있으면 색연필은 모두 24자루입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_4_1.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">60+60+60=60×4입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">20×2의 계산 결과와 10×4의<br />계산 결과는 서로 같습니다. </div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">22+22+22+22와 22×5를<br />계산하면 계산 결과가 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">우유가 한 상자에 32개씩 2상자 있습니다.<br />우유의 개수는 모두 64개입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">19+19+19+19+19+19+19=19×7입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">15씩 5번 뛰어 세면 65입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">한 장에 24개가 있는 붙임딱지가 5장이면 붙임딱지는 모두 120개입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_4_8.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x"">
+									<div class="flex-center">
+										<div class="text">50×5의 계산 결과와 25×6의<br />계산 결과는 서로 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">20씩 6번 뛰어 세기 하는 것은<br />20 × 6과 다릅니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson4 -->
+
+							<!-- lesson5 -->
+							<div class="quiz-set lesson5">
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">1 cm를 10칸으로 똑같이 나누었을 때<br />작은 눈금 한 칸의 길이를 1 mm이라고 씁니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">1000 m와 1 km는 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">3020 m는 3 km 200 m입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">초바늘이 시계를 반 바퀴 도는 데<br />걸리는 시간은 60초입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">100초는 1분 40초와 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">크레파스의 길이는 약 10 mm입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_5_6.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">시계의 시각에서 30분 후는 10시 10분 38초입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_5_7.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">2분 30초는 150초와 같습니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">200초보다 2분 50초가 더 긴 시간입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="title">도서관에서 우재네 집까지<br />20 km 57 m입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_5_10.png" /></div>
+								</div>
+							</div>
+							<!-- //lesson5 -->
+
+							<!-- lesson6 -->
+							<div class="quiz-set lesson6">
+								<div class="quiz" data-answer="o">
+									<div class="title">똑같이 나누어진 도형은 모두 4개입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_6_1.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="text">남은 부분은 전체의 <img src="images/quiz/quiz_3_1_6_2_1.png">입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_6_2_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">전체를 똑같이 5로 나눈 것 중의 2를<br /><img src="images/quiz/quiz_3_1_6_3.png">라 씁니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="text">먹은 부분은 전체의 <img src="images/quiz/quiz_3_1_6_4_1.png">입니다.</div>
+									<div class="image"><img src="images/quiz/quiz_3_1_6_4_2.png" /></div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text"><img src="images/quiz/quiz_3_1_6_5_1.png">과 <img src="images/quiz/quiz_3_1_6_5_2.png"> 중에서 더 큰 수는 <img src="images/quiz/quiz_3_1_6_5_2.png">입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="x">
+									<div class="flex-center">
+										<div class="text">0.1, 0.2, 0.3과 같은 수에서<br />‘.’을 소수라고 합니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">9 cm보다  5 mm 더 긴 길이는<br />9.5 cm입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">0.<span class="box"></span> < 0.6에서 <span class="box"></span> 안에 들어갈 수 있는<br />수는 1, 2, 3, 4, 5입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">0.1이 36개이면 3.6입니다.</div>
+									</div>
+								</div>
+								<div class="quiz" data-answer="o">
+									<div class="flex-center">
+										<div class="text">8 cm 3 mm를 cm로 나타내면<br />8.3 cm입니다.</div>
+									</div>
+								</div>
+							</div>
+							<!-- //lesson6 -->
+							
+
+							<!-- page-con -->
+							<div class="page-con">
+								<span class="current">1</span>/10
+							</div>
+							<!-- page-con -->
+
+							<div class="answer-btn button">정답</div>
+							<div class="next-btn button hidden">다음 문제</div>
+						</div>
+						<!-- //quiz -->
+
+						<!-- o-img -->
+						<div class="o-img hidden"></div>
+						<!-- //o-img -->
+
+						<!-- x-img -->
+						<div class="x-img hidden"></div>
+						<!-- //x-img -->
+
+						<!-- char-con -->
+						<div class="char-con">
+							<div class="default"></div>
+							<div class="o"></div>
+							<div class="x"></div>
+						</div>
+						<!-- //char-con -->
+
+						<div class="restart-btn button">처음부터</div>
+
+                    </div>
+					<!-- //game -->
+
+					<!-- result -->
+                    <div id="result" class="section hidden">
+						
+						<!-- result-pannel -->
+						<div class="result-pannel">
+							<div class="input-con">
+								<input type="text" placeholder="이름을 입력해 주세요.">
+							</div>
+							<div class="text-con">
+								친구들이 끝까지 잘 풀었어요.<br />
+								모두 축하해 주세요.
+							</div>
+							<div class="reset-btn button"><span>다시 하기</span></div>
+						</div>
+						<!-- //result-pannel -->
+
+						<!-- result-top -->
+						<div class="result-top">
+							<h4>놀이 결과</h4>
+						</div>
+						<!-- //result-top -->
+
+						<div class="fire1"></div>
+						<div class="fire2"></div>
+						<div class="fire3"></div>
+						<div class="fire4"></div>
+
+                    </div>
+					<!-- //result -->
+
+					<!-- animation_container -->
+					<div id="animation_container" style="background-color:transparent; width:1280px; height:720px">
+						<canvas id="canvas" width="1280" height="720" style="position: absolute; display: block; background-color:transparent;"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+					</div>
+					<!-- //animation_container -->
+
+				</div>
+				<!-- //game-content -->
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>
