@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+.dragLineContainer {
+  margin: 0 auto 0;
+  width: 1000px;height:500px;overflow:hidden;background:url(../images/1_5/1_5_5.png) center / auto no-repeat;
+  background-size: contain;
+}
+
+.dragLineContainer > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 132px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dragLineContainer .left {
+  height: 440px;
+}
+.dragLineContainer .left > li {
+  width: 490px;
+  padding: 6px 47px 0 4px;
+  background-image: url(../images/1_5/1_5_5_01.svg);
+}
+.dragLineContainer .left > li input {
+  width: 120px;
+  background-image: none;
+}
+.dragLineContainer .right {
+  height: 396px;
+  margin: 20px 0 0 0;
+}
+.dragLineContainer .right > li {
+  width: 188px;
+  height: 88px;
+  padding: 5px 35px 0 30px;
+  background-image: url("../images/1_5/1_5_5_02.svg");
+}
+.dragLineArea:after { content: none; }
+.top_1 {
+  top: 192px;
+}
+.top_2 {
+  top: 295px;
+}
+.top_3 {
+  top: 402px;
+}
+.left_1 {
+  left: 540px;
+}
+.left_2 {
+  left: 906px;
+}
+.left_1.pos01{left:298px;}
+.left_1.pos02{left:574px;}
+.left_1.pos03{left:908px;}
+
+.left_2.pos04{left:464px;}
+.left_2.pos05{left:666px;}
+
+
+.balloonText {
+  position: absolute;
+ 
+}
+.balloonText > li:nth-child(1){
+  position: absolute;
+  width: 300px;
+  top:322px; left:60px;
+  z-index: 2;
+  font-size: 28px;
+}
+.balloonText > li:nth-child(2){
+  position: absolute;
+  width: 300px;
+  top:340px; left:770px;
+  z-index: 2;
+  font-size: 28px;
+}
+
+.num {position: absolute;}
+.num > li:nth-child(1){
+  position: absolute;
+  width: 230px;
+  top:190px; left:218px;
+  z-index: 2;
+  font-size: 38px;
+}
+.num > li:nth-child(2){
+  position: absolute;
+  width: 230px;
+  top:170px; left:530px;
+  z-index: 2;
+  font-size: 38px;
+}
+.num > li:nth-child(3){
+  position: absolute;
+  width: 230px;
+  top:195px; left:895px;
+  z-index: 2;
+  font-size: 38px;
+}
+main .multiply {
+  height: 28px;
+  margin: 0 2px;
+}
+.popup_pages > li.min.solve{ }
+.popup_pages > li.min.solve .item{margin:0 40px;float:left;}
+.popup_pages > li.min.solve .item fomula.vertical:nth-child(1) > ul li span{font-size: 40px;}
+.popup_pages .arrowR {
+  clear: both; margin-top:20px;
+}
+.popup_pages .arrowR li:nth-child(1){
+  width:40px; display: inline-block; vertical-align: top; margin-top:5px
+}
+.popup_pages .arrowR li:nth-child(2){
+  width:1010px; display: inline-block;
+}
+
+
+
+
+canvas {
+  position: absolute;
+  top: 106px;
+  left: 33px;
+}
+.drawBtn {
+  position: absolute;
+  top: 79px;
+  left: 980px;
+}
+/* 펜 옵션 팝업 */
+.pen_tool {
+  top: 178px;
+  left: 732px;
+}
+/* 정답 보기 상태일 때 그리기 안되도록 블럭 처리 */
+canvas.pointerOff {
+  pointer-events: none;
+}
+
+
+.answerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/1_5/1_5_5_answer.png) center / contain no-repeat;
+}
+
+.solve fomula[data-solid-line="0"] > ul:first-child {
+  height: 36px;
+}
+
+.pen_tool {
+  z-index: 10;
+}
+.popup_container {
+  z-index: 11;
+}
+
+
+/* 추가 */
+header {
+			display: none
+		}
+
+		.lesson_1:before {
+			display: none
+		}
+		main:before,
+		.lesson_1{background:none;}
+		.quizButtons.solve{display: none;}
+		main{top:0}
+
+		#wrap{
+			width: 1170px;
+			height: 768px;
+			padding: 38px 0;
+			box-shadow: none;
+			background-color:#fff;
+		}
+		
+		main .contentsArea{
+			padding: 30px 56px 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background:#fff;
+		}
+		.balloonText{
+			font-size:38px !important
+		}
+		main .contentsArea h1{opacity:0;}
+		.dragLineContainer {
+			margin-top: 60px;
+		}
+
+		.balloon{text-align: center;}
+		.colorBox,
+		.txt{position:absolute;z-index: 1;}
+		.txt.n1{top: 260px;left: 210px;}
+		.txt.n2{top: 230px;left: 530px;}
+		.txt.n3{top: 266px;left: 890px;}
+		.colorBox.n1{top: 550px;left: 440px;z-index: 1;}
+		.colorBox.n2{top: 550px;left: 620px;z-index: 1;}
+		.b1{top: 370px;left: 40px;}
+		.b2{top: 370px;left: 800px;}
