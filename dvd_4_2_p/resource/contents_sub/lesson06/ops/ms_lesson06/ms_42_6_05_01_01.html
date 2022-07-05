@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts.css" />
+		<link rel="stylesheet" href="../common/css/OverlayScrollbars.min.css" />
+
+		<link rel="stylesheet" href="../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../common/ui/css/theme04Ms.css" />
+
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/content.css" />
+
+		<link rel="stylesheet" href="css/ms_42_6_05_01_01.css" />
+	</head>
+	<body>
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<img src="images/ms_42_6_05_01_01/bg.svg" alt="">
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<span class="ico-title-h1 num-03"><em class="text">1</em></span>
+					</div>
+					<div class="right-inner">
+						모양을 채우고 있는 다각형의 이름과 개수를 써 보세요.
+					</div>
+				</div>
+
+				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<!-- quiz -->
+					<div id="quiz-01" class="quiz quiz-draggable" data-ui="quiz-draggable" data-option='{"answer":[1,1,0,3,4,6], "clone":true}'>
+						<div class="area-con">
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+						</div>
+						
+						<div class="drag-con">
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="1">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="2">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="3">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="4">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="5">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="6">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="7">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="8">
+								<span class="area btn-"></span>
+							</div>
+						</div>
+					</div>
+					<!-- //quiz -->
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<!-- <div class="btn-answer-part" data-option='{"quiz":["#quiz-01"],"quizGroup": []}'></div> -->
+					</div>
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-answer-all toggle"><span></span></div>
+						<div class="button btn-explan"><span></span></div>
+					</div>
+
+				</div>
+
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button box-type btn-more-one more-01"><span>쌍둥이 문제</span></div>
+					<!-- <div class="button box-type btn-more-one more-02"><span>한 번 더!</span></div> -->
+				</div>
+
+			</div>
+
+			<!-- 팝업 :: 풀이 -->
+			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<div class="bg"></div>
+				<div class="text-content">
+					변의 길이를 세어 다각형의 이름을 알 수 있습니다. 가를 이루는 사각형을 사다리꼴, 나를 이루는 사각형을 마름모 또는 평행사변형이라고 해도 됩니다.
+				</div>
+				<div class="button btn-close ico-close-02"></div>
+			</div>
+
+			<!-- 팝업 :: 쌍둥이 문제 -->
+			<div class="popup popup-more-one " data-ui="popup" data-option='{"btn":".btn-more-one.more-01"}'>
+				<div class="bg">
+					<img src="images/ms_42_6_05_01_01/bg_popup_more.svg" alt="">
+				</div>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-one"><span>쌍둥이 문제</span></div>
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<!-- <span class="ico-title-h1 num-01"><em class="text">1</em></span> -->
+					</div>
+					<div class="right-inner">
+						<span>
+							모양을 채우고 있는 다각형의 이름과 개수를 써 보세요.
+						</span>
+					</div>
+				</div>
+
+				<div id="quiz-content-02" class="quiz-content" data-ui="quizMain" data-option='{}'>
+					
+					<div id="quiz-02" class="quiz quiz-draggable" data-ui="quiz-draggable" data-option='{"answer":[1,0,5,7], "clone":true}'>
+						<div class="area-con">
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+							<div class="drag-area"><span class="area"></span></div>
+						</div>
+						
+						<div class="drag-con">
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="1">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="2">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="3">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="4">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="5">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="6">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="7">
+								<span class="area btn-"></span>
+							</div>
+							<div class="drag-item" scale="1" drag-scale="1" img-idx="8">
+								<span class="area btn-"></span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-answer-all toggle"><span></span></div>
+					</div>
+
+				</div>
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>	
+
+		</div>
+		
+		<script src="../common/ui/js/uiData.js"></script>
+		<script src="../common/ui/js/uiDataMs.js"></script>
+		<script src="js/ms_42_6_05_01_01.js"></script>
+
+		<script src="../common/js/libs/polyfill.min.js"></script>
+		<script src="../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../common/js/libs/materialize.js"></script>
+		<script src="../common/js/libs/TweenMax.min.js"></script>
+		<script src="../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../common/js/libs/class.js"></script>
+		<script src="../common/js/common.js"></script>
+		<script src="../common/js/app/mindmap.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/app/angle.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/cornerbase.js"></script>
+		<script src="../common/js/videoplayer.js"></script>
+		<script src="../common/js/quiz/quizMain.js"></script>
+		<script src="../common/js/quiz/quizCheck.js"></script>
+		<script src="../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../common/js/quiz/quizInput.js"></script>
+		<script src="../common/js/quiz/quizDraggable.js"></script>
+		<script src="../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../common/js/content.js"></script>
+
+
+	</body>
+
+</html>
