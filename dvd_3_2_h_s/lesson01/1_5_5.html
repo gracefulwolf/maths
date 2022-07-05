@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/font.css">
+	<link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math.css">
+	<link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math_suhi.css" />
+	<link rel="stylesheet" href="../../__common__/css/custom_last_v2.css">
+
+	<link rel="stylesheet" href="../include/sub/style/master.css">
+	<link rel="stylesheet" href="../include/sub_3-2/style/sub_3-2.css">
+	<link rel="stylesheet" href="./css/1_5_5.css">
+	<style>
+		
+		
+		
+		
+		
+	</style>
+</head>
+
+<body class="lesson_1">
+	<div id="wrap">
+		<header>
+			<div class="js-addThingsMenu addThingsMenu"></div>
+			<div class="js-indexButton indexButton" data-hover=""></div>
+			<div class="indexBox">
+				<span>1. 곱셈</span>
+				<span>(몇)×(몇십몇)을 계산해 볼까요</span>
+			</div>
+			<div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="18">수학<span>18~19</span>쪽</div>
+			<div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="19">수학 익힘<span>19</span>쪽</div>
+			<div class="js-addThingsButton addThingsButton"></div>
+			<div class="js-closeButton closeButton" data-type="ebook_sub" data-page="19"></div>
+		</header>
+		<main class="act">
+			<div class="contentsArea">
+				<h1 data-star="2" data-index="5">하늘이와 우주의 풍선을 찾아 선으로 이어 보세요.</h1>
+				
+
+
+				<div class="b1 balloon right orange ctTail">
+					내 풍선에는 계산<br>
+					결과가 가장 작은<br>
+					곱셈이 적혀 있어.
+				</div>
+				<div class="b2 balloon left sky ctTail">
+					계산 결과가 가장<br>
+					큰 곱셈이 적혀 있는<br>
+					풍선이 내 거야.
+				</div>
+				<div class="txt n1">3×74</div>
+				<div class="txt n2">4×68</div>
+				<div class="txt n3">6×47</div>
+
+				<div class="colorBox orange n1">하늘</div>
+				<div class="colorBox sky n2">우주</div>
+
+
+
+				
+				<section class="noUserSelect">
+					<div class="dragLineContainer">
+						<div class="answerImage" data-click-target="1"></div>
+					</div>
+					<canvas id="draw0" class="canvas_1" width="992px" height="410px"></canvas>
+					<div class="drawBtn" data-parent="contentsArea"></div>
+
+
+					<div class="buttonContainer">
+						<button class="dapCheckBtn" data-quiz-chain="" data-click-obj="1"></button>
+					</div>
+					
+					<!-- <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle"
+						data-solve-btn=""></div>
+					<div class="quizButtons answer" data-quiz-chain="" data-click-obj="1"></div> -->
+				</section>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="min solve slideup" data-popup-page="1">
+					<div class="bunsu">
+						<div class="item">
+							<fomula class="vertical" data-solid-line="0">['',1,'']</fomula>
+							<fomula class="vertical" data-solid-line="1">['','',3] [*,7,4] [2,2,2]</fomula>
+						</div>
+						<div class="item">
+							<fomula class="vertical" data-solid-line="0">['',3,'']</fomula>
+							<fomula class="vertical" data-solid-line="1">['','',4] [*,6,8] [2,7,2]</fomula>
+						</div>
+						<div class="item">
+							<fomula class="vertical" data-solid-line="0">['',4,'']</fomula>
+							<fomula class="vertical" data-solid-line="1">['','',6] [*,4,7] [2,8,2]</fomula>
+						</div>
+					</div>
+
+					<div class="arrowR">
+						<ul>
+							<li>
+								<div class="arrow pink right noAni"></div>
+							</li>
+							<li>하늘이의 풍선에는 계산 결과가 가장 작은 곱셈이 적혀 있으므로 3<symbol class="multiply"></symbol>74와 선을 잇고, 우주의
+								풍선에는 계산 결과가 가장 큰 곱셈이 적혀 있으므로 6<symbol class="multiply"></symbol>47과 선을 잇습니다.</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<script src="../include/libs/js/ts.min.js"></script>
+	<script src="../include/math/script/fomula.min.js"></script>
+	<script src="../include/libs/js/popup.min.js"></script>
+	<script src="../include/libs/js/slider.min.js"></script>
+	<script src="../include/contents/js/quiz/quiz.min.js"></script>
+	<script src="../include/contents/js/pageManager.min.js"></script>
+	<!-- <script src="./js/3_1_5.js"></script> -->
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			window.$callBack.quizChainAnswer = function (QUIZCHAIN) {
+				if (drawClear) drawClear(0);
+				document.querySelector('.canvas_1').classList.add('pointerOff');
+			}
+			window.$callBack.quizChainReset = function (QUIZCHAIN) {
+				document.querySelector('.canvas_1').classList.remove('pointerOff');
+			}
+		});
+	</script>
+</body>
+
+</html>
