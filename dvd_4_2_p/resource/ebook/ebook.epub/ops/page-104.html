@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.1000 (cdbook01) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>수학4CD2</title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="css/render.gen.min.css">
+    <script type="text/javascript" src="js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="js/render-page-104.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController"
+      ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>배운 내용을 스스로 평가하고, 꾸러미 의 붙임딱지를 붙여 보세요.
+스스로 평가
+
+붙임딱지 붙이는 곳
+
+[5~8] 지우가 식물의 키를 매일 10시에 조사하여 두 꺾은선그래프로 나타냈습니다. 물음에
+답하세요.
+
+(가) (cm) 30
+25
+20
+15
+10
+5 0
+키 날짜
+
+식물의 키 1234567
+(일)
+
+(나) (cm) 29
+28
+27
+26
+25
+24 0
+키 날짜
+
+식물의 키 1234567
+(일)
+
+5
+꺾 은 선 그 래 프
+
+5 (가) , (나) 그래프의 세로 눈금 한 칸의 크기는 각각 몇 cm를 나타내나요?
+(가) ( 1 )`cm, (나) ( 0.2 )`cm
+풀이 (가) 그래프는 0`cm와 5`cm 사이가 5칸으로 나누어져 있습니다.
+6 (나) 그래프는 24`cm와 25`cm 사이가 5칸으로 나누어져 있습니다. 안에 알맞은 말을 써넣으세요.
+
+(나) 그래프에서는 세로 눈금의 필요 없는 부분을 줄여서 꺾은선그래프를 그렸습니다.
+
+물결선 (으)로
+
+풀이 (나) 그래프에서 24`cm 아래는 그릴 필요가 없습니다.
+
+7 (가) 와 (나) 그래프 중에서 식물의 키 변화를 더 잘 알 수 있는 그래프는 어느
+것이고, 그 까닭은 무엇인가요? (나) 그래프, 세로 눈금 한 칸이 나타
+
+내는 크기가 더 작으므로 변화를 더 잘 알 수 있습니다.
+
+8 전날보다 식물의 키가 가장 많이 자란 날은 며칠인가요?
+
+( 4 )일
+풀이 꺾은선이 가장 가파르게 올라간 날을 찾습니다. 4일에는 3일보다
+
+1.4`cm가 자라 다른 날에 비해 가장 많이 자랐습니다.
+
+113
+
+</xmp></div>
+</body>
+
+</html>
