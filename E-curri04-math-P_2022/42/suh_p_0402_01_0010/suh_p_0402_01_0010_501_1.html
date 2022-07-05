@@ -12,13 +12,18 @@
 	<style>
 		/*.iframe-wrap{position: relative; width:100%; height:100%; }
 		.iframe-wrap .iframe-item{width:1280px; height:720px; position: absolute; top:50%; left:0;}*/
-		iframe{width:100%; height:100%; border:0;}
+		/*iframe{ width: 100%;height: 100%;border: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;}*/
+		.iframe-wrap{position: relative; width:100%; height:100%; }
+		.iframe-wrap .iframe-item{width:1280px; height:725px; position: absolute; top:50%; left:0;;
+			transform: scale(0.914) translate(0, -50%); transform-origin: 0 0;}
 	</style>
 </head>
 
 <body>
 	<div id="wrap" class="math">
-		<iframe src="../../../dvd_4_2_p/resource/contents/lesson01/ops/lesson01/mm_42_1_09_03_01.html"></iframe>
+		<div class="iframe-wrap">
+			<iframe src="../../../dvd_4_2_p/resource/contents/lesson01/ops/lesson01/mm_42_1_09_03_01.html" class="iframe-item"></iframe>
+		</div>
 	</div>
 
 	<div id="loadingContainer">
@@ -39,9 +44,10 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
-
+		document.querySelector('.challenge-container').remove();
 	}, false);
 	</script>
+
 
 </body>
 </html>
