@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>파일 다운로드</title>
+    <style>
+        [progress]{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+이 파일을 실행 또는 저장 하시겠습니까?
+<br>
+<button onclick="saveFile();">저장</button>
+<button onclick="cancelFile();">취소</button>
+<div progress style="visibility: hidden;">처리중입니다...</div>
+
+<script>
+    //var WIN = nw.Window.get();
+    //WIN.resizeTo(100, 100);
+
+    // Parent 창에서 전달받은 값
+    var config = window.jj.parameter;
+
+    // zip 파일로 묶은다음 다운로드 한다.
+    // 다운로드 완료 후 zip 파일은 삭제 한다.
+
+    var opener = window.jj.opener();
+    var console = opener.console;
+
+    //-----------------------
+    // 저장
+    //-----------------------
+
+    function saveFile(){
+        console.log('# save');
+
+        // progress 표시
+        progress(true);
+
+        // 압축 하기
+        console.log('* 압축 대상 : ', config);
+
+        // zip 파일 경로를 지정하지 않으면 file dialogbox 창이 자동으로 뜬다.
+        window.jj.native.zip(config, finish);
+
+        function finish(err, dest){
+            console.log('* 압축 경로 ', dest);
+
+            // progress 표시 제거
+            progress(false);
+            // 취소 후 대기상태
+            if(!dest) return;
+
+            if (err){
+                alert(err);
+                window.jj.native.close({error : err});
+                return;
+            }
+
+            console.log("success!");
+
+            // 결과 전달
+            window.jj.native.close({save : dest});
+        }
+    }
+
+    //-----------------------
+    // 취소
+    //-----------------------
+
+    function cancelFile(){
+        console.log('# cancel');
+        window.jj.native.close();
+    }
+
+    /*
+     window.jj.event.addListener('close', function(parent){
+        // parent 창이 이미 닫힌 경우임
+        if(!parent.jj) return;
+
+        // iframe이 있는 경우일 수도 있다.
+        var target = window.jj._global.getTopWindowInstance(parent.jj._id);
+        if(target) window.jj.event.message(target, '창닫힘 content');
+    });
+     */
+
+    //-----------------------
+    // progress
+    //-----------------------
+
+    function progress(visible){
+        // progress 표시/제거
+        var dom = document.querySelector('[progress]');
+        dom.style.visibility = visible ? 'visible' : 'hidden';
+    }
+
+</script>
+
+</body>
+</html>
