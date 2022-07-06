@@ -16,59 +16,61 @@
 
 		<link rel="stylesheet" href="../common/css/common.css" />
 		<link rel="stylesheet" href="../common/css/content.css" />
-		<link rel="stylesheet" href="css/ms_42_1_00_05_01.css" />
+		<link rel="stylesheet" href="../../../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/re_style/css/style.css">
+
+		<style>
+			.content-container.page_5,
+			.page_5 .drawing-content,
+			.page_5 .app-drawing-tool .drawing-content{width:100%; height: 532px; overflow: hidden;}
+			.app-drawing-tool{z-index: 3 !important;}
+			.ui-container.loaded {display: none}
+			body {
+				min-width: 100%;
+			}
+			#quiz-01 {margin-top: -80px;}
+			#quiz-01 img {width: 100%;height: auto;}
+			.button.btn-explan {display: none;}
+			.btns-bottom-right {z-index: 100;}
+		</style>
 	</head>
 	<body>
-        <div class="content-container">
-			<div class="content" data-ui="cornerBase">
-				<div class="bg"></div>
+        <div class="content-container page_5">
+			<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
 
-				<div class="title-h1">
-					<div class="left-inner">
-						<span class="ico-title-h1 num-02"><em class="text">5</em></span>
+				<!-- quiz -->
+				<div id="quiz-01" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
+					<div class="base">
+						<img src="images/ms_42_1_00_05_01/base_01.svg" alt="" width="1280" height="720">
 					</div>
-					<div class="right-inner">
-						<span>
-							가장 큰 분수는 빨간색, 가장 작은 분수는 파란색으로 색칠해 보세요.
-						</span>
+					<div class="answer">
+						<img src="images/ms_42_1_00_05_01/answer_01.svg" alt="" width="1280" height="720">
 					</div>
-				</div>
-				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
-
-					<!-- quiz -->
-					<div id="quiz-01" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
-						<div class="base">
-							<img src="images/ms_42_1_00_05_01/base_01.svg" alt="" width="1280" height="720">
-						</div>
-						<div class="answer">
-							<img src="images/ms_42_1_00_05_01/answer_01.svg" alt="" width="1280" height="720">
-						</div>
-						<div class="check-list">
-							<div class="check-item" data-answer-part-idx="0"></div>
-						</div>
-					</div>
-					
-					<!-- //quiz -->
-
-					<!-- 부분 정답 :: absolute -->
-					<div class="btns-answer-part hide">
-						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
-					</div>
-					
-					<!-- 우측 하단 영역 고정 버튼 -->
-					<div class="btns-bottom-right check-btns">
-						<div class="button btn-retry toggle remove"><span></span></div>
-						<div class="button btn-ex toggle"><span></span></div>
-						<div class="button btn-explan"><span></span></div>
-					</div>
+					<!--<div class="check-list">
+                        <div class="check-item" data-answer-part-idx="0"></div>
+                    </div>-->
 				</div>
 
-				<!-- 색칠하세요 :: 드로잉 툴 -->
-				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
+				<!-- //quiz -->
 
+				<!-- 부분 정답 :: absolute -->
+				<div class="btns-answer-part hide">
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+				</div>
+
+				<!-- 우측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-right check-btns">
+					<div class="button btn-retry toggle remove"><span></span></div>
+					<div class="button btn-ex toggle"><span></span></div>
+					<div class="button btn-explan"><span></span></div>
+				</div>
 			</div>
+
+			<!-- 색칠하세요 :: 드로잉 툴 -->
+			<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
+
 			<!-- 팝업 :: 풀이 -->
-			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+			<!--<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
 				<div class="bg"></div>
 				<div class="text-content t-a-center">
 					<span>
@@ -76,7 +78,7 @@
 					</span>
 				</div>
 				<div class="button btn-close ico-close-02"></div>
-			</div>
+			</div>-->
 		</div>
 		
 		<script src="../common/ui/js/uiData.js"></script>
