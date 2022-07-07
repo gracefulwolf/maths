@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>파일 다운로드</title>
+</head>
+<body>
+이 파일을 실행 또는 저장 하시겠습니까?
+<br>
+<button onclick="openFile();">열기</button>
+<button onclick="saveFile();">저장</button>
+<button onclick="cancelFile();">취소</button>
+
+<script>
+    //var WIN = nw.Window.get();
+    //WIN.resizeTo(100, 100);
+
+    // Parent 창에서 전달받은 값
+    var originalPath = window.jj.parameter;
+    originalPath = originalPath.replace(/\\/img, '/');
+
+    //-----------------------
+    // 열기
+    //-----------------------
+
+    function openFile(){
+        console.log('# open : ', originalPath);
+
+        // 결과 전달
+        window.jj.native.close({open : originalPath});
+    }
+
+    //-----------------------
+    // 저장
+    //-----------------------
+
+    function saveFile(){
+        console.log('# save : ', originalPath);
+
+        // 저장하기 파일 경로 찾기
+//        var dialogbox = require('../api/dialogbox');
+        var dialogbox = window.$$_module.api.dialogbox;
+        dialogbox.saveas(originalPath, function (file){
+            if(!file) return;
+            if(!(file instanceof File)) return;
+
+            copyFile(file.path);
+        });
+    }
+
+    function copyFile(dest){
+        //var src = window.jj._path.toAbsolutePath(originalPath);
+        var src = originalPath;
+        console.log('* 복사 대상 : ', src);
+        console.log('* 복사할 경로 ', dest);
+
+        var fs = require('fs-extra');
+        fs.copy(src, dest, function (err) {
+            if (err){
+                alert(err);
+                window.jj.native.close({error : err});
+                return;
+            }
+
+            console.log("success!");
+
+            // 결과 전달
+            window.jj.native.close({save : dest});
+        });
+    }
+
+    //-----------------------
+    // 취소
+    //-----------------------
+
+    function cancelFile(){
+        console.log('# cancel');
+        window.jj.native.close();
+    }
+
+    /*
+     window.jj.event.addListener('close', function(parent){
+        // parent 창이 이미 닫힌 경우임
+        if(!parent.jj) return;
+
+        // iframe이 있는 경우일 수도 있다.
+        var target = window.jj._global.getTopWindowInstance(parent.jj._id);
+        if(target) window.jj.event.message(target, '창닫힘 content');
+    });
+     */
+
+</script>
+
+</body>
+</html>

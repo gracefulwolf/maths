@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset=UTF-8><title>알림</title><style>
+       body{background:0 0}.title{width:99.5%;height:35px;background:rgba(0,0,0,.5);border-radius:10px;color:#fff;text-align:center;line-height:33px}.buttonContainer{margin-top:15px;text-align:center}button{width:90px;height:40px;font-weight:700;background:#ddd;border:0 solid;border-radius:7px;cursor:pointer;font-size:15px;outline:0;color:#333}
+
+    </style></head><body>  <div class="title">
+        이 파일을 실행 또는 저장 하시겠습니까?    
+    </div>
+    <div class="buttonContainer">
+        <button onclick="openFile();">열기</button>
+        <button onclick="saveFile();">저장</button>
+        <button onclick="cancelFile();">취소</button>        
+    </div><script>
+function openFile(){console.log("# open : ",originalPath),window.jj["native"].close({open:originalPath})}function saveFile(){console.log("# save");var o=window.$$_module.api.dialogbox;o.saveas(originalPath,function(o){o&&o instanceof File&&copyFile(o.path)})}function copyFile(o){var e=originalPath;console.log("* 복사 대상 : ",e),console.log("* 복사할 경로 ",o);var n=require("fs-extra");n.copy(e,o,function(e){return e?(alert(e),void window.jj["native"].close({error:e})):(console.log("success!"),void window.jj["native"].close({save:o}))})}function cancelFile(){console.log("# cancel"),window.jj["native"].close()}var WIN=nw.Window.get();WIN.resizeTo(350,150);var originalPath=window.jj.parameter;
+</script></body></html>
