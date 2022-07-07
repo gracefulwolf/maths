@@ -17,9 +17,110 @@
 		<link rel="stylesheet" href="../common/css/common.css" />
 		<link rel="stylesheet" href="../common/css/content.css" />
 		<link rel="stylesheet" href="css/ms_42_1_01_06_01.css" />
+		<link rel="stylesheet" href="../../../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/re_style/css/style.css">
+
+		<style>
+			.content-container.page_2,
+			.page_2 .drawing-content,
+			.page_2 .app-drawing-tool .drawing-content{width:100%; height: 585px; overflow: hidden;}
+			.app-drawing-tool{z-index: 3 !important;}
+			.ui-container.loaded {display: none}
+
+			.app-drawing-tool .tool-container {top: 83px !important}
+			.left-inner {display: none !important;}
+			.right-inner {display: none !important}
+			.check-list {display: none !important}
+			.quiz-check.image-answer {top: 177px;}
+
+			body {
+				min-width: 100%;
+			}
+			#quiz-01 {margin-top: -80px;}
+			#quiz-01 img {width: 100%;height: auto;}
+			.button.btn-explan {display: none;}
+			.btns-bottom-right {z-index: 10;bottom: 2px;}
+			.base, .answer {text-align: center}
+			#quiz-02 {width: 100%;}
+			.quiz-check.image-answer {top: 150px;}
+			.quiz-check.image-answer .base, .quiz-check.image-answer .answer {
+				display: inline-block;
+				text-align: center;
+				border-radius: 20px;
+				line-height: 1.3em;
+				font-family: NotoM;
+				box-sizing: border-box;
+				padding: 30px 120px;
+				left: 220px;
+				font-size: 36px;
+				background-color: #f6e7d4;
+			}
+			.content-container > .content > .bg {background: none;}
+
+			.bunsuWrap {
+				display: inline-block;
+				font-family: NotoM;
+				font-size: 36px;
+			}
+			.bunsuWrap ul {
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 2px;
+				text-align: center;
+				font-size: inherit;
+				line-height: 1.1em;
+			}
+			.bunsuWrap ul > li { min-width: 0.8em;}
+			.bunsuWrap ul > li:first-of-type {
+				border-bottom: 2px solid #000;
+			}
+			.bunsuWrap.ps1 {left: 160px;top: -4px;}
+			.bunsuWrap.ps2 {left: 440px;top: -4px;}
+			.bunsuWrap.ps3 {left: 312px;top: 88px;}
+			.exam {
+				position: absolute;
+				left: 42px;
+				top: 46px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				height: 35px;
+				padding: 0 15px;
+				margin: 0.4em 0.3em 0 0;
+				font-size: 15px;
+				text-align: center;
+				border-radius: 20px;
+				line-height: 35px;
+				color: #fff;
+				overflow: hidden;
+				box-sizing: border-box;
+				background-color: #f87c1a;
+				vertical-align: top;
+				font-family: 'YGJAL';
+			}
+			.oval {
+				position: absolute;
+				bottom: 28px;
+				left: 270px;
+				width: 130px;
+				height: 40px;
+				border-radius: 50%;
+				border: 1px solid #3bb5fe;
+			}
+			.circle {
+				position: absolute;
+				bottom: 26px;
+				left: 432px;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				border: 1px solid #3bb5fe;
+			}
+		</style>
+
 	</head>
 	<body>
-        <div class="content-container">
+        <div class="content-container page_2">
 			<div class="content" data-ui="cornerBase">
 				<div class="bg"></div>
 
@@ -39,13 +140,66 @@
 					<!-- quiz -->
 					<div id="quiz-01" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 						<div class="base">
-							<img src="images/ms_42_1_01_06_01/base_01.svg" alt="" width="1280" height="720">
+							<div class="bunsuWrap inline">
+							    <ul>
+							        <li>2</li>
+							        <li>6</li>
+							    </ul>
+							</div>
+							+
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>3</li>
+									<li>6</li>
+								</ul>
+							</div>
+							=
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>2 + 3</li>
+									<li>6 + 6</li>
+								</ul>
+							</div>
+							=
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>5</li>
+									<li>12</li>
+								</ul>
+							</div>
 						</div>
+
 						<div class="answer">
-							<img src="images/ms_42_1_01_06_01/answer_01.svg" alt="" width="1280" height="720">
-						</div>
-						<div class="check-list">
-							<div class="check-item" data-answer-part-idx="0"></div>
+							<span class="exam">예</span>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>2</li>
+									<li>6</li>
+								</ul>
+							</div>
+							+
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>3</li>
+									<li>6</li>
+								</ul>
+							</div>
+							=
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>2 + 3</li>
+									<li>6 + 6</li>
+								</ul>
+							</div>
+							=
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>5</li>
+									<li>12</li>
+								</ul>
+							</div>
+							<div class="oval"></div>
+							<div class="circle"></div>
 						</div>
 					</div>
 					<!-- //quiz -->
@@ -59,15 +213,15 @@
 					<div class="btns-bottom-right check-btns">
 						<div class="button btn-retry toggle remove"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
-						<div class="button btn-explan"><span></span></div>
+						<!--<div class="button btn-explan"><span></span></div>-->
 					</div>
 
 				</div>
 
 				<!-- 좌측 하단 영역 고정 버튼 -->
-				<div class="btns-bottom-left">
+				<!--<div class="btns-bottom-left">
 					<div class="button box-type btn-more-one more-01"><span>쌍둥이 문제</span></div>
-				</div>
+				</div>-->
 
 				<!-- 색칠하세요 :: 드로잉 툴 -->
 				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
@@ -75,7 +229,7 @@
 			</div>
 
 			<!-- 팝업 :: 풀이 -->
-			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+			<!--<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
 				<div class="bg"></div>
 				<div class="text-content">
 					<span style="letter-spacing: -1px;"> 
@@ -83,11 +237,11 @@
 					</span>
 				</div>
 				<div class="button btn-close ico-close-02"></div>
-			</div>
+			</div>-->
 
 			<!-- 팝업 :: 쌍둥이 문제 -->
 			<div class="popup popup-more-one" data-ui="popup" data-option='{"btn":".btn-more-one.more-01"}'>
-				<div class="bg"></div>
+				<!--<div class="bg"></div>-->
 
 				<!-- 좌측 상단 영역 고정 말풍선 -->
 				<div class="box-top-left">
