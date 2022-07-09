@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="../common/libs/css/master.css">
+	<link rel="stylesheet" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style>
+		.--half{display:table; margin: 0 auto;}
+		.--half > li{display:table-row;}
+		.--half > li > div{display:table-cell; padding:0 0 15px; vertical-align:middle;}
+		.--half > li > div:nth-child(1){width:auto; text-align:right;}
+		.--half > li > div:nth-child(2){width:75%; text-align:left;}
+		.--half .colorBox.check{display:inline-block; line-height:37px;}
+		.--half > li > div > *{vertical-align:middle;}
+		.--half .--whitespace{display:inline-block; min-width:54px; text-align:right;}
+
+		.lineBox.green{min-width: 290px; text-align: center;}
+		.math_calc_table .--finger{position: absolute; top: 160px; left: 90px;}
+		.math_calc_table .--finger.complete{display: none;}
+		.pop_page_101 .--finger{top: 175px;}
+		.math_calc_table .--answer{background: #00a0ff; opacity: 0;}
+		.math_calc_table .--answer.on{opacity: 1; transition: all 1s ease;}
+
+		.--flex{align-items: flex-start;}
+		.--flex .colorBox{flex-shrink: 0;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header>
+			<div class="title active">
+				<div class="bullet number orange inline">5</div>
+				<div>잘못 계산한 곳을 찾아 까닭을 쓰고, 바르게 계산해 보세요.</div>
+			</div>
+		</header>
+		<main>
+			<div class="contentsBox" data-quiz="toggle">
+				<section>
+					<div class="flexListContainer jcenter center">
+						<div class="lineBox green">
+							<div class="math_calc_table class3">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td>6</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td>×</td>
+											<td>3</td>
+											<td>4</td>
+										</tr>
+										<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+										<tr>
+											<td>2</td>
+											<td>5</td>
+											<td>6</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>9</td>
+											<td>2</td>
+										</tr>
+										<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+										<tr>
+											<td>4</td>
+											<td>4</td>
+											<td>8</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="icon_arrow big ml_40 mr_40"></div>
+						<div class="lineBox green">
+							<div class="math_calc_table class3">
+								<table>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td>6</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td>×</td>
+											<td></td>
+											<td>3</td>
+											<td>4</td>
+										</tr>
+										<tr class="line-tr"><td colspan="4"><div class="rowLine"></div></td></tr>
+										<tr>
+											<td></td>
+											<td class="answer" data-toggle-target="1">2</td>
+											<td class="answer" data-toggle-target="1">5</td>
+											<td class="answer" data-toggle-target="1">6</td>
+										</tr>
+										<tr>
+											<td class="answer" data-toggle-target="1">1</td>
+											<td class="answer" data-toggle-target="1">9</td>
+											<td class="answer" data-toggle-target="1">2</td>
+											<td class="answer" data-toggle-target="1">0</td>
+										</tr>
+										<tr class="line-tr"><td colspan="4"><div class="rowLine --answer" data-toggle-target="1"></div></td></tr>
+										<tr>
+											<td class="answer" data-toggle-target="1">2</td>
+											<td class="answer" data-toggle-target="1">1</td>
+											<td class="answer" data-toggle-target="1">7</td>
+											<td class="answer" data-toggle-target="1">6</td>
+										</tr>
+									</tbody>
+								</table>
+								<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+							</div>
+						</div>
+					</div>
+					<div class="flexListContainer --flex mt_30">
+						<div class="colorBox check skyBlue">까닭</div>
+						<div class="toggle" data-toggle-obj="2">
+							<div class="answer" data-toggle-target="2">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet exam">예</ins>
+										<div>곱셈식에서 64×3이 아니라 64×30이므로 192가 아닌 1920입니다.</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<!-- 하단 버튼 -->
+					<div class="buttonContainer left">
+						<button class="characterBtn" data-popup-btn="101" data-hover="">
+							<span>한 번 더</span>
+						</button>
+					</div>
+					<div class="buttonContainer">
+						<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+						<button class="dapCheckBtn" data-answer-btn=""></button>
+					</div>
+					<!-- //하단 버튼 -->
+				</section>
+			</div>
+		</main>
+
+		<!-- Popup -->
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!-- 풀이확인 -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						64와 34의 십의 자리에 있는 수 3의 곱셈은 64×3이 아니라 64×30이므로 1920입니다.
+					</div>
+				</li>
+
+				<!-- 한 번 더 -->
+				<li class="whole pop_page_101" data-popup-page="101">
+					<div class="popup_contents type-oncemore">
+
+						<div class="basicSlider contentsBox " data-slide-container="popup">
+							<ul class="basicSlider_tabs" data-tabs="">
+								<li data-hover="" role="button">
+									<h2 class="box"><span>한 번 더 <b class="yellowT">1</b></span></h2>
+								</li>
+								<li data-hover="" role="button">
+									<h2 class="box"><span>한 번 더 <b class="yellowT">2</b></span></h2>
+								</li>
+							</ul>
+
+							<ul class="basicSlider_slides" data-slides="">
+								<!-- 한번더 탭 1 -->
+								<li class="page_1" data-quiz="toggle">
+									<ul class="contentsList mb_30">
+										<li>
+											<div class="bullet number orange inline mr_10">5</div>
+											<div>잘못 계산한 곳을 찾아 바르게 계산해 보세요.</div>
+										</li>
+									</ul>
+									<div class="flexListContainer jcenter center mt_80">
+										<div class="lineBox green">
+											<div class="math_calc_table class3">
+												<table>
+													<tbody>
+														<tr>
+															<td></td>
+															<td>5</td>
+															<td>2</td>
+														</tr>
+														<tr>
+															<td>×</td>
+															<td>3</td>
+															<td>7</td>
+														</tr>
+														<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td>3</td>
+															<td>6</td>
+															<td>4</td>
+														</tr>
+														<tr>
+															<td>1</td>
+															<td>5</td>
+															<td>6</td>
+														</tr>
+														<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td>5</td>
+															<td>2</td>
+															<td>0</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="icon_arrow big ml_40 mr_40"></div>
+										<div class="lineBox green">
+											<div class="math_calc_table class3">
+												<table>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td>5</td>
+															<td>2</td>
+														</tr>
+														<tr>
+															<td>×</td>
+															<td></td>
+															<td>3</td>
+															<td>7</td>
+														</tr>
+														<tr class="line-tr"><td colspan="4"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td></td>
+															<td>3</td>
+															<td>6</td>
+															<td>4</td>
+														</tr>
+														<tr>
+															<td class="answer" data-toggle-target="1">1</td>
+															<td class="answer" data-toggle-target="1">5</td>
+															<td class="answer" data-toggle-target="1">6</td>
+															<td class="answer" data-toggle-target="1">0</td>
+														</tr>
+														<tr class="line-tr"><td colspan="4"><div class="rowLine --answer" data-toggle-target="1"></div></td></tr>
+														<tr>
+															<td class="answer" data-toggle-target="1">1</td>
+															<td class="answer" data-toggle-target="1">9</td>
+															<td class="answer" data-toggle-target="1">2</td>
+															<td class="answer" data-toggle-target="1">4</td>
+														</tr>
+													</tbody>
+												</table>
+												<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+											</div>
+										</div>
+									</div>
+									<a href="./data/(3-2-1)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</li>
+								<!-- //한번더 탭 1 -->
+
+								<!-- 한번더 탭 2 -->
+								<li class="page_2" data-quiz="toggle">
+									<ul class="contentsList mb_30">
+										<li>
+											<div class="bullet number orange inline mr_10">5</div>
+											<div>잘못 계산한 곳을 찾아 바르게 계산해 보세요.</div>
+										</li>
+									</ul>
+									<div class="flexListContainer jcenter center mt_80">
+										<div class="lineBox green">
+											<div class="math_calc_table class3">
+												<table>
+													<tbody>
+														<tr>
+															<td></td>
+															<td>2</td>
+															<td>7</td>
+														</tr>
+														<tr>
+															<td>×</td>
+															<td>6</td>
+															<td>8</td>
+														</tr>
+														<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td>2</td>
+															<td>1</td>
+															<td>6</td>
+														</tr>
+														<tr>
+															<td>1</td>
+															<td>6</td>
+															<td>2</td>
+														</tr>
+														<tr class="line-tr"><td colspan="3"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td>3</td>
+															<td>7</td>
+															<td>8</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="icon_arrow big ml_40 mr_40"></div>
+										<div class="lineBox green">
+											<div class="math_calc_table class3">
+												<table>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td>2</td>
+															<td>7</td>
+														</tr>
+														<tr>
+															<td>×</td>
+															<td></td>
+															<td>6</td>
+															<td>8</td>
+														</tr>
+														<tr class="line-tr"><td colspan="4"><div class="rowLine"></div></td></tr>
+														<tr>
+															<td></td>
+															<td>2</td>
+															<td>1</td>
+															<td>6</td>
+														</tr>
+														<tr>
+															<td class="answer" data-toggle-target="1">1</td>
+															<td class="answer" data-toggle-target="1">6</td>
+															<td class="answer" data-toggle-target="1">2</td>
+															<td class="answer" data-toggle-target="1">0</td>
+														</tr>
+														<tr class="line-tr"><td colspan="4"><div class="rowLine --answer" data-toggle-target="1"></div></td></tr>
+														<tr>
+															<td class="answer" data-toggle-target="1">1</td>
+															<td class="answer" data-toggle-target="1">8</td>
+															<td class="answer" data-toggle-target="1">3</td>
+															<td class="answer" data-toggle-target="1">6</td>
+														</tr>
+													</tbody>
+												</table>
+												<span class="popBtn click-finger-Btn blinkOn blinkOpacity --finger n1" data-toggle-obj="1" data-hover=""></span>
+											</div>
+										</div>
+									</div>
+									<a href="./data/(3-2-1)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+									<button class="dapCheckBtn" data-answer-btn=""></button>
+								</li>
+								<!-- //한번더 탭 2 -->
+							</ul>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		}, false);
+
+	</script>
+
+</body>
+
+</html>
