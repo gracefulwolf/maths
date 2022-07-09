@@ -12,6 +12,47 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<link rel="stylesheet" href="./css/suh_h_0402_01_0003_103_1.css">
 	<style type="text/css">
+		.numCard.etc{width:54px; height:66px; background-image:url(./images/numCard_etc.png); background-size:auto 66px; background-position-x:calc(-54px * 10);}
+		.numCard.etc[data-index="0"]{background-position-x:calc(-54px * (1 - 1));}
+		.numCard.etc[data-index="1"]{background-position-x:calc(-54px * (2 - 1));}
+		.numCard.etc[data-index="2"]{background-position-x:calc(-54px * (3 - 1));}
+		.numCard.etc[data-index="3"]{background-position-x:calc(-54px * (4 - 1));}
+		.numCard.etc[data-index="4"]{background-position-x:calc(-54px * (5 - 1));}
+		.numCard.etc[data-index="5"]{background-position-x:calc(-54px * (6 - 1));}
+		.numCard.etc[data-index="6"]{background-position-x:calc(-54px * (7 - 1));}
+		.numCard.etc[data-index="7"]{background-position-x:calc(-54px * (8 - 1));}
+		.numCard.etc[data-index="8"]{background-position-x:calc(-54px * (9 - 1));}
+		.numCard.etc[data-index="9"]{background-position-x:calc(-54px * (10 - 1));}
+		.numCard.etc.dot{background-position-x:calc(-54px * (11 - 1));}
+
+		.page_1 .study_guide{top:-24px; right:0;}
+		.page_1 .it-start-wrap{position:relative; z-index:1; width:100%; height:120px;}
+		.page_1 .dragObj{position:absolute; top:20px;}
+		.page_1 .dragObj_1{left:120px;}
+		.page_1 .dragObj_2{left:220px;}
+		.page_1 .dragObj_3{left:320px;}
+		.page_1 .dragObj_4{left:420px;}
+		.page_1 .dragObj_5{left:520px;}
+		.page_1 .dragObj_6{left:620px;}
+		.page_1 .dragObj_7{left:720px;}
+		.page_1 .dragObj_8{left:820px;}
+		.page_1 .dragObj > div{display:flex; align-items:center; justify-content:center; height:100%; padding:0 20px 0 40px;}
+		.page_1 .it-end-wrap{position:relative; height:120px; margin:40px 0 0;}
+		.page_1 .dropArea{display:flex; align-items:center; justify-content:center; position:absolute; top:0; width:80px; height:100px; border:1px solid #ccc; border-radius:10px;}
+		.page_1 .dropArea_1{left:100px;}
+		.page_1 .dropArea_2{left:200px;}
+		.page_1 .dropArea_3{left:300px;}
+		.page_1 .dropArea_4{left:400px;}
+		.page_1 .dropArea_5{left:500px;}
+		.page_1 .dropArea_6{left:600px;}
+		.page_1 .dropArea_7{left:700px;}
+		.page_1 .dropArea_8{left:800px;}
+		.page_1 .it-start-wrap .dragObj.dragObjComplete{opacity:.25;}
+		.page_1 .it-end-wrap .dragObj.dragObjComplete{position:static; top:0; left:0;}
+		.page_1 .it-btn,
+		.page_1 .it-btn.reset{background:#236cbb url(../common/contents/images/icon/icon_check.svg) no-repeat 15px center / 22px auto;}
+		.page_1 .it-btn:before,
+		.page_1 .it-btn.reset:before{content:"다시하기";padding-left:18px;}
 	</style>
 </head>
 
@@ -30,7 +71,7 @@
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<!-- 1 -->
-					<li class="page_1" data-quiz="toggle">
+					<li class="page_1">
 						<div class="basicSlider contentsBox doItContent"  data-slide-container="">
 							<div class="moveButtonContainer" data-slide-btn-container="">
 								<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -41,11 +82,44 @@
 								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
 							<ul class="basicSlider_slides" data-slides="">
-								<li class="innerTab_1">
+								<li class="innerTab_1" data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer"  data-total-complete-count="3">
+									<!--
+										data-total-complete-count
+										의 갯수를 정답보다 하나 많게 설정하여 정답완료를 못하게한다.
+									-->
 									<h2><ins class="dot"></ins><span>
 										2장을 고르세요.
 									</span></h2>
 									<!-- 숫자 카드 드래그 -->
+									<section>
+										<div class="study_guide">
+											<em>숫자 카드</em>을 <em>드래그</em>하여 옮기세요.
+										</div>
+										<div class="dragDropContainer mt_20">
+											<div class="it-start-wrap dragBox lineBox sky dragObjUL">
+												<div class="js-dragObj dragObj dragObj_1 numCard etc" data-name="drag-obj" data-index="1" data-value="1" data-drag-obj-answer="1"></div>
+
+												<div class="js-dragObj dragObj dragObj_2 numCard etc" data-name="drag-obj" data-index="2" data-value="2" data-drag-obj-answer="1"></div>
+
+												<div class="js-dragObj dragObj dragObj_3 numCard etc" data-name="drag-obj" data-index="3" data-value="3" data-drag-obj-answer="1"></div>
+
+												<div class="js-dragObj dragObj dragObj_4 numCard etc" data-name="drag-obj" data-index="4" data-value="4" data-drag-obj-answer="1"></div>
+
+												<div class="js-dragObj dragObj dragObj_5 numCard etc" data-name="drag-obj" data-index="5" data-value="5" data-drag-obj-answer="1"></div>
+
+											</div>
+											<div class="it-end-wrap">
+												<div class="js-dropArea dropArea dropArea_1" data-type="1" data-drop-area-answer="1"></div>
+												
+												<div class="js-dropArea dropArea dropArea_2" data-type="2" data-drop-area-answer="1"></div>
+												
+												
+											</div>
+										</div>
+										<div class="buttonContainer">
+											<button class="dapCheckBtn it-btn reset" id="it_reset_btn" data-answer-btn="" data-type="reset"></button>
+										</div>
+									</section>
 								</li>
 								<li class="innerTab_2">
 									<h2><ins class="dot"></ins><span>
@@ -125,5 +199,30 @@
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (){
+			document.querySelector("#it_reset_btn").addEventListener("click", function(){
+				if( !this.classList.contains( "reset" ) ){
+					this.classList.add( "reset" );
+				}
+			});
 
+			var it_tab = $ts.getEl( ".basicSlider_tabs li" );
+			it_tab.forEach(function (objs, index){
+				objs.addEventListener('click', function () {
+					document.querySelector("#it_reset_btn").classList.add( "reset" );
+				});
+			});
+		}, false);
+
+
+		window.dragDropCallbacks = {
+			"drag-obj": function(DRAGDROP) {
+				if (DRAGDROP.droppedArea) {
+					if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+				}
+			},
+		};
+
+	</script>
 </html>
