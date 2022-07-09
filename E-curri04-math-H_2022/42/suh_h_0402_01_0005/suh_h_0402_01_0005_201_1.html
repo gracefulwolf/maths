@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="./css/suh_h_0402_01_0002_102_1.css">
 	<style type="text/css">
 		.operator {display:inline-block;padding: 0 2px;vertical-align: middle;}
+		.pos-r{position:relative}
+		.pos-a{position:absolute}
 		.ta-c {text-align:center !important}
 		.flex-center {display:flex;align-items:center;justify-content:center;}
 		.alignCneter {align-items: center;}
@@ -27,23 +29,17 @@
 		[class^='ex-'] {
 			position: absolute;
 		}
-		.ex-gradation {position: absolute; top:0; left:0;font-size:30px;line-height:1;width: 100%;display: flex;align-items: center;justify-content: space-between;}
+		.ex-gradation {position: absolute; top:0;left:0;font-size:30px;line-height:1;width:100%;display: flex;align-items: center;justify-content: space-between;}
 
 		.page_1 img {height: 112px;margin: -20px auto 0;}
 
-		.page_2 img {height: 210px;margin: 0 auto;}
-
-		.page_2 .ex-val-1 {top: 59%;left: 12.5%;}
-		.page_2 .ex-val-2 {top: 59%;left: 69%;}
-		.page_2 .ex-val-3 {top: 14%;left: 18%;}
+		.page_2 figure img {padding-top: 30px;height: 105px;}
+		.page_2 .ex-gradation {left: 46px;width: 91%;}
 
 		.lineBox .colorBox {display: inline-block;}
 
-		.page_3 .colorBox {display: inline-block;}
-
-		.labelBox {position: relative;padding-top: 25px;}
-		.labelBox > .colorBox {position: absolute;top: 0;left:5%;}
-		.labelBox > .lineBox {padding-top: 50px;}
+		.page_3 figure img {padding-top: 30px;height: 105px;}
+		.page_3 .ex-gradation {left: 16px;width: 96.5%;}
 
 		.pop_page_1 .ex-balloon-1 {width: 476px;top: 12%;left: 1%;}
 	</style>
@@ -66,15 +62,10 @@
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
 						<section class="full">
-							<ul class="contentsList">
-								<li>
-									<ins class="bullet circleDot orange ml_20 mb_20"></ins>
-									<div>
-										구하려는 것을 식으로 나타내 보세요.
-										<div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div>
-									</div>
-								</li>
-							</ul>
+							<h2><ins class="dot"></ins><span>
+								구하려는 것을 식으로 나타내 보세요.
+								<div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div>
+							</span></h2>
 							<div class="flex-center mt_50">
 								<div class="toggle" data-toggle-obj="000-">
 									<div class="answer" data-toggle-target="000-">
@@ -99,122 +90,36 @@
 					</li>
 					<li class="page_2" data-quiz="toggle">
 						<section class="full">
-							<div class="labelBox pink">
-								<div class="colorBox pink">방법2</div>
-								<div class="lineBox pink">
-									<div class="flex-center">
-										<figure class="pt_30">
-											<img src="./images/suh_h_0402_01_0005_202_1_2.png" alt="">
-											<div class="ex-gradation">
-												<span>0</span>
-												<span>1</span>
-												<span>2</span>
-												<span>3</span>
-												<span>4</span>
-											</div>
-											<div class="ex-val-1">
-												<div class="bunsuWrap inline">
-													<ul>
-														<li><div class="toggle" data-toggle-obj="2-1">
-															<div class="answer" data-toggle-target="2-1">
-																4
-															</div>
-														</div></li>
-														<li>3</li>
-													</ul>
-												</div>
-											</div>
-											<div class="ex-val-2">
-												<div class="bunsuWrap inline">
-													<ul>
-														<li><div class="toggle" data-toggle-obj="2-2">
-															<div class="answer" data-toggle-target="2-2">
-																7
-															</div>
-														</div></li>
-														<li>3</li>
-													</ul>
-												</div>
-											</div>
-										</figure>
-										<figure class="ml_30">
-											<img src="./images/suh_h_0402_01_0005_202_1_3.png" alt="">
-											<div class="ex-val-3">
-												<div class="bunsuWrap inline">
-													3<ul>
-														<li>2</li>
-														<li>3</li>
-													</ul>
-												</div><span class="operator">＝</span><div class="bunsuWrap inline">
-													<ul>
-														<li><div class="toggle" data-toggle-obj="2-3">
-															<div class="answer" data-toggle-target="2-3">
-																11
-															</div>
-														</div></li>
-														<li>3</li>
-													</ul>
-												</div>
-											</div>
-										</figure>
-									</div>
-									<div class="flex-center mt_50">
-										<div>
-											<div class="bunsuWrap inline">
-												3<ul>
-													<li>2</li>
-													<li>3</li>
-												</ul>
-											</div><span class="operator">－</span><div class="bunsuWrap inline">
-												2<ul>
-													<li>1</li>
-													<li>3</li>
-												</ul>
-											</div><span class="operator">＝</span><div class="bunsuWrap inline">
-												<ul>
-													<li><div class="toggle" data-toggle-obj="2-4">
-														<div class="answer" data-toggle-target="2-4">
-															11
-														</div>
-													</div></li>
-													<li>3</li>
-												</ul>
-											</div><span class="operator">－</span><div class="bunsuWrap inline">
-												<ul>
-													<li><div class="toggle" data-toggle-obj="2-5">
-														<div class="answer" data-toggle-target="2-5">
-															7
-														</div>
-													</div></li>
-													<li>3</li>
-												</ul>
-											</div><span class="operator">＝</span><div class="bunsuWrap inline">
-												<ul>
-													<li><div class="toggle" data-toggle-obj="2-6">
-														<div class="answer" data-toggle-target="2-6">
-															4
-														</div>
-													</div></li>
-													<li>3</li>
-												</ul>
-											</div><span class="operator">＝</span><div class="bunsuWrap inline">
-												<div class="toggle" data-toggle-obj="2-7">
-													<div class="answer" data-toggle-target="2-7">
-														1
-													</div>
-												</div><ul>
-													<li><div class="toggle" data-toggle-obj="2-8">
-														<div class="answer" data-toggle-target="2-8">
-															1
-														</div>
-													</div></li>
-													<li>3</li>
-												</ul>
-											</div>
-										</div>
+							<h2><ins class="dot"></ins><span>
+								<div class="bunsuWrap inline">
+									3<ul>
+										<li>4</li>
+										<li>5</li>
+									</ul>
+								</div>만큼 색칠하고, 색칠한 부분에 <div class="bunsuWrap inline">
+									1<ul>
+										<li>1</li>
+										<li>5</li>
+									</ul>
+								</div>만큼 <span class="icon_x_title" style="width:40px;height:40px;"></span>표 하여 알아보세요.
+							</span></h2>
+
+							<figure class="flex-center mt_80">
+								<img src="./images/suh_h_0402_01_0005_201_1_1.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+									<span>2</span>
+									<span>3</span>
+									<span>4</span>
+								</div>
+								<div class="pos-a toggle noBg" data-toggle-obj="2-1">
+									<div class="answer" data-toggle-target="2-1">
+										<img src="./images/suh_h_0402_01_0005_201_1_2.png" alt="">
 									</div>
 								</div>
-							</div>
+							</figure>
+
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
@@ -223,30 +128,70 @@
 					<li class="page_3" data-quiz="toggle">
 						<section class="full">
 							<h2><ins class="dot"></ins><span>
-								앞의 두 방법을 비교해 보세요.
+								한옥 마을에서 시장까지의 거리는 몇 km인지 말하고, 어림한 결과와 비교해 보세요.
 							</span></h2>
-							<div class="ml_20">
-								<div>
-									<div class="colorBox green">방법1</div>
+
+							<div class="basicSlider doItContent"  data-slide-container="">
+								<div class="moveButtonContainer" data-slide-btn-container="">
+									<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+									<ul class="basicSlider_circle_tabs" data-tabs="">
+										<li data-hover=""></li>
+										<li data-hover=""></li>
+									</ul>
+									<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 								</div>
-								<div class="mt_10">
-									<div class="toggle" data-toggle-obj="3-1">
-										<div class="answer" data-toggle-target="3-1">
-											자연수 부분과 진분수 부분으로 나누어 계산했습니다.
+								<ul class="basicSlider_slides inner" data-slides="">
+									<li class="innerTab_1">
+										<figure class="flex-center mt_80">
+											<img src="./images/suh_h_0402_01_0005_201_1_2.png" alt="">
+											<div class="ex-gradation">
+												<span>0</span>
+												<span>1</span>
+												<span>2</span>
+												<span>3</span>
+												<span>4</span>
+											</div>
+										</figure>
+										<div class="flex-center mt_30">
+											<div class="toggle" data-toggle-obj="3-1">
+												<div class="answer" data-toggle-target="3-1">
+													<div class="bunsuWrap inline">
+														2<ul>
+															<li>3</li>
+															<li>5</li>
+														</ul>
+													</div> km
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
-								<div class="mt_20">
-									<div class="colorBox pink">방법2</div>
-								</div>
-								<div class="mt_10">
-									<div class="toggle" data-toggle-obj="3-2">
-										<div class="answer" data-toggle-target="3-2">
-											대분수를 가분수로 바꾸어 분자 부분만 빼서 계산했습니다.
+									</li>
+									<li class="innerTab_2">
+										<figure class="flex-center mt_80">
+											<img src="./images/suh_h_0402_01_0005_201_1_2.png" alt="">
+											<div class="ex-gradation">
+												<span>0</span>
+												<span>1</span>
+												<span>2</span>
+												<span>3</span>
+												<span>4</span>
+											</div>
+										</figure>
+										<div class="flex-center mt_30">
+											<div class="toggle" data-toggle-obj="3-2">
+												<div class="answer" data-toggle-target="3-2">
+													<div class="flex-wrap">
+														<div class="bullet exam">예</div>
+														<div>
+															2 km보다 멀다고 어림했는데 실제 2 km보다 멀게 나왔습니다.
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
 							</div>
+
 							<div class="buttonContainer">
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
