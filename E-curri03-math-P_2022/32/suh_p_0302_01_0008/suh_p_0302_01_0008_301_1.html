@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style>
+		@keyframes css-ani-arrow-leftToRight{
+			0%,100%{transform:translateX(0);}
+			50%{transform:translateX(-10px);}
+		}
+
+		.lineBox{position: relative;margin: 0 auto;padding: 30px;}
+		.lineBox .bullet.exam{position: absolute;}
+		.icon_arrow{position: relative; z-index: -1; opacity: 0; animation: css-ani-arrow-leftToRight 1s linear 0s infinite;}
+		.--answer{position: relative; z-index: -1; opacity: 0;}
+		.--answer.on,
+		.icon_arrow.on,
+		.--answer.on + .icon_arrow{z-index: 0; opacity: 1;}
+		.icon_arrow.complete{animation: none;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="pointContainer">
+		<header>
+			<h1><ins class="icon"></ins>핵심 정리</h1>
+		</header>
+		<main>
+			<div class="contentsBox" data-quiz="toggle">
+				<h2>올림이 여러 번 있는 (몇십몇)×(몇십몇)의 계산</h2>
+				<section>
+					<ul class="contentsList">
+						<li class="mb_10">
+							<div class="bullet circleDot"></div>
+							<div class="ls1">
+								(몇십몇)×(몇)과 (몇십몇)×(몇십)을 따로 구하여 더한 값이 (몇십몇)×(몇십몇)의 계산입니다.
+							</div>
+						</li>
+					</ul>
+					<div class="lineBox sky mt_20">
+						<div class="bullet exam">예</div>
+						<div class="flexListContainer jcenter mt_20">
+							<div>
+								<div class="math_calc_table class3">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td>3</td>
+												<td>6</td>
+											</tr>
+											<tr>
+												<td>×</td>
+												<td>4</td>
+												<td>9</td>
+											</tr>
+											<tr class="line">
+												<td colspan="3">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="lineDotted line_0"></div>
+									<div class="lineDotted line_1"></div>
+									<div class="lineDotted line_2"></div>
+									<div class="lineDotted line_3"></div>
+								</div>
+							</div>
+							<ins class="icon_arrow big on ml_60 mr_60 mt_80" data-toggle-obj="1"></ins>
+							<div class="--answer" data-toggle-target="1">
+								<div class="math_calc_table class3">
+									<table>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>3</td>
+												<td>6</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>×</td>
+												<td class="blueT">4</td>
+												<td class="redT">9</td>
+											</tr>
+											<tr class="line">
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="redT">3</td>
+												<td class="redT">2</td>
+												<td class="redT">4</td>
+											</tr>
+											<tr>
+												<td class="blueT">1</td>
+												<td class="blueT">4</td>
+												<td class="blueT">4</td>
+												<td class="blueT">0</td>
+											</tr>
+											<tr class="line">
+												<td colspan="4">
+													<div class="rowLine"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>7</td>
+												<td>6</td>
+												<td>4</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="lineDotted line_0"></div>
+									<div class="lineDotted line_1"></div>
+									<div class="lineDotted line_2"></div>
+									<div class="lineDotted line_3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript"></script>
+</body>
+
+</html>
