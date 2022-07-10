@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./css/4_6_6.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>마름모를 알아볼까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="97">수학<span>97</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="70">수학 익힘<span>70</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page=97"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="3">마름모를 완성해 봅시다.</h1>
+          <section class="noUserSelect">
+            <div class="js-drawLine drawLine draw_1" data-option="">
+              <canvas class="js-drawArea drawArea"></canvas>
+              <div class="js-dragObj dragObj" data-type="drag" data-index="1"></div> 
+              <div class="js-dragObj dragObj" data-type="drag" data-index="2"></div> 
+              <div class="js-resetButton resetButton" data-hover=""></div>
+            </div>
+            <div class="js-drawLine drawLine draw_2" data-option="">
+              <canvas class="js-drawArea drawArea"></canvas>
+              <div class="js-dragObj dragObj" data-type="drag" data-index="1"></div> 
+              <div class="js-dragObj dragObj" data-type="drag" data-index="2"></div> 
+              <div class="js-resetButton resetButton" data-hover=""></div>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [
+            { start: {x: 105, y: 205}, end: {x: 255, y: 352} },
+            { start: {x: 405, y: 205}, end: {x: 255, y: 352} }
+          ],
+          [
+            { start: {x: 355, y: 55}, end: {x: 105, y: 55} },
+            { start: {x: 355, y: 305}, end: {x: 355, y: 55} }
+          ],
+        ];
+
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dropObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drop');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+      
+          return dot;
+        }
+      
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        
+        var drawLines = containers.map(function(container, index) {
+          createDot(container, [11, 8]);
+
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function(DrawLine) {},
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+              },
+              incorrect: function(DrawLine) {},
+              showAnswer: function(DrawLine) {},
+              reset: function(DrawLine) {}
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

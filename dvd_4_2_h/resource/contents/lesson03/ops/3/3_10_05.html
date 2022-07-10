@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="./css/3_10_5.css">
+  </head>
+	<body class="lesson_3">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈 </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="75">수학<span>75</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="56">수학 익힘<span>56</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="75"></div>
+      </header>
+      <main>
+        <div class="contentsArea">
+          <h2 data-index="4">숫자 4가 나타내는 수가 가장 큰 것을 찾아 기호를 써 보세요. </h2>
+          <section class="noUserSelect" data-quiz="dragDrop" data-option="copy">
+            <!-- <ins class="draw"></ins> -->
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj" data-name="drag-obj">㉠ <span class="afterHidden">6.<span class="txtCRed">4</span>5</span></div>
+              <div class="js-dragObj dragObj" data-name="drag-obj">㉡ <span class="afterHidden">2.06<span class="txtCRed">4</span></span></div>
+              <div class="js-dragObj dragObj" data-name="drag-obj">㉢ <span class="afterHidden">8.2<span class="txtCRed">4</span></span></div>
+              <div class="js-dragObj dragObj" data-name="drag-obj">㉣ <span class="afterHidden"><span class="txtCRed">4</span>.789</span></div>
+            </div>
+            <div class="dropAreas">
+              <div class="js-dropArea dropArea"></div></div>
+            <div class="quizButtons answer" data-answer-btn="" data-hover="" ></div>
+          </section>
+
+        </div>
+      </main>
+    
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+      window.$efSound.muted(true);
+      window.$efSound.incorrect(); // 오답 사운드
+
+      function setSound() {
+        if (isMuted) {
+          window.$efSound.muted(false);
+          isMuted = false;
+        }
+      }
+      var isMuted = true;
+      document.body.addEventListener('mousedown', setSound);
+      document.body.addEventListener('touchstart', setSound);
+      // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+      window.addEventListener('load', function() {
+
+        window.dragDropCallbacks = {
+          "drag-obj": dragCallback,
+        };
+
+        function dragCallback(dragDrop) {
+          var dropArea, dropAreaElement, children;
+          dropArea = dragDrop.droppedArea;
+          if (!dropArea) {
+            window.$efSound.incorrect();
+            return console.log('dropArea 없음.');
+          }
+
+          dropAreaElement = dragDrop.droppedArea.element;
+          children = dropAreaElement.children;
+
+          if (children.length > 1) {
+            dropAreaElement.removeChild(children[0]);
+          }
+        }
+
+        var dragAnswerButton = document.querySelector('.quizButtons');
+        dragAnswerButton.addEventListener('click', function() {
+          var dropAreas = $ts.getEl('.js-dropArea');
+          if (dragAnswerButton.className.indexOf('reset') === -1) {
+            dropAreas[0].innerHTML = '';
+            $ts.getEl('.contentsArea')[0].classList.remove('complete');
+          }else{
+            dropAreas[0].innerHTML = '<div class="js-dragObj dragObj" data-name="drag-obj">㉣ <span class="afterHidden"><span class="txtCRed">4</span>.789</span></div>';
+            $ts.getEl('.contentsArea')[0].classList.add('complete');
+          }
+        });
+
+      });
+    </script>
+  </body>
+</html>

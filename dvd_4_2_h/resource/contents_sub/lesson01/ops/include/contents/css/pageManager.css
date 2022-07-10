@@ -1,0 +1,78 @@
+
+@charset "utf-8";
+
+/*─────────────────────────┐
+	name: pageManager.css
+	data: 2018.08.29
+└─────────────────────────*/
+
+/************* common ************/
+.on,
+.hover {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.off { opacity: .2; pointer-events: none; }
+.hide { opacity: 0; }
+
+.tAlign_center { text-align: center; }
+.tAlign_justify { text-align: justify; }
+[drag],
+[data-drag],
+[data-hover] {
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+flex {
+	display: flex;
+	align-items: center;
+}
+flex.jCenter { justify-content: center; }
+/*i[class*="fa-"] { vertical-align: top; }*/
+
+[data-appear] { opacity: 0; }
+
+/*********************************/
+/* design box */
+.box {
+	padding: 6px 20px 8px;
+	box-sizing: border-box;
+	border-radius: 12px;
+}
+.box.line {
+	border: 4px solid #eee;
+	background: #fff;
+}
+.box.line.pink { border-color: #fab4ba; }
+.box.line.blue { border-color: #a7d1db; }
+.box.line.green { border-color: #97d494; }
+.box.line.purple { border-color: #bfb5eb; }
+.box.line.orange { border-color: #f7c57e; }
+
+.box.color { background: #eee; }
+.box.color.pink { background: #fad1d4; }
+.box.color.blue { background: #cfe4e9; }
+.box.color.green { background: #c3e3c1; }
+.box.color.purple { background: #d6d1eb; }
+
+.box.bg { background: #f0f0f0; }
+.box.bg.orange { background: #faeddc; }
+.box.bg.blue { background: #d8ebf0; }
+.box.bg.purple { background: #e9e3f5; }
+.box.bg.beige { background: #F4F2ED; }
+
+
+
+/* loading */
+.loadingImage {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .3) url(../../contents/images/loadingImage_sample.gif) center no-repeat;
+}

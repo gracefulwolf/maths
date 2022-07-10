@@ -1,0 +1,216 @@
+@charset "utf-8";
+.inputQuizContainer {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inputQuizContainer .imgBgContainer {
+  position: relative;
+  width: 860px;
+  height: 451px;
+  margin: 0 auto 30px;
+  background: url("../images/5_0/5_0_3.svg") center/contain no-repeat;
+  box-sizing: border-box;
+}
+.inputQuizContainer .imgBgContainer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/5_0/5_0_3_bg.svg") center/contain no-repeat;
+  pointer-events: none;
+}
+
+figure.fig1 {
+  position: absolute;
+  top: 180px;
+  left: 267px;
+  width: 646px;
+  overflow: hidden
+}
+
+figure.fig1 img {
+  margin-top: -35px
+}
+
+.clickButton {
+  opacity: 0
+}
+
+.contentsArea > h1 {
+  margin-bottom: 5px;
+  word-break: break-all;
+}
+
+.graphContainer {
+  position: absolute;
+  top: 212px;
+  left: 85px;
+  width: 482px;
+}
+
+.graphContainer input {
+  position: absolute;
+  padding: 5px 2px 4px;
+  text-align: center;
+  z-index: 1;
+}
+
+.graphContainer .input_1 {
+  top: 0;
+  left: 0;
+  width: 203px;
+  height: 60px;
+  font-size: 35px;
+}
+
+.graphContainer .input_2 {
+  top: 60px;
+  left: 0;
+  width: 203px;
+  height: 60px;
+  font-size: 35px;
+}
+
+.graphContainer .input_3 {
+  top: 120px;
+  left: 0;
+  width: 203px;
+  height: 60px;
+  font-size: 35px;
+}
+
+.graphContainer .input_4 {
+  top: 178px;
+  left: -4px;
+  width: 80px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.graphContainer .input_5 {
+  top: 198px;
+  left: 120px;
+  width: 80px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.graphContainer .input_6 {
+  top: 178px;
+  left: 322px;
+  width: 50px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.graphContainer .input_7 {
+  top: 178px;
+  left: 465px;
+  width: 50px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.graphContainer .input_8 {
+  top: 178px;
+  left: 607px;
+  width: 50px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.graphContainer .input_9 {
+  top: 203px;
+  left: 609px;
+  width: 48px;
+  height: 37px;
+  font-size: 24px;
+  background-position: 50%;
+}
+
+.fillContainer {
+  position: absolute;
+  top: 3px;
+  left: 204px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 172px;
+}
+
+.fillContainer .square {
+  display: flex;
+  width: 100%;
+  /*flex-direction: column-reverse;*/
+  border-right: none;
+  box-sizing: border-box;
+}
+
+.square > .target {
+  width: 100%;
+  height: 40px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.square > .target.fill[index] {
+  background-color: #EDC6CA;
+  border: 2px solid #c83164;
+  border-right: 0;
+  border-left: 0;
+  animation: none;
+}
+
+.square > .target.fill.last {
+  border-right: 2px solid #c83164;
+}
+
+.square > .target[index="0"] {
+  animation: targetOpacity 1s ease-in-out infinite;
+}
+.fillContainer .square:after{
+  background-color: #d3edfb;
+  border: 2px solid #00a0e9;
+  border-bottom: 0;
+  border-top: 0;
+  animation: none;
+}
+
+@keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-o-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-ms-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+@-webkit-keyframes targetOpacity {
+  50% {
+    background-color: yellow;
+  }
+}
+
+.titleIndent > ins.exam {
+  top: 8px;
+  left: -62px;
+}

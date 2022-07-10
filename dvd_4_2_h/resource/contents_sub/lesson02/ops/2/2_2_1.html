@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  <link rel="stylesheet" href="../include/math/style/drawLine.css">
+  <link rel="stylesheet" href="../include/math/style/rotete.css">
+  <link rel="stylesheet" href="css/2_2_1.css">
+</head>
+
+<body class="lesson_2">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>2. 삼각형</span>
+        <span>이등변삼각형의 성질을 알아볼까요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="34">수학<span>34~35</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="28">수학 익힘<span>28</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="28"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea noUserSelect">
+        <h1 data-star="1" data-index="1">이등변삼각형을 완성하고, 세 각의 크기를 재어 보세요.</h1>
+        <section>
+          <div class="drawContainer draw_1">
+            <div class="sectionPaper"></div>
+            <div class="js-drawLine drawLine" data-option="">
+              <canvas class="js-drawArea drawArea"></canvas>
+              <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+              <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+              <div class="js-resetButton resetButton" data-hover=""></div>
+            </div>
+            <ins class="exam exam_1">예</ins>
+            <div class="line"></div>
+          </div>
+          <div class="drawContainer draw_2">
+              <div class="js-drawLine drawLine" data-option="">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div>
+                <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                <div class="js-resetButton resetButton" data-hover=""></div>
+              </div>
+              <ins class="exam exam_1">예</ins>
+              <div class="line line2"></div>
+
+            </div>
+
+          <div class="dragBox noIcon">
+            <div class="js-rotate rotateContainer">
+              <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+              <div class="js-rotateButton rotateButton right"></div>
+              <div class="js-rotateButton rotateButton left"></div>
+            </div>
+          </div>
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="">
+          </div>
+          <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <p>이등변삼각형을 완성하면 다음과 같습니다.</p>
+          <figure>
+            <img src="images/2_2/2_2_1_solve.svg" alt="이미지">
+          </figure>
+          <p>완성한 삼각형의 세 각의 크기를 재면 길이가 같은 두 변에 있는 두 각의 크기가 같습니다.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/math/script/rotate.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/newDrawLine.min.js"></script>
+  <script type="text/javascript">
+
+      window.addEventListener('load', function () {
+        var containers = $ts.getEl('.js-drawLine');
+
+        var answers = [
+          [
+            {
+              end: {x: 288, y: 75},
+              start: {x: 208, y: 274}
+            },
+            {
+              end: {x: 288, y: 75},
+              start: {x: 368, y: 274}
+            }
+          ],
+          [
+            {
+              end: {x: 448, y: 274},
+              start: {x: 128, y: 274}
+            },
+            {
+              end: {x: 448, y: 274},
+              start: {x: 288, y: 74}
+            }
+          ]
+        ]
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dragObj');
+          dot.classList.add('horizon_' + (i + 1));
+          dot.classList.add('vertical_' + (j + 1));
+          dot.setAttribute('data-type', 'drag');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+
+          return dot;
+        }
+
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        var drawLines = containers.map(function (container, index) {
+          createDot(container, [13, 9]);
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function (DrawLine) { },
+              correct: function (DrawLine) {
+                console.log('correct', DrawLine);
+
+              },
+              showAnswer: function (DrawLine) {
+              },
+              reset: function (DrawLine) {
+
+              }
+            },
+          });
+        })
+        $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+      });
+  </script>
+</body>
+
+</html>

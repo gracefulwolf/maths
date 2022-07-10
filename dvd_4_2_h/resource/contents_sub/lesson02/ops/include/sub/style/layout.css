@@ -1,0 +1,119 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* layout.css *
+***********************/
+
+body {
+  overflow: hidden;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  color: #111;
+  font-family: NSquareRB;
+}
+
+/********************** header **********************/
+header {
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 54px;
+  padding: 15px 20px 0;
+  color: #888;
+  font-size: 18px;
+  font-family: GMSansM;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* drawLine에 resetButton이 zIndex가 10임 */
+  z-index: 2; 
+}
+header > *:not(.addThingsMenu) { opacity: 0; }
+header.on > * { opacity: 1; }
+
+/* header - index */
+header .indexBox {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  /* top: 0; */
+  /* left: 0px; */
+  height: 100%;
+  /* padding: 0 10px; */
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+header .indexBox > * {
+  margin-right: 6px;
+}
+header .indexBox > span:first-child {
+  font-family: GMSansB;
+}
+header .indexBox > span:nth-of-type(2) {
+  color: #555;
+}
+
+/******************** header End ********************/
+
+/********************** main **********************/
+main {
+  position: absolute;
+  top: 60px;
+  height: calc(720px - 58px);
+  /* flex: 1 0 auto; */
+  /* position: relative; */
+  width: 100%;
+  /* margin-top: 30px; */
+  font-size: 50px;
+  font-family: NSquareRB;
+  letter-spacing: -0.05em;
+  word-spacing: 0.02em;
+  line-height: 1.3;
+  overflow: hidden;
+}
+main .contentsArea {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  right: 50px;
+  bottom: 20px;
+  word-break: keep-all;
+}
+.contentsArea h1 {
+  flex: 0 0 auto;
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 20px;
+  font-family: NSquareREB;
+  background-size: auto 1.2em;
+  background-position: 0 0.1em;
+  background-repeat: no-repeat;
+}
+.contentsArea > section {
+  flex: 0 1 100%;
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+  box-sizing: border-box;
+}
+
+.contentsArea h2,
+.contentsArea h3 {
+  flex: 0 0 auto;
+}
+/******************** main End ********************/

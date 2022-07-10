@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="./css/2_5_4.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 삼각형</span>
+          <span>어떤 삼각형인지 알아볼까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="41">수학<span>41</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="34">수학 익힘<span>34</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="41"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="2">어떤 삼각형인지 <ins class="examIcon"></ins>에서 모두 골라 써 봅시다.</h1>
+          <section class="noUserSelect">
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+                  <div class="dragBox top">
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="1">이등변삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="">정삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="1">예각삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="2">직각삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="">둔각삼각형</div>
+                  </div>
+                  <div class="dropAreas">
+                    <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+                    <div class="js-dropArea dropArea" data-drop-area-answer="2"></div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+                </li>
+                <li class="page2" data-quiz="dragDrop" data-quiz-name="drag_2" data-option="copy">
+                  <div class="dragBox top">
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="1,2">이등변삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="1">정삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="1">예각삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="">직각삼각형</div>
+                    <div class="js-dragObj dragObj" data-drag-obj-answer="2">둔각삼각형</div>
+                  </div>
+                  <div class="dropAreas">
+                    <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+                    <div class="js-dropArea dropArea" data-drop-area-answer="2"></div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        window.$efSound.muted(true);
+        window.$efSound.incorrect(); // 오답 사운드
+
+        function setSound() {
+          if (isMuted) {
+            window.$efSound.muted(false);
+            isMuted = false;
+          }
+        }
+        var isMuted = true;
+        document.body.addEventListener('mousedown', setSound);
+        document.body.addEventListener('touchstart', setSound);
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+
+
+        window.$callBack.dragCorrect = function(DRAG) {
+          console.log('dragCorrect:', DRAG);
+          
+          var dropArea = DRAG.droppedArea.element;
+          var children = $ts.getEl('.dragObj', dropArea);
+
+          var isChild = children.filter(function(child) { return child.innerText === DRAG.movingObj.element.innerText; });
+
+          if (isChild.length > 1) {
+            window.$efSound.incorrect();
+            dropArea.removeChild(isChild[0]);
+          }
+        }
+        window.$callBack.dragIncorrect = function(DRAG) {
+          console.log('dragIncorrect:', DRAG);
+
+          window.$efSound.incorrect();
+        }
+
+
+
+
+        var isAnswered = false;
+        var chainButtons = $ts.getEl('.js-chainButtons');
+        var dropAreas = $ts.getEl('.js-dropArea');
+
+        function clearDropAreas() {
+          dropAreas.forEach(function(area) {
+            area.innerHTML = '';
+          });
+        }
+
+        function resetQuiz() {
+          clearDropAreas();
+          isAnswered = false;
+          $pm.array.quiz.inPage.forEach(function(quiz) {
+            if (quiz.type === 'dragDrop') quiz.reset();
+          });
+          
+          dropAreas.forEach(function(area) {
+            area.classList.remove('textColor');
+            area.classList.remove('answer');
+          });
+        }
+
+        function showAnswer() {
+          clearDropAreas();
+          isAnswered = true;
+          dropAreas.forEach(function(area) {
+            area.classList.add('textColor');
+            area.classList.add('answer');
+          });
+          $pm.array.quiz.inPage.forEach(function(quiz) {
+            if (quiz.type === 'dragDrop') quiz.showAnswer();
+          })
+        }
+
+        chainButtons.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+
+            if (isAnswered) resetQuiz();
+            else showAnswer();
+
+          });
+        });
+
+
+
+        
+        window.$callBack.sliderMove = function(SLIDER) {
+          isAnswered = false;
+          resetQuiz();
+        }
+      });
+    </script>
+  </body>
+</html>

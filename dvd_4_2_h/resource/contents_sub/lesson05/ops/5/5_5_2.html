@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  
+  <style>
+    .imgBgContainer {
+      margin: 0 auto;
+      width: 1080px;
+      height: 490px;
+      padding: 0px 6px 0 809px;
+      background-image: url(images/5_5/5_5_2.svg);
+      box-sizing: border-box;
+    }
+    .imgBgContainer > .oxObj:not(:last-of-type){
+      margin-bottom: 46px;
+    }
+    .imgBgContainer > .oxObj .icon {
+      background-size: 36%;
+    }
+    
+    .oxObj {
+      position: relative;
+      width: 100%;
+      height: 128px;
+    }
+    
+    h1 ins.icon.icon_o {
+      top: 2px;
+    }
+    .displayN {
+      display: none;
+    }
+    [data-quiz="ox"].complete .oxObj {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="lesson_5">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>5. 자료와 꺾은선그래프</span>
+        <span>자료를 수집하여 분석해 볼까요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="118">수학<span>118~121</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="86">수학 익힘<span>86</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="86"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea">
+        <h1 data-star="2" data-index="2">꺾은선그래프로 나타내기에 알맞은 주제에 <ins class="icon icon_o"></ins>표 하세요.</h1>
+        <section data-quiz="ox">
+          <div class="imgBgContainer">
+            <div class="oxObj obj1" data-ox-obj="1" data-answer=""><div class="icon icon_o" data-ox-target="1"></div></div>
+            <div class="oxObj obj2" data-ox-obj="2"><div class="icon icon_o" data-ox-target="2"></div></div>
+            <div class="oxObj obj3" data-ox-obj="3"><div class="icon icon_o" data-ox-target="3"></div></div>
+          </div>
+          <!-- <div class="displayN" data-ox-obj="4" data-answer=""><div class="icon icon_o" data-ox-target="4"></div></div> -->
+          
+          
+          <!-- <div class="displayN" data-ox-obj="1" data-answer=""></div> -->
+          
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+          <div class="js-buttons quizButtons answer" data-hover="" data-quiz-chain=""></div>
+        </section>
+        
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <ul class="flexListContainer">
+            꺾은선그래프는 자료의 변화를 한눈에 알아보기 쉽습니다. 따라서 꺾은선그래프로 나타내기에 알맞은 주제는 우리 고장의 인구 변화입니다.
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/fomula.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+      var oxQuiz = $pm.array.quiz.inPage.filter(function(quiz) {return quiz.type === 'ox'});
+      window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+        oxQuiz.forEach(function(quiz) {
+          quiz.reset();
+          quiz.showAnswer();
+          quiz.quiz.obj.forEach(function(obj) { obj.style.pointerEvents = 'none'; });
+        });
+      }
+      window.$callBack.quizChainReset = function(QUIZCHAIN) {
+        oxQuiz.forEach(function(quiz) {
+          quiz.reset();
+          quiz.quiz.obj.forEach(function(obj) { obj.style.pointerEvents = ''; });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

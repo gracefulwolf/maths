@@ -1,0 +1,222 @@
+
+@charset "utf-8";
+/* .target.on .grayBox{
+  animation: none;
+  opacity: 1;
+} */
+.imageFomula {
+  width: 100%;
+  height: 100%;
+  background: url(../images/3_5/3_5_04_01.svg) left 60px center / contain no-repeat;
+  pointer-events: none;
+}
+[data-toggle-obj="1"].complete ~ .imageFomula {
+  background: url(../images/3_5/3_5_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="2"].complete ~ .imageFomula {
+  background: url(../images/3_5/3_5_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="3"].complete ~ .imageFomula {
+  background: url(../images/3_5/3_5_04_01_03.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01.svg) left 60px center / contain no-repeat;
+}
+/* [data-toggle-obj="4"].complete ~ .imageFomula {
+  background: url(../images/3_5/3_5_04_01_04.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_03.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/3_5/3_5_04_01.svg) left 60px center / contain no-repeat;
+} */
+.hideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.formula {
+  position: absolute;
+  top: 61px;
+  left: 625px;
+  width: 242px;
+  height: 319px;
+  background-image: url(../images/3_5/3_5_04_02.svg);
+  background-position: 0 0;
+  background-size: auto 394px;
+  background-repeat: no-repeat;
+}
+.formula[data-step="1"] {
+  background-position: -242.5px 0;
+}
+.formula[data-step="2"] {
+  background-position: -485px 0;
+}
+.formula[data-step="3"] {
+  height: 394px;
+  background-position: -727.5px 0;
+}
+.formula[data-step="4"] {
+  height: 394px;
+  background-position: -727.5px 0;
+}
+
+
+/* connectLine */
+.connectLine {
+  left: 344px;
+}
+.connectLine.one > p , 
+.connectLine.ten > p {
+  left: 35px;
+}
+
+
+
+.connectLine.ten {
+  top: 248px;
+}
+.connectLine.ten:before {
+  width: 160px;
+}
+.connectLine.ten:after {
+  bottom: 34px;
+  left: 160px;
+  width: 185px;
+  height: 0px;
+}
+
+
+.connectLine.one {
+  top: 353px;
+}
+.connectLine.one:before {
+  width: 150px;
+  border-right: none;
+  border-bottom-right-radius: 0;
+}
+.connectLine.one:after {
+  bottom: 25px;
+  left: 150px;
+  width: 200px;
+  height: 35px;
+}
+
+.connectLine.hundred {
+  top: 360px;
+}
+.connectLine.hundred:before {
+  width: 160px;
+}
+.connectLine.hundred:after {
+  bottom: 24px;
+  left: 160px;
+  width: 85px;
+  height: 80px;
+}
+
+/* grayBox */
+.target_1 .grayBox_1 {
+  top: 61px;
+  right: 364px;
+  width: 79px;
+  height: 160px;
+}
+.target_1 .grayBox_2 {
+  top: 221px;
+  right: 364px;
+  width: 159px;
+  height: 80px;
+}
+
+.target_2 .grayBox_1 {
+  top: 61px;
+  right: 446px;
+  width: 79px;
+  height: 160px;
+}
+.target_2 .grayBox_2 {
+  top: 302px;
+  height: 77px;
+  right: 446px;
+  width: 79px;
+}
+
+
+
+/* clickButton */
+.clickButton[data-toggle-obj="1"] {
+  top: 158px;
+  left: 354px;
+}
+.clickButton[data-toggle-obj="2"] {
+  top: 321px;
+  left: 354px;
+}
+.clickButton[data-toggle-obj="3"] {
+  top: 430px;
+  left: 354px;
+}
+.clickButton[data-toggle-obj="4"] {
+  top: 440px;
+  left: 354px;
+}
+
+/* popupFomula */
+.lastFormula,
+.lastFormula.active.on {
+  top: 320px;
+  left: 912px;
+  width: 254px;
+  height: 255px;
+}
+.lastFormula.active.on:after,
+.lastFormula:after {
+  width: 254px;
+  height: 255px;
+  background: url(../images/3_5/3_5_04_03.svg) center / contain no-repeat;
+}
+
+
+/* img */
+.img_01 {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 55px;
+}
+
+/* target3 */
+[data-toggle-target="4"] {
+  opacity: 1;
+  visibility: visible;
+}
+[data-toggle-target="4"].on {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.target_3 {
+  opacity: 1;
+  visibility: visible;
+}
+.target_3.on {
+  opacity: 0;
+  visibility: hidden;
+}
+.target_3 .char_01 {
+  position: absolute;
+  top: 100px;
+  left: 900px;
+}
+.target_3 .balloonText {
+  position: absolute;
+  top: 134px;
+  left: 940px;
+}

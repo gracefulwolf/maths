@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/4_2_9.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>평행을 알아볼까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="89">수학<span>89</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="62">수학 익힘<span>62</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="89"></div>
+      </header>
+      <main class="act quiz with">
+        <div class="contentsArea">
+          <h1 data-index="1">짝과 함께 다음과 같이 평행선을 그어 보세요.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <div class="imageBox">
+                    <div class="arrow pink right noAni"></div>
+                    <div class="arrow pink right noAni"></div>
+                    <div class="balloonText text_1">한 직선 긋기</div>
+                    <div class="balloonText text_2">짝이 그은 직선에 평행한<br/>
+                      직선 긋기</div>
+                    <div class="balloonText text_3">앞에서 그린 직선에 평행한<br/>
+                      직선 긋기</div>
+                  </div>
+                  <div class="popupButton movie" data-popup-btn="1"></div>
+                </li>
+                <li class="page2 noUserSelect">
+                  <div class="js-drawLine drawLine" data-option="drawing">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                    <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                    <div class="line"></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                  <div class="dragBox top">
+                    <div class="js-rotate rotateContainer rotate_triangle_1">
+                      <div class="js-rotateTarget rotateTarget mathTools ruler triangle"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                    </div>
+                    <div class="js-rotate rotateContainer rotate_triangle_2">
+                      <div class="js-rotateTarget rotateTarget mathTools ruler triangle_2"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                    </div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="whole" data-popup-page="1">
+            <h3>짝과 함께 평행선 긋기</h3>
+            <div class="mediaContainer video on" data-media-container="video">
+              <video poster="media/mp4/4_2_9_mov.jpg" webkit-playsinline="" playsinline="">
+                  <source src="media/mp4/4_2_9_mov.mp4" type="video/mp4">
+                  Your browser does not support the video element.
+              </video>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/controller.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {   
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 45,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+             
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [ 
+            { start: {x: 379, y: 298}, end: {x: 720, y: 298}, },
+            { start: {x: 379, y: 200}, end: {x: 720, y: 200}, },
+            { start: {x: 379, y: 101}, end: {x: 720, y: 101}, }
+          ],
+        ];
+
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dragObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drag');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+      
+          return dot;
+        }
+      
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        var drawLines = containers.map(function(container, index) {
+          // createDot(container, [7, 5]);
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.page'+ (index+2) +' .js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function(DrawLine) {},
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+                // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+              },
+              showAnswer: function(DrawLine) {},
+              reset: function(DrawLine) {}
+            },
+          })
+        });
+
+
+        
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          // 페이지 이동 시 초기화
+          rotateArray.forEach(function(rotate) { rotate.reset(); });
+          drawLines.forEach(function(drawLine) { drawLine.reset(); });
+        }
+      });
+    </script>
+  </body>
+</html>

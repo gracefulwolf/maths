@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  <link rel="stylesheet" href="./css/1_2_5.css">
+  <style>
+    .flexContainer {
+      margin: -20px auto 0;
+      width: 1100px;
+      height: 77%;
+      background: url(images/2_1/2_1_5.svg) center/contain no-repeat;
+      justify-content: flex-start;
+    }
+
+    .flexContainer>li {
+      width: 260px;
+      height: 190px;
+      padding: 200px 0 0 85px;
+
+      box-sizing: border-box;
+    }
+
+    .flexContainer>li>div {
+      display: flex;
+      align-items: center;
+      width: 240px;
+      margin: 10px auto 0;
+      color: transparent;
+      /* background:rgba(0,0,0,0.5); */
+      /* padding:265px 0 80px; */
+    }
+
+    .flexContainer .oxObj {
+      width: 100%;
+      height: 70px;
+    }
+
+    .flexWrap {
+      display: flex;
+      margin-left: 60px;
+    }
+
+    .reason {
+      width: 100px;
+      height: 69px;
+      background: #fff url(./images/icon_reason_02.svg) no-repeat;
+      background-size: 100px 69px;
+      flex-shrink: 0;
+    }
+    .flexWrap.titleIndent > ins.exam {
+      top: 402px;
+      left: 158px;
+    }
+   .titleIndent textarea.answerMode,
+    .titleIndent input.answerMode {
+      text-indent: 50px;
+    }
+    .displayN { display: none; }
+  </style>
+</head>
+
+<body class="lesson_2">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>2. 삼각형</span>
+        <span>삼각형을 분류해 볼까요(1)</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="32">수학<span>32~33</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="27">수학 익힘<span>27</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+      <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="27"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea">
+        <h1 data-star="3" data-index="5">어떤 삼각형인지 찾아 <ins class="icon icon_o"></ins>표 하고, 그 까닭을 써 보세요.</h1>
+        <section  data-quiz="ox" data-quiz-name="ox_1">
+          <ul class="flexContainer">
+            <li>
+              <div>
+                <div class="oxObj inline" data-ox-obj="1" data-answer="">
+                  <div class="icon icon_o" data-ox-target="1"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="oxObj inline" data-ox-obj="2">
+                  <div class="icon icon_o" data-ox-target="2"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="displayN" data-ox-obj="3" data-answer=""><div class="icon" data-ox-target="3"></div></div>
+
+          <div class="flexWrap titleIndent" data-quiz="input" data-quiz-name="input_1">
+            <div class="reason"></div>
+            <input class="maxWidth" type="text" data-input-obj="1" data-answer="두 변의 길이가 같기 때문입니다.">
+            <ins class="exam" data-after-target="input_1">예</ins>
+          </div>
+                  
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="">
+          </div>
+          <div class="js-buttons quizButtons answer" data-hover="" data-quiz-chain="ox_1, input_1">
+          </div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          주어진 삼각형은 이등변삼각형입니다. 그 까닭은 두 변의 길이가 같기 때문입니다.
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+      var oxObjs = $ts.getEl('[data-ox-target]');
+      var answerBtn = $ts.getEl('.js-buttons')[0];
+
+      window.$callBack.oxCorrect = function(OX) {
+        clickOXTarget(OX);
+      };
+      window.$callBack.oxIncorrect = function(OX) {
+        clickOXTarget(OX);
+      };
+
+      function clickOXTarget(OX) {
+        oxObjs.forEach(function (obj) {
+          obj.classList.remove('on');
+        })
+        OX.curTarget[0].classList.add('on');
+      }
+
+      answerBtn.addEventListener('click', function () {
+        if(this.className.indexOf('reset') === -1){ }
+        else{
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+            if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+          })
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>

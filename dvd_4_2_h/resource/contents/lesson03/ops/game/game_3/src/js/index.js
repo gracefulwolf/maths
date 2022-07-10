@@ -1,0 +1,101 @@
+// constants
+
+// dom elements
+var selectPlays = document.querySelectorAll(".selectPlay");
+var selectTargets = document.querySelectorAll(".js-selectTarget");
+
+// get
+function getParentPlayPage(element) {
+	var parentElement = element.parentElement;
+	
+	while (!parentElement.classList.contains("playPage")) {
+		parentElement = parentElement.parentElement;
+	}
+	
+	return parentElement;
+}
+function getParentElement(element) {
+	var parentElement = element.parentElement;
+	
+	return parentElement;
+}
+
+// update dom elements
+function addClassAnswered(element) {
+	element.classList.add("answered");
+}
+function removeClassAnswered(element) {
+	element.classList.remove("answered");
+}
+function addClassSelected(element) {
+	element.classList.add("selected");
+}
+function removeClassSelected(element) {
+	element.classList.remove("selected");
+}
+function addClassView(element) {
+	element.classList.add("view");
+}
+function removeClassView(element) {
+	element.classList.remove("view");
+}
+function addClassInactive(element) {
+	element.classList.add("inactive");
+}
+function removeClassInactive(element) {
+	element.classList.remove("inactive");
+}
+
+function resetGame() {
+	selectTargets.forEach(removeClassSelected);
+	selectTargets.forEach(removeClassAnswered);
+}
+
+/* 아이스크림 클릭 시 */
+function onSelectTargetClick() {
+	var selectTargeAnswer = this.dataset.selectAnswer;
+	var parentPlayPageElement = getParentPlayPage(this);
+	var selectTargetIndex = this.dataset.selectIndex;
+	var selectTargePlayPage = parentPlayPageElement.dataset.playPage;
+	var pageSelectTargets = parentPlayPageElement.querySelectorAll(".js-selectTarget");
+	
+	var isCorrect = selectTargeAnswer === "o";
+	
+	if (isCorrect) {
+		pageSelectTargets.forEach(addClassSelected);
+		
+		var selectTargets = document.querySelectorAll(".selectTarget[data-select-index='"+selectTargetIndex+"']");
+		selectTargets.forEach(addClassAnswered);		
+		
+		window.efSound("correct");
+		window.completePlayPage(1000);
+    // [공통] 스프라이트 애니 정지(오답)
+    window.stopSpriteAni("incorrect");
+    // [공통] 스프라이트 애니 실행(정답)
+    window.playSpriteAni("correct");
+	}
+	else {
+		window.shake(this);
+		window.efSound("incorrect");
+    // [공통] 스프라이트 애니 실행(오답)
+    window.playSpriteAni("incorrect");
+		
+		var bubbleBoxOwner = parentPlayPageElement.querySelector(".bubbleBoxOwner");
+		addClassView(bubbleBoxOwner);
+		setTimeout(function() {
+			removeClassView(bubbleBoxOwner);
+		}, 1000);
+	}
+}
+
+// process
+selectTargets.forEach(function (selectTarget) {
+	selectTarget.onclick = onSelectTargetClick;
+	window.addHoverEvent(selectTarget);
+});
+selectPlays.forEach(window.addHoverEvent);
+
+// [공통] 모든 게임 종료 후, 다시하기를 했을 때, 플레이 페이지 내부 요소 리셋 콜백 함수.
+window.setResetCallback(function () {
+	resetGame();
+});

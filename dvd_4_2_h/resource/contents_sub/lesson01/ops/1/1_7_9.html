@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  <!-- <link rel="stylesheet" href="./css/1_7_7.css"> -->
+  <style>
+    .dflex{text-align: center;}
+    .sign_circle{vertical-align: middle;}
+    .pop_1{position: absolute;top:-85px;left:491px}
+    .contentsArea h1{word-break: normal;}
+    .popup_pages bunsu {
+      position: relative;
+      top: -5px;
+    }
+
+    /* 검수서 수정 */
+  </style>
+</head>
+<body class="lesson_1">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>1. 분수의 덧셈과 뺄셈</span>
+        <span>공부를 잘했나요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="25">수학<span>25~27</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="23">수학 익힘<span>23</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="23"></div>
+    </header>
+    <main class="finish">
+      <div class="contentsArea">
+        <h1 data-index="9">계산 결과를 비교하여 <ins class="circle"></ins> 안에 <symbol class="inequal_left"></symbol>, <symbol class="equal"></symbol>, <symbol class="inequal_right"></symbol>를 알맞게 써넣으세요.</h1>
+        <section data-quiz="ox">
+          <div class="inputQuizContainer h80">
+            <ul>
+              <li class="dflex">
+                4<bunsu>5/8</bunsu><symbol class="minus"></symbol><bunsu>28/8</bunsu>
+                <div class="js-click sign_circle" data-index="1">
+                  <symbol data-ox-target="1-1" class="inequal_left" data-answer=""></symbol>
+                  <symbol data-ox-target="1-2" class="equal"></symbol>
+                  <symbol data-ox-target="1-3" class="inequal_right"></symbol>
+                </div>
+                <bunsu>34/8</bunsu><symbol class="minus"></symbol>3<bunsu>3/8</bunsu>
+              </li>
+            </ul>
+            <!--  -->
+          </div>
+          <div class="js-pop signPop pop_1" data-index="1">
+            <div class="" data-ox-obj="1-1" data-answer=""><symbol class="inequal_left"></symbol></div>
+            <div class="" data-ox-obj="1-2"><symbol class="equal"></symbol></div>
+            <div class="" data-ox-obj="1-3"><symbol class="inequal_right"></symbol></div>
+          </div>
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+          <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <div>
+            <ul class="calcUL">
+              <li>
+                <P>
+                  4<bunsu>5/8</bunsu><symbol class="minus"></symbol><bunsu>28/8</bunsu><symbol class="equal"></symbol><bunsu>37/8</bunsu><symbol class="minus"></symbol><bunsu>28/8</bunsu><symbol class="equal"></symbol><bunsu>9/8</bunsu><symbol class="equal"></symbol>1<bunsu>1/8</bunsu><br>
+                  <bunsu>34/8</bunsu><symbol class="minus"></symbol>3<bunsu>3/8</bunsu><symbol class="equal"></symbol><bunsu>34/8</bunsu><symbol class="minus"></symbol><bunsu>27/8</bunsu><symbol class="equal"></symbol><bunsu>7/8</bunsu><br>
+                  이므로 4<bunsu>5/8</bunsu><symbol class="minus"></symbol><bunsu>28/8</bunsu><symbol data-ox-target="1-1" class="inequal_left"></symbol><bunsu>34/8</bunsu><symbol class="minus"></symbol>3<bunsu>3/8</bunsu>입니다.
+                </P>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/math/script/fomula.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/fraction.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() { 
+        var clickObjs = $ts.getEl('.js-click');
+        var pops = $ts.getEl('.js-pop');
+        var oxObjs = $ts.getEl('[data-ox-obj]');
+        
+        oxObjs.forEach(function(obj) {
+          obj.addEventListener('click', closePop.bind(obj));
+        });
+        clickObjs.forEach(function(obj) {
+          obj.addEventListener('click', openPop.bind(obj));
+        });
+        
+        window.$callBack.oxCorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+        
+        function openPop() {
+          var clickObj = this;
+          pops.forEach(function(target, index) {
+            if (index !== clickObj.getAttribute('data-index')-1) target.classList.remove('on');
+            else target.classList.add('on');
+          });
+        }
+        function closePop() {
+          pops.forEach(function(target, index) {
+            target.classList.remove('on');
+          });
+        }
+        
+        var answerButton = document.querySelector('.js-buttons');
+        var oxTargets = $ts.getEl('[data-ox-target]');
+        
+        answerButton.addEventListener('click', function () {
+          var isReset = this.className.indexOf('reset') === -1;
+          
+          if (isReset) {
+            oxTargets.forEach(function (obj) {
+              obj.classList.remove('on');
+              obj.classList.remove('blue');
+            })
+          }else{
+            closePop();
+            showAnswer();
+          }
+        })
+        
+        function showAnswer() {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          oxObjs.forEach(function (obj) {
+            if(obj.hasAttribute('data-answer')){
+              var idx = obj.getAttribute('data-ox-obj');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('on');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('blue');
+            }
+          })
+        }
+      });
+  </script>
+</body>
+</html>

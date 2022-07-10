@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="css/5_0_3.css">
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 꺾은선그래프</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="108">수학<span>108~109</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="77">수학 익힘<span>77</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="77"></div>
+      </header>
+      <main class="ready">
+        <div class="contentsArea">
+          <h1 data-index="2">샛별이네 반 학생들이 좋아하는 운동을 조사하여 나타낸 표를 막대그래프로 나타내 보세요.</h1>
+          <section data-quiz="input">
+            <div class="inputQuizContainer">
+              <div class="imgBgContainer">
+                <div class="graphContainer">
+
+                  <div class="fillContainer">
+                    <div class="js-fillContainer square square_1" data-length="17" data-answer="11"></div>
+                    <div class="js-fillContainer square square_2" data-length="17" data-answer="13"></div>
+                    <div class="js-fillContainer square square_3" data-length="17" data-answer="4"></div>
+
+                  </div>
+                  <div class="titleIndent">
+                    <input type="text" data-input-obj="" data-answer="줄넘기" class="noBox input_1">
+                    <input type="text" data-input-obj="" data-answer="피구" class="noBox input_2">
+                    <input type="text" data-input-obj="" data-answer="달리기" class="noBox input_3">
+                    <input type="text" data-input-obj="" data-answer="운동" class="noBox input_4">
+                    <input type="text" data-input-obj="" data-answer="학생 수" class="noBox input_5">
+
+                    <input type="text" data-input-obj="" data-answer="5" class="noBox input_6">
+                    <input type="text" data-input-obj="" data-answer="10" class="noBox input_7">
+                    <input type="text" data-input-obj="" data-answer="15" class="noBox input_8">
+                    <input type="text" data-input-obj="" data-answer="명" class="noBox input_9">
+
+                    <ins class="exam" data-after-target="input">예</ins>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <!-- <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div> -->
+            <div class="quizButtons answer" data-hover="" data-answer-btn=""></div>
+            <div class="js-chainButtons hidden"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>가로 눈금 한 칸의 크기를 정한 후 자료의 수에 맞게 막대를 그려 막대그래프로 나타냅니다.</p>
+          </li>
+        </ul>
+      </section>
+     
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fillTarget.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        $ts.getEl('.js-fillContainer').forEach(function (container) {
+          new FillTarget({
+            container: container,
+            answerButton: document.querySelector('.quizButtons.answer')
+          });
+        });
+        window.$callBack.filledTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+              obj.classList.add('last');
+            }
+          })
+          // console.log(el.targets.querySelectorAll('.fill').lastChild)
+        }
+        window.$callBack.toggleTarget = function (el) {
+          var fillArray = el.container.querySelectorAll('.fill');
+          fillArray.forEach(function (obj) {
+            obj.classList.remove('last');
+            if (!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) {
+              obj.classList.add('last');
+            }
+          })
+        }
+      });
+    </script>
+  </body>
+</html>

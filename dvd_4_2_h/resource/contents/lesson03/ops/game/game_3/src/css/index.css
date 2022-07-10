@@ -1,0 +1,255 @@
+@font-face {
+	font-family: 'MaplestoryLight';
+	src: url("../MaplestoryLight.woff");
+}
+
+.page--start {
+	background-image: url('../image/startPage__background.png');
+}
+.page--game {
+	background-image: url('../image/gamePage__background.png');
+}
+
+.gamePage__title__icon {
+	flex-shrink: 0;
+	width: 49px;
+    height: 55px;
+    background: url('../image/gamePage__title__icon.png') center / contain no-repeat;
+}
+.gamePage__introMessage {
+	width: 411px;
+	height: 244px;
+	background: url('../image/gamePage__introMessage.png') center / contain no-repeat;
+	text-align: center;
+}
+.gamePage__title__text {
+	letter-spacing: -1px;
+	text-align: justify;	
+}
+
+/* gamePage 캐릭들 */
+.selectPlay {
+	position: absolute;
+    background: center / contain no-repeat;
+}
+.selectPlay--selected {
+	transform: scale(1.1);
+}
+.selectPlay[data-play-index="1"] {
+    top: 246px;
+    left: 105px;
+	width: 250px;
+	height: 344px;
+}
+.selectPlay[data-play-index="2"] {
+	top: 310px;
+    left: 335px;
+    width: 225px;
+    height: 341px;
+}
+.selectPlay[data-play-index="3"] {
+    top: 219px;
+    left: 562px;
+    width: 167px;
+    height: 350px;
+}
+.selectPlay[data-play-index="4"] {
+    top: 167px;
+    left: 733px;
+    width: 232px;
+    height: 350px;
+}
+.selectPlay[data-play-index="5"] {
+	top: 337px;
+    left: 924px;
+    width: 242px;
+    height: 338px;
+}
+.selectPlay--completed .selectPlay__image {
+	opacity: 0.3 !important;
+}
+.selectPlay[data-play-index="1"] .selectPlay__image {
+	width: 330px;
+	height: 330px;
+	background-image: url('../image/selectPlay_1.png');
+}
+.selectPlay[data-play-index="2"] .selectPlay__image {
+	width: 330px;
+	height: 330px;
+	background-image: url('../image/selectPlay_2.png');
+}
+.selectPlay[data-play-index="3"] .selectPlay__image {
+	width: 350px;
+	height: 350px;
+	background-image: url('../image/selectPlay_3.png');
+}
+.selectPlay[data-play-index="4"] .selectPlay__image {
+	width: 320px;
+	height: 320px;
+	background-image: url('../image/selectPlay_4.png');
+}
+.selectPlay[data-play-index="5"] .selectPlay__image {
+	width: 350px;
+	height: 350px;
+	background-image: url('../image/selectPlay_5.png');
+}
+.selectPlay[data-play-index="1"] .selectPlay__image, .selectPlay[data-play-index="1"] .spriteAni {
+    top: -10px;
+    left: -53px;
+}
+.selectPlay[data-play-index="2"] .selectPlay__image, .selectPlay[data-play-index="2"] .spriteAni {
+    top: -1px;
+    left: -55px;
+}
+.selectPlay[data-play-index="3"] .selectPlay__image, .selectPlay[data-play-index="3"] .spriteAni {
+    top: 1;
+    left: -86px;
+}
+.selectPlay[data-play-index="4"] .selectPlay__image, .selectPlay[data-play-index="4"] .spriteAni {
+    top: -7px;
+    left: -27px;
+}
+.selectPlay[data-play-index="5"] .selectPlay__image, .selectPlay[data-play-index="5"] .spriteAni {
+    top: -9px;
+    left: -50px;
+}
+.selectPlay__name {
+	position: absolute;
+    color: #111111;
+    font-size: 20px;
+    font-family: 'MaplestoryLight';
+    letter-spacing: -1px;
+}
+.selectPlay[data-play-index="1"] .selectPlay__name { top: 138px; left: 122px; }
+.selectPlay[data-play-index="2"] .selectPlay__name { top: 128px; left: 97px; }
+.selectPlay[data-play-index="3"] .selectPlay__name { top: 165px; left: 37px; }
+.selectPlay[data-play-index="4"] .selectPlay__name { top: 146px; left: 152px; }
+.selectPlay[data-play-index="5"] .selectPlay__name { top: 139px; left: 150px; }
+.selectPlay[data-play-index="1"] .selectPlay__completeMark { top: 105px; left: 27px; }
+.selectPlay[data-play-index="2"] .selectPlay__completeMark { top: 106px; left: 18px; }
+.selectPlay[data-play-index="3"] .selectPlay__completeMark { top: 130px; left: 115px; }
+.selectPlay[data-play-index="4"] .selectPlay__completeMark { top: 112px; left: 60px; }
+.selectPlay[data-play-index="5"] .selectPlay__completeMark { top: 123px; left: 47px; }
+
+/* playPage */
+.playPage {
+	background: center / contain no-repeat;
+	background-image: url('../image/playPage__background.png');
+}
+/*.playPage[data-play-page="1"] { background-image: url('../image/playPage__background_1.png'); }*/
+.playPage .selectPlay {
+	transition-duration: 1s;
+	transform: scale(1);
+}
+.playPage--on .selectPlay[data-play-index="1"] { transform: translate(237px, 86px); }
+.playPage--on .selectPlay[data-play-index="2"] { transform: translate(6px, -9px); }
+.playPage--on .selectPlay[data-play-index="3"] { transform: translate(-167px, 35px); }
+.playPage--on .selectPlay[data-play-index="4"] { transform: translate(-381px, 133px); }
+.playPage--on .selectPlay[data-play-index="5"] { transform: translate(-651px, -39px); }
+
+/* playPage 아이스크림 영역 */
+.selectTarget {
+	position: absolute;
+	cursor: pointer;
+    width: 117px;
+}
+.selectTarget.selected {
+	cursor: default;
+	pointer-events: none;
+}
+.selectTarget.answered {
+	cursor: default;
+	pointer-events: none;
+}
+.selectTarget.hovered {
+	transform: none;
+}
+.selectTarget[data-select-index="1"] { top: 195px; left: 668px; height: 100px; }
+.selectTarget[data-select-index="2"] { top: 195px; left: 795px; height: 100px; }
+.selectTarget[data-select-index="3"] { top: 301px; left: 668px; height: 100px; }
+.selectTarget[data-select-index="4"] { top: 301px; left: 795px; height: 100px; }
+.selectTarget[data-select-index="5"] { top: 301px; left: 917px; height: 100px; }
+.selectTarget__text {
+	position: absolute;
+    bottom: 10px;
+    left: 14px;
+    color: #111111;
+    font-size: 26px;
+    font-family: 'NanumSquareRoundEB';
+    letter-spacing: -2px;	
+}
+.selectTarget__name {
+    position: absolute;
+    bottom: 12px;
+    left: 67px;
+    color: #111111;
+    font-size: 22px;
+    font-family: 'NanumSquareRoundEB';
+    letter-spacing: -2px;
+	display: none;
+}
+.selectTarget.answered .selectTarget__name {
+	display: block;
+}
+
+/* playPage 말풍선들 */
+.bubbleBoxOwner {
+	position: absolute;
+    top: 55px;
+    left: 1025px;
+	width: 178px;
+	height: 109px;
+    color: #111111;
+    font-size: 25px;
+	text-align: center;
+    font-family: 'MaplestoryLight';
+    letter-spacing: -1px;
+	padding-bottom: 15px;
+	box-sizing: border-box;
+	background: url('../image/icon_bubble.png') center / contain no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+}
+.bubbleBoxOwner.view {
+	visibility: visible;
+	animation: bubbleBoxOwner 1s;
+}
+@keyframes bubbleBoxOwner {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+.bubbleBox {
+	position: absolute;
+	width: 277px;
+	height: 160px;
+    color: #111111;
+    font-size: 47px;
+    font-family: 'NanumSquareRoundB';
+    letter-spacing: -1px;
+	background: center / contain no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.playPage[data-play-page="1"] .bubbleBox { top: 212px; left: 102px; background-image: url('../image/selectPlay_bubble_1.png'); }
+.playPage[data-play-page="2"] .bubbleBox { top: 212px; left: 102px; background-image: url('../image/selectPlay_bubble_2.png'); }
+.playPage[data-play-page="3"] .bubbleBox { top: 212px; left: 102px; background-image: url('../image/selectPlay_bubble_3.png'); }
+.playPage[data-play-page="4"] .bubbleBox { top: 132px; left: 73px; background-image: url('../image/selectPlay_bubble_4.png'); }
+.playPage[data-play-page="5"] .bubbleBox { top: 191px; left: 80px; background-image: url('../image/selectPlay_bubble_5.png'); }
+
+.page--end {
+	background: url('../image/playPage__background__end.png') center / contain no-repeat;
+}
+div.resultPanel {
+    top: calc((720px - 339px) / 2);
+    left: calc((1280px - 810px) / 2);
+    width: 810px;
+    height: 339px;
+	background: url('../image/resultPanel.png') center / contain no-repeat;
+}
+div.regameButton {
+	top: 287px;
+    left: calc((810px - 250px) / 2);
+}

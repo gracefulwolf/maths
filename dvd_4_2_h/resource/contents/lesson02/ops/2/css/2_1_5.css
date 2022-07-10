@@ -1,0 +1,130 @@
+
+@charset "utf-8";
+
+
+ins.exam {
+  top: 90px;
+  left: 100px;
+  z-index: 2;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1080px;
+  height: 440px;
+  margin: 20px auto 0;
+}
+.flexBox > * {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* outline: 1px solid tomato; */
+}
+.flexBox > *:nth-of-type(1) {
+  background: url(../images/2_1/2_1_5_01.svg) center / contain no-repeat;
+}
+.flexBox > *:nth-of-type(2) {
+  background: url(../images/2_1/2_1_5_02.svg) center / contain no-repeat;
+}
+
+
+
+.drawLine {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.resetButton {
+  bottom: -10px;
+  right: 50px;
+}
+
+
+
+.dragObj {
+  width: 50px;
+  height: 46px;
+}
+.dragObj:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #af7120;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.dragObj.horizon_1 { left: calc(50px * (1 - 1) + 100px); }
+.dragObj.horizon_2 { left: calc(50px * (2 - 1) + 100px); }
+.dragObj.horizon_3 { left: calc(50px * (3 - 1) + 100px); }
+.dragObj.horizon_4 { left: calc(50px * (4 - 1) + 100px); }
+.dragObj.horizon_5 { left: calc(50px * (5 - 1) + 100px); }
+.dragObj.horizon_6 { left: calc(50px * (6 - 1) + 100px); }
+.dragObj.horizon_7 { left: calc(50px * (7 - 1) + 100px); }
+.dragObj.horizon_8 { left: calc(50px * (8 - 1) + 100px); }
+.dragObj.horizon_9 { left: calc(50px * (9 - 1) + 100px); }
+.dragObj.horizon_10 { left: calc(50px * (10 - 1) + 100px); }
+
+.dragObj.vertical_1 { top: calc(46px * (1 - 1) + 96px); }
+.dragObj.vertical_2 { top: calc(46px * (2 - 1) + 96px); }
+.dragObj.vertical_3 { top: calc(46px * (3 - 1) + 96px); }
+.dragObj.vertical_4 { top: calc(46px * (4 - 1) + 96px); }
+.dragObj.vertical_5 { top: calc(46px * (5 - 1) + 96px); }
+.dragObj.vertical_6 { top: calc(46px * (6 - 1) + 96px); }
+.dragObj.vertical_7 { top: calc(46px * (7 - 1) + 96px); }
+.dragObj.vertical_8 { top: calc(46px * (8 - 1) + 96px); }
+.dragObj.vertical_9 { top: calc(46px * (9 - 1) + 96px); }
+.dragObj.vertical_10 { top: calc(46px * (10 - 1) + 96px); }
+
+
+.dragObj.horizon_7.vertical_2 {
+  display: none;
+}
+.dragObj.horizon_7.vertical_4 {
+  display: none;
+}
+.dragObj.horizon_7.vertical_6 {
+  display: none;
+}
+
+.dragObj.horizon_1.vertical_2 { left: calc(50px * (1 - 1) + 125px); } 
+.dragObj.horizon_2.vertical_2 { left: calc(50px * (2 - 1) + 125px); } 
+.dragObj.horizon_3.vertical_2 { left: calc(50px * (3 - 1) + 125px); } 
+.dragObj.horizon_4.vertical_2 { left: calc(50px * (4 - 1) + 125px); } 
+.dragObj.horizon_5.vertical_2 { left: calc(50px * (5 - 1) + 125px); } 
+.dragObj.horizon_6.vertical_2 { left: calc(50px * (6 - 1) + 125px); } 
+.dragObj.horizon_7.vertical_2 { left: calc(50px * (7 - 1) + 125px); } 
+.dragObj.horizon_8.vertical_2 { left: calc(50px * (8 - 1) + 125px); } 
+.dragObj.horizon_9.vertical_2 { left: calc(50px * (9 - 1) + 125px); } 
+.dragObj.horizon_10.vertical_2 { left: calc(50px * (10 - 1) + 125px); } 
+
+.dragObj.horizon_1.vertical_4 { left: calc(50px * (1 - 1) + 125px); } 
+.dragObj.horizon_2.vertical_4 { left: calc(50px * (2 - 1) + 125px); } 
+.dragObj.horizon_3.vertical_4 { left: calc(50px * (3 - 1) + 125px); } 
+.dragObj.horizon_4.vertical_4 { left: calc(50px * (4 - 1) + 125px); } 
+.dragObj.horizon_5.vertical_4 { left: calc(50px * (5 - 1) + 125px); } 
+.dragObj.horizon_6.vertical_4 { left: calc(50px * (6 - 1) + 125px); } 
+.dragObj.horizon_7.vertical_4 { left: calc(50px * (7 - 1) + 125px); } 
+.dragObj.horizon_8.vertical_4 { left: calc(50px * (8 - 1) + 125px); } 
+.dragObj.horizon_9.vertical_4 { left: calc(50px * (9 - 1) + 125px); } 
+.dragObj.horizon_10.vertical_4 { left: calc(50px * (10 - 1) + 125px); } 
+
+.dragObj.horizon_1.vertical_6 { left: calc(50px * (1 - 1) + 125px); } 
+.dragObj.horizon_2.vertical_6 { left: calc(50px * (2 - 1) + 125px); } 
+.dragObj.horizon_3.vertical_6 { left: calc(50px * (3 - 1) + 125px); } 
+.dragObj.horizon_4.vertical_6 { left: calc(50px * (4 - 1) + 125px); } 
+.dragObj.horizon_5.vertical_6 { left: calc(50px * (5 - 1) + 125px); } 
+.dragObj.horizon_6.vertical_6 { left: calc(50px * (6 - 1) + 125px); } 
+.dragObj.horizon_7.vertical_6 { left: calc(50px * (7 - 1) + 125px); } 
+.dragObj.horizon_8.vertical_6 { left: calc(50px * (8 - 1) + 125px); } 
+.dragObj.horizon_9.vertical_6 { left: calc(50px * (9 - 1) + 125px); } 
+.dragObj.horizon_10.vertical_6 { left: calc(50px * (10 - 1) + 125px); } 

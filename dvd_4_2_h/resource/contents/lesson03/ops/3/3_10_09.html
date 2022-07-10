@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="./css/3_10_9.css">
+  </head>
+	<body class="lesson_3">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈 </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="77">수학<span>77</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="56">수학 익힘<span>56</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="77"></div>
+      </header>
+      <main>
+        <div class="contentsArea">
+          <h2 data-index="8">계산 결과가 같은 것끼리 선으로 이어 보세요.</h2>
+                  <section>
+                    <div class="page4 noUserSelect" data-quiz="dragLine" data-option="answer" data-total-complete-count="3">
+                     
+                      <div class="dragLineContainer">
+                        <svg class="js-svgContainer svgContainer"></svg>
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="1" data-name="dragLine" data-answer="2"></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="2" data-complete-count="1"></div>
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="1" data-name="dragLine" data-answer="1"></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="1" data-complete-count="1"></div>
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="1" data-name="dragLine" data-answer="3" ></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="1" data-name="dragLine" data-answer="3" data-complete-count="1"></div>
+                        
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="2" data-name="dragLine" data-answer="1"></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="1" data-complete-count="1"></div>
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="2" data-name="dragLine" data-answer="2"></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="2" data-complete-count="1"></div>
+                        <div class="js-dragLineArea dragLineArea dragObj" data-group="2" data-name="dragLine" data-answer="3"></div>
+                        <div class="js-dragLineObj dragLineObj dragObj" data-group="2" data-name="dragLine" data-answer="3" data-complete-count="1"></div>
+                        
+                        
+                      </div>
+                      
+                      <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+                    </div>
+                  </section>
+          
+        
+        </div>
+      </main>
+  
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <!-- <script src="./js/3_1_5.js"></script> -->
+    <script type="text/javascript">
+      (function() {
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        window.$efSound.muted(true);
+        window.$efSound.incorrect(); // 오답 사운드
+
+        function setSound() {
+          if (isMuted) {
+            window.$efSound.muted(false);
+            isMuted = false;
+          }
+        }
+        var isMuted = true;
+        document.body.addEventListener('mousedown', setSound);
+        document.body.addEventListener('touchstart', setSound);
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        window.addEventListener('load', function() {
+
+          window.dragDropCallbacks = {
+            dragLine: dragLineCallback,
+          };
+      
+          function dragLineCallback(dragdrop) {
+            if (dragdrop.movingObj.DISABLED) window.$efSound.correct();
+            else window.$efSound.incorrect();
+          }
+      
+      
+          var dragLineAnswerButton = document.querySelector('.page4 .js-buttons');
+          dragLineAnswerButton.addEventListener('click', function() {
+            var inputQuiz = $pm.array.quiz.inPage.filter(function(quiz) {
+              return quiz.container.classList.contains('page4_input');
+            })[0];
+      
+            var isReset = this.className.indexOf('reset') === -1;
+      
+            if (isReset) inputQuiz.reset();
+            else inputQuiz.showAnswer();
+          });
+          
+          // $pm.array.mainSlider.reset({idx: 3});
+        });
+      })();
+    </script>
+  </body>
+</html>

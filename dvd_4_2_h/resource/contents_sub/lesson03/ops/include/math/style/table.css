@@ -1,0 +1,192 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* table.css *
+***********************/
+
+
+
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+}
+.table > ul {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.table > ul.shrink {
+  flex-shrink: 0;
+}
+.table > ul > li {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.table > ul > li.dottedLine.top {
+  border-top: 2px dotted #111;
+}
+.table > ul > li.dottedLine.bottom {
+  border-bottom: 2px dotted #111;
+}
+.table > ul > li.dottedLine.right {
+  border-right: 2px dotted #111;
+}
+.table > ul > li.dottedLine.left {
+  border-left: 2px dotted #111;
+}
+
+.table > ul > li.dashedLine.top {
+  border-top: 2px dashed #111;
+}
+.table > ul > li.dashedLine.bottom {
+  border-bottom: 2px dashed #111;
+}
+.table > ul > li.dashedLine.right {
+  border-right: 2px dashed #111;
+}
+.table > ul > li.dashedLine.left {
+  border-left: 2px dashed #111;
+}
+
+/* .table > ul > li.solidLine.top {
+  border-top: 3px solid #dcd1ae;
+} */
+.table > ul > li.solidLine.bottom {
+  border-bottom: 3px solid #dcd1ae;
+}
+/* .table > ul > li.solidLine.right {
+  border-right: 3px solid #dcd1ae;
+}
+.table > ul > li.solidLine.left {
+  border-left: 3px solid #dcd1ae;
+} */
+
+.table .title,
+.table .subTitle {
+  font-size: 40px;
+  font-family: MapleStoryL;
+}
+
+.table .title:before,
+.table .subTitle:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 14px;
+  z-index: -1;
+}
+.table .title:before {
+  background-color: #EAE4D1;
+}
+.table .subTitle:before {
+  background-color: #F6F4EC;
+}
+
+/* cell spacing 0과 같은 조건 noSpace*/
+.table.noSpace {
+  border-radius: 14px;
+}
+.table.noSpace .title:before,
+.table.noSpace .subTitle:before {
+  content: none;
+}
+.table.noSpace > ul:not(:last-of-type) > li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: -1px;
+  width: 2px;
+  bottom: auto;
+  height: 100%;
+  border-radius: 0;
+  z-index: 1;
+}
+.table.noSpace > ul:nth-of-type(1) > li:nth-of-type(1) {
+  border-radius: 12px 0 0 0;
+}
+.table.noSpace > ul:nth-of-type(1) > li:last-of-type {
+  border-radius: 0 0 0 12px;
+}
+.table.noSpace > ul:last-of-type > li:nth-of-type(1) {
+  border-radius: 0 12px 0 0;
+}
+.table.noSpace > ul:last-of-type > li:last-of-type {
+  border-radius: 0 0 12px 0;
+}
+/* sky 색상 추가 */
+.table.noSpace.sky {
+  border: 2px solid #329AD7;
+}
+.table.noSpace.sky .title,
+.table.noSpace.sky .subTitle {
+  background-color: #E8F3FB;
+}
+.table.noSpace.sky > ul:not(:last-of-type) > li:after {
+  background-color: #329AD7;
+}
+.table.noSpace.sky > ul > li:not(:last-of-type) {
+  border-bottom: 2px solid #329AD7;
+}
+/* purple 생상 추가 */
+.table.noSpace.purple {
+  border: 2px solid #9387BF;
+}
+.table.noSpace.purple .title,
+.table.noSpace.purple .subTitle {
+  background-color: #F0ECF5;
+}
+.table.noSpace.purple > ul:not(:last-of-type) > li:after {
+  background-color: #9387BF;
+}
+.table.noSpace.purple > ul > li:not(:last-of-type) {
+  border-bottom: 2px solid #9387BF;
+}
+
+/* purple 생상 추가 */
+.table.noSpace.green {
+  border: 2px solid #C4DD89;
+}
+.table.noSpace.green .title,
+.table.noSpace.green .subTitle {
+  background-color: #ECF4D9;
+}
+.table.noSpace.green > ul:not(:last-of-type) > li:after {
+  background-color: #00924F;
+}
+.table.noSpace.green > ul > li:not(:last-of-type) {
+  border-bottom: 2px solid #00924F;
+}
+
+.table input {
+  font-size: 50px;
+  text-align: center;
+}
+.table input.noBox {
+  width: 100%;
+}
+
+.tableCaption {
+  font-size: 40px;
+  text-align: center;
+}

@@ -1,0 +1,198 @@
+
+
+
+@charset "utf-8";
+
+
+ins.exam {
+  position: absolute;
+  top: 72px;
+  left: 35px;
+  z-index: 2;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1190px;
+  height: 490px;
+  margin-left: 34px;
+}
+.flexBox > * {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-right: 30px;
+  /* outline: 1px solid tomato; */
+}
+.flexBox > *:nth-of-type(1) {
+  background: url(../images/2_3/2_3_4_01.svg) center / contain no-repeat;
+}
+.flexBox > *:nth-of-type(2) {
+  background: url(../images/2_3/2_3_4_01.svg) center / contain no-repeat;
+}
+
+.drawLine {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 100%;
+  height: 390px;
+}
+
+.resetButton {
+  bottom: -4px;
+  right: -10px;
+}
+
+
+
+.dragObj {
+  width: 50px;
+  height: 50px;
+  /* outline: 1px solid tomato; */
+}
+.dragObj:before {
+  /* content: ''; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #af7120;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.dragObj.horizon_1 { left: calc(58.4px * (1 - 1) + 28px); }
+.dragObj.horizon_2 { left: calc(58.4px * (2 - 1) + 28px); }
+.dragObj.horizon_3 { left: calc(58.4px * (3 - 1) + 28px); }
+.dragObj.horizon_4 { left: calc(58.4px * (4 - 1) + 28px); }
+.dragObj.horizon_5 { left: calc(58.4px * (5 - 1) + 28px); }
+.dragObj.horizon_6 { left: calc(58.4px * (6 - 1) + 28px); }
+.dragObj.horizon_7 { left: calc(58.4px * (7 - 1) + 28px); }
+.dragObj.horizon_8 { left: calc(58.4px * (8 - 1) + 28px); }
+.dragObj.horizon_9 { left: calc(58.4px * (9 - 1) + 28px); }
+.dragObj.horizon_10 { left: calc(58.4px * (10 - 1) + 28px); }
+
+.dragObj.vertical_1 { top: calc(50.9px * (1 - 1) + 18px); }
+.dragObj.vertical_2 { top: calc(50.9px * (2 - 1) + 18px); }
+.dragObj.vertical_3 { top: calc(50.9px * (3 - 1) + 18px); }
+.dragObj.vertical_4 { top: calc(50.9px * (4 - 1) + 18px); }
+.dragObj.vertical_5 { top: calc(50.9px * (5 - 1) + 18px); }
+.dragObj.vertical_6 { top: calc(50.9px * (6 - 1) + 18px); }
+.dragObj.vertical_7 { top: calc(50.9px * (7 - 1) + 18px); }
+.dragObj.vertical_8 { top: calc(50.9px * (8 - 1) + 18px); }
+.dragObj.vertical_9 { top: calc(50.9px * (9 - 1) + 18px); }
+.dragObj.vertical_10 { top: calc(50.9px * (10 - 1) + 18px); }
+
+.dragObj.vertical_2.horizon_1 { left: calc(58.8px * (1 - 1) + 56px); }
+.dragObj.vertical_2.horizon_2 { left: calc(58.8px * (2 - 1) + 56px); }
+.dragObj.vertical_2.horizon_3 { left: calc(58.8px * (3 - 1) + 56px); }
+.dragObj.vertical_2.horizon_4 { left: calc(58.8px * (4 - 1) + 56px); }
+.dragObj.vertical_2.horizon_5 { left: calc(58.8px * (5 - 1) + 56px); }
+.dragObj.vertical_2.horizon_6 { left: calc(58.8px * (6 - 1) + 56px); }
+.dragObj.vertical_2.horizon_7 { left: calc(58.8px * (7 - 1) + 56px); }
+.dragObj.vertical_2.horizon_8 { left: calc(58.8px * (8 - 1) + 56px); }
+.dragObj.vertical_2.horizon_9 { display: none; }
+.dragObj.vertical_2.horizon_10 { display: none; }
+
+.dragObj.vertical_4.horizon_1 { left: calc(58.8px * (1 - 1) + 56px); }
+.dragObj.vertical_4.horizon_2 { left: calc(58.8px * (2 - 1) + 56px); }
+.dragObj.vertical_4.horizon_3 { left: calc(58.8px * (3 - 1) + 56px); }
+.dragObj.vertical_4.horizon_4 { left: calc(58.8px * (4 - 1) + 56px); }
+.dragObj.vertical_4.horizon_5 { left: calc(58.8px * (5 - 1) + 56px); }
+.dragObj.vertical_4.horizon_6 { left: calc(58.8px * (6 - 1) + 56px); }
+.dragObj.vertical_4.horizon_7 { left: calc(58.8px * (7 - 1) + 56px); }
+.dragObj.vertical_4.horizon_8 { left: calc(58.8px * (8 - 1) + 56px); }
+.dragObj.vertical_4.horizon_9 { display: none; }
+.dragObj.vertical_4.horizon_10 { display: none; }
+
+.dragObj.vertical_6.horizon_1 { left: calc(58.8px * (1 - 1) + 56px); }
+.dragObj.vertical_6.horizon_2 { left: calc(58.8px * (2 - 1) + 56px); }
+.dragObj.vertical_6.horizon_3 { left: calc(58.8px * (3 - 1) + 56px); }
+.dragObj.vertical_6.horizon_4 { left: calc(58.8px * (4 - 1) + 56px); }
+.dragObj.vertical_6.horizon_5 { left: calc(58.8px * (5 - 1) + 56px); }
+.dragObj.vertical_6.horizon_6 { left: calc(58.8px * (6 - 1) + 56px); }
+.dragObj.vertical_6.horizon_7 { left: calc(58.8px * (7 - 1) + 56px); }
+.dragObj.vertical_6.horizon_8 { left: calc(58.8px * (8 - 1) + 56px); }
+.dragObj.vertical_6.horizon_9 { display: none; }
+.dragObj.vertical_6.horizon_10 { display: none; }
+
+
+
+
+
+
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #000;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+.line.line_1 {
+  top: 111px;
+  left: 174px;
+  width: 114px;
+  transform: rotate(90deg);
+}
+.line.line_2 {
+  top: 111px;
+  left: 173px;
+  width: 162px;
+  transform: rotate(45deg);
+}
+.line.line_3 {
+  top: 111px;
+  left: 232px;
+  width: 206px;
+  transform: rotate(124deg);
+}
+
+
+
+
+.induceLight {
+  pointer-events: auto;
+}
+
+.light_1 {
+  top: 165px;
+  left: 735px;
+}
+.light_2 {
+  top: 334px;
+  left: 622px;
+}
+
+
+
+
+
+
+.dragBox {
+  position: absolute;
+  top: -74px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  z-index: 1;
+}
+.dragBox .rotateContainer {
+  top: 14px;
+  left: 40px;
+  width: 130px;
+  height: 70px;
+}
+.dragBox .rotateContainer.showRotate {
+  width: 420px;
+  height: 220px;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  
+  <style>
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 0 auto
+    }
+    
+    /* .inputQuizContainer figure{width:500px;margin:0 auto 30px} */
+    flex {
+      /* justify-content: center; */
+      padding-bottom: 20px
+    }
+    
+    flex figure:nth-child(1) {
+      height: 200px;
+      margin-right: 100px;
+    }
+    
+    flex .lineBox {
+      width: 800px;
+      font-size: 35px;
+      padding: 20px 10px;
+    }
+    flex .lineBox.yellow ul > li {
+      display: flex;
+    }
+    flex .lineBox.yellow ul > li > span:nth-of-type(1){
+      padding-right: 10px;
+      flex-shrink: 0;
+      left: 420px;
+    }
+    flex .lineBox.yellow ul > li > span:nth-of-type(2){
+      width: 100%;
+    }
+    .dragObj { left: 57px; }
+    .dragObj[data-index="1"] { top: 22px; }
+    .dragObj[data-index="2"] { top: 65px; }
+    .dragObj[data-index="3"] { top: 110px; }
+    .colorBox {
+      position: relative;
+      margin-left: 65px;
+      /* margin: 0 auto; */
+      width: 1120px;
+      height: 66px;
+      padding-left: 50px;
+      box-sizing: border-box;
+    }
+    
+    .dropArea .dragObj.dragObjComplete {
+      display: none;
+    }
+    .dropArea {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    .dropArea.blue {
+      color: #0060e3;
+    }
+    figure img {
+      width: auto;
+      height: 100%;
+    }
+    
+    .popup_pages > li.solve > *:not(:first-child) {
+      display: inline-block
+    }
+    .finish .contentsArea > h1 {
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+    .finish .contentsArea > h2 {
+      word-break: break-all;
+    }
+    
+    figure .clickButton {
+      left: 208px;
+    }
+    
+    .popup_pages > li.min.middleSize figure {
+      width: 550px;
+    }
+    
+    .popup_pages > li.min.middleSize figure > img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .popup_pages > li.min.middleSize {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .topBox {
+      flex: 1 0 auto;
+    }
+    .min[data-popup-page="1"] .arrow {
+      position: relative;
+      top: 10px;
+    }
+    .popup_pages .listBox {margin-bottom: 10px; }
+    .popup_pages .listBox > li {
+      display: flex;
+    }
+    .popup_pages .listBox > li:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    .popup_pages .listBox > li > *:nth-child(1) {
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body class="lesson_5">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>5. 자료와 꺾은선그래프</span>
+        <span>공부를 잘했나요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="125">수학<span>125~127</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="89">수학 익힘<span>89</span>쪽</div>
+      <div class="js-addThingsButton addThingsButton"></div>
+      <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="89"></div>
+    </header>
+    <main class="finish">
+      <div class="contentsArea" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+        <h2><span class="lessonColorText">[<ins class="titleNumber" data-index="7"></ins>~<ins class="titleNumber" data-index="8"></ins>]</span>
+          우주의 공 던지기 기록을 조사하여 나타낸 꺾은선그래프입니다. 물음에 답해 보세요.
+        </h2>
+        <flex class="topBox">
+          <figure class="titleIndent">
+            <img src="images/5_6/5_6_7.svg" alt="">
+            <div class="clickButton" data-popup-btn="2"></div>
+          </figure>
+          <div class="lineBox dragBox top">
+            <ul>
+              <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠</span><span>기록이 가장 좋지 않게 나온 때는 1회입니다.</span></li>
+              <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡</span><span>기록이 점점 좋아지고 있습니다.</span></li>
+              <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢</span><span>4회보다 5회 때 기록이 38 m 더 좋아졌습니다.</span></li>
+            </ul>
+          </div>
+        </flex>
+        <h1 data-index="7">꺾은선그래프를 보고 알 수 있는 내용을 모두 찾아 기호를 써 보세요.</h1>
+        <section>
+          <div class="colorBox gray">
+            <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+          </div>
+          <!-- <div class="titleIndent">
+            
+            <input type="text" class="maxWidth" data-input-obj="1" data-answer="㉢">
+          </div> -->
+          
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode=""></div>
+          <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+          <div class="dragResetButton" data-hover=""></div>
+          
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <ul class="listBox">
+            <li>
+              <span>㉠</span>
+              <div>가장 아래에 찍힌 때는 1회이므로 기록이 가장 좋지 않게 나온 때는 1회입니다.</div>
+            </li>
+            <li>
+              <span>㉡</span>
+              <div>꺾은선이 오른쪽 위로 올라가고 있으므로 기록이 점점 좋아지고 있습니다.</div>
+            </li>
+            <li>
+              <span>㉢</span>
+              <div>4회: 20 m, 5회: 38 m</div>
+            </li>
+            <li>
+              <div class="arrow noAni pink right"></div>
+              <div> 38<symbol class="minus"></symbol>20<symbol class="equal"></symbol>18 (m)이므로 4회보다 5회 때 기록이<br/>18 m 더 좋아졌습니다.</div>
+            </li>
+          </ul>
+          <p> 따라서 꺾은선그래프를 보고 알 수 있는 내용을 모두 찾으면 ㉠, ㉡입니다.</p>
+        </li>
+        <li class="min middleSize slideup" data-popup-page="2">
+          <figure>
+            <img src="images/5_6/5_6_7.svg" alt="">
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script src="../include/math/script/fomula.min.js"></script>
+  
+  <script type="text/javascript">
+    (function() {
+      window.addEventListener('load', function() {
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        window.$efSound.muted(true);
+        window.$efSound.correct(); // 정답 사운드
+        window.$efSound.incorrect(); // 오답 사운드
+        
+        function setSound() {
+          if (isMuted) {
+            window.$efSound.muted(false);
+            isMuted = false;
+          }
+        }
+        var isMuted = true;
+        document.body.addEventListener('mousedown', setSound);
+        document.body.addEventListener('touchstart', setSound);
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        
+        window.dragDropCallbacks = {
+          "drag-obj": dragCallback,
+        };
+        
+        $ts.getEl('.dragResetButton')[0].addEventListener('click', function () {
+          $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+        })
+        
+        function dragCallback(DRAG) {
+          console.log('DRAG: ', DRAG);
+          
+          
+          // 정/오답 판별
+          if (DRAG.movingObj && DRAG.droppedArea) {
+            var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+            
+            if (answers) var isCorrect = answers.filter(function(answer) {
+              return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+            }).length > 0;
+            
+            console.log()
+            
+            if (isCorrect) {
+              if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                DRAG.droppedArea.element.innerHTML += DRAG.movingObj.element.innerHTML;
+              }
+              else DRAG.droppedArea.element.innerHTML += ', ' + DRAG.movingObj.element.innerHTML;
+            }
+            else window.$efSound.incorrect();
+          }
+        }
+        var isAnswered = false;
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          var dropArea = document.querySelector('.js-dropArea');
+          dropArea.innerHTML = '㉠, ㉡';
+          dropArea.classList.add('blue');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          var dropArea = document.querySelector('.js-dropArea');
+          dropArea.innerHTML = '';
+          dropArea.classList.remove('blue');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+@charset "utf-8";
+
+
+.drawBtn {background:url(../images/draw_btn.png) no-repeat; width: 48px; height: 48px; cursor: pointer; background-size: 100% 100%; position: absolute;}
+
+
+
+/* 그리기 */
+.pen_tool { background-image: url(../images/draw/drawOption.png); width:300px; height:40px; background-size: 100% 100%; position: absolute !important; display: none; z-index:100; }
+.pen_tool > div { background-size: 100% 100%; position: absolute; top:50%; transform: translateY(-50%); cursor: pointer; }
+.pen_tool .move_tool { background-image: url(../images/draw/move.png); width:22px; height:22px; left:12px; }
+.pen_tool .eraser_tool { background-image: url(../images/draw/eraser.png); width:33px; height:33px; left:46px; }
+.pen_tool .eraser_tool.select { background-image: url(../images/draw/eraser_over.png); }
+.pen_tool .allEraser_tool { background-image: url(../images/draw/reset.png); width: 16px; height:23px; left:90px; }
+.pen_tool .color_tool { width:23px; height:23px; background-color:red; border-radius: 50%; left:123px; box-shadow: 0px 0px 4px #777; }
+.pen_tool .width_tool { width:33px; height:33px; }
+.pen_tool .width_tool[data-width="5"] { background-image: url(../images/draw/light.png); left:153px; }
+.pen_tool .width_tool[data-width="5"].select { background-image: url(../images/draw/light_over.png); }
+.pen_tool .width_tool[data-width="10"] { background-image: url(../images/draw/middle.png); left:189px; }
+.pen_tool .width_tool[data-width="10"].select { background-image: url(../images/draw/middle_over.png); }
+.pen_tool .width_tool[data-width="15"] { background-image: url(../images/draw/bold.png); left:224px; }
+.pen_tool .width_tool[data-width="15"].select { background-image: url(../images/draw/bold_over.png); }
+.pen_tool .close_tool { background-image: url(../images/draw/close.png); width:16px; height:16px; left:270px; }
+
+.pen_tool .color_palette { background-color:#D4F0F4; width:200px; height:150px; border-radius: 20px; top:45px; transform: none; left:113px; cursor: auto; font-size:0; padding: 7px; display: none; line-height: normal; } 
+.pen_tool .color_palette > div { width:23px; height:23px; cursor: pointer; border-radius: 50%; display: inline-block; margin: 6px 7px; position: relative; }
+.pen_tool .color_palette > div.select::after { content:""; display: block; position: absolute; top:-2px; left:-2px; width:23px; height:23px; border: 2px solid #3232ff; border-radius: 50%; }
+
+.pen_tool .color_palette > div:nth-child(1) { background-color:#ffffff; }
+.pen_tool .color_palette > div:nth-child(2) { background-color:#adaea9; }
+.pen_tool .color_palette > div:nth-child(3) { background-color:#858489; }
+.pen_tool .color_palette > div:nth-child(4) { background-color:#5c5d58; }
+.pen_tool .color_palette > div:nth-child(5) { background-color:#000000; }
+
+.pen_tool .color_palette > div:nth-child(6) { background-color:#fff800; }
+.pen_tool .color_palette > div:nth-child(7) { background-color:#f9bd00; }
+.pen_tool .color_palette > div:nth-child(8) { background-color:#fd8200; }
+.pen_tool .color_palette > div:nth-child(9) { background-color:#fe3e00; }
+.pen_tool .color_palette > div:nth-child(10) { background-color:#fd0000; }
+
+.pen_tool .color_palette > div:nth-child(11) { background-color:#96cf00; }
+.pen_tool .color_palette > div:nth-child(12) { background-color:#69cc00; }
+.pen_tool .color_palette > div:nth-child(13) { background-color:#019802; }
+.pen_tool .color_palette > div:nth-child(14) { background-color:#007c00; }
+.pen_tool .color_palette > div:nth-child(15) { background-color:#034f00; }
+
+.pen_tool .color_palette > div:nth-child(16) { background-color:#3E73D9; }
+.pen_tool .color_palette > div:nth-child(17) { background-color:#0AC1F1; }
+.pen_tool .color_palette > div:nth-child(18) { background-color:#0E5AEF; }
+.pen_tool .color_palette > div:nth-child(19) { background-color:#0B1A7D; }
+.pen_tool .color_palette > div:nth-child(20) { background-color:#100645; }

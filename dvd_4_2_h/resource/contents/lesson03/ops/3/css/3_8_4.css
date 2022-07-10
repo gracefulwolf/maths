@@ -1,0 +1,218 @@
+
+@charset "utf-8";
+/* .target.on .grayBox{
+  animation: none;
+  opacity: 1;
+} */
+.imageFomula {
+  width: 100%;
+  height: 100%;
+  background: url(../images/3_8/3_8_4_01.svg) left 60px center / contain no-repeat;
+  pointer-events: none;
+}
+[data-toggle-obj="1"].complete ~ .imageFomula {
+  background: url(../images/3_8/3_8_4_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="2"].complete ~ .imageFomula {
+  background: url(../images/3_8/3_8_4_03.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01.svg) left 60px center / contain no-repeat;
+}
+[data-toggle-obj="3"].complete ~ .imageFomula {
+  background: url(../images/3_8/3_8_4_04.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_03.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01.svg) left 60px center / contain no-repeat;
+}
+/* [data-toggle-obj="4"].complete ~ .imageFomula {
+  background: url(../images/3_8/3_8_4_01_04.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01_03.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01_02.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01_01.svg) left 60px center / contain no-repeat,
+  url(../images/3_8/3_8_4_01.svg) left 60px center / contain no-repeat;
+} */
+.hideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.formula {
+  position: absolute;
+  top: 61px;
+  left: 625px;
+  width: 324px;
+  height: 476px;
+  background-image: url(../images/3_8/3_8_4_05.svg);
+  background-position: 0 0;
+  background-size: auto 472px;
+  background-repeat: no-repeat;
+}
+.formula[data-step="1"] {
+  background-position: -326.5px 0;
+}
+.formula[data-step="2"] {
+  background-position: -653px 0;
+}
+.formula[data-step="3"] {
+  background-position: -979.5px 0;
+}
+.formula[data-step="4"] {
+  background-position: -979.5px 0;
+}
+
+
+/* connectLine */
+.connectLine {
+  left: 458px;
+}
+.connectLine.one > p , 
+.connectLine.ten > p,
+.connectLine.hundred > p {
+  left: 13px;
+}
+
+
+
+.connectLine.hundred {
+  top: 203px;
+}
+.connectLine.hundred:before {
+  width: 158px;
+  border-right: none;
+  border-bottom-right-radius: 0;
+}
+.connectLine.hundred:after {
+  border-top: none;
+  border-bottom: 2px dashed #00803d;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 8px;
+  bottom: -95px;
+  left: 157px;
+  width: 75px;
+  height: 115px;
+}
+
+
+.connectLine.ten {
+  top: 338px;
+}
+.connectLine.ten:before {
+  width: 135px;
+  border-right: none;
+  border-bottom-right-radius: 0;
+}
+.connectLine.ten:after {
+  border-top: none;
+  border-bottom: 2px dashed #008ccf;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 8px;
+  bottom: -38px;
+  left: 139px;
+  width: 95px;
+  height: 59px;
+}
+
+/* 
+.connectLine.one {
+  top: 353px;
+}
+.connectLine.one:before {
+  width: 150px;
+  border-right: none;
+  border-bottom-right-radius: 0;
+}
+.connectLine.one:after {
+  bottom: 25px;
+  left: 150px;
+  width: 200px;
+  height: 35px;
+}
+
+.connectLine.hundred {
+  top: 360px;
+}
+.connectLine.hundred:before {
+  width: 160px;
+}
+.connectLine.hundred:after {
+  bottom: 24px;
+  left: 160px;
+  width: 85px;
+  height: 80px;
+} */
+
+/* grayBox */
+.target_1 .grayBox_1 {
+  top: 141px;
+  right: 284px;
+  width: 80px;
+  height: 160px;
+}
+.target_1 .grayBox_2 {
+  top: 300px;
+  right: 284px;
+  width: 240px;
+  height: 80px;
+}
+
+.target_2 .grayBox_1 {
+  top: 141px;
+  right: 364px;
+  width: 80px;
+  height: 160px;
+}
+.target_2 .grayBox_2 {
+  top: 382px;
+  height: 77px;
+  right: 365px;
+  width: 160px;
+}
+
+
+/* clickButton */
+.clickButton[data-toggle-obj="1"] {
+  top: 158px;
+  left: 460px;
+}
+.clickButton[data-toggle-obj="2"] {
+  top: 320px;
+  left: 460px;
+}
+.clickButton[data-toggle-obj="3"] {
+  top: 430px;
+  left: 460px;
+}
+.clickButton[data-toggle-obj="4"] {
+  top: 440px;
+  left: 460px;
+}
+
+/* popupFomula */
+.lastFormula,
+.lastFormula.active.on {
+  top: 320px;
+  left: 992px;
+  width: 254px;
+  height: 255px;
+}
+.lastFormula.active.on:after,
+.lastFormula:after {
+  width: 254px;
+  height: 255px;
+  background: url(../images/3_8/3_8_4_06.svg) center / contain no-repeat;
+}
+
+
+/* img */
+.img_01 {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 55px;
+}
+

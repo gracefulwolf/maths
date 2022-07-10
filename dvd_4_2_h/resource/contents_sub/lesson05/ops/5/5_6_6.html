@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <style>
+      .finish .contentsArea > h1 {
+        word-break: break-word;
+      }
+      .lineBox {
+        width: 850px;
+        padding: 20px 10px;
+        margin: 0 auto 30px;
+      }
+      .lineBox ul > li > span:nth-of-type(1){
+        padding-right: 10px;
+      }
+      .dragObj { left: 35px; } 
+      .dragObj[data-index="1"] { top: 24px; } 
+      .dragObj[data-index="2"] { top: 84px; } 
+      .dragObj[data-index="3"] { top: 149px; } 
+
+      .colorBox {
+        position: relative;
+        margin: 0 auto;
+        width: 1080px;
+        height: 115px;
+        padding-left: 50px;
+        box-sizing: border-box;
+      }
+      .dropArea {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .dropArea .dragObj.dragObjComplete {
+  display: none;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+    </style>
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 꺾은선그래프</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="125">수학<span>125~127</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="88">수학 익힘<span>88</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="88"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="6">꺾은선그래프로 나타내기에 알맞은 주제를 모두 찾아 기호를 써 보세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+            <div class="titleIndent">
+              <div class="lineBox dragBox top">
+                <ul>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠</span><span>우리 고장의 치킨 전문점 수의 변화</span></li>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡</span><span>우리 반 학생들의 달리기 기록</span></li>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢</span><span>선인장 키의 변화</span></li>
+                </ul>
+              </div>
+
+              
+              <div class="colorBox gray">
+                <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+              </div>
+
+              <!-- <div class="inputQuizContainer">
+                <input type="text" class="maxWidth" data-input-obj="1" data-answer="㉠, ㉢">
+              </div> -->
+            </div>
+          
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode=""></div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+            <div class="dragResetButton" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p> 꺾은선그래프는 자료의 변화를 한눈에 알아보기 쉽습니다. </p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+          $ts.getEl('.dragResetButton')[0].addEventListener('click', function () {
+            $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+          })
+
+          function dragCallback(DRAG) {
+            console.log('DRAG: ', DRAG);
+
+
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              console.log()
+
+              if (isCorrect) {
+                if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                  DRAG.droppedArea.element.innerHTML += DRAG.movingObj.element.innerHTML;
+                }
+                else DRAG.droppedArea.element.innerHTML += ', ' + DRAG.movingObj.element.innerHTML;
+              }
+              else window.$efSound.incorrect();
+            }
+          }
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉠, ㉢';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

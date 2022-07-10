@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="./css/3_3_7.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈</span>
+          <span>소수의 크기를 비교해 볼까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="61">수학<span>61</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="44">수학 익힘<span>44</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="61"></div>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <h1 data-index="1">
+            <p>소수의 크기를 비교하여 <ins class="circle"></ins> 안에 <symbol class="inequal_left"></symbol>, <symbol class="equal"></symbol>, <symbol class="inequal_right"></symbol>를 알맞게 써넣으 세요.</p>
+          </h1>
+          <section data-quiz="ox">
+            <div class="quizContainer">
+              <flex>
+                <div class="quiz_1">
+                  0.43
+                  <div class="js-click sign_circle" data-index="1">
+                    <symbol class="inequal_left" data-ox-target="1-1"></symbol>
+                    <symbol class="equal" data-ox-target="1-2"></symbol>
+                    <symbol class="inequal_right" data-ox-target="1-3"></symbol>
+                  </div>
+                  0.42
+                  
+                  <div class="js-pop signPop pop_1" data-index="1">
+                    <div class="signSymbol" data-ox-obj="1-1" data-answer=""><symbol class="inequal_left"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="1-2"><symbol class="equal"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="1-3"><symbol class="inequal_right"></symbol></div>
+                  </div>
+                </div>
+                <div class="quiz_2">
+                  0.38
+                  <div class="js-click sign_circle" data-index="2">
+                    <symbol class="inequal_left" data-ox-target="2-1"></symbol>
+                    <symbol class="equal" data-ox-target="2-2"></symbol>
+                    <symbol class="inequal_right" data-ox-target="2-3"></symbol>
+                  </div>
+                  0.4
+                  
+                  <div class="js-pop signPop pop_2" data-index="2">
+                    <div class="signSymbol" data-ox-obj="2-1"><symbol class="inequal_left"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="2-2"><symbol class="equal"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="2-3" data-answer=""><symbol class="inequal_right"></symbol></div>
+                  </div>
+                </div>
+                <div class="quiz_3">
+                  3.164
+                  <div class="js-click sign_circle" data-index="3">
+                    <symbol class="inequal_left" data-ox-target="3-1"></symbol>
+                    <symbol class="equal" data-ox-target="3-2"></symbol>
+                    <symbol class="inequal_right" data-ox-target="3-3"></symbol>
+                  </div>
+                  3.168
+                  
+                  <div class="js-pop signPop pop_3" data-index="3">
+                    <div class="signSymbol" data-ox-obj="3-1"><symbol class="inequal_left"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="3-2"><symbol class="equal"></symbol></div>
+                    <div class="signSymbol" data-ox-obj="3-3" data-answer=""><symbol class="inequal_right"></symbol></div>
+                  </div>
+                </div>
+              </flex>
+            </div>
+            <div class="displayN" data-ox-obj="1-4" data-ox-target="1-4" data-answer=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-quiz-chain="ox_1, ox_2, ox_3" data-type="answer"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        var clickObjs = $ts.getEl('.js-click');
+        var pops = $ts.getEl('.js-pop');
+        var oxObjs = $ts.getEl('[data-ox-obj]');
+
+        oxObjs.forEach(function(obj) {
+          obj.addEventListener('click', closePop.bind(obj));
+        });
+        clickObjs.forEach(function(obj) {
+          obj.addEventListener('click', openPop.bind(obj));
+        });
+
+        window.$callBack.oxCorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+
+        function openPop() {
+          var clickObj = this;
+          pops.forEach(function(target, index) {
+            if (index !== clickObj.getAttribute('data-index')-1) target.classList.remove('on');
+            else target.classList.add('on');
+          });
+        }
+        function closePop() {
+          pops.forEach(function(target, index) {
+            target.classList.remove('on');
+          });
+        }
+
+        var answerButton = document.querySelector('.js-buttons');
+        var oxTargets = $ts.getEl('[data-ox-target]');
+
+        answerButton.addEventListener('click', function () {
+          var isReset = this.className.indexOf('reset') === -1;
+
+          if (isReset) {
+            oxTargets.forEach(function (obj) {
+              obj.classList.remove('on');
+              obj.classList.remove('blue');
+            })
+            $ts.getEl('.contentsArea')[0].classList.remove('complete');
+          }else{
+            closePop();
+            showAnswer();
+            $ts.getEl('.contentsArea')[0].classList.add('complete');
+          }
+        })
+
+        function showAnswer() {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          oxObjs.forEach(function (obj) {
+            if(obj.hasAttribute('data-answer')){
+              var idx = obj.getAttribute('data-ox-obj');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('on');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('blue');
+            }
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

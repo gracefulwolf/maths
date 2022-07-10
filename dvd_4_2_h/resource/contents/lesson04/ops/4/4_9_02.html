@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/4_9_2.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형  </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="103">수학<span>103</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="74">수학 익힘<span>74</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="103"></div>
+      </header>
+      <main >
+        <div class="contentsArea">
+          <h1>이 단원에서 배운 내용을 이용하여 다음 문제를 풀어 봅시다.</h1>
+          <h3><span>[1~3]</span>수직인 직선과 평행한 직선에 대한 물음에 답해 보세요.</h3>
+          
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <ul class="basicSlider_slides" data-slides="main">
+            
+                <li class="page2 noUserSelect">
+                  
+                  <div class="js-drawLine drawLine" data-option="drawing">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                    <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                    <div class="line"></div>
+                  </div>
+                  <div class="dragBox right">
+                    <div class="js-rotate rotateContainer">
+                      <div class="js-rotateTarget rotateTarget mathTools ruler triangle"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                    </div>
+                  </div>
+                  <h2 data-index="1"  style="margin-top:360px; position: absolute; ">점 ㄱ을 지나고 직선 ㄴㄷ에 수직인 직선을 그어 보세요.</h2>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+                </li>
+               
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+      
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/controller.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {   
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 45,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+             
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [ { start: {x: 265, y: 45}, end: {x: 265, y: 226}, } ],
+        ];
+
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dragObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drag');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+      
+          return dot;
+        }
+      
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        var drawLines = containers.map(function(container, index) {
+          // createDot(container, [7, 5]);
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.page'+ (index+2) +' .js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function(DrawLine) {},
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+                // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+              },
+              showAnswer: function(DrawLine) {},
+              reset: function(DrawLine) {}
+            },
+          })
+        });
+
+
+        
+
+        window.$callBack.sliderMove = function(SLIDER) {
+          // 페이지 이동 시 초기화
+          rotateArray.forEach(function(rotate) { rotate.reset(); });
+          drawLines.forEach(function(drawLine) { drawLine.reset(); });
+        }
+      });
+    </script>
+  </body>
+</html>

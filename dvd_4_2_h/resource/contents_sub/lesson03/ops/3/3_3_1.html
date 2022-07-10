@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  <style>
+    .act .contentsArea > h1 {
+      word-break: break-all;
+    }
+    .dflex{display:flex;align-items:center;width:500px;justify-content:center}
+    .dflex .left{flex:1;text-align:right}
+    .dflex .right{flex:1}
+    ul.dflex{width:100%;justify-content:space-around;height:120px;align-items:center}
+    .ready .contentsArea h1{display:block}
+    ins{display:inline-block}
+    .pop_1{left:494px;top:194px}
+    .arrow{vertical-align: middle;}
+    .inputQuizContainer{width:1100px;margin:0 auto}
+    .inputQuizContainer figure{width:1100px;margin:0 auto 30px}
+    
+    
+    .fillContainer {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border: 2px solid #6dcef5;
+      margin: 0 40px;
+    }
+    .fillContainer .square {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    .fillContainer .square div.target {
+      width: 25px;
+      height: 25px;
+      background-image: url(./images/sectionPaper_repeat.svg);
+      background-size: 25px auto;
+    }
+    .target.fill {
+      background-color: #d7e7af;
+    }
+    .complete .target.fill {
+      background-color: #c1dff5;
+    }
+    .obj1{position:absolute;top:0px;left:120px;justify-content: space-between;width:940px}
+    .flexWrap {
+      display: flex;
+    }
+    .flexWrap ins.circle {
+      margin: 0 15px;
+    }
+    .flexWrap symbol.inequal_left {
+      top: -8px;
+    }
+    .flexWrap .arrow.pink {
+      position: relative;
+      top: -3px;
+      margin-right: 10px;
+    }
+    .displayN { display: none; }
+    section.complete .fillContainer { pointer-events: none; }
+  </style>
+</head>
+<body class="lesson_3">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>3. 소수의 덧셈과 뺄셈</span>
+        <span>소수의 크기를 비교해 볼까요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="60">수학<span>60~61</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="44">수학 익힘<span>44</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="44"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea">
+        <h1 data-star="1" data-index="1">전체 크기가 1인 모눈종이에 주어진 소수만큼 색칠하고, 크기를 비교하여 <ins class="circle"></ins> 안에 <symbol class="inequal_left"></symbol>, <symbol class="equal"></symbol>, <symbol class="inequal_right"></symbol>를 알맞게 써넣으세요.</h1>
+        <section data-quiz="ox" data-quiz-name="ox_1">
+          <div class="inputQuizContainer">
+            <figure><img src="images/3_3/3_3_1.svg" alt=""></figure>
+            <flex class="obj1">
+              <div class="fillContainer">
+                <div class="js-fillContainer square square_1" data-length="100" data-answer="34"></div>
+              </div>
+              <div class="fillContainer">
+                <div class="js-fillContainer square square_2" data-length="100" data-answer="25"></div>
+              </div>
+            </flex>
+          </div>  
+          <div>
+            <ul class="dflex">
+              <li class="dflex">
+                <div class="left">0.34</div>
+                <div class="js-click sign_circle" data-index="1">
+                  <symbol data-ox-target="1-1" class="inequal_left"></symbol>
+                  <symbol data-ox-target="1-2" class="equal"></symbol>
+                  <symbol data-ox-target="1-3" class="inequal_right"></symbol>
+                </div>
+                <div class="right">0.25</div>
+              </li>
+            </ul>
+            <div class="js-pop signPop pop_1" data-index="1">
+              <div class="" data-ox-obj="1-1" data-answer=""><symbol class="inequal_left"></symbol></div>
+              <div class="" data-ox-obj="1-2"><symbol class="equal"></symbol></div>
+              <div class="" data-ox-obj="1-3"><symbol class="inequal_right"></symbol></div>
+            </div>
+          </div>
+          <div class="displayN" data-ox-obj="1-4" data-ox-target="1-4" data-answer=""><symbol></symbol></div>
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+          <!-- <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div> -->
+          <div class="js-chainButtons quizButtons answer" data-quiz-chain="ox_1, input_1" data-hover=""></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <div>모눈 한 칸의 크기는 0.01이므로 0.34는 34칸을 색칠하고 0.25는 25칸을 색칠합니다.</div>
+          <div class="flexWrap">
+            <div class="arrow pink right noAni"></div>
+            <div class="left">0.34</div>
+            <ins class="circle"><symbol class="inequal_left"></symbol></ins>
+            <div class="right">0.25</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <script src="../include/libs/js/ts.min.js"></script>
+  <script src="../include/math/script/fillTarget.min.js"></script>
+  <script src="../include/libs/js/popup.min.js"></script>
+  <script src="../include/libs/js/slider.min.js"></script>
+  <script src="../include/contents/js/quiz/quiz.min.js"></script>
+  <script src="../include/contents/js/pageManager.min.js"></script>
+  <script type="text/javascript">
+    
+    window.addEventListener('load', function() {
+      $ts.getEl('.js-fillContainer').forEach(function(container) {
+        new FillTarget({
+          container: container,
+          answerButton: document.querySelector('.js-chainButtons')
+        });
+      });
+      window.$callBack.filledTarget = function (el) {
+        var fillArray = el.container.querySelectorAll('.fill');
+        fillArray.forEach(function (obj) {
+          obj.classList.remove('last');
+          if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        })
+        // console.log(el.targets.querySelectorAll('.fill').lastChild)
+      }
+      window.$callBack.toggleTarget = function (el) {
+        var fillArray = el.container.querySelectorAll('.fill');
+        fillArray.forEach(function (obj) {
+          obj.classList.remove('last');
+          if(!obj.nextElementSibling || !obj.nextElementSibling.classList.contains('fill')) { obj.classList.add('last'); }
+        })
+      }
+      
+      
+      //
+      var clickObjs = $ts.getEl('.js-click');
+      var pops = $ts.getEl('.js-pop');
+      var oxObjs = $ts.getEl('[data-ox-obj]');
+      
+      oxObjs.forEach(function(obj) {
+        obj.addEventListener('click', closePop.bind(obj));
+      });
+      clickObjs.forEach(function(obj) {
+        obj.addEventListener('click', openPop.bind(obj));
+      });
+      
+      window.$callBack.oxCorrect = function(OX) {
+        var parent = OX.curTarget[0].parentNode;
+        var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+        oxObj.forEach(function (obj) {
+          obj.classList.remove('on')
+        })
+        parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+      };
+      window.$callBack.oxIncorrect = function(OX) {
+        var parent = OX.curTarget[0].parentNode;
+        var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+        oxObj.forEach(function (obj) {
+          obj.classList.remove('on')
+        })
+        parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+      };
+      
+      function openPop() {
+        var clickObj = this;
+        pops.forEach(function(target, index) {
+          if (index !== clickObj.getAttribute('data-index')-1) target.classList.remove('on');
+          else target.classList.add('on');
+        });
+      }
+      function closePop() {
+        pops.forEach(function(target, index) {
+          target.classList.remove('on');
+        });
+      }
+      
+      var answerButton = document.querySelector('.js-chainButtons');
+      var oxTargets = $ts.getEl('[data-ox-target]');
+      
+      answerButton.addEventListener('click', function () {
+        var isReset = this.className.indexOf('reset') === -1;
+        
+        if (isReset) {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+            obj.classList.remove('blue');
+          })
+        }else{
+          closePop();
+          showAnswer();
+        }
+      })
+      
+      function showAnswer() {
+        oxTargets.forEach(function (obj) {
+          obj.classList.remove('on');
+        })
+        oxObjs.forEach(function (obj) {
+          if(obj.hasAttribute('data-answer')){
+            var idx = obj.getAttribute('data-ox-obj');
+            $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('on');
+            $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('blue');
+          }
+        })
+      }
+    });
+    
+  </script>
+</body>
+</html>

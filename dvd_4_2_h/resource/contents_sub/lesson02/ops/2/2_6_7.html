@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1000px;margin:-6px auto 26px}
+      .popup_pages > li.solve > *:not(:first-child){display: inline-block;}
+      /* .maxWidth{text-align: center;} */
+      figure img { pointer-events: none;}
+      .dragObj {
+        left: 586px;
+        font-size: 45px;
+        width: 350px;
+      }
+    .dragObj[data-index="1"] { top: 61px;}
+    .dragObj[data-index="2"] { top: 121px;}
+    .dragObj[data-index="3"] { top: 181px;}
+    .dragObj[data-index="4"] { top: 241px;}
+    .colorBox {
+      position: relative;
+      margin: 0 auto;
+      width: 1080px;
+      height: 75px;
+      padding-left: 50px;
+      box-sizing: border-box;
+    }
+    .dropArea {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 45px;
+    }
+    
+    .dropArea .dragObj.dragObjComplete {
+      display: none;
+    }
+    .dropArea.blue {
+      color: #0060e3;
+    }
+    .dropArea .dragObj.dragObjComplete + span,
+    .dropArea span {
+    display: none;
+}
+
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+        <header>
+            <div class="js-addThingsMenu addThingsMenu"></div>
+            <div class="js-indexButton indexButton" data-hover=""></div>
+            <div class="indexBox">
+                <span>2. 삼각형</span>
+                <span>공부를 잘했나요</span>
+            </div>
+            <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="45">수학<span>45~47</span>쪽</div>
+            <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="37">수학 익힘<span>37</span>쪽</div>
+              <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="37"></div>
+        </header>
+        <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="7"><ins class="examIcon"></ins>에서 이등변삼각형이 그려지는 세 점을 찾아 기호를 써 보세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+            <div class="inputQuizContainer">
+              <figure><img src="images/2_6/2_6_7.svg" alt=""></figure>
+              <div class="colorBox gray">
+                <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+              </div>
+              <!-- <input type="text" data-input-obj="1" data-answer="㉡" class="maxWidth"> -->
+            </div>
+            <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠ <span>점 ㄱ, 점 ㄴ, 점 ㄷ</span></div>
+            <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡ <span>점 ㄱ, 점 ㄹ, 점 ㅁ</span></div>
+            <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢ <span>점 ㄴ, 점 ㄷ, 점 ㄹ</span></div>
+            <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="4" data-drag-obj-answer="1">㉣ <span>점 ㄴ, 점 ㄷ, 점 ㅁ</span></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode=""></div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            이등변삼각형은 두 변의 길이가 같은 삼각형이므로 이등변삼각형이 그려지는 세 점을 찾으면 ㉡ 점 ㄱ, 점 ㄹ, 점 ㅁ입니다.</li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(DRAG) {
+            console.log('DRAG: ', DRAG);
+
+            if (!DRAG.droppedArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              console.log()
+
+              if (isCorrect) {
+                if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                  DRAG.droppedArea.element.innerHTML = DRAG.movingObj.element.innerHTML;
+                }
+                else DRAG.droppedArea.element.innerHTML = DRAG.movingObj.element.innerHTML;
+              }
+            }
+          }
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉡';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="./css/1_7_6.css">
+    <style></style>
+  </head>
+	<body class="lesson_1">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>1. 분수의 덧셈과 뺄셈</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="25">수학<span>25~27</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="22">수학 익힘<span>22</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="22"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea noUserSelect">
+          <h1 data-index="6">은하네 집에서 학교까지 가는 경로는 ㉮와 ㉯가 있습니다. ㉮와 ㉯ 중 어느 경로가 몇 km 더 짧은지 <ins class="inputBox"></ins> 안에 알맞은 수나 말을 써넣으세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="quiz_2" data-option="copy">
+            <div class="inputQuizContainer" data-quiz="input" data-quiz-name="quiz_1">
+              <div class="img">
+                <div class="posText_1">㉮</div>
+                <div class="posText_2">㉯</div>
+              </div>
+
+              <div class="dragBox top">
+                <div class="js-dragObj dragObj dragObj_1 figure" data-name="drag-obj" data-drag-obj-answer="1">㉮</div>
+                <div class="js-dragObj dragObj dragObj_2 figure" data-name="drag-obj" data-drag-obj-answer="2">㉯</div>
+              </div>
+              
+              <div class="flexWrap">
+                <div class="arrow pink right noAni"></div>
+                <div>
+                  <div class="colorBox gray">
+                    <div class="js-dropArea dropArea" data-drop-area-answer="2"></div>
+                  </div>
+                  가 <bunsu class="hasInput"><input class="small inlineBox" type="text" data-input-obj="1" data-answer="1">/<input class="small inlineBox" type="text" data-input-obj="1" data-answer="14"></bunsu> km 더 짧습니다.
+                </div>
+              </div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-quiz-chain="quiz_1, quiz_2"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+              <p> ㉮ 1<bunsu>11/14</bunsu><symbol class="plus"></symbol><bunsu>8/14</bunsu><symbol class="equal"></symbol><bunsu>25/14</bunsu><symbol class="plus"></symbol><bunsu>8/14</bunsu><symbol class="equal"></symbol><bunsu>33/14</bunsu><symbol class="equal"></symbol>2<bunsu>5/14</bunsu> (km) <br>
+                ㉯ 1<bunsu>9/14</bunsu><symbol class="plus"></symbol><bunsu>9/14</bunsu><symbol class="equal"></symbol><bunsu>23/14</bunsu><symbol class="plus"></symbol><bunsu>9/14</bunsu><symbol class="equal"></symbol><bunsu>32/14</bunsu><symbol class="equal"></symbol>2<bunsu>4/14</bunsu> (km)<br>
+                따라서 ㉮와 ㉯의 거리의 차는<br>
+                2<bunsu>5/14</bunsu><symbol class="minus"></symbol>2<bunsu>4/14</bunsu><symbol class="equal"></symbol><bunsu>1/14</bunsu> (km)<br>
+                이므로 <span class="textColor answer">㉯</span>가 <span class="textColor answer"><bunsu>1/14</bunsu></span> km 더 짧습니다.
+            </p>
+          </li>  
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(dragDrop) {
+            var dropArea, dropAreaElement, children;
+            dropArea = dragDrop.droppedArea;
+            if (!dropArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+
+            dropAreaElement = dragDrop.droppedArea.element;
+            children = dropAreaElement.children;
+
+            if (children.length > 1) {
+              dropAreaElement.removeChild(children[0]);
+            }
+          }
+
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉯';
+            dropArea.classList.add('blue');
+            $ts.getEl('.contentsArea')[0].classList.add('complete');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+            $ts.getEl('.contentsArea')[0].classList.remove('complete');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

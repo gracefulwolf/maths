@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="css/5_3_6.css">
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 꺾은선그래프</span>
+          <span>꺾은선그래프로 나타내 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="114">수학<span>114~115</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="83">수학 익힘<span>83</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="83"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="3" data-index="6">꺾은선그래프로 나타내 보세요.</h1>
+          <section data-quiz="input" data-quiz-name="input_1">
+
+            <figure class="js-graph">
+              <img src="images/5_3/5_3_6.svg" alt="이미지" class="img">
+              <input type="text" data-input-obj="" data-answer="음식물 쓰레기양" class="input_1">
+              <input type="text" data-input-obj="" data-answer="kg" class="input_2">
+              <input type="text" data-input-obj="" data-answer="쓰레기양" class="input_3">
+              <input type="text" data-input-obj="" data-answer="요일" class="input_4">
+              <input type="text" data-input-obj="" data-answer="40" class="left input_5">
+              <input type="text" data-input-obj="" data-answer="35" class="left input_6">
+              <input type="text" data-input-obj="" data-answer="30" class="left input_7">
+              <input type="text" data-input-obj="" data-answer="25" class="left input_8">
+              <input type="text" data-input-obj="" data-answer="20" class="left input_9">
+              <input type="text" data-input-obj="" data-answer="월" class="bottom input_10">
+              <input type="text" data-input-obj="" data-answer="화" class="bottom input_11">
+              <input type="text" data-input-obj="" data-answer="수" class="bottom input_12">
+              <input type="text" data-input-obj="" data-answer="목" class="bottom input_13">
+              <input type="text" data-input-obj="" data-answer="금" class="bottom input_14">
+              <div class="js-lineGraph lineGraph" data-option="">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-quizButton resetButton" data-type="reset"></div>
+              </div>
+            </figure>
+            <ins class="exam" data-after-target="input_1">예</ins>
+
+            <div class="popupButton head" data-popup-btn="2" data-popup-option="toggle"></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-chainButtons quizButtons answer" data-hover="" data-quiz-chain="input_1"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <P> 가로 눈금과 세로 눈금이 만나는 자리에 점을 찍고 점들을 선분으로 이어 꺾은선그래프로 나타냅니다.</P>            
+          </li>
+          <li class="min head slideleft" data-popup-page="2">
+            <figure>
+              <img src="images/5_3/5_3_4.svg" alt="">
+            </figure>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/lineGraph.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var graph = document.querySelector('.js-graph');
+        var lineGraph = document.querySelector('.js-lineGraph');
+
+        function createDot(container, dotLength) {
+          function createElement(container, i, j) {
+            var dot = document.createElement('div');
+            var light = document.createElement('div');
+            light.classList.add('induceLight');
+            dot.appendChild(light);
+
+            dot.classList.add('js-dot');
+            dot.classList.add('graphDot');
+            dot.classList.add('horizon_' + (i+1));
+            dot.classList.add('vertical_' + (j+1));
+            dot.setAttribute('data-type', i);
+            dot.setAttribute('data-index', j);
+            container.appendChild(dot);
+
+            return dot;
+          }
+
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        createDot(lineGraph, [5, 24]);
+
+
+
+        var answers = [
+          {x: 74, y: 224},
+        {x: 148, y: 169},
+        {x: 222, y: 306},
+        {x: 296, y: 101},
+        {x: 370, y: 59},
+        ];
+        window.lineGraph = new $LineGraph({
+          container: lineGraph,
+          resetButton: lineGraph.querySelector('.js-quizButton'),
+          length: 4,
+          lineWidth: 6,
+          callback: {
+            click: function(GRAPH, clickedDot) {
+              var sameDotArray = GRAPH.dots.filter(function(dot) {
+                return dot.type[0] === clickedDot.type[0];
+              });
+
+              sameDotArray.forEach(function(dot) {
+                dot.dom.classList.add('lightOff');
+              })
+              console.log(window.lineGraph)
+            },
+            reset: function(GRAPH) {
+              GRAPH.dots.forEach(function(dot) {
+                dot.dom.classList.remove('lightOff');
+              })
+            },
+          }
+        });
+
+        var quizButton = $ts.getEl('.quizButtons.answer')[0];
+        quizButton.addEventListener('click', function () {
+          window.lineGraph.reset();
+          if(this.className.indexOf('reset') === -1){
+            allReset();
+          }else{
+            $ts.getEl('.answer')[0].classList.add('on');
+            $ts.getEl('.lineGraph')[0].classList.add('pointerOff');
+            $ts.getEl('.resetButton')[0].classList.add('off');
+            lightOff();
+            answerLineShow();
+          }
+        })
+
+        var graphDot = $ts.getEl('.graphDot');
+        function lightOff() {
+          graphDot.forEach(function (obj) {
+            obj.classList.add('lightOff');
+          })
+        }
+        function lightOn() {
+          graphDot.forEach(function (obj) {
+            obj.classList.remove('lightOff');
+          })
+        }
+        function answerLineShow(){
+          var canvas = $ts.getEl('canvas')[0];
+          var context = canvas.getContext('2d');
+          context.strokeStyle = '#0060e3';
+          context.fillStyle = '#0060e3';
+          context.lineWidth = 6;
+          context.lineCap = 'round';
+          context.lineJoin = 'round';
+          context.save();
+
+          var drawPointers = function (pointer) {
+            context.lineTo(pointer.x, pointer.y);
+          }
+          context.beginPath();
+          answers.forEach(drawPointers);
+          context.stroke();
+          context.restore();
+          context.save();
+        }
+
+        function allReset(){
+          $ts.getEl('.answer')[0].classList.remove('on');
+          $ts.getEl('.lineGraph')[0].classList.remove('pointerOff');
+          $ts.getEl('.resetButton')[0].classList.remove('off');
+          lightOn();
+        }
+      });
+    </script>
+  </body>
+</html>

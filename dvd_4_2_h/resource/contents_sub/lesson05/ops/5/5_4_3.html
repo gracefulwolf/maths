@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="css/5_4_3.css">
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 꺾은선그래프</span>
+          <span>꺾은선그래프로 자료를 해석해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="116">수학<span>116~117</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="84">수학 익힘<span>84</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="84"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h2><span class="lessonColorText">[<ins class="titleNumber" data-index="1"></ins>~<ins class="titleNumber" data-index="3"></ins>]</span> 어느 마을의 이사 온 가구 수를 조사하여 나타낸 꺾은선그래프입니다. 물음에 답해 보세요. </h2>
+          <figure class="fig1">
+              <img src="images/5_4/5_4_1.svg" alt="">
+              <div class="clickButton" data-popup-btn="2"></div>
+            </figure>
+          <h1 data-star="2" data-index="3">이사 온 가구 수는 대체로 어떻게 변하고 있는지 알아보려고 합니다. 알맞은 말에 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <div class="lineBox yellow">
+              <div>이사 온 가구 수는 ( <span data-ox-obj="1" data-answer=""><div class="icon icon_o" data-ox-target="1"></div>늘어나고</span> , <span data-ox-obj="2"><div class="icon icon_o" data-ox-target="2"></div>줄어들고</span> ) 있습니다.</div>
+            </div>
+            <div class="displayN" data-ox-obj="3" data-ox-target="3" data-answer=""></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+          
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="flexListContainer">
+              꺾은선이 오른쪽 위로 올라가고 있습니다.
+            </ul>
+          </li>
+            <li class="min middleSize slideup" data-popup-page="2">
+            <figure>
+              <img src="images/5_4/5_4_1.svg" alt="">
+            </figure>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.js-buttons')[0];
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else{
+            oxObjs.forEach(function (obj) {
+              obj.classList.remove('on');
+              if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

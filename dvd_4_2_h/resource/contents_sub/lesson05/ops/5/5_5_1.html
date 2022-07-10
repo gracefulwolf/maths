@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/sub/style/master.css">
+  <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+  
+  <style>
+    .inputQuizContainer {
+      width: 1100px;
+      margin: 0 auto;
+      text-align: right
+    }
+    
+    .inputQuizContainer figure {
+      width: 1100px;
+      margin: 0 auto 30px
+    }
+    
+    .small {
+      width: 150px;
+      text-align: center;
+    }
+    
+    .lineBox {
+      margin-bottom: 20px
+    }
+    
+    flex {
+      flex-direction: column;
+      width: 100%
+    }
+    
+    flex ul {
+      display: flex;
+      width: 95%
+    }
+    flex > ul:nth-of-type(1) {
+      margin-bottom: 10px;
+    }
+    
+    flex ul li {
+      flex: 1;
+      font-size: 44px;
+      text-align: left;
+      padding-left: 40px;
+    }
+    
+    flex ul li:first-child {
+      flex: 2
+    }
+    
+    .contentsArea > h1 {
+      word-break: break-all;
+      letter-spacing: -1px;
+    }
+    
+    .dragObj[data-index="1"] {
+    top: 14px;
+    left: 23px;
+}
+    .dragObj[data-index="2"] {
+      top: 14px;
+      left: 693px;
+    }
+    .dragObj[data-index="3"] {
+      top: 81px;
+      left: 23px;
+    }
+    .dragObj[data-index="4"] {
+      top: 81px;
+      left: 693px;
+    }
+    .dropArea .dragObj.dragObjComplete {
+      display: none;
+    }
+    .dropArea {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .dropArea.blue {
+      color: #0060e3;
+    }
+    .colorBox {
+      position: relative;
+      margin: 0 auto;
+      width: 1080px;
+      height: 115px;
+      padding-left: 50px;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body class="lesson_5">
+  <div id="wrap">
+    <header>
+      <div class="js-addThingsMenu addThingsMenu"></div>
+      <div class="js-indexButton indexButton" data-hover=""></div>
+      <div class="indexBox">
+        <span>5. 자료와 꺾은선그래프</span>
+        <span>자료를 수집하여 분석해 볼까요</span>
+      </div>
+      <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="118">수학<span>118~121</span>쪽</div>
+      <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="86">수학 익힘<span>86</span>쪽</div>
+      <div class="js-addThingsButton addThingsButton"></div>
+      <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="86"></div>
+    </header>
+    <main class="act">
+      <div class="contentsArea">
+        <h1 data-star="1" data-index="1">자료를 수집하여 분석하는 과정을 차례대로 기호를 써 보세요.</h1>
+        <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+          <div class="inputQuizContainer">
+            <div class="lineBox dragBox top">
+              <flex>
+                <ul>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠</span> 꺾은선그래프로 자료 해석하기</li>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡</span> 자료 수집하기</li>
+                </ul>
+                <ul>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢</span> 꺾은선그래프로 나타내기</li>
+                  <li><span class="js-dragObj dragObj figure" data-name="drag-obj" data-index="4" data-drag-obj-answer="1">㉣</span> 주제 정하기</li>
+                </ul>
+              </flex>
+            </div>
+            <div class="colorBox gray">
+              <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+            </div>
+            <!-- <figure><img src="images/5_5/5_5_1.svg" alt=""></figure> -->
+            
+            <!-- <input class="small inlineBox" type="text" data-input-obj="1" data-answer="㉣"> -
+            <input class="small inlineBox" type="text" data-input-obj="1" data-answer="㉡"> -
+            <input class="small inlineBox" type="text" data-input-obj="1" data-answer="㉢"> -
+            <input class="small inlineBox" type="text" data-input-obj="1" data-answer="㉠"> -->
+          </div>
+          
+          <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode=""></div>
+          <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+          <div class="dragResetButton" data-hover=""></div>
+        </section>
+      </div>
+    </main>
+    <section class="popup_container" data-popup-container="">
+      <ul class="popup_pages">
+        <li class="min solve slideup" data-popup-page="1">
+          <p> 자료를 수집하여 분석하는 과정은 다음과 같습니다.<br>
+            ① 주제 정하기<br>
+            ② 자료 수집하기<br>
+            ③ 꺾은선그래프로 나타내기<br>
+            ④ 꺾은선그래프로 자료 해석하기</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          $ts.getEl('.dragResetButton')[0].addEventListener('click', function () {
+            $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+          })
+
+          function dragCallback(DRAG) {
+            console.log('DRAG: ', DRAG);
+
+
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              console.log()
+
+              if (isCorrect) {
+                // window.$efSound.correct();
+                if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                  DRAG.droppedArea.element.innerHTML += DRAG.movingObj.element.innerHTML;
+                }
+                else DRAG.droppedArea.element.innerHTML += ', ' + DRAG.movingObj.element.innerHTML;
+              }
+            }
+            else window.$efSound.incorrect();
+          }
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉣, ㉡, ㉢, ㉠';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+          }
+        });
+      })();
+    </script>
+  </body>
+  </html>

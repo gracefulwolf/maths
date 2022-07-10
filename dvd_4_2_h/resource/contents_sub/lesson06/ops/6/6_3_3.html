@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <style>
+      .imageBox {
+        height: 400px;
+        background: url(./images/6_3/6_3_3.svg) center / auto 300px no-repeat;
+        pointer-events: none;
+      }
+      .answerImage {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 400px;
+        background: url(./images/6_3/6_3_3_answer.svg) center / auto 300px no-repeat;
+      }
+      .answerImage_1 {background: url(./images/6_3/6_3_3_answer_1.svg) center / auto 300px no-repeat;}
+      .answerImage_2 {background: url(./images/6_3/6_3_3_answer_2.svg) center / auto 300px no-repeat;}
+      .answerImage_3 {background: url(./images/6_3/6_3_3_answer.svg) center / auto 300px no-repeat;}
+      .clickLine {
+        /* outline: 1px solid red; */
+      }
+      .line_1 {
+        width: 560px;
+        height: 20px;
+        position: absolute;
+        top: 190px;
+        left: 348px;
+        transform: rotate(32deg);
+      }
+      .line_2 {
+        width: 510px;
+        height: 20px;
+        position: absolute;
+        top: 205px;
+        left: 281px;
+        transform: rotate(-31deg);
+      }
+      .line_3 {
+        width: 20px;
+        height: 280px;
+        position: absolute;
+        top: 67px;
+        left: 585px;
+      }
+      .complete[data-quiz="toggle"] .answerImage {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .complete[data-quiz="toggle"] [data-answer] {
+        opacity: 1;
+        visibility: visible;
+      }
+      .complete[data-quiz="toggle"] .clickLine { pointer-events: none; }
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형</span>
+          <span>대각선을 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="138">수학<span>138~139</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="96">수학 익힘<span>96</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="96"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="3">다음 사각형에 그은 선분 중 대각선이 아닌 것을 찾아 표시해 보세요.</h1>
+          <section data-quiz="toggle" data-option="toggle">
+            <div class="imageBox" data-toggle-obj="3">
+              <div class="answerImage answerImage_1" data-toggle-target="1"></div>
+              <div class="answerImage answerImage_2" data-toggle-target="2"></div>
+              <div class="answerImage answerImage_3" data-answer data-toggle-target="3"></div>
+            </div>
+            <div class="clickLine line_1" data-toggle-obj="1"></div>
+            <div class="clickLine line_2" data-toggle-obj="2"></div>
+            <div class="clickLine line_3" data-toggle-obj="3"></div>
+            
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+            <!-- <div class="quizButtons answer" data-click-obj="1" data-hover="" data-quiz-chain=""></div> -->
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            사각형에 그은 선분 중 대각선이 아닌 것을 찾아 표시하면 다음과 같습니다.
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() { });
+    </script>
+  </body>
+</html>
