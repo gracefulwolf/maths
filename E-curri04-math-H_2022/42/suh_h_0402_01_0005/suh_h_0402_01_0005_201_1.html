@@ -272,6 +272,107 @@
 	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
-
+	<script>
+	window.addEventListener('load', function() {
+	
+		var isShowAnswer = false;
+		// (function() {
+		// })();
+		var clickObj = $ts.getEl('[data-click-obj]');
+		
+		function hideAnswer(obj) {
+		obj.classList.remove('complete');
+		obj.classList.remove('pointerOff');
+		}
+		
+		function toggleAnswer() {
+		console.log('click')
+		if (!isShowAnswer) {
+			clickObj.forEach(function(obj) {
+			hideAnswer(obj);
+			if (obj.hasAttribute('data-answer')) {
+				obj.classList.add('complete');
+			}
+			obj.classList.add('pointerOff');
+			});
+			isShowAnswer = true;
+		} else {
+			clickObj.forEach(hideAnswer);
+			isShowAnswer = false;
+		}
+		}
+		
+		var answerClickButton = $ts.getEl('.page2 .quizButtons.answer');
+		
+		answerClickButton.forEach(function(btn) {
+		
+		btn.addEventListener('click', toggleAnswer);
+		});
+		
+		// 페이지 이동할 때 초기화 
+		window.$callBack.sliderMove = function(SLIDER) {
+		isShowAnswer = false;
+		clickObj.forEach(hideAnswer);
+		var dropAreas = $ts.getEl('.page2 .js-dropArea');
+		dropAreas.forEach(function(drop) {
+			drop.innerHTML = '';
+		})
+		}
+		
+		function insertCookies(dropArea) {
+		dropArea.innerHTML = '';
+		dropArea.innerHTML = '<div class="dragObj"></div>';
+		}
+		function removeCookies(dropArea) {
+		dropArea.innerHTML = '';
+		}
+		function setCompleted(dragObj) {
+		dragObj.classList.add('dragObjComplete');
+		}
+		function resetCompleted(dragObj) {
+		dragObj.classList.remove('dragObjComplete');
+		}
+		
+		function toggleDragAnswer() {
+		var dragObjs = $ts.getEl('.page2 .js-dragObj');
+		var dropAreas = $ts.getEl('.page2 .js-dropArea');
+		var dropAreasAnswer = $ts.getEl('.page2 .js-dropArea.xAnswer');
+		
+		function dragReset() {
+			dropAreas.forEach(removeCookies);
+			dragObjs.forEach(resetCompleted);
+		}
+		function dragAnswer() {
+			dropAreas.forEach(removeCookies);
+			dropAreasAnswer.forEach(insertCookies);
+			dragObjs.forEach(setCompleted);
+		}
+		
+		var isReset = this.className.indexOf('reset') === -1;
+		
+		if (isReset) dragReset();
+		else dragAnswer();
+		}
+		
+		window.dragDropCallbacks = {
+		"drag-obj": function(DRAGDROP) {
+			if (DRAGDROP.droppedArea) {
+			if ($ts.getEl('.page2 .js-dragObj.dragObjComplete').length === 6) {
+				console.log($ts.getEl('.page2 .js-dragObj.dragObjComplete').length)
+				DRAGDROP.droppedArea.DISABLED = true;
+			}
+			if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
+			}else {
+			window.$efSound.incorrect();
+			return console.log('dropArea 없음.');
+			}
+		},
+		};
+		
+		var dragAnswerButton = document.querySelector('.page2 .js-chainButtons');
+		dragAnswerButton.addEventListener('click', toggleDragAnswer);
+	});
+	
+	</script>
 
 </html>
