@@ -1,0 +1,478 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+    <style>
+
+		.eye.popBtn{transform: translate(0,9px);}
+
+		.toggle .answer {justify-content: flex-start;}
+
+
+
+
+		.popup_pages>li.whole.on {z-index:4}
+		.mathCalcContainer .answerBox .answer,
+		.mathCalcContainer input{text-align: center;}
+		.mathCalcContainer .inputBox.noline{border-color:transparent}
+		.mathCalcContainer .inputBox.noline input{color:#000;}
+
+
+		.pop_page_1 .img{
+			width: 100%;
+			height: 100%;
+			background:#fff url(./images/suh_p_0402_01_0010_201_1/suh_p_0402_01_0010_201_1_2.png) no-repeat 50% / contain;
+		}
+		.img-wrap {position: relative;text-align: center}
+		.img-wrap img {width: auto; height: 550px;}
+		.img-wrap .b1 {width: 277px;left: 36%;bottom: 14%;top: auto;line-height: 1;}
+		.img-wrap .b1.balloon.ctTail.left:after {top: 40%;}
+		.img-wrap .b2 {left: 67%;bottom: 34%;top: auto; width: auto; white-space: nowrap;line-height: 1;}
+		.img-wrap .b2.balloon.ctTail.bottom:after {left: 20%;}
+		.img-wrap [class*="text"] {position: absolute;transform: scale(.4)}
+		.img-wrap .colorBox {text-align: center;font-size: 30px;}
+		.img-wrap .text0 {left: 59.3%;top: 4.2%;font-size: 34px;}
+		.img-wrap .text1 {left: 31%;top: 9%;}
+		.img-wrap .text2 {left: 51.5%;top: 9%;}
+		.img-wrap .text3 {left: 31%;top: 29%;}
+		.img-wrap .text4 {left: 51.5%;top: 29%;}
+		.img-wrap .text5 {left: 31%;top: 49%;}
+		.img-wrap .text6 {left: 51.5%;top: 49%;}
+		.popup_pages>li.image .popup_closeBtn {right: 13.5%;}
+
+		.pop_page_1 [class*="text"] {position: absolute;transform: scale(.9)}
+		.pop_page_1 .colorBox {text-align: center;font-size: 30px;}
+		.pop_page_1 .text0 {left: 73.3%;top: 8%;font-size: 31px;}
+		.pop_page_1 .text1 { left: 26%;top: 20%;}
+		.pop_page_1 .text2 {left: 60%;top: 20%;}
+		.pop_page_1 .text3 { left: 26%;top: 44%;}
+		.pop_page_1 .text4 {left: 58.5%;top: 44%;}
+		.pop_page_1 .text5 { left: 27%;top: 72%;}
+		.pop_page_1 .text6 {left: 59%;top: 72%;}
+
+    </style>
+</head>
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/boy_2_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/girl_1_sprite.png" alt="스프라이트">
+	</div>
+<div id="wrap">
+	<header>
+		<div class="title">
+			선호가 지난주에 간식으로 먹은 설탕의 양은 10개입니다. 어떤   간식을 먹었는지 찾아봅시다.
+			<div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div>
+		</div>
+		
+	</header>
+    <main>
+        <div class="basicSlider contentsBox right" data-slide-container="main">
+            <!--   탭 버튼   -->
+            <ul class="basicSlider_tabs" data-tabs="">
+                <li data-hover="">문제</li>
+                <li data-hover="">계획</li>
+                <li data-hover="">실행</li>
+                <li data-hover="">반성</li>
+            </ul>
+            <ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+                    <ul class="contentsList">
+                        <li>
+                            <ins class="bullet circleDot"></ins>
+                            <div>
+                                <p class="mb_10">
+									구하려는 것은 무엇인가요?
+								</p>
+									<div class="toggle box" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<span class="bullet exam">예</span>
+											선호가 지난주에 먹은 간식입니다.
+										</div>
+									</div>
+									<div class="toggle box" data-toggle-obj="1-1">
+										<div class="answer" data-toggle-target="1-1">
+											<span class="bullet exam">예</span>
+											들어 있는 설탕의 합이 10개인 간식들입니다.
+										</div>
+									</div>
+                            </div>
+                        </li>
+                        <li>
+                            <ins class="bullet circleDot"></ins>
+                            <div>
+                                <p class="mb_10">
+									알고 있는 것은 무엇인가요?
+								</p>
+									<div class="toggle box mb_10" data-toggle-obj="2">
+										<div class="answer textAlignL" data-toggle-target="2">
+											<span class="bullet exam">예</span>
+											간식에 들어 있는 설탕의 양을 알고 있습니다.
+										</div>
+									</div>
+									<div class="toggle box mb_10" data-toggle-obj="2-1">
+										<div class="answer textAlignL" data-toggle-target="2-1">
+											<span class="bullet exam">예</span>
+											선호가 지난주에 간식으로 먹은 설탕의 양을 알고
+											있습니다.
+										</div>
+									</div>
+                            </div>
+                        </li>
+                    </ul>
+					<button class="dapCheckBtn" data-answer-btn="1"></button>
+                </li>
+
+				<li class="page_2" data-quiz="toggle">
+					<ul class="contentsList">
+						<li>
+							<ins class="bullet circleDot"></ins>
+							<div>
+								<p class="mb_10">
+									선호가 지난주에 먹은 간식은 몇 가지일까요?
+								</p>
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<span class="bullet exam">예</span>
+										간식이 1가지이면 설탕의 양이 10개가 될 수 없습니다.
+									</div>
+								</div>
+								<div class="toggle box" data-toggle-obj="1-1">
+									<div class="answer" data-toggle-target="1-1">
+										<span class="bullet exam">예</span>
+										간식이 5가지이면 설탕의 양이 10개가 넘습니다.
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<ins class="bullet circleDot"></ins>
+							<div>
+								<p class="mb_10">
+									알고 있는 것은 무엇인가요?
+								</p>
+								<div class="toggle box mb_10" data-toggle-obj="2">
+									<div class="answer textAlignL" data-toggle-target="2">
+										<span class="bullet exam">예</span>
+										설탕의 양을 더한 결과가 10개가 되는 경우가 있는지 어림해 보면 될 것 같습니다.
+									</div>
+								</div>
+								<div class="toggle box mb_10" data-toggle-obj="2-1">
+									<div class="answer textAlignL" data-toggle-target="2-1">
+										<span class="bullet exam">예</span>
+										덧셈 결과가 자연수인 분수들을 찾아 더해 봅니다.
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<button class="dapCheckBtn" data-answer-btn="1"></button>
+                </li>
+
+				<li class="page_3" data-quiz="toggle">
+					<ul class="contentsList">
+						<li>
+							<ins class="bullet circleDot"></ins>
+							<div>
+								<p class="mb_10">
+									생각한 방법으로 문제를 해결해 보세요.
+								</p>
+								<div class="toggle box" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<span class="bullet exam">예</span>
+										콜라와 초코파이를 더했습니다.
+									</div>
+								</div>
+								<div class="toggle box" data-toggle-obj="1-1">
+									<div class="answer" data-toggle-target="1-1">
+										<span class="bullet exam">예</span>
+										아이스크림과 오렌지주스를 더했습니다.
+									</div>
+								</div>
+								<div class="toggle box" data-toggle-obj="1-2">
+									<div class="answer" data-toggle-target="1-2">
+										<span class="bullet exam">예</span>
+										콜라, 사탕, 감자칩을 더하면 설탕의 양이 10개가 됩니다.
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<button class="dapCheckBtn" data-answer-btn="1"></button>
+                </li>
+
+				<li class="page_4">
+					<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding: 0;">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">
+												문제를 바르게 해결했는지 확인해 보고, 문제를 해결한 방법을 친구들에게 이야기해 보세요.
+											</p>
+											<div class="toggle box" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<span class="bullet exam">예</span>
+													6가지 간식에 들어 있는 설탕의 양을 더했습니다.
+												</div>
+											</div>
+											<div class="toggle box" data-toggle-obj="1-1">
+												<div class="answer flex-box" data-toggle-target="1-1" style="display: block">
+													<span class="bullet exam">예</span>
+													<div>
+														간식에 들어 있는 설탕의 양을 모두 가분수로 바꾼 후 덧셈 결과가
+														<div class="bunsuWrap inline" style="width: auto;">
+															<ul>
+																<li>40</li>
+																<li>4</li>
+															</ul>
+														</div>
+														이 되는 경우를 찾았습니다.
+													</div>
+												</div>
+											</div>
+											<div class="toggle box" data-toggle-obj="1-2">
+												<div class="answer" data-toggle-target="1-2">
+													<span class="bullet exam">예</span>
+													간식에 들어 있는 설탕의 양의 합이 자연수가 되는 경우를 찾은 후 10이 되는지 확인했습니다.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+
+							<li class="innerTab_2" data-quiz="toggle">
+								<ul class="contentsList">
+									<li>
+										<ins class="bullet circleDot"></ins>
+										<div>
+											<p class="mb_10">
+												문제를 바르게 해결했는지 확인해 보고, 문제를 해결한 방법을 친구들에게 이야기해 보세요.
+											</p>
+
+											<div class="aniWrap">
+												<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+											</div>
+
+											<style>
+												/*.page_4 .innerTab_2 .aniWrap{ position: relative;}*/
+												.page_4 .innerTab_2 .aniWrap .balloon { white-space: nowrap;transform: scale(.9)}
+											</style>
+
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+            </ul>
+        </div>
+    </main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="whole image pop_page_1" data-popup-page="1">
+				<div class="img"></div>
+				<div class="text0">각설탕 1개</div>
+				<div class="text1">
+					<div class="colorBox yellow">콜라</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							6<ul>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+				<div class="text2">
+					<div class="colorBox yellow">감자칩</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							1<ul>
+							<li>2</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+				<div class="text3">
+					<div class="colorBox yellow">오렌지주스</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							4<ul>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+				<div class="text4">
+					<div class="colorBox yellow">아이스크림</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							5<ul>
+							<li>1</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+				<div class="text5">
+					<div class="colorBox yellow">초코파이</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							3<ul>
+							<li>1</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+				<div class="text6">
+					<div class="colorBox yellow">사탕</div>
+					<div>
+						약
+						<div class="bunsuWrap inline">
+							1<ul>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+						</div>&nbsp;개
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
+
+<script type="text/javascript">
+	
+
+		window.$callBack.sliderReset=function(params) {
+			// $ts.getEl('.page_4 .characterImg')[0].style.left='38%';
+
+			// const calcInps = document.querySelectorAll('[data-calc-input]');
+
+			// for(let i = 0, len = calcInps.length; i < len; i++) {
+			// 	calcInps[i].value = '';
+			// }
+
+		};
+    	document.addEventListener('DOMContentLoaded', function () {
+			const reset=document.querySelectorAll('.resetBtn');
+			const tab=document.querySelectorAll('li[data-hover]');
+
+			for(let i=0, len=tab.length; i < len; i++) {
+				tab[i].addEventListener('click', function(){
+					var that=this;
+					setTimeout(function(){
+						for(let i=0, len=reset.length; i < len; i++) {
+							setTimeout(function(){
+								reset[i].classList.add('reset');
+							},0);
+						}
+					},0);
+				});
+			}
+
+			for(let i=0, len=reset.length; i < len; i++) {
+				setTimeout(function(){
+					reset[i].classList.add('reset');
+				},0);
+				
+				reset[i].addEventListener('click', function(){
+					var that=this;
+					setTimeout(function(){
+						that.classList.add('reset');
+					},0);
+				});
+			}
+
+			
+            // $prite.changeSpritePos=function(){}; // backgroundPosition 무한루프 방지
+            $prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_2',
+						// circle: 'sky',
+						speech:'right',
+						top: 30,
+						left: 335,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/girl_2.png',
+						spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+						sound: './media/audios/suh_p_0402_01_0010_201_2.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '나는 어림해서 덧셈 결과가 10개에 가까운<br>간식을 찾았는데 짝은 분수 부분만 따로 더해서 <br>자연수가 되는 간식을 찾아서 문제를 해결했어.',
+							class: 'balloon bottom orange ctTail',
+							top:88,
+							left: 200,
+							textAlign: 'center', 
+							wordBreak: 'keep-all',
+							whiteSpace: 'no-wrap',
+							transform: 'scale(.9)',
+						},
+						callbacks: {
+							start: function () {
+							}, // 시작시 콜백
+							end: function () {
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+        }, false);
+</script>
+</body>
+</html>
