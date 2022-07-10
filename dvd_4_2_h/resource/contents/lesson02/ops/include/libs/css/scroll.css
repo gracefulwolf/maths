@@ -1,0 +1,124 @@
+
+@charset "utf-8";
+
+/*─────────────────────────┐
+	name: scroll.css
+	data: 2018.09.11
+└─────────────────────────*/
+
+/**************************************************/
+/* scroll */
+/* 스크롤 사이즈 및 위치 값 조절은 container로 제어 */
+.scroll_container {
+	position: relative;
+	text-align: justify;
+	box-sizing: border-box;
+}
+/*.scroll_container.vertical { padding-right: 30px; }*/
+/*.scroll_container.horizon { padding-bottom: 30px; }*/
+.scroll_inner {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.scroll_content {
+	position: relative;
+	padding-bottom: 4px;
+	box-sizing: border-box;
+}
+.scroll_container.vertical .scroll_content {
+	width: 100%;
+	/*min-height: 600px;*/
+}
+.scroll_container.horizon .scroll_content { width: 1000px; height: 100%; }
+
+/* control - vertical */
+.scroll_container > .scroll_handleContainer.vertical {
+	position: absolute;
+	top: 0px;
+	right: -30px;
+	bottom: 0px;
+	width: 30px;
+}
+.scroll_handleContainer.vertical .scroll_bar {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	bottom: 0px;
+	width: 10px;
+	background: #eee;
+	border-radius: 50px;
+	cursor: pointer;
+}
+/* handler -> 실제 클릭(드래그) 가능한 영역 */
+.scroll_handleContainer.vertical .scroll_handler {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50px;
+	height: 30%;
+	text-align: center;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+/* handler:after; -> 화면에 보이는 영역 */
+.scroll_handleContainer.vertical .scroll_handler:after {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 100%;
+	background: #5040a3;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+/* control - horizon */
+.scroll_container > .scroll_handleContainer.horizon {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: -30px;
+	height: 30px;
+}
+.scroll_handleContainer.horizon .scroll_bar {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 10px;
+	height: 10px;
+	background: #eee;
+	border-radius: 50px;
+	cursor: pointer;
+}
+/* handler -> 실제 클릭(드래그) 가능한 영역 */
+.scroll_handleContainer.horizon .scroll_handler {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 30%;
+	height: 50px;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+/* handler:after; -> 화면에 보이는 영역 */
+.scroll_handleContainer.horizon .scroll_handler:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 10px;
+	background: #5040a3;
+	border-radius: 50px;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	cursor: pointer;
+}

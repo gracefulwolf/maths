@@ -1,0 +1,75 @@
+
+
+
+@charset "utf-8";
+
+
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 400px;
+}
+.flexBox > * {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.examBox {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  margin-right: 60px;
+  background: url(../images/4_1/4_1_3_01.svg) center / auto 82% no-repeat;
+}
+
+.quizContainer {
+  background: url(../images/4_1/4_1_3_02.svg) center / contain no-repeat;
+}
+
+
+.oxObj {
+  /* outline: 1px solid tomato; */
+  cursor: pointer;
+}
+.complete .oxObj,
+.oxObj.complete {
+  pointer-events: none;
+}
+
+.oxObj .icon {
+  opacity: 0;
+}
+
+.oxObj[data-ox-obj="1"] {
+  top: 192px;
+  left: 529px;
+  width: 60px;
+  height: 60px;
+  background: center / contain no-repeat;
+}
+.oxObj[data-ox-obj="2"] {
+  top: 187px;
+  left: 960px;
+}
+.oxObj[data-ox-obj="3"] {
+  top: 100px;
+  left: 873px;
+  width: 70px;
+  height: 70px;
+  background: center / contain no-repeat;
+}
+.oxObj[data-ox-obj="4"] {
+  top: 188px;
+  left: 788px;
+}
+
+.oxObj[data-ox-obj="1"].complete {
+  background-image: url(../images/4_1/4_1_3_answer_1.svg);
+}
+.oxObj[data-ox-obj="3"].complete {
+  background-image: url(../images/4_1/4_1_3_answer_2.svg);
+}

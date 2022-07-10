@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1100px;margin:0 auto 30px}
+      .oxObj{width:200px;height:70px;
+        /* background:rgba(0,0,0,0.5); */
+      }
+      .obj1{position: absolute;top:176px;left:321px}
+      .obj2{position: absolute;top:196px;left:588px}
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈</span>
+          <span>소수 두 자리 수의 뺄셈을 해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="70">수학<span>70~71</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="55">수학 익힘<span>55</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="55"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="5">그림을 보고 설명하는 수에 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer">
+              <figure><img src="images/3_8/3_8_5.svg" alt=""></figure>
+              <!-- <input type="text" class="maxWidth" data-input-obj="1" data-answer="9.19에 O표"> -->
+            </div>
+            <div class="oxObj obj1" data-ox-obj="1"><div class="icon icon_o" data-ox-target="1"></div></div>
+            <div class="oxObj obj2" data-ox-obj="2" data-answer=""><div class="icon icon_o" data-ox-target="2"></div></div>
+            <div class="displayN" data-ox-obj="3" data-ox-target="3" data-answer=""></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="flexListContainer">
+              <li>
+                12.34보다 3.15만큼 작은 수는 12.34<symbol class="minus"></symbol>3.15<symbol class="equal"></symbol>9.19입니다.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.js-buttons')[0];
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else{
+            oxObjs.forEach(function (obj) {
+              obj.classList.remove('on');
+              if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

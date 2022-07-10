@@ -1,0 +1,68 @@
+
+@charset "utf-8";
+
+/***************** drawLine *****************/
+.drawLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* top: 10px;
+  left: 10px;
+  width: 1260px;
+  height: 680px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dragObj {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: none;
+  z-index: 1;
+}
+
+.dragArea,
+.dropArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* canvas */
+.drawArea {
+  pointer-events: none;
+  /* outline: 1px solid tomato; */
+}
+
+.drawLine .resetButton {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff9603;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../math/images/quiz/icon_replay.svg);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, .2);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+.drawLine .resetButton.hover {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.drawLine .resetButton.off {
+  pointer-events: none;
+}
+
+/***************** drawLine End *****************/

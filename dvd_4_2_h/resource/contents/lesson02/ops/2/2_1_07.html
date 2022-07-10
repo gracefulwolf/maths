@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/2_1_7.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 삼각형</span>
+          <span>삼각형을 분류해 볼까요(1)</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="33">수학<span>33</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="26">수학 익힘<span>26</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="33"></div>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <h1 data-index="1">그림에서 이등변삼각형을 찾아 따라 그리고, 정삼각형은 색 칠해 보세요.</h1>
+          <section class="noUserSelect" data-quiz="dragDrop" data-option="answer,copy" data-quiz-name="drag_1">
+            <div class="imageBox">
+              <div class="balloonText">
+                두 가지 색으로 <br/>
+                구분해서 따라 그리고<br/>
+                색칠해 보자.
+              </div>
+              <img src="./images/2_1/2_1_7_bg.png" alt="" usemap="#image-map">
+              <div class="answerImage" data-after-target="drag_1" data-target="1"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="2"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="3"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="4"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="5"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="6"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="7"></div>
+              <div class="answerImage" data-after-target="drag_1" data-target="8"></div>
+              <map name="image-map">
+                <area class="js-dropArea dropArea" data-line="4" data-shape="1" data-drop-area-answer="shape,line" coords="575,59,622,228,748,104" shape="poly">
+                <area class="js-dropArea dropArea" data-line="5" data-shape="2" data-drop-area-answer="shape,line" coords="750,106,874,231,920,59" shape="poly">
+                <area class="js-dropArea dropArea" data-line="6" data-shape="3" data-drop-area-answer="shape,line" coords="932,252,1033,268,967,347" shape="poly">
+                <area class="js-dropArea dropArea" data-line="7" data-drop-area-answer="line" coords="823,484,994,420,931,251" shape="poly">
+                <area class="js-dropArea dropArea" data-line="8" data-drop-area-answer="line" coords="710,384,784,383,747,420" shape="poly">
+              </map>
+            </div>
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj circle red" data-drag-obj-answer="line" data-name="drag-obj"></div>
+              <div class="js-dragObj dragObj circle yellow" data-drag-obj-answer="shape" data-name="drag-obj"></div>
+            </div>
+            <div class="drawContainer">
+              <canvas id="draw0" class="canvas_1" width="525px" height="410px"></canvas>
+              <div class="drawBtn" data-parent="contentsArea"></div>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="drag_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        
+       // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+        /* window.$efSound.muted(true);
+        window.$efSound.correct(); // 정답 사운드
+        window.$efSound.incorrect(); // 오답 사운드
+
+        function setSound() {
+          if (isMuted) {
+            window.$efSound.muted(false);
+            isMuted = false;
+          }
+        }
+        var isMuted = true;
+        document.body.addEventListener('mousedown', setSound);
+        document.body.addEventListener('touchstart', setSound); */
+        // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+        
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          if (drawClear) drawClear(0);
+          document.querySelector('.canvas_1').classList.add('pointerOff');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          document.querySelector('.canvas_1').classList.remove('pointerOff');
+        }
+
+
+
+        function getEventData(event) {
+          var IsTouched = event.type.indexOf('touch') > -1;
+          var newEvent = IsTouched ? event.changedTouches[0] : event;
+          
+          return {
+            x: newEvent.clientX,
+            y: newEvent.clientY,
+          }
+        }
+        function getTarget(event) {
+          return document.elementFromPoint(getEventData(event).x, getEventData(event).y)
+        }
+
+        
+        window.dragDropCallbacks = {
+          "drag-obj": function(DRAGDROP) {
+            var getTarget = setInterval(function() {
+              if (curTarget) {
+                clearInterval(getTarget);
+
+                var objAnswer = DRAGDROP.movingObj.element.getAttribute('data-drag-obj-answer');
+                var targetAnswer = curTarget.getAttribute('data-drop-area-answer');
+
+                var target = curTarget.getAttribute('data-'+ objAnswer);
+
+                if (target) {
+                  var image = answerImages.filter(function(image) {
+                    return image.getAttribute('data-target') === target;
+                  })[0];
+                  
+                  if (image) {
+                    image.classList.add('on');
+                  } else window.$efSound.incorrect();
+                } else window.$efSound.incorrect(); 
+
+
+                
+                var isComplete = answerImages.filter(function(image) {
+                    return image.classList.contains('on');
+                }).length === answerImages.length;
+
+
+                if (isComplete) {
+                  $pm.array.quiz.inPage[1].complete();
+                }
+              }
+            }, 50);
+
+            setTimeout(function() {
+              clearInterval(getTarget);
+            }, 500)
+            
+          },
+        };
+              
+        var curTarget = null;
+        var answerImages = $ts.getEl('.answerImage');
+
+        document.addEventListener('mousedown', function(e) {
+          curTarget = null;
+        });
+        document.addEventListener('touchstart', function(e) {
+          curTarget = null;
+        });
+        document.addEventListener('mouseup', function(e) {
+          curTarget = getTarget(e);
+        });
+        document.addEventListener('touchend', function(e) {
+          curTarget = getTarget(e);
+        });
+      });
+    </script>
+  </body>
+</html>

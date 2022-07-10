@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./css/3_2_13.css">
+    <style></style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈</span>
+          <span>소수 세 자리 수를 알아볼까요</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="59">수학<span>59</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="42">수학 익힘<span>42</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="59"></div>
+      </header>
+      <main class="act quiz">
+        <div class="contentsArea">
+          <h1 data-index="1">샛별이가 설명하는 소수를 쓰고 읽은 뒤, 수직선에 나타내 보세요.</h1>
+          <section>
+            <ins class="draw"></ins>
+            <flex data-quiz="input" data-quiz-name="input_1">
+              <img src="images/3_2/3_2_13_01.png" alt="" class="img_01">
+              
+              <div class="right">
+                <ins class="write"></ins><input type="text" class="inlineBox" data-input-obj="1" data-answer="3.734">
+                <ins class="read"></ins><input type="text" class="inlineBox" data-input-obj="1" data-answer="삼 점 칠삼사">
+              </div>
+            </flex>
+            <div class="balloonText posBalloon">
+              일의 자리 숫자가 3,<br/>
+              소수 첫째 자리 숫자가 7,<br/>
+              소수 둘째 자리 숫자가 3,<br/>
+              소수 셋째 자리 숫자가 4인<br/>
+              소수입니다.
+            </div>
+            <div class="nameBox">샛별</div>
+            <img src="images/3_2/3_2_13_02.svg" alt="" class="img_02">
+
+            <div data-quiz="ox" data-quiz-name="ox_1">
+              <ul class="flex-box lineContainer">
+                <li class="oxObj" data-ox-obj="1" data-ox-target="1"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="2" data-ox-target="2"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="3" data-ox-target="3"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="4" data-ox-target="4"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="5" data-ox-target="5"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="6" data-ox-target="6"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="7" data-ox-target="7" data-answer=""><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="8" data-ox-target="8"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="9" data-ox-target="9"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="10" data-ox-target="10"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="11" data-ox-target="11"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="12" data-ox-target="12"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="13" data-ox-target="13"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="14" data-ox-target="14"><ins class="thinArrow red top"></ins></li>
+                <li class="oxObj" data-ox-obj="15" data-ox-target="15"><ins class="thinArrow red top"></ins></li>
+                <li class="displayN" data-ox-obj="16" data-ox-target="16" data-answer=""><ins class="thinArrow red top"></ins></li>
+              </ul>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="input_1, ox_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.quizButtons');
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if(this.className.indexOf('reset') === -1){ }
+            else{
+              oxObjs.forEach(function (obj) {
+                obj.classList.remove('on');
+                if(obj.hasAttribute('data-answer'))  obj.classList.add('on');
+              })
+            }
+          })
+        })
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  math css -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style>
+		/* 기본 스타일 */
+		.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.popup_pages .downloadBtn { bottom:20px;}
+		.popup_pages ins.number {margin: 6px 10px 0 0;width: 40px;height: 40px;line-height: 1.8em;text-align: center;font-size: 22px;letter-spacing: 0;border-radius: 10px;color: #6dbc4b;border: 2px solid #6dbc4b;background-color: #fff;}
+		img{width:100%}
+		.img-wrap {position: relative;}
+		.img-wrap img {width:auto; height: 100%;}
+		.bs-item {display: flex; align-items: center;gap: 8px;}
+		.numbering li {position: absolute; }
+		.num-list > .bullet{margin:4px 10px 0 0;}
+		.flex-center {display: flex;align-items: center;justify-content: center;}
+		.operator {display: inline-block;padding: 0 10px;vertical-align: middle;}
+		.picture-box {position:relative;background-repeat:no-repeat;background-position:50% 50%;height: 420px;margin:0 auto}
+		.picture-box .txt-box {position:absolute;text-align:center;font-size:34px;line-height:40px;/* letter-spacing:-1px */}
+		.innerTab_1 .picture-box {background-image:url("../suhi_p_0402_01_0003/images/suhi_p_0402_01_0003_8.png");width: 100%;background-size:auto 420px;}
+		.innerTab_1 .n1 {top: 28px;left: 293px;}
+		.innerTab_1 .n2 {top: 101px;left: 613px;}
+
+
+		/*page_0 개념정리 */
+		.page_0 .img-wrap{width:100%; padding:30px 10%; box-sizing: border-box;}
+
+		/* 1번 */
+		.fx-1 {align-items: center;}
+		.page_1 .fx-1 {position:relative; align-items: center;height: 270px;}
+		.pop_page_1 .fx-1 {position:relative; align-items: center;height: 330px;}
+		.flex-item {flex: 1;}
+		.flex-item.n1 {flex: 3;text-align: center;padding-left: 60px;}
+		.aniWrap {position: relative;z-index: 1;}
+		/* 애니 박스에서 분수 한줄로 처리 */
+		#aniBox_1 .balloon.green > span {display:block; width: 325px;}
+		figure {position: relative}
+		figure .click-finger-Btn {position: absolute;top: 50%;transform: translateY(-50%);width: 51px !important; }
+		figure .bullet.exam {position: absolute;left: 0;display: none;}
+		figure.complete .bullet.exam {display: block; }
+		.page_1 figure {width: auto;height: 240px;background: url(./images/suhi_p_0402_01_0005_2.png) center right / contain no-repeat;}
+		.page_1 figure.on {background: url(./images/suhi_p_0402_01_0005_3.png) center right / contain no-repeat;}
+		.page_1 figure .click-finger-Btn {right: 47%;}
+		.page_1 figure .exam {left: -60px;top: 60px;}
+		#aniBox_1 .balloon.green > span,
+		#aniBox_2 .balloon.green > span {display:block; width:100%;}
+		.characterWrap+.balloon.bottom:after {left: 70%;}
+		.pop_page_1 figure {width: auto;height: 240px;background: url(./images/suhi_p_0402_01_0005_4.png) center right / contain no-repeat;}
+		.pop_page_1 figure.on {background: url(./images/suhi_p_0402_01_0005_5.png) center right / contain no-repeat;}
+		.pop_page_1 figure .click-finger-Btn {right: 47%;}
+		.pop_page_1 figure .exam {left: -60px;top: 60px;}
+
+		/* 2번 */
+		.page_2 .img-wrap {width: 900px;height: 200px;margin:0 auto;}
+		.page_2 .img-wrap img { width: 100%;}
+		.page_2 .numbering li {top: 45%; }
+		.page_2 .numbering li:nth-child(1) {left: -1.3%; }
+		.page_2 .numbering li:nth-child(2) {left: 23%; }
+		.page_2 .numbering li:nth-child(3) {left: 47%; }
+		.page_2 .numbering li:nth-child(4) {right: 26%; }
+		.page_2 .numbering li:nth-child(5) {right: 2%; }
+		.page_2 .img-wrap .bunsuWrap {position: absolute;}
+		.page_2 .n1 {top: -27%;left: 36.5%;}
+		.page_2 .n2 {bottom: -22%;left: 22%;}
+		.page_2 .n3 {bottom: -20.5%;right: 28.5%}
+		.pop_page_3 .img-wrap {width: 900px;height: 200px;margin:0 auto;}
+		.pop_page_3 .img-wrap img {width: 100%;}
+		.pop_page_3 .numbering li {top: 45%; }
+		.pop_page_3 .numbering li:nth-child(1) {left: -1.3%; }
+		.pop_page_3 .numbering li:nth-child(2) {left: 23%; }
+		.pop_page_3 .numbering li:nth-child(3) {left: 47%; }
+		.pop_page_3 .numbering li:nth-child(4) {right: 26%; }
+		.pop_page_3 .numbering li:nth-child(5) {right: 2%; }
+		.pop_page_3 .img-wrap .bunsuWrap {position: absolute;}
+		.pop_page_3 .n1 {top: -27%;left: 41%;}
+		.pop_page_3 .n2 {bottom: -22%;left: 27%;}
+		.pop_page_3 .n3 {bottom: -20.5%;right: 19%}
+
+		/* 3번 */
+		.ox-content {position:relative;width:1000px;margin:0 auto; display: flex;justify-content: space-around;flex-wrap:wrap;}
+		.ox-content .bunsu-item {width: 25%;text-align: center;padding: 20px;}
+		.ox-content [class*='ox-'] {position:absolute;width: 160px;height:100px;}
+		.ox-content [class*='ox-'] .choice {text-align: center;}
+		.ox-content [class*='ox-'] .icon {width:100px;height:100px;display: inline-block;}
+		.ox-content .ox-1 {left:50px;top: 25px;}
+		.ox-content .ox-2 {left:295px;top: 25px;}
+		.ox-content .ox-3 {right:290px; bottom:25px;}
+		.ox-content .ox-4 {right:50px; bottom:25px;}
+
+		/* 4번 */
+		.num-4 {display:flex; flex-wrap: wrap;}
+		.num-4 > li {width: 50%; padding-left: 12%;margin-bottom: 60px;}
+
+
+
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						분수의 뺄셈을 해 볼까요(2)
+					</span>
+					<span class="sub-page">
+						18~19쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">개념 정리</li>
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<!-- 개념정리 -->
+					<li class="page_0" >
+						<h2>
+							<ins class="special type2"></ins>
+							<span></span>
+						</h2>
+						
+						<section class="full">
+							<div class="img-wrap">
+								<img src="./images/suhi_p_0402_01_0005_1.png" alt="">
+							</div>
+							
+						</section>
+					</li>
+
+					<!-- 1번  -->
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="number">1</ins>
+							<span style="margin-top: -14px;">
+								<div class="bunsuWrap inline">
+								    3<ul>
+								        <li>4</li>
+								        <li>6</li>
+								    </ul>
+								</div>－<div class="bunsuWrap inline">
+								    2<ul>
+								        <li>2</li>
+								        <li>6</li>
+								    </ul>
+								</div>을 그림으로 나타내 얼마인지 알아보세요.
+							</span>
+						</h2>
+
+						<!-- content -->
+						<section class="full">
+
+							<div class="flex-box fx-1">
+								<div class="flex-item n1">
+									<figure class="figure mt_70" data-toggle-obj="10" data-toggle-target="10">
+										<span class="bullet exam">예</span>
+										<span class="click-finger-Btn blinkOn blinkOpacity"></span>
+									</figure>
+								</div>
+								<div class="flex-item">
+									<div class="aniWrap">
+										<div id="aniBox_1" class="flexListContainer center jcenter"></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="textAlignC mt_40">
+								<div class="bunsuWrap inline">
+								    3<ul>
+								        <li>4</li>
+								        <li>6</li>
+								    </ul>
+								</div>－<div class="bunsuWrap inline">
+								    2<ul>
+								        <li>2</li>
+								        <li>6</li>
+								    </ul>
+								</div>＝(<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">3</div>
+							</div>－<div class="toggle" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">2</div>
+							</div>)＋(<div class="bunsuWrap inline">
+								    <ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="3">
+											    <div class="answer" data-toggle-target="3">4</div>
+											</div>
+										</li>
+								        <li>6</li>
+								    </ul>－<div class="bunsuWrap inline">
+									    <ul>
+									        <li>
+												<div class="toggle" data-toggle-obj="4">
+												    <div class="answer" data-toggle-target="4">2</div>
+												</div>
+											</li>
+									        <li>6</li>
+									    </ul>
+									</div>)＝<div class="toggle" data-toggle-obj="5">
+									    <div class="answer" data-toggle-target="5">1</div>
+									</div>＋<div class="bunsuWrap inline">
+									    <ul>
+									        <li>
+												<div class="toggle" data-toggle-obj="5">
+												    <div class="answer" data-toggle-target="5">2</div>
+												</div>
+											</li>
+									        <li>6</li>
+									    </ul>
+									</div>＝<div class="toggle" data-toggle-obj="6">
+									    <div class="answer" data-toggle-target="6">1</div>
+									</div>
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>
+												<div class="toggle" data-toggle-obj="7">
+													<div class="answer" data-toggle-target="7">2</div>
+												</div>
+											</li>
+									        <li>6</li>
+									    </ul>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="1-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+
+					<!-- 2번 : -->
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="number">2</ins>
+							<span style="letter-spacing: -1.2px;">
+							그림을 이용하여
+								<div class="bunsuWrap inline">
+								    3<ul>
+								        <li>2</li>
+								        <li>5</li>
+								    </ul>
+								</div>－<div class="bunsuWrap inline">
+								    1<ul>
+								        <li>1</li>
+								        <li>5</li>
+								    </ul>
+								</div>이 얼마인지 알아보세요.</span>
+						</h2>
+						<section class="full">
+
+							<div class="img-wrap textAlignC mt_40">
+								<img src="./images/suhi_p_0402_01_0005_6.png" alt="">
+								<ul class="numbering">
+									<li>0</li>
+									<li>1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<div class="bunsuWrap inline n1">
+									<ul>
+										<li>
+											<div class="toggle" data-toggle-obj="1">
+											    <div class="answer" data-toggle-target="1">17</div>
+											</div>
+										</li>
+										<li>5</li>
+									</ul>
+								</div>
+								<div class="bunsuWrap inline n2">
+									<ul>
+										<li>
+											<div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">11</div>
+											</div>
+										</li>
+										<li>5</li>
+									</ul>
+								</div>
+								<div class="bunsuWrap inline n3">
+									<ul>
+										<li>
+											<div class="toggle" data-toggle-obj="3">
+											    <div class="answer" data-toggle-target="3">6</div>
+											</div>
+										</li>
+										<li>5</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="textAlignC mt_50">
+								    
+								<div class="bunsuWrap inline">
+									3<ul>
+								        <li>2</li>
+								        <li>5</li>
+								    </ul>
+								</div>－<div class="bunsuWrap inline">
+								1<ul>
+								        <li>1</li>
+								        <li>5</li>
+								    </ul>
+								</div>＝<div class="bunsuWrap inline">
+								    <ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="1">
+											    <div class="answer" data-toggle-target="1">17</div>
+											</div>
+										</li>
+								        <li>5</li>
+								    </ul>
+								</div>－<div class="bunsuWrap inline">
+								    <ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="2">
+											    <div class="answer" data-toggle-target="2">6</div>
+											</div>
+										</li>
+								        <li>5</li>
+								    </ul>
+								</div>＝<div class="bunsuWrap inline">
+								    <ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="3">
+											    <div class="answer" data-toggle-target="3">17</div>
+											</div>－<div class="toggle" data-toggle-obj="4">
+											    <div class="answer" data-toggle-target="4">6</div>
+											</div>
+										</li>
+								        <li>5</li>
+								    </ul>
+								</div>＝<div class="bunsuWrap inline">
+								    <ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="5">
+											    <div class="answer" data-toggle-target="5">11</div>
+											</div>
+										</li>
+								        <li>5</li>
+								    </ul>
+								</div>＝<div class="bunsuWrap inline">
+									<div class="toggle" data-toggle-obj="6">
+										<div class="answer" data-toggle-target="6">2</div>
+									</div><ul>
+								        <li>
+											<div class="toggle" data-toggle-obj="7">
+											    <div class="answer" data-toggle-target="7">1</div>
+											</div>
+										</li>
+								        <li>5</li>
+								    </ul>
+								</div>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="2-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 3번 : OX -->
+					<li class="page_3" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<h2>
+							<ins class="number">3</ins>
+							<span>
+								계산 결과가 2보다 큰 뺄셈식을 모두 찾아
+								<span class="icon_o_title"></span>표 하세요.
+							</span>
+						</h2>
+						<section class="full">
+
+							<div class="ox-content mt_100 lineBox green">
+								<div class="bunsu-item">
+									<div class="bunsuWrap inline">
+										3<ul>
+										<li>4</li>
+										<li>6</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+										1<ul>
+										<li>3</li>
+										<li>6</li>
+									</ul>
+									</div>
+								</div>
+								<div class="bunsu-item">
+									<div class="bunsuWrap inline">
+										3<ul>
+										<li>3</li>
+										<li>5</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+										2<ul>
+										<li>1</li>
+										<li>5</li>
+									</ul>
+									</div>
+								</div>
+								<div class="bunsu-item">
+									<div class="bunsuWrap inline">
+										4<ul>
+										<li>2</li>
+										<li>4</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+										3<ul>
+										<li>1</li>
+										<li>4</li>
+									</ul>
+									</div>
+								</div>
+								<div class="bunsu-item">
+									<div class="bunsuWrap inline">
+										5<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+										2<ul>
+										<li>3</li>
+										<li>7</li>
+									</ul>
+									</div>
+								</div>
+
+								<div class="ox-1">
+									<div class="choice" data-ox-obj="1" data-answer>
+										<div class="icon icon_o" data-ox-target="1"></div>
+									</div>
+								</div>
+								<div class="ox-2">
+									<div class="choice" data-ox-obj="2" data-answer>
+										<div class="icon icon_x" data-ox-target="2"></div>
+									</div>
+								</div>
+								<div class="ox-3">
+									<div class="choice" data-ox-obj="3" data-answer>
+										<div class="icon icon_x" data-ox-target="3"></div>
+									</div>
+								</div>
+								<div class="ox-4">
+									<div class="choice" data-ox-obj="4" data-answer>
+										<div class="icon icon_o" data-ox-target="4"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="3-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4" data-quiz="toggle"  >
+						<h2>
+							<ins class="number">4</ins>
+							<span>
+								계산해 보세요.
+							</span>
+						</h2>
+						<section class="full">
+
+							<ul class="num-4 mt_60">
+								<li>
+									<div class="bunsuWrap inline">
+										2<ul>
+											<li>5</li>
+											<li>7</li>
+										</ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+										<li>2</li>
+										<li>7</li>
+									</ul>
+								</div>＝<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										<div class="bunsuWrap inline">
+											1<ul>
+												<li>3</li>
+												<li>7</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								</li>
+								<li>
+									<div class="bunsuWrap inline">
+										2<ul>
+											<li>6</li>
+											<li>10</li>
+										</ul>
+									</div>－<div class="bunsuWrap inline">
+									2<ul>
+										<li>3</li>
+										<li>10</li>
+									</ul>
+								</div>＝<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										<div class="bunsuWrap inline">
+											<ul>
+											<li>3</li>
+											<li>10</li>
+										</ul>
+										</div>
+									</div>
+								</div>
+								</li>
+								<li style=" width: 100%; text-align: center;">
+									<div class="bunsuWrap inline">
+										2<ul>
+											<li>7</li>
+											<li>8</li>
+										</ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+										<li>5</li>
+										<li>8</li>
+									</ul>
+								</div>＝<div class="toggle" data-toggle-obj="3">
+									<div class="answer" data-toggle-target="3">
+										<div class="bunsuWrap inline">
+											1<ul>
+											<li>2</li>
+											<li>8</li>
+										</ul>
+										</div>
+									</div>
+								</div>
+								</li>
+
+							</ul>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="4-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number">5</ins>
+							<span style="margin-top: -14px;">
+								물 20<div class="bunsuWrap inline">
+								    <ul>
+								        <li>7</li>
+								        <li>10</li>
+								    </ul>
+								</div>&nbsp;
+								L가 있었습니다. 세수를 한 후 물 15
+								<div class="bunsuWrap inline">
+								    <ul>
+								        <li>3</li>
+								        <li>11</li>
+								    </ul>
+								</div>&nbsp;
+								L가 남았다면, 사용한 물은 몇 L인가요?
+							</span>
+						</h2>
+						<section class="full">
+
+
+							<div style="width: 500px;margin: 50px auto;">
+								<div class="flex-box a-center">
+									<div class="colorBox skyBlue check" style="margin-right: 40px;">식</div>
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<div class="bunsuWrap inline">
+											    20<ul>
+											        <li>7</li>
+											        <li>11</li>
+											    </ul>
+											</div>－
+											<div class="bunsuWrap inline">
+											    15<ul>
+											        <li>3</li>
+											        <li>11</li>
+											    </ul>
+											</div>
+											＝
+											<div class="bunsuWrap inline">
+											    5<ul>
+											        <li>4</li>
+											        <li>11</li>
+											    </ul>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="flex-box a-center mt_40">
+									<div class="colorBox purple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">
+											5<div class="bunsuWrap inline">
+												<ul>
+													<li>4</li>
+													<li>11</li>
+												</ul>
+											</div>
+										</div>
+									</div>&nbsp;L
+								</div>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="5-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5-3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 6번 -->
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="number star">6</ins>
+							<div style="letter-spacing: 1.5px">1부터 6까지의 수 중 4개를 골라 한 번씩만 사용하여 계산     결과가 가장 큰 뺄셈식을 만들고, 계산해 보세요.</div>
+						</h2>
+
+						<section class="full">
+
+							<div class="flex-center mt_80">
+								<div class="lineBox green mr_60">
+									<div class="toggle" data-toggle-obj="1">
+									    <div class="answer" data-toggle-target="1">6</div>
+									</div>
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>
+												<div class="toggle" data-toggle-obj="2">
+												    <div class="answer" data-toggle-target="2">5</div>
+												</div>
+											</li>
+									        <li>7</li>
+									    </ul>
+									</div>－<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">1</div>
+									</div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>
+												<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">2</div>
+												</div>
+											</li>
+											<li>7</li>
+										</ul>
+									</div>
+
+								</div>
+								<div class="flex-box a-center mt_20">
+									<div class="colorBox purple check" style="margin-right: 40px;color: #fff;">답</div>
+									<div class="toggle complete" data-toggle-obj="2">
+										<div class="answer on" data-toggle-target="2">
+											<div class="bunsuWrap inline">
+												5<ul>
+													<li>3</li>
+													<li>7</li>
+												</ul>
+											</div>
+										</div>
+									</div>&nbsp;L
+								</div>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="6-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+								<button class="characterBtn" data-popup-btn="6-3" data-hover="">
+									<span>한번 더!</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="6-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+
+							
+						</section>
+					</li>
+
+					
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+
+				<!-- 1번 쌍둥이 문제 -->
+				<li class="whole pop_page_1" data-popup-page="1-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="number">1</ins>
+								<div>
+									<div style="margin-top: -14px;">
+										<div class="bunsuWrap inline">
+											3<ul>
+											<li>4</li>
+											<li>5</li>
+										</ul>
+										</div>－<div class="bunsuWrap inline">
+											2<ul>
+											<li>3</li>
+											<li>5</li>
+										</ul>
+										</div>을 그림으로 나타내 얼마인지 알아보세요.
+									</div>
+
+									<div>
+										<div class="flex-box fx-1">
+											<div class="flex-item n1">
+												<figure class="figure" data-toggle-obj="10" data-toggle-target="10">
+													<span class="bullet exam">예</span>
+													<span class="click-finger-Btn blinkOn blinkOpacity"></span>
+												</figure>
+											</div>
+											<div class="flex-item">
+												<div class="aniWrap">
+													<div id="aniBox_2" class="flexListContainer center jcenter"></div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="textAlignC">
+											<div class="bunsuWrap inline">
+												3<ul>
+													<li>4</li>
+													<li>5</li>
+												</ul>
+											</div>－<div class="bunsuWrap inline">
+												2<ul>
+													<li>3</li>
+													<li>5</li>
+												</ul>
+											</div>＝(<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">3</div>
+											</div>－<div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">2</div>
+											</div>)＋(<div class="bunsuWrap inline">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="3">
+															<div class="answer" data-toggle-target="3">4</div>
+														</div>
+													</li>
+													<li>5</li>
+												</ul>－<div class="bunsuWrap inline">
+													<ul>
+														<li>
+															<div class="toggle" data-toggle-obj="4">
+																<div class="answer" data-toggle-target="4">3</div>
+															</div>
+														</li>
+														<li>5</li>
+													</ul>
+												</div>)＝<div class="toggle" data-toggle-obj="5">
+													<div class="answer" data-toggle-target="5">1</div>
+												</div>＋<div class="bunsuWrap inline">
+													<ul>
+														<li>
+															<div class="toggle" data-toggle-obj="5">
+																<div class="answer" data-toggle-target="5">1</div>
+															</div>
+														</li>
+														<li>5</li>
+													</ul>
+												</div>＝<div class="toggle" data-toggle-obj="6">
+													<div class="answer" data-toggle-target="6">1</div>
+												</div><div class="bunsuWrap inline">
+													<ul>
+														<li>
+															<div class="toggle" data-toggle-obj="7">
+																<div class="answer" data-toggle-target="7">1</div>
+															</div>
+														</li>
+														<li>5</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 1번 풀이 확인 -->
+				<li class="solve pop_page_2" data-popup-page="1-2">
+					<div class="popup_contents">
+						<div style="margin-bottom: 10px;">
+							<span class="colorBox skyBlue check" style="width: 167px;display: inline-block">자연수 부분</span>
+							3칸에서 2칸을 빼면 1칸이므로 1이 됩니다.
+						</div>
+						<div style="letter-spacing: -3px">
+							<span class="colorBox skyBlue check" style="width: 167px;display:inline-block;text-align: center;">분수 부분</span>
+							4칸에서 2칸을 빼면 2칸이므로
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>6</li>
+								</ul>
+							</div>이 2개인
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>2</li>
+									<li>6</li>
+								</ul>
+							</div>가 됩니다.
+						</div>
+						<div>
+							<div class="bunsuWrap inline">
+								3<ul>
+								<li>4</li>
+								<li>6</li>
+							</ul>
+							</div>－<div class="bunsuWrap inline">
+							2<ul>
+							<li>2</li>
+							<li>6</li>
+						</ul>＝(3－2)＋(<div class="bunsuWrap inline">
+							<ul>
+								<li>4</li>
+								<li>6</li>
+							</ul>
+						</div>－<div class="bunsuWrap inline">
+							<ul>
+								<li>2</li>
+								<li>6</li>
+							</ul>
+						</div>)＝<div class="bunsuWrap inline">
+							1<ul>
+							<li>2</li>
+							<li>6</li>
+						</ul>
+						</div>
+						</div>
+						</div>
+				</li>
+
+				<!-- 2번 쌍둥이문제 -->
+				<li class="whole pop_page_3" data-popup-page="2-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="number">2</ins>
+								<div>
+									<div style="letter-spacing: -1.2px;margin-top: -14px;">
+									그림을 이용하여
+										<div class="bunsuWrap inline">
+											3<ul>
+												<li>4</li>
+												<li>5</li>
+											</ul>
+										</div>－<div class="bunsuWrap inline">
+											1<ul>
+												<li>1</li>
+												<li>5</li>
+											</ul>
+										</div>이 얼마인지 알아보세요.</div>
+
+									<div>
+
+										<div class="img-wrap textAlignC mt_60">
+											<img src="./images/suhi_p_0402_01_0005_7.png" alt="">
+											<ul class="numbering">
+												<li>0</li>
+												<li>1</li>
+												<li>2</li>
+												<li>3</li>
+												<li>4</li>
+											</ul>
+											<div class="bunsuWrap inline n1">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="1">
+															<div class="answer" data-toggle-target="1">19</div>
+														</div>
+													</li>
+													<li>5</li>
+												</ul>
+											</div>
+											<div class="bunsuWrap inline n2">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="2">
+															<div class="answer" data-toggle-target="2">13</div>
+														</div>
+													</li>
+													<li>5</li>
+												</ul>
+											</div>
+											<div class="bunsuWrap inline n3">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="3">
+															<div class="answer" data-toggle-target="3">6</div>
+														</div>
+													</li>
+													<li>5</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="textAlignC mt_80">
+
+											<div class="bunsuWrap inline">
+												3<ul>
+												<li>2</li>
+												<li>5</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											1<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+										</div>＝<div class="bunsuWrap inline">
+											<ul>
+												<li>
+													<div class="toggle" data-toggle-obj="1">
+														<div class="answer" data-toggle-target="1">19</div>
+													</div>
+												</li>
+												<li>5</li>
+											</ul>
+										</div>－<div class="bunsuWrap inline">
+											<ul>
+												<li>
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">6</div>
+													</div>
+												</li>
+												<li>5</li>
+											</ul>
+										</div>＝<div class="bunsuWrap inline">
+											<ul>
+												<li>
+													<div class="toggle" data-toggle-obj="3">
+														<div class="answer" data-toggle-target="3">19</div>
+													</div>－<div class="toggle" data-toggle-obj="4">
+													<div class="answer" data-toggle-target="4">6</div>
+												</div>
+												</li>
+												<li>5</li>
+											</ul>
+										</div>＝<div class="bunsuWrap inline">
+											<ul>
+												<li>
+													<div class="toggle" data-toggle-obj="5">
+														<div class="answer" data-toggle-target="5">13</div>
+													</div>
+												</li>
+												<li>5</li>
+											</ul>
+										</div>＝<div class="bunsuWrap inline">
+											<div class="toggle" data-toggle-obj="6">
+												<div class="answer" data-toggle-target="6">2</div>
+											</div><ul>
+											<li>
+												<div class="toggle" data-toggle-obj="7">
+													<div class="answer" data-toggle-target="7">3</div>
+												</div>
+											</li>
+											<li>5</li>
+										</ul>
+										</div>
+										</div>
+
+									</div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이 확인-->
+				<li class="solve pop_page_4" data-popup-page="2-2">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div>
+									<div class="bunsuWrap inline">
+									    3<ul>
+									        <li>2</li>
+									        <li>5</li>
+									    </ul>
+									</div>는
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>17</li>
+									        <li>7</li>
+									    </ul>
+									</div>이고
+									<div class="bunsuWrap inline">
+									    1<ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>은
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>6</li>
+									        <li>5</li>
+									    </ul>
+									</div>입니다.
+								</div>
+							</li>
+							<li>
+								<div>
+									그림에서 작은 눈금 한 칸은 
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>을 나타내고 17－6＝11이므로
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="bunsuWrap inline">
+									    3<ul>
+									        <li>2</li>
+									        <li>5</li>
+									    </ul>
+									</div>－<div class="bunsuWrap inline">
+									    1<ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>은
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>11</li>
+									        <li>5</li>
+									    </ul>
+									</div>(＝<div class="bunsuWrap inline">
+									    2<ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>)입니다.
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="bunsuWrap inline">
+									    3<ul>
+									        <li>2</li>
+									        <li>5</li>
+									    </ul>
+									</div>－<div class="bunsuWrap inline">
+										1<ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>＝<div class="bunsuWrap inline">
+									    <ul>
+									        <li>17</li>
+									        <li>5</li>
+									    </ul>
+									</div>－<div class="bunsuWrap inline">
+									    <ul>
+									        <li>6</li>
+									        <li>5</li>
+									    </ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>17－6</li>
+									        <li>5</li>
+									    </ul>
+									</div>＝
+									<div class="bunsuWrap inline">
+									    <ul>
+									        <li>11</li>
+									        <li>5</li>
+									    </ul>
+									</div>＝<div class="bunsuWrap inline">
+									    2<ul>
+									        <li>1</li>
+									        <li>5</li>
+									    </ul>
+									</div>
+
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- 3번 쌍둥이 문제 -->
+				<li class="whole pop_page_5" data-popup-page="3-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">3</ins>
+								<div>
+									<p class="mb_10">
+										계산 결과가 2보다 큰 뺄셈식을 모두 찾아
+										<span class="icon_o_title"></span>표 하세요.
+									</p>
+
+									<div class="ox-content lineBox green" style="margin-top: 160px;">
+										<div class="bunsu-item">
+											<div class="bunsuWrap inline">
+												3<ul>
+												<li>3</li>
+												<li>4</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											2<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+										</div>
+										</div>
+										<div class="bunsu-item">
+											<div class="bunsuWrap inline">
+												5<ul>
+												<li>4</li>
+												<li>6</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											2<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+										</div>
+										</div>
+										<div class="bunsu-item">
+											<div class="bunsuWrap inline">
+												4<ul>
+												<li>3</li>
+												<li>5</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											3<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+										</div>
+										</div>
+										<div class="bunsu-item">
+											<div class="bunsuWrap inline">
+												3<ul>
+												<li>5</li>
+												<li>7</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											1<ul>
+											<li>3</li>
+											<li>7</li>
+										</ul>
+										</div>
+										</div>
+
+										<div class="ox-1">
+											<div class="choice" data-ox-obj="1" data-answer>
+												<div class="icon icon_x" data-ox-target="1"></div>
+											</div>
+										</div>
+										<div class="ox-2">
+											<div class="choice" data-ox-obj="2" data-answer>
+												<div class="icon icon_o" data-ox-target="2"></div>
+											</div>
+										</div>
+										<div class="ox-3">
+											<div class="choice" data-ox-obj="3" data-answer>
+												<div class="icon icon_x" data-ox-target="3"></div>
+											</div>
+										</div>
+										<div class="ox-4">
+											<div class="choice" data-ox-obj="4" data-answer>
+												<div class="icon icon_o" data-ox-target="4"></div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 3번 풀이 확인 -->
+				<li class="solve pop_page_6" data-popup-page="3-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+									    3<ul>
+									        <li>4</li>
+									        <li>6</li>
+									    </ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+									<li>3</li>
+									<li>6</li>
+								</ul>
+								</div>＝(3－1)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>4</li>
+										<li>6</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>3</li>
+										<li>6</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									2<ul>
+										<li>1</li>
+										<li>6</li>
+									</ul>
+								</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										3<ul>
+										<li>3</li>
+										<li>5</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									2<ul>
+									<li>1</li>
+									<li>5</li>
+								</ul>
+								</div>＝(3－2)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>3</li>
+										<li>5</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>5</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									1<ul>
+									<li>2</li>
+									<li>5</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										4<ul>
+										<li>2</li>
+										<li>4</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									3<ul>
+									<li>1</li>
+									<li>4</li>
+								</ul>
+								</div>＝(4－3)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>4</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>1</li>
+										<li>4</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									1<ul>
+									<li>1</li>
+									<li>4</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										5<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									2<ul>
+									<li>3</li>
+									<li>7</li>
+								</ul>
+								</div>＝(5－2)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>3</li>
+										<li>7</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									3<ul>
+									<li>2</li>
+									<li>7</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+				<li class="solve pop_page_7" data-popup-page="8">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div class="bs-item" style="font-size: 32px;">
+									<div class="bunsuWrap inline">
+										3<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										2<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>
+									= (3 + 2) +	(
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>) = 5 +
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>
+									=
+									<div class="bunsuWrap inline">
+										5<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div class="bs-item" style="font-size: 32px;">
+									<div class="bunsuWrap inline">
+										1<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										4<ul>
+											<li>4</li>
+											<li>6</li>
+										</ul>
+									</div>
+									= (1 + 4) + (
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>4</li>
+											<li>6</li>
+										</ul>
+									</div>) = 5 +
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>7</li>
+											<li>6</li>
+										</ul>
+									</div>
+									= 5 +
+									<div class="bunsuWrap inline">
+										1<ul>
+											<li>1</li>
+											<li>6</li>
+										</ul>
+									</div>
+									=
+									<div class="bunsuWrap inline">
+										6<ul>
+											<li>1</li>
+											<li>6</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div class="bs-item" style="font-size: 32px;">
+									<div class="bunsuWrap inline">
+										4<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										2<ul>
+											<li>1</li>
+											<li>6</li>
+										</ul>
+									</div>
+									= (4 + 2) + (
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>6</li>
+										</ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>6</li>
+										</ul>
+									</div>) = 6 +
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>
+									=
+									<div class="bunsuWrap inline">
+										6<ul>
+											<li>3</li>
+											<li>6</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="icon_arrow"></span>
+								<div class="bs-item">
+									계산 결과가 가장 큰 덧셈식은
+									<div class="bunsuWrap inline">
+									    4<ul>
+									        <li>2</li>
+									        <li>6</li>
+									    </ul>
+									</div>
+									+
+									<div class="bunsuWrap inline">
+									    2<ul>
+									        <li>1</li>
+									        <li>6</li>
+									    </ul>
+									</div>
+									입니다.
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+				<!-- 4번 쌍둥이 문제 -->
+				<li class="whole pop_page_8" data-popup-page="4-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">4</ins>
+								<div>
+									<p class="mb_10">
+										계산해 보세요.
+									</p>
+
+									<ul class="num-4 mt_120">
+										<li>
+											<div class="bunsuWrap inline">
+												2<ul>
+												<li>5</li>
+												<li>9</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											1<ul>
+											<li>2</li>
+											<li>9</li>
+										</ul>
+										</div>＝<div class="toggle" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1">
+												<div class="bunsuWrap inline">
+													1<ul>
+													<li>3</li>
+													<li>9</li>
+												</ul>
+												</div>
+											</div>
+										</div>
+										</li>
+										<li>
+											<div class="bunsuWrap inline">
+												2<ul>
+												<li>7</li>
+												<li>10</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											2<ul>
+											<li>2</li>
+											<li>10</li>
+										</ul>
+										</div>＝<div class="toggle" data-toggle-obj="2">
+											<div class="answer" data-toggle-target="2">
+												<div class="bunsuWrap inline">
+													<ul>
+														<li>5</li>
+														<li>10</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										</li>
+										<li style=" width: 100%; text-align: center;">
+											<div class="bunsuWrap inline">
+												2<ul>
+												<li>5</li>
+												<li>8</li>
+											</ul>
+											</div>－<div class="bunsuWrap inline">
+											1<ul>
+											<li>3</li>
+											<li>8</li>
+										</ul>
+										</div>＝<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">
+												<div class="bunsuWrap inline">
+													1<ul>
+													<li>2</li>
+													<li>8</li>
+												</ul>
+												</div>
+											</div>
+										</div>
+										</li>
+
+									</ul>
+
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 4번 풀이 확인 -->
+				<li class="solve pop_page_9" data-popup-page="4-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										2<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+									<li>2</li>
+									<li>7</li>
+								</ul>
+								</div>＝(2－1)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>2</li>
+										<li>7</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									1<ul>
+									<li>3</li>
+									<li>7</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										2<ul>
+										<li>6</li>
+										<li>10</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									2<ul>
+									<li>3</li>
+									<li>10</li>
+								</ul>
+								</div>＝(2－2)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>6</li>
+										<li>10</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>3</li>
+										<li>10</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									<ul>
+									<li>3</li>
+									<li>10</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<div>
+									<div class="bunsuWrap inline">
+										2<ul>
+										<li>7</li>
+										<li>8</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+									<li>5</li>
+									<li>8</li>
+								</ul>
+								</div>＝(2－1)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>7</li>
+										<li>8</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>8</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									1<ul>
+										<li>2</li>
+										<li>8</li>
+									</ul>
+								</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+
+				<!-- 5번 쌍둥이 문제-->
+				<li class="whole pop_page_10" data-popup-page="5-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">5</ins>
+								<div>
+									<div style="margin-top: -14px;">
+										물 20<div class="bunsuWrap inline">
+											<ul>
+												<li>7</li>
+												<li>10</li>
+											</ul>
+										</div>&nbsp;
+										L가 있었습니다. 세수를 한 후 물 15
+										<div class="bunsuWrap inline">
+											<ul>
+												<li>3</li>
+												<li>11</li>
+											</ul>
+										</div>&nbsp;
+										L가 남았다면, 사용한 물은 몇 L인가요?
+									</div>
+
+									<div style="width: 500px;margin: 80px auto;">
+										<div class="flex-box a-center">
+											<div class="colorBox skyBlue check" style="margin-right: 40px;">식</div>
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">
+													<div class="bunsuWrap inline">
+														18<ul>
+														<li>7</li>
+														<li>9</li>
+													</ul>
+													</div>－
+													<div class="bunsuWrap inline">
+														14<ul>
+														<li>2</li>
+														<li>9</li>
+													</ul>
+													</div>
+													＝
+													<div class="bunsuWrap inline">
+														4<ul>
+														<li>5</li>
+														<li>9</li>
+													</ul>
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="flex-box a-center mt_40">
+											<div class="colorBox purple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
+											<div class="toggle" data-toggle-obj="2">
+												<div class="answer" data-toggle-target="2">
+													4<div class="bunsuWrap inline">
+													<ul>
+														<li>5</li>
+														<li>9</li>
+													</ul>
+												</div>
+												</div>
+											</div>&nbsp;L
+										</div>
+									</div>
+
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 5번 한번 더 -->
+				<li class="whole pop_page_11" data-popup-page="5-2">
+					<h2 class="pop-tit">
+						<ins class="special type4"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">5</ins>
+								<div>
+									<div class="mb_10">
+										<span class="blankBox"></span>
+										안에 들어갈 수 있는 가장 큰 수를 구해 보세요.
+									</div>
+
+									한번 더.......
+
+
+								</div>
+							</li>
+						</ul>
+
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 5번 풀이 확인 -->
+				<li class="solve pop_page_12" data-popup-page="5-3">
+					<div class="popup_contents">
+
+						<div>
+							<div class="bunsuWrap inline">
+								20<ul>
+								<li>7</li>
+								<li>11</li>
+							</ul>
+							</div>－<div class="bunsuWrap inline">
+							15<ul>
+							<li>3</li>
+							<li>11</li>
+						</ul>
+						</div>＝(20－15)＋(<div class="bunsuWrap inline">
+							<ul>
+								<li>7</li>
+								<li>11</li>
+							</ul>
+						</div>－<div class="bunsuWrap inline">
+							<ul>
+								<li>3</li>
+								<li>11</li>
+							</ul>
+						</div>)＝5＋<div class="bunsuWrap inline">
+							<ul>
+								<li>4</li>
+								<li>11</li>
+							</ul>
+						</div>＝<div class="bunsuWrap inline">
+							5<ul>
+								<li>4</li>
+								<li>11</li>
+							</ul>
+						</div>
+						</div>
+
+					</div>
+				</li>
+
+
+				<!-- 6번 쌍둥이 문제 -->
+				<li class="whole pop_page_13" data-popup-page="6-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">6</ins>
+								<div>
+									<div style="letter-spacing: 2px">1부터 7까지의 수 중 4개를 골라 한 번씩만 사용하여 계산 결과가 가장 큰 뺄셈식을 만들고, 계산해 보세요.</div>
+
+
+									<div class="flex-center" style="margin-top: 140px;">
+										<div class="lineBox green mr_60">
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">7</div>
+											</div>
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="2">
+															<div class="answer" data-toggle-target="2">6</div>
+														</div>
+													</li>
+													<li>8</li>
+												</ul>
+											</div>－<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">1</div>
+										</div>
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="4">
+															<div class="answer" data-toggle-target="4">2</div>
+														</div>
+													</li>
+													<li>8</li>
+												</ul>
+											</div>
+
+										</div>
+										<div class="flex-box a-center mt_20">
+											<div class="colorBox purple check" style="margin-right: 40px;color: #fff;">답</div>
+											<div class="toggle complete" data-toggle-obj="2">
+												<div class="answer on" data-toggle-target="2">
+													<div class="bunsuWrap inline">
+														6<ul>
+														<li>4</li>
+														<li>8</li>
+													</ul>
+													</div>
+												</div>
+											</div>&nbsp;L
+										</div>
+									</div>
+
+									
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-1)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="18" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 6번 풀이 확인 -->
+				<li class="solve pop_page_14" data-popup-page="6-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<div>
+									계산 결과가 가장 큰 뺄셈식을 만들 때에는
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 14px;"></ins>
+								<div>
+									빼지는 수의 자연수 부분에 가장 큰 수를 넣고, 빼는 수의 자연수 부분에는 가장 작은 수를 넣습니다.
+								</div>
+							</li>
+							<li>
+								<ins class="bullet circleDot" style="margin-top: 14px;"></ins>
+								<div>
+									빼지는 수의 분자 부분에 두 번째로 큰 수를 넣고, 빼는 수의 분자 부분에는 두 번째로 작은 수를 넣습니다.
+								</div>
+							</li>
+							<li>
+								<div>
+									<span class="icon_arrow"></span>
+									<div class="bunsuWrap inline">
+										6<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+									</div>－<div class="bunsuWrap inline">
+									1<ul>
+									<li>2</li>
+									<li>7</li>
+								</ul>
+								</div>＝(6－1)＋(<div class="bunsuWrap inline">
+									<ul>
+										<li>5</li>
+										<li>7</li>
+									</ul>
+								</div>－<div class="bunsuWrap inline">
+									<ul>
+										<li>2</li>
+										<li>7</li>
+									</ul>
+								</div>)＝<div class="bunsuWrap inline">
+									5<ul>
+									<li>3</li>
+									<li>7</li>
+								</ul>
+								</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+				<!-- 6번 한번 더 -->
+				<li class="whole pop_page_11" data-popup-page="6-3">
+					<h2 class="pop-tit">
+						<ins class="special type4"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">5</ins>
+								<div>
+									<div style="letter-spacing: 2px">
+										1부터 5까지의 수 중 4개를 골라 한 번씩만 사용하여 <br> 뺄셈식을 만들어 보세요.
+									</div>
+
+									<div class="flex-center" style="margin-top: 160px;">
+										<div class="lineBox green mr_60">
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">5</div>
+											</div>
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="2">
+															<div class="answer" data-toggle-target="2">4</div>
+														</div>
+													</li>
+													<li>7</li>
+												</ul>
+											</div>－<div class="toggle" data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3">1</div>
+										</div>
+											<div class="bunsuWrap inline">
+												<ul>
+													<li>
+														<div class="toggle" data-toggle-obj="4">
+															<div class="answer" data-toggle-target="4">2</div>
+														</div>
+													</li>
+													<li>7</li>
+												</ul>
+											</div>＝
+											<div class="bunsuWrap inline">
+											    4<ul>
+											        <li>2</li>
+											        <li>7</li>
+											    </ul>
+											</div>
+
+										</div>
+									</div>
+
+
+								</div>
+							</li>
+						</ul>
+
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="../suhi_p_0402_01_0003/js/contents.js"></script>
+	<!-- horizon -->
+	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
+
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'boy_1',
+						speech: 'right',
+						circle: 'sky',
+						top: 0,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suhi_p_0402_01_0005_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '<div class="bunsuWrap inline">\n' +
+									'2<ul>\n' +
+									'<li>2</li>\n' +
+									'<li>6</li>\n' +
+									'</ul>\n' +
+									'</div>만큼 \n' +
+									'<span class="icon_x_title"></span>\n' +
+									'표 해 보자!',
+							class: 'balloon bottom sky ctTail',
+							width: 400,
+							top: -161,
+							left: -200,
+							textAlign: 'left',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							// start: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = '-200px';
+							// }, // 시작시 콜백
+							// end: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = 0;
+							// } // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+			$prite.add({
+				target: $ts.getEl('#aniBox_2'),
+				spriteId: 'sprite2',
+				spriteList: [
+					{
+						name: 'boy_1',
+						speech: 'right',
+						circle: 'sky',
+						top: -50,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/boy_1.png',
+						spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+						sound: './media/audios/suhi_p_0402_01_0005_2.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '<div class="bunsuWrap inline">\n' +
+									'2<ul>\n' +
+									'<li>3</li>\n' +
+									'<li>5</li>\n' +
+									'</ul>\n' +
+									'</div>만큼\n' +
+									'<span class="icon_x_title"></span>\n' +
+									'표 해 보자!',
+							class: 'balloon bottom sky ctTail',
+							width: 400,
+							top: -181,
+							left: -200,
+							textAlign: 'left',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							// start: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = '-200px';
+							// }, // 시작시 콜백
+							// end: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = 0;
+							// } // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+		}, false);
+	</script>
+</body>
+
+</html>

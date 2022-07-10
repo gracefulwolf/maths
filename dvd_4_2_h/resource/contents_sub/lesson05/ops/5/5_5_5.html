@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="css/5_5_5.css">
+  </head>
+	<body class="lesson_5">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>5. 자료와 꺾은선그래프</span>
+          <span>자료를 수집하여 분석해 볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="118">수학<span>118~121</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="87">수학 익힘<span>87</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="87"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <!-- <h2><span class="lessonColorText">[<ins class="titleNumber" data-index="3"></ins>~<ins class="titleNumber" data-index="6"></ins>]</span> 인터넷을 이용해서 자료를 수집하여 분석해 보려고 합니다. 물음에 답해 보세요. </h2> -->
+          <h1 data-star="2" data-index="5">표를 꺾은선그래프로 나타내 보세요.</h1>
+          <section data-quiz="input" data-quiz-name="input_1">
+            <div class="js-graph graph">
+              <input type="text" class="noBox title" data-input-obj="1" data-answer="  ">
+
+              <input type="text" class="vertical" data-input-obj="1" data-answer="  ">
+              <input type="text" class="vertical" data-input-obj="2" data-answer="  ">
+              <input type="text" class="vertical" data-input-obj="3" data-answer="  ">
+              <input type="text" class="vertical" data-input-obj="3-1" data-answer="  ">
+              <input type="text" class="vertical" data-input-obj="3-2" data-answer="  ">
+
+              <input type="text" class="noBox horizon" data-input-obj="1" data-answer="  ">
+              <input type="text" class="noBox horizon" data-input-obj="2" data-answer="  ">
+              <input type="text" class="noBox horizon" data-input-obj="3" data-answer="  ">
+              <input type="text" class="noBox horizon" data-input-obj="4" data-answer="  ">
+              <input type="text" class="noBox horizon" data-input-obj="5" data-answer="  ">
+              <input type="text" class="noBox horizon" data-input-obj="6" data-answer="  ">
+
+              <input type="text" class="noBox type" data-input-obj="1" data-answer="  ">
+              <input type="text" class="noBox type" data-input-obj="2" data-answer="  ">
+              <input type="text" class="noBox type" data-input-obj="3" data-answer="  ">
+              <input type="text" class="noBox type" data-input-obj="4" data-answer="  ">
+
+              <div class="js-lineGraph lineGraph" data-option="">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-quizButton resetButton"></div>
+              </div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="quizButtons reset" data-quiz-chain="input_1" data-type="reset"></div>
+            <div class="js-chainButtons hidden"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="flexListContainer">
+                <li>가로와 세로에 각각 무엇을 나타낼지 정한 후, 세로 눈금 한 칸의 크기를 정합니다. 가로 눈금과 세로 눈금이 만나는 자리에 점을 찍고 점들을 선분으로 이어 꺾은선그래프로 나타냅니다.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- <div class="js-alert alertContainer">
+        <p>10 이하의 숫자를 입력해 주세요.</p>
+      </div> -->
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/lineGraph.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var graph = document.querySelector('.js-graph');
+        var lineGraph = document.querySelector('.js-lineGraph');
+
+        function createDot(container, dotLength) {
+          function createElement(container, i, j) {
+            var dot = document.createElement('div');
+            var light = document.createElement('div');
+            light.classList.add('induceLight');
+            dot.appendChild(light);
+
+            dot.classList.add('js-dot');
+            dot.classList.add('graphDot');
+            dot.classList.add('horizon_' + (i+1));
+            dot.classList.add('vertical_' + (j+1));
+            dot.setAttribute('data-type', i);
+            dot.setAttribute('data-index', j);
+            container.appendChild(dot);
+
+            return dot;
+          }
+
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        createDot(lineGraph, [6, 21]);
+
+
+
+        var answers = [
+          {x: 74, y: 252},
+          {x: 148, y: 224},
+          {x: 222, y: 182},
+          {x: 296, y: 101},
+          {x: 370, y: 59},
+        ];
+        window.lineGraph = new $LineGraph({
+          container: lineGraph,
+          resetButton: lineGraph.querySelector('.js-quizButton'),
+          length: 4,
+          lineWidth: 6,
+          callback: {
+            click: function(GRAPH, clickedDot) {
+              var sameDotArray = GRAPH.dots.filter(function(dot) {
+                return dot.type[0] === clickedDot.type[0];
+              });
+
+              sameDotArray.forEach(function(dot) {
+                dot.dom.classList.add('lightOff');
+              })
+              console.log(window.lineGraph)
+            },
+            reset: function(GRAPH) {
+              GRAPH.dots.forEach(function(dot) {
+                dot.dom.classList.remove('lightOff');
+              })
+            },
+          }
+        });
+
+        var quizButton = $ts.getEl('.quizButtons.reset')[0];
+        quizButton.addEventListener('click', function () {
+          window.lineGraph.reset();
+          if(this.className.indexOf('reset') === -1){
+            allReset();
+          }
+        })
+
+        var graphDot = $ts.getEl('.graphDot');
+        function lightOff() {
+          graphDot.forEach(function (obj) {
+            obj.classList.add('lightOff');
+          })
+        }
+        function lightOn() {
+          graphDot.forEach(function (obj) {
+            obj.classList.remove('lightOff');
+          })
+        }
+
+        function allReset(){
+          $ts.getEl('.lineGraph')[0].classList.remove('pointerOff');
+          $ts.getEl('.resetButton')[0].classList.remove('off');
+          lightOn();
+        }
+      });
+    </script>
+  </body>
+</html>

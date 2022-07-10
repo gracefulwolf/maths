@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+  <link rel="stylesheet" href="../include/math/style/master.css">
+  <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+  <link rel="stylesheet" href="css/5_5_04.css">
+</head>
+<body class="lesson_5">
+<div id="wrap">
+  <header>
+    <div class="js-addThingsMenu addThingsMenu"></div>
+    <div class="js-indexButton indexButton" data-hover=""></div>
+    <div class="indexBox">
+      <span>5. 자료와 꺾은선그래프</span>
+      <span>자료를 수집하여 분석해 볼까요</span>
+      <span class="step develop">전개</span>
+    </div>
+    <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="119">수학<span>119</span>쪽</div>
+    <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="86">수학 익힘<span>86</span>쪽</div>
+    <div class="js-addThingsButton addThingsButton"></div>
+    <div class="js-closeButton closeButton" data-type="ebook" data-page="119"></div>
+  </header>
+  <main class="act">
+    <div class="contentsArea">
+      <h1 data-index="2">인터넷을 이용해서 자료를 수집해 봅시다.</h1>
+      <section>
+        <div class="basicSlider" data-slide-container="main">
+          <div class="basicSlider_pageMove">
+            <ul class="basicSlider_circle_tabs" data-tabs="main">
+              <li></li>
+              <li></li>
+            </ul>
+            <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+            <div class="basicSlider_btn next" data-btn-next="main"></div>
+          </div>
+          <ul class="basicSlider_slides" data-slides="main">
+            <li class="page1">
+              <div class="titleIndent flexContainer">
+                <div class="left">
+                  <ul class="list dot">
+                    <li>자료를 수집하는 방법을 알아보세요.</li>
+                  </ul>
+                </div>
+                <figure>
+                  <img src="images/5_5/5_5_4_01.svg" alt="이미지">
+                  <div class="clickButton exclamation" data-popup-btn="1"></div>
+                </figure>
+              </div>
+            </li>
+            <li class="page2" data-quiz="input">
+              <div class="titleIndent">
+                <ul class="list dot">
+                  <li><div class="actTitleIcon">1</div>에서 정한 주제의 자료를 수집해 보세요.</li>
+                </ul>
+               <div class="dotListIndent inputQuizContainer">
+                 <textarea data-input-obj="" data-answer=" "></textarea>
+               </div>
+
+              </div>
+              <div class="quizButtons reset" data-hover="" data-answer-btn="" data-type="reset"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+  <section class="popup_container" data-popup-container="">
+    <ul class="popup_pages">
+      <li class="min middleSize slideup popup_page1" data-popup-page="1" data-quiz="toggle" data-quiz-name="toggle_popup">
+        <div class="popup_contents">
+          <div class="imageBox first">
+            <figure><img src="images/5_5/5_5_4_pop_img_3.png" alt="이미지"></figure>
+            <div class="arrow pink bottom first" data-toggle-obj="1"></div>
+          </div>
+          <div class="imageBox second" data-toggle-target="1">
+            <figure>
+              <img src="images/5_5/5_5_4_pop_img_2.png" alt="이미지">
+              <img src="images/5_5/5_5_4_popup_1.svg" alt="이미지" class="balloon">
+            </figure>
+            <div class="arrow pink bottom second" data-toggle-obj="2"></div>
+          </div>
+          <div class="imageBox last" data-toggle-target="2">
+            <figure><img src="images/5_5/5_5_4_pop_img_1.png" alt="이미지"></figure>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="../include/libs/js/ts.min.js"></script>
+<script src="../include/libs/js/slider.min.js"></script>
+<script src="../include/libs/js/popup.min.js"></script>
+<script src="../include/contents/js/quiz/quiz.min.js"></script>
+<script src="../include/contents/js/pageManager.min.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    window.$callBack.toggleClick =function (obj) {
+      $ts.getEl('.popup_contents .imageBox.'+obj.curObj.classList[3])[0].classList.add('off');
+    }
+    window.$popupCallBack.close = function(POPUP) {
+      $ts.getEl('.imageBox.first')[0].classList.remove('off');
+      $ts.getEl('.imageBox.second')[0].classList.remove('off');
+    };
+  });
+</script>
+</body>
+</html>

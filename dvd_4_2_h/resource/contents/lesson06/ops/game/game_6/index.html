@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 150쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>미술 작품</span><br/><span>무늬</span><br/><span>꾸미기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">미술 작품에 나타난 정다각형 모양의 무늬를 살펴보고 다음 활동을 해 보세요.</div>
+        </div>
+        
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="3">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="playPageText text_1">
+            	이 미술 작품은<input class="answerBox__input js-answerBoxInput input_1" type="text" data-answer="정사각형" />과<br/><input class="answerBox__input js-answerBoxInput input_2" type="text" data-answer="정팔각형" />만으로 그렸네.
+            </div>
+            
+            <div class="confirmBtn js-confirmButton"></div>
+        </div> <!-- selectPlay[data-play-page="1"] -->
+        
+        <div class="playPage js-playPage" data-play-page="2" data-drag-count="7">
+        	<div class="bubbleText text_1">비어 있는 부분을<br/>규칙에 맞게 채워 보자.</div>
+            
+            <div class="confirmBtn js-confirmButton"></div>
+            <div class="resetBtn js-resetBtn"></div>
+        
+            <div class="dropArea" drag-ans="1" drop-idx="0" data-degree="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="1" data-degree="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="2" data-degree="60"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="3" data-degree="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="4" data-degree="180"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="5" data-degree="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="6" data-degree="300"></div>
+
+        	<div class="dragObj" drag-ans="1" drag-idx="0">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="1">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="2">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="3">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="4">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="5">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj" drag-ans="2" drag-idx="6">
+            	<div class="dragImage"></div>
+                <div class="rotateButton left"></div>
+                <div class="rotateButton right"></div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="2"] -->
+        
+        <div class="playPage js-playPage" data-play-page="3">
+        	<div class="bubbleText text_2">정삼각형, 정사각형,<br/>정십이각형에 색칠하여<br/>미술 작품을 완성해 보자.</div>
+            <div class="paletteWrap">
+            	<div class="paletteColor" data-palette-color="orange"></div>
+                <div class="paletteColor" data-palette-color="blue"></div>
+                <div class="paletteColor" data-palette-color="green"></div>
+            </div>
+            
+            <div class="paletteTriangle" data-target-shape="triangle">
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+            </div>
+            
+            <div class="paletteQuadrangle" data-target-shape="quadrangle">
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+            </div>
+            
+            <div class="paletteOctagon" data-target-shape="octagon">
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+                <div class="paletteTarget"></div>
+            </div>
+            
+            <div class="resetBtn js-resetBtn"></div>
+        </div> <!-- selectPlay[data-play-page="3"] -->
+
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>미술 작품을 선택하세요.</div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">미술 작품에 나타난 정다각형 모양의 무늬를 살펴보고 다음 활동을 해 보세요.</div>
+        </div>
+        
+        <div class="selectPlay" data-play-index="1">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="2">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="3">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text"><b>미술 작품</b>을 <b>완성</b>했어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script src="./src/js/dragdropA.js" type="text/javascript"></script>
+<script src="./src/js/palette.js" type="text/javascript"></script>
+<script>
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>

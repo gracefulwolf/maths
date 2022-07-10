@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.19 (academy) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="./js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="./js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="./js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="./js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="./css/render.gen.min.css">
+    <script type="text/javascript" src="./js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="./js/render-page-30.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="./js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 번들 폰트 적용 -->
+    <style>
+</style>
+
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController" ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>수학 45~47쪽
+
+맞은 개수
+
+07 보 기  에서 이등변삼각형이 그려지는 세 점을 찾아 기호를 써 보세요.
+
+10 왼쪽은 삼각형의 세 각 중 두 각의 크 기입니다. 관계있는 것끼리 선으로 이 어 보세요.
+
+80^, 20^ 60^, 20^
+
+둔각삼각형 예각삼각형 직각삼각형
+
+보 기
+㉠ 점 ㄱ, 점 ㄴ, 점 ㄷ ㉡ 점 ㄱ, 점 ㄹ, 점 ㅁ ㉢ 점 ㄴ, 점 ㄷ, 점 ㄹ ㉣ 점 ㄴ, 점 ㄷ, 점 ㅁ
+
+11 설명하고 있는 삼각형을 그려 보세요.
+●	두 변의 길이가 같습니다. ●	한 각이 둔각입니다.
+
+[08 ~ 09] 삼각형을 보고 물음에 답해 보세 요.
+
+2 삼 각 형
+37
+
+08 예각삼각형을 모두 찾아 기호를 써 보 세요.
+
+12 어떤 삼각형인지 모두 찾아  표 하세 요. 30æ 30æ
+
+09 둔각삼각형을 모두 찾아 기호를 써 보 세요.
+
+이등변삼각형   정삼각형 예각삼각형 직각삼각형 둔각삼각형
+정답과 풀이  10
+
+9쪽
+
+</xmp></div>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./css/6_powerup.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap" class="powerup">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형</span>
+          <span>수학의 힘을 키워요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="144">수학<span>144</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="144"></div>
+      </header>
+      <section class="intro"></section>
+      <main>
+        <div class="contentsArea">
+          <div class="basicSlider" data-slide-container="main">
+            <ul class="basicSlider_slides" data-slides="main">
+              <li class="page1">
+                <h1>정다각형과 대각선을 이용하여 모빌을 만들어 봅시다.</h1>
+                <section>
+                  <div class="mediaContainer video on" data-media-container="video">
+                    <video poster="media/mp4/6_powerup_ani.jpg" webkit-playsinline="" playsinline="">
+                        <source src="media/mp4/6_powerup_ani.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                  </div>
+                </section>
+              </li>
+              <li class="page2">
+                <h2 class="widthTeacher"></h2>
+                <h3 class="h2Side">모빌을 만드는 방법을 알아보세요.</h3>
+                <div class="basicSlider" data-slide-container="inner">
+                  <ul class="basicSlider_slides" data-slides="inner">
+                    <li>
+                      <div class="pwu_page2Box cont1">
+                        <div class="clickButton example reflect" data-click-obj="1"></div>
+                        <div class="textArea">
+                            <span class="num">1</span>먼저 만들고 싶은 정다각형을 정합니다.
+                        </div>
+                        <div class="targetCont" data-click-target="1">
+                            정팔각형
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="pwu_page2Box cont2">
+                        <div class="clickButton example reflect" data-click-obj="2"></div>
+                        <div class="textArea">
+                            <span class="num">2</span>정다각형을 그립니다. 
+                        </div>
+                        <div class="targetCont" data-click-target="2">
+                          <img src="./images/6_powerup/6_powerup_page2_ex2.svg" style="width:343px">
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="pwu_page2Box cont2">
+                        <div class="clickButton example reflect" data-click-obj="3"></div>
+                        <div class="textArea">
+                            <span class="num">3</span>대각선을 그어 모빌을 만듭니다.
+                        </div>
+                        <div class="targetCont" data-click-target="3">
+                          <img src="./images/6_powerup/6_powerup_page2_ex3.svg" style="width:343px">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="basicSlider_btn prev" data-btn-prev="inner"></div>
+                  <div class="basicSlider_btn next" data-btn-next="inner"></div>
+                </div>
+              </li>
+              <li class="page3">
+                <h2 class="self"></h2>
+                <h3 class="h2Side">나만의 모빌을 만들어 보세요.</h3>
+                <div>
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="balloonText">모빌을 완성하고<br>
+                        만든 방법을<br>
+                        친구들에게<br>
+                        설명해 보세요.</div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="basicSlider_pageMove">
+              <ul class="basicSlider_circle_tabs" data-tabs="main">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+              <div class="basicSlider_btn next" data-btn-next="main"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min head slideleft" data-popup-page="1">
+           <img src="images/5_powerup/5_powerup_page2_ex.svg" alt="" class="popImgSize">
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script src="../include/libs/js/controller.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/sprite.min.js"></script>
+    <script src="../include/math/script/intro_powerup.js"></script>    
+    <script type="text/javascript"> 
+        window.$callBack.sliderMove = function(Slider) {
+          var containers = $ts.getEl('.js-drawLine');
+          var answers = [
+            [
+              {
+                start: {x: 250, y: 165},
+                end: {x: 200, y: 349},
+              },
+              {
+                start: {x: 200, y: 349},
+                end: {x: 300, y: 349}
+              },
+              {
+                start: {x: 300, y: 349},
+                end: {x: 250, y: 165}
+              }
+            ],
+            [ 
+              {
+                start: {x: 250, y: 165},
+                end: {x: 150, y: 349},
+              },
+              {
+                start: {x: 150, y: 349},
+                end: {x: 350, y: 349}
+              },
+              {
+                start: {x: 350, y: 349},
+                end: {x: 250, y: 165}
+              }
+            ],
+          ];
+  
+          function createElement(container, i, j) {
+            var dot = document.createElement('div');
+  
+            dot.classList.add('js-dragObj');
+            dot.classList.add('dragObj');
+            dot.classList.add('horizon_' + (i+1));
+            dot.classList.add('vertical_' + (j+1));
+            dot.setAttribute('data-type', 'drag');
+            dot.setAttribute('data-index', '1');
+  
+            container.appendChild(dot);
+        
+            return dot;
+          }
+        
+          function createDot(container, dotLength) {
+            for (var i = 0; i < dotLength[0]; i++) {
+              for (var j = 0; j < dotLength[1]; j++) {
+                createElement(container, i, j);
+              }
+            }
+          }
+  
+          containers.forEach(function(container, index) {
+            createDot(container, [1, 24]);
+            new DrawLine({
+              container: container,
+              resetButton: container.querySelector('.js-resetButton'),
+              answerButton: document.querySelector('.js-chainButtons'),
+              answer: answers[index],
+              lineWidth: 6,
+              callback: {
+                start: function(DrawLine) {},
+                correct: function(DrawLine) {
+                  console.log('correct', DrawLine);
+                  // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+                },
+                showAnswer: function(DrawLine) {},
+                reset: function(DrawLine) {}
+              },
+            })
+          })
+        }
+      </script>
+  </body>
+</html>

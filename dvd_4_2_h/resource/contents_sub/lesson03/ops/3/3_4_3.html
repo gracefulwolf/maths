@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1000px;margin:30px auto 30px}
+      .oxObj{width:200px;height:70px}
+      .obj1{position: absolute;top:356px;left:321px}
+      .obj2{position: absolute;top:356px;left:738px}
+      .list.dot > li:before{top:50%;margin-top:-.15em}
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈</span>
+          <span>소수 사이의 관계를 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="62">수학<span>62~63</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="47">수학 익힘<span>47</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="47"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="3">1.4와 같은 수를 찾아 <ins class="icon icon_o"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer">
+              <figure><img src="images/3_4/3_4_3.svg" alt=""></figure>
+            </div>
+            <div class="oxObj obj1" data-ox-obj="1" data-answer=""><div class="icon icon_o" data-ox-target="1"></div></div>
+            <div class="oxObj obj2" data-ox-obj="2"><div class="icon icon_o" data-ox-target="2"></div></div>
+            
+              
+              <div class="displayN" data-ox-obj="3" data-answer=""><div class="icon" data-ox-target="3"></div></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+          
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="flexListContainer">
+              <ul class="list dot">
+                <li>14의 <bunsu>1/10</bunsu>은 1.4입니다.</li>
+                <li>0.014의 10배는 0.14입니다.</li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-obj]');
+        var oxTargets = $ts.getEl('[data-ox-target]');
+
+        window.$callBack.oxCorrect = function(OX) {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+            console.log("a : " + OX.curTarget[0]);
+          OX.curTarget[0].classList.add('on');
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+            console.log("b : " + OX.curTarget[0]);
+          OX.curTarget[0].classList.add('on');
+        };
+
+        var quizButton = $ts.getEl('.quizButtons.answer')[0];
+        quizButton.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else {
+            oxObjs.forEach(function (obj) {
+              console.log(obj.hasAttribute('data-answer'))
+              if(obj.hasAttribute('data-answer')) {
+                obj.querySelector('.icon').classList.add('on');
+              }else{
+                obj.querySelector('.icon').classList.remove('on');
+              }
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

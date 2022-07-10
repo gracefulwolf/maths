@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="./css/1_3_5.css">
+  </head>
+	<body class="lesson_1">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>1. 분수의 덧셈과 뺄셈</span>
+          <span>분수의 덧셈을 해 볼까요(2)</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="14">수학<span>14~15</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="15">수학 익힘<span>15</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="15"></div>
+      </header>
+      <main class="act noUserSelect">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="5">계산 결과가 큰 것부터 차례대로 기호를 써 보세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+            <div class="dragMark"></div>
+            <div class="inputQuizContainer">
+                <ul class="flexContainer">
+                  <li><div class="js-dragObj dragObj" data-name="drag-obj" data-drag-obj-answer="1">㉠</div> 1<bunsu>5/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu></li>
+                  <li><div class="js-dragObj dragObj" data-name="drag-obj" data-drag-obj-answer="1">㉡</div> <bunsu>8/10</bunsu><symbol class="plus"></symbol>1<bunsu>3/10</bunsu></li>
+                  <li><div class="js-dragObj dragObj" data-name="drag-obj" data-drag-obj-answer="1">㉢</div> 1<bunsu>8/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu></li>
+                </ul>
+              <!-- <input type="text" data-input-obj="" data-answer="㉢, ㉠, ㉡"> -->
+              <div class="colorBox gray">
+                <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+              </div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+            <div class="dragResetButton" data-hover=""></div>
+            <!-- <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div> -->
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <ul class="flexListContainer">
+              <li>
+                <div>㉠ 1<bunsu>5/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu><symbol class="equal"></symbol><bunsu>15/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu><symbol class="equal"></symbol><bunsu>22/10</bunsu><symbol class="equal"></symbol>2<bunsu>2/10</bunsu></div>
+              </li>
+              <li>
+                <div>㉡ <bunsu>8/10</bunsu><symbol class="plus"></symbol>1<bunsu>3/10</bunsu><symbol class="equal"></symbol><bunsu>8/10</bunsu><symbol class="plus"></symbol><bunsu>13/10</bunsu><symbol class="equal"></symbol><bunsu>21/10</bunsu><symbol class="equal"></symbol>2<bunsu>1/10</bunsu></div>
+              </li>
+              <li>
+                <div>㉢ 1<bunsu>8/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu><symbol class="equal"></symbol><bunsu>18/10</bunsu><symbol class="plus"></symbol><bunsu>7/10</bunsu><symbol class="equal"></symbol><bunsu>25/10</bunsu><symbol class="equal"></symbol>2<bunsu>5/10</bunsu></div>
+              </li>
+            </ul>
+            <div class="textWrap"><div class="arrow pink right noAni"></div>계산 결과가 큰 것부터 차례대로 기호를 쓰면 ㉢, ㉠, ㉡입니다.</div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+
+          $ts.getEl('.dragResetButton')[0].addEventListener('click', function () {
+            $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+          })
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(dragDrop) {console.log(dragDrop.movingObj)
+            var dropArea, movingObj;
+            dropArea = dragDrop.droppedArea;
+            movingObj = dragDrop.movingObj;
+
+            if (!dropArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+
+            movingObj.DISABLED = true;
+            movingObj.element.classList.add('dragged');
+
+            // dropAreaElement = dragDrop.droppedArea.element;
+            // children = dropAreaElement.children;
+
+            // if (children.length > 1) {
+            //   dropAreaElement.removeChild(children[0]);
+            // }
+          }
+
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            var dragObjs = $ts.getEl('.js-dragObj');
+
+            dragObjs.forEach(function(obj) {
+              obj.classList.add('dragged');
+            });
+
+            dropArea.innerHTML = '㉢, ㉠, ㉡';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            var dragObjs = $ts.getEl('.js-dragObj');
+            
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+
+            dragObjs.forEach(function(obj) {
+              obj.classList.remove('dragged');
+            });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

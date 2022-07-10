@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 48쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>삼각형</span><br/><span>퍼즐</span><br/><span>맞추기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">삼각형 퍼즐 조각을 만들어 다양한 모양을 맞춰 보세요.</div>
+        </div>
+        
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__check"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__check"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="3">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__check"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="4">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__check"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        
+        <!-- 텍스트 -->
+        <div class="bubbleText text_1">삼각형 퍼즐 조각을<br/>이용하여 다음과 똑같은<br/>모양을 만들어 볼까?</div>
+        <div class="bubbleText text_2">삼각형 퍼즐 조각을<br/>이용하여 다음 모양을<br/>채워 보자.</div>
+        
+        <!-- 팝업 -->
+        <div class="popupBtn" data-index="1"></div>
+        <div class="popupWrap" data-index="1">
+        	<div class="popupBg"></div>
+            <div class="popupBox">
+                <div class="popupText text_1">선을 따라<br/>잘라 보자.</div>
+                <div class="popupText text_2">삼각형 퍼즐 조각에는<br/>정삼각형 6개와<br/>이등변삼각형 6개가<br/>있어.</div>
+                
+                <div class="popupCloseBtn"></div>
+            </div>
+        </div>
+        <!-- compopupWrapicWrap -->
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="replayBtn" data-index="1"></div>
+            <div class="answerBtn" data-index="1"></div>
+            <div class="popupBtn" data-index="2"></div>
+            
+        	<div class="dropWrap"><div class="dropImg"></div></div>
+            
+            <div class="dropArea" drag-ans="1" drop-idx="0"></div>
+            <div class="dropArea" drag-ans="2" drop-idx="1"></div>
+            <div class="dropArea" drag-ans="3" drop-idx="2"></div>
+            <div class="dropArea" drag-ans="4" drop-idx="3"></div>
+            <div class="dropArea" drag-ans="5" drop-idx="4"></div>
+            <div class="dropArea" drag-ans="6" drop-idx="5"></div>
+            <div class="dropArea" drag-ans="7" drop-idx="6"></div>
+            <div class="dropArea" drag-ans="8" drop-idx="7"></div>
+            <div class="dropArea" drag-ans="9" drop-idx="8"></div>
+            <div class="dropArea" drag-ans="10" drop-idx="9"></div>
+            <div class="dropArea" drag-ans="11" drop-idx="10"></div>
+            <div class="dropArea" drag-ans="12" drop-idx="11"></div>
+        
+			<div class="dragObj dragObj_1" drag-ans="1" drag-idx="0" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_2" drag-ans="2" drag-idx="1" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_3" drag-ans="3" drag-idx="2" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_4" drag-ans="4" drag-idx="3" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_5" drag-ans="5" drag-idx="4" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_6" drag-ans="6" drag-idx="5" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_7" drag-ans="7" drag-idx="6" data-degree="150">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_8" drag-ans="8" drag-idx="7" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_9" drag-ans="9" drag-idx="8" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_10" drag-ans="10" drag-idx="9" data-degree="330">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_11" drag-ans="11" drag-idx="10" data-degree="150">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_12" drag-ans="12" drag-idx="11" data-degree="330">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="1"] -->
+        
+        <div class="playPage js-playPage" data-play-page="2">
+        	<div class="replayBtn" data-index="2"></div>
+            <div class="answerBtn" data-index="2"></div>
+            <div class="popupBtn" data-index="3"></div>
+            
+            <div class="dropWrap"><div class="dropImg"></div></div>
+            
+            <div class="dropArea" drag-ans="13" drop-idx="12"></div>
+            <div class="dropArea" drag-ans="14" drop-idx="13"></div>
+            <div class="dropArea" drag-ans="15" drop-idx="14"></div>
+            <div class="dropArea" drag-ans="16" drop-idx="15"></div>
+            <div class="dropArea" drag-ans="17" drop-idx="16"></div>
+            <div class="dropArea" drag-ans="18" drop-idx="17"></div>
+            <div class="dropArea" drag-ans="19" drop-idx="18"></div>
+            <div class="dropArea" drag-ans="20" drop-idx="19"></div>
+            <div class="dropArea" drag-ans="21" drop-idx="20"></div>
+            <div class="dropArea" drag-ans="22" drop-idx="21"></div>
+            <div class="dropArea" drag-ans="23" drop-idx="22"></div>
+            <div class="dropArea" drag-ans="24" drop-idx="23"></div>
+        
+			<div class="dragObj dragObj_1" drag-ans="13" drag-idx="12" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_2" drag-ans="14" drag-idx="13" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_3" drag-ans="15" drag-idx="14" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_4" drag-ans="16" drag-idx="15" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_5" drag-ans="17" drag-idx="16" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_6" drag-ans="18" drag-idx="17" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_7" drag-ans="19" drag-idx="18" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_8" drag-ans="20" drag-idx="19" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_9" drag-ans="21" drag-idx="20" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_10" drag-ans="22" drag-idx="21" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_11" drag-ans="23" drag-idx="22" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_12" drag-ans="24" drag-idx="23" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="2"] -->
+        
+        <div class="playPage js-playPage" data-play-page="3">
+        	<div class="replayBtn" data-index="3"></div>
+            <div class="answerBtn" data-index="3"></div>
+            
+            <div class="dropWrap"><div class="dropImg"></div></div>
+            
+            <div class="dropArea" drag-ans="25" drop-idx="24"></div>
+            <div class="dropArea" drag-ans="26" drop-idx="25"></div>
+            <div class="dropArea" drag-ans="27" drop-idx="26"></div>
+            <div class="dropArea" drag-ans="28" drop-idx="27"></div>
+            <div class="dropArea" drag-ans="29" drop-idx="28"></div>
+            <div class="dropArea" drag-ans="30" drop-idx="29"></div>
+            <div class="dropArea" drag-ans="31" drop-idx="30"></div>
+            <div class="dropArea" drag-ans="32" drop-idx="31"></div>
+            <div class="dropArea" drag-ans="33" drop-idx="32"></div>
+            <div class="dropArea" drag-ans="34" drop-idx="33"></div>
+            <div class="dropArea" drag-ans="35" drop-idx="34"></div>
+            <div class="dropArea" drag-ans="36" drop-idx="35"></div>
+        
+			<div class="dragObj dragObj_1" drag-ans="25" drag-idx="24" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_2" drag-ans="26" drag-idx="25" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_3" drag-ans="27" drag-idx="26" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_4" drag-ans="28" drag-idx="27" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_5" drag-ans="29" drag-idx="28" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_6" drag-ans="30" drag-idx="29" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_7" drag-ans="31" drag-idx="30" data-degree="60">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_8" drag-ans="32" drag-idx="31" data-degree="330">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_9" drag-ans="33" drag-idx="32" data-degree="150">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_10" drag-ans="34" drag-idx="33" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_11" drag-ans="35" drag-idx="34" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_12" drag-ans="36" drag-idx="35" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="3"] -->
+        
+        <div class="playPage js-playPage" data-play-page="4">
+        	<div class="replayBtn" data-index="4"></div>
+            <div class="answerBtn" data-index="4"></div>
+            
+            <div class="dropWrap"><div class="dropImg"></div></div>
+            
+            <div class="dropArea" drag-ans="37" drop-idx="36"></div>
+            <div class="dropArea" drag-ans="38" drop-idx="37"></div>
+            <div class="dropArea" drag-ans="39" drop-idx="38"></div>
+            <div class="dropArea" drag-ans="40" drop-idx="39"></div>
+            <div class="dropArea" drag-ans="41" drop-idx="40"></div>
+            <div class="dropArea" drag-ans="42" drop-idx="41"></div>
+            
+            <div class="dropArea" drag-ans="43" drop-idx="42"></div>
+            <div class="dropArea" drag-ans="44" drop-idx="43"></div>
+            <div class="dropArea" drag-ans="45" drop-idx="44"></div>
+            <div class="dropArea" drag-ans="46" drop-idx="45"></div>
+            <div class="dropArea" drag-ans="47" drop-idx="46"></div>
+            <div class="dropArea" drag-ans="48" drop-idx="47"></div>
+        
+			<div class="dragObj dragObj_1" drag-ans="37" drag-idx="36" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_2" drag-ans="38" drag-idx="37" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_3" drag-ans="39" drag-idx="38" data-degree="90">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_4" drag-ans="40" drag-idx="39" data-degree="150">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_5" drag-ans="41" drag-idx="40" data-degree="210">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_6" drag-ans="42" drag-idx="41" data-degree="270">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_7" drag-ans="43" drag-idx="42" data-degree="0">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_8" drag-ans="44" drag-idx="43" data-degree="180">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_9" drag-ans="45" drag-idx="44" data-degree="240">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_10" drag-ans="46" drag-idx="45" data-degree="60">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_11" drag-ans="47" drag-idx="46" data-degree="300">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+            <div class="dragObj dragObj_12" drag-ans="48" drag-idx="47" data-degree="120">
+            	<div class="dragImage"></div>
+            	<div class="rotateButton right"></div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="4"] -->
+    
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>퍼즐 도형을 선택하세요.</div>
+        </div>
+
+        <!-- 팝업 -->
+        <div class="popupWrap" data-index="2">
+        	<div class="popupBg"></div>
+            <div class="popupBox">
+                <img src="./src/image/bg_drop_1.png" alt="">
+                <div class="popupCloseBtn"></div>
+            </div>
+        </div>
+        <div class="popupWrap" data-index="3">
+        	<div class="popupBg"></div>
+            <div class="popupBox">
+                <img src="./src/image/bg_drop_2.png" alt="">
+                <div class="popupCloseBtn"></div>
+            </div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+    	<div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">삼각형 퍼즐 조각을 만들어 다양한 모양을 맞춰 보세요.</div>
+        </div>
+        
+        <div class="selectPlay" data-play-index="1">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="2">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="3">
+        	<div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay" data-play-index="4">
+            <div class="selectPlay__image"></div>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        
+        <!-- 텍스트 -->
+        <div class="bubbleText text_1">삼각형 퍼즐 조각을<br/>이용하여 다음과 똑같은<br/>모양을 만들어 볼까?</div>
+        <div class="bubbleText text_2">삼각형 퍼즐 조각을<br/>이용하여 다음 모양을<br/>채워 보자.</div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text"><b>삼각형 퍼즐</b>을 <b>완성</b>했어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script src="./src/js/dragdropA.js" type="text/javascript"></script>
+<script>
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>

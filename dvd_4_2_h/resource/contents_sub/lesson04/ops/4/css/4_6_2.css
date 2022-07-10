@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.dragBox {
+  height: 375px;
+  margin: 0 0 40px;
+  border: none;
+  border-radius: 0;
+  background: url(../images/4_6/4_6_2_bg.svg) center / contain no-repeat;
+}
+.dragBox.right:after,
+.dragBox.right:before {
+  top: 0;
+  right: 166px;
+}
+.dragBox .dragObjComplete {
+  opacity: 0.3;
+}
+.dragBox span {
+  display: none;
+}
+.colorBox {
+  position: relative;
+  height: 68px;
+  padding-top: 6px;
+  box-sizing: border-box;
+}
+
+.dropArea {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.dropArea.blue {
+  color: #0060e3;
+}
+.dragObj {
+  height: 139px;
+}
+.dragObj img {
+  height: 100%;
+  vertical-align: top;
+  pointer-events: none;
+}
+.dragObj[data-index="1"],
+.dragObj[data-index="2"],
+.dragObj[data-index="3"]{
+  top: 33px;
+}
+.dragObj[data-index="4"],
+.dragObj[data-index="5"],
+.dragObj[data-index="6"] {
+  top: 204px;
+}
+.dragObj[data-index="1"] {
+  left: 249px;
+  width: 138px;
+}
+.dragObj[data-index="2"] {
+  left: 453px;
+  width: 209px;
+}
+.dragObj[data-index="3"] {
+  left: 725px;
+  width: 137px;
+  height: 105px;
+}
+.dragObj[data-index="4"] {
+  left: 249px;
+  width: 172px;
+}
+.dragObj[data-index="5"] {
+  left: 488px;
+  width: 142px;
+}
+.dragObj[data-index="6"] {
+  left: 726px;
+  width: 142px;
+}
+.dropArea span {
+  display: inline-block;
+}
+.dropArea img {
+  display: none;
+}
+.dropArea .dragObj.dragObjComplete {
+  display: none;
+}

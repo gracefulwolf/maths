@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:830px;margin:-20px auto 0}
+      .small{width: 98px;}
+      .inp1{position: absolute;top:350px;left:340px;}
+      .inp2{position: absolute;top:430px;left:374px;}
+      .inp3{position: absolute;top:350px;left:810px;}
+      .inp4{position: absolute;top:430px;left:844px;}
+      figure.image1{position: absolute;top:95px;left:203px;width:308px}
+      figure.image2{position: absolute;top:95px;left:666px;width:308px}
+      .clickButton{opacity:0}
+      
+      .dragObj {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 37.5px;
+        height: 37.5px;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        transition: none;
+      }
+      .dragObj:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 9px;
+        height: 9px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      .drawLine {
+        position: absolute;
+        top: 22px;
+        width: 387px;
+        height: 300px;
+      }
+      .drawLine_1 { left: 151px; }
+      .drawLine_2 { left: 614px; }
+      .drawLine > .resetButton {
+        bottom: 0;
+        right: 0px;
+        z-index: 2;
+      }
+      .dragObj.horizon_1 { top: calc(37.5px * (1 - 1) + 37.5px); }
+      .dragObj.horizon_2 { top: calc(37.5px * (2 - 1) + 37.5px); }
+      .dragObj.horizon_3 { top: calc(37.5px * (3 - 1) + 37.5px); }
+      .dragObj.horizon_4 { top: calc(37.5px * (4 - 1) + 37.5px); }
+      .dragObj.horizon_5 { top: calc(37.5px * (5 - 1) + 37.5px); }
+      .dragObj.horizon_6 { top: calc(37.5px * (6 - 1) + 37.5px); }
+      
+      .dragObj.vertical_1 { left: calc(37.5px * (1 - 1) + 37.5px); }
+      .dragObj.vertical_2 { left: calc(37.5px * (2 - 1) + 37.5px); }
+      .dragObj.vertical_3 { left: calc(37.5px * (3 - 1) + 37.5px); }
+      .dragObj.vertical_4 { left: calc(37.5px * (4 - 1) + 37.5px); }
+      .dragObj.vertical_5 { left: calc(37.5px * (5 - 1) + 37.5px); }
+      .dragObj.vertical_6 { left: calc(37.5px * (6 - 1) + 37.5px); }
+      .dragObj.vertical_7 { left: calc(37.5px * (7 - 1) + 37.5px); }
+      .dragObj.vertical_8 { left: calc(37.5px * (8 - 1) + 37.5px); }
+      .dragObj.vertical_9 { left: calc(37.5px * (9 - 1) + 37.5px); }
+      
+      ins.exam {
+        top: 26px;
+        left: 619px;
+      }
+      ins.exam + ins.exam {
+        left: 156px;
+      }
+  
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형</span>
+          <span>다각형을 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="132">수학<span>132~135</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="93">수학 익힘<span>93</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="93"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="3" data-index="4">다각형을 완성하고, <ins class="inputBox"></ins>안에 알맞은 수를 써넣으세요.</h1>
+          <section data-quiz="toggle" data-quiz-name="toggle_1">
+            <div class="inputQuizContainer">
+              <figure><img src="images/6_1/6_1_4.svg" alt=""></figure>
+              
+              <div class="js-drawLine drawLine drawLine_1" data-option="copy">
+                  <canvas class="js-drawArea drawArea"></canvas>
+                  <div class="js-resetButton resetButton" data-hover=""></div>
+                </div>
+                
+                <div class="js-drawLine drawLine drawLine_2" data-option="copy">
+                  <canvas class="js-drawArea drawArea"></canvas>
+                  <div class="js-resetButton resetButton" data-hover=""></div>
+                </div>
+                
+              <div class="clickButton question" data-toggle-obj="1"></div>
+              <figure class="image1" data-toggle-target="1"><img src="images/6_1/6_1_4_answer_1.svg" alt=""></figure>
+              <figure class="image2" data-toggle-target="1"><img src="images/6_1/6_1_4_answer_2.svg" alt=""></figure>
+              <div data-quiz="input" data-quiz-name="input_1">
+                <input class="small inlineBox inp1" type="text" data-input-obj="1" data-answer="6">
+                <input class="small inlineBox inp2" type="text" data-input-obj="1" data-answer="6">
+                <input class="small inlineBox inp3" type="text" data-input-obj="1" data-answer="7">
+                <input class="small inlineBox inp4" type="text" data-input-obj="1" data-answer="7">
+              </div>
+           </div>
+           <ins class="exam" data-after-target="toggle_1">예</ins>
+           <ins class="exam" data-after-target="toggle_1">예</ins>
+
+            <!-- <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div> -->
+            <!-- <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div> -->
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="toggle_1,input_1" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p> 다각형을 완성하고, 변의 수와 꼭짓점의 수를 구하면 다음과 같습니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+  var drawedPointer = [];
+
+
+  function createDrawLine(container) {
+    function createElement(container, i, j) {
+      var dot = document.createElement('div');
+
+      dot.classList.add('js-dragObj');
+      dot.classList.add('dragObj');
+      dot.classList.add('horizon_' + (i+1));
+      dot.classList.add('vertical_' + (j+1));
+      dot.setAttribute('data-type', 'drag');
+      dot.setAttribute('data-index', '1');
+
+      container.appendChild(dot);
+  
+      return dot;
+    }
+  
+    function createDot(container, dotLength) {
+      for (var i = 0; i < dotLength[0]; i++) {
+        for (var j = 0; j < dotLength[1]; j++) {
+          createElement(container, i, j);
+        }
+      }
+    }
+
+    createDot(container, [6, 9]);
+
+    return new DrawLine({
+      container: container,
+      resetButton: container.querySelector('.js-resetButton'),
+      answerButton: document.querySelector('.js-chainButtons'),
+      answer: [{
+            start: {x: -10000, y: -10000},
+            end: {x: -10000, y: -10000}
+          }],
+      lineWidth: 5,
+      callback: {
+        start: function(DrawLine) {},
+        correct: function(DrawLine) {
+          console.log('correct', DrawLine);
+          var startObj = DrawLine.DRAGDROP.startObj;
+          startObj.resetPosition();
+        },
+        showAnswer: function(DrawLine) {},
+        reset: function(DrawLine) {
+          drawedPointer = [];
+        }
+      },
+    });
+  }
+  
+
+  window.addEventListener('load', function() {
+    var drawLines = $ts.getEl('.js-drawLine').map(createDrawLine);
+    //var drawLines = $ts.getEl('.draw_2 .js-drawLine').map(createDrawLine);
+    //document.querySelector('.draw_1 .js-drawLine').forEach(createDrawLine2);
+  });
+})();
+    </script>
+  </body>
+</html>

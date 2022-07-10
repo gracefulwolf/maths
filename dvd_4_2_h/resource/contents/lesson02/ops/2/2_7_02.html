@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/2_7_2.css">
+  </head>
+	<body class="lesson_2">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 삼각형 </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="45">수학<span>45</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="36">수학 익힘<span>36</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="45"></div>
+      </header>
+      <main>
+        <div class="contentsArea">
+          <h1>이 단원에서 배운 내용을 이용하여 다음 문제를 풀어 봅시다.</h1>
+          <h3><span>[1~3]</span>삼각형을 보고 물음에 답해 보세요.</h3>
+          <section data-quiz="input" >
+            <figure>
+              <img src="./images/2_8/2_8_2_01.svg" height="260px">
+              <div class="clickButton question btn_1" data-popup-btn="1" data-index="1"></div>
+              <div class="clickButton question btn_2" data-popup-btn="1" data-index="2"></div>
+              <div class="clickButton question btn_3" data-popup-btn="1" data-index="3"></div>
+              <div class="clickButton question btn_4" data-popup-btn="1" data-index="4"></div>
+              <div class="clickButton question btn_5" data-popup-btn="1" data-index="5"></div>
+              <div class="clickButton question btn_6" data-popup-btn="1" data-index="6"></div>
+              <div class="clickButton question btn_7" data-popup-btn="1" data-index="7"></div>
+              <div class="clickButton question btn_8" data-popup-btn="1" data-index="8"></div>
+            </figure>
+            <h2 data-index="1">이등변삼각형을 모두 찾아 기호를 써 보세요.</h2>
+            <div class="inputQuizContainer titleIndent" >
+             <input type="text" class="maxWidth" data-input-obj="" data-answer="가, 다, 바, 사, 아">
+              <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+            </div>  
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min middleSize slideup noUserSelect" data-popup-page="1">
+            <div class="basicSlider" data-slide-container="popup">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="popup">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="popup"></div>
+                <div class="basicSlider_btn next" data-btn-next="popup"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="popup">
+                <li class="page1">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page2">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page3">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page4">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page5">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page6">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page7">
+                  <div class="imageBox"></div>
+                </li>
+                <li class="page8">
+                  <div class="imageBox"></div>
+                </li>
+              </ul>
+              <div class="dragBox noIcon doubleRotate">
+                <div class="js-rotate rotateContainer rotate_protractor">
+                  <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_triangle_2">
+                  <div class="js-rotateTarget rotateTarget mathTools ruler"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <!-- <script src="../include/math/script/sprite.min.js"></script> -->
+    <!-- <script src="../include/math/script/intro_finish.js"></script> -->
+    <script>
+      window.addEventListener('load', function() {
+        var rotateArray = $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+
+        window.$popupCallBack = window.$popupCallBack || {};
+        window.$popupCallBack.open = function(POPUP) {
+          var index = POPUP.btn.getAttribute('data-index')-1;
+          $pm.array.inPopup.slider[0].reset({idx: index});
+        };
+        window.$popupCallBack.close = function(POPUP) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        };
+        window.$callBack.sliderMove = function (SLIDER) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        }
+
+      });
+
+    </script>
+  </body>
+</html>

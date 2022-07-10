@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="css/2_3_1.css">
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+        <header>
+            <div class="js-addThingsMenu addThingsMenu"></div>
+            <div class="js-indexButton indexButton" data-hover=""></div>
+            <div class="indexBox">
+                <span>2. 삼각형</span>
+                <span>정삼각형의 성질을 알아볼까요</span>
+            </div>
+            <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="36">수학<span>36~37</span>쪽</div>
+            <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="30">수학 익힘<span>30</span>쪽</div>
+              <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="30"></div>
+        </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="1" data-index="1">정삼각형을 완성하고, 세 각의 크기를 재어 보세요.</h1>
+          <section>
+            <div class="drawContainer draw_1">
+            
+            <ins class="exam exam_1" data-click-target="1">예</ins>
+            
+              <div class="js-drawLine drawLine" data-option="drawing">
+                <canvas class="js-drawArea drawArea"></canvas>
+                <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div> 
+                <div class="js-resetButton resetButton" data-hover=""></div>
+              </div>
+            </div>
+
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-chainButtons quizButtons answer" data-click-obj="1" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+          	<div>
+                <div>정삼각형을 완성하면 다음과 같습니다.</div>
+                <div class="imgWrap">
+                    <ins class="exam">예</ins>
+                    <img src="images/2_3/2_3_1_answer.svg" alt="" />
+                </div>
+                <div>완성한 삼각형의 세 각의 크기를 재면 세 각의 크기가 같습니다.</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [{
+            start: {x: 116, y: 88},
+            end: {x: 246, y: 310}
+          },{
+            start: {x: 375, y: 88},
+            end: {x: 246, y: 310}
+          },{
+            start: {x: 766, y: 88},
+            end: {x: 864, y: 256}
+          },{
+            start: {x: 668, y: 256},
+            end: {x: 864, y: 256}
+          }]
+        ]
+        var drawLines = containers.map(function (container, index) {
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 3,
+            callback: {
+              start: function (DrawLine) { },
+              correct: function (DrawLine) {
+                console.log('correct', DrawLine);
+
+              },
+              showAnswer: function (DrawLine) {
+              },
+              reset: function (DrawLine) {
+
+              }
+            },
+          });
+        })
+
+        $ts.getEl('.js-rotate').map(function(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        });
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,611 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* powerup.css *
+***********************/
+
+
+
+
+/* .powerup header .mainBookButton { right: 210px; } */
+.powerup .popupButton { top: 0; }
+
+/************************* intro *************************/
+.powerup > section.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d2145;
+  z-index: 10;
+}
+.powerup > section.intro.hide {
+  opacity: 1;
+  top: -1200px;
+  animation: powerup_hideIntro 1s ease-in-out;
+}
+.powerup > section.intro.hide:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 200px;
+  left: -110px;
+  width: 1500px;
+  height: 900px;
+  border-radius: 50%;
+  /* background-color: #6a72af; */
+}
+.lesson_1 .powerup > section.intro.hide:before { 
+  background-color: #F6881F;
+}
+.lesson_2 .powerup > section.intro.hide:before { 
+  background-color: #6A72AF;
+}
+.lesson_3 .powerup > section.intro.hide:before { 
+  background-color: #00ABB0;
+}
+.lesson_4 .powerup > section.intro.hide:before { 
+  background-color: #AA5EA5;
+}
+.lesson_5 .powerup > section.intro.hide:before { 
+  background-color: #53B056;
+}
+.lesson_6 .powerup > section.intro.hide:before { 
+  background-color: #F36C44;
+}
+
+/************************* startButton *************************/
+.powerup > section.intro .startButton {
+  position: relative;
+  width: 260px;
+  height: 90px;
+  margin-top: 400px;
+  background: #e77d9d url(../../math/images/btn_start_text_and_arrow.svg) center / contain no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  animation: powerup_showButton 2.5s linear;
+  cursor: pointer;
+  /* z-index: 1; */
+}
+.powerup > section.intro .startButton.hover {
+  transform: scale(1.05);
+}
+/*********************** startButton END ***********************/
+
+
+
+
+/************************* bg *************************/
+.powerup > section.intro .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.powerup > section.intro > .bg .plant {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 623px;
+  animation: powerup_plantUp .7s ease-out;
+}
+.lesson_1 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_1.svg);
+}
+.lesson_2 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_2.svg);
+}
+.lesson_3 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_3.svg);
+}
+.lesson_4 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_4.svg);
+}
+.lesson_5 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_5.svg);
+}
+.lesson_6 .powerup > section.intro > .bg .plant {
+  background-image: url(../../math/images/powerup/intro/powerup_bg_planet_lesson_6.svg);
+}
+
+.powerup > section.intro > .bg .star {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../../math/images/powerup/intro/powerup_bg_start.svg) center / contain no-repeat;
+  animation: powerup_twinkle 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+.powerup > section.intro > .bg .buildings {
+  position: absolute;
+  top: 54px;
+  right: 102px;
+  width: 160px;
+  height: 212px;
+  background-size: auto 212px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/powerup/intro/powerup_bg_building.svg);
+  animation: powerup_buidingsUp .8s ease-in-out;
+}
+.lesson_1 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (1 - 1));
+}
+.lesson_2 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (2 - 1));
+}
+.lesson_3 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (3 - 1));
+}
+.lesson_4 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (4 - 1));
+}
+.lesson_5 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (5 - 1));
+}
+.lesson_6 .powerup > section.intro > .bg .buildings {
+  background-position-x: calc(-160px * (6 - 1));
+}
+/*********************** bg END ***********************/
+
+
+
+/************************* title *************************/
+.powerup > section.intro > .title {
+  position: absolute;
+  top: 174px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+}
+.powerup > section.intro > .title > * {
+  position: absolute;
+}
+.powerup > section.intro > .title .math {
+  left: 190px;
+  width: 335px;
+  height: 250px;
+  background: url(../../math/images/powerup/intro/powerup_title_math.svg) 0 0 / auto 250px no-repeat;
+  animation: powerup_zoomInMath 1.3s ease-in-out;
+}
+.lesson_1 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (1 - 1));
+}
+.lesson_2 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (2 - 1));
+}
+.lesson_3 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (3 - 1));
+}
+.lesson_4 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (4 - 1));
+}
+.lesson_5 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (5 - 1));
+}
+.lesson_6 .powerup > section.intro > .title .math {
+  background-position-x: calc(-335px * (6 - 1));
+}
+
+.powerup > section.intro > .title .math:after {
+  content: '';
+  position: absolute;
+  top: 190px;
+  left: 120px;
+  width: 68.5px;
+  height: 240px;
+  background-size: auto 100%;
+  background-position: 0 0;
+  background-image: url(../images/powerup/intro/powerup_title_math_tag.svg);
+}
+.lesson_1 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (1 - 1));
+}
+.lesson_2 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (2 - 1));
+}
+.lesson_3 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (3 - 1));
+}
+.lesson_4 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (4 - 1));
+}
+.lesson_5 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (5 - 1));
+}
+.lesson_6 .powerup > section.intro > .title .math:after {
+  background-position-x: calc(-68.5px * (6 - 1));
+}
+
+.powerup > section.intro > .title .power {
+  top: 190px;
+  left: 446px;
+  width: 442px;
+  height: 100px;
+  background: url(../../math/images/powerup/intro/powerup_title_power.svg) center / contain no-repeat;
+  animation: powerup_showPowerText 2s ease-out;
+}
+
+.powerup > section.intro > .title .study {
+  top: 54px;
+  left: 552px;
+  width: 400px;
+  height: 100px;
+  background: center / contain no-repeat;
+  animation: powerup_showStudy 2.5s linear;
+}
+
+.powerup > section.intro > .title .study.show { opacity: 1; }
+
+.powerup > section.intro > .title .char {
+  top: 40px;
+  left: 850px;
+  transform: scale(.8);
+  /* animation: powerup_char_bounce ease-in-out 1.5s infinite, powerup_zoomInChar 2.5s ease-in-out; */
+  animation: powerup_zoomInChar 2.5s ease-in-out;
+}
+/*********************** title END ***********************/
+
+/*********************** intro End ***********************/
+
+
+
+
+
+/************************* question *************************/
+.powerup .contentsArea h1 {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 20px;
+  font-family: NSquareREB;
+}
+.powerup .contentsArea h1:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-image: url(../../math/images/powerup/powerup_icon_title.svg);
+  background-repeat: no-repeat;
+  background-size: auto 60px;
+  background-position: 0 1px;
+}
+.lesson_1 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (1 - 1));
+}
+.lesson_2 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (2 - 1));
+}
+.lesson_3 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (3 - 1));
+}
+.lesson_4 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (4 - 1));
+}
+.lesson_5 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (5 - 1));
+}
+.lesson_6 .powerup .contentsArea h1:before {
+  background-position-x: calc(-60px * (6 - 1));
+}
+
+.powerup main {
+  overflow: visible;
+}
+.powerup .contentsArea .page1 h1 {
+  display: none;
+}
+
+.powerup .page1 section {
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 1280px;
+  height: 676px;
+}
+
+.powerup .page1 .mediaContainer {
+  background-color: #2f2e2e;
+}
+
+.powerup .page1 .video {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.powerup .page1 .video .controller {
+  bottom: 36px;
+}
+/*********************** question END ***********************/
+
+
+
+
+
+/************************* subTitle *************************/
+.powerup h2 {
+  width: 197px;
+  height: 50px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background-size: auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/powerup/powerup_title.svg);
+}
+.powerup h2.withTeacher {
+  background-position-y: 0;
+}
+.powerup h2.self {
+  background-position-y: -50px;
+}
+.lesson_1 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 0);
+}
+.lesson_2 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 1);
+}
+.lesson_3 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 2);
+}
+.lesson_4 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 3);
+}
+.lesson_5 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 4);
+}
+.lesson_6 .powerup .contentsArea h2 {
+  background-position-x: calc(-197px * 5);
+}
+
+
+.powerup .contentsArea h3 {
+  display: flex;
+  margin-bottom: 10px;
+}
+.powerup .contentsArea h3:before {
+  content: '';
+  display: block;
+  flex: 0 0 auto;
+  position: relative;
+  top: 8px;
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  background-size: auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../../math/images/powerup/powerup_icon_pencil.svg);
+}
+.lesson_1 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 0);
+}
+.lesson_2 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 1);
+}
+.lesson_3 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 2);
+}
+.lesson_4 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 3);
+}
+.lesson_5 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 4);
+}
+.lesson_6 .powerup .contentsArea h3:before {
+  background-position-x: calc(-44px * 5);
+}
+/*********************** subTitle END ***********************/
+
+
+
+
+
+/*********************** page END ***********************/
+.powerup .basicSlider_pageMove { bottom: -10px; }
+
+.powerup .basicSlider[data-slide-container="inner"] .basicSlider_btn.next,
+.powerup .basicSlider[data-slide-container="inner"] .basicSlider_btn.prev {
+  top: 200px;
+}
+.powerup .basicSlider[data-slide-container="inner"] .basicSlider_btn.next {
+  right: 250px;
+}
+.powerup .basicSlider[data-slide-container="inner"] .basicSlider_btn.prev {
+  left: 250px;
+}
+
+.powerup .titleIndent {
+  margin-left: 50px;
+}
+
+.powerup [data-click-obj].complete {
+  display: block;
+}
+/*********************** page END ***********************/
+
+
+
+
+
+
+/************************* animation *************************/
+@keyframes powerup_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-o-keyframes powerup_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-moz-keyframes powerup_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+@-webkit-keyframes powerup_hideIntro {
+  0% { top: 0; }
+  100% { top: -1200px; }
+}
+
+@keyframes powerup_showButton {
+  0%, 90% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@-o-keyframes powerup_showButton {
+  0%, 90% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@-moz-keyframes powerup_showButton {
+  0%, 90% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@-webkit-keyframes powerup_showButton {
+  0%, 90% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@keyframes powerup_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.1); }
+}
+@-o-keyframes powerup_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.1); }
+}
+@-moz-keyframes powerup_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.1); }
+}
+@-webkit-keyframes powerup_plantUp {
+  0% { bottom: -650px; }
+  50% { bottom: 0; transform: scaleY(1.1); }
+}
+
+@keyframes powerup_buidingsUp {
+  0%, 50% { top: 750px; }
+  51% { top: 204px; }
+  90% { top: 50px; transform: scaleY(1.1); }
+}
+@-o-keyframes powerup_buidingsUp {
+  0%, 50% { top: 750px; }
+  51% { top: 204px; }
+  90% { top: 50px; transform: scaleY(1.1); }
+}
+@-moz-keyframes powerup_buidingsUp {
+  0%, 50% { top: 750px; }
+  51% { top: 204px; }
+  90% { top: 50px; transform: scaleY(1.1); }
+}
+@-webkit-keyframes powerup_buidingsUp {
+  0%, 50% { top: 750px; }
+  51% { top: 204px; }
+  90% { top: 50px; transform: scaleY(1.1); }
+}
+
+@keyframes powerup_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-o-keyframes powerup_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-moz-keyframes powerup_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+@-webkit-keyframes powerup_zoomInMath {
+  0%, 80% { transform: scale(0); }
+  80.1% { transform: scale(0.3); }
+  90% { transform: scale(1.1); }
+}
+
+@keyframes powerup_showPowerText {
+  0%, 70% { background-position-x: -442px; }
+}
+@-o-keyframes powerup_showPowerText {
+  0%, 70% { background-position-x: -442px; }
+}
+@-moz-keyframes powerup_showPowerText {
+  0%, 70% { background-position-x: -442px; }
+}
+@-webkit-keyframes powerup_showPowerText {
+  0%, 70% { background-position-x: -442px; }
+}
+
+@keyframes powerup_showStudy {
+  0%, 90% { opacity: 0; }
+}
+@-o-keyframes powerup_showStudy {
+  0%, 90% { opacity: 0; }
+}
+@-moz-keyframes powerup_showStudy {
+  0%, 90% { opacity: 0; }
+}
+@-webkit-keyframes powerup_showStudy {
+  0%, 90% { opacity: 0; }
+}
+
+@keyframes powerup_zoomInChar {
+  0%, 80% { transform: scale(0); }
+  90% { transform: scale(.9); }
+}
+@-o-keyframes powerup_zoomInChar {
+  0%, 80% { transform: scale(0); }
+  90% { transform: scale(.9); }
+}
+@-moz-keyframes powerup_zoomInChar {
+  0%, 80% { transform: scale(0); }
+  90% { transform: scale(.9); }
+}
+@-webkit-keyframes powerup_zoomInChar {
+  0%, 80% { transform: scale(0); }
+  90% { transform: scale(.9); }
+}
+
+@keyframes powerup_char_bounce {
+  50% { top: calc(110px + 10px); }
+}
+@-o-keyframes powerup_char_bounce {
+  50% { top: calc(110px + 10px); }
+}
+@-moz-keyframes powerup_char_bounce {
+  50% { top: calc(110px + 10px); }
+}
+@-webkit-keyframes powerup_char_bounce {
+  50% { top: calc(110px + 10px); }
+}
+
+@keyframes powerup_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-o-keyframes powerup_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-moz-keyframes powerup_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+@-webkit-keyframes powerup_twinkle {
+  30% { opacity: 1; }
+  60% { opacity: 0; }
+}
+/*********************** animation END ***********************/

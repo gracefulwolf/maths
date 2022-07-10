@@ -1,0 +1,88 @@
+@charset "utf-8";
+figure {
+  position: relative;
+  margin: 0 0 0 90px;
+}
+figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  vertical-align: top;
+  pointer-events: none;
+}
+figure img:nth-of-type(2) {
+  top: -10px;
+  left: 8px;
+  width: 1111px;
+}
+.flexUL {
+  position: relative;
+  padding: 94px 0 0 0;
+  box-sizing: border-box;
+}
+.flexUL > li {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  font-family: MapleStoryL;
+}
+.flexUL > li:nth-of-type(1) {
+  height: 110px;
+}
+.flexUL > li:nth-of-type(2) {
+  height: 86px;
+}
+.flexUL > li:nth-of-type(3) {
+  height: 86px;
+}
+.flexUL > li > span {
+  flex-shrink: 0;
+  width: 586px;
+  margin-right: 25px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.flexUL > li:nth-of-type(3) > span {
+  letter-spacing: -4px;
+}
+.flexUL > li:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.starContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.starContainer > .star {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-size: auto 70px;
+  background-position: 70px 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.starContainer > .star.fill {
+  background-position: 0 0;
+}
+
+.green .star {
+  background-position: -70px 0;
+  background-image: url(../../include/math/images/finish/finish_self_star_green.svg);
+}
+
+.purple .star {
+  background-position: -70px 0;
+  background-image: url(../images/5_5/finish_self_star_purple.svg);
+}
+
+.blue .star {
+  background-position: -70px 0;
+  background-image: url(../images/5_5/finish_self_star_blue.svg);
+}

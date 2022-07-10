@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="./css/4_7_1.css">
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>여러 가지 사각형을 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="98">수학<span>98~99</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="72">수학 익힘<span>72</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="72"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea noUserSelect">
+          <h1 data-star="1" data-index="1">직사각형과 정사각형을 각각 찾아 기호를 써 보세요.</h1>
+          <section data-quiz="dragDrop" data-quiz-name="drag_1" data-option="copy">
+            <div class="dragBox right">
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1"><span>가</span><img src="images/4_7/4_7_1_1.svg" alt="이미지"></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1"><span>나</span><img src="images/4_7/4_7_1_2.svg" alt="이미지"></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1"><span>다</span><img src="images/4_7/4_7_1_3.svg" alt="이미지"></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="4" data-drag-obj-answer="1"><span>라</span><img src="images/4_7/4_7_1_4.svg" alt="이미지"></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="5" data-drag-obj-answer="1"><span>마</span><img src="images/4_7/4_7_1_5.svg" alt="이미지"></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="6" data-drag-obj-answer="1"><span>바</span><img src="images/4_7/4_7_1_6.svg" alt="이미지"></div>
+            </div>
+            <div class="inputQuizContainer">
+              <div class="table">
+                <ul>
+                  <li class="title">직사각형</li>
+                  <li class="dottedLine solidLine bottom right"><div class="js-dropArea dropArea" data-drop-area-answer="1"></div></li>
+                </ul>
+                <ul>
+                  <li class="title">정사각형</li>
+                  <li class="dottedLine solidLine bottom"><div class="js-dropArea dropArea" data-drop-area-answer="1"></div></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-quiz-chain="input_1"></div>
+          </section>
+          
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p> 직사각형은 네 각이 모두 직각인 사각형이므로 나, 다, 라, 바이고, 정사각형은 네 각이 모두 직각이고 네 변의 길이가 모두 같은 사각형이므로 나, 라입니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(DRAG) {
+            var dropArea, dropAreaElement, children;
+            dropArea = DRAG.droppedArea;
+
+            console.log('DRAG: ', DRAG);
+
+
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === dropArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              var children = $ts.getEl('.js-dragObj', DRAG.droppedArea.element);
+              if (children.length > 0) {
+                var isChild = children.filter(function(child) {
+                  return child.getAttribute('data-index') === DRAG.movingObj.element.getAttribute('data-index')
+                });
+              }
+              if (isChild && isChild.length > 1) {
+                DRAG.droppedArea.element.removeChild(isChild[1]);
+              }
+            }
+
+
+            if(!DRAG.droppedArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+          }
+
+          var isAnswered = false;
+          var dropArea = $ts.getEl('.js-dropArea');
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            $ts.getEl('.js-dropArea')[0].innerHTML = '나, 다, 라, 바';
+            $ts.getEl('.js-dropArea')[1].innerHTML = '나, 라';
+            dropArea.forEach(function (area) {
+              area.classList.add('blue');
+            })
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+
+            dropArea.forEach(function (area) {
+              area.innerHTML = '';
+              area.classList.remove('blue');
+            })
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

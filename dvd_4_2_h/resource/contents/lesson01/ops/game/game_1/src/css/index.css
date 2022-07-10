@@ -1,0 +1,334 @@
+.page--start {
+  background-image: url(../image/startPage__background.png);
+}
+
+.page--game {
+  background-image: url(../image/gamePage__background.png);  
+}
+
+.gamePage__title__text {
+  text-align: justify;
+  word-break: normal;
+}
+
+.gamePage__introMessage > div {
+  text-align: center;
+  font-size: 34px;
+}
+
+.selectPlay {
+  color: #17375e;
+  font-size: 32px;
+  transform: scale(1);
+}
+
+.selectPlay.hovered,
+.selectPlay.selectPlay--selected {
+  transform: scale(1.1);
+}
+
+.selectPlay .selectPlay__image {
+  background: url(../image/selectPlay.png) center / contain no-repeat;
+  /* box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2); */
+}
+
+/* 스티커 내 분수 */
+.bunsuWrap {
+	position: absolute;
+	font-family: "NanumSquareRoundEB";
+	font-size: 58px;
+	color: #111111;
+}
+.bunsuWrap > div {
+	padding: 0 5px;
+}
+.bunsuWrap .bottom {
+	position: relative;
+	top: -5px;
+  border-top: 5px solid #111111;
+}
+
+.selectPlay[data-play-index="1"] {
+  left: 270px;
+  top: 174px;
+  width: 316px;
+  height: 244px;
+}
+.selectPlay[data-play-index="1"] .selectPlay__image { transform: rotate( 8deg ); }
+.selectPlay[data-play-index="1"] .bunsuWrap_1 { top: 70px; left: 80px; }
+.selectPlay[data-play-index="1"] .operator    { top: 104px; left: 133px; }
+.selectPlay[data-play-index="1"] .bunsuWrap_2 { top: 70px; left: 180px; }
+.selectPlay[data-play-index="1"] .selectPlay__completeMark { top: 40px; left: 28px; }
+
+.selectPlay[data-play-index="2"] {
+  left: 690px;
+  top: 160px;
+  width: 318px;
+  height: 267px;
+}
+.selectPlay[data-play-index="2"] .selectPlay__image { transform: rotate( 10deg ); }
+.selectPlay[data-play-index="2"] .bunsuWrap_1 { top: 120px; left: 83px; }
+.selectPlay[data-play-index="2"] .operator    { top: 122px; left: 127px; }
+.selectPlay[data-play-index="2"] .bunsuWrap_2 { top: 90px; left: 172px; }
+.selectPlay[data-play-index="2"] .selectPlay__completeMark { top: 54px; left: 42px; }
+
+.selectPlay[data-play-index="3"] {
+  left: 270px;
+  top: 379px;
+  width: 317px;
+  height: 267px;
+}
+.selectPlay[data-play-index="3"] .selectPlay__image { transform: rotate( 10deg ); }
+.selectPlay[data-play-index="3"] .bunsuWrap_1 { top: 114px; left: 50px; }
+.selectPlay[data-play-index="3"] .bunsuWrap_2 { top: 83px; left: 88px; }
+.selectPlay[data-play-index="3"] .operator    { top: 117px; left: 147px; }
+.selectPlay[data-play-index="3"] .bunsuWrap_3 { top: 83px; left: 185px; }
+.selectPlay[data-play-index="3"] .selectPlay__completeMark { top: 48px; left: 21px; }
+
+.selectPlay[data-play-index="4"] {
+  left: 691px;
+  top: 411px;
+  width: 317px;
+  height: 223px;
+}
+.selectPlay[data-play-index="4"] .selectPlay__image { transform: rotate( -1deg ); }
+.selectPlay[data-play-index="4"] .bunsuWrap_1 { top: 58px; left: 74px; }
+.selectPlay[data-play-index="4"] .operator    { top: 92px; left: 131px; }
+.selectPlay[data-play-index="4"] .bunsuWrap_2 { top: 92px; left: 162px; }
+.selectPlay[data-play-index="4"] .bunsuWrap_3 { top: 58px; left: 205px; }
+.selectPlay[data-play-index="4"] .selectPlay__completeMark { left: 40px; top: 42px; }
+
+.selectPlay--completed .selectPlay__image {
+  opacity: 0.3 !important;
+}
+
+.selectPlay--completed .bunsu {
+  opacity: 1 !important;
+}
+
+.selectPlay.selectPlay--selected:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: -20px;
+  width: 90px;
+  height: 90px;
+  background: url(../image/check.svg) center / contain no-repeat;
+}
+
+.playPage .selectPlay {
+  transition-duration: 1s;
+  transform: scale(1.1);
+}
+
+.playPage--on .selectPlay[data-play-index="1"] {
+  transform: translate(-106px, -135px);
+}
+
+.playPage--on .selectPlay[data-play-index="2"] {
+  transform: translate(-316px, 0);
+}
+
+.playPage--on .selectPlay[data-play-index="3"] {
+  transform: translate(92px, -115px);
+}
+
+.playPage--on .selectPlay[data-play-index="4"] {
+  transform: translate(-456px, -15px);
+}
+
+.playPage {
+  background: url(../image/playPage__background.png) center / cover no-repeat;
+}
+
+.playPage--completed .selectPlay {
+  transition: transform 1s ease-out, opacity 1.2s ease-out;
+  opacity: 0;
+}
+
+.playPage--completed .selectPlay[data-play-index="1"] {
+  /* transform: translate(-630px, -135px) scale(1.3); */
+  transform: translate(-106px, -402px) scale(1.3);
+}
+
+.playPage--completed .selectPlay[data-play-index="2"] {
+  /* transform: translate(-1100px, 0) scale(1.3); */
+  transform: translate(-316px, -400px) scale(1.3);
+}
+
+.playPage--completed .selectPlay[data-play-index="3"] {
+  /* transform: translate(-700px, -115px) scale(1.3); */
+  transform: translate(92px, -700px) scale(1.3);
+}
+
+.playPage--completed .selectPlay[data-play-index="4"] {
+  /* transform: translate(-1100px, -15px) scale(1.3); */
+  transform: translate(-456px, -700px) scale(1.3);
+}
+
+.selectTarget {
+  position: absolute;
+  background: center / contain no-repeat;
+  cursor: pointer;
+}
+
+.selectTarget.hovered {
+  transform: scale(1.1);
+}
+
+.selectTarget.answered {
+	cursor: default;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.selectTarget[data-select-target="1"] {
+  left: 680px;
+  top: 334px;
+  width: 224px;
+  height: 185px;
+  background-image: url(../image/selectTarget_1.png);
+}
+
+.selectTarget[data-select-target="2"] {
+  left: 663px;
+  top: 560px;
+  width: 262px;
+  height: 126px;
+  background-image: url(../image/selectTarget_2.png);
+}
+.selectTarget[data-select-target="2"]:after {
+  position:absolute;
+  top: 78px;
+  left: 208px;
+  width: 69px;
+  height: 72px;
+  /* content: ""; */
+  /* background: url(../image/selectTarget_2_1.png) center / contain no-repeat; */
+}
+
+.selectTarget[data-select-target="3"] {
+  left: 967px;
+  top: 374px;
+  width: 206px;
+  height: 146px;
+  background-image: url(../image/selectTarget_3.png);
+}
+
+.selectTarget[data-select-target="4"] {
+  left: 962px;
+  top: 213px;
+  width: 223px;
+  height: 126px;
+  background-image: url(../image/selectTarget_4.png);
+}
+
+.selectTarget[data-select-target="5"] {
+  left: 706px;
+  top: 162px;
+  width: 189px;
+  height: 201px;
+  background-image: url(../image/selectTarget_5.png);
+}
+.selectTarget[data-select-target="5"]:after {
+  position:absolute;
+  top: 26px;
+  left: 187px;
+  width: 66px;
+  height: 71px;
+  /* content: ""; */
+  /* background: url(../image/selectTarget_5_1.png) center / contain no-repeat; */
+}
+
+.selectTarget .bunsuWrap {
+	position: absolute;
+	font-family: "NanumSquareRoundEB";
+	font-size: 28px;
+	color: #111111;
+}
+.selectTarget .bunsuWrap > div {
+	padding: 0 3px;
+}
+.selectTarget .bunsuWrap .bottom {
+	position: relative;
+	top: -5px;
+  border-top: 2px solid #111111;
+}
+
+.selectTarget[data-select-target="1"] .bunsuWrap_1 { top: 80px; left: 53px; }
+.selectTarget[data-select-target="1"] .bunsuWrap_2 { top: 66px; left: 71px; }
+.selectTarget[data-select-target="2"] .bunsuWrap_1 { top: 50px; left: 67px; }
+.selectTarget[data-select-target="2"] .bunsuWrap_2 { top: 35px; left: 86px; }
+.selectTarget[data-select-target="3"] .bunsuWrap   { top: 46px; left: 55px; }
+.selectTarget[data-select-target="4"] .bunsuWrap_1 { top: 50px; left: 52px; }
+.selectTarget[data-select-target="4"] .bunsuWrap_2 { top: 38px; left: 70px; }
+.selectTarget[data-select-target="5"] .bunsuWrap_1 { top: 85px; left: 28px; }
+.selectTarget[data-select-target="5"] .bunsuWrap_2 { top: 72px; left: 46px; }
+
+.playAnswer {
+  position: absolute;
+  /* display: none; */
+  opacity: 0;
+}
+
+.playAnswer.answered {
+  /* display: block; */
+  transition: transform 1s ease-in, opacity 1.2s ease-in;
+  opacity: 1;
+}
+
+.playAnswer[data-play-page="1"] {
+  left: 284px;
+  top: 271px;
+  width: 62px;
+  height: 64px;
+  background: url(../image/answer_1.png) center / contain no-repeat;
+}
+.playAnswer[data-play-page="2"] {
+  left: 530px;
+  top: 417px;
+  width: 62px;
+  height: 60px;
+  background: url(../image/answer_2.png) center / contain no-repeat;
+}
+.playAnswer[data-play-page="3"] {
+  left: 490px;
+  top: 521px;
+  width: 75px;
+  height: 56px;
+  background: url(../image/answer_3.png) center / contain no-repeat;
+}
+.playAnswer[data-play-page="4"] {
+  left: 391px;
+  top: 618px;
+  width: 54px;
+  height: 60px;
+  background: url(../image/answer_4.png) center / contain no-repeat;
+}
+
+.page--end {
+  background: url(../image/playPage__background.png) center / contain no-repeat;
+}
+
+.resultPanel {
+  top: calc((720px - 367px) / 2);
+  left: calc((1280px - 620px) / 2);
+  width: 620px;
+  height: 367px;
+  background: url(../image/resultPanel.png) center / contain no-repeat;
+}
+
+.regameButton {
+  top: 314px;
+  left: calc((620px - 250px) / 2);
+}
+
+
+
+
+.gamePage__introMessage {
+  width: 442px;
+  height: 266px;
+  padding-top: 130px;
+}

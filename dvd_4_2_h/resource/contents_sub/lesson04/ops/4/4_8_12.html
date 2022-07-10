@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <!-- <link rel="stylesheet" href="./css/2_0_2.css"> -->
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:900px;margin:0 auto 30px}
+
+      .sectionPaper {
+        position: absolute;
+        top: 56px;
+        left: 46px;
+        width: 400px;
+        height: 400px;
+        border: 2px solid #6dcef5;
+        box-shadow: inset 0 0 0 2px #fff;
+        background-image: url(./images/sectionPaper_repeat.svg);
+        background-size: 80px;
+        background-position: 0.5px 0.5px;
+      }
+      .drawContainer {
+        position: relative;
+        top: -10px;
+        /* left: 170px; */
+        width: 1052px;
+        height: 500px;
+        box-sizing: border-box;
+        background: url(./images/4_8/4_8_12.svg) center / contain no-repeat;
+      }
+      .drawLine {
+        width: 100%;
+        height: 100%;
+      }
+      .drawLine > .resetButton {
+        bottom: 70px;
+        right: 0px;
+      }
+      .drawLine > .resetButton.off {
+        pointer-events: none;
+      }
+      .drawContainer .line {
+        position: absolute;
+        width: 100px;
+        height: 6px;
+        background-color: #000;
+        border-radius: 10px;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        pointer-events: none;
+      }
+      
+      /* draw_1 */
+      .draw_1 .line {
+        top: 135px;
+        left: 126px;
+        width: 242px;
+      }
+      
+      /* draw_2 */
+      .draw_2 .line {
+        top: 218px;
+        left: 50px;
+        width: 342px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .dragObj {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        transition: none;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .dragObj:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* background-color: #b17d4b; */
+        /* opacity:.5; */
+      }
+      .dragObj.horizon_1 { top: calc((62px * 1) - 20px); }
+      .dragObj.horizon_2 { top: calc((62px * 2) - 20px); }
+      .dragObj.horizon_3 { top: calc((62px * 3) - 20px); }
+      .dragObj.horizon_4 { top: calc((62px * 4) - 20px); }
+      .dragObj.horizon_5 { top: calc((62px * 5) - 20px); }
+      .dragObj.horizon_6 { top: calc((62px * 6) - 20px); }
+      .dragObj.horizon_7 { top: calc((62px * 7) - 20px); }
+      
+      .dragObj.vertical_1 { left: calc(70px); }
+      .dragObj.vertical_2 { left: calc(70px + (62px * 1)); }
+      .dragObj.vertical_3 { left: calc(70px + (62px * 2)); }
+      .dragObj.vertical_4 { left: calc(70px + (62px * 3)); }
+      .dragObj.vertical_5 { left: calc(70px + (62px * 4)); }
+      .dragObj.vertical_6 { left: calc(70px + (62px * 5)); }
+      .dragObj.vertical_7 { left: calc(70px + (62px * 6)); }
+      .dragObj.vertical_8 { left: calc(70px + (62px * 7)); }
+      .dragObj.vertical_9 { left: calc(70px + (62px * 8)); }
+      .dragObj.vertical_10 { left: calc(70px + (62px * 9)); }
+      .dragObj.vertical_11 { left: calc(70px + (62px * 10)); }
+      .dragObj.vertical_12 { left: calc(70px + (62px * 11)); }
+      .dragObj.vertical_13 { left: calc(70px + (62px * 12)); }
+      .dragObj.vertical_14 { left: calc(70px + (62px * 13)); }
+      .dragObj.vertical_15 { left: calc(70px + (62px * 14)); }
+
+      .flexListContainer{display: flex; justify-content: space-around;}
+
+      .drawArea{opacity:0}
+      .pointerOff .drawArea{opacity:1}
+	  
+	  ins.exam {
+            position: absolute;
+            top: 74px;
+		    left: 169px;
+        }
+		.pointerOff ins.exam{ visibility: visible; opacity: 1; }
+		
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>공부를 잘했나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="103">수학<span>103~105</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="75">수학 익힘<span>75</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="75"></div>
+      </header>
+      <main class="finish">
+        <div class="contentsArea">
+          <h1 data-index="12">점 종이에서 한 꼭짓점만 옮겨서 마름모를 그려 보세요.</h1>
+          <section>
+            <div class="titleIndent">
+              <ul class="flexListContainer">
+
+                <li>
+                  <div class="drawContainer draw_1">
+                    <div class="js-drawLine drawLine" data-option="">
+                      <!-- <div class="line"></div> -->
+                      <ins class="exam exam_1" data-click-target="1">예</ins>
+                      
+                      <canvas class="js-drawArea drawArea"></canvas> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_1 vertical_6" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_1 vertical_15" data-type="drag" data-index="1"></div>
+
+                      <div class="js-dragObj dragObj horizon_2 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_6" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_2 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_2 vertical_15" data-type="drag" data-index="1"></div>
+
+                      <div class="js-dragObj dragObj horizon_3 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_3 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_3 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_3 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_3 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_3 vertical_6" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_3 vertical_15" data-type="drag" data-index="1"></div>
+
+                      <div class="js-dragObj dragObj horizon_4 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_4 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_4 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_4 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_4 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_4 vertical_6" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_4 vertical_15" data-type="drag" data-index="1"></div> 
+
+                      <div class="js-dragObj dragObj horizon_5 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_6" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_5 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_5 vertical_15" data-type="drag" data-index="1"></div> 
+
+                      <div class="js-dragObj dragObj horizon_6 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_6 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_6 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_6 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_6 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_6 vertical_6" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_6 vertical_15" data-type="drag" data-index="1"></div>
+
+                      <div class="js-dragObj dragObj horizon_7 vertical_1" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_7 vertical_2" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_7 vertical_3" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_7 vertical_4" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_7 vertical_5" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dragObj horizon_7 vertical_6" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_7" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_8" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_9" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_10" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_11" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_12" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_13" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_14" data-type="drag" data-index="1"></div>
+                      <div class="js-dragObj dragObj horizon_7 vertical_15" data-type="drag" data-index="1"></div>
+                      <!-- <div class="js-resetButton resetButton" data-hover=""></div> -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            마름모는 네 변의 길이를 모두 같게 그립니다.
+          </li>
+        </ul>
+      </section>
+     
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var drawLines = [];
+      
+        function resetAnswer(drawLine) {
+          drawLine.reset();
+        }
+      
+        function pageReset(btn) {
+          var reset = function() {
+            drawLines.forEach(resetAnswer);
+            //window.ruler.reset();
+          }
+      
+          btn.addEventListener('click', reset);
+        }
+      
+        function createDrawLine(container, index) {
+          var answers = [
+            [{
+              start: {x: 285, y: 250},
+              end: {x: 535, y: 438}
+            },{
+              start: {x: 532, y: 438},
+              end: {x: 780, y: 250}
+            }],
+            [{
+              start: {x: 47, y: 219},
+              end: {x: 287, y: 219}
+            },{
+              start: {x: 287, y: 219},
+              end: {x: 287, y: 459}
+            }]
+          ];
+          drawLines.push(new DrawLine({
+            container: container.querySelector('.js-drawLine'),
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-buttons'),
+            answer: answers[index],
+            callback: {
+              correct: function(DrawLine) {
+                // console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+              },
+              showAnswer: function(DrawLine) {},
+            },
+          }));
+        }
+        
+        window.addEventListener('load', function() {
+      
+          [document.querySelector('.draw_1')].forEach(createDrawLine);
+      
+          // window.ruler = new $Ruler({
+          //   container: document.querySelector('.contentsArea'),
+          //   target: document.querySelector('.js-ruler'),
+          //   rotateRightButton: document.querySelector('.js-rotateRightButton'),
+          //   rotateLeftButton: document.querySelector('.js-rotateLeftButton'),
+          //   scale: 1.5,
+          //   degree: 45,
+          // });
+          setTimeout(function() { drawLines.forEach(resetAnswer, 100); });
+        });
+      })();
+    </script>
+  </body>
+</html>

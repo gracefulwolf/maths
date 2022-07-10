@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>재밌게 놀이를 해요</title>
+    <!-- 공통, 필수 css -->    
+    <link rel="stylesheet" href="../base/css/font.css" />    
+    <link rel="stylesheet" href="../base/css/normalize.css" />
+    <link rel="stylesheet" href="../base/css/base.css" />
+    <!-- 게임별 css -->
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/font.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+      <div class="page page--start">
+        <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+          <div class="startPage__ePubPage__icon"></div>
+          수학 128쪽
+        </div>
+
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>꺾은선그래프 보고</span><br /><span>이야기 완성하기</span></div>
+
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+          시작하기
+          <div class="startButton__icon"></div>
+        </button>
+      </div>
+
+      <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+      <div class="page page--game page--on">
+        <div class="gamePage__bg"></div>
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+          <div class="gamePage__title__icon"></div>
+          <div class="gamePage__title__text">이야기 속 <div class="answerNumberBox"></div> 안에 알맞은 수를 써넣으세요.</div>
+        </div>
+
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+          <span class="hidden_text">봉선화 10일</span>
+          <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+          <span class="hidden_text">봉선화 60일</span>
+          <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="3">
+          <span class="hidden_text">봉선화 70일</span>
+          <div class="selectPlay__completeMark"></div>
+        </div>
+
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+          <div class="playPage__bg"></div>
+          <div class="graphBox"><div class="js-zoomButton zoomButton"></div></div>
+          <div class="dayOne"></div>
+          <div class="selectTarget js-selectTarget" data-select-target="1">8
+            <div class="selectTarget__correctMark"></div>
+          </div>
+          <div class="selectTarget js-selectTarget" data-select-target="2">13</div>
+          <div class="selectTarget js-selectTarget" data-select-target="3">15</div>
+          <div class="selectPlay" data-play-index="1"></div>
+          <div class="noticeBoard" data-play-page="1">
+            <span>10일에 본잎이 나왔어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+        </div>
+        <div class="playPage js-playPage" data-play-page="2">
+          <div class="playPage__bg"></div>
+          <div class="graphBox"><div class="js-zoomButton zoomButton"></div></div>
+          <div class="dayOne"></div>
+          <div class="selectTarget js-selectTarget" data-select-target="1">42</div>
+          <div class="selectTarget js-selectTarget" data-select-target="3">44</div>
+          <div class="selectTarget js-selectTarget" data-select-target="2">46
+            <div class="selectTarget__correctMark"></div>
+          </div>
+
+          <div class="selectPlay" data-play-index="1"></div>
+          <div class="noticeBoard" data-play-page="1">
+            <span>10일에 본잎이 나왔어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+          <div class="selectPlay" data-play-index="2"></div>
+          <div class="noticeBoard" data-play-page="2">
+            <span>60일에 꽃망울이 나왔어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+        </div>
+        <div class="playPage js-playPage" data-play-page="3">
+          <div class="playPage__bg"></div>
+          <div class="graphBox"><div class="js-zoomButton zoomButton"></div></div>
+          <div class="dayOne"></div>
+          
+          <div class="selectTarget js-selectTarget firstTarget" data-select-target="1">50</div>
+          <div class="selectTarget js-selectTarget firstTarget" data-select-target="2">51</div>
+          <div class="selectTarget js-selectTarget firstTarget" data-select-target="3">52
+            <div class="selectTarget__correctMark"></div>
+          </div>
+
+          <div class="selectTarget js-selectTarget secondTarget" data-select-target="1">40일과<br>50일</div>
+          <div class="selectTarget js-selectTarget secondTarget" data-select-target="3">50일과<br>60일
+            <div class="selectTarget__correctMark"></div>
+          </div>
+          <div class="selectTarget js-selectTarget secondTarget" data-select-target="2">60일과<br>70일</div>
+
+          <div class="selectPlay" data-play-index="1"></div>
+          <div class="noticeBoard" data-play-page="1">
+            <span>10일에 본잎이 나왔어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+          <div class="selectPlay" data-play-index="2"></div>
+          <div class="noticeBoard" data-play-page="2">
+            <span>60일에 꽃망울이 나왔어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+          
+          <div class="selectPlay firstTarget" data-play-index="3"></div>
+          <div class="selectPlay secondTarget" data-play-index="3"></div>
+          <div class="speechBubble secondTarget" data-play-page="3">
+            <span>꺾은선그래프를 보면</span>
+            <span>봉선화의 키가 가장 많이</span>
+            <span>큰 때는<div class="answerNumberBox" data-answer-index="1"></div>일과</span> 
+            <span><div class="answerNumberBox" data-answer-index="2"></div>일 사이구나.</span>
+          </div>
+
+          <div class="noticeBoard" data-play-page="3">
+            <span>70일에 꽃이 피었어요.</span>
+            <span>봉선화의 키는<div class="answerNumberBox"></div> cm였어요.</span>
+          </div>
+        </div>
+
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+          <div>봉선화 키우기를 선택하세요.</div>
+        </div>
+      </div>
+
+      <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+      <div class="page page--end">
+        <div class="selectPlay" data-play-index="1">
+          <div class="selectPlay__image"></div>
+        </div>
+        <div class="selectPlay" data-play-index="2">
+          <div class="selectPlay__image"></div>
+        </div>
+        <div class="selectPlay" data-play-index="3">
+          <div class="selectPlay__image"></div>
+        </div>
+        <div class="selectPlay" data-play-index="4">
+          <div class="selectPlay__image"></div>
+        </div>
+        <div class="selectPlay" data-play-index="5">
+          <div class="selectPlay__image"></div>
+        </div>
+        <div class="endPage__background"></div>
+
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+          <div class="resultPanel__text"><b>꺾은선그래프</b>를 보고<br/>이야기를 완성했어요!</div>
+
+          <!-- 다시하기 버튼 (.regameButton) -->
+          <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+      </div>
+
+      
+      <div class="js-popup graphPopup">
+        <div class="graphBox"></div>
+        <div class="closeButton"></div>
+        <h3>봉선화의 키</h3>
+      </div>
+    </div>
+    <!-- 공통, 필수 js -->
+    <script src="../base/js/sprite.min.js" type="text/javascript"></script>
+    <script src="../base/js/base.js" type="text/javascript"></script>
+    <!-- 게임별 js -->
+    <script src="./src/js/index.js" type="text/javascript"></script>
+    <script>
+      console.log("global functions ~>", {
+        completePlayPage: completePlayPage,
+        showNextStepButton: showNextStepButton,
+        efSound: efSound,
+        addEfSound: addEfSound,
+        addEfSounds: addEfSounds,
+        shake: shake,
+        setResetCallback: setResetCallback,
+        addHoverEvent: addHoverEvent,
+        getSpriteAnis: getSpriteAnis,
+        playSpriteAni: playSpriteAni,
+        stopSpriteAni: stopSpriteAni,
+      });
+    </script>
+  </body>
+</html>

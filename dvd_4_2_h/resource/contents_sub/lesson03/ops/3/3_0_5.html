@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="css/3_0_5.css">
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>3. 소수의 덧셈과 뺄셈</span>
+          <span>공부할 준비가 되어 있나요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="50">수학<span>50~51</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="39">수학 익힘<span>39</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="39"></div>
+      </header>
+      <main class="ready">
+        <div class="contentsArea">
+          <h1 data-index="4">크기를 비교하여 큰 수부터 차례대로 기호를 써 보세요.</h1>
+          <section class="noUserSelect" data-quiz="dragDrop" data-quiz-name="drag_1" data-option="answer">
+            <div class="dragBox top">
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="1" data-drag-obj-answer="1">㉠<span> 0.3</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="2" data-drag-obj-answer="1">㉡<span> 3.6</span></div>
+              <div class="js-dragObj dragObj figure" data-name="drag-obj" data-index="3" data-drag-obj-answer="1">㉢<span> 0.9</span></div>
+            </div>
+
+            <div class="colorBox gray">
+              <div class="js-dropArea dropArea" data-drop-area-answer="1"></div>
+            </div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn="" data-popup-mode="view"></div>
+            <div class="quizButtons answer" data-hover="" data-quiz-chain="drag_1"></div>
+            <div class="dragResetButton" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <div>소수점을 기준으로 왼쪽에 있는 수의 크기가 큰 쪽이 더 큽니다. 소수점을 기준으로 왼쪽에 있는 수의 크기가 같으면 소수점을 기준으로 오른쪽에 있는 수의 크기가 큰 쪽이 더 큽니다.<br>
+            <div class="arrow noAni pink right"></div>큰 수부터 차례대로 기호를 쓰면 ㉡, ㉢, ㉠입니다.</div>
+          </li>
+        </ul>
+      </section>
+      
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        window.addEventListener('load', function() {
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+          window.$efSound.muted(true);
+          window.$efSound.correct(); // 정답 사운드
+          window.$efSound.incorrect(); // 오답 사운드
+
+          function setSound() {
+            if (isMuted) {
+              window.$efSound.muted(false);
+              isMuted = false;
+            }
+          }
+          var isMuted = true;
+          document.body.addEventListener('mousedown', setSound);
+          document.body.addEventListener('touchstart', setSound);
+          // mobile에서 선잇기/드래그 동작 후 사운드가 안나오는 현상이 있어서 임의로 실행시킴 //
+
+          $ts.getEl('.dragResetButton')[0].addEventListener('click', function () {
+            $pm.array.quiz.inPage.forEach(function(quiz) { quiz.reset(); });
+          })
+
+          window.dragDropCallbacks = {
+            "drag-obj": dragCallback,
+          };
+
+          function dragCallback(DRAG) {
+            var dropArea = DRAG.droppedArea;
+            console.log('DRAG: ', DRAG);
+
+            if (!dropArea) {
+              window.$efSound.incorrect();
+              return console.log('dropArea 없음.');
+            }
+            // 정/오답 판별
+            if (DRAG.movingObj && DRAG.droppedArea) {
+              var answers = DRAG.movingObj.element.hasAttribute('data-drag-obj-answer') ? DRAG.movingObj.element.getAttribute('data-drag-obj-answer').replace(/ /g, '').split(',') : null;
+
+              if (answers) var isCorrect = answers.filter(function(answer) {
+                return answer === DRAG.droppedArea.element.getAttribute('data-drop-area-answer');
+              }).length > 0;
+
+              console.log()
+
+              if (isCorrect) {
+                if (DRAG.droppedArea.element.querySelectorAll('.js-dragObj').length === 1 ) {
+                  DRAG.droppedArea.element.innerHTML += DRAG.movingObj.element.innerHTML;
+                }
+                else DRAG.droppedArea.element.innerHTML += ', ' + DRAG.movingObj.element.innerHTML;
+              }
+            }
+          }
+          var isAnswered = false;
+          window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '㉡, ㉢, ㉠';
+            dropArea.classList.add('blue');
+          }
+          window.$callBack.quizChainReset = function(QUIZCHAIN) {
+            var dropArea = document.querySelector('.js-dropArea');
+            dropArea.innerHTML = '';
+            dropArea.classList.remove('blue');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+@charset "utf-8";
+figure { position: relative; }
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.flexContainer.wrap { flex-wrap: wrap; }
+.flexContainer .shrink { flex-shrink: 0; }
+
+.contentsArea [data-count-target],
+.squareContainer .fillContainer .square[data-count-target] {
+  display: none;
+}
+.contentsArea [data-count-target].on,
+.squareContainer .fillContainer .square[data-count-target].on {
+  display: flex;
+}
+.alertContainer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 5;
+}
+.alertContainer > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 250px;
+  font-size: 40px;
+  font-family: BMJUA;
+  border-radius: 20px;
+  background-color: #FFF;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+.alertContainer.on {
+  display: flex;
+}
+.alertContainer.on > p {
+  animation: zoomInAlert .5s ease-in-out;
+}
+@keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-o-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-moz-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+@-webkit-keyframes zoomInAlert {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+}
+
+ins.draw {
+  top: -70px;
+  right: 0;
+}
+ins.draw:after {
+  content: '표를 몇 칸으로 나눌지 생각해 보세요.';
+}
+
+/* page 1*/
+.flexContainer {
+  justify-content: flex-end;
+  margin: -10px 0 0 0;
+}
+.flexContainer input {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+}
+.tableContainer {
+  margin: 0 0 0 40px;
+}
+.tableContainer .tableCaption {
+  margin: 10px auto;
+  font-size: 50px;
+  width: 720px;
+}
+.tableContainer .tableCaption input {
+  width: 100%;
+  text-align: center;
+}
+.tableContainer .table {
+  z-index: 1;
+}
+.tableContainer .table input {
+  width: 96%;
+  padding: 5px 4px 4px;
+  font-size: inherit;
+}
+.tableContainer .table .shrink {
+  width: auto;
+  flex: 0 1 auto;
+}
+.tableContainer .table > ul > li {
+  height: 77px;
+}
+.tableContainer .table > ul:not(:first-of-type) > li:nth-child(1) {
+  border-top: 3px solid #dcd1ae;
+}
+.table .title {
+  padding: 0 10px;
+  width: auto;
+  font-size: 38px;
+}
+.tableContainer .table .shrink input {
+  font-size: inherit;
+  padding: 0;
+  width: 208px;
+  height: 67px;
+}
+.tableContainer .table > ul:not(:nth-of-type(1)) input {
+  font-size: calc(100% - 8px);
+  height: 67px;
+}
+
+
+.text {
+  position: absolute;
+  bottom: 3px;
+  left: 780px;
+  font-size: 28px;
+}

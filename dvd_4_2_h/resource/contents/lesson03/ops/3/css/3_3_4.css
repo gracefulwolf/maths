@@ -1,0 +1,192 @@
+
+@charset "utf-8";
+
+flex.jBetween {
+  margin: 0 auto 0;
+  width: 1136px;
+  justify-content: space-between;
+}
+.popupButton.head { top: -75px; }
+
+.fillContainer {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border: 2px solid #6dcef5;
+  box-sizing: border-box;
+}
+.fillContainer .square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+.fillContainer .square div.target {
+  cursor: pointer;
+}
+.fillContainer .square_1 {}
+
+.fillContainer .square_1 > div {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+.fillContainer .square_1 > div:not(:last-of-type):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -0.5px;
+  height: 100%;
+  border-right: 1px dashed #7AD2F6;
+  z-index: 1;
+  pointer-events: none;
+}
+.fillContainer .square_2,
+.fillContainer .square_3 {
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+.fillContainer .square_2 div.target,
+.fillContainer .square_3 div.target {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  background-image: url(../images/sectionPaper_repeat.svg);
+  background-size: 100% auto;
+}
+.fillContainer .square_2 > div:nth-of-type(10n + 1),
+.fillContainer .square_3 > div:nth-of-type(10n + 1) {
+  background-size: 100% 36px;
+}
+.fillContainer .square_2 div.target:nth-of-type(n+92):nth-of-type(-n+100),
+.fillContainer .square_3 div.target:nth-of-type(n+92):nth-of-type(-n+100) {
+  background-size: 36px 100%;
+}
+.fillContainer .square_2 div.target:nth-of-type(n+91),
+.fillContainer .square_3 div.target:nth-of-type(n+91) {
+  background-size: 36px 36px;
+}
+.fillContainer .square.complete {
+  pointer-events: none;
+}
+.square_1 .target.fill {
+  background-color: #caebf9;
+}
+.square_2 .target.fill {
+  background-color:#f4d0e4;
+  background-color: #caebf9;
+}
+.square_3 .target.fill {
+  background-color:#D7E8AE;
+  background-color: #caebf9;
+}
+
+.page1 .img_01 {
+  position: relative;
+  left: 123px;
+}
+.page1 .img_02 {
+  position: relative;
+  left: 347px;
+}
+.page1 .img_03 {
+  position: relative;
+  left: 580px;
+}
+.page1 .sectionPaper {
+  width: 350px;
+  height: 350px;
+}
+.page1 .sectionPaper.block_10 flex ul li {
+  border-right: 1px dashed #6dcef5;
+  background-image: none;
+}
+.page1 .sectionPaper flex ul li {
+  background-size: 35px auto;
+}
+
+
+/* page2 */
+/* page2 */
+/* page2 */
+.page2 .img_01 {
+  height: 320px;
+}
+
+/* page3 */
+/* page3 */
+/* page3 */
+.page3 .img_01 {
+  height: 320px;
+}
+.page3 .posText_1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* page4 */
+/* page4 */
+/* page4 */
+.page4 .img_01 {
+  height: 400px;
+}
+
+.popup_pages > li.head {
+  top: 105px;
+  right: 80px;
+  width: 1166px;
+}
+.popup_pages .imageBox {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  padding: 40px 0 0 40px;
+  background: url(../images/3_3/3_3_04_06.png) center/contain no-repeat;
+  box-sizing: border-box;
+}
+.popup_pages .on .imageBox {
+  animation: opacityOne 1s cubic-bezier(0.47, 0, 0.75, 0.72) forwards;
+  -webkit-animation: opacityOne 1s cubic-bezier(0.47, 0, 0.75, 0.72) forwards;
+}
+.popup_pages .imageBox> p { opacity: 0; }
+.popup_pages .on .imageBox > p {
+  animation: opacityOne 1s cubic-bezier(0.47, 0, 0.75, 0.72) 1s forwards;
+  -webkit-animation: opacityOne 1s cubic-bezier(0.47, 0, 0.75, 0.72) 1s forwards;
+}
+.popup_pages .on .imageBox > p:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.popup_pages .on .imageBox .subImage {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 291px;
+  height: 175px;
+  opacity: 0;
+  background: url(../images/3_3/3_3_04_06_1.png) center/contain no-repeat;
+  animation: opacityBlink 0.5s step-end 3s 3 forwards;
+  -webkit-animation: opacityBlink 0.5s step-end 3s 3 forwards;
+}
+
+
+@keyframes opacityOne {
+  from {opacity: 0;} to {opacity: 1;}
+}
+@-webkit-keyframes opacityOne {
+  from {opacity: 0;} to {opacity: 1;}
+}
+@-ms-keyframes opacityOne {
+  from {opacity: 0;} to {opacity: 1;}
+}
+
+@keyframes opacityBlink {
+  0%, 100% {opacity: 1;} 50% {opacity: 0;}
+}
+@-webkit-keyframes opacityBlink {
+  0%, 100% {opacity: 1;} 50% {opacity: 0;}
+}
+@-ms-keyframes opacityBlink {
+  0%, 100% {opacity: 1;} 50% {opacity: 0;}
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/4_6_5.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>마름모를 알아볼까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="97">수학<span>97</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="70">수학 익힘<span>70</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page=97"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="2">마름모의 성질을 예상하고, 확인해 봅시다.</h1>
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div>
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <div class="imageBox"></div>
+                  <ul class="list dot titleIndent">
+                    <li>마름모의 성질을 예상해 보세요.</li>
+                  </ul>
+                  <div class="quizContainer" data-quiz="input" data-quiz-name="input_1">
+                    <div>
+                      마주 보는 두 각의 크기가
+                      <input type="text" class="inlineBox" data-input-obj="1" data-answer="같습니다">.
+                    </div>
+                    <div>
+                      이웃한 두 각의 크기의 합이
+                      <input type="text" class="inlineBox" data-input-obj="2" data-answer="180">°입니다.
+                    </div>
+                    <div>
+                      마주 보는 꼭짓점끼리 이은 선분이
+                      <input type="text" class="inlineBox" data-input-obj="3" data-answer="수직으로"> 만나고 이등분합니다.
+                    </div>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="input_1" data-hover=""></div>
+                </li>
+                <li class="page2">
+                  <div class="imageBox"></div>
+                  <div class="dragBox top">
+                    <div class="js-rotate rotateContainer rotate_ruler">
+                      <div class="js-rotateTarget rotateTarget mathTools ruler"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                    </div>
+                    <div class="js-rotate rotateContainer rotate_protractor">
+                      <div class="js-rotateTarget rotateTarget mathTools ruler protractor"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="page3">
+                  <ul class="list dot titleIndent">
+                    <li>내 예상이 맞는지 자와 각도기로 확인해 보고, 마름모의 성질을 말해 보세요.</li>
+                  </ul>
+                  <div class="quizContainer titleIndent dotListIndent" data-quiz="input" data-quiz-name="input_2">
+                    <textarea type="text" class="maxWidth" data-input-obj="1" data-answer="  "></textarea>
+                    <ul class="list dot answer textColor" data-after-target="input_2">
+                      <li>마주 보는 두 각의 크기가 같습니다.</li>
+                      <li>이웃한 두 각의 크기의 합이 180˚입니다.</li>
+                      <li>마주 보는 꼭짓점끼리 이은 선분이 수직으로 만나고 이등분합니다.</li>
+                    </ul>
+                  </div>
+                  <div class="js-chainButtons quizButtons answer" data-quiz-chain="input_2" data-hover=""></div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 5,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+
+@charset "utf-8";
+
+
+
+section.game {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  font-size: 20px;
+  font-family: MapleStoryB;
+  background: #333;
+  z-index: 1;
+}
+section.game.on {
+  display: block;
+  animation: startGame .5s ease-in-out;
+}
+section.game > * {
+  display: block;
+  width: 100%;
+}
+section.game > header {
+  opacity: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 40px;
+  background-color: #F8F5E9;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 2px 0 2px rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  z-index: 1;
+}
+section.game > header > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 24px;
+  color: #FFF;
+  background-color: #FF9700;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+}
+section.game > header > h2:before {
+  content: '';
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  background: url(../images/game_icons.svg) left center / auto 100% no-repeat;
+}
+section.game > iframe {
+  opacity: 0;
+  position: relative;
+  top: 20px;
+  height: calc(100% - 20px);
+}
+section.game > iframe.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+section.game.on > * {
+  opacity: 1;
+  animation: showItemInGame .7s linear;
+}
+
+section.game .quizLengthContainer {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  margin-right: 12px;
+  color: #7C511E;
+}
+section.game .quizLengthContainer:before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 4px;
+  background: url(../images/game_icons.svg) right center / auto 100% no-repeat;
+}
+section.game .quizLengthContainer > span {
+  margin: 0 2px;
+}
+section.game .quizLengthContainer .totalLength {
+  opacity: .7;
+  font-size: 18px;
+}
+section.game .starContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  margin-right: 90px;
+}
+section.game .starContainer:before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  width: calc(100% - 10px);
+  border-bottom: 2px solid #5B4732;
+}
+section.game .starContainer > * {
+  flex: 0 0 auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  border-radius: 50%;
+  border: 1px solid #5B4732;
+  background: #7E664C url(../images/game_star.svg) left center / auto 100% no-repeat;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+section.game .starContainer > *:after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../images/game_star.svg) right center / auto 100% no-repeat;
+  animation: appendStar .5s ease-in-out;
+}
+section.game .starContainer > *.complete {
+  background: #7E664C;
+}
+section.game .starContainer > *.on {
+  /* border-color: #df3525; */
+  background: #ef3b2d;
+  /* border-width: 2px; */
+}
+section.game .starContainer > *.on:after,
+section.game .starContainer > *.complete:after {
+  content: '';
+}
+section.game .starContainer > *.on:after {
+  opacity: .9;
+}
+section.game .starContainer > *.complete:after {
+  animation: appendStar2 .5s ease-in-out;
+}
+
+@keyframes appendStar {
+  0% { transform: scale(0);}
+  50% { transform: scale(1);}
+  70% { transform: scale(1);}
+}
+@keyframes appendStar2 {
+  0% { transform: scale(0);}
+  50% { transform: scale(1.3);}
+  70% { transform: scale(1);}
+}
+
+section.game .closeButton {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 36px;
+  height: 32px;
+  border-radius: 14px;
+  background-color: #df3525;
+  cursor: pointer;
+}
+section.game .closeButton.hover {}
+
+section.game .closeButton:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i66CI7J207Ja0XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCINCgkgeT0iMHB4IiB3aWR0aD0iMzZweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzYgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM2IDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggc3R5bGU9ImZpbGw6I0Y4RjVFOTsiIGQ9Ik0yNy4xLDE2LjhjMC0yLjctMS4xLTQuNS0xLjctNS4yYy0wLjItMC4yLTAuMi0wLjYsMC0wLjhsMi4zLTIuMmMwLDAsMS4xLTEuMSwwLTEuMWgtNy40DQoJCQljLTAuNywwLTEuNi0wLjEtMS44LDAuMWMtMC4yLDAuMi0wLjEsMS4xLTAuMSwxLjhWMTZjMCwwLDAsMS4yLDEsMC4xYzAsMCwxLjMtMS4xLDIuNC0yYzAuNi0wLjUsMS41LTAuNiwxLjksMA0KCQkJYzAuNCwwLjcsMC44LDIsMC40LDQuNGMtMC4zLDItMi4zLDQuMi00LjIsNC44Yy01LDEuNC05LjMtMi05LjMtNi40YzAtMi41LDAuOS00LjksMy02YzEuNy0xLDAuMy0zLjEtMS0yLjUNCgkJCUM5LjUsOS45LDcuNywxMyw3LjcsMTYuN2MwLDUuMSwzLjUsOS45LDkuOCw5LjlDMjIuNywyNi41LDI3LjEsMjEuOSwyNy4xLDE2Ljh6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=') center / contain no-repeat;
+}
+section.game .closeButton.hover:before {
+  transform: rotate(-90deg);
+  transition: transform .3s ease-out;
+}
+
+
+
+
+
+/********************* animation *********************/
+@keyframes startGame {
+  0% { width: 0; height: 30px; }
+  50% { width: 100%; height: 30px; }
+  100% { height: 100%; }
+}
+@-o-keyframes startGame {
+  0% { width: 0; height: 30px; }
+  50% { width: 100%; height: 30px; }
+  100% { height: 100%; }
+}
+@-moz-keyframes startGame {
+  0% { width: 0; height: 30px; }
+  50% { width: 100%; height: 30px; }
+  100% { height: 100%; }
+}
+@-webkit-keyframes startGame {
+  0% { width: 0; height: 30px; }
+  50% { width: 100%; height: 30px; }
+  100% { height: 100%; }
+}
+
+@keyframes showItemInGame {
+  0%, 85% { opacity: 0; }
+}
+@-o-keyframes showItemInGame {
+  0%, 85% { opacity: 0; }
+}
+@-moz-keyframes showItemInGame {
+  0%, 85% { opacity: 0; }
+}
+@-webkit-keyframes showItemInGame {
+  0%, 85% { opacity: 0; }
+}
+/******************* animation END *******************/

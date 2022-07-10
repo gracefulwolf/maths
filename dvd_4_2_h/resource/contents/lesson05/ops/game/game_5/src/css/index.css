@@ -1,0 +1,551 @@
+.hidden_text {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
+  opacity: 0;
+}
+
+.page--start {
+  background-image: url(../image/startPage__background.png);
+}
+
+.gamePage__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url(../image/gamePage__background.png);
+
+  background-size: cover;
+}
+
+.gamePage__title__icon {
+  background-image: url(../image/gamePage__title__icon_green.png);
+}
+
+.gamePage__title__text {
+  display: flex;
+  text-align: justify;
+  word-break: normal;
+}
+
+.gamePage__introMessage {
+  width: 511px;
+  height: 246px;
+  background: url(../image/gamePage__introMessage.png) center / contain no-repeat;
+}
+
+.answerNumberBox {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  border: 2px solid #3FB1EA;
+  margin: 0 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamePage__title__text .answerNumberBox {
+  margin-top: 4px;
+}
+
+.selectPlay {
+  position: absolute;
+  top: 183px;
+  width: 337px;
+  height: 337px;
+  border-radius: 34px;
+  border: 6px solid #99D1AC;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: #E2F7E2;
+  transition-property: transform, border-color;
+  transition-duration: 400ms;
+  transform: scale(1);
+  will-change: transform, border-color;
+}
+
+.selectPlay:before {
+  content: '';
+  position: absolute;
+  /* background: 0 0 no-repeat; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 1s;
+  transition-property: transform, width, height;
+  will-change: transform, width, height;
+}
+
+.selectPlay.hovered,
+.selectPlay.selectPlay--selected {
+  transform: scale(1.1);
+  border-color: #4c7819;
+}
+
+.selectPlay[data-play-index="1"] {
+  left: 108px;
+}
+
+.selectPlay[data-play-index="2"] {
+  left: 481px;
+}
+
+.selectPlay[data-play-index="3"] {
+  left: 853px;
+}
+
+.selectPlay[data-play-index="1"]:before {
+  width: 311px;
+  height: 260px;
+  background: url(../image/selectPlay_1.png) center / contain no-repeat;
+}
+
+.selectPlay[data-play-index="2"]:before {
+  width: 251px;
+  height: 167px;
+  background: url(../image/selectPlay_2.png) center / contain no-repeat;
+}
+
+.selectPlay[data-play-index="3"]:before {
+  width: 262px;
+  height: 267px;
+  background: url(../image/selectPlay_3.png) center / contain no-repeat;
+}
+
+.selectPlay__completeMark {
+  top: -7px;
+  left: 28px;
+}
+
+/* .selectPlay[data-play-index="2"] .selectPlay__completeMark {
+  top: -7px;
+  left: 28px;
+}
+
+.selectPlay[data-play-index="3"] .selectPlay__completeMark {
+  top: -7px;
+  left: 28px;
+} */
+
+.selectPlay--disabled {
+  pointer-events: none;
+}
+
+.selectPlay--disabled::before {
+  opacity: 0.3 !important;
+}
+
+.playPage .selectPlay {
+  position: absolute;
+  width: 337px;
+  height: 337px;
+  transition-duration: 1s;
+  background: none;
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+  transition-property: transform, width, height;
+  will-change: transform, width, height;
+}
+
+.playPage--on .selectPlay[data-play-index="1"] {
+  transform: translate(732px, -41px);
+}
+
+.playPage--on .selectPlay[data-play-index="1"]::before {
+  width: 495px;
+  height: 414px;
+}
+
+.playPage--on .selectPlay[data-play-index="2"] {
+  transform: translate(259px, -41px);
+}
+
+.playPage--on .selectPlay[data-play-index="2"]::before {
+  width: 519px;
+  height: 345px;
+}
+
+.playPage--on .selectPlay[data-play-index="3"] {
+  transform: translate(-114px, -26px);
+}
+
+.playPage--on .selectPlay[data-play-index="3"]:before {
+  width: 523px;
+  height: 473px;
+  background: url(../image/selectPlay_3-0.png) center / contain no-repeat;
+}
+
+.playPage--on .selectPlay[data-play-index="3"].secondTarget {
+  transform: translate(-114px, -85px);
+}
+
+.playPage--on .selectPlay[data-play-index="3"].secondTarget:before {
+  background: url(../image/selectPlay_3.png) center / contain no-repeat;
+}
+
+.playPage__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url(../image/playPage__background.png);
+  background-size: cover;
+}
+
+.playPage .graphBox {
+  position: absolute;
+  top: -419px;
+  left: 51px;
+  width: 551px;
+  height: 419px;
+  transition: top 1s;
+  will-change: top;
+  background: url(../image/graphBox.png) center / contain no-repeat;
+}
+
+.playPage .graphBox::before {
+  position: absolute;
+  left: 204px;
+  top: 18px;
+  content: '봉선화의 키';
+  font-size: 33px;
+  color: #111111;
+  font-family: "NanumSquareRoundEB";
+}
+
+.playPage .graphBox::after {
+  position: absolute;
+  content: '';
+  left: 40px;
+  top: 92px;
+  width: 476px;
+  height: 293px;
+  background: url(../image/graph.png) center / contain no-repeat;
+}
+
+.playPage.playPage--on .graphBox {
+  top: 62px;
+}
+
+.playPage.playPage--on .dayOne {
+  position: absolute;
+  width: 153px;
+  height: 157px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 105px;
+  left: 712px;
+}
+
+.playPage.playPage--on .dayOne::before {
+  content: '';
+  width: 81px;
+  height: 129px;
+  background: url(../image/flowerpot.png) center / contain no-repeat;
+}
+
+.playPage.playPage--on .dayOne::after {
+  content: '1일에 씨를 뿌렸어요.';
+  font-size: 16px;
+  font-family: "NanumSquareRoundB";
+  color: #111111;
+  margin-top: -26px;
+  width: 153px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/noticeBoard.png) center / contain no-repeat;
+}
+
+.playPage .noticeBoard {
+  position: absolute;
+  font-size: 37px;
+  font-family: "NanumSquareRoundB";
+  color: #111111;
+  left: 645px;
+  top: 461px;
+  width: 523px;
+  height: 178px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/noticeBoard.png) center / contain no-repeat;
+  transition-duration: 1s;
+  transition-property: transform;
+  will-change: transform;
+}
+
+.noticeBoard span {
+  display: flex;
+  margin: 2px 0;
+}
+
+.noticeBoard .answerNumberBox {
+  width: 56px;
+  height: 46px;
+  border-radius: 11px;
+}
+
+.playPage .selectPlay.answered[data-play-index="1"] {
+  transform: translate(797px, -124px);
+}
+
+.playPage .selectPlay.answered[data-play-index="1"]::before {
+  width: 186px;
+  height: 156px;
+}
+
+.noticeBoard.answered[data-play-page="1"] {
+  transform: translate(123px, -232px) scale(0.4);
+}
+
+.playPage .selectPlay.answered[data-play-index="2"] {
+  transform: translate(155px, 15px);
+}
+
+.playPage .selectPlay.answered[data-play-index="2"]::before {
+  width: 147px;
+  height: 98px;
+}
+
+.noticeBoard.answered[data-play-page="2"] {
+  transform: translate(-96px, -101px) scale(0.4);
+}
+
+.answered .answerNumberBox {
+  /* border-color: transparent; */
+  /* background-color: transparent; */
+}
+
+.noticeBoard.answered[data-play-page="1"] .answerNumberBox::after {
+  content: '8';
+}
+
+.noticeBoard.answered[data-play-page="2"] .answerNumberBox::after {
+  content: '46';
+}
+
+.noticeBoard.answered[data-play-page="3"] .answerNumberBox::after {
+  content: '52';
+}
+
+.speechBubble.secondTarget.answered[data-play-page="3"] .answerNumberBox[data-answer-index="1"]::after {
+  content: '50';
+}
+.speechBubble.secondTarget.answered[data-play-page="3"] .answerNumberBox[data-answer-index="2"]::after {
+  content: '60';
+}
+
+.selectTarget {
+  top: 503px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background: center / contain no-repeat;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 6px solid #99D1AC;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: #E2F7E2;
+  font-size: 50px;
+  color: #111111;
+  font-family: "NanumSquareRoundB";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectTarget.hovered {
+  transform: scale(1.1);
+}
+
+.selectTarget[data-select-target="1"] {
+  left: 76px;
+}
+
+.selectTarget[data-select-target="2"] {
+  left: 253px;
+}
+
+.selectTarget[data-select-target="3"] {
+  left: 428px;
+}
+
+.selectTarget__correctMark {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: url(../image/icon_o_red.svg) top / contain no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.selectTarget.answered .selectTarget__correctMark {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.playPage[data-play-page="2"] .selectTarget[data-select-target="2"] {
+  left: 428px;
+}
+
+.playPage[data-play-page="2"] .selectTarget[data-select-target="3"] {
+  left: 253px;
+}
+
+.playPage[data-play-page="3"] .secondTarget {
+  font-size: 36px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.playPage[data-play-page="3"] .selectTarget[data-select-target="2"].secondTarget {
+  left: 428px;
+}
+
+.playPage[data-play-page="3"] .selectTarget[data-select-target="3"].secondTarget {
+  left: 253px;
+}
+
+.playPage[data-play-page="3"] .speechBubble {
+  position: absolute;
+  left: 670px;
+  top: 20px;
+  width: 276px;
+  height: 156px;
+  background: url(../image/speechBubble.png) center / contain no-repeat;
+  font-size: 25px;
+  display: flex;
+  font-family: 'MaplestoryLight';
+  flex-direction: column;
+  justify-content: center;
+}
+
+.playPage[data-play-page="3"] .speechBubble span {
+  display: flex;
+  justify-content: center;
+}
+
+.playPage[data-play-page="3"] .speechBubble .answerNumberBox {
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.page--end {
+  background: url(../image/playPage__background.png) center / contain no-repeat;
+}
+
+.resultPanel {
+  top: calc((720px - 367px) / 2);
+  left: calc((1280px - 620px) / 2);
+  width: 620px;
+  height: 367px;
+  background: url(../image/resultPanel.png) center / contain no-repeat;
+}
+
+.regameButton {
+  top: 314px;
+  left: calc((620px - 250px) / 2);
+}
+
+
+.zoomButton {
+  position: absolute;
+  right: 16px;
+  top: 76px;
+  width: 40px;
+  height: 40px;
+  background: url(../image/icon_zoom.svg) center / contain no-repeat;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.graphPopup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.graphPopup.visible {
+  display: block;
+}
+.graphPopup:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 1120px;
+  height: 630px;
+  border-radius: 12px;
+  border: 4px solid #eee;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+  border-color: #ffba48;
+  background:  #FFF url(../image/graph.png) center top 80px / auto 530px no-repeat;
+}
+.graphPopup:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+}
+.graphPopup .closeButton {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  width: 28px;
+  height: 28px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE4IDE4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMTcsMy4yODYgMTQuNzEzLDEgOSw2LjcxNCAzLjI4NywxIDEsMy4yODYgNi43MTMsOSAxLDE0LjcxNCAzLjI4NywxNyA5LDExLjI4NiAxNC43MTMsMTcgDQoJMTcsMTQuNzE0IDExLjI4Nyw5ICIvPg0KPC9zdmc+DQo=) center no-repeat;
+  background-size: 18px;
+  background-color: #ffba48;
+  cursor: pointer;
+  z-index: 1;
+}
+.graphPopup .graphBox {
+  position: absolute;
+  top: -419px;
+  left: 51px;
+  width: 551px;
+  height: 419px;
+  transition: top 1s;
+  will-change: top;
+  background: url(../image/graphBox.png) center / contain no-repeat;
+}
+.graphPopup h3 {
+  position: absolute;
+  top: 22px;
+  left: 570px;
+  font-size: 40px;
+  font-family: 'MapleStoryLight';
+  z-index: 1;
+}
+
+
+[data-play-page="3"] .answerNumberBox {
+  margin-right: 0;
+}

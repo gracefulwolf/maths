@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/2_7_7.css">
+  </head>
+	<body class="lesson_2">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 삼각형 </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="46">수학<span>46</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="36">수학 익힘<span>36</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="46"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h2 data-index="6">설명하고 있는 삼각형을 그려 보세요. </h2>
+          <section class="noUserSelect">
+            <!-- <img src="./images/2_8/2_8_7_01.svg" alt=""> -->
+            <div class="char">
+              <div class="balloonText">한 변의 길이는<br/>3 cm 이고, 두 각의<br/>크기는 45<span>˚</span>야.   </div>
+            </div>
+            <div class="imageBox"></div>
+            
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer rotate_protractor">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+              <div class="js-rotate rotateContainer rotate_ruler">
+                <div class="js-rotateTarget rotateTarget mathTools ruler_3"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+
+            <div class="js-drawLine drawLine" data-option="drawing">
+              <canvas class="js-drawArea drawArea"></canvas>
+              <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+              <div class="js-dragObj dropArea" data-type="drop" data-index="2"></div> 
+              <div class="js-resetButton resetButton" data-hover=""></div>
+            </div>
+            <ins class="exam">예</ins>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <!-- <script src="./js/2_3_6.js"></script> -->
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 5,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+
+
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [
+            { start: {x: 77, y: 302}, end: {x: 383, y: 302} },
+            { start: {x: 77, y: 302}, end: {x: 230, y: 151} },
+            { start: {x: 383, y: 302}, end: {x: 230, y: 151} }
+          ]
+        ];
+        
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+          
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dropObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drop');
+          dot.setAttribute('data-index', '1');
+          
+          container.appendChild(dot);
+          
+          return dot;
+        }
+        
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+        
+        
+        var drawLines = containers.map(function(container, index) {
+          // createDot(container, [7, 7]);
+          
+          return new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function(DrawLine) {},
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+              },
+              incorrect: function(DrawLine) {},
+              showAnswer: function(DrawLine) {},
+              reset: function(DrawLine) {}
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

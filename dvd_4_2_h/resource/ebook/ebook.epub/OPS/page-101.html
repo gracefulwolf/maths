@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.19 (academy) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="./js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="./js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="./js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="./js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="./css/render.gen.min.css">
+    <script type="text/javascript" src="./js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="./js/render-page-101.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="./js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 번들 폰트 적용 -->
+    <style>
+</style>
+
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController" ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>5 자료와 꺾은선그래프
+
+기사 내용이 뭐야?
+
+통계청 발표에 따르면 2020년 3월 전국 출생아 수는
+24378명으로 1년 전보다 줄었대.
+
+5 자 료 와 꺾 은 선 그 래 프 무엇을 배웠는지 확인해 보세요
+108
+4-1 막대그래프
+좋아하는운동
+(명) 10
+5 0 학생 수 운동 등산 달리기 줄넘기 수영
+
+•막대그래프:왼쪽그래프와같이조사한 자료의수량을막대모양으 로나타낸그래프
+•가장많은학생이좋아하는운동은달리 기입니다.
+•줄넘기를 좋아하는 학생은 수영을 좋아 하는학생보다1명더많습니다.
+
+</xmp></div>
+</body>
+
+</html>

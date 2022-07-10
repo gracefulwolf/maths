@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="./css/2_4_7.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 삼각형</span>
+          <span>삼각형을 분류해 볼까요(2)</span>
+          <span class="step quiz">평가</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="39">수학<span>39</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="32">수학 익힘<span>32</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="39"></div>
+      </header>
+      <main class="act quiz with">
+        <div class="contentsArea">
+          <h1 data-index="1">도형판에 예각삼각형, 직각삼각형, 둔각삼각형을 만들어 보세요. 짝과
+            도형판을 바꾸어 짝이 만든 삼각형이 어떤 삼각형인지 말해 보세요.</h1>
+          <section>
+            <div class="imageBox">
+              <div class="balloonText">예각삼각형</div>
+              <div class="balloonText">둔각삼각형</div>
+              <div class="balloonText">직각<br/>삼각형</div>
+            </div>
+            <div class="clickButton question" data-popup-btn="2"></div>
+            <div class="popupButton movie" data-popup-btn="1"></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="whole" data-popup-page="1">
+            <h3>도형판에 예각삼각형, 직각삼각형, 둔각삼각형을 만들고 짝과 바꾸어 어떤 삼각형인지 말하기</h3>
+            <div class="mediaContainer video on" data-media-container="video">
+              <video poster="media/mp4/2_4_7_mov.jpg" webkit-playsinline="" playsinline="">
+                  <source src="media/mp4/2_4_7_mov.mp4" type="video/mp4">
+                  Your browser does not support the video element.
+              </video>
+            </div>
+          </li>
+          <li class="min middleSize slideup" data-popup-page="2">
+            <div class="table">
+              <ul>
+                <li class="title">예각삼각형</li>
+                <li class="dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+                <li class="solidLine dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+              </ul>
+              <ul>
+                <li class="title">직각삼각형</li>
+                <li class="dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+                <li class="solidLine dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+              </ul>
+              <ul>
+                <li class="title">둔각삼각형</li>
+                <li class="dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+                <li class="solidLine dottedLine bottom right">
+                  <div class="js-drawLine drawLine" data-option="">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                  <ins class="exam">예</ins>
+                </li>
+              </ul>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-quiz-chain="" data-hover=""></div>
+          </li> 
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/controller.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/newBoardLine.min.js"></script>
+    <!-- <script src="../include/math/script/newDrawLine.min.js"></script> -->
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [
+            {x: 60, y: 56},
+            {x: 96, y: 164},
+            {x: 168, y: 92},
+          ],
+          [
+            {x: 60, y: 164},
+            {x: 96, y: 56},
+            {x: 168, y: 164},
+          ],
+          [
+            {x: 24, y: 56},
+            {x: 24, y: 164},
+            {x: 204, y: 164},
+          ],
+          [
+            {x: 24, y: 200},
+            {x: 24, y: 20},
+            {x: 132, y: 200},
+          ],
+          [
+            {x: 96, y: 56},
+            {x: 24, y: 92},
+            {x: 204, y: 200},
+          ],
+          [
+            {x: 96, y: 164},
+            {x: 24, y: 164},
+            {x: 204, y: 56},
+          ],
+        ];
+
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dragObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drag');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+      
+          return dot;
+        }
+      
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        var drawLines = containers.map(function(container, index) {
+          createDot(container, [6, 6]);
+          return new FigureBoardLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            // answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 20,
+            lineColor: '#e4a023',
+            innerColor: '#cbdfab',
+            innerLine: true,
+            maxLength: 3,
+            callback: {
+              start: function(DrawLine) {},
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+                // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+              },
+              showAnswer: function(DrawLine) {
+                container.classList.add('pointerOff');
+              },
+              reset: function(DrawLine) {
+                container.classList.remove('pointerOff');
+              }
+            },
+          })
+        })
+
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          console.log(QUIZCHAIN)
+          drawLines.forEach(function(drawLine, index) {
+            drawLine.reset();
+            drawLine.showAnswer(answers[index]);
+          })
+
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          drawLines.forEach(function(drawLine, index) {
+            drawLine.reset();
+          })
+        }
+        
+        window.$popupCallBack.open = function(POPUP) {
+          drawLines.forEach(function(drawLine) { drawLine.reset(); })
+        };
+
+      });
+    </script>
+  </body>
+</html>

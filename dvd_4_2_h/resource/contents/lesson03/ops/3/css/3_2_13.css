@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+ins.draw {
+  top: 0;
+  right: 0;
+}
+ins.draw:after {
+  content: '수직선을 클릭해 보세요.';
+}
+
+img.img_01 {
+  margin-left: 30px;
+  margin-right: 40px;
+}
+input {
+  width: 310px;
+  margin: 10px 10px;
+}
+
+
+.posBalloon {
+  position: absolute;
+  top: 13px;
+  left: 330px;
+}
+
+.img_02 {
+  position: absolute;
+  top: 306px;
+  left: 320px;
+  width: 900px;
+}
+
+.lineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  left: 339px;
+  top: -23px;
+  width: 859px;
+  height: 60px;
+}
+.lineContainer > li {
+  position: relative;
+  height: 100%;
+  width: 52px;
+  /* outline: 1px solid red; */
+}
+.oxObj .icon {
+  opacity: 0;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+}
+.oxObj {
+  pointer-events: none;
+}
+.oxObj[data-ox-obj] {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.lineContainer .thinArrow {
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  width: 25px;
+  transform: translateY(-50%) rotate(
+      -90deg
+  ) !important;
+  visibility: hidden;
+}
+.lineContainer > li:nth-of-type(n+1):nth-of-type(-n+2) .thinArrow {
+  left: calc(50% - 2px);
+}
+.lineContainer > li:nth-of-type(n+3):nth-of-type(-n+7) .thinArrow {
+  left: calc(50% - 1px);
+}
+.lineContainer .on .thinArrow {
+  opacity: 1;
+  visibility: visible;
+}
+.complete .lineContainer .oxObj.on:not([data-answer]) .thinArrow {
+  opacity: 0;
+  visibility: hidden;
+}
+.complete .oxObj[data-answer].on:after {
+  content: '3.734';
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #c8245b;
+  text-align: center;
+}
+.complete .oxObj {
+  pointer-events: none;
+}
+.displayN {
+  display: none;
+}
+.nameBox {
+  position: absolute;
+  top: 320px;
+  left: 133px;
+  font-size: 30px;
+}

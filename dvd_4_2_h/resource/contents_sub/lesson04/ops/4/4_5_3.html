@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="./css/2_1_1.css">
+    <style>
+      .inputQuizContainer{width:1100px;margin:30px auto;position:relative}
+      .inputQuizContainer figure{width:1000px;margin:0 auto 30px}
+
+      .drawContainer {
+        position: relative;
+        top: 0;
+        /* left: 170px; */
+        width: 430px;
+        height: 320px;
+        box-sizing: border-box;
+        /* background: url(./images/paper.svg) center / contain no-repeat; */
+        /* background:rgba(0,0,0,0.5); */
+      }
+      .drawLine {
+        width: 100%;
+        height: 100%;
+      }
+      .drawLine > .resetButton {
+        bottom: 0px;
+        right: 0px;
+      }
+      .drawLine > .resetButton.off {
+        pointer-events: none;
+      }      
+      .flexListContainer{display: flex; justify-content: space-around;}
+      .draw_1{position:absolute;top:0px;left:50px}
+      .draw_2{position:absolute;top:0px;left:620px}
+      .drawLine.pointerOff .drawArea{opacity:0}
+      .answerImage {
+          position: absolute;
+          top: 38px;
+          left: 77px;
+          width: 197px;
+          height: 237px;
+          pointer-events: none;  
+          background: url(images/4_5/4_5_3_01.svg) center / contain no-repeat;
+          display:none;
+      }
+      .pointerOff .answerImage{display:block}
+      .answerImage2 {
+          position: absolute;
+          top: 33px;
+          left: -1px;
+          width: 355px;
+          height: 210px;
+          background: url(images/4_5/4_5_3_02.svg) center / contain no-repeat;
+      }
+	  
+	  ins.exam {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+		.pointerOff ins.exam { visibility: visible; opacity: 1; }
+    </style>
+  </head>
+	<body class="lesson_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>4. 사각형</span>
+          <span>평행사변형을 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="94">수학<span>94~95</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="69">수학 익힘<span>69</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="69"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="3">주어진 선분을 한 변으로 하는 평행사변형을 완성해 보세요.</h1>
+          <section data-quiz="input">
+            <div class="inputQuizContainer">
+              <figure><img src="images/4_5/4_5_3.svg" alt=""></figure>
+              <ul class="flexListContainer">
+                <li>
+                  <div class="drawContainer draw_1">
+                    <div class="sectionPaper"></div>
+                    <div class="js-drawLine drawLine" data-option="drawing">
+                      <canvas class="js-drawArea drawArea"></canvas>
+                      <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div> 
+                      <div class="answerImage"></div>
+                      <div class="js-resetButton resetButton" data-hover=""></div>
+                      
+                      <ins class="exam exam_1" data-click-target="1">예</ins>
+                    </div>
+                    <!-- <div class="line"></div> -->
+                  </div>
+                </li>
+                <li>
+                  <div class="drawContainer draw_2">
+                    <div class="sectionPaper"></div>
+                    <div class="js-drawLine drawLine" data-option="drawing">
+                      <canvas class="js-drawArea drawArea"></canvas>
+                      <div class="js-dragObj dragArea" data-type="drag" data-index="1"></div> 
+                      <div class="js-dragObj dropArea" data-type="drop" data-index="1"></div> 
+                      <div class="answerImage answerImage2"></div>
+                      <div class="js-resetButton resetButton" data-hover=""></div>
+                      
+                      <ins class="exam exam_1" data-click-target="1">예</ins>
+                    </div>
+                    <!-- <div class="line"></div> -->
+                  </div>
+                </li>
+              </ul>
+           </div>
+          
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <P>마주 보는 두 쌍의 변이 서로 평행하도록 평행사변형을 완성합니다.	</P> 
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() { });
+
+
+      (function() {
+          var drawLines = [];
+          var answers = [
+            [{
+              start: {x: 78, y: 242},
+              end: {x: 280, y: 68}
+            }],
+            [{
+              start: {x: 18, y: 31},
+              end: {x: 219, y: 203}
+            }]
+          ];
+        
+          function resetAnswer(drawLine) {
+            drawLine.reset();
+          }
+        
+          function createDrawLine(container, index) {
+            drawLines.push(new DrawLine({
+              container: container.querySelector('.js-drawLine'),
+              resetButton: container.querySelector('.js-resetButton'),
+              answerButton: document.querySelector('.js-buttons'),
+              answer: answers[index],
+              callback: {
+                correct: function(DrawLine) {
+                  // console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+                },
+                showAnswer: function(DrawLine) {},
+              },
+            }));
+          }
+          
+          window.addEventListener('load', function() {
+            [document.querySelector('.draw_1'), 
+            document.querySelector('.draw_2')].forEach(createDrawLine);
+          
+            setTimeout(function() { drawLines.forEach(resetAnswer); }, 100);
+          });
+        })();
+    </script>
+  </body>
+</html>

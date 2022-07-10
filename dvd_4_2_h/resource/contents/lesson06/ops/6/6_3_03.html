@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="css/6_3_03.css">
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형</span>
+          <span>대각선을 알아볼까요</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="138">수학<span>138</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="96">수학 익힘<span>96</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="138"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="1"><span>주어진 다각형에 <ins class="examIcon"></ins>와 같이 이웃하지 않는 두 꼭짓점을 이어 봅시다.</span></h1>
+          <section class="noUserSelect">
+            <div class="flexContainer">
+              <figure>
+                <img src="images/6_3/6_3_3_01.svg" alt="이미지">
+              </figure>
+              <div class="drawContainer">
+                <div class="drawBox draw_1">
+                  <div class="js-drawLine drawLine" data-option="answer">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-dragObj dragObj dragObj_1" data-type="drag" data-index="1"></div>
+                    <div class="js-dragObj dragObj dragObj_2" data-type="drag" data-index="2"></div>
+                    <div class="js-dragObj dragObj dragObj_3" data-type="drag" data-index="2"></div>
+                    <div class="js-dragObj dragObj dragObj_4" data-type="drag" data-index="1"></div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                </div>
+                <div class="drawBox draw_2">
+                  <div class="js-drawLine drawLine" data-option="answer">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-dragObj dragObj dragObj_1" data-type="drag" data-index="3"></div>
+                    <div class="js-dragObj dragObj dragObj_2" data-type="drag" data-index="4"></div>
+                    <div class="js-dragObj dragObj dragObj_3" data-type="drag" data-index="4"></div>
+                    <div class="js-dragObj dragObj dragObj_4" data-type="drag" data-index="3"></div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                </div>
+                <div class="drawBox draw_3 last">
+                  <div class="js-drawLine drawLine" data-option="answer">
+                    <canvas class="js-drawArea drawArea"></canvas>
+                    <div class="js-dragObj dragObj dragObj_1" data-type="drag" data-index="5"></div>
+                    <div class="js-dragObj dragObj dragObj_2" data-type="drag" data-index="6"></div>
+                    <div class="js-dragObj dragObj dragObj_3" data-type="drag" data-index="5"></div>
+                    <div class="js-dragObj dragObj dragObj_4" data-type="drag" data-index="6"></div>
+                    <div class="js-resetButton resetButton" data-hover=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="js-buttons quizButtons" data-hover="" data-type="answer"></div>
+            <div class="induceLight light_1"></div>
+            <div class="induceLight light_2"></div>
+            <div class="induceLight light_3"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var drawLines = [];
+
+        function lightOff(light) {
+          light.classList.add('hide');
+        }
+        function lightOn(light) {
+          light.classList.remove('hide');
+        }
+
+        function setDrawLine(container, index) {
+          var answers = [
+            [{
+              start: {x: 46, y: 6},
+              end: {x: 215, y: 145}
+            },{
+              start: {x: 175, y: 6},
+              end: {x: 4, y: 145}
+            }],
+            [{
+              start: {x: 213, y: 9},
+              end: {x: 4, y: 148}
+            },{
+              start: {x: 55, y: 7},
+              end: {x: 167, y: 148}
+            }],
+            [{
+              start: {x: 131, y: 8},
+              end: {x: 131, y: 151}
+            },{
+              start: {x: 8, y: 78},
+              end: {x: 254, y: 78}
+            }]
+          ];
+          drawLines.push(new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-buttons'),
+            answer: answers[index],
+            callback: {
+              start: function(DrawLine) {
+                lightOff(document.querySelector('.induceLight.light_'+(index+1)));
+              },
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine.startPointer, DrawLine.endPointer);
+              },
+              incorrect: function(DrawLine) {
+                console.log('inCorrect')
+              },
+              showAnswer: function(DrawLine) {
+                $ts.getEl('.induceLight').forEach(lightOff);
+              },
+              reset: function(DrawLine) { }
+            },
+          }));
+        }
+
+        function setResetButtons(btn, index) {
+          btn.addEventListener('click', function() {
+            lightOn(document.querySelector('.induceLight.light_'+(index+1)));
+          });
+        }
+
+        var button = $ts.getEl('.quizButtons')[0];
+        button.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1) $ts.getEl('.induceLight').forEach(lightOn);
+        })
+        window.addEventListener('load', function() {
+          $ts.getEl('.js-drawLine').forEach(setDrawLine);
+          $ts.getEl('.js-resetButton').forEach(setResetButtons);
+
+          setTimeout(function() { drawLines.forEach(function(drawLine) { drawLine.reset(); }); }, 100);
+        });
+
+      })();
+    </script>
+  </body>
+</html>

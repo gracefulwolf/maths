@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.19 (academy) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="./js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="./js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="./js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="./js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="./css/render.gen.min.css">
+    <script type="text/javascript" src="./js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="./js/render-page-105.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="./js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 번들 폰트 적용 -->
+    <style>
+</style>
+
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController" ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>꺾은선그래프를 알아볼까요(2)
+내가 줄넘기를 한 개수를 꺾은선그래프로 나타냈어.
+
+변화가 잘 보이지 않네.
+줄넘기를 한 개수의 변화를 한눈에 알아보기 쉽게 나타내려면 어떻게
+해야 할까?
+
+활
+
+동
+1 은하가 양발 모아 뛰기로 줄넘기를 한 개수를 두 꺾은선그래프로 나타냈습니다. 두 그래프를 비교해 봅시다.
+
+가 줄넘기를한개수
+
+나 줄넘기를한개수
+
+5 (개) 80
+
+(개) 80
+
+자 료
+
+60
+
+와
+
+꺾 은
+
+40
+
+선
+
+그
+
+래 20
+
+프
+
+75 70 65
+
+00
+
+112
+
+개수
+
+월 화수 목금
+
+개수
+
+월 화수 목금
+
+요일
+
+(요일)
+
+요일
+
+(요일)
+
+●두그래프의같은점과다른점은각각무엇인가요? 
+●나 그래프와같이물결선(  )을사용해서나타내면 어떤점이좋을까요?
+
+그래프에서 일부분을 생략할 때
+을 사용해요.
+
+</xmp></div>
+</body>
+
+</html>

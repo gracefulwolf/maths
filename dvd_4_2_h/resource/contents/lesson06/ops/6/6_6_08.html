@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/6_6_08.css">
+  </head>
+	<body class="lesson_6">
+    <div id="wrap" class="finish quiz">    
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형  </span>
+          <span>단원을 마무리해요</span>
+          <span class="step finish_quiz">문제도 완벽</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="149">수학<span>149</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="100">수학 익힘<span>100</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="149"></div>
+      </header>
+      <main>
+        <div class="contentsArea">
+          <h3><span>[7~8]</span>모양 조각을 보고 물음에 답해 보세요.</h3>
+          <section class="noUserSelect">
+            <div class="flexContainer">
+              <div class="lineBox gray">
+                <div class="js-rotate rotateContainer rotate_1">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_2">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_3">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_4">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_5">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+                <div class="js-rotate rotateContainer rotate_6">
+                  <div class="js-rotateTarget rotateTarget"></div>
+                  <div class="js-rotateButton rotateButton right"></div>
+                  <div class="js-rotateButton rotateButton left"></div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h2 data-index="7">
+                   <p>모양 조각 중 2가지를 골라 평행 사변형을 만들어 보세요.</p>
+                  </h2>
+                </div>
+                <div class="lineBox yellow">
+                  <img data-click-target="1" src="./images/6_8/6_8_8_07.svg" alt="이미지">
+                </div>
+              </div>
+            </div>
+            <div class="js-buttons quizButtons answer" data-click-obj="1" data-quiz-chain=""></div>
+            <div class="js-supplies supplies">
+              <div class="js-suppliesContent suppliesContent"><p>모양 조각<ins class="downButton" data-download-file="4학년_2학기_183.pdf"></ins></p></div>
+              <div class="js-suppliesButton suppliesButton"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var rotate = $ts.getEl('.js-rotate').map(function(obj, index) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 15,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: true,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {
+              },
+              reset: function(Rotate) {
+              }
+            }
+          })
+        });
+
+        
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          rotate.forEach(function(target) {
+            target.reset();
+            target.container.classList.add('showAnswer');
+          });
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          rotate.forEach(function(target) {
+            target.reset();
+            target.container.classList.remove('showAnswer');
+          });
+        }
+      });
+    </script>
+<!--    <script src="js/6_4_4.js"></script>-->
+  </body>
+</html>

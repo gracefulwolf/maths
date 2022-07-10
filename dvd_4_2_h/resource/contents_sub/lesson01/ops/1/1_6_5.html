@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <link rel="stylesheet" href="./css/1_0_5.css">
+    <style>
+        .sign_circle{margin:0 10px}
+        symbol.plus{margin:0}
+        .pop_1{position: absolute;top:66px;left:570px}
+        bunsu {
+            position: relative;
+            top: -5px;
+        }
+        .bracket {
+      position: relative;
+      padding: 0 22px;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: bottom;
+    }
+
+        .bracket:before,
+        .bracket:after {
+          content: '';
+          position: absolute;
+          top: 12px;
+          width: 60px;
+          height: 70%;
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          border-radius: 50%;
+          box-sizing: border-box;
+        }
+
+        .bracket:before {
+          left: 0;
+          border-left: 3px solid black;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        .bracket:after {
+          right: 0;
+          border-right: 3px solid black;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+    </style>
+  </head>
+	<body class="lesson_1">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>1. 분수의 덧셈과 뺄셈</span>
+          <span>분수의 뺄셈을 해 볼까요(4)</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="20">수학<span>20~21</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="21">수학 익힘<span>21</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="21"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="5" data-star="3">크기를 비교하여 <ins class="circle"></ins> 안에 <symbol class="inequal_left"></symbol>, <symbol class="equal"></symbol>, <symbol class="inequal_right"></symbol>를 알맞게 써넣으세요.</h1>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer h80">
+              <ul class="dflex">
+                <li>
+                  4<bunsu>7/15</bunsu><symbol class="minus"></symbol>1<bunsu>11/15</bunsu>
+                  <div class="js-click sign_circle" data-index="1">
+                    <symbol data-ox-target="1-1" class="inequal_left"></symbol>
+                    <symbol data-ox-target="1-2" class="equal"></symbol>
+                    <symbol data-ox-target="1-3" class="inequal_right"></symbol>
+                  </div>
+                  3<bunsu>13/15</bunsu>
+                </li>
+                
+              </ul>
+              <!--  -->
+            </div>
+            <div class="js-pop signPop pop_1" data-index="1">
+              <div class="" data-ox-obj="1-1"><symbol class="inequal_left"></symbol></div>
+              <div class="" data-ox-obj="1-2"><symbol class="equal"></symbol></div>
+              <div class="" data-ox-obj="1-3" data-answer=""><symbol class="inequal_right"></symbol></div>
+            </div>
+
+            <div class="displayN" data-ox-obj="1-4" data-ox-target="1-4" data-answer=""><symbol></symbol></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>4<bunsu>7/15</bunsu><symbol class="minus"></symbol>1<bunsu>11/15</bunsu><symbol class="equal"></symbol>3<bunsu>22/15</bunsu><symbol class="minus"></symbol>1<bunsu>11/15</bunsu><symbol class="equal"></symbol>(3<symbol class="minus"></symbol>1)<symbol class="plus"></symbol><ins class="bracket"><bunsu>22/15</bunsu><symbol class="minus"></symbol><bunsu>11/15</bunsu></ins><br>
+              <symbol class="equal" style="margin-left:244px"></symbol>2<symbol class="plus"></symbol><bunsu>11/15</bunsu><symbol class="equal"></symbol>2<bunsu>11/15</bunsu><br>
+              이므로 4<bunsu>7/15</bunsu><symbol class="minus"></symbol>1<bunsu>11/15</bunsu><symbol data-ox-target="1-3" class="inequal_right"></symbol>3<bunsu>13/15</bunsu>입니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/math/script/fraction.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() { 
+        var clickObjs = $ts.getEl('.js-click');
+        var pops = $ts.getEl('.js-pop');
+        var oxObjs = $ts.getEl('[data-ox-obj]');
+        
+        oxObjs.forEach(function(obj) {
+          obj.addEventListener('click', closePop.bind(obj));
+        });
+        clickObjs.forEach(function(obj) {
+          obj.addEventListener('click', openPop.bind(obj));
+        });
+        
+        window.$callBack.oxCorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          var parent = OX.curTarget[0].parentNode;
+          var oxObj = OX.curTarget[0].parentNode.querySelectorAll('symbol');
+          oxObj.forEach(function (obj) {
+            obj.classList.remove('on')
+          })
+          parent.querySelector('[data-ox-target="'+OX.curObj.getAttribute('data-ox-obj')+'"]').classList.add('on');
+        };
+        
+        function openPop() {
+          var clickObj = this;
+          pops.forEach(function(target, index) {
+            if (index !== clickObj.getAttribute('data-index')-1) target.classList.remove('on');
+            else target.classList.add('on');
+          });
+        }
+        function closePop() {
+          pops.forEach(function(target, index) {
+            target.classList.remove('on');
+          });
+        }
+        
+        var answerButton = document.querySelector('.js-buttons');
+        var oxTargets = $ts.getEl('[data-ox-target]');
+        
+        answerButton.addEventListener('click', function () {
+          var isReset = this.className.indexOf('reset') === -1;
+          
+          if (isReset) {
+            oxTargets.forEach(function (obj) {
+              obj.classList.remove('on');
+              obj.classList.remove('blue');
+            })
+          }else{
+            closePop();
+            showAnswer();
+          }
+        })
+        
+        function showAnswer() {
+          oxTargets.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          oxObjs.forEach(function (obj) {
+            if(obj.hasAttribute('data-answer')){
+              var idx = obj.getAttribute('data-ox-obj');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('on');
+              $ts.getEl('[data-ox-target="'+idx+'"]')[0].classList.add('blue');
+            }
+          })
+        }
+      });
+    </script>
+  </body>
+</html>

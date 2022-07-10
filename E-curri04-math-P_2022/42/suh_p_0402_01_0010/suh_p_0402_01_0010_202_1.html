@@ -1,0 +1,483 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+    <style>
+
+
+		.toggle .answer {justify-content: flex-start;}
+
+		.popup_pages>li.whole.on {z-index:4}
+		.mathCalcContainer .answerBox .answer,
+		.mathCalcContainer input{text-align: center;}
+		.mathCalcContainer .inputBox.noline{border-color:transparent}
+		.mathCalcContainer .inputBox.noline input{color:#000;}
+
+		.img-wrap {position: relative;text-align: center;}
+		.img-wrap img {width:1050px; height: 255px;}
+        .img-wrap .exam {position:absolute;left:-40px;top:0;opacity:0}
+        .complete .img-wrap .exam {opacity:1}
+
+		.img-wrap [class*="fix"] {position: absolute;top: 22%;}
+		.img-wrap .fix0 {top: 2%;left: 41%;letter-spacing: -1px}
+		.img-wrap .fix1 {left: 8%;}
+		.img-wrap .fix2 {left: 28.5%;}
+		.img-wrap .fix3 {left: 43%;}
+		.img-wrap .fix4 {left: 58%;}
+		.img-wrap .fix5 {left: 73%;}
+		.img-wrap .fix6 {left: 87.5%;}
+		.img-wrap .fix7 { top: 43%;left: 8%;}
+		.img-wrap .fix8 { top: 72%;left: 1%;letter-spacing:-1px}
+
+		.img-wrap [class*="as"] {position: absolute;}
+        .img-wrap [class*="as"] .toggle {background-color:transparent;padding:0}
+        .img-wrap [class*="as"] .toggle .answer {padding:0}
+		.img-wrap .colorBox {text-align: center;font-size: 30px;}
+		.img-wrap .as1 {left: 24.5%;top: 43.5%;}
+		.img-wrap .as2 {left: 41%;top: 43.5%;}
+		.img-wrap .as3 {left: 52.5%;top: 43.5%;letter-spacing:-1px}
+		.img-wrap .as4 {left: 66.5%;top: 43.5%;letter-spacing:-4px}
+		.img-wrap .as5 {left: 82.5%;top: 43.5%;letter-spacing:-4px}
+        .img-wrap .as5 .toggle:after {left:41%}
+		.img-wrap .as6 {left: 27%;top: 63%;}
+		.img-wrap .as7 {left: 41.5%;top: 63%;}
+		.img-wrap .as8 {left: 56.5%;top: 63%;}
+		.img-wrap .as9 {left: 71.5%;top: 63%;}
+		.img-wrap .as10 {left: 86%;top: 63%;}
+		.popup_pages>li.image .popup_closeBtn {right: 13.5%;}
+
+
+    </style>
+</head>
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/boy_2_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/girl_1_sprite.png" alt="스프라이트">
+	</div>
+<div id="wrap">
+	<header>
+		<div class="title">
+			간식 계획표를 만들어 보고, 간식으로 먹게 되는 설탕의 양을 구해 봅시다.
+		</div>
+		
+	</header>
+    <main>
+        <div class="basicSlider contentsBox" data-slide-container="main">
+            <!--   탭 버튼   -->
+            <ul class="basicSlider_tabs" data-tabs="">
+                <li data-hover="">물음 1</li>
+                <li data-hover="">물음 2</li>
+            </ul>
+            <ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+					<h2 style="height: 89px;">
+						<ins class="bullet circleDot"></ins>
+						먹고 싶은 간식으로 간식 계획표를 세워 보세요.
+					</h2>
+
+					<div class="img-wrap">
+                        <div class="bullet exam">예</div>
+						<img src="./images/suh_p_0402_01_0010_202_1/suh_p_0402_01_0010_202_1_1.png" alt="">
+						<div class="fix0">간식 계획표</div>
+						<div class="fix1">요일</div>
+						<div class="fix2">월</div>
+						<div class="fix3">화</div>
+						<div class="fix4">수</div>
+						<div class="fix5">목</div>
+						<div class="fix6">금</div>
+						<div class="fix7">간식</div>
+						<div class="fix8">설탕의 양 (개)</div>
+						<div class="as1">
+                            <div class="toggle box" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">감자칩</div>
+                            </div>
+                        </div>
+						<div class="as2">
+                            <div class="toggle box" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">사탕</div>
+                            </div>
+                        </div>
+						<div class="as3">
+                            <div class="toggle box" data-toggle-obj="3">
+                                <div class="answer" data-toggle-target="3">초코파이</div>
+                            </div>
+                        </div>
+						<div class="as4">
+                            <div class="toggle box" data-toggle-obj="4">
+                                <div class="answer" data-toggle-target="4">아이스크림</div>
+                            </div>
+                        </div>
+						<div class="as5">
+                            <div class="toggle box" data-toggle-obj="5">
+                                <div class="answer" data-toggle-target="5">오렌지주스</div>
+                            </div>
+                        </div>
+						<div class="as6">
+                            <div class="toggle box" data-toggle-obj="6">
+                                <div class="answer" data-toggle-target="6">
+                                    <div class="bunsuWrap inline">
+                                        6<ul>
+                                        <li>3</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+						<div class="as7">
+                            <div class="toggle box" data-toggle-obj="7">
+                                <div class="answer" data-toggle-target="7">
+                                    <div class="bunsuWrap inline">
+                                        1<ul>
+                                        <li>2</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+						<div class="as8">
+                            <div class="toggle box" data-toggle-obj="8">
+                                <div class="answer" data-toggle-target="8">
+                                    <div class="bunsuWrap inline">
+                                        4<ul>
+                                        <li>3</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+						<div class="as9">
+                            <div class="toggle box" data-toggle-obj="9">
+                                <div class="answer" data-toggle-target="9">
+                                    <div class="bunsuWrap inline">
+                                        5<ul>
+                                        <li>1</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+						</div>
+						<div class="as10">
+                            <div class="toggle box" data-toggle-obj="10">
+                                <div class="answer" data-toggle-target="10">
+                                    <div class="bunsuWrap inline">
+                                        3<ul>
+                                        <li>1</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+					<button class="dapCheckBtn" data-answer-btn="1"></button>
+				</li>
+
+				<li class="page_2">
+					<div class="basicSlider contentsBox doItContent"  data-slide-container="" style="padding: 0;">
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1" data-quiz="toggle">
+								<h2 style="height: 89px;">
+									<ins class="bullet circleDot"></ins>
+									간식으로 먹게 되는 설탕의 양을 구해 보세요. 어떻게    구할 수 있나요?
+								</h2>
+
+								<div class="img-wrap">
+									<img src="./images/suh_p_0402_01_0010_202_1/suh_p_0402_01_0010_202_1_1.png" alt="">
+									<div class="fix0">간식 계획표</div>
+									<div class="fix1">요일</div>
+									<div class="fix2">월</div>
+									<div class="fix3">화</div>
+									<div class="fix4">수</div>
+									<div class="fix5">목</div>
+									<div class="fix6">금</div>
+									<div class="fix7">간식</div>
+                                    <div class="fix8">설탕의 양 (개)</div>
+									<div class="as1">감자칩</div>
+									<div class="as2">사탕</div>
+									<div class="as3">초코파이</div>
+									<div class="as4">아이스크림</div>
+									<div class="as5">오렌지주스</div>
+									<div class="as6">
+										<div class="bunsuWrap inline">
+											6<ul>
+											<li>3</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as7">
+										<div class="bunsuWrap inline">
+											1<ul>
+											<li>2</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as8">
+										<div class="bunsuWrap inline">
+											4<ul>
+											<li>3</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as9">
+										<div class="bunsuWrap inline">
+											5<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as10">
+										<div class="bunsuWrap inline">
+											3<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+								</div>
+								<div class="textAlignC" style="margin-top: -5px;">
+									<div class="toggle" data-toggle-obj="1">
+									    <div class="answer" data-toggle-target="1">
+											<div class="bunsuWrap inline">
+											    16<ul>
+											        <li>2</li>
+											        <li>4</li>
+											    </ul>
+											</div>개
+										</div>
+									</div>
+								</div>
+
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+
+							<li class="innerTab_2" data-quiz="toggle">
+								<h2 style="height: 89px;">
+									<ins class="bullet circleDot"></ins>
+									간식으로 먹게 되는 설탕의 양을 구해 보세요. 어떻게 구할 수 있나요?
+								</h2>
+
+								<div class="img-wrap">
+									<img src="./images/suh_p_0402_01_0010_202_1/suh_p_0402_01_0010_202_1_1.png" alt="">
+									<div class="fix0">간식 계획표</div>
+									<div class="fix1">요일</div>
+									<div class="fix2">월</div>
+									<div class="fix3">화</div>
+									<div class="fix4">수</div>
+									<div class="fix5">목</div>
+									<div class="fix6">금</div>
+									<div class="fix7">간식</div>
+                                    <div class="fix8">설탕의 양 (개)</div>
+									<div class="as1">감자칩</div>
+									<div class="as2">사탕</div>
+									<div class="as3">초코파이</div>
+									<div class="as4">아이스크림</div>
+									<div class="as5">오렌지주스</div>
+									<div class="as6">
+										<div class="bunsuWrap inline">
+											6<ul>
+											<li>3</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as7">
+										<div class="bunsuWrap inline">
+											1<ul>
+											<li>2</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as8">
+										<div class="bunsuWrap inline">
+											4<ul>
+											<li>3</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as9">
+										<div class="bunsuWrap inline">
+											5<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+									<div class="as10">
+										<div class="bunsuWrap inline">
+											3<ul>
+											<li>1</li>
+											<li>4</li>
+										</ul>
+										</div>
+									</div>
+								</div>
+								<div class="textAlignC" style="margin-top: -5px;">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">
+											<span class="bullet exam">예</span>
+											분수의 덧셈을 이용해서 구할 수 있습니다.
+										</div>
+									</div>
+								</div>
+
+								<button class="dapCheckBtn" data-answer-btn="1"></button>
+							</li>
+						</ul>
+					</div>
+				</li>
+            </ul>
+        </div>
+    </main>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<!--<li class="whole image pop_page_1" data-popup-page="1">
+			</li>-->
+		</ul>
+	</section>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.img-wrap .toggle').on('click',function(){
+            // efSound('./media/tab_click.mp3');
+            $(".page_1 .bullet.exam").css("opacity",1);
+        });
+        window.$callBack.hideAnswer = function (obj) {
+            $(".page_1 .bullet.exam").removeAttr("style");
+        }
+        window.$callBack.sliderReset = function (obj) {
+            $(".page_1 .bullet.exam").removeAttr("style");
+        }
+    });
+
+		window.$callBack.sliderReset=function(params) {
+			// $ts.getEl('.page_4 .characterImg')[0].style.left='38%';
+
+			// const calcInps = document.querySelectorAll('[data-calc-input]');
+
+			// for(let i = 0, len = calcInps.length; i < len; i++) {
+			// 	calcInps[i].value = '';
+			// }
+
+		};
+    	document.addEventListener('DOMContentLoaded', function () {
+			const reset=document.querySelectorAll('.resetBtn');
+			const tab=document.querySelectorAll('li[data-hover]');
+
+			for(let i=0, len=tab.length; i < len; i++) {
+				tab[i].addEventListener('click', function(){
+					var that=this;
+					setTimeout(function(){
+						for(let i=0, len=reset.length; i < len; i++) {
+							setTimeout(function(){
+								reset[i].classList.add('reset');
+							},0);
+						}
+					},0);
+				});
+			}
+
+			for(let i=0, len=reset.length; i < len; i++) {
+				setTimeout(function(){
+					reset[i].classList.add('reset');
+				},0);
+				
+				reset[i].addEventListener('click', function(){
+					var that=this;
+					setTimeout(function(){
+						that.classList.add('reset');
+					},0);
+				});
+			}
+
+			
+            // $prite.changeSpritePos=function(){}; // backgroundPosition 무한루프 방지
+            $prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_2',
+						// circle: 'sky',
+						speech:'right',
+						top: 30,
+						left: 335,
+						width: 340,
+        				height: 421,
+						thumbNail: '../common/contents/images/character/girl_2.png',
+						spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+						sound: './media/audios/suh_p_0402_01_0010_201_2.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '나는 어림해서 덧셈 결과가 10개에 가까운<br>간식을 찾았는데 짝은 분수 부분만 따로 더해서 <br>자연수가 되는 간식을 찾아서 문제를 해결했어.',
+							class: 'balloon bottom orange ctTail',
+							top:88,
+							left: 200,
+							textAlign: 'center', 
+							wordBreak: 'keep-all',
+							whiteSpace: 'no-wrap',
+							transform: 'scale(.9)',
+						},
+						callbacks: {
+							start: function () {
+							}, // 시작시 콜백
+							end: function () {
+							} // 끝날시 콜백
+						}
+					}
+				]
+			});
+        }, false);
+</script>
+</body>
+</html>

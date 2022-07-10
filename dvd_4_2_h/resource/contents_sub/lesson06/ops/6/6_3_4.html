@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_4-2/style/sub_4-2.css">
+    <style>
+      .inputQuizContainer{width:1100px;margin:0 auto}
+      .inputQuizContainer figure{width:1000px;margin:0 auto 30px}
+      .inputQuizContainer .oxObj {
+        position:absolute;
+        width: 200px;
+        height: 70px;
+        /* background:rgba(0,0,0,0.5); */
+      }
+      .inputQuizContainer .oxObj:nth-of-type(1){top:5px;left:903px;}
+      .inputQuizContainer .oxObj:nth-of-type(2){top:136px;left:903px;}
+      .inputQuizContainer .oxObj:nth-of-type(3){top:255px;left:903px;}
+
+      .displayN {
+        display: none;
+      }
+    </style>
+  </head>
+	<body class="lesson_6">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>6. 다각형</span>
+          <span>대각선을 알아볼까요</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="138">수학<span>138~139</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="97">수학 익힘<span>97</span>쪽</div>
+          <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="97"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="2" data-index="4">사각형의 대각선이 아닌 선분에 <ins class="icon icon_x blue"></ins>표 하세요.</h1>
+          <section data-quiz="ox">
+            <div class="inputQuizContainer">
+              <figure><img src="images/6_3/6_3_4.svg" alt=""></figure>
+              <div class="oxObj inline" data-ox-obj="1"><div class="icon icon_x blue" data-ox-target="1"></div></div>
+              <div class="oxObj inline" data-ox-obj="2" data-answer=""><div class="icon icon_x blue" data-ox-target="2"></div></div>
+              <div class="oxObj inline" data-ox-obj="3"><div class="icon icon_x blue" data-ox-target="3"></div></div>
+              <div class="displayN" data-ox-obj="4" data-answer=""><div class="icon icon_x blue" data-ox-target="4"></div></div>
+            </div>
+
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+            <div class="js-buttons quizButtons answer" data-hover="" data-answer-btn=""></div>
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>선분 ㄹㄷ은 사각형의 변이므로 대각선이 아닙니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var oxObjs = $ts.getEl('[data-ox-target]');
+        var answerBtn = $ts.getEl('.js-buttons')[0];
+
+        window.$callBack.oxCorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+        window.$callBack.oxIncorrect = function(OX) {
+          clickOXTarget(OX);
+        };
+
+        function clickOXTarget(OX) {
+          oxObjs.forEach(function (obj) {
+            obj.classList.remove('on');
+          })
+          OX.curTarget[0].classList.add('on');
+        }
+
+        answerBtn.addEventListener('click', function () {
+          if(this.className.indexOf('reset') === -1){ }
+          else{
+            oxObjs.forEach(function (obj) {
+              obj.classList.remove('on');
+              if(obj.parentNode.hasAttribute('data-answer'))  obj.classList.add('on');
+            })
+          }
+        })
+      });
+    </script>
+  </body>
+</html>
