@@ -1,0 +1,85 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* clickButton.css *
+***********************/
+
+
+
+/* 클릭버튼 */
+.clickButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: url(../../math/images/icon_click.svg) 0 0 / auto no-repeat;
+  animation: clickButton-motion .8s ease-in-out infinite;
+  cursor: pointer;
+}
+.clickButton.hover {
+  animation: none;
+}
+.clickButton.hover:before {
+  animation: none;
+}
+.clickButton.complete {
+  display: none;
+}
+.clickButton[data-toggle-target] {
+  opacity: 0;
+  visibility: hidden;
+}
+.clickButton[data-toggle-target].on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.clickButton.question {
+  background-position: 0 -50px;
+}
+.clickButton.exclamation {
+  background-position: 0px 0;
+}
+.clickButton.speaker {
+  background-position: 0 -100px;
+}
+.clickButton.example {
+  background-position: 0 -150px;
+}
+.clickButton.question.reflect {
+  background-position: -50px -50px;
+}
+.clickButton.exclamation.reflect {
+  background-position: -50px 0px;
+}
+.clickButton.speaker.reflect {
+  background-position: -50px -100px;
+}
+.clickButton.example.reflect {
+  background-position: -50px -150px;
+}
+.clickButton:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 48px;
+  left: 8px;
+  width: 30px;
+  height: 10px;
+  border-radius: 50%;
+  background-image: radial-gradient(ellipse, rgba(0, 0, 0, .25), rgba(0, 0, 0, .0) 80%);
+  animation: clickButton-shadowMotion .8s ease-in-out infinite;
+}
+
+@keyframes clickButton-motion { 50% { transform: translateY(3px) scaleY(1.02); } }
+@-o-keyframes clickButton-motion { 50% { transform: translateY(3px) scaleY(1.02); } }
+@-moz-keyframes clickButton-motion { 50% { transform: translateY(3px) scaleY(1.02); } }
+@-webkit-keyframes clickButton-motion { 50% { transform: translateY(3px) scaleY(1.02); } }
+@keyframes clickButton-shadowMotion { 50% { transform: translateY(-3px) scaleX(1.2); } }
+@-o-keyframes clickButton-shadowMotion { 50% { transform: translateY(-3px) scaleX(1.2); } }
+@-moz-keyframes clickButton-shadowMotion { 50% { transform: translateY(-3px) scaleX(1.2); } }
+@-webkit-keyframes clickButton-shadowMotion { 50% { transform: translateY(-3px) scaleX(1.2); } }

@@ -1,0 +1,104 @@
+
+@charset "utf-8";
+
+h3 span{color:#dc623d; padding-right:10px;}
+
+figure { position: relative; }
+
+figure img {
+  
+  height: 400px;
+  margin:20px 400px;
+  vertical-align: top;
+ 
+ }
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.quizContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.quizContainer > img {
+  display: block;
+  margin: 0 auto;
+}
+.oxObj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* outline: 1px solid tomato; */
+  width: 20px;
+  height: 340px;
+  pointer-events: none;
+}
+.oxObj .icon {
+  opacity: 0;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+}
+area {
+  cursor: pointer;
+}
+
+
+.oxObj[data-ox-obj="1"] {
+  top: 119px;
+  left: 607px;
+  height: 400px;
+}
+.oxObj[data-ox-obj="1"] .icon {
+  top: 140px;
+  left: 60px;
+}
+.oxObj[data-ox-obj="2"] {
+  top: 90px;
+  left: 534px;
+  height: 420px;
+  transform: rotate(23deg);
+}
+.oxObj[data-ox-obj="3"] {
+  top: 125px;
+  left: 620px;
+  height: 394px;
+}
+.oxObj[data-ox-obj="3"] .icon {
+  top: 240px;
+  left: 26px;
+}
+.oxObj[data-ox-obj="4"] {
+  top: 188px;
+  left: 496px;
+}
+.oxObj[data-ox-obj="4"] .icon {
+  top: 200px;
+  left: 30px;
+}
+
+.oxObj[data-ox-obj]:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.oxObj[data-ox-obj="1"]:after {
+  transform: rotate(76deg);
+}
+.oxObj[data-ox-obj="3"]:after {
+  transform: rotate(-33deg);
+}
+.oxObj[data-ox-obj="4"]:after {
+  transform: rotate(-38deg);
+}

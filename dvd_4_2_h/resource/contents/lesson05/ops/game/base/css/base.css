@@ -1,0 +1,577 @@
+/* common */
+body.pointerDisabled,
+body.pointerDisabled * {
+  pointer-events: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.defaultButton {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.hovered {
+  transition: transform 0.4s;
+  transform: scale(1.1);
+}
+
+.page {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page--on {
+  display: block;
+}
+
+/* wrapper */
+.wrapper {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* startPage */
+.page--start {
+  background: center / contain no-repeat;
+  color: #ffffff;
+}
+
+.startPage__ePubPage {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 353px;
+  left: 250px;
+  width: 132px;
+  height: 28px;
+  border-radius: 14px;
+  background-color: #66bc2f;
+  font-family: "NanumSquareB";
+  font-size: 16px;
+  color: white;
+  opacity: 0.8;
+}
+
+.startPage__ePubPage__icon {
+  width: 24px;
+  height: 18px;
+  margin-right: 4px;
+  background: url(../image/startPage__ePubPage__icon.svg) center / contain no-repeat;
+}
+
+.startPage__title {
+  position: absolute;
+  top: 390px;
+  left: 250px;
+  font-family: "NanumSquareRoundEB";
+  font-size: 64px;
+  letter-spacing: -0.05em;
+  line-height: 1.25;
+}
+
+.startPage__title>span {
+  position: relative;
+  display: inline-block;
+}
+
+.startPage__title>span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 4px;
+  background-color: #fff;
+}
+
+.startButton {
+  position: absolute;
+  top: 370px;
+  left: 920px;
+  width: 200px;
+  height: 70px;
+  border-radius: 24px;
+  background-color: #66bc2f;
+  font-family: "NanumSquareRoundEB";
+  font-size: 30px;
+  box-shadow: 3px 2px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.startButton__icon {
+  width: 34px;
+  height: 24px;
+  margin: -4px 0 0 12px;
+  background: url(../image/startButton__icon.svg) center / contain no-repeat;
+}
+
+/* gamePage */
+.page--game {
+  background: center / cover no-repeat;
+}
+
+.gamePage__title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 36px 36px 0;
+  font-family: "NanumSquareRoundEB";
+  font-size: 55px;
+  color: #111111;
+  word-break: keep-all;
+}
+
+.gamePage__title__icon {
+  width: 49px;
+  height: 55px;
+  background: url(../image/gamePage__title__icon.png) center / contain no-repeat;
+}
+
+.gamePage__title__text {
+  margin: 4px 0 0 16px;
+  font-size: 48px;
+}
+
+.selectPlay {
+  position: absolute;
+  font-family: "NanumSquareRoundB";
+  cursor: pointer;
+}
+
+.selectPlay .spriteAni {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.playPage .selectPlay {
+  cursor: default;
+  pointer-events: none;
+}
+
+.selectPlay * {
+  pointer-events: none;
+}
+
+.selectPlay--selected {
+  transition: transform 0.4s;
+  pointer-events: none;
+}
+
+.selectPlay--completed {
+  cursor: default;
+  pointer-events: none;
+  /* opacity: 0.3; */
+}
+
+.selectPlay__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: left center / auto 100% no-repeat;
+}
+
+.selectPlay--completed *,
+.selectPlay--completed:before,
+.selectPlay--completed:after {
+  opacity: 0.3;
+}
+
+.selectPlay__completeMark {
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  background: url(../image/selectPlay__completeMark.png) center / contain no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.selectPlay--completed .selectPlay__completeMark {
+  opacity: 1;
+  visibility: visible;
+}
+
+.playPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  /* -webkit-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s; */
+}
+
+.playPage--on {
+  opacity: 1;
+  visibility: visible;
+  z-index: 0;
+}
+
+.answerBox {
+  position: absolute;
+  width: 411px;
+  height: 417px;
+  background: url(../image/answerBox.png) center / contain no-repeat;
+  text-align: center;
+}
+
+.playPage--completed .answerBox {
+  display: none;
+}
+
+.answerBox__text {
+  margin: 154px auto 0;
+  font-family: "BMJUA";
+  font-size: 42px;
+  color: #333333;
+}
+
+.answerBox__input {
+  box-sizing: border-box;
+  width: 326px;
+  height: 66px;
+  margin: 17px auto 0;
+  padding: 0 20px;
+  border-radius: 12px;
+  border: 1px solid #DBDBDB;
+  background: transparent;
+  font-family: "NanumSquareRoundB";
+  font-size: 32px;
+  text-align: justify;
+}
+
+.answerBox__input:focus {
+  outline: none;
+}
+
+.confirmButton {
+  width: 100px;
+  height: 55px;
+  margin: 30px auto 0;
+  border-radius: 24px;
+  background-color: #2370dd;
+  font-family: "BMJUA";
+  font-size: 28px;
+}
+
+.confirmButton:focus {
+  outline: none;
+}
+
+.confirmButton::before {
+  content: "확인";
+}
+
+.nextStepButton {
+  box-sizing: border-box;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 102px;
+  height: 82px;
+  background: url(../image/nextStepButton.png) center / contain no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nextStepButton:focus {
+  outline: none;
+}
+
+.nextStepButton--show {
+  display: flex;
+  animation: nextStepButton 1.4s ease-in-out 0.4s 3;
+}
+
+@keyframes nextStepButton {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.gamePage__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page--on .gamePage__cover {
+  animation: gamePage__cover 2.4s linear;
+}
+
+@keyframes gamePage__cover {
+  10% {
+    opacity: 0.7;
+    visibility: visible;
+  }
+
+  90% {
+    opacity: 0.7;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.gamePage__introMessage {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 412px;
+  height: 246px;
+  padding-top: 110px;
+  background: url(../image/gamePage__introMessage.png) center / contain no-repeat;
+  font-family: "BMJUA";
+  font-size: 42px;
+  color: #333333;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.page--on .gamePage__introMessage {
+  animation: gamePage__introMessage 3s linear;
+}
+
+
+@keyframes gamePage__introMessage {
+  10% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* endPage */
+.endPage__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  /* background: url(../image/endPage__cover.png); */
+}
+
+.endPage__background::before,
+.endPage__background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.endPage__background::before {
+  background-color: #050A3B;
+}
+
+.endPage__background::after {
+  top: calc((720px - 1080px) / 2);
+  height: 1080px;
+  background: url(../image/endPage__spinning.png) center / auto 1080px no-repeat;
+}
+
+.page--on .endPage__background::after {
+  animation: endPage__spinning 6s linear 0s infinite;
+}
+
+@keyframes endPage__spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.endPage__background__star {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #387fff;
+  box-shadow: 0 0 10px 2.5px #387fff;
+  opacity: 0;
+  animation: endPage__background__star 2s ease-in 2s infinite;
+}
+
+@keyframes endPage__background__star {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.resultPanel {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc((720px - 448px) / 2);
+  left: calc((1280px - 542px) / 2);
+  width: 542px;
+  height: 448px;
+  padding-top: 60px;
+  background: url(../image/resultPanel.png) center / contain no-repeat;
+  transform: scale(1) rotate(0);
+  animation: resultPanel 0.4s cubic-bezier(0.47, 0, 0.75, 0.72);
+}
+
+@keyframes resultPanel {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-360deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.resultPanel__text {
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  font-family: "jalnan";
+  font-size: 44px;
+  color: #111111;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.resultPanel__text>b {
+  font-size: 48px;
+  color: #ff9100;
+}
+
+.regameButton {
+  position: absolute;
+  top: 395px;
+  left: calc((542px - 250px) / 2);
+  width: 250px;
+  height: 75px;
+  background: url(../image/regameButton.png) center / contain no-repeat;
+}
+
+/* shaking animation */
+@keyframes shake-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(5%);
+  }
+
+  80% {
+    transform: translateX(-5%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  33.3% {
+    transform: translateY(5%);
+  }
+
+  66.6% {
+    transform: translateY(-5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.bgmToggleButton {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: url(../image/bgm_off.svg) center / contain no-repeat;
+  cursor: pointer;
+}
+.bgmToggleButton.isPlay {
+  background-image: url(../image/bgm_on.svg);
+}

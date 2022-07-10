@@ -1,0 +1,67 @@
+
+@charset "utf-8";
+
+/***********************
+* 초등 전자저작물 *
+* 수학 3-4학년 *
+* ruler.css *
+***********************/
+
+.ruler { 
+  display: block;
+  position: absolute;
+  /* top: 10px; */
+  /* left: 50px; */
+  /* width: 140px; */
+  /* height: 140px; */
+  background: url(../../math/images/ruler_triangle.svg) center / contain no-repeat;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.ruler .clickArea {
+  width: 141%;
+  height: 100%;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* rotateButtons */
+.rotateRightButton,
+.rotateLeftButton {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4285f4;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+.isDragging.rotateRightButton,
+.isDragging.rotateLeftButton {
+  opacity: 1;
+  visibility: visible;
+}
+.rotateRightButton { 
+  background-image: url(../../math/images/icon_rotate_right.svg);
+  transform-origin: left top;
+}
+.rotateLeftButton {
+  background-image: url(../../math/images/icon_rotate_left.svg);
+  transform-origin: bottom right;
+}

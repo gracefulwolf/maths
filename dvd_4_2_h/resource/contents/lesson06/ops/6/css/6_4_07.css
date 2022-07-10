@@ -1,0 +1,211 @@
+@charset "utf-8";
+figure { position: relative; }
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+figure img[src*="svg"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flexContainer .shrink { flex-shrink: 0; margin-right: 10px; }
+.supplies {
+  top: -75px;
+  right: 0; /* 팝업 버튼 기본 위치 */
+}
+.flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 450px;
+}
+.flexContainer .lineBox.gray {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 376px;
+  height: 100%;
+}
+
+.flexContainer .rotateContainer .rotateTarget:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+/*.flexContainer .rotateContainer.showRotate .rotateTarget:after,*/
+/*.flexContainer .rotate_1.showRotate .rotateTarget:after,*/
+/*.flexContainer .rotate_2.showRotate .rotateTarget:after {*/
+/*  transform: scale(1.5);*/
+/*}*/
+/*.flexContainer .rotate_3.showRotate .rotateTarget:after {*/
+/*  transform: scale(1.54);*/
+/*}*/
+/*.flexContainer .rotate_6.showRotate .rotateTarget:after {*/
+/*  transform: scale(1.63);*/
+/*}*/
+.flexContainer .rotate_1 {
+  top: 40px;
+  left: 30px;
+  width: 150px;
+  height: 130px;
+}
+.flexContainer .rotate_1 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_01.png) center / contain no-repeat;
+}
+.flexContainer .rotate_2 {
+  top: 74px;
+  left: 215px;
+  width: 116px;
+  height: 67px;
+}
+.flexContainer .rotate_2 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_02.png) center / contain no-repeat;
+}
+.flexContainer .rotate_3 {
+  top: 225px;
+  left: 30px;
+  width: 148px;
+  height: 64px;
+}
+.flexContainer .rotate_3 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_04.png) center / contain no-repeat;
+}
+.flexContainer .rotate_4 {
+  top: 222px;
+  left: 238px;
+  width: 74px;
+  height: 74px;
+}
+.flexContainer .rotate_4 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_03.png) center / contain no-repeat;
+}
+.flexContainer .rotate_5 {
+  top: 345px;
+  left: 30px;
+  width: 146px;
+  height: 40px;
+}
+.flexContainer .rotate_5 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_05.png) center / contain no-repeat;
+}
+.flexContainer .rotate_6 {
+  top: 340px;
+  left: 240px;
+  width: 76px;
+  height: 66px;
+}
+.flexContainer .rotate_6 .rotateTarget:after {
+  background: url(../images/6_4/6_4_3_06.png) center / contain no-repeat;
+}
+
+
+.rotateButton {
+  top: 0;
+  left: 0;
+  transform: none;
+}
+.showRotate .rotateButton {
+  opacity: 1;
+  visibility: visible;
+}
+.flexContainer .rotate_1 .left {
+  top: 32px;
+  left: 31px;
+}
+.flexContainer .rotate_1 .right {
+  top: 57px;
+  left: 79px;
+}
+.flexContainer .rotate_2 .left {
+  top: -5px;
+  left: 22px;
+}
+.flexContainer .rotate_2 .right {
+  top: 31px;
+  left: 55px;
+}
+.flexContainer .rotate_3 .left {
+  top: 13px;
+  left: 25px;
+}
+.flexContainer .rotate_3 .right {
+  top: 13px;
+  left: 84px;
+}
+.flexContainer .rotate_4 .left {
+  top: 17px;
+  left: -11px;
+}
+.flexContainer .rotate_4 .right {
+  top: 17px;
+  left: 44px;
+}
+.flexContainer .rotate_5 .left {
+  top: -5px;
+  left: -21px;
+}
+.flexContainer .rotate_5 .right {
+  top: 5px;
+  left: 126px;
+}
+.flexContainer .rotate_6 .left {
+  top: 6px;
+  left: -24px;
+}
+.flexContainer .rotate_6 .right {
+  left: 56px;
+  top: 6px;
+}
+
+.lineBox.gray.showAnswer .rotateContainer .rotateTarget,
+.lineBox.gray.showAnswer .rotateContainer .rotateTarget:after {
+  pointer-events: none !important;
+}
+.showRotate.rotateContainer {
+  z-index: 1;
+}
+/*page */
+.flexContainer > .right {
+  position: relative;
+  display: block;
+  width: 695px;
+  height: 440px;
+  background: url("../images/6_4/6_4_7_01.png") center/contain no-repeat;
+}
+.flexContainer > .right figure {
+  display: none;
+  width: 436px;
+  margin: 130px auto 0;
+}
+.flexContainer .lineBox.gray.showAnswer + .right figure {
+  display: block;
+}
+
+.flexContainer > .right .answerImg {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  transform: none;
+}
+.flexContainer > .right .exam {
+  display: none;
+}
+.flexContainer .lineBox.showAnswer + .right .answerImg {
+  display: block;
+}
+.flexContainer .lineBox.showAnswer + .right .exam {
+  display: block;
+}
+.flexContainer .lineBox.showAnswer + .right .exam_1 {
+  top: 98px;
+  left: 50px;
+}
+.flexContainer .lineBox.showAnswer + .right .exam_2 {
+  top: 38px;
+  left: 325px;
+}

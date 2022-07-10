@@ -1,0 +1,43 @@
+@charset "utf-8";
+figure { position: relative; }
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+figure img[src*="svg"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.flexContainer.wrap { flex-wrap: wrap; }
+.flexContainer .shrink { flex-shrink: 0; }
+
+
+.flexContainer .left {
+  width: 513px;
+}
+.flexContainer .right {
+  width: 455px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 390px;
+}
+.flexContainer .right .table {}
+.flexContainer .right .table .title,
+.flexContainer .right .table .subTitle {
+  height: 66px;
+}
+.flexContainer .right .table input {
+  width: 100%;
+}
+.titleIndent > .char {
+  position: absolute;
+  width: 187px;
+  left: 543px;
+  top: 0;
+}

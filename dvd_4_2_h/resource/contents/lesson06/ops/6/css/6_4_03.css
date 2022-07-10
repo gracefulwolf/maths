@@ -1,0 +1,111 @@
+@charset "utf-8";
+figure { position: relative; }
+figure img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.inputQuizContainer textarea,
+.inputQuizContainer input {
+  width: 100%;
+}
+.inputQuizContainer textarea {
+  height: 100%;
+}
+.inputQuizContainer textarea.answerMode {
+  display: none;
+}
+.inputQuizContainer .answerValue {
+  display: none;
+  width: 100%;
+  padding: 5px 14px 4px;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #c6c6cc;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, .1);
+}
+.inputQuizContainer textarea.answerMode + .answerValue,
+.inputQuizContainer input.answerMode + .answerValue {
+  display: block;
+}
+
+/*page*/
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.flexContainer .shrink { flex-shrink: 0; margin-right: 10px; }
+
+.flexContainer.titleIndent {
+}
+.flexContainer.titleIndent figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 370px;
+}
+.flexContainer.titleIndent figure img {
+}
+.flexContainer.titleIndent figure figcaption {
+  margin: 20px 0 0 0;
+}
+.flexContainer.titleIndent figure figcaption input {
+  width: 316px;
+  text-align: center;
+  margin: 0 auto;
+}
+.flexContainer.titleIndent figure figcaption textarea,
+.flexContainer.titleIndent figure figcaption .answerValue {
+  margin: 0 auto;
+  width: 350px;
+  height: 148px;
+  text-align: center;
+}
+.flexContainer.titleIndent figure figcaption textarea.answerMode {
+  display: none;
+}
+.page1 .flexContainer.titleIndent figure img {
+  width: 300px;
+}
+.page2 .flexContainer.titleIndent figure img {
+  width: 320px;
+}
+.page3 .flexContainer.titleIndent figure img {
+  width: 220px;
+}
+.page4 .flexContainer.titleIndent figure img {
+  width: 286px;
+}
+.page5 .flexContainer.titleIndent figure img {
+  width: 300px;
+}
+.page6 .flexContainer.titleIndent figure img {
+  width: 236px;
+}
+
+
+.flexContainer.titleIndent .inFlex {
+  width: 700px;
+  margin: 30px 0 0 0;
+}
+.flexContainer.titleIndent .inputQuizContainer {
+  width: 100%;
+}
+.flexContainer.inFlex .inputQuizContainer textarea,
+.flexContainer.inFlex .inputQuizContainer .answerValue {
+  height: 230px;
+  word-break: break-all;
+}
+
+.page3 .flexContainer.inFlex .inputQuizContainer .answerValue {
+  letter-spacing: -2px;
+}

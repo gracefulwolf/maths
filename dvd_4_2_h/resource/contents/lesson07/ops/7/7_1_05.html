@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="css/7_1_5.css">
+  </head>
+	<body class="lesson_7 grade_4">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>창의·융합 프로젝트</span>
+          <span>보물섬으로 가는 방향 찾기</span>
+          <span class="step develop">전개</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="155">수학<span>155</span>쪽</div>
+        <!--        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="92">수학 익힘<span>92</span>쪽</div>-->
+                <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="155"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-index="3">보물 지도에서 보물섬이 있는 곳을 찾아 표시해 봅시다.</h1>
+          <section data-quiz="ox" data-option="" data-quiz-name="ox_1">
+            <figure>
+              <img src="images/7_1/7_1_5.png" alt="이미지" width="1100" usemap="#image-map">
+              <!-- <map name="image-map">
+                <area data-ox-obj="111" coords="559,259,52,46,46,473,260,387" shape="poly">
+                <area data-ox-obj="1" data-answer="" coords="561,257,1074,478,45,478" shape="poly">
+                <area data-ox-obj="112" coords="561,255,1081,37,1079,479" shape="poly">
+                <area data-ox-obj="113" coords="52,44,1080,35,558,257" shape="poly">
+              </map> -->
+              <!-- <div class="icon icon_x" data-ox-obj="4"></div>
+              <div class="icon icon_o" data-ox-obj="3"></div>
+              <div class="icon icon_x" data-ox-obj="2"></div>
+              <div class="icon icon_x" data-ox-obj="1"></div>
+              <div class="icon icon_o" data-ox-obj="3" data-answer></div> -->
+              <div class="icon icon_o" data-ox-target="1"></div>
+              <div class="icon icon_o" data-ox-target="2"></div>
+              <div class="icon icon_o" data-ox-target="3"></div>
+              <div class="icon icon_o" data-ox-target="4"></div>
+              <div class="icon icon_o" data-ox-target="5"></div>
+              <div class="clickObj" data-ox-obj="1"></div>
+              <div class="clickObj" data-ox-obj="2"></div>
+              <div class="clickObj" data-ox-obj="3"></div>
+              <div class="clickObj" data-ox-obj="4"></div>
+              <div class="clickObj" data-ox-obj="5" data-answer></div>
+            </figure>
+            <div class="quizButtons answer" data-quiz-chain="ox_1"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          $ts.getEl('[data-ox-target]').forEach(function(target) {
+            if (target.getAttribute('data-ox-target') != 5) target.classList.remove('on');
+          })
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {}
+      });
+    </script>
+  </body>
+</html>

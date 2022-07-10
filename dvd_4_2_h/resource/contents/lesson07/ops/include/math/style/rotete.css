@@ -1,0 +1,159 @@
+
+@charset "utf-8";
+
+
+
+.rotateContainer {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: none;
+}
+.showAnswer,
+.rotateContainer.pointerOff,
+.rotateContainer.pointerOff .rotateTarget:after {
+  pointer-events: none;
+}
+.rotateContainer.isDrag {
+  z-index: 10;
+}
+
+/* 타겟은 기본적으로 부모 사이즈와 동일함 */
+.rotateContainer .rotateTarget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.rotateContainer .rotateTarget:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  /*outline: 1px solid tomato;*/
+  pointer-events: auto;
+}
+
+.showAnswer .rotateButton,
+.rotateContainer.pointerOff .rotateButton,
+.rotateContainer.isDrag .rotateButton {
+  pointer-events: none;
+}
+
+.showAnswer .rotateTarget {
+  opacity: .3;
+}
+
+
+.rotateButton {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.rotateButton.right {
+  background:#4285f4 url(../../math/images/icon_rotate_right.svg) center / contain no-repeat;
+}
+.rotateButton.left {
+  background:#4285f4 url(../../math/images/icon_rotate_left.svg) center / contain no-repeat;
+}
+.doubleRotate .rotateButton.right {
+  left: calc(50% + 25px);
+}
+.doubleRotate .rotateButton.left {
+  left: calc(50% - 25px);
+}
+.showRotate .rotateButton {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.reflectIcon {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.showRotate .reflectIcon {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.reflectIcon.top,
+.reflectIcon.bottom {
+  width: 150px;
+  height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.reflectIcon.left,
+.reflectIcon.right {
+  width: 30px;
+  height: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.reflectIcon.top {
+  top: -30px;
+  background: url(../../math/images/icon_reflect_up.svg) center / contain no-repeat;
+}
+.reflectIcon.bottom {
+  bottom: -30px;
+  background: url(../../math/images/icon_reflect_down.svg) center / contain no-repeat;
+}
+.reflectIcon.left {
+  left: -30px;
+  background: url(../../math/images/icon_reflect_left.svg) center / contain no-repeat;
+}
+.reflectIcon.right {
+  right: -30px;
+  background: url(../../math/images/icon_reflect_right.svg) center / contain no-repeat;
+}
+
+
+.js-reflectXBox,
+.js-reflectYBox {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+.retateResetButton {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff9603;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../math/images/quiz/icon_replay.svg);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, .2);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+.retateResetButton.hover {
+  transform: scale(0.9);
+}
+.retateResetButton.dim {
+  opacity: .3;
+  pointer-events: none;
+}
