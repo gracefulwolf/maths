@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 페이지 렌더링 뷰 템플릿 : Jik-Ji 0.15.19 (academy) -->
+
+<head>
+    <meta name="viewport" content="width=1241, height=1595">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 라이브러리 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 라이브러리-->
+    <script type="text/javascript" src="./js/lib/async/async.min.js"></script>
+    <script type="text/javascript" src="./js/lib/mousetrap/mousetrap.min.js"></script>
+    <script src="./js/lib/jquery/jquery.min.js"></script>
+
+    <!--angular 모듈 로드-->
+    <script type="text/javascript" src="./js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!--UI 모듈 로드-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./js/lib/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="./js/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 프로젝트 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!--Jikji 모듈 로드-->
+    <link rel="stylesheet" href="./css/render.gen.min.css">
+    <script type="text/javascript" src="./js/render/core.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/tool.lib.min.js"></script>
+    <script type="text/javascript" src="./js/render/render.app.min.js"></script>
+
+    <!--페이지 뷰잉 모듈 로드 또는 직접 코드 삽입-->
+    <script type="text/javascript" src="./js/render-page-50.js"></script>
+
+    <!-- JJ-Binder for Web : App에서 실행시 스크립트 자동으로 적용 안됨 -->
+    <script type="text/javascript" src="./js/lib/binder_web.min.js"></script>
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // 사용자 세팅 (Font, CSS, JS)
+     //
+    ////////////////////////////////////////////////////////-->
+
+    <!-- 번들 폰트 적용 -->
+    <style>
+</style>
+
+
+    <!-- #_EXTERNAL_FILES_# -->
+
+    <!-- //////////////////////////////////////////////////////
+     //
+     // Etc. 런타임 세팅
+     //
+    ////////////////////////////////////////////////////////-->
+
+</head>
+
+<!-- ebook 뷰어에서 사이즈를 측정 가능하게 하기위해 paper 사이즈 명시함 -->
+<body class="jikji" ng-controller="ViewController" ng-style="paper">
+
+    <div class="applicationContainer" ng-cloak>
+        <div class="application" layout="row">
+            <!-- 레이아웃 : jj-scroller 스킨 minimal만 적용할 수있음(x축 안나오므로 native 스크롤바 그대로 사용) -->
+            <div screen-container flex layout="column" ng-if="projectIsOpen">
+
+                <jj-render-screen flex layout="column" layout-align="start start"
+                                  ng-style="::screenStyle"></jj-render-screen>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="_content_for_searching_at_viewer"><xmp>수학 75~77쪽
+
+맞은 개수
+
+08 ㉠이 나타내는 수는 ㉡이 나타내는 수 12 안에 알맞은 수를 써넣으세요.
+
+의 몇 배인지 구해 보세요.
+
+6.5+
+
+=8.7
+
+7.919 ㉠㉡
+
+-4.3=5.5
+
+09 수직선을 보고 안에 알맞은 수를 써 넣으세요. 01
+
+13 가장 큰 수와 가장 작은 수의 차를 구 해 보세요. 5.23   4.23   6.05   6.37
+
+0.4+0.3=
+
+14 두 수 ㉠, ㉡의 차를 구해 보세요.
+
+10 카드 , , , 을 한 번씩
+모두 사용하여 소수 두 자리 수를 만들
+려고 합니다. 만들 수 있는 가장 큰 수
+와 가장 작은 수의 합을 구해 보세요.
+
+㉠ 0.01이 67개인 수 ㉡ 0.1이 2개, 0.01이 8개인 수
+
+3
+소 수 의 덧 셈 과 뺄 셈
+57
+
+11 짐이 들어 있는 가방의 무게는 3.4 kg
+입니다. 여기에 0.55 kg의 책을 더 넣 으면 가방의 무게는 몇 kg인지 구해 보세요.
+
+15 처음 길이가 14.5 m인 리본을 사용하
+고 남은 길이를 재었더니 7.35 m였습 니다. 사용한 리본의 길이는 몇 m인지 구해 보세요.
+정답과 풀이 11
+
+3쪽
+
+</xmp></div>
+</body>
+
+</html>

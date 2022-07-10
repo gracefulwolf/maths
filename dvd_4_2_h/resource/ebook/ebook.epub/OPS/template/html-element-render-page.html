@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HTML Element</title>
+    <style>
+        /* 스크롤바 스타일*/
+        ::-webkit-scrollbar { width: 8px; height: 8px;border: 3px solid #fff; background: #2B2B2B; }
+        ::-webkit-scrollbar-button:start:decrement,
+        ::-webkit-scrollbar-button:end:increment { width: 0px; height: 0px; display: block; background: #2B2B2B; }
+        ::-webkit-scrollbar-track {background: #2B2B2B;}
+        ::-webkit-scrollbar-thumb { width: 50px; height: 50px; background: rgba(255, 255, 255, 0.3); border-radius: 0; }
+        ::-webkit-scrollbar-corner {background: #2B2B2B;}
+        body{overflow: auto;}
+    </style>
+
+    <!-- baseURL, style -->
+</head>
+<body>
+<!-- html, script -->
+
+<script>
+    (function(){
+        var uid = (function(search){
+            var queries = search.substring(1).split("&");
+            for (var i=0; i<queries.length; ++i ) {
+                var param = queries[i].split('=');
+                if(param[0] === 'uid') return param[1];
+            }
+        })(window.location.search);
+        if(!uid || !parent[uid]) return console.error('(HTML Element) UID 또는 메서드가 정의되지 않았습니다.');
+        parent[uid](window);
+    })();
+</script>
+
+</body>
+</html>
