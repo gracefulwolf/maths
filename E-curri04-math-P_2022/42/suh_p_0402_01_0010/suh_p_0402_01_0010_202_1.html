@@ -23,32 +23,37 @@
 		.mathCalcContainer .inputBox.noline{border-color:transparent}
 		.mathCalcContainer .inputBox.noline input{color:#000;}
 
-		.img-wrap {position: relative;text-align: center;font-size: 30px;}
-		.img-wrap img {width:844px; height: 255px;}
+		.img-wrap {position: relative;text-align: center;}
+		.img-wrap img {width:1050px; height: 255px;}
+        .img-wrap .exam {position:absolute;left:-40px;top:0;opacity:0}
+        .complete .img-wrap .exam {opacity:1}
 
-		.img-wrap [class*="fix"] {position: absolute;top: 25%;}
-		.img-wrap .fix0 {top: 5%;left: 43%;}
-		.img-wrap .fix1 {left: 17%;}
-		.img-wrap .fix2 {left: 33%;}
-		.img-wrap .fix3 {left: 44%;}
-		.img-wrap .fix4 {left: 56%;}
-		.img-wrap .fix5 {left: 67%;}
-		.img-wrap .fix6 {left: 79%;}
-		.img-wrap .fix7 { top: 49%;left: 17%;}
-		.img-wrap .fix8 { top: 68%;left: 14%;}
+		.img-wrap [class*="fix"] {position: absolute;top: 22%;}
+		.img-wrap .fix0 {top: 2%;left: 41%;letter-spacing: -1px}
+		.img-wrap .fix1 {left: 8%;}
+		.img-wrap .fix2 {left: 28.5%;}
+		.img-wrap .fix3 {left: 43%;}
+		.img-wrap .fix4 {left: 58%;}
+		.img-wrap .fix5 {left: 73%;}
+		.img-wrap .fix6 {left: 87.5%;}
+		.img-wrap .fix7 { top: 43%;left: 8%;}
+		.img-wrap .fix8 { top: 72%;left: 1%;letter-spacing:-1px}
 
 		.img-wrap [class*="as"] {position: absolute;}
+        .img-wrap [class*="as"] .toggle {background-color:transparent;padding:0}
+        .img-wrap [class*="as"] .toggle .answer {padding:0}
 		.img-wrap .colorBox {text-align: center;font-size: 30px;}
-		.img-wrap .as1 {left: 30%;top: 49%;}
-		.img-wrap .as2 {left: 43%;top: 49%;}
-		.img-wrap .as3 {left: 55%;top: 42%;}
-		.img-wrap .as4 {left: 65.5%;top: 42%;}
-		.img-wrap .as5 {left: 77.5%;top: 42%;}
-		.img-wrap .as6 {left: 32%;top: 69%;}
-		.img-wrap .as7 {left: 43.5%;top: 69%;}
-		.img-wrap .as8 {left: 55.5%;top: 69%;}
-		.img-wrap .as9 {left: 67%;top: 69%;}
-		.img-wrap .as10 {left: 79%;top: 69%;}
+		.img-wrap .as1 {left: 24.5%;top: 43.5%;}
+		.img-wrap .as2 {left: 41%;top: 43.5%;}
+		.img-wrap .as3 {left: 52.5%;top: 43.5%;letter-spacing:-1px}
+		.img-wrap .as4 {left: 66.5%;top: 43.5%;letter-spacing:-4px}
+		.img-wrap .as5 {left: 82.5%;top: 43.5%;letter-spacing:-4px}
+        .img-wrap .as5 .toggle:after {left:41%}
+		.img-wrap .as6 {left: 27%;top: 63%;}
+		.img-wrap .as7 {left: 41.5%;top: 63%;}
+		.img-wrap .as8 {left: 56.5%;top: 63%;}
+		.img-wrap .as9 {left: 71.5%;top: 63%;}
+		.img-wrap .as10 {left: 86%;top: 63%;}
 		.popup_pages>li.image .popup_closeBtn {right: 13.5%;}
 
 
@@ -82,6 +87,7 @@
 					</h2>
 
 					<div class="img-wrap">
+                        <div class="bullet exam">예</div>
 						<img src="./images/suh_p_0402_01_0010_202_1/suh_p_0402_01_0010_202_1_1.png" alt="">
 						<div class="fix0">간식 계획표</div>
 						<div class="fix1">요일</div>
@@ -91,51 +97,92 @@
 						<div class="fix5">목</div>
 						<div class="fix6">금</div>
 						<div class="fix7">간식</div>
-						<div class="fix8">설탕의 양 <br>(개)</div>
-						<div class="as1">감자칩</div>
-						<div class="as2">사탕</div>
-						<div class="as3">초코<br>파이</div>
-						<div class="as4">아이스<br>크림</div>
-						<div class="as5">오렌지<br>주스</div>
+						<div class="fix8">설탕의 양 (개)</div>
+						<div class="as1">
+                            <div class="toggle box" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">감자칩</div>
+                            </div>
+                        </div>
+						<div class="as2">
+                            <div class="toggle box" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">사탕</div>
+                            </div>
+                        </div>
+						<div class="as3">
+                            <div class="toggle box" data-toggle-obj="3">
+                                <div class="answer" data-toggle-target="3">초코파이</div>
+                            </div>
+                        </div>
+						<div class="as4">
+                            <div class="toggle box" data-toggle-obj="4">
+                                <div class="answer" data-toggle-target="4">아이스크림</div>
+                            </div>
+                        </div>
+						<div class="as5">
+                            <div class="toggle box" data-toggle-obj="5">
+                                <div class="answer" data-toggle-target="5">오렌지주스</div>
+                            </div>
+                        </div>
 						<div class="as6">
-							<div class="bunsuWrap inline">
-								6<ul>
-								<li>3</li>
-								<li>4</li>
-							</ul>
-							</div>
+                            <div class="toggle box" data-toggle-obj="6">
+                                <div class="answer" data-toggle-target="6">
+                                    <div class="bunsuWrap inline">
+                                        6<ul>
+                                        <li>3</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 						<div class="as7">
-							<div class="bunsuWrap inline">
-								1<ul>
-								<li>2</li>
-								<li>4</li>
-							</ul>
-							</div>
+                            <div class="toggle box" data-toggle-obj="7">
+                                <div class="answer" data-toggle-target="7">
+                                    <div class="bunsuWrap inline">
+                                        1<ul>
+                                        <li>2</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 						<div class="as8">
-							<div class="bunsuWrap inline">
-								4<ul>
-								<li>3</li>
-								<li>4</li>
-							</ul>
-							</div>
+                            <div class="toggle box" data-toggle-obj="8">
+                                <div class="answer" data-toggle-target="8">
+                                    <div class="bunsuWrap inline">
+                                        4<ul>
+                                        <li>3</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 						<div class="as9">
-							<div class="bunsuWrap inline">
-								5<ul>
-								<li>1</li>
-								<li>4</li>
-							</ul>
-							</div>
+                            <div class="toggle box" data-toggle-obj="9">
+                                <div class="answer" data-toggle-target="9">
+                                    <div class="bunsuWrap inline">
+                                        5<ul>
+                                        <li>1</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
 						</div>
 						<div class="as10">
-							<div class="bunsuWrap inline">
-								3<ul>
-								<li>1</li>
-								<li>4</li>
-							</ul>
-							</div>
+                            <div class="toggle box" data-toggle-obj="10">
+                                <div class="answer" data-toggle-target="10">
+                                    <div class="bunsuWrap inline">
+                                        3<ul>
+                                        <li>1</li>
+                                        <li>4</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 					</div>
 					<button class="dapCheckBtn" data-answer-btn="1"></button>
@@ -168,12 +215,12 @@
 									<div class="fix5">목</div>
 									<div class="fix6">금</div>
 									<div class="fix7">간식</div>
-									<div class="fix8">설탕의 양 <br>(개)</div>
+                                    <div class="fix8">설탕의 양 (개)</div>
 									<div class="as1">감자칩</div>
 									<div class="as2">사탕</div>
-									<div class="as3">초코<br>파이</div>
-									<div class="as4">아이스<br>크림</div>
-									<div class="as5">오렌지<br>주스</div>
+									<div class="as3">초코파이</div>
+									<div class="as4">아이스크림</div>
+									<div class="as5">오렌지주스</div>
 									<div class="as6">
 										<div class="bunsuWrap inline">
 											6<ul>
@@ -247,12 +294,12 @@
 									<div class="fix5">목</div>
 									<div class="fix6">금</div>
 									<div class="fix7">간식</div>
-									<div class="fix8">설탕의 양 <br>(개)</div>
+                                    <div class="fix8">설탕의 양 (개)</div>
 									<div class="as1">감자칩</div>
 									<div class="as2">사탕</div>
-									<div class="as3">초코<br>파이</div>
-									<div class="as4">아이스<br>크림</div>
-									<div class="as5">오렌지<br>주스</div>
+									<div class="as3">초코파이</div>
+									<div class="as4">아이스크림</div>
+									<div class="as5">오렌지주스</div>
 									<div class="as6">
 										<div class="bunsuWrap inline">
 											6<ul>
@@ -321,6 +368,7 @@
 <div id="loadingContainer">
     <div class="loadingIconAnimation"></div>
 </div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 <script type="text/javascript" src="../common/libs/js/ts.js"></script>
 <script type="text/javascript" src="../common/libs/js/animate.js"></script>
 <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -336,7 +384,18 @@
 <script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
 
 <script type="text/javascript">
-	
+    $(document).ready(function(){
+        $('.img-wrap .toggle').on('click',function(){
+            // efSound('./media/tab_click.mp3');
+            $(".page_1 .bullet.exam").css("opacity",1);
+        });
+        window.$callBack.hideAnswer = function (obj) {
+            $(".page_1 .bullet.exam").removeAttr("style");
+        }
+        window.$callBack.sliderReset = function (obj) {
+            $(".page_1 .bullet.exam").removeAttr("style");
+        }
+    });
 
 		window.$callBack.sliderReset=function(params) {
 			// $ts.getEl('.page_4 .characterImg')[0].style.left='38%';
