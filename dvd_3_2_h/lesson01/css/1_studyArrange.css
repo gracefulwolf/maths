@@ -1,0 +1,100 @@
+
+@charset "utf-8";
+
+
+ .flexBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.arrow {
+  position: absolute;
+  top: 130px;
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+  transform: rotate(-90deg);
+  background: url(../../include/math/images/icon_arrow_pink.svg) center / contain no-repeat;
+  animation: arrange_arrowMove .5s ease-in-out infinite;
+  cursor: pointer;
+}
+.arrow.complete {
+  animation: none;
+  /* pointer-events: none; */
+}
+
+@keyframes arrange_arrowMove {
+  30% { transform: rotate(-90deg) translateY(4px); }
+}
+@-o-keyframes arrange_arrowMove {
+  30% { transform: rotate(-90deg) translateY(4px); }
+}
+@-ms-keyframes arrange_arrowMove {
+  30% { transform: rotate(-90deg) translateY(4px); }
+}
+@-webkit-keyframes arrange_arrowMove {
+  30% { transform: rotate(-90deg) translateY(4px); }
+}
+
+
+/* fomula.vertical {
+  justify-content: flex-start;
+}
+fomula.vertical > ul {
+  height: 70px;
+}
+fomula.vertical > ul > li {
+  width: 60px;
+}
+fomula.vertical .line.solidLine {
+  height: calc(70px * 2);
+}
+fomula.vertical .line.dottedLine:nth-of-type(2),
+fomula.vertical .line.dashedLine:nth-of-type(2) {
+  left: calc(60px * (5 - 1));
+}
+fomula.vertical .line.dottedLine:nth-of-type(3),
+fomula.vertical .line.dashedLine:nth-of-type(3) {
+  left: calc(60px * (4 - 1));
+}
+fomula.vertical .line.dottedLine:nth-of-type(4),
+fomula.vertical .line.dashedLine:nth-of-type(4) {
+  left: calc(60px * (3 - 1));
+}
+fomula.vertical .line.dottedLine:nth-of-type(5),
+fomula.vertical .line.dashedLine:nth-of-type(5) {
+  left: calc(60px * (2 - 1));
+} */
+
+
+.imageBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 450px;
+}
+.imageBox.image_1 {
+  background: url(../images/1_1/1_1_12_01.svg) center / contain no-repeat;
+}
+.imageBox.image_2 {
+  background: url(../images/1_1/1_1_12_02.svg) center / contain no-repeat;
+}
+.imageBox.image_3 {
+  background: url(../images/1_1/1_1_12_03.svg) center / contain no-repeat;
+}
+.imageBox.image_4 {
+  background: url(../images/1_1/1_1_12_04.svg) center / contain no-repeat;
+}
+
+
+.arrow[data-toggle-obj="1"] {
+  left: 250px;
+}
+.arrow[data-toggle-obj="2"] {
+  left: 565px;
+}
+.arrow[data-toggle-obj="3"] {
+  left: 880px;
+}

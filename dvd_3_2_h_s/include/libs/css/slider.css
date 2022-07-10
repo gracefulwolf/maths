@@ -1,0 +1,196 @@
+
+/*─────────────────────────┐
+	name: slider.css
+	data: 2018.09.11
+└─────────────────────────*/
+
+@charset "utf-8";
+
+/**************************************************/
+/* basicSlider */
+#basicSlider {
+	width: 100%;
+	height: 100%;
+}
+.basicSlider_tabs {
+	position: absolute;
+	top: -58px;
+	right: 10px;
+	overflow: hidden;
+	/*padding: 10px;*/
+}
+.basicSlider_tabs > li {
+	float: left;
+	margin: 0 2px;
+	padding: 5px 14px 4px;
+	font-size: 20px;
+	letter-spacing: -0.05em;
+	font-family: NSquareEB;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #eeeeee;
+	box-shadow: inset 0px -5px 4px 0px rgba(0, 0, 0, .1);
+	-webkit-transform: translateY(6px);
+	-moz-transform: translateY(6px);
+	-ms-transform: translateY(6px);
+	transform: translateY(6px);
+	cursor: pointer;
+}
+.basicSlider_tabs > li.on {
+	padding: 8px 14px 4px;
+	box-shadow: none;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	pointer-events: none;
+}
+.basicSlider_tabs > li.hover {
+	padding: 8px 14px 4px;
+	box-shadow: none;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+.basicSlider_slides { width: 100%; height: 100%; }
+.basicSlider_slides > li {
+	display: none;
+	width: 100%;
+	height: 100%;
+	/*text-align: center;*/
+}
+.basicSlider_slides > li.on {
+	display: block;
+}
+.basicSlider_slides > li > span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	color: #111;
+	width: 100%;
+	font-size: 100px;
+	font-family: Baloo Tammudu;
+	transform: translateY(-40%);
+	-ms-transform: translateY(-40%);
+	-moz-transform: translateY(-40%);
+	-webkit-transform: translateY(-40%);
+}
+.basicSlider_btn {
+	position: absolute;
+	/*top: 50%;*/
+	/*color: pink;*/
+	font-size: 40px;
+	/*transform: translateY(-50%);*/
+	/*-ms-transform: translateY(-50%);*/
+	/*-moz-transform: translateY(-50%);*/
+	/*-webkit-transform: translateY(-50%);*/
+	pointer-events: auto;
+	cursor: pointer;
+}
+/*.basicSlider_btn.hover { color: tomato; }*/
+/*.basicSlider_btn.prev { left: 10px; }*/
+/*.basicSlider_btn.next { right: 10px; }*/
+/*.basicSlider_btn.prev.hover { left: 5px; }*/
+/*.basicSlider_btn.next.hover { right: 5px; }*/
+
+/* basicSlider_circle_tabs(하단 동그라미 탭) */
+.basicSlider_circle_tabs {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	pointer-events: none;
+	z-index: 1;
+}
+.basicSlider_circle_tabs > li {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+	pointer-events: auto;
+}
+.basicSlider_circle_tabs > li:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #ccc;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	pointer-events: auto;
+	cursor: pointer;
+}
+.basicSlider_circle_tabs > li.on {
+	pointer-events: none;
+}
+.basicSlider_circle_tabs > li.on:after {
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 3px #228038;
+	background: #228038;
+}
+.basicSlider_circle_tabs > li.hover:after {
+	width: 18px;
+	height: 18px;
+	background: #228038;
+}
+/* basicSlider_inner(내부 슬라이드 페이지 이동 버튼 위치 조절) */
+.basicSlider_inner > .basicSlider_btn {
+	position: absolute;
+	top: auto;
+	bottom: 0px;
+	color: pink;
+	font-size: 40px;
+	transform: none;
+	-ms-transform: none;
+	-moz-transform: none;
+	-webkit-transform: none;
+	cursor: pointer;
+}
+.basicSlider_inner > .basicSlider_btn.prev { left: 400px; }
+.basicSlider_inner > .basicSlider_btn.next { right: 400px; }
+
+/* carouselSlider */
+#carouselSlider {
+	position: relative;
+	width: 900px;
+	height: 100%;
+	overflow: hidden;
+}
+.carouselSlider_slides {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.carouselSlider_slides > li {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.carouselSlider_slides > li.on { display: block; }
+.carouselSlider_slides > li > span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	color: #111;
+	width: 100%;
+	font-size: 100px;
+	font-family: Baloo Tammudu;
+	transform: translateY(-40%);
+	-ms-transform: translateY(-40%);
+	-moz-transform: translateY(-40%);
+	-webkit-transform: translateY(-40%);
+}

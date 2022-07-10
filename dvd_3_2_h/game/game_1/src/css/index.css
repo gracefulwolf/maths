@@ -1,0 +1,464 @@
+@font-face {
+	font-family: 'MaplestoryLight';
+	src: url('../MaplestoryLight.woff');
+}
+@font-face {
+	font-family: 'MaplestoryBold';
+	src: url('../MaplestoryBold.woff');
+}
+
+.page--start {
+	background-image: url('../image/startPage__background.png');
+}
+.page--game {
+	background-image: url('../image/gamePage__background.png');
+}
+
+.gamePage__title__icon {
+	flex-shrink: 0;
+	width: 49px;
+    height: 55px;
+    background: url('../image/gamePage__title__icon.png') center / contain no-repeat;
+}
+.gamePage__introMessage {
+	width: 553px;
+	height: 244px;
+	background: url('../image/gamePage__introMessage.png') center / contain no-repeat;
+}
+
+/* 타이틀 이미지 */
+.titleImg {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	background: center / contain no-repeat;	
+	font-size: 18px;
+	font-family: 'MaplestoryLight';
+	color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+	vertical-align: top;
+	padding-top: 5px;
+}
+.titleImg.img_1 { background-image: url('../image/img_tNum_1.png'); }
+.titleImg.img_2 { background-image: url('../image/img_tNum_4.png'); }
+
+/* 만화 이미지 */
+.gamePageScene {
+	position: absolute;
+	top: 230px;
+	width: 100%;
+	display: none;
+}
+.gamePageSceneEnd {
+	position: absolute;
+	top: 230px;
+	width: 100%;
+}
+.gamePageScene.view { display: block; }
+.gamePageScene .comic {
+	width: 1200px;
+	height: 420px;
+	margin: 0 auto;
+	background: center / contain no-repeat;
+}
+.gamePageScene[data-play-scene="1"] .comic { background-image: url('../image/gamePage_scene_1.png'); }
+.gamePageScene[data-play-scene="2"] .comic { background-image: url('../image/gamePage_scene_2.png'); }
+.gamePageScene[data-play-scene="3"] .comic { background-image: url('../image/gamePage_scene_3.png'); }
+.gamePageScene .comic .text {
+	position: absolute;
+	font-size: 32px;
+	font-family: 'MaplestoryLight';
+	letter-spacing: -1px;
+	text-align: center;
+	background: center / contain no-repeat;
+	color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;	
+}
+.gamePageScene .comic .text.text_1_1 { top: 65px; left: 248px; }
+.gamePageScene .comic .text.text_1_2 { top: 212px; left: 342px; }
+.gamePageScene .comic .text.text_1_3 { top: 42px; left: 868px; }
+.gamePageScene .comic .text.text_1_4 {
+	top: 309px;
+    left: 997px;
+	width: 102px;
+	height: 102px;
+	background-image: url('../image/img_sNum_1.png');
+	padding-top: 15px;
+	color: #ffffff;
+    font-size: 30px;
+}
+.gamePageScene .comic .text.text_2_1 {
+    top: 35px;
+    left: 352px;
+	width: 102px;
+	height: 102px;
+	background-image: url('../image/img_sNum_2.png');	
+	color: #ffffff;
+    font-size: 30px;
+}
+.gamePageScene .comic .text.text_2_2 { top: 306px; left: 304px; }
+.gamePageScene .comic .text.text_2_3 { top: 36px; left: 725px; }
+.gamePageScene .comic .text.text_2_4 {
+    top: 297px;
+    left: 989px;
+	width: 102px;
+	height: 102px;
+	background-image: url('../image/img_sNum_3.png');
+	padding-top: 5px;
+	color: #ffffff;
+    font-size: 30px;
+}
+.gamePageScene .comic .text.text_3_1 {
+    top: 31px;
+    left: 174px;
+	width: 102px;
+	height: 102px;
+	background-image: url('../image/img_sNum_4.png');	
+	padding-top: 5px;
+	color: #ffffff;
+    font-size: 30px;
+}
+.gamePageScene .comic .text.text_3_2 { top: 65px; left: 434px; }
+.gamePageScene .comic .text.text_3_3 { top: 55px; left: 816px; }
+
+
+/* 도형들 */
+.selectPlayWrap { display: none;	}
+.selectPlayWrap.view { display: block; }
+.selectPlay {
+	position: absolute;
+	top: 68px;
+	width: 242px;
+	height: 242px;
+	background: center / contain no-repeat;
+}
+.selectPlay--selected {
+	transform: scale(1.2);
+}
+.selectPlay[data-play-index="1"] { left: 112px; }
+.selectPlay[data-play-index="2"] { left: 372px; }
+.selectPlay[data-play-index="3"] { left: 652px; }
+.selectPlay[data-play-index="4"] { left: 928px; }
+.selectPlay .selectPlay__image {
+	color: #ffffff;
+	font-size: 80px;
+	font-family: 'MaplestoryLight';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.selectPlay[data-play-index="1"] .selectPlay__image { background-image: url('../image/img_bNum_1.png'); padding-top: 30px; padding-right: 2px; }
+.selectPlay[data-play-index="2"] .selectPlay__image { background-image: url('../image/img_bNum_2.png'); }
+.selectPlay[data-play-index="3"] .selectPlay__image { background-image: url('../image/img_bNum_3.png'); padding-top: 10px; }
+.selectPlay[data-play-index="4"] .selectPlay__image { background-image: url('../image/img_bNum_4.png'); padding-top: 15px; }
+
+.selectPlay[data-play-index="1"] .selectPlay__completeMark { top: 120px; left: 174px; }
+.selectPlay[data-play-index="2"] .selectPlay__completeMark { top: 120px; left: 174px; }
+.selectPlay[data-play-index="3"] .selectPlay__completeMark { top: 120px; left: 174px; }
+.selectPlay[data-play-index="4"] .selectPlay__completeMark { top: 120px; left: 174px; }
+
+/* 네이게이션 */
+.sceneNaviWrap {
+	position: absolute;
+	top: 676px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sceneNaviWrap > div:not(:last-child) {
+	margin-right: 5px;
+}
+.sceneNaviWrap .naviArrow {
+	width: 20px;
+	height: 26px;
+	background: url('../image/btn_navi.png') no-repeat;
+	cursor: pointer;
+}
+.sceneNaviWrap .naviArrow.inactive {
+	cursor: default;
+	pointer-events: none;	
+}
+.sceneNaviWrap .naviArrow.left { background-position: 0 0; }
+.sceneNaviWrap .naviArrow.left.inactive { background-position: 0 -26px; }
+.sceneNaviWrap .naviArrow.right { background-position: -20px 0; }
+.sceneNaviWrap .naviArrow.right.inactive { background-position: -20px -26px; }
+.sceneNaviWrap .naviImg {
+	width: 30px;
+	height: 14px;
+	background: url('../image/img_navi.png') no-repeat;
+	cursor: pointer;
+}
+.sceneNaviWrap .naviImg.active {
+	background-position: -30px 0;
+	pointer-events: none;
+}
+
+/* playPage */
+.playPage {
+	background: url('../image/playPage__background.png') center / cover no-repeat;
+}
+.playPage .selectPlay {
+	transition-duration: 1s;
+	transform: scale(1.2);
+}
+/* playPage 상단 이미지 */
+.playPage .imgBoxWrap {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+}
+.imgBoxWrap .imgBoxBg {
+	position: relative;
+	width: 540px;
+	height: 370px;
+	margin: 0 auto;
+	background: center / contain no-repeat;
+}
+.playPage[data-play-page="1"] .imgBoxBg { background-image: url('../image/playPage__img_1.png'); }
+.playPage[data-play-page="2"] .imgBoxBg { background-image: url('../image/playPage__img_2.png'); }
+.playPage[data-play-page="3"] .imgBoxBg { background-image: url('../image/playPage__img_3.png'); }
+.playPage[data-play-page="4"] .imgBoxBg { background-image: url('../image/playPage__img_4.png'); }
+.imgBoxWrap .text {
+	position: absolute;
+	font-size: 28px;
+	font-family: "MaplestoryLight";
+	letter-spacing: -1px;
+	text-align: center;
+}
+.imgBoxWrap .text.text_1_1 { top: 44px; left: 207px; }
+.imgBoxWrap .text.text_1_2 { top: 287px; left: 283px; font-size: 46px; }
+.imgBoxWrap .text.text_2_1 { top: 65px; left: 250px; font-size: 46px; }
+.imgBoxWrap .text.text_2_2 { top: 264px; left: 251px; }
+.imgBoxWrap .text.text_3_1 { top: 39px; left: 115px; }
+.imgBoxWrap .text.text_3_2 { top: 275px; left: 308px; font-size: 46px; }
+.imgBoxWrap .text.text_4_1 { top: 56px; left: 70px; font-size: 46px; }
+.imgBoxWrap .text.text_4_2 { top: 65px; left: 330px; }
+/*
+.playPage--on .selectPlay[data-play-index="1"] { 	transform: translate(46px, 10px) scale(1.1); }
+.playPage--on .selectPlay[data-play-index="2"] { 	transform: translate(-264px, -47px) scale(1.46); }
+*/
+
+/* 말풍선 */
+.selectTargetWrap {
+	position: absolute;
+	top: 440px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.selectTarget {
+	position: relative;
+	width: 400px;
+	height: 220px;
+	cursor: pointer;
+}
+.selectTarget.selected {
+	cursor: default;
+	pointer-events: none;
+	opacity: 0.5;
+}
+.selectTarget.answered {
+	opacity: 1.0;
+}
+
+.selectTarget.hovered {
+	transform: scale(1.1);
+}
+.selectTarget .selectTarget__image {
+	display: flex;
+	align-items: center;
+/*	justify-content: center;*/
+	flex-direction: column;
+	width: 100%;
+    height: 100%;
+	box-sizing: border-box;
+	padding-top: 40px;
+	background: center / no-repeat;	
+}
+.selectTarget.answered .selectTarget__image { background-position: -400px 0; }
+.playPage[data-play-page="1"] .selectTarget__image { background-image: url('../image/playPage__bubble_1.png'); }
+.playPage[data-play-page="2"] .selectTarget__image { background-image: url('../image/playPage__bubble_2.png'); }
+.playPage[data-play-page="3"] .selectTarget__image { background-image: url('../image/playPage__bubble_3.png'); }
+.playPage[data-play-page="4"] .selectTarget__image { background-image: url('../image/playPage__bubble_4.png'); }
+
+/* 말풍선 내 텍스트 */
+.selectTarget .selectTarget__text {
+	font-family: "NanumSquareB";
+	text-align: center;
+	letter-spacing: -2px;
+}
+.selectTarget .selectTarget__text:nth-child(1) {
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+.selectTarget .selectTarget__text:nth-child(2) {
+	font-size: 36px;
+	color: #c47f10;
+}
+
+/* 말풍선 내 O 표시 */
+.selectTarget .selectTarget__o {
+	position: absolute;
+    top: 37px;
+    left: 126px;
+	width: 142px;
+	height: 142px;
+	background: url('../image/icon_o.png') center / contain no-repeat;
+	display: none;
+}
+.selectTarget.answered .selectTarget__o {
+	display: block;
+}
+
+.page--end {
+	background: url('../image/playPage__background__end.png') center / contain no-repeat;
+}
+div.resultPanel {
+    top: calc((720px - 369px) / 2);
+    left: calc((1280px - 703px) / 2);
+    width: 703px;
+    height: 369px;
+	background: url('../image/resultPanel.png') center / contain no-repeat;
+	padding-top: 70px;
+}
+div.regameButton {
+	top: 316px;
+    left: calc((703px - 250px) / 2);
+}
+
+/* 만화 보기 */
+.comicViewBtn {
+	position: absolute;
+	top: 180px;
+    left: 860px;
+	width: 142px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('../image/btn_comic.png') center / contain no-repeat;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 25px;
+	font-family: "NanumSquareB";
+	letter-spacing: -1px;
+	box-sizing: border-box;
+	padding-bottom: 5px;
+}
+.comicWrap {
+	position: absolute;
+	top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	visibility: hidden;
+}
+.comicWrap.view { visibility: visible; }
+.comicWrap .comicBg {
+	position: absolute;
+	top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.2;	
+}
+.comicWrap .comicBox {
+	position: relative;
+	width: 1080px;
+	height: 610px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('../image/bg_comic.png') center / contain no-repeat;
+}
+.comicBox .comicR {
+	position: absolute;
+	top: 130px;
+	left: 40px;
+	width: 1000px;
+	height: 350px;
+	background: center / contain no-repeat;
+	display: none;
+}
+.comicBox .comicR.view {
+	display: block;	
+}
+.comicBox .comicR[data-play-scene="1"] { background-image: url('../image/gamePage_scene_1.png'); }
+.comicBox .comicR[data-play-scene="2"] { background-image: url('../image/gamePage_scene_2.png'); }
+.comicBox .comicR[data-play-scene="3"] { background-image: url('../image/gamePage_scene_3.png'); }
+.comicBox .comicR .text {
+	position: absolute;
+	font-size: 26px;
+	font-family: "MaplestoryLight";
+	letter-spacing: -1px;
+	text-align: center;
+	background: center / contain no-repeat;
+}
+.comicBox .comicR .text.text_1_1 { top: 54px; left: 178px; }
+.comicBox .comicR .text.text_1_2 { top: 176px; left: 252px; }
+.comicBox .comicR .text.text_1_3 { top: 35px; left: 693px; }
+.comicBox .comicR .text.text_1_4 { top: 285px; left: 786px; }
+.comicBox .comicR .text.text_2_1 { top: 47px; left: 195px; }
+.comicBox .comicR .text.text_2_2 { top: 257px; left: 227px; }
+.comicBox .comicR .text.text_2_3 { top: 29px; left: 572px; }
+.comicBox .comicR .text.text_2_4 { top: 277px; left: 785px; }
+.comicBox .comicR .text.text_3_1 { top: 44px; left: 57px; }
+.comicBox .comicR .text.text_3_2 { top: 53px; left: 330px; }
+.comicBox .comicR .text.text_3_3 { top: 45px; left: 647px; }
+.comicCloseBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 36px;
+	background: url('../image/btn_comic_close.png') center / contain no-repeat;
+	cursor: pointer;
+}
+.comicNaviWrap {
+	position: absolute;
+	top: 570px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.comicNaviWrap > div:not(:last-child) {
+	margin-right: 5px;
+}
+.comicNaviWrap .comicNaviArrow {
+	width: 20px;
+	height: 26px;
+	background: url('../image/btn_navi.png') no-repeat;
+	cursor: pointer;
+}
+.comicNaviWrap .comicNaviArrow.inactive {
+	cursor: default;
+	pointer-events: none;	
+}
+.comicNaviWrap .comicNaviArrow.left { background-position: 0 0; }
+.comicNaviWrap .comicNaviArrow.left.inactive { background-position: 0 -26px; }
+.comicNaviWrap .comicNaviArrow.right { background-position: -20px 0; }
+.comicNaviWrap .comicNaviArrow.right.inactive { background-position: -20px -26px; }
+.comicNaviWrap .comicNaviImg {
+	width: 30px;
+	height: 14px;
+	background: url('../image/img_navi.png') no-repeat;
+	cursor: pointer;
+}
+.comicNaviWrap .comicNaviImg.active {
+	background-position: -30px 0;
+	pointer-events: none;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts.css" />
+		<link rel="stylesheet" href="../common/css/OverlayScrollbars.min.css" />
+
+		<link rel="stylesheet" href="../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../common/ui/css/theme04Ms.css" />
+
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/re_style/css/style.css">
+
+		<style>
+			.content-container.page_5,
+			.page_5 .drawing-content,
+			.page_5 .app-drawing-tool .drawing-content{width:100%; height: 515px; overflow: hidden;}
+			.app-drawing-tool{z-index: 3 !important;}
+			.ui-container.loaded {display: none}
+			body {
+				min-width: 100%;
+			}
+			#quiz-01 {margin-top: -80px;}
+			#quiz-01 img {width: 100%;height: auto;}
+			.button.btn-explan {display: none;}
+			.btns-bottom-right {z-index: 100;}
+		</style>
+	</head>
+	<body>
+        <div class="content-container page_5">
+			<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+				<!-- quiz -->
+				<div id="quiz-01" class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
+					<div class="base">
+						<img src="images/ms_42_1_00_05_01/base_01.svg" alt="" width="1280" height="720">
+					</div>
+					<div class="answer">
+						<img src="images/ms_42_1_00_05_01/answer_01.svg" alt="" width="1280" height="720">
+					</div>
+					<!--<div class="check-list">
+                        <div class="check-item" data-answer-part-idx="0"></div>
+                    </div>-->
+				</div>
+
+				<!-- //quiz -->
+
+				<!-- 부분 정답 :: absolute -->
+				<div class="btns-answer-part hide">
+					<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":["0"]}'></div>
+				</div>
+
+				<!-- 우측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-right check-btns">
+					<div class="button btn-retry toggle remove"><span></span></div>
+					<div class="button btn-ex toggle"><span></span></div>
+					<div class="button btn-explan"><span></span></div>
+				</div>
+			</div>
+
+			<!-- 색칠하세요 :: 드로잉 툴 -->
+			<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
+
+			<!-- 팝업 :: 풀이 -->
+			<!--<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<div class="bg"></div>
+				<div class="text-content t-a-center">
+					<span>
+						분모가 같은 분수는 분자가 클수록 큰 수입니다.
+					</span>
+				</div>
+				<div class="button btn-close ico-close-02"></div>
+			</div>-->
+		</div>
+		
+		<script src="../common/ui/js/uiData.js"></script>
+		<script src="../common/ui/js/uiDataMs.js"></script>
+		<script src="js/ms_42_1_00_05_01.js"></script>
+
+		<script src="../common/js/libs/polyfill.min.js"></script>
+		<script src="../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../common/js/libs/materialize.js"></script>
+		<script src="../common/js/libs/TweenMax.min.js"></script>
+		<script src="../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../common/js/libs/class.js"></script>
+		<script src="../common/js/common.js"></script>
+		<script src="../common/js/app/mindmap.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/app/angle.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/cornerbase.js"></script>
+		<script src="../common/js/videoplayer.js"></script>
+		<script src="../common/js/quiz/quizMain.js"></script>
+		<script src="../common/js/quiz/quizCheck.js"></script>
+		<script src="../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../common/js/quiz/quizInput.js"></script>
+		<script src="../common/js/quiz/quizDraggable.js"></script>
+		<script src="../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../common/js/content.js"></script>
+
+
+	</body>
+
+</html>

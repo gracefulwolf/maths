@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 30쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>이야기를</span><br/><span>완성하기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">빈 곳에 들어갈 대화를 찾아 만화를 완성하려고 합니다.<br/><span class="titleImg img_1">1</span>~<span class="titleImg img_2">4</span>의 곱셈을 계산하여 알맞은 답을 찾아 이야기를 만들어 보세요.</div>
+        </div>
+        
+        <div class="gamePageScene view" data-play-scene="1">
+        	<div class="comic">
+            	<div class="text text_1_1">우리 집에 놀러 와!<br/>내가 신기한 것 보여 줄게.</div>
+                <div class="text text_1_2">그래!</div>
+                <div class="text text_1_3">짜잔! 이게 뭘까?</div>
+                <div class="text text_1_4">1</div>
+            </div>
+        </div>
+        <div class="gamePageScene" data-play-scene="2">
+        	<div class="comic">
+            	<div class="text text_2_1">2</div>
+                <div class="text text_2_2">와~<br/>신기하다!</div>
+                <div class="text text_2_3">먹어 볼래?</div>
+                <div class="text text_2_4">3</div>
+            </div>
+        </div>
+        <div class="gamePageScene" data-play-scene="3">
+        	<div class="comic">
+            	<div class="text text_3_1">4</div>
+                <div class="text text_3_2">어서 먹어 봐!</div>
+                <div class="text text_3_3">흐흐! 맛있네.</div>
+            </div>
+        </div>
+    
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+		<div class="gamePageScene" data-play-scene="4">
+            <div class="selectPlay js-selectPlay" data-play-index="1">
+                <div class="selectPlay__image">1</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay js-selectPlay" data-play-index="2">
+                <div class="selectPlay__image">2</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay js-selectPlay" data-play-index="3">
+                <div class="selectPlay__image">3</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay js-selectPlay" data-play-index="4">
+                <div class="selectPlay__image">4</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+        </div>
+        
+        <!-- 페이지 내비게이션 -->
+        <div class="sceneNaviWrap">
+        	<div class="naviArrow left inactive"></div>
+            <div class="naviImg active" data-num="1"></div>
+            <div class="naviImg" data-num="2"></div>
+            <div class="naviImg" data-num="3"></div>
+            <div class="naviImg" data-num="4"></div>
+            <div class="naviArrow right"></div>
+        </div>
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="imgBoxWrap">
+            	<div class="imgBoxBg">
+                	<div class="text text_1_1">짜잔! 이게 뭘까?</div>
+	                <div class="text text_1_2">105×6</div>
+                </div>
+            </div>
+            <!--
+            <div class="selectPlay" data-play-index="1">
+            	<div class="selectPlay__image"></div>
+            </div>
+            -->
+            
+            <div class="selectTargetWrap">
+                <div class="selectTarget js-selectTarget" data-select-index="1" data-select-answer="o">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">① 630</div>
+                        <div class="selectTarget__text">고슴도치?</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="2">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">② 545</div>
+                        <div class="selectTarget__text">도깨비방망이?</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="3">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">③ 640</div>
+                        <div class="selectTarget__text">솔방울?</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+            </div> <!-- selectTargetWrap -->
+        </div> <!-- selectPlay[data-play-page="1"] -->
+        
+        <div class="playPage js-playPage" data-play-page="2">
+        	<div class="imgBoxWrap">
+            	<div class="imgBoxBg">
+                	<div class="text text_2_1">481×2</div>
+	                <div class="text text_2_2">와~<br/>신기하다!</div>
+                </div>
+            </div>
+
+            <div class="selectTargetWrap">
+                <div class="selectTarget js-selectTarget" data-select-index="1">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">① 802</div>
+                        <div class="selectTarget__text">밤송이야.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="2">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">② 965</div>
+                        <div class="selectTarget__text">우리 할아버지<br/>지압기야.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="3" data-select-answer="o">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">③ 962</div>
+                        <div class="selectTarget__text">과일의 왕이라 불리는<br/>두리안이야.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+            </div> <!-- selectTargetWrap -->
+        </div> <!-- selectPlay[data-play-page="2"] -->
+        
+        <div class="playPage js-playPage" data-play-page="3">
+        	<div class="imgBoxWrap">
+            	<div class="imgBoxBg">
+                	<div class="text text_3_1">먹어 볼래?</div>
+	                <div class="text text_3_2">7×22</div>
+                </div>
+            </div>
+
+            <div class="selectTargetWrap">
+                <div class="selectTarget js-selectTarget" data-select-index="1">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">① 134</div>
+                        <div class="selectTarget__text">너무 향기로워!</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="2">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">② 144</div>
+                        <div class="selectTarget__text">석유 냄새가 나!</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="3" data-select-answer="o">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">③ 154</div>
+                        <div class="selectTarget__text">악, 냄새!</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+            </div> <!-- selectTargetWrap -->
+        </div> <!-- selectPlay[data-play-page="3"] -->
+        
+        <div class="playPage js-playPage" data-play-page="4">
+        	<div class="imgBoxWrap">
+            	<div class="imgBoxBg">
+                	<div class="text text_4_1">46×21</div>
+	                <div class="text text_4_2">어서 먹어 봐!</div>
+                </div>
+            </div>
+
+            <div class="selectTargetWrap">
+                <div class="selectTarget js-selectTarget" data-select-index="1">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">① 854</div>
+                        <div class="selectTarget__text">자연의 향기를 가진<br/>과일이니까.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="2" data-select-answer="o">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">② 966</div>
+                        <div class="selectTarget__text">환상적인 맛을 가진<br/>과일이니까.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+                <div class="selectTarget js-selectTarget" data-select-index="3">
+                    <div class="selectTarget__image">
+                    	<div class="selectTarget__text">③ 956</div>
+                        <div class="selectTarget__text">달콤한 맛을<br/>느낄 수 있으니까.</div>
+                        <div class="selectTarget__o"></div>
+                    </div>
+                </div>
+            </div> <!-- selectTargetWrap -->
+        </div> <!-- selectPlay[data-play-page="4"] -->
+    
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>만화를 보고 숫자를 선택하세요.</div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">빈 곳에 들어갈 대화를 찾아 만화를 완성하려고 합니다.<br/><span class="titleImg img_1">1</span>~<span class="titleImg img_2">4</span>의 곱셈을 계산하여 알맞은 답을 찾아 이야기를 만들어 보세요.</div>
+        </div>
+        
+        <div class="gamePageSceneEnd">
+            <div class="selectPlay" data-play-index="1">
+                <div class="selectPlay__image">1</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="2">
+                <div class="selectPlay__image">2</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="3">
+                <div class="selectPlay__image">3</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="4">
+                <div class="selectPlay__image">4</div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+        </div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text">모든 <b>말풍선</b>을 채웠어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+        
+        <!-- 만화 보기 -->
+        <div class="comicViewBtn">만화 보기</div>
+        <div class="comicWrap">
+        	<div class="comicBg"></div>
+            <div class="comicBox">
+            	<div class="comicR view" data-play-scene="1">
+                    <div class="text text_1_1">우리 집에 놀러 와!<br/>내가 신기한 것 보여 줄게.</div>
+                    <div class="text text_1_2">그래!</div>
+                    <div class="text text_1_3">짜잔! 이게 뭘까?</div>
+                    <div class="text text_1_4">고슴도치?</div>
+                </div>
+                <div class="comicR" data-play-scene="2">
+                    <div class="text text_2_1">과일의 왕이라 불리는<br/>두리안이야.</div>
+                    <div class="text text_2_2">와~<br/>신기하다!</div>
+                    <div class="text text_2_3">먹어 볼래?</div>
+                    <div class="text text_2_4">악, 냄새!!</div>
+                </div>
+                <div class="comicR" data-play-scene="3">
+                    <div class="text text_3_1">환상적인 맛을 가진<br/>과일이니까</div>
+                    <div class="text text_3_2">어서 먹어 봐!</div>
+                    <div class="text text_3_3">흐흐! 맛있네.</div>
+	            </div>
+                <div class="comicCloseBtn"></div>
+                
+                <div class="comicNaviWrap">
+                    <div class="comicNaviArrow left inactive"></div>
+                    <div class="comicNaviImg active" data-num="1"></div>
+                    <div class="comicNaviImg" data-num="2"></div>
+                    <div class="comicNaviImg" data-num="3"></div>
+                    <div class="comicNaviArrow right"></div>
+                </div>
+            </div>
+        </div> <!-- comicWrap -->
+        
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script>
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>

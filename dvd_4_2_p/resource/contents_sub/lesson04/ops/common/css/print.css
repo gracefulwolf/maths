@@ -1,0 +1,67 @@
+@media print and (color) {
+    * {
+       -webkit-print-color-adjust: exact;
+       print-color-adjust: exact; /* 프린트시 background가 보이게 함 */
+       -webkit-print-color-adjust: exact; 
+       /* page-break-after: auto; */
+    }
+}
+
+@media print {
+    @page {
+        /* size: 21cm 29.7cm; */
+        size: landscape;
+        margin: 10px;
+    }
+    html, body {
+        background-color: #FFFFFF;
+        width: 1280px;
+        height: 720px;
+        /* height: 21cm; */
+        /* width: 29.7cm; */
+        margin: 0;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* 
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        display: flex;
+        width: 21cm;
+        min-height: 29.7cm;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+    */
+    header, footer { display: none; }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+  
+.page {
+    position: relative;
+    width: 21cm;
+    min-height: 29.7cm;
+    background-size: 100%;
+}
+
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+}
+/* IE9,10 */
+@media screen and (min-width:0\0){
+} 

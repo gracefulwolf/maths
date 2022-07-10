@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=1280, height=720">
+
+		<title></title>
+
+		<link rel="stylesheet" href="../common/css/materialize.min.css" />
+		<link rel="stylesheet" href="../common/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="../common/css/fonts.css" />
+		<link rel="stylesheet" href="../common/css/OverlayScrollbars.min.css" />
+
+		<link rel="stylesheet" href="../common/ui/css/ui.css" />
+		<link rel="stylesheet" href="../common/ui/css/theme04Ms.css" />
+
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/content.css" />
+
+		<link rel="stylesheet" href="css/ms_42_3_06_07_01.css" />
+	</head>
+	<body>
+        <div class="content-container">
+			<div class="content" data-ui="cornerBase">
+				<div class="bg">
+					<img src="images/ms_42_3_06_07_01/bg.png" alt="">
+					<img src="images/ms_42_3_06_07_01/bg.svg" alt="">
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<span class="ico-title-h1 num-03"><em class="text">6</em></span>
+					</div>
+					<div class="right-inner">
+						도원이네 모둠 친구들의 악력을 측정한 결과입니다. 
+						<span style="letter-spacing: -1px;">악력이 가장 센 친구와 가장 약한 친구의 악력의 차이는 몇 kg일까요?   </span>
+					</div>
+				</div>
+
+				<div id="quiz-content-01" class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div id="quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":["0.5"]}'>
+						<ul>
+							<li class="input-cont">
+								<input type="text" class="input"></input>
+								<div class="answer answer-part-00 inner-text"></div>
+								<!-- <div class="btn-check"></div> -->
+							</li>
+						</ul>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-option='{"quiz":["#quiz-01"], "quizGroup":[]}'></div>
+					</div>
+
+
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-answer toggle"><span></span></div>
+						<div class="button btn-explan"><span></span></div>
+					</div>
+
+				</div>
+
+				<!-- 좌측 하단 영역 고정 버튼 -->
+				<div class="btns-bottom-left">
+					<div class="button box-type btn-more-one more-01"><span>쌍둥이 문제</span></div>
+					<!-- <div class="button box-type btn-more-one more-02"><span>한 번 더!</span></div> -->
+				</div>
+
+			</div>
+
+			<!-- 팝업 :: 풀이 -->
+			<div class="popup popup-dim popup-explan" data-ui="popup" data-option='{"btn":".btn-explan"}'>
+				<div class="bg"></div>
+				<div class="text-content">
+					<div>
+						21.4 &gt; 21.3 &gt; 20.9이므로 악력이 가장 센 친구는 영주, 가장 약한 친구는 하선이입니다. 
+					</div>
+					<div>
+						<span class="sign-arrow col-pink"></span>
+						21.4-20.9=0.5(kg) 
+					</div>
+				</div>
+				<div class="button btn-close ico-close-02"></div>
+			</div>
+
+			<!-- 팝업 :: 쌍둥이 문제 -->
+			<div class="popup popup-more-one" data-ui="popup" data-option='{"btn":".btn-more-one.more-01"}'>
+				<div class="bg">
+					<img src="images/ms_42_3_06_07_01/pop_01_bg.svg" alt="">
+				</div>
+
+				<!-- 좌측 상단 영역 고정 말풍선 -->
+				<div class="box-top-left">
+					<div class="box top-more-one"><span>쌍둥이 문제</span></div>
+				</div>
+
+				<div class="title-h1">
+					<div class="left-inner">
+						<!-- <span class="ico-title-h1 num-01"><em class="text">1</em></span> -->
+					</div>
+					<div class="right-inner">
+						선아네 모둠 친구들의 책가방 무게를 측정한 결과입니다. 책가방이 가장 무거운 친구와 가장 가벼운 친구의 책가방 무게의 차이는 몇 kg일까요? 
+					</div>
+				</div>
+
+				<div class="quiz-content" data-ui="quizMain" data-option='{}'>
+
+					<div id="pop-01-quiz-01" class="quiz quiz-input-text" data-ui="quiz-input-text" data-option='{"answer":["1.2"]}'>
+						<ul>
+							<li class="input-cont">
+								<input type="text" class="input"></input>
+								<div class="answer answer-part-00 inner-text"></div>
+								<!-- <div class="btn-check"></div> -->
+							</li>
+						</ul>
+					</div>
+
+					<!-- 부분 정답 :: absolute -->
+					<div class="btns-answer-part hide">
+						<div class="btn-answer-part" data-option='{"quiz":["#pop-01-quiz-01"], "quizGroup":[]}'></div>
+					</div>
+
+					
+					<!-- 우측 하단 영역 고정 버튼 -->
+					<div class="btns-bottom-right check-btns">
+						<div class="button btn-retry toggle remove"><span></span></div>
+						<div class="button btn-answer toggle"><span></span></div>
+					</div>
+
+				</div>
+
+				<div class="button btn-close ico-close-01"></div>
+			</div>	
+
+		</div>
+		
+		<script src="../common/ui/js/uiData.js"></script>
+		<script src="../common/ui/js/uiDataMs.js"></script>
+		<script src="js/ms_42_3_06_07_01.js"></script>
+
+		<script src="../common/js/libs/polyfill.min.js"></script>
+		<script src="../common/js/libs/jquery-1.12.4.min.js"></script>
+		<script src="../common/js/libs/materialize.js"></script>
+		<script src="../common/js/libs/TweenMax.min.js"></script>
+		<script src="../common/js/libs/jquery.overlayscrollbars.min.js"></script>
+		<script src="../common/js/libs/class.js"></script>
+		<script src="../common/js/common.js"></script>
+		<script src="../common/js/app/mindmap.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/app/angle.js"></script>
+		<script src="../common/js/app/drawing.js"></script>
+		<script src="../common/js/cornerbase.js"></script>
+		<script src="../common/js/videoplayer.js"></script>
+		<script src="../common/js/quiz/quizMain.js"></script>
+		<script src="../common/js/quiz/quizCheck.js"></script>
+		<script src="../common/js/quiz/quizCheckMulti.js"></script>
+		<script src="../common/js/quiz/quizInput.js"></script>
+		<script src="../common/js/quiz/quizDraggable.js"></script>
+		<script src="../common/js/quiz/quizPopSelect.js"></script>
+		<script src="../common/js/quiz/quizDrawLine.js"></script>
+
+		<script src="../../../../../js/binder_web.min.js"></script>
+		<script src="../common/js/content.js"></script>
+
+
+	</body>
+
+</html>
