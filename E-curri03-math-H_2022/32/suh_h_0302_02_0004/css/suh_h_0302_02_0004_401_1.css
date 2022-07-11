@@ -103,45 +103,59 @@ h2 .blankBox.w50 {
     transform: rotate(-45deg);
 }
 
+td.toggle{display: table-cell;}
+
 /* page */
 .page_1 .img-wrap{width:800px; margin:0 auto}
 .page_1 .img-wrap img{width:100%}
 
 .page_3 .check-tit {margin-left:660px}
-.page_4 .check-tit {margin-left:660px}
+.page_4 .tableContainer {width:700px}
+.page_4 .tableContainer .answer{text-align: center; width: 100%; display: block;}
 
-.page_5 .study_guide {top:70px; right: 0;}
-.page_5 .dragLineContainer {margin-top:0; flex-direction: column;}
-.page_5 .colorBox{position: absolute; width:200px;height: 74px; text-align: center; display: flex; justify-content: center; align-items: center;}
-.page_5 .colorBox.col1{left:100px}
-.page_5 .colorBox.col2{right:100px}
-.page_5 .colorBox.row1{top:140px}
-.page_5 .colorBox.row2{top:240px}
-.page_5 .colorBox.row1.a{top:170px}
-.page_5 .colorBox.row2.a{top:310px}
-.page_5 .colorBox.row3{top:340px}
-.page_5 .dragLineObj.col1,
-.page_5 .dragLineArea.col1{left: 320px;}
-.page_5 .dragLineObj.col2,
-.page_5 .dragLineArea.col2{left: 680px;}
-.page_5 .dragLineObj.row1,
-.page_5 .dragLineArea.row1{top: 178px;}
-.page_5 .dragLineObj.row2,
-.page_5 .dragLineArea.row2{top: 278px;}
-.page_5 .dragLineObj.row3,
-.page_5 .dragLineArea.row3{top: 378px;}
-.page_5 .dragLineObj.row1.a,
-.page_5 .dragLineArea.row1.a{top: 208px;}
-.page_5 .dragLineObj.row2.a,
-.page_5 .dragLineArea.row2.a{top: 348px;}
+.page_5 .row-wrap{
+    margin:0 auto;
+    width:500px;
+    position: relative;
+}
+.page_5 .row-wrap::after{
+    content: "";
+    display: block;
+    width: 290px;
+    height: 400px;
+    background: url(../images/suh_h_0302_02_0004_401_1/suh_h_0302_02_0004_401_1_2.png) no-repeat 0 50% / 100%;
+    position: absolute;
+    top: -141px;
+    left: 110px;
+    z-index: 1;
+    pointer-events: none;
+}
+.page_5 .row-wrap .row.center{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.page_5 .row{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
 
-.page_6 .multipleChoiceList > li {
-    width: 50%;
-    margin-bottom: 40px;
+}
+.page_5 .row + .row{margin-top:4px}
+.page_5 .row .lineBox{
+    width:200px;
+    text-align: center;
+    padding:4px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    height: 70px;
 }
 
-.page_7 .check-tit {margin-left:660px}
-.page_8 .check-tit {margin-left:660px}
+.page_6 .tableContainer {width:700px}
+.page_6 .tableContainer .answer{text-align: center; width: 100%; display: block;}
+
 .page_9 .check-tit {margin-left:660px}
 .page_10 .check-tit {margin-left:660px}
 
