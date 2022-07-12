@@ -12,10 +12,17 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<style type="text/css">
 		.operator {display:inline-block;padding: 0 2px;vertical-align: middle;}
-        .flex-center {display:flex;align-items:center;justify-content:center;}
-        h2 .bunsuWrap {margin-top:-14px;}
+		.flex-center {display:flex;align-items:center;justify-content:center;}
+		h2 .bunsuWrap {margin-top:-14px;}
+
+		[class^='ex-'] {
+			position: absolute;
+		}
+		.ex-gradation {position: absolute; top:0; left:0;font-size: 30px;line-height:1;width: 100%;display: flex;align-items: center;justify-content: space-between;}
+
 		.basicSlider_slides  section{padding-right:0;}
 		.basicSlider_slides .answer{width: 100%; text-align: justify;}
+
 		.name2-1, .name2-2 {position: absolute;}
 		.popup_pages .name2-1 {top:55%; left: 17%;}
 		.popup_pages .name2-2 {top:57%; right: 9%;}
@@ -23,7 +30,9 @@
 		.popup_pages .b2-1{top: 16px;left: 440px;z-index: 2;width: 244px;}
 		.popup_pages .b2-1::after{top:65% !important;}
 		.popup_pages .b2-2{top: 528px;left: 728px;z-index: 2;width: 358px;}
+
 		.page_1 .popBtn.textInBtn.eye {position:relative;display:inline-block;vertical-align:middle;}
+		.page_1 .ex-gradation {left: 222px;width: 610px;}
 		.page_1 figure img {max-width: 100%;height:160px;}
 		.page_1 .flex-item {flex: 1 1 auto;}
 		.page_1 .flex-item.n1 {position:relative;}
@@ -32,15 +41,29 @@
 		.page_1 .flex-item.n1 .toggle.noBg::after{display:none;}
 		.page_1 .flex-item.n2 .figureUL > li {height: 160px;}
 		.page_1 .flex-item.n2 .bunsuWrap ul > li:first-of-type {padding-bottom:4px;margin-bottom:4px;}
-		.page_1 .ex-labels {margin-left:221px;width:calc(100% - 285px);}
-		.page_1 .ex-label.label1 {top:38%;left:12%;}
-		.page_1 .ex-label.label2 {top:40%;left:14%;}
-		.page_2 section figure img {max-width: 100%;height:125px;}
-		.page_2 .ex-labels {font-size:30px;margin-left:170px;width:calc(100% - 544px);}
-		.page_2 .ex-label.label1 {top:34%;left:7%;}
-		.page_2 .ex-label.label2 {top:36%;left:9%;}
-		section > .figureUL {width: 100%;}
-		section > .figureUL img {max-width: 100%; height: 145px;}
+
+		.page_1 .ex-label-1 {top:38%;left:12%;}
+		.page_1 .ex-label-2 {top:40%;left:14%;}
+
+		.page_2 .ex-gradation {left: 26.5%;width: 538px;}
+		.page_3 .ex-gradation,
+		.page_4 .ex-gradation,
+		.page_5 .ex-gradation {left: 26.5%;width: 557px;}
+
+		.page_2 .ex-label-1,
+		.page_3 .ex-label-1,
+		.page_4 .ex-label-1,
+		.page_5 .ex-label-1 {top:34%;left: 10%;}
+		.page_2 .ex-label-2,
+		.page_3 .ex-label-2,
+		.page_4 .ex-label-2,
+		.page_5 .ex-label-2 {top: 33%;left: 13%;}
+		.page_2 figure img,
+		.page_3 figure img,
+		.page_4 figure img,
+		.page_5 figure img {max-width: 100%; height: 145px;}
+		.page_2 figure img {max-width: 100%;height: 140px;}
+
 		.ex-labels,
 		figure .ex-label {position: absolute;font-size: 32px;z-index: 2;}
 		.ex-labels {font-size:34px; margin-left:204px;width:calc(100% - 476px);display:flex;align-items:center;justify-content:space-between;}
@@ -73,120 +96,110 @@
 								<h2><ins class="dot"></ins><span>
 									달이가 하늘이보다 더 먹은 롤케이크는 전체의 얼마인지 알아봅시다. <div class="popBtn textInBtn eye orange" data-hover="" data-popup-btn="1" data-popup-parent="hidden">그림 보기</div>
 								</span></h2>
-								<section>
-									<div class="flex-wrap">
-										<div class="flex-item n1">
-											<ul class="figureUL">
-												<li>
-													<figure>
-														<div class="ex-labels">
-															<div class="ex-label-1">0</div>
-															<div class="ex-label-2">1</div>
-														</div>
-														<div class="ex-label label1">하늘</div>
-														<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt=""><span
-														class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity" data-hover="" data-toggle-obj="1-1"></span>
-														<div class="toggle noBg box imgcheck">
-															<div class="answer imgcheck" data-toggle-target="1-1">
-																<span><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
-															</div>
-														</div>
-													</figure>
-												</li>
-												<li>
-													<figure>
-														<div class="ex-labels">
-															<div class="ex-label-1">0</div>
-															<div class="ex-label-2">1</div>
-														</div>
-														<div class="ex-label label2">달이</div>
-														<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt=""><span
-														class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity" data-hover="" data-toggle-obj="1-2"></span>
-														<div class="toggle noBg box imgcheck">
-															<div class="answer imgcheck" data-toggle-target="1-2">
-																<span><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
-															</div>
-														</div>
-													</figure>
-												</li>
-											</ul>
+								<div class="flex-wrap">
+									<div class="flex-item n1">
+										<div class="flex-center">
+											<figure>
+												<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
+												<div class="ex-gradation">
+													<span>0</span>
+													<span>1</span>
+												</div>
+												<div class="ex-label label1">하늘</div>
+												<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity" data-hover="" data-toggle-obj="1-1"></span>
+												<div class="toggle noBg box imgcheck">
+													<div class="answer imgcheck" data-toggle-target="1-1">
+														<span><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
+													</div>
+												</div>
+											</figure>
 										</div>
-										<div class="flex-item n2">
-											<ul class="figureUL">
-												<li class="flex-center">
-													<div class="bunsuWrap inline">
-														<ul>
-															<li><div class="toggle" data-toggle-obj="1-3">
-																<div class="answer" data-toggle-target="1-3">
-																	3
-																</div>
-															</div></li>
-															<li><div class="toggle" data-toggle-obj="1-4">
-																<div class="answer" data-toggle-target="1-4">
-																	8
-																</div>
-															</div></li>
-														</ul>
+										<div class="flex-center mt_20">
+											<figure>
+												<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
+												<div class="ex-gradation">
+													<span>0</span>
+													<span>1</span>
+												</div>
+												<div class="ex-label-2">달이</div>
+												<span class="popBtn click-finger-Btn btn_2 blinkOn blinkOpacity" data-hover="" data-toggle-obj="1-2"></span>
+												<div class="toggle noBg box imgcheck">
+													<div class="answer imgcheck" data-toggle-target="1-2">
+														<span><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
 													</div>
-												</li>
-												<li class="flex-center">
-													<div class="bunsuWrap inline">
-														<ul>
-															<li><div class="toggle" data-toggle-obj="1-5">
-																<div class="answer" data-toggle-target="1-5">
-																	5
-																</div>
-															</div></li>
-															<li><div class="toggle" data-toggle-obj="1-6">
-																<div class="answer" data-toggle-target="1-6">
-																	8
-																</div>
-															</div></li>
-														</ul>
-													</div>
-												</li>
-											</ul>
+												</div>
+											</figure>
 										</div>
 									</div>
-								</section>
+									<div class="flex-item n2">
+										<ul class="figureUL">
+											<li class="flex-center">
+												<div class="bunsuWrap inline">
+													<ul>
+														<li><div class="toggle" data-toggle-obj="1-3">
+															<div class="answer" data-toggle-target="1-3">
+																3
+															</div>
+														</div></li>
+														<li><div class="toggle" data-toggle-obj="1-4">
+															<div class="answer" data-toggle-target="1-4">
+																8
+															</div>
+														</div></li>
+													</ul>
+												</div>
+											</li>
+											<li class="flex-center mt_20">
+												<div class="bunsuWrap inline">
+													<ul>
+														<li><div class="toggle" data-toggle-obj="1-5">
+															<div class="answer" data-toggle-target="1-5">
+																5
+															</div>
+														</div></li>
+														<li><div class="toggle" data-toggle-obj="1-6">
+															<div class="answer" data-toggle-target="1-6">
+																8
+															</div>
+														</div></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="buttonContainer">
+								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
 					</li>
 					<!-- 2 -->
 					<li class="page_2" data-quiz="toggle">
-						<div class="flex-wrap">
-							<div class="flex-item">
-								<h2><ins class="dot"></ins><span>
-									달이가 하늘이보다 더 먹은 롤케이크는 전체의 얼마인지 식으로 나타내 보세요.
-								</span></h2>
-								<section>
-									<ul class="figureUL">
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
-												<div class="ex-label label1">하늘</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
-												<div class="ex-label label2">달이</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
-											</figure>
-										</li>
-									</ul>
-								</section>
-							</div>
+						<h2><ins class="dot"></ins><span>
+							달이가 하늘이보다 더 먹은 롤케이크는 전체의 얼마인지 식으로 나타내 보세요.
+						</span></h2>
+						<div class="flex-center">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-1">하늘</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
+							</figure>
+						</div>
+						<div class="flex-center mt_10">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-2">달이</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
+							</figure>
 						</div>
 						<div class="flex-center mt_20">
 							<div class="toggle" data-toggle-obj="2-1">
@@ -209,52 +222,48 @@
 					</li>
 					<!-- 3 -->
 					<li class="page_3" data-quiz="toggle">
+						<h2><ins class="dot"></ins><span>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>3</li>
+									<li>8</li>
+								</ul>
+							</div>과 <div class="bunsuWrap inline">
+								<ul>
+									<li>5</li>
+									<li>8</li>
+								</ul>
+							</div>는 <div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>8</li>
+								</ul>
+							</div>이 각각 몇 개인가요?
+						</span></h2>
 						<div class="flex-wrap">
 							<div class="flex-item">
-								<h2><ins class="dot"></ins><span>
-									<div class="bunsuWrap inline">
-										<ul>
-											<li>3</li>
-											<li>8</li>
-										</ul>
-									</div>과 <div class="bunsuWrap inline">
-										<ul>
-											<li>5</li>
-											<li>8</li>
-										</ul>
-									</div>는 <div class="bunsuWrap inline">
-										<ul>
-											<li>1</li>
-											<li>8</li>
-										</ul>
-									</div>이 각각 몇 개인가요?
-								</span></h2>
-								<section>
-									<ul class="figureUL">
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
-												<div class="ex-label label1">하늘</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
-												<div class="ex-label label2">달이</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
-											</figure>
-										</li>
-									</ul>
-								</section>
+								<div class="flex-center">
+									<figure>
+										<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
+										<div class="ex-gradation">
+											<span>0</span>
+											<span>1</span>
+										</div>
+										<div class="ex-label-1">하늘</div>
+										<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
+									</figure>
+								</div>
+								<div class="flex-center mt_10">
+									<figure>
+										<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
+										<div class="ex-gradation">
+											<span>0</span>
+											<span>1</span>
+										</div>
+										<div class="ex-label-2">달이</div>
+										<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
+									</figure>
+								</div>
 							</div>
 						</div>
 						<div class="flex-center mt_20">
@@ -285,57 +294,52 @@
 								</div>
 							</div>
 						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 					<!-- 4 -->
 					<li class="page_4" data-quiz="toggle">
-						<div class="flex-wrap">
-							<div class="flex-item">
-								<h2><ins class="dot"></ins><span>
-									<div class="bunsuWrap inline">
-										<ul>
-											<li>5</li>
-											<li>8</li>
-										</ul>
-									</div><span class="operator">－</span><div class="bunsuWrap inline">
-										<ul>
-											<li>3</li>
-											<li>8</li>
-										</ul>
-									</div>은 <div class="bunsuWrap inline">
-										<ul>
-											<li>1</li>
-											<li>8</li>
-										</ul>
-									</div>이 몇 개인가요?
-								</span></h2>
-								<section>
-									<ul class="figureUL">
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
-												<div class="ex-label label1">하늘</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
-												<div class="ex-label label2">달이</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
-											</figure>
-										</li>
-									</ul>
-								</section>
-							</div>
+						<h2><ins class="dot"></ins><span>
+							<div class="bunsuWrap inline">
+								<ul>
+									<li>5</li>
+									<li>8</li>
+								</ul>
+							</div><span class="operator">－</span><div class="bunsuWrap inline">
+								<ul>
+									<li>3</li>
+									<li>8</li>
+								</ul>
+							</div>은 <div class="bunsuWrap inline">
+								<ul>
+									<li>1</li>
+									<li>8</li>
+								</ul>
+							</div>이 몇 개인가요?
+						</span></h2>
+						<div class="flex-center">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-1">하늘</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
+							</figure>
+						</div>
+						<div class="flex-center mt_10">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-2">달이</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
+							</figure>
 						</div>
 						<div class="flex-center mt_20">
 							<div class="toggle" data-toggle-obj="4-1">
@@ -344,42 +348,37 @@
 								</div>
 							</div>
 						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 					<!-- 5 -->
 					<li class="page_5" data-quiz="toggle">
-						<div class="flex-wrap">
-							<div class="flex-item">
-								<h2><ins class="dot"></ins><span>
-									달이가 하늘이보다 더 먹은 롤케이크는 전체의 얼마인가요?
-								</span></h2>
-								<section>
-									<ul class="figureUL">
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
-												<div class="ex-label label1">하늘</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<div class="ex-labels">
-													<div class="ex-label-1">0</div>
-													<div class="ex-label-2">1</div>
-												</div>
-												<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
-												<div class="ex-label label2">달이</div>
-												<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
-											</figure>
-										</li>
-									</ul>
-								</section>
-							</div>
+						<h2><ins class="dot"></ins><span>
+							달이가 하늘이보다 더 먹은 롤케이크는 전체의 얼마인가요?
+						</span></h2>
+						<div class="flex-center mt_30">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_1.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-1">하늘</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0002_201_1_1_2.png" alt=""></span>
+							</figure>
+						</div>
+						<div class="flex-center mt_10">
+							<figure>
+								<img src="./images/suh_h_0402_01_0003_201_1_2.png" alt="">
+								<div class="ex-gradation">
+									<span>0</span>
+									<span>1</span>
+								</div>
+								<div class="ex-label-2">달이</div>
+								<span class="ex-val"><img src="images/suh_h_0402_01_0003_201_1_2_2.png" alt=""></span>
+							</figure>
 						</div>
 						<div class="flex-center mt_20">
 							<div class="bunsuWrap inline">
@@ -419,12 +418,30 @@
 								</ul>
 							</div>
 						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</main>
 
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole image pop_page_1" data-popup-page="1">
+					<div class="b2-1 balloon left sky ctTail">
+						나는 3조각만<br/>먹을게.
+					</div>
+					<div class="b2-2 balloon top pink ctTail">
+						그럼 나는 5조각!<br/>내가 너보다 더 먹는<br/>롤케이크는 전체의<br/>얼마인 거지?
+					</div>
+					<img src="./images/suh_h_0402_01_0003_102_1_2.png" alt="">
+					<div class="name2-1 colorBox sky">하늘</div>
+					<div class="name2-2 colorBox green">달이</div>
+				</li>
+			</ul>
+		</section>
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
