@@ -8,6 +8,7 @@
     background: #fff url(../images/suh_h_0302_01_0003_201_1/suh_h_0302_01_0003_201_1_1.png) no-repeat 50% 0 / cover;
     margin-bottom: 20px;
     border-radius: 20px;
+    pointer-events: none;
 }
 
 .btn_1 .b1 {
@@ -80,13 +81,16 @@
 .item-3 .group {
     position: absolute;
     width: 320px;
-    top: 5px;
+    top: 0;
     left: 477px;
 }
 
 .item-3 .group-item {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
+.item-3 .group-item.i1{margin-top: 0;}
+.item-3 .group-item.i2{margin-top: 12px;}
+.item-3 .group-item.i3{margin-top: 11px;}
 
 .item-3 .group-txt {
     display: inline-block;
@@ -94,9 +98,7 @@
     text-align: right;
 }
 
-.item-3 .group-item .toggle:after {
-    display: none;
-}
+
 
 .type-linebox-b .s1 {
     width: 150px;
@@ -137,4 +139,24 @@
     align-items: flex-start;
     justify-content: center;
     box-sizing: border-box;
+}
+
+
+.toggle.colorBox{line-height: 52px !important;}
+.type-linebox-b{position: absolute;top: 81px;}
+.type-linebox-b .lineBox{position: static;}
+.lbx1{left: -37px;}
+.lbx2{left: -26px;}
+.type-linebox-b.lbx3{left: -12px;}
+.type-linebox-b.lbx1::before{left: 85px;}
+.type-linebox-b.lbx3::before{left: 49px;}
+.type-linebox-b::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 21px;
+    border-left: 4px dashed #ccc;
+    position: absolute;
+    bottom: 78px;
+    left: 50%;
 }
