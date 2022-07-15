@@ -302,7 +302,7 @@
 		}
 		}
 		
-		var answerClickButton = $ts.getEl('.page2 .quizButtons.answer');
+		var answerClickButton = $ts.getEl('.page_2 .quizButtons.answer');
 		
 		answerClickButton.forEach(function(btn) {
 		
@@ -313,7 +313,7 @@
 		window.$callBack.sliderMove = function(SLIDER) {
 		isShowAnswer = false;
 		clickObj.forEach(hideAnswer);
-		var dropAreas = $ts.getEl('.page2 .js-dropArea');
+		var dropAreas = $ts.getEl('.page_2 .js-dropArea');
 		dropAreas.forEach(function(drop) {
 			drop.innerHTML = '';
 		})
@@ -334,9 +334,9 @@
 		}
 		
 		function toggleDragAnswer() {
-		var dragObjs = $ts.getEl('.page2 .js-dragObj');
-		var dropAreas = $ts.getEl('.page2 .js-dropArea');
-		var dropAreasAnswer = $ts.getEl('.page2 .js-dropArea.xAnswer');
+		var dragObjs = $ts.getEl('.page_2 .js-dragObj');
+		var dropAreas = $ts.getEl('.page_2 .js-dropArea');
+		var dropAreasAnswer = $ts.getEl('.page_2 .js-dropArea.xAnswer');
 		
 		function dragReset() {
 			dropAreas.forEach(removeCookies);
@@ -357,8 +357,8 @@
 		window.dragDropCallbacks = {
 		"drag-obj": function(DRAGDROP) {
 			if (DRAGDROP.droppedArea) {
-			if ($ts.getEl('.page2 .js-dragObj.dragObjComplete').length === 6) {
-				console.log($ts.getEl('.page2 .js-dragObj.dragObjComplete').length)
+			if ($ts.getEl('.page_2 .js-dragObj.dragObjComplete').length === 6) {
+				console.log($ts.getEl('.page_2 .js-dragObj.dragObjComplete').length)
 				DRAGDROP.droppedArea.DISABLED = true;
 			}
 			if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
@@ -369,7 +369,7 @@
 		},
 		};
 		
-		var dragAnswerButton = document.querySelector('.page2 .js-chainButtons');
+		var dragAnswerButton = document.querySelector('.page_2 .js-chainButtons');
 		dragAnswerButton.addEventListener('click', toggleDragAnswer);
 	});
 	
