@@ -15,18 +15,23 @@
         .flex-center {display:flex;align-items:center;justify-content:center;}
 		#wrap header .title {display: inline-flex;height:52px;align-items: center;}
 		.basicSlider_slides figure img {width: 100%;}
-		.ex1-labels,
-		.ex2-labels {width:100%;display:flex;align-items:center;justify-content:space-between;}
-		.ex1-labels + figure,
-		.ex2-labels + figure {height: 265px;}
-		.ex1-val-1,
-		.ex1-val-2,
-		.ex2-val-1,
-		.ex2-val-2 {position: absolute;}
-		.ex1-val-1 {top:54%;left:19%;}
-		.ex1-val-2 {top:56.5%;left:59%;}
-		.ex2-val-1 {top:56.5%;left:10%;}
-		.ex2-val-2 {top:53%;left:40%;}
+
+		[class^='ex-'] {
+			position: absolute;
+		}
+
+		.ex-labels,
+		.ex-labels {width:100%;display:flex;align-items:center;justify-content:space-between;}
+		.ex-labels + figure,
+		.ex-labels + figure {height: 265px;}
+
+		.ex-val-1,
+		.ex-val-2 {background-color: #fff;padding: 0 3px;}
+
+		.innerTab_1 .ex-val-1 {top:54%;left: 18%;}
+		.innerTab_1 .ex-val-2 {top:56.5%;left: 58%;}
+		.innerTab_2 .ex-val-1 {top:56.5%;left: 9%;}
+		.innerTab_2 .ex-val-2 {top:53%;left: 40%;}
 	</style>
 </head>
 
@@ -35,28 +40,30 @@
 	<div id="wrap" class="math">
 		<header>
 			<!-- n1 ~ n6 -->
-			<div class="title chukchuk" style="letter-spacing: -1px;" data-number="1">
-				<div class="bunsuWrap inline">
-					<ul>
-						<li>4</li>
-						<li>9</li>
-					</ul>
-				</div><span class="operator">＋</span><div class="bunsuWrap inline">
-					<ul>
-						<li>3</li>
-						<li>9</li>
-					</ul>
-				</div>과 <div class="bunsuWrap inline">
-					<ul>
-						<li>2</li>
-						<li>4</li>
-					</ul>
-				</div><span class="operator">＋</span><div class="bunsuWrap inline">
-					<ul>
-						<li>3</li>
-						<li>4</li>
-					</ul>
-				</div>을 계산해 보세요.
+			<div class="title chukchuk" data-number="1">
+				<div>
+					<div class="bunsuWrap inline">
+						<ul>
+							<li>4</li>
+							<li>9</li>
+						</ul>
+					</div><span class="operator">＋</span><div class="bunsuWrap inline">
+						<ul>
+							<li>3</li>
+							<li>9</li>
+						</ul>
+					</div>과 <div class="bunsuWrap inline">
+						<ul>
+							<li>2</li>
+							<li>4</li>
+						</ul>
+					</div><span class="operator">＋</span><div class="bunsuWrap inline">
+						<ul>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+					</div>을 계산해 보세요.
+				</div>
 			</div>
 		</header>
 		<main>
@@ -69,13 +76,13 @@
 								<div class="pointSliderContainer" data-slide-container="">
 									<ul class="basicSlider_slides inner" data-slides="">
 										<li class="innerTab_1">
-											<div class="ex1-labels">
-												<div class="ex1-label-1">0</div>
-												<div class="ex1-label-2">1</div>
+											<div class="ex-labels">
+												<div class="ex-label-1">0</div>
+												<div class="ex-label-2">1</div>
 											</div>
 											<figure class="pos-r">
 												<img src="./images/suh_h_0402_01_0002_203_1_1.png" alt="">
-												<div class="ex1-val-1"><div class="bunsuWrap inline">
+												<div class="ex-val-1"><div class="bunsuWrap inline">
 													<ul>
 														<li><div class="toggle" data-toggle-obj="1-1">
 															<div class="answer" data-toggle-target="1-1">
@@ -85,7 +92,7 @@
 														<li>9</li>
 													</ul>
 												</div></div>
-												<div class="ex1-val-2"><div class="bunsuWrap inline">
+												<div class="ex-val-2"><div class="bunsuWrap inline">
 													<ul>
 														<li><div class="toggle" data-toggle-obj="1-2">
 															<div class="answer" data-toggle-target="1-2">
@@ -133,14 +140,14 @@
 
 										</li>
 										<li class="innerTab_2">
-											<div class="ex2-labels">
-												<div class="ex1-label-1">0</div>
-												<div class="ex1-label-2">1</div>
-												<div class="ex1-label-3">2</div>
+											<div class="ex-labels">
+												<div class="ex-label-1">0</div>
+												<div class="ex-label-2">1</div>
+												<div class="ex-label-3">2</div>
 											</div>
 											<figure class="pos-r">
 												<img src="./images/suh_h_0402_01_0002_203_1_2.png" alt="">
-												<div class="ex2-val-1"><div class="bunsuWrap inline">
+												<div class="ex-val-1"><div class="bunsuWrap inline">
 													<ul>
 														<li><div class="toggle" data-toggle-obj="2-1">
 															<div class="answer" data-toggle-target="2-1">
@@ -150,7 +157,7 @@
 														<li>4</li>
 													</ul>
 												</div></div>
-												<div class="ex2-val-2"><div class="bunsuWrap inline">
+												<div class="ex-val-2"><div class="bunsuWrap inline">
 													<ul>
 														<li><div class="toggle" data-toggle-obj="2-2">
 															<div class="answer" data-toggle-target="2-2">
