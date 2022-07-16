@@ -45,6 +45,13 @@ header .title img[src*="inequalIcon"],h2 img[src*="inequalIcon"] {
     background: #f4f4f4 url(../../contents/images/icon/icon_info.png) 21px center/16px auto no-repeat;
     box-sizing: border-box
 }
+h2 .colorBox{
+    padding: 5px 14px;
+    line-height: 1 !important;
+    box-sizing: border-box;
+    max-height: -21px;
+    display: inline-block;
+}
 h2 .study_guide{
     bottom:-40px !important; top:auto !important; right:0 !important; left:auto !important;
 }
@@ -393,7 +400,11 @@ header .title .supply_guide.inline,header .title .pages_guide.inline {
     font-family: YGJAL;
     line-height: 28px
 }
-
+h2 .card-num{
+    height: 40px; 
+    display: inline-block;
+    transform: translate(0,4px);
+}
 h2 .icon_bogi,h3 .icon_bogi {
     height: 36px;
     margin: 5px 0 0 0;
@@ -831,7 +842,12 @@ section.flex-wrap {
 .flex-wrap.middle{
     align-items: center;
 }
-
+.flex-wrap.bottom{
+    align-items: flex-end;
+}
+.type-linebox-b.colorBox{
+    line-height:52px !important;
+}
 .type-linebox-b{
     position: relative;
     text-align: center;
@@ -908,7 +924,7 @@ section.flex-wrap {
 
 }
 .math-calc-side .flex-wrap{justify-content: space-between; width: 100%; flex:1; align-items: center; height: 50px;}
-.math-calc-side .n1{margin:-24px 10px 0}
+.math-calc-side .n1{margin:0 10px 0;letter-spacing: -8px;}
 .icon_arrow.ani.complete{animation: none;}
 .icon_arrow.ani {
     margin:0 20px;
@@ -936,12 +952,27 @@ section.flex-wrap {
 .solve .math_calc_table .lineDotted.line_2{left:80px;}
 .solve .math_calc_table .lineDotted.line_3{left:120px;}
 .solve .math_calc_table .lineDotted.line_4{left:160px;}
+.math_calc_table.class3 .toggle{
+    height: 64px !important;
+}
+.math_calc_table.class3 .sup .toggle{
+    height: 50px !important;
+    min-height: 50px !important;
+}
+.math_calc_table.class3 .sup .toggle .answer {top:4px !important}
+.toggle{min-height: 64px !important; display: inline-flex; align-items: center; }
+.toggle .answer {padding-top:7px}
 
 .math_calc_table.class3 .rowLine {
-    top: 2px !important;
+    top: 0 !important;
+    height: 4px;
+}
+.math_calc_table.class3 .toggle.colorBox .answer{
+    top:5px;
 }
 .math_calc_table.class3 .toggle .answer{
     padding:0;
+    top: 12px !important;
 }
 .math_calc_table.class3 td .toggle{
     margin-top:0;
@@ -951,6 +982,46 @@ section.flex-wrap {
     left:-50px;
     top:0;
 }
+.math_calc_table.class3 td .colorBox{
+    display:block;
+    padding:0 ;
+    text-align: center;
+    line-height: 1;
+    width:100%;
+    margin:0 ;
+}
+.math_calc_table.class3 .txt{
+    position: absolute; left: calc(100% + 4px); top:6px;    white-space: nowrap; color:#000;
+}
+.math_calc_table.division .rowLine2::before{
+    content: ")";
+    font-size: 40px;
+    position: absolute;
+    top: 4px;
+    left: -3px;
+    color: #000;
+    transform: scaleY(1.4);
+    font-family: NotoM;
+
+}
+.math_calc_table.class3.division .rowLine{
+    width: calc(100% + 10px);
+    left: -5px;
+    top: 2px;
+}
+.math_calc_table.class3.division .rowLine2{
+    position:absolute;
+    width: calc(100% + 10px);
+    left: -5px;
+    top: 2px;
+    height: 4px;
+    background-color: #000;
+}
+.contentsBox.board .math_calc_table.division .rowLine::before{color:#fff;}
+.contentsBox.board .math_calc_table.division .rowLine{background-color:#fff;}
+.contentsBox.board .math_calc_table.division .rowLine2::before{color:#fff;}
+.contentsBox.board .math_calc_table.division .rowLine2{background-color:#fff;}
+
 .toggle{padding:0;}
 .toggle .answer {
     padding: 6px 16px;
@@ -973,9 +1044,9 @@ section.flex-wrap {
 .greenT{color:green}
 .contentsBox section{padding:0}
 .flex-item  section{padding:0 0 0 20px; height: auto;}
-section.flex-wrap.middle{padding-bottom:60px;}
+section.flex-wrap.middle{padding-bottom:80px;}
 .word-keep{word-break: keep-all;}
-
+.suhi section.flex-wrap.middle{padding-bottom:100px;}
 .question-tbl-4{
     width: 100%;
     display: flex;
@@ -985,7 +1056,7 @@ section.flex-wrap.middle{padding-bottom:60px;}
 }
 .question-tbl-4 > .flex-wrap > .flex-wrap{
     justify-content: center;
-     align-items: center;
+    align-items: center;
 }
 .question-tbl-4 > .flex-wrap {
     justify-content: center;
@@ -1003,7 +1074,7 @@ section.flex-wrap.middle{padding-bottom:60px;}
 .check-tit.type-row >.flex-wrap{width: auto; align-items: center;}
 .check-tit{flex-direction: column; align-self: center;}
 .check-tit .flex-wrap{align-items: flex-start;}
-.check-tit .colorBox.check{display: inline-block; margin-top:5px;}
+.check-tit .colorBox.check{display: inline-block; margin-top:3px;}
 
 .colorBox.purple{
     color:#000
@@ -1021,9 +1092,9 @@ section.flex-wrap.middle{padding-bottom:60px;}
     max-height:40px!important;
     transform: translate(0, 4px);
 }
-
+.solve .popup_contents .flex-wrap.middle .blankBox{transform: translate(0,0);}
 .popup_pages .solve .toggle.circle.complete {
-    width: 40px; height: 40px; min-width: 40px; margin:0 10px;
+    width: 40px; height: 40px; min-width: 40px; min-height:40px !important; margin:0 10px; transform: translate(0, 3px);
 }
 .popup_pages .solve .toggle.circle.complete img{
  width:50%;
@@ -1053,3 +1124,138 @@ transform: scale(0.914) translate(0, -50%); transform-origin: 0 0;}
 }
 .tableContainer table thead + tbody th{background-color: #ddc9b1 !important}
 .tableContainer td .toggle{background-color: transparent;}
+
+.lineBox{position: relative;}
+.lineBox .icon_bogi{position: absolute; top:-20px; left:50%;height: 36px; border-radius: 10px;transform: translate(-50%, 0);}
+.lineBox .icon_bogi::after{font-size: 21px; line-height:36px;}
+
+.math_calc_table.class3 .bullet.number {
+    left: 6px;
+    top:4px
+}
+
+.solve .popup_contents .bullet.number{
+    transform: translate(0,4px);
+}
+
+
+.line-arrow{
+    position: absolute;
+}
+.line-arrow::after{
+    content: "";
+    width:20px;
+    height: 20px;
+    border:4px solid #00a0ff;
+    border-right:0;
+    border-bottom:0;
+    position: absolute;
+}
+.line-arrow.brt{
+    border:4px solid #00a0ff;
+    border-top:0;
+}
+.line-arrow.brt::after{
+    top: 0px;
+    right: -14px;
+    transform: rotate(45deg);
+}
+.line-arrow.tr{
+    border:4px solid #00a0ff;
+    border-bottom:0;
+    border-right:0;
+}
+.line-arrow.tr::after{
+    top: -14px;
+    right: 0;
+    transform: rotate(135deg);
+}
+.line-arrow.r,
+.line-arrow.l{
+    border:4px solid #00a0ff;
+    border-bottom:0;
+    border-right:0;
+    border-left:0;
+}
+.line-arrow.l::after{
+    top: -14px;
+    left: 0;
+    transform: rotate(-45deg);
+}
+.line-arrow.r::after{
+    top: -14px;
+    right: 0;
+    transform: rotate(135deg);
+}
+.line-arrow.b{
+    border:4px solid #00a0ff;
+    border-bottom:0;
+    border-top:0;
+    border-left:0;
+}
+.line-arrow.b::after{
+    bottom: 0;
+    right: -14px;
+    transform: rotate(225deg);
+}
+
+.hidden-box.on{opacity:1; pointer-events:initial; transition: opacity .2s ease-in; visibility: visible;}
+.hidden-box{opacity: 0; pointer-events: none; visibility: hidden;}
+
+.icon_arrow.eff.complete{
+    animation: none;
+}
+.icon_arrow.eff {
+    animation-name: arrow;
+    animation-duration: .7s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction:reverse;
+}
+@keyframes arrow {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(10px,0);}
+    100% {transform: translate(0,0);}
+}
+
+.toggle.colorBox{line-height: 52px !important;}
+td .toggle.colorBox{line-height: 36px !important;}
+
+/* .math_calc_table.class3 .toggle{
+    height: 54px !important;
+    line-height: 47px;
+} */
+
+.oxContainer.lineBox.green.hover{border-color: #cee492;}
+.oxContainer.lineBox.brown.hover{border-color: #ae7c65;}
+.oxContainer.lineBox.purple.hover{border-color: #cabfe0;}
+.oxContainer.lineBox.orange.hover{border-color: #fccd89;}
+.oxContainer.lineBox.sky.hover{border-color: #c1e8ec;}
+.oxContainer.lineBox.yellow.hover{border-color: #f4e8bd;}
+.oxContainer.lineBox.beige.hover{border-color: #efcfa6;}
+.oxContainer.lineBox.pink.hover{border-color: #ffdecc;}
+.oxContainer.lineBox.deeppink.hover{border-color: #f7c1c9;}
+
+.txt-df{font-family: NotoM !important; color:#000 !important; font-weight: 400 !important;}
+
+.mathCalcContainer .horizon input{text-align: center;}
+
+.toggle.lineBox.green.hover{border-color: #cee492;}
+.toggle.lineBox.brown.hover{border-color: #ae7c65;}
+.toggle.lineBox.purple.hover{border-color: #cabfe0;}
+.toggle.lineBox.orange.hover{border-color: #fccd89;}
+.toggle.lineBox.sky.hover{border-color: #c1e8ec;}
+.toggle.lineBox.yellow.hover{border-color: #f4e8bd;}
+.toggle.lineBox.beige.hover{border-color: #efcfa6;}
+.toggle.lineBox.pink.hover{border-color: #ffdecc;}
+.toggle.lineBox.deeppink.hover{border-color: #f7c1c9;}
+
+[role="button"] *,
+[role="button"]{cursor: pointer;}
+
+.popup_container{z-index: 10;}
+
+
+.oxContainer .icon_o, 
+.oxContainer .icon_x {z-index: 3;}

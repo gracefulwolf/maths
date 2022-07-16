@@ -632,7 +632,7 @@ h2 .bunsuContainer .bunsu {
     width: auto !important;
     display: inline-flex;
 }
-.math_calc_table.class3 table{width:auto !important}
+.math_calc_table.class3 table{width:auto !important; position: relative; }
 .math_calc_table th,
 .math_calc_table td {
     position: relative;
@@ -650,14 +650,14 @@ h2 .bunsuContainer .bunsu {
 .guide .math_calc_table tr td:first-child::before{content:""; display: block; width:300px; height:1px; border-top:1px dashed red; position: absolute; top:50%; left:0; z-index: 10;} 
 
 .solve .math_calc_table.class3 tr td {
-    width:40px; height:40px; min-width:40px; min-height:40px; padding:1px !important;
+    width:40px; height:40px; min-width:40px; min-height:40px; padding:0 !important;
 }
 .math_calc_table.class3 tr td {
-    width:50px; height:50px; min-width:50px; min-height:50px; padding:1px !important;
+    width:50px; height:50px; min-width:50px; min-height:50px; padding:0 !important;
 }
 .math_calc_table.class3 tr.line-tr td,
 .math_calc_table.class3 tr.line td{
-    height:8px !important;
+    height:4px !important;
 }
 .math_calc_table tr.line-tr td,
 .math_calc_table tr.line td{
@@ -682,11 +682,12 @@ h2 .bunsuContainer .bunsu {
     content: '';
     right: 0
 }
-
+.math_calc_table .rowLine2,
 .math_calc_table .rowLine {
     position: absolute;
-    height: 3px;
-    background-color: #000
+    height: 4px;
+    background-color: #000;
+    z-index:2;
 }
 
 .math_calc_table .smallDigits {
@@ -720,8 +721,9 @@ h2 .bunsuContainer .bunsu {
 }
 .math_calc_table.class3 .toggle .answer{
     position: absolute;
-    right:-15px;
-    letter-spacing: 27.5px !important;
+    right: -13px;
+    letter-spacing: 26.3px !important;
+
     text-align: right !important;
     top:2px;
 }
