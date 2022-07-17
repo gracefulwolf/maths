@@ -8,6 +8,7 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<style type="text/css">
 		.mediaContainer.video video {
 			position: relative;
@@ -22,6 +23,12 @@
 			max-width: none;
 			background: #eedac2;
 		}
+		.flex-center {display:flex;align-items:center;justify-content:center;}
+		.popup_pages .pop_page_1 {
+			top: 280px;
+			left: 380px;
+			width: 460px;
+		}
 	</style>
 </head>
 
@@ -30,7 +37,7 @@
 		<div class="mediaContainer video" data-media-container="video">
 			<div class="animationTitle">
 				<div class="mediaSubContainer">
-					<h2>편종 <span class="orange">만들기</span></h2>
+					<h2><span class="popBtn word btn_3" data-popup-btn="1" data-hover="">편종</span> 만들기</h2>
 					<button class="screenPlayBtn" title="재생"></button>
 				</div>
 			</div>
@@ -39,7 +46,23 @@
 				Your browser does not support the video element.
 			</video>
 		</div>
+
 	</div>
+	<section class="popup_container" data-popup-container="">
+		<ul class="popup_pages">
+			<li class="min pop_page_1" data-popup-page="1" data-drag>
+				<h2>편종</h2>
+				<div class="popup_contents">
+					<div class="flex-center">
+						<div>우리나라의 타악기</div>
+						<figure>
+							<img src="./images/편종.png" alt="">
+						</figure>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
 	</div>

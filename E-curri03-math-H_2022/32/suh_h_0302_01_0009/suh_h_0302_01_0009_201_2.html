@@ -9,7 +9,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
-	<link rel="stylesheet" href="../../../__common__/css/custom_last.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<!-- <link rel="stylesheet" href="../../../__common__/css/custom.css"> -->
 	<link rel="stylesheet" type="text/css" href="./css/suh_h_0302_01_0009_201_2.css">
 </head>
@@ -43,8 +43,8 @@
 										<div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">그림 보기</div>
 									</div>
 									<div class="flex-wrap center">
-										<div class="toggle " data-toggle-obj="1">
-											<div class="answer" data-toggle-target="1">
+										<div class="toggle box" data-toggle-obj="1">
+											<div class="answer" data-toggle-target="1" style="letter-spacing:1px">
 												삼촌이 세계 여러 나라에 일하러 다녀오며 조카를 위해 선물을 사 온 이야기를 하고 있습니다.
 											</div>
 										</div>
@@ -55,10 +55,10 @@
 								<ins class="bullet circleDot"></ins>
 								<div>
 									<div class="mb_10">
-										배에 걸린 깃발은 어디에 사용되는 것인가요?
+										삼촌이 싱가프로에서 선물을 사는 데 쓴 돈은 얼마인가요?
 									</div>
 									<div class="flex-wrap center">
-										<div class="toggle  " data-toggle-obj="2">
+										<div class="toggle box " data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
 												7달러입니다.
 											</div>
@@ -73,8 +73,8 @@
 										삼촌에게서 받은 1달러 동전은 나라별로 각각 몇 개인가요?
 									</div>
 									<div class="flex-wrap center">
-										<div class="toggle  " data-toggle-obj="3">
-											<div class="answer" data-toggle-target="3">
+										<div class="toggle box " data-toggle-obj="3">
+											<div class="answer" data-toggle-target="3" style="letter-spacing: 2px;">
 												캐나다 동전은 2개, 호주 동전은 4개, 싱가포르 동전은 3개, 뉴질랜드 동전은 5개입니다.
 											</div>
 										</div>
@@ -198,6 +198,7 @@
 										</li>
 										
 									</ul>
+									<button class="dapCheckBtn" data-answer-btn=""></button>
 								</li>
 							</ul>
 						</div>
@@ -479,7 +480,12 @@
 							</li>
 	
 						</ul>
-						<div id="aniBox_2" class="flexListContainer center jcenter"></div>
+						
+						<div class="single charSpriteImg girl_3"></div>
+						<div class="b1 balloon bottom orange ctTail">
+							곱셈식, 계산 과정, 계산 결과를 <br>모두 비교해 보세요.
+
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -556,7 +562,7 @@
 					<div class="popup_contents">
 						
 						<div class="img-wrap">
-							<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2.png" alt="">
+							<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2_1.png" alt="">
 							<div class="txt n1">캐나다</div>
 							<div class="txt n2">호주</div>
 							<div class="txt n3">싱가포르</div>
@@ -584,7 +590,7 @@
 							<li class="innerTab_1">
 								
 								<div class="img-wrap">
-									<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2.png" alt="">
+									<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2_1.png" alt="">
 									<div class="txt n1">캐나다</div>
 									<div class="txt n2">호주</div>
 									<div class="txt n3">싱가포르</div>
@@ -638,7 +644,7 @@
 							<li class="innerTab_1">
 								
 								<div class="img-wrap">
-									<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2.png" alt="">
+									<img src="./images/suh_h_0302_01_0009_201_2/suh_h_0302_01_0009_201_2_2_1.png" alt="">
 									<div class="txt n1">캐나다</div>
 									<div class="txt n2">호주</div>
 									<div class="txt n3">싱가포르</div>
@@ -728,44 +734,6 @@
 				});
 			}
 		}
-
-		$prite.add({
-		target: $ts.getEl('#aniBox_2'),
-		spriteId: 'sprite3',
-		spriteList: [
-			{
-				name: 'girl_3',
-				// circle: 'sky',
-				speech:'left',
-				top:60,
-				left: 330,
-				width: 340,
-				height: 421,
-				thumbNail: '../common/contents/images/character/girl_3.png',
-				spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
-				// sound: './media/audios/suh_h_0301_05_0009_201_2_1.mp3',
-				sheetWidth: 102000,
-				sheetHeight: 421,
-				//endSheet: 0,
-				delay: 40,
-				textBubble: {
-					text: '곱셈식, 계산 과정, 계산 결과를<br> 모두 비교해 보세요.',
-					class: 'balloon bottom brown ctTail',
-					top:68,
-					left: 259,
-					width:480,
-					textAlign: 'center', 
-					wordBreak: 'keep-all' 
-				},
-				callbacks: {
-					start: function () {
-					}, // 시작시 콜백
-					end: function () {
-					} // 끝날시 콜백
-				}
-			}
-		]
-	});
 
 	</script>
 </body>

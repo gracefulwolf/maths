@@ -15,10 +15,10 @@
 	<style type="text/css">
 		.iframe-wrap{position: relative; width:calc(100% + 112px); margin-left:-56px;height:462px; box-sizing: border-box;overflow: hidden;}
 		.iframe-wrap .iframe-item{width:1280px;
-		height: 765px;
-		position: absolute;
-		top: -275px;
-		left: 0px;
+			height: 765px;
+			position: absolute;
+			top: -275px;
+			left: 0px;
 		}
 		.pop_page_iframe .popup_contents{padding:0 !important;}
 		.pop_page_iframe .popup_closeBtn{z-index: 10001;}
@@ -95,12 +95,19 @@
 					<li class="page_2" data-quiz="dragDrop"  data-option="copy" data-quiz-name="drag_1">
 						<section class="full">
 							<h2><ins class="dot"></ins><span>
-								2만큼 색칠하고, 색칠한 부분에 <div class="bunsuWrap inline">
-									<ul>
-										<li>5</li>
-										<li>8</li>
-									</ul>
-								</div>만큼 <span class="icon_x_title" style="width:40px;height:40px;"></span>표 하여 알아보세요.
+								<span style="letter-spacing: -1px;">
+									<div class="bunsuWrap inline">
+										4<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+									</div>만큼 색칠하고, 색칠한 부분에 <div class="bunsuWrap inline">
+										2<ul>
+											<li>3</li>
+											<li>5</li>
+										</ul>
+									</div>만큼 <span class="icon_x_title" style="width:40px;height:40px;"></span>표 하여 알아보세요.
+								</span>
 								<div class="study_guide"><em>X표</em>를 <em>드래그</em>하여 옮기세요.</div>
 							</span></h2>
 
@@ -186,7 +193,7 @@
 					<li class="page_3" data-quiz="toggle">
 						<section class="full">
 							<h2><ins class="dot"></ins><span>
-								한옥 마을에서 시장까지의 거리는 몇 km인지 말하고, 어림한 결과와 비교해 보세요.
+								더 필요한 구리의 무게는 몇 kg인지 말하고, 어림한 결과와 비교해 보세요.
 							</span></h2>
 
 							<div class="basicSlider doItContent"  data-slide-container="">
@@ -200,7 +207,7 @@
 								</div>
 								<ul class="basicSlider_slides inner" data-slides="">
 									<li class="innerTab_1">
-										<figure class="flex-center mt_80">
+										<figure class="flex-center mt_50">
 											<img src="./images/suh_h_0402_01_0007_201_1_3.png" alt="">
 											<div class="ex-gradation">
 												<span>0</span>
@@ -208,6 +215,7 @@
 												<span>2</span>
 												<span>3</span>
 												<span>4</span>
+												<span>5</span>
 											</div>
 										</figure>
 										<div class="flex-center mt_30">
@@ -224,7 +232,7 @@
 										</div>
 									</li>
 									<li class="innerTab_2">
-										<figure class="flex-center mt_80">
+										<figure class="flex-center mt_50">
 											<img src="./images/suh_h_0402_01_0007_201_1_3.png" alt="">
 											<div class="ex-gradation">
 												<span>0</span>
@@ -232,6 +240,7 @@
 												<span>2</span>
 												<span>3</span>
 												<span>4</span>
+												<span>5</span>
 											</div>
 										</figure>
 										<div class="flex-center mt_30">
@@ -263,7 +272,7 @@
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
 	</div>
-
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
 	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
 	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -277,105 +286,18 @@
 	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script>
-	window.addEventListener('load', function() {
-	
-		var isShowAnswer = false;
-		// (function() {
-		// })();
-		var clickObj = $ts.getEl('[data-click-obj]');
 		
-		function hideAnswer(obj) {
-		obj.classList.remove('complete');
-		obj.classList.remove('pointerOff');
-		}
-		
-		function toggleAnswer() {
-		console.log('click')
-		if (!isShowAnswer) {
-			clickObj.forEach(function(obj) {
-			hideAnswer(obj);
-			if (obj.hasAttribute('data-answer')) {
-				obj.classList.add('complete');
-			}
-			obj.classList.add('pointerOff');
+		window.addEventListener('load', function() {
+
+			//탭안의 아이프레임인 경우 display none속성으로 위치값을 제대로 못가짐. 탭버튼 클릭시 아이프레임 재호출로 해결 및 탭이동시 리셋
+			$('.basicSlider_tabs > li').on('click', function(){
+				console.log(111);
+				document.querySelector( ".iframe-item" ).contentWindow.location.reload();
 			});
-			isShowAnswer = true;
-		} else {
-			clickObj.forEach(hideAnswer);
-			isShowAnswer = false;
-		}
-		}
-		
-		var answerClickButton = $ts.getEl('.page2 .quizButtons.answer');
-		
-		answerClickButton.forEach(function(btn) {
-		
-		btn.addEventListener('click', toggleAnswer);
+
 		});
 		
-		// 페이지 이동할 때 초기화 
-		window.$callBack.sliderMove = function(SLIDER) {
-		isShowAnswer = false;
-		clickObj.forEach(hideAnswer);
-		var dropAreas = $ts.getEl('.page2 .js-dropArea');
-		dropAreas.forEach(function(drop) {
-			drop.innerHTML = '';
-		})
-		}
-		
-		function insertCookies(dropArea) {
-		dropArea.innerHTML = '';
-		dropArea.innerHTML = '<div class="dragObj"></div>';
-		}
-		function removeCookies(dropArea) {
-		dropArea.innerHTML = '';
-		}
-		function setCompleted(dragObj) {
-		dragObj.classList.add('dragObjComplete');
-		}
-		function resetCompleted(dragObj) {
-		dragObj.classList.remove('dragObjComplete');
-		}
-		
-		function toggleDragAnswer() {
-		var dragObjs = $ts.getEl('.page2 .js-dragObj');
-		var dropAreas = $ts.getEl('.page2 .js-dropArea');
-		var dropAreasAnswer = $ts.getEl('.page2 .js-dropArea.xAnswer');
-		
-		function dragReset() {
-			dropAreas.forEach(removeCookies);
-			dragObjs.forEach(resetCompleted);
-		}
-		function dragAnswer() {
-			dropAreas.forEach(removeCookies);
-			dropAreasAnswer.forEach(insertCookies);
-			dragObjs.forEach(setCompleted);
-		}
-		
-		var isReset = this.className.indexOf('reset') === -1;
-		
-		if (isReset) dragReset();
-		else dragAnswer();
-		}
-		
-		window.dragDropCallbacks = {
-		"drag-obj": function(DRAGDROP) {
-			if (DRAGDROP.droppedArea) {
-			if ($ts.getEl('.page2 .js-dragObj.dragObjComplete').length === 6) {
-				console.log($ts.getEl('.page2 .js-dragObj.dragObjComplete').length)
-				DRAGDROP.droppedArea.DISABLED = true;
-			}
-			if (DRAGDROP.droppedArea.element.children.length === 1) DRAGDROP.droppedArea.DISABLED = true;
-			}else {
-			window.$efSound.incorrect();
-			return console.log('dropArea 없음.');
-			}
-		},
-		};
-		
-		var dragAnswerButton = document.querySelector('.page2 .js-chainButtons');
-		dragAnswerButton.addEventListener('click', toggleDragAnswer);
-	});
+	
 	
 	</script>
 
