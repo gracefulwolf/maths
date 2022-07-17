@@ -41,8 +41,8 @@
 								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
 							<ul class="basicSlider_slides" data-slides="">
-								<li class="innerTab_1" data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer"  data-total-complete-count="3">
-									<section>
+								<li class="innerTab_1">
+									<section data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer" data-total-complete-count="3">
 										<!--
 											data-total-complete-count
 											의 갯수를 정답보다 하나 많게 설정하여 정답완료를 못하게한다.
@@ -158,8 +158,8 @@
 								<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 							</div>
 							<ul class="basicSlider_slides" data-slides="">
-								<li class="innerTab_1" data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer" data-total-complete-count="2">
-									<section>
+								<li class="innerTab_1">
+									<section data-quiz="dragDrop" data-quiz-name="dragDrop" data-option="answer" data-total-complete-count="2">
 										<h2><ins class="dot"></ins><span>
 											1장을 고르세요.
 										</span></h2>
@@ -184,7 +184,7 @@
 														<div class="bunsuWrap inline">
 															<ul>
 																<li>
-																	<div class="js-dropArea dropArea dropArea_1" data-type="1" data-drop-area-answer="1"></div>
+																	<div class="js-dropArea dropArea dropArea_3" data-type="1" data-drop-area-answer="1"></div>
 																</li>
 																<li>6</li>
 															</ul>
@@ -527,6 +527,54 @@
 					})
 				});
 			});
+
+			window.$callBack.dragCorrect = function(DRAG) {
+				console.log('dragCorrect:', DRAG);
+
+				var dropArea = DRAG.droppedArea.element;
+				var children = $ts.getEl('.dragObj', dropArea);
+				var isChild = children.filter(function(child) { return child.innerText === DRAG.movingObj.element.innerText; });
+
+				if (isChild.length > 1) {
+					window.$efSound.incorrect();
+					dropArea.removeChild(isChild[0]);
+				}
+			}
+
+			window.$callBack.dragIncorrect = function(DRAG) {
+				console.log('dragIncorrect:', DRAG);
+				window.$efSound.incorrect();
+			}
+
+			var isAnswered = false;
+			var dropAreas = $ts.getEl('.js-dropArea');
+			var btnReset2 = $ts.getEl('#it_reset_btn2');
+
+			function clearDropAreas() {
+				dropAreas.forEach(function(area) {
+					area.innerHTML = '';
+				});
+			}
+
+			function resetQuiz() {
+				clearDropAreas();
+				isAnswered = false;
+				$pm.array.inPage.quiz.forEach(function(quiz) {
+					if (quiz.QUIZ.type === 'dragDrop') {
+						quiz.reset();
+					}
+				});
+
+				dropAreas.forEach(function(area) {
+					area.classList.remove('textColor');
+					area.classList.remove('answer');
+				});
+			}
+
+			btnReset2.addEventListener('click', function() {
+				resetQuiz();
+			});
+
 		}, false);
 
 
