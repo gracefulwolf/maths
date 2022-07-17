@@ -25,6 +25,7 @@
 		.card li:nth-child(2) {left:170px;}
 		.card li:nth-child(3) {right:30px;}
 		.checkContainer .lineBox {padding: 26px 20px;}
+		.page_10 .lineBox {width: 216px;margin: 0 auto;}
 
 
 
@@ -57,7 +58,6 @@
 		.page_6 .numbering li:nth-child(4) {right: 0;}
 		.toggle.bs-answer .answer {padding: 2px 12px;}
 		.checkContainer h2 .toggleBlank {margin-top: 8px;}
-		.page_3 .toggle::after {width: 34px;height: 34px;font-size: 18px;line-height: 29px;}
 		.page_6 .toggle {margin-left: 20px;}
 		.page_8 .toggle {margin-left: 20px;}
 
@@ -99,6 +99,24 @@
 		.page_7 .left_1 {left: 315px;;}
 		.page_7 .left_2 {left: 776px;}
 		.unit {margin: 0 10px;}
+		.operator {display: inline-block; vertical-align: -5px;}
+
+		/*.page_1 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1),*/
+		/*.page_2 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1),*/
+		/*.page_6 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1),*/
+		/*.page_7 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1) {height: 51px;}*/
+
+		.bunsuContainer .toggle .bunsu>li:nth-of-type(1) {  border-color: #00a0ff;}
+
+		.bunsuContainer.inToggle .bunsu>li:nth-of-type(1) {height: 51px;}
+		.bunsuContainer .toggle .answer {padding: 0;}
+		.page_3 .bunsuContainer.inToggle .toggle:after {width: 44px;height: 44px;font-size: 26px;line-height: 38px;}
+		.page_4 .bunsuContainer.inToggle .toggle:after {width: 44px;height: 44px;font-size: 26px;line-height: 38px;}
+		.page_3 .bunsuContainer.inToggle .toggle {vertical-align: middle}
+		.page_4 .bunsuContainer.inToggle .toggle {vertical-align: middle}
+
+		.popup_contents .bunsuContainer.inToggle .bunsu>li:nth-of-type(1) {height: 47px;}
+		.bunsuContainer .toggle .answer {padding: 0;}
 	</style>
 </head>
 <body>
@@ -160,7 +178,7 @@
 								        <li>2</li>
 								        <li>5</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline">
 									1<ul>
 										<li>3</li>
 										<li>5</li>
@@ -213,7 +231,7 @@
 
 						<h2 data-addline-container="" style="margin-top: 0;">
 							<ins class="dot orange"></ins>
-							<span>
+							<span style="margin-top: -15px;">
 								<span data-line-appear="2" class="givenLine" style="letter-spacing: 1px;padding-bottom: 18px;">
 									지호는 사과
 									<div class="bunsuWrap inline">
@@ -229,7 +247,8 @@
 									    </ul>
 									</div>개를 먹었습니다.
 								</span>
-								<span data-line-appear="1" style="letter-spacing: 2px;" class="getLine">지호는 민주보다 사과를 얼마큼 더 먹었는지 구하시오.</span>
+								<span data-line-appear="1" style="letter-spacing: 2px;padding-bottom: 18px;" class="getLine">지</span>
+								<span data-line-appear="1" style="letter-spacing: 2px;" class="getLine">호는 민주보다 사과를 얼마큼 더 먹었는지 구하시오.</span>
 								<span class="addLineController">
 								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
 								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
@@ -266,48 +285,36 @@
 						</h2>
 
 						<div class="flex-box j-evenly mt_100">
-							<div class="">
-								<div class="bunsuWrap inline">
-									3<ul>
-										<li>1</li>
+							<div class="bunsuContainer inToggle">
+								3<ul class="bunsu">
+								<li>1</li>
+								<li>4</li>
+							</ul>－1<ul class="bunsu">
+								<li>3</li>
+								<li>4</li>
+							</ul>＝<div class="toggle" data-toggle-obj="1">
+									<div class="answer" data-toggle-target="1">
+										1<ul class="bunsu">
+										<li>2</li>
 										<li>4</li>
 									</ul>
-								</div>－<div class="bunsuWrap inline">
-								    1<ul>
-								        <li>3</li>
-								        <li>4</li>
-								    </ul>
-								</div>＝<div class="toggle" data-toggle-obj="1">
-									<div class="answer" data-toggle-target="1">
-										<div class="bunsuWrap inline">
-											1<ul>
-												<li>2</li>
-												<li>4</li>
-											</ul>
-										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="">
-								<div class="bunsuWrap inline">
-									4<ul>
-										<li>4</li>
+							<div class="bunsuContainer inToggle">
+								4<ul class="bunsu">
+								<li>4</li>
+								<li>7</li>
+							</ul>－<ul class="bunsu">
+									<li>19</li>
+									<li>7</li>
+								</ul>＝<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										1<ul class="bunsu">
+										<li>6</li>
 										<li>7</li>
 									</ul>
-								</div>－<div class="bunsuWrap inline">
-								    <ul>
-								        <li>19</li>
-								        <li>7</li>
-								    </ul>
-								</div>＝<div class="toggle" data-toggle-obj="2">
-									<div class="answer" data-toggle-target="2">
-										<div class="bunsuWrap inline">
-											1<ul>
-												<li>6</li>
-												<li>7</li>
-											</ul>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -328,48 +335,36 @@
 						</h2>
 
 						<div class="flex-box j-evenly mt_100">
-							<div class="">
-								<div class="bunsuWrap inline">
-									5<ul>
-										<li>2</li>
-										<li>9</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									2<ul>
-										<li>6</li>
-										<li>9</li>
-									</ul>
-								</div>＝<div class="toggle" data-toggle-obj="1">
+							<div class="bunsuContainer inToggle">
+								5<ul class="bunsu">
+								<li>2</li>
+								<li>9</li>
+							</ul>－2<ul class="bunsu">
+								<li>6</li>
+								<li>9</li>
+							</ul>＝<div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
-										<div class="bunsuWrap inline">
-											2<ul>
-												<li>5</li>
-												<li>9</li>
-											</ul>
-										</div>
+										2<ul class="bunsu">
+										<li>5</li>
+										<li>9</li>
+									</ul>
 									</div>
 								</div>
 							</div>
 
-							<div class="">
-								<div class="bunsuWrap inline">
-									4<ul>
-										<li>1</li>
-										<li>8</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
-										<li>23</li>
-										<li>8</li>
-									</ul>
-								</div>＝<div class="toggle" data-toggle-obj="2">
+							<div class="bunsuContainer inToggle">
+								4<ul class="bunsu">
+								<li>1</li>
+								<li>8</li>
+							</ul>－<ul class="bunsu">
+									<li>23</li>
+									<li>8</li>
+								</ul>＝<div class="toggle" data-toggle-obj="2">
 									<div class="answer" data-toggle-target="2">
-										<div class="bunsuWrap inline">
-											1<ul>
-												<li>2</li>
-												<li>8</li>
-											</ul>
-										</div>
+										1<ul class="bunsu">
+										<li>2</li>
+										<li>8</li>
+									</ul>
 									</div>
 								</div>
 							</div>
@@ -387,7 +382,10 @@
 						<h2>
 							<ins class="dot"></ins>
 							<span>
-								<span class="toggleBlank circle"></span> 안에 >, =, < 를 알맞게 써넣으시오.
+								<span class="toggleBlank circle"></span> 안에
+								<img src="../common/contents/images/math/inequalIcon_2.png">,
+								<img src="../common/contents/images/math/equalIcon.png">,
+								<img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
 							</span>
 						</h2>
 
@@ -429,8 +427,8 @@
 										<li>15</li>
 									</ul>
 								</div>
-								<div class="toggle circle" data-toggle-obj="1" style="margin: 0 20px;">
-									<div class="answer" data-toggle-target="1">
+								<div class="toggle circle" data-toggle-obj="2" style="margin: 0 20px;">
+									<div class="answer" data-toggle-target="2">
 										<img src="../common/contents/images/math/inequalIcon_blue.png">
 									</div>
 								</div>
@@ -478,13 +476,13 @@
 									<div class="flex-wrap middle" style="min-width: 250px;">
 										<span class="bullet number orange inline">나</span>
 										<div class="bunsuWrap inline">
-											3<ul>
+											9<ul>
 											<li>1</li>
 											<li>8</li>
 										</ul>
 										</div>－<div class="bunsuWrap inline">
-											2<ul>
-											<li>3</li>
+											4<ul>
+											<li>7</li>
 											<li>8</li>
 										</ul>
 										</div>
@@ -492,13 +490,13 @@
 									<div class="flex-wrap middle" style="min-width: 250px;">
 										<span class="bullet number orange inline">다</span>
 										<div class="bunsuWrap inline">
-											3<ul>
-											<li>1</li>
+											5<ul>
+											<li>4</li>
 											<li>8</li>
 										</ul>
 										</div>－<div class="bunsuWrap inline">
-											2<ul>
-											<li>3</li>
+											3<ul>
+											<li>7</li>
 											<li>8</li>
 										</ul>
 										</div>
@@ -536,7 +534,7 @@
 
 						<h2 data-addline-container="" style="margin-top: 0;">
 							<ins class="dot orange"></ins>
-							<span>
+							<span style="margin-top: -15px;">
 								<span data-line-appear="2" class="givenLine" style="letter-spacing: .5px;padding-bottom: 18px;">
 									물
 									<div class="bunsuWrap inline">
@@ -587,7 +585,9 @@
 
 						<h2 data-addline-container="" style="margin-top: 0;">
 							<ins class="dot orange"></ins>
-							<span>계산 결과가 큰 순서대로 기호를 써 보시오.</span>
+							<span>
+								계산 결과가 가장 작은 것을 찾아 기호를 써 보시오.
+							</span>
 						</h2>
 
 						<section class="flex-wrap middle center" style="padding-bottom: 100px;">
@@ -714,7 +714,7 @@
 							</div>
 
 							<div class="ox-1">
-								<div class="choice" data-ox-obj="1" data-answer>
+								<div class="choice" data-ox-obj="1">
 									<div class="icon icon_x" data-ox-target="1"></div>
 								</div>
 							</div>
@@ -724,7 +724,7 @@
 								</div>
 							</div>
 							<div class="ox-3">
-								<div class="choice" data-ox-obj="3" data-answer>
+								<div class="choice" data-ox-obj="3">
 									<div class="icon icon_x" data-ox-target="3"></div>
 								</div>
 							</div>
@@ -736,12 +736,12 @@
 						</div>
 
 						<div class="buttonContainer">
-							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
+							<button class="solveCheckBtn" data-popup-btn="9" data-hover=""></button>
 							<button class="dapCheckBtn" data-answer-btn=""></button>
 						</div>
 					</li>
 
-					<li class="page_10" data-quiz="toggle">
+					<li class="page_10" data-page-num="" data-quiz="toggle">
 
 						<h2>
 							<ins class="dot"></ins>
@@ -790,11 +790,6 @@
 								</div>
 							</div>
 
-
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
-							</div>
 						</section>
 
 
@@ -816,33 +811,24 @@
 					<div class="popup_contents">
 						<ul class="contentList">
 							<li>
-								<div class="bunsuWrap inline">
-								    3<ul>
-								        <li>2</li>
-								        <li>5</li>
-								    </ul>
-								</div>－<div class="bunsuWrap inline">
-								    1<ul>
-								        <li>3</li>
-								        <li>5</li>
-								    </ul>
-								</div>＝<div class="bunsuWrap inline">
-								    2<ul>
-								        <li>7</li>
-								        <li>5</li>
-								    </ul>
-								</div>－<div class="bunsuWrap inline">
-								    1<ul>
-								        <li>3</li>
-								        <li>5</li>
-								    </ul>
-								</div>＝<div class="bunsuWrap inline">
-								    1<ul>
-								        <li>4</li>
-								        <li>5</li>
-								    </ul>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>2</li>
+									<li>5</li>
+								</ul>－1<ul class="bunsu">
+									<li>3</li>
+									<li>5</li>
+								</ul>＝2<ul class="bunsu">
+									<li>7</li>
+									<li>5</li>
+								</ul>－1<ul class="bunsu">
+									<li>3</li>
+									<li>5</li>
+								</ul>＝1<ul class="bunsu">
+									<li>4</li>
+									<li>5</li>
+								</ul>
 								</div>
-
 							</li>
 						</ul>
 					</div>
@@ -852,36 +838,26 @@
 					<div class="popup_contents">
 						<ul class="contentList">
 							<li>
-								<div class="bunsuWrap inline">
-									3<ul>
-										<li>4</li>
-										<li>6</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>4</li>
+									<li>6</li>
+								</ul>－<ul class="bunsu">
 										<li>11</li>
 										<li>6</li>
-									</ul>
-								</div>＝<div class="bunsuWrap inline">
-									<ul>
+									</ul>＝<ul class="bunsu">
 										<li>22</li>
 										<li>6</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>11</li>
 										<li>6</li>
-									</ul>
-								</div>＝<div class="bunsuWrap inline">
-									<ul>
+									</ul>＝<ul class="bunsu">
 										<li>11</li>
 										<li>6</li>
-									</ul>
-								</div>＝<div class="bunsuWrap inline">
-									1<ul>
-										<li>5</li>
-										<li>6</li>
-									</ul>
+									</ul>＝1<ul class="bunsu">
+									<li>5</li>
+									<li>6</li>
+								</ul>
 								</div>
 
 							</li>
@@ -893,70 +869,48 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<ins class="dot orange" style="margin-top: 35px;"></ins>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										3<ul>
-											<li>1</li>
-											<li>4</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>3</li>
-											<li>4</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-									    2<ul>
-									        <li>5</li>
-									        <li>4</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>3</li>
-											<li>4</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>4</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>1</li>
+									<li>4</li>
+								</ul>－1<ul class="bunsu">
+									<li>3</li>
+									<li>4</li>
+								</ul>＝2<ul class="bunsu">
+									<li>5</li>
+									<li>4</li>
+								</ul>－1<ul class="bunsu">
+									<li>3</li>
+									<li>4</li>
+								</ul>＝1<ul class="bunsu">
+									<li>2</li>
+									<li>4</li>
+								</ul>
 								</div>
 							</li>
 							<li>
-								<ins class="dot orange" style="margin-top: 35px;"></ins>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										4<ul>
-											<li>4</li>
-											<li>7</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>19</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-									    <ul>
-									        <li>32</li>
-									        <li>7</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>19</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>13</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>6</li>
-											<li>7</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									4<ul class="bunsu">
+									<li>4</li>
+									<li>7</li>
+								</ul>－<ul class="bunsu">
+										<li>19</li>
+										<li>7</li>
+									</ul>＝<ul class="bunsu">
+										<li>32</li>
+										<li>7</li>
+									</ul>－<ul class="bunsu">
+										<li>19</li>
+										<li>7</li>
+									</ul>＝<ul class="bunsu">
+										<li>13</li>
+										<li>7</li>
+									</ul>＝1<ul class="bunsu">
+									<li>6</li>
+									<li>7</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -968,70 +922,48 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="dot orange" style="margin-top: 35px;"></ins>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										5<ul>
-											<li>2</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										2<ul>
-											<li>6</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										4<ul>
-											<li>11</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										2<ul>
-											<li>6</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										2<ul>
-											<li>5</li>
-											<li>9</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									5<ul class="bunsu">
+									<li>2</li>
+									<li>9</li>
+								</ul>－2<ul class="bunsu">
+									<li>6</li>
+									<li>9</li>
+								</ul>＝4<ul class="bunsu">
+									<li>11</li>
+									<li>9</li>
+								</ul>－2<ul class="bunsu">
+									<li>6</li>
+									<li>9</li>
+								</ul>＝2<ul class="bunsu">
+									<li>5</li>
+									<li>9</li>
+								</ul>
 								</div>
 							</li>
 							<li>
-								<ins class="dot orange" style="margin-top: 35px;"></ins>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										4<ul>
-											<li>1</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>23</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>33</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>23</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>10</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>8</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									4<ul class="bunsu">
+									<li>1</li>
+									<li>8</li>
+								</ul>－<ul class="bunsu">
+										<li>23</li>
+										<li>8</li>
+									</ul>＝<ul class="bunsu">
+										<li>33</li>
+										<li>8</li>
+									</ul>－<ul class="bunsu">
+										<li>23</li>
+										<li>8</li>
+									</ul>＝<ul class="bunsu">
+										<li>10</li>
+										<li>8</li>
+									</ul>＝1<ul class="bunsu">
+									<li>2</li>
+									<li>8</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -1043,99 +975,69 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										5<ul>
-											<li>3</li>
-											<li>10</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-									    1<ul>
-									        <li>7</li>
-									        <li>10</li>
-									    </ul>
-									</div>＝<div class="bunsuWrap inline">
-									    4<ul>
-									        <li>13</li>
-									        <li>10</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>7</li>
-											<li>10</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>6</li>
-											<li>10</li>
-										</ul>
-									</div>이므로
-									<div class="bunsuWrap inline ml_10">
-										5<ul>
-											<li>3</li>
-											<li>10</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>7</li>
-											<li>10</li>
-										</ul>
-									</div>
-									<span class="toggleBlank circle" style="line-height: 29px;">=</span>
-									<div class="bunsuWrap inline">
-										3<ul>
-											<li>6</li>
-											<li>10</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									5<ul class="bunsu">
+									<li>3</li>
+									<li>10</li>
+								</ul>－1<ul class="bunsu">
+									<li>7</li>
+									<li>10</li>
+								</ul>＝4<ul class="bunsu">
+									<li>13</li>
+									<li>10</li>
+								</ul>－1<ul class="bunsu">
+									<li>7</li>
+									<li>10</li>
+								</ul>＝3<ul class="bunsu">
+									<li>6</li>
+									<li>10</li>
+								</ul>이므로
+									5<ul class="bunsu">
+									<li>3</li>
+									<li>10</li>
+								</ul>－1<ul class="bunsu">
+									<li>7</li>
+									<li>10</li>
+								</ul>
+									<span class="toggleBlank circle" style="line-height: 29px;vertical-align: middle">=</span>
+									3<ul class="bunsu">
+									<li>6</li>
+									<li>10</li>
+								</ul>
 								</div>
 							</li>
 							<li>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										6<ul>
-											<li>2</li>
-											<li>15</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>8</li>
-											<li>15</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										5<ul>
-											<li>17</li>
-											<li>15</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>8</li>
-											<li>15</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										4<ul>
-											<li>9</li>
-											<li>15</li>
-										</ul>
-									</div>이므로
-									<div class="bunsuWrap inline ml_10">
-										6<ul>
-											<li>2</li>
-											<li>15</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>8</li>
-											<li>15</li>
-										</ul>
-									</div>
-									<span class="toggleBlank circle" style="line-height: 29px;"><</span>
-									<div class="bunsuWrap inline">
-										5<ul>
-											<li>2</li>
-											<li>15</li>
-										</ul>
-									</div>
+								<ins class="dot orange" style="margin-top: 25px;"></ins>
+								<div class="bunsuContainer inToggle">
+									6<ul class="bunsu">
+									<li>2</li>
+									<li>15</li>
+								</ul>－ 1<ul class="bunsu">
+									<li>8</li>
+									<li>15</li>
+								</ul>＝5<ul class="bunsu">
+									<li>17</li>
+									<li>15</li>
+								</ul>－1<ul class="bunsu">
+									<li>8</li>
+									<li>15</li>
+								</ul>＝4<ul class="bunsu">
+									<li>9</li>
+									<li>15</li>
+								</ul>이므로
+									6<ul class="bunsu">
+									<li>2</li>
+									<li>15</li>
+								</ul>－1<ul class="bunsu">
+									<li>8</li>
+									<li>15</li>
+								</ul>
+									<span class="toggleBlank circle" style="line-height: 29px;vertical-align: middle"><</span>
+									5<ul class="bunsu">
+									<li>2</li>
+									<li>15</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -1147,100 +1049,68 @@
 						<ul class="contentsList">
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">가</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										3<ul>
-											<li>1</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										2<ul>
-											<li>3</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										2<ul>
-											<li>9</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										2<ul>
-											<li>3</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>6</li>
-											<li>8</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>1</li>
+									<li>8</li>
+								</ul>－2<ul class="bunsu">
+									<li>3</li>
+									<li>8</li>
+								</ul>＝2<ul class="bunsu">
+									<li>9</li>
+									<li>8</li>
+								</ul>－2<ul class="bunsu">
+									<li>3</li>
+									<li>8</li>
+								</ul>＝<ul class="bunsu">
+										<li>6</li>
+										<li>8</li>
+									</ul>
 								</div>
 							</li>
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">나</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										9<ul>
-											<li>1</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										4<ul>
-											<li>7</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										8<ul>
-											<li>9</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										4<ul>
-											<li>7</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										4<ul>
-											<li>2</li>
-											<li>8</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									9<ul class="bunsu">
+									<li>1</li>
+									<li>8</li>
+								</ul>－4<ul class="bunsu">
+									<li>7</li>
+									<li>8</li>
+								</ul>＝8<ul class="bunsu">
+									<li>9</li>
+									<li>8</li>
+								</ul>－4<ul class="bunsu">
+									<li>7</li>
+									<li>8</li>
+								</ul>＝4<ul class="bunsu">
+									<li>2</li>
+									<li>8</li>
+								</ul>
 								</div>
 							</li>
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">다</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										5<ul>
-											<li>4</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										3<ul>
-											<li>7</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>44</li>
-											<li>8</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>31</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>13</li>
-											<li>8</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>5</li>
-											<li>8</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									5<ul class="bunsu">
+									<li>4</li>
+									<li>8</li>
+								</ul>－3<ul class="bunsu">
+									<li>7</li>
+									<li>8</li>
+								</ul>＝<ul class="bunsu">
+										<li>44</li>
+										<li>8</li>
+									</ul>－<ul class="bunsu">
+										<li>31</li>
+										<li>8</li>
+									</ul>＝<ul class="bunsu">
+										<li>13</li>
+										<li>8</li>
+									</ul>＝1<ul class="bunsu">
+									<li>5</li>
+									<li>8</li>
+								</ul>
 								</div>
 							</li>
 							<li style="display: block">
@@ -1248,8 +1118,7 @@
 								따라서 계산 결과가 가장 큰 순서는
 								<span class="bullet number orange inline">나</span>,
 								<span class="bullet number orange inline">다</span>,
-								<span class="bullet number orange inline">가</span>
-								입니다.
+								<span class="bullet number orange inline">가</span>입니다.
 							</li>
 						</ul>
 					</div>
@@ -1259,33 +1128,23 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										3<ul>
-											<li>13</li>
-											<li>18</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-									    1<ul>
-									        <li>15</li>
-									        <li>18</li>
-									    </ul>
-									</div>＝<div class="bunsuWrap inline">
-										2<ul>
-											<li>31</li>
-											<li>18</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>15</li>
-											<li>18</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>16</li>
-											<li>18</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>13</li>
+									<li>18</li>
+								</ul>－1<ul class="bunsu">
+									<li>15</li>
+									<li>18</li>
+								</ul>＝2<ul class="bunsu">
+									<li>31</li>
+									<li>18</li>
+								</ul>－1<ul class="bunsu">
+									<li>15</li>
+									<li>18</li>
+								</ul>＝1<ul class="bunsu">
+									<li>16</li>
+									<li>18</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -1298,101 +1157,71 @@
 						<ul class="contentsList">
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">가</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										8<ul>
-											<li>3</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>6</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										7<ul>
-											<li>12</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>6</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										6<ul>
-											<li>6</li>
-											<li>9</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									8<ul class="bunsu">
+									<li>3</li>
+									<li>9</li>
+								</ul>－1<ul class="bunsu">
+									<li>6</li>
+									<li>9</li>
+								</ul>＝7<ul class="bunsu">
+									<li>12</li>
+									<li>9</li>
+								</ul>－1<ul class="bunsu">
+									<li>6</li>
+									<li>9</li>
+								</ul>＝6<ul class="bunsu">
+									<li>6</li>
+									<li>9</li>
+								</ul>
 								</div>
 							</li>
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">나</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										2<ul>
-											<li>2</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>17</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>20</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>17</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>3</li>
-											<li>9</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									2<ul class="bunsu">
+									<li>2</li>
+									<li>9</li>
+								</ul>－<ul class="bunsu">
+										<li>17</li>
+										<li>9</li>
+									</ul>＝<ul class="bunsu">
+										<li>20</li>
+										<li>9</li>
+									</ul>－<ul class="bunsu">
+										<li>17</li>
+										<li>9</li>
+									</ul>＝<ul class="bunsu">
+										<li>3</li>
+										<li>9</li>
+									</ul>
 								</div>
 							</li>
 							<li>
 								<span class="bullet number orange inline" style="margin:15px 10px 0 0">다</span>
-								<div class="flex-box a-center">
-									<div class="bunsuWrap inline">
-										4<ul>
-											<li>1</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>10</li>
-											<li>9</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>9</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										2<ul>
-											<li>8</li>
-											<li>9</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									4<ul class="bunsu">
+									<li>1</li>
+									<li>9</li>
+								</ul>－1<ul class="bunsu">
+									<li>2</li>
+									<li>9</li>
+								</ul>＝3<ul class="bunsu">
+									<li>10</li>
+									<li>9</li>
+								</ul>－1<ul class="bunsu">
+									<li>2</li>
+									<li>9</li>
+								</ul>＝2<ul class="bunsu">
+									<li>8</li>
+									<li>9</li>
+								</ul>
 								</div>
 							</li>
 							<li style="display: block">
 								<span class="icon_arrow"></span>
 								따라서 계산 결과가 가장 작은 것은
-								<span class="bullet number orange inline">나</span> 입니다.
+								<span class="bullet number orange inline">나</span>입니다.
 							</li>
 						</ul>
 					</div>
@@ -1403,136 +1232,92 @@
 						<ul class="contentsList">
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box a-center" style="margin-top:-13px;">
-									<div class="bunsuWrap inline">
-										4<ul>
-											<li>1</li>
-											<li>5</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>5</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>6</li>
-											<li>5</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>2</li>
-											<li>5</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										2<ul>
-											<li>4</li>
-											<li>5</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
+									4<ul class="bunsu">
+									<li>1</li>
+									<li>5</li>
+								</ul>－1<ul class="bunsu">
+									<li>2</li>
+									<li>5</li>
+								</ul>＝3<ul class="bunsu">
+									<li>6</li>
+									<li>5</li>
+								</ul>－1<ul class="bunsu">
+									<li>2</li>
+									<li>5</li>
+								</ul>＝2<ul class="bunsu">
+									<li>4</li>
+									<li>5</li>
+								</ul>
 								</div>
 							</li>
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box a-center" style="margin-top:-13px;">
-									<div class="bunsuWrap inline">
-										5<ul>
-											<li>3</li>
-											<li>7</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>5</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										4<ul>
-											<li>10</li>
-											<li>7</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-											<li>5</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>5</li>
-											<li>7</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
+									5<ul class="bunsu">
+									<li>3</li>
+									<li>7</li>
+								</ul>－1<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＝4<ul class="bunsu">
+									<li>10</li>
+									<li>7</li>
+								</ul>－1<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＝3<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>
 								</div>
 							</li>
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box a-center" style="margin-top:-13px;">
-									<div class="bunsuWrap inline">
-										6<ul>
-											<li>1</li>
-											<li>6</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										4<ul>
-											<li>3</li>
-											<li>6</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>37</li>
-											<li>6</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>27</li>
-											<li>6</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>10</li>
-											<li>6</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										1<ul>
-											<li>4</li>
-											<li>6</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
+									6<ul class="bunsu">
+									<li>1</li>
+									<li>6</li>
+								</ul>－4<ul class="bunsu">
+									<li>3</li>
+									<li>6</li>
+								</ul>＝<ul class="bunsu">
+										<li>37</li>
+										<li>6</li>
+									</ul>－<ul class="bunsu">
+										<li>27</li>
+										<li>6</li>
+									</ul>＝<ul class="bunsu">
+										<li>10</li>
+										<li>6</li>
+									</ul>＝1<ul class="bunsu">
+									<li>4</li>
+									<li>6</li>
+								</ul>
 								</div>
 							</li>
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box a-center" style="margin-top:-13px;">
-									<div class="bunsuWrap inline">
-										6<ul>
-											<li>1</li>
-											<li>4</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										2<ul>
-											<li>2</li>
-											<li>4</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>25</li>
-											<li>4</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
-											<li>10</li>
-											<li>4</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>15</li>
-											<li>4</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>3</li>
-											<li>4</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
+									6<ul class="bunsu">
+									<li>1</li>
+									<li>4</li>
+								</ul>－2<ul class="bunsu">
+									<li>2</li>
+									<li>4</li>
+								</ul>＝<ul class="bunsu">
+										<li>25</li>
+										<li>4</li>
+									</ul>－<ul class="bunsu">
+										<li>10</li>
+										<li>4</li>
+									</ul>＝<ul class="bunsu">
+										<li>15</li>
+										<li>4</li>
+									</ul>＝3<ul class="bunsu">
+									<li>3</li>
+									<li>4</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -1544,33 +1329,23 @@
 						<ul class="contentsList">
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box a-center" style="margin-top:-13px;">
-									<div class="bunsuWrap inline">
-										4<ul>
-											<li>2</li>
-											<li>7</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										3<ul>
-											<li>5</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										3<ul>
-											<li>9</li>
-											<li>7</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										3<ul>
-											<li>5</li>
-											<li>7</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
-											<li>4</li>
-											<li>7</li>
-										</ul>
-									</div>
+								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
+									4<ul class="bunsu">
+									<li>2</li>
+									<li>7</li>
+								</ul>－3<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＝3<ul class="bunsu">
+									<li>9</li>
+									<li>7</li>
+								</ul>－3<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＝<ul class="bunsu">
+										<li>4</li>
+										<li>7</li>
+									</ul>
 								</div>
 							</li>
 						</ul>

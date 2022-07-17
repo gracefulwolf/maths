@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 	<style>
+		.popup_contents .dot.orange {margin-top: 35px;}
 		.gate_container .downloadBtn{right:20px; left:auto;}
 		.downloadBtn{left:0;}
 		.downloadBtn::before{content:attr(data-name);}
@@ -24,6 +25,8 @@
 			height: 140px;
 			background: url(./images/suh_p_0402_01_0002_401_1/suh_p_0402_01_0002_401_1_1.png) center / contain no-repeat;
 		}
+		.page_1 .figure .bullet.exam {position: absolute;top: -4%;left: -48%;display: none;}
+		.page_1 .figure.complete .bullet.exam {display: block}
 		.page_1 figure .click-finger-Btn {
 			position: absolute;
 			left: 54px;
@@ -36,7 +39,7 @@
 			background: url(./images/suh_p_0402_01_0002_401_1/suh_p_0402_01_0002_401_1_2.png) center / contain no-repeat;
 		}
 		.q-type-1 {align-items: center; justify-content: space-evenly;height: 300px;}
-		.fx-1 {align-items: center; gap: 8px}
+		.fx-1 {align-items: center;}
 		.pop_page_3 .flex-box,
 		.pop_page_4 .flex-box,
 		.pop_page_5 .flex-box,
@@ -61,8 +64,6 @@
 		.bunsu-item.bs1 {left: 54px;}
 		.bunsu-item.bs2 {left: 189px;bottom: auto;top: -61px;}
 		.bunsu-item.bs3 {left: 276px;}
-		.toggle.bs-answer::after {width: 34px;height: 34px;font-size: 18px;line-height: 29px;}
-		.toggle.bs-answer .answer {padding: 2px 12px;}
 		.checkContainer h2 .toggleBlank {margin-top: 8px;}
 
 		.page_8 .horizonContainer {
@@ -104,17 +105,19 @@
 			z-index: 1;
 		}
 		.page_8 .bunsuContainer .bunsu_1 {
-			top: 90px;
+			top: 110px;
 			left: 105px;
 		}
 		.page_8 .bunsuContainer .bunsu_2 {
-			top: 90px;
+			top: 110px;
 			left: 376px;
 		}
 		.page_8 .bunsuContainer .bunsu_3 {
-			top: 238px;
+			top: 283px;
 			left: 550px;
 		}
+		.operator {vertical-align: -4px;display: inline-block;}
+		.pop_page_10 .blankBox {height: 40px !important;}
 	</style>
 </head>
 <body>
@@ -130,11 +133,11 @@
 				<div class="gate_title_title">확인 문제</div>
 				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
 
-				<a href="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+				<a href="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 			<!--추가-->
-			<input type="hidden" class="reviewBtnHref" value="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시">
-			<input type="hidden" class="downBtnHref" value="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시">
+			<input type="hidden" class="reviewBtnHref" value="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시.hwp">
+			<input type="hidden" class="downBtnHref" value="./data/3~4학년군_수학(박)4-2_확인문제_1_02차시.hwp">
 		</div>
 
 
@@ -175,8 +178,7 @@
 								        <li>2</li>
 								        <li>6</li>
 								    </ul>
-								</div> +
-								<div class="bunsuWrap inline">
+								</div><span class="operator">＋</span><div class="bunsuWrap inline">
 								    <ul>
 								        <li>3</li>
 								        <li>6</li>
@@ -186,7 +188,8 @@
 						</h2>
 
 						<div class="q-type-1 flex-box">
-							<figure class="figure" data-toggle-obj="1" data-toggle-target="1">
+							<figure class="figure" data-toggle-obj="1-1" data-toggle-target="1-1">
+								<span class="bullet exam">예</span>
 								<span class="click-finger-Btn blinkOn blinkOpacity"></span>
 							</figure>
 
@@ -194,27 +197,19 @@
 								<ul class="bunsu">
 									<li>2</li>
 									<li>6</li>
-								</ul>
-								<span class="symbol">+</span>
-								<ul class="bunsu">
+								</ul><span class="">＋</span><ul class="bunsu">
 									<li>3</li>
 									<li>6</li>
-								</ul>
-								<span class="symbol">=</span>
-								<ul class="bunsu withToggle">
+								</ul><span class="">＝</span><ul class="bunsu withToggle">
 									<li>
 										<div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">2</div>
-										</div>
-										<span class="symbol">+</span>
-										<div class="toggle" data-toggle-obj="2">
+										</div>＋<div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">3</div>
 										</div>
 									</li>
 									<li>6</li>
-								</ul>
-								<span class="symbol">=</span>
-								<ul class="bunsu withToggle">
+								</ul>＝<ul class="bunsu withToggle">
 									<li>
 										<div class="toggle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">5</div>
@@ -241,8 +236,7 @@
 								        <li>1</li>
 								        <li>5</li>
 								    </ul>
-								</div> +
-								<div class="bunsuWrap inline">
+								</div><span class="operator">＋</span><div class="bunsuWrap inline">
 								    <ul>
 								        <li>2</li>
 								        <li>5</li>
@@ -290,20 +284,18 @@
 							</div>
 						</div>
 
-						<div class="flex-box" style="align-items: center;justify-content: center; gap: 6px;">
+						<div class="flex-box" style="align-items: center;justify-content: center; ">
 							<div class="bunsuWrap inline">
 								<ul>
 									<li>1</li>
 									<li>5</li>
 								</ul>
-							</div> +
-							<div class="bunsuWrap inline">
+							</div>＋<div class="bunsuWrap inline">
 								<ul>
 									<li>2</li>
 									<li>5</li>
 								</ul>
-							</div> =
-							<div class="bunsuWrap inline" >
+							</div>＝<div class="bunsuWrap inline" >
 								<ul>
 									<li>
 										<div class="toggle bs-answer" data-toggle-obj="1">
@@ -314,8 +306,7 @@
 									</li>
 									<li>5</li>
 								</ul>
-							</div> =
-							<div class="bunsuWrap inline">
+							</div>＝<div class="bunsuWrap inline">
 								<ul>
 									<li>
 										<div class="toggle bs-answer" data-toggle-obj="1">
@@ -344,22 +335,19 @@
 
 						<div class="flex-box">
 							<div style="margin: 0 auto;">
-								<div class="flex-box fx-1 mt_20" style="gap: 6px;">
+								<div class="flex-box fx-1 mt_20" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>4</li>
 										</ul>
-									</div>
-									+
+									</div>＋
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>2</li>
 											<li>4</li>
 										</ul>
-									</div>
-									=
-									<div class="toggle" data-toggle-obj="1">
+									</div>＝<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											<div class="bunsuWrap inline">
 												<ul>
@@ -370,33 +358,28 @@
 										</div>
 									</div>
 								</div>
-								<div class="flex-box fx-1 mt_90" style="gap: 6px;">
+								<div class="flex-box fx-1 mt_90" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>2</li>
 											<li>5</li>
 										</ul>
-									</div>
-									+
+									</div>＋
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>3</li>
 											<li>5</li>
 										</ul>
-									</div>
-									=
-									<div class="toggle" data-toggle-obj="2">
+									</div>=<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">
 											<div class="flex-box fx-1">
-												1 ( =
+												1(＝
 												<div class="bunsuWrap inline">
 													<ul>
 														<li>5</li>
 														<li>5</li>
 													</ul>
-												</div>
-												)
-											</div>
+												</div>)</div>
 										</div>
 									</div>
 								</div>
@@ -420,22 +403,19 @@
 
 						<div class="flex-box">
 							<div style="margin: 0 auto;">
-								<div class="flex-box fx-1 mt_20" style="gap: 6px;">
+								<div class="flex-box fx-1 mt_20" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>6</li>
 										</ul>
-									</div>
-									+
+									</div>＋
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>4</li>
 											<li>6</li>
 										</ul>
-									</div>
-									=
-									<div class="toggle" data-toggle-obj="1">
+									</div>＝<div class="toggle" data-toggle-obj="1">
 										<div class="answer" data-toggle-target="1">
 											<div class="bunsuWrap inline">
 												<ul>
@@ -446,33 +426,26 @@
 										</div>
 									</div>
 								</div>
-								<div class="flex-box fx-1 mt_90" style="gap: 6px;">
+								<div class="flex-box fx-1 mt_90" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>2</li>
 										</ul>
-									</div>
-									+
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>3</li>
 											<li>2</li>
 										</ul>
-									</div>
-									=
-									<div class="toggle" data-toggle-obj="2">
+									</div>＝<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">
 											<div class="flex-box fx-1">
-												2 ( =
-												<div class="bunsuWrap inline">
+												2(＝<div class="bunsuWrap inline">
 													<ul>
 														<li>4</li>
 														<li>2</li>
 													</ul>
-												</div>
-												)
-											</div>
+												</div>)</div>
 										</div>
 									</div>
 								</div>
@@ -547,14 +520,13 @@
 											<li>5</li>
 											<li>12</li>
 										</ul>
-									</span> 만큼 읽고, 오늘은 소설책을 전체의
+									</span>만큼 읽고, 오늘은 소설책을 전체의
 									<span class="bunsuWrap">
 										<ul>
 											<li>6</li>
 											<li>12</li>
 										</ul>
-									</span>
-									만큼 읽었습니다.
+									</span>만큼 읽었습니다.
 								</span>&nbsp;
 								<span data-line-appear="1" style="letter-spacing: 2px;padding-bottom: 18px;" class="getLine">오늘까지 읽은 소설</span>
 								<span data-line-appear="1" style="letter-spacing: 2px;" class="getLine">책은 전체의 몇 분의 몇인지 쓰시오.</span>
@@ -577,7 +549,7 @@
 										</div>
 									</div>
 								</div>
-							</div>&nbsp;kg
+							</div>
 						</div>
 
 						<div class="buttonContainer">
@@ -616,7 +588,7 @@
 						<h2>
 							<ins class="dot"></ins>
 							<span>
-								수직선을 보고 <span class="toggleBlank"></span> 안에 알맞은 수를 써넣으시오.
+								수직선을 보고 <span class="blankBox"></span> 안에 알맞은 수를 써넣으시오.
 							</span>
 						</h2>
 
@@ -727,14 +699,14 @@
 							</span>
 						</h2>
 
-						<div class="question-tbl-4 lineBox sky">
+						<div class="lineBox sky">
 							<ul class="contentsList">
 								<li>
-									<div class="flex-box fx-1" style="gap: 4px;">
+									<div style="letter-spacing: 3px">
 										<div class="bunsuWrap inline">
 											<ul>
-												<li>7</li>
 												<li>5</li>
+												<li>7</li>
 											</ul>
 										</div>는
 										<div class="bunsuWrap inline">
@@ -744,7 +716,7 @@
 											</ul>
 										</div>이
 										<div class="toggle" data-toggle-obj="1">
-										  <div class="answer" data-toggle-target="1">5</div>
+											<div class="answer" data-toggle-target="1">5</div>
 										</div>개,
 										<div class="bunsuWrap inline">
 											<ul>
@@ -759,19 +731,18 @@
 											</ul>
 										</div>이
 										<div class="toggle" data-toggle-obj="2">
-										  <div class="answer" data-toggle-target="2">3</div>
+											<div class="answer" data-toggle-target="2">3</div>
 										</div>개이므로
 									</div>
 								</li>
 								<li>
-									<div class="flex-box fx-1">
+									<div style="letter-spacing: 3px">
 										<div class="bunsuWrap inline">
 											<ul>
 												<li>5</li>
 												<li>7</li>
 											</ul>
-										</div>+
-										<div class="bunsuWrap inline">
+										</div><span class="operator">＋</span><div class="bunsuWrap inline">
 										    <ul>
 										        <li>3</li>
 										        <li>7</li>
@@ -796,27 +767,24 @@
 												<li>5</li>
 												<li>7</li>
 											</ul>
-										</div>+
-										<div class="bunsuWrap inline">
+										</div>＋<div class="bunsuWrap inline">
 										    <ul>
 										        <li>3</li>
 										        <li>7</li>
 										    </ul>
-										</div>=
-										<div class="bunsuWrap inline">
+										</div>＝<div class="bunsuWrap inline">
 										    <ul>
 										        <li>
 													<div class="toggle" data-toggle-obj="3">
 													  <div class="answer" data-toggle-target="3">5</div>
-													</div>+
+													</div>＋
 													<div class="toggle" data-toggle-obj="4">
 													  <div class="answer" data-toggle-target="4">3</div>
 													</div>
 												</li>
 										        <li>7</li>
 										    </ul>
-										</div>=
-										<div class="bunsuWrap inline">
+										</div>＝<div class="bunsuWrap inline">
 										    <ul>
 										        <li>
 													<div class="toggle" data-toggle-obj="5">
@@ -825,8 +793,7 @@
 												</li>
 										        <li>7</li>
 										    </ul>
-										</div>=
-										<div class="toggle" data-toggle-obj="6">
+										</div>＝<div class="toggle" data-toggle-obj="6">
 										  <div class="answer" data-toggle-target="6">1</div>
 										</div>
 										<div class="bunsuWrap inline">
@@ -862,9 +829,7 @@
 							<ul class="bunsu">
 								<li>2</li>
 								<li>5</li>
-							</ul>
-							<span class="symbol">+</span>
-							<ul class="bunsu">
+							</ul>＋<ul class="bunsu" style="vertical-align: -26px">
 								<li>
 									<span>
 										<span class="blankBox w50"></span>
@@ -872,7 +837,7 @@
 								</li>
 								<li>5</li>
 							</ul>
-							<span class="symbol"><</span>1
+							<img src="../common/contents/images/math/inequalIcon_2.png" style="vertical-align: -9px; width: 24px;transform: rotate(-180deg)">1
 							<ul class="bunsu">
 								<li>1</li>
 								<li>5</li>
@@ -916,20 +881,18 @@
 						<ul class="contentsList">
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul><li>1</li><li>4</li></ul>
-									</div> +
+									</div>＋
 									<div class="bunsuWrap inline">
 										<ul><li>2</li><li>4</li></ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
-											<li>1+2</li>
+											<li>1＋2</li>
 											<li>4</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>3</li>
 											<li>4</li>
@@ -939,20 +902,18 @@
 							</li>
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box"  style="gap: 10px;">
+								<div class="flex-box"  style="">
 									<div class="bunsuWrap inline">
 										<ul><li>2</li><li>5</li></ul>
 									</div>
-									<span class="unit">+</span>
+									<span class="unit">＋</span>
 									<div class="bunsuWrap inline">
 										<ul><li>3</li><li>5</li></ul>
-									</div>&nbsp;=
-									<div class="bunsuWrap inline">
-										<ul><li>2+3</li><li>5</li></ul>
-									</div>= 1 ( =
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
+										<ul><li>2＋3</li><li>5</li></ul>
+									</div>＝1(＝<div class="bunsuWrap inline">
 										<ul><li>5</li><li>5</li></ul>
-									</div>&nbsp;)
+									</div>)
 								</div>
 							</li>
 						</ul>
@@ -965,20 +926,17 @@
 						<ul class="contentsList">
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul><li>1</li><li>6</li></ul>
-									</div> +
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul><li>4</li><li>6</li></ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>=<div class="bunsuWrap inline">
 										<ul>
-											<li>1+4</li>
+											<li>1＋4</li>
 											<li>6</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>5</li>
 											<li>6</li>
@@ -988,20 +946,20 @@
 							</li>
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="flex-box"  style="gap: 10px;">
+								<div class="flex-box"  style="">
 									<div class="bunsuWrap inline">
 										<ul><li>1</li><li>2</li></ul>
 									</div>
-									<span class="unit">+</span>
+									<span class="unit">＋</span>
 									<div class="bunsuWrap inline">
 										<ul><li>3</li><li>2</li></ul>
-									</div>&nbsp;=
+									</div>＝
 									<div class="bunsuWrap inline">
-										<ul><li>1+3</li><li>2</li></ul>
-									</div>= 2 ( =
+										<ul><li>1＋3</li><li>2</li></ul>
+									</div>＝2(＝
 									<div class="bunsuWrap inline">
-										<ul><li>4</li><li>4</li></ul>
-									</div>&nbsp;)
+										<ul><li>4</li><li>2</li></ul>
+									</div>)
 								</div>
 							</li>
 						</ul>
@@ -1013,32 +971,28 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>4</li>
 											<li>7</li>
 										</ul>
-									</div> +
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>5</li>
 											<li>7</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
-											<li>4+5</li>
+											<li>4＋5</li>
 											<li>7</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>9</li>
 											<li>7</li>
 										</ul>
-									</div>= 1
-									<div class="bunsuWrap inline">
+									</div>＝1<div class="bunsuWrap inline">
 										<ul>
 											<li>2</li>
 											<li>7</li>
@@ -1054,26 +1008,23 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>5</li>
 											<li>12</li>
 										</ul>
-									</div> +
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>6</li>
 											<li>12</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
-											<li>5+6</li>
+											<li>5＋6</li>
 											<li>12</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>11</li>
 											<li>12</li>
@@ -1089,7 +1040,7 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									분모가 5인 진분수는
 									<div class="bunsuWrap inline">
 										<ul>
@@ -1118,43 +1069,38 @@
 								</div>
 							</li>
 							<li>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>5</li>
 										</ul>
-									</div>+
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>2</li>
 											<li>5</li>
 										</ul>
-									</div>+
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>3</li>
 											<li>5</li>
 										</ul>
-									</div>+
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>4</li>
 											<li>5</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
-											<li>1+2+3+4</li>
+											<li>1＋2＋3＋4</li>
 											<li>5</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>10</li>
 											<li>5</li>
 										</ul>
-									</div>= 2
+									</div>＝2
 								</div>
 							</li>
 						</ul>
@@ -1165,26 +1111,23 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box" style="gap: 10px;">
+								<div class="flex-box" style="">
 									<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>5</li>
 										</ul>
-									</div>+
-									<div class="bunsuWrap inline">
+									</div>＋<div class="bunsuWrap inline">
 										<ul>
 											<li>2</li>
 											<li>5</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>=<div class="bunsuWrap inline">
 										<ul>
-											<li>1+2</li>
+											<li>1＋2</li>
 											<li>5</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>=<div class="bunsuWrap inline">
 										<ul>
 											<li>3</li>
 											<li>5</li>
@@ -1205,14 +1148,13 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<div class="flex-box" style="gap: 4px;">
+								<div style="letter-spacing: 2px">
 									1<div class="bunsuWrap inline">
 										<ul>
 											<li>1</li>
 											<li>5</li>
 										</ul>
-									</div>=
-									<div class="bunsuWrap inline">
+									</div>＝<div class="bunsuWrap inline">
 										<ul>
 											<li>6</li>
 											<li>5</li>
@@ -1220,7 +1162,7 @@
 									</div>이므로
 									<div class="bunsuWrap inline">
 										<ul>
-											<li>2+ <span class="blankBox"></span></li>
+											<li>2＋<span class="blankBox"></span></li>
 											<li>5</li>
 										</ul>
 									</div><
@@ -1229,16 +1171,14 @@
 											<li>6</li>
 											<li>5</li>
 										</ul>
-									</div>이고, 2 +
-									<span class="blankBox"></span>
-									<6입니다.
+									</div>이고, 2＋<span class="blankBox" style="vertical-align: -8px"></span><6입니다.
 								</div>
 							</li>
 							<li>
 								<div class="flex-box">
 									<div class="icon_arrow big"></div>
 									<span class="blankBox"></span>&nbsp;
-									안에 들어갈 수 있는 수는 1,2,3입니다.
+									안에 들어갈 수 있는 수는 1, 2, 3입니다.
 								</div>
 							</li>
 						</ul>

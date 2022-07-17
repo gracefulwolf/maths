@@ -18,15 +18,16 @@
 
 		.bg-wrap {
 			position: relative;
-			width: 100%;height: 100%;background:#fff url(./images/suh_p_0402_01_0006_202_1/suh_p_0402_01_0006_202_1_2.png) no-repeat 50% 50% / contain;}
+			background:#fff url(./images/suh_p_0402_01_0006_202_1/suh_p_0402_01_0006_202_1_2.png) no-repeat 50% 50% / contain;
+			height: 355px;width: 1000px;}
 
 		.bg-wrap [class*="n-"] {position: absolute}
 		.bg-wrap [class*="n-"],
-		.bg-wrap [class*="n-"] .toggle .answer{font-size: 30px !important;}
+		.bg-wrap [class*="n-"] .toggle .answer{}
 		.bg-wrap [class*="n-"] .toggle:after {width: 36px;height: 36px;font-size: 20px;line-height: 32px;}
-		.bg-wrap .n-1 {left: 256px; top: 28px;}
-		.bg-wrap .n-2 {left: 207px;top: 144px;}
-		.bg-wrap .n-3 {left: 213px;bottom: 5px;}
+		.bg-wrap .n-1 {left: 227px;top: 23px;}
+		.bg-wrap .n-2 {left: 145px;top: 132px;}
+		.bg-wrap .n-3 {left: 177px;bottom: -6px;}
 
 		figure .numbering li {position: absolute;}
 		figure.n1 .numbering li:nth-child(1) {right: 55px;top: 243px;}
@@ -47,7 +48,17 @@
 		.img-wrap .bs-2 {left: 220px; top: 128px;}
 		.img-wrap .bs-3 {display: block;right: 352px;top: 128px;}
 		.img-wrap .bs-3 .bunsuWrap {position: relative;}
-
+		.operator {display: inline-block;vertical-align: -5px;}
+		.page_2 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1),
+		.page_6 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1),
+		.page_7 .bunsuContainer.inToggle .bunsu>li:nth-of-type(1) {height: 51px;}
+		.bunsuContainer.inToggle .toggle .answer {padding: 0;}
+		.numbering li {position: absolute;top: 44%;}
+		.numbering li:nth-child(1) { left: 8.5%;}
+		.numbering li:nth-child(2) { left: 28.5%;}
+		.numbering li:nth-child(3) { left: 48%;}
+		.numbering li:nth-child(4) { left: 67.5%;}
+		.numbering li:nth-child(5) { right: 10.5%; }
 	</style>
 </head>
 
@@ -92,8 +103,7 @@
 													<li>3</li>
 													<li>5</li>
 												</ul>
-											</div>
-											을 계산하는 방법을 알아보세요.
+											</div>을 계산하는 방법을 알아보세요.
 										</span>
 									</h2>
 									<section style="margin-bottom: 80px;">
@@ -105,7 +115,7 @@
 												        <li>5</li>
 												        <li>5</li>
 												    </ul>
-												</div>－<div class="bunsuWrap inline">
+												</div><span class="operator">－</span><div class="bunsuWrap inline">
 													2<ul>
 														<li>3</li>
 														<li>5</li>
@@ -150,7 +160,7 @@
 									</h2>
 
 									<section class="mt_20" style="padding-left: 100px;">
-										<span class="colorBox skyBlue check">방법 1</span>
+										<span class="colorBox skyBlue check" style="height: 58px;display: inline-block;line-height: 42px !important;">방법 1</span>
 										<div class="flex-box a-center mt_30">
 											4－<div class="bunsuWrap inline">
 											    2<ul>
@@ -216,7 +226,7 @@
 										<li>3</li>
 										<li>5</li>
 									</ul>
-								</div>을 계산하는 방법을 알아보세요.
+								</div>을 계산하는 다른 방법을 알아보세요.
 							</span>
 						</h2>
 
@@ -252,52 +262,52 @@
 									<li>5</li>
 								</ul>
 							</div>
+							<ul class="numbering">
+							    <li>0</li>
+							    <li>1</li>
+							    <li>2</li>
+							    <li>3</li>
+							    <li>4</li>
+							</ul>
 						</div>
 
 						<div style="padding:20px 0 0 80px;">
 
-							<span class="colorBox skyBlue mt_10 check" style="align-self: flex-start">방법 2</span>
-							<div class="flex-box mt_20">
+							<span class="colorBox skyBlue mt_10 check" style="align-self: flex-start;height: 56px;display: inline-block;">방법 2</span>
+							<div class="flex-box mt_10">
 								<div>
-									4－<div class="bunsuWrap inline">
-									2<ul>
+									<div class="bunsuContainer inToggle inline">
+										4－2<ul class="bunsu">
 										<li>3</li>
 										<li>5</li>
 									</ul>
-								</div>＝<div class="bunsuWrap inline">
-										<ul>
+									</div><div class="bunsuContainer inToggle inline">＝<ul class="bunsu">
 											<li>
-												<div class="toggle" data-toggle-obj="1">
-													<div class="answer" data-toggle-target="1">20</div>
+												<div class="toggle" data-toggle-obj="1-1">
+													<div class="answer" data-toggle-target="1-1">20</div>
 												</div>
 											</li>
 											<li>5</li>
-										</ul>
-									</div>－<div class="bunsuWrap inline">
-										<ul>
+										</ul>－<ul class="bunsu">
 											<li>
-												<div class="toggle" data-toggle-obj="2">
-													<div class="answer" data-toggle-target="2">13</div>
+												<div class="toggle" data-toggle-obj="2-1">
+													<div class="answer" data-toggle-target="2-1">13</div>
 												</div>
 											</li>
 											<li>5</li>
-										</ul>
-									</div>＝<div class="bunsuWrap inline">
-										<ul>
+										</ul>＝<ul class="bunsu">
 											<li>
-												<div class="toggle" data-toggle-obj="3">
+												<div class="toggle" data-toggle-obj="3-1">
 													<div class="answer" data-toggle-target="3">7</div>
 												</div>
 											</li>
 											<li>5</li>
-										</ul>
-									</div>＝<div class="toggle" data-toggle-obj="4">
-										<div class="answer" data-toggle-target="4">1</div>
-									</div><div class="bunsuWrap inline">
-										<ul>
+										</ul>＝<div class="toggle" data-toggle-obj="4-1">
+										<div class="answer" data-toggle-target="4-1">1</div>
+									</div><ul class="bunsu">
 											<li>
-												<div class="toggle" data-toggle-obj="5">
-													<div class="answer" data-toggle-target="5">2</div>
+												<div class="toggle" data-toggle-obj="5-1">
+													<div class="answer" data-toggle-target="5-1">2</div>
 												</div>
 											</li>
 											<li>5</li>
@@ -320,7 +330,7 @@
 								어떻게 계산했는지 이야기해 보세요.
 							</span>
 						</h2>
-						<div class="mt_40">
+						<div class="">
 							<div class="toggle" data-toggle-obj="1" style="width: 100%;">
 								<div class="answer" data-toggle-target="1" style="text-align: justify">
 									<span class="exam bullet">예</span>
