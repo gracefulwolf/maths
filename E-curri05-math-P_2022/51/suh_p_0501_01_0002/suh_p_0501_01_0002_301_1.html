@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+      <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+      <style>
+          .contentsList .circleDot {position:relative;top:8px}
+
+          .box-flex {display:flex;justify-content:space-around;margin-top:40px;position:relative}
+          .box-flex .exam {position:absolute;left:30px;top:6px}
+          .box-content {height:280px;position:relative}
+          .box-content [class^="line-"] {color:#00a0ff;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+          .box-content [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+          .box-content .line-1 {width:75px;top:60px;left:20px;z-index:2}
+          .box-content .line-1:before {height:60px}
+          .box-content .line-2 {width:120px;top:60px;left:64px}
+          .box-content .line-2:before {height:140px}
+          .box-content .sub-desc {opacity:0}
+          .box-content .sub-desc.complete {opacity:1}
+          .box-content.n2 .line-1 {left:22px;width:85px}
+          .box-content.n1 .line-2 {width:114px;left:56px}
+      </style>
+  </head>
+
+  <body>
+    <div id="wrap" class="pointContainer">
+      <header>
+        <h1><ins class="icon"></ins>핵심 정리</h1>
+      </header>
+      <main>
+        <div class="basicSlider contentsBox" data-slide-container="main">
+          <ul class="basicSlider_slides" data-slides="">
+            <li class="page_1" data-quiz="toggle" >
+              <h2>(&nbsp;&nbsp;&nbsp;)가 없는 혼합 계산 알아보기(1)</h2>
+              <section>
+                <ul class="contentsList">
+                  <li>
+                    <div class="bullet circleDot orange"></div>
+                    <div>
+                        (&nbsp;&nbsp;&nbsp;)가 없으면
+                        <div class="toggle" data-toggle-obj="1">
+                        <span class="answer" data-toggle-target="1">앞</span>
+                      </div>에서부터 차례로 계산합니다.
+                    </div>
+                  </li>
+                </ul>
+                  <div class="box-flex">
+                      <div class="exam bullet">예</div>
+                      <div class="box-content n1">
+                          <div class="flex-item">
+                              36－8＋12＝
+                              <div class="toggle" data-toggle-obj="1"  data-group-index="1">
+                                  <div class="answer" data-toggle-target="1">
+                                      40
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="sub-desc" data-toggle-obj="2" data-group-index="1">
+                              <span class="line-1">①</span>
+                              <span class="line-2">②</span>
+                          </div>
+                      </div>
+                      <div class="box-content n2">
+                          <div class="flex-item">
+                              72÷12×3＝
+                              <div class="toggle" data-toggle-obj="2"  data-group-index="2">
+                                  <div class="answer" data-toggle-target="2">
+                                      18
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="sub-desc" data-toggle-obj="2" data-group-index="2">
+                              <span class="line-1">①</span>
+                              <span class="line-2">②</span>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <div id="loadingContainer">
+      <div class="loadingIconAnimation"></div>
+    </div>
+
+    <script type="text/javascript" src="../common/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../common/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../common/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../common/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../common/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../common/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="./js/contents.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
