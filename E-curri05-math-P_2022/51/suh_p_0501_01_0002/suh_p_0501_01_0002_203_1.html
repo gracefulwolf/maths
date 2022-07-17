@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+    <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+    <style>
+        .box-flex {display:flex;justify-content:space-around;margin-top:40px}
+        .box-content {height:280px;position:relative}
+        .box-content [class^="line-"] {color:#00a0ff;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .box-content [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .box-content .line-1 {width:72px;top:60px;left:20px;z-index:2}
+        .box-content .line-1:before {height:60px}
+        .box-content .line-2 {width:102px;top:60px;left:56px}
+        .box-content .line-2:before {height:140px}
+        .box-content .sub-desc {opacity:0}
+        .box-content .sub-desc.complete {opacity:1}
+        .box-content.n2 .line-1 {left:22px}
+        .box-content.n1 .line-2 {width:112px}
+        .box-content .data {padding-left:170px}
+        .box-content.n2 .data {padding-left:150px}
+
+        .popup_pages>li.on {z-index:10}
+        .pop_page_2 .box-flex {margin-top:0}
+        .pop_page_2 .box-content {margin:0;height:250px}
+        .pop_page_2 .box-content [class^="line-"] {color:#000}
+        .pop_page_2 .box-content .line-1 {top:50px;width:60px;left:40px}
+        .pop_page_2 .box-content .line-2 {width:85px;left:70px}
+        .pop_page_2 .box-content.n1 .line-2 {width:95px}
+    </style>
+</head>
+
+<body>
+
+<div id="wrap" class="math" >
+	<header>
+		<div class="title">
+            계산 순서를 나타내고, 계산해 봅시다.
+        </div>
+    </header>
+	<main>
+		<div class="basicSlider contentsBox" data-slide-container="main">
+			<ul class="basicSlider_slides" data-slides="">
+                <li class="page_2" data-quiz="toggle">
+                    <div class="box-flex">
+                        <div class="box-content n1">
+                            <div class="flex-item">
+                                34＋6－15＝
+                                <div class="toggle" data-toggle-obj="1"  data-group-index="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        25
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-desc" data-toggle-obj="2" data-group-index="1">
+                                <span class="line-1">①</span>
+                                <span class="line-2">②</span>
+                            </div>
+                        </div>
+                        <div class="box-content n2">
+                            <div class="flex-item">
+                                15×6÷9＝
+                                <div class="toggle" data-toggle-obj="2"  data-group-index="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        10
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-desc" data-toggle-obj="2" data-group-index="2">
+                                <span class="line-1">①</span>
+                                <span class="line-2">②</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+			</ul>
+		</div>
+    </main>
+
+    <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+            <li class="solve pop_page_2" data-popup-page="2">
+                <div class="popup_contents">
+                    <div class="box-flex">
+                        <div class="box-content n1">
+                            <ul class="contentsList">
+                                <li>
+                                    <ins class="dot orange"></ins>
+                                    <div>
+                                        <div class="flex-item">
+                                            34＋6－15＝40－15
+                                            <p class="data">＝25</p>
+                                        </div>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="box-content n2">
+                            <ul class="contentsList">
+                                <li>
+                                    <ins class="dot orange"></ins>
+                                    <div>
+                                        <div class="flex-item">
+                                            15×6÷9＝90÷9
+                                            <p class="data">＝10</p>
+                                        </div>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+<div id="loadingContainer">
+	<div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        $prite.add({
+            target: $ts.getEl('#aniBox_3'),
+            spriteId: 'sprite3',
+            spriteList: [
+                {
+                    name: 'boy_1',
+                    circle: 'sky',
+                    top: 130,
+                    left: 890,
+                    width: 340,
+                    height: 421,
+                    thumbNail: '../common/contents/images/character/boy_1.png',
+                    spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+                    sound: './media/audios/suh_p_0501_01_0002_202_1.mp3',
+                    speech:'left',
+                    textBubble: {
+                        text: '먼저 무엇을 구해야 하지?',
+                        class: 'balloon right sky',
+                        top: 150,
+                        left: 590,
+                        width: 270,
+                        textAlign: 'center',
+                        wordBreak: 'keep-all'
+                    },
+                    sheetWidth: 102000,
+                    sheetHeight: 421,
+                    endSheet: 0,
+                    delay: 40,
+                    callbacks: {
+                        start: function () {},
+                        end: function () {}
+                    }
+
+                }
+
+            ]
+        });
+    }, false);
+
+  </script>
+</body>
+</html>
