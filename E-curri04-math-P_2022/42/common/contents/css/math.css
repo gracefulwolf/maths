@@ -666,13 +666,19 @@ h2 .bunsuContainer .bunsu {
 .math_calc_table.class3  tr:nth-last-of-type(2) td {
     padding-bottom: 0
 }
+.math_calc_table.class3 .sup .toggle .answer {font-size:32px !important;top:6px;right:-12px}
+.math_calc_table.class3 .dot {position:absolute;bottom:0;right:-5px;width:8px;height:8px;background-color:#000;display:block;border-radius:50%;z-index:2}
+.math_calc_table .bg-line.bg-pink {background-color:#ffd1d4}
+.math_calc_table .bg-line.bg-green {background-color:#eaf3dd}
+.math_calc_table .bg-line.bg-sky {background-color:#deecf8}
+.math_calc_table .bg-line {position:absolute;width:50px}
 
 .math_calc_table .lineDotted,
 .math_calc_table td.dotted:after {
     position: absolute;
     border-right: 2px dashed #b0a7ab;
 }
-
+.math_calc_table .bg-line,
 .math_calc_table .lineDotted {
     top: 0;
     height: 100%
@@ -1044,3 +1050,17 @@ animation: opacityEff 1s ease-out forwards;
 #wrap main {
     font-size: 40px;
 }
+.toggle.hand:after {
+    width: 51px;
+    height: 70px;
+    border-radius:0;
+    border:none;
+    content:'';
+    background: url("../../../common/contents/images/icon/icon_click_finger.png") center/contain no-repeat;
+    -webkit-animation: opacity 1.5s ease-in 3;
+    -o-animation: opacity 1.5s ease-in 3;
+    animation: opacity 1.5s ease-in 3;
+    left:50%;
+    margin-left:-25px;
+}
+.toggle.hand.complete:after {display:none}
