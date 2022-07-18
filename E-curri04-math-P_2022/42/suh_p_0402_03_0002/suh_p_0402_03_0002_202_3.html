@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
-<link rel="stylesheet" href="./css/suh_p_0402_03_0002_202_1.css">
+<link rel="stylesheet" href="./css/suh_p_0402_03_0002_202_3.css">
 </head>
 <body>
 
@@ -28,25 +28,20 @@
 			<ul class="basicSlider_tabs" data-tabs="">
 				<li data-hover="">물음 1</li>
 				<li data-hover="">물음 2</li>
-				<li data-hover="">물음 3</li>
 			</ul>
 			<ul class="basicSlider_slides" data-slides="">
 				<li class="page_1" data-quiz="toggle">
 					<h2>
 						<ins class="dot"></ins>
-						<div style="letter-spacing:-.5px;">
-							<div class="bunsuWrap inline">
-								<ul>
-									<li>1</li>
-									<li>100</li>
-								</ul>
-							</div>을 소수로 나타내 보세요.
-						</div>
+						<p style="letter-spacing:-.5px;">0.27을 그림에 <span class="ic-arrow"></span>로 나타내 보세요.</p>
 					</h2>
 					<section>
-						<div class="toggle mt_20" data-toggle-obj="1">
+						<div class="toggle finger-box" data-toggle-obj="1">
+							<span class="click-finger-Btn blinkOn blinkOpacity"></span>
+							<div class="toggle-bg"></div>
 							<div class="answer" data-toggle-target="1">
-								<p>0.01입니다.</p>
+								<img src="./images/suh_p_0402_03_0002_202_3/suh_p_0402_03_0002_202_3_2.png" alt="">
+								<span class="txt">0.27</span>
 							</div>
 						</div>
 					</section>
@@ -57,61 +52,18 @@
 				<li class="page_2" data-quiz="toggle">
 					<h2>
 						<ins class="dot"></ins>
-						<div style="letter-spacing:-.5px;">
-							<div class="bunsuWrap inline">
-								<ul>
-									<li>27</li>
-									<li>100</li>
-								</ul>
-							</div>은 <div class="bunsuWrap inline">
-								<ul>
-									<li>1</li>
-									<li>100</li>
-								</ul>
-							</div>이 몇 개인가요?
-						</div>
+						<p style="letter-spacing:-.5px;">0.27을 전체 크기가 1인 모눈종이에 나타내 보세요.</p>
 					</h2>
 					<section>
-						<div class="toggle mt_20" data-toggle-obj="1">
+						<div class="toggle finger-box" data-toggle-obj="1">
+							<span class="click-finger-Btn blinkOn blinkOpacity"></span>
+							<div class="toggle-bg"></div>
 							<div class="answer" data-toggle-target="1">
-								<p>27개입니다.</p>
+								<span class="bullet exam">예</span>
+								<img src="./images/suh_p_0402_03_0002_202_3/suh_p_0402_03_0002_202_3_4.png" alt="">
 							</div>
 						</div>
-					</section>
-					<div class="buttonContainer">
-						<button class="dapCheckBtn" data-answer-btn=""></button>
-					</div>
-				</li>
-				<li class="page_3" data-quiz="toggle">
-					<h2>
-						<ins class="dot"></ins>
-						<div style="letter-spacing:-.5px;">
-							<div class="bunsuWrap inline">
-								<ul>
-									<li>27</li>
-									<li>100</li>
-								</ul>
-							</div>은 소수로 어떻게 나타낼 수 있을까요?
-						</div>
-					</h2>
-					<section>
-						<div class="toggle box mt_20" data-toggle-obj="1">
-							<div class="answer" data-toggle-target="1">
-								<div>
-									<div class="bunsuWrap inline">
-										<ul>
-											<li>1</li>
-											<li>100</li>
-										</ul>
-									</div>은 0.01이므로 <div class="bunsuWrap inline">
-										<ul>
-											<li>27</li>
-											<li>100</li>
-										</ul>
-									</div>은 0.01이 27개입니다. 따라서 0.27로 나타낼 수 있습니다.
-								</div>
-							</div>
-						</div>
+						<div id="aniBox"></div>
 					</section>
 					<div class="buttonContainer">
 						<button class="dapCheckBtn" data-answer-btn=""></button>
@@ -139,6 +91,38 @@
 <script type="text/javascript" src="./js/contents.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		$prite.add({
+			target: $ts.getEl('#aniBox'),
+			spriteId: 'sprite1',
+			spriteList: [
+
+				{
+					name: 'girl_1',
+					circle: 'deeppink',
+					speech: 'left',
+					top: 190,
+					left: 900,
+					width: 340,
+					height: 421,
+					thumbNail: '../common/contents/images/character/girl_1.png',
+					spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+					sound: './media/audios/suh_p_0402_03_0002_202_3.mp3',
+					textBubble: {
+						text: '모눈 한 칸의<br> 크기는 0.01이야.',
+						class: 'balloon bottom deeppink',
+						top: 30,
+						left: 724,
+						width: 360,
+						textAlign: 'center',
+						wordBreak: 'keep-all'
+					},
+					sheetWidth: 102000,
+					sheetHeight: 421,
+					delay: 40
+
+				}
+			]
+		});
 	}, false);
 
 </script>
