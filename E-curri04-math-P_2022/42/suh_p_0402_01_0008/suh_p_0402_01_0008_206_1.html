@@ -13,11 +13,19 @@
 
 
 	<style>
+
+
+		.type-oncemore.popup_contents .basicSlider_tabs .box,
+		.type-oncemore.popup_contents .basicSlider_tabs li span {cursor: pointer}
+		.operator {display: inline-block;vertical-align: -4px;}
 		.popup_contents .dot.orange {margin-top: 35px;}
-		.pop-title {display: flex; }
-		.pop-title .number {margin-right: 10px; margin-top: 2px;}
+		.pop-title {display: flex; font-size: 40px;}
+		.pop-title .number {margin-right: 10px; margin-top: 5px;}
+		.popup_contents .bunsuContainer .bunsu {margin: -3px 0 0;}
+		.popup_pages>li.whole {font-size: 40px;}
 
 		.lineBox {display: inline-block;padding: 20px 60px;}
+		.equal {width: 24px;vertical-align: middle !important; }
 
 	</style>
 </head>
@@ -38,15 +46,17 @@
 						<div class="lineBox green">
 							<div class="bunsuWrap inline">
 							    <ul>
-							        <li><span class="blankBox"></span></li>
+							        <li><span class="blankBox w50"></span></li>
 							        <li>8</li>
 							    </ul>
-							</div>＜<div class="bunsuWrap inline">
+							</div>
+							<img src="../common/contents/images/math/inequalIcon.png" class="equal">
+							<div class="bunsuWrap inline">
 								4<ul>
 							        <li>4</li>
 							        <li>8</li>
 							    </ul>
-							</div>－<div class="bunsuWrap inline">
+							</div><span class="operator">－</span><div class="bunsuWrap inline">
 							    3<ul>
 							        <li>6</li>
 							        <li>8</li>
@@ -65,7 +75,7 @@
 					<!-- 하단 버튼 -->	
 					<div class="buttonContainer left">
 						<button class="characterBtn" data-popup-btn="101" data-hover="">
-							<span>한 번 더 <b>1</b></span>
+							<span>한 번 더</span>
 						</button>
 					</div>
 					<div class="buttonContainer">
@@ -83,48 +93,32 @@
 				<!-- 풀이확인 -->
 				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
-						<div class="">
-							<div class="bunsuWrap inline">
-								4<ul>
-								<li>4</li>
-								<li>8</li>
-							</ul>
-							</div>－<div class="bunsuWrap inline">
-							3<ul>
+						<div class="bunsuContainer inToggle">
+							4<ul class="bunsu">
+							<li>4</li>
+							<li>8</li>
+						</ul>－3<ul class="bunsu">
 							<li>6</li>
 							<li>8</li>
-						</ul>
-						</div>＝
-							<div class="bunsuWrap inline">
-							    3<ul>
-							        <li>12</li>
-							        <li>8</li>
-							    </ul>
-							</div>－
-							<div class="bunsuWrap inline">
-							    3<ul>
-							        <li>6</li>
-							        <li>8</li>
-							    </ul>
-							</div>＝(3－3)＋(<div class="bunsuWrap inline">
-							<ul>
+						</ul>＝3<ul class="bunsu">
+							<li>12</li>
+							<li>8</li>
+						</ul>－3<ul class="bunsu">
+							<li>6</li>
+							<li>8</li>
+						</ul>＝(3－3)＋(<ul class="bunsu">
 								<li>12</li>
 								<li>8</li>
-							</ul>
-						</div>－<div class="bunsuWrap inline">
-							<ul>
+							</ul>－<ul class="bunsu">
 								<li>6</li>
 								<li>8</li>
-							</ul>
-						</div>)＝<div class="bunsuWrap inline">
-							<ul>
-							<li>6</li>
-							<li>8</li>
-						</ul>
-						</div>이므로
+							</ul>)＝<ul class="bunsu">
+								<li>6</li>
+								<li>8</li>
+							</ul>이므로
 						</div>
 						<div class="mt_15">
-							<span class="blankBox"></span> 안에 들어갈 수 있는 수는 6보다 작은 자연수입니다.
+							<span class="blankBox w50"></span> 안에 들어갈 수 있는 수는 6보다 작은 자연수입니다.
 						</div>
 					</div>
 				</li>
@@ -148,17 +142,19 @@
 								<li class="page_1" data-quiz="toggle">
 									<div class="pop-title">
 										<div class="bullet number orange">6</div>
-										<div>1부터 9까지의 수 중에서 <span class="toggleBlank"></span>  안에 들어갈 수 있는 수를 모두 찾아보세요.</div>
+										<div>1부터 9까지의 수 중에서 <span class="blankBox w50"></span> 안에 들어갈 수 있는 수를 모두 찾아보세요.</div>
 									</div>
 
 									<div class="textAlignC" style="padding-top: 40px;">
 										<div class="lineBox green">
 											<div class="bunsuWrap inline">
 												<ul>
-													<li><span class="blankBox"></span></li>
+													<li><span class="blankBox w50"></span></li>
 													<li>7</li>
 												</ul>
-											</div>＜<div class="bunsuWrap inline">
+											</div>
+											<img src="../common/contents/images/math/inequalIcon.png" class="equal">
+											<div class="bunsuWrap inline">
 											4<ul>
 											<li>3</li>
 											<li>7</li>
@@ -188,7 +184,7 @@
 								<li class="page_2" data-quiz="toggle">
 									<div class="pop-title">
 										<div class="bullet number orange">6</div>
-										<div>1부터 9까지의 수 중에서 <span class="toggleBlank"></span>  안에 들어갈 수 있는 수를 모두 찾아보세요.</div>
+										<div>1부터 9까지의 수 중에서 <span class="blankBox w50"></span>  안에 들어갈 수 있는 수를 모두 찾아보세요.</div>
 									</div>
 
 									<div class="textAlignC" style="padding-top: 40px;">
@@ -205,7 +201,7 @@
 										</ul>
 										</div>＜<div class="bunsuWrap inline">
 											<ul>
-											<li><span class="blankBox"></span></li>
+											<li><span class="blankBox w50"></span></li>
 											<li>10</li>
 										</ul>
 										</div>

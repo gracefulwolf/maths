@@ -13,8 +13,14 @@
 
 
 	<style>
-		.pop-title {display: flex; }
-		.pop-title .number {margin-right: 10px; margin-top: 2px;}
+		.type-oncemore.popup_contents .basicSlider_tabs .box,
+		.type-oncemore.popup_contents .basicSlider_tabs li span {cursor: pointer}
+		.operator {display: inline-block;vertical-align: -4px;}
+		.popup_contents .dot.orange {margin-top: 35px;}
+		.pop-title {display: flex; font-size: 40px;}
+		.pop-title .number {margin-right: 10px; margin-top: 5px;}
+		.bunsuContainer .bunsu {margin: -2px 0 0 !important;}
+
 		.contentsBox {padding-top: 10px;}
 
 		.img-wrap {position: relative;width: 1020px;margin:0 auto;}
@@ -27,7 +33,7 @@
 		.img-wrap .t5 {right: 3.8%;top: 82.5%;}
 		.img-wrap .t6 {left: 14.5%;top: 67%;letter-spacing: -2.4px;}
 
-		.pop_page_101 .lineBox.green {width: 800px;margin:0 auto; padding: 10px 25px;}
+		.pop_page_101 .lineBox.green {width: 884px;margin:0 auto; padding: 10px 25px;}
 		.pop_page_101 .contentList > li {display: flex;}
 		.pop_page_101 .contentList li .circleDot {margin-top: 27px;}
 	</style>
@@ -86,7 +92,7 @@
 					<!-- 하단 버튼 -->	
 					<div class="buttonContainer left">
 						<button class="characterBtn" data-popup-btn="101" data-hover="">
-							<span>한 번 더 <b>1</b></span>
+							<span>한 번 더</span>
 						</button>
 					</div>
 					<div class="buttonContainer">
@@ -106,98 +112,68 @@
 					<div class="popup_contents">
 						<ul class="contentsList">
 							<li>
-								<ins class="dot orange"></ins>
+								<ins class="dot orange" style="margin-top: 20px;"></ins>
 								<div>규민이 물통에 들어 있는 물의 양:</div>
 							</li>
 							<li>
-								<div class="pl_20">
-									<div class="bunsuWrap inline">
-										3<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
-									</div>＋<div class="bunsuWrap inline">
-									1<ul>
+								<div class="pl_20 bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＋1<ul class="bunsu">
 									<li>3</li>
 									<li>7</li>
-								</ul>
-								</div>＝(3＋1)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(3＋1)＋(<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>＋<div class="bunsuWrap inline">
-									<ul>
+									</ul>＋<ul class="bunsu">
 										<li>3</li>
 										<li>7</li>
-									</ul>
-								</div>)＝4＋<div class="bunsuWrap inline">
-									<ul>
+									</ul>)＝4＋<ul class="bunsu">
 										<li>8</li>
 										<li>7</li>
-									</ul>
-								</div>＝4＋<div class="bunsuWrap inline">
-									1<ul>
+									</ul>＝4＋1<ul class="bunsu">
 									<li>1</li>
 									<li>7</li>
-								</ul>
-								</div>＝<div class="bunsuWrap inline">
-									1<ul>
+								</ul>＝5<ul class="bunsu">
 									<li>5</li>
 									<li>7</li>
 								</ul>
 								</div>
-								</div>
 							</li>
 
 							<li>
-								<ins class="dot orange"></ins>
+								<ins class="dot orange" style="margin-top: 20px;"></ins>
 								<div>물이 가장 많이 들어 있는 물통과 가장 적게 들어 있는 물통의 물의 양의 차:</div>
 							</li>
 
 							<li>
-								<div class="pl_20">
-									<div class="bunsuWrap inline">
-										5<ul>
-										<li>3</li>
-										<li>7</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									3<ul>
+								<div class="bunsuContainer inToggle pl_20">
+									5<ul class="bunsu">
+									<li>3</li>
+									<li>7</li>
+								</ul>－3<ul class="bunsu">
 									<li>5</li>
 									<li>7</li>
-								</ul>
-								</div>＝<div class="bunsuWrap inline">
-									    4<ul>
-									        <li>10</li>
-									        <li>7</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-									    3<ul>
-									        <li>5</li>
-									        <li>7</li>
-									    </ul>
-									</div>＝(4－3)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝4<ul class="bunsu">
+									<li>10</li>
+									<li>7</li>
+								</ul>－3<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>＝(4－3)＋(<ul class="bunsu">
 										<li>10</li>
 										<li>7</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>)＝1＋<div class="bunsuWrap inline">
-									<ul>
+									</ul>)＝1＋<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>＝<div class="bunsuWrap inline">
-									1<ul>
+									</ul>＝1<ul class="bunsu">
 									<li>5</li>
 									<li>7</li>
 								</ul>
-								</div>
 								</div>
 							</li>
 
@@ -228,9 +204,9 @@
 									</div>
 
 									<div class="lineBox green mt_40">
-										<ul class="contentList">
+										<ul class="contentsList">
 											<li>
-												<ins class="bullet circleDot orange"></ins>
+												<ins class="dot orange"></ins>
 												<div>서준이의 물통에는 물
 													<div class="bunsuWrap inline">
 													    1<ul>
@@ -241,7 +217,7 @@
 													L가 들어 있습니다.</div>
 											</li>
 											<li>
-												<ins class="bullet circleDot orange"></ins>
+												<ins class="dot orange"></ins>
 												<div>시우의 물통에는
 													<div class="bunsuWrap inline">
 													    1<ul>
@@ -252,7 +228,7 @@
 													L가 들어 있습니다.</div>
 											</li>
 											<li>
-												<ins class="bullet circleDot orange"></ins>
+												<ins class="dot orange"></ins>
 												<div>지유의 물통에는 서준이보다 물
 													<div class="bunsuWrap inline">
 													    1<ul>
@@ -280,7 +256,7 @@
 									</div>
 
 
-									<a href="./data/(3-1-5)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+									<a href="./data/(4-2-1)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 									<button class="dapCheckBtn" data-answer-btn=""></button>
 								</li>
 								<!-- //한번더 탭 1 -->
@@ -293,9 +269,9 @@
 									</div>
 
 									<div class="lineBox green mt_40">
-										<ul class="contentList">
+										<ul class="contentsList">
 											<li>
-												<ins class="bullet circleDot orange"></ins>
+												<ins class="dot orange"></ins>
 												<div>서준이의 물통에는 물
 													<div class="bunsuWrap inline">
 														4<ul>
@@ -306,7 +282,7 @@
 													L가 들어 있습니다.</div>
 											</li>
 											<li>
-												<ins class="bullet circleDot orange"></ins>
+												<ins class="dot orange"></ins>
 												<div>시우의 물통에는
 													<div class="bunsuWrap inline">
 														2<ul>
@@ -317,8 +293,8 @@
 													L가 들어 있습니다.</div>
 											</li>
 											<li>
-												<ins class="bullet circleDot orange"></ins>
-												<div>지유의 물통에는 서준이보다 물
+												<ins class="dot orange"></ins>
+												<div>지유의 물통에는 시우보다 물
 													<div class="bunsuWrap inline">
 														1<ul>
 														<li>3</li>

@@ -23,14 +23,15 @@
 			height: 100px;
 			background: #fff url(./images/suh_p_0402_01_0002_202_1/suh_p_0402_01_0002_202_1_1.png) no-repeat 50% 0 / cover;
 		}
-		.finger-box.toggle .answer {position: absolute;left: 0;right: 0;width: 394px;top: 0;padding: 0;}
+		.finger-box.toggle .answer {position: absolute;left: 0;right: 0;width: 340px;top: 0;padding: 0;}
 		.flex-v1 {display: flex;justify-content: center;align-items: center;}
-		.flex-v1 .bullet.exam{align-self: center;}
+		.flex-v1 .bullet.exam{align-self: center;display: none}
 		.flex-v1 .exam {margin-right: 20px;}
 		.flex-v1 .colorBox {margin-right: 40px;}
 		.tt-a {margin-top: -15px;}
 		.toggle .answer.answer2 {display: block;}
 		.n2 {position:relative;margin:0 auto 70px;width: 700px;height: 145px;background: #fff url(./images/suh_p_0402_01_0002_202_1/suh_p_0402_01_0002_202_1_5.png) no-repeat 50% 0 / cover;}
+		.page_1 .toggle.complete .exam.bullet {display: block;position: relative;left: -110px;}
 		.numbering {
 			display: flex;
 			position: relative;
@@ -46,8 +47,9 @@
 		.bunsu-item.bs1 {left: 33px;}
 		.bunsu-item.bs2 {left: 169px;bottom: auto;top: -61px;}
 		.bunsu-item.bs3 {left: 238px;}
-		.toggle.bs-answer::after {width: 34px;height: 34px;font-size: 18px;line-height: 29px;}
-		.toggle.bs-answer .answer {padding: 2px 12px;}
+		/*.toggle.bs-answer::after {width: 34px;height: 34px;font-size: 18px;line-height: 29px;}*/
+		/*.toggle.bs-answer .answer {padding: 2px 12px;}*/
+		.operator {vertical-align:-5px;display: inline-block}
 	</style>
 </head>
 
@@ -59,8 +61,8 @@
 					<ul>
 						<li>2</li>
 						<li>5</li>
-					</ul>＋
-				</div><div class="bunsuWrap inline">
+					</ul>
+				</div><span class="operator">＋</span><div class="bunsuWrap inline">
 					<ul>
 						<li>4</li>
 						<li>5</li>
@@ -86,8 +88,9 @@
 									<ul>
 										<li>2</li>
 										<li>5</li>
-									</ul>＋
-								</div><div class="bunsuWrap inline">
+									</ul>
+								</div>와
+								<div class="bunsuWrap inline">
 									<ul>
 										<li>4</li>
 										<li>5</li>
@@ -103,7 +106,6 @@
 						</h2>
 
 						<div class="textAlignC mt_30 flex-v1" >
-							<span class="exam bullet">예</span>
 							<div class="colorBox green">
 								<div class="bunsuWrap inline">
 									<ul>
@@ -116,13 +118,13 @@
 								<span class="click-finger-Btn blinkOn blinkOpacity"></span>
 								<div class="n1"></div>
 								<div class="answer" data-toggle-target="1">
+									<span class="exam bullet">예</span>
 									<img src="./images/suh_p_0402_01_0002_202_1/suh_p_0402_01_0002_202_1_2.png" width="394" height="100"  alt="">
 								</div>
 							</div>
 						</div>
 
 						<div class="textAlignC mt_40 flex-v1" >
-							<span class="exam bullet">예</span>
 							<div class="colorBox green">
 								<div class="bunsuWrap inline">
 									<ul>
@@ -135,6 +137,7 @@
 								<span class="click-finger-Btn blinkOn blinkOpacity"></span>
 								<div class="n1"></div>
 								<div class="answer" data-toggle-target="2">
+									<span class="exam bullet">예</span>
 									<img src="./images/suh_p_0402_01_0002_202_1/suh_p_0402_01_0002_202_1_4.png" width="394" height="100"  alt="">
 								</div>
 							</div>
@@ -169,47 +172,52 @@
 
 						<div class="toggle box mt_20" data-toggle-obj="1">
 							<div class="answer answer2 ls-1" data-toggle-target="1">
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>2</li>
-										<li>5</li>
-									</ul>
-								</div>는
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>1</li>
-										<li>5</li>
-									</ul>
-								</div>이 2개이고,
-								<div class="bunsuWrap inline">
+								<div class="flex-box">
+									<span class="exam bullet" style="margin-top: 27px;">예</span>
+									<div>
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>5</li>
+										</ul>
+									</div>는
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+									</div>이 2개이고,
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>4</li>
+											<li>5</li>
+										</ul>
+									</div>는
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+									</div>이 4개이므로
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>2</li>
+											<li>5</li>
+										</ul>
+									</div><span class="operator">＋</span><div class="bunsuWrap inline">
 									<ul>
 										<li>4</li>
 										<li>5</li>
 									</ul>
 								</div>는
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>1</li>
-										<li>5</li>
-									</ul>
-								</div>이 4개이므로
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>2</li>
-										<li>5</li>
-									</ul>
-								</div>＋<div class="bunsuWrap inline">
-									<ul>
-										<li>4</li>
-										<li>5</li>
-									</ul>
-								</div>는
-								<div class="bunsuWrap inline">
-									<ul>
-										<li>1</li>
-										<li>5</li>
-									</ul>
-								</div>이 모두 6개입니다.
+									<div class="bunsuWrap inline">
+										<ul>
+											<li>1</li>
+											<li>5</li>
+										</ul>
+									</div>이 모두 6개입니다.
+								</div>
+								</div>
 							</div>
 						</div>
 
@@ -227,7 +235,7 @@
 										<li>2</li>
 										<li>5</li>
 									</ul>
-								</div>＋<div class="bunsuWrap inline">
+								</div><span class="operator">＋</span><div class="bunsuWrap inline">
 									<ul>
 										<li>4</li>
 										<li>5</li>
@@ -246,7 +254,7 @@
 								<div class="bunsuWrap">
 									<ul>
 										<li>
-											<div class="toggle mb_5" data-toggle-obj="1">
+											<div class="toggle mb_5" data-toggle-obj="1" data-group-index="1">
 												<div class="answer" data-toggle-target="1">2</div>
 											</div>
 										</li>
@@ -291,7 +299,7 @@
 									<li>4</li>
 									<li>5</li>
 								</ul>
-							</div>＝<div class="bunsuWrap inline" >
+							</div>＝<div class="bunsuWrap inline" style="margin-top:-8px">
 								<ul>
 									<li>
 										<div class="toggle bs-answer" data-toggle-obj="1">
@@ -302,7 +310,7 @@
 									</li>
 									<li>5</li>
 								</ul>
-							</div>＝<div class="bunsuWrap inline">
+							</div>＝<div class="bunsuWrap inline" style="margin-top:-8px">
 								<ul>
 									<li>
 										<div class="toggle bs-answer" data-toggle-obj="1">
@@ -314,7 +322,7 @@
 							</div>＝<div class="toggle bs-answer" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">1</div>
 							</div>
-							<div class="bunsuWrap inline">
+							<div class="bunsuWrap inline" style="margin-top:-8px">
 								<ul>
 									<li>
 										<div class="toggle bs-answer" data-toggle-obj="1">
