@@ -25,7 +25,6 @@
 		.numbering li {position: absolute; }
 		.num-list > .bullet{margin:4px 10px 0 0;}
 		.flex-center {display: flex;align-items: center;justify-content: center;}
-		.operator {display: inline-block;padding: 0 10px;vertical-align: middle;}
 		.picture-box {position:relative;background-repeat:no-repeat;background-position:50% 50%;height: 420px;margin:0 auto}
 		.picture-box .txt-box {position:absolute;text-align:center;font-size:34px;line-height:40px;/* letter-spacing:-1px */}
 		.innerTab_1 .picture-box {background-image:url("../suhi_p_0402_01_0003/images/suhi_p_0402_01_0003_8.png");width: 100%;background-size:auto 420px;}
@@ -103,7 +102,13 @@
 		.num-4 > li {width: 50%; padding-left: 12%;margin-bottom: 60px;}
 
 
-
+		.popup_contents .downloadBtn {bottom: 20px;}
+		.operator {display: inline-block;vertical-align: -5px;}
+		.moveButtonContainer.dvd-moveButton {left: 20%;right: 20%;width: auto;}
+		.bunsuToggle {vertical-align: 5px;}
+		.popup_contents .bunsuContainer .bunsu {margin: -3px 0 0;}
+		.popup_pages>li.whole {font-size: 40px;}
+		.popup_pages>li.whole .bunsuWrap {font-size: 40px;}
 
 	</style>
 </head>
@@ -153,14 +158,14 @@
 					<!-- 1번  -->
 					<li class="page_1" data-quiz="toggle">
 						<h2>
-							<ins class="number">1</ins>
+							<ins class="bullet number">1</ins>
 							<span style="margin-top: -14px;">
 								<div class="bunsuWrap inline">
 								    3<ul>
 								        <li>4</li>
 								        <li>6</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline">
 								    2<ul>
 								        <li>2</li>
 								        <li>6</li>
@@ -193,16 +198,16 @@
 								        <li>4</li>
 								        <li>6</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline">
 								    2<ul>
 								        <li>2</li>
 								        <li>6</li>
 								    </ul>
-								</div>＝(<div class="toggle" data-toggle-obj="1">
+								</div><span class="operator">＝(</span><div class="toggle" data-toggle-obj="1">
 								<div class="answer" data-toggle-target="1">3</div>
-							</div>－<div class="toggle" data-toggle-obj="2">
+							</div><span class="operator">－</span><div class="toggle" data-toggle-obj="2">
 								<div class="answer" data-toggle-target="2">2</div>
-							</div>)＋(<div class="bunsuWrap inline">
+							</div><span class="operator">)＋(</span><div class="bunsuWrap inline bunsuToggle">
 								    <ul>
 								        <li>
 											<div class="toggle" data-toggle-obj="3">
@@ -210,7 +215,7 @@
 											</div>
 										</li>
 								        <li>6</li>
-								    </ul>－<div class="bunsuWrap inline">
+									</ul></div><span class="operator">－</span><div class="bunsuWrap inline bunsuToggle">
 									    <ul>
 									        <li>
 												<div class="toggle" data-toggle-obj="4">
@@ -219,9 +224,9 @@
 											</li>
 									        <li>6</li>
 									    </ul>
-									</div>)＝<div class="toggle" data-toggle-obj="5">
+									</div><span class="operator">)＝</span><div class="toggle" data-toggle-obj="5">
 									    <div class="answer" data-toggle-target="5">1</div>
-									</div>＋<div class="bunsuWrap inline">
+									</div><span class="operator">＋</span><div class="bunsuWrap inline bunsuToggle">
 									    <ul>
 									        <li>
 												<div class="toggle" data-toggle-obj="5">
@@ -230,10 +235,10 @@
 											</li>
 									        <li>6</li>
 									    </ul>
-									</div>＝<div class="toggle" data-toggle-obj="6">
+									</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="6">
 									    <div class="answer" data-toggle-target="6">1</div>
 									</div>
-									<div class="bunsuWrap inline">
+								<div class="bunsuWrap inline">
 									    <ul>
 									        <li>
 												<div class="toggle" data-toggle-obj="7">
@@ -243,8 +248,9 @@
 									        <li>6</li>
 									    </ul>
 									</div>
-								</div>
+
 							</div>
+
 
 
 							<div class="buttonContainer left">
@@ -263,15 +269,15 @@
 					<!-- 2번 : -->
 					<li class="page_2" data-quiz="toggle">
 						<h2>
-							<ins class="number">2</ins>
-							<span style="letter-spacing: -1.2px;">
+							<ins class="bullet number">2</ins>
+							<span style="margin-top: -14px">
 							그림을 이용하여
 								<div class="bunsuWrap inline">
 								    3<ul>
 								        <li>2</li>
 								        <li>5</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline">
 								    1<ul>
 								        <li>1</li>
 								        <li>5</li>
@@ -328,41 +334,41 @@
 								        <li>2</li>
 								        <li>5</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline">
 								1<ul>
 								        <li>1</li>
 								        <li>5</li>
 								    </ul>
-								</div>＝<div class="bunsuWrap inline">
+								</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 								    <ul>
 								        <li>
-											<div class="toggle" data-toggle-obj="1">
-											    <div class="answer" data-toggle-target="1">17</div>
+											<div class="toggle" data-toggle-obj="1-1">
+											    <div class="answer" data-toggle-target="1-1">17</div>
 											</div>
 										</li>
 								        <li>5</li>
 								    </ul>
-								</div>－<div class="bunsuWrap inline">
+								</div><span class="operator">－</span><div class="bunsuWrap inline bunsuToggle">
 								    <ul>
 								        <li>
-											<div class="toggle" data-toggle-obj="2">
-											    <div class="answer" data-toggle-target="2">6</div>
+											<div class="toggle" data-toggle-obj="2-1">
+											    <div class="answer" data-toggle-target="2-1">6</div>
 											</div>
 										</li>
 								        <li>5</li>
 								    </ul>
-								</div>＝<div class="bunsuWrap inline">
+								</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 								    <ul>
 								        <li>
-											<div class="toggle" data-toggle-obj="3">
-											    <div class="answer" data-toggle-target="3">17</div>
+											<div class="toggle" data-toggle-obj="3-1">
+											    <div class="answer" data-toggle-target="3-1">17</div>
 											</div>－<div class="toggle" data-toggle-obj="4">
 											    <div class="answer" data-toggle-target="4">6</div>
 											</div>
 										</li>
 								        <li>5</li>
 								    </ul>
-								</div>＝<div class="bunsuWrap inline">
+								</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 								    <ul>
 								        <li>
 											<div class="toggle" data-toggle-obj="5">
@@ -371,7 +377,7 @@
 										</li>
 								        <li>5</li>
 								    </ul>
-								</div>＝<div class="bunsuWrap inline">
+								</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 									<div class="toggle" data-toggle-obj="6">
 										<div class="answer" data-toggle-target="6">2</div>
 									</div><ul>
@@ -401,7 +407,7 @@
 					<!-- 3번 : OX -->
 					<li class="page_3" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
 						<h2>
-							<ins class="number">3</ins>
+							<ins class="bullet number">3</ins>
 							<span>
 								계산 결과가 2보다 큰 뺄셈식을 모두 찾아
 								<span class="icon_o_title"></span>표 하세요.
@@ -416,7 +422,7 @@
 										<li>4</li>
 										<li>6</li>
 									</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 										1<ul>
 										<li>3</li>
 										<li>6</li>
@@ -429,7 +435,7 @@
 										<li>3</li>
 										<li>5</li>
 									</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 										2<ul>
 										<li>1</li>
 										<li>5</li>
@@ -442,7 +448,7 @@
 										<li>2</li>
 										<li>4</li>
 									</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 										3<ul>
 										<li>1</li>
 										<li>4</li>
@@ -455,7 +461,7 @@
 										<li>5</li>
 										<li>7</li>
 									</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 										2<ul>
 										<li>3</li>
 										<li>7</li>
@@ -469,12 +475,12 @@
 									</div>
 								</div>
 								<div class="ox-2">
-									<div class="choice" data-ox-obj="2" data-answer>
+									<div class="choice" data-ox-obj="2">
 										<div class="icon icon_x" data-ox-target="2"></div>
 									</div>
 								</div>
 								<div class="ox-3">
-									<div class="choice" data-ox-obj="3" data-answer>
+									<div class="choice" data-ox-obj="3">
 										<div class="icon icon_x" data-ox-target="3"></div>
 									</div>
 								</div>
@@ -500,7 +506,7 @@
 					<!-- 4번 -->
 					<li class="page_4" data-quiz="toggle"  >
 						<h2>
-							<ins class="number">4</ins>
+							<ins class="bullet number">4</ins>
 							<span>
 								계산해 보세요.
 							</span>
@@ -514,12 +520,12 @@
 											<li>5</li>
 											<li>7</li>
 										</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 									1<ul>
 										<li>2</li>
 										<li>7</li>
 									</ul>
-								</div>＝<div class="toggle" data-toggle-obj="1">
+								</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="1">
 									<div class="answer" data-toggle-target="1">
 										<div class="bunsuWrap inline">
 											1<ul>
@@ -536,12 +542,12 @@
 											<li>6</li>
 											<li>10</li>
 										</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 									2<ul>
 										<li>3</li>
 										<li>10</li>
 									</ul>
-								</div>＝<div class="toggle" data-toggle-obj="2">
+								</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="2">
 									<div class="answer" data-toggle-target="2">
 										<div class="bunsuWrap inline">
 											<ul>
@@ -558,12 +564,12 @@
 											<li>7</li>
 											<li>8</li>
 										</ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 									1<ul>
 										<li>5</li>
 										<li>8</li>
 									</ul>
-								</div>＝<div class="toggle" data-toggle-obj="3">
+								</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="3">
 									<div class="answer" data-toggle-target="3">
 										<div class="bunsuWrap inline">
 											1<ul>
@@ -593,12 +599,12 @@
 					<!-- 5번 -->
 					<li class="page_5" data-quiz="toggle">
 						<h2>
-							<ins class="number">5</ins>
+							<ins class="bullet number star">5</ins>
 							<span style="margin-top: -14px;">
 								물 20<div class="bunsuWrap inline">
 								    <ul>
 								        <li>7</li>
-								        <li>10</li>
+								        <li>11</li>
 								    </ul>
 								</div>&nbsp;
 								L가 있었습니다. 세수를 한 후 물 15
@@ -643,7 +649,7 @@
 									</div>
 								</div>
 								<div class="flex-box a-center mt_40">
-									<div class="colorBox purple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
+									<div class="colorBox deepPurple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
 									<div class="toggle" data-toggle-obj="2">
 										<div class="answer" data-toggle-target="2">
 											5<div class="bunsuWrap inline">
@@ -674,7 +680,7 @@
 					<li class="page_6" data-quiz="toggle">
 						<h2>
 							<ins class="number star">6</ins>
-							<div style="letter-spacing: 1.5px">1부터 6까지의 수 중 4개를 골라 한 번씩만 사용하여 계산     결과가 가장 큰 뺄셈식을 만들고, 계산해 보세요.</div>
+							<div style="letter-spacing: 1.5px">1부터 6까지의 수 중 4개를 골라 한 번씩만 사용하여 계산 결과가 가장 큰 뺄셈식을 만들고, 계산해 보세요.</div>
 						</h2>
 
 						<section class="full">
@@ -683,8 +689,7 @@
 								<div class="lineBox green mr_60">
 									<div class="toggle" data-toggle-obj="1">
 									    <div class="answer" data-toggle-target="1">6</div>
-									</div>
-									<div class="bunsuWrap inline">
+									</div><div class="bunsuWrap inline">
 									    <ul>
 									        <li>
 												<div class="toggle" data-toggle-obj="2">
@@ -693,10 +698,9 @@
 											</li>
 									        <li>7</li>
 									    </ul>
-									</div>－<div class="toggle" data-toggle-obj="3">
+									</div><span class="operator" style="vertical-align: -9px">－</span><div class="toggle" data-toggle-obj="3">
 										<div class="answer" data-toggle-target="3">1</div>
-									</div>
-									<div class="bunsuWrap inline">
+									</div><div class="bunsuWrap inline">
 										<ul>
 											<li>
 												<div class="toggle" data-toggle-obj="4">
@@ -709,9 +713,9 @@
 
 								</div>
 								<div class="flex-box a-center mt_20">
-									<div class="colorBox purple check" style="margin-right: 40px;color: #fff;">답</div>
-									<div class="toggle complete" data-toggle-obj="2">
-										<div class="answer on" data-toggle-target="2">
+									<div class="colorBox deepPurple check" style="margin-right: 40px;color: #fff;">답</div>
+									<div class="toggle complete" data-toggle-obj="2-1">
+										<div class="answer on" data-toggle-target="2-1">
 											<div class="bunsuWrap inline">
 												5<ul>
 													<li>3</li>
@@ -719,7 +723,7 @@
 												</ul>
 											</div>
 										</div>
-									</div>&nbsp;L
+									</div>
 								</div>
 							</div>
 
@@ -729,7 +733,7 @@
 									<span>쌍둥이 문제</span>
 								</button>
 								<button class="characterBtn" data-popup-btn="6-3" data-hover="">
-									<span>한번 더!</span>
+									<span>한 번 더!</span>
 								</button>
 							</div>
 							<div class="buttonContainer">
@@ -758,7 +762,7 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="number">1</ins>
+								<ins class="bullet number">1</ins>
 								<div>
 									<div style="margin-top: -14px;">
 										<div class="bunsuWrap inline">
@@ -771,7 +775,7 @@
 											<li>3</li>
 											<li>5</li>
 										</ul>
-										</div>을 그림으로 나타내 얼마인지 알아보세요.
+										</div>를 그림으로 나타내 얼마인지 알아보세요.
 									</div>
 
 									<div>
@@ -796,24 +800,23 @@
 													<li>4</li>
 													<li>5</li>
 												</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 												2<ul>
 													<li>3</li>
 													<li>5</li>
 												</ul>
-											</div>＝(<div class="toggle" data-toggle-obj="1">
+											</div><span class="operator">＝(</span><div class="toggle" data-toggle-obj="1">
 												<div class="answer" data-toggle-target="1">3</div>
-											</div>－<div class="toggle" data-toggle-obj="2">
+											</div><span class="operator">－</span><div class="toggle" data-toggle-obj="2">
 												<div class="answer" data-toggle-target="2">2</div>
-											</div>)＋(<div class="bunsuWrap inline">
-												<ul>
+											</div><span class="operator">)＋(</span><div class="bunsuWrap inline bunsuToggle"><ul>
 													<li>
 														<div class="toggle" data-toggle-obj="3">
 															<div class="answer" data-toggle-target="3">4</div>
 														</div>
 													</li>
 													<li>5</li>
-												</ul>－<div class="bunsuWrap inline">
+										</ul></div><span class="operator">－</span><div class="bunsuWrap inline bunsuToggle">
 													<ul>
 														<li>
 															<div class="toggle" data-toggle-obj="4">
@@ -822,9 +825,9 @@
 														</li>
 														<li>5</li>
 													</ul>
-												</div>)＝<div class="toggle" data-toggle-obj="5">
+												</div><span class="operator">)＝</span><div class="toggle" data-toggle-obj="5">
 													<div class="answer" data-toggle-target="5">1</div>
-												</div>＋<div class="bunsuWrap inline">
+												</div><span class="operator">＋</span><div class="bunsuWrap inline bunsuToggle">
 													<ul>
 														<li>
 															<div class="toggle" data-toggle-obj="5">
@@ -833,7 +836,7 @@
 														</li>
 														<li>5</li>
 													</ul>
-												</div>＝<div class="toggle" data-toggle-obj="6">
+												</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="6">
 													<div class="answer" data-toggle-target="6">1</div>
 												</div><div class="bunsuWrap inline">
 													<ul>
@@ -845,7 +848,6 @@
 														<li>5</li>
 													</ul>
 												</div>
-											</div>
 										</div>
 
 									</div>
@@ -868,8 +870,9 @@
 							3칸에서 2칸을 빼면 1칸이므로 1이 됩니다.
 						</div>
 						<div style="letter-spacing: -3px">
-							<span class="colorBox skyBlue check" style="width: 167px;display:inline-block;text-align: center;">분수 부분</span>
+							<span class="colorBox skyBlue check" style="width: 167px;display:inline-block;text-align: center;letter-spacing: normal">분수 부분</span>
 							4칸에서 2칸을 빼면 2칸이므로
+
 							<div class="bunsuWrap inline">
 								<ul>
 									<li>1</li>
@@ -883,33 +886,23 @@
 								</ul>
 							</div>가 됩니다.
 						</div>
-						<div>
-							<div class="bunsuWrap inline">
-								3<ul>
-								<li>4</li>
-								<li>6</li>
-							</ul>
-							</div>－<div class="bunsuWrap inline">
-							2<ul>
+						<div class="bunsuContainer inToggle">
+							3<ul class="bunsu">
+							<li>4</li>
+							<li>6</li>
+						</ul>－2<ul class="bunsu">
 							<li>2</li>
 							<li>6</li>
-						</ul>＝(3－2)＋(<div class="bunsuWrap inline">
-							<ul>
+						</ul>＝(3－2)＋(<ul class="bunsu">
 								<li>4</li>
 								<li>6</li>
-							</ul>
-						</div>－<div class="bunsuWrap inline">
-							<ul>
+							</ul>－<ul class="bunsu">
 								<li>2</li>
 								<li>6</li>
-							</ul>
-						</div>)＝<div class="bunsuWrap inline">
-							1<ul>
+							</ul>)＝1<ul class="bunsu">
 							<li>2</li>
 							<li>6</li>
 						</ul>
-						</div>
-						</div>
 						</div>
 				</li>
 
@@ -923,7 +916,7 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="number">2</ins>
+								<ins class="bullet number">2</ins>
 								<div>
 									<div style="letter-spacing: -1.2px;margin-top: -14px;">
 									그림을 이용하여
@@ -932,7 +925,7 @@
 												<li>4</li>
 												<li>5</li>
 											</ul>
-										</div>－<div class="bunsuWrap inline">
+										</div><span class="operator">－</span><div class="bunsuWrap inline">
 											1<ul>
 												<li>1</li>
 												<li>5</li>
@@ -989,12 +982,12 @@
 												<li>2</li>
 												<li>5</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											1<ul>
 											<li>1</li>
 											<li>5</li>
 										</ul>
-										</div>＝<div class="bunsuWrap inline">
+										</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 											<ul>
 												<li>
 													<div class="toggle" data-toggle-obj="1">
@@ -1003,7 +996,7 @@
 												</li>
 												<li>5</li>
 											</ul>
-										</div>－<div class="bunsuWrap inline">
+										</div><span class="operator">－</span><div class="bunsuWrap inline bunsuToggle">
 											<ul>
 												<li>
 													<div class="toggle" data-toggle-obj="2">
@@ -1012,7 +1005,7 @@
 												</li>
 												<li>5</li>
 											</ul>
-										</div>＝<div class="bunsuWrap inline">
+										</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 											<ul>
 												<li>
 													<div class="toggle" data-toggle-obj="3">
@@ -1023,7 +1016,7 @@
 												</li>
 												<li>5</li>
 											</ul>
-										</div>＝<div class="bunsuWrap inline">
+										</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 											<ul>
 												<li>
 													<div class="toggle" data-toggle-obj="5">
@@ -1032,7 +1025,7 @@
 												</li>
 												<li>5</li>
 											</ul>
-										</div>＝<div class="bunsuWrap inline">
+										</div><span class="operator">＝</span><div class="bunsuWrap inline bunsuToggle">
 											<div class="toggle" data-toggle-obj="6">
 												<div class="answer" data-toggle-target="6">2</div>
 											</div><ul>
@@ -1110,7 +1103,7 @@
 									        <li>2</li>
 									        <li>5</li>
 									    </ul>
-									</div>－<div class="bunsuWrap inline">
+									</div><span class="operator">－</span><div class="bunsuWrap inline">
 									    1<ul>
 									        <li>1</li>
 									        <li>5</li>
@@ -1121,7 +1114,7 @@
 									        <li>11</li>
 									        <li>5</li>
 									    </ul>
-									</div>(＝<div class="bunsuWrap inline">
+									</div>(<span class="operator">＝</span><div class="bunsuWrap inline">
 									    2<ul>
 									        <li>1</li>
 									        <li>5</li>
@@ -1130,45 +1123,29 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<div class="bunsuWrap inline">
-									    3<ul>
-									        <li>2</li>
-									        <li>5</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-										1<ul>
-									        <li>1</li>
-									        <li>5</li>
-									    </ul>
-									</div>＝<div class="bunsuWrap inline">
-									    <ul>
-									        <li>17</li>
-									        <li>5</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-									    <ul>
-									        <li>6</li>
-									        <li>5</li>
-									    </ul>
-									</div>＝
-									<div class="bunsuWrap inline">
-									    <ul>
-									        <li>17－6</li>
-									        <li>5</li>
-									    </ul>
-									</div>＝
-									<div class="bunsuWrap inline">
-									    <ul>
-									        <li>11</li>
-									        <li>5</li>
-									    </ul>
-									</div>＝<div class="bunsuWrap inline">
-									    2<ul>
-									        <li>1</li>
-									        <li>5</li>
-									    </ul>
-									</div>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>2</li>
+									<li>5</li>
+								</ul>－1<ul class="bunsu">
+									<li>1</li>
+									<li>5</li>
+								</ul>＝<ul class="bunsu">
+										<li>17</li>
+										<li>5</li>
+									</ul>－<ul class="bunsu">
+										<li>6</li>
+										<li>5</li>
+									</ul>＝<ul class="bunsu">
+										<li>17－6</li>
+										<li>5</li>
+									</ul>＝<ul class="bunsu">
+										<li>11</li>
+										<li>5</li>
+									</ul>＝2<ul class="bunsu">
+									<li>1</li>
+									<li>5</li>
+								</ul>
 
 								</div>
 							</li>
@@ -1185,7 +1162,7 @@
 					<div class="popup_contents" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">3</ins>
+								<ins class="bullet number">3</ins>
 								<div>
 									<p class="mb_10">
 										계산 결과가 2보다 큰 뺄셈식을 모두 찾아
@@ -1199,7 +1176,7 @@
 												<li>3</li>
 												<li>4</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											2<ul>
 											<li>1</li>
 											<li>4</li>
@@ -1212,7 +1189,7 @@
 												<li>4</li>
 												<li>6</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											2<ul>
 											<li>3</li>
 											<li>6</li>
@@ -1225,7 +1202,7 @@
 												<li>3</li>
 												<li>5</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											3<ul>
 											<li>1</li>
 											<li>5</li>
@@ -1238,7 +1215,7 @@
 												<li>5</li>
 												<li>7</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											1<ul>
 											<li>3</li>
 											<li>7</li>
@@ -1247,7 +1224,7 @@
 										</div>
 
 										<div class="ox-1">
-											<div class="choice" data-ox-obj="1" data-answer>
+											<div class="choice" data-ox-obj="1">
 												<div class="icon icon_x" data-ox-target="1"></div>
 											</div>
 										</div>
@@ -1257,7 +1234,7 @@
 											</div>
 										</div>
 										<div class="ox-3">
-											<div class="choice" data-ox-obj="3" data-answer>
+											<div class="choice" data-ox-obj="3">
 												<div class="icon icon_x" data-ox-target="3"></div>
 											</div>
 										</div>
@@ -1286,127 +1263,87 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-									    3<ul>
-									        <li>4</li>
-									        <li>6</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-									1<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>4</li>
+									<li>6</li>
+								</ul>－1<ul class="bunsu">
 									<li>3</li>
 									<li>6</li>
-								</ul>
-								</div>＝(3－1)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(3－1)＋(<ul class="bunsu">
 										<li>4</li>
 										<li>6</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>3</li>
 										<li>6</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									2<ul>
-										<li>1</li>
-										<li>6</li>
-									</ul>
-								</div>
+									</ul>)＝2<ul class="bunsu">
+									<li>1</li>
+									<li>6</li>
+								</ul>
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										3<ul>
-										<li>3</li>
-										<li>5</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									2<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									3<ul class="bunsu">
+									<li>3</li>
+									<li>5</li>
+								</ul>－2<ul class="bunsu">
 									<li>1</li>
 									<li>5</li>
-								</ul>
-								</div>＝(3－2)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(3－2)＋(<ul class="bunsu">
 										<li>3</li>
 										<li>5</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>1</li>
 										<li>5</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									1<ul>
+									</ul>)＝1<ul class="bunsu">
 									<li>2</li>
 									<li>5</li>
 								</ul>
 								</div>
-								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										4<ul>
-										<li>2</li>
-										<li>4</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									3<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									4<ul class="bunsu">
+									<li>2</li>
+									<li>4</li>
+								</ul>－3<ul class="bunsu">
 									<li>1</li>
 									<li>4</li>
-								</ul>
-								</div>＝(4－3)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(4－3)＋(<ul class="bunsu">
 										<li>1</li>
 										<li>4</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>1</li>
 										<li>4</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									1<ul>
+									</ul>)＝1<ul class="bunsu">
 									<li>1</li>
 									<li>4</li>
 								</ul>
 								</div>
-								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										5<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									2<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									5<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>－2<ul class="bunsu">
 									<li>3</li>
 									<li>7</li>
-								</ul>
-								</div>＝(5－2)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(5－2)＋(<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>3</li>
 										<li>7</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									3<ul>
+									</ul>)＝3<ul class="bunsu">
 									<li>2</li>
 									<li>7</li>
 								</ul>
-								</div>
 								</div>
 							</li>
 						</ul>
@@ -1419,7 +1356,7 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
 								<div class="bs-item" style="font-size: 32px;">
 									<div class="bunsuWrap inline">
 										3<ul>
@@ -1464,7 +1401,7 @@
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
 								<div class="bs-item" style="font-size: 32px;">
 									<div class="bunsuWrap inline">
 										1<ul>
@@ -1516,7 +1453,7 @@
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
 								<div class="bs-item" style="font-size: 32px;">
 									<div class="bunsuWrap inline">
 										4<ul>
@@ -1594,7 +1531,7 @@
 					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">4</ins>
+								<ins class="bullet number">4</ins>
 								<div>
 									<p class="mb_10">
 										계산해 보세요.
@@ -1607,12 +1544,12 @@
 												<li>5</li>
 												<li>9</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											1<ul>
 											<li>2</li>
 											<li>9</li>
 										</ul>
-										</div>＝<div class="toggle" data-toggle-obj="1">
+										</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="1">
 											<div class="answer" data-toggle-target="1">
 												<div class="bunsuWrap inline">
 													1<ul>
@@ -1629,12 +1566,12 @@
 												<li>7</li>
 												<li>10</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											2<ul>
 											<li>2</li>
 											<li>10</li>
 										</ul>
-										</div>＝<div class="toggle" data-toggle-obj="2">
+										</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="2">
 											<div class="answer" data-toggle-target="2">
 												<div class="bunsuWrap inline">
 													<ul>
@@ -1651,12 +1588,12 @@
 												<li>5</li>
 												<li>8</li>
 											</ul>
-											</div>－<div class="bunsuWrap inline">
+											</div><span class="operator">－</span><div class="bunsuWrap inline">
 											1<ul>
 											<li>3</li>
 											<li>8</li>
 										</ul>
-										</div>＝<div class="toggle" data-toggle-obj="3">
+										</div><span class="operator">＝</span><div class="toggle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">
 												<div class="bunsuWrap inline">
 													1<ul>
@@ -1689,96 +1626,66 @@
 
 						<ul class="contentsList">
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										2<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									1<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									2<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>－1<ul class="bunsu">
 									<li>2</li>
 									<li>7</li>
-								</ul>
-								</div>＝(2－1)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(2－1)＋(<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>2</li>
 										<li>7</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									1<ul>
+									</ul>)＝ 1<ul class="bunsu">
 									<li>3</li>
 									<li>7</li>
 								</ul>
-								</div>
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										2<ul>
-										<li>6</li>
-										<li>10</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									2<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									2<ul class="bunsu">
+									<li>6</li>
+									<li>10</li>
+								</ul>－2<ul class="bunsu">
 									<li>3</li>
 									<li>10</li>
-								</ul>
-								</div>＝(2－2)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(2－2)＋(<ul class="bunsu">
 										<li>6</li>
 										<li>10</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
+										<li>3</li>
+										<li>10</li>
+									</ul>)＝<ul class="bunsu">
 										<li>3</li>
 										<li>10</li>
 									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									<ul>
-									<li>3</li>
-									<li>10</li>
-								</ul>
-								</div>
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 28px;"></ins>
-								<div>
-									<div class="bunsuWrap inline">
-										2<ul>
-										<li>7</li>
-										<li>8</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									1<ul>
+								<ins class="bullet dot deepGreen" style="margin-top: 24px;"></ins>
+								<div class="bunsuContainer inToggle">
+									2<ul class="bunsu">
+									<li>7</li>
+									<li>8</li>
+								</ul>－1<ul class="bunsu">
 									<li>5</li>
 									<li>8</li>
-								</ul>
-								</div>＝(2－1)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(2－1)＋(<ul class="bunsu">
 										<li>7</li>
 										<li>8</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>5</li>
 										<li>8</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									1<ul>
-										<li>2</li>
-										<li>8</li>
-									</ul>
-								</div>
+									</ul>)＝1<ul class="bunsu">
+									<li>2</li>
+									<li>8</li>
+								</ul>
 								</div>
 							</li>
 						</ul>
@@ -1796,26 +1703,26 @@
 					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">5</ins>
+								<ins class="bullet number">5</ins>
 								<div>
 									<div style="margin-top: -14px;">
-										물 20<div class="bunsuWrap inline">
+										쌀 18<div class="bunsuWrap inline">
 											<ul>
 												<li>7</li>
-												<li>10</li>
+												<li>9</li>
 											</ul>
-										</div>&nbsp;
-										L가 있었습니다. 세수를 한 후 물 15
+										</div>
+										kg이 있었습니다. 요리를 한 후 쌀
 										<div class="bunsuWrap inline">
-											<ul>
-												<li>3</li>
-												<li>11</li>
+											14<ul>
+												<li>2</li>
+												<li>9</li>
 											</ul>
-										</div>&nbsp;
-										L가 남았다면, 사용한 물은 몇 L인가요?
+										</div>
+										kg이 남았다면, 사용한 쌀은 몇 kg인가요?
 									</div>
 
-									<div style="width: 500px;margin: 80px auto;">
+									<div style="width: 500px;margin: 40px auto;">
 										<div class="flex-box a-center">
 											<div class="colorBox skyBlue check" style="margin-right: 40px;">식</div>
 											<div class="toggle" data-toggle-obj="1">
@@ -1844,7 +1751,7 @@
 											</div>
 										</div>
 										<div class="flex-box a-center mt_40">
-											<div class="colorBox purple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
+											<div class="colorBox deepPurple check" style="margin-right: 40px;font-size: 24px;color: #fff;">답</div>
 											<div class="toggle" data-toggle-obj="2">
 												<div class="answer" data-toggle-target="2">
 													4<div class="bunsuWrap inline">
@@ -1854,7 +1761,7 @@
 													</ul>
 												</div>
 												</div>
-											</div>&nbsp;L
+											</div>&nbsp;kg
 										</div>
 									</div>
 
@@ -1881,7 +1788,7 @@
 					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">5</ins>
+								<ins class="bullet number">5</ins>
 								<div>
 									<div class="mb_10">
 										<span class="blankBox"></span>
@@ -1906,38 +1813,26 @@
 				<li class="solve pop_page_12" data-popup-page="5-3">
 					<div class="popup_contents">
 
-						<div>
-							<div class="bunsuWrap inline">
-								20<ul>
-								<li>7</li>
-								<li>11</li>
-							</ul>
-							</div>－<div class="bunsuWrap inline">
-							15<ul>
+						<div class="bunsuContainer inToggle">
+							20<ul class="bunsu">
+							<li>7</li>
+							<li>11</li>
+						</ul>－15<ul class="bunsu">
 							<li>3</li>
 							<li>11</li>
-						</ul>
-						</div>＝(20－15)＋(<div class="bunsuWrap inline">
-							<ul>
+						</ul>＝(20－15)＋(<ul class="bunsu">
 								<li>7</li>
 								<li>11</li>
-							</ul>
-						</div>－<div class="bunsuWrap inline">
-							<ul>
+							</ul>－<ul class="bunsu">
 								<li>3</li>
 								<li>11</li>
-							</ul>
-						</div>)＝5＋<div class="bunsuWrap inline">
-							<ul>
+							</ul>)＝5＋<ul class="bunsu">
 								<li>4</li>
 								<li>11</li>
-							</ul>
-						</div>＝<div class="bunsuWrap inline">
-							5<ul>
-								<li>4</li>
-								<li>11</li>
-							</ul>
-						</div>
+							</ul>＝5<ul class="bunsu">
+							<li>4</li>
+							<li>11</li>
+						</ul>
 						</div>
 
 					</div>
@@ -1953,7 +1848,7 @@
 					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">6</ins>
+								<ins class="bullet number">6</ins>
 								<div>
 									<div style="letter-spacing: 2px">1부터 7까지의 수 중 4개를 골라 한 번씩만 사용하여 계산 결과가 가장 큰 뺄셈식을 만들고, 계산해 보세요.</div>
 
@@ -1988,7 +1883,7 @@
 
 										</div>
 										<div class="flex-box a-center mt_20">
-											<div class="colorBox purple check" style="margin-right: 40px;color: #fff;">답</div>
+											<div class="colorBox deepPurple check" style="margin-right: 40px;color: #fff;">답</div>
 											<div class="toggle complete" data-toggle-obj="2">
 												<div class="answer on" data-toggle-target="2">
 													<div class="bunsuWrap inline">
@@ -2026,46 +1921,36 @@
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 14px;"></ins>
+								<ins class="bullet dot deepGreen" style="margin-top: 14px;"></ins>
 								<div>
 									빼지는 수의 자연수 부분에 가장 큰 수를 넣고, 빼는 수의 자연수 부분에는 가장 작은 수를 넣습니다.
 								</div>
 							</li>
 							<li>
-								<ins class="bullet circleDot" style="margin-top: 14px;"></ins>
+								<ins class="bullet dot deepGreen" style="margin-top: 14px;"></ins>
 								<div>
 									빼지는 수의 분자 부분에 두 번째로 큰 수를 넣고, 빼는 수의 분자 부분에는 두 번째로 작은 수를 넣습니다.
 								</div>
 							</li>
 							<li>
-								<div>
+								<div class="bunsuContainer inToggle">
 									<span class="icon_arrow"></span>
-									<div class="bunsuWrap inline">
-										6<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
-									</div>－<div class="bunsuWrap inline">
-									1<ul>
+									6<ul class="bunsu">
+									<li>5</li>
+									<li>7</li>
+								</ul>－ 1<ul class="bunsu">
 									<li>2</li>
 									<li>7</li>
-								</ul>
-								</div>＝(6－1)＋(<div class="bunsuWrap inline">
-									<ul>
+								</ul>＝(6－1)＋(<ul class="bunsu">
 										<li>5</li>
 										<li>7</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									<ul>
+									</ul>－<ul class="bunsu">
 										<li>2</li>
 										<li>7</li>
-									</ul>
-								</div>)＝<div class="bunsuWrap inline">
-									5<ul>
+									</ul>)＝5<ul class="bunsu">
 									<li>3</li>
 									<li>7</li>
 								</ul>
-								</div>
 								</div>
 							</li>
 						</ul>
@@ -2082,7 +1967,7 @@
 					<div class="popup_contents" data-quiz="toggle">
 						<ul class="contentsList">
 							<li>
-								<ins class="number">5</ins>
+								<ins class="bullet number">5</ins>
 								<div>
 									<div style="letter-spacing: 2px">
 										1부터 5까지의 수 중 4개를 골라 한 번씩만 사용하여 <br> 뺄셈식을 만들어 보세요.
@@ -2092,8 +1977,7 @@
 										<div class="lineBox green mr_60">
 											<div class="toggle" data-toggle-obj="1">
 												<div class="answer" data-toggle-target="1">5</div>
-											</div>
-											<div class="bunsuWrap inline">
+											</div><div class="bunsuWrap inline bunsuToggle">
 												<ul>
 													<li>
 														<div class="toggle" data-toggle-obj="2">
@@ -2102,10 +1986,9 @@
 													</li>
 													<li>7</li>
 												</ul>
-											</div>－<div class="toggle" data-toggle-obj="3">
+											</div><span class="operator">－</span><div class="toggle" data-toggle-obj="3">
 											<div class="answer" data-toggle-target="3">1</div>
-										</div>
-											<div class="bunsuWrap inline">
+										</div><div class="bunsuWrap inline bunsuToggle">
 												<ul>
 													<li>
 														<div class="toggle" data-toggle-obj="4">
@@ -2114,8 +1997,7 @@
 													</li>
 													<li>7</li>
 												</ul>
-											</div>＝
-											<div class="bunsuWrap inline">
+											</div><span class="operator">＝</span><div class="bunsuWrap inline">
 											    4<ul>
 											        <li>2</li>
 											        <li>7</li>
@@ -2189,8 +2071,8 @@
 									'<li>6</li>\n' +
 									'</ul>\n' +
 									'</div>만큼 \n' +
-									'<span class="icon_x_title"></span>\n' +
-									'표 해 보자!',
+									'<span class="icon_x_title"></span>표 해 보자!\n' +
+									'',
 							class: 'balloon bottom sky ctTail',
 							width: 400,
 							top: -161,
@@ -2236,8 +2118,8 @@
 									'<li>5</li>\n' +
 									'</ul>\n' +
 									'</div>만큼\n' +
-									'<span class="icon_x_title"></span>\n' +
-									'표 해 보자!',
+									'<span class="icon_x_title"></span>표 해 보자!\n' +
+									'',
 							class: 'balloon bottom sky ctTail',
 							width: 400,
 							top: -181,
