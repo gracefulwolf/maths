@@ -15,21 +15,34 @@
 
 		.page_1 .purple {margin:20px auto 0;width:810px}
 
-		.page_2 .study_guide {top:50px;right:0}
-		.page_2 .box-flex {display:flex;justify-content:space-between}
-		.page_2 .colorBox{width:200px;text-align:center;margin-top:40px;padding:16px}
+		.page_2 .study_guide,
+		.page_8 .study_guide {top:50px;right:0}
+		.page_2 .box-flex,
+		.page_8 .box-flex {display:flex;justify-content:space-between}
+		.page_2 .colorBox,
+		.page_8 .colorBox {width:200px;text-align:center;margin-top:40px;padding:16px}
 
 		.page_2 .dragLineObj.left,
-		.page_2 .dragLineArea.left{left:225px}
+		.page_2 .dragLineArea.left,
+		.page_8 .dragLineObj.left,
+		.page_8 .dragLineArea.left {left:225px}
 		.page_2 .dragLineObj.right,
-		.page_2 .dragLineArea.right {left:770px}
+		.page_2 .dragLineArea.right,
+		.page_8 .dragLineObj.right,
+		.page_8 .dragLineArea.right {left:770px}
 
 		.page_2 .dragLineObj.top1,
-		.page_2 .dragLineArea.top1{top:158px}
+		.page_2 .dragLineArea.top1,
+		.page_8 .dragLineObj.top1,
+		.page_8 .dragLineArea.top1 {top:158px}
 		.page_2 .dragLineObj.top2,
-		.page_2 .dragLineArea.top2{top:265px}
+		.page_2 .dragLineArea.top2,
+		.page_8 .dragLineObj.top2,
+		.page_8 .dragLineArea.top2 {top:265px}
 		.page_2 .dragLineObj.top3,
-		.page_2 .dragLineArea.top3{top:375px}
+		.page_2 .dragLineArea.top3,
+		.page_8 .dragLineObj.top3,
+		.page_8 .dragLineArea.top3 {top:375px}
 
 		.page_4 .flex-box {display:flex;align-items:center;justify-content:center}
 
@@ -41,14 +54,24 @@
 		.page_6 .txt-item.n3 {left:620px;top:-10px}
 		.page_6 .txt-item.n4 {left:620px;top:140px}
 
+		.page_7 .box-flex {display:flex;align-items:center;justify-content:space-around;margin-top:70px}
+
+		.page_9 .box-flex {display:flex;align-items:center;width:380px;margin:50px auto 0}
+		.page_9 .box-flex ~ .box-flex {margin-top:20px}
+
+		.page_10 .card-list {display:flex;align-items:center;justify-content:center;margin-top:80px}
+		.page_10 .card-list .carditem {margin:0 5px}
+
 		.img-answer {position:relative}
 		.img-answer img {width:100%;height:100%;vertical-align:top;object-fit:contain}
 		.img-answer .toggle {position:absolute;top:0;left:0;width:100%;height:100%;background-color:transparent}
 		.img-answer .toggle .answer {padding:0;background:url("./images/suh_p_0402_03_0007_401_1/suh_p_0402_03_0007_401_1_2.png") no-repeat 50% 50% / auto 100%;height:100%}
 		.toggle.hand:after {z-index:3;left:52.5%}
 
-		.solve .box-flex {display:flex;justify-content:space-around}
-		.solve .box-flex {padding-top:20px}
+		.solve .box-flex {display:flex;justify-content:space-around;padding-top:40px}
+
+		.pop_page_2 .box-flex,
+		.pop_page_8 .box-flex {padding-bottom:30px}
 
 	</style>
 </head>
@@ -320,47 +343,61 @@
 
 					<li class="page_7" data-page-num="" data-quiz="toggle">
 
-						<h2 data-addline-container="" style="margin-top: 0;">
+						<h2 data-addline-container="">
 							<ins class="dot orange"></ins>
-							<span style="margin-top: -15px;">
-								<span data-line-appear="2" class="givenLine" style="letter-spacing: .5px;padding-bottom: 18px;">
-									물
-									<div class="bunsuWrap inline">
-									    3<ul>
-									        <li>13</li>
-									        <li>18</li>
-									    </ul>
-									</div>
-									L가 들어 있는 물통에서 물
-									<div class="bunsuWrap inline">
-									   1<ul>
-									        <li>15</li>
-									        <li>18</li>
-									    </ul>
-									</div>
-									L를 사용했습니다.
-								</span>
-								<span data-line-appear="1" class="getLine" style="">남은 물은 몇 L인지 구하시오.</span>
-								<span class="addLineController">
-								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
-								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
-								</span>
+							<span>
+								계산해 보시오.
 						  </span>
 						</h2>
 
-						<div class="question-tbl-4 mt_40">
-							<div class="toggle" data-toggle-obj="1">
-								<div class="answer" data-toggle-target="1">
-									<div class="flex-wrap" style="align-items: center;">
-										<div class="bunsuWrap">
-											1<ul>
-												<li>16</li>
-												<li>18</li>
-											</ul>
-										</div>
+						<div class="box-flex">
+							<div class="item">
+								3.5－2.6＝<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+												0.9
 									</div>
 								</div>
-							</div>&nbsp;L
+							</div>
+							<div class="item">
+								<div class="math_calc_table class3">
+									<table>
+										<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del blue" data-toggle-obj="1" data-group-index="3"></span>
+												4
+												<sup class="sup blueT sub-answer" data-toggle-obj="1" data-group-index="3">3</sup>
+												<span class="dot"></span>
+											</td>
+											<td>1
+												<sup class="sup blueT sub-answer" data-toggle-obj="1" data-group-index="3">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>－</td>
+											<td>3<span class="dot"></span></td>
+											<td>5</td>
+										</tr>
+										<tr class="line">
+											<td colspan="3">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td colspan="2">
+												<div class="toggle" data-toggle-obj="1"  data-group-index="3">
+													<div class="answer" data-toggle-target="1">
+														1<span class="dot"></span>5
+													</div>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
 
 						<div class="buttonContainer">
@@ -369,158 +406,96 @@
 						</div>
 					</li>
 
-					<li class="page_8" data-page-num="" data-quiz="toggle">
+					<li class="page_8"  data-quiz="dragLine" data-total-complete-count="3">
 
-						<h2 data-addline-container="" style="margin-top: 0;">
+						<h2 data-addline-container="">
 							<ins class="dot orange"></ins>
 							<span>
-								계산 결과가 가장 작은 것을 찾아 기호를 써 보시오.
+								계산 결과가 같은 것끼리 이어 보시오.
 							</span>
 						</h2>
 
-						<section class="flex-wrap middle center" style="padding-bottom: 100px;">
-
-							<div>
-								<div class="lineBox purple flex-wrap center">
-									<div class="flex-wrap middle" style="min-width: 250px;">
-										<span class="bullet number orange inline">가</span>
-										<div class="bunsuWrap inline">
-											8<ul>
-												<li>3</li>
-												<li>9</li>
-											</ul>
-										</div>－<div class="bunsuWrap inline">
-											1<ul>
-												<li>6</li>
-												<li>9</li>
-											</ul>
-										</div>
-									</div>
-									<div class="flex-wrap middle" style="min-width: 250px;">
-										<span class="bullet number orange inline">나</span>
-										<div class="bunsuWrap inline">
-											2<ul>
-												<li>2</li>
-												<li>9</li>
-											</ul>
-										</div>－<div class="bunsuWrap inline">
-											<ul>
-												<li>17</li>
-												<li>9</li>
-											</ul>
-										</div>
-									</div>
-									<div class="flex-wrap middle" style="min-width: 250px;">
-										<span class="bullet number orange inline">다</span>
-										<div class="bunsuWrap inline">
-											4<ul>
-												<li>1</li>
-												<li>9</li>
-											</ul>
-										</div>－<div class="bunsuWrap inline">
-											1<ul>
-												<li>2</li>
-												<li>9</li>
-											</ul>
-										</div>
-									</div>
+						<div class="study_guide">점을  <em>드래그</em>하여 옳은 답과 <em>연결</em>하세요.</div>
+						<div class="box-flex">
+							<div class="colorBox-group left">
+								<div class="colorBox yellow">
+									1.2－0.5
 								</div>
-								<div class="flex-wrap center mt_50">
-									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<div class="bullet number orange inline">나</div>
-										</div>
-									</div>
+								<div class="colorBox yellow">
+									3.5－2.2
+								</div>
+								<div class="colorBox yellow">
+									5.1－2.5
 								</div>
 							</div>
 
-
-							<div class="buttonContainer">
-								<button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button>
-								<button class="dapCheckBtn" data-answer-btn=""></button>
+							<div class="colorBox-group right">
+								<div class="colorBox sky">
+									1.5－0.2
+								</div>
+								<div class="colorBox sky">
+									2.3－1.6
+								</div>
+								<div class="colorBox sky">
+									3.9－1.3
+								</div>
 							</div>
-						</section>
+						</div>
+
+						<svg class="js-svgContainer svgContainer"></svg>
+
+						<div class="js-dragLineArea dragLineArea left top1" data-group="1" data-name="dragLine" data-answer="1"></div>
+						<div class="js-dragLineObj dragLineObj left top1" data-group="1" data-name="dragLine" data-answer="1" data-complete-count="1"></div>
+						<div class="js-dragLineArea dragLineArea left top2" data-group="1" data-name="dragLine" data-answer="2"></div>
+						<div class="js-dragLineObj dragLineObj left top2" data-group="1" data-name="dragLine" data-answer="2" data-complete-count="1"></div>
+						<div class="js-dragLineArea dragLineArea left top3" data-group="1" data-name="dragLine" data-answer="3"></div>
+						<div class="js-dragLineObj dragLineObj left top3" data-group="1" data-name="dragLine" data-answer="3" data-complete-count="1"></div>
+
+						<div class="js-dragLineArea dragLineArea right top1" data-group="2" data-name="dragLine" data-answer="2"></div>
+						<div class="js-dragLineObj dragLineObj right top1" data-group="2" data-name="dragLine" data-answer="2" data-complete-count="1"></div>
+						<div class="js-dragLineArea dragLineArea right top2" data-group="2" data-name="dragLine" data-answer="1"></div>
+						<div class="js-dragLineObj dragLineObj right top2" data-group="2" data-name="dragLine" data-answer="1" data-complete-count="1"></div>
+						<div class="js-dragLineArea dragLineArea right top3" data-group="2" data-name="dragLine" data-answer="3"></div>
+						<div class="js-dragLineObj dragLineObj right top3" data-group="2" data-name="dragLine" data-answer="3" data-complete-count="1"></div>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
 
 					</li>
 
-					<li class="page_9" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox1">
+					<li class="page_9" data-quiz="toggle">
 
-						<h2><ins class="dot"></ins><span>계산 결과가 3과 4사이인 뺄셈식에  <span class="icon_o_title"></span>표 하시오.</span></h2>
+						<h2 data-addline-container="">
+							<ins class="dot"></ins>
+							<span>
+								<span data-line-appear="2" class="givenLine">
+									정민이는 주전자에서 코코아 한 잔을 따라 마셨습니다. 주전자에 들어 있던 코코아가 0.6 L이고 정민이가 마신 코코아가 0.2 L라면
+								</span>
+								<span data-line-appear="1">남은 코코아는 몇 L인지 구하시오.</span>
+								<span class="addLineController">
+								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+						  </span>
+						</h2>
 
-						<div class="ox-content mt_40 lineBox pink">
-							<div class="bunsu-item">
-								<div class="bunsuWrap inline">
-									4<ul>
-										<li>1</li>
-										<li>5</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									1<ul>
-										<li>2</li>
-										<li>5</li>
-									</ul>
+						<div class="box-flex">
+							<div class="colorBox skyBlue check">식</div>
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">
+									0.6－0.2＝0.4
 								</div>
 							</div>
-							<div class="bunsu-item">
-								<div class="bunsuWrap inline">
-									5<ul>
-										<li>3</li>
-										<li>7</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									1<ul>
-										<li>5</li>
-										<li>7</li>
-									</ul>
+						</div>
+						<div class="box-flex">
+							<div class="colorBox deepPurple check">답</div>
+							<div class="toggle mr_10" data-toggle-obj="2">
+								<div class="answer" data-toggle-target="2">
+									0.4
 								</div>
-							</div>
-							<div class="bunsu-item">
-								<div class="bunsuWrap inline">
-									6<ul>
-										<li>1</li>
-										<li>6</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									4<ul>
-										<li>3</li>
-										<li>6</li>
-									</ul>
-								</div>
-							</div>
-							<div class="bunsu-item">
-								<div class="bunsuWrap inline">
-									6<ul>
-										<li>1</li>
-										<li>4</li>
-									</ul>
-								</div>－<div class="bunsuWrap inline">
-									2<ul>
-										<li>2</li>
-										<li>4</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="ox-1">
-								<div class="choice" data-ox-obj="1">
-									<div class="icon icon_x" data-ox-target="1"></div>
-								</div>
-							</div>
-							<div class="ox-2">
-								<div class="choice" data-ox-obj="2" data-answer>
-									<div class="icon icon_o" data-ox-target="2"></div>
-								</div>
-							</div>
-							<div class="ox-3">
-								<div class="choice" data-ox-obj="3">
-									<div class="icon icon_x" data-ox-target="3"></div>
-								</div>
-							</div>
-							<div class="ox-4">
-								<div class="choice" data-ox-obj="4" data-answer>
-									<div class="icon icon_o" data-ox-target="4"></div>
-								</div>
-							</div>
+							</div> L
 						</div>
 
 						<div class="buttonContainer">
@@ -533,53 +508,22 @@
 
 						<h2>
 							<ins class="dot"></ins>
-							<span>두 수를 골라
-								<span class="blankBox"></span>
-								안에 써넣어 계산 결과가 가장 작은 뺄셈식을 만들고 계산해 보시오.
-							</span>
+							<span style="letter-spacing:-1px">다음 5장의 카드를 한 번씩 사용하여 만들 수 있는 소수 한 자리 수 중에서 가장 큰 수와 가장 작은 수의 뺄셈을 해 보시오.</span>
 						</h2>
 
-						<section class="flex-wrap middle center" style="padding-bottom: 80px;">
+						<div class="card-list">
+							<div class="carditem n4"></div>
+							<div class="carditem n2"></div>
+							<div class="carditem n6"></div>
+							<div class="carditem n0"></div>
+							<div class="carditem n8"></div>
+						</div>
 
-							<div>
-								<div class="lineBox purple flex-wrap center">
-									2, 4, 5
-								</div>
-								<div class="flex-wrap center mt_50 middle">
-									<span class="icon_arrow mr_20"></span>
-									<div class="bunsuWrap inline">
-									    4<ul>
-									        <li>
-												<div class="toggle" data-toggle-obj="1">
-												    <div class="answer" data-toggle-target="1">2</div>
-												</div>
-											</li>
-									        <li>7</li>
-									    </ul>
-									</div>－<div class="bunsuWrap inline">
-									    3<ul>
-									        <li>
-												<div class="toggle" data-toggle-obj="2">
-												    <div class="answer" data-toggle-target="2">5</div>
-												</div>
-											</li>
-									        <li>7</li>
-									    </ul>
-									</div>＝<div class="bunsuWrap inline">
-									    <ul>
-									        <li>
-												<div class="toggle" data-toggle-obj="1">
-												    <div class="answer" data-toggle-target="1">4</div>
-												</div>
-											</li>
-									        <li>7</li>
-									    </ul>
-									</div>
-								</div>
+						<div class="textAlignC mt_20">
+							<div class="toggle" data-toggle-obj="1">
+								<div class="answer" data-toggle-target="1">8.4</div>
 							</div>
-
-						</section>
-
+						</div>
 
 						<div class="buttonContainer">
 							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
@@ -602,33 +546,207 @@
 				</li>
 
 				<li class="solve pop_page_2" data-popup-page="2">
-					<div class="popup_contents">
-						<ul class="contentList">
-							<li>
-								<div class="bunsuContainer inToggle">
-									3<ul class="bunsu">
-									<li>4</li>
-									<li>6</li>
-								</ul>－<ul class="bunsu">
-										<li>11</li>
-										<li>6</li>
-									</ul>＝<ul class="bunsu">
-										<li>22</li>
-										<li>6</li>
-									</ul>－<ul class="bunsu">
-										<li>11</li>
-										<li>6</li>
-									</ul>＝<ul class="bunsu">
-										<li>11</li>
-										<li>6</li>
-									</ul>＝1<ul class="bunsu">
-									<li>5</li>
-									<li>6</li>
-								</ul>
+					<div class="popup_contents" data-slide-container="popup">
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1">
+								<div class="box-flex">
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>9</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>8</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<span class="del complete"></span>
+														1
+														<sup class="sup redT">0</sup>
+														<span class="dot"></span>
+													</td>
+													<td>4
+														<sup class="sup redT">10</sup>
+													</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>9</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
-
+							</li>
+							<li class="innerTab_2">
+								<div class="box-flex">
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>7</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>1</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<span class="del complete"></span>
+														2
+														<sup class="sup redT">1</sup>
+														<span class="dot"></span>
+													</td>
+													<td>1
+														<sup class="sup redT">10</sup>
+													</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>1<span class="dot"></span></td>
+													<td>8</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>1<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>1<span class="dot"></span></td>
+													<td>2</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</li>
 						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
 					</div>
 				</li>
 
@@ -728,201 +846,264 @@
 
 				<li class="solve pop_page_7" data-popup-page="7">
 					<div class="popup_contents">
-						<ul class="contentsList">
-							<li>
-								<div class="bunsuContainer inToggle">
-									3<ul class="bunsu">
-									<li>13</li>
-									<li>18</li>
-								</ul>－1<ul class="bunsu">
-									<li>15</li>
-									<li>18</li>
-								</ul>＝2<ul class="bunsu">
-									<li>31</li>
-									<li>18</li>
-								</ul>－1<ul class="bunsu">
-									<li>15</li>
-									<li>18</li>
-								</ul>＝1<ul class="bunsu">
-									<li>16</li>
-									<li>18</li>
-								</ul>
+						<div class="box-flex">
+							<div class="item">
+								<div class="math_calc_table class3">
+									<table>
+										<tbody>
+										<tr>
+											<td></td>
+											<td>
+												<span class="del complete"></span>
+												3
+												<sup class="sup redT">2</sup>
+												<span class="dot"></span>
+											</td>
+											<td>5
+												<sup class="sup redT">10</sup>
+											</td>
+										</tr>
+										<tr>
+											<td>－</td>
+											<td>2<span class="dot"></span></td>
+											<td>6</td>
+										</tr>
+										<tr class="line">
+											<td colspan="3">
+												<div class="rowLine"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>0<span class="dot"></span></td>
+											<td>9</td>
+										</tr>
+										</tbody>
+									</table>
 								</div>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
 				</li>
 
 
 				<li class="solve pop_page_8" data-popup-page="8">
-					<div class="popup_contents">
-						<ul class="contentsList">
-							<li>
-								<span class="bullet number orange inline" style="margin:15px 10px 0 0">가</span>
-								<div class="bunsuContainer inToggle">
-									8<ul class="bunsu">
-									<li>3</li>
-									<li>9</li>
-								</ul>－1<ul class="bunsu">
-									<li>6</li>
-									<li>9</li>
-								</ul>＝7<ul class="bunsu">
-									<li>12</li>
-									<li>9</li>
-								</ul>－1<ul class="bunsu">
-									<li>6</li>
-									<li>9</li>
-								</ul>＝6<ul class="bunsu">
-									<li>6</li>
-									<li>9</li>
-								</ul>
+					<div class="popup_contents" data-slide-container="popup">
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1">
+								<div class="box-flex">
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<span class="del complete"></span>
+														1
+														<sup class="sup redT">0</sup>
+														<span class="dot"></span>
+													</td>
+													<td>2
+														<sup class="sup redT">10</sup>
+													</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>7</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>3<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>2<span class="dot"></span></td>
+													<td>2</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>1<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<span class="del complete"></span>
+														5
+														<sup class="sup redT">4</sup>
+														<span class="dot"></span>
+													</td>
+													<td>1
+														<sup class="sup redT">10</sup>
+													</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>2<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>2<span class="dot"></span></td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 							</li>
-							<li>
-								<span class="bullet number orange inline" style="margin:15px 10px 0 0">나</span>
-								<div class="bunsuContainer inToggle">
-									2<ul class="bunsu">
-									<li>2</li>
-									<li>9</li>
-								</ul>－<ul class="bunsu">
-										<li>17</li>
-										<li>9</li>
-									</ul>＝<ul class="bunsu">
-										<li>20</li>
-										<li>9</li>
-									</ul>－<ul class="bunsu">
-										<li>17</li>
-										<li>9</li>
-									</ul>＝<ul class="bunsu">
-										<li>3</li>
-										<li>9</li>
-									</ul>
+							<li class="innerTab_2">
+								<div class="box-flex">
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>1<span class="dot"></span></td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>0<span class="dot"></span></td>
+													<td>2</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>1<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>
+														<span class="del complete"></span>
+														2
+														<sup class="sup redT">1</sup>
+														<span class="dot"></span>
+													</td>
+													<td>3
+														<sup class="sup redT">10</sup>
+													</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>1<span class="dot"></span></td>
+													<td>6</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>0<span class="dot"></span></td>
+													<td>7</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="item">
+										<div class="math_calc_table class3">
+											<table>
+												<tbody>
+												<tr>
+													<td></td>
+													<td>3<span class="dot"></span></td>
+													<td>9</td>
+												</tr>
+												<tr>
+													<td>－</td>
+													<td>1<span class="dot"></span></td>
+													<td>3</td>
+												</tr>
+												<tr class="line">
+													<td colspan="3">
+														<div class="rowLine"></div>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>2<span class="dot"></span></td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
-							</li>
-							<li>
-								<span class="bullet number orange inline" style="margin:15px 10px 0 0">다</span>
-								<div class="bunsuContainer inToggle">
-									4<ul class="bunsu">
-									<li>1</li>
-									<li>9</li>
-								</ul>－1<ul class="bunsu">
-									<li>2</li>
-									<li>9</li>
-								</ul>＝3<ul class="bunsu">
-									<li>10</li>
-									<li>9</li>
-								</ul>－1<ul class="bunsu">
-									<li>2</li>
-									<li>9</li>
-								</ul>＝2<ul class="bunsu">
-									<li>8</li>
-									<li>9</li>
-								</ul>
-								</div>
-							</li>
-							<li style="display: block">
-								<span class="icon_arrow"></span>
-								따라서 계산 결과가 가장 작은 것은
-								<span class="bullet number orange inline">나</span>입니다.
 							</li>
 						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+						</div>
 					</div>
 				</li>
 
 				<li class="solve pop_page_9" data-popup-page="9">
 					<div class="popup_contents">
-						<ul class="contentsList">
-							<li>
-								<ins class="dot orange"></ins>
-								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
-									4<ul class="bunsu">
-									<li>1</li>
-									<li>5</li>
-								</ul>－1<ul class="bunsu">
-									<li>2</li>
-									<li>5</li>
-								</ul>＝3<ul class="bunsu">
-									<li>6</li>
-									<li>5</li>
-								</ul>－1<ul class="bunsu">
-									<li>2</li>
-									<li>5</li>
-								</ul>＝2<ul class="bunsu">
-									<li>4</li>
-									<li>5</li>
-								</ul>
-								</div>
-							</li>
-							<li>
-								<ins class="dot orange"></ins>
-								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
-									5<ul class="bunsu">
-									<li>3</li>
-									<li>7</li>
-								</ul>－1<ul class="bunsu">
-									<li>5</li>
-									<li>7</li>
-								</ul>＝4<ul class="bunsu">
-									<li>10</li>
-									<li>7</li>
-								</ul>－1<ul class="bunsu">
-									<li>5</li>
-									<li>7</li>
-								</ul>＝3<ul class="bunsu">
-									<li>5</li>
-									<li>7</li>
-								</ul>
-								</div>
-							</li>
-							<li>
-								<ins class="dot orange"></ins>
-								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
-									6<ul class="bunsu">
-									<li>1</li>
-									<li>6</li>
-								</ul>－4<ul class="bunsu">
-									<li>3</li>
-									<li>6</li>
-								</ul>＝<ul class="bunsu">
-										<li>37</li>
-										<li>6</li>
-									</ul>－<ul class="bunsu">
-										<li>27</li>
-										<li>6</li>
-									</ul>＝<ul class="bunsu">
-										<li>10</li>
-										<li>6</li>
-									</ul>＝1<ul class="bunsu">
-									<li>4</li>
-									<li>6</li>
-								</ul>
-								</div>
-							</li>
-							<li>
-								<ins class="dot orange"></ins>
-								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
-									6<ul class="bunsu">
-									<li>1</li>
-									<li>4</li>
-								</ul>－2<ul class="bunsu">
-									<li>2</li>
-									<li>4</li>
-								</ul>＝<ul class="bunsu">
-										<li>25</li>
-										<li>4</li>
-									</ul>－<ul class="bunsu">
-										<li>10</li>
-										<li>4</li>
-									</ul>＝<ul class="bunsu">
-										<li>15</li>
-										<li>4</li>
-									</ul>＝3<ul class="bunsu">
-									<li>3</li>
-									<li>4</li>
-								</ul>
-								</div>
-							</li>
-						</ul>
+						<p style="letter-spacing:-1.8px">(남은 코코아의 양)<br>
+						＝(주전자에 들어 있는 코코아의 양)－(정민이가 마신 코코아의 양)<br>
+							＝0.6－0.2＝0.4 (L)</p>
 					</div>
 				</li>
 
@@ -931,26 +1112,17 @@
 						<ul class="contentsList">
 							<li>
 								<ins class="dot orange"></ins>
-								<div class="bunsuContainer inToggle" style="margin-top:-13px;">
-									4<ul class="bunsu">
-									<li>2</li>
-									<li>7</li>
-								</ul>－3<ul class="bunsu">
-									<li>5</li>
-									<li>7</li>
-								</ul>＝3<ul class="bunsu">
-									<li>9</li>
-									<li>7</li>
-								</ul>－3<ul class="bunsu">
-									<li>5</li>
-									<li>7</li>
-								</ul>＝<ul class="bunsu">
-										<li>4</li>
-										<li>7</li>
-									</ul>
-								</div>
+								<div>가장 큰 소수 한 자리 수: 8.6</div>
+							</li>
+							<li>
+								<ins class="dot orange"></ins>
+								<div>가장 작은 소수 한 자리 수: 0.2</div>
 							</li>
 						</ul>
+						<div class="mt_10">
+							<div class="icon_arrow"></div>
+							(가장 큰 수)－(가장 작은 수)＝8.6－0.2＝8.4
+						</div>
 					</div>
 				</li>
 
