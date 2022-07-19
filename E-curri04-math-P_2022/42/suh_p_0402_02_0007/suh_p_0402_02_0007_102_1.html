@@ -11,21 +11,30 @@
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
 
 	<style>
-		.toggle .answer.answer2 {display: block;}
-		.basicSlider_slides .flex-item.n1{position:relative;max-width:500px;}
+		.basicSlider_slides .flex-item.n1{position:relative;max-width:470px;}
 		.basicSlider_slides .flex-item.n2{margin-left:40px}
 		.basicSlider_slides  section{padding-right:0;}
 		.basicSlider_slides .answer{width: 100%; text-align: justify;}
-		.btn_1.zoomBtn{background:#fff url(./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_1.png) no-repeat 0 0 / cover; width:100%; height: 440px;}
+		.page_1 .toggle .img_tri {width: 44px;vertical-align: -5px;display: inline-block;}
+		.page_1 .toggle .answer {letter-spacing: -1px}
+		.btn_1.zoomBtn{ width:100%; height: 500px;overflow: hidden}
+		.btn_1.zoomBtn img {width: 100%; height: 100%}
 		.basicSlider_slides .flex-item.n1 .text {position: absolute;left: 20px;top: 20px;z-index: 2;}
-		.pop_page_1 .img{width: 100%;height: 100%;background:#fff url(./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_2.png) no-repeat 50% 50% / cover;}
-		.pop_page_1 .text {position: absolute;left: 95px;top: 20%;width: 520px;line-height: 50px;font-size:40px;text-align:justify;letter-spacing:-1px}
+		.pop_page_1 .img{width: 100%;height: 100%;background:#fff url(./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_10.png) no-repeat 50% 50% / cover;}
+		.pop_page_1 .text {position: absolute;left: 95px;top: 14%;width: 520px;line-height: 50px;font-size:40px;text-align:justify;letter-spacing:-1px}
 		.popup_pages img{width:114%;margin-left: -160px;}
 		.toggle .answer{text-align: justify;}
 		.flex-item.n2 section{display: flex;justify-content: center;flex-direction: column;align-items: stretch;}
 		.flex-item.n2 section .toggle{width: auto;}
 
-		.img-item {opacity:0;position:absolute;top:0;left:0;width:100%;height:100%}
+		.img-item {opacity:0;position:absolute;top:0;left:0;width:100%;height:499px;
+			border-radius: 10px;
+			border: 2px solid #f4e8d2;
+			box-sizing: border-box;
+			z-index: 2;
+			cursor: default;
+			pointer-events: none;
+		}
 		.img-item img {width:100%;height:100%}
 		.img-item.complete {opacity:1;z-index:2}
 
@@ -52,12 +61,19 @@
 						<div class="flex-wrap">
 							<div class="flex-item n1">
 								<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_1.png" alt="">
 								</button>
 								<div class="img-item" data-toggle-obj="1" data-group-index="1">
 									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_2.png" alt="">
 								</div>
 								<div class="img-item" data-toggle-obj="2" data-group-index="2">
 									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_3.png" alt="">
+								</div>
+								<div class="img-item" data-toggle-obj="2" data-group-index="3">
+									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_4.png" alt="">
+								</div>
+								<div class="img-item" data-toggle-obj="2" data-group-index="4">
+									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_5.png" alt="">
 								</div>
 							</div>
 
@@ -69,15 +85,24 @@
 									</span>
 								</h2>
 								<section>
-									<div class="icon_tri_title"></div>
-									<div class="toggle" data-toggle-obj="1" data-group-index="1">
+									<div class="toggle mt_10" data-toggle-obj="1" data-group-index="1">
 										<div class="answer answer2" data-toggle-target="1">
-											정삼각형이라고 생각합니다.
+											이등변삼각형 (<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_6.png" class="img_tri" alt="">)이 있습니다.
 										</div>
 									</div>
-									<div class="toggle" data-toggle-obj="2" data-group-index="2">
+									<div class="toggle mt_10" data-toggle-obj="2" data-group-index="2">
 										<div class="answer answer2" data-toggle-target="2">
-											정삼각형이라고 생각합니다.
+											둔각삼각형 (<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_7.png" class="img_tri" alt="">)이 있습니다.
+										</div>
+									</div>
+									<div class="toggle mt_10" data-toggle-obj="3" data-group-index="3">
+										<div class="answer answer2" data-toggle-target="3">
+											예각삼각형 (<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_8.png" class="img_tri" alt="">)이 있습니다.
+										</div>
+									</div>
+									<div class="toggle mt_10" data-toggle-obj="4" data-group-index="4">
+										<div class="answer answer2" data-toggle-target="4">
+											직각삼각형 (<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_9.png" class="img_tri" alt="">)이 있습니다.
 										</div>
 									</div>
 								</section>
@@ -102,6 +127,7 @@
 									<div class="flex-wrap">
 										<div class="flex-item n1">
 											<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+												<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_1.png" alt="">
 											</button>
 										</div>
 
@@ -118,7 +144,7 @@
 														짝은 정삼각형이라고 했는데 저는 예각삼각형이라고 했습니다.
 													</div>
 												</div>
-												<div class="toggle mt_10" data-toggle-obj="2">
+												<div class="toggle mt_5" data-toggle-obj="2">
 													<div class="answer answer2" data-toggle-target="2">
 														저는 이등변삼각형이라고 했는데 짝은 둔각삼각형이라고 했습니다.
 													</div>
@@ -136,6 +162,7 @@
 									<div class="flex-wrap">
 										<div class="flex-item n1">
 											<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
+												<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_1.png" alt="">
 											</button>
 										</div>
 
@@ -165,60 +192,6 @@
 
 					</li>
 
-					<li class="page_3" data-quiz="toggle">
-
-						<div class="flex-wrap">
-							<div class="flex-item n1">
-								<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
-								</button>
-							</div>
-
-							<div class="flex-item n2">
-								<h2>
-									<ins class="dot"></ins>
-									<span style="">
-										가방의 삼각형 무늬에는 어떤 특징이 있나요?
-									</span>
-								</h2>
-								<section>
-									<div class="toggle" data-toggle-obj="1">
-									    <div class="answer" data-toggle-target="1">
-											큰 정삼각형 사이에 작은 정삼각형이 있습니다.
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
-					</li>
-
-					<li class="page_4" data-quiz="toggle">
-
-						<div class="flex-wrap">
-							<div class="flex-item n1">
-								<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
-								</button>
-							</div>
-
-							<div class="flex-item n2">
-								<h2>
-									<ins class="dot"></ins>
-									<span style="">
-										정삼각형은 세 변의 길이가 같은 삼각형입니다. 각의 크기는 어떨 것 같나요?
-									</span>
-								</h2>
-								<section>
-									<div class="toggle" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											각도기로 재어 보지는 않았지만 세 각의 크기도 같을 것 같습니다.
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
-						<button class="dapCheckBtn" data-answer-btn=""></button>
-					</li>
-
 
 				</ul>
 			</div>
@@ -228,11 +201,11 @@
 			<ul class="popup_pages">
 				<li class="whole image pop_page_1" data-popup-page="1">
 					<div class="text">
-						내 가방에 있는 삼각형 무늬를 <br>
-						봐. 삼각형도 이렇게 예쁠 수  <br>
-						있구나! 삼각형에 어떤 특징이 <br>
-						있어서 이렇게 예쁜 무늬를 만 <br>
-						들 수 있는 걸까?
+						여행지에 도착! 창문에 이렇게 <br>
+						다양한 삼각형이 있다니! 많은<br>
+						삼각형을 어떻게 분류해야 할<br>
+						까? 변의 길이로? 각의 크기로? <br>
+						정말 아리송해.
 					</div>
 					<div class="img"></div>
 				</li>
@@ -261,10 +234,17 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			$('.page_1 .dapCheckBtn').click(function(){
 				$('.img-item').removeClass('complete');
+				$('.page_1 .zoomBtn ').css('zIndex', 1);
 			});
-			$('.flex-item .toggle').click(function(){
+			$('.page_1 .flex-item .toggle').click(function(){
 				$('.img-item').removeClass('complete');
+				$('.page_1 .zoomBtn ').css('zIndex', -1);
 			});
+
+			$('.page_1 .flex-item.n1 .img-item').click(function(){
+				$('.img-item').css('point');
+			});
+
 		}, false);
 
 	</script>
