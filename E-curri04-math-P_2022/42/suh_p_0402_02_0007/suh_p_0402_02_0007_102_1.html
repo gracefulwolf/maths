@@ -25,6 +25,10 @@
 		.flex-item.n2 section{display: flex;justify-content: center;flex-direction: column;align-items: stretch;}
 		.flex-item.n2 section .toggle{width: auto;}
 
+		.img-item {opacity:0;position:absolute;top:0;left:0;width:100%;height:100%}
+		.img-item img {width:100%;height:100%}
+		.img-item.complete {opacity:1;z-index:2}
+
 	</style>
 </head>
 
@@ -49,6 +53,12 @@
 							<div class="flex-item n1">
 								<button class="popBtn btn_1 zoomBtn line" data-hover="" data-popup-btn="1">
 								</button>
+								<div class="img-item" data-toggle-obj="1" data-group-index="1">
+									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_2.png" alt="">
+								</div>
+								<div class="img-item" data-toggle-obj="2" data-group-index="2">
+									<img src="./images/suh_p_0402_02_0007_102_1/suh_p_0402_02_0007_102_1_3.png" alt="">
+								</div>
 							</div>
 
 							<div class="flex-item n2">
@@ -60,8 +70,13 @@
 								</h2>
 								<section>
 									<div class="icon_tri_title"></div>
-									<div class="toggle" data-toggle-obj="1">
+									<div class="toggle" data-toggle-obj="1" data-group-index="1">
 										<div class="answer answer2" data-toggle-target="1">
+											정삼각형이라고 생각합니다.
+										</div>
+									</div>
+									<div class="toggle" data-toggle-obj="2" data-group-index="2">
+										<div class="answer answer2" data-toggle-target="2">
 											정삼각형이라고 생각합니다.
 										</div>
 									</div>
@@ -229,7 +244,7 @@
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
 	</div>
-
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
 	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
 	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
@@ -244,6 +259,12 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			$('.page_1 .dapCheckBtn').click(function(){
+				$('.img-item').removeClass('complete');
+			});
+			$('.flex-item .toggle').click(function(){
+				$('.img-item').removeClass('complete');
+			});
 		}, false);
 
 	</script>
