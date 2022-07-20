@@ -3,6 +3,8 @@
 .pos-r{position:relative}
 .pos-a{position:absolute}
 .flex-center {display:flex;align-items:center;justify-content:center;}
+.align-center {align-items: center;}
+.justify-sb {justify-content: space-between;}
 .va-m{vertical-align:middle}
 .ta-c {text-align:center}
 .ta-l {text-align:left}
@@ -10,12 +12,17 @@
 h2 .bunsuWrap {margin-top:-14px;}
 .solve .blankBox,
 .bunsuWrap .blankBox {vertical-align: middle;}
+.bunsuWrap.inline {display: inline-flex;align-items: center;}
 .mr_100 {margin-right: 100px;}
 .mr_200 {margin-right: 200px;}
 .mr_300 {margin-right: 300px;}
 .bunsuWrap.highlight {color: #00a0ff}
 .bunsuWrap.highlight ul > li:first-of-type {border-bottom-color: #00a0ff;}
 .icon_o_title.withBunsu {vertical-align: middle;display:inline-flex;align-items:center;justify-content:center;}
+
+.colorBox.deepGreen {
+    background-color: #a3d48e;
+}
 
 h2 ins + span {letter-spacing: -1px;}
 
@@ -36,11 +43,11 @@ display: inline-block;
 .contentsList .bullet.circleDot {align-self:center;}
 .contentsList .dot {align-self:center;}
 
-.page_0 .colorBox {display: inline-block;}
+.page_0 .colorBox {display: inline-block; color:#000;}
 .page_0 .lineBox {height: 390px;}
 
 .page_1 figure {padding-top: 30px;text-align: center;}
-.page_1 figure .ex-labels {position: absolute;top:0;left:0;width: 786px;display: flex;align-items: center;justify-content: space-between;font-size: 30px;}
+.page_1 figure .ex-labels {position: absolute;top: -5px;left: -3px;width: 792px;display: flex;align-items: center;justify-content: space-between;font-size: 40px;}
 .page_1 figure img {height: 300px;}
 .page_1 figure .ex-val-1,
 .page_1 figure .ex-val-2 {position: absolute;}
@@ -49,12 +56,14 @@ display: inline-block;
 
 .page_2 .contentsList {font-size: 35px;}
 .page_2 .contentsList .bullet.circleDot {align-self: flex-start;}
+.page_2 .contentsList .toggle {padding: 2px 4px; height: 45px;vertical-align: middle; line-height: 1;}
 
 .page_3 .flex-wrap {width:75%;margin:0 auto;justify-content: space-between;}
 .page_3 .flex-wrap .flex-item {flex: 1 1 auto;}
+.page_3 .flex-wrap .flex-wrap.n1 {width: 135px;justify-content: flex-end;}
+.page_3 .flex-wrap .toggle  {width: 100px;}
 
-.page_4 .flex-wrap {gap:70px;align-items:center;justify-content: space-between;}
-.page_4 .flex-wrap.lineBox {padding: 30px 50px;}
+.page_4 .flex-wrap.lineBox {gap:70px;align-items:center;justify-content: space-between; padding: 30px 50px;}
 .page_4 .flex-wrap > div {position: relative;}
 .page_4 .flex-wrap > div .icon{position: absolute;}
 .page_4 .icon.icon_o, .icon.icon_x {position:absolute;top: -27%;left: 0%;width: 140px;height: 140px;}
