@@ -24,24 +24,21 @@
 		.pop-title .number {margin-right:10px; margin-top:5px}
 		.popup_pages>li.whole {font-size:40px}
 
-		.lineBox {position:relative;display:flex}
-		.lineBox:before {content:'';position:absolute;top:0;bottom:0;right:35%;border-left:4px dashed #cabfe0}
-		.box-a {display:flex;align-items:center}
-		.box-a .bullet {align-self:center;margin:0 0 0 10px}
-		.col-a {width:65%}
-		.col-b {width:35%;text-align:center;padding-left:20px}
-		.lineBox .toggle {background-color:transparent}
+		.img-box {position:relative;width:100%;background-size:contain;background-repeat:no-repeat;margin-top:60px}
+		.img-box.n1 {height:200px;background-image:url(./images/suh_p_0402_03_0010_207_1/suh_p_0402_03_0010_207_1_1.png)}
+		.img-box.n2 {height:200px;background-image:url(./images/suh_p_0402_03_0010_207_1/suh_p_0402_03_0010_207_1_2.png);margin-top:80px}
+		.img-box.n3 {height:200px;background-image:url(./images/suh_p_0402_03_0010_207_1/suh_p_0402_03_0010_207_1_3.png);margin-top:80px}
+		.img-box .color-box-group {position:absolute;top:-50px;white-space:nowrap}
+		.img-box .color-box-group .colorBox {display:inline-flex}
+		.img-box .txt-item {position:absolute;background-color:#fff}
+		.img-box.n1 .txt-item.n1 {top:115px;left:100px}
+		.img-box.n1 .txt-item.n2 {top:170px;left:225px}
 
-		.img-answer {position:relative;text-align:center;margin-top:30px;height:180px}
-		.img-answer img {width:100%;height:100%;vertical-align:top;object-fit:contain}
-		.img-answer .toggle {position:absolute;top:0;left:0;width:100%;height:100%;background-color:transparent}
-		.img-answer .toggle .answer {padding:0;/*background:url("./images/suh_p_0402_03_0010_205_1/suh_p_0402_03_0010_205_1_1.png") no-repeat 50% 50%;background-size:contain;height:100%*/}
-		.img-answer .toggle .answer img {width:80%}
-		.img-answer .txt-item {position:absolute}
-		.img-answer .txt-item.n1 {top:-30px;left:155px}
-		.img-answer .txt-item.n2 {top:-30px;left:360px}
-		.img-answer .txt-item.n3 {top:130px;left:250px}
-		.img-answer .toggle.hand:after {top:44%}
+		.img-box.n2 .txt-item.n1 {top:85px;left:119px}
+		.img-box.n2 .txt-item.n2 {top:140px;left:245px}
+
+		.img-box.n3 .txt-item.n1 {top:88px;left:119px}
+		.img-box.n3 .txt-item.n2 {top:140px;left:225px}
 
 	</style>
 </head>
@@ -62,68 +59,59 @@
 				</ul>
 				<ul class="basicSlider_slides" data-slides="">
 					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="dot"></ins>
+							<span>선주네 집에서 분식집까지의 거리는 몇 km인가요?</span>
+						</h2>
 						<section>
-							<div class="lineBox purple">
-								<div class="col-a">
-									<div class="box-a">
-										<div class="check colorBox skyBlue">방법 1</div>
-										<div class="exam bullet">예</div>
-									</div>
-									<div class="img-answer">
-										<div class="toggle hand" data-toggle-obj="3">
-											<div class="answer" data-toggle-target="3">
-												<img src="./images/suh_p_0402_03_0010_205_1/suh_p_0402_03_0010_205_1_1.png">
-												<p class="txt-item n1">0.6</p>
-												<p class="txt-item n2">0.5</p>
-												<p class="txt-item n3">1.1</p>
-											</div>
-										</div>
-									</div>
+							<div class="img-box n1">
+								<div class="color-box-group">
+									<div class="colorBox green">공원</div>
+									<div class="colorBox pink" style="margin-left:130px">분식집</div>
+									<div class="colorBox purple" style="margin-left:85px">선주네 집</div>
+									<div class="colorBox sky" style="margin-left:190px">장난감 가게</div>
 								</div>
-								<div class="col-b">
-									<div class="box-a">
-										<div class="check colorBox skyBlue">방법 2</div>
-										<div class="exam bullet">예</div>
-									</div>
-									<div class="toggle hand tb-type" data-toggle-obj="1">
-										<div class="answer" data-toggle-target="1">
-											<div class="math_calc_table class3">
-												<table>
-													<tbody>
-													<tr>
-														<td></td>
-														<td>0<span class="dot"></span><sup class="sup redT">1</sup></td>
-														<td>6</td>
-													</tr>
-													<tr>
-														<td>＋</td>
-														<td>0<span class="dot"></span></td>
-														<td>5</td>
-													</tr>
-													<tr class="line">
-														<td colspan="3">
-															<div class="rowLine"></div>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>1<span class="dot"></span></td>
-														<td>1</td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-
-								</div>
+								<p class="txt-item n1">0.76 km</p>
+								<p class="txt-item n2">1.53 km</p>
 							</div>
 							<div class="textAlignC mt_20">
 								<div class="toggle" data-toggle-obj="2">
 									<div class="answer" data-toggle-target="2">
-										1.1
+										0.77
 									</div>
-								</div> kg
+								</div> km
+							</div>
+
+							<!-- 하단 버튼 -->
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+							<!-- //하단 버튼 -->
+						</section>
+					</li>
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="dot"></ins>
+							<span>선주네 집에서 장난감 가게까지의 거리는 몇 km인가요?</span>
+						</h2>
+						<section>
+							<div class="img-box n1">
+								<div class="color-box-group">
+									<div class="colorBox green">공원</div>
+									<div class="colorBox pink" style="margin-left:130px">분식집</div>
+									<div class="colorBox purple" style="margin-left:85px">선주네 집</div>
+									<div class="colorBox sky" style="margin-left:190px">장난감 가게</div>
+								</div>
+								<p class="txt-item n1">0.76 km</p>
+								<p class="txt-item n2">1.53 km</p>
+							</div>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="2">
+									<div class="answer" data-toggle-target="2">
+										1.27
+									</div>
+								</div> km
 							</div>
 
 							<!-- 하단 버튼 -->
@@ -133,13 +121,11 @@
 								</button>
 							</div>
 							<div class="buttonContainer">
-								<!--<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>-->
+								<button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
 								<button class="dapCheckBtn" data-answer-btn=""></button>
 							</div>
 							<!-- //하단 버튼 -->
 						</section>
-					</li>
-					<li class="page_2" data-quiz="toggle">
 					</li>
 				</ul>
 			</li>
@@ -149,74 +135,16 @@
 		<section class="popup_container" data-popup-container="">
 			<ul class="popup_pages">
 				<!-- 풀이확인 -->
-				<!--<li class="solve pop_page_1" data-popup-page="1">
+				<li class="solve pop_page_1" data-popup-page="1">
 					<div class="popup_contents">
-						<div class="box-flex">
-							<div class="item">
-								<div class="math_calc_table class3">
-									<table>
-										<tbody>
-										<tr>
-											<td></td>
-											<td>0<span class="dot"></span></td>
-											<td>8</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td>＋</td>
-											<td>0<span class="dot"></span></td>
-											<td>1</td>
-											<td>5</td>
-										</tr>
-										<tr class="line">
-											<td colspan="4">
-												<div class="rowLine"></div>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>0<span class="dot"></span></td>
-											<td>9</td>
-											<td>5</td>
-										</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="item">
-								<div class="math_calc_table class3">
-									<table>
-										<tbody>
-										<tr>
-											<td></td>
-											<td>1</td>
-											<td>4</td>
-											<td>6</td>
-										</tr>
-										<tr>
-											<td>－</td>
-											<td>1<span class="dot"></span></td>
-											<td>0</td>
-											<td>2</td>
-										</tr>
-										<tr class="line">
-											<td colspan="4">
-												<div class="rowLine"></div>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>0<span class="dot"></span></td>
-											<td>4</td>
-											<td>4</td>
-										</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+						<p>선주네 집에서 분식집까지의 거리는 1.53－0.76＝0.77 (km)입니다.</p>
 					</div>
-				</li>-->
+				</li>
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+						<p>선주네 집에서 장난감 가게까지의 거리는 0.77＋0.5＝1.27 (km)입니다.</p>
+					</div>
+				</li>
 
 				<!-- 한 번 더 -->
 				<li class="whole pop_page_101" data-popup-page="101">
@@ -234,142 +162,161 @@
 
 							<ul class="basicSlider_slides" data-slides="">
 								<!-- 한번더 탭 1 -->
-								<li class="pop_page_1" data-quiz="toggle">
+								<li class="pop_page_1"  data-slide-container="popup">
 									<div class="pop-title">
-										<div class="bullet number orange inline">5</div>
-										<div>도연이가 어제 달린 거리는 1.3 km, 오늘 달린 거리는 0.9 km입니다. 도연이가 어제와 오늘 달린 거리는 모두 몇 km인지 두 가지 방법으로 구해 보세요.</div>
+										<div class="bullet number orange inline">7</div>
+										<div>하준이네 집에서 도서관까지의 거리는 하준이네 집에서 학교까지의 거리보다 0.43 km만큼 더 깁니다. 하준이네 집에서 도서관까지의 거리는 몇 km인지 구해 보세요.</div>
 									</div>
-
-									<div class="lineBox purple ml_50 mt_50">
-										<div class="col-a">
-											<div class="box-a">
-												<div class="check colorBox skyBlue">방법 1</div>
-												<div class="exam bullet">예</div>
-											</div>
-											<div class="toggle hand mt_10" data-toggle-obj="3">
-												<div class="answer textAlignJ" data-toggle-target="3" style="letter-spacing:-1px">
-													1.3은 0.1이 13개, 0.9는 0.1이 9개인 수입니다. 1.3＋0.9는 0.1이 13＋9＝22(개)이므로 2.2입니다.
-												</div>
-											</div>
-										</div>
-										<div class="col-b">
-											<div class="box-a">
-												<div class="check colorBox skyBlue">방법 2</div>
-												<div class="exam bullet">예</div>
-											</div>
-											<div class="toggle hand tb-type" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													<div class="math_calc_table class3">
-														<table>
-															<tbody>
-															<tr>
-																<td></td>
-																<td>1<span class="dot"></span><sup class="sup redT">1</sup></td>
-																<td>3</td>
-															</tr>
-															<tr>
-																<td>＋</td>
-																<td>0<span class="dot"></span></td>
-																<td>9</td>
-															</tr>
-															<tr class="line">
-																<td colspan="3">
-																	<div class="rowLine"></div>
-																</td>
-															</tr>
-															<tr>
-																<td></td>
-																<td>2<span class="dot"></span></td>
-																<td>2</td>
-															</tr>
-															</tbody>
-														</table>
+									<ul class="basicSlider_slides" data-slides="">
+										<li class="innerTab_1" data-quiz="toggle">
+											<div class="ml_50 mt_20">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet circleDot orange"></div>
+														<div>하준이네 집에서 학교까지의 거리는 몇 km인가요?</div>
+													</li>
+												</ul>
+												<div class="img-box n2">
+													<div class="color-box-group">
+														<div class="colorBox green">공원</div>
+														<div class="colorBox pink" style="margin-left:196px">학교</div>
+														<div class="colorBox purple" style="margin-left:80px">하준이네 집</div>
+														<div class="colorBox sky" style="margin-left:190px">도서관</div>
 													</div>
+													<p class="txt-item n1">0.81 km</p>
+													<p class="txt-item n2">1.4 km</p>
+												</div>
+												<div class="textAlignC mt_20">
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															0.59
+														</div>
+													</div> km
 												</div>
 											</div>
 
-										</div>
-									</div>
-									<div class="textAlignC mt_20">
-										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">
-												2.2
+											<a href="./data/(4-2-3)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</li>
+
+										<li class="innerTab_2" data-quiz="toggle">
+											<div class="ml_50 mt_20">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet circleDot orange"></div>
+														<div>하준이네 집에서 도서관까지의 거리는 몇 km인가요?</div>
+													</li>
+												</ul>
+												<div class="img-box n2">
+													<div class="color-box-group">
+														<div class="colorBox green">공원</div>
+														<div class="colorBox pink" style="margin-left:196px">학교</div>
+														<div class="colorBox purple" style="margin-left:80px">하준이네 집</div>
+														<div class="colorBox sky" style="margin-left:190px">도서관</div>
+													</div>
+													<p class="txt-item n1">0.81 km</p>
+													<p class="txt-item n2">1.4 km</p>
+												</div>
+												<div class="textAlignC mt_20">
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															1.02
+														</div>
+													</div> km
+												</div>
 											</div>
-										</div> km
+											<a href="./data/(4-2-3)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</li>
+									</ul>
+									<div class="moveButtonContainer" data-slide-btn-container="">
+										<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+										<ul class="basicSlider_circle_tabs" data-tabs="">
+											<li data-hover=""></li>
+											<li data-hover=""></li>
+										</ul>
+										<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
 									</div>
 
-									<a href="./data/(4-2-3)풀어보고확인하고한번더_1.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-									<button class="dapCheckBtn" data-answer-btn=""></button>
 								</li>
 								<!-- //한번더 탭 1 -->
 
 								<!-- 한번더 탭 2 -->
-								<li class="pop_page_2" data-quiz="toggle">
+								<li class="pop_page_2" data-slide-container="popup">
 									<div class="pop-title">
-										<div class="bullet number orange inline">5</div>
-										<div>유리는 시장에서 사과 1.4 kg과 배 1.2 kg을 샀습니다. 유리가 산 사과와 배는 모두 몇 kg인지 두 가지 방법으로 구해 보세요.</div>
+										<div class="bullet number orange inline">7</div>
+										<div>예지네 집에서 병원까지의 거리는 예지네 집에서 우체국까지의 거리보다 0.61 km만큼 더 깁니다. 예지네 집에서 병원까지의 거리는 몇 km인지 구해 보세요.</div>
 									</div>
-
-									<div class="lineBox purple ml_50" style="margin-top:98px">
-										<div class="col-a">
-											<div class="box-a">
-												<div class="check colorBox skyBlue">방법 1</div>
-												<div class="exam bullet">예</div>
-											</div>
-											<div class="toggle hand mt_10" data-toggle-obj="3">
-												<div class="answer textAlignJ" data-toggle-target="3">
-													1.4는 0.1이 14개, 1.2는 0.1이 12개인 수입니다. 1.4＋1.2는 0.1이 14＋12＝26(개)이므로 2.6입니다.
-												</div>
-											</div>
-										</div>
-										<div class="col-b">
-											<div class="box-a">
-												<div class="check colorBox skyBlue">방법 2</div>
-												<div class="exam bullet">예</div>
-											</div>
-											<div class="toggle hand tb-type" data-toggle-obj="1">
-												<div class="answer" data-toggle-target="1">
-													<div class="math_calc_table class3">
-														<table>
-															<tbody>
-															<tr>
-																<td></td>
-																<td>1<span class="dot"></span></td>
-																<td>4</td>
-															</tr>
-															<tr>
-																<td>＋</td>
-																<td>1<span class="dot"></span></td>
-																<td>2</td>
-															</tr>
-															<tr class="line">
-																<td colspan="3">
-																	<div class="rowLine"></div>
-																</td>
-															</tr>
-															<tr>
-																<td></td>
-																<td>2<span class="dot"></span></td>
-																<td>6</td>
-															</tr>
-															</tbody>
-														</table>
+									<ul class="basicSlider_slides" data-slides="">
+										<li class="innerTab_1" data-quiz="toggle">
+											<div class="ml_50 mt_20">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet circleDot orange"></div>
+														<div>예지네 집에서 우체국까지의 거리는 몇 km인가요?</div>
+													</li>
+												</ul>
+												<div class="img-box n3">
+													<div class="color-box-group">
+														<div class="colorBox green">공원</div>
+														<div class="colorBox pink" style="margin-left:75px">우체국</div>
+														<div class="colorBox purple" style="margin-left:80px">예지네 집</div>
+														<div class="colorBox sky" style="margin-left:340px">병원</div>
 													</div>
+													<p class="txt-item n1">0.52 km</p>
+													<p class="txt-item n2">1.2 km</p>
+												</div>
+												<div class="textAlignC mt_20">
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															0.68
+														</div>
+													</div> km
 												</div>
 											</div>
 
-										</div>
-									</div>
-									<div class="textAlignC mt_20">
-										<div class="toggle" data-toggle-obj="2">
-											<div class="answer" data-toggle-target="2">
-												2.6
-											</div>
-										</div> kg
-									</div>
+											<a href="./data/(4-2-3)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</li>
 
-									<a href="./data/(4-2-3)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
-									<button class="dapCheckBtn" data-answer-btn=""></button>
+										<li class="innerTab_2" data-quiz="toggle">
+											<div class="ml_50 mt_20">
+												<ul class="contentsList">
+													<li>
+														<div class="bullet circleDot orange"></div>
+														<div>예지네 집에서 병원까지의 거리는 몇 km인가요?</div>
+													</li>
+												</ul>
+												<div class="img-box n3">
+													<div class="color-box-group">
+														<div class="colorBox green">공원</div>
+														<div class="colorBox pink" style="margin-left:75px">우체국</div>
+														<div class="colorBox purple" style="margin-left:80px">예지네 집</div>
+														<div class="colorBox sky" style="margin-left:340px">병원</div>
+													</div>
+													<p class="txt-item n1">0.52 km</p>
+													<p class="txt-item n2">1.2 km</p>
+												</div>
+												<div class="textAlignC mt_20">
+													<div class="toggle" data-toggle-obj="2">
+														<div class="answer" data-toggle-target="2">
+															1.29
+														</div>
+													</div> km
+												</div>
+											</div>
+											<a href="./data/(4-2-3)풀어보고확인하고한번더_2.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+											<button class="dapCheckBtn" data-answer-btn=""></button>
+										</li>
+									</ul>
+									<div class="moveButtonContainer" data-slide-btn-container="">
+										<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+										<ul class="basicSlider_circle_tabs" data-tabs="">
+											<li data-hover=""></li>
+											<li data-hover=""></li>
+										</ul>
+										<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+									</div>
 								</li>
 								<!-- //한번더 탭 2 -->
 							</ul>
