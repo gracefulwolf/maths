@@ -548,6 +548,7 @@
 
 			var isAnswered = false;
 			var dropAreas = $ts.getEl('.js-dropArea');
+			var btnReset1 = $ts.getEl('#it_reset_btn1');
 			var btnReset2 = $ts.getEl('#it_reset_btn2');
 
 			function clearDropAreas() {
@@ -571,6 +572,9 @@
 				});
 			}
 
+			btnReset1.addEventListener('click', function() {
+				resetQuiz();
+			});
 			btnReset2.addEventListener('click', function() {
 				resetQuiz();
 			});
