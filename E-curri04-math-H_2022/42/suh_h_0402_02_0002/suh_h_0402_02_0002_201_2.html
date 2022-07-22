@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0"><meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+  <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+  <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+  <style type="text/css">
+    .contentsBox.board .balloon {color: #000;}
+    .contentsList {position: relative;z-index: 4;}
+    #aniBox .balloon {z-index: 5;}
+  </style>
+</head>
+<body>
+
+<div id="wrap" class="math">
+    <header>
+        <div class="title">변의 길이에 따라 삼각형을 분류해 봅시다.</div>
+    </header>
+    <main>
+        <div class="contentsBox board" data-quiz="toggle" >
+            <ul class="contentsList">
+                <li class="mt_30">
+                    <ins class="dot orange mt_30"></ins>
+                    <div>
+                        두 변의 길이가 같은 삼각형을 <div class="toggle yellow" data-toggle-obj="1-1">
+                            <div class="answer" data-toggle-target="1-1">
+                                이등변삼각형
+                            </div>
+                        </div>이라고 합니다.
+                    </div>
+                </li>
+                <li class="mt_30">
+                    <ins class="dot orange mt_30"></ins>
+                    <div>
+                        세 변의 길이가 같은 삼각형을 <div class="toggle yellow" data-toggle-obj="1-2">
+                            <div class="answer" data-toggle-target="1-2">
+                                정삼각형
+                            </div>
+                        </div>이라고 합니다.
+                    </div>
+                </li>
+            </ul>
+
+            <div id="aniBox" class="mt_30"></div>
+        </div>
+    </main>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+
+        $prite.add({
+            target: $ts.getEl('#aniBox'),
+            spriteId: 'sprite1',
+            spriteList: [
+            {
+                name: 'girl_1',
+                speech: 'right',
+                top: 150,
+                left: 365,
+                width: 340,
+                height: 421,
+                thumbNail: '../common/contents/images/character/girl_1.png',
+                spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+                sound: './media/audios/suh_h_0402_02_0001_204_1.mp3',
+                textBubble: {
+                    text: '정삼각형은<br/>이등변삼각형<br/>이기도 해요.',
+                    class: 'balloon bottom orange',
+                    top: 65,
+                    left: 398,
+                    width: 275,
+                    textAlign: 'center',
+                    wordBreak: 'keep-all'
+                },
+                sheetWidth: 102000,
+                sheetHeight: 421,
+                //endSheet: 0,
+                delay: 40
+
+            }]
+        });
+
+    }, false);
+</script>
+
+</body>
+</html>
