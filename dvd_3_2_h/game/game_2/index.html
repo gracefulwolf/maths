@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>재밌게 놀이를 해요</title>
+<!-- 공통, 필수 css -->
+<link rel="stylesheet" href="../base/css/font.css" />
+<link rel="stylesheet" href="../base/css/normalize.css" />
+<link rel="stylesheet" href="../base/css/base.css" />
+<!-- 게임별 css -->
+<link rel="stylesheet" href="./src/css/index.css" />
+</head>
+<body>
+<div class="wrapper">
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--start page--on">
+    <!-- 교과서 페이지 (.startPage__ePubPage) -->
+        <div class="startPage__ePubPage">
+            <div class="startPage__ePubPage__icon"></div>
+            수학 58쪽
+        </div>
+    
+        <!-- 게임명 (.startPage__title) -->
+        <div class="startPage__title"><span>외계인 그림</span><br/><span>완성하기</span></div>
+    
+        <!-- 시작하기 버튼 (.startButton) -->
+        <button class="defaultButton startButton js-startButton">
+            시작하기
+            <div class="startButton__icon"></div>
+        </button>
+    </div> <!-- page--start -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--game">
+        <!-- 발문 (.gamePage__title) -->
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">나눗셈을 계산하여 몫과 나머지에 따라 외계인 그림을 완성해 보세요.</div>
+        </div>
+    
+        <!-- 플레이 선택 요소 (.selectPlay[data-play-index=""]) -->
+        <div class="selectPlay js-selectPlay" data-play-index="1">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="480" height="480" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="2">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="560" height="560" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="3">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="510" height="510" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="4">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="496" height="496" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="5">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="615" height="615" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+        <div class="selectPlay js-selectPlay" data-play-index="6">
+            <div class="selectPlay__image"></div>
+            <canvas class="spriteAni js-spriteAni" width="464" height="464" data-sprite-name="basic" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            <div class="selectPlay__completeMark"></div>
+        </div>
+    
+        <!-- 플레이 페이지 (.playPage[data-play-page=""]) -->
+        <div class="playPage js-playPage" data-play-page="1">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 나머지만큼 이빨을 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">27÷2</div>
+
+            <div class="selectPlay" data-play-index="1">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="480" height="480" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="480" height="480" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">1</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">2</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">3</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="1"] -->
+        
+        <div class="playPage js-playPage" data-play-page="2">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 몫만큼 눈을 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">58÷9</div>
+
+            <div class="selectPlay" data-play-index="2">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="560" height="560" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="560" height="560" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">5</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">6</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">7</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="2"] -->
+        
+        <div class="playPage js-playPage" data-play-page="3">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 몫만큼 귀를 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">99÷9</div>
+
+            <div class="selectPlay" data-play-index="3">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="510" height="510" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="510" height="510" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">9</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">10</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">11</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="3"] -->
+        
+        <div class="playPage js-playPage" data-play-page="4">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 나머지만큼 뿔을 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">407÷9</div>
+
+            <div class="selectPlay" data-play-index="4">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="496" height="496" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="496" height="496" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">0</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">2</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">4</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="4"] -->
+        
+        <div class="playPage js-playPage" data-play-page="5">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 몫만큼 팔을 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">80÷9</div>
+
+            <div class="selectPlay" data-play-index="5">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="615" height="615" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="615" height="615" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">6</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">7</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">8</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="5"] -->
+        
+        <div class="playPage js-playPage" data-play-page="6">
+        	<div class="infoBoxWrap">
+            	<div class="infoBoxBg"></div>
+	            <div class="infoBoxText">나눗셈의 나머지만큼 날개를 그려 주세요.</div>
+            </div>
+            
+        	<div class="bubbleBox">364÷6</div>
+
+            <div class="selectPlay" data-play-index="6">
+            	<div class="selectPlay__image"></div>
+                <canvas class="spriteAni js-spriteAni" width="464" height="464" data-sprite-name="correct" data-sprite-frame="40" data-sprite-duration="1.5" data-sprite-loop="y"></canvas>
+            	<canvas class="spriteAni js-spriteAni" width="464" height="464" data-sprite-name="incorrect" data-sprite-frame="40" data-sprite-duration="1.5"></canvas>
+            </div>
+            
+            <div class="selectTarget js-selectTarget" data-select-index="1">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">2</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="2" data-select-answer="o">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">4</div>
+                </div>
+            </div>
+            <div class="selectTarget js-selectTarget" data-select-index="3">
+                <div class="selectTarget__image">
+                    <div class="selectTarget__text">6</div>
+                </div>
+            </div>
+        </div> <!-- selectPlay[data-play-page="6"] -->
+    
+        <!-- 다음 스텝 버튼 (.nextStepButton) -->
+        <button class="defaultButton nextStepButton js-nextStepButton"></button>
+    
+        <!-- 커버 및 인트로 메시지 (.gamePage__cover & .gamePage__introMessage) -->
+        <div class="gamePage__cover"></div>
+        <div class="gamePage__introMessage">
+            <div>외계인을 선택하세요.</div>
+        </div>
+    </div> <!-- page--game -->
+    
+    <!-- .page : 총 3단계의 페이지 (.page--start, .page--game, .page--end) -->
+    <div class="page page--end">
+        <div class="gamePage__title">
+            <div class="gamePage__title__icon"></div>
+            <div class="gamePage__title__text">나눗셈을 계산하여 몫과 나머지에 따라 외계인 그림을 완성해 보세요.</div>
+        </div>
+        
+        <div class="gamePageSceneEnd">
+            <div class="selectPlay" data-play-index="1">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="2">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="3">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="4">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="5">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+            <div class="selectPlay" data-play-index="6">
+                <div class="selectPlay__image"></div>
+                <div class="selectPlay__completeMark"></div>
+            </div>
+        </div>
+
+        <div class="endPage__background"></div>
+        
+        <!-- 결과 (.resultPanel) -->
+        <div class="resultPanel">
+        	<div class="resultPanel__text">모든 <b>외계인</b>을 완성했어요!</div>
+        
+            <!-- 다시하기 버튼 (.regameButton) -->
+            <div class="defaultButton regameButton js-regameButton"></div>
+        </div>
+    </div> <!-- page--end -->
+</div> <!-- wrapper-->
+
+<!-- 공통, 필수 js -->
+<script src="../base/js/sprite.min.js" type="text/javascript"></script>
+<script src="../base/js/base.js" type="text/javascript"></script>
+<!-- 게임별 js -->
+<script src="./src/js/index.js" type="text/javascript"></script>
+<script>
+/*
+console.log("global functions ~>", {
+	completePlayPage: completePlayPage,
+	showNextStepButton: showNextStepButton,
+	efSound: efSound,
+	addEfSound: addEfSound,
+	addEfSounds: addEfSounds,
+	shake: shake,
+	setResetCallback: setResetCallback,
+	addHoverEvent: addHoverEvent,
+});
+*/
+</script>
+
+</body>
+</html>
