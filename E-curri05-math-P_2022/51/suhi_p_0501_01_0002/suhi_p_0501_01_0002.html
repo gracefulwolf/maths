@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+    <!--  math css -->
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+    <style>
+        .popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+        .popup_pages .buttonContainer{right:40px; bottom:20px;}
+        .popup_pages .downloadBtn { bottom:20px;}
+        .popup_pages ins.number {margin: 6px 10px 0 0;width: 40px;height: 40px;line-height: 1.8em;text-align: center;font-size: 22px;letter-spacing: 0;border-radius: 10px;color: #6dbc4b;border: 2px solid #6dbc4b;background-color: #fff;}
+        .img-wrap {position: relative;}
+        .img-wrap img {width:auto; height: 100%;}
+        .bs-item {display: flex; align-items: center;gap: 8px;}
+        .num-list > .bullet{margin:4px 10px 0 0;}
+        .numbering li {position: absolute; }
+        .flex-center {display: flex;align-items: center;justify-content: center;}
+        .picture-box {position:relative;background-repeat:no-repeat;background-position:50% 50%;height: 420px;margin:0 auto}
+        .picture-box .txt-box {position:absolute;text-align:center;line-height:40px;/* letter-spacing:-1px */}
+        .innerTab_1 .picture-box {margin-top: 15px;background-image:url("./images/suhi_p_0402_01_0003_8.png");width: 100%;background-size:auto 420px;}
+        .innerTab_1 .n1 {top: 28px;left: 154px;line-height: 1.2;}
+        .popup_contents .icon_bogi {height: 36px; vertical-align: top;border-radius: 10px;}
+        .popup_contents .icon_bogi:after {font-size: 21px;line-height: 36px;}
+        .popup_contents .downloadBtn {bottom: 20px;}
+        .operator {display: inline-block;vertical-align: -5px;}
+        .moveButtonContainer.dvd-moveButton {left: 20%;right: 20%;width: auto;}
+        .bunsuToggle {vertical-align: 5px;}
+
+        [class^="line-"] {color:#00a0ff;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .line-1 {width:70px;top:60px;left:72px;z-index:3}
+        .line-1:before {height:60px}
+        .line-1 .toggle {position:relative;left:-8px}
+        .line-2 {width:112px;top:60px;left:106px;z-index:2}
+        .line-2:before {height:140px}
+
+
+        /*page_0 개념정리 */
+        .page_0 .box-flex {display:flex;justify-content:space-between;margin-top:240px}
+        .page_0 .box-flex .item {width:40%;position:relative}
+        .page_0 .balloon {top:-240px;width:320px;text-align:center;}
+        .page_0 .balloon:after {left:10%}
+
+		/* 1번 */
+        .page_1 .box-flex {display:flex;justify-content:space-around}
+        .page_1 .lineBox {width:300px;margin:100px auto 0;text-align:center;position:relative}
+        .page_1 .lineBox .toggle {position:absolute;left:0;top:0;right:0;bottom:0}
+        .page_1 .toggle.hand:after {margin-left:10px;margin-top:60px}
+        .page_1 .toggle.hand .line {position:absolute;top:13px;left:44px;width:135px;height:50px;border-radius:25px;border:5px solid #00a0ff}
+        .page_1 .n1 .toggle.hand .line {left:34px}
+        .page_1  [class^="line-"] {background-color:transparent}
+        .page_1 .line-2:before {border-left:none}
+        .page_1 .line-2:after {content:'';position:absolute;left:0;border-left:2px solid #00a0ff;height:20px;bottom:60px}
+        .page_1 .n2 .line-1 {left:80px}
+        .page_1 .n2 .line-2 {left:113px;width:100px}
+
+        .pop_page_1 .box-flex {display:flex;justify-content:space-around}
+        .pop_page_1 .lineBox {width:300px;margin:100px auto 0;text-align:center;position:relative}
+        .pop_page_1 .lineBox .toggle {position:absolute;left:0;top:0;right:0;bottom:0}
+        .pop_page_1 .toggle.hand:after {margin-left:10px;margin-top:60px}
+        .pop_page_1 .toggle.hand .line {position:absolute;top:13px;left:44px;width:135px;height:50px;border-radius:25px;border:5px solid #00a0ff}
+        .pop_page_1 .n1 .toggle.hand .line {left:34px}
+        .pop_page_1  [class^="line-"] {background-color:transparent}
+        .pop_page_1 .line-2:before {border-left:none}
+        .pop_page_1 .line-2:after {content:'';position:absolute;left:0;border-left:2px solid #00a0ff;height:20px;bottom:60px}
+        .pop_page_1 .n2 .line-1 {left:80px}
+        .pop_page_1 .n2 .line-2 {left:113px;width:100px}
+
+
+		/* 2번*/
+		.page_2 .box-flex {display:flex;justify-content:space-around;margin-top:160px}
+        .pop_page_3 .box-flex {display:flex;justify-content:space-around;margin-top:160px}
+
+
+		.pop_page_3 .img-wrap {height: 240px;}
+		.pop_page_3 .img-wrap img {width:auto; height: 100%;}
+		.pop_page_3 .numbering li {top: 55%; }
+		.pop_page_3 .numbering li:nth-child(1) {left: 13.7%; }
+		.pop_page_3 .numbering li:nth-child(2) {right: 10.5%; }
+		.pop_page_3 .img-wrap .bunsuWrap {position: absolute;}
+		.pop_page_3 .n1 {top: -19%;left: 37.5%;}
+		.pop_page_3 .n2 {bottom: -19%;left: 30%;}
+		.pop_page_3 .n3 {bottom: 18%;right: 37.5%;}
+
+		/* 3번 */
+		.page_3 .flex-box .item {position:relative}
+        .page_3 .flex-box .item .txt-item {position:absolute;top:48px;left:0;color:#00a0ff;opacity:0;font-weight:bold}
+        .page_3 .flex-box .item .txt-item.complete {opacity:1}
+
+        .pop_page_6 .flex-box .item {position:relative}
+        .pop_page_6 .flex-box .item .txt-item {position:absolute;top:48px;left:0;color:#00a0ff;opacity:0;font-weight:bold}
+        .pop_page_6 .flex-box .item .txt-item.complete {opacity:1}
+
+        /* 4번 */
+        .page_4 .box-flex {display:flex;align-items:center;width:600px;margin:20px auto 0}
+
+        .pop_page_9 .box-flex {display:flex;align-items:center;width:600px;margin:20px auto 0}
+
+        /* 5번 */
+        .page_5 .box-flex {display:flex;align-items:center;width:450px;margin:60px auto 0}
+        .page_5 .box-flex ~ .box-flex {margin-top:20px}
+
+        .pop_page_12 .box-flex {display:flex;align-items:center;width:450px;margin:60px auto 0}
+        .pop_page_12 .box-flex ~ .box-flex {margin-top:20px}
+
+        /* 6번 */
+        .page_6 .box-flex {display:flex;align-items:flex-start;width:100%;margin:60px auto 0}
+        .page_6 .box-flex ~ .box-flex {margin-top:20px}
+
+        .pop_page_15 .box-flex {display:flex;align-items:flex-start;width:100%;margin:60px auto 0}
+        .pop_page_15 .box-flex ~ .box-flex {margin-top:20px}
+
+
+        .solve [class^="line-"] {color:#000;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .solve [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .solve .line-1 {width:74px;top:50px;left:18px;z-index:2}
+        .solve .line-1:before {height:60px}
+        .solve .line-2 {width:116px;top:50px;left:50px;z-index:1}
+        .solve .line-2:before {height:140px}
+        .solve .box-p {padding-bottom:130px;position:relative}
+        .solve .n2 .line-1 {width:66px}
+        .solve .n2 .line-2 {width:87px}
+
+        .pop_page_4 .contentsList {display:flex}
+        .pop_page_4 .contentsList li {width:50%}
+
+        .popup_contents .contentsList img[src*="equalIcon"] {
+            height: 11px;
+            vertical-align: middle;
+            margin: -7px 0 0 0;
+        }
+        .popup_contents .contentsList img[src*="inequalIcon"] {
+            height: 30px;
+        }
+        .popup_contents .answer img[src*="equalIcon"] {margin:0}
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						(&nbsp;&nbsp;&nbsp;)가 없는 혼합 계산을 알아볼까요(1)
+					</span>
+					<span class="sub-page">
+						8~9쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">개념 정리</li>
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<!-- 개념정리 -->
+					<li class="page_0" >
+						<h2>
+							<ins class="special type2"></ins>
+							<span></span>
+						</h2>
+						
+						<section class="full">
+							<div class="box-flex">
+								<div class="item">
+                                    <img src="./images/suhi_p_0501_01_0002_1.png" alt="">
+                                    <div class="balloon deeppink bottom">
+                                        덧셈, 뺄셈이<br>
+                                        섞여 있는 식은<br>
+                                        <span class="redT">앞에서부터<br>
+                                            차례대로 계산해</span>!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="./images/suhi_p_0501_01_0002_2.png" alt="">
+                                    <div class="balloon green bottom">
+                                        곱셈, 나눗셈이<br>
+                                        섞여 있는 식<br>
+                                        <span class="redT">앞에서부터<br>
+                                            차례대로 계산해</span>!
+                                    </div>
+                                </div>
+							</div>
+							
+						</section>
+					</li>
+
+					<!-- 1번 -->
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">1</ins>
+							<span>
+								가장 먼저 계산해야 하는 부분에 <span class="icon_o_title"></span>표 하세요.
+							</span>
+						</h2>
+
+						<!-- content -->
+						<section class="full">
+                            <div class="box-flex">
+                                <div class="lineBox purple n1">
+                                    58－8＋17
+                                    <div class="toggle hand" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <!--<span class="icon_o_title"></span>-->
+                                            <span class="line"></span>
+                                            <span class="line-1">①</span>
+                                            <span class="line-2">②</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lineBox purple n2">
+                                    72÷4×3
+                                    <div class="toggle hand" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <!--<span class="icon_o_title"></span>-->
+                                            <span class="line"></span>
+                                            <span class="line-1">①</span>
+                                            <span class="line-2">②</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="1-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+
+					<!-- 2번  -->
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">2</ins>
+							<span>계산해 보세요.</span>
+						</h2>
+						<section class="full">
+
+							<div class="box-flex">
+                                <div class="item">
+                                    41＋18－23＝<div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">36</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    19×4÷2＝<div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">38</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="2-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 3번  -->
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">3</ins>
+                            <div>
+                                계산 결과를 비교하여 <span class="toggleBlank circle"></span> 안에
+                                <img src="../common/contents/images/math/inequalIcon_2.png">,
+                                <img src="../common/contents/images/math/equalIcon.png">,
+                                <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+                            </div>
+						</h2>
+						<section class="full">
+
+                            <div class="flex-box a-center j-center" style="height: 300px">
+                                <div class="item">
+                                    43－17＋5
+                                    <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝31</p>
+                                </div>
+                                <div class="toggle circle" data-toggle-obj="1" style="margin: 0 20px;" data-group-index="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <img src="../common/contents/images/math/inequalIcon_2_blue.png">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    22＋4－19
+                                    <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝7</p>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="3-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+                                <button class="characterBtn" data-popup-btn="3-3" data-hover="">
+                                    <span>한 번 더!</span>
+                                </button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4"  data-quiz="toggle" >
+						<h2>
+							<ins class="bullet number">4</ins>
+							<span style="letter-spacing:1px">
+								현우의 용돈 기입장입니다. 3월 14일에 남은 돈은 얼마인지 하나의 식으로 나타내 구해 보세요.
+							</span>
+						</h2>
+						<section class="full">
+                            <div class="tableContainer green" style="margin-left:50px">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:25%;" span="4">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>날짜</th>
+                                        <th>들어온 돈</th>
+                                        <th>나간 돈</th>
+                                        <th>남은 돈</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightGreen">3월 8일</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td>2400원</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightGreen">3월 12일</th>
+                                        <td>5300원</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lightGreen">3월 14일</th>
+                                        <td></td>
+                                        <td>1800원</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="box-flex">
+                                <div class="colorBox skyBlue check">식</div>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        2400＋5300－1800＝5900
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-flex">
+                                <div class="colorBox deepPurple check">답</div>
+                                <div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        5900
+                                    </div>
+                                </div>원
+                            </div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="4-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number">5</ins>
+							<div style="letter-spacing:-.2px">
+                                농촌 일손 돕기에 참여한 연우와 지수, 아린이는 딸기를 각각 50개씩 땄습니다. 3명이 수확한 딸기를 6상자에 똑같이 나누어 담았다면, 한 상자에 든 딸기는 몇 개인지 하나의 식으로 나타내 구해 보세요.
+							</div>
+						</h2>
+						<section class="full">
+
+
+                            <div class="box-flex">
+                                <div class="colorBox skyBlue check">식</div>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        50×3÷6＝25
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-flex">
+                                <div class="colorBox deepPurple check">답</div>
+                                <div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        25
+                                    </div>
+                                </div>개
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="5-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5-3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 6번 -->
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">6</ins>
+							<span style="letter-spacing: -1.2px;">
+								23－15＋9를 이용해서 풀 수 있는 문제를 만들고 해결해 보세요.
+							</span>
+						</h2>
+						<section class="full">
+
+                            <div class="box-flex">
+                                <div class="colorBox deepPurple check">문제</div>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1" style="justify-content:flex-start">
+                                        <span class="exam bullet">예</span>
+                                        <p class="textAlignJ" style="letter-spacing:-1px">버스에 23명이 타고 있었습니다. 이번 정류장에서 15명이 내리고, 9명이 탔습니다. 버스에 타고 있는 사람은 몇 명인가요?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-flex">
+                                <div class="colorBox skyBlue check">풀이</div>
+                                <div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        23－15＋9＝8＋9＝17(명)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttonContainer left">
+                                <button class="characterBtn" data-popup-btn="6-1" data-hover="">
+                                    <span>쌍둥이 문제</span>
+                                </button>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+
+						</section>
+					</li>
+
+					
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!-- 쌍둥이 문제 -->
+				<li class="whole pop_page_1" data-popup-page="1-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">1</ins>
+								<div>
+									<div>
+                                        가장 먼저 계산해야 하는 부분에 <span class="icon_o_title"></span>표 하세요.
+									</div>
+
+                                    <div class="box-flex">
+                                        <div class="lineBox deeppink n1">
+                                            55－7＋18
+                                            <div class="toggle hand" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <!--<span class="icon_o_title"></span>-->
+                                                    <span class="line"></span>
+                                                    <span class="line-1">①</span>
+                                                    <span class="line-2">②</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lineBox deeppink n2">
+                                            52÷4×2
+                                            <div class="toggle hand" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <!--<span class="icon_o_title"></span>-->
+                                                    <span class="line"></span>
+                                                    <span class="line-1">①</span>
+                                                    <span class="line-2">②</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 1번 풀이 확인 -->
+				<li class="solve pop_page_2" data-popup-page="1-2">
+					<div class="popup_contents">
+						<ul class="contentsList">
+                            <li>
+                                <div class="dot deepGreen"></div>
+                                <p style="letter-spacing:-1.2px">덧셈과 뺄셈이 섞여 있는 식은 앞에서부터 차례대로 계산합니다.</p>
+                            </li>
+                            <li>
+                                <div class="dot deepGreen"></div>
+                                <p style="letter-spacing:-2px">곱셈과 나눗셈이 섞여 있는 식은 앞에서부터 차례대로 계산합니다.</p>
+                            </li>
+                        </ul>
+					</div>
+				</li>
+
+				<!-- 2번 쌍둥이문제 -->
+				<li class="whole pop_page_3" data-popup-page="2-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">2</ins>
+								<div>
+									<div>
+										계산해 보세요.
+									</div>
+
+                                    <div class="box-flex">
+                                        <div class="item">
+                                            42＋17－24＝<div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">35</div>
+                                        </div>
+                                        </div>
+                                        <div class="item">
+                                            18×3÷2＝<div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">27</div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이 확인-->
+                <li class="solve pop_page_4" data-popup-page="2-2">
+                    <div class="popup_contents">
+                        <ul class="contentsList">
+                            <li class="n1">
+                                <ins class="dot deepGreen"></ins>
+                                <div>
+                                    <div class="box-p">
+                                        41＋18－23＝59－23
+                                        <p style="padding-left:190px">＝36</p>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="n2">
+                                <ins class="dot deepGreen"></ins>
+                                <div>
+                                    <div class="box-p">
+                                        19×4÷2＝76÷2
+                                        <p style="padding-left:150px">＝38</p>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+				<!-- 3번 쌍둥이 문제 -->
+				<li class="whole pop_page_6" data-popup-page="3-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">3</ins>
+								<div>
+									<div>
+                                        계산 결과를 비교하여 <span class="toggleBlank circle" style="position:relative;top:4px"></span> 안에
+                                        <img src="../common/contents/images/math/inequalIcon_2.png">,
+                                        <img src="../common/contents/images/math/equalIcon.png">,
+                                        <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+                                    </div>
+
+                                    <div class="flex-box a-center j-center" style="height: 300px">
+                                        <div class="item">
+                                            62－16＋26
+                                            <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝72</p>
+                                        </div>
+                                        <div class="toggle circle" data-toggle-obj="1" style="margin: 0 20px;" data-group-index="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <img src="../common/contents/images/math/inequalIcon_2_blue.png">
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            23＋5－20
+                                            <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝8</p>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+                <!-- 3번 한번더 문제 -->
+                <li class="whole pop_page_6" data-popup-page="3-3">
+                    <h2 class="pop-tit">
+                        <ins class="special type4"></ins>
+                        <span></span>
+                    </h2>
+                    <div class="popup_contents" data-quiz="toggle">
+                        <ul class="contentsList">
+                            <li>
+                                <ins class="bullet number">3</ins>
+                                <div>
+                                    <div>
+                                        계산 결과를 비교하여 <span class="toggleBlank circle" style="position:relative;top:4px"></span> 안에
+                                        <img src="../common/contents/images/math/inequalIcon_2.png">,
+                                        <img src="../common/contents/images/math/equalIcon.png">,
+                                        <img src="../common/contents/images/math/inequalIcon.png">를 알맞게 써넣으시오.
+                                    </div>
+
+                                    <div class="flex-box a-center j-center" style="height: 300px">
+                                        <div class="item">
+                                            65÷13×18
+                                            <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝90</p>
+                                        </div>
+                                        <div class="toggle circle" data-toggle-obj="1" style="margin: 0 20px;" data-group-index="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <img src="../common/contents/images/math/inequalIcon_2_blue.png">
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            36×2÷3
+                                            <p class="txt-item" data-toggle-obj="1" data-group-index="1">＝24</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+
+				<!-- 3번 풀이 확인 -->
+				<li class="solve pop_page_7" data-popup-page="3-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+                            <li>
+                                <div class="dot deepGreen"></div>
+                                <div>
+                                    43－17＋5＝26＋5＝31
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dot deepGreen"></div>
+                                <div>
+                                    22＋4－19＝26－19＝7
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt_10">
+                            <span class="icon_arrow"></span>
+                            31
+                            <span class="toggleBlank circle" style="line-height: 29px;vertical-align: middle"><img src="../common/contents/images/math/inequalIcon_2.png"></span>
+                            7
+                        </div>
+
+					</div>
+				</li>
+
+
+				<!-- 4번 쌍둥이 문제 -->
+				<li class="whole pop_page_9" data-popup-page="4-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">4</ins>
+								<div>
+									<p>
+                                        지수의 용돈 기입장입니다. 4월 2일에 남은 돈은 얼마인지 하나의 식으로 나타내 구해 보세요.
+									</p>
+
+                                    <div class="tableContainer green" style="margin-top:40px">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:25%;" span="4">
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <th>날짜</th>
+                                                <th>들어온 돈</th>
+                                                <th>나간 돈</th>
+                                                <th>남은 돈</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="lightGreen">3월 9일</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td>2400원</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="lightGreen">3월 21일</th>
+                                                <td></td>
+                                                <td>2000원</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="lightGreen">4월 2일</th>
+                                                <td>4600원</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="box-flex">
+                                        <div class="colorBox skyBlue check">식</div>
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                2400－2000＋4600＝5000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-flex">
+                                        <div class="colorBox deepPurple check">답</div>
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                5000
+                                            </div>
+                                        </div>원
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 4번 풀이 확인 -->
+				<li class="solve pop_page_10" data-popup-page="4-2">
+					<div class="popup_contents">
+                        2400＋5300－1800＝7700－1800＝5900(원)
+					</div>
+				</li>
+
+
+				<!-- 5번 쌍둥이 문제-->
+				<li class="whole pop_page_12" data-popup-page="5-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">5</ins>
+								<div>
+									<div>
+                                        소민이와 아버지, 어머니는 고추를 각각 60개씩 땄습니다.
+                                        3명이 수확한 고추를 5상자에 똑같이 나누어 담았다면, 한 상자에 든 고추가 모두 몇 개인지 하나의 식으로 나타내 구해 보세요.
+									</div>
+
+                                    <div class="box-flex">
+                                        <div class="colorBox skyBlue check">식</div>
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                60×3÷5＝36
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-flex">
+                                        <div class="colorBox deepPurple check">답</div>
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                36
+                                            </div>
+                                        </div>개
+                                    </div>
+                                    
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 5번 풀이 확인 -->
+				<li class="solve pop_page_13" data-popup-page="5-3">
+					<div class="popup_contents">
+                        50×3÷6＝150÷6＝25(개)
+					</div>
+				</li>
+
+
+				<!-- 6번 쌍둥이 문제(이너탭) -->
+				<li class="whole pop_page_15" data-popup-page="6-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">6</ins>
+								<div>
+									<div style="letter-spacing:-2px">13＋24－19를 이용해서 풀 수 있는 문제를 만들고 해결해 보세요.</div>
+
+                                    <div class="box-flex">
+                                        <div class="colorBox deepPurple check">문제</div>
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1" style="justify-content:flex-start">
+                                                <span class="exam bullet">예</span>
+                                                <p class="textAlignJ" style="letter-spacing:-1px">버스에 승객이 13명 있었습니다. 이번 정류장에서 24명이 더 타고, 19명이 내렸습니다. 버스에 타고 있는 승객은 몇 명인가요?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-flex">
+                                        <div class="colorBox skyBlue check">풀이</div>
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                13＋24－19＝37－19＝18(명)
+                                            </div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(5-1-1)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
+
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+
+
+		}, false);
+	</script>
+</body>
+
+</html>
