@@ -1,0 +1,197 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+    <style>
+
+        .contentsBox .bullet.number {display:inline-block;position:relative}
+        .contentsBox h2 .bullet.number {top:-8px}
+
+        .contentsList .bullet.number {top:2px}
+
+        .toggle.box {vertical-align:top}
+        .toggle .answer {justify-content: flex-start;}
+
+        .title .icon_bogi {height:36px;margin:-8px 0 0 0;border:2px solid #8e795e;border-radius:30px;background-color:#fcf7f4;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center}
+        .title .icon_bogi:after {content:'조건';font-size:21px}
+        .icon_bogi:after {content:'조건'}
+
+        .bogiContainer .toggle {background-color:transparent}
+        .bogiContainer .contentsList {padding-top:40px}
+        .bogiContainer .exam {position:absolute;left:10px;top:5px}
+
+
+        .solve [class^="line-"] {color:#00a0ff;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .solve [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .solve .line-1 {width:52px;top:50px;left:9px;z-index:4}
+        .solve .line-1:before {height:40px}
+        .solve .line-2 {width:50px;top:50px;left:176px;z-index:3}
+        .solve .line-2:before {height:40px}
+        .solve .line-3 {width:82px;top:50px;left:34px;z-index:2}
+        .solve .line-3:before {height:110px}
+        .solve .line-4 {width:124px;top:50px;left:74px}
+        .solve .line-4:before {height:180px}
+
+        .pop_page_1 .contentsList {display:flex}
+        .pop_page_1 .contentsList li {width:50%}
+        .solve .box-p {padding-bottom:80px;position:relative}
+
+        .page_1 .box-flex {display:flex;align-items:center;justify-content:center;margin-top:20px}
+
+    </style>
+</head>
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/boy_2_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/girl_1_sprite.png" alt="스프라이트">
+	</div>
+<div id="wrap">
+	<header>
+		<div class="title" style="letter-spacing:1px">
+            <div class="icon_bogi"></div>을 다르게 하여 새로운 혼합 계산을 만들고 해결해 봅시다.
+		</div>
+		
+	</header>
+    <main>
+        <div class="basicSlider contentsBox" data-slide-container="main">
+            <!--   탭 버튼   -->
+            <ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+                    <div class="bogi_wrap">
+                        <div class="bogiContainer">
+                            <div class="icon_bogi"></div>
+                            <div class="inner">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <span class="bullet exam">예</span>
+                                        <ul class="contentsList">
+                                            <li>
+                                                <div class="dot orange"></div>
+                                                <p style="letter-spacing:-1.5px">1부터 9까지의 자연수 중에서 서로 다른 수 5개를 사용합니다.</p>
+                                            </li>
+                                            <li>
+                                                <div class="dot orange"></div>
+                                                <p>＋, －, ×, ÷를 각각 한 번씩 사용합니다.</p>
+                                            </li>
+                                            <li>
+                                                <div class="dot orange"></div>
+                                                <p>(&nbsp;&nbsp;&nbsp;&nbsp;)를 사용하지 않습니다.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-flex">
+                        <div class="colorBox skyBlue check">식</div>
+                        <div class="toggle" data-toggle-obj="2">
+                            <div class="answer" data-toggle-target="2">
+                                <span class="bullet exam">예</span>
+                                <p>7×8＋5－4÷2＝59</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </main>
+	<section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+            <li class="solve pop_page_1" data-popup-page="1">
+                <div class="popup_contents">
+                    <p style="letter-spacing: -.5px">7×8＋5－4÷2는 곱셈, 나눗셈, 덧셈, 뺄셈 순서로 계산합니다.</p>
+                    <div class="box-p mt_10">
+                        7×8＋5－4÷2＝56＋5－4÷2
+                        <p style="padding-left:240px">＝56＋5－2</p>
+                        <p style="padding-left:240px">＝61－2</p>
+                        <p style="padding-left:240px">＝59</p>
+                        <span class="line-1">①</span>
+                        <span class="line-2">②</span>
+                        <span class="line-3">③</span>
+                        <span class="line-4">④</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+	</section>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+    <script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
+<script type="text/javascript">
+    	document.addEventListener('DOMContentLoaded', function () {
+            $prite.add({
+                target: $ts.getEl('#aniBox_1'),
+                spriteId: 'sprite1',
+                spriteList: [
+                    {
+                        name: 'girl_2',
+                        // circle: 'green',
+                        top: 70,
+                        left: 330,
+                        width: 340,
+                        height: 421,
+                        thumbNail: '../common/contents/images/character/girl_2.png',
+                        spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+                        sound: './media/audios/suh_p_0501_01_0008_202_1.mp3',
+                        speech:'right',
+                        textBubble: {
+                            text: '괄호 안을 가장 먼저 계산하고 곱셈이나 나눗셈을 계산한 후 덧셈이나 뺄셈을 계산해야 해.<br>바르게 계산했어.',
+                            class: 'balloon left purple',
+                            top: 190,
+                            left: 410,
+                            width: 480,
+                            textAlign: 'center',
+                            wordBreak: 'keep-all'
+                        },
+                        sheetWidth: 102000,
+                        sheetHeight: 421,
+                        endSheet: 0,
+                        delay: 40,
+                        callbacks: {
+                            start: function () {
+                            	$ts.getEl('.characterImg')[0].style.left = '-200px';
+                            }, // 시작시 콜백
+                            end: function () {
+                            	$ts.getEl('.characterImg')[0].style.left = 0;
+                            } // 끝날시 콜백
+                        }
+                    }
+                ]
+            });
+        }, false);
+</script>
+</body>
+</html>

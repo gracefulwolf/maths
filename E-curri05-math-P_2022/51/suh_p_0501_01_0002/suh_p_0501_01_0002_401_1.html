@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style>
+		.gate_container .downloadBtn{right:20px; left:auto;}
+		.downloadBtn{left:0;}
+		.downloadBtn::before{content:attr(data-name);}
+		.contentsList .icon_arrow{ margin:0 10px;}
+		.lineBox .bullet.number,
+		 h2 .bullet.number{margin-top:22px; margin-right: 20px;}
+
+        .img-box1 {background:url("./images/suh_p_0501_01_0002_401_1/suh_p_0501_01_0002_401_1_1.png") 50% 50% no-repeat;background-size:contain;height:260px;position:relative;margin-top:40px}
+        .img-box1 p {text-align:center}
+        .img-box1 p.txt-item1 {position:relative;top:-40px}
+        .img-box1 p.txt-item2 {margin-top:15px}
+        .img-box1 p.txt-item3 {margin-top:40px}
+
+        .page_2 .lineBox .icon {position:absolute;width:48px;height:48px;left:50%;top:50%;margin:-24px 0 0 -24px}
+
+        .page_3 .lineBox {width:400px;margin:100px auto 0}
+
+        .page_4 .contentsList {margin-left:30px}
+        .page_4 .contentsList li {margin-top:50px}
+        .page_4 .contentsList .dot.orange {position:relative;top:4px}
+
+        .page_5 .lineBox {width:300px;margin:100px auto 0;text-align:center;position:relative}
+        .page_5 .lineBox .toggle {position:absolute;left:0;top:0;right:0;bottom:0}
+        .page_5 .toggle.hand:after {margin-left:10px;margin-top:60px}
+        /*.page_5 .toggle.hand .icon_o_title {position:absolute;top:30px;left:108px}*/
+        .page_5 .toggle.hand .line {position:absolute;top:21px;left:42px;width:135px;height:50px;border-radius:25px;border:5px solid #00a0ff}
+
+        .page_6 .box-flex {display:flex;align-items:center;width:450px;margin:82px auto 0}
+        .page_6 .box-flex ~ .box-flex {margin-top:20px}
+
+        .page_7 .box-flex {display:flex;margin-top:60px;justify-content:space-around}
+        .page_7 .box-flex ~ .box-flex .item {padding-left:20px}
+
+        .page_8 .box-item {margin-top:80px;text-align:center;position:relative}
+        .page_8 [class^="line-"] {color:#000;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .page_8 [class^="line-"]:before {content:'';border:2px solid #000;display:block;border-top:none;width:100%}
+        .page_8 .line-1 {width:86px;top:60px;left:350px;z-index:3}
+        .page_8 .line-1:before {height:60px}
+        .page_8 .line-1 .toggle {position:relative;left:-8px}
+        .page_8 .line-2 {width:130px;top:60px;left:392px;z-index:2}
+        .page_8 .line-2:before {height:140px}
+        .page_8 .line-3 {width:122px;top:70px;left:505px;z-index:3;background-color:transparent}
+        .page_8 .line-3:before {height:160px;border-left:none}
+        .page_8 .line-3:after {content:'';position:absolute;width:10px;height:10px;border-top:2px solid #000;border-left:2px solid #000;transform:rotate(45deg);top:-1px;right:-7px}
+
+        .page_9 .box-flex {display:flex;align-items:center;width:450px;margin:82px auto 0}
+        .page_9 .box-flex ~ .box-flex {margin-top:20px}
+
+        .page_10 .box-flex {display:flex;align-items:center;width:450px;margin:30px auto 0}
+        .page_10 .box-flex ~ .box-flex {margin-top:20px}
+
+        .solve [class^="line-"] {color:#000;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .solve [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .solve .line-1 {width:61px;top:50px;left:18px;z-index:2}
+        .solve .line-1:before {height:60px}
+        .solve .line-2 {width:102px;top:50px;left:46px}
+        .solve .line-2:before {height:140px}
+
+        .solve.pop_page_2 .line-2 {width:89px}
+        .pop_page_4 .contentsList,
+        .pop_page_7 .contentsList {display:flex}
+        .pop_page_4 .contentsList li,
+        .pop_page_7 .contentsList li {width:50%}
+        .solve.pop_page_4 .line-1 {width:76px}
+        .solve.pop_page_4 .line-2 {left:56px;width:111px}
+
+        .solve.pop_page_7 .innerTab_1 .line-1 {width:63px}
+        .solve.pop_page_7 .innerTab_1 .line-2 {left:48px;width:100px}
+        .solve.pop_page_7 .innerTab_2 .line-2 {left:48px;width:88px}
+
+        .solve .box-p {padding-bottom:130px;position:relative}
+
+        .buttonContainer {z-index:2}
+	</style>
+</head>
+<body>
+
+	<div id="wrap" class="checkContainer math" data-open-gate="">
+		<div class="prev-img">
+			<img src="../common/contents/images/quiz/alert_correct.png" alt="">
+			<img src="../common/contents/images/quiz/alert_incorrect.png" alt="">
+		</div>
+
+		<div class="gate_container">
+			<div class="gate_title_container">
+				<div class="gate_title_title">확인 문제</div>
+				<div class="gate_btn" data-open-btn="" data-hover="">시작</div>
+
+				<a href="./data/5~6학년군_수학(박)5-1_확인문제_1_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+			</div>
+			<!--추가-->
+			<input type="hidden" class="reviewBtnHref" value="./data/5~6학년군_수학(박)5-1_확인문제_1_02차시.hwp">
+			<input type="hidden" class="downBtnHref" value="./data/5~6학년군_수학(박)5-1_확인문제_1_02차시.hwp">
+		</div>
+
+
+		<header>
+			<div class="checkTitle">
+				<span class="title"><span class="orange">확인</span> 문제</span>
+			</div>
+
+			<span class="cl_sticker">
+				<img class="on" src="../common/contents/images/icon/sticker.png" alt="기본 이미지">
+				<img class="last" src="../common/contents/images/icon/sticker_hover.png" alt="클릭시 이미지">
+			</span>
+		</header>
+
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<ul class="basicSlider_tabs main-tab" data-tabs="">
+					<li data-hover="" data-page-num="">문제 1</li>
+					<li data-hover="" data-page-num="">문제 2</li>
+					<li data-hover="" data-page-num="">문제 3</li>
+					<li data-hover="" data-page-num="">문제 4</li>
+					<li data-hover="" data-page-num="">문제 5</li>
+					<li data-hover="" data-page-num="">문제 6</li>
+					<li data-hover="" data-page-num="">문제 7</li>
+					<li data-hover="" data-page-num="">문제 8</li>
+					<li data-hover="" data-page-num="">문제 9</li>
+					<li data-hover="" data-page-num="">문제 10</li>
+				</ul>
+
+				<ul class="basicSlider_slides main-tab" data-slides="">
+
+					<!-- 1번 -->
+					<li class="page_1" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+							<span>
+								아래와 같은 마법 상자에 어떤 수를 넣으면 새로운 수가 나옵니다. 이 상자에 40을 넣으면 얼마가 나올지 구하시오.
+							</span>
+						</h2>
+
+						<section>
+                            <div class="img-box1">
+                                <p class="txt-item1">40</p>
+                                <p class="txt-item2">÷5</p>
+                                <p class="txt-item3">×12</p>
+                            </div>
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        96
+                                    </div>
+                                </div>
+                            </div>
+
+						</section>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 2번 -->
+					<li class="page_2" data-page-num="" data-slide-container="">
+
+						<h2>
+							<ins class="dot"></ins>
+							<span>
+								계산식 42÷6×3을 이용하는 문제를 만들고 답을 구하려고 합니다. 물음에 답하시오.
+							</span>
+						</h2>
+
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="ox" data-option="hide, answerSound" data-quiz-name="ox3">
+                                <ul class="contentsList">
+                                   <li>
+                                       <div class="dot orange"></div>
+                                       <div>알맞은 말이나 수에 <span class="icon_o_title"></span>표 하시오. </div>
+                                   </li>
+                                </ul>
+                                <div class="lineBox green mt_20">
+                                    지호네 반 학생 (
+                                    <span class="flex-item" data-ox-obj="1" data-answer>
+                                        42
+                                        <span class="icon icon_o" data-ox-target="1"></span>
+                                    </span>,
+                                    <span class="flex-item" data-ox-obj="2">
+                                        6
+                                        <span class="icon icon_x" data-ox-target="2"></span>
+                                    </span> )명을 (
+                                    <span class="flex-item" data-ox-obj="3" data-answer>
+                                        6
+                                        <span class="icon icon_o" data-ox-target="3"></span>
+                                    </span>, <span class="flex-item" data-ox-obj="4">
+                                        3
+                                        <span class="icon icon_x" data-ox-target="4"></span>
+                                    </span> )명씩 모둠으로
+                                    나누어 놀이를 하려고 합니다. 각 (
+                                    <span class="flex-item" data-ox-obj="5">
+                                        학생
+                                        <span class="icon icon_x" data-ox-target="5"></span>
+                                    </span>, <span class="flex-item" data-ox-obj="6" data-answer>
+                                        모둠
+                                        <span class="icon icon_o" data-ox-target="6"></span>
+                                    </span> )에게 색종이를 3장씩 나누어 주려면 필요한 색종이는 몇 장일까요?
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="solveCheckBtn" data-popup-btn="2" data-hover=""></button>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <ul class="contentsList">
+                                    <li>
+                                        <div class="dot orange"></div>
+                                        <div>앞에서 만든 문제의 답을 구해 보시오.</div>
+                                    </li>
+                                </ul>
+                                <div class="textAlignC mt_100">
+                                    <div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            21
+                                        </div>
+                                    </div>장
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+
+					</li>
+
+					<!-- 3번 -->
+					<li class="page_3" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+							<span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.</span>
+						</h2>
+
+						<section>
+
+							<div class="lineBox purple">
+                                98－<div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    86
+                                </div>
+                            </div>＋42＝54
+                            </div>
+
+						</section>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="3" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+                            <span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.</span>
+						</h2>
+
+						<section>
+
+							<ul class="contentsList">
+                                <li>
+                                    <div class="dot orange"></div>
+                                    <div>
+                                        23＋19－16＝<div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                42
+                                            </div>
+                                        </div>－16＝<div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                26
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dot orange"></div>
+                                    <div>
+                                        71－28＋45＝<div class="toggle" data-toggle-obj="3">
+                                            <div class="answer" data-toggle-target="3">
+                                                43
+                                            </div>
+                                        </div>＋45＝<div class="toggle" data-toggle-obj="4">
+                                            <div class="answer" data-toggle-target="4">
+                                                88
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+
+						</section>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="4" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+							<span>가장 먼저 계산해야 하는 부분에  <span class="icon_o_title"></span>표 하시오.</span>
+						</h2>
+
+						<section>
+                            <div class="lineBox purple">
+                                45÷9×2
+                                <div class="toggle hand" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <!--<span class="icon_o_title"></span>-->
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                            </div>
+						</section>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 6번 -->
+					<li class="page_6" data-page-num="" data-quiz="toggle">
+
+                        <h2 data-addline-container="">
+                            <ins class="dot"></ins>
+                            <span>
+								<span data-line-appear="2" class="givenLine">
+									남학생이 24명, 여학생이 17명 있습니다. 그중에서 모자를 쓰지 않은 학생은 29명입니다.
+								</span>
+								<span data-line-appear="1">모자를 쓴 학생은 몇 명인지 하나의 식으로 나타내 구해 보시오.</span>
+								<span class="addLineController">
+								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+						  </span>
+                        </h2>
+
+                        <div class="box-flex">
+                            <div class="colorBox skyBlue check">식</div>
+                            <div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    24＋17－29＝12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-flex">
+                            <div class="colorBox deepPurple check">답</div>
+                            <div class="toggle mr_10" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">
+                                    12
+                                </div>
+                            </div>명
+                        </div>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="6" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+
+					</li>
+
+					<!-- 7번 -->
+					<li class="page_7" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+							<span>계산해 보시오.</span>
+						</h2>
+
+						<section>
+							<div class="box-flex">
+                                <div class="item">
+                                    47－4＋12＝<div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            55
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    56＋5－13＝<div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            48
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-flex">
+                                <div class="item">
+                                    36÷4×3＝<div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            27
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    16×7÷8＝<div class="toggle" data-toggle-obj="4">
+                                        <div class="answer" data-toggle-target="4">
+                                            14
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+						</section>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="7" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 8번 -->
+					<li class="page_8" data-page-num="" data-quiz="toggle">
+
+						<h2>
+							<ins class="dot"></ins>
+                            <span><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으시오.</span>
+						</h2>
+
+						<section>
+							<div class="box-item">
+                                45＋66－37＝<div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        74
+                                    </div>
+                                </div>
+                                <div class="line-1">
+                                    <div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            111
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line-2">
+                                    <div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            74
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line-3"></div>
+                            </div>
+
+						</section>
+
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+
+					</li>
+
+					<!-- 9번 -->
+					<li class="page_9" data-quiz="toggle">
+
+                        <h2 data-addline-container="">
+                            <ins class="dot"></ins>
+                            <span>
+								<span data-line-appear="2" class="givenLine" style="letter-spacing:-1px">
+									민수는 위인전 43권, 과학책 5권을 가지고 있습니다. 그중에서 4권을 친구에게 빌려줬습니다.
+								</span>
+								<span data-line-appear="1">민수에게 남은 책은 몇 권인지 하나의 식으로 나타내 구해 보시오.</span>
+								<span class="addLineController">
+								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+						  </span>
+                        </h2>
+
+                        <div class="box-flex">
+                            <div class="colorBox skyBlue check">식</div>
+                            <div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    43＋5－4＝44
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-flex">
+                            <div class="colorBox deepPurple check">답</div>
+                            <div class="toggle mr_10" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">
+                                    44
+                                </div>
+                            </div>권
+                        </div>
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="9" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+					<!-- 10번 -->
+					<li class="page_10" data-page-num="" data-quiz="toggle">
+
+                        <h2 data-addline-container="">
+                            <ins class="dot"></ins>
+                            <span>
+								<span data-line-appear="2" class="givenLine" style="letter-spacing:-1px">
+									정호네 모둠은 나눔 장터에서 쓸 쿠폰을 만들려고 종이 40장을 5명이 똑같이 나누어 가졌습니다. 종이 한 장으로 쿠폰 8장을 만들 수 있다면
+								</span>
+								<span data-line-appear="1">한 사람이 만들 수 있는 쿠폰은 몇 장인지 하나의 식으로 나타내 구해 보시오.</span>
+								<span class="addLineController">
+								  <span class="controlBtn getLineBtn" data-line-index="1">구해야 할 것</span>
+								  <span class="controlBtn givenLineBtn" data-line-index="2">주어진 것</span>
+								</span>
+						  </span>
+                        </h2>
+
+                        <div class="box-flex">
+                            <div class="colorBox skyBlue check">식</div>
+                            <div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    40÷5×8＝64
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-flex">
+                            <div class="colorBox deepPurple check">답</div>
+                            <div class="toggle mr_10" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">
+                                    64
+                                </div>
+                            </div>장
+                        </div>
+
+
+						<div class="buttonContainer">
+							<button class="solveCheckBtn" data-popup-btn="10" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+
+		<!-- 팝업 -->
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+
+				<!-- 1번 풀이확인 -->
+				<li class="solve pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+						<div class="box-p">
+                            40÷5×12＝8×12
+                            <p style="padding-left:170px">＝96</p>
+                            <span class="line-1">①</span>
+                            <span class="line-2">②</span>
+                        </div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이확인 -->
+				<li class="solve pop_page_2" data-popup-page="2">
+					<div class="popup_contents">
+                        42를 6으로 나눈 후 3을 곱하는 문제를 만듭니다.
+					</div>
+				</li>
+
+                <li class="solve pop_page_2" data-popup-page="2-2">
+                    <div class="popup_contents">
+                        <div class="box-p">
+                            42÷6×3＝7×3
+                            <p style="padding-left:150px">＝21</p>
+                            <span class="line-1">①</span>
+                            <span class="line-2">②</span>
+                        </div>
+                    </div>
+                </li>
+
+				<!-- 3번 풀이확인 -->
+				<li class="solve pop_page_3" data-popup-page="3">
+					<div class="popup_contents">
+                        <p>98－<span class="blankBox w50"></span>＋42＝54</p>
+                        <p class="mt_10">
+                            <span class="icon_arrow"></span>
+                            98－<span class="blankBox w50"></span>＝12
+                        </p>
+                        <p class="mt_10">
+                            <span class="icon_arrow"></span>
+                            <span class="blankBox w50"></span>＝86
+                        </p>
+					</div>
+				</li>
+
+				<!-- 4번 풀이확인 -->
+				<li class="solve pop_page_4" data-popup-page="4">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="dot orange"></ins>
+								<div>
+                                    <div class="box-p">
+                                        23＋19－16＝42－16
+                                        <p style="padding-left:190px">＝26</p>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+								</div>
+							</li>
+							<li>
+								<ins class="dot orange"></ins>
+								<div>
+                                    <div class="box-p">
+                                        71－28＋45＝43＋45
+                                        <p style="padding-left:190px">＝88</p>
+                                        <span class="line-1">①</span>
+                                        <span class="line-2">②</span>
+                                    </div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+
+				<!-- 5번 풀이확인 -->
+				<li class="solve pop_page_5" data-popup-page="5">
+					<div class="popup_contents">
+                        <p style="letter-spacing:-1.5px">곱셈과 나눗셈이 섞여 있는 식은 앞에서부터 차례대로 계산합니다.</p>
+					</div>
+				</li>
+
+
+				<!-- 6번 풀이확인 -->
+				<li class="solve pop_page_6" data-popup-page="6">
+					<div class="popup_contents">
+                        (모자를 쓴 학생 수)<br>
+                        ＝(전체 학생 수)－(모자를 쓰지 않은 학생 수)<br>
+                        ＝(남학생 수)＋(여학생 수)－(모자를 쓰지 않은 학생 수)<br>
+                        ＝24＋17－29＝41－29＝12(명)
+					</div>
+				</li>
+
+				<!-- 7번 풀이확인 -->
+				<li class="solve pop_page_7" data-popup-page="7">
+					<div class="popup_contents" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1">
+                                <ul class="contentsList">
+                                    <li>
+                                        <ins class="dot orange"></ins>
+                                        <div>
+                                            <div class="box-p">
+                                                47－4＋12＝43＋12
+                                                <p style="padding-left:170px">＝55</p>
+                                                <span class="line-1">①</span>
+                                                <span class="line-2">②</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <ins class="dot orange"></ins>
+                                        <div>
+                                            <div class="box-p">
+                                                56＋5－13＝61－13
+                                                <p style="padding-left:170px">＝48</p>
+                                                <span class="line-1">①</span>
+                                                <span class="line-2">②</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="innerTab_2">
+                                <ul class="contentsList">
+                                    <li>
+                                        <ins class="dot orange"></ins>
+                                        <div>
+                                            <div class="box-p">
+                                                36÷4×3＝9×3
+                                                <p style="padding-left:150px">＝27</p>
+                                                <span class="line-1">①</span>
+                                                <span class="line-2">②</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <ins class="dot orange"></ins>
+                                        <div>
+                                            <div class="box-p">
+                                                16×7÷8＝112÷8
+                                                <p style="padding-left:150px">＝14</p>
+                                                <span class="line-1">①</span>
+                                                <span class="line-2">②</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+					</div>
+				</li>
+
+
+				<!-- 8번 풀이확인 -->
+				<li class="solve pop_page_8" data-popup-page="8">
+					<div class="popup_contents">
+
+					</div>
+				</li>
+
+
+				<!-- 9번 풀이확인 -->
+				<li class="solve pop_page_9" data-popup-page="9">
+					<div class="popup_contents" style="letter-spacing:-1.5px">
+                        (민수에게 남은 책의 수)<br>
+                        ＝(민수가 가지고 있던 책의 수)－(친구에게 빌려준 책의 수)<br>
+                        ＝(위인전 책의 개수)＋(과학책 개수)－(친구에게 빌려준 책의 수)<br>
+                        ＝43＋5－4＝48－4＝44(권)
+					</div>
+				</li>
+
+
+				<!-- 10번 풀이확인 -->
+				<li class="solve pop_page_10" data-popup-page="10">
+					<div class="popup_contents">
+                        <p style="letter-spacing:-1.8px">종이 40장을 5명이 똑같이 나누어 가진 후 종이 한 장당 쿠폰 8장을 만들 수 있으므로 40÷5×8＝8×8＝64(장)입니다.</p>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+	</div>
+
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/cmn_openGate.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+    <script type="text/javascript">
+		// ox quiz 정답 콜백
+		window.$callBack.oxCorrect=function (obj) {
+
+		}
+		// ox quiz 오답 콜백
+		window.$callBack.oxIncorrect=function (obj) {
+
+		}
+		// ox quiz 정답 확인 클릭시 콜백
+		window.$callBack.viewAnswer=function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap on');
+			// }
+		};
+		// ox quiz 정답 가리기 클릭시 콜백
+		window.$callBack.hideAnswer=function (obj) {
+			// if(obj.QUIZ.name=="ox1"){
+			//     $ts.getEl('.multipleChoiceList')[0].setAttribute('class', 'multipleChoiceList wrap');
+			// }
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			$(".controlBtn").click(function(){
+				$efSound.click();
+			})
+
+
+		}, false);
+
+
+		//0615 확인문제 jQuery 부분
+		$(document).ready(function(){
+			$('.cl_mainContainer .quizList li').on('click', function(){
+				$('.cl_mainContainer .quizList li').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			let solveArr = [1,2,3,4,5,6,7,8,9,10];
+			for(let i = 0; i < 500; i++) {
+				let randomNum1 = Math.floor(Math.random() * 10);
+				let randomNum2 = Math.floor(Math.random() * 10);
+
+				let temp = solveArr[randomNum1]
+				solveArr[randomNum1] = solveArr[randomNum2]
+				solveArr[randomNum2] = temp;
+
+			}
+
+			$('.basicSlider_tabs.main-tab > li').each(function(index){
+				$(this).attr('data-page-num', solveArr[index]);
+			})
+
+
+			function countNum ( num ) {
+				$('.basicSlider_tabs.main-tab > li').css('display', 'none');
+				for(let k = 0; k < num; k++) {
+					$('.basicSlider_tabs.main-tab > li').eq(k).css('display', 'block');
+				}
+			}
+			//초기 첫번째 3문제 클릭시 3개 sorting
+			//countNum ( 3 )
+
+			//디폴트로 10문제 선택
+			countNum ( 10 );
+
+			$('.cl_mainContainer .quizList li').on('click',function(){
+				var num = $(this).attr('data-num');
+				countNum ( num )
+			});
+
+			//각 랜덤에 부합하는 contents 내용
+			$('.basicSlider_tabs.main-tab > li').on('click', function(){
+				$('.basicSlider_slides.main-tab > li').css('display', 'none');
+				let pageNum = $(this).attr('data-page-num');
+
+				$('.basicSlider_slides.main-tab > .page_' + pageNum  ).css('display', 'block')
+			})
+
+			//시작버튼 클릭 시
+			$(".gate_btn").on("click", function(){
+				$('.basicSlider_slides.main-tab > li').css('display', 'none');
+				$('.basicSlider_slides.main-tab > .page_' + solveArr[0]  ).css('display', 'block')
+			});
+
+
+			//모달창 클릭시 텍스트 랜덤
+			function randomChangeTxt () {
+				let randomTxtNum = Math.floor(Math.random()* (3) ) + 1;
+
+				$('.cl_modalBg .mathTxt span').css('display', 'none');
+				$('.cl_modalBg .mathTxt span[data-math-txt="'+ randomTxtNum +'"]').css('display', 'block');
+			}
+
+
+			let clapSound = new Audio("../common/contents/media/clap.mp3");
+			$('.cl_sticker img').on('click', function(){
+				if($('.cl_sticker img').hasClass('on')) {
+					$('.cl_modalBg').addClass('show');
+					playPraiseAni(3);
+					randomChangeTxt ();
+
+					clapSound.play();
+					clapSound.currentTime = 0;
+				}
+			})
+
+			$('.cl_modalBg .modalTop .closeBtn').on('click', function(){
+
+				$('.cl_modalBg').removeClass('show');
+				clapSound.pause();
+			});
+
+
+
+
+			//곰돌이 애니메이션
+			var praiseAniInterval
+			function playPraiseAni(_repeat){
+				var totalCnt = 0;
+				var aniCnt = 0;
+				var nextPosX;
+				var nextPosY = 0;
+
+				var repeatCnt = 1;
+
+				clearInterval(praiseAniInterval);
+				praiseAniInterval = setInterval(function(){
+
+					if(totalCnt == 20){
+						nextPosY = 260;
+						nextPosX = 0;
+						aniCnt = 0;
+					}
+
+					nextPosX = aniCnt * 300;
+
+					$(".praiseAni").css("background-position-x", -nextPosX+"px");
+					$(".praiseAni").css("background-position-y", -nextPosY+"px");
+
+					aniCnt++;
+					totalCnt++;
+
+
+					if(totalCnt >= 29){
+						if(repeatCnt < _repeat) {
+							repeatCnt++;
+
+							totalCnt = 0;
+							aniCnt = 0;
+							nextPosY = 0;
+							nextPosX = 0;
+						}else {
+							clearInterval(praiseAniInterval);
+						}
+
+					}
+
+				}, 40);
+			}
+
+
+
+		});
+
+	</script>
+
+</body>
+</html>
