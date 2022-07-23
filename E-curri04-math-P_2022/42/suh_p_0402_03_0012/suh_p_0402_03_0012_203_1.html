@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+    <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+	<style type="text/css">
+        .img-box {text-align:center;height:90%;margin:45px -56px 0}
+        .img-box img {height:82%;width:100%;object-fit:contain;position:relative;top:99px}
+        .balloon:after {top:45%}
+	</style>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<header>
+			<div class="title">
+                나만의 자전거 여행 경로를 정하고, 이를 소개해 봅시다.
+			</div>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1"  data-quiz="toggle">
+                        <h2><ins class="dot"></ins><span>
+							어떤 것을 기준으로 자전거 여행 경로를 정하면 좋을까요?
+						</span></h2>
+                        <div class="toggle box" data-toggle-obj="1">
+                            <div class="answer" data-toggle-target="1">
+                                <span class="bullet exam">예</span>
+                                <div class="textAlignJ" style="letter-spacing:-1.5px">
+                                    저는 운동이 많이 될 수 있게 거리는 짧아도 오래 걸리는 경로로 정할 것입니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggle box mt_10" data-toggle-obj="2">
+                            <div class="answer" data-toggle-target="2" style="justify-content:flex-start">
+                                <span class="bullet exam">예</span>
+                                <div class="textAlignJ">
+                                    저는 최대한 긴 여행 경로로 정할 것입니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggle box mt_10" data-toggle-obj="3">
+                            <div class="answer" data-toggle-target="3" style="justify-content:flex-start">
+                                <span class="bullet exam">예</span>
+                                <div class="textAlignJ">
+                                    저는 2시간 정도 걸리는 경로로 정할 것입니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aniBox_3"></div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+					</li>
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<li class="whole pop_page_1" data-popup-page="1">
+					<div class="popup_contents">
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+    <script type="text/javascript" src="../common/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../common/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../common/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../common/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../common/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../common/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="./js/contents.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+            $prite.add({
+                target: $ts.getEl('#aniBox_3'),
+                spriteId: 'sprite3',
+                spriteList: [
+                    {
+                        name: 'boy_1',
+                        circle: 'sky',
+                        top: 350,
+                        left: 440,
+                        width: 340,
+                        height: 421,
+                        thumbNail: '../common/contents/images/character/boy_1.png',
+                        spriteSheet: '../common/contents/images/character/boy_1_sprite.png',
+                        sound: './media/audios/suh_p_0402_03_0012_203_1.mp3',
+                        speech:'right',
+                        textBubble: {
+                            text: '어떤 경로로 정했는지 <br>친구들과 이야기해 봐.',
+                            class: 'balloon left sky',
+                            top: 360,
+                            left: 350,
+                            width: 400,
+                            textAlign: 'center',
+                            wordBreak: 'keep-all'
+                        },
+                        sheetWidth: 102000,
+                        sheetHeight: 421,
+                        endSheet: 0,
+                        delay: 40,
+                        callbacks: {
+                            start: function () {
+                                $ts.getEl('.page_1 .characterImg')[0].style.left = '-300px';
+                            }, // 시작시 콜백
+                            end: function () {
+                                $ts.getEl('.page_1 .characterImg')[0].style.left = 0;
+                            } // 끝날시 콜백
+                        }
+
+                    }
+
+                ]
+            });
+		}, false);
+
+	</script>
+
+</body>
+
+</html>
