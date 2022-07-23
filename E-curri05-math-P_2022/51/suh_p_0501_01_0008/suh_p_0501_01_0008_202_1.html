@@ -1,0 +1,450 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+    <style>
+        #wrap header .title {margin:12px 0}
+        .contentsBox {padding-top:20px}
+
+        .contentsBox .bullet.number {display:inline-block;position:relative}
+        .contentsBox h2 .bullet.number {top:-8px}
+
+        .contentsList .bullet.number {top:2px}
+
+        .toggle.box {vertical-align:top}
+        .toggle .answer {justify-content: flex-start;}
+
+        .title .icon_bogi {height:36px;margin:-8px 0 0 0;border:2px solid #8e795e;border-radius:30px;background-color:#fcf7f4;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center}
+        .title .icon_bogi:after {content:'조건';font-size:21px}
+        .icon_bogi:after {content:'조건'}
+
+        .bogi_wrap {margin-bottom:5px}
+        .bogiContainer .inner {padding:30px 20px 10px}
+        .bogiContainer .contentsList>li:not(:last-of-type) {margin-bottom:0}
+
+        .tableContainer {padding-left:40px;position:relative}
+        .tableContainer .toggle {background-color:transparent;width:100%}
+        .tableContainer .toggle .answer {padding:0;justify-content:center;width:100%}
+        .tableContainer table td,
+        .tableContainer table th {padding:0}
+        .tableContainer .sub-answer {position:absolute;left:-10px;top:0;opacity:0}
+        .complete .tableContainer .sub-answer {opacity:1}
+        .dapCheckBtn {z-index:2}
+
+        .page_2 .toggle {display:block;margin-left:auto;margin-right:auto;width:340px}
+        .page_3 .toggle {display:block;margin-left:auto;margin-right:auto;width:420px}
+
+        .page_4 .balloon:after {top:60%}
+
+        .solve [class^="line-"] {color:#00a0ff;position:absolute;text-align:center;background-color:#fff;padding-bottom:8px}
+        .solve [class^="line-"]:before {content:'';border:2px solid #00a0ff;display:block;border-top:none;width:100%}
+        .solve .line-1 {width:48px;top:50px;left:23px;z-index:3}
+        .solve .line-1:before {height:40px}
+        .solve .line-2 {width:96px;top:50px;left:46px;z-index:2}
+        .solve .line-2:before {height:110px}
+        .solve .line-3 {width:105px;top:50px;left:92px}
+        .solve .line-3:before {height:180px}
+
+        .solve .num2 .line-1 {left:79px}
+        .solve .num2 .line-2 {width:92px;left:9px}
+        .solve .num2 .line-3 {width:144px;left:54px}
+
+        .solve .num3 .line-1 {left:79px}
+        .solve .num3 .line-2 {width:95px;left:103px}
+        .solve .num3 .line-3 {width:140px;left:8px}
+
+        .pop_page_1 .contentsList {display:flex}
+        .pop_page_1 .contentsList li {width:50%}
+        .solve .box-p {padding-bottom:130px;position:relative}
+
+    </style>
+</head>
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/boy_2_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/girl_1_sprite.png" alt="스프라이트">
+	</div>
+<div id="wrap">
+	<header>
+		<div class="title" style="letter-spacing:1px">
+            <div class="icon_bogi"></div>에 맞는 혼합 계산을 만들고 짝과 바꾸어 해결해 봅시다.
+		</div>
+		
+	</header>
+    <main>
+        <div class="basicSlider contentsBox right" data-slide-container="main">
+            <!--   탭 버튼   -->
+            <ul class="basicSlider_tabs" data-tabs="">
+                <li data-hover="">문제</li>
+                <li data-hover="">계획</li>
+                <li data-hover="">실행</li>
+                <li data-hover="">반성</li>
+            </ul>
+            <ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-slide-container="">
+                    <div class="bogi_wrap">
+                        <div class="bogiContainer">
+                            <div class="icon_bogi"></div>
+                            <div class="inner">
+                                <ul class="contentsList">
+                                    <li>
+                                        <ins class="bullet number orange">ㄱ</ins>
+                                        <p>1부터 9까지의 자연수 중에서 서로 다른 수 4개를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄴ</ins>
+                                        <p>＋, －, ×, ÷ 중 세 가지 기호를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄷ</ins>
+                                        <p>(&nbsp;&nbsp;&nbsp;&nbsp;)를 한 번 사용합니다.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="basicSlider_slides" data-slides="">
+                        <li class="innerTab_1" data-quiz="toggle">
+                            <ul class="contentsList">
+                                <li>
+                                    <ins class="bullet circleDot"></ins>
+                                    <div>
+                                        <p class="mb_5">
+                                            구하려는 것은 무엇인가요?
+                                        </p>
+                                        <div class="toggle box" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <p style="letter-spacing:-1.8px">조건에 맞게 자연수의 혼합 계산을 만들고 해결하려고 합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="dapCheckBtn" data-answer-btn="1"></button>
+                        </li>
+                        <li class="innerTab_2" data-quiz="toggle">
+                            <ul class="contentsList">
+                                <li>
+                                    <ins class="bullet circleDot"></ins>
+                                    <div>
+                                        <p class="mb_5">
+                                            주어진 조건은 무엇인가요?
+                                        </p>
+                                        <div class="toggle box" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <p style="letter-spacing:-2px">1부터 9까지의 자연수 중에서 서로 다른 수 4개를 사용합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="toggle box mt_10" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                <p>＋, －, ×, ÷ 중 세 가지 기호를 사용합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="toggle box mt_10" data-toggle-obj="3">
+                                            <div class="answer" data-toggle-target="3">
+                                                <p>(&nbsp;&nbsp;&nbsp;&nbsp;)를 한 번 사용합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="dapCheckBtn" data-answer-btn="1"></button>
+                        </li>
+                        <li class="innerTab_3" data-quiz="toggle">
+                            <ul class="contentsList">
+                                <li>
+                                    <ins class="bullet circleDot"></ins>
+                                    <div>
+                                        <p class="mb_5">
+                                            어떤 방법으로 문제를 해결하면 좋을까요?
+                                        </p>
+                                        <div class="toggle box" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <span class="bullet exam">예</span>
+                                                <p style="letter-spacing:-2px">인증 도장 3개 찍을 수 있는 경로를 정하여 전체 거리와 걸리는 시간을 구해 보고, 조건에 맞는지 확인해 보면 됩니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="dapCheckBtn" data-answer-btn="1"></button>
+                        </li>
+                    </ul>
+                    <div class="moveButtonContainer" data-slide-btn-container="">
+                        <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                        <ul class="basicSlider_circle_tabs" data-tabs="">
+                            <li data-hover=""></li>
+                            <li data-hover=""></li>
+                        </ul>
+                        <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                    </div>
+                </li>
+
+				<li class="page_2" data-quiz="toggle">
+                    <div class="bogi_wrap">
+                        <div class="bogiContainer">
+                            <div class="icon_bogi"></div>
+                            <div class="inner">
+                                <ul class="contentsList">
+                                    <li>
+                                        <ins class="bullet number orange">ㄱ</ins>
+                                        <p>1부터 9까지의 자연수 중에서 서로 다른 수 4개를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄴ</ins>
+                                        <p>＋, －, ×, ÷ 중 세 가지 기호를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄷ</ins>
+                                        <p>(&nbsp;&nbsp;&nbsp;&nbsp;)를 한 번 사용합니다.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="contentsList">
+                        <li>
+                            <ins class="bullet circleDot"></ins>
+                            <div>
+                                <p class="mb_5">
+                                    주어진 조건을 활용하여 혼합 계산을 만들어 보세요.
+                                </p>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <span class="bullet exam">예</span>
+                                        <p>(4＋3)×2－1</p>
+                                    </div>
+                                </div>
+                                <div class="toggle mt_10" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <span class="bullet exam">예</span>
+                                        <p>9×(8－7)＋6</p>
+                                    </div>
+                                </div>
+                                <div class="toggle mt_10" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <span class="bullet exam">예</span>
+                                        <p>3－(6＋4)÷5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="dapCheckBtn" data-answer-btn="1"></button>
+
+                </li>
+
+                <li class="page_3" data-quiz="toggle">
+                    <div class="bogi_wrap">
+                        <div class="bogiContainer">
+                            <div class="icon_bogi"></div>
+                            <div class="inner">
+                                <ul class="contentsList">
+                                    <li>
+                                        <ins class="bullet number orange">ㄱ</ins>
+                                        <p>1부터 9까지의 자연수 중에서 서로 다른 수 4개를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄴ</ins>
+                                        <p>＋, －, ×, ÷ 중 세 가지 기호를 사용합니다.</p>
+                                    </li>
+                                    <li>
+                                        <ins class="bullet number orange">ㄷ</ins>
+                                        <p>(&nbsp;&nbsp;&nbsp;&nbsp;)를 한 번 사용합니다.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="contentsList">
+                        <li>
+                            <ins class="bullet circleDot"></ins>
+                            <div>
+                                <p class="mb_5">
+                                    만든 혼합 계산을 짝과 바꾸어 계산해 보세요.
+                                </p>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <span class="bullet exam">예</span>
+                                        <p>(4＋3)×2－1＝13</p>
+                                    </div>
+                                </div>
+                                <div class="toggle mt_10" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <span class="bullet exam">예</span>
+                                        <p>9×(8－7)＋6＝15</p>
+                                    </div>
+                                </div>
+                                <div class="toggle mt_10" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <span class="bullet exam">예</span>
+                                        <p>3－(6＋4)÷5＝1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="buttonContainer">
+                        <button class="solveCheckBtn" data-popup-btn="1" data-hover=""></button>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+
+                </li>
+
+                <li class="page_4">
+                    <ul class="contentsList">
+                        <li>
+                            <ins class="bullet circleDot"></ins>
+                            <div>
+                                <p class="mb_5" style="letter-spacing:1px">
+                                    계산 과정이 바른지 확인하고, 문제를 해결한 방법을 짝과 비교해 보세요.
+                                </p>
+                                <div id="aniBox_1"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+	<section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+            <li class="solve pop_page_1" data-popup-page="1">
+                <div class="popup_contents" data-slide-container="popup">
+                    <ul class="basicSlider_slides" data-slides="">
+                        <li class="innerTab_1">
+                            <ul class="contentsList">
+                                <li class="num1">
+                                    <ins class="dot orange"></ins>
+                                    <div>
+                                        <div class="box-p">
+                                            (4＋3)×2－1＝7×2－1
+                                            <p style="padding-left:210px">＝14－1</p>
+                                            <p style="padding-left:210px">＝13</p>
+                                            <span class="line-1">①</span>
+                                            <span class="line-2">②</span>
+                                            <span class="line-3">③</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="num2">
+                                    <ins class="dot orange"></ins>
+                                    <div>
+                                        <div class="box-p">
+                                            9×(8－7)＋6＝9×1＋6
+                                            <p style="padding-left:210px">＝9＋6</p>
+                                            <p style="padding-left:210px">＝15</p>
+                                            <span class="line-1">①</span>
+                                            <span class="line-2">②</span>
+                                            <span class="line-3">③</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="innerTab_2">
+                            <ul class="contentsList">
+                                <li class="num3">
+                                    <ins class="dot orange"></ins>
+                                    <div>
+                                        <div class="box-p">
+                                            3－(6＋4)÷5＝3－10÷5
+                                            <p style="padding-left:210px">＝3－2</p>
+                                            <p style="padding-left:210px">＝1</p>
+                                            <span class="line-1">①</span>
+                                            <span class="line-2">②</span>
+                                            <span class="line-3">③</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="moveButtonContainer" data-slide-btn-container="">
+                        <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                        <ul class="basicSlider_circle_tabs" data-tabs="">
+                            <li data-hover=""></li>
+                            <li data-hover=""></li>
+                        </ul>
+                        <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+	</section>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+    <script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
+<script type="text/javascript">
+    	document.addEventListener('DOMContentLoaded', function () {
+            $prite.add({
+                target: $ts.getEl('#aniBox_1'),
+                spriteId: 'sprite1',
+                spriteList: [
+                    {
+                        name: 'girl_2',
+                        // circle: 'green',
+                        top: 70,
+                        left: 330,
+                        width: 340,
+                        height: 421,
+                        thumbNail: '../common/contents/images/character/girl_2.png',
+                        spriteSheet: '../common/contents/images/character/girl_2_sprite.png',
+                        sound: './media/audios/suh_p_0501_01_0008_202_1.mp3',
+                        speech:'right',
+                        textBubble: {
+                            text: '괄호 안을 가장 먼저 계산하고 곱셈이나 나눗셈을 계산한 후 덧셈이나 뺄셈을 계산해야 해.<br>바르게 계산했어.',
+                            class: 'balloon left purple',
+                            top: 190,
+                            left: 410,
+                            width: 480,
+                            textAlign: 'center',
+                            wordBreak: 'keep-all'
+                        },
+                        sheetWidth: 102000,
+                        sheetHeight: 421,
+                        endSheet: 0,
+                        delay: 40,
+                        callbacks: {
+                            start: function () {
+                            	$ts.getEl('.characterImg')[0].style.left = '-200px';
+                            }, // 시작시 콜백
+                            end: function () {
+                            	$ts.getEl('.characterImg')[0].style.left = 0;
+                            } // 끝날시 콜백
+                        }
+                    }
+                ]
+            });
+        }, false);
+</script>
+</body>
+</html>
