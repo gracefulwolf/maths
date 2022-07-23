@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+
+    <style>
+        .box-flex {display:flex}
+        .box-flex .item {width:25%;text-align:center}
+        .box-flex .img-box {height:200px;margin-bottom:20px;display:flex;align-items:flex-end;justify-content:center}
+        .box-flex .item img {width:80%;vertical-align:top}
+        .sub-answer {opacity:0}
+        .complete .sub-answer {opacity:1}
+    </style>
+</head>
+<body>
+	<div class="prev-img">
+		<img src="../common/contents/images/character/boy_1_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/boy_2_sprite.png" alt="스프라이트">
+		<img src="../common/contents/images/character/girl_1_sprite.png" alt="스프라이트">
+	</div>
+<div id="wrap">
+	<header>
+		<div class="title" style="letter-spacing:-1px">
+            <span class="toggleBlank"></span> 안에 알맞은 말을 써넣어 ‘더불어 사는 삶’과 관련된 말을 완성해 봅시다.
+		</div>
+		
+	</header>
+    <main>
+        <div class="basicSlider contentsBox" data-slide-container="main">
+            <!--   탭 버튼   -->
+            <ul class="basicSlider_slides" data-slides="">
+				<li class="page_1" data-quiz="toggle">
+                    <span class="bullet exam sub-answer">예</span>
+                    <div class="box-flex">
+                        <div class="item">
+                            <div class="img-box"><img src="./images/suh_p_0501_01_0008_204_1/suh_p_0501_01_0008_204_1_1.png" alt=""></div>
+                            <div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    <p>기쁨</p>
+                                </div>
+                            </div>은/는<br>더하고
+                        </div>
+                        <div class="item">
+                            <div class="img-box"><img src="./images/suh_p_0501_01_0008_204_1/suh_p_0501_01_0008_204_1_2.png" alt=""></div>
+                            <div class="toggle" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">
+                                    <p>슬픔</p>
+                                </div>
+                            </div>은/는<br>빼고
+                        </div>
+                        <div class="item">
+                            <div class="img-box"><img src="./images/suh_p_0501_01_0008_204_1/suh_p_0501_01_0008_204_1_3.png" alt=""></div>
+                            <div class="toggle" data-toggle-obj="3">
+                                <div class="answer" data-toggle-target="3">
+                                    <p>사랑</p>
+                                </div>
+                            </div>은/는<br>곱하고
+                        </div>
+                        <div class="item">
+                            <div class="img-box"><img src="./images/suh_p_0501_01_0008_204_1/suh_p_0501_01_0008_204_1_4.png" alt=""></div>
+                            <div class="toggle" data-toggle-obj="4">
+                                <div class="answer" data-toggle-target="4">
+                                    <p>행복</p>
+                                </div>
+                            </div>은/는<br>나누고
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script src="../common/contents/js/quiz/quiz_math_calc.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.toggle').on('click',function(){
+            $(".sub-answer").css("opacity",1);
+        });
+        window.$callBack.hideAnswer = function (obj) {
+            $(".sub-answer").removeAttr("style");
+        }
+    });
+</script>
+</body>
+</html>
