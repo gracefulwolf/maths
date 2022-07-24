@@ -17,7 +17,29 @@
 		<link rel="stylesheet" href="../common/css/common.css" />
 		<link rel="stylesheet" href="../common/css/content.css" />
 
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/css/content.css" />
+		<link rel="stylesheet" href="../../../../../common/re_style/css/style.css">
+
 		<link rel="stylesheet" href="css/mm_42_2_07_05_01.css" />
+
+		<style>
+			.content-container > .content {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				top: -22%;
+				left: -12%;
+				overflow: hidden;
+			}
+
+			.btns-bottom-right {z-index: 100;bottom: 22px;}
+			.content .app-drawing-tool .tool-container {
+				top: 160px;
+			}
+		</style>
+
 	</head>
 	<body>
         <div class="content-container">
@@ -59,7 +81,6 @@
 					<div class="btns-bottom-right check-btns">
 						<div class="button btn-retry toggle remove"><span></span></div>
 						<div class="button btn-ex toggle"><span></span></div>
-						<div class="button btn-explan"><span></span></div>
 					</div>
 
 					<!-- 팝업 :: 풀이 -->
@@ -72,159 +93,16 @@
 					</div>
 
 					<!-- 좌측 하단 영역 고정 버튼 -->
-					<div class="btns-bottom-left">
-						<div class="button box-type btn-twins twins-01"><span>한 번 더 <em class="num"></em></span></div>
-						<div class="button box-type btn-twins twins-02"><span>한 번 더 <em class="num"></em></span></div>
-					</div>
 
 				</div>
 
-				<!-- 하단 탭 -->
-				<ul class="bottom-tabs" data-ui="tabs" data-option='{"list":[]}'></ul>
 
 				<!-- 색칠하세요 :: 드로잉 툴 -->
 				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}' style="z-index: 0;"></div>
 
 			</div>
 
-			<!-- 팝업 :: 한 번 더 1 -->
-			<div class="popup popup-twins twins-01" data-ui="popup" data-option='{"btn":".btn-twins.twins-01"}'>
-				<div class="bg"></div>
 
-				<!-- 좌측 상단 영역 고정 말풍선 -->
-				<div class="box-top-left">
-					<div class="box top-twins twins-01"><span>한 번 더</span></div>
-					<ul class="twins-tabs">
-						<li class="tab on"><span>1</span></li>
-						<li class="tab"><span>2</span></li>
-					</ul>
-				</div>
-
-				<div class="title-h1">
-					<div class="left-inner">
-					</div>
-					<div class="right-inner">
-						예각삼각형을 찾아 색칠해 보세요.
-					</div>
-				</div>
-				
-				<div class="quiz-content" data-ui="quizMain" data-option='{}'>
-
-					<!-- 스크롤 박스 -->
-					<div class="scroll-box w-1200 title-line-1 scroll-box-01">
-						<div class="scroll-inner">
-							<div class="scroll-bg"></div>	
-
-							<div id="twins-01-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
-								<div class="base">
-									<img src="images/mm_42_2_07_05_01/twins_base_01.png" alt="" width="1280" height="600">
-								</div>
-								<div class="answer">
-									<img src="images/mm_42_2_07_05_01/twins_01_answer_01.svg" alt="" width="1280" height="600">
-								</div>
-								<div class="base abs">
-									<img src="images/mm_42_2_07_05_01/twins_base_01.svg" alt="" width="1280" height="600">
-								</div>
-								
-								<div class="check-list">
-									<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
-								</div>
-							</div>
-							
-							
-							<!-- 부분 정답 :: absolute -->
-							<div class="btns-answer-part">
-								<div class="btn-answer-part" data-option='{"quiz":["#twins-01-quiz-01"], "quizGroup":[]}'></div>
-							</div>
-
-						</div>
-					</div>
-					<!-- //스크롤 박스 -->
-
-					
-					<!-- 우측 하단 영역 고정 버튼 -->
-					<div class="btns-bottom-right check-btns">
-						<div class="button btn-retry toggle remove"><span></span></div>
-						<div class="button btn-ex toggle"><span></span></div>
-						<!-- <div class="button btn-explan"><span></span></div> -->
-					</div>
-
-				</div>
-
-				<!-- 색칠하세요 :: 드로잉 툴 -->
-				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
-
-				<div class="button btn-close ico-close-01"></div>
-			</div>
-
-			<!-- 팝업 :: 한 번 더 2 -->
-			<div class="popup popup-twins twins-02" data-ui="popup" data-option='{"btn":".btn-twins.twins-02"}'>
-				<div class="bg"></div>
-
-				<!-- 좌측 상단 영역 고정 말풍선 -->
-				<div class="box-top-left">
-					<div class="box top-twins twins-01"><span>한 번 더</span></div>
-					<ul class="twins-tabs">
-						<li class="tab"><span>1</span></li>
-						<li class="tab on"><span>2</span></li>
-					</ul>
-				</div>
-
-				<div class="title-h1">
-					<div class="left-inner">
-					</div>
-					<div class="right-inner">
-						둔각삼각형을 찾아 색칠해 보세요.
-					</div>
-				</div>
-
-				<div class="quiz-content" data-ui="quizMain" data-option='{}'>
-
-					<!-- 스크롤 박스 -->
-					<div class="scroll-box w-max title-line-1" data-overflow-y="scroll">
-						<div class="scroll-inner">
-							<div class="scroll-bg"></div>
-
-							<div id="twins-02-quiz-01" class="quiz quiz-check image-answer abs" data-ui="quiz-check" data-option='{"answer":[]}'>
-								<div class="base">
-									<img src="images/mm_42_2_07_05_01/twins_base_01.png" alt="" width="1280" height="600">
-								</div>
-								<div class="answer">
-									<img src="images/mm_42_2_07_05_01/twins_02_answer_01.svg" alt="" width="1280" height="600">
-								</div>
-								<div class="base abs">
-									<img src="images/mm_42_2_07_05_01/twins_base_01.svg" alt="" width="1280" height="600">
-								</div>
-								
-								<div class="check-list">
-									<!-- <div class="check-item" data-answer-part-idx="0"></div> -->
-								</div>
-							</div>
-							
-							<!-- 부분 정답 :: absolute -->
-							<div class="btns-answer-part">
-								<div class="btn-answer-part" data-option='{"quiz":["#twins-02-quiz-01"], "quizGroup":[]}'></div>
-							</div>
-
-						</div>
-					</div>
-					<!-- //스크롤 박스 -->
-
-					
-					<!-- 우측 하단 영역 고정 버튼 -->
-					<div class="btns-bottom-right check-btns">
-						<div class="button btn-retry toggle remove"><span></span></div>
-						<div class="button btn-ex toggle"><span></span></div>
-						<!-- <div class="button btn-explan"><span></span></div> -->
-					</div>
-
-				</div>
-
-				<!-- 색칠하세요 :: 드로잉 툴 -->
-				<div class="app-drawing-tool" data-ui="app-drawing-tool" data-option='{}'></div>
-
-				<div class="button btn-close ico-close-01"></div>
-			</div>
 
 		</div>
 		
