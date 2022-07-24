@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0"><meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+  <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+  <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+  <style type="text/css">
+    .operator{display:inline-block;padding:0 2px;vertical-align:middle;}
+    .pos-r{position:relative}
+    .pos-a{position:absolute}
+    .flex-center {display:flex;align-items:center;justify-content:center;}
+    .align-center {align-items: center;}
+    .justify-sb {justify-content: space-between;}
+    .justify-c {justify-content: center;}
+    .d-ib {display: inline-block;}
+    .va-m{vertical-align:middle}
+    .width-full {width:100%}
+
+    header .bunsuWrap {margin-top:-14px;}
+    .bunsuWrap ul > li:first-of-type {border-color: #fff;}
+    .contentsBox.board .balloon {color: #000;}
+    .contentsList {position: relative;z-index: 4;}
+    #aniBox .balloon {z-index: 5;}
+    [class^='ex-'] {
+        position: absolute;
+        color: #000;
+    }
+
+    .click-finger-Btn.complete {display: none;}
+
+    .flex-item {flex: 0 0 auto;}
+    .n1 figure img {
+        height: 200px;
+    }
+    .n2 figure img {
+        height: 200px;
+    }
+    .contentsList .ex-arrow-1 {top: 200px;left: 50%;margin: 0;transform: rotate(90deg);animation: arrMove 1s ease-in-out infinite;}
+    .contentsList .ex-arrow-1.complete {animation: none;}
+    .step1 {opacity: 0; transition: opacity .5s linear;}
+    .step1.on {opacity: 1;}
+    .step2 {margin-top: 30px; opacity: 0; transition: opacity .5s linear;}
+    .step2.on {opacity: 1;}
+    .step2 .group1 {z-index: 2; height: 60px; background: url(./images/suh_h_0402_03_0002_301_1_2.png) 0 0/contain no-repeat;}
+    .step2 .group2 {z-index: 1; top:-5px; height: 60px; background: url(./images/suh_h_0402_03_0002_301_1_3.png) 0 0/contain no-repeat;}
+    .step2 .group3 {z-index: 0; top:-10px; height: 60px; background: url(./images/suh_h_0402_03_0002_301_1_4.png) 0 0/contain no-repeat;}
+    [class^='ex-label-'] {
+        font-size: 35px;
+    }
+
+    .ex-label-1 {top: 21px;left: 36px;}
+    .ex-label-2 {top: 0;left: 257px;}
+    .ex-label-3 {top: 0;left: 393px;}
+    .ex-label-4 {top: 130px;left: 57px;}
+    .ex-label-5 {top: 130px;left: 171px;}
+    .ex-label-6 {top: 130px;left: 276px;}
+    .ex-label-7 {top: 130px;left: 414px;}
+    .ex-label-16 {top: 235px;left: 2px;color: #fff;}
+
+    .ex-label-8 {top: 6px;left: 43px;}
+    .ex-label-9 {top: 6px;left: 43px;}
+    .ex-label-10 {top: 6px;left: 140px;}
+    .ex-label-11 {top: 6px;left: 225px;}
+    .ex-label-12 {top: 6px;left: 43px;}
+    .ex-label-13 {top: 6px;left: 140px;}
+    .ex-label-14 {top: 6px;left: 225px;}
+    .ex-label-15 {top: 6px;left: 337px;}
+
+    [class^='ex-finger-'] {
+        z-index: 4;
+    }
+    .ex-finger-1 {top: 196px;left: 67px;;}
+    .ex-finger-2 {top: 79px;left: 115px;}
+    .ex-finger-3 {top: 79px;left: 326px;}
+    .ex-finger-4 {bottom: 76px;right: 182px;}
+
+    @keyframes arrMove { 50% {top: 190px; }}
+    @-o-keyframes arrMove { 50% {top: 190px; }}
+    @-ms-keyframes arrMove { 50% {top: 190px; }}
+    @-webkit-keyframes arrMove { 50% {top: 190px; }}
+
+    .flex-item.n2 {opacity: 0; transition: opacity .5s linear;}
+    .flex-item.n2.on {opacity: 1;}
+    .flex-item.n2 img {opacity: 0; transition: opacity .5s linear;}
+    .flex-item.n2 img.on {opacity: 1;}
+    .flex-item.n2 .colorBox {opacity: 0; font-size: 35px; line-height: 1.25 !important; transition: opacity .5s linear;}
+    .flex-item.n2 .colorBox.on {opacity: 1;}
+    .flex-item.n2 .colorBox .n1 {color: rgb(187, 20, 20);}
+    .flex-item.n2 .colorBox .n2 {color: rgb(88, 129, 240);}
+    .flex-item.n2 .colorBox .n3 {color: rgb(84, 189, 84);}
+    </style>
+</head>
+<body>
+
+<div id="wrap" class="math">
+    <header>
+        <div class="title"><div class="bunsuWrap inline">
+            1<ul>
+                <li>25</li>
+                <li>100</li>
+            </ul>
+        </div>를 소수로 나타내 봅시다.</div>
+    </header>
+    <main>
+        <div class="contentsBox board" data-quiz="toggle" >
+            <ul class="contentsList">
+                <li>
+                    <ins class="dot orange mt_30"></ins>
+                    <div style="letter-spacing: -1px;">
+                        분수 <div class="bunsuWrap inline">
+                            1<ul>
+                                <li>25</li>
+                                <li>100</li>
+                            </ul>
+                        </div>를 소수로 <div class="toggle yellow" data-toggle-obj="1-1">
+                            <div class="answer" data-toggle-target="1-1">
+                                1.25
+                            </div>
+                        </div>라 쓰고 <div class="toggle yellow" data-toggle-obj="1-2">
+                            <div class="answer" data-toggle-target="1-2">
+                                일 점 이오
+                            </div>
+                        </div>라고 읽습니다.
+                    </div>
+                </li>
+                <li class="flex-wrap justify-c mt_20" style="gap: 20px; padding-left: 80px;">
+                    <div class="ex-label-16">
+                        1.25
+                    </div>
+                    <span class="ex-finger-1 click-finger-Btn blinkOn blinkOpacity" data-hover="" data-toggle-obj="1"></span>
+                    <div class="flex-item n1 pos-r step1" data-toggle-target="1">
+                        <figure>
+                            <img src="./images/suh_h_0402_03_0002_301_1_1.png" alt="">
+                            <div class="ex-label-1">
+                                일의<br/>자리
+                            </div>
+                            <div class="ex-label-2">
+                                소수<br/>첫째<br/>자리
+                            </div>
+                            <div class="ex-label-3">
+                                소수<br/>둘째<br/>자리
+                            </div>
+                            <div class="ex-label-4">
+                                1
+                            </div>
+                            <div class="ex-label-5">
+                                .
+                            </div>
+                            <div class="ex-label-6">
+                                2
+                            </div>
+                            <div class="ex-label-7">
+                                5
+                            </div>
+                            <div class="ex-arrow-1 icon_arrow" data-toggle-obj="2"></div>
+                        </figure>
+                        <figure class="step2" data-toggle-target="2">
+                            <div class="group1 pos-r">
+                                <div class="ex-label-8">
+                                    1
+                                </div>
+                            </div>
+                            <div class="group2 pos-r">
+                                <div class="ex-label-9">
+                                    0
+                                </div>
+                                <div class="ex-label-10">
+                                    .
+                                </div>
+                                <div class="ex-label-11">
+                                    2
+                                </div>
+                            </div>
+                            <div class="group3 pos-r">
+                                <div class="ex-label-12">
+                                    0
+                                </div>
+                                <div class="ex-label-13">
+                                    .
+                                </div>
+                                <div class="ex-label-14">
+                                    0
+                                </div>
+                                <div class="ex-label-15">
+                                    5
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="flex-item n2" data-toggle-target="2">
+                        <figure class="flex-center" style="gap: 10px;">
+                            <img src="./images/suh_h_0402_03_0002_301_1_5_2.png" alt="" data-toggle-target="3">
+                            <img src="./images/suh_h_0402_03_0002_301_1_6_2.png" alt="" data-toggle-target="4">
+                            <span class="ex-finger-2 click-finger-Btn blinkOn blinkOpacity" data-hover="" data-toggle-obj="3"></span>
+                            <span class="ex-finger-3 click-finger-Btn blinkOn blinkOpacity" data-hover="" data-toggle-obj="4"></span>
+                        </figure>
+                        <span class="ex-finger-4 click-finger-Btn blinkOn blinkOpacity" data-hover="" data-toggle-obj="5"></span>
+                        <div class="colorBox sky mt_60" data-toggle-target="5">
+                            1.25는 <span class="n1">1</span>이 1개, <span class="n2">0.1</span>이 2개,<br/>
+                            <span class="n3">0.01</span>이 5개
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </main>
+</div>
+<div id="loadingContainer">
+    <div class="loadingIconAnimation"></div>
+</div>
+
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+</script>
+
+</body>
+</html>
