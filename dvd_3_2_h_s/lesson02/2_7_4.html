@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" href="../../__common__/css/custom_last_v2.css">
+
+    
+    <link rel="stylesheet" href="../include/sub/style/master.css">
+    <link rel="stylesheet" href="../include/sub_3-2/style/sub_3-2.css">
+    <link rel="stylesheet" href="./css/2_7_4.css">
+    <style>
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <div class="indexBox">
+          <span>2. 나눗셈</span>
+          <span>(세 자리 수)÷(한 자리 수)를 계산해 볼까요(1), (2)</span>
+        </div>
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="46">수학<span>46~49</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="39">수학 익힘<span>39</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook_sub" data-page="39"></div>
+
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <h1 data-star="3" data-index="4">나눗셈을 하고, 나머지만큼 꽃잎을 그려 꽃을 완성해 보세요.</h1>
+            <div class="colorBox sky n1">298÷6</div>
+            <div class="colorBox sky n2">927÷7</div>
+          <section data-quiz="image">
+            <div class="imageBox">
+              <div class="answerImage" data-click-target="1"></div>
+            </div>
+             <!-- <div class="bullet exam" data-click-target="1">예</div>
+             <div class="bullet exam" data-click-target="1">예</div> -->
+            <div class="bullet exam e1" data-click-target="1">예</div>
+            <div class="bullet exam e2" data-click-target="1">예</div>
+            <canvas id="draw0" class="canvas_1" width="656px" height="190px"></canvas>
+            <div class="drawBtn" data-parent="contentsArea"></div>
+            <div class="quizButtons solve" data-hover="" data-popup-btn="1" data-popup-option="toggle" data-solve-btn=""></div>
+
+            <button class="dapCheckBtn" data-click-obj="1" data-quiz-chain="" data-hover=""></button>
+
+            <!-- <div class="js-chainButtons quizButtons answer" data-click-obj="1" data-quiz-chain="" data-hover=""></div> -->
+          </section>
+        </div>
+      </main>
+      <section class="popup_container" data-popup-container="">
+        <ul class="popup_pages">
+          <li class="min solve slideup" data-popup-page="1">
+            <p>298<symbol class="division"></symbol>6<symbol class="equal"></symbol>49…4이므로 꽃잎을 4개 그립니다.</p>
+            <p>927<symbol class="division"></symbol>7<symbol class="equal"></symbol>132…3이므로 꽃잎을 3개 그립니다.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/fomula.min.js"></script>
+    <script src="../include/libs/js/popup.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+
+        window.$callBack.quizChainAnswer = function(QUIZCHAIN) {
+          if (drawClear) drawClear(0);
+          document.querySelector('.canvas_1').classList.add('pointerOff');
+        }
+        window.$callBack.quizChainReset = function(QUIZCHAIN) {
+          document.querySelector('.canvas_1').classList.remove('pointerOff');
+        }
+      });
+    </script>
+  </body>
+</html>
