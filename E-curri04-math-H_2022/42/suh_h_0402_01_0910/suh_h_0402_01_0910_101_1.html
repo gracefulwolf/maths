@@ -18,7 +18,7 @@
 <body>
 	<div id="wrap" class="math">
 		<header>
-			<div class="title" style="letter-spacing: -1px;">숫자 카드를 사용하여 대분수와 가분수를 만들고 다음 활동을 해 봅시다.</div>
+			<div class="title" style="letter-spacing: -3px;padding-bottom:10px">숫자 카드를 사용하여 대분수와 가분수를 만들고 다음 활동을 해 봅시다.</div>
 		</header>
 		<main>
 			<div class="basicSlider contentsBox" data-slide-container="main">
@@ -85,7 +85,7 @@
 											</div>
 										</div>
 										<div class="buttonContainer">
-											<button class="dapCheckBtn it-btn reset" id="it_reset_btn1" data-answer-btn="" data-type="reset"></button>
+											<button class="resetBtn" id="it_reset_btn1" data-answer-btn="" data-type="reset"></button>
 										</div>
 									</section>
 								</li>
@@ -548,6 +548,7 @@
 
 			var isAnswered = false;
 			var dropAreas = $ts.getEl('.js-dropArea');
+			var btnReset1 = $ts.getEl('#it_reset_btn1');
 			var btnReset2 = $ts.getEl('#it_reset_btn2');
 
 			function clearDropAreas() {
@@ -571,6 +572,9 @@
 				});
 			}
 
+			btnReset1.addEventListener('click', function() {
+				resetQuiz();
+			});
 			btnReset2.addEventListener('click', function() {
 				resetQuiz();
 			});
@@ -587,4 +591,5 @@
 		};
 
 	</script>
+</body>
 </html>
