@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1차 / 한대희 3-2</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{background-color: #eee; font-family: '돋움';}
+        h1{font-size:20px; padding:0 20px; text-align: center;}
+        h2{font-size:16px; padding:5px 20px; font-weight: 700; width: 100%; background-color: rgb(3, 83, 195); color:rgb(195, 227, 255)}
+        .guide-list{width: 250px; position:absolute; z-index: 10; left:10px; top:10px; margin:0; padding:20px 0; border-left:1px solid #eee; background:#fff; border-radius: 6px; box-shadow: 1px 4px 5px rgba(0,0,0,0.2);}
+        .guide-list li {list-style:none;font-size:12px;color:#000; margin:8px 0; padding:0 0 8px 0; border-bottom: 1px dashed #ccc;}
+        .guide-list li a {padding: 4px 20px; display: inline-block; color:#000; text-decoration: none;font-size:12px; font-weight: 600;}
+    .guide-list ul{padding:0; margin:30px 0;}
+        li a:active,
+         li a.on,
+        li a:focus,
+        li a:hover{background-color: #222222; color:#fff !important}
+        body{margin:0; padding: 0;}
+
+        .wrap{position: fixed; top:500px; left:290px;font-weight: 900;}
+        .wrap div{margin-bottom: 20px;}
+        .name,
+        .pagelink{text-align: center; font-weight: 900;  font-size: 30px;}
+
+    </style>
+</head>
+<body>
+    <div class="guide-list">
+        <h1>2차 한대희</h1>
+
+        <h2>suh_h_0501_01_0001</h2>
+        <ul>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_101_1.html" class="link" target="view">suh_h_0501_01_0001_101_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_201_1.html" class="link" target="view">suh_h_0501_01_0001_201_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_202_1.html" class="link" target="view">suh_h_0501_01_0001_202_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_203_1.html" class="link" target="view">suh_h_0501_01_0001_203_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_204_1.html" class="link" target="view">suh_h_0501_01_0001_204_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_301_1.html" class="link" target="view">suh_h_0501_01_0001_301_1</a></li>
+        </ul>
+
+        <h2>suh_h_0501_01_0002</h2>
+        <ul>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_101_1.html" class="link" target="view">suh_h_0501_01_0001_101_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_201_1.html" class="link" target="view">suh_h_0501_01_0001_201_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_202_1.html" class="link" target="view">suh_h_0501_01_0001_202_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_203_1.html" class="link" target="view">suh_h_0501_01_0001_203_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_204_1.html" class="link" target="view">suh_h_0501_01_0001_204_1</a></li>
+            <li><a data-href="./suh_h_0501_01_0001/suh_h_0501_01_0001_301_1.html" class="link" target="view">suh_h_0501_01_0001_301_1</a></li>
+        </ul>
+    </div>
+   
+    
+
+    <iframe id="preview" title="" src="./suh_h_0501_01_0001/suh_h_0501_01_0001_101_1.html" style="border:0; position: fixed; top:0; left:270px; width:1170px; height:768px; transform: scale(.6) translate(0, 0); transform-origin: 0 0; "></iframe>
+    <div class="wrap">
+        <div class="name">suh_h_0301_03_0001_101_1</div>
+        <a class="pagelink" href="./suh_h_0301_03_0001/suh_h_0301_03_0001_101_1.html" target="view">PAGE GO GO!!</a>
+    </div><br>
+
+    <script>
+
+        const linka = document.querySelectorAll('.link');
+
+        for (let i=0, len=linka.length; i < len; i++) {
+            const that=linka[i];
+
+            let href_=that.dataset.href;
+            href_=href_.split('/').reverse()[0];
+            
+            that.textContent=href_;
+
+            that.addEventListener('click', function(){
+                for (let i=0, len=linka.length; i < len; i++) {
+                    const that=linka[i];
+
+                    that.classList.remove('on');
+                }
+                this.classList.add('on')
+                if (document.querySelector('#preview').src !== this.dataset.href) {
+                    document.querySelector('#preview').src=this.dataset.href;
+                    // document.querySelector('.name').href=this.dataset.href;
+                    document.querySelector('.pagelink').href=this.dataset.href;
+                    document.querySelector('.name').textContent=this.dataset.href;
+                }
+            
+
+            });
+        }
+
+
+
+      
+      </script>
+</body>
+</html>
