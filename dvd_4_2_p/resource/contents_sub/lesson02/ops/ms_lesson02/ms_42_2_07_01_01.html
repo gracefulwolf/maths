@@ -18,6 +18,74 @@
 		<link rel="stylesheet" href="../common/css/content.css" />
 
 		<link rel="stylesheet" href="css/ms_42_2_07_01_01.css" />
+
+		<link rel="stylesheet" href="../../../../../../E-curri04-math-P_2022/42/common/libs/css/font.css">
+		<link rel="stylesheet" href="../../../../../../E-curri04-math-P_2022/42/common/contents/css/contents.css">
+		<link rel="stylesheet" href="../../../../../../E-curri04-math-P_2022/42/common/contents/css/animation.css">
+
+		<style>
+			.title-box-top,
+			.title-h1,
+			.ui-container{display: none;}
+
+
+			.btn-retry {
+				background: #216cbe url(../../../../../../E-curri03-math-H_2022/31/common/contents/images/icon/icon_check.svg) 15px center/22px auto no-repeat;
+				width: 150px;
+				height: 50px;
+				color: #fff;
+				font-size: 20px;
+				font-family: YGJAL;
+				text-align: left;
+				border-radius: 8px;
+				cursor: pointer;
+				box-sizing: border-box;
+				z-index: 1;
+				bottom:10px;
+				box-shadow: none;
+				font-weight: bold;
+				padding-left: 32px;
+			}
+			.btn-retry::before {content: "다시하기";padding-left: 14px;display: flex;height: 100%;align-items: center;}
+			.quiz-check.image-answer .check-item.type-01 {
+				width: 51px;
+				height: 70px;
+				background: url(../../../../../../E-curri03-math-H_2022/31/common/contents/images/icon/icon_click_finger.png) center/contain no-repeat;
+			}
+			.quiz:nth-child(1) .check-item {
+				left: 284px;
+				top: 117px;
+			}
+			.quiz:nth-child(2) .check-item {
+				left: 538px;
+				top: 117px;
+			}
+			.quiz:nth-child(3) .check-item {
+				left: 818px;
+				top: 97px;
+			}
+			.quiz:nth-child(4) .check-item {
+				left: 1094px;
+				top: 97px;
+			}
+
+			.colorBox {position: absolute;font-family: NotoM;font-size: 40px;white-space: nowrap;text-align: center;padding: 10px 20px;border-radius: 4px;line-height: 1.2;}
+			.colorBox.orange {background-color: #fccd89 !important;left: 70px;top: 140px;}
+			.colorBox.sky {background-color: #d4f3f6 !important;top: 140px;left: 390px;}
+			.colorBox.brown {background-color: #ae7c65 !important;color:#000;top: 120px;left: 620px;}
+			.colorBox.purple {background-color: #cabfe0 !important;color:#000;top: 120px;left: 900px;}
+			.quiz .answer .blank {position: absolute; width: 150px;height: 30px;background-color: #fff;top: 1007px;}
+			.quiz .answer .blank.n1 {left: 938px;}
+			.quiz .answer .blank.n2 {left: 673px; width: 148px;}
+			.quiz .answer .blank.n3 {left: 380px;}
+			.quiz .answer .blank.n4 {left: 97px;}
+
+			.quiz .answer .text {font-family: NotoM; font-size: 40px;position: absolute;white-space: nowrap;top: 990px;}
+			.quiz .answer .text.n1 {left: 900px;}
+			.quiz .answer .text.n2 {left: 642px;}
+			.quiz .answer .text.n3 {left: 383px;}
+			.quiz .answer .text.n4 {left: 80px;}
+		</style>
 	</head>
 	<body>
 		<div class="content-container">
@@ -49,7 +117,7 @@
 							<div class="scroll-bg"></div>
 
 							<div class="img-box mt-0 mb-0">
-								<img src="images/ms_42_2_07_01_01/bg.png" alt="" width="1200" height="1150">
+								<img src="../../../../../../E-curri04-math-P_2022/42/suhi_p_0402_02_0008/images/suhi_p_0402_02_0008_1.png" alt="" width="1150" height="1150">
 							</div>
 
 							<div class="quiz-list">
@@ -58,10 +126,18 @@
 								<div class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 									<div class="answer">
 										<img src="images/ms_42_2_07_01_01/line_01.svg" alt="" class="line-01">
+										<div class="blank n1"></div>
+										<div class="text n1">
+											이등변삼각형
+										</div>
 									</div>
-
+									<div class="colorBox orange">
+										두 변의 <br>
+										길이가 <br>
+										같은 삼각형
+									</div>
 									<div class="check-list">
-										<div class="check-item type-01"></div>
+										<div class="check-item type-01 click-finger-Btn blinkOn blinkOpacity"></div>
 									</div>
 								</div>
 								
@@ -69,10 +145,19 @@
 								<div class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 									<div class="answer">
 										<img src="images/ms_42_2_07_01_01/line_02.svg" alt="" class="line-02">
+										<div class="blank n2"></div>
+										<div class="text n2">
+											둔각삼각형
+										</div>
+									</div>
+									<div class="colorBox sky">
+										한 각이 <br>
+										둔각인 <br>
+										삼각형
 									</div>
 
 									<div class="check-list">
-										<div class="check-item type-01"></div>
+										<div class="check-item type-01 click-finger-Btn blinkOn blinkOpacity"></div>
 									</div>
 								</div>
 
@@ -80,10 +165,19 @@
 								<div class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 									<div class="answer">
 										<img src="images/ms_42_2_07_01_01/line_03.svg" alt="" class="line-03">
+										<div class="blank n3"></div>
+										<div class="text n3">
+											정삼각형
+										</div>
+									</div>
+									<div class="colorBox brown">
+										세 변의 <br>
+										길이가<br>
+										같은 삼각형
 									</div>
 
 									<div class="check-list">
-										<div class="check-item type-01"></div>
+										<div class="check-item type-01 click-finger-Btn blinkOn blinkOpacity"></div>
 									</div>
 								</div>
 
@@ -91,10 +185,20 @@
 								<div class="quiz quiz-check image-answer" data-ui="quiz-check" data-option='{"answer":[]}'>
 									<div class="answer">
 										<img src="images/ms_42_2_07_01_01/line_04.svg" alt="" class="line-04">
+										<div class="blank n4"></div>
+										<div class="text n4">
+											예각삼각형
+										</div>
+									</div>
+
+									<div class="colorBox purple">
+										세 각이 <br>
+										모두 예각인 <br>
+										삼각형
 									</div>
 
 									<div class="check-list">
-										<div class="check-item type-01"></div>
+										<div class="check-item type-01 click-finger-Btn blinkOn blinkOpacity"></div>
 									</div>
 								</div>
 								
@@ -103,7 +207,7 @@
 							
 							<!-- 우측 하단 영역 고정 버튼 -->
 							<div class="btns-bottom-right check-btns">
-								<div class="button btn-retry"><span></span></div>
+								<div class="btn-retry"></div>
 							</div>
 
 						</div>
