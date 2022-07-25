@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style type="text/css">
+        .flex-center {display:flex;align-items:center;justify-content:center;}
+        .flex-center .lineBox {width: 645px;}
+
+.ifr_wrap{position: relative; width: 100%; height: 100%;}
+.page-iframe{position:absolute; z-index:1; top:60px; left:0; overflow:hidden; width:1060px; height:485px; border:0; background:transparent;}
+.popup_pages .page-iframe{top:0; left:0;width:100%; height:100%;/* transform-origin: 0 50%; transform: scale(1.03, 1.1);*/}
+.page-iframe .popup_contents .toggle,
+.page-iframe + section .toggle{z-index:1;}
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math">
+		<header>
+			<div class="title" style="letter-spacing: -1px;">
+                소수 두 자리 수와 소수 세 자리 수를 만들고 다음 활동을 해 봅시다.
+            </div>
+		</header>
+		<main>
+			<div class="contentsBox">
+                <div class="flex-center mt_100">
+                    <div class="lineBox sky">
+                        소수 두 자리 수와 소수 세 자리 수를 만들어 보세요.
+                        <div class="popBtn textInBtn orange inline eye" data-hover="" data-popup-btn="1">활동해 보기</div>
+                    </div>
+                </div>
+            </div>
+		</main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <!-- 풀 스크린 -->
+                <li class="whole pop_page_1" data-popup-page="1">
+                    <div class="popup_contents" style="padding:0">
+						<div class="ifr_wrap">
+							<iframe src="../../../dvd_4_2_h/resource/contents/lesson03/ops/3/3_10_01.html" title="" class="page-iframe" scrolling="no" allowTransparency="true"></iframe>
+						</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			const _eyeButt = document.querySelector( ".textInBtn.eye" );
+			_eyeButt.addEventListener( "click", function(){
+				setTimeout(function(){
+					document.querySelector( ".page-iframe" ).contentWindow.location.reload();
+				},0);
+			});
+		}, false);
+	</script>
+</body>
+</html>
