@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+    <!--  math css -->
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+    <style>
+        .popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+        .popup_pages .buttonContainer{right:40px; bottom:20px;}
+        .popup_pages .downloadBtn { bottom:20px;}
+        .popup_pages ins.number {margin: 6px 10px 0 0;width: 40px;height: 40px;line-height: 1.8em;text-align: center;font-size: 22px;letter-spacing: 0;border-radius: 10px;color: #6dbc4b;border: 2px solid #6dbc4b;background-color: #fff;}
+        .img-wrap img {width:auto; height: 100%;}
+        .numbering li {position: absolute; }
+        .popup_contents .downloadBtn {bottom: 20px;}
+
+        /*page_0 개념정리 */
+        .page_0 .box-img {margin-top:80px}
+        .page_0 .box-img img {width:100%}
+
+		/* 1번 */
+        .page_1 .box-img {margin-top:40px;height:200px;position:relative}
+        .page_1 .box-img .txt-item {position:absolute;top:80px}
+        .page_1 .box-img .txt-item.n1 {left:375px}
+        .page_1 .box-img .txt-item.n2 {left:642px}
+        .page_1 .box-img img {width:100%;height:100%;object-fit:contain}
+
+        .pop_page_1 .box-img {margin-top:40px;height:200px;position:relative}
+        .pop_page_1 .box-img .txt-item {position:absolute;top:80px}
+        .pop_page_1 .box-img .txt-item.n1 {left:368px}
+        .pop_page_1 .box-img .txt-item.n2 {left:632px}
+        .pop_page_1 .box-img img {width:100%;height:100%;object-fit:contain}
+
+		/* 2번*/
+		.page_2 .box-flex,
+        .pop_page_3 .box-flex {display:flex;justify-content:space-around;margin-top:60px}
+
+        .img-box2 {height:100px;text-align:center;margin-top:100px;position:relative}
+        .img-box2 .txt-item {position:absolute;top:66px;left:66px}
+        .img-box2 .txt-item span:not(:last-child) {margin-right:365px}
+        .img-box2 img {vertical-align:top;height:100%;width:100%;object-fit:contain}
+
+        .pop_page_3 .img-box2 .txt-item {left:-12px}
+        .pop_page_3 .img-box2 .txt-item span:not(:last-child) {margin-right:422px}
+
+		/* 3번 */
+        .pop_page_6 .box-flex,
+        .page_3 .box-flex {display:flex;align-items:center;justify-content:space-around;margin-top:70px}
+        .page_3 .math_calc_table.class3 .answer .dot {right:72%}
+
+        /* 4번 */
+        .pop_page_9 .tableContainer,
+        .page_4 .tableContainer {width:60%;margin:60px auto}
+
+
+        /* 5번 */
+        .page_5 .box-flex,
+        .pop_page_12 .box-flex {display:flex;align-items:center;justify-content:center;margin-top:20px}
+        .box-img-g {position:relative;background:url("./images/suhi_p_0402_03_0008_8.png") 50% 50% no-repeat;height:300px;background-size:contain;width:960px;margin:0 auto}
+        .box-img-g .item {position:absolute;top:36px;width:386px;height:228px}
+        .box-img-g .item .toggle {position:absolute;top:0;left:0;width:100%;height:100%;background-color:transparent}
+        .box-img-g .item .toggle .answer {padding:0;display:block}
+        .box-img-g .toggle.hand:after {margin-left:0}
+        .box-img-g .item.n1 {left:0}
+        .box-img-g .item.n2 {right:6px}
+        .box-img-g .toggle .group span.dot {background-color:#00a0ff}
+        .box-img-g .group {display:flex;position:relative}
+        .box-img-g .group span {width:102px;height:76px;display:flex;align-items:center;justify-content:center}
+        .box-img-g .group span:first-child {width:80px}
+        .box-img-g .group span.dot {position:absolute;width:8px;height:8px;background-color:#000;border-radius:50%;bottom:10px}
+
+        /* 6번 */
+        .page_6 .img-bg {background:url("./images/suhi_p_0402_03_0008_9.png") 50% 50% no-repeat;background-size:contain;height:300px;width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .page_6 .img-bg p {width:140px;text-align:center}
+        .page_6 .img-bg p ~ p {margin-left:80px}
+
+        .pop_page_15 .img-bg {background-position:50% 50%;background-repeat:no-repeat;background-size:contain;height:300px;width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .pop_page_15 .img-bg.n1 {background-image:url("./images/suhi_p_0402_03_0008_10.png")}
+        .pop_page_15 .img-bg.n2 {background-image:url("./images/suhi_p_0402_03_0008_11.png")}
+        .pop_page_15 .img-bg p {width:140px;text-align:center}
+        .pop_page_15 .img-bg p ~ p {margin-left:80px}
+
+
+        .img-answer {position:relative}
+        .img-answer .txt-item {position:absolute}
+        .img-answer .exam {position:absolute}
+        .img-answer.n1 .exam {left:-10px;top:0}
+        .img-answer.n2 .exam {left:-10px;top:0}
+        .img-answer img {width:100%;height:100%;vertical-align:top;object-fit:contain}
+        .img-answer.n1,
+        .img-answer.n2 {height:180px;margin-top:60px}
+        .img-answer.n1 .txt-item {top:120px;left:-40px}
+        .img-answer.n1 .txt-item span {width:80px;text-align:center;display:inline-block}
+        .img-answer.n1 .txt-item span:not(:last-child) {margin-right:110px}
+        .img-answer.n2 .txt-item {top:120px;left:-40px}
+        .img-answer.n2 .txt-item span {width:80px;text-align:center;display:inline-block}
+        .img-answer.n2 .txt-item span:not(:last-child) {margin-right:104px}
+        .img-answer .toggle {position:absolute;top:0;left:0;width:100%;height:100%;background-color:transparent}
+        .img-answer .toggle .answer {padding:0;background-size:contain;height:100%;background-position:50% 50%;background-repeat:no-repeat}
+        .img-answer.n1 .toggle.hand:after {top:72%}
+        .img-answer.n2 .toggle.hand:after {top:72%}
+        .img-answer.n1 .toggle .answer {background-image:url("./images/suhi_p_0402_03_0008_5.png")}
+        .img-answer.n2 .toggle .answer {background-image:url("./images/suhi_p_0402_03_0008_7.png")}
+
+        .buttonContainer {z-index:2}
+        .solve .box-flex {display:flex;justify-content:space-around;padding-top:20px}
+        .popup_pages>li.on {z-index:2}
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						소수 두 자리 수의 덧셈을 해 볼까요
+					</span>
+					<span class="sub-page">
+						48~49쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">개념 정리</li>
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<!-- 개념정리 -->
+					<li class="page_0" >
+						<h2>
+							<ins class="special type2"></ins>
+							<span></span>
+						</h2>
+						
+						<section class="full">
+							<div class="box-img">
+                                <img src="./images/suhi_p_0402_03_0008_1.png" alt="">
+							</div>
+						</section>
+					</li>
+
+					<!-- 1번 -->
+					<li class="page_1"  data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">1</ins>
+							<span style="letter-spacing:-1px">
+								전체 크기가 1인 모눈종이에 색칠된 그림을 보고 <span class="blankBox w50"></span>안에 알맞은 수를 써넣으세요.
+							</span>
+						</h2>
+                        <section class="full">
+                            <div class="box-img">
+                                <img src="./images/suhi_p_0402_03_0008_2.png">
+                                <p class="txt-item n1">＋</p>
+                                <p class="txt-item n2">＝</p>
+                            </div>
+                            <div class="textAlignC mt_20">
+                                0.45＋0.4＝<div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">0.85</div>
+                                </div>
+                            </div>
+
+                            <div class="buttonContainer left">
+                                <button class="characterBtn" data-popup-btn="1-1" data-hover="">
+                                    <span>쌍둥이 문제</span>
+                                </button>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="1-2" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+                        </section>
+						<!-- content -->
+					</li>
+
+
+					<!-- 2번  -->
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">2</ins>
+							<span>0.24＋0.17은 얼마인지 그림에 나타내 알아보세요.</span>
+						</h2>
+						<section class="full">
+                            <div class="img-answer n1">
+                                <div class="exam bullet">예</div>
+                                <img src="./images/suhi_p_0402_03_0008_4.png">
+                                <p class="txt-item">
+                                    <span>0</span>
+                                    <span>0.1</span>
+                                    <span>0.2</span>
+                                    <span>0.3</span>
+                                    <span>0.4</span>
+                                    <span>0.5</span>
+                                </p>
+                                <div class="toggle hand" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                    </div>
+                                </div>
+                            </div>
+							<div class="textAlignC mt_20">
+                                <div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">0.41</div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="2-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 3번  -->
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">3</ins>
+                            <div>
+                                계산해 보세요.
+                            </div>
+						</h2>
+						<section class="full">
+
+                            <div class="box-flex">
+                                <div class="item">
+                                    0.82＋0.11＝<div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        0.93
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="item">
+                                    0.29＋0.43＝<div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        0.72
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="box-flex">
+                                <div class="item">
+                                    <div class="math_calc_table class3">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    1
+                                                    <sup class="sup blueT sub-answer" data-toggle-obj="3" data-group-index="3">1</sup>
+                                                    <span class="dot"></span>
+                                                </td>
+                                                <td>7
+                                                    <sup class="sup blueT sub-answer" data-toggle-obj="3" data-group-index="3">1</sup>
+                                                </td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>＋</td>
+                                                <td>2<span class="dot"></span></td>
+                                                <td>2</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr class="line">
+                                                <td colspan="4">
+                                                    <div class="rowLine"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td colspan="3">
+                                                    <div class="toggle" data-toggle-obj="3"  data-group-index="3">
+                                                        <div class="answer" data-toggle-target="3">
+                                                            4<span class="dot"></span>00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="math_calc_table class3">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td><span>1</span>
+                                                    <sup class="sup blueT sub-answer" data-toggle-obj="4" data-group-index="4">1</sup>
+                                                </td>
+                                                <td>
+                                                    <span>5</span>
+                                                    <sup class="sup blueT sub-answer" data-toggle-obj="4" data-group-index="4">1</sup>
+                                                    <span class="dot"></span>
+                                                </td>
+                                                <td>3</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>＋</td>
+                                                <td></td>
+                                                <td>4<span class="dot"></span></td>
+                                                <td>8</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr class="line">
+                                                <td colspan="5">
+                                                    <div class="rowLine"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <div class="toggle" data-toggle-obj="4"  data-group-index="4">
+                                                        <div class="answer" data-toggle-target="4">
+                                                            20<span class="dot" style="right:54%"></span>16
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="3-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4"  data-quiz="toggle" >
+						<h2>
+							<ins class="bullet number">4</ins>
+							<span>
+								어느 피겨 스케이팅 선수가 쇼트 프로그램에서 받은 기술 점수와 구성 점수입니다. 이 선수가 쇼트 프로그램에서 받은 총점은 몇 점일까요?
+							</span>
+						</h2>
+						<section class="full">
+
+                            <div class="tableContainer green">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:50%;" span="2">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>기술 점수</th>
+                                        <th>구성 점수</th>
+                                    </tr>
+                                    <tr>
+                                        <td>39.03점</td>
+                                        <td>35.89점</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        74.92
+                                    </div>
+                                </div>점
+                            </div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="4-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number star">5</ins>
+							<div>
+                                잘못 계산한 곳을 찾아 까닭을 쓰고, 바르게 계산해 보세요.
+                            </div>
+						</h2>
+						<section class="full">
+                            <div class="box-img-g">
+                                <div class="item n1">
+                                    <div class="group">
+                                        <span></span>
+                                        <span>3</span>
+                                        <span class="dot" style="left:46%"></span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                    </div>
+                                    <div class="group">
+                                        <span>＋</span>
+                                        <span></span>
+                                        <span>1</span>
+                                        <span class="dot" style="left:73%"></span>
+                                        <span>2</span>
+                                    </div>
+                                    <div class="group">
+                                        <span></span>
+                                        <span>3</span>
+                                        <span class="dot" style="left:46%"></span>
+                                        <span>5</span>
+                                        <span>7</span>
+                                    </div>
+                                </div>
+                                <div class="item n2">
+                                    <div class="toggle hand" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="group">
+                                                <span></span>
+                                                <span>3</span>
+                                                <span class="dot" style="left:46%"></span>
+                                                <span>4</span>
+                                                <span>5</span>
+                                            </div>
+                                            <div class="group">
+                                                <span>＋</span>
+                                                <span>1</span>
+                                                <span class="dot" style="left:46%"></span>
+                                                <span>2</span>
+                                                <span></span>
+                                            </div>
+                                            <div class="group">
+                                                <span></span>
+                                                <span>4</span>
+                                                <span class="dot" style="left:46%"></span>
+                                                <span>6</span>
+                                                <span>5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-flex">
+                                <div class="colorBox skyBlue check">까닭</div>
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <span class="exam bullet">예</span>
+                                        <p>소수점의 자리를 잘못 맞추어 계산하였습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="5-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5-3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 6번 -->
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number star">6</ins>
+							<span style="letter-spacing:-1.5px">
+								카드를 한 번씩 모두 사용하여 소수 두 자리 수를 만들려고 합니다. 만들 수 있는 가장 큰 수와 가장 작은 수의 합을 구해 보세요.
+							</span>
+						</h2>
+						<section class="full">
+
+                            <div class="img-bg">
+                                <p>6</p>
+                                <p>2</p>
+                                <p>5</p>
+                                <p>.</p>
+                            </div>
+
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        9.08
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttonContainer left">
+                                <button class="characterBtn" data-popup-btn="6-1" data-hover="">
+                                    <span>쌍둥이 문제</span>
+                                </button>
+                                <button class="characterBtn" data-popup-btn="6-3" data-hover="">
+                                    <span>한 번 더!</span>
+                                </button>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="6-2" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!-- 쌍둥이 문제 -->
+				<li class="whole pop_page_1" data-popup-page="1-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">1</ins>
+								<div>
+									<div style="letter-spacing:-1px">
+                                        전체 크기가 1인 모눈종이에 색칠된 그림을 보고 <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+                                    </div>
+                                    <div class="box-img">
+                                        <img src="./images/suhi_p_0402_03_0008_3.png">
+                                        <p class="txt-item n1">＋</p>
+                                        <p class="txt-item n2">＝</p>
+                                    </div>
+                                    <div class="textAlignC mt_20">
+                                        0.5＋0.24＝<div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">0.74</div>
+                                        </div>
+                                    </div>
+
+                                    <a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- 1번 풀이 확인 -->
+				<li class="solve pop_page_2" data-popup-page="1-2">
+					<div class="popup_contents">
+                        <p>모눈 한 칸의 크기가 0.01이고 0.45＋0.4는 모눈 85칸이므로 0.85입니다.</p>
+					</div>
+				</li>
+
+				<!-- 2번 쌍둥이문제 -->
+				<li class="whole pop_page_3" data-popup-page="2-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">2</ins>
+								<div>
+									<div>
+                                        0.16＋0.19는 얼마인지 그림에 나타내 알아보세요.
+                                    </div>
+
+                                    <div class="img-answer n2">
+                                        <div class="exam bullet">예</div>
+                                        <img src="./images/suhi_p_0402_03_0008_6.png">
+                                        <p class="txt-item">
+                                            <span>0</span>
+                                            <span>0.1</span>
+                                            <span>0.2</span>
+                                            <span>0.3</span>
+                                            <span>0.4</span>
+                                            <span>0.5</span>
+                                        </p>
+                                        <div class="toggle hand" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="textAlignC mt_20">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">0.35</div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이 확인-->
+                <li class="solve pop_page_4" data-popup-page="2-2">
+                    <div class="popup_contents">
+                        <p>그림에서 0.24까지 표시한 후 0.17만큼 더 간 위치에 표시하면 0.24＋0.17＝0.41입니다.</p>
+                    </div>
+                </li>
+
+
+				<!-- 3번 쌍둥이 문제 -->
+				<li class="whole pop_page_6" data-popup-page="3-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">3</ins>
+								<div>
+									<div>
+                                        계산해 보세요.
+                                    </div>
+
+                                    <div class="box-flex">
+                                        <div class="item">
+                                            0.75＋0.21＝<div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                0.96
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="item">
+                                            0.48＋0.13＝<div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                0.61
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-flex">
+                                        <div class="item">
+                                            <div class="math_calc_table class3">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            3
+                                                            <sup class="sup blueT sub-answer" data-toggle-obj="3" data-group-index="3">1</sup>
+                                                            <span class="dot"></span>
+                                                        </td>
+                                                        <td>6
+                                                            <sup class="sup blueT sub-answer" data-toggle-obj="3" data-group-index="3">1</sup>
+                                                        </td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>＋</td>
+                                                        <td>5<span class="dot"></span></td>
+                                                        <td>9</td>
+                                                        <td>7</td>
+                                                    </tr>
+                                                    <tr class="line">
+                                                        <td colspan="4">
+                                                            <div class="rowLine"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td colspan="3">
+                                                            <div class="toggle" data-toggle-obj="3"  data-group-index="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    9<span class="dot" style="right:72%"></span>61
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="math_calc_table class3">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <span>2</span>
+                                                            <sup class="sup blueT sub-answer" data-toggle-obj="4" data-group-index="4">1</sup>
+                                                            <span class="dot"></span>
+                                                        </td>
+                                                        <td>7</td>
+                                                        <td>5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>＋</td>
+                                                        <td>1</td>
+                                                        <td>4<span class="dot"></span></td>
+                                                        <td>6</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="line">
+                                                        <td colspan="5">
+                                                            <div class="rowLine"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td colspan="4">
+                                                            <div class="toggle" data-toggle-obj="4"  data-group-index="4">
+                                                                <div class="answer" data-toggle-target="4">
+                                                                    17<span class="dot" style="right:54%"></span>35
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 3번 풀이 확인 -->
+				<li class="solve pop_page_7" data-popup-page="3-2">
+					<div class="popup_contents">
+                        <div class="box-flex">
+                            <div class="item">
+                                <div class="math_calc_table class3">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>0<span class="dot"></span></td>
+                                            <td>8</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>＋</td>
+                                            <td>0<span class="dot"></span></td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr class="line">
+                                            <td colspan="4">
+                                                <div class="rowLine"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0<span class="dot"></span></td>
+                                            <td>9</td>
+                                            <td>3</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="math_calc_table class3">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>0</td>
+                                            <td>
+                                                2<sup class="sup redT">1</sup>
+                                            </td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>＋</td>
+                                            <td>0<span class="dot"></span></td>
+                                            <td>4</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr class="line">
+                                            <td colspan="4">
+                                                <div class="rowLine"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0<span class="dot"></span></td>
+                                            <td>7</td>
+                                            <td>2</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</li>
+
+				<!-- 4번 쌍둥이 문제 -->
+				<li class="whole pop_page_9" data-popup-page="4-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">4</ins>
+								<div>
+									<p>
+                                        어느 피겨 스케이팅 선수가 쇼트 프로그램에서 받은 기술 점수와 구성 점수입니다. 이 선수가 쇼트 프로그램에서 받은 총점은 몇 점일까요?
+                                    </p>
+
+                                    <div class="tableContainer green">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:50%;" span="2">
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <th>기술 점수</th>
+                                                <th>구성 점수</th>
+                                            </tr>
+                                            <tr>
+                                                <td>35.16점</td>
+                                                <td>32.45점</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="textAlignC">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                67.61
+                                            </div>
+                                        </div>점
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 4번 풀이 확인 -->
+				<li class="solve pop_page_10" data-popup-page="4-2">
+					<div class="popup_contents">
+                        <p style="letter-spacing:-1px">(총점)＝(기술 점수)＋(구성 점수)＝39.03＋35.89＝74.92(점)</p>
+					</div>
+				</li>
+
+				<!-- 5번 쌍둥이 문제-->
+				<li class="whole pop_page_12" data-popup-page="5-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">5</ins>
+								<div>
+									<div>
+                                        잘못 계산한 곳을 찾아 까닭을 쓰고, 바르게 계산해 보세요.
+                                    </div>
+
+                                    <div class="box-img-g">
+                                        <div class="item n1">
+                                            <div class="group">
+                                                <span></span>
+                                                <span>4</span>
+                                                <span class="dot" style="left:46%"></span>
+                                                <span>1</span>
+                                                <span>8</span>
+                                            </div>
+                                            <div class="group">
+                                                <span>＋</span>
+                                                <span></span>
+                                                <span>2</span>
+                                                <span class="dot" style="left:73%"></span>
+                                                <span>9</span>
+                                            </div>
+                                            <div class="group">
+                                                <span></span>
+                                                <span>4</span>
+                                                <span class="dot" style="left:46%"></span>
+                                                <span>4</span>
+                                                <span>7</span>
+                                            </div>
+                                        </div>
+                                        <div class="item n2">
+                                            <div class="toggle hand" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div class="group">
+                                                        <span></span>
+                                                        <span>4</span>
+                                                        <span class="dot" style="left:46%"></span>
+                                                        <span>1</span>
+                                                        <span>8</span>
+                                                    </div>
+                                                    <div class="group">
+                                                        <span>＋</span>
+                                                        <span>2</span>
+                                                        <span class="dot" style="left:46%"></span>
+                                                        <span>9</span>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="group">
+                                                        <span></span>
+                                                        <span>7</span>
+                                                        <span class="dot" style="left:46%"></span>
+                                                        <span>0</span>
+                                                        <span>8</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="box-flex">
+                                        <div class="colorBox skyBlue check">까닭</div>
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <span class="exam bullet">예</span>
+                                                <p>소수점의 자리를 잘못 맞추어 계산하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 5번 풀이 확인 -->
+				<li class="solve pop_page_13" data-popup-page="5-3">
+					<div class="popup_contents">
+                        소수점의 자리를 맞추어 쓰고 계산해야 하는데 잘못 맞추어 계산해서 틀렸습니다.
+                    </div>
+				</li>
+
+
+				<!-- 6번 쌍둥이 문제 -->
+				<li class="whole pop_page_15" data-popup-page="6-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">6</ins>
+								<div>
+									<div style="letter-spacing:-1.5px">카드를 한 번씩 모두 사용하여 소수 두 자리 수를 만들려고 합니다. 만들 수 있는 가장 큰 수와 가장 작은 수의 합을 구해 보세요.</div>
+                                    <div class="img-bg n1">
+                                        <p>7</p>
+                                        <p>4</p>
+                                        <p>6</p>
+                                        <p>.</p>
+                                    </div>
+
+                                    <div class="textAlignC">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                12.31
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+					</div>
+				</li>
+
+                <!-- 6번 한번더 문제 -->
+                <li class="whole pop_page_15" data-popup-page="6-3">
+                    <h2 class="pop-tit">
+                        <ins class="special type4"></ins>
+                        <span></span>
+                    </h2>
+                    <div class="popup_contents" data-quiz="toggle">
+                        <ul class="contentsList">
+                            <li>
+                                <ins class="bullet number">6</ins>
+                                <div>
+                                    <div style="letter-spacing:-1.5px">카드를 한 번씩 모두 사용하여 소수 두 자리 수를 만들려고 합니다. 만들 수 있는 가장 큰 수와 가장 작은 수의 합을 구해 보세요.</div>
+                                    <div class="img-bg n2">
+                                        <p>7</p>
+                                        <p>8</p>
+                                        <p>3</p>
+                                        <p>.</p>
+                                    </div>
+
+                                    <div class="textAlignC">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                12.51
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="./data/(4-2-3)수학익힘쌍둥이_08차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 6번 풀이 확인 -->
+                <li class="solve pop_page_13" data-popup-page="6-2">
+                    <div class="popup_contents">
+                        <ul class="contentsList">
+                            <li>
+                                <ins class="dot deepGreen"></ins>
+                                <p>만들 수 있는 가장 큰 소수 두 자리 수: 6.52</p>
+                            </li>
+                            <li>
+                                <ins class="dot deepGreen"></ins>
+                                <p>만들 수 있는 가장 작은 소수 두 자리 수: 2.56</p>
+                            </li>
+                        </ul>
+                        <p class="mt_10">
+                            <span class="icon_arrow"></span>
+                            6.52＋2.56＝9.08
+                        </p>
+                    </div>
+                </li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+            $prite.add({
+                target: $ts.getEl('#aniBox_3'),
+                spriteId: 'sprite3',
+                spriteList: [
+                    {
+                        name: 'girl_1',
+                        circle: 'deeppink',
+                        top: 160,
+                        left: 850,
+                        width: 340,
+                        height: 421,
+                        thumbNail: '../common/contents/images/character/girl_1.png',
+                        spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+                        sound: './media/audios/suhi_p_0402_03_0007_1.mp3',
+                        speech:'left',
+                        textBubble: {
+                            text: '소수점은 그대로 내려서 찍어.',
+                            class: 'balloon bottom deeppink',
+                            top: 0,
+                            left: 790,
+                            width: 290,
+                            textAlign: 'center',
+                            wordBreak: 'keep-all'
+                        },
+                        sheetWidth: 102000,
+                        sheetHeight: 421,
+                        endSheet: 0,
+                        delay: 40,
+                        callbacks: {
+                            start: function () {},
+                            end: function () {}
+                        }
+
+                    }
+
+                ]
+            });
+
+		}, false);
+	</script>
+</body>
+
+</html>
