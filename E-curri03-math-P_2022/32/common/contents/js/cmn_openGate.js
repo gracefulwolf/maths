@@ -118,7 +118,10 @@ function openGateInit() {
                             $(this).addClass('active');
 
                             var num = $(this).attr('data-num');
-                            countNum ( num )
+                            countNum ( num );
+
+                            var buttonClick = new Audio("../common/libs/media/click.mp3");
+                            buttonClick.play();
                         });
 
 
