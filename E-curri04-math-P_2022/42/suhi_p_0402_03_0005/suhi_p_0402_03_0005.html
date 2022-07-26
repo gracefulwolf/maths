@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+    <!--  math css -->
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+    <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+    <style>
+        .popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+        .popup_pages .buttonContainer{right:40px; bottom:20px;}
+        .popup_pages .downloadBtn { bottom:20px;}
+        .popup_pages ins.number {margin: 6px 10px 0 0;width: 40px;height: 40px;line-height: 1.8em;text-align: center;font-size: 22px;letter-spacing: 0;border-radius: 10px;color: #6dbc4b;border: 2px solid #6dbc4b;background-color: #fff;}
+        .img-wrap img {width:auto; height: 100%;}
+        .numbering li {position: absolute; }
+        .popup_contents .downloadBtn {bottom: 20px;}
+
+        /*page_0 개념정리 */
+        .page_0 .box-img {margin-top:80px;height:300px;position:absolute}
+        .page_0 .box-img img {width:100%;height:300px;object-fit:contain}
+        .page_0 .box-img .txt-item {position:absolute;display:flex;align-items:center;justify-content:space-around;width:100%;left:0;padding-right:53px}
+        .page_0 .box-img .txt-item.n1 {top:-10px}
+        .page_0 .box-img .txt-item.n2 {bottom:-30px}
+
+		/* 1번 */
+        .page_1 .contentsList li ins {position:relative;top:8px}
+        .page_1 .contentsList li:nth-child(2) ins {top:18px}
+        .page_1 .bunsuWrap {position:relative;top:-2px}
+
+        .pop_page_1 .contents-box .contentsList li ins {position:relative;top:8px}
+        .pop_page_1 .contents-box .contentsList li:nth-child(2) ins {top:18px}
+        .pop_page_1 .bunsuWrap {position:relative;top:-2px}
+
+
+        /* 2번*/
+        .page_2 .txt-item {position:absolute;display:flex;width:100%;left:0}
+        .page_2 .txt-item.n1 {justify-content:center;top:-60px;align-items:flex-end}
+        .page_2 .txt-item.n1 > div {width:20%;text-align:center}
+        .page_2 .txt-item.n2 {top:81px}
+        .page_2 .txt-item.n3 {top:171px}
+        .page_2 .txt-item.n2 > div,
+        .page_2 .txt-item.n3 > div {width:20%;height:90px;background-color:transparent;display:flex;align-items:center;justify-content:center}
+
+        .img-box2 {height:300px;text-align:center;margin:100px 50px 0;position:relative}
+        .img-box2 img {vertical-align:top;height:100%;width:100%;object-fit:contain}
+
+        .pop_page_3 .txt-item {position:absolute;display:flex;width:100%;left:0}
+        .pop_page_3 .txt-item.n1 {justify-content:center;top:-60px;align-items:flex-end}
+        .pop_page_3 .txt-item.n1 > div {width:20%;text-align:center}
+        .pop_page_3 .txt-item.n2 {top:81px}
+        .pop_page_3 .txt-item.n3 {top:171px}
+        .pop_page_3 .txt-item.n2 > div,
+        .pop_page_3 .txt-item.n3 > div {width:20%;height:90px;background-color:transparent;display:flex;align-items:center;justify-content:center}
+
+		/* 3번 */
+        .page_3 .bullet.green.number {display:inline-flex;color:#a3d48e;align-items:center;justify-content:center}
+        .page_3 .box-flex {display:flex;margin:50px 0 0 50px}
+        .page_3 .lineBox {width:290px;height:250px;margin-right:40px;box-sizing:border-box;text-align:center;padding:20px 0;flex-shrink:0;position:relative}
+        .page_3 .lineBox .line {position:relative;color:#ff0000}
+        .page_3 .lineBox .line:before {content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background-color:#000}
+        .page_3 .lineBox .txt-item {position:absolute;bottom:20px}
+        .page_3 .lineBox .txt-item:before {content:'';position:absolute;left:50%;bottom:calc(100% - 4px);margin-left:-1px;width:2px;height:80px;background-color:#ff0000}
+        .page_3 .lineBox .txt-item:after {content:'';position:absolute;width:10px;height:10px;bottom:calc(100% + 65px);left:50%;margin-left:-6px;border-top:2px solid #ff0000;border-right:2px solid #ff0000;transform:rotate(-45deg)}
+        .page_3 .lineBox .txt-item.n1 {left:46px}
+        .page_3 .lineBox .txt-item.n2 {left:162px}
+        .page_3 .sub-item ~ .sub-item {margin-top:10px}
+        .page_3 .sub-item .bullet.green.number {position:relative;top:-8px}
+        .page_3 .toggle {width:140px}
+
+
+        .pop_page_6 .box-flex {display:flex;margin:50px 0 0 50px}
+        .pop_page_6 .lineBox {width:290px;height:250px;margin-right:40px;box-sizing:border-box;text-align:center;padding:20px 0;flex-shrink:0;position:relative}
+        .pop_page_6 .lineBox .line {position:relative;color:#ff0000}
+        .pop_page_6 .lineBox .line:before {content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background-color:#000}
+        .pop_page_6 .lineBox .txt-item {position:absolute;bottom:20px}
+        .pop_page_6 .lineBox .txt-item:before {content:'';position:absolute;left:50%;bottom:calc(100% + 4px);margin-left:-1px;width:2px;height:80px;background-color:#ff0000}
+        .pop_page_6 .lineBox .txt-item:after {content:'';position:absolute;width:10px;height:10px;bottom:calc(100% + 73px);left:50%;margin-left:-6px;border-top:2px solid #ff0000;border-right:2px solid #ff0000;transform:rotate(-45deg)}
+        .pop_page_6 .lineBox .txt-item.n1 {left:61px}
+        .pop_page_6 .lineBox .txt-item.n2 {left:177px}
+        .pop_page_6 .sub-item ~ .sub-item {margin-top:10px}
+        .pop_page_6 .sub-item .bullet.green.number {position:relative;top:-8px}
+        .pop_page_6 .toggle {width:140px}
+        .pop_page_6 .bullet.green.number,
+        .pop_page_7 .bullet.green.number {display:inline-flex;color:#a3d48e;align-items:center;justify-content:center;position:relative;top:-6px}
+
+        /* 4번 */
+        .page_4 .lineBox,
+        .pop_page_9 .lineBox {width:700px;text-align:center;padding:30px;margin:60px auto}
+
+        .solve .box-flex {display:flex;justify-content:space-around;padding-top:20px}
+        .popup_pages>li.on {z-index:2}
+
+        /* 5번 */
+        .page_5 .box-flex {display:flex;align-items:center;justify-content:center;margin-top:40px}
+        .page_5 .img-bg {background:url("./images/suhi_p_0402_03_0005_3.png") 50% 0 no-repeat;background-size:contain;height:240px;margin-bottom:20px;position:relative;margin-top:20px}
+
+        .pop_page_12 .box-flex {display:flex;align-items:center;width:450px;margin:60px auto 0}
+        .pop_page_12 .box-flex ~ .box-flex {margin-top:20px}
+
+        /* 6번 */
+        .page_6 .img-box6 {position:relative;height:260px;text-align:center}
+        .page_6 .img-box6 img {width:100%;height:100%;object-fit:contain;vertical-align:top}
+        .page_6 .img-box6 .colorBox {position:absolute;bottom:-40px;left:50%;margin-left:-53px}
+        .page_6 .balloon {left:630px;top:0}
+
+        .pop_page_15 .bullet.green.number {display:inline-flex;color:#a3d48e;align-items:center;justify-content:center}
+        .pop_page_15 .tit .bullet.number.green {position:relative;top:-7px}
+        .pop_page_15 .lineBox {width:300px;margin:40px auto;padding:30px 50px 30px 30px;display:flex;align-items:center;justify-content:center}
+        .pop_page_15 .math_calc_table.class3 .bullet.number {position:relative;left:0;top:-4px}
+        .pop_page_15 .box-flex {display:flex;align-items:center;justify-content:center}
+        .pop_page_15 .box-flex .number {margin-right:10px;align-self:center}
+        .pop_page_15 .box-flex .number ~ .number {margin-left:40px}
+
+        .pop_page_13 .bullet.green.number {display:inline-flex;color:#a3d48e;align-items:center;justify-content:center;margin:0}
+        .pop_page_13 .contentsList .bullet.number.green {position:relative;top:-7px}
+
+        .popup_contents .contentsList img[src*="equalIcon"] {
+            height: 11px;
+            vertical-align: middle;
+            margin: -7px 0 0 0;
+        }
+        .popup_contents .contentsList img[src*="inequalIcon"] {
+            height: 30px;
+        }
+        .popup_contents .answer img[src*="equalIcon"] {margin:0}
+
+
+        .buttonContainer {z-index:2}
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						소수 사이의 관계를 알아볼까요
+					</span>
+					<span class="sub-page">
+						42~43쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">개념 정리</li>
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+					<li data-hover="">6</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<!-- 개념정리 -->
+					<li class="page_0" >
+						<h2>
+							<ins class="special type2"></ins>
+							<span></span>
+						</h2>
+						
+						<section class="full">
+							<div class="box-img">
+                                <img src="./images/suhi_p_0402_03_0005_1.png" alt="">
+                                <div class="txt-item n1">
+                                    <span>10배</span>
+                                    <span>10배</span>
+                                    <span>10배</span>
+                                </div>
+                                <div class="txt-item n2">
+                                    <div class="bunsuWrap">
+                                        <ul><li>1</li><li>10</li></ul>
+                                    </div>
+                                    <div class="bunsuWrap">
+                                        <ul><li>1</li><li>10</li></ul>
+                                    </div>
+                                    <div class="bunsuWrap">
+                                        <ul><li>1</li><li>10</li></ul>
+                                    </div>
+                                </div>
+							</div>
+						</section>
+					</li>
+
+					<!-- 1번 -->
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">1</ins>
+							<span>
+								<span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+							</span>
+						</h2>
+
+                        <ul class="contentsList ml_50 mt_50">
+                            <li>
+                                <ins class="circleDot deepGreen bullet"></ins>
+                                <div>
+                                    0.01의 100배는
+                                    <div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            1
+                                        </div>
+                                    </div>입니다.
+                                </div>
+                            </li>
+                            <li>
+                                <ins class="circleDot deepGreen bullet"></ins>
+                                <div>
+                                    0.1의 <div class="bunsuWrap inline"><ul><li>1</li><li>10</li></ul></div>은
+                                    <div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            0.01
+                                        </div>
+                                    </div>입니다.
+                                </div>
+                            </li>
+                            <li>
+                                <ins class="circleDot deepGreen bullet"></ins>
+                                <div>
+                                    0.1은 0.001의
+                                    <div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            100
+                                        </div>
+                                    </div>배입니다.
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="buttonContainer left">
+                            <button class="characterBtn" data-popup-btn="1-1" data-hover="">
+                                <span>쌍둥이 문제</span>
+                            </button>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="solveCheckBtn" data-popup-btn="1-2" data-hover=""></button>
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+						<!-- content -->
+					</li>
+
+
+					<!-- 2번  -->
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">2</ins>
+							<span>빈칸에 알맞은 수를 써넣으세요.</span>
+						</h2>
+						<section class="full">
+                            <div class="img-box2">
+                                <img src="./images/suhi_p_0402_03_0005_2.png" alt="">
+                                <div class="txt-item n1">
+                                    <div class="bunsuWrap"><ul><li>1</li><li>10</li></ul></div>
+                                    <div class="bunsuWrap"><ul><li>1</li><li>10</li></ul></div>
+                                    <div>10배</div>
+                                    <div>10배</div>
+                                </div>
+                                <div class="txt-item n2">
+                                    <div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">0.009</div>
+                                    </div>
+                                    <div>0.09</div>
+                                    <div>0.9</div>
+                                    <div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">9</div>
+                                    </div>
+                                    <div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">90</div>
+                                    </div>
+                                </div>
+                                <div class="txt-item n3">
+                                    <div class="toggle" data-toggle-obj="4">
+                                        <div class="answer" data-toggle-target="4">0.236</div>
+                                    </div>
+                                    <div class="toggle" data-toggle-obj="5">
+                                        <div class="answer" data-toggle-target="5">2.36</div>
+                                    </div>
+                                    <div>23.6</div>
+                                    <div class="toggle" data-toggle-obj="6">
+                                        <div class="answer" data-toggle-target="6">236</div>
+                                    </div>
+                                    <div>2360</div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="2-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 3번  -->
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number">3</ins>
+                            <div>
+                                <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+                            </div>
+						</h2>
+						<section class="full">
+
+                            <div class="box-flex">
+                                <div class="lineBox green">
+                                    <span class="line">3</span>
+                                    <span>0</span>
+                                    .
+                                    <span>0</span>
+                                    <span class="line">3</span>
+                                    <span>4</span>
+
+                                    <p class="txt-item n1"><span class="bullet number green">ㄱ</span></p>
+                                    <p class="txt-item n2"><span class="bullet number green">ㄴ</span></p>
+                                </div>
+
+                                <div class="item">
+                                    <div class="sub-item">
+                                        <span class="bullet number green">ㄱ</span>이 나타내는 수는
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                30
+                                            </div>
+                                        </div>이고,
+                                    </div>
+                                    <div class="sub-item">
+                                        <span class="bullet number green">ㄴ</span>이 나타내는 수는
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                0.03
+                                            </div>
+                                        </div>입니다.
+                                    </div>
+                                    <div class="sub-item">
+                                        따라서 <span class="bullet number green">ㄱ</span>이 나타내는 수는 <span class="bullet number green">ㄴ</span>이 나타내는 수의
+                                        <div class="toggle" data-toggle-obj="3">
+                                            <div class="answer" data-toggle-target="3">
+                                                1000
+                                            </div>
+                                        </div>입니다.
+                                    </div>
+                               </div>
+                            </div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="3-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4"  data-quiz="toggle" >
+						<h2>
+							<ins class="bullet number">4</ins>
+							<div style="position:relative;top:-12px">
+								다음이 나타내는 수의 <div class="bunsuWrap inline"><ul><li>1</li><li>100</li></ul></div>은 얼마일까요?
+							</div>
+						</h2>
+						<section class="full">
+                            <div class="lineBox sky">
+                                10이 4개, 1이 1개, 0.1이 6개인 수
+                            </div>
+
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        0.416
+                                    </div>
+                                </div>
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="4-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+                                <button class="characterBtn" data-popup-btn="4-3" data-hover="">
+                                    <span>한 번 더!</span>
+                                </button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="4-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number star">5</ins>
+							<div style="letter-spacing:-1.5px">
+                                음료수가 한 병에 0.21 L 씩 들어 있습니다. 한 상자에 음료수가 10병씩 들어 있다면 10상자에 들어 있는 음료수는 모두 몇 L일까요?
+                            </div>
+						</h2>
+						<section class="full">
+                            <div class="img-bg">
+                            </div>
+
+                            <div class="textAlignC">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        21
+                                    </div>
+                                </div> L
+                            </div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="5-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5-3" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 6번 -->
+					<li class="page_6" data-quiz="toggle">
+						<h2>
+							<ins class="bullet number star">6</ins>
+							<div style="position:relative;top:-12px">
+								예성이가 생각한 수의
+                                <div class="bunsuWrap inline"><ul><li>1</li><li>10</li></ul></div>은 얼마일까요?
+							</div>
+						</h2>
+						<section class="full">
+                            <div class="img-box6">
+                                <img src="./images/suhi_p_0402_03_0005_4.png" alt="">
+                                <div class="colorBox deeppink">예성</div>
+                                <div class="balloon deeppink left textAlignC">
+                                    내가 생각한 수의<br>
+                                    100배는 740이야.
+                                </div>
+                            </div>
+
+                            <div class="textAlignC mt_60">
+                                <div class="toggle" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        0.74
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttonContainer left">
+                                <button class="characterBtn" data-popup-btn="6-1" data-hover="">
+                                    <span>쌍둥이 문제</span>
+                                </button>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="solveCheckBtn" data-popup-btn="6-2" data-hover=""></button>
+                                <button class="dapCheckBtn" data-answer-btn=""></button>
+                            </div>
+
+						</section>
+					</li>
+
+					
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+				<!-- 쌍둥이 문제 -->
+				<li class="whole pop_page_1" data-popup-page="1-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">1</ins>
+								<div class="contents-box">
+									<div>
+                                        <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+									</div>
+                                    <ul class="contentsList mt_50">
+                                        <li>
+                                            <ins class="circleDot deepGreen bullet"></ins>
+                                            <div>
+                                                0.1의 100배는
+                                                <div class="toggle" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        10
+                                                    </div>
+                                                </div>입니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <ins class="circleDot deepGreen bullet"></ins>
+                                            <div>
+                                                0.01의 <div class="bunsuWrap inline"><ul><li>1</li><li>10</li></ul></div>은
+                                                <div class="toggle" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        0.001
+                                                    </div>
+                                                </div>입니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <ins class="circleDot deepGreen bullet"></ins>
+                                            <div>
+                                                1은 0.001의
+                                                <div class="toggle" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3">
+                                                        1000
+                                                    </div>
+                                                </div>배입니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- 1번 풀이 확인 -->
+				<li class="solve pop_page_2" data-popup-page="1-2">
+					<div class="popup_contents">
+                        <div style="letter-spacing:-1px">
+                            0.01의 100배는 1이고, 0.1의
+                            <div class="bunsuWrap inline"><ul><li>1</li><li>10</li></ul></div>은 0.01입니다. 0.1은 0.001의 100배입니다.
+                        </div>
+					</div>
+				</li>
+
+				<!-- 2번 쌍둥이문제 -->
+				<li class="whole pop_page_3" data-popup-page="2-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">2</ins>
+								<div>
+									<div>
+                                        빈칸에 알맞은 수를 써넣으세요.
+									</div>
+
+                                    <div class="img-box2">
+                                        <img src="./images/suhi_p_0402_03_0005_2.png" alt="">
+                                        <div class="txt-item n1">
+                                            <div class="bunsuWrap"><ul><li>1</li><li>10</li></ul></div>
+                                            <div class="bunsuWrap"><ul><li>1</li><li>10</li></ul></div>
+                                            <div>10배</div>
+                                            <div>10배</div>
+                                        </div>
+                                        <div class="txt-item n2">
+                                            <div class="toggle" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">0.05</div>
+                                            </div>
+                                            <div>0.5</div>
+                                            <div>5</div>
+                                            <div class="toggle" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">50</div>
+                                            </div>
+                                            <div class="toggle" data-toggle-obj="3">
+                                                <div class="answer" data-toggle-target="3">500</div>
+                                            </div>
+                                        </div>
+                                        <div class="txt-item n3">
+                                            <div class="toggle" data-toggle-obj="4">
+                                                <div class="answer" data-toggle-target="4">0.014</div>
+                                            </div>
+                                            <div class="toggle" data-toggle-obj="5">
+                                                <div class="answer" data-toggle-target="5">0.14</div>
+                                            </div>
+                                            <div>1.4</div>
+                                            <div class="toggle" data-toggle-obj="6">
+                                                <div class="answer" data-toggle-target="6">14</div>
+                                            </div>
+                                            <div>140</div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이 확인-->
+                <li class="solve pop_page_4" data-popup-page="2-2">
+                    <div class="popup_contents">
+                        <ul class="contentsList">
+                            <li>
+                                <ins class="dot deepGreen"></ins>
+                                <div style="letter-spacing:-1px">소수를 10배 하면 소수점을 기준으로 수가 왼쪽으로 한 자리씩 이동합니다.</div>
+                            </li>
+                            <li>
+                                <ins class="dot deepGreen" style="position:relative;top:12px"></ins>
+                                <div>
+                                    소수의 <div class="bunsuWrap inline" style="position:relative;top:-4px"><ul><li>1</li><li>10</li></ul></div>을 구하면 소수점을 기준으로 수가 오른쪽으로 한 자리씩 이동합니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+				<!-- 3번 쌍둥이 문제 -->
+				<li class="whole pop_page_6" data-popup-page="3-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">3</ins>
+								<div>
+									<div>
+                                        <span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.
+                                    </div>
+								</div>
+							</li>
+						</ul>
+                        <div class="box-flex">
+                            <div class="lineBox green">
+                                <span class="line">7</span>
+                                .
+                                <span>1</span>
+                                <span>4</span>
+                                <span class="line">7</span>
+
+                                <p class="txt-item n1"><span class="bullet number green">ㄱ</span></p>
+                                <p class="txt-item n2"><span class="bullet number green">ㄴ</span></p>
+                            </div>
+
+                            <div class="item">
+                                <div class="sub-item">
+                                    <span class="bullet number green">ㄱ</span>이 나타내는 수는
+                                    <div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            7
+                                        </div>
+                                    </div>이고,
+                                </div>
+                                <div class="sub-item">
+                                    <span class="bullet number green">ㄴ</span>이 나타내는 수는
+                                    <div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            0.007
+                                        </div>
+                                    </div>입니다.
+                                </div>
+                                <div class="sub-item">
+                                    따라서 <span class="bullet number green">ㄱ</span>이 나타내는 수는 <span class="bullet number green">ㄴ</span>이 나타내는 수의
+                                    <div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            1000
+                                        </div>
+                                    </div>입니다.
+                                </div>
+                            </div>
+                        </div>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 3번 풀이 확인 -->
+				<li class="solve pop_page_7" data-popup-page="3-2">
+					<div class="popup_contents">
+                        <p style="letter-spacing:.5px">
+                            <span class="bullet number green">ㄱ</span>은 십의 자리 숫자이므로 30을 나타내고,
+                            <span class="bullet number green">ㄴ</span>은 소수 둘째 자리 숫자이므로 0.03을 나타냅니다. 30은 0.03의 1000배이므로
+                            <span class="bullet number green">ㄱ</span>이 나타내는 수는
+                            <span class="bullet number green">ㄴ</span>이 나타내는 수의 1000배입니다.
+                        </p>
+					</div>
+				</li>
+
+
+				<!-- 4번 쌍둥이 문제 -->
+				<li class="whole pop_page_9" data-popup-page="4-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">4</ins>
+								<div>
+                                    <div style="position:relative;top:-12px">
+                                        다음이 나타내는 수의 <div class="bunsuWrap inline"><ul><li>1</li><li>100</li></ul></div>은 얼마일까요?
+                                    </div>
+
+                                    <div class="lineBox sky">
+                                        100이 8개, 1이 9개, 0.1이 2개인 수
+                                    </div>
+
+                                    <div class="textAlignC">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                8.092
+                                            </div>
+                                        </div>
+                                    </div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+                <!-- 4번 한번더 문제 -->
+                <li class="whole pop_page_9" data-popup-page="4-3">
+                    <h2 class="pop-tit">
+                        <ins class="special type4"></ins>
+                        <span></span>
+                    </h2>
+                    <div class="popup_contents" data-quiz="toggle">
+                        <ul class="contentsList">
+                            <li>
+                                <ins class="bullet number">4</ins>
+                                <div>
+                                    <div>
+                                        0.1이 8개, 0.001이 5개인 수의 10배는 얼마일까요?
+                                    </div>
+
+
+                                    <div class="textAlignC mt_130">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                8.05
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+
+				<!-- 4번 풀이 확인 -->
+				<li class="solve pop_page_10" data-popup-page="4-2">
+					<div class="popup_contents">
+                        <div>10이 4개, 1이 1개, 0.1이 6개인 수는 41.6입니다.</div>
+                        <div class="mt_10">
+                            41.6의
+                            <div class="bunsuWrap inline" style="position:relative;top:-2px"><ul><li>1</li><li>10</li></ul></div>은 0.416입니다.
+                        </div>
+					</div>
+				</li>
+
+
+				<!-- 5번 쌍둥이 문제-->
+				<li class="whole pop_page_12" data-popup-page="5-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">5</ins>
+								<div>
+									<div style="letter-spacing:-1px">
+                                        초콜릿이 한 봉지에 0.45 kg씩 들어 있습니다. 한 상자에 초콜릿이 10봉지씩 들어 있다면 10상자에 들어 있는 초콜릿은 모두 몇 kg일까요?
+                                    </div>
+
+                                    <div class="textAlignC mt_100">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                45
+                                            </div>
+                                        </div> kg
+                                    </div>
+                                    
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 5번 풀이 확인 -->
+				<li class="solve pop_page_13" data-popup-page="5-3">
+					<div class="popup_contents">
+                        0.21의 10배는 2.1이고, 2.1의 10배는 21입니다. 따라서 10상자에 들어 있는 음료수는 모두 21 L입니다.
+                    </div>
+				</li>
+
+
+				<!-- 6번 쌍둥이 문제 -->
+				<li class="whole pop_page_15" data-popup-page="6-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">6</ins>
+								<div style="position:relative;top:-12px">
+                                    어떤 수의 10배는 160입니다. 어떤 수의
+                                    <div class="bunsuWrap inline"><ul><li>1</li><li>100</li></ul></div>은 얼마일까요?
+								</div>
+							</li>
+						</ul>
+
+                        <div class="textAlignC mt_130">
+                            <div class="toggle" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    0.16
+                                </div>
+                            </div>
+                        </div>
+
+						<a href="./data/(4-2-3)수학익힘쌍둥이_05차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+					</div>
+				</li>
+
+                <!-- 6번 풀이 확인 -->
+                <li class="solve pop_page_13" data-popup-page="6-2">
+                    <div class="popup_contents" style="letter-spacing:-.8px">
+                        예성이가 생각한 수의 100배가 740이므로 예성이가 생각한 수는 740의
+                        <div class="bunsuWrap inline"><ul><li>1</li><li>100</li></ul></div>인 7.4입니다. 따라서 7.4의
+                        <div class="bunsuWrap inline"><ul><li>1</li><li>10</li></ul></div>은 0.74입니다.
+                    </div>
+                </li>
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+            $prite.add({
+                target: $ts.getEl('#aniBox_3'),
+                spriteId: 'sprite3',
+                spriteList: [
+                    {
+                        name: 'girl_1',
+                        circle: 'deeppink',
+                        top: 160,
+                        left: 850,
+                        width: 340,
+                        height: 421,
+                        thumbNail: '../common/contents/images/character/girl_1.png',
+                        spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
+                        sound: './media/audios/suhi_p_0402_03_0006_1.mp3',
+                        speech:'left',
+                        textBubble: {
+                            text: '소수점의 자리를 <br>맞추어 계산해.',
+                            class: 'balloon bottom deeppink',
+                            top: 0,
+                            left: 790,
+                            width: 290,
+                            textAlign: 'center',
+                            wordBreak: 'keep-all'
+                        },
+                        sheetWidth: 102000,
+                        sheetHeight: 421,
+                        endSheet: 0,
+                        delay: 40,
+                        callbacks: {
+                            start: function () {},
+                            end: function () {}
+                        }
+
+                    }
+
+                ]
+            });
+
+		}, false);
+	</script>
+</body>
+
+</html>
