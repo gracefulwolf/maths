@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css" />
+	<!--  math css -->
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css" />
+	<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css" />
+	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
+	<style>
+		/* 기본 스타일 */
+		.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+		.popup_pages .buttonContainer{right:40px; bottom:20px;}
+		.popup_pages .downloadBtn { bottom:20px;}
+		.popup_pages ins.number {width: 40px;height: 40px;line-height: 1.8em;text-align: center;font-size: 22px;letter-spacing: 0;border-radius: 10px;color: #6dbc4b;border: 2px solid #6dbc4b;background-color: #fff;}
+		img{width:100%}
+
+
+		.img-wrap {position: relative;margin:0 auto;}
+		.img-wrap  img {width: 100%;}
+		.img-wrap .txt {position: absolute;white-space: nowrap;}
+
+
+		/*page_0 개념정리 */
+		.page_0 .img-wrap{margin-top: 30px; padding: 0 50px;width:100%; box-sizing: border-box;}
+		.page_0 .img-wrap .txt {text-align: center;}
+		.page_0 .img-wrap .txt.n1 {left: 36%;top: 16%;}
+		.page_0 .img-wrap .txt.n2 {left: 77%;top: 50%;}
+
+
+		/* 1번 */
+		.page_1 .img-wrap {width: 720px;margin-top: 10px;}
+		.page_1 .img-wrap .txt.n1 {left: 15%;top: 55%;}
+		.page_1 .img-wrap .txt.n2 {left: 38%;top: 46%;}
+		.page_1 .img-wrap .txt.n3 {left: 72%;top: 53%;}
+		.page_1 .lineBox {width: 950px;margin:0 auto;padding: 10px 30px;}
+		.pop_page_1_1 .img-wrap {width: 1000px;margin-top: 40px;margin-left: -20px;}
+		.pop_page_1_1 .img-wrap .txt.n1 {left: 12%;top: 59%;}
+		.pop_page_1_1 .img-wrap .txt.n2 {left: 48%;top: 51%;}
+		.pop_page_1_1 .img-wrap .txt.n3 {left: 85%;top: 36%;}
+
+
+		/* 2번 */
+		.page_2 .img-wrap {width: 900px;margin-top: 10px;}
+		.page_2 .img-wrap .txt.n1 {left: 14.5%;top: 31%;}
+		.page_2 .img-wrap .txt.n2 {left:32%;top: 51%;}
+		.page_2 .img-wrap .txt.n3 {left: 44%;top: 27%;}
+		.page_2 .img-wrap .txt.n4 {left: 64.5%;top: 51%;}
+		.page_2 .img-wrap .txt.n5 {left: 90%;top: 45%;}
+		.page_2 .contentsList {display: inline-block;}
+		.page_2 .contentsList .colorBox {width: 90px;text-align: center}
+
+		.pop_page_2_1 .img-wrap {width: 1040px;margin-top: 40px;}
+		.pop_page_2_1 .img-wrap .txt.n1 {left: 14.5%;top: 24%;}
+		.pop_page_2_1 .img-wrap .txt.n2 {left:31%;top: 47%;}
+		.pop_page_2_1 .img-wrap .txt.n3 {left: 49%;top: 25%;}
+		.pop_page_2_1 .img-wrap .txt.n4 {left: 64.5%;top: 51%;}
+		.pop_page_2_1 .img-wrap .txt.n5 {left: 81%;top: 22%;}
+
+		.pop_page_2_2 .img-wrap {width: 700px;margin-top: 30px;margin-bottom: 30px;}
+		.pop_page_2_2 .img-wrap .txt.n1 {left: 8%; top: 18%;}
+		.pop_page_2_2 .img-wrap .txt.n2 {left: 47%;top: 47%;}
+		.pop_page_2_2 .img-wrap .txt.n3 {left: 88%;top: 25%;}
+		.pop_page_2_2 .img-wrap .txt.n4 {left: -6.5%; top: 34%;}
+		.pop_page_2_2 .img-wrap .txt.n5 {left: 16%;top: 34%;}
+		.pop_page_2_2 .img-wrap .txt.n6 {left: 31%;top: 27%;}
+		.pop_page_2_2 .img-wrap .txt.n7 {left: 49%;top: 90%;}
+		.pop_page_2_2 .img-wrap .txt.n8 {left: 69%; top: 51%;}
+		.pop_page_2_2 .img-wrap .txt.n9 {left: 81%;top: -22%;}
+
+
+		/* 3번 */
+		.page_3 .img-wrap {width: 900px;margin-top: 40px;}
+		.page_3 .img-wrap .txt.n1 {left: 0.5%;top: 11%;}
+		.page_3 .img-wrap .txt.n2 {left: -3%;top: 78%;}
+		.page_3 .img-wrap .txt.n3 {left: 23%;top: 44%;}
+		.page_3 .img-wrap .txt.n4 {left: 39.5%;top: 21%;}
+		.page_3 .img-wrap .txt.n5 {left: 40%;top: 53%;}
+		.page_3 .img-wrap .txt.n6 {left: 56%;top: 48%;}
+		.page_3 .img-wrap .txt.n7 {left: 73%;top: 36%;}
+		.page_3 .img-wrap .txt.n8 {left: 96%;top: -4%;}
+		.page_3 .img-wrap .txt.n9 {left: 94%;top: 53%;}
+
+		.pop_page_3_1 .img-wrap {width: 1040px;margin-top: 40px;}
+		.pop_page_3_1 .img-wrap .txt.n1 {left: 0.5%;top: 13%;}
+		.pop_page_3_1 .img-wrap .txt.n2 {left: -3%;top: 81%;}
+		.pop_page_3_1 .img-wrap .txt.n3 {left: 19%; top: 47%;}
+		.pop_page_3_1 .img-wrap .txt.n4 {left: 33.5%;top: 47%;}
+		.pop_page_3_1 .img-wrap .txt.n5 {left: 48%;top: 3%;}
+		.pop_page_3_1 .img-wrap .txt.n6 {left: 56%;top: 50%;}
+		.pop_page_3_1 .img-wrap .txt.n7 {left: 72%;top: 33%;}
+		.pop_page_3_1 .img-wrap .txt.n8 {left: 93%;top: -2%;}
+		.pop_page_3_1 .img-wrap .txt.n9 {left: 92%; top: 56%;}
+
+		.pop_page_3_2 .img-wrap {width: 700px;margin-top: 30px;margin-bottom: 30px;}
+		.pop_page_3_2 .img-wrap .txt.n1 {left: 0;top: 10%;}
+		.pop_page_3_2 .img-wrap .txt.n2 {left: -5%; top: 79%;}
+		.pop_page_3_2 .img-wrap .txt.n3 {left: 22%;top: 46%;}
+		.pop_page_3_2 .img-wrap .txt.n4 {left: 36.5%;top: 22%;}
+		.pop_page_3_2 .img-wrap .txt.n5 {left: 37%;top: 54%;}
+		.pop_page_3_2 .img-wrap .txt.n6 {left: 58%; top: 49%;}
+		.pop_page_3_2 .img-wrap .txt.n7 {left: 70%;top: 37%;}
+		.pop_page_3_2 .img-wrap .txt.n8 {left: 96%;top: -4%;}
+		.pop_page_3_2 .img-wrap .txt.n9 {left: 94%;top: 53%;}
+		.pop_page_3_2 .blankBox {line-height: 47px; font-size: 40px;}
+
+
+
+		/* 4번 */
+		.page_4 .iframe-wrap {width: 1058px;height: 503px;position: absolute !important;top: 0;left: 0;overflow: hidden;z-index: 0 !important;}
+		.page_4 .page-iframe {width: 100%;height: 100%;overflow: hidden;border: 0;position: absolute;z-index: 1;top:0;left: 0;}
+		.page_4 .buttonContainer.right {right: 170px;}
+		.pop_page_4_1 .dvd-section {position:relative; width: 100%;height: 570px;}
+		.pop_page_4_1 .iframe-wrap {width: 100%;height: 100%;position: absolute !important;top: 0;left: 0;overflow: hidden;z-index: 0 !important;}
+		.pop_page_4_1 .page-iframe {width: 100%;height: 100%;overflow: hidden;border: 0;position: absolute;z-index: 1;top:0;left: 0;}
+
+
+		/* 5번 */
+
+
+
+	</style>
+</head>
+
+<body>
+	<div id="wrap" class="math suhi">
+		<header>
+			<h1><ins class="suhi_title"></ins>
+				<span class="subInfo">
+					<span class="sub-text">
+						이등변삼각형을 알아볼까요
+					</span>
+					<span class="sub-page">
+						22~23쪽
+					</span>
+				</span>
+			</h1>
+		</header>
+		<main>
+			<div class="basicSlider contentsBox" data-slide-container="main">
+				<!--   탭 버튼   -->
+				<ul class="basicSlider_tabs" data-tabs="">
+					<li data-hover="">개념 정리</li>
+					<li data-hover="">1</li>
+					<li data-hover="">2</li>
+					<li data-hover="">3</li>
+					<li data-hover="">4</li>
+					<li data-hover="">5</li>
+				</ul>
+				<ul class="basicSlider_slides" data-slides="">
+					<!-- 개념정리 -->
+					<li class="page_0" >
+						<h2>
+							<ins class="special type2"></ins>
+							<span></span>
+						</h2>
+						
+						<section class="full">
+							<div class="img-wrap">
+								<img src="./images/suhi_p_0402_02_0002_1.png" alt="">
+
+								<div class="txt n1">우리는 <br> 이등변삼각형이야.</div>
+								<div class="txt n2">길이가 <br> 같아.</div>
+							</div>
+							
+						</section>
+					</li>
+
+					<!-- 1번  -->
+					<li class="page_1" data-quiz="toggle">
+						<h2>
+							<ins class="number">1</ins>
+							<span>
+								<span class="blankBox w50"></span>
+								안에 알맞은 말을 써넣으세요.
+							</span>
+						</h2>
+
+						<!-- content -->
+						<section class="full">
+
+							<div class="img-wrap">
+								<img src="./images/suhi_p_0402_02_0002_2.png" alt="">
+								<div class="txt n1">가</div>
+								<div class="txt n2">나</div>
+								<div class="txt n3">다</div>
+							</div>
+
+							<div class="lineBox green mt_20">
+								삼각형 가, 나, 다와 같이 두 변의 길이가 같은 삼각형을 <br>
+								<div class="toggle" data-toggle-obj="1">
+								    <div class="answer" data-toggle-target="1">이등변삼각형</div></div>
+								(이)라고 합니다.
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="1-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="1-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+
+					<!-- 2번  -->
+					<li class="page_2" data-quiz="toggle">
+						<h2>
+							<ins class="number">2</ins>
+							<span>
+								자를 이용하여 이등변삼각형을 모두 찾고, 그렇게 생각한 까닭을 써 보세요.
+								<div class="supply_guide inline" style="transform: translateY(5px)">꾸러미 1</div>
+							</span>
+						</h2>
+
+						<section class="full">
+
+							<div class="img-wrap">
+								<img src="./images/suhi_p_0402_02_0002_4.png" alt="">
+								<div class="txt n1">가</div>
+								<div class="txt n2">나</div>
+								<div class="txt n3">다</div>
+								<div class="txt n4">라</div>
+								<div class="txt n5">마</div>
+							</div>
+
+							<div class="textAlignC mt_15">
+								<ul class="contentsList inline">
+									<li>
+										<span class="colorBox deepPurple check">답</span>
+										<div class="toggle" data-toggle-obj="1">
+										    <div class="answer" data-toggle-target="1">가, 라, 마</div>
+										</div>
+									</li>
+									<li>
+										<span class="colorBox skyBlue check">까닭</span>
+										<div class="toggle" data-toggle-obj="2">
+										    <div class="answer" data-toggle-target="2">
+												<span class="bullet exam">예</span>
+												길이가 같은 두 변이 있습니다.
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="2-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="2-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 3번 -->
+					<li class="page_3" data-quiz="toggle">
+						<h2>
+							<ins class="number">3</ins>
+							<span style="letter-spacing: -2.4px">
+								다음 도형은 이등변삼각형입니다.
+								<span class="blankBox w50"></span>
+								안에 알맞은 수를 써넣으세요.
+							</span>
+						</h2>
+						<section class="full">
+
+
+							<div class="img-wrap">
+								<img src="./images/suhi_p_0402_02_0002_7.png" alt="">
+								<div class="txt n1">
+									<div class="toggle" data-toggle-obj="1">
+										<div class="answer" data-toggle-target="1">8</div>
+									</div>
+									cm
+								</div>
+								<div class="txt n2">4 cm</div>
+								<div class="txt n3">8 cm</div>
+								<div class="txt n4">
+									<div class="toggle" data-toggle-obj="2">
+										<div class="answer" data-toggle-target="2">2</div>
+									</div>
+									cm
+								</div>
+								<div class="txt n5">2 cm</div>
+								<div class="txt n6">3 cm</div>
+								<div class="txt n7">
+									<div class="toggle" data-toggle-obj="3">
+										<div class="answer" data-toggle-target="3">7</div>
+									</div>
+									cm
+								</div>
+								<div class="txt n8">2 cm</div>
+								<div class="txt n9">7 cm</div>
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="3-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="3-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+					<!-- 4번 -->
+					<li class="page_4"  data-quiz="toggle" >
+						<h2>
+							<ins class="number">4</ins>
+							<span>
+								그림에서 이등변삼각형을 모두 찾아 색칠해 보세요.
+							</span>
+						</h2>
+						<section class="full">
+
+							<div class="iframe-wrap">
+								<iframe src="../../../dvd_4_2_p/resource/contents/lesson02/ops/lesson02/suhi_p_0402_02_0002_1.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+							</div>
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="4-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+							</div>
+							<div class="buttonContainer right">
+								<button class="solveCheckBtn" data-popup-btn="4-2" data-hover=""></button>
+								<!--<button class="dapCheckBtn" data-answer-btn=""></button>-->
+							</div>
+						</section>
+					</li>
+
+					<!-- 5번 -->
+					<li class="page_5" data-quiz="toggle">
+						<h2>
+							<ins class="number star">5</ins>
+							<span>
+								주한이는 3 cm 막대와 5 cm 막대를 2개씩 가지고 있습니다. 주한이가 만들 수 있는 이등변삼각형은 모두 몇 개인가요?
+							</span>
+						</h2>
+						<section class="full">
+
+
+							<div class="textAlignC mt_100">
+								<div class="toggle" data-toggle-obj="1">
+								    <div class="answer" data-toggle-target="1">2</div>
+								</div>개
+							</div>
+
+
+							<div class="buttonContainer left">
+								<button class="characterBtn" data-popup-btn="5-1" data-hover="">
+									<span>쌍둥이 문제</span>
+								</button>
+								<!--<button class="characterBtn" data-popup-btn="5-3" data-hover="">
+									<span>한번 더!</span>
+								</button>-->
+							</div>
+							<div class="buttonContainer">
+								<button class="solveCheckBtn" data-popup-btn="5-2" data-hover=""></button>
+								<button class="dapCheckBtn" data-answer-btn=""></button>
+							</div>
+						</section>
+					</li>
+
+
+				</ul>
+			</div>
+		</main>
+		<section class="popup_container" data-popup-container="">
+			<ul class="popup_pages">
+
+				<!-- 1번 쌍둥이 문제 -->
+				<li class="whole pop_page_1_1" data-popup-page="1-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">1</ins>
+								<div>
+									<div class="mb_10">두 변의 길이가 같은 삼각형을 무엇이라고 하나요?</div>
+
+									<div>
+										<div class="img-wrap">
+											<img src="./images/suhi_p_0402_02_0002_3.png" alt="">
+											<div class="txt n1">가</div>
+											<div class="txt n2">나</div>
+											<div class="txt n3">다</div>
+										</div>
+										
+										<div class="textAlignC mt_40">
+											<div class="toggle" data-toggle-obj="1">
+											    <div class="answer" data-toggle-target="1">이등변삼각형</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-2)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 1번 풀이 확인 -->
+				<li class="solve pop_page_1_2" data-popup-page="1-2">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div>
+									두 변의 길이가 같은 삼각형을 이등변삼각형이라고 합니다.
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- 2번 쌍둥이문제 -->
+				<li class="whole pop_page_2_1" data-popup-page="2-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">2</ins>
+								<div>
+									<div class="mb_10">길이가 같은 두 변이 있는 삼각형을 모두 찾아보세요.</div>
+
+									<div>
+
+										<div class="img-wrap">
+											<img src="./images/suhi_p_0402_02_0002_5.png" alt="">
+											<div class="txt n1">가</div>
+											<div class="txt n2">나</div>
+											<div class="txt n3">다</div>
+											<div class="txt n4">라</div>
+											<div class="txt n5">마</div>
+										</div>
+										
+										<div class="textAlignC mt_20">
+											<div class="toggle" data-toggle-obj="1">
+											    <div class="answer" data-toggle-target="1">나, 라, 마</div>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+							</li>
+						</ul>
+
+						<a href="./data/(4-2-2)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="5" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 2번 풀이 확인-->
+				<li class="solve pop_page_2_2" data-popup-page="2-2">
+					<div class="popup_contents">
+						<ul class="contentsList">
+							<li>
+								<div style="width: 100%">
+									두 변의 길이가 같은 삼각형을 찾습니다.
+
+									<div class="img-wrap">
+										<img src="./images/suhi_p_0402_02_0002_6.png" alt="">
+										<div class="txt n1">가</div>
+										<div class="txt n2">라</div>
+										<div class="txt n3">마</div>
+										<div class="txt n4 blueT">2 cm</div>
+										<div class="txt n5 blueT">2 cm</div>
+										<div class="txt n6 blueT">2 cm</div>
+										<div class="txt n7 blueT">2 cm</div>
+										<div class="txt n8 blueT">2.5 cm</div>
+										<div class="txt n9 blueT">2.5 cm</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- 3번 쌍둥이 문제 -->
+				<li class="whole pop_page_3_1" data-popup-page="3-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">3</ins>
+								<div>
+									<p class="mb_10">
+										다음 도형은 이등변삼각형입니다.
+										<span class="blankBox w50"></span>
+										안에 알맞은 수를 써넣으세요.
+									</p>
+
+									<div>
+
+										<div class="img-wrap">
+											<img src="./images/suhi_p_0402_02_0002_8.png" alt="">
+											<div class="txt n1">
+												<div class="toggle" data-toggle-obj="1">
+												    <div class="answer" data-toggle-target="1">7</div>
+												</div>
+												cm
+											</div>
+											<div class="txt n2">3 cm</div>
+											<div class="txt n3">7 cm</div>
+											<div class="txt n4">
+												<div class="toggle" data-toggle-obj="2">
+													<div class="answer" data-toggle-target="2">4</div>
+												</div>
+												cm
+											</div>
+											<div class="txt n5">4 cm</div>
+											<div class="txt n6">6 cm</div>
+											<div class="txt n7">
+												<div class="toggle" data-toggle-obj="3">
+													<div class="answer" data-toggle-target="3">6</div>
+												</div>
+												cm
+											</div>
+											<div class="txt n8">3 cm</div>
+											<div class="txt n9">6 cm</div>
+										</div>
+
+									</div>
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-2)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="8" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 3번 풀이 확인 -->
+				<li class="solve pop_page_3_2" data-popup-page="3-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<div style="width: 100%">
+									이등변삼각형은 길이가 같은 두 변이 있습니다.
+
+									<div class="img-wrap">
+										<img src="./images/suhi_p_0402_02_0002_9.png" alt="">
+										<div class="txt n1">
+											<span class="blankBox w50">8</span>
+											cm
+										</div>
+										<div class="txt n2">4 cm</div>
+										<div class="txt n3">8 cm</div>
+										<div class="txt n4">
+											<span class="blankBox w50">2</span>
+											cm
+										</div>
+										<div class="txt n5">2 cm</div>
+										<div class="txt n6">3 cm</div>
+										<div class="txt n7">
+											<span class="blankBox w50">7</span>
+											cm
+										</div>
+										<div class="txt n8">2 cm</div>
+										<div class="txt n9">7 cm</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+
+				<!-- 4번 쌍둥이 문제 -->
+				<li class="whole pop_page_4_1" data-popup-page="4-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">4</ins>
+								<div >
+									<p class="mb_10">
+										그림에서 이등변삼각형을 모두 찾아 색칠해 보세요.
+									</p>
+
+									<section class="dvd-section">
+										<div class="iframe-wrap">
+											<iframe src="../../../dvd_4_2_p/resource/contents/lesson02/ops/lesson02/suhi_p_0402_02_0002_2.html" title="" class="page-iframe" id="ifm1" scrolling="no"></iframe>
+										</div>
+
+									</section>
+
+								</div>
+							</li>
+						</ul>
+
+						
+						<a href="./data/(4-2-2)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<!--<div class="buttonContainer">
+							 <button class="solveCheckBtn" data-popup-btn="11" data-hover=""></button>
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>-->
+					</div>
+				</li>
+
+				<!-- 4번 풀이 확인 -->
+				<li class="solve pop_page_4_2" data-popup-page="4-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<div>
+									두 변의 길이가 같은 삼각형을 찾아 색칠합니다.
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+
+				<!-- 5번 쌍둥이 문제-->
+				<li class="whole pop_page_5_1" data-popup-page="5-1">
+					<h2 class="pop-tit">
+						<ins class="special type3"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet number">5</ins>
+								<div>
+									<div class="mb_10">
+										승환이는 5 cm 막대와 7 cm 막대를 2개씩 가지고 있습니다. 승환이가 만들 수 있는 이등변삼각형은 모두 몇 개인가요?
+									</div>
+
+									<div>
+
+										<div class="textAlignC mt_100">
+											<div class="toggle" data-toggle-obj="1">
+												<div class="answer" data-toggle-target="1">2</div>
+											</div>개
+										</div>
+
+									</div>
+
+
+								</div>
+							</li>
+						</ul>
+						
+						<a href="./data/(4-2-2)수학익힘쌍둥이_02차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
+						<div class="buttonContainer">
+							<!-- <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> -->
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>
+
+
+				<!-- 5번 풀이 확인 -->
+				<li class="solve pop_page_5_2" data-popup-page="5-2">
+					<div class="popup_contents">
+
+						<ul class="contentsList">
+							<li>
+								<ins class="bullet dot deepGreen"></ins>
+								<div>3 cm, 3 cm, 5 cm 막대로 두 변의 길이가 같은 이등변삼각형을 만들 수 있습니다.</div>
+							</li>
+							<li>
+								<ins class="bullet dot deepGreen"></ins>
+								<div>3 cm, 5 cm, 5 cm 막대로 두 변의 길이가 같은 이등변삼각형을 만들 수 있습니다.</div>
+							</li>
+							<li>
+								<div>
+									<span class="icon_arrow"></span>
+									만들 수 있는 이등변삼각형은 모두 2개입니다.
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</li>
+
+				<!-- 5번 한번 더 -->
+				<!--<li class="whole pop_page_5_3" data-popup-page="5-3">
+					<h2 class="pop-tit">
+						<ins class="special type4"></ins>
+						<span></span>
+					</h2>
+					<div class="popup_contents" data-quiz="toggle">
+						<ul class="contentsList">
+							<li>
+								<ins class="number">5</ins>
+								<div>
+									<div class="mb_10">
+										<span class="blankBox"></span>
+										안에 들어갈 수 있는 가장 큰 수를 구해 보세요.
+									</div>
+
+									한번 더.......
+
+
+								</div>
+							</li>
+						</ul>
+
+						<div class="buttonContainer">
+							&lt;!&ndash; <button class="solveCheckBtn" data-popup-btn="14" data-hover=""></button> &ndash;&gt;
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</div>
+				</li>-->
+
+			</ul>
+		</section>
+	</div>
+	<div id="loadingContainer">
+		<div class="loadingIconAnimation"></div>
+	</div>
+
+	<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+	<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+	<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+	<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+	<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+	<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+	<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+	<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+	<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+	<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+	<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+	<script type="text/javascript" src="./js/contents.js"></script>
+	<!-- horizon -->
+	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
+
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$prite.add({
+				target: $ts.getEl('#aniBox_1'),
+				spriteId: 'sprite1',
+				spriteList: [
+					{
+						name: 'girl_3',
+						speech: 'right',
+						circle: 'sky',
+						top: 40,
+						left: 0,
+						width: 340,
+						height: 421,
+						thumbNail: '../common/contents/images/character/girl_3.png',
+						spriteSheet: '../common/contents/images/character/girl_3_sprite.png',
+						sound: './media/audios/suhi_p_0402_01_0003_1.mp3',
+						sheetWidth: 102000,
+						sheetHeight: 421,
+						//endSheet: 0,
+						delay: 40,
+						textBubble: {
+							text: '<div class="bunsuWrap inline">\n' +
+									'<ul>\n' +
+									'<li>2</li>\n' +
+									'<li>8</li>\n' +
+									'</ul>\n' +
+									'</div>만큼 \n' +
+									'<span class="icon_x_title"></span>\n' +
+									'표 해 보자!',
+							class: 'balloon bottom green ctTail',
+							top: -158,
+							left: 50,
+							textAlign: 'left',
+							wordBreak: 'keep-all'
+						},
+						callbacks: {
+							// start: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = '-200px';
+							// }, // 시작시 콜백
+							// end: function () {
+							// 	$ts.getEl('.characterImg')[0].style.left = 0;
+							// } // 끝날시 콜백
+						}
+					}
+				]
+			});
+
+		}, false);
+	</script>
+</body>
+
+</html>
