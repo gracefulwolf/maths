@@ -30,13 +30,17 @@ function openGateInit() {
                     $('#animation_container #canvas').attr('width',1500);
                     $('#animation_container #canvas').attr('height',940);
 
+
+
                     $(document).ready(function(){
+
                         /*
                         * *** 게이트화면 설정
                         * */
 
                         //기존 게이트화면 html 제거
                         $("#wrap .gate_container .gate_title_container").remove();
+
 
                         //게이트화면 html 생성
                         var gateHtml = '<div class="cl_mainContainer">\n' +
@@ -66,11 +70,14 @@ function openGateInit() {
                             '\t\t\t</div>';
 
                         $("#wrap .gate_container").append(gateHtml);
+
                         $("#wrap .gate_container").show();
+
 
                         //활동지 미리보기, 활동지 다운로드 버튼 href 지정
                         //$(".cl_mainContainer a.search").attr("href", $("#wrap .gate_container input.reviewBtnHref").val());
                         $(".cl_mainContainer a.down").attr("href", $("#wrap .gate_container input.downBtnHref").val());
+
 
                         //활동지 미리보기 다운버튼
                         $(".cl_mainContainer a.search").on("click", function(e){
@@ -155,18 +162,18 @@ function openGateInit() {
 
 
                         //각 랜덤에 부합하는 contents 내용
-                        $('.basicSlider_tabs li').on('click', function(){
-                            // $('.basicSlider_slides').eq(0).children("li").css('display', 'none');
+                         $('.basicSlider_tabs li').on('mouseup', function(){     /*click를 mouseup으로 변경 --> 선긋기 오류 해결*/
+                            $('.basicSlider_slides').eq(0).children("li").css('display', 'none');
                             let pageNum = $(this).attr('data-page-num');
 
-                            // $('.basicSlider_slides').eq(0).children("li[data-page-num="+pageNum+"]").css("display", "flex");
+                           $('.basicSlider_slides').eq(0).children("li[data-page-num="+pageNum+"]").css("display", "flex");
 
                             $('.basicSlider_slides').eq(0).children("li").removeClass("on");
                             $('.basicSlider_slides').eq(0).children("li[data-page-num="+pageNum+"]").addClass("on");
                         });
 
                         //시작버튼 클릭 시
-                        $(".gate_btn").on("click", function(){
+                        $(".gate_btn").on("mouseup", function(){
 
                             //10문제 선택인경우 랜덤으로 섞은번호 원래대로
                             if($(".quizList > li[data-num=10]").hasClass("active") == true){
@@ -176,14 +183,24 @@ function openGateInit() {
                                 })
                             }
 
-
                             $(".gate_container").addClass("off");
                             $(".checkContainer.math").addClass("on");
-                            // $('.basicSlider_slides').eq(0).children("li").css('display', 'none');
-                            // $('.basicSlider_slides').eq(0).children("li[data-page-num="+solveArr[0]+"]").css("display", "flex");
+                            $('.basicSlider_slides').eq(0).children("li").css('display', 'none');
+                            $('.basicSlider_slides').eq(0).children("li[data-page-num="+solveArr[0]+"]").css("display", "flex");
 
                             $('.basicSlider_slides').eq(0).children("li").removeClass("on");
                             $('.basicSlider_slides').eq(0).children("li[data-page-num="+solveArr[0]+"]").addClass("on");
+
+
+                            $(".basicSlider_tabs li").eq(0).trigger("click");
+
+
+                            try{
+                                showLeftSlide();
+                            }catch(err){
+
+                            }
+
                         });
 
 
