@@ -89,8 +89,12 @@
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
 
-			var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".js-chainButtons");
-
+			document.querySelector('.dapCheckBtn').addEventListener('click', function() {
+				var btn = document.querySelector('.dapCheckBtn');
+				var childBtn = document.querySelector("iframe").contentWindow.document.querySelector(".js-chainButtons");
+				childBtn.click();
+				btn.classList.toggle('reset');
+			})
 
 		}, false);
 

@@ -10,6 +10,25 @@
 	<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
 	<link rel="stylesheet" href="../../../__common__/css/custom_last_v2.css">
     <style>
+		.flex-center {display:flex;align-items:center;justify-content:center;}
+
+		.iframe-wrap{position: relative; width:calc(100% + 112px); margin-left:-56px;height:462px; box-sizing: border-box;overflow: hidden;}
+		.iframe-wrap .iframe-item{
+			width: 1140px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0px;
+		}
+		.pop_page_iframe .popup_contents{padding:0 !important;}
+		.pop_page_iframe .popup_closeBtn{z-index: 10001;}
+
+		.study_guide {right: 0;}
+
+		.innerTab_3 .toggle {width: 900px; text-align: left;}
+
+		.fake-toggle {position: absolute; display: none;}
+
     </style>
 </head>
 
@@ -22,53 +41,75 @@
 			</div>
 		</header>
 		<main>
-			<div class="contentsBox">
-                <div class="basicSlider doItContent" data-slide-container="">
-                    <div class="moveButtonContainer" data-slide-btn-container="">
-                        <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-                        <ul class="basicSlider_circle_tabs" data-tabs="">
-                            <li data-hover=""></li>
-                            <li data-hover=""></li>
-                            <li data-hover=""></li>
-                        </ul>
-                        <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
-                    </div>
-                    <ul class="basicSlider_slides" data-slides="">
-                        <li class="innerTab_1">
-                            
-                            <div class="buttonContainer">
-                                <!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
-                                <button class="dapCheckBtn" data-answer-btn=""></button>
-                            </div>
-                        </li>
-                        <li class="innerTab_2">
-                            
-                            <div class="buttonContainer">
-                                <!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
-                                <button class="dapCheckBtn" data-answer-btn=""></button>
-                            </div>
-                        </li>
-                        <li class="innerTab_3">
-                            
-                            <div class="buttonContainer">
-                                <!-- <button class="solveCheckBtn" data-popup-btn="0000" data-hover=""></button> -->
-                                <button class="dapCheckBtn" data-answer-btn=""></button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+			<div class="basicSlider doItContent contentsBox" data-slide-container="">
+				<div class="moveButtonContainer" data-slide-btn-container="">
+					<div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+					<ul class="basicSlider_circle_tabs" data-tabs="">
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+						<li data-hover=""></li>
+					</ul>
+					<div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+				</div>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="innerTab_1">
+						<div class="study_guide"><em>점</em>을 <em>드래그</em>하여 <em>그려</em> 보세요.</div>
+
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_4_2_h/resource/contents/lesson02/ops/2/suh_h_0402_02_0003_202_1-1.html" class="iframe-item"></iframe>
+						</div>
+
+						<div class="fake-toggle" data-toggle-obj="1"></div>
+
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="innerTab_2">
+						<div class="study_guide"><em>점</em>을 <em>드래그</em>하여 <em>그려</em> 보세요.</div>
+
+						<div class="iframe-wrap">
+							<iframe src="../../../dvd_4_2_h/resource/contents/lesson02/ops/2/suh_h_0402_02_0003_202_1-2.html" class="iframe-item"></iframe>
+						</div>
+						
+						<div class="
+						" data-toggle-obj="1"></div>
+
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+					<li class="innerTab_3" data-quiz="toggle">
+						<h2 data-addline-container="" style="margin-top: 0;">
+							<ins class="dot orange"></ins>
+							<span>
+								무엇을 알 수 있나요?
+							</span>
+						</h2>
+						
+						<div class="ml_20 mt_20">
+							<div class="toggle" data-toggle-obj="1-1">
+								<div class="answer" data-toggle-target="1-1">
+									세 각 중 두 각의 크기가 같습니다.
+								</div>
+							</div>
+						</div>
+						<div class="ml_20 mt_20">
+							<div class="toggle" data-toggle-obj="1-2">
+								<div class="answer" data-toggle-target="1-2">
+									길이가 같은 두 변에 있는 두 각의 크기가 같습니다.
+								</div>
+							</div>
+						</div>
+						
+						<div class="buttonContainer">
+							<button class="dapCheckBtn" data-answer-btn=""></button>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</main>
 
-		<section class="popup_container" data-popup-container="">
-			<ul class="popup_pages">
-				<li class="solve image pop_page_1" data-popup-page="1">
-
-				</li>
-			</ul>
-		</section>
-
-		
 	</div>
 	<div id="loadingContainer">
 		<div class="loadingIconAnimation"></div>
@@ -88,6 +129,31 @@
 	<script type="text/javascript" src="./js/contents.js"></script>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
+			const btnTabs = document.querySelectorAll('.basicSlider_btn, .basicSlider_circle_tabs > li');
+			btnTabs.forEach(function (item) {
+				item.addEventListener('click', function() {
+					const iframes = document.querySelectorAll(".iframe-item");
+					iframes.forEach(function(item, idx) {
+						console.log(item);
+						item.contentWindow.location.reload();
+				});
+			});
+			})
+			
+
+			document.querySelector('.innerTab_1 .dapCheckBtn').addEventListener('click', function() {
+				var btn = document.querySelector('.innerTab_1 .dapCheckBtn');
+				var childBtn = document.querySelector(".innerTab_1 .iframe-item").contentWindow.document.querySelector(".js-chainButtons");
+				childBtn.click();
+				btn.classList.toggle('reset');
+			})
+			document.querySelector('.innerTab_2 .dapCheckBtn').addEventListener('click', function() {
+				var btn = document.querySelector('.innerTab_2 .dapCheckBtn');
+				var childBtn = document.querySelector(".innerTab_2 .iframe-item").contentWindow.document.querySelector(".js-chainButtons");
+				childBtn.click();
+				btn.classList.toggle('reset');
+			})
+
 		}, false);
 
 	</script>

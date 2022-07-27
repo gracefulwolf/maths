@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="../../../../../../E-curri04-math-H_2022/42/common/contents/css/bullet.css">
+    <link rel="stylesheet" href="./css/0402_03_202.css">
+    <style>
+      #wrap {
+        width: 1140px;
+      }
+      header {display: none;}
+      main {top: 0;}
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <section>
+            <div class="flexBox">
+              <div class="colorBox sky">
+                30˚
+              </div>
+              <div class="lineBox sky">
+                <div class="js-drawLine drawLine" data-option="">
+                  <canvas class="js-drawArea drawArea"></canvas>
+                  <div class="js-resetButton resetButton" data-hover=""></div>
+                  <div class="line line_3"></div>
+                </div>
+              </div>
+                <ins class="bullet exam" data-click-target="1">예</ins>
+            </div>
+            <div class="induceLight light_1" data-index="1"></div>
+            <div class="induceLight light_2" data-index="1"></div>
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools protractor"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+            <div class="js-chainButtons quizButtons answer" data-click-obj="1" data-quiz-chain="" data-hover=""></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {  
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+        
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+
+
+        var containers = $ts.getEl('.js-drawLine');
+        var answers = [
+          [ 
+            {
+              start: {x: 116, y: 281},
+              end: {x: 340, y: 281},
+            },
+            {
+              start: {x: 340, y: 281},
+              end: {x: 228, y: 113}
+            }
+          ],
+        ];
+
+        function createElement(container, i, j) {
+          var dot = document.createElement('div');
+
+          dot.classList.add('js-dragObj');
+          dot.classList.add('dragObj');
+          dot.classList.add('horizon_' + (i+1));
+          dot.classList.add('vertical_' + (j+1));
+          dot.setAttribute('data-type', 'drag');
+          dot.setAttribute('data-index', '1');
+
+          container.appendChild(dot);
+      
+          return dot;
+        }
+      
+        function createDot(container, dotLength) {
+          for (var i = 0; i < dotLength[0]; i++) {
+            for (var j = 0; j < dotLength[1]; j++) {
+              createElement(container, i, j);
+            }
+          }
+        }
+
+        function lightOff(lights) {
+          lights && lights.forEach(function(light) {
+            light.classList.add('hide');
+          });
+        }
+        function lightOn(lights) {
+          lights && lights.forEach(function(light) {
+            light.classList.remove('hide');
+          });
+        }
+
+        containers.forEach(function(container, index) {
+          var light = $ts.getEl('.induceLight[data-index="'+index+'"');
+
+          createDot(container, [7, 5]);
+          new DrawLine({
+            container: container,
+            resetButton: container.querySelector('.js-resetButton'),
+            answerButton: document.querySelector('.js-chainButtons'),
+            answer: answers[index],
+            lineWidth: 6,
+            callback: {
+              start: function(DrawLine) {
+                lightOff(light);
+              },
+              correct: function(DrawLine) {
+                console.log('correct', DrawLine);
+                // DrawLine.DRAGDROP.startObj.dom.classList.add('lightVisible');
+              },
+              showAnswer: function(DrawLine) {
+                lightOff(light);
+              },
+              reset: function(DrawLine) {
+                lightOn(light);
+              }
+            },
+          })
+        })
+      });
+    </script>
+  </body>
+</html>

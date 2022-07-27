@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_4-2/style/math_4-2.css">
+    <link rel="stylesheet" href="../include/math/style/drawLine.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="../../../../../../E-curri04-math-H_2022/42/common/contents/css/bullet.css">
+    <style>
+      #wrap {
+        width: 1140px;
+      }
+      header {display: none;}
+      main {top: 0;}
+
+      .dragBox {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 280px;
+        height: 100px;
+        z-index: 1;
+      }
+      .dragBox .rotateContainer {
+        top: 14px;
+        left: 40px;
+        width: 200px;
+        height: 60px;
+      }
+      .dragBox .rotateContainer.showRotate {
+        width: 600px;
+        height: 120px;
+      }
+
+    </style>
+  </head>
+	<body class="lesson_2">
+    <div id="wrap">
+      <header>
+
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <section>
+            <div class="dragBox noIcon">
+              <div class="js-rotate rotateContainer">
+                <div class="js-rotateTarget rotateTarget mathTools ruler"></div>
+                <div class="js-rotateButton rotateButton right"></div>
+                <div class="js-rotateButton rotateButton left"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/math/script/newDrawLine.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        function crateRotate(obj) {
+          return new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          });
+        }
+
+        var rotateArray = $ts.getEl('.js-rotate').map(crateRotate);
+
+      });
+    </script>
+  </body>
+</html>
