@@ -14,13 +14,17 @@
       (this.closeInnerMode = t.closeInnerMode);
     var s,
       e = this;
+
+  
+
+
     (this.set = function () {
       if (
         (this.btn.hasAttribute("data-popup-option") && this.addOption(),
-        this.autoMode || this.closeInnerMode
-          ? ((this.closeBtn = $ts.ce({ tag: "div", class: "popup_closeBtn", parent: $ts.getEl("[data-popup-inner]", this.page)[0] })), this.autoMode && this.open())
-          : (this.closeBtn = $ts.ce({ tag: "div", class: "popup_closeBtn", parent: this.page })),
-        1 < this.page.querySelectorAll(".popup_closeBtn").length)
+          this.autoMode || this.closeInnerMode
+            ? ((this.closeBtn = $ts.ce({ tag: "div", class: "popup_closeBtn", parent: $ts.getEl("[data-popup-inner]", this.page)[0] })), this.autoMode && this.open())
+            : (this.closeBtn = $ts.ce({ tag: "div", class: "popup_closeBtn", parent: this.page })),
+          1 < this.page.querySelectorAll(".popup_closeBtn").length)
       )
         for (var t = this.page.querySelectorAll(".popup_closeBtn"), s = 0; s < t.length; s++) 0 !== s && this.page.removeChild(t[s]);
       this.toggle ? this.btn.addEventListener("click", this.viewToggle.bind(this)) : this.btn.addEventListener("click", this.open.bind(this)),
@@ -28,8 +32,13 @@
         $ts.addHoverEvents(this.closeBtn, "preventDefault"),
         this.btn.addEventListener("click", window.$efSound.click),
         this.closeBtn.addEventListener("click", window.$efSound.click);
+
+        console.log(this, this.closeBtn);
+
+
+     
     }),
-      (this.toggle = function () {}),
+      (this.toggle = function () { }),
       (this.addOption = function () {
         var t = (t = this.btn.getAttribute("data-popup-option")).replace(/ /g, "").split(",");
         for (var s in t) this[t[s]] = !0;
@@ -43,10 +52,10 @@
           this.page.classList.add("on"),
           this.btn.classList.add("popupOn"),
           this.autoMode &&
-            !this.btn.classList.contains("opened") &&
-            (s = window.setInterval(function () {
-              e.close();
-            }, e.autoMode)),
+          !this.btn.classList.contains("opened") &&
+          (s = window.setInterval(function () {
+            e.close();
+          }, e.autoMode)),
           this.callBack && this.callBack.open && this.callBack.open(this);
       }),
       (this.close = function () {
@@ -82,11 +91,11 @@
         var t, s, e;
         this.btn.hasAttribute("data-slide") &&
           ((t = parseInt(this.btn.getAttribute("data-slide")) - 1),
-          (s = parseInt(this.btn.getAttribute("data-slide-page")) - 1),
-          (e = window.$pm.array.inPopup.slider[t]),
-          setTimeout(function () {
-            (e.idx = s), e.changeMoves();
-          }));
+            (s = parseInt(this.btn.getAttribute("data-slide-page")) - 1),
+            (e = window.$pm.array.inPopup.slider[t]),
+            setTimeout(function () {
+              (e.idx = s), e.changeMoves();
+            }));
       }),
       this.set();
   }
