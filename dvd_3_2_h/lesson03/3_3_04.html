@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math.css">
+    <link rel="stylesheet" type="text/css" href="../../E-curri03-math-H_2022/32/common/contents/css/math_suhi.css" />
+    <link rel="stylesheet" href="../../__common__/css/custom_last_v2.css">
+
+    <link rel="stylesheet" href="../include/math/style/master.css">
+    <link rel="stylesheet" href="../include/math_3-2/style/math_3-2.css">
+    <link rel="stylesheet" href="../include/math/style/rotete.css">
+    <link rel="stylesheet" href="./css/3_3_4.css">
+    <style>
+      /* 추가 */
+      main .contentsArea,
+      body {
+        background-color: transparent !important;
+      }
+
+      header {
+        display: none
+      }
+
+      .lesson_1:before {
+        display: none
+      }
+
+      main:before,
+      .lesson_1 {
+        background: none;
+      }
+
+      .quizButtons.solve {
+        display: none;
+      }
+
+      main {
+        top: 0
+      }
+
+      #wrap {
+        width: 1280px;
+        height: 768px;
+        padding: 38px 0;
+        box-shadow: none;
+        background-color: transparent !important;
+      }
+
+      main .contentsArea {
+        padding: 30px 56px 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+      }
+
+      .balloonText {
+        font-size: 38px !important
+      }
+
+      main .contentsArea h1 {
+        opacity: 0;
+      }
+
+      .dragLineContainer {
+        margin-top: 60px;
+      }
+
+      .balloon {
+        text-align: center;
+      }
+
+      .colorBox,
+      .txt {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .txt.n1 {
+        top: 260px;
+        left: 210px;
+      }
+
+      .txt.n2 {
+        top: 230px;
+        left: 530px;
+      }
+
+      .txt.n3 {
+        top: 266px;
+        left: 890px;
+      }
+
+      .colorBox.n1 {
+        top: 550px;
+        left: 440px;
+        z-index: 1;
+      }
+
+      .colorBox.n2 {
+        top: 550px;
+        left: 620px;
+        z-index: 1;
+      }
+
+      .b1 {
+        top: 370px;
+        left: 40px;
+      }
+
+      .b2 {
+        top: 370px;
+        left: 800px;
+      }
+
+      .dragBox.top:before,
+      .dragBox.top:after {
+        display: none;
+      }
+
+      .page1 .dragBox {
+        position: absolute;
+        top: 56px;
+        right: 0;
+        width: 230px;
+        height: 100px;
+      }
+
+      .page1 .dragBox {
+        position: absolute;
+        top: 126px;
+        right: 6px;
+        width: 180px;
+        height: 80px;
+      }
+
+      .rotateContainer {
+        position: absolute;
+        top: 17px;
+        left: 10px;
+        width: 156px;
+        height: 42px;
+      }
+    </style>
+  </head>
+	<body class="lesson_3">
+    <div id="wrap">
+      <header>
+        <div class="js-addThingsMenu addThingsMenu"></div>
+        <div class="js-indexButton indexButton" data-hover=""></div>
+        <!-- <div class="indexBox">
+          <span>3. 원</span>
+          <span>원의 성질을 알아볼까요</span>
+          <span class="step develop">전개</span>
+        </div> -->
+        <div class="js-mainBookButton mainBookButton" data-type="ebook" data-page="66">수학<span>66</span>쪽</div>
+        <div class="js-subBookButton subBookButton" data-type="ebook_sub" data-page="50">수학 익힘<span>50</span>쪽</div>
+        <div class="js-addThingsButton addThingsButton"></div>
+        <div class="js-closeButton closeButton" data-type="ebook" data-page="66"></div>
+      </header>
+      <main class="act">
+        <div class="contentsArea">
+          <!-- <h1 data-index="2">원 안에 그은 ㉠~㉨의 선분 중 길이가 가장 긴 선분을 찾아 봅시다.</h1> -->
+          <section>
+            <div class="basicSlider" data-slide-container="main">
+              <!-- <div class="basicSlider_pageMove">
+                <ul class="basicSlider_circle_tabs" data-tabs="main">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <div class="basicSlider_btn prev" data-btn-prev="main"></div>
+                <div class="basicSlider_btn next" data-btn-next="main"></div>
+              </div> -->
+              <ul class="basicSlider_slides" data-slides="main">
+                <li class="page1">
+                  <!-- <div class="imageBox"></div> -->
+                  <!-- <div class="char">
+                    <div class="balloonText">나는 컴퍼스로<br/>
+                      선분의 길이를<br/>
+                      비교해 볼거야.</div>
+                  </div> -->
+                  <div class="dragBox top">
+                    <div class="js-rotate rotateContainer">
+                      <div class="js-rotateTarget rotateTarget mathTools compass"></div>
+                      <div class="js-rotateButton rotateButton left"></div>
+                      <div class="js-rotateButton rotateButton right"></div>
+                    </div>
+                  </div>
+<!--                  <div class="js-chainButtons quizButtons answer" data-click-obj="1" data-quiz-chain="" data-hover=""></div>-->
+                </li>
+                
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../include/libs/js/ts.min.js"></script>
+    <script src="../include/math/script/rotate.min.js"></script>
+    <script src="../include/libs/js/slider.min.js"></script>
+    <script src="../include/contents/js/quiz/quiz.min.js"></script>
+    <script src="../include/contents/js/pageManager.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var rotateArray = [];
+        var rotateContainer = $ts.getEl('.js-rotate');
+
+        rotateContainer.forEach(function(obj, index) {
+          rotateArray.push(new $Rotate({
+            obj: obj,
+            target: obj.querySelector('.js-rotateTarget'),
+            degree: 1,
+            rightButton: obj.querySelector('.js-rotateButton.right'),
+            leftButton: obj.querySelector('.js-rotateButton.left'),
+            resetButton: false,
+            copy: false,
+            callback: {
+              move: function(Rotate) {},
+              end: function(Rotate) {}
+            }
+          }));
+        });
+
+        
+        window.$callBack.sliderMove = function(SLIDER) {
+          rotateArray.forEach(function(rotate) {
+            rotate.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
