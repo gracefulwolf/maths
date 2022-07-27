@@ -222,51 +222,7 @@
 	<!-- <script type="text/javascript" src="../common/contents/js/math_makeHorizonLine.js"></script> -->
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-			$prite.add({
-				target: $ts.getEl('#aniBox_1'),
-				spriteId: 'sprite3',
-				spriteList: [
-					{
-						name: 'girl_1',
-						circle: 'deeppink',
-						speech:'right',
-						top: 310,
-						left: 0,
-						width: 340,
-        				height: 421,
-						thumbNail: '../common/contents/images/character/girl_1.png',
-						spriteSheet: '../common/contents/images/character/girl_1_sprite.png',
-						sound: './media/audios/suhi_p_0301_01_0006_1.mp3',
-						sheetWidth: 102000,
-						sheetHeight: 421,
-						//endSheet: 0,
-						delay: 40,
-						textBubble: {
-							text: '같은 자리의 수끼리 뺄 수<br> 없을 때는 받아내림을 해!',
-							class: 'balloon left deeppink ctTail',
-							top:326,
-							left: 450,
-							textAlign: 'center', 
-							wordBreak: 'keep-all' 
-						},
-						callbacks: {
-							start: function () {
-								$ts.getEl('.page_1 .characterImg')[0].style.left='-200px';
-							}, // 시작시 콜백
-							end: function () {
-								$ts.getEl('.page_1 .characterImg')[0].style.left=0;
-							} // 끝날시 콜백
-						}
-					}
-				]
-			});
-
-			window.$callBack.sliderReset=function(params) {
-				$ts.getEl('.page_1 .characterImg')[0].style.left=0;
-			};
-
 		}, false);
 	</script>
 </body>
-
 </html>
