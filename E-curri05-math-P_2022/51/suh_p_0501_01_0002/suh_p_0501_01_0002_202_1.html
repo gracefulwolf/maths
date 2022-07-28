@@ -22,6 +22,8 @@
         .page_0 .img-box {height:450px;margin-top:-20px}
         .page_0 .img-box img {width:100%;height:100%;object-fit:contain}
 
+        .page_1 .balloon.sky:after {top:calc(50% - 10px)}
+
         .page_2 .img-box {position:relative;height:360px;background:url("./images/suh_p_0501_01_0002_201_1/suh_p_0501_01_0002_201_1_1.png") 50% 100% no-repeat;background-size:auto 250px}
         .page_2 .img-box .balloon {text-align:center}
         .page_2 .img-box .balloon.orange {right:10px;top:20px}
@@ -93,10 +95,10 @@
                 <li class="page_3" data-quiz="toggle">
                     <h2><ins class="dot"></ins><span>아래 식을 계산하는 순서를 말해 보세요.</span></h2>
                     <section>
-                        <div class="textAlignC mt_50">
+                        <div class="textAlignC mt_30">
                             <div class="lineBox purple">40÷5×6＝48</div>
                         </div>
-                        <div class="toggle box mt_20" data-toggle-obj="1">
+                        <div class="toggle box mt_40" data-toggle-obj="1">
                             <div class="answer" data-toggle-target="1" style="letter-spacing:-2.2px">
                                 곱셈과 나눗셈이 섞여 있는 식은 앞에서부터 차례대로 계산합니다.
                             </div>
@@ -149,8 +151,8 @@
                 {
                     name: 'boy_1',
                     circle: 'sky',
-                    top: 130,
-                    left: 890,
+                    top: 150,
+                    left: 460,
                     width: 340,
                     height: 421,
                     thumbNail: '../common/contents/images/character/boy_1.png',
@@ -160,8 +162,8 @@
                     textBubble: {
                         text: '먼저 무엇을 구해야 하지?',
                         class: 'balloon right sky',
-                        top: 150,
-                        left: 590,
+                        top: 170,
+                        left: 350,
                         width: 270,
                         textAlign: 'center',
                         wordBreak: 'keep-all'
@@ -171,8 +173,12 @@
                     endSheet: 0,
                     delay: 40,
                     callbacks: {
-                        start: function () {},
-                        end: function () {}
+                        start: function () {
+                            $ts.getEl('.page_1 .characterImg')[0].style.left='200px';
+                        }, // 시작시 콜백
+                        end: function () {
+                            $ts.getEl('.page_1 .characterImg')[0].style.left=0;
+                        } // 끝날시 콜백
                     }
 
                 }
