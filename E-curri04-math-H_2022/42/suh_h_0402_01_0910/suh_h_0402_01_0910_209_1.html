@@ -16,6 +16,9 @@
         .contentsBox section.full {padding-top: 100px;}
         .popup_pages .solve .popup_contents {letter-spacing: -1px;}
         .popup_pages .solve .blankBox {vertical-align:middle}
+        .w40 {height:40px;min-height:40px}
+        .solve .blankBox.w50 {top:-2px}
+        .p-01 {position:relative;top:-2px}
     </style>
 </head>
 
@@ -25,7 +28,7 @@
     <header>
         <div class="title active">
             <div class="bullet number orange inline">9</div>
-            <div><span class="blankBox white w50"></span> 안에 들어갈 수 있는 자연수를 모두 구해 보세요.</div>
+            <div><span class="blankBox white w40" style="position:relative;top:4px"></span> 안에 들어갈 수 있는 자연수를 모두 구해 보세요.</div>
         </div>
     </header>
     <main>
@@ -38,9 +41,9 @@
                                 <li>3</li>
                                 <li>5</li>
                             </ul>
-                        </div><span class="operator">＋</span><div class="bunsuWrap inline">
+                        </div>＋<div class="bunsuWrap inline">
                             <ul>
-                                <li><span class="blankBox w50"></span></li>
+                                <li><span class="blankBox w40"></span></li>
                                 <li>5</li>
                             </ul>
                         </div><span class="operator">＜</span>2
@@ -67,33 +70,39 @@
             <!-- 1 -->
             <li class="solve pop_page_1" data-popup-page="1">
                 <div class="popup_contents">
-                    <div class="bunsuWrap inline">
-                        <ul>
-                            <li>3</li>
-                            <li>5</li>
-                        </ul>
-                    </div><span class="operator">＋</span><div class="bunsuWrap inline">
-                        <ul>
-                            <li><span class="blankBox w50"></span></li>
-                            <li>5</li>
-                        </ul>
-                    </div><span class="operator">＝</span>2이면 2<span class="operator">＝</span><div class="bunsuWrap inline">
-                        <ul>
-                            <li>10</li>
-                            <li>5</li>
-                        </ul>
-                    </div>이므로 3<span class="operator">＋</span><span class="blankBox w50"></span><span class="operator">＝</span> 10, 10<span class="operator">－</span>3<span class="operator">＝</span><span class="blankBox w50"></span>, <span class="blankBox w50"></span><span class="operator">＝</span>7입니다.
-                    <div class="bunsuWrap inline">
-                        <ul>
-                            <li>3</li>
-                            <li>5</li>
-                        </ul>
-                    </div><span class="operator">＋</span><div class="bunsuWrap inline">
-                        <ul>
-                            <li><span class="blankBox w50"></span></li>
-                            <li>5</li>
-                        </ul>
-                    </div>가 2보다 작아야 하므로 <span class="blankBox w50"></span> 안에 들어갈 수 있는 자연수는 7보다 작은 1, 2, 3, 4, 5, 6입니다.
+                    <div class="flex-box a-center">
+                        <div class="bunsuWrap inline">
+                            <ul>
+                                <li>3</li>
+                                <li>5</li>
+                            </ul>
+                        </div>＋<div class="bunsuWrap inline">
+                            <ul class="p-01">
+                                <li><span class="blankBox w50"></span></li>
+                                <li>5</li>
+                            </ul>
+                        </div>＝2이면 2＝<div class="bunsuWrap inline">
+                            <ul>
+                                <li>10</li>
+                                <li>5</li>
+                            </ul>
+                        </div>이므로 3＋<span class="blankBox w50"></span>＝10, 10<span class="operator">－</span>3＝<span class="blankBox w50"></span>,
+                    </div>
+                    <div class="flex-box a-center">
+                        <span class="blankBox w50"></span>＝7입니다.
+                        <div class="bunsuWrap inline ml_10">
+                            <ul>
+                                <li>3</li>
+                                <li>5</li>
+                            </ul>
+                        </div>＋<div class="bunsuWrap inline">
+                            <ul class="p-01">
+                                <li><span class="blankBox w50"></span></li>
+                                <li>5</li>
+                            </ul>
+                        </div>가 2보다 작아야 하므로 <span class="blankBox w50 ml_10 mr_10"></span> 안에 들어갈
+                    </div>
+                    수 있는 자연수는 7보다 작은 1, 2, 3, 4, 5, 6입니다.
                 </div>
             </li>
         </ul>
